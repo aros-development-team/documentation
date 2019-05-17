@@ -3,7 +3,7 @@ Recursos del Desarrollador
 ==========================
 
 + `Cómo contribuir`__
-+ `Acceso y uso de SVN`__
++ `Acceso y uso de Git`__
 + `Cómo compilar`__
 + `El Manual para el Desarrollo de Aplicaciones`__
 + `El Manual para el Desarrollo de Aplicaciones con Zune`__
@@ -18,7 +18,7 @@ Recursos del Desarrollador
 + `Enlaces útiles`__
 
 __ contribute
-__ svn
+__ git
 __ compiling
 __ app-dev/index
 __ zune-dev/index

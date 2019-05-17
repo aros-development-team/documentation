@@ -6,7 +6,7 @@ Developers Resources
 + `Roadmap`__
 + `Bug tracker on Sourceforge`__
 + `Feature requests on Sourceforge`__
-+ `Subversion access and usage`__
++ `Git access and usage`__
 + `How to compile`__
 + `Applications development manual`__
 + `Zune Applications development manual`__
@@ -28,7 +28,7 @@ __ contribute
 __ roadmap
 __ http://sourceforge.net/p/aros/bugs/
 __ http://sourceforge.net/p/aros/feature-requests/
-__ svn
+__ git
 __ compiling
 __ app-dev/index
 __ zune-dev/index

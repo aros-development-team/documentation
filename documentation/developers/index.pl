@@ -3,7 +3,7 @@ Dla programistów
 ================
 
 + `Jak do³±czyæ`__
-+ `SVN - dostêp i u¿ywanie`__
++ `Git - dostêp i u¿ywanie`__
 + `Jak kompilowaæ`__
 + `Podrêcznik programowania`__
 + `Zune - podrêcznik programowania`__
@@ -17,7 +17,7 @@ Dla programistów
 + `Przydatne linki`__
 
 __ contribute
-__ svn
+__ git
 __ compiling
 __ app-dev/index
 __ zune-dev/index

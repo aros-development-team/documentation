@@ -3,7 +3,7 @@ Kehittäjien Resurssit
 =====================
 
 + `Kuinka avustaa`__
-+ `Subversion käyttöoikeus ja käyttö`__
++ `Git käyttöoikeus ja käyttö`__
 + `Kuinka kääntää (compile)`__
 + `Ohjelmien kehitysmanuaali`__
 + `Zune ohjelmien kehitysmanuaali`__
@@ -16,7 +16,7 @@ Kehittäjien Resurssit
 + `Hyödyllisiä linkkejä`__
 
 __ contribute
-__ cvs
+__ git
 __ compiling
 __ app-dev/index
 __ zune-dev/index

@@ -6,7 +6,7 @@ Ontwikkelaars Informatie
              deze links door naar Engelstalige pagina's.
 
 + `Hoe mee te helpen`__
-+ `SVN toegang en gebruik`__
++ `Git toegang en gebruik`__
 + `Hoe te compileren (Engels)`__
 + `Applicatie ontwikkelings handleiding (Engels)`__
 + `Zune Applicatie ontwikkelings handleiding (Engels)`__
@@ -20,7 +20,7 @@ Ontwikkelaars Informatie
 + `Handige links (Engels)`__
 
 __ contribute
-__ svn
+__ git
 __ compiling
 __ app-dev/index
 __ zune-dev/index
