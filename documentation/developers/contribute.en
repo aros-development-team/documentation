@@ -71,7 +71,7 @@ Programming
 
   This involves implementing missing ANSI functions in the AROS crt (stdc),
   aswell as POSIX functions in the posixc library, to make it easier to port
-  *nix software (particularly the GNU toolchain and associated tools). The
+  \*nix software (particularly the GNU toolchain and associated tools). The
   biggest thing missing is support for POSIX style signalling, but there are
   some other functions missing as well.
 
@@ -160,7 +160,7 @@ __ ../../contact#irc-channels
 The Git repository
 -------------------------
 
-The AROS Git repository is hosted on GitHub under the AROS Development Team 
+The AROS Git repository is hosted on GitHub under the AROS Development Team
 umbrella organization.  If you would like to be able to collaborate in
 the development of AROS then please apply for membership (however, if you just
 want to browse the sources, there is a `read-only access`
