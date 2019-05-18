@@ -37,7 +37,7 @@ contribute:       Medverka
 roadmap:          Syfte och mål (Roadmap)
 bug-tracker:      Buggrapportering
 feature-requests: Feature Requests
-working-with-subversion: Arbeta med Subversion
+working-with-git: Arbeta med Git
 compiling:        Kompilering
 application-development-manual: Manual för programutveckling
 zune-application-development-manual: Manual för Zune programutveckling
@@ -45,7 +45,7 @@ system-development-manual:      Manual för systemutveckling
 debugging-manual: Manual för buggfixning
 reference:        Referens
 specifications:   Specifikationer
-ui-style-guide:   UI Style Guide    
+ui-style-guide:   UI Style Guide
 testing:          Testing
 documenting:      Dokumentering
 porting:          Porting

@@ -9,7 +9,7 @@ from components import *
 
 def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     navigation = Tree \
-    ( [    
+    ( [
     P ( contents = [
     Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer'),
     A( _N['home'], href=makeURL( '.', lang ))]
@@ -58,14 +58,14 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),    
+        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
         A( _N['news'], href=makeURL( 'news/', lang ) )]),
         Tree ( A( _N['archive'], href=makeURL( 'news/archive/', lang ) ) ),
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
         A( _N['introduction'], href=makeURL( 'introduction/', lang ) ) ]),
-    
+
         Tree \
         ( [
             A( _N['status'], href=makeURL('introduction/status/everything', lang ) ),
@@ -109,7 +109,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 A( _N['roadmap'], href=makeURL( 'documentation/developers/roadmap', lang ) ),
                 A( _N['bug-tracker'], href='http://sourceforge.net/p/aros/bugs/' ),
                 A( _N['feature-requests'], href='http://sourceforge.net/p/aros/feature-requests/' ),
-                A( _N['working-with-subversion'], href=makeURL( 'documentation/developers/svn', lang ) ),
+                A( _N['working-with-git'], href=makeURL( 'documentation/developers/git', lang ) ),
                 A( _N['compiling'],  href=makeURL( 'documentation/developers/compiling', lang ) ),
                 A( _N['application-development-manual'], href=makeURL( 'documentation/developers/app-dev/index', lang ) ),
                 A( _N['zune-application-development-manual'], href=makeURL( 'documentation/developers/zune-dev/index', lang ) ),
@@ -156,29 +156,29 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     ] )
 
     sponsors = Table\
-    ( 
+    (
         cellspacing = 5, cellpadding = 0,
         contents =
         [
             TR
-            ( 
+            (
                 TD
-                ( 
+                (
                     A
-                    ( 
+                    (
                         Img( src = '%(ROOT)simages/trustec-small.png', border = 0, alt = 'Trustsec' ),
-                        href = 'http://www.trustsec.de/' 
+                        href = 'http://www.trustsec.de/'
                     )
                 )
             ),
             TR
-            ( 
+            (
                 TD
                 (
                     A
-                    ( 
-                        Img( src = '%(ROOT)simages/genesi-small.gif', border = 0, alt = 'Genesi USA' ), 
-                        href = 'https://genesi.company/' 
+                    (
+                        Img( src = '%(ROOT)simages/genesi-small.gif', border = 0, alt = 'Genesi USA' ),
+                        href = 'https://genesi.company/'
                     )
                 )
             ),
@@ -190,7 +190,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                     (
                         Img \
                         (
-                            src = 'https://sourceforge.net/sflogo.php?group_id=43586&amp;type=10', 
+                            src = 'https://sourceforge.net/sflogo.php?group_id=43586&amp;type=10',
                             width = 88, height = 16, border = 0, alt = 'Get AROS Research Operating System at SourceForge.net. '
                                 'Fast, secure and Free Open Source software downloads'
                         ),
@@ -198,13 +198,13 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                     )
                 )
             )
-        ] 
+        ]
     )
-    
+
     bar = Table(
         border = 0, cellpadding = 2, cellspacing = 2, width = 171,
         contents = [
-            TR( 
+            TR(
                 valign = 'top', contents = [
                     TD( rowspan = 8, width=15 ),
                     TD()
@@ -233,7 +233,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     )
 
     statsPHP = '''
-        <?php 
+        <?php
             //define("_BBC_PAGE_NAME", "my page title");
             define("_BBCLONE_DIR", "%(ROOT)smybbclone/");
             define("COUNTER", _BBCLONE_DIR."index.php");
@@ -251,14 +251,14 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
               echo "<area shape=\\"rect\\" coords=\\"100,78,168,95\\" alt=\\"AROS-Exec\\" href=\\"https://ae.amigalife.org\\">";
               echo "<area shape=\\"rect\\" coords=\\"180,78,240,95\\" alt=\\"AROS-Exec Archives\\" href=\\"http://archives.aros-exec.org\\">";
               echo "<area shape=\\"rect\\" coords=\\"260,78,350,95\\" alt=\\"Power2People\\" href=\\"https://power2people.org/\\">";
-              echo "</map>"; 
+              echo "</map>";
     ?>
     '''
     statsPHP4 = '''
     <?php
         echo "<table width=\\"100%%\\"><tr><td>";
         echo "<div style=\\"text-align: right;\\">";
-        echo "<font color=\\"#aaaaaa\\" size=\\"-1\\">";        
+        echo "<font color=\\"#aaaaaa\\" size=\\"-1\\">";
     ?>
     '''
     statsPHP6 = '''
@@ -269,27 +269,27 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     '''
     statsPHP5= '''
     <?php
-        include( '%(ROOT)srsfeed/browserdetect.php'); 
+        include( '%(ROOT)srsfeed/browserdetect.php');
         $win_ie56 = (browser_detection('browser') == 'ie' ) &&
 
           (browser_detection('number') >= 5 ) &&
 
                 (browser_detection('number') < 7  );
-    if ($win_ie56) { 
+    if ($win_ie56) {
 
     echo \"<img src=\\"/images/kittymascot.gif\\"
         alt=\\"kitty mascot\\"
-        style=\\"float:right\\" border=\\"0\\"><img 
-        src=\\"/images/toplogomenu.gif\\" border=\\"0\\" 
+        style=\\"float:right\\" border=\\"0\\"><img
+        src=\\"/images/toplogomenu.gif\\" border=\\"0\\"
         alt=\\"top logo menu\\"
         usemap=\\"#map\\">";
 
         }
         else {
-        echo \"<img src=\\"/images/kittymascot.png\\"  
+        echo \"<img src=\\"/images/kittymascot.png\\"
         alt=\\"kitty mascot\\"
-        style=\\"float:right\\" 
-        border=\\"0\\"><img src=\\"/images/toplogomenu.png\\" 
+        style=\\"float:right\\"
+        border=\\"0\\"><img src=\\"/images/toplogomenu.png\\"
         alt=\\"top logo menu\\"
         border=\\"0\\" usemap=\\"#map\\">";
         } ?>
@@ -305,16 +305,16 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 content = 'AROS, OS, operating system, research, open source, portage'
             )
         ] ),
-        Body( 
+        Body(
             style = 'margin: 0px;',
             bgcolor = '#ffffff', contents = [
                 statsPHP3,
                 Table(
-                    border = 0, cellspacing = 0, cellpadding = 0, 
-                    style="background-image:url('%(ROOT)simages/backgroundtop.png'); background-repeat:repeat-x;", 
+                    border = 0, cellspacing = 0, cellpadding = 0,
+                    style="background-image:url('%(ROOT)simages/backgroundtop.png'); background-repeat:repeat-x;",
                     width = '100%%', contents = [
                         TR( [
-                            TD( 
+                            TD(
                                 valign = 'top', width = '100%%', height = 109,
                                 contents = statsPHP5)
 
@@ -323,11 +323,11 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
 #                Area(shape ='rect', coords='96,83,177,104', alt = 'AROS-Exec', href="http://www.aros-exec.org"),
 #                Area(shape ='rect', coords='183,84,263,104', alt = 'Team AROS', href="http://www.teamaros.org"),
 #                Area(shape ='rect', coords='271,82,353,104', alt = 'AROS-Exec Archives', href="http://archives.aros-exec.org") ],
-                            
+
                         ] ),
-            
+
                         TR(
-                            TD( 
+                            TD(
                             Table(
                                 border = 0, cellspacing = 0, cellpadding = 0,
                                 width = '100%%', contents = [
@@ -342,7 +342,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                                 ]
                             )
                             )
-                        ), 
+                        ),
                         TR( [
                             TD(
                                 width = '100%%', valign = 'bottom', align = 'center',

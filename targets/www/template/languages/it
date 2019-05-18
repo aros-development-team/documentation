@@ -9,7 +9,7 @@ news-archive-for: Archivio notizie per
 mirrors:          Mirror
 contents:         Contenuti
 search:           Cerca
-visitors:         Visitatori 
+visitors:         Visitatori
 sponsors:         Sponsor
 
 [navigation]
@@ -37,7 +37,7 @@ contribute:       Per contribuire
 roadmap:          Roadmap
 bug-tracker:      Bug Tracker
 feature-requests: Feature Requests
-working-with-subversion: Lavorare con Subversion
+working-with-git: Lavorare con Git
 compiling:        Compilare
 application-development-manual: Manuale Sviluppo Applicazioni
 zune-application-development-manual: Manuale Sviluppo Applicazioni Zune

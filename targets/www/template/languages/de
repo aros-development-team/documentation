@@ -35,7 +35,7 @@ hwcompat:         Hardware Compatibility
 developers:       Entwickler
 contribute:       Mitwirken
 roadmap:          Roadmap
-working-with-subversion: Arbeiten mit Subversion
+working-with-git: Arbeiten mit Git
 bug-tracker:      Fehlermeldung
 feature-requests: Funktionsanforderung
 compiling:        Kompilierung

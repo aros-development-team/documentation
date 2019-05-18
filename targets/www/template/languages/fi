@@ -37,7 +37,7 @@ contribute:       Osanotto
 roadmap:          Roadmap
 bug-tracker:      Bugien seuranta
 feature-requests: Feature Requests
-working-with-subversion: Subversion:n kanssa työskentely
+working-with-git: Git:n kanssa työskentely
 compiling:        Kääntö
 application-development-manual: Ohjelmiston kehitysmanuaali
 zune-application-development-manual: Zune-ohjelmiston kehitysmanuaali
