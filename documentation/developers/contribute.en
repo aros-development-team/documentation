@@ -72,8 +72,8 @@ Programming
   This involves implementing missing ANSI functions in the AROS crt (stdc),
   aswell as POSIX functions in the posixc library, to make it easier to port
   \*nix software (particularly the GNU toolchain and associated tools). The
-  biggest thing missing is support for POSIX style signalling, but there are
-  some other functions missing as well.
+  biggest things missing are support for wchar and POSIX style signalling,
+  but there are some other functions missing as well.
 
 + Implementing more datatypes and improve existing ones
 
@@ -142,7 +142,7 @@ Joining the Team
 
 Want to join the development effort? Great! Then join the `development mailing
 lists`__ you are interested in (at least joining the main development list is
-*highly* recommended) and request access to the Subversion repository.
+*highly* recommended) and request access to the `GitHub organization`__.
 That's it. :)
 
 Writing a short mail to the development list containing an introduction about
@@ -154,13 +154,14 @@ task database. This way we can make sure people don't work on the same thing
 by mistake...
 
 __ ../../contact#mailing-lists
+__ https://github.com/aros-development-team
 __ ../../contact#irc-channels
 
 
 The Git repository
 -------------------------
 
-The AROS Git repository is hosted on GitHub under the AROS Development Team
+The AROS Git repository is hosted on GitHub under the `AROS Development Team`__
 umbrella organization.  If you would like to be able to collaborate in
 the development of AROS then please apply for membership (however, if you just
 want to browse the sources, there is a `read-only access`
@@ -169,4 +170,5 @@ For information on how to use the AROS Git repository, please read "`Working wit
 Git`__". Even if you already know how to use Git it is useful to look through
 that page, as it contains information and tips specific to the AROS repository.
 
+__ https://github.com/aros-development-team
 __ git
