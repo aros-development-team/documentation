@@ -2,7 +2,7 @@
 .. raw:: html
 
    <table style="width: 100%; text-align: justify; " background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
-   
+
 .. Include:: introduction/index-abstract.ru
 
 `ѕодробнее... <introduction/index>`__
@@ -11,7 +11,7 @@
 
    </td></tr></tbody></table><br>
 
-                                                          
+
 .. raw:: html
 
     <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
@@ -62,16 +62,16 @@ Commits
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
    ѕоследние файлы<br>на AROS-Archives:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br><a href=http://archives.aros-exec.org>
    The AROS archives</a> хран€т последние разработки ѕќ от нашего сообщества, а также €вл€ютс€ основным хранилищем приложений, тем, графики и различной документации, созданных пользовател€ми.<br><br>
-   <?php include("../rsfeed/archives.php"); ?><br></td></tr></table>
+   </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?> 
+   <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
    ѕоследние темы форума AROS-EXEC:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href=http://aros-exec.org>AROS-EXEC</a> - основной сайт сообщества AROS. «десь прос€т помощи, узнают новости сообщества и дел€тс€ своими соображени€ми об AROS.<br><br>
-   <?php include("../rsfeed/aeforum.php"); ?><br></td></tr></tbody></table>
+   </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
    <?php if ($win_ie56) { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.gif\" align=\"middle\">"; } else { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.png\" align=\"middle\">"; } ?>
    Syndication Feeds:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <?php  include("../rsfeed/synfeed.php");  ?><br></td></tr></table>
+   </td></tr></table>
    </td></tr></table>
