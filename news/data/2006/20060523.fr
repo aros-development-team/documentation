@@ -35,7 +35,7 @@ ont été résolus et Lunapaint fonctionne bien également en version native.
 Vous pouvez consulter les captures d'écran `ici`__ et lire une belle interview
 sur `The Aros Show`__. Téléchargez-le à partir des `Archives`__!
 
-__ http://aros-exec.org/modules/xcgal/thumbnails.php?album=23
+__ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
 __ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 

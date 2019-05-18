@@ -72,6 +72,6 @@ clase pendisplay que ocurría cuando no había pinceles libres
 en la pantalla. Paolo Besser ha agregado otros Íconos Gorilla.
 
 
-__ http://aros-exec.org/modules/xcgal/displayimage.php?pid=239
-__ http://aros-exec.org/modules/news/article.php?storyid=227
+__ https://ae.amigalife.org/modules/xcgal/displayimage.php?pid=239
+__ https://ae.amigalife.org/modules/news/article.php?storyid=227
 __ http://www.lua.org/bugs.html#5.1.1

@@ -4,6 +4,6 @@ echo "<img src=\"/images/rsfeed.gif\" alt=\"rsfeed logo\"><a href
 Recent submissions</a>";
 echo "<br>";
 echo "<img src=\"/images/rsfeed.gif\" alt=\"rsfeed logo\"><a href 
-=\"http://aros-exec.org/modules/newbb/rss.php?c=0\">AROS-Exec 
+=\"https://ae.amigalife.org/modules/newbb/rss.php?c=0\">AROS-Exec 
 Forum</a>";
 ?>

@@ -37,7 +37,7 @@ Michal также добавил в AROS поддержку инструкций SSE.
 Petr Novak перевёл `aros.org на чешский язык`__.
 
 
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=2319
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319
 __ http://ftp.ticklers.org/pub/aminet/driver/video/Wazp3D.readme
 __ http://msaros.blogspot.com/2007/10/very-close.html
 __ http://www.aros.org/cs

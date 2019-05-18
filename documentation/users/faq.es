@@ -17,7 +17,7 @@ Preguntas comunes
 --------------------------
 
 Por supuesto. Por favor ve al `foro de AROS-Exec 
-<http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1636&start=0>`__ 
+<https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0>`__ 
 y lee los hilos y pregunta todo lo que quieras. Este FAQ se actualizará con
 las respuestas de los usuarios, aunque el foro permanece más actual. 
 
@@ -194,7 +194,7 @@ que obtuviste) en el foro de Ayuda en `AROS-Exec`__ o conviérte en un
 desarrollador y suscríbete a la lista AROS Developer y pónlo allí, y
 alguien intentará ayudarte.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 ¿AROS tendrá memoria protegida, SVM, RT, ...?

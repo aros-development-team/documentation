@@ -15,7 +15,7 @@ Algemene vragen
 
 Mag ik een vraag stellen?
 -------------------------
-Natuurlijk kunt u dat. Gaat u a.u.b. naar het `Aros-Exec forum <http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1636&start=0>`__
+Natuurlijk kunt u dat. Gaat u a.u.b. naar het `Aros-Exec forum <https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0>`__
 , lees het betreffende topic en vraag alles wat u wilt (liefst in het Engels). Deze FAQ zal geupdate worden met meer
 gebruikers vragen, maar het forum is en blijft de meest up-to-date plek.
 
@@ -205,7 +205,7 @@ U kunt ook ontwikkelaar worden en uzelf abonneren op de AROS ontwikkelaars lijst
 en daar het tegengekomen probleem posten. In beiden gevallen zal iemand u proberen
 te helpen.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Krijgt AROS geheugen bescherming, SVM, RT, ...?

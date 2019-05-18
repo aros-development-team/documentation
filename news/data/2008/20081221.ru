@@ -77,7 +77,7 @@ Matthias Rustler портирует на AROS Ignition, приложение для
 
 __ http://archives.aros-exec.org
 __ http://sszymczy.rootnode.net/index.php?menu=projects&submenu=aroscompilation
-__ http://aros-exec.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3141&forum=2
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3141&forum=2
 __ http://live.vmwaros.org
 __ http://ve.vmwaros.org
 __ http://vmwaros.blogspot.com/2008/12/vmwaros-version-10-released.html

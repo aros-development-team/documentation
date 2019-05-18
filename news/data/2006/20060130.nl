@@ -26,7 +26,7 @@ informatie is weggehaald. U zult de resultaten van zijn werk overal op
 de website vinden. Matthias heeft ook ExecuteStartup ingestuurd, een 
 kleine tool die applicaties start die zich in de SYS:WBstartup map bevinden.
 
-__ http://aros-exec.org
+__ https://ae.amigalife.org
 
 Netwerk voorzieningen
 ---------------------

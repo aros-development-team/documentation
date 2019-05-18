@@ -73,4 +73,4 @@ __ http://sourceforge.net/p/aros/bugs/
    <?php virtual( "/cgi-bin/files?type=nightly&lang=ru" ); ?>
 
 __ http://sourceforge.net/p/aros/bugs/
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/

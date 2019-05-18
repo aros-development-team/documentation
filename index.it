@@ -71,7 +71,7 @@ Commits
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
    Ultimi post nel forum AROS-EXEC:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=http://aros-exec.org>AROS-EXEC</a> è il portale principale della community degli utenti di AROS. Il suo forum è il posto giusto per ricevere aiuto,
+   <a href=https://ae.amigalife.org>AROS-EXEC</a> è il portale principale della community degli utenti di AROS. Il suo forum è il posto giusto per ricevere aiuto,
    inviare commenti e conoscere altri utenti di AROS.<br><br>
    </td></tr></tbody></table>
 

@@ -59,7 +59,7 @@ Randy Vice перестал собирать задания для AROS: TeamAROS была закрыта, но все
 
 __ http://live.vmwaros.org
 __ http://ve.vmwaros.org
-__ http://aros-exec.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3017&forum=2
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3017&forum=2
 __ http://sszymczy.rootnode.net/index.php?menu=projects&submenu=aroscompilation
 __ http://aros.sourceforge.net/introduction/status/everything.php
 __ http://www.power2people.org

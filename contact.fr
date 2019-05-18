@@ -78,7 +78,7 @@ les dernières news concernant AROS, les forums de discussion en ligne, des
 galleries d'images et bien plus. C'est l'endroit parfait pour les utilisateurs
 d'AROS venant du monde entier.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 IRC Channels 

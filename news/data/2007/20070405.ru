@@ -67,6 +67,6 @@ pendisplay в случае, если дл€ экрана нет свободных перьев. Ќесколько новых
 иконок из темы Gorilla были добавлены Paolo Besser.
 
 
-__ http://aros-exec.org/modules/xcgal/displayimage.php?pid=239
-__ http://aros-exec.org/modules/news/article.php?storyid=227
+__ https://ae.amigalife.org/modules/xcgal/displayimage.php?pid=239
+__ https://ae.amigalife.org/modules/news/article.php?storyid=227
 __ http://www.lua.org/bugs.html#5.1.1

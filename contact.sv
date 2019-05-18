@@ -76,7 +76,7 @@ AROS-Exec__ är den officella community-portalen för AROS. Här finner du de
 senaste nyheterna om AROS, diskussionsforum, bildgallerier och mycket mer. Det
 är den perfekta mötesplatsen för AROS-användare från hela världen.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 IRC-Kanaler
 ===========

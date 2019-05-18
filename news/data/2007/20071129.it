@@ -54,6 +54,6 @@ __ http://msaros.blogspot.com
 __ http://www.vmwaros.org
 __ http://vmwaros.blogspot.com/2007/11/vmwaros-beta-01-released.html
 __ http://vmwaros.blogspot.com/2007/11/here-we-go.html
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=2434
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2434
 __ http://cataclysm.cx
 

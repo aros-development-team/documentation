@@ -32,7 +32,7 @@ Hogne "M0ns00n" Titlestad закончил работу над Lunapaint v0.2 для i386/AROS.
 и Lunapaint теперь замечательно работает и на нативной версии AROS. Скриншоты
 можно увидеть `здесь`__ , а также есть замечательная статья на `The Aros Show`__, которую можно скачать в `Архивах`__.
 
-__ http://aros-exec.org/modules/xcgal/thumbnails.php?album=23
+__ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
 __ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 

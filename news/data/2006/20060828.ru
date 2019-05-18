@@ -19,5 +19,5 @@
 
 __ http://www.aros.org/ru/index.php
 __ http://www.aros.org/pl/index.php
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1595&forum=21
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1603&forum=21
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1595&forum=21
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1603&forum=21

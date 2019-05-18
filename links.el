@@ -18,7 +18,7 @@
 
   Η TeamAROS είναι η βασική ομάδα υποστήριξης του AROS.
   
-+  `AROS-Exec <http://aros-exec.org>`__
++  `AROS-Exec <https://ae.amigalife.org>`__
 
   Η ιστοσελίδα, το φόρουμ, τα νέα και οι φωτογραφίες της κοινότητας του AROS.
 

@@ -70,7 +70,7 @@ Commits
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
    Οι τελευταίες δημοσιεύσεις στο AROS-EXEC φόρουμ:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Το <a href=http://aros-exec.org>AROS-EXEC</a> αποτελεί τη βασική ιστοσελίδα της κοινότητας. Ζητήστε βοήθεια, μάθετε τι συμβαίνει στην κοινότητα, και δημοσιεύστε τις σκέψεις σας για το AROS.<br><br>
+   Το <a href=https://ae.amigalife.org>AROS-EXEC</a> αποτελεί τη βασική ιστοσελίδα της κοινότητας. Ζητήστε βοήθεια, μάθετε τι συμβαίνει στην κοινότητα, και δημοσιεύστε τις σκέψεις σας για το AROS.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">

@@ -77,7 +77,7 @@ novinky týkající se AROSu, online diskuzní fóra, obrázkové galerie a mnoho
 dal¹ího. Je to ideální místo pro setkávání u¾ivatelù AROSu z celého
 svìta.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 IRC kanály

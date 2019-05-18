@@ -83,7 +83,7 @@ het laatste nieuws vinden rond AROS, online discussie forums, afbeelding
 galerijen en veel meer. Het is de perfecte ontmoetingsplaats voor AROS
 gebruiker over de hele wereld.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 IRC Kanalen

@@ -35,7 +35,7 @@ U kunt `hier screenshots`__ bekijken van Lunapaint. Een mooi (Engelstalig)
 interview is lezen op `The Aros Show`__. Het programma is reeds te downloaden 
 uit het `Archief`__.
 
-__ http://aros-exec.org/modules/xcgal/thumbnails.php?album=23
+__ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
 __ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 

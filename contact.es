@@ -85,7 +85,7 @@ AROS-Exec__ es el portal oficial de la comunidad AROS. Allí puedes encontrar
 las noticias más recientes de AROS, foros online de discusión, galerías de imágenes, 
 y mucho más. Es el perfecto lugar de encuentro para los usuarios de AROS de todo el mundo.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Los canales de IRC

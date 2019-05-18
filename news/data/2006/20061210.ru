@@ -66,5 +66,5 @@ Windows могут использовать последнюю версию WinAros, содержащую native GCC.
 __ http://ministerq.integradesign.org/31.PNG
 __ http://ministerq.integradesign.org/32.PNG
 __ http://amigg.integradesign.org/amigg_beta.lha
-__ http://aros-exec.org/modules/news/article.php?storyid=185
+__ https://ae.amigalife.org/modules/news/article.php?storyid=185
 

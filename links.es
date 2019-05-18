@@ -18,7 +18,7 @@ Recursos de AROS
 
   El TeamAROS es un grupo de apoyo base para AROS.
 
-+  `AROS-Exec <http://aros-exec.org>`__
++  `AROS-Exec <https://ae.amigalife.org>`__
 
   El sitio web de la Comunidad AROS, los foros, las noticias, las galerías
 

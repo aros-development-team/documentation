@@ -46,7 +46,7 @@ Zdroje AROSu
 + `Dokumentace AROSu na WikiBooks`__
 
 __ http://www.teamaros.org/
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 __ http://archives.aros-exec.org/
 __ http://aros.aminet.net/
 __ http://www.aros.bbs.pl/

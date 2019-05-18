@@ -20,7 +20,7 @@ Naturligtvis! Gå till `AROS-Exec forum`__ och läs trådarna
 och fråga allting som du vill. Den här FAQ är uppdaterad med användarfrågor,
 men forumet är alltid mest aktuellt.
 
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
 
 
 Vad handlar AROS om? 
@@ -193,7 +193,7 @@ Skicka ett meddelande med detaljer (Till exempel, felmeddelandena som du får)
 i hjälpforumet på `AROS-Exec`__ eller bli en utvecklare och prenumerera
 på "AROS Developer list" och skicka meddelandet där, så får du hjälp.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Kommer AROS ha minnesskydd (memory protection), SVM, RT, ...?

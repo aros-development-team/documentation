@@ -64,6 +64,6 @@ Pavel Fedin heeft een crash verholpen in de 'pendisplay class' die optreed als e
 vrije 'pens' op het scherm zijn. Tot slot zijn enkele Gorilla Iconen toegevoegd door Paolo Besser. 
 
 
-__ http://aros-exec.org/modules/xcgal/displayimage.php?pid=239
-__ http://aros-exec.org/modules/news/article.php?storyid=227
+__ https://ae.amigalife.org/modules/xcgal/displayimage.php?pid=239
+__ https://ae.amigalife.org/modules/news/article.php?storyid=227
 __ http://www.lua.org/bugs.html#5.1.1

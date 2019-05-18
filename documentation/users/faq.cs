@@ -20,7 +20,7 @@ Samozøejmì mù¾e¹. Pøejdi prosím na `AROS-Exec fórum`__,
 proèti si vlákna a zeptej se na co chce¹. Tyto FAQ budou postupnì aktualizovány
 podle otázek u¾ivatelù na fóru, fórum je v¹ak více aktuální.
 
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
 
 
 Co je vlastnì AROS?
@@ -198,7 +198,7 @@ get) on the Help forum at `AROS-Exec`__ or become a developer and
 subscribe to the AROS Developer list and post it there, and someone will
 try to help you.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Bude mít AROS ochranu pamìti, SVM, RT, ...?

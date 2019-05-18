@@ -22,7 +22,7 @@ tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
    <?php virtual( "/cgi-bin/files?type=snapshots&lang=fi" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Öiset käännökset
@@ -42,5 +42,5 @@ Muissa tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
    <?php virtual( "/cgi-bin/files?type=nightly&lang=fi" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 

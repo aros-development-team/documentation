@@ -97,7 +97,7 @@ opnemen via de `AROS-Exec`__ forums.
 
 __ nightly
 __ http://sourceforge.net/p/aros/bugs/
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 

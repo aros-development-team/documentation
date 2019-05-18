@@ -87,7 +87,7 @@ iedereen die ons op welke wijze dan ook helpt zoals diegenen die software
 converteren, nieuwe applicaties maken, documentatie schrijven en/of enkel
 AROS onder de aandacht brengen zowel binnen als buiten de Amiga-gemeenschap.
 
-__ http://aros-exec.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=4724&forum=2
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=4724&forum=2
 __ http://vmwaros.blogspot.com/2010/05/icaros-desktop-122-update-ready-for.html
 __ http://vmwaros.blogspot.com/2010/06/create-your-own-icaros-stick.html
 __ http://www.aros-broadway.de/

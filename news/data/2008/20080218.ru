@@ -84,5 +84,5 @@ __ http://archives.aros-exec.org/share/document/manual/aros_shell_manual_version
 __ http://archives.aros-exec.org/share/document/manual/aros_install_manual_version_0.25a.pdf
 __ http://aros-wandering.blogspot.com
 __ http://www.chilibi.org/aros/texlive
-__ http://aros-exec.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=2569&forum=2
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=2569&forum=2
 __ http://www.tbs-software.com/fp/welcome.phtml

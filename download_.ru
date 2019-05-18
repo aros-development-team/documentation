@@ -103,4 +103,4 @@ __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
    <?php virtual( "/cgi-bin/files?type=nightly&lang=ru" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/

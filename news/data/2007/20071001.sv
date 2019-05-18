@@ -45,7 +45,7 @@ och `HW Upgrade`__. En rapport av evenemanget har blivit publicerad av
 på YouTube.
 
 __ http://mama.indstate.edu/users/nova/installer.jpg
-__ http://aros-exec.org/modules/newbb/viewtopic.php?topic_id=2319
+__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319
 __ http://www.pianetaamiga.it/2007/eng/
 __ http://tgmonline.futuregamer.it/news/settembre2007/20070910111905
 __ http://www.hwupgrade.it/news/videogiochi/presentazione-italiana-per-l-os-indipendente-aros_22619-0.html

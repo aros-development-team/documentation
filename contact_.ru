@@ -101,7 +101,7 @@ latest news related to AROS, online discussion forums, picture galleries, and
 much more. It's the perfect meeting place for AROS users from all over the
 world.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Каналы IRC 

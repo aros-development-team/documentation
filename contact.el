@@ -77,7 +77,7 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 πολλά περισσότερα. Είναι το τελειότερο μέρος συνάντησης για τους χρήστες του AROS από όλο
 τον κόσμο.
 
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 Κανάλια IRC

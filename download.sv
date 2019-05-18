@@ -97,7 +97,7 @@ Var snäll och rapportera alla buggar du hittar via buggrapportkanalen
 
 __ nightly
 __ http://sourceforge.net/p/aros/bugs/
-__ http://aros-exec.org/
+__ https://ae.amigalife.org/
 
 
 
