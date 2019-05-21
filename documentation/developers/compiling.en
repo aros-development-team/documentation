@@ -456,7 +456,7 @@ Internet::
 
     > sudo apt-get install git g++ libpng12-dev libx11-dev
     libxcursor-dev libgl1-mesa-dev gawk bison flex netpbm automake cmake gperf
-    libswitch-perl libasound2-dev
+    libswitch-perl libasound2-dev python-mako
 
 If you are using the 64-bit version of Ubuntu, you will need some 
 extra packages, and a small fix::
