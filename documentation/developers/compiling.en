@@ -93,7 +93,7 @@ Sources
 =======
 
 You can download the AROS sources either from the `download page`__ or by
-using SVN (see `subversion documentation`__).
+using Git (see `git documentation`__).
 
 Extract or download ``source`` package sources into a directory of your
 choice. If you want to build contributed software as well, extract or
@@ -101,7 +101,7 @@ download ``contrib`` package sources into a ``./contrib`` subdirectory
 of your ``source`` package directory tree.
 
 __ ../../download
-__ ../../documentation/developers/svn
+__ ../../documentation/developers/git
 
 
 
@@ -239,7 +239,7 @@ To start the compilation, simply run::
 
     > make
 
-If this doesn't work after a SVN update, you can try::
+If this doesn't work after a Git pull, you can try::
 
     > make clean
     > rm -rf bin/
@@ -359,7 +359,7 @@ Building AROS in different directories
 It is possible to configure and build AROS in a directory other than the
 working copy. For example::
 
-   > svn co https://svn.aros.org/svn/aros/trunk/AROS aros-src
+   > git clone https://github.com/aros-development-team/AROS.git aros-src
    > cd aros-src
    > mkdir ../build
    > cd ../build
@@ -398,7 +398,7 @@ reconfigure, or identify and copy changes into another working copy.
    best to delete the bin/ directory, as well as any files that shouldn't
    exist when the following command is used:
 
-   svn status --no-ignore
+   git status -s --ignored
 
    Delete any files which are ignored/not supposed to be there
    (unless they are your own projects files).
@@ -454,7 +454,7 @@ Getting the needed packages
 Because the Live CD misses needed packages we have to get them from the
 Internet::
 
-    > sudo apt-get install subversion g++ libpng12-dev libx11-dev
+    > sudo apt-get install git g++ libpng12-dev libx11-dev
     libxcursor-dev libgl1-mesa-dev gawk bison flex netpbm automake cmake gperf
     libswitch-perl libasound2-dev
 
@@ -466,6 +466,10 @@ extra packages, and a small fix::
 
 You will need to enter your user password at the prompt.
 
+And if you are compiling the 32bit target on a 64bit host and will use the X11 display
+driver, you may also need::
+
+    > sudo apt-get install libxcursor-dev:i386
 
 Setting the locale to ISO 8859
 """"""""""""""""""""""""""""""
@@ -488,14 +492,14 @@ Then set the console's locale::
 Get the sources
 """""""""""""""
 
-To find out more instruction on how to use our SVN Repository,
-please refer to `Working with Subversion <svn.php>`__
+To find out more instruction on how to use our Git Repository,
+please refer to `Working with Git <git.php>`__
 
 In brief, the commands you must use are the following::
 
-   > svn checkout https://svn.aros.org/svn/aros/trunk/AROS
+   > git clone https://github.com/aros-development-team/AROS.git
    > cd AROS
-   > svn checkout https://svn.aros.org/svn/aros/trunk/contrib
+   > git clone https://github.com/aros-development-team/contrib.git
 
 
 Configure and compile AROS sources
