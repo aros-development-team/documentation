@@ -1,4 +1,5 @@
-Options +Includes Indexes
+#Options +Includes Indexes
+Options +Indexes
 XBitHack on 
 
 # 20121206 Trying to improve a bit ... -- Jman
