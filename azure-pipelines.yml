@@ -1,0 +1,50 @@
+# Build & Deploy the AROS website
+# to use, you must define the following secret variables
+# in the pipeline settings-:
+#    RSYNC_USER - sourceforge user to upload as
+#    RSYNC_PASSWORD - ...
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+    AROSDOCBUILDDIR:  '$(AZBUILDPATH)/Documentation' # Location builds are done in
+    AZBUILDPATH: '$(Build.BinariesDirectory)' # workspace path
+    AROSDOCSRCDIR: '$(system.defaultWorkingDirectory)' # Path to the source code
+
+steps:
+- script: |
+    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys B02C46DF417A0893
+    sudo apt-get update
+    sudo pip install --upgrade pip
+    sudo pip install Pillow
+  displayName: 'Installing AROS build dependencies'
+
+- script: |
+    mkdir -p '$(AROSDOCBUILDDIR)'
+    echo '##vso[task.prependpath]$(AROSDOCBUILDDIR)'
+    echo 'Copying sources...'
+    cp -R $(AROSDOCSRCDIR)/* $(AROSDOCBUILDDIR)/
+  displayName: 'Setup workspace'
+
+- script: |
+    echo 'Calling build www...'
+    ./build www
+  workingDirectory: '$(AROSDOCBUILDDIR)'
+  displayName: 'Building website'
+
+#- script: |
+#    echo 'Calling build html...'
+#    ./build html
+#  workingDirectory: '$(AROSDOCBUILDDIR)'
+#  displayName: 'Building documentation'
+
+- script: |
+    sshpass -p "$(MAPPED_PASS)" rsync -rciv --rsh=ssh $(AROSDOCBUILDDIR)/bin/documentation/www/ $(MAPPED_USER),aros@web.sourceforge.net:/home/project-web/aros/htdocs/
+  env:
+    MAPPED_USER: $(RSYNC_USER)
+    MAPPED_PASS: $(RSYNC_PASSWORD)
+  displayName: 'Deploying website'
