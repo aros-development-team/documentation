@@ -75,8 +75,8 @@ __ http://docutils.sourceforge.net/docs/user/rst/quickref.html
 The documentation archive
 -------------------------
 
-In order to change or write documentation you need a checkout of the
-`subversion archive <svn>`_ 'documentation'. The archive contains:
+In order to change or write documentation you need a clone of the
+`Git repository <git>`_ 'documentation'. The archive contains:
 
 + some common documents, like contact.en, links.en, etc.
 + a directory 'db' with some database facts about the project
@@ -458,6 +458,6 @@ Additionally, there is a ``clean`` target, which will delete the entire
 
     Currently, you can't use a read-only file system for the source
     directories, as quite many intermediate files are generated there. If
-    you've checked out the sources from SVN there's no need to worry: the
+    you've checked out the sources from Git there's no need to worry: the
     generated files are ignored as appropriate.
 
