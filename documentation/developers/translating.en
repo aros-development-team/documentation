@@ -41,9 +41,9 @@ First, please `contact us
 you can contribute (just to be on the safe side).
 
 Translating is as basic as it implicates. All you need to start translating
-with AROS is a suitable text-editor, access to the AROS 'SVN sources' and a
+with AROS is a suitable text-editor, access to the AROS 'Git sources' and a
 feel for your language and grammar. Information about the first two can be
-found here on the `Working with SVN <svn>`__ page, the latter is up to you of
+found here on the `Working with Git <git>`__ page, the latter is up to you of
 course. You don't even need to use AROS to work on either the site or the OS
 - using Linux, Windows or OS X will do just fine.
 
@@ -75,14 +75,14 @@ Of all the content, translating the developer section is least important.
 Generally developers tend to have a grasp of English that is adequate for
 reading documentation, making it not worth the effort to translate; users will
 also require more attention generally. An exception to the rule are the
-'working with SVN' and 'contribute' pages, which can be useful when you
+'working with Git' and 'contribute' pages, which can be useful when you
 recruit other people in your country.
 
 
 Procedure
 ~~~~~~~~~
-The AROS website is built from text-only files, stored in an online SVN
-archive. These are later put into a template, creating the AROS site you can
+The AROS website is built from text-only files, stored in an online Git
+repository. These are later put into a template, creating the AROS site you can
 see on the web.
 
 To summarize, it is highly recommended that you:
@@ -90,15 +90,15 @@ To summarize, it is highly recommended that you:
 + make your intentions known to the developer ML and see if your services are
   needed (to be on the safe side)
 + read this whole page
-+ read the `Working with SVN <svn>`__ page
-+ apply for SVN access
++ read the `Working with Git <git>`__ page
++ apply for Git access
 + sign up for both the developer and website Mailing List (ML)
 
-*SVN*
+*Git*
 
-If you are not familiar with SVN, read up about it on the
-`Working with SVN <svn>`__ page as stated.
-In short: SVN works kind of like FTP in that it focusses only on files.
+If you are not familiar with Git, read up about it on the
+`Working with Git <git>`__ page as stated.
+In short: Git works kind of like FTP in that it focusses only on files.
 However, instead of moving single files around like FTP does, you now
 keep a full (and synchronized) copy of the sources on your hard disk. You then
 work offline on these files, and when wished, synchronize your local changes
@@ -108,25 +108,24 @@ website, together with the menus, are added in a separate process on the
 server which transforms these text files into a full HTML website. This will
 be covered later to some extend.
 
-It is highly recommended to wait until you get SVN access before you start. It
-makes it easier to send in and change your translated files later. Problem is
-however, that it can take a long time before you receive your actual SVN
-access - sometimes even several weeks after your initial request. It can be a
-challenge for patience, should you be really enthusiastic... luckily for you,
-you can make a head-start by downloading a copy of the website sources from
-the AROS website. This is simply a copy of the website SVN repository just
-mentioned. Besides, it also makes a great way to get familiar with the way
-content is handled and the archive is structured. Only drawback to this route
-is that later you will have to manually copy your files to your 'real' SVN
-checkout. (There is a scenario possible where you translate from the archive
-and send the files to the ML, but the extra work this brings with it is not
+It is highly recommended to wait until you get Git access before you start. It
+makes it easier to send in and change your translated files later. Be warned that
+it may take a little while to get Git access - sometimes even several weeks
+after your initial request. It can be a challenge for patience, should you be
+really enthusiastic... luckily for you, you can make a head-start by downloading
+a copy of the website sources from the AROS website. This is simply a copy of
+the website Git repository just mentioned. Besides, it also makes a great way to
+get familiar with the way content is handled and the archive is structured. Only
+drawback to this route is that later you will have to manually copy your files to
+your 'real' Git clone. (There is a scenario possible where you translate from the
+archive and send the files to the ML, but the extra work this brings with it is not
 recommended.)
 
-When you have SVN access, perform a checkout of the website sources with SVN.
+When you have Git access, perform a clone of the website sources with Git.
 This will download the current repository to your HD, containing all the files
 of the website. The locations is::
 
-  https://svn.aros.org/svn/aros/trunk/documentation/
+  https://github.com/aros-development-team/documentation.git
 
 When browsing the local copy (or the downloaded one) you will notice the many
 different language extensions behind files. Each extension corresponds to a
@@ -238,16 +237,16 @@ AROS, like AmigaOS, offers the option of storing an application's text-strings
 in a separate file, allowing easy and efficient localization. The catalog
 files for AROS are located mostly within the main code repository, which is
 different from the website repository. In this case you can either perform a
-complete SVN checkout, or browse the SVN repository trough your browser and
+complete Git clone, or browse the Git repository trough your browser and
 download specific files.
 
 The OS repository can be accessed by browser using this link
-https://svn.aros.org/svn/aros/trunk/AROS allowing you get one or two files
-efficiently. A complete SVN checkout needs to be performed by::
+https://github.com/aros-development-team/AROS allowing you get one or two files
+efficiently. A complete Git clone needs to be performed by::
 
-    svn checkout https://svn.aros.org/svn/aros/trunk/AROS
+    git clone https://github.com/aros-development-team/AROS.git
 
-Note the SVN checkout is quite large (200MB) and thus takes some time to
+Note the Git clone is quite large (200MB) and thus takes some time to
 complete. Don't get intimidated by the size of the repository: you only need
 to focus on a fraction of these files, fortunately. Now the work can begin. If
 ever confused, don't hesitate to ask for help on AROS-exec or the ML.
@@ -279,7 +278,7 @@ localizing the AmigaOS. This means you can find some \*.cd and \*.ct files
 along with the code (usually in Catalog drawer). <name>.cd files contain
 catalog definitions and shouldn't be touched unless you have changed the
 program itself. The CT files contain all the translated strings, and are the
-object of your work. Browse the SVN Tree for these files and translate them:
+object of your work. Browse the Git Tree for these files and translate them:
 find the most recent <name>.ct file (look for version and date in header),
 copy to <your_lang>.ct (much easier to translate than from <lang>.cd file) and
 edit it. Try to put the words in correct times, which will require you to
@@ -292,7 +291,7 @@ from \*.cd files for your language. It's useful in the sense that it also
 keeps the original text as comments (for checking) and creates empty lines
 for your translations. It also offers compiling options needed for testing
 catalogs, which will be covered later.
-The source code of Flexcat can be found in the SVN repository in AROS/tools
+The source code of Flexcat can be found in the Git repository in AROS/tools
 but needs to be compiled for either AmigaOS or Linux. You can also check
 Aminet or ask the Developer ML.
 
@@ -321,7 +320,7 @@ Flexcat documentation has additional information.
 Checking your work
 ~~~~~~~~~~~~~~~~~~
 Again, perform spellchecks and re-read texts as mentioned. Testing is
-possible by several methods: (1) submit them to the SVN server and wait for
+possible by several methods: (1) submit them to the Git server and wait for
 the next nightly build. Or (2), more immediate, you can compile the locales
 yourself using Flexcat, then copy them to the AROS locale drawer and check
 with the involved application. Compiling the catalog files with Flexcat is
@@ -337,7 +336,7 @@ is still legible.
 
 ..Note::
 
-    Don't commit the catalogs to the SVN. They are automatically generated
+    Don't commit the catalogs to the Git repository. They are automatically generated
     by the build system.
 
 
@@ -348,15 +347,14 @@ requiring subsequent synchronization of the translated documents. It's not a
 thankful job (except from a end-user's POV), but necessary. The frequency of
 your updates is fully up to you.
 
-Tracking changes can be done with the SVN changelogs, available trough your
-SVN client. This list displays *all* changes ever made to the repository.
+Tracking changes can be done with the Git changelogs, available trough your
+Git client. This list displays *all* changes ever made to the repository.
 Judge from the logmessages and changed files if the concerned change is
 relevant. Comparing and synchronizing documents afterwards can be somewhat
 cumbersome. Some text-editors offer a synchronized window scrolling option,
 which can be of some help when comparing two pages. For example, the
-TortoiseSVN client provides split merge window for two files being merged and
+TortoiseGit client provides split merge window for two files being merged and
 color text mark-up, making it easier to see what's got changed in the file.
 Also you can subscribe to CVS mailing list to receive the changelogs of each
-SVN revision (alas it's limited to ISO text at this time).
-FIXME: is there an easier way with SVN?
+Git revision (alas it's limited to ISO text at this time).
 
