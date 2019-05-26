@@ -15,55 +15,38 @@ Download
 
 .. Include:: download-abstract.en
 
+.. raw:: html
 
-Icaros Desktop LIVE!
---------------------
-
-.. image:: /images/icaroslive_logo.png
-   :align: left
-
-`Icaros Desktop LIVE!`__ is a complete distribution of the AROS desktop
-operating system. It comes on a bootable live DVD-ROM or CD-ROM that
-runs directly on your PC (its hardware components must already be
-supported by AROS) or in a virtual machine such as VMWare or `VirtualBox`__.
-It can be installed on the hard drive and can coexist with installed
-OSes such as Microsoft Windows, in a dedicated partition. A quick
-reference guide and some AROS PDF manuals are included.
-
-__ http://live.icarosdesktop.org/
-__ https://www.virtualbox.org/
-
-
-AspireOS
---------
-
-.. image:: /images/aspireos_logo.png
-   :align: left
-
-`AspireOS`__ is a lightweight distribution, originally designed for
-netbooks such as the Acer Aspire One. It tries to keep things as simple
-as possible. The programs included are well tested.
-
-__ https://sites.google.com/site/arosaspireone/
-
-
-AROS Broadway
--------------
-
-`AROS Broadway`__ is the native AROS distribution made for the
-ARES Computer but also working on every AROS compatible PC.
-
-__ http://www.aros-broadway.de/index.html
-
-
-AROS Vision
------------
-
-`AROS Vision`__ is a distribution for M68k Amigas. To run well, it requires
-a powerful Amiga or an emulator such as WinUAE.
-
-__ http://www.aros-platform.de/download.htm
-
+   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1">
+   <tr><td colspan=2>
+   <h1>Icaros Desktop LIVE!<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td colspan=2><img alt="icaros-logo" src="/images/icaroslive_logo.png"></td>
+   <td colspan=2><a href="http://live.icarosdesktop.org/">Icaros Desktop LIVE!</a> is a complete distribution of the AROS desktop operating system. It comes on a bootable live DVD-ROM or CD-ROM that runs directly on your PC (its hardware components must already be supported by AROS) or in a virtual machine such as <a href="https://www.vmware.com/uk/products/workstation-player.html">VMWare</a> or <a href="https://www.virtualbox.org/">VirtualBox</a>. It can be installed on the hard drive and can coexist with installed OSes such as Microsoft Windows, in a dedicated partition. A quick reference guide and some AROS PDF manuals are included.</td>
+   </tr>
+   <tr><td colspan=2>
+   <h1>AspireOS<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td colspan=2><img alt="aspireos-logo" src="/images/aspireos_logo.png"></td>
+   <td colspan=2><a href="https://sites.google.com/site/arosaspireone/">AspireOS</a> is a lightweight distribution, originally designed for netbooks such as the Acer Aspire One. It tries to keep things as simple as possible. The programs included are well tested.</td>
+   </tr>
+   <tr><td colspan=2>
+   <h1>AROS Broadway<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td colspan=2></td>
+   <td colspan=2><a href="http://www.aros-broadway.de/index.html">AROS Broadway</a> is the native AROS distribution made for the ARES Computer but also working on every AROS compatible PC.</td>
+   </tr>
+   <tr><td colspan=2>
+   <h1>AROS Vision<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td colspan=2></td>
+   <td colspan=2><a href="http://www.aros-platform.de/download.htm">AROS Vision</a> is a distribution for M68k Amigas. To run well, it requires a powerful Amiga or an emulator such as WinUAE.</td>
+   </tr>
+   </table>
 
 
 Nightly Builds (ABIv1)
