@@ -27,14 +27,9 @@
 
 .. raw:: html
 
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-
-GitHub Commits
-==============
-
-.. raw:: html
-
-   <object width="100%" height="400" data="../github-commits.php"></object></td></tr></table>
+   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1"><tr><td>
+   <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <object width="100%" height="400" data="github-commits.php"></object></td></tr></table>
 
 
 .. raw:: html
