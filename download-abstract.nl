@@ -1,5 +1,6 @@
-Distributies
-============
+.. raw:: html
+
+   <h1>Distributies<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 Distributies zijn voorgeconfigureerde en geteste versies van AROS.
 Ze bevatten vele nuttige gebruikersapplicaties die niet worden
