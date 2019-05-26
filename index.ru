@@ -29,12 +29,12 @@
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
 
-Commits
+GitHub Commits
 =======
 
 .. raw:: html
 
-   <object width="100%" height="400" data="../commits.php"></object></td></tr></table>
+   <object width="100%" height="400" data="../github-commits.php"></object></td></tr></table>
 
 
 .. raw:: html
