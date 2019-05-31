@@ -28,8 +28,10 @@ Working with Git
 Introduction
 ============
 
-GitHub hosts the AROS central "repository", which is the main
+GitHub__ hosts the AROS central "repository", which is the main
 database containing the published common codebase of the project.
+
+__ https://github.com/
 
 Individual developers are encouraged to create forks of the project and
 issue pull requests to have changes merged back into the project. This allows
@@ -145,8 +147,8 @@ Git will try  to merge the changes automatically. If both of you changed the
 same lines Git might fail in merging the sources. When this happens, Git
 will complain and put **both** versions in the file separated by ``<<<<``.
 You need to edit the file and resolve the conflict manually. Once this is
-done, you also need to use the "git resolve" command to tell Git that all is
-well.
+done, you also need to use the "git add" and "git commit" command to tell
+Git that all is well.
 
 .. Warning::
 
@@ -163,36 +165,27 @@ Committing changes
 ==================
 
 If you have made some changes and feel that you want to share your work with
-the other developers, you should use the "commit" command::
+the other developers, you should commit your changes::
 
+    > git add <file>
     > git commit -m "import changes"
-
-Adding new files and directories
-================================
-
-Setting properties
-==================
-
-Importing
-=========
-
-Tags
-====
-
-
-Copying
-=======
+    > git push
 
 
 Further reading
 ===============
 
+* Pro Git Book__
+* Github help__
+
+__ https://git-scm.com/book/en/v2
+__ https://help.github.com/en
+
 
 Sources
--------
+=======
 
 Those interested in the sources only, should also be able to download them
 from the Sources section of the `Nightly builds`__ page.
 
 __ ../../nightly1
-
