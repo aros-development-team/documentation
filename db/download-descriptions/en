@@ -47,7 +47,7 @@ amiga-m68k-boot:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This archive contains ROM images and a boot
     floppy image.
-amiga-m68k-bootiso:
+amiga-m68k-boot-iso:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This is the CD-ROM ISO image, which
     contains all AROS system files.

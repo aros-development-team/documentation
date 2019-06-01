@@ -171,15 +171,19 @@ the other developers, you should commit your changes::
     > git commit -m "import changes"
     > git push
 
+If you have forked you have to create pull requests as explained in the Introduction_.
+
 
 Further reading
 ===============
 
-* Pro Git Book__
-* Github help__
++ `Pro Git book`__
++ `Github help`__
++ `Git documentation`__
 
 __ https://git-scm.com/book/en/v2
 __ https://help.github.com/en
+__ https://git-scm.com/doc
 
 
 Sources
