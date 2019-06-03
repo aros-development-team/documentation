@@ -42,6 +42,33 @@ steps:
     cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
 
+
+- script: |
+    mkdir -p '$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources'
+    cp -r $(AROSDOCSRCDIR)/* $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources/
+    wget https://raw.githubusercontent.com/aros-development-team/AROS/master/LICENSE -P $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources/
+    wget https://raw.githubusercontent.com/aros-development-team/AROS/master/ACKNOWLEDGEMENTS -P $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources/
+    echo "Creating $(AROSBUILDID)-docs-sources.tar.bz2"
+    tar cjvf $(AROSBUILDID)-docs-sources.tar.bz2 $(AROSBUILDID)-docs-sources
+    md5sum $(AROSBUILDID)-docs-sources.tar.bz2 >$(AROSBUILDID)-docs-sources.tar.bz2.md5
+    rm -Rf $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources
+  workingDirectory: '$(AROSDOCBUILDDIR)'
+  displayName: 'Creating documentation source package'
+
+- script: |
+    mkdir -p ~/.ssh
+    mkdir -p '$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources'
+    cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources.tar.bz2 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
+    cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
+    ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
+    sshpass -p "$MAPPED_PASS" rsync -avz --rsh=ssh $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
+    rm -Rf $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources
+  env:
+    MAPPED_USER: $(SF_RSYNC_USER)
+    MAPPED_PASS: $(SF_RSYNC_PASSWORD)
+  displayName: 'Deploying documentation source package'
+
+
 - script: |
     echo 'Calling build www...'
     ./build www
@@ -61,7 +88,7 @@ steps:
     echo 'Calling build html...'
     ./build html
   workingDirectory: '$(AROSDOCSRCBUILDDIR)'
-  displayName: 'Building documentation'
+  displayName: 'Building docs-html package'
 
 - script: |
     mkdir -p '$(AROSPACKAGEDIR)'
@@ -84,4 +111,4 @@ steps:
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
-  displayName: 'Deploying documentation'
+  displayName: 'Deploying docs-html package'
