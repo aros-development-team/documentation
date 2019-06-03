@@ -11,8 +11,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-    AROSWEBSRCBUILDDIR:  '$(AROSWEBBUILDDIR)/Documentation' # Location builds are done in
-    AROSWEBBUILDDIR:  '$(AZBUILDPATH)/web' # Location builds are done in
+    AROSWEBSRCBUILDDIR:  '$(AROSDOCBUILDDIR)/web' # Location builds are done in
+    AROSDOCSRCBUILDDIR:  '$(AROSDOCBUILDDIR)/html' # Location builds are done in
+    AROSDOCBUILDDIR:  '$(AZBUILDPATH)/documentation'
     AZBUILDPATH: '$(Build.BinariesDirectory)' # workspace path
     AROSDOCSRCDIR: '$(system.defaultWorkingDirectory)' # Path to the source code
 
@@ -26,12 +27,19 @@ steps:
   displayName: 'Installing AROS build dependencies'
 
 - script: |
-    mkdir -p '$(AROSWEBBUILDDIR)'
+    mkdir -p '$(AROSDOCBUILDDIR)'
     mkdir -p '$(AROSWEBSRCBUILDDIR)'
-    echo '##vso[task.prependpath]$(AROSWEBBUILDDIR)'
+    mkdir -p '$(AROSDOCSRCBUILDDIR)'
+    BUILDDATE=$(date -u +'%Y%m%d')
+    echo "##vso[task.setvariable variable=arosbuilddate]$BUILDDATE"
+    echo "##vso[task.setvariable variable=arosbuildid]AROS-$BUILDDATE"
+    echo "##vso[task.setvariable variable=AROSPACKAGEDIR]$(AROSDOCBUILDDIR)/AROS-$BUILDDATE-docs-html"
+    echo '##vso[task.prependpath]$(AROSDOCBUILDDIR)'
     echo '##vso[task.prependpath]$(AROSWEBSRCBUILDDIR)'
-    echo 'Copying sources...'
+    echo '##vso[task.prependpath]$(AROSDOCSRCBUILDDIR)'
+    echo 'Copying sources to buil directories...'
     cp -R $(AROSDOCSRCDIR)/* $(AROSWEBSRCBUILDDIR)/
+    cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
 
 - script: |
@@ -40,17 +48,39 @@ steps:
   workingDirectory: '$(AROSWEBSRCBUILDDIR)'
   displayName: 'Building website'
 
-#- script: |
-#    echo 'Calling build html...'
-#    ./build html
-#  workingDirectory: '$(AROSDOCBUILDDIR)'
-#  displayName: 'Building documentation'
-
 - script: |
     mkdir -p ~/.ssh
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-    sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh $(AROSWEBBUILDDIR)/bin/documentation/www/ $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
+    sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh $(AROSWEBSRCBUILDDIR)/bin/documentation/www/ $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
   displayName: 'Deploying website'
+
+- script: |
+    echo 'Calling build html...'
+    ./build html
+  workingDirectory: '$(AROSDOCSRCBUILDDIR)'
+  displayName: 'Building documentation'
+
+- script: |
+    cp -r $(AROSDOCBUILDDIR)/distfiles/bin/documentation/html/* $(AROSPACKAGEDIR)/
+    cp -r $(AROSSRCDIR)/LICENSE $(AROSPACKAGEDIR)/
+    cp -r $(AROSSRCDIR)/ACKNOWLEDGEMENTS $(AROSPACKAGEDIR)/
+    echo "Creating $(AROSBUILDID)-docs-html.tar.bz2"
+    tar cjvf $(AROSBUILDID)-docs-html.tar.bz2 $(AROSBUILDID)-docs-html
+    md5sum $(AROSBUILDID)-docs-html.tar.bz2 >$(AROSBUILDID)-docs-html.tar.bz2.md5
+  workingDirectory: '$(AROSDOCBUILDDIR)'
+  displayName: 'Creating docs-html package'
+
+- script: |
+    mkdir -p ~/.ssh
+    mkdir -p '$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation'
+    cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/
+    cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/
+    ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
+    sshpass -p "$MAPPED_PASS" rsync -avz --rsh=ssh $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
+  env:
+    MAPPED_USER: $(SF_RSYNC_USER)
+    MAPPED_PASS: $(SF_RSYNC_PASSWORD)
+  displayName: 'Deploying documentation'
