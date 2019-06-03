@@ -64,9 +64,10 @@ steps:
   displayName: 'Building documentation'
 
 - script: |
+    mkdir -p '$(AROSPACKAGEDIR)'
     cp -r $(AROSDOCBUILDDIR)/bin/documentation/html/* $(AROSPACKAGEDIR)/
-    cp -r $(AROSSRCDIR)/LICENSE $(AROSPACKAGEDIR)/
-    cp -r $(AROSSRCDIR)/ACKNOWLEDGEMENTS $(AROSPACKAGEDIR)/
+    wget https://raw.githubusercontent.com/aros-development-team/AROS/master/LICENSE -P $(AROSPACKAGEDIR)/
+    wget https://raw.githubusercontent.com/aros-development-team/AROS/master/ACKNOWLEDGEMENTS -P $(AROSPACKAGEDIR)/
     echo "Creating $(AROSBUILDID)-docs-html.tar.bz2"
     tar cjvf $(AROSBUILDID)-docs-html.tar.bz2 $(AROSBUILDID)-docs-html
     md5sum $(AROSBUILDID)-docs-html.tar.bz2 >$(AROSBUILDID)-docs-html.tar.bz2.md5
