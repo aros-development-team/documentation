@@ -49,7 +49,7 @@ steps:
     wget https://raw.githubusercontent.com/aros-development-team/AROS/master/LICENSE -P $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources/
     wget https://raw.githubusercontent.com/aros-development-team/AROS/master/ACKNOWLEDGEMENTS -P $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources/
     echo "Creating $(AROSBUILDID)-docs-sources.tar.bz2"
-    tar cjvf $(AROSBUILDID)-docs-sources.tar.bz2 $(AROSBUILDID)-docs-sources
+    tar cjvf $(AROSBUILDID)-docs-sources.tar.bz2 --exclude=.git $(AROSBUILDID)-docs-sources
     md5sum $(AROSBUILDID)-docs-sources.tar.bz2 >$(AROSBUILDID)-docs-sources.tar.bz2.md5
     rm -Rf $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-sources
   workingDirectory: '$(AROSDOCBUILDDIR)'
