@@ -42,12 +42,12 @@ docs-html:
 amiga-m68k-system:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This archive contains ROM images and all AROS
-    system binaries, compiled from the Git repository.
-amiga-m68k-boot:
+    system binaries, compiled from the Subversion tree.
+amiga-m68k-boot-floppy:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This archive contains ROM images and a boot
     floppy image.
-amiga-m68k-boot-iso:
+amiga-m68k-bootiso:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This is the CD-ROM ISO image, which
     contains all AROS system files.
@@ -79,22 +79,22 @@ freebsd-i386-system:
     will not work on FreeBSD 4.x systems.
 linux-i386-system:
     The hosted version for Linux/i386. This archive
-    contains all AROS system binaries, compiled from the Git
-    repository.
+    contains all AROS system binaries, compiled from the Subversion
+    tree.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
     and compiled under Windows XP, but should work on all 32-bit Windows
     versions starting from Windows 98.
 linux-x86_64-system:
     The hosted version for Linux/x86_64. This archive
-    contains all AROS system binaries, compiled from the Git
-    repository.
+    contains all AROS system binaries, compiled from the Subversion
+    tree.
 linux-ppc-system:
     The hosted version for Linux/PowerPC. This archive contains all AROS
-    system binaries, compiled from the Git repository.
+    system binaries, compiled from the Subversion tree.
 linux-arm-system:
     The hosted version for Linux/ARM. This archive contains the AROS core
-    system binaries, compiled from the Git repository. Please note that
+    system binaries, compiled from the Subversion tree. Please note that
     this version requires at least an ARMv6 CPU with VFP unit.
 linux-arm-contrib:
     This archive contains all the contributed programs,
@@ -103,8 +103,8 @@ linux-arm-contrib:
     an ARMv6 CPU with VFP unit.
 linux-armhf-system:
     The hosted version for Linux/ARM (using hard-float ABI). This archive
-    contains the AROS core system binaries, compiled from the Git
-    repository. Please note that this version requires at least an ARMv6 CPU
+    contains the AROS core system binaries, compiled from the Subversion
+    tree. Please note that this version requires at least an ARMv6 CPU
     with VFP unit.
 linux-armhf-contrib:
     This archive contains all the contributed programs,
@@ -113,8 +113,8 @@ linux-armhf-contrib:
     version requires at least an ARMv6 CPU with VFP unit.
 android-arm-system:
     The hosted version for Android/ARM. This archive
-    contains the AROS core system binaries, compiled from the Git
-    repository. This version also requires ARMv6 with VFP (all Android devices seem
+    contains the AROS core system binaries, compiled from the Subversion
+    tree. This version also requires ARMv6 with VFP (all Android devices seem
     to meet this requirement). No Android modifications (like rooting etc.)
     are required to run this version.
 pc-i386-boot-floppy:
@@ -130,7 +130,7 @@ pc-x86_64-boot-iso:
     The native version for 64-bit (x86_64, amd64) PC computers.
     This is the bootable CD-ROM ISO image, which
     contains all AROS system and contributed programs.
-pc-x86_64-smp-boot-iso:
+smp-pc-x86_64-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
 sam440-ppc-boot-iso:
