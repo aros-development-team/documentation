@@ -43,11 +43,11 @@ amiga-m68k-system:
     Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
     mit AmigaOS. Dieses Archiv enthält ROM-Speicherabbilder und alle AROS
     System-Binärdateien, welche aus dem Subversion-Verzeichnis erstellt wurden.
-amiga-m68k-boot:
+amiga-m68k-boot-floppy:
     Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
     mit AmigaOS. Dieses Archiv enthält ROM-Speicherabbilder und ein
     Boot-Floppy-Speicherabbild.
-amiga-m68k-boot-iso:
+amiga-m68k-bootiso:
     Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
     mit AmigaOS. Dies ist das CDROM-ISO-Image.
 darwin-i386-system:
@@ -94,7 +94,7 @@ pc-x86_64-boot-iso:
     Die native Version für 64-Bit (x86_64, amd64) Computer.
     Dies ist das bootbare CDROM ISO-Image, welches alle
     AROS-Systemprogramme und beigesteuerte Programme enthält.
-pc-x86_64-smp-boot-iso:
+smp-pc-x86_64-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
 sam440-ppc-boot-iso:
