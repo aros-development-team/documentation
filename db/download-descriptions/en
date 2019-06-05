@@ -41,16 +41,16 @@ docs-html:
     on the website, but adapted for offline reading.
 amiga-m68k-system:
     The native version for m68k Amigas or WinUAE. This version is binary
-    compatible with AmigaOS. This archive contains ROM images and all AROS
-    system binaries, compiled from the Git repository.
+    compatible with AmigaOS. This archive contains ROM images and core
+    AROS system files, compiled from the Git repository.
 amiga-m68k-boot-floppy:
-    The native version for m68k Amigas or WinUAE. This version is binary
-    compatible with AmigaOS. This archive contains ROM images and a boot
-    floppy image.
+    The native version for m68k Amigas, or WinUAE. This version is binary
+    compatible with AmigaOS. The archive contains a bootable
+    floppy image which will kick the AROS rom.
 amiga-m68k-boot-iso:
     The native version for m68k Amigas or WinUAE. This version is binary
     compatible with AmigaOS. This is the CD-ROM ISO image, which
-    contains all AROS system files.
+    contains the core AROS system files.
 amiga-m68k-contrib:
     This archive contains all the contributed programs,
     compiled for the m68k architecture, for use with the
@@ -79,7 +79,7 @@ freebsd-i386-system:
     will not work on FreeBSD 4.x systems.
 linux-i386-system:
     The hosted version for Linux/i386. This archive
-    contains all AROS system binaries, compiled from the Git
+    contains all core AROS system files, compiled from the Git
     repository.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
@@ -87,14 +87,14 @@ mingw32-i386-system:
     versions starting from Windows 98.
 linux-x86_64-system:
     The hosted version for Linux/x86_64. This archive
-    contains all AROS system binaries, compiled from the Git
+    contains all core AROS system files, compiled from the Git
     repository.
 linux-ppc-system:
-    The hosted version for Linux/PowerPC. This archive contains all AROS
-    system binaries, compiled from the Git repository.
+    The hosted version for Linux/PowerPC. This archive contains all core
+    AROS system files, compiled from the Git repository.
 linux-arm-system:
-    The hosted version for Linux/ARM. This archive contains the AROS core
-    system binaries, compiled from the Git repository. Please note that
+    The hosted version for Linux/ARM. This archive contains the core
+    AROS system files, compiled from the Git repository. Please note that
     this version requires at least an ARMv6 CPU with VFP unit.
 linux-arm-contrib:
     This archive contains all the contributed programs,
@@ -103,7 +103,7 @@ linux-arm-contrib:
     an ARMv6 CPU with VFP unit.
 linux-armhf-system:
     The hosted version for Linux/ARM (using hard-float ABI). This archive
-    contains the AROS core system binaries, compiled from the Git
+    contains the core AROS system files, compiled from the Git
     repository. Please note that this version requires at least an ARMv6 CPU
     with VFP unit.
 linux-armhf-contrib:
@@ -113,34 +113,33 @@ linux-armhf-contrib:
     version requires at least an ARMv6 CPU with VFP unit.
 android-arm-system:
     The hosted version for Android/ARM. This archive
-    contains the AROS core system binaries, compiled from the Git
+    contains the core AROS system files, compiled from the Git
     repository. This version also requires ARMv6 with VFP (all Android devices seem
     to meet this requirement). No Android modifications (like rooting etc.)
     are required to run this version.
 pc-i386-boot-floppy:
     The native version for i386-based PC AT computers and
-    compatibles. This archive contains the boot
-    disk floppy image which you can quickly write to a disk
-    to boot AROS with.
+    compatibles. This archive contains a bootable floppy disk
+    image, which you can write to a disk to boot AROS with.
 pc-i386-boot-iso:
     The native version for i386-based PC AT computers and
     compatibles. This is the bootable CD-ROM ISO image, which
-    contains all AROS system and contributed programs.
+    contains all core AROS system files.
 pc-x86_64-boot-iso:
     The native version for 64-bit (x86_64, amd64) PC computers.
     This is the bootable CD-ROM ISO image, which
-    contains all AROS system and contributed programs.
+    contains all core AROS system files.
 pc-x86_64-smp-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
 sam440-ppc-boot-iso:
     The native version for Sam440EP, Sam440EP Flex and Sam460ex computers.
     This is the bootable CD-ROM ISO image including ub2lb (Parthenope)
-    SLB. It contains all AROS system and contributed programs.
+    SLB. It contains all core AROS system files.
 efika-chrp-ppc-boot-iso:
     The native version for PowerPC Efika computers. This is the
     bootable CD-ROM ISO image including ub2lb for open firmware. It
-    contains all AROS system and contributed programs.
+    contains all core AROS system files.
 raspi-armhf:
     The native version for ARMv6 based Raspberry Pi computers.
     Contains all files needed to boot from a FAT formatted sd-card.
