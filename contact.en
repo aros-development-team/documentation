@@ -3,7 +3,7 @@ Contact Information
 ===================
 
 :Authors:   Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2009, The AROS Development Team
+:Copyright: Copyright (C) 1995-2019, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -46,10 +46,10 @@ following mailings lists are available:
 
 + `AROS CVS`__
 
-  This is a read-only developer mailing list where Subversion logs are
-  automatically posted whenever something is commited to the Subversion
-  server. So if you want almost real-time feedback on the Subversion server,
-  this is the list for you. The volume to this list can be quite high.
+  This is a read-only developer mailing list, to which logs are automatically
+  posted whenever something is commited to the AROS repositories.  If you want
+  almost real-time feedback on the commit activity in the AROS repositories,
+  this is the list for you. The volume of traffic to this list can be very high.
 
 + `AROS Website`__
 
@@ -68,21 +68,26 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 .. _`bug database`: http://sourceforge.net/p/aros/bugs/
 
 
-Forums
-======
+Community Resources
+===================
 
-AROS-Exec__ is the official community portal for AROS. There, you can find the
+------
+Forums
+------
+
+AROS-Exec__ is a popular community portal for AROS. There, you can find the
 latest news related to AROS, online discussion forums, picture galleries, and
 much more. It's the perfect meeting place for AROS users from all over the
-world.
+world, and a few AROS core developers are known to frequent there.
 
 __ https://ae.amigalife.org/
 
 
+------------
 IRC Channels
-============
+------------
 
-There is an official IRC channel for AROS, unsurprisingly named `#aros`__, on
+Probably the best known IRC channel for AROS, is unsurprisingly named `#aros`__, on
 the FreeNode__ network. Please connect to `irc.freenode.net`__, which will
 redirect to a server close to you. It's for discussing everything and anything
 related to AROS, including development and how to take over the world. On rare
