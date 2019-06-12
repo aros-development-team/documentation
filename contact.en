@@ -53,9 +53,8 @@ following mailings lists are available:
 
 + `AROS Website`__
 
-  The website build script sents mail to this list, so, those who commit
-  changes to the documentation or can fix stuff if something explodes should
-  subscribe to it.
+  The website build script sends mail to this list, so that developers involved
+  in its operation and maintenance can fix issues when they arise.
 
 
 Follow the links to the administrative pages for information on how to
