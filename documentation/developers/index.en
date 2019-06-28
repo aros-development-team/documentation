@@ -17,6 +17,7 @@ Developers Resources
 + `Specifications`__
 + `Hardware`__
 + `User interface style guide`__
++ `Autodocs`__
 + `Testing`__
 + `Documenting`__
 + `Porting software to AROS`__
@@ -39,6 +40,7 @@ __ autodocs/index
 __ specifications/index
 __ hardware/index
 __ ui
+__ autodocs/
 __ testing/index
 __ documenting
 __ porting
