@@ -13,7 +13,7 @@ Developers Resources
 + `System development manual`__
 + `PCI subsystem manual`__
 + `Debugging manual`__
-+ `API Reference`__
++ `Autodocs (API Reference)`__
 + `Specifications`__
 + `Hardware`__
 + `User interface style guide`__
@@ -40,7 +40,6 @@ __ autodocs/index
 __ specifications/index
 __ hardware/index
 __ ui
-__ autodocs/
 __ testing/index
 __ documenting
 __ porting
