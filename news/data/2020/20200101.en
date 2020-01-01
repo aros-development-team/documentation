@@ -1,0 +1,76 @@
+====================
+2017 to 2019 Summary
+====================
+
+:Author:   Nick Andrews, Matthias Rustler
+:date:     2020-01-01
+
+
+Github migration
+----------------
+
+As a new year begins, its time to reflect on some of the things that have
+happened since the last news entry - which is a shocking 3 years ago!
+Firstly, the main AROS development has now migrated to `GitHub`. It has
+been a contraversial decision/move but in the long run is better for
+the developer community, and AROS as a whole. Along with this has been
+the migration of the nightly builds to use Azure Pipelines, so that as a
+developer team we can all contribute to the maintenance/monitoring and fault
+resolution that is frequently needed in a project such as AROS, and in a
+more timely manner. You can find details about GIT usage in our `documentation`.
+
+__ https://github.com/aros-development-team
+__ ../git
+
+
+SMP
+---
+
+There's an experimental version of AROS x86_64 which can make use of multiple
+CPU cores. The scheduling code was rewritten to enable it by sharing a common
+task list of waiting tasks to run, and allowing the tasks to specify which
+core they can run on. Exec and other core components have been adapted to
+properly lock access to resources they use so that tasks running on other
+cores can safely access some things.
+
+
+m68k
+----
+
+For a long time the m68k port has played only a minor role. This has changed
+recently because of the `Vampire turbo cards` where AROS will be the standard
+operating system. Various improvements have been done for the graphics drivers,
+the screen composition, ATA device, keyboard handling, MMU support etc.
+
+__ http://www.apollo-core.com/
+
+
+Raspberry Pi
+------------
+
+Some progress has been made on the port for the `card-sized computer`. An USB
+driver has been written and a big-endian target has been added.
+
+__ https://en.wikipedia.org/wiki/Raspberry_Pi
+
+
+AHCI Device
+-----------
+
+The source code of the `AHCI` device has beeen refactored to work more
+similarly to ATA device, exposing hidd controller/bus/unit classes that can
+be viewed in SysExplorer.
+
+__ https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface
+
+
+Build System
+------------
+
+A massive amount of refactoring has been done to make sure only the correct
+flags are used when building components, and to make sure flags are used
+consistently. It has beeen made sure object files from different components
+don't pollute each other when they are made in the same mmakefile. Changes 
+have been made to allow modules to be built for different flavours (e.g. cpu
+types) of a target. The flags used when compiling c++/objc code have been
+cleaned up.
