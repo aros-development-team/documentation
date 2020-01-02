@@ -37,7 +37,7 @@ steps:
     echo '##vso[task.prependpath]$(AROSDOCBUILDDIR)'
     echo '##vso[task.prependpath]$(AROSWEBSRCBUILDDIR)'
     echo '##vso[task.prependpath]$(AROSDOCSRCBUILDDIR)'
-    echo 'Copying sources to buil directories...'
+    echo 'Copying sources to build directories...'
     cp -R $(AROSDOCSRCDIR)/* $(AROSWEBSRCBUILDDIR)/
     cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
