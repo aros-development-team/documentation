@@ -11,13 +11,13 @@ Github migration
 
 As a new year begins, its time to reflect on some of the things that have
 happened since the last news entry - which is a shocking 3 years ago!
-Firstly, the main AROS development has now migrated to `GitHub`. It has
+Firstly, the main AROS development has now migrated to `GitHub`__. It has
 been a contraversial decision/move but in the long run is better for
 the developer community, and AROS as a whole. Along with this has been
 the migration of the nightly builds to use Azure Pipelines, so that as a
 developer team we can all contribute to the maintenance/monitoring and fault
 resolution that is frequently needed in a project such as AROS, and in a
-more timely manner. You can find details about GIT usage in our `documentation`.
+more timely manner. You can find details about GIT usage in our `documentation`__.
 
 __ https://github.com/aros-development-team
 __ ../git
@@ -38,7 +38,7 @@ m68k
 ----
 
 For a long time the m68k port has played only a minor role. This has changed
-recently because of the `Vampire turbo cards` where AROS will be the standard
+recently because of the `Vampire turbo cards`__ where AROS will be the standard
 operating system. Various improvements have been done for the graphics drivers,
 the screen composition, ATA device, keyboard handling, MMU support etc.
 
@@ -48,7 +48,7 @@ __ http://www.apollo-core.com/
 Raspberry Pi
 ------------
 
-Some progress has been made on the port for the `card-sized computer`. An USB
+Some progress has been made on the port for the `card-sized computer`__. An USB
 driver has been written and a big-endian target has been added.
 
 __ https://en.wikipedia.org/wiki/Raspberry_Pi
@@ -57,7 +57,7 @@ __ https://en.wikipedia.org/wiki/Raspberry_Pi
 AHCI Device
 -----------
 
-The source code of the `AHCI` device has beeen refactored to work more
+The source code of the `AHCI`__ device has beeen refactored to work more
 similarly to ATA device, exposing hidd controller/bus/unit classes that can
 be viewed in SysExplorer.
 
