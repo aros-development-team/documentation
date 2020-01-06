@@ -2,7 +2,7 @@ Sponsoren
 =========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright © 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -42,12 +42,16 @@ Die folgenden Firmen, Organisationen und Personen haben Ressourcen beigesteuert:
 
 + Yann Vernier
 + Randal Vice
++ Stephen Jones
++ `Apollo Team`__
++ `Github`__
 
 
 Die folgenden Organisationen und Personen haben Entwicklungsarbeit gesponsert:
 
-+ `Team AROS`__
-+ `Norsk Amigaforening`__
++ Team AROS
++ `Power2People`__
++ Norsk Amigaforening
 + Timothy Rue
 + Jakob Eriksson
 + Serge Guillaume
@@ -60,9 +64,14 @@ Die folgenden Organisationen und Personen haben Entwicklungsarbeit gesponsert:
 + Joshua Dolan
 + Matthew Parsons
 + Jean-Pierre Rivière
++ Stephen Jones
++ Pascal Papara
++ `ACube Systems Slr`__
 
 __ http://www.trustsec.de/
-__ http://www.pegasosppc.com/
-__ http://www.sourceforge.net/
-__ http://www.thenostromo.com/teamaros/
-__ http://www.naf.as/
+__ https://genesi.company/
+__ https://sourceforge.net/
+__ http://www.apollo-core.com/
+__ https://github.com/
+__ https://power2people.org/
+__ http://acube-systems.biz/

@@ -3,7 +3,7 @@ Sponsors
 ========
 
 :Authors:   Aaron Digulla, Adam Chodorowski
-:Copyright: Copyright © 1995-2015, The AROS Development Team
+:Copyright: Copyright © 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -44,7 +44,8 @@ resources:
 + Yann Vernier
 + Randal Vice
 + Stephen Jones
-
++ `Apollo Team`__
++ `Github`__
 
 The following organizations and individuals have sponsored development work:
 
@@ -70,5 +71,7 @@ The following organizations and individuals have sponsored development work:
 __ http://www.trustsec.de/
 __ https://genesi.company/
 __ https://sourceforge.net/
+__ http://www.apollo-core.com/
+__ https://github.com/
 __ https://power2people.org/
 __ http://acube-systems.biz/
