@@ -237,7 +237,7 @@ AROS uses the default AmigaOS charactersets for encoding languages.  Below is a
 list of the ones used. Please try to ensure you do not use characters that are
 not included in those encodings.
 
-    .. ISO-8859-1::
+    * :n:`ISO-8859-1`
         * catalog descriptors (.cd) in english
         
         albanian.ct
@@ -256,7 +256,7 @@ not included in those encodings.
         spanish.ct
         swedish.ct
 
-    .. ISO-8859-2::
+    * :n:`ISO-8859-2`
         bosnian.ct
         croatian.ct
         czech.ct
@@ -265,25 +265,25 @@ not included in those encodings.
         slovak.ct
         slovene.ct
 
-    .. ISO-8859-3::
+    * :n:`ISO-8859-3`
         maltese.ct
         turkish.ct
 
-    .. ISO-8859-4::
+    * :n:`ISO-8859-4`
         estonian.ct
         latvian.ct
         lithuanian.ct
 
-    .. ISO-8859-5::
+    * :n:`ISO-8859-5`
         bulgarian.ct
         macedonian.ct
         serbian.ct
         ukrainian.ct
 
-    .. AmigaPL::
+    * :n:`AmigaPL`
         polish.ct
 
-    .. Amiga-1251::
+    * :n:`Amiga-1251`
         russian.ct
 
 
