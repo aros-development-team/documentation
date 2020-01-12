@@ -3,7 +3,7 @@ Translating
 ===========
 
 :Authors:   William Ouwehand, Keen
-:Copyright: Copyright (C) 1995-2009, The AROS Development Team
+:Copyright: Copyright (C) 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
@@ -228,6 +228,63 @@ basic translation suffices, encompassing the Workbench and its
 applications/utilities. These make a good start/base for further localization.
 You can later always progress to the extra OS applications and contributed
 files.
+
+
+Localization character sets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+AROS uses the default AmigaOS charactersets for encoding languages.  Below is a
+list of the ones used. Please try to ensure you do not use characters that are
+not included in those encodings.
+
+    .. ISO-8859-1::
+        * catalog descriptors (.cd) in english
+        
+        albanian.ct
+        catalan.ct
+        danish.ct
+        dutch.ct
+        faroese.ct
+        finnish.ct
+        french.ct
+        german.ct
+        irish.ct
+        icelandic.ct
+        italian.ct
+        norwegian.ct
+        portuguese.ct
+        spanish.ct
+        swedish.ct
+
+    .. ISO-8859-2::
+        bosnian.ct
+        croatian.ct
+        czech.ct
+        hungarian.ct
+        rumanian.ct
+        slovak.ct
+        slovene.ct
+
+    .. ISO-8859-3::
+        maltese.ct
+        turkish.ct
+
+    .. ISO-8859-4::
+        estonian.ct
+        latvian.ct
+        lithuanian.ct
+
+    .. ISO-8859-5::
+        bulgarian.ct
+        macedonian.ct
+        serbian.ct
+        ukrainian.ct
+
+    .. AmigaPL::
+        polish.ct
+
+    .. Amiga-1251::
+        russian.ct
 
 
 Procedure
