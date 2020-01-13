@@ -1,3 +1,9 @@
+.. raw:: html
+
+    <style> .n {color:red} </style>
+
+.. role:: n
+
 ===========
 Translating
 ===========
