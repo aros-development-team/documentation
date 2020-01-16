@@ -232,18 +232,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ]
     )
 
-    statsPHP = '''
-        <?php
-            //define("_BBC_PAGE_NAME", "my page title");
-            define("_BBCLONE_DIR", "%(ROOT)smybbclone/");
-            define("COUNTER", _BBCLONE_DIR."index.php");
-            if (file_exists(COUNTER)) include_once(COUNTER);
-        ?>
-    '''
-    statsPHP2 = '''
-    <?php echo date("m.d.y");
-    ?>
-    '''
     statsPHP3 = '''
     <?php
         echo "<map name=\\"map\\">";
@@ -359,8 +347,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                             )
                         ] )
                     ]
-                ),
-                statsPHP
+                )
             ]
         )
     ] )
