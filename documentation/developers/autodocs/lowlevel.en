@@ -28,11 +28,24 @@ Synopsis
           APTR intRoutine,
           APTR intData );
 
-Bugs
-~~~~
+Function
+~~~~~~~~
 ::
 
-     This function is unimplemented.
+        register a callback that is called whenever a keyboard
+        input event occurs.
+
+
+Inputs
+~~~~~~
+::
+
+     intRoutine - the routine to invoke every vblank. This routine should
+                  be as short as possible to minimize its effect on overall
+                  system performance.
+     intData - data passed to the routine in register A1. If more than one
+               long word of data is required this should be a pointer to
+               a structure that contains the required data.
 
 
 
@@ -166,11 +179,36 @@ Synopsis
 
  ULONG GetKey();
 
-Bugs
-~~~~
+Function
+~~~~~~~~
 ::
 
-     This function is unimplemented.
+     returns the currently pressed 'qualifier' and 'key' combination.
+
+
+Inputs
+~~~~~~
+::
+
+     none
+
+
+Result
+~~~~~~
+::
+
+     0xFF if no key is pressed otherwise it returns the actual key in the low word,
+     and qualifier in the high word -:
+     
+     'qualifier'     key equivalent
+     LLKB_LSHIFT     Left Shift
+     LLKB_RSHIFT     Rigt Shift
+     LLKB_CAPSLOCK   Caps Lock
+     LLKB_CONTROL    Control
+     LLKB_LALT       Left Alt
+     LLKB_RALT       Right Alt
+     LLKB_LAMIGA     Left Amiga
+     LLKB_RAMIGA     Right Amiga
 
 
 
@@ -239,11 +277,12 @@ Synopsis
  VOID RemKBInt(
           APTR intHandle );
 
-Bugs
-~~~~
+Function
+~~~~~~~~
 ::
 
-     This function is unimplemented.
+        remove a keyboard interrupt previously registerd
+        with addkbint.
 
 
 
@@ -382,7 +421,7 @@ Bugs
 ~~~~
 ::
 
-     This function is unimplemented.
+     This functions implementation is incomplete.
 
 
 

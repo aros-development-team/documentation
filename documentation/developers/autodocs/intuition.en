@@ -2228,7 +2228,7 @@ Result
 ~~~~~~
 ::
 
-     None.
+     Pointer to the default public screen or NULL, if there is none.
 
 
 Notes
@@ -2239,12 +2239,18 @@ Notes
      since it is easy to open a window on the default public screen
      without specifying a name.
 
+     The returned Screen pointer can become invalid any time, if the screen
+     gets closed after the return of GetDefaultPubScreen(). This function
+     does not lock the screen.
+
+     Better use LockPubScreen(NULL).
+
 
 
 See also
 ~~~~~~~~
 
-`SetDefaultPubScreen()`_ `OpenWindow()`_ 
+`SetDefaultPubScreen()`_ `OpenWindow()`_ `LockPubScreen()`_ 
 
 ----------
 
@@ -2998,6 +3004,10 @@ Function
      If you try to lock the Workbench screen or the default public screen
      and there isn't any, the Workbench screen will be automatically opened
      and locked.
+
+     The local variable PUBSCREEN can be used to override the name of the 
+     default public screen to use ("set PUBSCREEN mypubscreen").
+     If the screen does not exist, the PUBSCREEN content is ignored.
 
 
 Inputs

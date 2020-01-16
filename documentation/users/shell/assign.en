@@ -14,7 +14,7 @@ Name
 
 
      Assign [(name):] [{(target)}] [LIST] [EXISTS] [DISMOUNT] [DEFER]
-            [PATH] [ADD] [REMOVE] [VOLS] [DIRS] [DEVICES]
+            [PATH] [ADD] [PREPEND] [REMOVE] [VOLS] [DIRS] [DEVICES]
 
 
 Synopsis
@@ -23,7 +23,7 @@ Synopsis
 
 
      NAME, TARGET/M, LIST/S, EXISTS/S, DISMOUNT/S, DEFER/S, PATH/S, ADD/S,
-     REMOVE/S, VOLS/S, DIRS/S, DEVICES/S
+     PREPEND/S, REMOVE/S, VOLS/S, DIRS/S, DEVICES/S
 
 
 Location
@@ -73,6 +73,7 @@ Inputs
                    to exist when the ASSIGN command is executed
      ADD       --  don't replace an assign but add another object for a
                    NAME (multi-assigns)
+     PREPEND   --  like ADD, but puts the assign at the front of the list
      REMOVE    --  remove an ASSIGN
      VOLS      --  show assigned volumes if in LIST mode
      DIRS      --  show assigned directories if in LIST mode

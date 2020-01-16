@@ -9,11 +9,51 @@ task
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`LockTaskList()`_                       `NextTaskEntry()`_                      `QueryTaskTagList()`_                   `UnLockTaskList()`_                     
-
+`AddTaskHook()`_                        `InitTaskHooks()`_                      `LockTaskList()`_                       `NextTaskEntry()`_                      
+`QueryTaskTagList()`_                   `RunTaskHooks()`_                       `UnLockTaskList()`_                     
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
+
+AddTaskHook()
+=============
+
+Synopsis
+~~~~~~~~
+::
+
+ BOOL AddTaskHook(
+          struct Hook * tHook,
+          ULONG thType );
+
+
+----------
+
+InitTaskHooks()
+===============
+
+Synopsis
+~~~~~~~~
+::
+
+ BOOL InitTaskHooks(
+          APTR thDispatcher,
+          ULONG thType,
+          ULONG thFlags );
+
+Inputs
+~~~~~~
+::
+
+         thDispatcher - default dispatcher used to call the hook.
+         thType - Task Hook Type for the list.
+         thFlags -
+                         THF_ROA - Runs a TaskHook immidiately when it is added.
+                         THF_IAR - Runs a TaskHook immidiately if the TaskHooks have been run.
+
+
+
+----------
 
 LockTaskList()
 ==============
@@ -149,6 +189,20 @@ Result
 
      None
 
+
+
+----------
+
+RunTaskHooks()
+==============
+
+Synopsis
+~~~~~~~~
+::
+
+ BOOL RunTaskHooks(
+          APTR thDispatcher,
+          ULONG thType );
 
 
 ----------
