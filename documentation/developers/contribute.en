@@ -3,7 +3,7 @@ Contribute
 ==========
 
 :Authors:   Adam Chodorowski, Neil Cafferkey
-:Copyright: Copyright © 1995-2019, The AROS Development Team
+:Copyright: Copyright © 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -48,6 +48,7 @@ Programming
   - AROS/m68k-amiga:
 
     + Native graphics optimisations
+    + Support for Vampire Standalone
 
   - AROS/arm-raspi
 
@@ -56,16 +57,20 @@ Programming
 
   - Generic printer support.
 
+  - AROS/Raspberry Pi:
+
+    + Native drivers
+
+
 + Porting to other architectures. Some examples of hardware for which no
   maintained AROS port exists or has been started:
 
   - AmigaOne
-  - Macintosh, both m68k and PowerPC.
+  - Macintosh PowerPC.
 
 + Implementing missing Preferences editors:
 
   - Overscan
-  - Palette
 
 + Improving the C standard library
 
@@ -88,7 +93,6 @@ Programming
 
   - animation.datatype
 
-    + anim.datatype
     + cdxl.datatype
 
 
