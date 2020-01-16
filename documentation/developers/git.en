@@ -117,6 +117,14 @@ They can be checked out to include in the AROS build as follows::
 
     After the clone, Git will remember where the source came from.
 
+Preparing the sources to build
+==============================
+
+After cloning the repository(s), git must be told to initialize the
+submodules that are included in the cloned repository. To do this
+run the following command in the cloned tree
+
+    > git submodule update --init --recursive
 
 
 Getting the extra sources
