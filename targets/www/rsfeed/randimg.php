@@ -31,11 +31,11 @@ And by doing so potentially access sensetive files.
 function random_image($dir,$w,$h) {
     $dir2 = '/home/project-web/aros/htdocs'.$dir;
     //echo $dir2;
-    if(file_exists($dir2) AND !ereg("\.\.",$dir) AND !ereg("\.ht",$dir)) {
+    if(file_exists($dir2) AND !preg_match("/\.\./",$dir) AND !preg_match("/\.ht/",$dir)) {
         $d = dir("$dir2");
         $i = 0;
         while (false !== ($entry = $d->read())) {
-            if(eregi(".jpg|.jpeg|.gif|.png",$entry)) {
+            if(preg_match("/.jpg|.jpeg|.gif|.png/i",$entry)) {
                 $array[$i] = $entry;
                 $i++;
             }
