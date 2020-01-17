@@ -1,7 +1,7 @@
   
 .. raw:: html
    
-   <h1>Введение<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Введение<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png" /></h1>
 
 AROS Research Operating System - экономичная, эффективная и гибкая 
 операционная система для персональных компьютеров, 

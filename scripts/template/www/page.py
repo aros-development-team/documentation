@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright (C) 2002-2015, The AROS Development Team. All rights reserved.
+# Copyright (C) 2002-2020, The AROS Development Team. All rights reserved.
 # $Id$
 
 import os
@@ -11,7 +11,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     navigation = Tree \
     ( [
     P ( contents = [
-    Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer'),
+    Img( src = '%(ROOT)simages/pointer.png', alt = ''),
     A( _N['home'], href=makeURL( '.', lang ))]
     ),
         Tree \
@@ -58,12 +58,12 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['news'], href=makeURL( 'news/', lang ) )]),
         Tree ( A( _N['archive'], href=makeURL( 'news/archive/', lang ) ) ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['introduction'], href=makeURL( 'introduction/', lang ) ) ]),
 
         Tree \
@@ -74,11 +74,11 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A(  _N['download'], href=makeURL( 'download', lang ) )]),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         _N['pictures']]),
         Tree \
         ( [
@@ -87,7 +87,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         _N['documentation'] ]),
         Tree \
         ( [
@@ -128,7 +128,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['contact'], href=makeURL( 'contact', lang ) )]),
         Tree \
         ( [
@@ -138,20 +138,20 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ] ),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A(  _N['credits'], href=makeURL( 'credits', lang ) )]),
      P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['acknowledgements'], href=makeURL( 'acknowledgements', lang ) )]),
         BR(),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['sponsors'], href=makeURL( 'sponsors', lang ) )]),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['linking'], href=makeURL( 'linking', lang ) )]),
     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = 'pointer' ),
+        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( _N['links'], href=makeURL( 'links', lang ) )])
     ] )
 
@@ -257,7 +257,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     '''
     statsPHP5= '''
     <?php
-        include( '%(ROOT)srsfeed/browserdetect.php');
+        require_once( '%(ROOT)srsfeed/browserdetect.php');
         $win_ie56 = (browser_detection('browser') == 'ie' ) &&
 
           (browser_detection('number') >= 5 ) &&
