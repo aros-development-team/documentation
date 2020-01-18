@@ -20,10 +20,11 @@ posixc
 `fchown()`_                             `fclose()`_                             `fcntl()`_                              `fdopen()`_                             
 `feof()`_                               `ferror()`_                             `fflush()`_                             `fgetc()`_                              
 `fgetpos()`_                            `fgets()`_                              `fileno()`_                             `flock()`_                              
-`flockfile()`_                          `fopen()`_                              `fprintf()`_                            `fputc()`_                              
-`fputs()`_                              `fread()`_                              `freopen()`_                            `fscanf()`_                             
-`fseek()`_                              `fseeko()`_                             `fsetpos()`_                            `fstat()`_                              
-`fsync()`_                              `ftell()`_                              `ftime()`_                              `ftruncate()`_                          
+`flockfile()`_                          `fopen()`_                              `fopen64()`_                            `fprintf()`_                            
+`fputc()`_                              `fputs()`_                              `fread()`_                              `freopen()`_                            
+`fscanf()`_                             `fseek()`_                              `fseeko()`_                             `fseeko64()`_                           
+`fsetpos()`_                            `fstat()`_                              `fsync()`_                              `ftell()`_                              
+`ftello()`_                             `ftello64()`_                           `ftime()`_                              `ftruncate()`_                          
 `funlockfile()`_                        `fwrite()`_                             `gcvt()`_                               `getc()`_                               
 `getc_unlocked()`_                      `getchar()`_                            `getcwd()`_                             `getegid()`_                            
 `getenv()`_                             `geteuid()`_                            `getfsstat()`_                          `getgid()`_                             
@@ -2238,6 +2239,10 @@ Notes
 ~~~~~
 ::
 
+     On 32bit systems, fopen and related operations only work with
+     32bit filesystems/files. Anything larger than 2GB needs to use
+     the correct 64bit structures and functions.
+    
      This function must not be used in a shared library or
      in a threaded application.
 
@@ -2254,6 +2259,93 @@ See also
 ~~~~~~~~
 
 `fclose()`_ `fread()`_ `fwrite()`_ `open()`_ `fgets()`_ `fgetc()`_ `fputs()`_ `fputc()`_ `getc()`_ `putc()`_ 
+
+----------
+
+fopen64()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  FILE * fopen64(
+     const char * pathname,
+     const char * mode)
+
+
+Function
+~~~~~~~~
+::
+
+     Opens a file with the specified name in the specified mode.
+
+
+Inputs
+~~~~~~
+::
+
+     pathname - Path and filename of the file you want to open.
+     mode - How to open the file:
+
+             r: Open for reading. The stream is positioned at the
+                     beginning of the file.
+
+             r+: Open for reading and writing. The stream is positioned
+                     at the beginning of the file.
+
+             w: Open for writing. If the file doesn't exist, then
+                     it is created. If it does already exist, then
+                     it is truncated. The stream is positioned at the
+                     beginning of the file.
+
+             w+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. If it does already
+                     exist, then it is truncated. The stream is
+                     positioned at the beginning of the file.
+
+             a: Open for writing. If the file doesn't exist, then
+                     it is created. The stream is positioned at the
+                     end of the file.
+
+             a+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. The stream is positioned
+                     at the end of the file.
+
+             b: Open in binary more. This has no effect and is ignored.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to a FILE handle or NULL in case of an error. When NULL
+     is returned, then errno is set to indicate the error.
+
+
+Notes
+~~~~~
+::
+
+     Provides access larger to files that may be larger than 2GB, if the
+     underlying filesystem supports it.
+    
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+Bugs
+~~~~
+::
+
+     Most modes are not supported right now.
+
+
+
+See also
+~~~~~~~~
+
+`fseeko64()`_ `ftello64()`_ 
 
 ----------
 
@@ -2631,7 +2723,9 @@ Notes
 ~~~~~
 ::
 
-     64-bit version
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (fseeko64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
 
 
 Bugs
@@ -2647,6 +2741,73 @@ See also
 ~~~~~~~~
 
 `fseek()`_ 
+
+----------
+
+fseeko64()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fseeko64(
+     FILE * stream,
+     off64_t  offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     offset, whence - How to modify the current position. whence
+             can be SEEK_SET, then offset is the absolute position
+             in the file (0 is the first byte), SEEK_CUR then the
+             position will change by offset (ie. -5 means to move
+             5 bytes to the beginning of the file) or SEEK_END.
+             SEEK_END means that the offset is relative to the
+             end of the file (-1 is the last byte and 0 is
+             the EOF).
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Notes
+~~~~~
+::
+
+     Allows seeking on files that may be larger than 2GB, if the
+     underlying filesystem supports it.
+
+
+Bugs
+~~~~
+::
+
+     Not fully compatible with iso fseeko, especially in 'ab' and 'a+b'
+     modes
+
+
+
+See also
+~~~~~~~~
+
+`fopen64()`_ `ftello64()`_ 
 
 ----------
 
@@ -2794,6 +2955,85 @@ See also
 ~~~~~~~~
 
 `fopen()`_ `fseek()`_ `fwrite()`_ 
+
+----------
+
+ftello()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  off_t ftello(
+     FILE *stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Query this stream
+
+
+Notes
+~~~~~
+::
+
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (ftello64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
+
+
+
+
+----------
+
+ftello64()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  off64_t ftello64(
+     FILE *stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Query this stream
+
+
+Notes
+~~~~~
+::
+
+     Returns the position in files that may be larger than 2GB, if the
+     underlying filesystem supports it.
+
+
+
+See also
+~~~~~~~~
+
+`fopen64()`_ `ftello64()`_ 
 
 ----------
 
