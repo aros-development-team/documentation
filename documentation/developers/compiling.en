@@ -9,9 +9,7 @@ Compiling AROS
             + Aaron Digulla
             + Adam Chodorowski
             + Neil Cafferkey
-:Copyright: Copyright (C) 2001-2017, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Copyright: Copyright (C) 2001-2020, The AROS Development Team
 :Status:    Done.
 :Abstract:
     This document provides information and advice on how to compile AROS. Development of AROS is
@@ -96,8 +94,8 @@ You can download the AROS sources either from the `download page`__ or by
 using Git (see `git documentation`__).
 
 Extract or download ``source`` package sources into a directory of your
-choice. If you want to build contributed software as well, extract or
-download ``contrib`` package sources into a ``./contrib`` subdirectory
+choice. If you want to build contributed software as well, download and
+extract ``contrib`` package sources into a ``./contrib`` subdirectory
 of your ``source`` package directory tree.
 
 __ ../../download
@@ -201,7 +199,7 @@ Hosted AROS/i386-linux and AROS/i386-freebsd
 You do not have to specify the ``--target`` option to build these targets.
 The following options are available for hosted builds:
 
-``--with-resolution=WIDTHxHEIGHTxDEPTH [default: 800x600x8]``
+``--with-resolution=WIDTHxHEIGHTxDEPTH [default: initial Workbench screen]``
     Set the default resolution and depth AROS will use.
 
 ``--enable-x11-shm [default: auto]``
@@ -442,7 +440,7 @@ Compiling HowTos
 -----------------
 
 This step-by-step guide will describe how to prepare the development 
-environment and compile 32-bit Linux-hosted AROS on Ubuntu Linux 14.04. 
+environment and compile 32-bit Linux-hosted AROS on Ubuntu Linux 18.04. 
 Let's assume you have a CD image (iso) from an Ubuntu site and have 
 installed the system from it. Also, you should set it up to access the 
 Internet.
@@ -454,15 +452,14 @@ Getting the needed packages
 Because the Live CD misses needed packages we have to get them from the
 Internet::
 
-    > sudo apt-get install git g++ libpng12-dev libx11-dev
-    libxcursor-dev libgl1-mesa-dev gawk bison flex netpbm automake cmake gperf
-    libswitch-perl libasound2-dev python-mako
+    > sudo apt-get install git-core gcc g++ make cmake gawk bison flex bzip2
+    netpbm autoconf automake libx11-dev libxext-dev libc6-dev liblzo2-dev
+    libxxf86vm-dev libpng-dev libsdl1.2-dev byacc python-mako libxcursor-dev
 
 If you are using the 64-bit version of Ubuntu, you will need some 
-extra packages, and a small fix::
+extra packages::
 
     > sudo apt-get install gcc-multilib libxxf86vm1:i386
-    > sudo touch /usr/include/bits/predefs.h
 
 You will need to enter your user password at the prompt.
 
@@ -470,23 +467,6 @@ And if you are compiling the 32bit target on a 64bit host and will use the X11 d
 driver, you may also need::
 
     > sudo apt-get install libxcursor-dev:i386
-
-Setting the locale to ISO 8859
-""""""""""""""""""""""""""""""
-
-This step is not strictly necessary. However, filenames with accented
-characters will not be reproduced properly without doing this.
-Just find the en_US iso 8859-1 string in the list provided by the
-following applications and choose it::
-
-     > sudo apt-get install localeconf
-     > sudo dpkg-reconfigure localeconf
-
-Then set the console's locale::
-
-     > sudo locale-gen "en_US"
-     > sudo dpkg-reconfigure locales
-     > export LANG="en_US.ISO-8859-1"
 
 
 Get the sources
@@ -518,3 +498,11 @@ But once it finishes, you will have a compiled Linux-hosted AROS.
 Please note that you will need Internet access during the build,
 as it downloads sources from various servers.
 
+
+Scripts
+"""""""
+
+There are some Bash `scripts`__ in the archive. They do all required
+steps interactively.
+
+__ http://archives.aros-exec.org/share/development/cross/scripts.zip

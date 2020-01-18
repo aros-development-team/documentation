@@ -548,9 +548,10 @@ clean.
 Tracking memory with Mungwall
 =============================
 
-If configured with ``--enable-debug``, AROS enables ``Mungwall``. One of the
-things that does is to keep track of "walls", small zones before and after
-your memory allocations, to verify that you don't write out of your bounds.
+If configured with ``--enable-debug``, AROS enables ``Mungwall``. Additionally,
+you have to add ``mungwall`` to the command line arguments when starting AROS.
+One of the things that does is to keep track of "walls", small zones before and
+after your memory allocations, to verify that you don't write out of your bounds.
 This check is done in the memory allocation routines, or additionally at any
 time by calling ``AvailMem(MEMF_CLEAR)``.
 

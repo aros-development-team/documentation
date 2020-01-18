@@ -3,13 +3,13 @@ Zune Test Specifications
 ========================
 
 :Author:    Neil Cafferkey
-:Copyright: Copyright © 2015-2016, The AROS Development Team
+:Copyright: Copyright © 2015-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
 The sections below describe test cases to confirm the basic functionality of 
 Zune classes using the main Zune test program. The standard location of this 
-program in binary distributions is 'Tests/Zune/test'.
+program in binary distributions is 'Developer/Debug/Tests/Zune'.
 
 Colorfield
 ==========
