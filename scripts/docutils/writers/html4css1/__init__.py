@@ -197,6 +197,7 @@ class HTMLTranslator(nodes.NodeVisitor):
     """
 
     xml_declaration = '<?xml version="1.0" encoding="%s" ?>\n'
+    phpenc = '<?php\nmb_internal_encoding("%s");\n?>'
     doctype = ('<!DOCTYPE html'
                ' PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"'
                ' "http://www.w3.org/TR/xhtml1/DTD/'
@@ -228,6 +229,7 @@ class HTMLTranslator(nodes.NodeVisitor):
             self.html_prolog.append(self.xml_declaration)
         self.head_prefix.extend([self.doctype,
                                  self.head_prefix_template % (lcode, lcode)])
+        self.html_prolog.append([self.phpenc % settings.output_encoding])
         self.html_prolog.append(self.doctype)
         self.head = self.meta[:]
         stylesheet = utils.get_stylesheet_reference(settings)
