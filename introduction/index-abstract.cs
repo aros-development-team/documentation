@@ -1,6 +1,6 @@
 .. raw:: html
 
-   <h1>Úvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png" /></h1>
+   <h1>Úvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 .. raw:: html
 
