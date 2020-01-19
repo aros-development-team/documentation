@@ -232,19 +232,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ]
     )
 
-    statsPHP4 = '''
-    <?php
-        echo "<table width=\\"100%%\\"><tr><td>";
-        echo "<div style=\\"text-align: right;\\">";
-        echo "<font color=\\"#aaaaaa\\" size=\\"-1\\">";
-    ?>
-    '''
-    statsPHP6 = '''
-    <?php
-        echo "</font></div>";
-        echo "</td></tr></table>";
-    ?>
-    '''
     statsPHP5= '''
     <?php
         require_once( '%(ROOT)srsfeed/browserdetect.php');
@@ -272,6 +259,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         border=\\"0\\" usemap=\\"#map\\">";
         } ?>
     '''
+
     page = HTML( [
         Head( [
             Charset( charset ),
@@ -307,33 +295,41 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
 
                         TR(
                             TD(
-                            Table(
-                                border = 0, cellspacing = 0, cellpadding = 0,
-                                width = '100%%', contents = [
-                                    TR( contents = [
-                                        TD(
-                                            width = 171, contents = [ bar ], id = 'menusidebar'
-                                        ),
-                                        TD( width="100%%",
-                                            contents =  '%(CONTENT)s'
-                                        ),
-                                    ]),
-                                ]
-                            )
+                                Table(
+                                    border = 0, cellspacing = 0, cellpadding = 0,
+                                    width = '100%%', contents = [
+                                        TR( contents = [
+                                            TD(
+                                                width = 171, contents = [ bar ], id = 'menusidebar'
+                                            ),
+                                            TD( width="100%%",
+                                                contents =  '%(CONTENT)s'
+                                            ),
+                                        ]),
+                                    ]
+                                )
                             )
                         ),
                         TR( [
                             TD(
                                 width = '100%%', valign = 'bottom', align = 'center',
                                 contents = [
-                                        BR(),
-                                        statsPHP4,
-                                        _M['copyright'],
-                                        BR(),
-                                        _M['trademarks'],
-                                        statsPHP6,
-                                        BR(),
-                                        BR()
+                                    BR(),
+                                    Table(width = '100%%', contents = [
+                                        TR( contents = [
+                                            TD( contents = [
+                                                Div( style = 'text-align: right', contents = [
+                                                    Font( color = '#aaaaaa', size = '-1', contents = [
+                                                        _M['copyright'],
+                                                        BR(),
+                                                        _M['trademarks'],
+                                                        BR(),
+                                                        BR()
+                                                    ] )
+                                                ] )
+                                            ] )
+                                        ] )
+                                    ] )
                                 ]
                             )
                         ] )
