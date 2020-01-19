@@ -232,16 +232,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         ]
     )
 
-    statsPHP3 = '''
-    <?php
-        echo "<map name=\\"map\\">";
-              echo "<area shape=\\"rect\\" coords=\\"25,78,85,95\\" alt=\\"http://www.aros.org\\" href=\\"http://aros.sourceforge.net/\\">";
-              echo "<area shape=\\"rect\\" coords=\\"100,78,168,95\\" alt=\\"AROS-Exec\\" href=\\"https://ae.amigalife.org\\">";
-              echo "<area shape=\\"rect\\" coords=\\"180,78,240,95\\" alt=\\"AROS-Exec Archives\\" href=\\"http://archives.aros-exec.org\\">";
-              echo "<area shape=\\"rect\\" coords=\\"260,78,350,95\\" alt=\\"Power2People\\" href=\\"https://power2people.org/\\">";
-              echo "</map>";
-    ?>
-    '''
     statsPHP4 = '''
     <?php
         echo "<table width=\\"100%%\\"><tr><td>";
@@ -296,7 +286,15 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         Body(
             style = 'margin: 0px;',
             bgcolor = '#ffffff', contents = [
-                statsPHP3,
+                Map(
+                    name = 'map',
+                    contents = [
+                        Area(shape = 'rect', coords = '25,78,85,95',   alt = 'http://www.aros.org', href = 'http://aros.sourceforge.net/'),
+                        Area(shape = 'rect', coords = '100,78,168,95', alt = 'AROS-Exec',           href = 'https://ae.amigalife.org'),
+                        Area(shape = 'rect', coords = '180,78,240,95', alt = 'AROS-Exec Archives',  href = 'http://archives.aros-exec.org'),
+                        Area(shape = 'rect', coords = '260,78,350,95', alt = 'Power2People',        href = 'https://power2people.org/')
+                    ]
+                ),
                 Table(
                     border = 0, cellspacing = 0, cellpadding = 0,
                     style="background-image:url('%(ROOT)simages/backgroundtop.png'); background-repeat:repeat-x;",
@@ -305,13 +303,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                             TD(
                                 valign = 'top', width = '100%%', height = 109,
                                 contents = statsPHP5)
-
-#                Map(name = 'map')[,
-#                Area(shape ='rect', coords='5,84,87,104', alt = 'AROS.org', href="http://www.aros.org"),
-#                Area(shape ='rect', coords='96,83,177,104', alt = 'AROS-Exec', href="http://www.aros-exec.org"),
-#                Area(shape ='rect', coords='183,84,263,104', alt = 'Team AROS', href="http://www.teamaros.org"),
-#                Area(shape ='rect', coords='271,82,353,104', alt = 'AROS-Exec Archives', href="http://archives.aros-exec.org") ],
-
                         ] ),
 
                         TR(

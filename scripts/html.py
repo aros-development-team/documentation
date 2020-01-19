@@ -240,3 +240,11 @@ class Div( Standard ):
 class BR( Node ):
     def __str__( self ):
         return '<br>'
+
+class Map( Standard ):
+    def __init__( self, contents=None, **attributes ):
+        Standard.__init__( self, 'map', attributes, contents )
+
+class Area( StandardNoClose ):
+    def __init__( self, contents=None, **attributes ):
+        StandardNoClose.__init__( self, 'area', attributes, contents )
