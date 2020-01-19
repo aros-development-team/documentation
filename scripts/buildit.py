@@ -528,7 +528,7 @@ def buildWWW():
             'kittymascot.gif',
             'backgroundtop.png',
             'disk.png',
-            'arosthubmain.png',
+            'arosthumbmain.png',
             'bgcolormain.png',
             'mainpagespacer.png',
             'rsfeed.gif',
@@ -597,10 +597,10 @@ def buildWWW():
         shutil.rmtree(cgi_dest)
     copytree('targets/www/cgi-bin', cgi_dest)
 
-    thub_dest = os.path.join(TRGROOT, 'images/thubs')
-    if os.path.exists(thub_dest):
-        shutil.rmtree(thub_dest)
-    copytree('targets/www/images/thubs', thub_dest)
+    thumb_dest = os.path.join(TRGROOT, 'images/thumbs')
+    if os.path.exists(thumb_dest):
+        shutil.rmtree(thumb_dest)
+    copytree('targets/www/images/thumbs', thumb_dest)
 
 
     rsfeed_dest = os.path.join(TRGROOT, 'rsfeed')

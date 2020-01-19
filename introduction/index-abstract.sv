@@ -4,7 +4,7 @@
 
 .. raw:: html
 
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thubs/","100","76"); ?>
+  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
 AROS är ett resurssnålt, effektivt och flexibelt operativsystem, gjord för att
 hjälpa dig få ut det mesta av din dator. Det är ett oberoende, fritt och

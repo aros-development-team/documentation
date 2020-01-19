@@ -44,7 +44,7 @@ function random_image($dir,$w,$h) {
         $i = $i -1;
         $i = rand(0,$i);
         if($array[$i] != "") {
-            echo "<img src=\"$dir$array[$i]\" alt=\"thub\"";
+            echo "<img src=\"$dir$array[$i]\" alt=\"thumbnail\"";
             if(isset($w) AND is_numeric($w)) {
                 echo " width=\"$w\"";
             }
