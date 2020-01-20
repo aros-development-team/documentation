@@ -260,6 +260,12 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         } ?>
     '''
 
+    phpencoding = '''
+    <?php
+        mb_internal_encoding("%s");
+    ?>
+    ''' % (charset)
+
     page = HTML( [
         Head( [
             Charset( charset ),
@@ -274,6 +280,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         Body(
             style = 'margin: 0px;',
             bgcolor = '#ffffff', contents = [
+                phpencoding,
                 Map(
                     name = 'map',
                     contents = [
