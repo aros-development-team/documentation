@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2002, The AROS Development Team. All rights reserved.
+# Copyright © 2002-2020, The AROS Development Team. All rights reserved.
 # $Id$
 
 # The core framework classes
@@ -124,11 +124,13 @@ class StandardEmpty( Node ):
 # ========================
 
 class HTML( Standard ):
-    def __init__( self, contents=None, **attributes ):
+    def __init__( self, charset, contents=None, **attributes ):
         Standard.__init__( self, 'html', attributes, contents )
+        self.charset = charset
 
     def __str__( self ):
-        result  = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
+        result  = "<?php ini_set('default_charset', '%s'); ?>\n" % (self.charset)
+        result += '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'
         result += Standard.__str__( self )
 
         return result 
