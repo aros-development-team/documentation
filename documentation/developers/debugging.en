@@ -3,9 +3,7 @@ AROS Debugging Manual
 =====================
 
 :Authors:   David Le Corfec, Matthias Rustler, Krzysztof Smiechowic
-:Copyright: Copyright (C) 2004-2017, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Copyright: Copyright (C) 2004-2020, The AROS Development Team
 :Status:    Work in progress.
 
 The AROS Debugging reference Manual.
@@ -637,14 +635,14 @@ Misc Wanderer tools
 Snoopy
 ------
 
-Snoopy (sys:utilities/snoopy) patches some library functions in such
+Snoopy (System:System/Snoopy) patches some library functions in such
 a way that their arguments and result are print to the debugging console.
 
 
 Sashimi
 -------
 
-Sashimi (sys:tools/debug/sashimi) shows all debugging output in a
+Sashimi (System:Developer/Debug/sashimi) shows all debugging output in a
 Wanderer window. This is useful when you want to see debug output of AROS
 when it's build without debug support or you can't read the serial output.
 
