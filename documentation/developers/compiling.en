@@ -28,9 +28,10 @@ The following software is required for compiling AROS:
 + GNU Binutils
 + GNU Make
 + GNU AWK (GAWK) - other awks may also be suitable
-+ Python 2.2.1+
++ Python 3
++ Python-Mako 3
 + Bison
-+ Flex 2.
++ Flex 2
 + pngtopnm and ppmtoilbm (part of the netpbm package)
 + Autoconf 2.61+
 + Automake
@@ -505,4 +506,4 @@ Scripts
 There are some Bash `scripts`__ in the archive. They do all required
 steps interactively.
 
-__ http://archives.aros-exec.org/share/development/cross/scripts.zip
+__ http://archives.aros-exec.org/?function=showfile&file=development/cross/gimmearos.zip
