@@ -32,6 +32,7 @@ howto:            Hurman (Howto)
 hwcompat:         Hårdvarukompatibilitet
 shell:            Shell-kommandon
 applications:     Program
+translators:       Translators
 developers:       Utvecklare
 contribute:       Medverka
 roadmap:          Syfte och mål (Roadmap)

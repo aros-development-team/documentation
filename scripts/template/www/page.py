@@ -102,6 +102,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 A( _N['howto'], href=makeURL( 'documentation/users/howto', lang ) ),
                 A( _N['hwcompat'], href=makeURL( 'documentation/users/hardware', lang ) ),
             ] ),
+            A( _N['translators'], href=makeURL( 'documentation/translating/index', lang ) ),
             A( _N['developers'], href=makeURL( 'documentation/developers/index', lang ) ),
             Tree \
             ( [
@@ -121,7 +122,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 A( _N['testing'], href=makeURL( 'documentation/developers/testing/', lang ) ),
                 A( _N['documenting'], href=makeURL( 'documentation/developers/documenting', lang ) ),
                 A( _N['porting'], href=makeURL( 'documentation/developers/porting', lang ) ),
-                A( _N['translating'], href=makeURL( 'documentation/developers/translating', lang ) ),
                 A( _N['summaries'], href=makeURL( 'documentation/developers/summaries/', lang ) ),
                 A( _N['links'], href=makeURL( 'documentation/developers/links', lang ) )
             ] )

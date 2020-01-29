@@ -32,6 +32,7 @@ applications:     Applications
 faq:              FAQ
 howto:            HowTo
 hwcompat:         Hardware Compatibility
+translators:       Translators
 developers:       Développeurs
 contribute:       Contributions
 roadmap:          Roadmap
