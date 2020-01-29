@@ -12,7 +12,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     ( [
     P ( contents = [
     Img( src = '%(ROOT)simages/pointer.png', alt = ''),
-    A( _N['home'], href=makeURL( '.', lang ))]
+    A( '<b>' + _N['home'] + '</b>', href=makeURL( '.', lang ))]
     ),
         Tree \
         ( [
@@ -59,12 +59,12 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['news'], href=makeURL( 'news/', lang ) )]),
+        A( '<b>' + _N['news'] + '</b>', href=makeURL( 'news/', lang ) )]),
         Tree ( A( _N['archive'], href=makeURL( 'news/archive/', lang ) ) ),
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['introduction'], href=makeURL( 'introduction/', lang ) ) ]),
+        A( '<b>' + _N['introduction'] + '</b>', href=makeURL( 'introduction/', lang ) ) ]),
 
         Tree \
         ( [
@@ -75,11 +75,11 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A(  _N['download'], href=makeURL( 'download', lang ) )]),
+        A( '<b>' + _N['download'] + '</b>', href=makeURL( 'download', lang ) )]),
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        _N['pictures']]),
+        '<b>' + _N['pictures'] + '</b>']),
         Tree \
         ( [
             A( _N['screenshots'], href=makeURL( 'pictures/screenshots/', lang) ),
@@ -102,8 +102,8 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 A( _N['howto'], href=makeURL( 'documentation/users/howto', lang ) ),
                 A( _N['hwcompat'], href=makeURL( 'documentation/users/hardware', lang ) ),
             ] ),
-            A( _N['translators'], href=makeURL( 'documentation/translating/index', lang ) ),
-            A( _N['developers'], href=makeURL( 'documentation/developers/index', lang ) ),
+            A( '<b>' + _N['translators'] + '</b>', href=makeURL( 'documentation/translating/index', lang ) ),
+            A( '<b>' + _N['developers'] + '</b>', href=makeURL( 'documentation/developers/index', lang ) ),
             Tree \
             ( [
                 A( _N['contribute'], href=makeURL( 'documentation/developers/contribute', lang ) ),
@@ -129,7 +129,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['contact'], href=makeURL( 'contact', lang ) )]),
+        A( '<b>' + _N['contact'] + '</b>', href=makeURL( 'contact', lang ) )]),
         Tree \
         ( [
             A( _N['mailing-lists'], href=makeURL( 'contact', lang, 'mailing-lists' ) ),
@@ -139,20 +139,20 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A(  _N['credits'], href=makeURL( 'credits', lang ) )]),
+        A( '<b>' + _N['credits'] + '</b>', href=makeURL( 'credits', lang ) )]),
      P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['acknowledgements'], href=makeURL( 'acknowledgements', lang ) )]),
+        A( '<b>' + _N['acknowledgements'] + '</b>', href=makeURL( 'acknowledgements', lang ) )]),
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['sponsors'], href=makeURL( 'sponsors', lang ) )]),
+        A( '<b>' + _N['sponsors'] + '</b>', href=makeURL( 'sponsors', lang ) )]),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['linking'], href=makeURL( 'linking', lang ) )]),
+        A( '<b>' + _N['linking'] + '</b>', href=makeURL( 'linking', lang ) )]),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( _N['links'], href=makeURL( 'links', lang ) )])
+        A( '<b>' + _N['links'] + '</b>', href=makeURL( 'links', lang ) )])
     ] )
 
     sponsors = Table\
