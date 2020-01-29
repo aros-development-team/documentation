@@ -88,10 +88,10 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        _N['documentation'] ]),
+        '<b>' + _N['documentation'] + '</b>']),
         Tree \
         ( [
-            A( _N['users'], href=makeURL( 'documentation/users/', lang ) ),
+            A( '<b>' + _N['users'] + '</b>', href=makeURL( 'documentation/users/', lang ) ),
             Tree \
             ( [
                 A( _N['installation'], href=makeURL( 'documentation/users/installation', lang ) ),
