@@ -3,7 +3,7 @@ Contact Information
 ===================
 
 :Authors:   Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2019, The AROS Development Team
+:Copyright: Copyright (C) 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -14,20 +14,25 @@ Contact Information
 Contact
 =======
 
-The main contact for the AROS Development Team is Aaron "Optimizer" Digulla.
-If you want to address the team as a whole, e.g. if you want to propose
-a sponsoring deal or other forms of cooperation, this is the guy to talk to.
-You can reach him by sending a mail to `digulla@aros.org`__.
+If you have queries about AROS, or would like to contribute - the prefered
+method of contacting members of the team is via the organization slack 
+channel. Users may also find the other community resources helpfull in contacting
+like minded indidivuals, or just for advice/help.
 
-__ mailto:digulla@aros.org
+Slack
+====
+
+There is an official slack channel for discussion around AROS development, that
+can be joined via this `link`__. 
+
+__ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
 
 
 Mailing lists
 =============
 
-There are a couple of AROS-related mailing lists available, which are the main
-channels of information and discussion about AROS for developers. The
-following mailings lists are available:
+There are a couple of AROS-related mailing lists available, mainly for people who
+prefer to receive information this way:
 
 + `AROS Developer`__
 
@@ -55,7 +60,6 @@ following mailings lists are available:
 
   The website build script sends mail to this list, so that developers involved
   in its operation and maintenance can fix issues when they arise.
-
 
 Follow the links to the administrative pages for information on how to
 subscribe, unsubscribe, accessing the archives and other useful functions.
