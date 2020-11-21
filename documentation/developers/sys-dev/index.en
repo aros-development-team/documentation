@@ -25,7 +25,10 @@ Table of Contents
 + `Modules`__
 + `Libraries`__
 
++ `Multitasking and the Schedular`__
+
 
 __ system-development
 __ modules
 __ libraries
+__ scheduling
