@@ -17,10 +17,10 @@ utility
 `MoveMem()`_                            `NamedObjectName()`_                    `NextTagItem()`_                        `PackBoolTags()`_                       
 `PackStructureTags()`_                  `RefreshTagItemClones()`_               `ReleaseNamedObject()`_                 `RemNamedObject()`_                     
 `SDivMod32()`_                          `SetMem()`_                             `SMult32()`_                            `SMult64()`_                            
-`Stricmp()`_                            `Strlcat()`_                            `Strlcpy()`_                            `Strlen()`_                             
-`Strnicmp()`_                           `TagInArray()`_                         `ToLower()`_                            `ToUpper()`_                            
-`UDivMod32()`_                          `UMult32()`_                            `UMult64()`_                            `UnpackStructureTags()`_                
-`VSNPrintf()`_                          
+`Stricmp()`_                            `Strlcat()`_                            `Strlcpy()`_                            `Strnicmp()`_                           
+`TagInArray()`_                         `ToLower()`_                            `ToUpper()`_                            `UDivMod32()`_                          
+`UMult32()`_                            `UMult64()`_                            `UnpackStructureTags()`_                `VSNPrintf()`_                          
+
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -1869,26 +1869,6 @@ Example
 ::
 
  Strlcpy(buffer, "Hello", sizeof buffer);
- 
-
-
-----------
-
-Strlen()
-========
-
-Synopsis
-~~~~~~~~
-::
-
- ULONG Strlen(
-          STRPTR string );
-
-Notes
-~~~~~
-::
-
- Check the LVO before adding this function to the library.
  
 
 
