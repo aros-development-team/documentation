@@ -10,54 +10,57 @@ posixc
 
 ======================================= ======================================= ======================================= ======================================= 
 `--background_POSIX--`_                 `__get_default_file()`_                 `__path_a2u()`_                         `__path_u2a()`_                         
-`__posixc_assert()`_                    `__posixc_get_environptr()`_            `__posixc_set_environptr()`_            `__posixc_strerror()`_                  
-`access()`_                             `alphasort()`_                          `basename()`_                           `chdir()`_                              
-`chmod()`_                              `chown()`_                              `clearerr()`_                           `clock_gettime()`_                      
-`close()`_                              `closedir()`_                           `creat()`_                              `dirfd()`_                              
-`dirname()`_                            `dup()`_                                `dup2()`_                               `endgrent()`_                           
-`endpwent()`_                           `execl()`_                              `execlp()`_                             `execv()`_                              
-`execve()`_                             `execvp()`_                             `fchdir()`_                             `fchmod()`_                             
-`fchown()`_                             `fclose()`_                             `fcntl()`_                              `fdopen()`_                             
-`feof()`_                               `ferror()`_                             `fflush()`_                             `fgetc()`_                              
-`fgetpos()`_                            `fgets()`_                              `fileno()`_                             `flock()`_                              
-`flockfile()`_                          `fopen()`_                              `fopen64()`_                            `fprintf()`_                            
+`__posixc_alphasort()`_                 `__posixc_assert()`_                    `__posixc_creat()`_                     `__posixc_fgetpos()`_                   
+`__posixc_fopen()`_                     `__posixc_fseeko()`_                    `__posixc_fsetpos()`_                   `__posixc_fstat()`_                     
+`__posixc_ftello()`_                    `__posixc_get_environptr()`_            `__posixc_lseek()`_                     `__posixc_lstat()`_                     
+`__posixc_readdir()`_                   `__posixc_scandir()`_                   `__posixc_set_environptr()`_            `__posixc_stat()`_                      
+`__posixc_strerror()`_                  `access()`_                             `alphasort64()`_                        `basename()`_                           
+`chdir()`_                              `chmod()`_                              `chown()`_                              `clearerr()`_                           
+`clock_gettime()`_                      `close()`_                              `closedir()`_                           `creat64()`_                            
+`dirfd()`_                              `dirname()`_                            `dup()`_                                `dup2()`_                               
+`endgrent()`_                           `endpwent()`_                           `execl()`_                              `execlp()`_                             
+`execv()`_                              `execve()`_                             `execvp()`_                             `fchdir()`_                             
+`fchmod()`_                             `fchown()`_                             `fclose()`_                             `fcntl()`_                              
+`fdopen()`_                             `feof()`_                               `ferror()`_                             `fflush()`_                             
+`fgetc()`_                              `fgetpos64()`_                          `fgets()`_                              `fileno()`_                             
+`flock()`_                              `flockfile()`_                          `fopen64()`_                            `fprintf()`_                            
 `fputc()`_                              `fputs()`_                              `fread()`_                              `freopen()`_                            
-`fscanf()`_                             `fseek()`_                              `fseeko()`_                             `fseeko64()`_                           
-`fsetpos()`_                            `fstat()`_                              `fsync()`_                              `ftell()`_                              
-`ftello()`_                             `ftello64()`_                           `ftime()`_                              `ftruncate()`_                          
-`funlockfile()`_                        `fwrite()`_                             `gcvt()`_                               `getc()`_                               
-`getc_unlocked()`_                      `getchar()`_                            `getcwd()`_                             `getegid()`_                            
-`getenv()`_                             `geteuid()`_                            `getfsstat()`_                          `getgid()`_                             
-`getgrent()`_                           `getgrgid()`_                           `getgrnam()`_                           `getgroups()`_                          
-`getloadavg()`_                         `getlogin()`_                           `getopt()`_                             `getopt_long()`_                        
-`getopt_long_only()`_                   `getpass()`_                            `getpgid()`_                            `getpgrp()`_                            
-`getpid()`_                             `getppid()`_                            `getpwent()`_                           `getpwnam()`_                           
-`getpwuid()`_                           `getrlimit()`_                          `gets()`_                               `gettimeofday()`_                       
-`getuid()`_                             `getw()`_                               `ioctl()`_                              `isatty()`_                             
-`jrand48()`_                            `kill()`_                               `lcong48()`_                            `link()`_                               
-`lrand48()`_                            `lseek()`_                              `lstat()`_                              `mkdir()`_                              
-`mknod()`_                              `mkstemp()`_                            `mktemp()`_                             `mrand48()`_                            
-`nanosleep()`_                          `nrand48()`_                            `open()`_                               `opendir()`_                            
-`pclose()`_                             `perror()`_                             `pipe()`_                               `popen()`_                              
-`posix_memalign()`_                     `printf()`_                             `putc()`_                               `putchar()`_                            
-`putenv()`_                             `puts()`_                               `putw()`_                               `read()`_                               
-`readdir()`_                            `remove()`_                             `rename()`_                             `rewind()`_                             
-`rewinddir()`_                          `rmdir()`_                              `scandir()`_                            `scanf()`_                              
-`seed48()`_                             `seekdir()`_                            `setbuf()`_                             `setegid()`_                            
-`setenv()`_                             `seteuid()`_                            `setgid()`_                             `setgrent()`_                           
-`setlinebuf()`_                         `setpwent()`_                           `setrlimit()`_                          `setsid()`_                             
-`setuid()`_                             `setvbuf()`_                            `sigaction()`_                          `sigaddset()`_                          
-`sigdelset()`_                          `sigemptyset()`_                        `sigfillset()`_                         `sigismember()`_                        
-`siglongjmp()`_                         `sigpending()`_                         `sigprocmask()`_                        `sigsuspend()`_                         
-`sleep()`_                              `srand48()`_                            `stat()`_                               `statfs()`_                             
-`swab()`_                               `symlink()`_                            `sysconf()`_                            `system()`_                             
-`tcgetattr()`_                          `tcgetpgrp()`_                          `tcsetattr()`_                          `telldir()`_                            
-`tempnam()`_                            `times()`_                              `tmpfile()`_                            `tmpnam()`_                             
-`truncate()`_                           `ttyname()`_                            `umask()`_                              `uname()`_                              
-`ungetc()`_                             `unlink()`_                             `unsetenv()`_                           `updatestdio()`_                        
-`usleep()`_                             `utime()`_                              `utimes()`_                             `vfork()`_                              
-`vfprintf()`_                           `vfscanf()`_                            `vprintf()`_                            `vscanf()`_                             
-`wait()`_                               `waitpid()`_                            `write()`_                              
+`fscanf()`_                             `fseek()`_                              `fseeko64()`_                           `fsetpos64()`_                          
+`fstat64()`_                            `fsync()`_                              `ftell()`_                              `ftello64()`_                           
+`ftime()`_                              `ftruncate()`_                          `funlockfile()`_                        `fwrite()`_                             
+`gcvt()`_                               `getc()`_                               `getc_unlocked()`_                      `getchar()`_                            
+`getcwd()`_                             `getegid()`_                            `getenv()`_                             `geteuid()`_                            
+`getfsstat()`_                          `getgid()`_                             `getgrent()`_                           `getgrgid()`_                           
+`getgrnam()`_                           `getgroups()`_                          `getloadavg()`_                         `getlogin()`_                           
+`getopt()`_                             `getopt_long()`_                        `getopt_long_only()`_                   `getpass()`_                            
+`getpgid()`_                            `getpgrp()`_                            `getpid()`_                             `getppid()`_                            
+`getpwent()`_                           `getpwnam()`_                           `getpwuid()`_                           `getrlimit()`_                          
+`gets()`_                               `gettimeofday()`_                       `getuid()`_                             `getw()`_                               
+`ioctl()`_                              `isatty()`_                             `jrand48()`_                            `kill()`_                               
+`lcong48()`_                            `link()`_                               `lrand48()`_                            `lseek64()`_                            
+`lstat64()`_                            `mkdir()`_                              `mknod()`_                              `mkstemp()`_                            
+`mktemp()`_                             `mrand48()`_                            `nanosleep()`_                          `nrand48()`_                            
+`open()`_                               `opendir()`_                            `pclose()`_                             `perror()`_                             
+`pipe()`_                               `popen()`_                              `posix_memalign()`_                     `printf()`_                             
+`putc()`_                               `putchar()`_                            `putenv()`_                             `puts()`_                               
+`putw()`_                               `read()`_                               `readdir64()`_                          `remove()`_                             
+`rename()`_                             `rewind()`_                             `rewinddir()`_                          `rmdir()`_                              
+`scandir64()`_                          `scanf()`_                              `seed48()`_                             `seekdir()`_                            
+`setbuf()`_                             `setegid()`_                            `setenv()`_                             `seteuid()`_                            
+`setgid()`_                             `setgrent()`_                           `setlinebuf()`_                         `setpwent()`_                           
+`setrlimit()`_                          `setsid()`_                             `setuid()`_                             `setvbuf()`_                            
+`sigaction()`_                          `sigaddset()`_                          `sigdelset()`_                          `sigemptyset()`_                        
+`sigfillset()`_                         `sigismember()`_                        `siglongjmp()`_                         `sigpending()`_                         
+`sigprocmask()`_                        `sigsuspend()`_                         `sleep()`_                              `srand48()`_                            
+`stat64()`_                             `statfs()`_                             `swab()`_                               `symlink()`_                            
+`sysconf()`_                            `system()`_                             `tcgetattr()`_                          `tcgetpgrp()`_                          
+`tcsetattr()`_                          `telldir()`_                            `tempnam()`_                            `times()`_                              
+`tmpfile()`_                            `tmpnam()`_                             `truncate()`_                           `ttyname()`_                            
+`umask()`_                              `uname()`_                              `ungetc()`_                             `unlink()`_                             
+`unsetenv()`_                           `updatestdio()`_                        `usleep()`_                             `utime()`_                              
+`utimes()`_                             `vfork()`_                              `vfprintf()`_                           `vfscanf()`_                            
+`vprintf()`_                            `vscanf()`_                             `wait()`_                               `waitpid()`_                            
+`write()`_                              
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -254,6 +257,34 @@ Notes
 
 ----------
 
+__posixc_alphasort()
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_alphasort(
+     const struct dirent **a,
+     const struct dirent **b
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     Support function for scandir().
+
+
+
+See also
+~~~~~~~~
+
+`scandir()`_ 
+
+----------
+
 __posixc_assert()
 =================
 
@@ -308,6 +339,393 @@ See also
 
 ----------
 
+__posixc_creat()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_creat(
+     const char * pathname,
+     int          mode)
+
+
+Function
+~~~~~~~~
+::
+
+     Creates a file with the specified mode and name.
+
+
+Inputs
+~~~~~~
+::
+
+     pathname - Path and filename of the file you want to open.
+     mode - The access flags.
+
+
+Result
+~~~~~~
+::
+
+     -1 for error or a file descriptor for use with write().
+
+
+Notes
+~~~~~
+::
+
+     If the filesystem doesn't allow to specify different access modes
+     for users, groups and others, then the user modes are used.
+
+     This is the same as open (pathname, O_CREAT|O_WRONLY|O_TRUNC, mode);
+
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+
+See also
+~~~~~~~~
+
+`open()`_ `close()`_ `write()`_ `fopen()`_ 
+
+----------
+
+__posixc_fgetpos()
+==================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_fgetpos(
+     FILE   * stream,
+     fpos_t * pos)
+
+
+Function
+~~~~~~~~
+::
+
+     Get the current position in a stream. This function is eqivalent
+     to ftell(). However, on some systems fpos_t may be a complex
+     structure, so this routine may be the only way to portably
+     get the position of a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - The stream to get the position from.
+     pos - Pointer to the fpos_t position structure to fill.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`fsetpos()`_ 
+
+----------
+
+__posixc_fopen()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+  FILE * __posixc_fopen(
+     const char * pathname,
+     const char * mode)
+
+
+Function
+~~~~~~~~
+::
+
+     Opens a file with the specified name in the specified mode.
+
+
+Inputs
+~~~~~~
+::
+
+     pathname - Path and filename of the file you want to open.
+     mode - How to open the file:
+
+             r: Open for reading. The stream is positioned at the
+                     beginning of the file.
+
+             r+: Open for reading and writing. The stream is positioned
+                     at the beginning of the file.
+
+             w: Open for writing. If the file doesn't exist, then
+                     it is created. If it does already exist, then
+                     it is truncated. The stream is positioned at the
+                     beginning of the file.
+
+             w+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. If it does already
+                     exist, then it is truncated. The stream is
+                     positioned at the beginning of the file.
+
+             a: Open for writing. If the file doesn't exist, then
+                     it is created. The stream is positioned at the
+                     end of the file.
+
+             a+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. The stream is positioned
+                     at the end of the file.
+
+             b: Open in binary more. This has no effect and is ignored.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to a FILE handle or NULL in case of an error. When NULL
+     is returned, then errno is set to indicate the error.
+
+
+Notes
+~~~~~
+::
+
+     On 32bit systems, fopen and related operations only work with
+     32bit filesystems/files. Anything larger than 2GB needs to use
+     the correct 64bit structures and functions.
+    
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+Bugs
+~~~~
+::
+
+     Most modes are not supported right now.
+
+
+
+See also
+~~~~~~~~
+
+`fclose()`_ `fread()`_ `fwrite()`_ `open()`_ `fgets()`_ `fgetc()`_ `fputs()`_ `fputc()`_ `getc()`_ `putc()`_ 
+
+----------
+
+__posixc_fseeko()
+=================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_fseeko(
+     FILE * stream,
+     off_t  offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     offset, whence - How to modify the current position. whence
+             can be SEEK_SET, then offset is the absolute position
+             in the file (0 is the first byte), SEEK_CUR then the
+             position will change by offset (ie. -5 means to move
+             5 bytes to the beginning of the file) or SEEK_END.
+             SEEK_END means that the offset is relative to the
+             end of the file (-1 is the last byte and 0 is
+             the EOF).
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Notes
+~~~~~
+::
+
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (fseeko64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
+
+
+Bugs
+~~~~
+::
+
+     Not fully compatible with iso fseeko, especially in 'ab' and 'a+b'
+     modes
+
+
+
+See also
+~~~~~~~~
+
+`fseek()`_ 
+
+----------
+
+__posixc_fsetpos()
+==================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_fsetpos(
+     FILE            * stream,
+     const fpos_t    * pos)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream. This function is eqivalent
+     to fseek() with whence set to SEEK_SET. However, on some systems
+     fpos_t may be a complex structure, so this routine may be the only
+     way to portably reposition a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     pos - The new position in the stream.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`fgetpos()`_ 
+
+----------
+
+__posixc_fstat()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_fstat(
+     int fd,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file specified by an open file descriptor.
+     Information is stored in stat structure. Consult stat() documentation
+     for detailed description of that structure.
+
+
+Inputs
+~~~~~~
+::
+
+     filedes - File descriptor of the file
+     sb - Pointer to stat structure that will be filled by the fstat()
+     call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`stat()`_ 
+
+----------
+
+__posixc_ftello()
+=================
+
+Synopsis
+~~~~~~~~
+::
+
+  off_t __posixc_ftello(
+     FILE *stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Query this stream
+
+
+Notes
+~~~~~
+::
+
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (ftello64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
+
+
+
+
+----------
+
 __posixc_get_environptr()
 =========================
 
@@ -347,6 +765,216 @@ See also
 ~~~~~~~~
 
 `__posixc_set_environptr()`_ 
+
+----------
+
+__posixc_lseek()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+  off_t __posixc_lseek(
+     int    filedes,
+     off_t  offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Reposition read/write file offset
+
+
+Inputs
+~~~~~~
+::
+
+     filedef - the filedescriptor being modified
+     offset, whence -
+               How to modify the current position. whence
+               can be SEEK_SET, then offset is the absolute position
+               in the file (0 is the first byte), SEEK_CUR then the
+               position will change by offset (ie. -5 means to move
+               5 bytes to the beginning of the file) or SEEK_END.
+               SEEK_END means that the offset is relative to the
+               end of the file (-1 is the last byte and 0 is
+               the EOF).
+
+
+Result
+~~~~~~
+::
+
+     The new position on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Bugs
+~~~~
+::
+
+     File is extended with zeros if desired position is beyond the end of 
+     file.
+
+     Since it's not possible to use Seek() for directories, this 
+     implementation fails with EISDIR for directory file descriptors.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fwrite()`_ 
+
+----------
+
+__posixc_lstat()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_lstat(
+     const char  *path,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file like stat does except that lstat
+     does not follow symbolic links. Information is stored in stat
+     structure. Consult stat() documentation for detailed description
+     of that structure.
+
+
+Inputs
+~~~~~~
+::
+
+     path - Pathname of the file
+     sb - Pointer to stat structure that will be filled by the lstat() call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`stat()`_ `fstat()`_ 
+
+----------
+
+__posixc_readdir()
+==================
+
+Synopsis
+~~~~~~~~
+::
+
+  struct dirent *__posixc_readdir(
+     DIR *dir)
+
+
+Function
+~~~~~~~~
+::
+
+      Reads a directory
+
+
+Inputs
+~~~~~~
+::
+
+     dir - the directory stream pointing to the directory being read
+
+
+Result
+~~~~~~
+::
+
+     The  readdir()  function  returns  a  pointer  to a dirent
+     structure, or NULL if an error occurs  or  end-of-file  is
+     reached.
+
+     The data returned by readdir() is  overwritten  by  subse­
+     quent calls to readdir() for the same directory stream.
+
+     According  to POSIX, the dirent structure contains a field
+     char d_name[] of unspecified size, with at  most  NAME_MAX
+     characters  preceding the terminating null character.  Use
+     of other fields will harm the  portability  of  your  pro­
+     grams.
+
+
+
+See also
+~~~~~~~~
+
+`read()`_ `opendir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+
+----------
+
+__posixc_scandir()
+==================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_scandir(
+     const char *dir,
+     struct dirent ***namelist,
+     int (*select)(const struct dirent *),
+     int (*compar)(const struct dirent **, const struct dirent **)
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     Scan directory
+
+
+Inputs
+~~~~~~
+::
+
+     dir      - Directory to be scanned
+     namelist - Array with the found entries.
+     select   - Filter function which must return non-zero if entry shall be
+                added. If NULL all entries will be added.
+     compar   - Function which will be used by qsort() for sorting of the
+                entries. The function alphasort() can be used for sorting
+                in alphabetical oder. If NULL sorting order isn't specified.
+
+
+Result
+~~~~~~
+::
+
+     Number of entries
+
+
+
+See also
+~~~~~~~~
+
+`alphasort()`_ 
 
 ----------
 
@@ -406,6 +1034,65 @@ See also
 ~~~~~~~~
 
 `__posixc_get_environptr()`_ `getenv()`_ `setenv()`_ 
+
+----------
+
+__posixc_stat()
+===============
+
+Synopsis
+~~~~~~~~
+::
+
+  int __posixc_stat(
+     const char *path,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file. Information is stored in stat
+     structure having the following fields:
+     
+     dev_t           st_dev;     - ID of device containing the file
+     ino_t           st_ino;     - inode number
+     mode_t          st_mode;    - protection mode
+     nlink_t         st_nlink;   - number of hard links
+     uid_t           st_uid;     - user ID of the file's owner
+     gid_t           st_gid;     - group ID of the file's group
+     dev_t           st_rdev;    - device ID (if the file is character
+                                   or block special file)
+     off_t           st_size;    - file size, in bytes
+     time_t          st_atime;   - time of last acces
+     time_t          st_mtime;   - time of last data modification
+     time_t          st_ctime;   - time of last file status change
+     blksize_t       st_blksize; - optimal blocksize for I/O
+     blkcnt_t        st_blocks;  - number of blocks allocated for file
+
+
+Inputs
+~~~~~~
+::
+
+     path - Pathname of the file
+     sb - Pointer to stat structure that will be filled by the stat() call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`lstat()`_ `fstat()`_ 
 
 ----------
 
@@ -508,16 +1195,16 @@ See also
 
 ----------
 
-alphasort()
-===========
+alphasort64()
+=============
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int alphasort(
-     const struct dirent **a,
-     const struct dirent **b
+  int alphasort64(
+     const struct dirent64 **a,
+     const struct dirent64 **b
      )
 
 
@@ -525,7 +1212,7 @@ Function
 ~~~~~~~~
 ::
 
-     Support function for scandir().
+     Support function for scandir64().
 
 
 
@@ -924,14 +1611,14 @@ See also
 
 ----------
 
-creat()
-=======
+creat64()
+=========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int creat(
+  int creat64(
      const char * pathname,
      int          mode)
 
@@ -1932,16 +2619,16 @@ See also
 
 ----------
 
-fgetpos()
-=========
+fgetpos64()
+===========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int fgetpos(
+  int fgetpos64(
      FILE   * stream,
-     fpos_t * pos)
+     __fpos64_t * pos)
 
 
 Function
@@ -2171,94 +2858,6 @@ Function
      Obtain exclusive access to the file.
 
 
-
-----------
-
-fopen()
-=======
-
-Synopsis
-~~~~~~~~
-::
-
-  FILE * fopen(
-     const char * pathname,
-     const char * mode)
-
-
-Function
-~~~~~~~~
-::
-
-     Opens a file with the specified name in the specified mode.
-
-
-Inputs
-~~~~~~
-::
-
-     pathname - Path and filename of the file you want to open.
-     mode - How to open the file:
-
-             r: Open for reading. The stream is positioned at the
-                     beginning of the file.
-
-             r+: Open for reading and writing. The stream is positioned
-                     at the beginning of the file.
-
-             w: Open for writing. If the file doesn't exist, then
-                     it is created. If it does already exist, then
-                     it is truncated. The stream is positioned at the
-                     beginning of the file.
-
-             w+: Open for reading and writing. If the file doesn't
-                     exist, then it is created. If it does already
-                     exist, then it is truncated. The stream is
-                     positioned at the beginning of the file.
-
-             a: Open for writing. If the file doesn't exist, then
-                     it is created. The stream is positioned at the
-                     end of the file.
-
-             a+: Open for reading and writing. If the file doesn't
-                     exist, then it is created. The stream is positioned
-                     at the end of the file.
-
-             b: Open in binary more. This has no effect and is ignored.
-
-
-Result
-~~~~~~
-::
-
-     A pointer to a FILE handle or NULL in case of an error. When NULL
-     is returned, then errno is set to indicate the error.
-
-
-Notes
-~~~~~
-::
-
-     On 32bit systems, fopen and related operations only work with
-     32bit filesystems/files. Anything larger than 2GB needs to use
-     the correct 64bit structures and functions.
-    
-     This function must not be used in a shared library or
-     in a threaded application.
-
-
-Bugs
-~~~~
-::
-
-     Most modes are not supported right now.
-
-
-
-See also
-~~~~~~~~
-
-`fclose()`_ `fread()`_ `fwrite()`_ `open()`_ `fgets()`_ `fgetc()`_ `fputs()`_ `fputc()`_ `getc()`_ `putc()`_ 
 
 ----------
 
@@ -2676,74 +3275,6 @@ See also
 
 ----------
 
-fseeko()
-========
-
-Synopsis
-~~~~~~~~
-::
-
-  int fseeko(
-     FILE * stream,
-     off_t  offset,
-     int    whence)
-
-
-Function
-~~~~~~~~
-::
-
-     Change the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Modify this stream
-     offset, whence - How to modify the current position. whence
-             can be SEEK_SET, then offset is the absolute position
-             in the file (0 is the first byte), SEEK_CUR then the
-             position will change by offset (ie. -5 means to move
-             5 bytes to the beginning of the file) or SEEK_END.
-             SEEK_END means that the offset is relative to the
-             end of the file (-1 is the last byte and 0 is
-             the EOF).
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-Notes
-~~~~~
-::
-
-     on 32bit platforms, off_t is a 32bit value, and so the 64bit
-     version (fseeko64) is needed to work with large files.
-     off_t is 64bit natively on 64bit platforms.
-
-
-Bugs
-~~~~
-::
-
-     Not fully compatible with iso fseeko, especially in 'ab' and 'a+b'
-     modes
-
-
-
-See also
-~~~~~~~~
-
-`fseek()`_ 
-
-----------
-
 fseeko64()
 ==========
 
@@ -2811,16 +3342,16 @@ See also
 
 ----------
 
-fsetpos()
-=========
+fsetpos64()
+===========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int fsetpos(
+  int fsetpos64(
      FILE            * stream,
-     const fpos_t    * pos)
+     const __fpos64_t        * pos)
 
 
 Function
@@ -2857,16 +3388,16 @@ See also
 
 ----------
 
-fstat()
-=======
+fstat64()
+=========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int fstat(
+  int fstat64(
      int fd,
-     struct stat *sb)
+     struct stat64 *sb)
 
 
 Function
@@ -2874,7 +3405,7 @@ Function
 ::
 
      Returns information about a file specified by an open file descriptor.
-     Information is stored in stat structure. Consult stat() documentation
+     Information is stored in stat64 structure. Consult stat() documentation
      for detailed description of that structure.
 
 
@@ -2883,7 +3414,7 @@ Inputs
 ::
 
      filedes - File descriptor of the file
-     sb - Pointer to stat structure that will be filled by the fstat()
+     sb - Pointer to stat structure that will be filled by fstat64()
      call.
 
 
@@ -2955,44 +3486,6 @@ See also
 ~~~~~~~~
 
 `fopen()`_ `fseek()`_ `fwrite()`_ 
-
-----------
-
-ftello()
-========
-
-Synopsis
-~~~~~~~~
-::
-
-  off_t ftello(
-     FILE *stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Query this stream
-
-
-Notes
-~~~~~
-::
-
-     on 32bit platforms, off_t is a 32bit value, and so the 64bit
-     version (ftello64) is needed to work with large files.
-     off_t is 64bit natively on 64bit platforms.
-
-
-
 
 ----------
 
@@ -4537,16 +5030,16 @@ Synopsis
 
 ----------
 
-lseek()
-=======
+lseek64()
+=========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  off_t lseek(
+  __off64_t lseek64(
      int    filedes,
-     off_t  offset,
+     __off64_t  offset,
      int    whence)
 
 
@@ -4600,16 +5093,16 @@ See also
 
 ----------
 
-lstat()
-=======
+lstat64()
+=========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int lstat(
+  int lstat64(
      const char  *path,
-     struct stat *sb)
+     struct stat64 *sb)
 
 
 Function
@@ -4642,7 +5135,7 @@ Result
 See also
 ~~~~~~~~
 
-`stat()`_ `fstat()`_ 
+`stat64()`_ `fstat64()`_ 
 
 ----------
 
@@ -5696,14 +6189,14 @@ See also
 
 ----------
 
-readdir()
-=========
+readdir64()
+===========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  struct dirent *readdir(
+  struct dirent64 *readdir64(
      DIR *dir)
 
 
@@ -5918,18 +6411,18 @@ See also
 
 ----------
 
-scandir()
-=========
+scandir64()
+===========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int scandir(
+  int scandir64(
      const char *dir,
-     struct dirent ***namelist,
-     int (*select)(const struct dirent *),
-     int (*compar)(const struct dirent **, const struct dirent **)
+     struct dirent64 ***namelist,
+     int (*select)(const struct dirent64 *),
+     int (*compar)(const struct dirent64 **, const struct dirent64 **)
      )
 
 
@@ -6710,16 +7203,16 @@ Synopsis
 
 ----------
 
-stat()
-======
+stat64()
+========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  int stat(
+  int stat64(
      const char *path,
-     struct stat *sb)
+     struct stat64 *sb)
 
 
 Function
@@ -6730,19 +7223,19 @@ Function
      structure having the following fields:
      
      dev_t           st_dev;     - ID of device containing the file
-     ino_t           st_ino;     - inode number
+     ino64_t         st_ino;     - (lfs) inode number
      mode_t          st_mode;    - protection mode
      nlink_t         st_nlink;   - number of hard links
      uid_t           st_uid;     - user ID of the file's owner
      gid_t           st_gid;     - group ID of the file's group
      dev_t           st_rdev;    - device ID (if the file is character
                                    or block special file)
-     off_t           st_size;    - file size, in bytes
+     off64_t         st_size;    - (lfs) file size, in bytes
      time_t          st_atime;   - time of last acces
      time_t          st_mtime;   - time of last data modification
      time_t          st_ctime;   - time of last file status change
      blksize_t       st_blksize; - optimal blocksize for I/O
-     blkcnt_t        st_blocks;  - number of blocks allocated for file
+     blkcnt64_t      st_blocks;  - (lfs) number of blocks allocated for file
 
 
 Inputs
@@ -6765,7 +7258,7 @@ Result
 See also
 ~~~~~~~~
 
-`lstat()`_ `fstat()`_ 
+`lstat64()`_ `fstat64()`_ 
 
 ----------
 

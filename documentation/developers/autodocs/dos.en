@@ -10,44 +10,45 @@ dos
 
 ======================================= ======================================= ======================================= ======================================= 
 `AbortPkt()`_                           `AddBuffers()`_                         `AddDosEntry()`_                        `AddPart()`_                            
-`AddSegment()`_                         `AllocDosObject()`_                     `AssignAdd()`_                          `AssignLate()`_                         
-`AssignLock()`_                         `AssignPath()`_                         `AttemptLockDosList()`_                 `ChangeMode()`_                         
-`CheckSignal()`_                        `Cli()`_                                `CliInit()`_                            `CliInitNewcli()`_                      
-`CliInitRun()`_                         `Close()`_                              `CompareDates()`_                       `CreateDir()`_                          
-`CreateNewProc()`_                      `CreateProc()`_                         `CurrentDir()`_                         `DateStamp()`_                          
-`DateToStr()`_                          `Delay()`_                              `DeleteFile()`_                         `DeleteVar()`_                          
-`DeviceProc()`_                         `DoPkt()`_                              `DupLock()`_                            `DupLockFromFH()`_                      
-`EndNotify()`_                          `ErrorReport()`_                        `ExAll()`_                              `ExAllEnd()`_                           
-`Examine()`_                            `ExamineFH()`_                          `Execute()`_                            `Exit()`_                               
-`ExNext()`_                             `Fault()`_                              `FGetC()`_                              `FGets()`_                              
-`FilePart()`_                           `FindArg()`_                            `FindCliProc()`_                        `FindDosEntry()`_                       
-`FindSegment()`_                        `FindVar()`_                            `Flush()`_                              `Format()`_                             
-`FPutC()`_                              `FPuts()`_                              `FRead()`_                              `FreeArgs()`_                           
-`FreeDeviceProc()`_                     `FreeDosEntry()`_                       `FreeDosObject()`_                      `FWrite()`_                             
-`GetArgStr()`_                          `GetConsoleTask()`_                     `GetCurrentDirName()`_                  `GetDeviceProc()`_                      
-`GetFileSysTask()`_                     `GetProgramDir()`_                      `GetProgramName()`_                     `GetPrompt()`_                          
-`GetVar()`_                             `Info()`_                               `Inhibit()`_                            `Input()`_                              
-`InternalLoadSeg()`_                    `InternalUnLoadSeg()`_                  `IoErr()`_                              `IsFileSystem()`_                       
-`IsInteractive()`_                      `LoadSeg()`_                            `Lock()`_                               `LockDosList()`_                        
-`LockRecord()`_                         `LockRecords()`_                        `MakeDosEntry()`_                       `MakeLink()`_                           
-`MatchEnd()`_                           `MatchFirst()`_                         `MatchNext()`_                          `MatchPattern()`_                       
-`MatchPatternNoCase()`_                 `MaxCli()`_                             `NameFromFH()`_                         `NameFromLock()`_                       
-`NewLoadSeg()`_                         `NextDosEntry()`_                       `Open()`_                               `OpenFromLock()`_                       
-`Output()`_                             `ParentDir()`_                          `ParentOfFH()`_                         `ParsePattern()`_                       
-`ParsePatternNoCase()`_                 `PathPart()`_                           `PrintFault()`_                         `PutStr()`_                             
-`Read()`_                               `ReadArgs()`_                           `ReadItem()`_                           `ReadLink()`_                           
-`Relabel()`_                            `RemAssignList()`_                      `RemDosEntry()`_                        `RemSegment()`_                         
-`Rename()`_                             `ReplyPkt()`_                           `RunCommand()`_                         `SameDevice()`_                         
-`SameLock()`_                           `Seek()`_                               `SelectInput()`_                        `SelectOutput()`_                       
-`SendPkt()`_                            `SetArgStr()`_                          `SetComment()`_                         `SetConsoleTask()`_                     
-`SetCurrentDirName()`_                  `SetFileDate()`_                        `SetFileSize()`_                        `SetFileSysTask()`_                     
-`SetIoErr()`_                           `SetMode()`_                            `SetOwner()`_                           `SetProgramDir()`_                      
-`SetProgramName()`_                     `SetPrompt()`_                          `SetProtection()`_                      `SetVar()`_                             
-`SetVBuf()`_                            `SplitName()`_                          `StartNotify()`_                        `StrToDate()`_                          
-`StrToLong()`_                          `SystemTagList()`_                      `UnGetC()`_                             `UnLoadSeg()`_                          
-`UnLock()`_                             `UnLockDosList()`_                      `UnLockRecord()`_                       `UnLockRecords()`_                      
-`VFPrintf()`_                           `VFWritef()`_                           `VPrintf()`_                            `WaitForChar()`_                        
-`WaitPkt()`_                            `Write()`_                              `WriteChars()`_                         
+`AddSegment()`_                         `AllocDosObject()`_                     `AssignAdd()`_                          `AssignAddToList()`_                    
+`AssignLate()`_                         `AssignLock()`_                         `AssignPath()`_                         `AttemptLockDosList()`_                 
+`ChangeMode()`_                         `CheckSignal()`_                        `Cli()`_                                `CliInit()`_                            
+`CliInitNewcli()`_                      `CliInitRun()`_                         `Close()`_                              `CompareDates()`_                       
+`CreateDir()`_                          `CreateNewProc()`_                      `CreateProc()`_                         `CurrentDir()`_                         
+`DateStamp()`_                          `DateToStr()`_                          `Delay()`_                              `DeleteFile()`_                         
+`DeleteVar()`_                          `DeviceProc()`_                         `DoPkt()`_                              `DupLock()`_                            
+`DupLockFromFH()`_                      `EndNotify()`_                          `ErrorReport()`_                        `ExAll()`_                              
+`ExAllEnd()`_                           `Examine()`_                            `ExamineFH()`_                          `Execute()`_                            
+`Exit()`_                               `ExNext()`_                             `Fault()`_                              `FGetC()`_                              
+`FGets()`_                              `FilePart()`_                           `FindArg()`_                            `FindCliProc()`_                        
+`FindDosEntry()`_                       `FindSegment()`_                        `FindVar()`_                            `Flush()`_                              
+`Format()`_                             `FPutC()`_                              `FPuts()`_                              `FRead()`_                              
+`FreeArgs()`_                           `FreeDeviceProc()`_                     `FreeDosEntry()`_                       `FreeDosObject()`_                      
+`FWrite()`_                             `GetArgStr()`_                          `GetConsoleTask()`_                     `GetCurrentDirName()`_                  
+`GetDeviceProc()`_                      `GetFileSysTask()`_                     `GetProgramDir()`_                      `GetProgramName()`_                     
+`GetPrompt()`_                          `GetSegListInfo()`_                     `GetVar()`_                             `Info()`_                               
+`Inhibit()`_                            `Input()`_                              `InternalLoadSeg()`_                    `InternalUnLoadSeg()`_                  
+`IoErr()`_                              `IsFileSystem()`_                       `IsInteractive()`_                      `LoadSeg()`_                            
+`Lock()`_                               `LockDosList()`_                        `LockRecord()`_                         `LockRecords()`_                        
+`MakeDosEntry()`_                       `MakeLink()`_                           `MatchEnd()`_                           `MatchFirst()`_                         
+`MatchNext()`_                          `MatchPattern()`_                       `MatchPatternNoCase()`_                 `MaxCli()`_                             
+`NameFromFH()`_                         `NameFromLock()`_                       `NewLoadSeg()`_                         `NextDosEntry()`_                       
+`Open()`_                               `OpenFromLock()`_                       `Output()`_                             `ParentDir()`_                          
+`ParentOfFH()`_                         `ParsePattern()`_                       `ParsePatternNoCase()`_                 `PathPart()`_                           
+`PrintFault()`_                         `PutStr()`_                             `Read()`_                               `ReadArgs()`_                           
+`ReadItem()`_                           `ReadLink()`_                           `Relabel()`_                            `RemAssignList()`_                      
+`RemDosEntry()`_                        `RemSegment()`_                         `Rename()`_                             `ReplyPkt()`_                           
+`RunCommand()`_                         `SameDevice()`_                         `SameLock()`_                           `Seek()`_                               
+`SelectInput()`_                        `SelectOutput()`_                       `SendPkt()`_                            `SetArgStr()`_                          
+`SetComment()`_                         `SetConsoleTask()`_                     `SetCurrentDirName()`_                  `SetFileDate()`_                        
+`SetFileSize()`_                        `SetFileSysTask()`_                     `SetIoErr()`_                           `SetMode()`_                            
+`SetOwner()`_                           `SetProgramDir()`_                      `SetProgramName()`_                     `SetPrompt()`_                          
+`SetProtection()`_                      `SetVar()`_                             `SetVBuf()`_                            `SplitName()`_                          
+`StartNotify()`_                        `StrToDate()`_                          `StrToLong()`_                          `SystemTagList()`_                      
+`UnGetC()`_                             `UnLoadSeg()`_                          `UnLock()`_                             `UnLockDosList()`_                      
+`UnLockRecord()`_                       `UnLockRecords()`_                      `VFPrintf()`_                           `VFWritef()`_                           
+`VPrintf()`_                            `WaitForChar()`_                        `WaitPkt()`_                            `Write()`_                              
+`WriteChars()`_                         
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -436,6 +437,21 @@ See also
 ~~~~~~~~
 
 `Lock()`_ `AssignLock()`_ `AssignPath()`_ `AssignLate()`_ `DupLock()`_ `RemAssignList()`_ 
+
+----------
+
+AssignAddToList()
+=================
+
+Synopsis
+~~~~~~~~
+::
+
+ BOOL AssignAddToList(
+          CONST_STRPTR name,
+          BPTR lock,
+          ULONG position );
+
 
 ----------
 
@@ -3223,6 +3239,50 @@ See also
 ~~~~~~~~
 
 `SetPrompt()`_ 
+
+----------
+
+GetSegListInfo()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+ ULONG GetSegListInfo(
+          BPTR seglist,
+          const struct TagItem * taglist );
+ 
+ ULONG GetSegListInfoTags(
+          BPTR seglist,
+          TAG tag, ... );
+
+Function
+~~~~~~~~
+::
+
+     returns information about a loaded seglist.
+
+
+Inputs
+~~~~~~
+::
+
+     seglist - The segment list.
+
+
+Result
+~~~~~~
+::
+
+     returns number of tags aknowledged.
+
+
+
+See also
+~~~~~~~~
+
+`LoadSeg()`_ 
 
 ----------
 

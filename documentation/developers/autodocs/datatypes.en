@@ -1179,7 +1179,6 @@ Function
 ~~~~~~~~
 ::
 
-
  Examine the data pointed to by 'handle'.
 
 
@@ -1187,22 +1186,30 @@ Inputs
 ~~~~~~
 ::
 
+ type    --  specifies the stream-type of 'handle', using one of the following types;
+             DTST_FILE - 'handle' is a BPTR lock
+             DTST_CLIPBOARD - 'handle' is a struct IFFHandle *
+             DTST_RAM - (v45) 'handle' is a STRPTR datatype-name
+ handle  --  handle to return a datatype for.
+ attrs   --  additional attributes.
+             
+             DTA_GroupID  -  (v45) (ULONG)
+                             the group (GID_#?) to match.
+                             0 is used as a wildcard value.
 
- type    --  type of 'handle'
- handle  --  handle to examine (if 'type' is DTST_FILE, 'handle' should be
-             a BPTR lock; if it's DTST_CLIPBOARD, 'handle' should be a
-             struct IFFHandle *).
- attrs   --  additional attributes (currently none defined).
+             DTA_DataType -  (v45) (struct DataType *)
+                             starts/continues search from the specified
+                             DataType. NULL has the same effect as not
+                             using DTA_DataType.
 
 
 Result
 ~~~~~~
 ::
 
-
  A pointer to a DataType or NULL if failure. IoErr() gives more information
  in the latter case:
-
+ 
  ERROR_NO_FREE_STORE     --  Not enough memory available
  ERROR_OBJECT_NOT_FOUND  --  Unable to open the data type object
  ERROR_NOT_IMPLEMENTED   --  Unknown handle type

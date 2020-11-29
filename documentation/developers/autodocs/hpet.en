@@ -9,21 +9,21 @@ hpet
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`AllocHPETUnit()`_                      `FreeHPETUnit()`_                       `GetHPETCount()`_                       `GetUnitAttrsA()`_                      
+`AllocCSUnit()`_                        `FreeCSUnit()`_                         `GetCSAttrsA()`_                        `GetCSUnitAttrsA()`_                    
 
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
 
-AllocHPETUnit()
-===============
+AllocCSUnit()
+=============
 
 Synopsis
 ~~~~~~~~
 ::
 
- ULONG AllocHPETUnit(
-          const char * user );
+ IPTR AllocCSUnit(
+          const struct Node * owner );
 
 Function
 ~~~~~~~~
@@ -36,29 +36,29 @@ Inputs
 ~~~~~~
 ::
 
-     user - a string specifying the name of current user. Can not be NULL.
+     owner - a Node specifying the consumer of the clock source. Can not be NULL.
 
 
 Result
 ~~~~~~
 ::
 
-     A number of HPET timer unit allocated for exclusive use, or -1 if
+     An opaque handle for the HPET timer unit allocated for exclusive use, or -1 if
      there was no free HPET.
 
 
 
 ----------
 
-FreeHPETUnit()
-==============
+FreeCSUnit()
+============
 
 Synopsis
 ~~~~~~~~
 ::
 
- void FreeHPETUnit(
-          ULONG unit );
+ void FreeCSUnit(
+          IPTR unit );
 
 Function
 ~~~~~~~~
@@ -84,20 +84,24 @@ Result
 
 ----------
 
-GetHPETCount()
-==============
+GetCSAttrsA()
+=============
 
 Synopsis
 ~~~~~~~~
 ::
 
- ULONG GetHPETCount();
+ BOOL GetCSAttrsA(
+          const struct TagItem * tags );
+ 
+ BOOL GetCSAttrs(
+          TAG tag, ... );
 
 Function
 ~~~~~~~~
 ::
 
-     Return the total number of HPET units in the system.
+     Query attributes of HPET ClockSource resource.
 
 
 Inputs
@@ -107,29 +111,22 @@ Inputs
      None
 
 
-Result
-~~~~~~
-::
-
-     Total number of HPET units
-
-
 
 ----------
 
-GetUnitAttrsA()
-===============
+GetCSUnitAttrsA()
+=================
 
 Synopsis
 ~~~~~~~~
 ::
 
- BOOL GetUnitAttrsA(
-          ULONG unit,
+ BOOL GetCSUnitAttrsA(
+          IPTR unit,
           const struct TagItem * tags );
  
- BOOL GetUnitAttrs(
-          ULONG unit,
+ BOOL GetCSUnitAttrs(
+          IPTR unit,
           TAG tag, ... );
 
 Function

@@ -573,9 +573,9 @@ Synopsis
 ~~~~~~~~
 ::
 
- ULONG GetCyberMapAttr(
+ IPTR GetCyberMapAttr(
           struct BitMap * bitMap,
-          ULONG attribute );
+          IPTR attribute );
 
 Function
 ~~~~~~~~

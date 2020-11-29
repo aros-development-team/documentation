@@ -21,8 +21,9 @@ CLID_Hidd_PCIDevice
 -------------------
 
 ========================================== ========================================== ========================================== ========================================== 
-`aoHidd_PCIDevice_Owner`_                  `moHidd_PCIDevice_AddInterrupt`_           `moHidd_PCIDevice_Obtain`_                 `moHidd_PCIDevice_Release`_                
-`moHidd_PCIDevice_RemoveInterrupt`_        
+`aoHidd_PCIDevice_Owner`_                  `moHidd_PCIDevice_AddInterrupt`_           `moHidd_PCIDevice_Obtain`_                 `moHidd_PCIDevice_ObtainVectors`_          
+`moHidd_PCIDevice_Release`_                `moHidd_PCIDevice_ReleaseVectors`_         `moHidd_PCIDevice_RemoveInterrupt`_        `moHidd_PCIDevice_VectorIRQ`_              
+
 ========================================== ========================================== ========================================== ========================================== 
 
 -----------
@@ -143,6 +144,51 @@ See also
 
 ----------
 
+moHidd_PCIDevice_ObtainVectors
+==============================
+
+Synopsis
+~~~~~~~~
+::
+
+     OOP_Object *OOP_DoMethod(OOP_Object *obj, struct pHidd_PCIDevice_ObtainVectors *Msg);
+
+     OOP_Object *HIDD_PCIDevice_ObtainVectors(OOP_Object *obj, const struct TagItem *requirements);
+
+
+Function
+~~~~~~~~
+::
+
+     Allocates Hardware IRQ's and assigns them to the device MSI vector configuration.
+
+
+Inputs
+~~~~~~
+::
+
+     obj   - Pointer to the device object.
+     requirements - TagList of allocation requirements.
+     
+     supported Tags-:
+             tHidd_PCIVector_Min           - Minimum number of vectors/irqs to allocate
+             tHidd_PCIVector_Max          - Maximum number of vectors/irqs to allocate
+
+Result
+~~~~~~
+::
+
+     TRUE on success.
+
+
+
+See also
+~~~~~~~~
+
+`moHidd_PCIDevice_ReleaseVectors`_ 
+
+----------
+
 moHidd_PCIDevice_Release
 ========================
 
@@ -192,6 +238,40 @@ See also
 
 ----------
 
+moHidd_PCIDevice_ReleaseVectors
+===============================
+
+Synopsis
+~~~~~~~~
+::
+
+     OOP_Object *OOP_DoMethod(OOP_Object *obj, struct pHidd_PCIDevice_ReleaseVectors *Msg);
+
+     OOP_Object *HIDD_PCIDevice_ReleaseVectors(OOP_Object *obj);
+
+
+Function
+~~~~~~~~
+::
+
+     Releases the APIC IRQ's and clears the PCI devices MSI vector configuration.
+
+
+Inputs
+~~~~~~
+::
+
+     obj   - Pointer to the device object.
+
+
+
+See also
+~~~~~~~~
+
+`moHidd_PCIDevice_ObtainVectors`_ 
+
+----------
+
 moHidd_PCIDevice_RemoveInterrupt
 ================================
 
@@ -232,6 +312,48 @@ See also
 ~~~~~~~~
 
 `moHidd_PCIDevice_AddInterrupt`_ 
+
+----------
+
+moHidd_PCIDevice_VectorIRQ
+==========================
+
+Synopsis
+~~~~~~~~
+::
+
+     UBYTE OOP_DoMethod(OOP_Object *obj, struct pHidd_PCIDevice_VectorIRQ *Msg);
+
+     UBYTE HIDD_PCIDevice_VectorIRQ(OOP_Object *obj, ULONG vector);
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the Hardware IRQ for a given device MSI vector.
+
+
+Inputs
+~~~~~~
+::
+
+     obj   - Pointer to the device object.
+     vector - Vector to return the IRQ for.
+
+
+Result
+~~~~~~
+::
+
+     Returns the Hardware IRQ on success, for use with AddIntServer.
+
+
+
+See also
+~~~~~~~~
+
+`moHidd_PCIDevice_ObtainVectors`_ `AddIntServer`_ 
 
 CLID_Hidd_PCIDriver
 -------------------

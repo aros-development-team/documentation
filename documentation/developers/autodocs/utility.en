@@ -1793,6 +1793,38 @@ Synopsis
           CONST_STRPTR source,
           LONG size );
 
+Function
+~~~~~~~~
+::
+
+ Appends the string 'source' to the string 'destination'. The total length
+ including the terminating NUL is limited to 'size'.
+ 
+
+Inputs
+~~~~~~
+::
+
+ destination - the target string. Might be NULL.
+ source - the string which will be appended. Might be NULL.
+ size - the length of the 'destination' buffer
+ 
+
+Result
+~~~~~~
+::
+
+ The number of Bytes which would have been written without the truncation.
+ 
+
+Example
+~~~~~~~
+::
+
+ Strlcpy(buffer, "Hello ", sizeof buffer);
+ Strlcat(buffer, "World.", sizeof buffer);
+
+
 
 ----------
 
@@ -1808,6 +1840,37 @@ Synopsis
           CONST_STRPTR source,
           LONG size );
 
+Function
+~~~~~~~~
+::
+
+ Copies the string 'source' into 'destination'. String will be
+ null-terminated. Not more than 'size' Bytes will be written.
+ 
+
+Inputs
+~~~~~~
+::
+
+ destination - the target. Might be NULL.
+ source      - the string which will be copied. Might be NULL.
+ size        - the size of the 'destination'
+ 
+
+Result
+~~~~~~
+::
+
+ The string lenght of 'source'.
+ 
+
+Example
+~~~~~~~
+::
+
+ Strlcpy(buffer, "Hello", sizeof buffer);
+ 
+
 
 ----------
 
@@ -1820,6 +1883,13 @@ Synopsis
 
  ULONG Strlen(
           STRPTR string );
+
+Notes
+~~~~~
+::
+
+ Check the LVO before adding this function to the library.
+ 
 
 
 ----------
