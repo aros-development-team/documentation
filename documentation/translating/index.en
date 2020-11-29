@@ -246,21 +246,21 @@ not included in those encodings.
     * :n:`ISO-8859-1`
         * catalog descriptors (.cd) in english
         
-        albanian.ct
-        catalan.ct
-        danish.ct
-        dutch.ct
-        faroese.ct
-        finnish.ct
-        french.ct
-        german.ct
-        irish.ct
-        icelandic.ct
-        italian.ct
-        norwegian.ct
-        portuguese.ct
-        spanish.ct
-        swedish.ct
+        * albanian.ct
+          catalan.ct
+          danish.ct
+          dutch.ct
+          faroese.ct
+          finnish.ct
+          french.ct
+          german.ct
+          irish.ct
+          icelandic.ct
+          italian.ct
+          norwegian.ct
+          portuguese.ct
+          spanish.ct
+          swedish.ct
 
     * :n:`ISO-8859-2`
         bosnian.ct
@@ -397,7 +397,7 @@ catalogs for the application. Besides verifying correct text-use it is also
 recommended to test translations on smaller screen sizes to see if the text
 is still legible.
 
-..Note::
+.. Note::
 
     Don't commit the catalogs to the Git repository. They are automatically generated
     by the build system.
