@@ -2,7 +2,7 @@
 
 .. raw:: html
 
-   <h1>Distributions<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <a id="distributions"><h1>Distributions<br></a><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 Distributions are preconfigured, and tested, versions of AROS. They
 contain a lot of useful 3rd party applications that don't come with the
