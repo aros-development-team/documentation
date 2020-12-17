@@ -103,23 +103,6 @@ td.layout.invis {
   border: 0;
   padding: 8px }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .donate_box {
   border-radius: 4px;
   background: #FDF1CD;
@@ -127,9 +110,11 @@ td.layout.invis {
   padding: 20px 20px 15px;
   min-height: 420px;
 }
+
 .donate_box h3 {
  margin: auto;
 }
+
 .donate_box #download_div {
   margin-top: 15px;
 }
@@ -138,6 +123,7 @@ td.layout.invis {
     font-size: 14px;
     height: 30px;
 }
+
 .donateButton {
     background: url('images/download-arrow.png') no-repeat 9px 9px;
     background-size: 20px 20px;
@@ -151,6 +137,7 @@ td.layout.invis {
     font-weight: bold;
     text-decoration: none;
 }
+
 a>.donateButton{
   margin-top: 40px;
 }
@@ -158,6 +145,7 @@ a>.donateButton{
 .donate_box blockquote {
     line-height: 150%;
 }
+
 .donate_box .pay-logo {
     width: 100px;
 }
@@ -187,6 +175,7 @@ a>.donateButton{
 	padding-left: 0;
 	position: relative;
 }
+
 .tabs li label[for^=tab]{
 	clear: right;
 	margin-right: 10px	 !important;
@@ -196,6 +185,7 @@ a>.donateButton{
 	width: 120px;
 	text-align: center;
 }
+
 .tabs .tab-content{
 	display: none;
 	position: absolute;
@@ -207,9 +197,11 @@ a>.donateButton{
 	border-left: 1px dotted #ccc;
 	padding-left: 20px;
 }
+
 .tabs [id^="tab"]:checked ~ [id$="_tab"]{
 	display: block;
 }
+
 .download_div{
 	display:none;
 }
@@ -222,12 +214,15 @@ textarea, select, input[type=text]{
 	padding: 5px;
 	width: 100%;
 }
+
 input[type=text]{
 	height: 31px;
 }
+
 input[type=text]:focus{
 	border: 1px solid #888;
 }
+
 select{
 	background-color: #fff;
 }
@@ -240,6 +235,7 @@ select{
 	list-style: none;
 	padding-left: 15px;
 }
+
 .three-column {
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
@@ -247,6 +243,7 @@ select{
 	list-style: none;
 	padding-left: 15px;
 }
+
 .two-column > li, .three-column > li{
 	margin: 0 5px 10px !important;
 	float: none;
@@ -262,9 +259,11 @@ select{
 	clear: right;
 	width: 100%;
 }
+
 .amountlabel > input[type="radio"]{
 	display:none;
 }
+
 .amountlabel > label{
 	border-radius: 4px;
 	padding: 10px 15px;
@@ -281,6 +280,7 @@ select{
 .donateButton {
     color: white;
 }
+
 .amountlabel > label,
 .switch-field label {
 	background-color: rgba(180,180,180,0.75);
@@ -302,8 +302,6 @@ select{
 .donateButton {
 	background-color: #179bd7;
 }
-
-
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
