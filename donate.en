@@ -140,7 +140,7 @@
    	  <!-- download -->
    	  <div id="download_div">
    	    <p>
-   	      <a href="thanks-for-download.html"><button class="donateButton" alt="download">Download</button></a>
+   	      <a href="download.php#distributions"><button class="donateButton" alt="download">Download</button></a>
    	    </p>
    	  </div>
    	</div>
