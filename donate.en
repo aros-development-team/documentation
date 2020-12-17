@@ -101,7 +101,7 @@
    	        <input type="hidden"   name="on0" value="Publish your donation and name">
    		<input type="hidden"   name="os0" value="No">
    		<input type="checkbox" name="os0" value="Yes">
-   		<span>Add me to the <a href="donate.html#sponsors">list of sponsors</a>
+   		<span>Add me to the <a href="sponsors.php">list of sponsors</a>
    		    (from 20,- EUR/USD up)</span>
    	      </label>
    	      <input type="hidden" name="charset" value="utf-8">
@@ -128,8 +128,8 @@
    	      <input name="no_shipping" value="1" type="hidden">
    	      <input name="no_note" value="1" type="hidden">
    	      <input name="image_url" value="https://www.aros.org/images/AROS_logo_paypal.png" type="hidden">
-   	      <input name="return" value="https://www.aros.org/thanks-for-donation.html" type="hidden">
-   	      <input name="cancel_return" value="https://www.aros.org/thanks-for-download.html" type="hidden">
+   	      <input name="return" value="https://www.aros.org/donated.php" type="hidden">
+   	      <input name="cancel_return" value="#distributions" type="hidden">
    	      <input name="cbt" value="Download AROS now!" type="hidden">
    	      <p id="dButton">
    	      <button class="donateButton" name="submit" alt="Donate via PayPal"
@@ -155,6 +155,9 @@
      document.getElementById('EUR').style.display = "none";
      amountGiven = 15;
    
+     window.addEventListener("load",function(){
+       document.getElementById("developer").selectedIndex = Math.floor(document.getElementById("developer")..length * Math.random());
+     },false);
      function checkAmount(amount) {
        if (amount < 0 ) {
          document.getElementById('amountfield').value = 0;
