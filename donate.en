@@ -7,7 +7,11 @@
        <p>Pay what you want! - Thank you!</p>
    
        <p>Select a Developer : <select name="developer" id="developer" onchange="developer_choice(this.value)">
+
 .. Include:: donate-devs.inc
+
+.. raw:: html
+
        </select></p>
        <ul class="tabs">
    
