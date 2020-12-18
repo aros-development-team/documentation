@@ -154,7 +154,7 @@
    
      window.addEventListener("load",function(){
        document.getElementById('download_div').style.display = "none";
-       document.getElementById('GBP').style.display = "none";
+       document.getElementById('USD').style.display = "none";
        document.getElementById('EUR').style.display = "none";
        amountGiven = 10;
        document.getElementById('developer').selectedIndex = Math.floor(document.getElementById('developer').length * Math.random());
