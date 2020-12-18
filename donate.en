@@ -128,7 +128,7 @@
    	      <input name="no_shipping" value="1" type="hidden">
    	      <input name="no_note" value="1" type="hidden">
    	      <input name="image_url" value="http://www.aros.org/images/AROS_logo_paypal.png" type="hidden">
-   	      <input name="return" value="https://www.aros.org/donated.php" type="hidden">
+   	      <input name="return" value="http://www.aros.org/donated.php" type="hidden">
    	      <input name="cancel_return" value="#distributions" type="hidden">
    	      <input name="cbt" value="Download AROS now!" type="hidden">
    	      <p id="dButton">
