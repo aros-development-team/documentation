@@ -187,7 +187,7 @@
          document.getElementById(id).checked = "checked";
        }
      }
-
+   
      function currency_choice(txt) {
        if (txt == "GBP") {
          document.getElementById('EUR').style.display = "none";
@@ -239,3 +239,4 @@
        }
      }
    </script>
+   
