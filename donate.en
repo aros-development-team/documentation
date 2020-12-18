@@ -76,8 +76,7 @@
    
    	    <div class="switches">
    	      <div class="switch-field">
-   	        <input type="radio" id="switch_left" name="currency_code" value="USD" onchange="currency_choice('USD')"
-                       checked="checked">
+   	        <input type="radio" id="switch_left" name="currency_code" value="USD" onchange="currency_choice('USD')">
    	        <label for="switch_left">USD</label>
    	        <input type="radio" id="switch_mid" name="currency_code" value="GBP" onchange="currency_choice('GBP')"
                        checked="checked">
@@ -155,11 +154,11 @@
    
      window.addEventListener("load",function(){
        document.getElementById('download_div').style.display = "none";
-       document.getElementById('GBP').style.display = "none";
+       document.getElementById('USD').style.display = "none";
        document.getElementById('EUR').style.display = "none";
        amountGiven = 10;
-       document.getElementById("developer").selectedIndex = Math.floor(document.getElementById("developer").length * Math.random());
-       document.getElementById('business').value = document.getElementById("developer").value;
+       document.getElementById('developer').selectedIndex = Math.floor(document.getElementById('developer').length * Math.random());
+       document.getElementById('business').value = document.getElementById('developer').value;
      });
    
      function checkAmount(amount) {
