@@ -31,7 +31,7 @@
    	      <label for="amount1"> $0 </label>
    	      <input type="radio" name="amount" value="10" id="amount2" onchange="checkAmount(value)">
    	      <label for="amount2"> $10 </label>
-   	      <input type="radio" name="amount" value="15" id="amount3" onchange="checkAmount(value)" checked="checked">
+   	      <input type="radio" name="amount" value="15" id="amount3" onchange="checkAmount(value)">
    	      <label for="amount3"> $15 </label>
    	      <input type="radio" name="amount" value="25" id="amount4" onchange="checkAmount(value)">
    	      <label for="amount4"> $25 </label>
@@ -45,7 +45,7 @@
    	    <div class="amountlabel" id="GBP">
    	      <input type="radio" name="amount" value="0" id="amount1_G" onchange="checkAmount(value)">
    	      <label for="amount1_G"> £0 </label>
-   	      <input type="radio" name="amount" value="10" id="amount2_G" onchange="checkAmount(value)">
+   	      <input type="radio" name="amount" value="10" id="amount2_G" onchange="checkAmount(value)" checked="checked">
    	      <label for="amount2_G"> £10 </label>
    	      <input type="radio" name="amount" value="15" id="amount3_G" onchange="checkAmount(value)">
    	      <label for="amount3_G"> £15 </label>
@@ -154,7 +154,7 @@
    
      window.addEventListener("load",function(){
        document.getElementById('download_div').style.display = "none";
-       document.getElementById('USD').style.display = "none";
+       document.getElementById('GBP').style.display = "none";
        document.getElementById('EUR').style.display = "none";
        amountGiven = 10;
        document.getElementById('developer').selectedIndex = Math.floor(document.getElementById('developer').length * Math.random());
