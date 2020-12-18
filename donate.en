@@ -159,6 +159,7 @@
        document.getElementById('EUR').style.display = "none";
        amountGiven = 10;
        document.getElementById("developer").selectedIndex = Math.floor(document.getElementById("developer").length * Math.random());
+       document.getElementById('business').value = document.getElementById("developer").value;
      });
    
      function checkAmount(amount) {
