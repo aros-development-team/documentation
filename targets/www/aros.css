@@ -1,5 +1,5 @@
-@import url(docutils.css);
-@import url(donations.css);
+@import url(docutils.css?v=1.3);
+@import url(donations.css?v=1.3);
 
 body {
     font-family: arial, verdana, helvetica, sans-serif

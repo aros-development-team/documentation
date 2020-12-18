@@ -272,7 +272,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
         Head( [
             Charset( charset ),
             Title( 'AROS Research Operating System' ),
-            Link( href = '%(ROOT)saros.css', type = 'text/css', rel = 'stylesheet' ),
+            Link( href = '%(ROOT)saros.css?v=1.3', type = 'text/css', rel = 'stylesheet' ),
             Link( href = '%(ROOT)sprint.css', type = 'text/css', rel = 'stylesheet', media = 'print' ),
             Meta(
                 name    = 'keywords',

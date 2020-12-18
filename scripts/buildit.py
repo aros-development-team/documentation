@@ -394,7 +394,7 @@ def processHTML(src, depth):
             '--no-source-link', '--no-datestamp',
             '--output-encoding=iso-8859-15',
             '--target-suffix=html',
-            '--stylesheet=' + '../' * depth + 'aros.css',
+            '--stylesheet=' + '../' * depth + 'aros.css?v=1.3',
             '--link-stylesheet',
             src_abs, dst_abs
         ]

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <title>AROS Research Operating System</title>
-<link rel="stylesheet" href="%(ROOT)saros.css" type="text/css" />
+<link rel="stylesheet" href="%(ROOT)saros.css?v=1.3" type="text/css" />
 </head>
 <body>
 <h1 class="title">AROS Research Operating System Offline Documentation</h1>
