@@ -150,14 +150,17 @@
    </div>
    
    <script type="text/javascript">
-     document.getElementById('download_div').style.display = "none";
-     document.getElementById('GBP').style.display = "none";
-     document.getElementById('EUR').style.display = "none";
-     amountGiven = 15;
+     var amountGiven = 0;
+     var amount = 0;
    
      window.addEventListener("load",function(){
-       document.getElementById("developer").selectedIndex = Math.floor(document.getElementById("developer")..length * Math.random());
-     },false);
+       document.getElementById('download_div').style.display = "none";
+       document.getElementById('GBP').style.display = "none";
+       document.getElementById('EUR').style.display = "none";
+       amountGiven = 10;
+       document.getElementById("developer").selectedIndex = Math.floor(document.getElementById("developer").length * Math.random());
+     });
+   
      function checkAmount(amount) {
        if (amount < 0 ) {
          document.getElementById('amountfield').value = 0;
