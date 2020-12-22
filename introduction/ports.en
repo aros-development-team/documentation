@@ -3,10 +3,10 @@ Ports
 =====
 
 :Authors:   Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2012, The AROS Development Team
+:Copyright: Copyright (C) 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
-:Status:    Done.
+:Status:    WIP
 
 .. Contents::
 
@@ -68,8 +68,19 @@ either not be complete enough or have compilation requirements that we can't
 always meet due to limited resources.
 
 
-AROS/pc-i386 and x86-64
------------------------
+AROS/amiga-m68k
+---------------
+
+:Flavour:    Native
+:Status:     Working, incomplete driver support
+:Maintained: Yes
+
+AROS/amiga-m68k is the native port for m68k Amigas, or emulators like WinUAE.
+This version is binary compatible with AmigaOS.
+
+
+AROS/pc-i386 and pc-x86-64
+--------------------------
 
 :Flavour:    Native
 :Status:     Working, incomplete driver support
@@ -85,30 +96,18 @@ This port works quite well, but we only have the most basic driver support.
 One of the biggest limitations is that we currently only have support for
 accelerated graphics on nVidia and ATI graphics hardware. Other graphics
 adapters must be used with generic (non-accelerated) VGA and VBE graphics
-drivers. There are more drivers in the works, but development is quite slow
-since we only have about 2.5 hardware hackers.
-
-This port is available for download.
+drivers.
 
 
-AROS/pp-m68k
-------------
+AROS/pc-x86_64-smp
+------------------
 
 :Flavour:    Native
-:Status:     Partly working (in an emulator), incomplete driver support
-:Maintained: No
+:Status:     Working, incomplete driver support
+:Maintained: Yes
 
-AROS/pp-m68k is the native port of AROS to the Palm line of handheld
-computers and compatibles ("pp" stands for "palm pilot", which was the name of
-the first handhelds of this line). This means that you might be able to take
-AROS with you in your pocket when travelling in the future...
-
-This port is currently very raw. It does mostly work (running in an emulator,
-since nobody wants to risk trashing their expensive hardware just yet) but
-there is still a lot of work left. There is a graphics driver, but not any
-input ones.
-
-This port is not available for download at this time.
+AROS/pc-x86_64-smp is an experimental port with support for some kind of
+Symmetric MultiProcessing.
 
 
 AROS/linux-i386 and x86-64
@@ -125,52 +124,68 @@ This is the most complete port of AROS, feature-wise, since most of the
 developers currently use Linux when developing AROS, and there are far
 fewer drivers to write.
 
-This port is available for download.
 
-
-AROS/freebsd-i386
------------------
+AROS/mingw32-i386
+------------------
 
 :Flavour:    Hosted
 :Status:     Working
-:Maintained: No
+:Maintained: Yes
 
-AROS/freebsd-i386 is the hosted port of AROS to the FreeBSD operating system
-running on the x86 family of processors.
-
-This port is relatively complete since it shares most of it's code with that
-of AROS/linux-i386, but since there aren't many developers that use FreeBSD
-it is lagging a little bit behind.
-
-We try to compile AROS/freebsd-i386 when doing snapshots, but that's not
-always possible. It's, thus, not always available for download.
+This port is intended to run on Microsoft Windows (beginning from Windows 98)
+as the hosted system.
 
 
-AROS/linux-ppc
+AROS/darwin-i386 and darwin-x86_64
+----------------------------------
+
+:Flavour:    Hosted
+:Status:     Working
+:Maintained: Yes
+
+The hosted version for Darwin and MacOS X on the i386 and x86_64 platform.
+This should work on all Intel MacOS X versions starting from 10.4. It requires
+an X11 server for the display.
+
+
+AROS/darwin-ppc
 ---------------
 
 :Flavour:    Hosted
 :Status:     Working
 :Maintained: Yes
 
-AROS/linux-ppc is the hosted port of AROS to the Linux operating system
-running on the PowerPC family of processors.
-
-Rebuilding requires a patched gcc3.4.3. The diff file can be found in
-contrib/gnu/gcc.
+The hosted version for Darwin and MacOS X on the PowerPC platform.
+This should work on all MacOS X versions. It requires
+an X11 server for the display.
 
 
-AROS/mingw32-i386
-------------------
+AROS/raspi-armhf
+----------------
 
-This port is intended to run on Microsoft Windows (beginning from Windows 98)
-as the hosted system. The port is in its early days but is developed
-constantly.
+:Flavour:    Native
+:Status:     Not working
+:Maintained: Yes
 
-The port maintainer is Pavel Fedin. GDI is used to make the screen output.
+The native version for ARMv6 based Raspberry Pi computers. 
 
-This port can be downloaded from our download page.
 
+AROS/sam440-ppc
+---------------
+
+:Flavour:    Native
+:Status:     Working
+:Maintained: Yes
+
+The native version for Sam440EP, Sam440EP Flex and Sam460ex computers.
+
+
+Legacy
+======
+
+Some more ports were developed in the past. They aren't maintained and it's
+doubtable wether they still work on current systems. Examples are: freebsd-i386,
+pp-m68k (Palm Pilot), android-arm, linux-arm, linux-ppc and efika-chrp-ppc.
 
 
 Footnote
