@@ -575,7 +575,8 @@ def buildWWW():
         [
             'docutils.css',
             'aros.css',
-            'print.css'
+            'print.css',
+            'donations.css'
         ],
         srcpath,
         TRGROOT
@@ -651,7 +652,8 @@ def buildHTML():
         [
             'docutils.css',
             'aros.css',
-            'print.css'
+            'print.css',
+            'donations.css'
         ],
         srcpath,
         TRGROOT
