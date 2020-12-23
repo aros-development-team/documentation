@@ -19,8 +19,12 @@ method of contacting members of the team is via the organization slack
 channel. Users may also find the other community resources helpfull in contacting
 like minded indidivuals, or just for advice/help.
 
+
+Development Team Resources
+==========================
+
 Slack
-=====
+-----
 
 There is an official slack channel for discussion around AROS development, that
 can be joined via this `link`__. 
@@ -29,25 +33,10 @@ __ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NW
 
 
 Mailing lists
-=============
+-------------
 
 There are a couple of AROS-related mailing lists available, mainly for people who
 prefer to receive information this way:
-
-+ `AROS Developer`__
-
-  This is the developer mailing list, where discussions about the development
-  of AROS are held. Also, the nightly build status is posted daily to this
-  list. Submissions to the `bug database`_ are posted to this list, too.
-  It is **highly** recommended for developers to join this list, as
-  it will otherwise be quite hard to keep up to date on current developments.
-  Since there aren't *that* many AROS developers, the volume on this list is
-  generally quite low, but it can become quite high during heated discussions.
-
-  .. Note:: Subscription requests to this list are not handled automatically,
-            but every request is verified by the list administrator. So, there
-            might be some delay from the time you send a subscription request
-            to when you actually become a member.
 
 + `AROS CVS`__
 
@@ -64,11 +53,9 @@ prefer to receive information this way:
 Follow the links to the administrative pages for information on how to
 subscribe, unsubscribe, accessing the archives and other useful functions.
 
-__ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
 __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 
-.. _`bug database`: http://sourceforge.net/p/aros/bugs/
 
 
 Community Resources
@@ -78,7 +65,6 @@ There are a number of community created resources that can be usefull sources
 of information for users and developers alike. A few of them are listed below.
 
 
-------
 Forums
 ------
 
@@ -90,7 +76,6 @@ world, and a few AROS core developers are known to frequent there.
 __ https://ae.amigalife.org/
 
 
-------------
 IRC Channels
 ------------
 
@@ -105,4 +90,3 @@ __ irc://irc.freenode.net/aros
 __ http://freenode.net/
 __ irc://irc.freenode.net/
 __ irc://irc.freenode.net/aros.dev
-
