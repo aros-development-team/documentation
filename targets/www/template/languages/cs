@@ -32,12 +32,11 @@ applications:     Aplikace
 faq:              FAQ
 howto:            HowTo
 hwcompat:         Kompatibilita hardware
-translators:       Translators
+translators:      Translators
 developers:       Vývojáøi
 contribute:       Spolupráce
 roadmap:          Plán
-bug-tracker:      Bug tracker
-feature-requests: Feature Requests
+issue-tracker:    Issue tracker
 working-with-git: Práce s Git
 compiling:        Kompilace
 application-development-manual: Manuál pro vývoj aplikací

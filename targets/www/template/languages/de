@@ -32,13 +32,12 @@ applications:     Anwendungen
 faq:              FAQ
 howto:            HowTo
 hwcompat:         Hardware Compatibility
-translators:       Translators
+translators:      Translators
 developers:       Entwickler
 contribute:       Mitwirken
 roadmap:          Roadmap
 working-with-git: Arbeiten mit Git
-bug-tracker:      Fehlermeldung
-feature-requests: Funktionsanforderung
+issue-tracker:    Fehlermeldung
 compiling:        Kompilierung
 application-development-manual: Anwendungs Entwicklungs Handbuch
 zune-application-development-manual: Zune Anwendungs Entwicklungs Handbuch

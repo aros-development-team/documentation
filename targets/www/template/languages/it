@@ -32,12 +32,11 @@ applications:     Applications
 faq:              FAQ
 howto:            HowTo
 hwcompat:         Hardware Compatibility
-translators:       Translators
+translators:      Translators
 developers:       Sviluppatori
 contribute:       Per contribuire
 roadmap:          Roadmap
-bug-tracker:      Bug Tracker
-feature-requests: Feature Requests
+issue-tracker:    Bug Tracker
 working-with-git: Lavorare con Git
 compiling:        Compilare
 application-development-manual: Manuale Sviluppo Applicazioni

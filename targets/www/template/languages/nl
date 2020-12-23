@@ -32,12 +32,11 @@ applications:     Applications
 faq:              Veel gestelde vragen (FAQ)
 howto:            HowTo
 hwcompat:         Hardware Compatibility
-translators:       Translators
+translators:      Translators
 developers:       Ontwikkelaars
 contribute:       Meehelpen
 roadmap:          Roadmap
-bug-tracker:      Fouten melden
-feature-requests: Feature Requests
+issue-tracker:    Fouten melden
 working-with-git: Werken met Git
 compiling:        Compileren
 application-development-manual: Applicatie Ontwikkeling Gids

@@ -32,12 +32,11 @@ applications:     Applications
 faq:              ЧАВО(FAQ)
 howto:            HowTo
 hwcompat:         Hardware Compatibility
-translators:       Translators
+translators:      Translators
 developers:       Разработчики
 contribute:       Участие
 roadmap:          План развития
-bug-tracker:      Сообщить об ошибке
-feature-requests: Feature Requests
+issue-tracker:    Сообщить об ошибке
 working-with-git: Работа с Git
 compiling:        Сборка
 application-development-manual: Руководство по разработке приложений

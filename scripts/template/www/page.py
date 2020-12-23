@@ -108,8 +108,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
             ( [
                 A( _N['contribute'], href=makeURL( 'documentation/developers/contribute', lang ) ),
                 A( _N['roadmap'], href=makeURL( 'documentation/developers/roadmap', lang ) ),
-                A( _N['bug-tracker'], href='http://sourceforge.net/p/aros/bugs/' ),
-                A( _N['feature-requests'], href='http://sourceforge.net/p/aros/feature-requests/' ),
+                A( _N['issue-tracker'], href='https://github.com/aros-development-team/AROS/issues' ),
                 A( _N['working-with-git'], href=makeURL( 'documentation/developers/git', lang ) ),
                 A( _N['compiling'],  href=makeURL( 'documentation/developers/compiling', lang ) ),
                 A( _N['application-development-manual'], href=makeURL( 'documentation/developers/app-dev/index', lang ) ),
