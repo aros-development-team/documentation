@@ -129,20 +129,6 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
         A( '<b>' + _N['contact'] + '</b>', href=makeURL( 'contact', lang ) )]),
-        Tree \
-        ( [
-            A( _N['slack'], href=makeURL( 'contact', lang, 'slack' ) ),
-            A( _N['mailing-lists'], href=makeURL( 'contact', lang, 'mailing-lists' ) ),
-        ] ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['community'] + '</b>', href=makeURL( 'contact', lang, 'community-resources' ) )]),
-        Tree \
-        ( [
-            #A( _N['forums'], href=makeURL( 'contact', lang, 'forums' ) ),
-            A( _N['irc-channels'], href=makeURL( 'contact', lang, 'irc-channels' ) )
-        ] ),
         BR(),
     P ( contents = [
         Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
