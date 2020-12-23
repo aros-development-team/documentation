@@ -4,7 +4,7 @@ AROS Installation Guide
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey,
             Sergey Mineychev
-:Copyright: Copyright (C) 1995-2011, The AROS Development Team
+:Copyright: Copyright (C) 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Needs to be updated for some AROS ports. In works, being
@@ -33,7 +33,7 @@ don't reflect the current status of AROS. The users are encouraged to
 download the nightly builds instead.
 
 Nightly builds are done, as the name implies, automatically every night
-directly from the Subversion tree and contain the latest code. However, they
+directly from the Git repository and contain the latest code. However, they
 have not been tested in any way and can be horribly broken, extremely buggy
 and should you be very unlucky, they might even destroy your system. Most of
 the time they work fine, though.
@@ -49,16 +49,15 @@ available and how to download them.
 Installation
 ============
 
-AROS/linux-i386, AROS/linux-x86-64 and AROS/freebsd-i386
---------------------------------------------------------
+AROS/linux-i386 and AROS/linux-x86-64
+-------------------------------------
 
 Requirements
 """"""""""""
 
-To run AROS/linux-i386, AROS/linux-x86-64 or AROS/freebsd-i386 you will need
-the following:
+To run AROS/linux-i386 or AROS/linux-x86-64 you will need the following:
 
-+ A working FreeBSD 5.x or Linux installation (doesn't really matter which
++ A working Linux installation (doesn't really matter which
   distribution you run, as long as it's relatively recent).
 + A configured and working X server (for example X.Org or XFree86) for
   x11.hidd, or libsdl installed (for sdl.hidd).
@@ -71,15 +70,14 @@ That's it.
 Extracting
 """"""""""
 
-Since AROS/linux-i386, AROS/linux-x86-64 and AROS/freebsd-i386 are hosted
-flavors of AROS, installation is simple. Simply get the appropriate archives
+Since AROS/linux-i386 and AROS/linux-x86-64 are hosted flavors of AROS,
+installation is simple. Simply get the appropriate archives
 for your platform from the `download page`_ and extract them where you want
 them::
 
     > tar -vxjf AROS-<version>-<platform>-<cpu>-system.tar.bz2
 
-If you downloaded the contrib archive, you may want to extract it too (but
-its contents is already included in the system archive and on the LiveCD)::
+If you downloaded the contrib archive, you may want to extract it too::
 
     > tar -vxjf AROS-<version>-pc-<cpu>-contrib.tar.bz2
 
@@ -92,31 +90,8 @@ Running
 After having extracted all files you can launch AROS like this::
 
     > cd AROS
-    > boot/aros-unix -m <size of mem, used for AROS in MB, number>
+    > boot/linux/AROSBootstrap -m <size of mem used for AROS in MB>
 
-
-.. Note::
-
-    Unless you are running XFree86 3.x or earlier, you may notice that the
-    AROS window does not refresh properly (for example when a different window
-    passes over it). This is due to the fact that AROS uses the "backingstore"
-    functionality of X, which is turned off by default in XFree86 4.0 and
-    later.
-    To turn it on, add the following line to the device section of your
-    graphics card in the X configuration file (commonly named
-    ``/etc/X11/xorg.conf``, ``/etc/X11/XF86Config-4`` or
-    ``/etc/X11/XF86Config``)::
-
-        Option "backingstore"
-
-    A complete device section might then look like this::
-
-        Section "Device"
-            Identifier      "Matrox G450"
-            Driver          "mga"
-            BusID           "PCI:1:0:0"
-            Option          "backingstore"
-        EndSection
 
 Also there's an sdl.hidd, allowing you to run AROS-Hosted without any X-server
 ever installed. It's known to be working, but is in testing stage.
@@ -125,7 +100,7 @@ ever installed. It's known to be working, but is in testing stage.
 
 
 
-AROS/pc-i386 and AROS/pc-X86-64
+AROS/pc-i386 and AROS/pc-x86-64
 -------------------------------
 
 Requirements
@@ -138,7 +113,7 @@ Requirements
     unwise to install an operating system on a working machine whose HD
     contains valuable data. We'd advise you to make a backup of your data
     beforehand (always a good thing to do), and we cannot take responsibility
-    for damage that occurs. Any bug reports on the installation  process will
+    for damage that occurs. Any bug reports on the installation process will
     however be appreciated.
 
 You will need a *PCI-based* PC-AT (based on i486 or later) with PS/2
@@ -149,20 +124,17 @@ There are generic 2D-accelerated drivers (HIDDs) for some ATI and nVidia
 cards.
 
 Also, most PC-compatible emulators/VMs (virtual machines) can be used. QEMU,
-VMware (Server/Workstation/Fusion), Q, Bochs and MS VPC are known to work.
-A notable exception is VirtualBox.
-IcAros is a distribution already configured with Qemu (windows)
+VMware (Server/Workstation/Fusion), VirtualBox, Bochs and MS VPC are known to work.
 
 AROS has drivers for several different network cards.
-Further details are available in the FAQ.
+Further details are available in the FAQ_.
 
 If you want to try sound on AROS, the best choice at this moment is
 Creative 10k-based sound cards.
 
 The x86-64 port has similar requirements, except of course that
 a 64-bit capable Intel/AMD CPU is needed. Chipset support is currently
-limited. This port is in the early stages of development, so please report
-any bugs found.
+limited.
 
 
 
@@ -198,15 +170,9 @@ reinstall them.
 Installation media
 """"""""""""""""""
 
-The recommended installation media for AROS/pc-i386 is CD-ROM, since the whole
-system fits on a single disc (and also all the contributed software).
-This also makes the installation easier, since you don't have to go through
-hoops transferring the software on several floppies.
-
-Since nobody currently sells AROS on CAROM (or any other media for that
-matter), you will need access to a CD burner to create the installation disk
-yourself.
-
+The recommended installation media for AROS/pc-i386 and AROS/pc-x86_64 is
+CD-ROM, since the whole system fits on a single disc (and also all the
+contributed software).
 
 
 CD-ROM
@@ -218,12 +184,13 @@ Writing
 Simply download the ISO image from the `download page`_ (we recommend
 using a download manager able to resume broken downloads, like wget)
 and burn it to the CD using your favorite CD burning program. There are
-a number of freeware CD burning programs for any system. Windows users we can
-point to the `InfraRecorder
-<http://infrarecorder.sourceforge.net>`__ - it's free, small and fast,
+a number of freeware CD burning programs for any system. We can point
+Windows users to the InfraRecorder__ - it's free, small and fast,
 and it's just simple. Other examples are CDBurnerXP, DeepBurn, and AstroBurn.
 In the Linux world there are k3B, Brasero and others. On Amiga (and AROS) you
 can use FryingPan.
+
+__ http://infrarecorder.sourceforge.net
 
 
 Booting
@@ -288,9 +255,6 @@ that it may corrupt existing partitions. If you want to be as safe as possible,
 install AROS on its own harddisk. Other options would be: Making a full backup
 beforehand, using a PC which does not contain anything you can't live without,
 or use a virtual machine.
-There are many free VMs available, such as VirtualPC, Q, QEMU and VMWare, which
-are known to work with AROS. You can also use VmwAROS preinstalled environment
-to try it out. 
 
 
 Getting ready
@@ -323,7 +287,7 @@ with installing options.
 
 You can see the current installing device (ata.device) and its unit (0),
 which is your first HDD. If you intend to install on additional disk, please,
-change this number. To find out the number, you can use a */Tools/HDToolbox*
+change this number. To find out the number, you can use *Tools/HDToolbox*
 utility. Check the option ``Only use free space`` if you want to keep current
 partitions as they are, or select ``Wipe disk`` to **erase** existing data on
 the hard drive. You can set the size of new AROS partition if you wish, and
@@ -343,11 +307,11 @@ in a window::
     [x] Install Bootloader
 
 + ``Choose language Options`` allows you to select the locale of your newly
-    installed system (by launching the /Extras/Locale program).
+    installed system (by launching the Prefs/Locale program).
 + ``Install AROS Core System`` allows installing of all AROS base programs
     that the OS needs to function properly.
 + ``Install Extra Software`` allows installing additional programs (located
-    in the /Extras drawer and, if selected, on the WORK partition).
+    in the Extras drawer and, if selected, on the WORK partition).
 + ``Install Development Software`` allows the installation of development
     software, like programming languages.
 + ``Install Bootloader`` enables installing of GRUB bootloader to the MBR of
@@ -363,7 +327,7 @@ files should be copied to it::
     DH0
 
     [ ] Use 'WORK' Partition
-    [ ] Copy Extras and Development Files to Work
+    [ ] Use 'WORK' Partition for Extras and Developer Files
 
     Work Partition            [ ] Format Partition
     DH1
@@ -757,91 +721,10 @@ to your questions.
 
 
 
-AROS/linux-ppc
---------------
-
-Requirements
-""""""""""""
-
-To be written by someone.
-
-
-
-
-Extracting
-""""""""""
-
-Simply get the appropriate archives for your platform from the
-`download page`_ and extract them where you want them::
-
-    > tar -vxjf AROS-<version>-<platform>-ppc-system.tar.bz2
-
-If you downloaded the contrib archive, you may want to extract it too (but
-its contents are already included in the system archive and on the LiveCD)::
-
-    > tar -vxjf AROS-<version>-ppc-all-contrib.tar.bz2
-
-
-
-
-Running
-"""""""
-
-To be written by someone.
-
-
-
-
-
-AROS/m68k-backport (AfA)
-------------------------
-
-This is not the usual native/hosted flavour of AROS, but a thing that can be
-called a *backport*. Actually, it's a set of libraries and binaries to enhance
-the capabilities of original AmigaOS. AfA stands for AROS for Amigas.
-AfA is developed by Bernd Roesch and can be found
-`here <http://amidevcpp.amiga-world.de/afa_binarie_upload.php>`_.
-
-
-
-
-Requirements
-""""""""""""
-
-To be written by someone.
-
-
-
-
-Installation
-""""""""""""
-
-+ copy the directory AfA_OS_Libs to your sys: Amiga drive Bootpartition.
-  If you don't want it there, you can copy it elsewhere and assign AfA_OS:
-  to the directory where the AfA_OS_Libs are located.
-+ copy Libs:freetype2.library to your sys:libs directory.
-+ copy C:AfA_OS_Loader to your sys:fonts directory.
-+ copy Fonts: to your sys:fonts directory. If you want to have more fonts,
-  use the Fonts from AROS or MOS.
-+ copy prefs: to your sys:prefs directory.
-
-To start AfA at boot time, add AfA_OS_Loader to your S:startup-sequence, just
-before IPrefs. It must be inserted after patching tools like MCP
-or picasso96/cgx, because they patch the AfA_OS Functions back.
-
-If you start it with the parameter MOUSESTART (must be written in uppercase),
-you must hold the left mousebutton during boot time to load the modules,
-instead of skipping them.
-
-To see if all works well, start the "TextBench" program found in the AfA
-archive. Antialiased TTF fonts rendering speed is currently not the best, it
-is not optimized (see aatext source code), but hopefully it's fast enough to
-be usable even on a 060/50MHz.
-
-
 .. _`download page`: ../../download
 
 .. _rawrite: http://uranus.chrysocome.net/linux/rawwrite.htm
 
 .. _`AROS Archives`: http://archives.aros-exec.org
 
+.. _FAQ: faq
