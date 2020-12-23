@@ -61,10 +61,10 @@ Distributions
 Nightly Builds (ABIv1)
 ======================
 
-`Nightly builds`__ are done, as the name implies, every night, directly
+Nightly builds are done, as the name implies, every night, directly
 from the Git repository, and they contain the latest code. However,
 they have not been tested in any way and may contain bugs. Most of the
-time, though, they work just fine.
+time, though, they work just fine. `Download link`__
 
 These builds are based on sources of the new `ABI`__. **They are not 
 compatible with existing AROS distributions or with the AROS software
@@ -84,7 +84,8 @@ Nightly Builds (ABIv0)
 ======================
 
 Because almost all available AROS software and distributions are
-for the old ABIv0 ABI, we keep `these builds`__ for the i386 platform.
+for the old ABIv0 ABI, we keep these builds for the i386 platform.
+`Download link`__
 
 __ nightly
 
@@ -92,8 +93,9 @@ __ nightly
 Snapshots (ABIv1)
 =================
 
-`Snapshots`__ are non-periodic, non-automated builds of AROS. They are done
+Snapshots are non-periodic, non-automated builds of AROS. They are done
 by developers who can't set up a nightly build for some reason.
+`Download link`__
 
 These ports are not unmaintained, so please use the `issue tracker`__ to report
 bugs.
@@ -105,7 +107,7 @@ __ https://github.com/aros-development-team/AROS/issues
 Snapshots (ABIv0)
 =================
 
-As with the nightly builds we keep a set of `snapshots`__ which are based
-on sources of the ABIv0 branch on a separate download page.
+As with the nightly builds we keep a set of snapshots which are based
+on sources of the ABIv0 branch on a separate download page. `Download link`__
 
 __ snapshots
