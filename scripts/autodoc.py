@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2008-2019, The AROS Development Team. All rights reserved.
+# Copyright © 2008-2020, The AROS Development Team. All rights reserved.
 # $Id$
 
 
@@ -110,7 +110,7 @@ def move_if_changed(tmpfilename, targetfilename):
 class AutoDoc(object):
     """ Autodoc base class.
 
-    Subclasses must set the elements
+    Subclasses must set the element's
     docname (function or command name e.g. "Draw") and docfilename (lower case docname)
     """
 
@@ -510,9 +510,9 @@ class ShellDocList(object):
 
         print "Creating index file"
         os.write(fdesc, ".. This document is automatically generated. Don't edit it!\n\n")
-        os.write(fdesc, "==============\n")
-        os.write(fdesc, "Shell Commands\n")
-        os.write(fdesc, "==============\n\n")
+        os.write(fdesc, "=======================\n")
+        os.write(fdesc, "Using AROS by the Shell\n")
+        os.write(fdesc, "=======================\n\n")
         os.write(fdesc, "+ `Introduction <introduction>`_\n")
         os.write(fdesc, "+ `Scripts <scripts>`_\n\n")
 
@@ -798,7 +798,7 @@ def write_index(fdesc, targetdir):
     os.write(fdesc, tablesep + "\n")
     docnr = 1
     for doc in files:
-        if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc != "scripts" and doc[:12] != "introduction":
+        if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" and doc[:12] != "introduction":
             docname = doc[:-3]
             tocname = "`%s <%s>`_" %(docname, docname)
             tocname = tocname.ljust(50)

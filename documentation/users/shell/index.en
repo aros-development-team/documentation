@@ -1,8 +1,8 @@
 .. This document is automatically generated. Don't edit it!
 
-==============
-Shell Commands
-==============
+=======================
+Using AROS by the Shell
+=======================
 
 + `Introduction <introduction>`_
 + `Scripts <scripts>`_
@@ -25,11 +25,11 @@ Commands
 `partition <partition>`_                          `path <path>`_                                    `pathpart <pathpart>`_                            `pipe <pipe>`_                                    `play <play>`_                                    
 `print <print>`_                                  `prompt <prompt>`_                                `protect <protect>`_                              `quit <quit>`_                                    `reboot <reboot>`_                                
 `relabel <relabel>`_                              `rename <rename>`_                                `requestchoice <requestchoice>`_                  `requestfile <requestfile>`_                      `requeststring <requeststring>`_                  
-`resident <resident>`_                            `reslist <reslist>`_                              `run <run>`_                                      `scripts <scripts>`_                              `search <search>`_                                
-`set <set>`_                                      `setclock <setclock>`_                            `setdate <setdate>`_                              `setdefaultfont <setdefaultfont>`_                `setenv <setenv>`_                                
-`setkeyboard <setkeyboard>`_                      `shell <shell>`_                                  `shutdown <shutdown>`_                            `skip <skip>`_                                    `sort <sort>`_                                    
-`stack <stack>`_                                  `stacksnoop <stacksnoop>`_                        `status <status>`_                                `symboldump <symboldump>`_                        `tasklist <tasklist>`_                            
-`touch <touch>`_                                  `type <type>`_                                    `unalias <unalias>`_                              `unset <unset>`_                                  `unsetenv <unsetenv>`_                            
-`uuidgen <uuidgen>`_                              `version <version>`_                              `wait <wait>`_                                    `waitforport <waitforport>`_                      `waitx <waitx>`_                                  
-`which <which>`_                                  `why <why>`_                                      
+`resident <resident>`_                            `reslist <reslist>`_                              `run <run>`_                                      `search <search>`_                                `set <set>`_                                      
+`setclock <setclock>`_                            `setdate <setdate>`_                              `setdefaultfont <setdefaultfont>`_                `setenv <setenv>`_                                `setkeyboard <setkeyboard>`_                      
+`shell <shell>`_                                  `shutdown <shutdown>`_                            `skip <skip>`_                                    `sort <sort>`_                                    `stack <stack>`_                                  
+`stacksnoop <stacksnoop>`_                        `status <status>`_                                `symboldump <symboldump>`_                        `tasklist <tasklist>`_                            `touch <touch>`_                                  
+`type <type>`_                                    `unalias <unalias>`_                              `unset <unset>`_                                  `unsetenv <unsetenv>`_                            `uuidgen <uuidgen>`_                              
+`version <version>`_                              `wait <wait>`_                                    `waitforport <waitforport>`_                      `waitx <waitx>`_                                  `which <which>`_                                  
+`why <why>`_                                      
 ================================================= ================================================= ================================================= ================================================= ================================================= 

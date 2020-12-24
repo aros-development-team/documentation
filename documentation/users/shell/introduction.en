@@ -8,11 +8,6 @@ Introduction to the AROS Shell
 :Date:      $Date$
 :Status:    Draft
 
--------------
-
-`Index <index>`_
-
--------------
 
 .. Contents::
 
@@ -21,8 +16,10 @@ Introduction
 ------------
 AROS has a command line interface, the 'Shell'.
 You can start it with menu Wanderer>Shell. A window
-with the path of the current AROS window will be opened. The prompt
+with the path of the current Wanderer window will be opened. The prompt
 normally shows the the number of the Shell and the current path.
+
+.. Figure:: /documentation/users/shell/images/shell.png
 
 The Shell has a command history. You can access it with cursor up and down
 keys.

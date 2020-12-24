@@ -408,6 +408,7 @@ def processHTML(src, depth):
 
 
 def copyImages():
+    # developer/ui
     imagepath = 'documentation/developers/ui/images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
@@ -423,6 +424,7 @@ def copyImages():
         dstpath
     )
 
+    # developer/zune-dev
     imagepath = 'documentation/developers/zune-dev/images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
@@ -431,6 +433,22 @@ def copyImages():
 
     pathscopy('hello.png', srcpath, dstpath)
 
+    # user/shell
+    imagepath = 'documentation/users/shell/images'
+    dstpath   = os.path.join(TRGROOT, imagepath)
+    srcpath   = imagepath
+
+    makedir(dstpath)
+
+    pathscopy(
+        [
+            'shell.png'
+        ],
+        srcpath,
+        dstpath
+    )
+
+    # generic
     imagepath = 'images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
