@@ -3,7 +3,7 @@ Frequently Asked Questions
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright © 1995-2010, The AROS Development Team
+:Copyright: Copyright © 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -22,7 +22,7 @@ read the threads and ask everything you want. This FAQ will
 be updated with the users' questions, but the forum will be
 more up-to-date.
 
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
+__ https://ae.amigalife.org
 
 
 What is AROS all about?
@@ -84,13 +84,13 @@ arguments. So we decided to start with something we knew how to handle. Then,
 when we have the experience to see what is possible or not, we could decide
 on improvements.
 
-We also want to be binary compatible with the original AmigaOS on Amiga. The
-reason for this is just that a new OS without any programs to run on it has
-little chance to survive. Therefore we try to make the shift from the original
-OS to our new one as painless as possible (but not to the extent that we can't
-improve AROS afterwards). As usual, everything has its price and we try to
-decide carefully what that price might be and if we and everyone else would be
-willing to pay it.
+We also want to be binary compatible with the original AmigaOS on Amiga
+computers. The reason for this is just that a new OS without any programs to
+run on it has little chance to survive. Therefore we try to make the shift from
+the original OS to our new one as painless as possible (but not to the extent
+that we can't improve AROS afterwards). As usual, everything has its price and
+we try to decide carefully what that price might be and if we and everyone else
+would be willing to pay it.
 
 
 Can't you implement feature XYZ?
@@ -133,17 +133,16 @@ What hardware architectures is AROS available for?
 --------------------------------------------------
 
 Currently AROS is available in a quite usable state as native and hosted
-(under Linux, and FreeBSD) for the i386 architecture (i.e. IBM PC AT
-compatible clones). There are ports under way at varying degrees of
-completeness to SUN SPARC (hosted under Solaris) and Palm compatible
-handhelds (native).
+(under Linux) for the i386 architecture (i.e. IBM PC AT
+compatible clones) and for X86_64. There are ports under way at varying
+degrees of completeness to 68k Amigas and Raspberry Pi.
 
 
 Will there be a port of AROS to PowerPC?
 ----------------------------------------
 
-There is currently an effort under way to port AROS to PowerPC, initially
-hosted under Linux.
+It's already available. The maintained ports of AROS for PowerPC are
+sam440-ppc and darwin-ppc.
 
 
 Why are you using Linux and X11?
@@ -198,7 +197,7 @@ What do I do if AROS won't compile?
 
 Please post a message with details (for example, the error messages you
 get) on the Help forum at `AROS-Exec`__ or become a developer and
-subscribe to the AROS Developer list and post it there, and someone will
+subscribe to the AROS Slack channel and post it there, and someone will
 try to help you.
 
 __ https://ae.amigalife.org/
@@ -297,13 +296,10 @@ is simply how open source development works.
 What programming languages are available?
 -----------------------------------------
 
-Most development for AROS is done using ANSI C by cross-compiling the
-sources under a different OS, e.g. Linux or FreeBSD. Fabio Alemagna has
-completed an initial port of GCC to i386 native. However, it is not
-currently on the ISO or integrated into the build system.
+GCC (C, C++) is available both as native and as cross compiler.
 
-The languages that are available natively are Python_, Regina_, Lua_,
-Hollywood_ and False_:
+The languages that are available natively are Python_, Regina_, Lua_
+and Hollywood_:
 
 + Python is a scripting language which has become quite popular, because of
   its nice design and features (object-oriented programming, module system,
@@ -320,27 +316,18 @@ Hollywood_ and False_:
   has some simple graphics commands, the latter is an interface to Zune.
 
 + Hollywood is a commercial programming language for multimedia applications
-  including games. The CD-ROM contains a version for i386-aros.
-
-+ False can be classified as an exotic language, so it will most likely not
-  be used for serious development, although it can be lots of fun. :-)
+  including games. You can buy a version for i386-aros (ABI v0).
 
 .. _Python: https://www.python.org/
 .. _Regina: http://regina-rexx.sourceforge.net/
 .. _Lua: http://www.lua.org/
 .. _Hollywood: http://www.airsoftsoftwair.com/
-.. _False:  http://strlen.com/false-language
 
 
 Why is there no m68k emulator in AROS?
 --------------------------------------
 
-To make old Amiga programs run on AROS, we have ported UAE_ to AROS. AROS's
-version of UAE will probably be a bit faster than other versions UAE since
-AROS needs less resources than other operating systems (which means UAE will
-get more CPU time), and we'll try to patch the Kickstart ROM in UAE to call
-AROS functions which will give another small improvement. Of course, this only
-applies to the native flavors of AROS and not the hosted flavors.
+There is already an attempt to integrate the emulator janus-uae.
 
 But why don't we simply implement a virtual m68k CPU to run software directly
 on AROS? Well, the problem here is that m68k software expects the data to be
@@ -357,9 +344,8 @@ tell how a couple of bytes in RAM are encoded.
 Will there be an AROS Kickstart ROM?
 ------------------------------------
 
-There might be, if someone creates a native Amiga port of AROS and does all
-the other work needed to create a Kickstart ROM. Currently, no one has applied
-for the job.
+They are already available in the amiga-m68k-boot-iso package in the
+directory boot/amiga.
 
 
 Software questions
@@ -404,15 +390,6 @@ What does the Wanderer Snapshot <all/window> action actually do?
 This command remembers icon placement of all windows (or of a single window).
 
 
-I've launched AROS-hosted but it failed
----------------------------------------
-
-If you are root and AROS crashes at launch, do "xhost +" before
-"sudo && ./aros -m 20". You must also give it some memory with -m option as
-shown. The space between "-m" and the value is important. Also don't forget
-about BackingStore option in section Device of your xorg.conf.
-
-
 What are the command line options for AROS-hosted executable?
 -------------------------------------------------------------
 
@@ -436,23 +413,8 @@ Here are some::
     gfx=<hidd name>	- Use the named HIDD as the gfx driver
     lib=<name>		- Load and initiate the named library/HIDD
 
-And some older ones, if you're using older build (from r28786)::
-
-    nofdc		- Disables the floppy driver completely.
-    noclick		- Disables the floppy disk change detection
-                          (and clicking)
-
-
 Please note that the options are case-sensitive.
 
-
-Compilation Errors
-------------------
-
-Q: I`ve compiled AROS with gcc4 but found that compiled AROS-hosted segfaults
-with -m > 20 and if I compile AROS-native it does not start (black screen)
-
-A: Add -fno-strict-aliasing to scripts/aros-gcc.in and try to recompile.
 
 
 How can I make a DOS script that automatically runs for an installed package?
