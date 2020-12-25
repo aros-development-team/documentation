@@ -80,6 +80,14 @@ pc-x86_64-boot-iso:
 pc-x86_64-smp-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
+raspi-armhf-system:
+    The native version for ARMv6 based Raspberry Pi computers.
+    Contains all files needed to boot from a FAT formatted sd-card.
+raspi-armhf-ports:
+    This archive contains applications and games which are built
+    from external sources for the armhf architecture (both hosted
+    and native). Because of its size the archive will only be updated
+    from time to time on the snapshots page.
 pc-i386-contrib:
     Este arquivo contém todo o programa contribuído
     compilado para a arquitectura i386. Eles irão funcionar em

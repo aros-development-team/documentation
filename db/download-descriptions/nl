@@ -71,6 +71,14 @@ pc-i386-boot-iso:
     De native versie voor i386-gebaseerde PC AT compatibele computers.
     Dit is een opstartbaar CDROM ISO bestand, dat alle AROS systeem en
     gecontribueerde programma's bevat.
+raspi-armhf-system:
+    The native version for ARMv6 based Raspberry Pi computers.
+    Contains all files needed to boot from a FAT formatted sd-card.
+raspi-armhf-ports:
+    This archive contains applications and games which are built
+    from external sources for the armhf architecture (both hosted
+    and native). Because of its size the archive will only be updated
+    from time to time on the snapshots page.
 pc-i386-contrib:
     Dit archief bevat alle gecontribueerde programma's gecompileerd voor
     de i386 architectuur. Deze werken zowel in de gehoste (bijv. i386-linux)

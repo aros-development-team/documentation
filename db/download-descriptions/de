@@ -107,6 +107,14 @@ efika-chrp-ppc-boot-iso:
     bootfähige CDROM ISO-Speicherabbild einschließlich ub2lb für
     "open firmware". Es enthält alle AROS System- und beigesteuerte
     Programme.
+raspi-armhf-system:
+    The native version for ARMv6 based Raspberry Pi computers.
+    Contains all files needed to boot from a FAT formatted sd-card.
+raspi-armhf-ports:
+    This archive contains applications and games which are built
+    from external sources for the armhf architecture (both hosted
+    and native). Because of its size the archive will only be updated
+    from time to time on the snapshots page.
 pc-i386-contrib:
     Dieses Archiv enthält alle beigesteuerten Programme für die
     i386-Architektur. Sie funktionieren sowohl für hosted (z.B. i386-linux)
