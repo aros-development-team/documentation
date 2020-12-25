@@ -71,7 +71,15 @@ pc-i386-boot-floppy:
 pc-i386-boot-iso:
     Native version för i386-baserade PC AT datorer och kompatibla.
     Detta är en bootbar CDROM ISO image, som innehåller alla
-    AROS-system och bidragande program. 
+    AROS-system och bidragande program.
+raspi-armhf-system:
+    The native version for ARMv6 based Raspberry Pi computers.
+    Contains all files needed to boot from a FAT formatted sd-card.
+raspi-armhf-ports:
+    This archive contains applications and games which are built
+    from external sources for the armhf architecture (both hosted
+    and native). Because of its size the archive will only be updated
+    from time to time on the snapshots page.
 pc-i386-contrib:
     Detta arkiv innehåller alla bidragande program komplierade
     för i386-arkitekturen. Dom fungerar både i (i386-linux)
