@@ -259,7 +259,7 @@ Notes
 See also
 ~~~~~~~~
 
-`TR_GETSYSTIME`_ `TR_SETSYSTIME`_ `GetSysTime`_ 
+`TR_GETSYSTIME`_ `TR_SETSYSTIME`_ `GetSysTime()`_ 
 
 ----------
 

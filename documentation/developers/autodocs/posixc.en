@@ -75,6 +75,7 @@ Notes
      On AROS standardized C interfaces are implemented with a few shared
      libraries. A distinction is made between a standard ANSI-C/ISO-C
      part and a POSIX emulation layer.
+     
      Here the POSIX part is documented.
 
      The posixc.library is a shared library that implements (part of) the C
@@ -83,7 +84,7 @@ Notes
      Purpose of this library is to implement a POSIX compliant compatibility
      layer. Currently no full implementation of the POSIX layer is provided
      but enough to port a lot of POSIX compliant or LINUX code over to AROS.
-     As this library has overhead in implementatio 'real' AROS/Amiga programs
+     As this library has overhead in implementation 'real' AROS/Amiga programs
      should not depend on this library.
 
      Also some non-standard or legacy POSIX functions are provided by the
@@ -110,7 +111,7 @@ Notes
 See also
 ~~~~~~~~
 
-stdc.library/--background_C99-- 
+stdc/--background_C99-- 
 
 ----------
 
@@ -281,7 +282,7 @@ Function
 See also
 ~~~~~~~~
 
-`scandir()`_ 
+`__posixc_scandir()`_ 
 
 ----------
 
@@ -390,7 +391,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `close()`_ `write()`_ `fopen()`_ 
+`open()`_ `close()`_ `write()`_ `__posixc_fopen()`_ 
 
 ----------
 
@@ -436,7 +437,7 @@ Result
 See also
 ~~~~~~~~
 
-`fsetpos()`_ 
+`__posixc_fsetpos()`_ 
 
 ----------
 
@@ -638,7 +639,7 @@ Result
 See also
 ~~~~~~~~
 
-`fgetpos()`_ 
+`__posixc_fgetpos()`_ 
 
 ----------
 
@@ -684,7 +685,7 @@ Result
 See also
 ~~~~~~~~
 
-`stat()`_ 
+`__posixc_stat()`_ 
 
 ----------
 
@@ -827,7 +828,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fwrite()`_ 
 
 ----------
 
@@ -873,7 +874,7 @@ Result
 See also
 ~~~~~~~~
 
-`stat()`_ `fstat()`_ 
+`__posixc_stat()`_ `__posixc_fstat()`_ 
 
 ----------
 
@@ -974,7 +975,7 @@ Result
 See also
 ~~~~~~~~
 
-`alphasort()`_ 
+`__posixc_alphasort()`_ 
 
 ----------
 
@@ -1092,7 +1093,7 @@ Result
 See also
 ~~~~~~~~
 
-`lstat()`_ `fstat()`_ 
+`__posixc_lstat()`_ `__posixc_fstat()`_ 
 
 ----------
 
@@ -1219,7 +1220,7 @@ Function
 See also
 ~~~~~~~~
 
-`scandir()`_ 
+`__posixc_scandir()`_ 
 
 ----------
 
@@ -1566,7 +1567,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `read()`_ `write()`_ `fopen()`_ 
+`open()`_ `read()`_ `write()`_ `__posixc_fopen()`_ 
 
 ----------
 
@@ -1607,7 +1608,7 @@ Result
 See also
 ~~~~~~~~
 
-`close()`_ `opendir()`_ `readdir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+`close()`_ `opendir()`_ `__posixc_readdir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
 
 ----------
 
@@ -1662,7 +1663,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `close()`_ `write()`_ `fopen()`_ 
+`open()`_ `close()`_ `write()`_ `__posixc_fopen()`_ 
 
 ----------
 
@@ -1712,7 +1713,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+`open()`_ `__posixc_readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
 
 ----------
 
@@ -2307,7 +2308,7 @@ Result
 See also
 ~~~~~~~~
 
-`fopen()`_ `open()`_ `close()`_ 
+`__posixc_fopen()`_ `open()`_ `close()`_ 
 
 ----------
 
@@ -2586,7 +2587,7 @@ Synopsis
 ::
 
   int fgetc(
-     FILE * stream)
+     FILE * stream
 
 
 Function
@@ -2661,7 +2662,7 @@ Result
 See also
 ~~~~~~~~
 
-`fsetpos()`_ 
+`__posixc_fsetpos()`_ 
 
 ----------
 
@@ -2723,7 +2724,7 @@ Example
 See also
 ~~~~~~~~
 
-`fopen()`_ `gets()`_ `fputs()`_ 
+`__posixc_fopen()`_ `gets()`_ `fputs()`_ 
 
 ----------
 
@@ -3111,7 +3112,7 @@ Result
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fwrite()`_ 
 
 ----------
 
@@ -3271,7 +3272,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fwrite()`_ 
 
 ----------
 
@@ -3384,7 +3385,7 @@ Result
 See also
 ~~~~~~~~
 
-`fgetpos()`_ 
+`__posixc_fgetpos()`_ 
 
 ----------
 
@@ -3430,7 +3431,7 @@ Result
 See also
 ~~~~~~~~
 
-`stat()`_ 
+`__posixc_stat()`_ 
 
 ----------
 
@@ -3485,7 +3486,7 @@ Result
 See also
 ~~~~~~~~
 
-`fopen()`_ `fseek()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fseek()`_ `fwrite()`_ 
 
 ----------
 
@@ -3706,7 +3707,7 @@ Result
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fwrite()`_ 
 
 ----------
 
@@ -5089,7 +5090,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ 
+`__posixc_fopen()`_ `fwrite()`_ 
 
 ----------
 
@@ -5177,7 +5178,7 @@ Result
 See also
 ~~~~~~~~
 
-`chmod()`_ `stat()`_ `umask()`_ 
+`chmod()`_ `__posixc_stat()`_ `umask()`_ 
 
 ----------
 
@@ -5450,7 +5451,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`close()`_ `read()`_ `write()`_ `fopen()`_ 
+`close()`_ `read()`_ `write()`_ `__posixc_fopen()`_ 
 
 ----------
 
@@ -5490,7 +5491,7 @@ Result
 See also
 ~~~~~~~~
 
-`open()`_ `readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+`open()`_ `__posixc_readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
 
 ----------
 
@@ -6295,8 +6296,8 @@ Synopsis
 ::
 
   int rename(
-     const char * oldpath,
-     const char * newpath)
+     const char * oldpath
+     const char * newpath
 
 
 Function
@@ -6353,7 +6354,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`fopen()`_ `fwrite()`_ `fseek()`_ 
+`__posixc_fopen()`_ `fwrite()`_ `fseek()`_ 
 
 ----------
 
@@ -6457,7 +6458,7 @@ Result
 See also
 ~~~~~~~~
 
-`alphasort()`_ 
+`__posixc_alphasort()`_ 
 
 ----------
 
@@ -7128,7 +7129,7 @@ Notes
 See also
 ~~~~~~~~
 
-`kill()`_ `pause()`_ `sigaction()`_ `signal()`_ `sigprocmask()`_ `sigwaitinfo()`_ `sigsetops()`_ `sigwait()`_ 
+`kill()`_ `pause()`_ `sigaction()`_ stdc/signal() `sigprocmask()`_ `sigwaitinfo()`_ `sigsetops()`_ `sigwait()`_ 
 
 ----------
 
@@ -7660,7 +7661,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`fopen()`_ `mkstemp()`_ 
+`__posixc_fopen()`_ `mkstemp()`_ 
 
 ----------
 

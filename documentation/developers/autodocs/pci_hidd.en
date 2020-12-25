@@ -21,8 +21,8 @@ CLID_Hidd_PCIDevice
 -------------------
 
 ========================================== ========================================== ========================================== ========================================== 
-`aoHidd_PCIDevice_Owner`_                  `moHidd_PCIDevice_AddInterrupt`_           `moHidd_PCIDevice_Obtain`_                 `moHidd_PCIDevice_ObtainVectors`_          
-`moHidd_PCIDevice_Release`_                `moHidd_PCIDevice_ReleaseVectors`_         `moHidd_PCIDevice_RemoveInterrupt`_        `moHidd_PCIDevice_VectorIRQ`_              
+`aoHidd_PCIDevice_Owner`_                  `moHidd_PCIDevice_AddInterrupt`_           `moHidd_PCIDevice_GetVectorAttribs`_       `moHidd_PCIDevice_Obtain`_                 
+`moHidd_PCIDevice_ObtainVectors`_          `moHidd_PCIDevice_Release`_                `moHidd_PCIDevice_ReleaseVectors`_         `moHidd_PCIDevice_RemoveInterrupt`_        
 
 ========================================== ========================================== ========================================== ========================================== 
 
@@ -99,6 +99,49 @@ See also
 ~~~~~~~~
 
 `moHidd_PCIDevice_RemoveInterrupt`_ 
+
+----------
+
+moHidd_PCIDevice_GetVectorAttribs
+=================================
+
+Synopsis
+~~~~~~~~
+::
+
+     UBYTE OOP_DoMethod(OOP_Object *obj, struct pHidd_PCIDevice_GetVectorAttribs *Msg);
+
+     UBYTE HIDD_PCIDevice_GetVectorAttribs(OOP_Object *obj, ULONG vectorno);
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the Hardware IRQ for a given device MSI vector.
+
+
+Inputs
+~~~~~~
+::
+
+     obj   - Pointer to the device object.
+     vectorno - Vector to return the IRQ for.
+     attribs - struct TagItem array of requested attrib details.
+
+
+Result
+~~~~~~
+::
+
+     Returns the Hardware IRQ on success, for use with AddIntServer.
+
+
+
+See also
+~~~~~~~~
+
+`moHidd_PCIDevice_ObtainVectors`_ exec/AddIntServer 
 
 ----------
 
@@ -313,48 +356,6 @@ See also
 
 `moHidd_PCIDevice_AddInterrupt`_ 
 
-----------
-
-moHidd_PCIDevice_VectorIRQ
-==========================
-
-Synopsis
-~~~~~~~~
-::
-
-     UBYTE OOP_DoMethod(OOP_Object *obj, struct pHidd_PCIDevice_VectorIRQ *Msg);
-
-     UBYTE HIDD_PCIDevice_VectorIRQ(OOP_Object *obj, ULONG vector);
-
-
-Function
-~~~~~~~~
-::
-
-     Returns the Hardware IRQ for a given device MSI vector.
-
-
-Inputs
-~~~~~~
-::
-
-     obj   - Pointer to the device object.
-     vector - Vector to return the IRQ for.
-
-
-Result
-~~~~~~
-::
-
-     Returns the Hardware IRQ on success, for use with AddIntServer.
-
-
-
-See also
-~~~~~~~~
-
-`moHidd_PCIDevice_ObtainVectors`_ `AddIntServer`_ 
-
 CLID_Hidd_PCIDriver
 -------------------
 
@@ -505,6 +506,7 @@ Inputs
      driverClass - A pointer to OOP class of the driver. In order to create an object
                    of some previously registered public class, use
                    oop.library/OOP_FindClass().
+     instanceTags - Tags used during driver instance creation.
 
 
 Result
