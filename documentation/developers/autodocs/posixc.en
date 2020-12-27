@@ -411,7 +411,7 @@ Function
 ~~~~~~~~
 ::
 
-     Get the current position in a stream. This function is eqivalent
+     Get the current position in a stream. This function is equivalent
      to ftell(). However, on some systems fpos_t may be a complex
      structure, so this routine may be the only way to portably
      get the position of a stream.
@@ -507,7 +507,7 @@ Notes
 ::
 
      On 32bit systems, fopen and related operations only work with
-     32bit filesystems/files. Anything larger than 2GB needs to use
+     32bit filesystems/files. Anything larger than 2 GB needs to use
      the correct 64bit structures and functions.
     
      This function must not be used in a shared library or
@@ -585,7 +585,7 @@ Bugs
 ~~~~
 ::
 
-     Not fully compatible with iso fseeko, especially in 'ab' and 'a+b'
+     Not fully compatible with ISO fseeko, especially in 'ab' and 'a+b'
      modes
 
 
@@ -613,7 +613,7 @@ Function
 ~~~~~~~~
 ::
 
-     Change the current position in a stream. This function is eqivalent
+     Change the current position in a stream. This function is equivalent
      to fseek() with whence set to SEEK_SET. However, on some systems
      fpos_t may be a complex structure, so this routine may be the only
      way to portably reposition a stream.
@@ -911,14 +911,13 @@ Result
      structure, or NULL if an error occurs  or  end-of-file  is
      reached.
 
-     The data returned by readdir() is  overwritten  by  subse­
-     quent calls to readdir() for the same directory stream.
+     The data returned by readdir() is overwritten by subsequent
+     calls to readdir() for the same directory stream.
 
      According  to POSIX, the dirent structure contains a field
      char d_name[] of unspecified size, with at  most  NAME_MAX
      characters  preceding the terminating null character.  Use
-     of other fields will harm the  portability  of  your  pro­
-     grams.
+     of other fields will harm the portability of your programs.
 
 
 
@@ -961,7 +960,7 @@ Inputs
                 added. If NULL all entries will be added.
      compar   - Function which will be used by qsort() for sorting of the
                 entries. The function alphasort() can be used for sorting
-                in alphabetical oder. If NULL sorting order isn't specified.
+                in alphabetical order. If NULL sorting order isn't specified.
 
 
 Result
@@ -1008,7 +1007,7 @@ Result
 ~~~~~~
 ::
 
-     0 on fail, other value on succes
+     0 on fail, other value on success
 
 
 Notes
@@ -1066,7 +1065,7 @@ Function
      dev_t           st_rdev;    - device ID (if the file is character
                                    or block special file)
      off_t           st_size;    - file size, in bytes
-     time_t          st_atime;   - time of last acces
+     time_t          st_atime;   - time of last access
      time_t          st_mtime;   - time of last data modification
      time_t          st_ctime;   - time of last file status change
      blksize_t       st_blksize; - optimal blocksize for I/O
@@ -1174,7 +1173,7 @@ Inputs
             to be checked:
 
             W_OK - for write permission
-            R_OK - for readpermissions
+            R_OK - for read permissions
             X_OK - for execute permission
             F_OK - Just to see whether the file exists
 
@@ -1295,7 +1294,7 @@ Result
 ::
 
      If the current directory was changed successfully, zero is returned.    
-     Otherwise, -1 is returned and errno set apropriately.
+     Otherwise, -1 is returned and errno set appropriately.
      
 
 Notes
@@ -1304,9 +1303,9 @@ Notes
 
      At program exit, the current working directory will be changed back
      to the one that was current when the program first started. If you
-     do not desire this behaviour, use dos.library/CurrentDir() instead.
+     do not desire this behavior, use dos.library/CurrentDir() instead.
      The path given to chdir can be translated so that getcwd gives back
-     a string that is not the same but points to th same directory. For
+     a string that is not the same but points to the same directory. For
      example, assigns are replaced by the path where the assign points to
      and device names (like DH0:) are replaced with the volume name
      (e.g. Workbench:).
@@ -1494,7 +1493,7 @@ Inputs
 
      clk_id - identifier of the particular clock on which to act
              CLOCK_REALTIME 
-             System-wide realtime clock. Setting this clock requires appropriate privileges. 
+             System-wide real-time clock. Setting this clock requires appropriate privileges.
              CLOCK_MONOTONIC 
              Clock that cannot be set and represents monotonic time since some unspecified starting point. 
              CLOCK_PROCESS_CPUTIME_ID 
@@ -2182,7 +2181,7 @@ Result
 ::
 
      If the current directory was changed successfully, zero is returned.
-     Otherwise, -1 is returned and errno set apropriately.
+     Otherwise, -1 is returned and errno set appropriately.
      
 
 Notes
@@ -2191,7 +2190,7 @@ Notes
 
      At program exit, the current working directory will be changed back
      to the one that was current when the program first started. If you
-     do not desire this behaviour, use dos.library/CurrentDir() instead.
+     do not desire this behavior, use dos.library/CurrentDir() instead.
 
 
 
@@ -2423,12 +2422,12 @@ Inputs
 ::
 
      filedes - The descriptor the stream has to be associated with
-     mode    - The mode of the stream  (same as with fopen()) must be com­
-               patible with the mode of the file  descriptor.   The  file
+     mode    - The mode of the stream  (same as with fopen()) must be com­patible
+               with the mode of the file  descriptor.   The  file
                position  indicator  of  the  new  stream  is  set to that
-               belonging to filedes, and the error and end-of-file indica­
-               tors  are cleared.  Modes "w" or "w+" do not cause trunca­
-               tion of the file.  The file descriptor is not dup'ed,  and
+               belonging to filedes, and the error and end-of-file indicators
+               are cleared.  Modes "w" or "w+" do not cause truncation of the
+               file.  The file descriptor is not duplicated,  and
                will  be  closed  when  the  stream  created  by fdopen is
                closed.
 
@@ -2467,7 +2466,7 @@ Function
 ::
 
      Test the EOF-Flag of a stream. This flag is set automatically by
-     any function which recognises EOF. To clear it, call clearerr().
+     any function which recognizes EOF. To clear it, call clearerr().
 
 
 Inputs
@@ -2557,7 +2556,7 @@ Function
 ::
 
      Flush a stream. If the stream is an input stream, then the stream
-     is synchronised for unbuffered I/O. If the stream is an output
+     is synchronized for unbuffered I/O. If the stream is an output
      stream, then any buffered data is written.
 
 
@@ -2636,7 +2635,7 @@ Function
 ~~~~~~~~
 ::
 
-     Get the current position in a stream. This function is eqivalent
+     Get the current position in a stream. This function is equivalent
      to ftell(). However, on some systems fpos_t may be a complex
      structure, so this routine may be the only way to portably
      get the position of a stream.
@@ -2927,7 +2926,7 @@ Notes
 ~~~~~
 ::
 
-     Provides access larger to files that may be larger than 2GB, if the
+     Provides access larger to files that may be larger than 2 GB, if the
      underlying filesystem supports it.
     
      This function must not be used in a shared library or
@@ -3143,15 +3142,15 @@ Inputs
 ::
 
      path   - the file to open
-     mode   - The mode of the stream  (same as with fopen()) must be com­
-              patible with the mode of the file  descriptor.   The  file
+     mode   - The mode of the stream  (same as with fopen()) must be com­patible
+              with the mode of the file  descriptor.   The  file
               position  indicator  of  the  new  stream  is  set to that
-              belonging to fildes, and the error and end-of-file indica­
-              tors  are cleared.  Modes "w" or "w+" do not cause trunca­
-              tion of the file.  The file descriptor is not dup'ed,  and
+              belonging to fildes, and the error and end-of-file indicators
+              are cleared.  Modes "w" or "w+" do not cause truncation of the
+              file.  The file descriptor is not duplicated,  and
               will  be  closed  when  the  stream  created  by fdopen is
               closed.
-     stream - the stream to wich the file will be associated.
+     stream - the stream to which the file will be associated.
 
 
 Result
@@ -3261,7 +3260,7 @@ Bugs
 ~~~~
 ::
 
- Not fully compatible with iso fseek, especially in 'ab' and 'a+b'
+ Not fully compatible with ISO fseek, especially in 'ab' and 'a+b'
  modes
 
  Since it's not possible to use Seek() for directories, this
@@ -3331,7 +3330,7 @@ Bugs
 ~~~~
 ::
 
-     Not fully compatible with iso fseeko, especially in 'ab' and 'a+b'
+     Not fully compatible with ISO fseeko, especially in 'ab' and 'a+b'
      modes
 
 
@@ -3359,7 +3358,7 @@ Function
 ~~~~~~~~
 ::
 
-     Change the current position in a stream. This function is eqivalent
+     Change the current position in a stream. This function is equivalent
      to fseek() with whence set to SEEK_SET. However, on some systems
      fpos_t may be a complex structure, so this routine may be the only
      way to portably reposition a stream.
@@ -3519,7 +3518,7 @@ Notes
 ~~~~~
 ::
 
-     Returns the position in files that may be larger than 2GB, if the
+     Returns the position in files that may be larger than 2 GB, if the
      underlying filesystem supports it.
 
 
@@ -3739,7 +3738,7 @@ Inputs
 ::
 
      number  - The number to convert.
-     ndigits - The number of significan digits that the string has to have.
+     ndigits - The number of significant digits that the string has to have.
      buf     - The buffer that will contain the result string.
 
 
@@ -4047,7 +4046,7 @@ Inputs
 ::
 
      buf - pointer to statfs structures where information about filesystems
-         will be stored or NULL
+           will be stored or NULL
      bufsize - size of buf in bytes
      flags - not used
 
@@ -4741,7 +4740,7 @@ Inputs
              DST_EET         // Eastern European dst
              DST_CAN         // Canada
              DST_GB          // Great Britain and Eire
-             DST_RUM         // Rumania
+             DST_RUM         // Romania
              DST_TUR         // Turkey
              DST_AUSTALT     // Australian style with shift in 1986
 
@@ -4925,7 +4924,7 @@ Bugs
 ~~~~
 ::
 
-     Only the requests listed above are implented.
+     Only the requests listed above are implemented.
 
 
 
@@ -5286,7 +5285,7 @@ Bugs
 
      Cannot create more than 26 filenames for the same process id. This is because
      the "bumping" is only done to the first tail character - it should be
-     generalised to bump more characters if necessary.
+     generalized to bump more characters if necessary.
 
 
 
@@ -5404,7 +5403,7 @@ Inputs
              O_NOCTTY:
              O_TRUNC: If the file exists, then it gets overwritten. This
                      is the default and the opposite to O_APPEND.
-             O_APPEND: If the file exists, then the startung position for
+             O_APPEND: If the file exists, then the starting position for
                      writes is the end of the file.
              O_NONBLOCK or O_NDELAY: Opens the file in non-blocking mode.
                      If there is no data in the file, then read() on a
@@ -6078,7 +6077,7 @@ Function
 ~~~~~~~~
 ::
 
-     Print a string to stdout. A newline ('\n') is emmitted after the
+     Print a string to stdout. A newline ('\n') is emitted after the
      string.
 
 
@@ -6223,14 +6222,13 @@ Result
      structure, or NULL if an error occurs  or  end-of-file  is
      reached.
 
-     The data returned by readdir() is  overwritten  by  subse­
-     quent calls to readdir() for the same directory stream.
+     The data returned by readdir() is  overwritten  by subsequent
+     calls to readdir() for the same directory stream.
 
      According  to POSIX, the dirent structure contains a field
      char d_name[] of unspecified size, with at  most  NAME_MAX
      characters  preceding the terminating null character.  Use
-     of other fields will harm the  portability  of  your  pro­
-     grams.
+     of other fields will harm the portability of your programs.
 
 
 
@@ -6444,7 +6442,7 @@ Inputs
                 added. If NULL all entries will be added.
      compar   - Function which will be used by qsort() for sorting of the
                 entries. The function alphasort() can be used for sorting
-                in alphabetical oder. If NULL sorting order isn't specified.
+                in alphabetical order. If NULL sorting order isn't specified.
 
 
 Result
@@ -6585,9 +6583,9 @@ Inputs
 ::
 
      name      - Name of the environment variable,
-     value     - Value wich the variable must be set or changed to.
+     value     - Value which the variable must be set or changed to.
      overwrite - If non-zero then, if a variable with the name name already
-                 exists, its value is changet to value, otherwise is not
+                 exists, its value is changed to value, otherwise is not
                  changed
                  
 
@@ -6926,7 +6924,7 @@ Inputs
 ~~~~~~
 ::
 
-     Set to initialise
+     Set to initialize
 
 
 Result
@@ -7165,7 +7163,7 @@ Result
 ::
 
      Zero if the requested time has elapsed, or the number of seconds
-     left to sleep when the process was signalled.
+     left to sleep when the process was signaled.
 
 
 Example
@@ -7183,7 +7181,7 @@ Bugs
      The current implementation simply uses the dos.library function
      Delay() to sleep, and cannot be interrupted by incoming signals.
      This shouldn't be of any importance, since AROS doesn't have 
-     POSIX style signalling yet (but when it is implemented, this
+     POSIX style signaling yet (but when it is implemented, this
      function needs to be changed). 
 
 
@@ -7232,7 +7230,7 @@ Function
      dev_t           st_rdev;    - device ID (if the file is character
                                    or block special file)
      off64_t         st_size;    - (lfs) file size, in bytes
-     time_t          st_atime;   - time of last acces
+     time_t          st_atime;   - time of last access
      time_t          st_mtime;   - time of last data modification
      time_t          st_ctime;   - time of last file status change
      blksize_t       st_blksize; - optimal blocksize for I/O
@@ -7838,7 +7836,7 @@ Inputs
      c - Put this character back into the stream. The next read will
              return this character. If you push back more than one
              character, then they will be returned in reverse order.
-             The function gurantees that one character can be
+             The function guarantees that one character can be
              pushed back but no more. It is possible to push the EOF
              character back into the stream.
      stream - Read from this stream
@@ -8208,7 +8206,7 @@ Function
        memory region so changes to memory in the child are also seen by the
        parent.
 
-     Behaviour for other resources not described in this doc may not be
+     Behavior for other resources not described in this doc may not be
      relied on for future compatibility.
 
 
@@ -8463,7 +8461,7 @@ Notes
 ~~~~~
 ::
 
-     This function will work only for child processeses notifying parent
+     This function will work only for child processes notifying parent
      process of their death, for example processes created by vfork() call.
      If you want to use it for other processes, remember to set the
      NP_NotifyOnDeath tag value to TRUE during child process creation.
@@ -8548,7 +8546,7 @@ Notes
 ~~~~~
 ::
 
-     This function will work only for child processeses notifying parent
+     This function will work only for child processes notifying parent
      process of their death, for example processes created by vfork() call.
      If you want to use it for other processes, remember to set the
      NP_NotifyOnDeath tag value to TRUE during child process creation.

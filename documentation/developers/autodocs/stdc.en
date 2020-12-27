@@ -1905,7 +1905,7 @@ Function
 ::
 
      Flush a stream. If the stream is an input stream, then the stream
-     is synchronised for unbuffered I/O. If the stream is an output
+     is synchronized for unbuffered I/O. If the stream is an output
      stream, then any buffered data is written.
 
 
@@ -1986,7 +1986,7 @@ Function
 ~~~~~~~~
 ::
 
-     Get the current position in a stream. This function is eqivalent
+     Get the current position in a stream. This function is equivalent
      to ftell(). However, on some systems fpos_t may be a complex
      structure, so this routine may be the only way to portably
      get the position of a stream.
@@ -2395,7 +2395,7 @@ Inputs
               cleared and indication if stream is read and/or write.
               No change to position in file or no truncation will be
               performed.
-     stream - the stream to wich the file will be associated.
+     stream - the stream to which the file will be associated.
 
 
 Result
@@ -2514,7 +2514,7 @@ Bugs
 ~~~~
 ::
 
-     Not fully compatible with iso fseek, especially in 'ab' and 'a+b'
+     Not fully compatible with ISO fseek, especially in 'ab' and 'a+b'
      modes
 
 
@@ -2542,7 +2542,7 @@ Function
 ~~~~~~~~
 ::
 
-     Change the current position in a stream. This function is eqivalent
+     Change the current position in a stream. This function is equivalent
      to fseek() with whence set to SEEK_SET. However, on some systems
      fpos_t may be a complex structure, so this routine may be the only
      way to portably reposition a stream.
@@ -4229,7 +4229,7 @@ Notes
 ~~~~~
 ::
 
-     stdc.library currenlty only implements "C" locale.
+     stdc.library currently only implements "C" locale.
 
 
 
@@ -4282,7 +4282,7 @@ Notes
 ~~~~~
 ::
 
-     stdc.library currenlty only supports "C" locale
+     stdc.library currently only supports "C" locale
      This means that the function returns 0 when s is NULL and only 0, 1 or -1
      when s is not NULL.
 
@@ -4312,7 +4312,7 @@ Function
 ~~~~~~~~
 ::
 
-     Locate the first occurence of c which is converted to an unsigned
+     Locate the first occurrence of c which is converted to an unsigned
      char in the first n bytes of the memory pointed to by mem.
 
 
@@ -4845,9 +4845,9 @@ Bugs
 ::
 
      All functions are fully ANSI C3.159-1989 conformant, but provide
-     the additional flags q, Z and ' as well as an additional behaviour
+     the additional flags q, Z and ' as well as an additional behavior
      of the L and l flags. The latter may be considered to be a bug, as
-     it changes the behaviour of flags defined in ANSI C3.159-1989.
+     it changes the behavior of flags defined in ANSI C3.159-1989.
 
      The effect of padding the %p format with zeros (either by the 0
      flag or by specifying a precision), and the benign effect (i.e.,
@@ -4856,7 +4856,7 @@ Bugs
      combinations should be avoided.
 
      Some combinations of flags defined by ANSI C are not making sense
-     in ANSI C (e.g. %Ld). While they may have a well-defined behaviour
+     in ANSI C (e.g. %Ld). While they may have a well-defined behavior
      on Linux, this need not to be so on other architectures. Therefore
      it usually is better to use flags that are not defined by ANSI C at
      all, i.e. use q instead of L in combination with diouxX conversions
@@ -5109,7 +5109,7 @@ Notes
 ~~~~~
 ::
 
-     The behaviour of raise() follows the BSD semantics.
+     The behavior of raise() follows the BSD semantics.
      For each signal the system keeps track of a signal handler is already
      being called.
      If not, the signal handler is called; when yes this will logged and the
@@ -5534,7 +5534,7 @@ Result
 ~~~~~~
 ::
 
-     0 on succes, EOF on error. errno indicated error.
+     0 on success, EOF on error. errno indicated error.
      Function fails when size < 208 and buf != NULL.
 
 
@@ -6190,7 +6190,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of a non-blank character in str.
+     A pointer to the first occurrence of a non-blank character in str.
 
 
 Example
@@ -6434,7 +6434,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of search in str or NULL if search
+     A pointer to the first occurrence of search in str or NULL if search
      is not found in str.
 
 
@@ -6549,7 +6549,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of c in str or NULL if c is not
+     A pointer to the first occurrence of c in str or NULL if c is not
      found in str.
 
 
@@ -6994,7 +6994,7 @@ Function
 ~~~~~~~~
 ::
 
-     Calculate str1 - str2 ignoring case. Upto n characters are taken
+     Calculate str1 - str2 ignoring case. Up to n characters are taken
      into account.
 
 
@@ -7103,7 +7103,7 @@ Function
 ~~~~~~~~
 ::
 
-     Calculate str1 - str2 for upto n chars or upto the first 0 byte.
+     Calculate str1 - str2 for up to n chars or up to the first 0 byte.
 
 
 Inputs
@@ -7292,7 +7292,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of any character in accept in str
+     A pointer to the first occurrence of any character in accept in str
      or NULL if no character of accept is not found in str.
 
 
@@ -7350,7 +7350,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of c in str or NULL if c is not
+     A pointer to the first occurrence of c in str or NULL if c is not
      found in str.
 
 
@@ -7591,7 +7591,7 @@ Result
 ~~~~~~
 ::
 
-     A pointer to the first occurence of search in str or NULL if search
+     A pointer to the first occurrence of search in str or NULL if search
      is not found in str.
 
 
@@ -8032,7 +8032,7 @@ Inputs
      str - The string which should be converted. Leading
              whitespace are ignored. The number may be prefixed
              by a '+' or '-'. An 'e' or 'E' introduces the exponent.
-             Komma is only allowed before exponent.
+             Comma is only allowed before exponent.
      endptr - If this is non-NULL, then the address of the first
              character after the number in the string is stored
              here.
@@ -8700,7 +8700,7 @@ Inputs
      c - Put this character back into the stream. The next read will
              return this character. If you push back more than one
              character, then they will be returned in reverse order.
-             The function gurantees that one character can be
+             The function guarantees that one character can be
              pushed back but no more. It is possible to push the EOF
              character back into the stream.
      stream - Read from this stream
