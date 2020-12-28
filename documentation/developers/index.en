@@ -4,8 +4,7 @@ Developers Resources
 
 + `How to contribute`__
 + `Roadmap`__
-+ `Bug tracker on Sourceforge`__
-+ `Feature requests on Sourceforge`__
++ `Issue tracker on Github`__
 + `Git access and usage`__
 + `How to compile`__
 + `Applications development manual`__
@@ -26,8 +25,7 @@ Developers Resources
 
 __ contribute
 __ roadmap
-__ http://sourceforge.net/p/aros/bugs/
-__ http://sourceforge.net/p/aros/feature-requests/
+__ https://github.com/aros-development-team/AROS/issues
 __ git
 __ compiling
 __ app-dev/index
