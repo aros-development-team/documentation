@@ -11,7 +11,7 @@ AROS Installation Guide
             updating to the current status.
 :Abstract:
     This manual will guide you through the necessary steps for installing
-    different AROS flavours.
+    different AROS flavors.
 
     .. Warning::
 
@@ -23,6 +23,7 @@ AROS Installation Guide
 
 
 .. Contents::
+
 
 Downloading
 ===========
@@ -43,37 +44,28 @@ available and how to download them.
 
 
 
+Installation of AROS/linux-i386 and AROS/linux-x86-64
+=====================================================
 
-
-
-Installation
-============
-
-AROS/linux-i386 and AROS/linux-x86-64
--------------------------------------
 
 Requirements
-""""""""""""
+------------
 
 To run AROS/linux-i386 or AROS/linux-x86-64 you will need the following:
 
 + A working Linux installation (doesn't really matter which
   distribution you run, as long as it's relatively recent).
-+ A configured and working X server (for example X.Org or XFree86) for
-  x11.hidd, or libsdl installed (for sdl.hidd).
++ A configured and working X server (for example X.Org or XFree86)
 
 That's it.
 
 
-
-
 Extracting
-""""""""""
+----------
 
 Since AROS/linux-i386 and AROS/linux-x86-64 are hosted flavors of AROS,
-installation is simple. Simply get the appropriate archives
-for your platform from the `download page`_ and extract them where you want
-them::
+installation is simple. Just get the appropriate archives for your platform
+from the `download page`_ and extract them where you want them::
 
     > tar -vxjf AROS-<version>-<platform>-<cpu>-system.tar.bz2
 
@@ -82,29 +74,35 @@ If you downloaded the contrib archive, you may want to extract it too::
     > tar -vxjf AROS-<version>-pc-<cpu>-contrib.tar.bz2
 
 
-
-
 Running
-"""""""
+-------
 
 After having extracted all files you can launch AROS like this::
 
     > cd AROS
-    > boot/linux/AROSBootstrap -m <size of mem used for AROS in MB>
+    > boot/linux/AROSBootstrap [options] [kernel arguments]
+
+Options::
+
+     -m <size>          allocate <size> Megabytes of memory for AROS
+                        (default is 64MB)
+     -c <file>          read configuration from <file>
+                        (default is boot/linux/AROSBootstrap.conf)
+     --memsize <size>   same as '-m <size>'
+     --config <file>    same as '-c'
+
+Kernel arguments::
+
+    mungwall           enables memory checks
+    --fullscreen       runs AROS in fullscreen mode
 
 
-Also there's an sdl.hidd, allowing you to run AROS-Hosted without any X-server
-ever installed. It's known to be working, but is in testing stage.
 
-
-
-
-
-AROS/pc-i386 and AROS/pc-x86-64
--------------------------------
+Installation of AROS/pc-i386 and AROS/pc-x86_64
+===============================================
 
 Requirements
-""""""""""""
+------------
 
 .. Note::
 
@@ -138,9 +136,8 @@ limited.
 
 
 
-
 BIOS Settings
-"""""""""""""
+-------------
 
 AROS relies on the BIOS to do some hardware configuration that other
 operating systems handle by themselves. Because of this, the BIOS
@@ -167,19 +164,12 @@ reinstall them.
 
 
 
-Installation media
-""""""""""""""""""
+Installation from CD-ROM
+------------------------
 
 The recommended installation media for AROS/pc-i386 and AROS/pc-x86_64 is
 CD-ROM, since the whole system fits on a single disc (and also all the
 contributed software).
-
-
-CD-ROM
-^^^^^^
-
-Writing
-'''''''
 
 Simply download the ISO image from the `download page`_ (we recommend
 using a download manager able to resume broken downloads, like wget)
@@ -190,12 +180,6 @@ and it's just simple. Other examples are CDBurnerXP, DeepBurn, and AstroBurn.
 In the Linux world there are k3B, Brasero and others. On Amiga (and AROS) you
 can use FryingPan.
 
-__ http://infrarecorder.sourceforge.net
-
-
-Booting
-'''''''
-
 The easiest way to boot from the AROS installation CD is if you have a
 computer that supports booting from CD-ROM. This might require additional
 changes in the BIOS set-up, though, to enable booting from CD-ROM, as it is
@@ -205,24 +189,22 @@ first CD-ROM drive and reboot the computer. The boot is fully automatic, and
 if everything works you should see a nice screen after a little while.
 
 If your computer does not support booting directly from CD-ROM, you can create
-a boot floppy_ and use it together with the CD-ROM. Simply insert both the
+a boot floppy and use it together with the CD-ROM. Simply insert both the
 boot floppy and the CD into their respective drives and reboot. AROS will
 start booting from the floppy, but after the most important things have been
 loaded (including the CD-ROM file system handler) it will continue booting
 from the CD-ROM.
 
+__ http://infrarecorder.sourceforge.net
 
 
-Floppy
-^^^^^^
+
+Installing from Floppy
+----------------------
 
 These days floppies can be found useful only to boot if your PC's BIOS
 doesn't support booting from CD or on some really obsolete PCs. But it's
 still maintained.
-
-
-Writing
-'''''''
 
 To create the boot floppy, you will need to download the disk image from
 the `download page`_, extract the archive, and write the boot image to a
@@ -237,17 +219,14 @@ a floppy. Please see the documentation of rawrite_ for information on how to
 use it. There's also an GUI version called rawwritewin.
 
 
-Booting
-'''''''
-
-Simply insert the boot floppy into the drive and reboot the computer. The boot
+To boot simply insert the boot floppy into the drive and reboot the computer. The boot
 is fully automatic, and if everything works you should see a nice screen after
 a while.
 
 
 
 Installing to hard drive
-""""""""""""""""""""""""
+------------------------
 
 Note that you have been WARNED that AROS is still in development. Though
 harddisk installation is well-developed by now; there is still an off chance
@@ -372,7 +351,7 @@ used to boot Vista, you'd just need to add a menu entry to your
     chainloader +1
 
 If you prefer to use the Vista bootloader, there are programs like EasyBCD to
-manage its behaviour.
+manage its behavior.
 
 TO-DO more...
 
@@ -646,7 +625,7 @@ box) ::
     Show Bootloader Options         [V]
         <Yes, bootloader will not be installed otherwise>
 
-Note that *Show Partitioning Options* can be unselectable and greyed out
+Note that *Show Partitioning Options* can be unselectable and grayed out
 if the installer is unable to find any suitable partition.
 
 After you've made the selection you want, click *Proceed*.
