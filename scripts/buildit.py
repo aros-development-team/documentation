@@ -433,8 +433,8 @@ def copyImages():
 
     pathscopy('hello.png', srcpath, dstpath)
 
-    # user/shell
-    imagepath = 'documentation/users/shell/images'
+    # users
+    imagepath = 'documentation/users/images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
 
@@ -442,6 +442,15 @@ def copyImages():
 
     pathscopy(
         [
+            'installer1.png',
+            'installer2.png',
+            'installer3.png',
+            'installer4.png',
+            'installer5.png',
+            'installer6.png',
+            'installer7.png',
+            'installer8.png',
+            'installer9.png',
             'shell.png'
         ],
         srcpath,
