@@ -78,6 +78,11 @@ pc-x86_64-smp-boot-iso:
 raspi-armhf-system:
     The native version for ARMv6 based Raspberry Pi computers.
     Contains all files needed to boot from a FAT formatted sd-card.
+raspi-armhf-contrib:
+    This archive contains all the contributed programs,
+    compiled for the ARM architecture, for use with the
+    RasPi/ARM port (using hard-float ABI). Please note that this
+    version requires at least an ARMv6 CPU with VFP unit.
 raspi-armhf-ports:
     This archive contains applications and games which are built
     from external sources for the armhf architecture (both hosted
