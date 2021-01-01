@@ -255,10 +255,10 @@ def makeNews():
         # Create a recent news page
         if utility.newer(current, _dst):
             output = file(_dst, 'w')
-            output.write(titleReST(_T['news']))
+            output.write(utility.titleReST(_T['news']))
             for filepath in current:
-                output.write(htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # Not ideal, but at least legal HTML
-                output.write(drctReST('include', filepath))
+                output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # Not ideal, but at least legal HTML
+                output.write(utility.drctReST('include', filepath))
             output.close()
 
         # Create year news pages
@@ -269,10 +269,10 @@ def makeNews():
 
                 if utility.newer(archives[lang][year], _dst):
                     output = file(_dst, 'w')
-                    output.write(titleReST(_T['news-archive-for'] + ' ' + year))
+                    output.write(utility.titleReST(_T['news-archive-for'] + ' ' + year))
                     for filepath in archives[lang][year]:
-                        output.write(htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # At least legal HTML
-                        output.write(drctReST('include', filepath))
+                        output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # At least legal HTML
+                        output.write(utility.drctReST('include', filepath))
                     output.close()
 
     return True
@@ -504,11 +504,16 @@ def copyHeaders():
 def buildClean():
     shutil.rmtree(DSTROOT, True)
 
-    filenames = glob.glob('credits.??') \
-        + glob.glob('news/index.??') \
-        + glob.glob('news/archive/20[0-9][0-9].??')
+    filenames = glob.glob('news/index.??') \
+        + glob.glob('news/archive/20[0-9][0-9].??') \
+        + glob.glob('targets/www/template.html.*')
+
     for filename in filenames:
-        remove(filename)
+        utility.remove(filename)
+    
+    # the localized versions of credits.* aren't
+    # created by the script. Hence we can only delete credits.en
+    utility.remove('credits.en')
 
 
 def buildWWW():
@@ -635,9 +640,6 @@ def buildWWW():
     if os.path.exists(rsfeed_dest):
         shutil.rmtree(rsfeed_dest)
     utility.copytree('targets/www/rsfeed', rsfeed_dest)
-
-    toolpath = os.path.join(TRGROOT, 'tools')
-    utility.makedir(toolpath)
 
     # Remove index-offline.php
     utility.remove(os.path.join(TRGROOT, 'index-offline.php'))
