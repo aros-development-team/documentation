@@ -1,12 +1,10 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2002, The AROS Development Team. All rights reserved.
+# Copyright © 2002-2020, The AROS Development Team. All rights reserved.
 # $Id$
 
 import os, sys
 
-from build.utility import *
-
-import db.mirrors.format.html
+from build import utility
 
 from page import makePage
 from ConfigParser import ConfigParser
@@ -39,11 +37,11 @@ def makeTemplates():
         file( dst, 'w' ).write( makePage( _T, _N, _M, '', language, charset ) )
 
     for language in os.listdir( LANG_DIR ):
-        if ignore( language ): continue 
+        if utility.ignore( language ): continue
 
         dst = os.path.join( DST_DIR, 'template.html.' + language )
        
-        if newer \
+        if utility.newer \
         ( 
             [ 
                 __file__, 
@@ -53,7 +51,7 @@ def makeTemplates():
             ], 
             dst 
         ):
-            reportBuilding( dst )
+            utility.reportBuilding( dst )
             makeTemplate( language, dst )
         else:
-            reportSkipping( dst )
+            utility.reportSkipping( dst )
