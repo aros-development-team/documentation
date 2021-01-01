@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2002-2012, The AROS Development Team. All rights reserved.
+# Copyright © 2002-2020, The AROS Development Team. All rights reserved.
 # $Id$
 
 import os
@@ -15,11 +15,11 @@ import db.tasks.format.html
 from docutils.core import Publisher
 from docutils.io import NullOutput
 
-from build.utility import *
-from build.thumbnail import *
+from build import utility
+from build import thumbnail
 
 from template.www import makeTemplates
-from template.www.gallery import *
+from template.www import gallery 
 
 import autodoc
 
@@ -66,7 +66,7 @@ def recurse(function, path='.', depth=0):
     for name in os.listdir(path):
         name = os.path.join(path, name)
 
-        if not ignore(name):
+        if not utility.ignore(name):
             if os.path.isdir(name):
                 recurse(function, name, depth + 1)
             else:
@@ -85,21 +85,21 @@ def processPicture(src, depth):
     src_abs = os.path.normpath(os.path.join(SRCROOT, src))
     dst_dir = os.path.dirname(dst_abs)
 
-    tn_dst     = makeThumbnailPath(src)
+    tn_dst     = thumbnail.makeThumbnailPath(src)
     tn_dst_abs = os.path.normpath(os.path.join(TRGROOT, tn_dst))
     tn_dst_dir = os.path.dirname(tn_dst_abs)
 
     # Make sure the destination directories exist.
-    makedir(dst_dir)
-    makedir(tn_dst_dir)
+    utility.makedir(dst_dir)
+    utility.makedir(tn_dst_dir)
 
     # Copy the original image over.
-    copy(src_abs, dst_abs)
+    utility.copy(src_abs, dst_abs)
 
     # Create the thumbnail.
-    if newer([src_abs], tn_dst_abs):
+    if utility.newer([src_abs], tn_dst_abs):
         print '» Thumbnailing', src
-        makeThumbnail(src_abs, tn_dst_abs, (200, 200))
+        thumbnail.makeThumbnail(src_abs, tn_dst_abs, (200, 200))
 
 
 # makePictures
@@ -146,7 +146,7 @@ def makePictures():
                     if pictureFormat not in ['jpg', 'jpeg', 'png']:
                         continue
 
-                    output += makePicture(
+                    output += gallery.makePicture(
                         picturePath,
                         convertWWW(pathAltLang(os.path.splitext(picturePath)[0], lang),
                                    lang, options), lang
@@ -173,7 +173,7 @@ def makePictures():
             else:
                 dst = os.path.join(TRGROOT, lang, root)
             if not os.path.exists(dst):
-                makedir(dst)
+                utility.makedir(dst)
             file(os.path.join(dst, filename), 'w').write(TEMPLATE_DATA[lang] % strings)
 
 
@@ -189,7 +189,7 @@ def makeStatus(extension='.php'):
             dstdir = os.path.join(TRGROOT, dstdir)
         else:
             dstdir = os.path.join(TRGROOT, lang, dstdir)
-        makedir(dstdir)
+        utility.makedir(dstdir)
         db.tasks.format.html.format(tasks, dstdir, TEMPLATE_DATA[lang], lang, extension)
 
 
@@ -246,14 +246,14 @@ def makeNews():
         _dst = NEWS_SRC_INDX + lang
 
         # Set up translated title dictionary
-        config = ConfigParser()
+        config = gallery.ConfigParser()
         config.read(os.path.join('targets/www/template/languages', lang))
         _T = {}
         for option in config.options('titles'):
             _T[option] = config.get('titles', option)
 
         # Create a recent news page
-        if newer(current, _dst):
+        if utility.newer(current, _dst):
             output = file(_dst, 'w')
             output.write(titleReST(_T['news']))
             for filepath in current:
@@ -267,7 +267,7 @@ def makeNews():
                 archives[lang][year].sort(reverse=True)
                 _dst = os.path.join(NEWS_SRC_ARCH + year + '.' + lang)
 
-                if newer(archives[lang][year], _dst):
+                if utility.newer(archives[lang][year], _dst):
                     output = file(_dst, 'w')
                     output.write(titleReST(_T['news-archive-for'] + ' ' + year))
                     for filepath in archives[lang][year]:
@@ -358,10 +358,10 @@ def processWWW(src, depth):
         src_abs = os.path.normpath(os.path.join(SRCROOT, src))
         dst_dir = os.path.dirname(dst_abs)
 
-        makedir(dst_dir)
+        utility.makedir(dst_dir)
 
-        if newer([TEMPLATE + lang, src_abs], dst_abs):
-            reportBuilding(dst)
+        if utility.newer([TEMPLATE + lang, src_abs], dst_abs):
+            utility.reportBuilding(dst)
             strings = {
                 'ROOT'    : '../' * dst_depth,
                 'BASE'    : '../' * dst_depth,
@@ -369,7 +369,7 @@ def processWWW(src, depth):
             }
             file(dst_abs, 'w').write(TEMPLATE_DATA[lang] % strings)
         else:
-            reportSkipping(dst)
+            utility.reportSkipping(dst)
 
 
 def processHTML(src, depth):
@@ -385,10 +385,10 @@ def processHTML(src, depth):
     src_abs = os.path.normpath(os.path.join(SRCROOT, src))
     dst_dir = os.path.dirname(dst_abs)
 
-    makedir(dst_dir)
+    utility.makedir(dst_dir)
 
-    if newer([src_abs], dst_abs):
-        reportBuilding(src)
+    if utility.newer([src_abs], dst_abs):
+        utility.reportBuilding(src)
         arguments = [
             '--no-generator',   '--language=' + suffix,
             '--no-source-link', '--no-datestamp',
@@ -404,7 +404,7 @@ def processHTML(src, depth):
         publisher.set_writer('html')
         publisher.publish(argv=arguments)
     else:
-        reportSkipping(dst)
+        utility.reportSkipping(dst)
 
 
 def copyImages():
@@ -413,9 +413,9 @@ def copyImages():
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
 
-    makedir(dstpath)
+    utility.makedir(dstpath)
 
-    pathscopy(
+    utility.pathscopy(
         [
             'windows-prefs-titlebar.png',
             'windows-prefs-buttons.png'
@@ -429,18 +429,18 @@ def copyImages():
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
 
-    makedir(dstpath)
+    utility.makedir(dstpath)
 
-    pathscopy('hello.png', srcpath, dstpath)
+    utility.pathscopy('hello.png', srcpath, dstpath)
 
     # users
     imagepath = 'documentation/users/images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
 
-    makedir(dstpath)
+    utility.makedir(dstpath)
 
-    pathscopy(
+    utility.pathscopy(
         [
             'installer1.png',
             'installer2.png',
@@ -462,9 +462,9 @@ def copyImages():
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
 
-    makedir(dstpath)
+    utility.makedir(dstpath)
 
-    pathscopy(
+    utility.pathscopy(
         [
             'aros-banner.gif',
             'aros-banner2.png',
@@ -491,14 +491,14 @@ def copySamples():
     srcpath = os.path.join('documentation', 'developers', 'samplecode')
     dstpath = os.path.join(TRGROOT, srcpath)
     shutil.rmtree(dstpath, True)
-    copytree(srcpath, dstpath)
+    utility.copytree(srcpath, dstpath)
 
 
 def copyHeaders():
     srcpath = os.path.join('documentation', 'developers', 'headerfiles')
     dstpath = os.path.join(TRGROOT, srcpath)
     shutil.rmtree(dstpath, True)
-    copytree(srcpath, dstpath)
+    utility.copytree(srcpath, dstpath)
 
 
 def buildClean():
@@ -521,9 +521,9 @@ def buildWWW():
             dstpath = TRGROOT
         else:
             dstpath = os.path.join(TRGROOT, lang)
-        remove(os.path.join(dstpath, 'index.php'))
-        remove(os.path.join(dstpath, 'introduction/index.php'))
-        remove(os.path.join(dstpath, 'download.php'))
+        utility.remove(os.path.join(dstpath, 'index.php'))
+        utility.remove(os.path.join(dstpath, 'introduction/index.php'))
+        utility.remove(os.path.join(dstpath, 'download.php'))
 
     makeNews()
     makeCredits()
@@ -537,13 +537,13 @@ def buildWWW():
 
     recurse(processWWW)
 
-    copy('license.html', TRGROOT)
+    utility.copy('license.html', TRGROOT)
 
     imagepath = os.path.join(TRGROOT, 'images')
-    makedir(imagepath)
+    utility.makedir(imagepath)
     srcpath = 'targets/www/images'
 
-    pathscopy(
+    utility.pathscopy(
         [
             'trustec-small.png',
             'genesi-small.gif',
@@ -598,7 +598,7 @@ def buildWWW():
     copyHeaders()
 
     srcpath= 'targets/www'
-    pathscopy(
+    utility.pathscopy(
         [
             'docutils.css',
             'aros.css',
@@ -609,49 +609,38 @@ def buildWWW():
         TRGROOT
     )
 
-    copy(os.path.join('targets/www', 'htaccess'), os.path.join(TRGROOT, '.htaccess'))
+    utility.copy(os.path.join('targets/www', 'htaccess'), os.path.join(TRGROOT, '.htaccess'))
 
     dbpath = os.path.join(TRGROOT, 'db')
-    makedir(dbpath)
+    utility.makedir(dbpath)
 
-    makedir(os.path.join(dbpath, 'download-descriptions'))
+    utility.makedir(os.path.join(dbpath, 'download-descriptions'))
     for lang in languages:
         desc_file = os.path.join('db/download-descriptions', lang)
         if os.path.exists(desc_file):
-            copy(desc_file, os.path.join(dbpath, 'download-descriptions'))
+            utility.copy(desc_file, os.path.join(dbpath, 'download-descriptions'))
 
     cgi_dest = os.path.join(TRGROOT, 'cgi-bin')
     if os.path.exists(cgi_dest):
         shutil.rmtree(cgi_dest)
-    copytree('targets/www/cgi-bin', cgi_dest)
+    utility.copytree('targets/www/cgi-bin', cgi_dest)
 
     thumb_dest = os.path.join(TRGROOT, 'images/thumbs')
     if os.path.exists(thumb_dest):
         shutil.rmtree(thumb_dest)
-    copytree('targets/www/images/thumbs', thumb_dest)
+    utility.copytree('targets/www/images/thumbs', thumb_dest)
 
 
     rsfeed_dest = os.path.join(TRGROOT, 'rsfeed')
     if os.path.exists(rsfeed_dest):
         shutil.rmtree(rsfeed_dest)
-    copytree('targets/www/rsfeed', rsfeed_dest)
+    utility.copytree('targets/www/rsfeed', rsfeed_dest)
 
     toolpath = os.path.join(TRGROOT, 'tools')
-    makedir(toolpath)
-
-    srcpath = 'targets/www/tools'
-    pathscopy(
-        [
-            'password.html',
-            'password.php',
-            'redirect.php'
-        ],
-        srcpath,
-        toolpath
-    )
+    utility.makedir(toolpath)
 
     # Remove index-offline.php
-    remove(os.path.join(TRGROOT, 'index-offline.php'))
+    utility.remove(os.path.join(TRGROOT, 'index-offline.php'))
 
     os.system('chmod -R go+r %s' % TRGROOT)
 
@@ -675,7 +664,7 @@ def buildHTML():
     copyHeaders()
 
     srcpath = 'targets/www'
-    pathscopy(
+    utility.pathscopy(
         [
             'docutils.css',
             'aros.css',
@@ -686,13 +675,13 @@ def buildHTML():
         TRGROOT
     )
 
-    copy('license.html', TRGROOT)
+    utility.copy('license.html', TRGROOT)
 
     # Make status
     makeStatus('.html')
 
     # Use index-offline as index
-    remove(os.path.join(TRGROOT, 'index.html'))
+    utility.remove(os.path.join(TRGROOT, 'index.html'))
     os.rename(os.path.join(TRGROOT, 'index-offline.html'), os.path.join(TRGROOT, 'index.html'))
 
     os.system('chmod -R go+r %s' % TRGROOT)
