@@ -42,7 +42,6 @@ steps:
     cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
 
-
 - script: |
     mkdir -p '$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source'
     cp -r $(AROSDOCSRCDIR)/* $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source/
@@ -61,13 +60,12 @@ steps:
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source.tar.bz2 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-    sshpass -p "$MAPPED_PASS" rsync -avz --rsh=ssh $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
+    sshpass -p "$MAPPED_PASS" rsync -avz --rsh="ssh -c arcfour" $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
     rm -Rf $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
   displayName: 'Deploying documentation source package'
-
 
 - script: |
     echo 'Calling build www...'
@@ -78,7 +76,7 @@ steps:
 - script: |
     mkdir -p ~/.ssh
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-    sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh $(AROSDOCBUILDDIR)/bin/documentation/www/ $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
+    sshpass -p "$MAPPED_PASS" rsync -rciv --rsh="ssh -c arcfour" $(AROSDOCBUILDDIR)/bin/documentation/www/ $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
@@ -107,7 +105,7 @@ steps:
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-    sshpass -p "$MAPPED_PASS" rsync -avz --rsh=ssh $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
+    sshpass -p "$MAPPED_PASS" rsync -avz --rsh="ssh -c arcfour" $(Build.BinariesDirectory)/Upload/ $MAPPED_USER,aros@web.sourceforge.net:uploads/nightly2/
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
