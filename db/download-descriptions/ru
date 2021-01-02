@@ -133,3 +133,15 @@ linux-arm-sdk:
     Набор файлов и инструментов для сборки ваших собственных программ AROS для 
     избранной платформы. Для этого также понадобятся gcc и binutils, 
     настроенные на компиляцию исполняемых файлов формата arm-elf.
+Linux-gnu-amiga-m68k-toolchain:
+    Linux GNU crosscompiler for AROS m68k target
+Linux-gnu-pc-i386-toolchain:
+    Linux GNU crosscompiler for AROS i386 target
+Linux-gnu-pc-x86_64-toolchain:
+    Linux GNU crosscompiler for AROS x86_64 target
+Linux-gnu-sam440-ppc-toolchain:
+    Linux GNU crosscompiler for AROS PPC target
+Linux-gnu-raspi-arm-toolchain:
+    Linux GNU crosscompiler for AROS ARM target
+Linux-gnu-mingw32-i386-toolchain:
+    Linux GNU crosscompiler for AROS mingw32 i386 target

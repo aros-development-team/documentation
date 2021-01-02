@@ -118,3 +118,15 @@ pc-x86_64-sdk:
     Set of files and tools to build your own AROS programs
     on your preferred machine. You'll need also gcc and the
     binutils configured to produce x86_64-elf executables.
+Linux-gnu-amiga-m68k-toolchain:
+    Linux GNU crosscompiler for AROS m68k target
+Linux-gnu-pc-i386-toolchain:
+    Linux GNU crosscompiler for AROS i386 target
+Linux-gnu-pc-x86_64-toolchain:
+    Linux GNU crosscompiler for AROS x86_64 target
+Linux-gnu-sam440-ppc-toolchain:
+    Linux GNU crosscompiler for AROS PPC target
+Linux-gnu-raspi-arm-toolchain:
+    Linux GNU crosscompiler for AROS ARM target
+Linux-gnu-mingw32-i386-toolchain:
+    Linux GNU crosscompiler for AROS mingw32 i386 target
