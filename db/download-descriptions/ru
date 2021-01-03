@@ -143,5 +143,7 @@ Linux-gnu-sam440-ppc-toolchain:
     Linux GNU crosscompiler for AROS PPC target
 Linux-gnu-raspi-arm-toolchain:
     Linux GNU crosscompiler for AROS ARM target
+Linux-gnu-raspi-armhf-toolchain:
+    Linux GNU crosscompiler for AROS ARM target
 Linux-gnu-mingw32-i386-toolchain:
     Linux GNU crosscompiler for AROS mingw32 i386 target
