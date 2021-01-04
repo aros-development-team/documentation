@@ -3,10 +3,8 @@ AROS Installation Guide
 =======================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey,
-            Sergey Mineychev
-:Copyright: Copyright (C) 1995-2020, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+            Sergey Mineychev, Matthias Rustler
+:Copyright: Copyright (C) 1995-2021, The AROS Development Team
 :Status:    Needs to be updated for some AROS ports. In works, being
             updating to the current status.
 :Abstract:
@@ -55,7 +53,8 @@ To run AROS/linux-i386 or AROS/linux-x86-64 you will need the following:
 
 + A working Linux installation (doesn't really matter which
   distribution you run, as long as it's relatively recent).
-+ A configured and working X server (for example X.Org or XFree86)
++ A configured and working X server (for example X.Org or XFree86) for
+  the X11 monitor driver, or libsdl installed for the SDL monitor driver.
 
 That's it.
 
@@ -94,7 +93,11 @@ Options::
 Kernel arguments::
 
     mungwall           enables memory checks
-    --fullscreen       runs AROS in fullscreen mode
+    --fullscreen       runs AROS in fullscreen mode (only X11)
+
+
+If you want to run AROS under libsdl instead of X11 you have to swap the files
+Storage/Monitors/SDL* with Devs/Monitors/X11*.
 
 
 
