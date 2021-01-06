@@ -19,9 +19,9 @@ Developers Resources
 + `Testing`__
 + `Documenting`__
 + `Porting software to AROS`__
-+ `Translating`__
 + `Summaries`__
 + `Useful links`__
++ `FAQ`__
 
 __ contribute
 __ roadmap
@@ -40,6 +40,6 @@ __ ui
 __ testing/index
 __ documenting
 __ porting
-__ translating
 __ summaries/index
 __ links
+__ faq
