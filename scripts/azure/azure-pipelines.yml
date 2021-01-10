@@ -108,12 +108,14 @@ steps:
       fi
     done
     if test -f "$(AROSDOCBUILDDIR)/rsync-directories.log"; then
+      echo "Deploying website directories using $(BUILDTHREADS) threads"
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
-      cd $(AROSDOCBUILDDIR)/bin/documentation/www && cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh {} $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/ttest/
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www && cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh {} $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
     fi
     if test -f "$(AROSDOCBUILDDIR)/rsync-files.log"; then
+      echo "Deploying website root files"
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
-      cd $(AROSDOCBUILDDIR)/bin/documentation/www && sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh `cat $(AROSDOCBUILDDIR)/rsync-files.log` $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/ttest/
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www && sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh `cat $(AROSDOCBUILDDIR)/rsync-files.log` $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
     fi
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
