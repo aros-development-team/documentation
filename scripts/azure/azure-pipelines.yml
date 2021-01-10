@@ -42,21 +42,21 @@ steps:
     cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
 
-  - script: |
-      echo "PATH=${PATH}"
-      export ncpu=
-      case '$(Agent.OS)' in
-      'Linux')
-        ncpu=$(nproc)
-        ;;
-      'Darwin')
-        ncpu=$(sysctl -n hw.ncpu)
-        ;;
-      esac
-      [[ -z "$ncpu" || $ncpu -le 0 ]] && ncpu=1
-      echo "Found ${ncpu} cores"
-      echo "##vso[task.setvariable variable=BUILDTHREADS;]$ncpu"
-    displayName: 'Detecting number of build threads'
+- script: |
+    echo "PATH=${PATH}"
+    export ncpu=
+    case '$(Agent.OS)' in
+    'Linux')
+      ncpu=$(nproc)
+      ;;
+    'Darwin')
+      ncpu=$(sysctl -n hw.ncpu)
+      ;;
+    esac
+    [[ -z "$ncpu" || $ncpu -le 0 ]] && ncpu=1
+    echo "Found ${ncpu} cores"
+    echo "##vso[task.setvariable variable=BUILDTHREADS;]$ncpu"
+  displayName: 'Detecting number of build threads'
 
 - script: |
     mkdir -p '$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source'
