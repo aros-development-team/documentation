@@ -42,6 +42,22 @@ steps:
     cp -R $(AROSDOCSRCDIR)/* $(AROSDOCSRCBUILDDIR)/
   displayName: 'Setup workspace'
 
+  - script: |
+      echo "PATH=${PATH}"
+      export ncpu=
+      case '$(Agent.OS)' in
+      'Linux')
+        ncpu=$(nproc)
+        ;;
+      'Darwin')
+        ncpu=$(sysctl -n hw.ncpu)
+        ;;
+      esac
+      [[ -z "$ncpu" || $ncpu -le 0 ]] && ncpu=1
+      echo "Found ${ncpu} cores"
+      echo "##vso[task.setvariable variable=BUILDTHREADS;]$ncpu"
+    displayName: 'Detecting number of build threads'
+
 - script: |
     mkdir -p '$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source'
     cp -r $(AROSDOCSRCDIR)/* $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source/
@@ -76,7 +92,29 @@ steps:
 - script: |
     mkdir -p ~/.ssh
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-    sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh $(AROSDOCBUILDDIR)/bin/documentation/www/ $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/
+    if test -f "$(AROSDOCBUILDDIR)/rsync-directories.log"; then
+        rm $(AROSDOCBUILDDIR)/rsync-directories.log
+    fi
+    if test -f "$(AROSDOCBUILDDIR)/rsync-files.log"; then
+        rm $(AROSDOCBUILDDIR)/rsync-files.log
+    fi
+    for entry in $(AROSDOCBUILDDIR)/bin/documentation/www/*
+    do
+      if test -d "$entry"; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-directories.log
+      fi
+      if test -f "$entry"; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-files.log
+      fi
+    done
+    if test -f "$(AROSDOCBUILDDIR)/rsync-directories.log"; then
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www && cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh {} $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/ttest/
+    fi
+    if test -f "$(AROSDOCBUILDDIR)/rsync-files.log"; then
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www && sshpass -p "$MAPPED_PASS" rsync -rciv --rsh=ssh `cat $(AROSDOCBUILDDIR)/rsync-files.log` $MAPPED_USER,aros@web.sourceforge.net:/home/project-web/aros/htdocs/ttest/
+    fi
   env:
     MAPPED_USER: $(SF_RSYNC_USER)
     MAPPED_PASS: $(SF_RSYNC_PASSWORD)
