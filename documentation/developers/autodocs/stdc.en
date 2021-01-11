@@ -53,8 +53,9 @@ stdc
 `strupr()`_                             `strxfrm()`_                            `system()`_                             `time()`_                               
 `tmpfile()`_                            `tmpnam()`_                             `ungetc()`_                             `vfprintf()`_                           
 `vfscanf()`_                            `vprintf()`_                            `vscanf()`_                             `vsnprintf()`_                          
-`vsprintf()`_                           `vsscanf()`_                            `wcstombs()`_                           `wctomb()`_                             
-
+`vsprintf()`_                           `vsscanf()`_                            `wcscat()`_                             `wcscmp()`_                             
+`wcscpy()`_                             `wcslen()`_                             `wcsncmp()`_                            `wcsncpy()`_                            
+`wcstombs()`_                           `wctomb()`_                             
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -9025,6 +9026,227 @@ See also
 ~~~~~~~~
 
 `scanf()`_ `sscanf()`_ `fscanf()`_ `vscanf()`_ `vfscanf()`_ 
+
+----------
+
+wcscat()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  wchar_t *wcscat(
+     wchar_t *wcdst,
+     const wchar_t *wcsrc)
+
+
+Function
+~~~~~~~~
+::
+
+     Appends a wide string, onto another wide string.
+
+
+Inputs
+~~~~~~
+::
+
+     wcdst - the wide string that will have the text appended to it.
+     wcsrc - the wide string to append.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to the resulting wide string.
+
+
+
+----------
+
+wcscmp()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int wcscmp(
+     const wchar_t *wcstra,
+     const wchar_t *wcstrb)
+
+
+Function
+~~~~~~~~
+::
+
+     Lexicographically compares two null-terminated wide strings.
+
+
+Inputs
+~~~~~~
+::
+
+     wcstra - wide string to compare.
+     wcstrb - wide string to compare.
+
+
+Result
+~~~~~~
+::
+
+     If wcstra appears before wcstrb lexographically, then -1 is returned.
+     If wcstrb appears before wcstra lexographically, then 1 is returned.
+     If the strings are equal, 0 is returned.
+
+
+
+----------
+
+wcscpy()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  wchar_t *wcscpy(
+     wchar_t *wcdst,
+     const wchar_t *wcsrc)
+
+
+Function
+~~~~~~~~
+::
+
+     Copies a wide string, to another wide string.
+
+
+Inputs
+~~~~~~
+::
+
+     wcdst - the wide string that will be copied to.
+     wcsrc - the wide string to copy.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to the resulting wide string.
+
+
+
+----------
+
+wcslen()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  size_t wcslen(
+     const wchar_t *wcstr)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the length of a wide string.
+
+
+Inputs
+~~~~~~
+::
+
+     wcstr - wide string to tally.
+
+
+Result
+~~~~~~
+::
+
+     The number of non-null wide characters, in the wide string.
+
+
+
+----------
+
+wcsncmp()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int wcsncmp(
+     const wchar_t *wcstra,
+     const wchar_t *wcstrb,
+     size_t cnt)
+
+
+Function
+~~~~~~~~
+::
+
+     Lexicographically compares two null-terminated wide strings, upto the
+     specified length
+
+
+Inputs
+~~~~~~
+::
+
+     wcstra - wide string to compare.
+     wcstrb - wide string to compare.
+     cnt - maximum number of wide characters to compare.
+
+
+
+----------
+
+wcsncpy()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  wchar_t *wcsncpy(
+     wchar_t *wcdst,
+     const wchar_t *wcsrc,
+     size_t cnt)
+
+
+Function
+~~~~~~~~
+::
+
+     Copies upto the specified length of wide characters from
+     a wide string, to another wide string.
+
+
+Inputs
+~~~~~~
+::
+
+     wcdst - the wide string that will be copied to.
+     wcsrc - the wide string to copy.
+     cnt - maximum number of wide characters to copy.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to the resulting wide string.
+
+
 
 ----------
 
