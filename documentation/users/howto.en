@@ -3,7 +3,7 @@
 ======================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright © 1995-2010, The AROS Development Team
+:Copyright: Copyright ï¿½ 1995-2010, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -325,3 +325,12 @@ displayed. Select the key you wish to send. Repeat the procedure for the
 Open shell and move your joystick to the left - your selected letter should
 appear in the shell.
 
+
+How to enable HostGL
+--------------------
+
+On the hosted flavors of AROS you can speed up applications which use Mesa GL
+by enabling a wrapper to the host's Mesa GL. This can be done by opening a
+Shell window and enter::
+
+    setenv sys/gl hostgl save
