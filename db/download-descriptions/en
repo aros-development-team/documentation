@@ -61,16 +61,18 @@ amiga-m68k-ports:
     size the archive will only be updated from time to time on the snapshots page.
 darwin-i386-system:
     The hosted version for Darwin and MacOS X on the i386 platform. This
-    should work on all Intel MacOS X versions starting from 10.4. It requires
-    an X11 server for the display.
+    version has been built for MacOSX10.14 i386 (32bit), but may work on
+    earlier versions.
+    * An X11 server may be required for use.
 darwin-ppc-system:
     The hosted version for Darwin and MacOS X on the PowerPC platform. This
-    should work on all MacOS X versions. It requires
-    an X11 server for the display.
+    should work on all MacOS X versions.
+    * An X11 server may be required for use.
 darwin-x86_64-system:
     The hosted version for Darwin and MacOS X on the x86-64 platform. This
-    should work on all Intel MacOS X versions starting from 10.6.  It requires
-    X11 server for the display.
+    version has been built for MacOSX10.14 i386 (32bit), but may work on
+    earlier versions.
+    * An X11 server may be required for use.
 freebsd5-i386-system:
     The hosted version for FreeBSD/i386 5.x. Note that it
     will not work on FreeBSD 4.x systems.
