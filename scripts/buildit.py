@@ -466,6 +466,8 @@ def copyImages():
 
     utility.pathscopy(
         [
+            'AROS_logo_paypal.png',
+            'paypal-logo.png',
             'aros-banner.gif',
             'aros-banner2.png',
             'aros-banner-blue.png',
@@ -473,6 +475,14 @@ def copyImages():
             'aros-banner-peta.png',
             'aros-sigbar-user.png',
             'aros-sigbar-coder.png',
+            'download-arrow.png'
+        ],
+        srcpath,
+        dstpath
+    )
+
+    utility.pathscopy(
+        [
             'genesi.gif',
             'trustec.png',
             'sourceforge.png',
