@@ -33,7 +33,7 @@ for file in os.listdir(unittestroot):
 ## Output HTML ###############################################################
 
 print ('''
-<table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1">
+<table style="width: 100%; Height: 100vh; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1">
    <tr>
       <td>
          <h1>Unit Test Results<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
@@ -58,9 +58,9 @@ print ('''
 ''')
 
 print ('''
-   <tr>
+   <tr height="100%">
       <td>
-         <object width="100%" height="95%" id="displayedtest" data="{}" type="text/html"></object>
+         <object width="100%" height="95vh" id="displayedtest" data="{}" type="text/html"></object>
       </td>
    </tr>
 </table>
