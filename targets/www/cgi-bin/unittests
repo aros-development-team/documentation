@@ -60,7 +60,7 @@ print ('''
 print ('''
    <tr height="100%">
       <td>
-         <object width="100%" height="95vh" id="displayedtest" data="{}" type="text/html"></object>
+         <object style="float:left;height:100%;" width="100%" height="95vh" id="displayedtest" data="{}" type="text/html"></object>
       </td>
    </tr>
 </table>
