@@ -44,3 +44,17 @@ or utility.library, or use inline functions which you get by including
 
 Add ``-fno-builtin`` to the USER_CFLAGS. That prevents GCC to pull in symbols
 like memset, abs etc.
+
+
+How to run the unit test locally
+--------------------------------
+
+Copy some files::
+
+    cd <srcdir>/scripts/nightly/autotest
+    cp Test.cunit <arosdir>/S/Test
+    cp Try <arosdir>/S/Try
+    cp User-Startup.cunit <arosdir>/S/User-Startup
+
+Restart AROS. The output is sent to DEBUG: which means on hosted the Console
+from where you have started AROS. Note that AROS exits after running the script.
