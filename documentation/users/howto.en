@@ -331,6 +331,6 @@ How to enable HostGL
 
 On the hosted flavors of AROS you can speed up applications which use Mesa GL
 by enabling a wrapper to the host's Mesa GL. This can be done by opening a
-Shell window and enter::
+Shell window and entering::
 
-    setenv sys/gl hostgl save
+    setenv sys/gl save hostgl
