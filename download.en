@@ -23,6 +23,7 @@ Distributions
 .. raw:: html
 
    <table style="width: 80%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="2" cellspacing="0">
+
    <tr><td colspan=2>
    <h1>Icaros Desktop LIVE!<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
    </td></tr>
@@ -36,6 +37,7 @@ Distributions
    installed OSes such as Microsoft Windows, in a dedicated partition. A quick reference guide and some AROS PDF manuals
    are included.</td>
    </tr>
+
    <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
    <tr><td colspan=2>
    <h1>AspireOS<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
@@ -65,18 +67,18 @@ Distributions
    For the best experience, a powerful Amiga or an emulator such as WinUAE is recommended.</td>
    </tr>
    <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
+
    <tr><td colspan=2>
    <h1>Tiny AROS<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
    </td></tr>
    <tr>
-   <td style="background-color: #ffffff;"></td>
+   <td style="background-color: #ffffff;"><img alt="tinyaros-logo" src="/images/tinyaros_logo.png"></td>
    <td><a href="http://tinyaros.flazio.com/home">Tiny AROS</a> is another native distribution for x86 computers. It
    comes with a different icon set.</td>
    </tr>
-   <tr><td style="background-color: #ffffff; text-align:left;">If your distribution isnt listed but you feel it should be,
-   contact the AROS Dev Team.</td></tr>
    </table>
 
+If your distribution isn't listed but you feel it should be, contact the AROS Dev Team.
 
 Nightly Builds (ABIv1)
 ======================

@@ -490,7 +490,8 @@ def copyImages():
             'bttr.jpeg',
             'icaroslive_logo.png',
             'aspireos_logo.png',
-            'kcachegrind.jpg'
+            'kcachegrind.jpg',
+            'tinyaros_logo.png'
         ],
         srcpath,
         dstpath
