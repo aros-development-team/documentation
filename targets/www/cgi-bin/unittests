@@ -30,6 +30,8 @@ for file in os.listdir(unittestroot):
         elif activepage == '':
             activepage = '/unittests/' + file
 
+results.sort()
+
 ## Output HTML ###############################################################
 
 print ('''
