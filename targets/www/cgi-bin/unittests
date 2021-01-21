@@ -50,8 +50,8 @@ print ('''
 ''')
 for result in results:
     print ('''
-            <option value="%(result)s">%(result)s</option>
-    ''' % {'result': result} )
+            <option value="{0}">{1}</option>
+    '''.format(result,result[:-15]) )
 
 print ('''
         </select>
