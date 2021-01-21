@@ -27,10 +27,10 @@ for file in os.listdir(unittestroot):
         if tstpage != '':
             if tstpage == file:
                 activepage = '/unittests/' + file
-        elif activepage == '':
-            activepage = '/unittests/' + file
 
 results.sort()
+if activepage == '':
+        activepage = '/unittests/' + results[0]
 
 ## Output HTML ###############################################################
 
