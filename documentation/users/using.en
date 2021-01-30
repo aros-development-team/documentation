@@ -3,7 +3,7 @@ AROS User's Guide
 =================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Sergey Mineychev
-:Copyright: Copyright 1995-2010, The AROS Development Team
+:Copyright: Copyright 1995-2021, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished. Needs heavy updating. In works!
@@ -20,18 +20,17 @@ AROS User's Guide
 Introduction
 ============
 
-This is the AROS Research Operating System User's Guide. It is meant to
+This is the AROS Research Operating System User's Guide. This User's Guide is meant to
 get people used to AROS. It is for *everybody* interested in AROS, as it
-tries to provide information on AROS on different levels of
-advancedness. It should cover everything in sufficient depth, but in such a
-way that you don't *have* to learn what you don't *want* to learn.
+tries to provide information on AROS on different levels. It should cover everything in 
+sufficient depth, but in such a way that you don't *have* to learn what you don't *want* to learn.
 
 
 
 Who should read this guide?
 -----------------------------
 
-This guide will help you getting used to AROS. It is written for
+This guide will help you to get used to AROS. It is written for
 everybody who is interested in AROS. Keep in mind that you are actually
 using software that is BETA and in research. It is currently mostly fun
 to play with and cool to program for and program in. So your interest in AROS
@@ -46,7 +45,7 @@ place.
 How you should read this guide?
 ---------------------------------
 
-This guide is ordered from "simple" to "advanced". You can start reading
+This guide is arranged from "simple" to "advanced". You can start reading
 at any chapter that contains information that is new to you. But maybe
 even more important, you can, and should, stop reading at any chapter that
 contains information going beyond your interest. In this way you can
@@ -59,8 +58,8 @@ This way, there's a starting point and a stopping point for everyone.
 
 It is important to realize that this guide is meant for AROS, not Amiga.
 So even if you owned an Amiga for years, you might need to read "Using
-AROS" too.  This is not an embarrassment: you will notice that using
-AROS is very slightly different from using AmigaOS. This is because our
+AROS" too.  This is not by whim but by necessity. You will notice that 
+using AROS is slightly different from using AmigaOS. This is because our
 Workbench is not finished. At the moment the system mostly works through
 a AmigaDOS shell - replacement (or CLI to older users). We do have a
 Workbench and you can navigate disks and launch the applications
@@ -77,10 +76,11 @@ Using AROS
 AROS-hosted: An Operating System in an Operating System?
 -----------------------------------------------------------
 
-AROS is originally developed on Linux_ running on an Intel-based
-computer. It runs on many more machines and operating systems, though.
-This may sound strange: an OS running on top of an other OS, that's
-emulation, right?
+AROS was originally developed on Linux_ running on an Intel-based
+computer. Many developers still prefer this setup. It runs on many 
+other machines and operating systems, though. This may sound strange: 
+an OS running on top of another OS, that's emulation, right? No. It's
+something else.
 
 A nice term for what AROS-hosted does is "API emulation". API is a
 three-letter acronym for Application Programmer's Interface. In plain
@@ -99,15 +99,15 @@ require Linux. This is called "native" AROS.
 AROS can run natively on the Intel and Amiga computers, but not quite as
 well as it runs on Linux. AROS library functions are made to run under
 Linux first, internally using Linux kernel and library calls. This way a
-programmer has the opportunity to bother about the implementation of
-the whole system first, and to bother about the technical details in a
-later stadium. People are currently working on making the "native" AROS
+programmer has the opportunity to focus on the implementation of
+the whole system first, and then on the technical details at a later 
+time. Many people are currently working on making the "native" AROS
 more usable. The results are very impressive and it is perfectly
 possible to use AROS-native as a real (and only) Operating system on an
 IBM PC compatible machine.
 
 Of course, AROS is not *only* an API emulator. It also tries to provide
-replacements to all the AmigaOS 3.1 system software, and you will also
+replacements for all the AmigaOS 3.1 system software, and you will also
 find a few demo's and games being shipped with AROS, just to show that
 they work - we might just be at 77% of the whole system, but we already
 have Quake running!
@@ -121,9 +121,9 @@ Native AROS is currently under heavy development. If you want to see
 cool tricks, try AROS on Linux. But if you're (also) interested in what
 a great job the programmers have done, you can try "native" too.
 
-The instructions for installing native AROS are varying depending on
-which platform you use. Because "native" is still in great development,
-the *results* from installing native AROS can also vary depending on the
+The instructions for installing native AROS vary depending on which 
+AROS platform you use. Because "native" is still in development, the 
+*results* from installing native AROS can also vary depending on the
 age of the code that you use.
 
 On i386 there are different booting media available. The first and most
@@ -136,24 +136,22 @@ a small size, but therefore has only a minimal set of features. If you
 have no CD drive it still can show some parts of AROS to you.
 
 TO create the AROS LiveCD, you first download its archive. You then unpack
-it and write the ISO image to a CD-R(W). If you intent to use AROS in a
+it and write the ISO image to a CD-R(W). If you intend to use AROS in a
 virtual machine, you can use the ISO image as-is. Once the disc is ready,
 you can reboot your PC with the LiveCD. If your system does not support
 booting from CD, also download and write the AROS boot floppy to disk
 (with Rawrite or Winimage, for example) and boot from it, leaving the CD
 in the drive. Booting will then continue with the CD. In either case, after
-the CD is booted you will find yourself in AROS (it is looks stunningly
-close to AmigaOS).
-You can fool around the LiveCD with the Wanderer (or with the Shell),
-play some games/demo's included as contributed programs on the
-CD, look at system basics until you get bored. It's also possible to add
-files to the ISO image and get some extra software written for AROS, and
-rewrite the LiveCD. For now, here ends the simple part of using an
-AROS-native.
+the CD is booted you will find yourself in AROS (it looks stunningly
+close to AmigaOS). You can fool around the LiveCD with the Wanderer 
+(or with the Shell), play some games/demo's included as contributed programs 
+on the CD, look at system basics until you get bored. It's also possible to 
+add files to the ISO image and get some extra software written for AROS, and
+rewrite the LiveCD. For now, here ends the simple part of using AROS-native.
 
 To test all other features it's required to install_ the system to the
-hard disk (real or virtual). This process must be still treated as
-experimental. It has been described in Installation Doc. Anyway, remember
+hard disk (real or virtual). This process must still be treated as
+experimental. It has been described in the Installation Doc. Anyway, remember
 that work continues and soon you'll be able to get more from native AROS!
 
 
@@ -161,21 +159,20 @@ that work continues and soon you'll be able to get more from native AROS!
 Using "native" AROS i386 in Virtual Machines
 --------------------------------------------
 
-Currently the *Virtualization* technologies are developed to an almost
-complete real machine replacement, have been burned-on by the increasing
+Currently the *Virtualization* technologies are developed to be an almost
+complete real machine replacement and they have been assisted by increasing
 CPU speeds. You can make a "virtual" machine inside of your system ("host")
-and launch AROS on it, without being worried about any failures and
+and launch AROS on it without being worried about any failures and
 relaunching the "guest" system quickly if something has happened.
 
-There's a number of free virtual machine packages, best known are QEMU
+There are a number of free virtual machine packages, best known are QEMU
 (Free, Open Source, for many host systems), VMWare Player
 (Free. There's also a full VMWare server for free that requires a free
 serial) and Microsoft VPC (Free). You can get a version for your "host" system
-that suits your needs. Below follow some tips on launching AROS for different
-VM's.
+that suits your needs. Below are some tips on launching AROS for different VM's.
 
-Instead of having almost the same AROS set-up inside the VM's, there's a
-difference in setting the VM itself.
+Instead of having almost the same AROS set-up inside the VM's, there are
+differences in setting up the VM itself.
 
 
 VM for Linux/FreeBSD
@@ -211,7 +208,7 @@ your launch string (or a script).
     the KQEMU kernel module (and appending the -kernel-kqemu option if in
     Windows). But remember that KQEMU can make the guest system unstable.
     You're advised not to use the Alt+Tab combination to free a keyboard
-    lock, but rather to use Ctrl+Alt, as otherwise Tab key may remain pressed
+    lock, but rather to use Ctrl+Alt, otherwise Tab key may remain pressed
     and thus may damage a currently edited file.
 
 Still, `VMWare <http://www.vmware.com/products.html>`__
@@ -239,12 +236,12 @@ Q does not support direct virtualisation yet (nor the
 i386 kernel acceleration module), making it achieve only part of the
 possible speed at the moment.
 
-Another (upcoming) choice for VM on Intel will be the `VMWare Fusion`__
-virtualiser, expected for release early 2007. Beta version 33141 already
+Another suitable choice for VM on Intel is the `VMWare Fusion`__
+virtualiser, which was released in early 2007. Beta version 33141 already
 supports booting the AROS LiveCD, on condition that floppy drive support is
 disabled in the GRUB boot parameters (Just highlight your
 selection on the GRUB menu, press e twice, add nofdc to the command line,
-press return, then b. If you've installed to hard disk, you can change this
+press return, then b). If you've installed to hard disk, you can change this
 permanently in the menu.lst file).
 
 __ http://www.vmware.com/products/fusion.html
@@ -300,7 +297,7 @@ called AfA (AROS for Amigas).
 Using AROS hosted on Linux or FreeBSD
 -------------------------------------
 
-Once you got the binaries for your system, either by compiling or by
+Once you get the binaries for your system, either by compiling or by
 downloading pre-compiled binaries, you should go down into the
 "bin/$TARGET/AROS/boot" directory, where $TARGET is your system target
 (something like "linux-i386"). Run the file "AROSBootstrap"
@@ -320,15 +317,14 @@ used. You can get this list with ./AROSBootstrap -h::
      --config <file>    same as '-c <file>'
 
 You may have to add some more memory for hosted AROS with -m option to
-made some programs working properly.
+make some programs work properly.
 
-Because "Wanderer" is very limited, you'll prefer to work with the Shell.
-Start it by selecting the menu "Wanderer" and then the option "Shell".
-Now you can type in commands.
-An important command is "dir": it will show you a directory's contents. The
-directory named "C" contains all the commands, so it might be useful to
-display its contents with "dir c:". The shell behaves like an AmigaDOS
-shell, and the commands in "C" behave like their AmigaDOS equivalents. (Note
+Because "Wanderer" is limited in some ways, you may prefer to work with the 
+Shell. Start it by selecting the menu "Wanderer" and then the option "Shell".
+Now you can type in commands. An important command is "dir": it will show you a 
+directory's contents. The directory named "C" contains all the commands, so it 
+might be useful to display its contents with "dir c:". The shell behaves like an 
+AmigaDOS shell, and commands in "C" behave like their AmigaDOS equivalents. (Note
 to Unix folks: to address the parent directory, use "/" and not "..": the
 latter would look rather ugly because AROS sees Unix' ".." as a normal
 directory name. You shouldn't use "./" as a prefix to address a command
@@ -346,48 +342,48 @@ AROS Zune GUI Basics
 --------------------
 
 The abbreviation GUI stands for Graphical User Interface, and is applied to
-all the graphical means used by OS to interact with user, other than the
-plain command-line interface (CLI). For those who never have used any OS
-from the Amiga branch, it will be useful to give some GUI basics for such
-systems to help them. These basics are the subject of this section, although
-part of the section will be AROS-specific.
+all the graphical means used by an OS to interact with the user, other than the
+plain text command-line interface (CLI). For those who have never used any OS
+from the Amiga family, it will be useful to give some GUI basics for such
+systems to help. These basics are the subject of this section, although part 
+of the section will be AROS-specific.
 
 An Amiga system uses specific and common principles, as you'll already have
 noticed. First, it uses menu bars, but the menu bar of any application isn't
 attached to its window - it's always at the top of the screen, where it can be
-easily accessed. To do this, select window you need, and move mouse
-pointer to upper side of a screen. Then, if you press right mouse button
-there, you can see the pull-down menu, representing your application's
+easily accessed. To do this, select the window you need, and move the mouse
+pointer to the upper side of a screen. Then, if you press the right mouse button
+there, you can see the pull-down menu, representing your application's menu
 options. As the screen usually has a backdrop window for Wanderer, if no other
 window is selected you'll probably see the Wanderer menus in the menu bar.
 
-Now, consider the desktop, which - as was mentioned before - is
-called "Wanderer". But what exactly is that "Wanderer"? Well, Wanderer is an
+Now, consider the desktop called "Workbench", which as was mentioned before 
+is called "Wanderer". But what exactly is "Wanderer"? Well, Wanderer is an
 application, just like all others. Specifically, it's an AROS file manager,
-allowing you to choose and operate files (the functionality isn't complete
-yet), to launch programs, to get some system information, to launch a Shell
-(window) and to perform certain other actions. Usually it opens on a wide
-screen and acts as your desktop (icons on this desktop represents the
+allowing you to choose and operate on files, to launch programs, to get some 
+system information, or to launch a Shell (window) and to perform certain other 
+actions. (note: the functionality isn't complete).Usually it opens on a wide
+screen and acts as your desktop (icons on this desktop represent the
 volumes and disks you can work with). It can be removed from the backdrop
 by deselecting the "Backdrop" option, which can be found in its Wanderer menu
 (which was mentioned in the previous paragraph). This will make Wanderer
 just another window you can move, resize, etc. This is somewhat different
 from desktops of other systems, that usually are fixed in their place. Of
 course, you can even decide not to use the Wanderer at all, and use instead
-your preferred file manager (e.g. Directory Opus).
+your preferred file manager (e.g. Directory Opus, or Scalos).
 
-But how do the applications behave then; where will the windows be opened?
+But how do the applications behave then? Where will the windows be opened?
 This is where the concept of a "screen" is introduced. A "screen" is the
 place where your window is meant to open. If an application is described as
 "opening on the Wanderer screen", it will look like what usually happens in
 other OS-s - your application will appear as a window on the desktop. On
-another hand, the window can "open on its own screen" - it looks like it
-captures the whole screen. It hasn't; it has opened a new "screen" of its own
+the other hand, the window can "open on its own screen" - it looks like it
+occupies the whole screen. It doesn't. it opened a new "screen" of its own
 in front of the Wanderer screen, and it now obscures the desktop. You can,
 however, switch the screens with the "depth gadget", the graphic in the top
 right corner of the screen. So, if you wish, you can switch between Wanderer,
 Directory Opus, and any other applications opening on their own screens.
-This behaviour also comes from the Amiga's history.
+This behaviour also comes from the Amiga's historical GUI - "Workbench".
 
 Now a few words on the windows themselves. AROS windows usually have
 "gadgets", control buttons to manipulate them with. The first one, in the top
@@ -397,12 +393,12 @@ and maximising the window. And the last, in the top right corner again, is
 the "depth gadget", which allows moving the window to the front or to the
 back, just like when switching screens. Some windows may not have gadgets at
 all - look at the Kitty demo; it doesn't even show a border, and yet has a
-well-curved shape - or have a different set of gadgets.
+well-curved shape - or has a different set of gadgets.
 
 The window's contents usually consist of elements that could be seen in
 any GUI - buttons, lists, strings of text, any other kind of gadgets. If an
 application is intended to change any preferences of a subsystem or an
-application, it's usual called *Pref* for short. Such a Pref has a specific
+application, it's usually called *Pref* for short. Such a Pref has a specific
 extra set of buttons. Usually these buttons are: TEST (apply all the changes
 made by Pref, but don't save the changes and don't close the window), SAVE
 (apply and save the changes and close the window), USE (apply the changes and
@@ -410,25 +406,24 @@ close the window, but don't save the changes), CANCEL (discard all the
 changes and close the window).
 
 Some remarks on names::
-It helps to know that, again from the Amiga's history, the file placement unit
-is often called a "drawer", rather than a "folder" or "directory" on other
-systems, but its meaning remains the same. Imagine a large workbench: a
-worktop and drawers below it. Translate it as "a directory" if you're
-uncertain.
+It helps to know that, again from the Amiga's history, the file placement location
+that corresponds to a directory is often called a "drawer", rather than a "folder" 
+on other systems, but its meaning remains the same. Imagine a large workbench: a
+worktop and drawers below it. Translate it as "a directory" if you're uncertain.
 
 There are special keys in AROS, just like on the original Amiga, used for
 quick commands. On a PC keyboard, Left and Right WinKey are used for
 the original Amiga keys "Left Amiga" and "Right Amiga". They are used in
 different combinations to launch commands.
 
-Another unknown name you may encounter in AROS is "Zune". Zune is a GUI
-toolkit developed as replacement for MUI (Magic User Interface), widely used
+Another name you may encounter in AROS is "Zune". Zune is a GUI toolkit 
+developed as a replacement for MUI (Magic User Interface), widely used
 on Amigas. There is no explicit application called "Zune", but you can find
 Zune Pref, which allows you to set settings for Zune-based applications in
-general, or for a single application in particular.
-For example, to set Zune preferences for Wanderer you can select "GUI prefs"
-from Wanderer's menu. Or to set Zune prefs for other applications you can
-use it as a CLI command: Zune <application filename>.
+general, or for a single application in particular. For example, to set Zune 
+preferences for Wanderer you can select "GUI prefs" from Wanderer's menu. Or to 
+set Zune prefs for other applications you can use it as a CLI command: Zune 
+<application filename>.
 
 To be finished...
 
@@ -439,14 +434,14 @@ AROS CLI (Command Line Interface)
 
 To-do - CLI commands abstract and comparison ...
 
-AROS has its CLI, the Command Line Interface, greatly expanding the
+AROS has its own CLI, the Command Line Interface, greatly expanding the
 capabilities of the OS. Those who have used AmigaOS will notice that it looks
 pretty close to the CLI of AmigaDOS. Some CLI basics are described in
 `introduction <shell/introduction>`__ to CLI commands.
 
 You no longer need to type all the commands to the end - now there's
 a neat tabulator completion similar to that on Linux consoles. This allows
-you also to append filenames or choose them from a list.
+you to also append filenames or choose them from a list.
 
 To be finished...
 
@@ -470,8 +465,8 @@ separate directories:
     + Locale - holds catalog files of various AROS applications translations
     + Prefs - has a number of preferences-setting programs
     + S - contains some system launch-time scripts
-    + System - the place for certain system controls
-    + Tools -  the location for commonly used system applications
+    + System - the place for certain system applications
+    + Tools -  the location for other commonly used applications
     + Utilities - the place for not-so-commonly used but still useful
       applications
 
@@ -489,66 +484,74 @@ which allows you to manipulate launched commodities and get information
 about them. Usually commodities don't open any windows. To stop them, simply
 double-click them again.
 
-To operate with files of different types, Amiga-like systems are using
-*datatypes*. A datatype is a kind of system library which allows the
+To operate with files of different types, Amiga-like systems have traditionally
+used *datatypes*. A datatype is a kind of system library which allows the
 programs to read or/and write such files without having to bother about the
-implementation of such formats.
+implementation of such formats. So, any program on the system can in theory use 
+datatypes to interact with sound files, picture files, text files, or many other 
+file types. They can open, load, and save them without having to write specific 
+code to do so. That is the beauty of using datatypes. AROS is still in development 
+and so many new datatypes are being added to AROS on a regular basis.
 
 Again some terms need explaining:
 AROS uses *handlers* to communicate with the file systems, and *HIDDs* to
-communicate with the hardware.
+communicate with the hardware. The keyboard and mouse use HIDDs. The graphics drivers 
+for AROS are also HIDDs. File systems used on AROS such as the FAT File System has its 
+own fat.handler that handles the file system operations. That way more file systems can 
+be added to AROS.
 
 To be finished...
 
 
 
 
-Customising the installed AROS
+Customising the AROS Installation
 ==============================
 
 Setting up the Locale
 ---------------------
 
-AROS is becoming a really international system this days, being
+AROS is becoming a really international system these days, being
 translated to many languages. Translating isn't very difficult, and the
 number of the AROS translators is still increasing. If Unicode support
 will be implemented it can be translated in every language people use.
-If you feel you can give AROS to your country, both OS and
+If you feel you can translate AROS into your language, both OS and
 documentation, do not hesitate to contact us and offer your help.
 
-So, about the language. First, depending on available fonts you must set fonts
-by launching SYS:Prefs/Fonts and designating Fonts to different system
-text: Icons (used for icons labels), Screen (used on common screen) and
-System (used in CLI window). If your language uses a character set different
-from ISO (for example, Cyrillic CP-1251) these *must* be the fonts for the
-correct codepage. AROS currently can use two kinds of fonts - the Amiga
+So, about the language portion of AROS. Depending on the available 
+fonts you must set fonts by launching SYS:Prefs/Fonts and designating Fonts 
+to different system text: Icons (used for icons labels), Screen (used on common 
+screen) and System (used in CLI window). If your language uses a character set 
+different from ISO (for example, Cyrillic CP-1251) these *must* be the fonts for 
+the correct codepage. AROS currently can use two kinds of fonts - the Amiga
 bitmap fonts (which can be used directly) and TrueType (via the FreeType 2
 manager, which still has some issues with non-ISO codepages). Bitmap
-fonts are in any particular codepage, and TTF can be Unicode.
+fonts are in any particular codepage, and TTF can be Unicode. This language
+localisation in AROS and on Amiga OS is traditionally called "Locale".
 
 How can you change the AROS locale? To do this you need to launch the
 Locale pref in SYS:Prefs. You can see a list of supported locales there
 and select your preferred ones. On the second page of this Pref you can
-select the country used (it gives correct currency and date/time
+select the preferred country (it gives correct currency and date/time
 format). And the last tab allows you to change the computer's time zone to
 that used in your location.
 
-After you've made changes to fonts, reboot the system, and you must be
-able to see all the translated content.
+After you've made changes to fonts and locale, reboot the system, and you 
+should be able to see all the translated content.
 
 So now you can read, but can you also write in your language? To do this,
 you'll have to change the keyboard layout.
 
 Keyboard and mouse settings are managed by the Input pref. You can change
 the layout and click *Use* but we can do even better. This tool
-allows you also to save presets - just like any application it's got a menu,
+allows you also to save presets - just like any application it's has a menu,
 allowing you to save your preferences to a file, to keep different settings
 of locales. We will use it later to switch our keyboard layouts. Choose your
 locale's keyboard layout from the list and make a left click to open the
 context menu. Then enter the name of your preset to File string, say,
 *locale1* and click Ok to save it to SYS:Prefs/Presets directory. Now choose
-an American (PC) layout and repeat the saving presets, say, with name
-*English*. This presets can be used later to switch the layouts. Click
+an American (PC) layout and repeat the saving presets, such as with name
+*English*. These presets can be used later to switch the layouts. Click
 *Cancel* to exit.
 
 There's an FKey commodity which allows you to make actions assigned to
@@ -579,7 +582,7 @@ usually means you have to extract it to some directory on a hard disk or
 RAM disk. Then some programs require you to make assignments, which you can do
 in the CLI with the Assign command, and some start script additions.
 For example - to work properly, Lunapaint needs Lunapaint: to be assigned to
-the directory it was extracted to. You can do this with the command
+the directory it was extracted to. You can do this with the following command
 
     Assign Lunapaint: Disk:Path/Lunapaint
 
@@ -591,12 +594,12 @@ To do this, type this command in CLI prompt::
 
 Then insert the Lunapaint (or other program) assign at the end of the file.
 (If the name of the assign is rather cryptic, it's wise to add a comment to
-remind you of the program it belongs to.) Save the changes and that's set.
+remind you of the program it belongs to.) Save the changes and that's it.
 Such a procedure can be used for any program that needs it.
 
 Another way is to use the ENVARC:SYS/Packages directory. All you need here
-is to create a text file with the name of your application, with in that file
-the a path to that application. Then create a directory named S in the
+is to create a text file with the name of your application, within that file
+then add the path to that application. Then create a directory named S in the
 program's directory and put the package start-up file there. This way is
 safer, but it's different from the style of the Amiga.
 
@@ -605,14 +608,14 @@ safer, but it's different from the style of the Amiga.
 Setting up the Network
 ----------------------
 
-To communicate with other computers on network, AROS uses a TCP Stack,
+To communicate with other computers on the network, AROS uses a TCP Stack,
 AROSTCP, which is a port of AmiTCP. This software is located in the
 ``SYS:System/Network/AROSTCP`` directory. Setting up is not easy but a GUI
-tool is being developed. Do note that there actually are very few networking
+tool is being developed. Please note that there actually are very few networking
 programs on AROS, as yet (but some interesting tools are in development,
 soon to be released).
 
-First you need is to set up the side of your machine of the network. This
+First you need to set up your machine’s side of the network. This
 part can differ depending on your hardware. On a real machine you need to
 install the supported network interface card (NIC) and plug the cable in. On
 a virtual machine you should set up its NIC implementation and check if it's
@@ -682,9 +685,8 @@ ENVARC:AROSTCP/db directory, that way the Config file could be::
     ENV:AROSTCP/db
 
 Now make AROSTCP start at boot with the word "True" in ENVARC:AROSTCP/Autorun
-(Create the file if not exists in CLI window with a command
-echo "True" >sys:AROSTCP/Autorun)
-Edit the ``SYS:System/Network/AROSTCP/S/Package-Startup``::
+(Create the file if it doesn’t exist in a CLI window with the command echo "True" 
+>sys:AROSTCP/Autorun) Edit the ``SYS:System/Network/AROSTCP/S/Package-Startup``::
 
     ; $VER: AROSTCP-PackageStartup 1.0 (01/08/06)
     ; AROSTCP-PackageStartup (c) The AROS Dev Team.
@@ -757,10 +759,9 @@ mode.
 Net on QEMU/Windows
 """""""""""""""""""
 
-Setting QEMU to run on Windows is relatively harder to that of Linux. First,
+Setting QEMU to run on Windows is somewhat more difficult than on Linux. First,
 make sure you have set your Firewall to learning mode (or prepare it to
-receive new rules) or completely disable it. Firewall can block transfers to
-VM.
+receive new rules) or completely disable it. Firewall can block transfers to VM.
 
 There are two ways to use network with QEMU on Windows. The first and the
 more proven is to use the tap interface. To use it you must download
@@ -790,7 +791,7 @@ This mode can work even without giving administrating privileges to user, but
 can *make some applications on AROS refuse to work properly (such as
 FTP-client)*.
 
-There's some guides available on how to set-up the QEMU networking in Windows:
+There are some more guides available on how to set-up the QEMU networking in Windows:
 
     + For `VLan <http://www.h7.dion.ne.jp/~qemu-win/HowToNetwork-en.html>`__
     + For `Tap <http://www.h7.dion.ne.jp/~qemu-win/TapWin32-en.html>`__
@@ -829,7 +830,9 @@ Currently there's not much support for sound in AROS. For one thing, at the
 moment there's no working driver for a virtual machine's implementation of
 sound cards (usually sb16/es) so the way to try to get sound would be to use
 AROS-native on pc with a real SB Live/Audigy card. The AC97-compliant
-codecs are supported as well.
+codecs are supported as well. Note: new AROS drivers are being written, and 
+the sound system is still being developed. So, if your AROS sound system 
+doesn’t work at the moment, don't worry. It may work in the near future.
 
 AHI sound in AROS also supports no sound (VOID) and disk writing options.
 
@@ -839,16 +842,16 @@ To be written by someone...
 Is that all the User's Information in this guide?
 =================================================
 
-This chapter should have told you how to get, install and use AROS.
+This guied should have shown you how to get, install and use AROS.
 After having tried running every program in the directories C, Demos,
 Utilities, Tools, Games, etc., you might wonder if that is all. No,
-you can find some applications at http://archives.aros-exec.org.
+you can find some more applications at http://archives.aros-exec.org.
 
 If you feel that this guide did not provide enough information about
-compiling, installing, Subversion, the shell, etc., know that there are
+compiling, installing, using Subversion, shell, etc., know that there are
 reasons for that. First, there is already much information available, and
-it would be rather pointless to just that in this document.  Second, such
-information is rather specific, as one of the readers might be
+it would be rather pointless to include that in this document.  Second, 
+such information is rather specific, as one of the readers might be
 interested in compiling the source code, others might want to know all
 about the Amiga shell, etc. So to keep this guide readable, it only points
 to places where you can find such information, instead of providing it
