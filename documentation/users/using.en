@@ -28,7 +28,7 @@ sufficient depth, but in such a way that you don't *have* to learn what you don'
 
 
 Who should read this guide?
------------------------------
+---------------------------
 
 This guide will help you to get used to AROS. It is written for
 everybody who is interested in AROS. Keep in mind that you are actually
@@ -43,7 +43,7 @@ place.
 
 
 How you should read this guide?
----------------------------------
+-------------------------------
 
 This guide is arranged from "simple" to "advanced". You can start reading
 at any chapter that contains information that is new to you. But maybe
@@ -74,7 +74,7 @@ Using AROS
 ==========
 
 AROS-hosted: An Operating System in an Operating System?
------------------------------------------------------------
+--------------------------------------------------------
 
 AROS was originally developed on Linux_ running on an Intel-based
 computer. Many developers still prefer this setup. It runs on many 
@@ -506,7 +506,7 @@ To be finished...
 
 
 Customising the AROS Installation
-==============================
+=================================
 
 Setting up the Locale
 ---------------------
