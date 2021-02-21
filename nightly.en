@@ -5,8 +5,11 @@ Download ABIv0 Nightly Builds
 .. Note::
 
    These builds are only provided for developers and testers, and for users
-   of architectures for which distributions have not been created.
+   of architectures for which distributions have not been created. If your
+   preferred architecture is not included here, please look in the
+   Snapshots section (see the `main download page`__).
 
+__ download
 
 Nightly Builds (ABIv0)
 ======================
