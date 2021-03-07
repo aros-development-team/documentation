@@ -2212,7 +2212,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`__posixc_get_environptr()`_ `getenv()`_ `setenv()`_ 
+`__posixc_get_environptr()`_ `__posixc_getenv()`_ `setenv()`_ 
 
 ----------
 

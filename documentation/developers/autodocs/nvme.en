@@ -1,5 +1,5 @@
 ====
-vega
+nvme
 ====
 
 .. This document is automatically generated. Don't edit it!
@@ -9,27 +9,49 @@ vega
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`GetOpenVGStateTrackerApi()`_           
+`moHidd_NVMEBus_Shutdown`_              
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
 
-GetOpenVGStateTrackerApi()
-==========================
+moHidd_NVMEBus_Shutdown
+=======================
 
 Synopsis
 ~~~~~~~~
 ::
 
-  APTR GetOpenVGStateTrackerApi(
+     APTR OOP_DoMethod(OOP_Object *obj, struct pHidd_NVMEBus_Shutdown *Msg);
+
+     APTR HIDD_NVMEBus_Shutdown(void);
+
 
 Function
 ~~~~~~~~
 ::
 
-     This is a PRIVATE function used by egl.library to receive pointer to
-     api structure of OpenVG. Do not use this function in your application.
-     OpenVG context is created using EGL API.
+     Instantly shutdown all activity on the bus.
+
+
+Inputs
+~~~~~~
+::
+
+     None
+
+
+Result
+~~~~~~
+::
+
+     None
+
+
+Notes
+~~~~~
+::
+
+     This method is called by nvme.device during system reset handler execution.
 
 
 
