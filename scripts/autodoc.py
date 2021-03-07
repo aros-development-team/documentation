@@ -1,6 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2008-2020, The AROS Development Team. All rights reserved.
-# $Id$
+# Copyright © 2008-2021, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
@@ -102,6 +101,10 @@ def move_if_changed(tmpfilename, targetfilename):
             print tmpfilename, "moved to", targetfilename
             shutil.move(tmpfilename, targetfilename)
             return
+    else:
+        print tmpfilename, "moved to", targetfilename
+        shutil.move(tmpfilename, targetfilename)
+        return
 
     print tmpfilename, "removed"
     os.remove(tmpfilename)
