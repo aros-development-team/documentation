@@ -21,7 +21,7 @@ Synopsis
 ::
 
 
- Search [FROM] {(name | pattern} [SEARCH] (string | pattern) [ALL] 
+ Search [FROM] {(name | pattern} [SEARCH] (string | pattern) [ALL]
         [NONUM] [QUIET] [QUICK] [FILE] [PATTERN] [LINES=Number]
 
 

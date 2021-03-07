@@ -733,7 +733,7 @@ Function
 ~~~~~~~~
 ::
 
-     AND of one region with another region, leaving result in 
+     AND of one region with another region, leaving result in
      second region.
 
 
@@ -985,7 +985,7 @@ Function
 ~~~~~~~~
 ::
 
-     Process the filled vector buffer. 
+     Process the filled vector buffer.
      After the operation the buffer is reinitialized for
      processing of further Area functions.
      Makes use of the raster given by the TmpRas structure that
@@ -1014,7 +1014,7 @@ Bugs
 ::
 
      There is still a problem when some polygons are filled that
-     pixels are missing. This could be due to the way lines are 
+     pixels are missing. This could be due to the way lines are
      drawn. All lines should be drawn from lower
      y coordinates to higher y coordinates since this is the
      way the algorithm calculates lines here. For example, it
@@ -1258,9 +1258,9 @@ Function
      Try to lock the current layer. If it is already locked this
      function will return FALSE, TRUE otherwise.
      If the layer could be locked successfully nesting will take place
-     which means that for every successful locking of a layer 
-     UnlockLayerRom() has to be called for that layer to let other 
-     tasks access that layer. 
+     which means that for every successful locking of a layer
+     UnlockLayerRom() has to be called for that layer to let other
+     tasks access that layer.
 
 
 Inputs
@@ -2262,7 +2262,7 @@ Function
 
      Copies the contents of one rastport to another rastport.
      Takes care of layered and non-layered source and destination
-     rastports. 
+     rastports.
      If you have a window you should always use this function instead
      of BltBitMap().
 
@@ -2483,14 +2483,14 @@ Function
      If the layer has a superbitmap all the parts that are visible will
      be refreshed with what is in the superbitmap. This function should
      be called after the SuperBitMap of the layer was synchronized with
-     SyncSBitMap() and manipulated. 
+     SyncSBitMap() and manipulated.
 
 
 Inputs
 ~~~~~~
 ::
 
-     l  - pointer to superbitmapped layer 
+     l  - pointer to superbitmapped layer
 
 
 Result
@@ -3309,7 +3309,7 @@ Function
 ::
 
      Free a via GetSprite previously allocated sprite.
-     Don't even dare to free a sprite you didn't allocate.   
+     Don't even dare to free a sprite you didn't allocate.
 
 
 Inputs
@@ -4504,7 +4504,7 @@ Bugs
 ::
 
      The function itself is a bug.
-     Why does this function exist at all? The necessary memory should 
+     Why does this function exist at all? The necessary memory should
      be allocated in InitRastPort() or the functions that need it.
 
 
@@ -5203,8 +5203,8 @@ Notes
 
      Shared palette entries should not be changed (via SetRGB??())
      since other applications might use the same color.
-     A PaletteExtra structure must have been attached to the 
-     ColorMap prior to calling this function (AttachPalExtra()). 
+     A PaletteExtra structure must have been attached to the
+     ColorMap prior to calling this function (AttachPalExtra()).
 
 
 
@@ -5392,7 +5392,7 @@ Function
 ~~~~~~~~
 ::
 
-     OR of one region with another region, leaving result in 
+     OR of one region with another region, leaving result in
      second region.
 
 
@@ -5479,9 +5479,9 @@ Function
      the blitter right now or if no blits are in the queues (QBlit(),
      QBSBlit()). Otherwise the function will block until the blitter
      can be accessed.
-     It is good practice to start the blitter immediately after calling 
+     It is good practice to start the blitter immediately after calling
      this function and then call DisownBlitter() so other tasks can
-     use the blitter. 
+     use the blitter.
 
 
 
@@ -5578,7 +5578,7 @@ Notes
      blitter, a blitter is simulated. Therefore all code that will
      be executed in the function that is called must not contain
      code that is hacking the blitter's register but should contain
-     calls to graphics functions instead.      
+     calls to graphics functions instead.
 
 
 
@@ -5634,7 +5634,7 @@ Notes
      blitter, a blitter is simulated. Therefore all code that will
      be executed in the function that is called must not contain
      code that is hacking the blitter's register but should contain
-     calls to graphics functions instead.      
+     calls to graphics functions instead.
 
 
 
@@ -5711,7 +5711,7 @@ Inputs
                      - Layers == NULL
                      - temprp->BitMap with Rows set to 1,
                      - temprp->BytesPerRow set to (((width+15)>>4)<<1),
-                       and temporary memory allocated for 
+                       and temporary memory allocated for
                        temprp->BitMap->Planes[])
 
 
@@ -6041,7 +6041,7 @@ Inputs
 ::
 
    rp    - pointer to rastport
-   dx,dy - distance to move in x and y direction. Positive values go 
+   dx,dy - distance to move in x and y direction. Positive values go
            towards (0,0)
    xMin,yMin - upper left  hand corner of the affected rectangle
    xMax,yMax - lower right hand corner of the affected rectangle
@@ -6087,7 +6087,7 @@ Inputs
 ::
 
    rp    - pointer to rastport
-   dx,dy - distance to move in x and y direction. Positive values go 
+   dx,dy - distance to move in x and y direction. Positive values go
            towards (0,0)
    xMin,yMin - upper left  hand corner of the affected rectangle
    xMax,yMax - lower right hand corner of the affected rectangle
@@ -7132,7 +7132,7 @@ Function
 
      If the layer has a superbitmap all the parts that are visible will
      be copied into the superbitmap. This is usually not done except when
-     parts of a superbitmapped layer become hidden the visible parts are 
+     parts of a superbitmapped layer become hidden the visible parts are
      stored into the superbitmap.
 
 
@@ -7140,7 +7140,7 @@ Inputs
 ~~~~~~
 ::
 
-     l  - pointer to superbitmapped layer 
+     l  - pointer to superbitmapped layer
 
 
 Result

@@ -183,7 +183,7 @@ Function
 ~~~~~~~~
 ::
 
-     Create a new partition table. 
+     Create a new partition table.
 
 
 Inputs
@@ -471,7 +471,7 @@ Notes
 ~~~~~
 ::
 
-     Nested partition tables (e.g. RDB subpartitions on PC MBR drive) are 
+     Nested partition tables (e.g. RDB subpartitions on PC MBR drive) are
      treated as virtual disks. In this case start and end block numbers are
      relative to the beginning of the virtual disk (which is represented by
      a parent partition containing the RDB itself), not absolute numbers.
@@ -485,8 +485,8 @@ Notes
      you might need to adjust these data in order to mount the file system
      correctly (if absolute start/end blocks are not cylinder-aligned).
 
-     Starting from V2, partition.library always provides default values 
-     for all attributes, even for those not listed as readable in 
+     Starting from V2, partition.library always provides default values
+     for all attributes, even for those not listed as readable in
      QueryPartitionAttrs() results.
 
 

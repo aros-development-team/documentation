@@ -744,7 +744,7 @@ Function
      constants:
              PIXFMT_RGB24 - 3 bytes per pixel: 1 byte per component, in
                  the order red, green, blue.
-             PIXFMT_RGBA32 - 4 bytes per pixel: 1 byte per component, in  
+             PIXFMT_RGBA32 - 4 bytes per pixel: 1 byte per component, in
                  the order red, green, blue, alpha.
              PIXFMT_ARGB32 - 4 bytes per pixel: 1 byte per component, in
                  the order alpha, red, green, blue.
@@ -766,10 +766,10 @@ Function
                  for green, then 5 bits for red.
              PIXFMT_RGB16PC - 2 bytes per pixel, accessed as a little
                  endian value: 5 bits for red, then 6 bits for green, then
-                 5 bits for blue. 
+                 5 bits for blue.
              PIXFMT_BGR16PC - 2 bytes per pixel, accessed as a little
                  endian value: 5 bits for blue, then 6 bits for green, then
-                 5 bits for red.  
+                 5 bits for red.
              PIXFMT_BGR24 - 3 bytes per pixel: 1 byte per component, in
                  the order blue, green, red.
              PIXFMT_BGRA32 - 4 bytes per pixel: 1 byte per component, in

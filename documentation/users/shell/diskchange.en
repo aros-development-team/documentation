@@ -45,9 +45,9 @@ Function
 ::
 
 
-       Diskchange is intended only for removable media. For example if 
-   you have a internal floppy disk dive set to noclick AROS  will not 
-   perform disk presence check. So you have to manually update any 
+       Diskchange is intended only for removable media. For example if
+   you have a internal floppy disk dive set to noclick AROS  will not
+   perform disk presence check. So you have to manually update any
    disk change made.
 
 

@@ -439,7 +439,7 @@ Function
 ::
 
      Cleans up after a call to ArgArrayInit().  Make sure you don't need
-     the tooltype anymore array before calling this function. 
+     the tooltype anymore array before calling this function.
 
 
 Result
@@ -802,7 +802,7 @@ Function
 
      This is the varargs version of the cybergraphics.library call
      BestCModeIDTagList().
-     For more information see the documentation of 
+     For more information see the documentation of
      cybergraphics.library/BestCModeIDTagList().
 
 
@@ -2285,7 +2285,7 @@ Result
 
      An array which can be passed to any function which expects the
      structure or NULL if something failed. This call may fail for
-     different reasons on different systems. On some systems, NULL 
+     different reasons on different systems. On some systems, NULL
      indicates that there was not enough     memory.
 
 
@@ -2640,7 +2640,7 @@ Inputs
      description  --  commodities filter description (see
                       commodities.library/SetFilter())
      port         --  message port the hotkey messages will be sent to
-     id           --  identifier (see CxSender()) 
+     id           --  identifier (see CxSender())
 
 
 Result
@@ -3034,7 +3034,7 @@ Function
 ::
 
      Given a list of ordered circular sublists, merge pairs of ordered sublists into one
-     ordered circular sublist. 
+     ordered circular sublist.
 
 
 Inputs
@@ -3048,7 +3048,7 @@ Inputs
                I.e., the 2nd sublist will be at l->mln_Pred->mln_Succ, the 3rd will be at
                l->mln_Pred->mln_Succ->mln_Pred->mln_Succ and so on.
               
-     compare - Pointer to the comparison function used to merge the 
+     compare - Pointer to the comparison function used to merge the
                sublists
               
      data    - Pointer to user-defined data which will be passed untouched
@@ -4303,7 +4303,7 @@ Function
 ~~~~~~~~
 ::
 
-     This function allocates enough space, and copies the given string 
+     This function allocates enough space, and copies the given string
      into it.
 
 
@@ -4318,7 +4318,7 @@ Result
 ~~~~~~
 ::
 
-     A string copy of the original string (possibly of zero length) or 
+     A string copy of the original string (possibly of zero length) or
      NULL if passed a NULL pointer.
 
 

@@ -38,7 +38,7 @@ Function
 
 
  Join makes one big file of all listed files by putting them together
- in the order given. The destination file may not have the same name 
+ in the order given. The destination file may not have the same name
  as any of input files. You must supply a destination file name. The
  original files remain unchanged. Any number of files can be Join:ed in
  one operation.
@@ -58,7 +58,7 @@ Example
 ::
 
 
- Join Text1.doc Text2.doc AS Text.doc    
+ Join Text1.doc Text2.doc AS Text.doc
  (This will merge the two text files into one.)
      
 

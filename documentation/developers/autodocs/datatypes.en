@@ -311,7 +311,7 @@ Result
 ::
 
 
- The return value of GM_DOMAIN or 0 if an error occurred. The 'domain' 
+ The return value of GM_DOMAIN or 0 if an error occurred. The 'domain'
  IBox will be filled with the requested values as a side effect.
 
 
@@ -368,7 +368,7 @@ Inputs
  o    --  pointer to data type object
  win  --  window the object is attached to
  req  --  requester the object is attached to
- msg  --  the message to send to the object    
+ msg  --  the message to send to the object
 
 
 Result

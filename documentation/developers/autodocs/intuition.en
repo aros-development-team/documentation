@@ -3005,7 +3005,7 @@ Function
      and there isn't any, the Workbench screen will be automatically opened
      and locked.
 
-     The local variable PUBSCREEN can be used to override the name of the 
+     The local variable PUBSCREEN can be used to override the name of the
      default public screen to use ("set PUBSCREEN mypubscreen").
      If the screen does not exist, the PUBSCREEN content is ignored.
 
@@ -3726,7 +3726,7 @@ Notes
 ::
 
      We cannot guarantee that the public screen, the name of which you got
-     by using this function, is available when you call for instance 
+     by using this function, is available when you call for instance
      LockPubScreen(). Therefore you must be prepared to handle failure of
      that kind of functions.
 
@@ -4162,7 +4162,7 @@ Tags
 
      SA_FrontChild (struct Screen *)
          Attach given child screen to this screen. Child screen
-         must already be open. The child screen will go to the 
+         must already be open. The child screen will go to the
          front of the screen group.
 
      SA_BackChild (struct Screen *)
@@ -4190,7 +4190,7 @@ Tags
          Default: FALSE
 
      SA_Colors32 (ULONG *)
-         Data is forwarded to graphics.library/LoadRGB32().  
+         Data is forwarded to graphics.library/LoadRGB32().
          Overwrites values which were set by SA_Colors.
 
      SA_Interleaved (BOOL)
@@ -4416,7 +4416,7 @@ Tags
          Open the window on the public screen with the given address.
          An address of NULL means default public screen. You're
          responsible that the screen stays open until OpenWindowTags()
-         has finished, i.e. 
+         has finished, i.e.
          you're the owner of the screen,
          you have already a window open on the screen
          or you use LockPubScreen()
@@ -4650,7 +4650,7 @@ Function
 ~~~~~~~~
 ::
 
-     Change the status flags for a given public screen. 
+     Change the status flags for a given public screen.
 
 
 Inputs
@@ -5298,18 +5298,18 @@ Bugs
 ~~~~
 ::
 
-     I am not sure, if it is enough to just send a SNOTIFY message to one 
-     screen. I would suggest, the former FirstScreen gets a SDEPTH_TOBACK 
+     I am not sure, if it is enough to just send a SNOTIFY message to one
+     screen. I would suggest, the former FirstScreen gets a SDEPTH_TOBACK
      message and the new FirstScreen gets a SDEPTH_TOFRONT message.
      Currently only the screen supplied with ScreenDepth gets a message.
 
      But those messages need to be sent in front of the actual
      screen depth change because of the SNOTIFY_WAIT_REPLY-flag must be
-     able to block the action. But we only know after int_screendepth(), 
-     if there was a change and which change took place. 
+     able to block the action. But we only know after int_screendepth(),
+     if there was a change and which change took place.
 
-     So I leave it, as it is. This way SNOTIFY_WAIT_REPLY should work 
-     at least. Is there something written in the AutoDocs, how this has 
+     So I leave it, as it is. This way SNOTIFY_WAIT_REPLY should work
+     at least. Is there something written in the AutoDocs, how this has
      to be done (each screen gets a message)?
 
      (o1i)

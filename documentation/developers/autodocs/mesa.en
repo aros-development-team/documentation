@@ -93,7 +93,7 @@ Tags
                   GLA_Height + GLA_Top + GLA_Bottom should equal the height
                   of the rastport. The GLA_Height is interchangable at
                   cration time with GLA_Bottom. Later durring window resizing
-                  , height is calculated from scalled top, bottom and window 
+                  , height is calculated from scalled top, bottom and window
                   height.
 
      GLA_Screen - pointer to Screen onto which scene is to be rendered. When
@@ -112,7 +112,7 @@ Tags
      GLA_AlphaFlag - ignored. All rendering is done with alpha channel.
 
      GLA_NoDepth - disables the depth/Z buffer. Depth buffer is enabled by
-                   default and is 16 or 24 bit based on rendering 
+                   default and is 16 or 24 bit based on rendering
                    capabilities.
 
      GLA_NoStencil - disables the stencil buffer. Stencil buffer is enabled
@@ -315,7 +315,7 @@ Inputs
 ::
 
 
-     ctx - 
+     ctx -
      tagList - a pointer to tags to be used during creation.
 
 

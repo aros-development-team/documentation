@@ -69,7 +69,7 @@ Notes
      For compatibility reasons these cases are handled specially:
      
      Absolute path:
-         Prints the expanded path if it exists and is a file 
+         Prints the expanded path if it exists and is a file
          and no RES argument is given.
          
      Path which ends with a ':':

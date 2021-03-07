@@ -45,7 +45,7 @@ Inputs
 ::
 
 
-     PATH    -- path  
+     PATH    -- path
      ADD     -- adds path
      SHOW    -- shows path
      RESET   -- removes existing path and replaces it by new path

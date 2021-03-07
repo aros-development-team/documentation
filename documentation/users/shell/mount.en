@@ -70,7 +70,7 @@ Example
 ::
 
 
-     Mount DEVS:FAT0    
+     Mount DEVS:FAT0
      (Mounts a FAT device defined in the DEVS:FAT0 file)
 
 

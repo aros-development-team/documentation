@@ -931,7 +931,7 @@ Result
 ~~~~~~
 ::
 
-     < 0 if date1 is later than date2, == 0 if they are equal or > 0 
+     < 0 if date1 is later than date2, == 0 if they are equal or > 0
      if date2 is later than date1.
 
 
@@ -1807,7 +1807,7 @@ Function
 ~~~~~~~~
 ::
 
-     Fill in a FileInfoBlock structure concerning a file or directory 
+     Fill in a FileInfoBlock structure concerning a file or directory
      associated with a particular lock.
 
 
@@ -2266,7 +2266,7 @@ Function
 ::
 
      Find a CLI process by its task number. The number must be greater
-     than 0. 
+     than 0.
 
 
 Inputs
@@ -2357,26 +2357,26 @@ Function
 ~~~~~~~~
 ::
 
-     Search for a resident segment by name and type (system or user). 
-     The first segment that exactly matches the name and type will be 
+     Search for a resident segment by name and type (system or user).
+     The first segment that exactly matches the name and type will be
      returned. The name is case insensitive. If the system argument is
-     non-zero, only system segments will be returned (i.e. those that 
-     have a negative seg_UC value); if zero, only user segments will 
+     non-zero, only system segments will be returned (i.e. those that
+     have a negative seg_UC value); if zero, only user segments will
      be returned (i.e. those with a non-negative seg_UC value).
 
-     You can continue searching for multiple segments that share the 
-     same name and type by specifying the last returned segment as 
+     You can continue searching for multiple segments that share the
+     same name and type by specifying the last returned segment as
      the seg argument.
 
-     FindSegment() does no locking of the segment list. You should 
-     lock the list by calling Forbid() before calling FindSegment(), 
-     and unlock the list by calling Permit() once you have finished 
+     FindSegment() does no locking of the segment list. You should
+     lock the list by calling Forbid() before calling FindSegment(),
+     and unlock the list by calling Permit() once you have finished
      calling FindSegment().
 
-     If you wish to prevent a user segment from being unloaded, you 
-     must increment its seg_UC value before unlocking the list. Once 
-     finished with the segment, you must decrement its seg_UC value 
-     under Forbid()/Permit() protection. The seg_UC value of system 
+     If you wish to prevent a user segment from being unloaded, you
+     must increment its seg_UC value before unlocking the list. Once
+     finished with the segment, you must decrement its seg_UC value
+     under Forbid()/Permit() protection. The seg_UC value of system
      segments should never be altered.
 
 
@@ -2557,7 +2557,7 @@ Function
 ~~~~~~~~
 ::
 
-     Write a character to a file handle. 
+     Write a character to a file handle.
 
      The write is buffered.
 
@@ -2704,7 +2704,7 @@ Function
 ::
 
      FreeArgs() will clean up after a call to ReadArgs(). If the
-     RDArgs structure was allocated by the system in a call to 
+     RDArgs structure was allocated by the system in a call to
      ReadArgs(), then it will be freed. If however, you allocated
      the RDArgs structure with AllocDosObject(), then you will
      have to free it yourself with FreeDosObject().
@@ -2850,7 +2850,7 @@ Function
 ~~~~~~~~
 ::
 
-     Buffered write of a number of blocks to a stream. 
+     Buffered write of a number of blocks to a stream.
      May write fewer blocks than requested.
 
 
@@ -4599,9 +4599,9 @@ Result
 ~~~~~~
 ::
 
-     Returns a lock to the parent directory or NULL, in which case the 
-     supplied lock has no parent directory (because it is the root 
-     directory) or an error occured. IoErr() returns 0 in the former case 
+     Returns a lock to the parent directory or NULL, in which case the
+     supplied lock has no parent directory (because it is the root
+     directory) or an error occured. IoErr() returns 0 in the former case
      and a different value on error.
 
 
@@ -4834,7 +4834,7 @@ Function
 ~~~~~~~~
 ::
 
-     This routine writes an unformatted string to the default output.  No 
+     This routine writes an unformatted string to the default output.  No
      newline is appended to the string and any error is returned.  This
      routine is buffered.
 
@@ -6340,7 +6340,7 @@ Result
 ~~~~~~
 ::
 
-     0 if operation succeeded. 
+     0 if operation succeeded.
 
 
 

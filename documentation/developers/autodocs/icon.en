@@ -194,8 +194,8 @@ Inputs
      rp       - rastport to draw into
      icon     - the icon
      label    - label string
-     leftEdge, 
-     topEdge  - drawing position 
+     leftEdge,
+     topEdge  - drawing position
      state    - drawing state, see intuition/imageclass.h
  
 

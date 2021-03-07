@@ -3116,7 +3116,7 @@ Notes
      (*) On EXECSMP builds, Disable() only aplies to the processor
          it is called from (and needs to be re-enabled there also)
          Data which needs to be protected from parallel access will
-         also require a spinlock.            
+         also require a spinlock.
 
 
 Bugs
@@ -3281,7 +3281,7 @@ Notes
 
      (*) On EXECSMP builds, Enable() only applies to the processor
          it is called from. Data which needs to be protected from
-         parallel access will also require a spinlock.            
+         parallel access will also require a spinlock.
 
 
 Bugs
@@ -3752,7 +3752,7 @@ Notes
 
      (*) On EXECSMP builds, Forbid() only aplies to the processor
          it is called from. Data which needs to be protected from
-         parallel access will also require a spinlock.  
+         parallel access will also require a spinlock.
 
 
 Bugs
@@ -3919,7 +3919,7 @@ Function
 ~~~~~~~~
 ::
 
-     This function will free a slot in taskstorage 
+     This function will free a slot in taskstorage
 
 
 Inputs
@@ -4809,7 +4809,7 @@ Function
 ~~~~~~~~
 ::
 
-     Calls a function with a new stack. 
+     Calls a function with a new stack.
 
 
 Inputs
@@ -5177,7 +5177,7 @@ Notes
 
      (*) On EXECSMP builds, Forbid() only aplies to the processor
          it is called from. Data which needs to be protected from
-         parallel access will also require a spinlock.  
+         parallel access will also require a spinlock.
 
 
 Bugs

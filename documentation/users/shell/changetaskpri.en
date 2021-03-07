@@ -40,7 +40,7 @@ Function
 ~~~~~~~~
 ::
 
-     The ChangeTaskPri command is used to change the current run 
+     The ChangeTaskPri command is used to change the current run
      priority of a Task. As AROS is a multitasking operating
      system, you can determine which tasks receive more CPU time
      by changing their priorities.

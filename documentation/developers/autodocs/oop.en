@@ -262,7 +262,7 @@ Function
      };
 
      describes an interface of the class.
-     The MethodTable is an array of 
+     The MethodTable is an array of
 
      struct MethodDescr
      {
@@ -653,7 +653,7 @@ Function
      Maps a globally unique string interface ID into
      a numeric AttrBase ID that is unique on
      pr. machine basis. IMPORTANT: You MUST
-     be sure that at least one class implementing 
+     be sure that at least one class implementing
      specified interface is initialized at the time calling
      this function. This function is especially useful
      for a class to get AttrBases of the interfaces
@@ -694,7 +694,7 @@ Function
 ~~~~~~~~
 ::
 
-     Get a specific method function for a specific object and 
+     Get a specific method function for a specific object and
      a specific interface. This a direct pointer to the method
      implementation. The pointer should ONLY be used on the object you
      acquired.
@@ -724,7 +724,7 @@ Notes
 ::
 
      !!! Use with EXTREME CAUTION. Very few programs need the extra speed gained
-         by calling a method directly 
+         by calling a method directly
      !!!
 
 

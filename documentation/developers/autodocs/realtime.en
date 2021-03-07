@@ -287,7 +287,7 @@ Function
 ::
 
 
- Query the attributes of a player. For each tagitem ti_Tag specifies the 
+ Query the attributes of a player. For each tagitem ti_Tag specifies the
  attribute and ti_Data a pointer to the IPTR variable in which you want
  the value to be stored.
 

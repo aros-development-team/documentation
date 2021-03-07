@@ -38,7 +38,7 @@ Function
 ::
 
 
- DIR displays the file or directory contained in the current or 
+ DIR displays the file or directory contained in the current or
  specified directory. Directories get listed first, then in alphabetical
  order, the files are listed in two columns. Pressing CTRL-C aborts the
  directory listing.

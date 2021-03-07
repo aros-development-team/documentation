@@ -42,8 +42,8 @@ Function
      two lists for faster redrawing. This routine allows a
      faster update of the display as it will only be rendered
      in the damaged areas.
-     This routine will automatically lock the layer to prevent 
-     changes.   
+     This routine will automatically lock the layer to prevent
+     changes.
 
 
 Inputs
@@ -89,7 +89,7 @@ Function
     in front of the first backdrop layer.
     The areas of simple layers, that become visible by moving this
     layer, are added to the damagelist and the LAYERREFRESH flag
-    is set.  
+    is set.
 
 
 Inputs
@@ -97,7 +97,7 @@ Inputs
 ::
 
     dummy - nothing
-    L     - pointer to layer 
+    L     - pointer to layer
 
 
 Result
@@ -130,7 +130,7 @@ Function
     Changes the shape of the layer on the fly.
     When the shape of a layer is changed the current pixel content
     is copied into its ClipRects so no information is lost.
-    The user can provide a callback hook that will be 
+    The user can provide a callback hook that will be
     called when the current layer's information is all backed up
     in ClipRects. The signature of the callback should look as follows:
 
@@ -186,7 +186,7 @@ Inputs
 ~~~~~~
 ::
 
-    L       - pointer to layer 
+    L       - pointer to layer
     visible - TRUE or FALSE
 
 
@@ -280,8 +280,8 @@ Function
      filled with a certain pattern. The backfill hook has to
      do that.
      If a super bitmap layer is wanted the flags LAYERSUPER and
-     the flag LAYERSMART have to be set and a pointer to a 
-     bitmap must also be passed to this function. 
+     the flag LAYERSMART have to be set and a pointer to a
+     bitmap must also be passed to this function.
 
 
 Inputs
@@ -300,14 +300,14 @@ Inputs
                              (struct Rectangle) bounds,
                              (WORD) offsetx,
                              (WORD) offsety ]
-     bm2   - pointer to optional super bitmap. 
+     bm2   - pointer to optional super bitmap.
      
 
 Result
 ~~~~~~
 ::
 
-     Pointer to the newly created layer. NULL if layer could not be 
+     Pointer to the newly created layer. NULL if layer could not be
      created (Probably out of memory).
      
 
@@ -386,7 +386,7 @@ Inputs
      x1,y1 - lower right corner of the layer (in parent layer coords)
      flags - choose the type of layer by setting some flags
              If it is to be a super bitmap layer then the tag
-             LA_SUPERBITMAP must be provided along with a 
+             LA_SUPERBITMAP must be provided along with a
              pointer to a valid super bitmap.
      tagList - a list of tags that specify the properties of the
                layer. The following tags are currently supported:
@@ -419,7 +419,7 @@ Result
 ~~~~~~
 ::
 
-     Pointer to the newly created layer. NULL if layer could not be 
+     Pointer to the newly created layer. NULL if layer could not be
      created (Probably out of memory).
      If the layer is created successfully you must not free its shape.
      The shape is automatically freed when the layer is deleted.
@@ -460,8 +460,8 @@ Function
      filled with a certain pattern. The backfill hook has to
      do that.
      If a super bitmap layer is wanted the flags LAYERSUPER and
-     the flag LAYERSMART have to be set and a pointer to a 
-     bitmap must also be passed to this function. 
+     the flag LAYERSMART have to be set and a pointer to a
+     bitmap must also be passed to this function.
 
 
 Inputs
@@ -480,7 +480,7 @@ Inputs
                              (struct Rectangle) bounds,
                              (WORD) offsetx,
                              (WORD) offsety ]
-     bm2   - pointer to optional super bitmap. 
+     bm2   - pointer to optional super bitmap.
 
 
 Result
@@ -565,7 +565,7 @@ Inputs
      x1,y1 - lower right corner of the layer (in parent layer coords)
      flags - choose the type of layer by setting some flags
              If it is to be a super bitmap layer then the tag
-             LA_SUPERBITMAP must be provided along with a 
+             LA_SUPERBITMAP must be provided along with a
              pointer to a valid super bitmap.
      tagList - a list of tags that specify the properties of the
                layer. The following tags are currently supported:
@@ -598,7 +598,7 @@ Result
 ~~~~~~
 ::
 
-     Pointer to the newly created layer. NULL if layer could not be 
+     Pointer to the newly created layer. NULL if layer could not be
      created (Probably out of memory).
      If the layer is created successfully you must not free its shape.
      The shape is automatically freed when the layer is deleted.
@@ -641,7 +641,7 @@ Result
 ::
 
      TRUE  - layer was successfully deleted
-     FALSE - layer could not be delete (out of memory) 
+     FALSE - layer could not be delete (out of memory)
 
 
 
@@ -715,7 +715,7 @@ Inputs
 
      l    -  pointer to layer
      flag -  TRUE if the update was complete. The damage list is disposed.
-             FALSE it the update was partial. The damage list is kept. 
+             FALSE it the update was partial. The damage list is kept.
 
 
 Bugs
@@ -803,7 +803,7 @@ Function
 
     Install a transparent Clip region in the layer. All subsequent
     graphics call to the rastport of the layer will be clipped to
-    that region. 
+    that region.
     None of the system functions will free the ClipRegion for you,
     so you will have to call InstallClipRegion(l, NULL) before
     closing a window or deleting a layer.
@@ -867,7 +867,7 @@ Function
 
      Install a backfill hook into the LayerInfo structure. This
      backfill hook will be called to clear the areas where there
-     is no layer. It will be used for every layer.        
+     is no layer. It will be used for every layer.
 
 
 Inputs
@@ -881,8 +881,8 @@ Result
 ~~~~~~
 ::
 
-     If there was a backfill hook installed before it will be 
-     returned. LAYERS_BACKFILL will be returned if the default 
+     If there was a backfill hook installed before it will be
+     returned. LAYERS_BACKFILL will be returned if the default
      backfill hook was installed, LAYERS_NOBACKFILL if there
      was nothing to be called for clearing an area.
 
@@ -915,7 +915,7 @@ Function
 ::
 
     Checks whether this layer is hidden by any siblings
-    that are in front of it. All these siblings must have 
+    that are in front of it. All these siblings must have
     the same priority as that layer.
     It can be specified whether invisible siblings are to be
     considered in the comparison.
@@ -925,7 +925,7 @@ Inputs
 ~~~~~~
 ::
 
-    L               - pointer to layer 
+    L               - pointer to layer
     check_invisible - whether invisible siblings are to be considered
 
 
@@ -961,7 +961,7 @@ Inputs
 ~~~~~~
 ::
 
-    L       - pointer to layer 
+    L       - pointer to layer
 
 
 Result
@@ -1261,7 +1261,7 @@ Function
      It updates the contents of the superbitmap with what is
      visible on the display, repositions the superbitmap
      and redraws the display.
-     For non-superbitmapped layers, all subsequent (x,y) pairs 
+     For non-superbitmapped layers, all subsequent (x,y) pairs
      are adjusted by the scroll(x,y) value in the layer. If
      ScrollLayer(-10,-3) was called and (0,0) is drawn it will
      finally end up at coordinates (10, 3) in the superbitmap.
@@ -1307,7 +1307,7 @@ Function
      to its height.
      If parts of simple layers become visible those parts are
      added to the damage list and a refresh is triggered for
-     those layers. 
+     those layers.
      If the new layer is bigger than before the additional parts
      are added to a damage list if the layer is a non-super-
      bitmap layer. Refresh is also triggered for this layer.
@@ -1488,7 +1488,7 @@ Function
      it is brought in front of all backdrop layers and behind the
      last non-backdrop layer. By clearing the BACKDROP flag of a layer
      a backdrop layer can be brought in front of all other layers.
-     Parts of a simple layer that become visible are added to the 
+     Parts of a simple layer that become visible are added to the
      damage list and the REFRESH flag is set.
 
 
@@ -1533,7 +1533,7 @@ Function
 ::
 
      Determines in which layer the point (x,y) is to be found.
-     Starts with the frontmost layer. 
+     Starts with the frontmost layer.
 
 
 Inputs

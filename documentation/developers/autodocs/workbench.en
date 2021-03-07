@@ -564,14 +564,14 @@ Function
 ::
 
 
- Accesses AppIcon information from workbench.library. This function 
- is meant for iterations through wblibs´ AppIcon storage as needed 
- to display those. 
+ Accesses AppIcon information from workbench.library. This function
+ is meant for iterations through wblibs´ AppIcon storage as needed
+ to display those.
      Initialised with a NULL as the first argument, it iterates
  through all AppIcons stored in workbench.library by returning the
  pointer to the next AppIcon´s DiskObject structure and copies the
  name of the given AppIcon to the given array. The function returns
- a NULL if the end of AppIcon list was reached or if no AppIcons 
+ a NULL if the end of AppIcon list was reached or if no AppIcons
  were stored.
 
 
@@ -580,7 +580,7 @@ Inputs
 ::
 
 
- lastdiskobj  --  NULL (initial value) or pointer to a DiskObject 
+ lastdiskobj  --  NULL (initial value) or pointer to a DiskObject
                   structure stored in workbench.library
  text         --  char array pointer to store AppIcon´s name in
 
@@ -686,7 +686,7 @@ Function
      specified port about actions the application is supposed to carry out.
      
      All messages sent to the message port are of struct WBHandlerMessage,
-     which is specified in <workbench/handler.h>. The wbhm_Type field 
+     which is specified in <workbench/handler.h>. The wbhm_Type field
      identifies the type of message and which part of the wbhm_Data union
      is relevant. The following types are currently defined:
      
@@ -705,7 +705,7 @@ Function
          Request to open the specified drawer.
          
      WBHM_TYPE_UPDATE
-         The state of the specified disk object has changed, and this 
+         The state of the specified disk object has changed, and this
          message serves as a notification and suggestion that you should
          update its visual representation to the user. For example, it
          might have been deleted or renamed.
@@ -1052,7 +1052,7 @@ Inputs
 ~~~~~~
 ::
 
-     msgport - The message port of that was earlier passed in to 
+     msgport - The message port of that was earlier passed in to
                RegisterWorkbench().
 
 
@@ -1061,7 +1061,7 @@ Result
 ::
 
      TRUE if the message port was successfully unregistered, FALSE otherwise.
-     The unregistration will fail if the message port isn't the same that 
+     The unregistration will fail if the message port isn't the same that
      was passed in with RegisterWorkbench() earlier or if the passed
      in pointer is NULL.
 
@@ -1156,7 +1156,7 @@ Function
 ::
 
      Informs the workbench application that an object has changed, and that
-     it should update it's visual representation. 
+     it should update it's visual representation.
 
 
 Inputs

@@ -941,11 +941,11 @@ Example
          { aHidd_PixFmt_BitsPerPixel , 24                            },
          { aHidd_PixFmt_StdPixFmt    , vHidd_StdPixFmt_Native        },
          { aHidd_PixFmt_BitMapType   , vHidd_BitMapType_Chunky       },
-         { TAG_DONE                  , 0UL                           } 
+         { TAG_DONE                  , 0UL                           }
      };
 
      // 640x480 resolution
-     struct TagItem tags_800_600[] = 
+     struct TagItem tags_800_600[] =
      {
          { aHidd_Sync_HDisp          , 640                    },
          { aHidd_Sync_VDisp          , 480                    },
@@ -953,7 +953,7 @@ Example
      };
 
      // 800x600 resolution
-     struct TagItem tags_800_600[] = 
+     struct TagItem tags_800_600[] =
      {
          { aHidd_Sync_HDisp          , 800                    },
          { aHidd_Sync_VDisp          , 600                    },
@@ -961,7 +961,7 @@ Example
      };
 
      // 1024x768 resolution
-     struct TagItem tags_1024_768[] = 
+     struct TagItem tags_1024_768[] =
      {
          { aHidd_Sync_HDisp          , 1024                    },
          { aHidd_Sync_VDisp          , 768                     },
@@ -1292,7 +1292,7 @@ Synopsis
      VOID OOP_DoMethod(OOP_Object *obj, struct pHidd_Gfx_CopyBox *msg);
 
      VOID HIDD_Gfx_CopyBox(OOP_Object *gfxHidd, OOP_Object *src, WORD srcX, WORD srcY,
-                           OOP_Object *dest, WORD destX, WORD destY, UWORD width, UWORD height, 
+                           OOP_Object *dest, WORD destX, WORD destY, UWORD width, UWORD height,
                            OOP_Object *gc);
 
 
@@ -1360,7 +1360,7 @@ Synopsis
      IPTR OOP_DoMethod(OOP_Object *obj, struct pHidd_Gfx_CopyBoxMasked *msg);
 
      IPTR HIDD_Gfx_CopyBoxMasked(OOP_Object *gfxHidd, OOP_Object *src, WORD srcX, WORD srcY,
-                           OOP_Object *dest, WORD destX, WORD destY, UWORD width, UWORD height, 
+                           OOP_Object *dest, WORD destX, WORD destY, UWORD width, UWORD height,
                            PLANEPTR mask, OOP_Object *gc);
 
 
@@ -1728,7 +1728,7 @@ Synopsis
 ~~~~~~~~
 ::
 
-     OOP_Object *OOP_DoMethod(OOP_Object *o, struct pHidd_Gfx_GetPixFmt *msg); 
+     OOP_Object *OOP_DoMethod(OOP_Object *o, struct pHidd_Gfx_GetPixFmt *msg);
 
      OOP_Object *HIDD_Gfx_GetPixFmt(OOP_Object *gfxHidd, HIDDT_StdPixFmt pixFmt);
 
@@ -4680,7 +4680,7 @@ Synopsis
 
      HIDDT_RGBConversionFunction
      HIDD_BM_SetRGBConversionFunction(OOP_Object *obj, HIDDT_StdPixFmt srcPixFmt,
-                                      HIDDT_StdPixFmt dstPixFmt, 
+                                      HIDDT_StdPixFmt dstPixFmt,
                                       HIDDT_RGBConversionFunction function);
 
 

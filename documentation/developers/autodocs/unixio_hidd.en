@@ -492,7 +492,7 @@ Result
 ~~~~~~
 ::
 
-     A number of the opened file descriptor or -1 for an error. 
+     A number of the opened file descriptor or -1 for an error.
 
 
 
@@ -536,7 +536,7 @@ Result
 ~~~~~~
 ::
 
-     A number of the opened packet descriptor or -1 for an error. 
+     A number of the opened packet descriptor or -1 for an error.
 
 
 

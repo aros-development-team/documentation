@@ -41,7 +41,7 @@ Function
      drive. Adding buffers speeds disk access but has the drawback
      of using up system memory (typically 512 bytes per buffer).
      Specifying a negative number subtracts buffers from the drive.
-         If only the DRIVE argument is specified, the number of 
+         If only the DRIVE argument is specified, the number of
      buffers for that drive are displayed without changing the buffer
      allocation.
 

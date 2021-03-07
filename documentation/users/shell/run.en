@@ -46,7 +46,7 @@ Inputs
 ::
 
 
-     QUIET    --  avoids printing of the background CLI's number 
+     QUIET    --  avoids printing of the background CLI's number
 
      COMMAND  --  the program to run together with its arguments
 

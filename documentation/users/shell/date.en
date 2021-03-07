@@ -48,9 +48,9 @@ Inputs
      DAY  -- sets date by name (monday, tuesday, ... , tomorrow, yesterday)
      DATE -- sets date in format DD-MMM-YY.
              For MMM either the number or the first 3 letters of the
-             month in English        
+             month in English
      TIME -- sets time in format HH:MM:SS
-     TO   -- output is sent to file          
+     TO   -- output is sent to file
 
 
 Example

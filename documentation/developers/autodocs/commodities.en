@@ -38,7 +38,7 @@ Function
 
 
  Activates/deactivates a given commodity object. (An inactive object
- doesn't perform its function on its input - it just passes it on to 
+ doesn't perform its function on its input - it just passes it on to
  the next object.) The activation depends on the value of 'true'; if
  it's TRUE the object is activated, if it's FALSE it's deactivated.
      All objects are created in the active state except for brokers;
@@ -322,7 +322,7 @@ Inputs
 
  type  -  the type of the commodity object to be created. Possible
           types are defined in <libraries/commodities.h>.
- arg1  -  depends on the value of 'type' above.  
+ arg1  -  depends on the value of 'type' above.
  arg2  -  depends on the value of 'type' above.
 
 
@@ -374,7 +374,7 @@ Function
 
  Create a commodity broker from the specifications found in the structure
  pointed to by 'nb'. The NewBroker structure is described in <Libraries/
- Commodities.h>, see this file for more info. After the call, the 
+ Commodities.h>, see this file for more info. After the call, the
  NewBroker structure isn't needed anymore and may be discarded.
 
 
@@ -673,7 +673,7 @@ Notes
 See also
 ~~~~~~~~
 
-`DeleteCxObjAll()`_   
+`DeleteCxObjAll()`_ 
 
 ----------
 
@@ -746,7 +746,7 @@ Inputs
 ::
 
 
- cxm  -  the commodity message to delete (must NOT be NULL) 
+ cxm  -  the commodity message to delete (must NOT be NULL)
 
 
 Notes

@@ -9,7 +9,8 @@ debug
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`DecodeLocationA()`_                    `EnumerateSymbolsA()`_                  `RegisterModule()`_                     `UnregisterModule()`_                   
+`DecodeLocationA()`_                    `DisassembleCtx()`_                     `EnumerateSymbolsA()`_                  `FreeDisassembleCtx()`_                 
+`GetCtxInstructionA()`_                 `InitDisassembleCtx()`_                 `RegisterModule()`_                     `UnregisterModule()`_                   
 
 ======================================= ======================================= ======================================= ======================================= 
 
@@ -91,6 +92,40 @@ Notes
 
 ----------
 
+DisassembleCtx()
+================
+
+Synopsis
+~~~~~~~~
+::
+
+ IPTR DisassembleCtx(
+          APTR ctx );
+
+Function
+~~~~~~~~
+::
+
+     Disassemble the next instruction for the given context handle.
+
+
+Inputs
+~~~~~~
+::
+
+     ctx             - Disassembly context handle.
+
+
+Result
+~~~~~~
+::
+
+     returns the size of the disassembled instruction.
+
+
+
+----------
+
 EnumerateSymbolsA()
 ===================
 
@@ -114,6 +149,115 @@ Function
  loaded modules that match the given search criteria.
 
  The message that is passed to hook contains a pointer to struct SymbolInfo.
+
+
+
+----------
+
+FreeDisassembleCtx()
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+ void FreeDisassembleCtx(
+          APTR ctx );
+
+Function
+~~~~~~~~
+::
+
+     Free the disassemble context
+
+
+Inputs
+~~~~~~
+::
+
+     ctx             - Disassembly context handle.
+
+
+
+----------
+
+GetCtxInstructionA()
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+ APTR GetCtxInstructionA(
+          APTR ctx,
+          struct TagItem * tags );
+ 
+ APTR GetCtxInstruction(
+          APTR ctx,
+          TAG tag, ... );
+
+Function
+~~~~~~~~
+::
+
+     Get the requested attributes for the disasembled
+             instruction, for the specified Disassembly context.
+
+
+Inputs
+~~~~~~
+::
+
+     ctx             - Disassembly context handle.
+     tags    - Taglist of requested attributes.
+                             DCIT_Instruction_Offset - instructions offset relative to the PC.
+                             DCIT_Instruction_HexStr - instruction in hex format
+                             DCIT_Instruction_Asm    - disassembled instruction
+
+
+Result
+~~~~~~
+::
+
+     number of handled attributes.
+
+
+
+----------
+
+InitDisassembleCtx()
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+ APTR InitDisassembleCtx(
+          APTR start,
+          APTR end,
+          APTR pc );
+
+Function
+~~~~~~~~
+::
+
+     Initializes a disassembly context for the given inputs.
+
+
+Inputs
+~~~~~~
+::
+
+     start   - Start address of disassembly
+     end     - End address of disassembly
+     pc              - Program Counter value.
+
+
+Result
+~~~~~~
+::
+
+     returns a disassembly context handle.
 
 
 
