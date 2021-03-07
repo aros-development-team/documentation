@@ -110,6 +110,31 @@ def move_if_changed(tmpfilename, targetfilename):
     os.remove(tmpfilename)
 
 
+class FunctionIndex(object):
+    def __init__(self):
+        self.funcdict = {}
+
+    def add_list(self, docpath, libdocs):
+        for ldoc in libdocs.doclist:
+            if ldoc.docname.endswith("()"): # leave out e.g. background etc.
+                self.funcdict[ldoc.docname] = docpath
+
+    def write(self, fdesc):
+        tablesep = (("=" * 64) + " ") * 4
+        os.write(fdesc, "==============\n")
+        os.write(fdesc, "Function Index\n")
+        os.write(fdesc, "==============\n\n")
+        os.write(fdesc, tablesep + "\n")
+        entrynr = 1
+        for func in sorted(self.funcdict):
+            text = ("`%s <%s>`_" %(func, self.funcdict[func])).ljust(65)
+            os.write(fdesc, text)
+            if (entrynr) % 4 == 0:
+                os.write(fdesc, "\n")
+            entrynr += 1
+        os.write(fdesc, "\n" + tablesep + "\n")
+
+
 class AutoDoc(object):
     """ Autodoc base class.
 
@@ -801,7 +826,8 @@ def write_index(fdesc, targetdir):
     os.write(fdesc, tablesep + "\n")
     docnr = 1
     for doc in files:
-        if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" and doc[:12] != "introduction":
+        if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" \
+                and doc[:12] != "introduction" and doc[:13] != "functionindex":
             docname = doc[:-3]
             tocname = "`%s <%s>`_" %(docname, docname)
             tocname = tocname.ljust(50)
@@ -815,7 +841,9 @@ def write_index(fdesc, targetdir):
 def create_module_docs():
     """Create the module docs.
     """
-
+    
+    function_index = FunctionIndex()
+    
     module_titles = ("Synopsis", "Template", "Function",
                      "Inputs", "Tags", "Result", "Example", "Notes", "Bugs", "See also")  # The titles we want
                                                                                           # to be printed
@@ -826,9 +854,9 @@ def create_module_docs():
                os.path.join(TOPDIR, "arch", "all-pc"),
                os.path.join(TOPDIR, "arch", "m68k-amiga"),
                os.path.join(TOPDIR, "workbench", "libs"),
-               os.path.join(TOPDIR, "workbench/libs/mesa"))
+               os.path.join(TOPDIR, "workbench", "libs", "mesa"))
     for sdir in srcdirs:
-        create_lib_docs_dir(sdir, targetdir, module_titles)
+        create_lib_docs_dir(sdir, targetdir, module_titles, function_index)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = (os.path.join(TOPDIR, "compiler", "alib"),
@@ -849,12 +877,6 @@ def create_module_docs():
     for sdir in srcdirs:
         create_hidd_docs_dir(sdir, targetdir, module_titles)
 
-    # add muimaster classes
-    #docpath = os.path.join(topdir, "workbench", "libs", "muimaster", "classes")
-    #hidddocs = hidddoclist()
-    #hidddocs.read(docpath, "mui_classes")
-    #hidddocs.write(targetdir, module_titles)
-
     # print index file
     filename = os.path.join(targetdir, "index.en")
     print "Writing to file", filename
@@ -865,12 +887,22 @@ def create_module_docs():
     os.write(tempfd, ".. This document is automatically generated. Don't edit it!\n\n")
 
     write_index(tempfd, targetdir)
+    os.write(tempfd, "\n`Function Index <functionindex>`_\n")
     os.close(tempfd)
     move_if_changed(tempfilename, filename)
+
+    # print function index
+    filename = os.path.join(targetdir, "functionindex.en")
+    print "Writing to file", filename
+    (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
+    function_index.write(tempfd)
+    os.close(tempfd)
+    move_if_changed(tempfilename, filename)
+
     print "Done"
 
 
-def create_lib_docs_dir(srcdir, targetdir, titles):
+def create_lib_docs_dir(srcdir, targetdir, titles, function_index):
     """Scan whole parent directory.
 
     Scans a parent directory like AROS/rom for subdirectories with
@@ -891,6 +923,7 @@ def create_lib_docs_dir(srcdir, targetdir, titles):
             libdocs = LibDocList()
             libdocs.read(docpath)
             libdocs.write(targetdir, titles)
+            function_index.add_list(sdir, libdocs)
 
 def create_hidd_docs_dir(srcdir, targetdir, titles):
     """Scan whole parent directory.
