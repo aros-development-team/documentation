@@ -120,14 +120,14 @@ class FunctionIndex(object):
                 self.funcdict[ldoc.docname] = docpath
 
     def write(self, fdesc):
-        tablesep = (("=" * 64) + " ") * 4
+        tablesep = (("=" * 74) + " ") * 4
         os.write(fdesc, "==============\n")
         os.write(fdesc, "Function Index\n")
         os.write(fdesc, "==============\n\n")
         os.write(fdesc, tablesep + "\n")
         entrynr = 1
         for func in sorted(self.funcdict):
-            text = ("`%s <%s>`_" %(func, self.funcdict[func])).ljust(65)
+            text = ("`%s <%s#%s>`_" %(func, self.funcdict[func], func[:-2].lower())).ljust(75)
             os.write(fdesc, text)
             if (entrynr) % 4 == 0:
                 os.write(fdesc, "\n")
