@@ -99,7 +99,7 @@ def processPicture(src, depth):
 
     # Create the thumbnail.
     if utility.newer([src_abs], tn_dst_abs):
-        print '» Thumbnailing', src
+        print('» Thumbnailing', src)
         thumbnail.makeThumbnail(src_abs, tn_dst_abs, (200, 200))
 
 
@@ -227,7 +227,7 @@ def makeNews():
             if ext == '.en' and len(date) == 8 and date.isdigit():
                 year = date[:4]
                 if year != yeardirname:
-                    print 'Error: News item "' + date + '" found in news year "' + yeardirname + '".'
+                    print('Error: News item "' + date + '" found in news year "' + yeardirname + '".')
 
                 # Generate a recent news source list and year news source lists for each language
                 for lang in languages:
@@ -263,7 +263,7 @@ def makeNews():
             output.close()
 
         # Create year news pages
-        for year in archives[lang].keys():
+        for year in list(archives[lang].keys()):
             if len(archives[lang][year]):
                 archives[lang][year].sort(reverse=True)
                 _dst = os.path.join(NEWS_SRC_ARCH + year + '.' + lang)
@@ -727,10 +727,10 @@ if __name__ == '__main__':
     for arg in sys.argv[1:]:
         if arg in LANGUAGES:
             languages.append(arg)
-        elif TARGETS.has_key(arg):
+        elif arg in TARGETS:
             targets.append(arg)
         else:
-            print 'Error: Unrecognised argument, "' + arg + '".'
+            print('Error: Unrecognised argument, "' + arg + '".')
             valid = 0
 
     if valid:

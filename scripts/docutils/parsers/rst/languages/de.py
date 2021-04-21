@@ -39,7 +39,7 @@ directives = {
       'pull-quote (translation required)': 'pull-quote', # kasten too ?
       'zusammengesetzt': 'compound',
       'verbund': 'compound',
-      u'container (translation required)': 'container',
+      'container (translation required)': 'container',
       #'fragen': 'questions',
       'tabelle': 'table',
       'csv-tabelle': 'csv-table',
@@ -48,9 +48,9 @@ directives = {
       #'imagemap': 'imagemap',
       'bild': 'image',
       'abbildung': 'figure',
-      u'unver\xe4ndert': 'raw',
-      u'roh': 'raw',
-      u'einf\xfcgen': 'include',
+      'unver\xe4ndert': 'raw',
+      'roh': 'raw',
+      'einf\xfcgen': 'include',
       'ersetzung': 'replace',
       'ersetzen': 'replace',
       'ersetze': 'replace',
@@ -58,14 +58,14 @@ directives = {
       'datum': 'date',
       'klasse': 'class',
       'rolle': 'role',
-      u'default-role (translation required)': 'default-role',
-      u'title (translation required)': 'title',
+      'default-role (translation required)': 'default-role',
+      'title (translation required)': 'title',
       'inhalt': 'contents',
       'kapitel-nummerierung': 'sectnum',
       'abschnitts-nummerierung': 'sectnum',
-      u'linkziel-fu\xdfnoten': 'target-notes',
-      u'header (translation required)': 'header',
-      u'footer (translation required)': 'footer',
+      'linkziel-fu\xdfnoten': 'target-notes',
+      'header (translation required)': 'header',
+      'footer (translation required)': 'footer',
       #u'fu\xdfnoten': 'footnotes',
       #'zitate': 'citations',
       }
@@ -73,7 +73,7 @@ directives = {
 mapping."""
 
 roles = {
-      u'abk\xfcrzung': 'abbreviation',
+      'abk\xfcrzung': 'abbreviation',
       'akronym': 'acronym',
       'index': 'index',
       'tiefgestellt': 'subscript',
@@ -83,15 +83,15 @@ roles = {
       'rfc-referenz': 'rfc-reference',
       'betonung': 'emphasis',
       'fett': 'strong',
-      u'w\xf6rtlich': 'literal',
+      'w\xf6rtlich': 'literal',
       'benannte-referenz': 'named-reference',
       'unbenannte-referenz': 'anonymous-reference',
-      u'fu\xdfnoten-referenz': 'footnote-reference',
+      'fu\xdfnoten-referenz': 'footnote-reference',
       'zitat-referenz': 'citation-reference',
       'ersetzungs-referenz': 'substitution-reference',
       'ziel': 'target',
       'uri-referenz': 'uri-reference',
-      u'unver\xe4ndert': 'raw',
-      u'roh': 'raw',}
+      'unver\xe4ndert': 'raw',
+      'roh': 'raw',}
 """Mapping of German role names to canonical role names for interpreted text.
 """

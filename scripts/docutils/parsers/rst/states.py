@@ -295,7 +295,7 @@ class RSTState(StateWS):
         if blank_finish_state is None:
             blank_finish_state = initial_state
         state_machine.states[blank_finish_state].blank_finish = blank_finish
-        for key, value in extra_settings.items():
+        for key, value in list(extra_settings.items()):
             setattr(state_machine.states[initial_state], key, value)
         state_machine.run(block, input_offset, memo=self.memo,
                           node=node, match_titles=match_titles)
@@ -902,8 +902,7 @@ class Inliner:
         return self.reference(match, lineno, anonymous=1)
 
     def standalone_uri(self, match, lineno):
-        if not match.group('scheme') or urischemes.schemes.has_key(
-              match.group('scheme').lower()):
+        if not match.group('scheme') or match.group('scheme').lower() in urischemes.schemes:
             if match.group('email'):
                 addscheme = 'mailto:'
             else:
@@ -1000,7 +999,7 @@ class Body(RSTState):
           'parens': Struct(prefix='(', suffix=')', start=1, end=-1),
           'rparen': Struct(prefix='', suffix=')', start=0, end=-1),
           'period': Struct(prefix='', suffix='.', start=0, end=-1)}
-    enum.formats = enum.formatinfo.keys()
+    enum.formats = list(enum.formatinfo.keys())
     enum.sequences = ['arabic', 'loweralpha', 'upperalpha',
                       'lowerroman', 'upperroman'] # ORDERED!
     enum.sequencepats = {'arabic': '[0-9]+',
@@ -1100,7 +1099,7 @@ class Body(RSTState):
         return blockquote, messages
 
     # u'\u2014' is an em-dash:
-    attribution_pattern = re.compile(ur'(---?(?!-)|\u2014) *(?=[^ \n])')
+    attribution_pattern = re.compile(r'(---?(?!-)|\u2014) *(?=[^ \n])')
 
     def check_attribution(self, indented, line_offset):
         """
@@ -1384,7 +1383,9 @@ class Body(RSTState):
         optionlist = nodes.option_list()
         try:
             listitem, blank_finish = self.option_list_item(match)
-        except MarkupError, (message, lineno):
+        except MarkupError as xxx_todo_changeme1:
+            # This shouldn't happen; pattern won't match.
+            (message, lineno) = xxx_todo_changeme1.args
             # This shouldn't happen; pattern won't match.
             msg = self.reporter.error(
                 'Invalid option list marker: %s' % message, line=lineno)
@@ -1505,7 +1506,7 @@ class Body(RSTState):
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end(),
                                                           until_blank=1)
-        text = u'\n'.join(indented)
+        text = '\n'.join(indented)
         text_nodes, messages = self.inline_text(text, lineno)
         line = nodes.line(text, '', *text_nodes)
         if match.string.rstrip() != '|': # not empty
@@ -1572,7 +1573,7 @@ class Body(RSTState):
                              + 1)
                 table = self.build_table(tabledata, tableline)
                 nodelist = [table] + messages
-            except tableparser.TableMarkupError, detail:
+            except tableparser.TableMarkupError as detail:
                 nodelist = self.malformed_table(
                     block, ' '.join(detail.args)) + messages
         else:
@@ -1584,7 +1585,7 @@ class Body(RSTState):
         blank_finish = 1
         try:
             block = self.state_machine.get_text_block(flush_left=1)
-        except statemachine.UnexpectedIndentationError, instance:
+        except statemachine.UnexpectedIndentationError as instance:
             block, source, lineno = instance.args
             messages.append(self.reporter.error('Unexpected indentation.',
                                                 source=source, line=lineno))
@@ -2007,7 +2008,7 @@ class Body(RSTState):
             arguments, options, content, content_offset = (
                 self.parse_directive_block(indented, line_offset,
                                            directive_fn, option_presets))
-        except MarkupError, detail:
+        except MarkupError as detail:
             error = self.reporter.error(
                 'Error in "%s" directive:\n%s.' % (type_name,
                                                    ' '.join(detail.args)),
@@ -2118,11 +2119,11 @@ class Body(RSTState):
             return 0, 'invalid option block'
         try:
             options = utils.extract_extension_options(node, option_spec)
-        except KeyError, detail:
+        except KeyError as detail:
             return 0, ('unknown option: "%s"' % detail.args[0])
-        except (ValueError, TypeError), detail:
+        except (ValueError, TypeError) as detail:
             return 0, ('invalid option value: %s' % ' '.join(detail.args))
-        except utils.ExtensionOptionError, detail:
+        except utils.ExtensionOptionError as detail:
             return 0, ('invalid option data: %s' % ' '.join(detail.args))
         if blank_finish:
             return 1, options
@@ -2209,7 +2210,8 @@ class Body(RSTState):
             if expmatch:
                 try:
                     return method(self, expmatch)
-                except MarkupError, (message, lineno): # never reached?
+                except MarkupError as xxx_todo_changeme: # never reached?
+                    (message, lineno) = xxx_todo_changeme.args # never reached?
                     errors.append(self.reporter.warning(message, line=lineno))
                     break
         nodelist, blank_finish = self.comment(match)
@@ -2433,7 +2435,8 @@ class OptionList(SpecializedBody):
         """Option list item."""
         try:
             option_list_item, blank_finish = self.option_list_item(match)
-        except MarkupError, (message, lineno):
+        except MarkupError as xxx_todo_changeme2:
+            (message, lineno) = xxx_todo_changeme2.args
             self.invalid_input()
         self.parent += option_list_item
         self.blank_finish = blank_finish
@@ -2624,7 +2627,7 @@ class Text(RSTState):
         msg = None
         try:
             block = self.state_machine.get_text_block(flush_left=1)
-        except statemachine.UnexpectedIndentationError, instance:
+        except statemachine.UnexpectedIndentationError as instance:
             block, source, lineno = instance.args
             msg = self.reporter.error('Unexpected indentation.',
                                       source=source, line=lineno)

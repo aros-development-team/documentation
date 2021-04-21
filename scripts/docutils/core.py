@@ -205,10 +205,10 @@ class Publisher:
             self.apply_transforms()
             output = self.writer.write(self.document, self.destination)
             self.writer.assemble_parts()
-        except SystemExit, error:
+        except SystemExit as error:
             exit = 1
             exit_status = error.code
-        except Exception, error:
+        except Exception as error:
             if not self.settings:       # exception too early to report nicely
                 raise
             if self.settings.traceback: # Propagate exceptions?
@@ -230,24 +230,24 @@ class Publisher:
         if not self.document:
             return
         if self.settings.dump_settings:
-            print >>sys.stderr, '\n::: Runtime settings:'
-            print >>sys.stderr, pprint.pformat(self.settings.__dict__)
+            print('\n::: Runtime settings:', file=sys.stderr)
+            print(pprint.pformat(self.settings.__dict__), file=sys.stderr)
         if self.settings.dump_internals:
-            print >>sys.stderr, '\n::: Document internals:'
-            print >>sys.stderr, pprint.pformat(self.document.__dict__)
+            print('\n::: Document internals:', file=sys.stderr)
+            print(pprint.pformat(self.document.__dict__), file=sys.stderr)
         if self.settings.dump_transforms:
-            print >>sys.stderr, '\n::: Transforms applied:'
-            print >>sys.stderr, (' (priority, transform class, '
-                                 'pending node details, keyword args)')
-            print >>sys.stderr, pprint.pformat(
+            print('\n::: Transforms applied:', file=sys.stderr)
+            print((' (priority, transform class, '
+                                 'pending node details, keyword args)'), file=sys.stderr)
+            print(pprint.pformat(
                 [(priority, '%s.%s' % (xclass.__module__, xclass.__name__),
                   pending and pending.details, kwargs)
                  for priority, xclass, pending, kwargs
-                 in self.document.transformer.applied])
+                 in self.document.transformer.applied]), file=sys.stderr)
         if self.settings.dump_pseudo_xml:
-            print >>sys.stderr, '\n::: Pseudo-XML:'
-            print >>sys.stderr, self.document.pformat().encode(
-                'raw_unicode_escape')
+            print('\n::: Pseudo-XML:', file=sys.stderr)
+            print(self.document.pformat().encode(
+                'raw_unicode_escape'), file=sys.stderr)
 
     def report_Exception(self, error):
         if isinstance(error, utils.SystemMessage):
@@ -255,19 +255,19 @@ class Publisher:
         elif isinstance(error, UnicodeError):
             self.report_UnicodeError(error)
         else:
-            print >>sys.stderr, '%s: %s' % (error.__class__.__name__, error)
-            print >>sys.stderr, ("""\
+            print('%s: %s' % (error.__class__.__name__, error), file=sys.stderr)
+            print(("""\
 Exiting due to error.  Use "--traceback" to diagnose.
 Please report errors to <docutils-users@lists.sf.net>.
 Include "--traceback" output, Docutils version (%s [%s]),
 Python version (%s), your OS type & version, and the
 command line used.""" % (__version__, __version_details__,
-                         sys.version.split()[0]))
+                         sys.version.split()[0])), file=sys.stderr)
 
     def report_SystemMessage(self, error):
-        print >>sys.stderr, ('Exiting due to level-%s (%s) system message.'
+        print(('Exiting due to level-%s (%s) system message.'
                              % (error.level,
-                                utils.Reporter.levels[error.level]))
+                                utils.Reporter.levels[error.level])), file=sys.stderr)
 
     def report_UnicodeError(self, error):
         sys.stderr.write(

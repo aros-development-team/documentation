@@ -76,8 +76,8 @@ class attribute_tuple(PythonStructural, TextElement): pass
 # Collect all the classes we've written above
 def install_node_class_names():
     node_class_names = []
-    for name, var in globals().items():
-        if (type(var) is types.ClassType
+    for name, var in list(globals().items()):
+        if (type(var) is type
             and issubclass(var, PythonStructural) \
             and name.lower() == name):
             node_class_names.append(var.tagname or name)
