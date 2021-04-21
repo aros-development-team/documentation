@@ -1,7 +1,6 @@
-# Author: Nicola Larosa, Lele Gaifax
-# Contact: docutils@tekNico.net, lele@seldati.it
-# Revision: $Revision$
-# Date: $Date$
+# $Id: it.py 7119 2011-09-02 13:00:23Z milde $
+# Authors: Nicola Larosa <docutils@tekNico.net>;
+#          Lele Gaifax <lele@seldati.it>
 # Copyright: This module has been placed in the public domain.
 
 # Beware: the italian translation of the reStructuredText documentation
@@ -20,6 +19,7 @@ __docformat__ = 'reStructuredText'
 directives = {
       'attenzione': 'attention',
       'cautela': 'caution',
+      'code (translation required)': 'code',
       'pericolo': 'danger',
       'errore': 'error',
       'suggerimento': 'hint',
@@ -45,6 +45,7 @@ directives = {
       'tabella-csv': 'csv-table',
       'tabella-elenco': 'list-table',
       'meta': 'meta',
+      'math (translation required)': 'math',
       #'imagemap': 'imagemap',
       'immagine': 'image',
       'figura': 'figure',
@@ -73,6 +74,7 @@ mapping."""
 roles = {
       'abbreviazione': 'abbreviation',
       'acronimo': 'acronym',
+      u'code (translation required)': 'code',
       'indice': 'index',
       'deponente': 'subscript',
       'esponente': 'superscript',
@@ -82,6 +84,7 @@ roles = {
       'enfasi': 'emphasis',
       'forte': 'strong',
       'letterale': 'literal',
+    'math (translation required)': 'math',
       'riferimento-con-nome': 'named-reference',
       'riferimento-anonimo': 'anonymous-reference',
       'riferimento-nota': 'footnote-reference',

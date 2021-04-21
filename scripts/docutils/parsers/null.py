@@ -1,7 +1,5 @@
-# Author: Martin Blais
-# Contact: blais@furius.ca
-# Revision: $Revision$
-# Date: $Date$
+# $Id: null.py 4564 2006-05-21 20:44:42Z wiemann $
+# Author: Martin Blais <blais@furius.ca>
 # Copyright: This module has been placed in the public domain.
 
 """A do-nothing parser."""

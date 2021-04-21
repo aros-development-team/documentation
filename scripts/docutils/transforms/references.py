@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: references.py 8565 2020-09-14 10:26:03Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -49,7 +47,7 @@ class PropagateTargets(Transform):
                  target.hasattr('refname'))):
                 continue
             assert len(target) == 0, 'error: block-level target has children'
-            next_node = target.next_node(ascend=1)
+            next_node = target.next_node(ascend=True)
             # Do not move names and ids into Invisibles (we'd lose the
             # attributes) or different Targetables (e.g. footnotes).
             if (next_node is not None and
@@ -138,7 +136,7 @@ class AnonymousHyperlinks(Transform):
             return
         for ref, target in zip(anonymous_refs, anonymous_targets):
             target.referenced = 1
-            while 1:
+            while True:
                 if target.hasattr('refuri'):
                     ref['refuri'] = target['refuri']
                     ref.resolved = 1
@@ -242,7 +240,7 @@ class IndirectHyperlinks(Transform):
             del target.multiply_indirect
         if reftarget.hasattr('refuri'):
             target['refuri'] = reftarget['refuri']
-            if target.has_key('refid'):
+            if 'refid' in target:
                 del target['refid']
         elif reftarget.hasattr('refid'):
             target['refid'] = reftarget['refid']
@@ -259,7 +257,7 @@ class IndirectHyperlinks(Transform):
         target.resolved = 1
 
     def nonexistent_indirect_target(self, target):
-        if self.document.nameids.has_key(target['refname']):
+        if target['refname'] in self.document.nameids:
             self.indirect_target_error(target, 'which is a duplicate, and '
                                        'cannot be used as a unique reference')
         else:
@@ -277,12 +275,13 @@ class IndirectHyperlinks(Transform):
             reflist.extend(self.document.refnames.get(name, []))
         for id in target['ids']:
             reflist.extend(self.document.refids.get(id, []))
-        naming += '(id="%s")' % target['ids'][0]
+        if target['ids']:
+            naming += '(id="%s")' % target['ids'][0]
         msg = self.document.reporter.error(
               'Indirect hyperlink target %s refers to target "%s", %s.'
               % (naming, target['refname'], explanation), base_node=target)
         msgid = self.document.set_id(msg)
-        for ref in uniq(reflist):
+        for ref in utils.uniq(reflist):
             prb = nodes.problematic(
                   ref.rawsource, ref.rawsource, refid=msgid)
             prbid = self.document.set_id(prb)
@@ -393,15 +392,16 @@ class InternalTargets(Transform):
             <target id="id1" name="direct internal">
         """
         for name in target['names']:
-            refid = self.document.nameids[name]
+            refid = self.document.nameids.get(name)
             reflist = self.document.refnames.get(name, [])
             if reflist:
                 target.note_referenced_by(name=name)
             for ref in reflist:
                 if ref.resolved:
                     continue
-                del ref['refname']
-                ref['refid'] = refid
+                if refid:
+                    del ref['refname']
+                    ref['refid'] = refid
                 ref.resolved = 1
 
 
@@ -504,10 +504,10 @@ class Footnotes(Transform):
         corresponding footnote references.
         """
         for footnote in self.document.autofootnotes:
-            while 1:
+            while True:
                 label = str(startnum)
                 startnum += 1
-                if not self.document.nameids.has_key(label):
+                if label not in self.document.nameids:
                     break
             footnote.insert(0, nodes.label('', label))
             for name in footnote['names']:
@@ -602,12 +602,12 @@ class Footnotes(Transform):
         """
         for footnote in self.document.footnotes:
             for label in footnote['names']:
-                if self.document.footnote_refs.has_key(label):
+                if label in self.document.footnote_refs:
                     reflist = self.document.footnote_refs[label]
                     self.resolve_references(footnote, reflist)
         for citation in self.document.citations:
             for label in citation['names']:
-                if self.document.citation_refs.has_key(label):
+                if label in self.document.citation_refs:
                     reflist = self.document.citation_refs[label]
                     self.resolve_references(citation, reflist)
 
@@ -663,75 +663,94 @@ class Substitutions(Transform):
     def apply(self):
         defs = self.document.substitution_defs
         normed = self.document.substitution_names
-        subreflist = self.document.traverse(nodes.substitution_reference)
         nested = {}
+        line_length_limit = getattr(self.document.settings,
+                                    "line_length_limit", 10000)
+
+        subreflist = list(self.document.traverse(nodes.substitution_reference))
         for ref in subreflist:
+            msg = ''
             refname = ref['refname']
-            key = None
-            if defs.has_key(refname):
+            if refname in defs:
                 key = refname
             else:
                 normed_name = refname.lower()
-                if normed.has_key(normed_name):
-                    key = normed[normed_name]
+                key = normed.get(normed_name, None)
             if key is None:
                 msg = self.document.reporter.error(
                       'Undefined substitution referenced: "%s".'
                       % refname, base_node=ref)
+            else:
+                subdef = defs[key]
+                if len(subdef.astext()) > line_length_limit:
+                    msg = self.document.reporter.error(
+                            'Substitution definition "%s" exceeds the'
+                            ' line-length-limit.' % (key))
+            if msg:
                 msgid = self.document.set_id(msg)
                 prb = nodes.problematic(
                       ref.rawsource, ref.rawsource, refid=msgid)
                 prbid = self.document.set_id(prb)
                 msg.add_backref(prbid)
                 ref.replace_self(prb)
-            else:
-                subdef = defs[key]
+                continue
+
+            parent = ref.parent
+            index = parent.index(ref)
+            if  ('ltrim' in subdef.attributes
+                    or 'trim' in subdef.attributes):
+                if index > 0 and isinstance(parent[index - 1],
+                                            nodes.Text):
+                    parent[index - 1] = parent[index - 1].rstrip()
+            if  ('rtrim' in subdef.attributes
+                    or 'trim' in subdef.attributes):
+                if  (len(parent) > index + 1
+                        and isinstance(parent[index + 1], nodes.Text)):
+                    parent[index + 1] = parent[index + 1].lstrip()
+            subdef_copy = subdef.deepcopy()
+            try:
+                # Take care of nested substitution references:
+                for nested_ref in subdef_copy.traverse(
+                        nodes.substitution_reference):
+                    nested_name = normed[nested_ref['refname'].lower()]
+                    if nested_name in nested.setdefault(nested_name, []):
+                        raise CircularSubstitutionDefinitionError
+                    nested[nested_name].append(key)
+                    nested_ref['ref-origin'] = ref
+                    subreflist.append(nested_ref)
+            except CircularSubstitutionDefinitionError:
                 parent = ref.parent
-                index = parent.index(ref)
-                if  (subdef.attributes.has_key('ltrim')
-                     or subdef.attributes.has_key('trim')):
-                    if index > 0 and isinstance(parent[index - 1],
-                                                nodes.Text):
-                        parent.replace(parent[index - 1],
-                                       parent[index - 1].rstrip())
-                if  (subdef.attributes.has_key('rtrim')
-                     or subdef.attributes.has_key('trim')):
-                    if  (len(parent) > index + 1
-                         and isinstance(parent[index + 1], nodes.Text)):
-                        parent.replace(parent[index + 1],
-                                       parent[index + 1].lstrip())
-                subdef_copy = subdef.deepcopy()
-                try:
-                    # Take care of nested substitution references:
-                    for nested_ref in subdef_copy.traverse(
-                          nodes.substitution_reference):
-                        nested_name = normed[nested_ref['refname'].lower()]
-                        if nested_name in nested.setdefault(nested_name, []):
-                            raise CircularSubstitutionDefinitionError
-                        else:
-                            nested[nested_name].append(key)
-                            subreflist.append(nested_ref)
-                except CircularSubstitutionDefinitionError:
-                    parent = ref.parent
-                    if isinstance(parent, nodes.substitution_definition):
-                        msg = self.document.reporter.error(
-                            'Circular substitution definition detected:',
-                            nodes.literal_block(parent.rawsource,
-                                                parent.rawsource),
-                            line=parent.line, base_node=parent)
-                        parent.replace_self(msg)
-                    else:
-                        msg = self.document.reporter.error(
-                            'Circular substitution definition referenced: "%s".'
-                            % refname, base_node=ref)
-                        msgid = self.document.set_id(msg)
-                        prb = nodes.problematic(
-                            ref.rawsource, ref.rawsource, refid=msgid)
-                        prbid = self.document.set_id(prb)
-                        msg.add_backref(prbid)
-                        ref.replace_self(prb)
+                if isinstance(parent, nodes.substitution_definition):
+                    msg = self.document.reporter.error(
+                        'Circular substitution definition detected:',
+                        nodes.literal_block(parent.rawsource,
+                                            parent.rawsource),
+                        line=parent.line, base_node=parent)
+                    parent.replace_self(msg)
                 else:
-                    ref.replace_self(subdef_copy.children)
+                    # find original ref substitution which caused this error
+                    ref_origin = ref
+                    while ref_origin.hasattr('ref-origin'):
+                        ref_origin = ref_origin['ref-origin']
+                    msg = self.document.reporter.error(
+                        'Circular substitution definition referenced: '
+                        '"%s".' % refname, base_node=ref_origin)
+                    msgid = self.document.set_id(msg)
+                    prb = nodes.problematic(
+                        ref.rawsource, ref.rawsource, refid=msgid)
+                    prbid = self.document.set_id(prb)
+                    msg.add_backref(prbid)
+                    ref.replace_self(prb)
+                continue
+            ref.replace_self(subdef_copy.children)
+            # register refname of the replacment node(s)
+            # (needed for resolution of references)
+            for node in subdef_copy.children:
+                if isinstance(node, nodes.Referential):
+                    # HACK: verify refname attribute exists.
+                    # Test with docs/dev/todo.txt, see. |donate|
+                    if 'refname' in node:
+                        self.document.note_refname(node)
 
 
 class TargetNotes(Transform):
@@ -766,7 +785,7 @@ class TargetNotes(Transform):
                 continue
             footnote = self.make_target_footnote(target['refuri'], refs,
                                                  notes)
-            if not notes.has_key(target['refuri']):
+            if target['refuri'] not in notes:
                 notes[target['refuri']] = footnote
                 nodelist.append(footnote)
         # Take care of anonymous references.
@@ -776,13 +795,13 @@ class TargetNotes(Transform):
             if ref.hasattr('refuri'):
                 footnote = self.make_target_footnote(ref['refuri'], [ref],
                                                      notes)
-                if not notes.has_key(ref['refuri']):
+                if ref['refuri'] not in notes:
                     notes[ref['refuri']] = footnote
                     nodelist.append(footnote)
         self.startnode.replace_self(nodelist)
 
     def make_target_footnote(self, refuri, refs, notes):
-        if notes.has_key(refuri):  # duplicate?
+        if refuri in notes:  # duplicate?
             footnote = notes[refuri]
             assert len(footnote['names']) == 1
             footnote_name = footnote['names'][0]
@@ -802,8 +821,7 @@ class TargetNotes(Transform):
         for ref in refs:
             if isinstance(ref, nodes.target):
                 continue
-            refnode = nodes.footnote_reference(
-                refname=footnote_name, auto=1)
+            refnode = nodes.footnote_reference(refname=footnote_name, auto=1)
             refnode['classes'] += self.classes
             self.document.note_autofootnote_ref(refnode)
             self.document.note_footnote_ref(refnode)
@@ -856,7 +874,7 @@ class DanglingReferences(Transform):
 
 
 class DanglingReferencesVisitor(nodes.SparseNodeVisitor):
-    
+
     def __init__(self, document, unknown_reference_resolvers):
         nodes.SparseNodeVisitor.__init__(self, document)
         self.document = document
@@ -875,7 +893,7 @@ class DanglingReferencesVisitor(nodes.SparseNodeVisitor):
                 if resolver_function(node):
                     break
             else:
-                if self.document.nameids.has_key(refname):
+                if refname in self.document.nameids:
                     msg = self.document.reporter.error(
                         'Duplicate target name, cannot be used as a unique '
                         'reference: "%s".' % (node['refname']), base_node=node)
@@ -886,7 +904,10 @@ class DanglingReferencesVisitor(nodes.SparseNodeVisitor):
                 msgid = self.document.set_id(msg)
                 prb = nodes.problematic(
                       node.rawsource, node.rawsource, refid=msgid)
-                prbid = self.document.set_id(prb)
+                try:
+                    prbid = node['ids'][0]
+                except IndexError:
+                    prbid = self.document.set_id(prb)
                 msg.add_backref(prbid)
                 node.replace_self(prb)
         else:
@@ -896,11 +917,3 @@ class DanglingReferencesVisitor(nodes.SparseNodeVisitor):
             node.resolved = 1
 
     visit_footnote_reference = visit_citation_reference = visit_reference
-
-
-def uniq(L):
-     r = []
-     for item in L:
-         if not item in r:
-             r.append(item)
-     return r

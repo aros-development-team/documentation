@@ -1,7 +1,5 @@
-# Author: Edward Loper
-# Contact: edloper@gradient.cis.upenn.edu
-# Revision: $Revision$
-# Date: $Date$
+# $Id: roles.py 8571 2020-10-28 08:46:19Z milde $
+# Author: Edward Loper <edloper@gradient.cis.upenn.edu>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -77,6 +75,7 @@ __docformat__ = 'reStructuredText'
 from docutils import nodes, utils
 from docutils.parsers.rst import directives
 from docutils.parsers.rst.languages import en as _fallback_language_module
+from docutils.utils.code_analyzer import Lexer, LexerError
 
 DEFAULT_INTERPRETED_ROLE = 'title-reference'
 """
@@ -103,14 +102,14 @@ def role(role_name, language_module, lineno, reporter):
     messages = []
     msg_text = []
 
-    if _roles.has_key(normname):
+    if normname in _roles:
         return _roles[normname], messages
 
     if role_name:
         canonicalname = None
         try:
             canonicalname = language_module.roles[normname]
-        except AttributeError, error:
+        except AttributeError as error:
             msg_text.append('Problem retrieving role entry from language '
                             'module %r: %s.' % (language_module, error))
         except KeyError:
@@ -137,7 +136,7 @@ def role(role_name, language_module, lineno, reporter):
         messages.append(message)
 
     # Look the role up in the registry, and return it.
-    if _role_registry.has_key(canonicalname):
+    if canonicalname in _role_registry:
         role_fn = _role_registry[canonicalname]
         register_local_role(normname, role_fn)
         return role_fn, messages
@@ -153,7 +152,7 @@ def register_canonical_role(name, role_fn):
       - `role_fn`: The role function.  See the module docstring.
     """
     set_implicit_options(role_fn)
-    _role_registry[name] = role_fn
+    _role_registry[name.lower()] = role_fn
 
 def register_local_role(name, role_fn):
     """
@@ -164,7 +163,7 @@ def register_local_role(name, role_fn):
       - `role_fn`: The role function.  See the module docstring.
     """
     set_implicit_options(role_fn)
-    _roles[name] = role_fn
+    _roles[name.lower()] = role_fn
 
 def set_implicit_options(role_fn):
     """
@@ -173,7 +172,7 @@ def set_implicit_options(role_fn):
     """
     if not hasattr(role_fn, 'options') or role_fn.options is None:
         role_fn.options = {'class': directives.class_option}
-    elif not role_fn.options.has_key('class'):
+    elif 'class' not in role_fn.options:
         role_fn.options['class'] = directives.class_option
 
 def register_generic_role(canonical_name, node_class):
@@ -182,7 +181,7 @@ def register_generic_role(canonical_name, node_class):
     register_canonical_role(canonical_name, role)
 
 
-class GenericRole:
+class GenericRole(object):
 
     """
     Generic interpreted text role, where the interpreted text is simply
@@ -196,10 +195,10 @@ class GenericRole:
     def __call__(self, role, rawtext, text, lineno, inliner,
                  options={}, content=[]):
         set_classes(options)
-        return [self.node_class(rawtext, utils.unescape(text), **options)], []
+        return [self.node_class(rawtext, text, **options)], []
 
 
-class CustomRole:
+class CustomRole(object):
 
     """
     Wrapper for custom interpreted text roles.
@@ -235,7 +234,7 @@ def generic_custom_role(role, rawtext, text, lineno, inliner,
     # Once nested inline markup is implemented, this and other methods should
     # recursively call inliner.nested_parse().
     set_classes(options)
-    return [nodes.inline(rawtext, utils.unescape(text), **options)], []
+    return [nodes.inline(rawtext, text, **options)], []
 
 generic_custom_role.options = {'class': directives.class_option}
 
@@ -256,7 +255,7 @@ register_generic_role('title-reference', nodes.title_reference)
 def pep_reference_role(role, rawtext, text, lineno, inliner,
                        options={}, content=[]):
     try:
-        pepnum = int(text)
+        pepnum = int(utils.unescape(text))
         if pepnum < 0 or pepnum > 9999:
             raise ValueError
     except ValueError:
@@ -266,9 +265,10 @@ def pep_reference_role(role, rawtext, text, lineno, inliner,
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
     # Base URL mainly used by inliner.pep_reference; so this is correct:
-    ref = inliner.document.settings.pep_base_url + inliner.pep_url % pepnum
+    ref = (inliner.document.settings.pep_base_url
+           + inliner.document.settings.pep_file_url_template % pepnum)
     set_classes(options)
-    return [nodes.reference(rawtext, 'PEP ' + utils.unescape(text), refuri=ref,
+    return [nodes.reference(rawtext, 'PEP ' + text, refuri=ref,
                             **options)], []
 
 register_canonical_role('pep-reference', pep_reference_role)
@@ -276,8 +276,12 @@ register_canonical_role('pep-reference', pep_reference_role)
 def rfc_reference_role(role, rawtext, text, lineno, inliner,
                        options={}, content=[]):
     try:
-        rfcnum = int(text)
-        if rfcnum <= 0:
+        if "#" in text:
+            rfcnum, section = utils.unescape(text).split("#", 1)
+        else:
+            rfcnum, section  = utils.unescape(text), None
+        rfcnum = int(rfcnum)
+        if rfcnum < 1:
             raise ValueError
     except ValueError:
         msg = inliner.reporter.error(
@@ -287,15 +291,21 @@ def rfc_reference_role(role, rawtext, text, lineno, inliner,
         return [prb], [msg]
     # Base URL mainly used by inliner.rfc_reference, so this is correct:
     ref = inliner.document.settings.rfc_base_url + inliner.rfc_url % rfcnum
+    if section is not None:
+        ref += "#"+section
     set_classes(options)
-    node = nodes.reference(rawtext, 'RFC ' + utils.unescape(text), refuri=ref,
+    node = nodes.reference(rawtext, 'RFC ' + str(rfcnum), refuri=ref,
                            **options)
     return [node], []
 
 register_canonical_role('rfc-reference', rfc_reference_role)
 
 def raw_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
-    if not options.has_key('format'):
+    if not inliner.document.settings.raw_enabled:
+        msg = inliner.reporter.warning('raw (and derived) roles disabled')
+        prb = inliner.problematic(rawtext, rawtext, msg)
+        return [prb], [msg]
+    if 'format' not in options:
         msg = inliner.reporter.error(
             'No format (Writer name) is associated with this role: "%s".\n'
             'The "raw" role cannot be used directly.\n'
@@ -304,13 +314,55 @@ def raw_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
     set_classes(options)
-    node = nodes.raw(rawtext, utils.unescape(text, 1), **options)
+    node = nodes.raw(rawtext, utils.unescape(text, True), **options)
+    node.source, node.line = inliner.reporter.get_source_and_line(lineno)
     return [node], []
 
 raw_role.options = {'format': directives.unchanged}
 
 register_canonical_role('raw', raw_role)
 
+def code_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
+    set_classes(options)
+    language = options.get('language', '')
+    classes = ['code']
+    if 'classes' in options:
+        classes.extend(options['classes'])
+    if language and language not in classes:
+        classes.append(language)
+    try:
+        tokens = Lexer(utils.unescape(text, True), language,
+                       inliner.document.settings.syntax_highlight)
+    except LexerError as error:
+        msg = inliner.reporter.warning(error)
+        prb = inliner.problematic(rawtext, rawtext, msg)
+        return [prb], [msg]
+
+    node = nodes.literal(rawtext, '', classes=classes)
+
+    # analyse content and add nodes for every token
+    for classes, value in tokens:
+        if classes:
+            node += nodes.inline(value, value, classes=classes)
+        else:
+            # insert as Text to decrease the verbosity of the output
+            node += nodes.Text(value, value)
+
+    return [node], []
+
+code_role.options = {'class': directives.class_option,
+                     'language': directives.unchanged}
+
+register_canonical_role('code', code_role)
+
+def math_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
+    set_classes(options)
+    i = rawtext.find('`')
+    text = rawtext.split('`')[1]
+    node = nodes.math(rawtext, text, **options)
+    return [node], []
+
+register_canonical_role('math', math_role)
 
 ######################################################################
 # Register roles that are currently unimplemented.
@@ -341,7 +393,7 @@ def set_classes(options):
     Auxiliary function to set options['classes'] and delete
     options['class'].
     """
-    if options.has_key('class'):
-        assert not options.has_key('classes')
+    if 'class' in options:
+        assert 'classes' not in options
         options['classes'] = options['class']
         del options['class']

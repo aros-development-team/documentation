@@ -3,6 +3,7 @@
 # $Id$
 
 import os.path
+import PIL
 from PIL import Image
 
 def makeThumbnailPath( originalPath ):

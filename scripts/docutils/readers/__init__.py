@@ -1,7 +1,5 @@
-# Authors: David Goodger; Ueli Schlaepfer
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: __init__.py 8478 2020-01-30 12:29:29Z milde $
+# Authors: David Goodger <goodger@python.org>; Ueli Schlaepfer
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -10,6 +8,8 @@ This package contains Docutils Reader modules.
 
 __docformat__ = 'reStructuredText'
 
+import sys
+from importlib import import_module
 
 from docutils import utils, parsers, Component
 from docutils.transforms import universal
@@ -22,8 +22,9 @@ class Reader(Component):
 
     Each reader module or package must export a subclass also called 'Reader'.
 
-    The three steps of a Reader's responsibility are defined: `scan()`,
-    `parse()`, and `transform()`. Call `read()` to process a document.
+    The two steps of a Reader's responsibility are to read data from the
+    source Input object and parse the data with the Parser object.
+    Call `read()` to process a document.
     """
 
     component_type = 'reader'
@@ -103,7 +104,10 @@ _reader_aliases = {}
 def get_reader_class(reader_name):
     """Return the Reader class from the `reader_name` module."""
     reader_name = reader_name.lower()
-    if _reader_aliases.has_key(reader_name):
+    if reader_name in _reader_aliases:
         reader_name = _reader_aliases[reader_name]
-    module = __import__(reader_name, globals(), locals())
+    try:
+        module = import_module('docutils.readers.'+reader_name)
+    except ImportError:
+        module = import_module(reader_name)
     return module.Reader

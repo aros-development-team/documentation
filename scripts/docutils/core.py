@@ -1,7 +1,5 @@
-# Authors: David Goodger
-# Contact: goodger@python.org
-# Revision: $Revision$
-# Date: $Date$
+# $Id: core.py 8367 2019-08-27 12:09:56Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -13,20 +11,20 @@ custom component objects first, and pass *them* to
 
 .. _The Docutils Publisher: http://docutils.sf.net/docs/api/publisher.html
 """
+from __future__ import print_function
 
 __docformat__ = 'reStructuredText'
 
 import sys
 import pprint
-from types import StringType
 from docutils import __version__, __version_details__, SettingsSpec
 from docutils import frontend, io, utils, readers, writers
 from docutils.frontend import OptionParser
 from docutils.transforms import Transformer
+from docutils.utils.error_reporting import ErrorOutput, ErrorString
 import docutils.readers.doctree
 
-
-class Publisher:
+class Publisher(object):
 
     """
     A facade encapsulating the high-level logic of a Docutils system.
@@ -55,9 +53,11 @@ class Publisher:
         """A `docutils.writers.Writer` instance."""
 
         for component in 'reader', 'parser', 'writer':
-            assert not isinstance(getattr(self, component), StringType), \
-                   ('passed string as "%s" parameter; use "%s_name" instead'
-                    % (getattr(self, component), component, component))
+            assert not isinstance(getattr(self, component), str), (
+                'passed string "%s" as "%s" parameter; pass an instance, '
+                'or use the "%s_name" parameter instead (in '
+                'docutils.core.publish_* convenience functions).'
+                % (getattr(self, component), component, component))
 
         self.source = source
         """The source of input data, a `docutils.io.Input` instance."""
@@ -75,6 +75,8 @@ class Publisher:
         self.settings = settings
         """An object containing Docutils settings as instance attributes.
         Set by `self.process_command_line()` or `self.get_settings()`."""
+
+        self._stderr = ErrorOutput()
 
     def set_reader(self, reader_name, parser, parser_name):
         """Set `self.reader` by name."""
@@ -110,7 +112,7 @@ class Publisher:
         #@@@ Add self.source & self.destination to components in future?
         option_parser = OptionParser(
             components=(self.parser, self.reader, self.writer, settings_spec),
-            defaults=defaults, read_config_files=1,
+            defaults=defaults, read_config_files=True,
             usage=usage, description=description)
         return option_parser
 
@@ -134,7 +136,7 @@ class Publisher:
         if self.settings is None:
             defaults = (settings_overrides or {}).copy()
             # Propagate exceptions by default when used programmatically:
-            defaults.setdefault('traceback', 1)
+            defaults.setdefault('traceback', True)
             self.get_settings(settings_spec=settings_spec,
                               config_section=config_section,
                               **defaults)
@@ -152,6 +154,11 @@ class Publisher:
             usage, description, settings_spec, config_section, **defaults)
         if argv is None:
             argv = sys.argv[1:]
+            # converting to Unicode (Python 3 does this automatically):
+            if sys.version_info < (3, 0):
+                # TODO: make this failsafe and reversible?
+                argv_encoding = (frontend.locale_encoding or 'ascii')
+                argv = [a.decode(argv_encoding) for a in argv]
         self.settings = option_parser.parse_args(argv)
 
     def set_io(self, source_path=None, destination_path=None):
@@ -165,9 +172,16 @@ class Publisher:
             source_path = self.settings._source
         else:
             self.settings._source = source_path
-        self.source = self.source_class(
-            source=source, source_path=source_path,
-            encoding=self.settings.input_encoding)
+        # Raise IOError instead of system exit with `tracback == True`
+        # TODO: change io.FileInput's default behaviour and remove this hack
+        try:
+            self.source = self.source_class(
+                source=source, source_path=source_path,
+                encoding=self.settings.input_encoding)
+        except TypeError:
+            self.source = self.source_class(
+                source=source, source_path=source_path,
+                encoding=self.settings.input_encoding)
 
     def set_destination(self, destination=None, destination_path=None):
         if destination_path is None:
@@ -187,7 +201,7 @@ class Publisher:
 
     def publish(self, argv=None, usage=None, description=None,
                 settings_spec=None, settings_overrides=None,
-                config_section=None, enable_exit_status=None):
+                config_section=None, enable_exit_status=False):
         """
         Process command line options and arguments (if `self.settings` not
         already set), run `self.reader` and then `self.writer`.  Return
@@ -205,17 +219,17 @@ class Publisher:
             self.apply_transforms()
             output = self.writer.write(self.document, self.destination)
             self.writer.assemble_parts()
-        except SystemExit, error:
+        except SystemExit as error:
             exit = 1
             exit_status = error.code
-        except Exception, error:
+        except Exception as error:
             if not self.settings:       # exception too early to report nicely
                 raise
             if self.settings.traceback: # Propagate exceptions?
                 self.debugging_dumps()
                 raise
             self.report_Exception(error)
-            exit = 1
+            exit = True
             exit_status = 1
         self.debugging_dumps()
         if (enable_exit_status and self.document
@@ -230,67 +244,67 @@ class Publisher:
         if not self.document:
             return
         if self.settings.dump_settings:
-            print >>sys.stderr, '\n::: Runtime settings:'
-            print >>sys.stderr, pprint.pformat(self.settings.__dict__)
+            print('\n::: Runtime settings:', file=self._stderr)
+            print(pprint.pformat(self.settings.__dict__), file=self._stderr)
         if self.settings.dump_internals:
-            print >>sys.stderr, '\n::: Document internals:'
-            print >>sys.stderr, pprint.pformat(self.document.__dict__)
+            print('\n::: Document internals:', file=self._stderr)
+            print(pprint.pformat(self.document.__dict__), file=self._stderr)
         if self.settings.dump_transforms:
-            print >>sys.stderr, '\n::: Transforms applied:'
-            print >>sys.stderr, (' (priority, transform class, '
-                                 'pending node details, keyword args)')
-            print >>sys.stderr, pprint.pformat(
+            print('\n::: Transforms applied:', file=self._stderr)
+            print(' (priority, transform class, pending node details, '
+                  'keyword args)', file=self._stderr)
+            print(pprint.pformat(
                 [(priority, '%s.%s' % (xclass.__module__, xclass.__name__),
                   pending and pending.details, kwargs)
                  for priority, xclass, pending, kwargs
-                 in self.document.transformer.applied])
+                 in self.document.transformer.applied]), file=self._stderr)
         if self.settings.dump_pseudo_xml:
-            print >>sys.stderr, '\n::: Pseudo-XML:'
-            print >>sys.stderr, self.document.pformat().encode(
-                'raw_unicode_escape')
+            print('\n::: Pseudo-XML:', file=self._stderr)
+            print(self.document.pformat().encode(
+                'raw_unicode_escape'), file=self._stderr)
 
     def report_Exception(self, error):
         if isinstance(error, utils.SystemMessage):
             self.report_SystemMessage(error)
-        elif isinstance(error, UnicodeError):
+        elif isinstance(error, UnicodeEncodeError):
             self.report_UnicodeError(error)
+        elif isinstance(error, io.InputError):
+            self._stderr.write(u'Unable to open source file for reading:\n'
+                               u'  %s\n' % ErrorString(error))
+        elif isinstance(error, io.OutputError):
+            self._stderr.write(
+                u'Unable to open destination file for writing:\n'
+                u'  %s\n' % ErrorString(error))
         else:
-            print >>sys.stderr, '%s: %s' % (error.__class__.__name__, error)
-            print >>sys.stderr, ("""\
+            print(u'%s' % ErrorString(error), file=self._stderr)
+            print(("""\
 Exiting due to error.  Use "--traceback" to diagnose.
 Please report errors to <docutils-users@lists.sf.net>.
-Include "--traceback" output, Docutils version (%s [%s]),
+Include "--traceback" output, Docutils version (%s%s),
 Python version (%s), your OS type & version, and the
-command line used.""" % (__version__, __version_details__,
-                         sys.version.split()[0]))
+command line used.""" % (__version__,
+                         docutils.__version_details__ and
+                         ' [%s]'%docutils.__version_details__ or '',
+                         sys.version.split()[0])), file=self._stderr)
 
     def report_SystemMessage(self, error):
-        print >>sys.stderr, ('Exiting due to level-%s (%s) system message.'
-                             % (error.level,
-                                utils.Reporter.levels[error.level]))
+        print('Exiting due to level-%s (%s) system message.' % (
+            error.level, utils.Reporter.levels[error.level]),
+              file=self._stderr)
 
     def report_UnicodeError(self, error):
-        sys.stderr.write(
-            '%s: %s\n'
+        data = error.object[error.start:error.end]
+        self._stderr.write(
+            '%s\n'
             '\n'
             'The specified output encoding (%s) cannot\n'
             'handle all of the output.\n'
             'Try setting "--output-encoding-error-handler" to\n'
             '\n'
             '* "xmlcharrefreplace" (for HTML & XML output);\n'
-            % (error.__class__.__name__, error,
-               self.settings.output_encoding))
-        try:
-            data = error.object[error.start:error.end]
-            sys.stderr.write(
-                '  the output will contain "%s" and should be usable.\n'
-                '* "backslashreplace" (for other output formats, Python 2.3+);\n'
-                '  look for "%s" in the output.\n'
-                % (data.encode('ascii', 'xmlcharrefreplace'),
-                   data.encode('ascii', 'backslashreplace')))
-        except AttributeError:
-            sys.stderr.write('  the output should be usable as-is.\n')
-        sys.stderr.write(
+            '  the output will contain "%s" and should be usable.\n'
+            '* "backslashreplace" (for other output formats);\n'
+            '  look for "%s" in the output.\n'
             '* "replace"; look for "?" in the output.\n'
             '\n'
             '"--output-encoding-error-handler" is currently set to "%s".\n'
@@ -301,19 +315,25 @@ command line used.""" % (__version__, __version_details__,
             'Include "--traceback" output, Docutils version (%s),\n'
             'Python version (%s), your OS type & version, and the\n'
             'command line used.\n'
-            % (self.settings.output_encoding_error_handler,
+            % (ErrorString(error),
+               self.settings.output_encoding,
+               data.encode('ascii', 'xmlcharrefreplace'),
+               data.encode('ascii', 'backslashreplace'),
+               self.settings.output_encoding_error_handler,
                __version__, sys.version.split()[0]))
 
 default_usage = '%prog [options] [<source> [<destination>]]'
 default_description = ('Reads from <source> (default is stdin) and writes to '
-                       '<destination> (default is stdout).')
+                       '<destination> (default is stdout).  See '
+                       '<http://docutils.sf.net/docs/user/config.html> for '
+                       'the full reference.')
 
 def publish_cmdline(reader=None, reader_name='standalone',
                     parser=None, parser_name='restructuredtext',
                     writer=None, writer_name='pseudoxml',
                     settings=None, settings_spec=None,
                     settings_overrides=None, config_section=None,
-                    enable_exit_status=1, argv=None,
+                    enable_exit_status=True, argv=None,
                     usage=default_usage, description=default_description):
     """
     Set up & run a `Publisher` for command-line-based file I/O (input and
@@ -341,7 +361,7 @@ def publish_file(source=None, source_path=None,
                  parser=None, parser_name='restructuredtext',
                  writer=None, writer_name='pseudoxml',
                  settings=None, settings_spec=None, settings_overrides=None,
-                 config_section=None, enable_exit_status=None):
+                 config_section=None, enable_exit_status=False):
     """
     Set up & run a `Publisher` for programmatic use with file-like I/O.
     Return the encoded string output also.
@@ -367,7 +387,7 @@ def publish_string(source, source_path=None, destination_path=None,
                    writer=None, writer_name='pseudoxml',
                    settings=None, settings_spec=None,
                    settings_overrides=None, config_section=None,
-                   enable_exit_status=None):
+                   enable_exit_status=False):
     """
     Set up & run a `Publisher` for programmatic use with string I/O.  Return
     the encoded string or Unicode string output.
@@ -404,7 +424,7 @@ def publish_parts(source, source_path=None, source_class=io.StringInput,
                   writer=None, writer_name='pseudoxml',
                   settings=None, settings_spec=None,
                   settings_overrides=None, config_section=None,
-                  enable_exit_status=None):
+                  enable_exit_status=False):
     """
     Set up & run a `Publisher`, and return a dictionary of document parts.
     Dictionary keys are the names of parts, and values are Unicode strings;
@@ -437,7 +457,7 @@ def publish_doctree(source, source_path=None,
                     parser=None, parser_name='restructuredtext',
                     settings=None, settings_spec=None,
                     settings_overrides=None, config_section=None,
-                    enable_exit_status=None):
+                    enable_exit_status=False):
     """
     Set up & run a `Publisher` for programmatic use with string I/O.
     Return the document tree.
@@ -466,11 +486,11 @@ def publish_from_doctree(document, destination_path=None,
                          writer=None, writer_name='pseudoxml',
                          settings=None, settings_spec=None,
                          settings_overrides=None, config_section=None,
-                         enable_exit_status=None):
+                         enable_exit_status=False):
     """
-    Set up & run a `Publisher` to render from an existing document tree data
-    structure, for programmatic use with string I/O.  Return a pair of encoded
-    string output and document parts.
+    Set up & run a `Publisher` to render from an existing document
+    tree data structure, for programmatic use with string I/O.  Return
+    the encoded string output.
 
     Note that document.settings is overridden; if you want to use the settings
     of the original `document`, pass settings=document.settings.
@@ -500,6 +520,39 @@ def publish_from_doctree(document, destination_path=None,
         settings_spec, settings_overrides, config_section)
     pub.set_destination(None, destination_path)
     return pub.publish(enable_exit_status=enable_exit_status)
+
+def publish_cmdline_to_binary(reader=None, reader_name='standalone',
+                    parser=None, parser_name='restructuredtext',
+                    writer=None, writer_name='pseudoxml',
+                    settings=None, settings_spec=None,
+                    settings_overrides=None, config_section=None,
+                    enable_exit_status=True, argv=None,
+                    usage=default_usage, description=default_description,
+                    destination=None, destination_class=io.BinaryFileOutput
+                    ):
+    """
+    Set up & run a `Publisher` for command-line-based file I/O (input and
+    output file paths taken automatically from the command line).  Return the
+    encoded string output also.
+
+    This is just like publish_cmdline, except that it uses
+    io.BinaryFileOutput instead of io.FileOutput.
+
+    Parameters: see `publish_programmatically` for the remainder.
+
+    - `argv`: Command-line argument list to use instead of ``sys.argv[1:]``.
+    - `usage`: Usage string, output if there's a problem parsing the command
+      line.
+    - `description`: Program description, output for the "--help" option
+      (along with command-line option descriptions).
+    """
+    pub = Publisher(reader, parser, writer, settings=settings,
+        destination_class=destination_class)
+    pub.set_components(reader_name, parser_name, writer_name)
+    output = pub.publish(
+        argv, usage, description, settings_spec, settings_overrides,
+        config_section=config_section, enable_exit_status=enable_exit_status)
+    return output
 
 def publish_programmatically(source_class, source, source_path,
                              destination_class, destination, destination_path,

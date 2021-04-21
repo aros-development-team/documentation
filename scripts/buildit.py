@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: iso-8859-1 -*-
 # Copyright © 2002-2020, The AROS Development Team. All rights reserved.
 # $Id$
@@ -7,6 +7,7 @@ import os
 import sys
 import shutil
 import glob
+import codecs
 
 import db.credits.parse
 import db.credits.format.rest
@@ -99,7 +100,7 @@ def processPicture(src, depth):
 
     # Create the thumbnail.
     if utility.newer([src_abs], tn_dst_abs):
-        print '» Thumbnailing', src
+        print('» Thumbnailing', src)
         thumbnail.makeThumbnail(src_abs, tn_dst_abs, (200, 200))
 
 
@@ -134,7 +135,7 @@ def makePictures():
                 if name == '.svn' or not os.path.isdir(path):
                     continue
 
-                output += '\n<div class="gallerygroup">\n<a name=%s>\n' % name
+                output += '\n<div class="gallerygroup">\n<a name=%s>\n' % name.encode("ascii")
                 output += convertWWW(pathAltLang('overview', lang, path), lang, options)
 
                 pictureNames = os.listdir(path)
@@ -175,7 +176,7 @@ def makePictures():
                 dst = os.path.join(TRGROOT, lang, root)
             if not os.path.exists(dst):
                 utility.makedir(dst)
-            file(os.path.join(dst, filename), 'w').write(TEMPLATE_DATA[lang] % strings)
+            open(os.path.join(dst, filename), 'w').write(TEMPLATE_DATA[lang] % strings)
 
 
 # makeStatus
@@ -183,7 +184,7 @@ def makePictures():
 # Creates graphs of component implementation status.
 
 def makeStatus(extension='.php'):
-    tasks = db.tasks.parse.parse(file('db/status', 'r'))
+    tasks = db.tasks.parse.parse(open('db/status', 'r'))
     for lang in languages:
         dstdir = 'introduction/status'
         if lang == DEFAULTLANG:
@@ -227,7 +228,7 @@ def makeNews():
             if ext == '.en' and len(date) == 8 and date.isdigit():
                 year = date[:4]
                 if year != yeardirname:
-                    print 'Error: News item "' + date + '" found in news year "' + yeardirname + '".'
+                    print('Error: News item "' + date + '" found in news year "' + yeardirname + '".')
 
                 # Generate a recent news source list and year news source lists for each language
                 for lang in languages:
@@ -248,14 +249,15 @@ def makeNews():
 
         # Set up translated title dictionary
         config = gallery.ConfigParser()
-        config.read(os.path.join('targets/www/template/languages', lang))
+        with codecs.open(os.path.join('targets/www/template/languages', lang), 'r', encoding='iso-8859-15') as configfile:
+            config.read_file(configfile)
         _T = {}
-        for option in config.options('titles'):
+        for option in config['titles']:
             _T[option] = config.get('titles', option)
 
         # Create a recent news page
         if utility.newer(current, _dst):
-            output = file(_dst, 'w')
+            output = open(_dst, 'w')
             output.write(utility.titleReST(_T['news']))
             for filepath in current:
                 output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # Not ideal, but at least legal HTML
@@ -263,13 +265,13 @@ def makeNews():
             output.close()
 
         # Create year news pages
-        for year in archives[lang].keys():
+        for year in list(archives[lang].keys()):
             if len(archives[lang][year]):
                 archives[lang][year].sort(reverse=True)
                 _dst = os.path.join(NEWS_SRC_ARCH + year + '.' + lang)
 
                 if utility.newer(archives[lang][year], _dst):
-                    output = file(_dst, 'w')
+                    output = open(_dst, 'w')
                     output.write(utility.titleReST(_T['news-archive-for'] + ' ' + year))
                     for filepath in archives[lang][year]:
                         output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # At least legal HTML
@@ -287,9 +289,9 @@ def makeCredits():
     if (not os.path.exists('credits.en')) \
         or (os.path.getmtime('db/credits') > os.path.getmtime('credits.en')):
         CREDITS_DATA = db.credits.format.rest.format(
-            db.credits.parse.parse(file('db/credits', 'r'))
+            db.credits.parse.parse(codecs.open('db/credits', 'r', encoding='iso-8859-15'))
         )
-        file('credits.en', 'w').write(CREDITS_DATA)
+        open('credits.en', 'w').write(CREDITS_DATA)
 
 
 # convertWWW
@@ -368,7 +370,7 @@ def processWWW(src, depth):
                 'BASE'    : '../' * dst_depth,
                 'CONTENT' : convertWWW(src_abs, lang)
             }
-            file(dst_abs, 'w').write(TEMPLATE_DATA[lang] % strings)
+            open(dst_abs, 'w').write(TEMPLATE_DATA[lang] % strings)
         else:
             utility.reportSkipping(dst)
 
@@ -548,7 +550,7 @@ def buildWWW():
     makeTemplates()
 
     for lang in languages:
-        TEMPLATE_DATA[lang] = file(TEMPLATE + lang, 'r').read()
+        TEMPLATE_DATA[lang] = open(TEMPLATE + lang, 'r').read()
 
     makePictures()
     makeStatus()
@@ -665,13 +667,13 @@ def buildHTML():
     TRGROOT = os.path.join(DSTROOT, 'html')
     global languages
     languages = [DEFAULTLANG]
-    TEMPLATE_DATA[DEFAULTLANG] = file('targets/html/template.html.en', 'r').read()
+    TEMPLATE_DATA[DEFAULTLANG] = open('targets/html/template.html.en', 'r').read()
 
     makeNews()
     makeCredits()
 
     if not os.path.exists('news/index.en'):
-        file('news/index.en', 'w').write('')
+        open('news/index.en', 'w').write('')
     recurse(processHTML)
 
     copyImages()
@@ -728,10 +730,10 @@ if __name__ == '__main__':
     for arg in sys.argv[1:]:
         if arg in LANGUAGES:
             languages.append(arg)
-        elif TARGETS.has_key(arg):
+        elif arg in TARGETS:
             targets.append(arg)
         else:
-            print 'Error: Unrecognised argument, "' + arg + '".'
+            print('Error: Unrecognised argument, "' + arg + '".')
             valid = 0
 
     if valid:

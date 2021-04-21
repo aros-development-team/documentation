@@ -3,11 +3,12 @@
 # $Id$
 
 import os, sys
+import codecs
 
 from build import utility
 
-from page import makePage
-from ConfigParser import ConfigParser
+from .page import makePage
+from configparser import ConfigParser
 
 def makeTemplates():
     # Deduce important paths
@@ -18,7 +19,8 @@ def makeTemplates():
     def makeTemplate( language, dst ):
         # Setup translation dictionaries
         config = ConfigParser()
-        config.read( os.path.join( LANG_DIR, language ) )
+        with codecs.open(os.path.join( LANG_DIR, language ), 'r', encoding='iso-8859-15') as configfile:
+            config.read_file(configfile)
 
         charset = config.get( 'meta', 'charset' )
 
@@ -34,7 +36,7 @@ def makeTemplates():
         for option in config.options( 'misc' ):
             _M[option] = config.get( 'misc', option )
         
-        file( dst, 'w' ).write( makePage( _T, _N, _M, '', language, charset ) )
+        open( dst, 'w' ).write( makePage( _T, _N, _M, '', language, charset ) )
 
     for language in os.listdir( LANG_DIR ):
         if utility.ignore( language ): continue

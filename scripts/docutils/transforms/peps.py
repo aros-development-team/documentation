@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: peps.py 8527 2020-07-14 16:41:15Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -33,9 +31,9 @@ class Headers(Transform):
 
     default_priority = 360
 
-    pep_url = 'pep-%04d.html'
-    pep_cvs_url = ('http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/python/'
-                   'python/nondist/peps/pep-%04d.txt')
+    pep_url = 'pep-%04d'
+    pep_cvs_url = ('http://hg.python.org'
+                   '/peps/file/default/pep-%04d.txt')
     rcs_keyword_substitutions = (
           (re.compile(r'\$' r'RCSfile: (.+),v \$$', re.IGNORECASE), r'\1'),
           (re.compile(r'\$[a-zA-Z]+: (.+) \$$'), r'\1'),)
@@ -94,9 +92,12 @@ class Headers(Transform):
                                     'a single paragraph:\n%s'
                                     % field.pformat(level=1))
             elif name == 'last-modified':
-                date = time.strftime(
-                      '%d-%b-%Y',
-                      time.localtime(os.stat(self.document['source'])[8]))
+                try:
+                    date = time.strftime(
+                        '%d-%b-%Y',
+                        time.localtime(os.stat(self.document['source'])[8]))
+                except OSError:
+                    date = 'unknown'
                 if cvs_url:
                     body += nodes.paragraph(
                         '', '', nodes.reference('', date, refuri=cvs_url))
@@ -115,7 +116,7 @@ class Headers(Transform):
             elif name in ('replaces', 'replaced-by', 'requires'):
                 newbody = []
                 space = nodes.Text(' ')
-                for refpep in re.split(',?\s+', body.astext()):
+                for refpep in re.split(r',?\s+', body.astext()):
                     pepno = int(refpep)
                     newbody.append(nodes.reference(
                         refpep, refpep,
@@ -146,7 +147,8 @@ class Contents(Transform):
     default_priority = 380
 
     def apply(self):
-        language = languages.get_language(self.document.settings.language_code)
+        language = languages.get_language(self.document.settings.language_code,
+                                          self.document.reporter)
         name = language.labels['contents']
         title = nodes.title('', name)
         topic = nodes.topic('', title, classes=['contents'])
