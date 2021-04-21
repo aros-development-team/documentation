@@ -135,7 +135,8 @@ def makePictures():
                 if name == '.svn' or not os.path.isdir(path):
                     continue
 
-                output += '\n<div class="gallerygroup">\n<a name=%s>\n' % name.encode("ascii")
+                outstr = '\n<div class="gallerygroup">\n<a name=%s>\n' % name
+                output += outstr.encode("ascii")
                 output += convertWWW(pathAltLang('overview', lang, path), lang, options)
 
                 pictureNames = os.listdir(path)
@@ -148,13 +149,15 @@ def makePictures():
                     if pictureFormat not in ['jpg', 'jpeg', 'png']:
                         continue
 
-                    output += gallery.makePicture(
+                    outstr = gallery.makePicture(
                         picturePath,
                         convertWWW(pathAltLang(os.path.splitext(picturePath)[0], lang),
                                    lang, options), lang
                     )
+                    output += outstr.encode("ascii")
 
-                output += '</a>\n</div>\n'
+                outstr = '</a>\n</div>\n'
+                output += outstr.encode("ascii")
 
             if lang == DEFAULTLANG:
                 strings = {
