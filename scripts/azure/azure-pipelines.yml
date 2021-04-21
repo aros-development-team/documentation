@@ -23,7 +23,8 @@ steps:
     sudo apt-get update
     sudo apt-get install -y sshpass
     sudo pip install --upgrade pip
-    sudo pip install Pillow
+    pip install Pillow
+    pip install Image
   displayName: 'Installing AROS build dependencies'
 
 - script: |
