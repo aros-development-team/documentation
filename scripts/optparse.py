@@ -76,6 +76,9 @@ import textwrap
 #   Id: help.py,v 1.6 2003/08/27 02:35:41 goodger Exp
 #   Id: errors.py,v 1.7 2003/04/21 01:53:28 gward Exp
 
+# Save a reference to the original standard output
+original_stdout = sys.stdout
+
 class OptParseError (Exception):
     def __init__ (self, msg):
         self.msg = msg
@@ -1325,7 +1328,9 @@ class OptionParser (OptionContainer):
         or not defined.
         """
         if self.usage:
-            print(self.get_usage(), file=file)
+            sys.stdout = file
+            print(self.get_usage())
+            sys.stdout = original_stdout
 
     def get_version (self):
         if self.version:
@@ -1342,7 +1347,9 @@ class OptionParser (OptionContainer):
         name.  Does nothing if self.version is empty or undefined.
         """
         if self.version:
-            print(self.get_version(), file=file)
+            sys.stdout = file
+            print(self.get_version())
+            sys.stdout = original_stdout
 
     def format_option_help (self, formatter=None):
         if formatter is None:
