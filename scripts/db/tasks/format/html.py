@@ -315,7 +315,7 @@ def format( root, directory, template, lang, extension, parent = None ):
             'CONTENT' : contentstr
         }
 
-    output = file( os.path.join( directory, root.category + extension ), 'w' )
+    output = open( os.path.join( directory, root.category + extension ), 'w' )
     output.write( template % strings )
     output.close()
 
