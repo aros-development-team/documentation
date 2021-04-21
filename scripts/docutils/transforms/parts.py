@@ -32,7 +32,7 @@ class SectNum(Transform):
     """Should be applied before `Contents`."""
 
     def apply(self):
-        self.maxdepth = self.startnode.details.get('depth', sys.maxint)
+        self.maxdepth = self.startnode.details.get('depth', sys.maxsize)
         self.startvalue = self.startnode.details.get('start', 1)
         self.prefix = self.startnode.details.get('prefix', '')
         self.suffix = self.startnode.details.get('suffix', '')
@@ -53,7 +53,7 @@ class SectNum(Transform):
                 # Use &nbsp; for spacing:
                 generated = nodes.generated(
                     '', (self.prefix + '.'.join(numbers) + self.suffix
-                         +  u'\u00a0' * 3),
+                         +  '\u00a0' * 3),
                     classes=['sectnum'])
                 title.insert(0, generated)
                 title['auto'] = 1
@@ -82,7 +82,7 @@ class Contents(Transform):
 
     def apply(self):
         details = self.startnode.details
-        if details.has_key('local'):
+        if 'local' in details:
             startnode = self.startnode.parent.parent
             while not (isinstance(startnode, nodes.section)
                        or isinstance(startnode, nodes.document)):
@@ -91,7 +91,7 @@ class Contents(Transform):
         else:
             startnode = self.document
         self.toc_id = self.startnode.parent['ids'][0]
-        if details.has_key('backlinks'):
+        if 'backlinks' in details:
             self.backlinks = details['backlinks']
         else:
             self.backlinks = self.document.settings.toc_backlinks
@@ -111,7 +111,7 @@ class Contents(Transform):
         sections.reverse()
         entries = []
         autonum = 0
-        depth = self.startnode.details.get('depth', sys.maxint)
+        depth = self.startnode.details.get('depth', sys.maxsize)
         for section in sections:
             title = section[0]
             auto = title.get('auto')    # May be set by SectNum.

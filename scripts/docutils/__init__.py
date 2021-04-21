@@ -62,7 +62,7 @@ __version_details__ = 'release'
 """Extra version details (e.g. 'snapshot 2005-05-29, r3410', 'repository',
 'release'), modified automatically & manually."""
 
-class ApplicationError(StandardError): pass
+class ApplicationError(Exception): pass
 class DataError(ApplicationError): pass
 
 
