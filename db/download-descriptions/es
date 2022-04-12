@@ -51,6 +51,8 @@ linux-i386-system:
     los programas y demos incluidos en él. Este archivo
     contiene todos los binarios del sistema AROS compilados
     del árbol de Subversion.
+mingw32-x86_64-system:
+    The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
     and compiled under Windows XP, but should work on all 32-bit Windows
