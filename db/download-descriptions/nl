@@ -51,6 +51,8 @@ linux-i386-system:
     capabele versie, wat betekend dat je hiermee alle bijgesloten
     programma's en demo's kunt draaien. Dit archief bevat ook alle AROS
     systeem binaries gecompileerd vanuit de Subversion tak. 
+mingw32-x86_64-system:
+    The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
     and compiled under Windows XP, but should work on all 32-bit Windows
