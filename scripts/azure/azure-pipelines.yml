@@ -22,6 +22,7 @@ steps:
     sudo apt-key adv --keyserver packages.microsoft.com --recv-keys B02C46DF417A0893
     sudo apt-get update
     sudo apt-get install -y sshpass
+    sudo apt install python2
     sudo pip install --upgrade pip
     sudo pip install Pillow
   displayName: 'Installing AROS build dependencies'
