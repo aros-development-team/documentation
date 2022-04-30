@@ -51,6 +51,8 @@ linux-i386-system:
     όλα τα προγράμματα και τα demos που έχουν συμπεριληφθεί σε αυτή.
     Αυτό το πακέτο περιέχει όλα τα εκτελέσιμα αρχεία συστήματος του AROS 
 	που έγιναν compiled στον Subversion server.
+mingw32-x86_64-system:
+    The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
     and compiled under Windows XP, but should work on all 32-bit Windows

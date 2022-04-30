@@ -83,6 +83,8 @@ linux-i386-system:
     The hosted version for Linux/i386. This archive
     contains all core AROS system files, compiled from the Git
     repository.
+mingw32-x86_64-system:
+    The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
     The hosted version for Microsoft Windows on i386 platform. Developed
     and compiled under Windows XP, but should work on all 32-bit Windows
