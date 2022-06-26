@@ -6,8 +6,8 @@ import os, sys
 
 from build import utility
 
-from page import makePage
-from ConfigParser import ConfigParser
+from .page import makePage
+from configparser import ConfigParser
 
 def makeTemplates():
     # Deduce important paths

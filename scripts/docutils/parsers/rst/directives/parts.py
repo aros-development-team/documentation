@@ -50,13 +50,13 @@ def contents(name, arguments, options, content, lineno,
         title = nodes.title(title_text, '', *text_nodes)
     else:
         messages = []
-        if options.has_key('local'):
+        if 'local' in options:
             title = None
         else:
             title = nodes.title('', language.labels['contents'])
     topic = nodes.topic(classes=['contents'])
     topic['classes'] += options.get('class', [])
-    if options.has_key('local'):
+    if 'local' in options:
         topic['classes'].append('local')
     if title:
         name = title.astext()

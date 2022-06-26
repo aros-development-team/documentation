@@ -480,20 +480,20 @@ class TokenParser:
     def __init__(self, text):
         self.text = text + '\n\n'
         self.lines = self.text.splitlines(1)
-        self.generator = tokenize.generate_tokens(iter(self.lines).next)
-        self.next()
+        self.generator = tokenize.generate_tokens(iter(self.lines).__next__)
+        next(self)
 
     def __iter__(self):
         return self
 
-    def next(self):
-        self.token = self.generator.next()
+    def __next__(self):
+        self.token = next(self.generator)
         self.type, self.string, self.start, self.end, self.line = self.token
         return self.token
 
     def goto_line(self, lineno):
         while self.start[0] < lineno:
-            self.next()
+            next(self)
         return token
 
     def rhs(self, lineno):
@@ -503,7 +503,7 @@ class TokenParser:
         """
         self.goto_line(lineno)
         while self.string != '=':
-            self.next()
+            next(self)
         self.stack = None
         while self.type != token.NEWLINE and self.string != ';':
             if self.string == '=' and not self.stack:
@@ -514,8 +514,8 @@ class TokenParser:
                 self._backquote = 0
             else:
                 self.note_token()
-            self.next()
-        self.next()
+            next(self)
+        next(self)
         text = ''.join(self.tokens)
         return text.strip()
 
@@ -527,14 +527,14 @@ class TokenParser:
     def note_token(self):
         if self.type == tokenize.NL:
             return
-        del_ws = self.del_ws_prefix.has_key(self.string)
-        append_ws = not self.no_ws_suffix.has_key(self.string)
-        if self.openers.has_key(self.string):
+        del_ws = self.string in self.del_ws_prefix
+        append_ws = self.string not in self.no_ws_suffix
+        if self.string in self.openers:
             self.stack.append(self.string)
             if (self._type == token.NAME
-                or self.closers.has_key(self._string)):
+                or self._string in self.closers):
                 del_ws = 1
-        elif self.closers.has_key(self.string):
+        elif self.string in self.closers:
             assert self.stack[-1] == self.closers[self.string]
             self.stack.pop()
         elif self.string == '`':
@@ -561,16 +561,16 @@ class TokenParser:
         """
         self.goto_line(lineno)
         while self.string != 'def':
-            self.next()
+            next(self)
         while self.string != '(':
-            self.next()
+            next(self)
         name = None
         default = None
         parameter_tuple = None
         self.tokens = []
         parameters = {}
         self.stack = [self.string]
-        self.next()
+        next(self)
         while 1:
             if len(self.stack) == 1:
                 if parameter_tuple:
@@ -622,7 +622,7 @@ class TokenParser:
                         'token=%r' % (self.token,))
             else:
                 self.note_token()
-            self.next()
+            next(self)
         return parameters
 
 
@@ -717,14 +717,14 @@ def trim_docstring(text):
     # and split into a list of lines:
     lines = text.expandtabs().splitlines()
     # Determine minimum indentation (first line doesn't count):
-    indent = sys.maxint
+    indent = sys.maxsize
     for line in lines[1:]:
         stripped = line.lstrip()
         if stripped:
             indent = min(indent, len(line) - len(stripped))
     # Remove indentation (first line is special):
     trimmed = [lines[0].strip()]
-    if indent < sys.maxint:
+    if indent < sys.maxsize:
         for line in lines[1:]:
             trimmed.append(line[indent:].rstrip())
     # Strip off trailing and leading blank lines:
@@ -756,5 +756,5 @@ if __name__ == '__main__':
     else:
         filename = args[0]
         content = open(filename).read()
-        print parse_module(content, filename).pformat()
+        print(parse_module(content, filename).pformat())
 

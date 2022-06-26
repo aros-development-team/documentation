@@ -156,7 +156,7 @@ class Reporter:
         Raise an exception or generate a warning if appropriate.
         """
         attributes = kwargs.copy()
-        if kwargs.has_key('base_node'):
+        if 'base_node' in kwargs:
             source, line = get_source_line(kwargs['base_node'])
             del attributes['base_node']
             if source is not None:
@@ -170,7 +170,7 @@ class Reporter:
         if self.stream and (level >= self.report_level
                             or self.debug_flag and level == 0):
             msgtext = msg.astext().encode(self.encoding, self.error_handler)
-            print >>self.stream, msgtext
+            print(msgtext, file=self.stream)
         if level >= self.halt_level:
             raise SystemMessage(msg, level)
         if level > 0 or self.debug_flag:
@@ -303,11 +303,11 @@ def assemble_option_dict(option_list, options_spec):
         convertor = options_spec[name]  # raises KeyError if unknown
         if convertor is None:
             raise KeyError(name)        # or if explicitly disabled
-        if options.has_key(name):
+        if name in options:
             raise DuplicateOptionError('duplicate option "%s"' % name)
         try:
             options[name] = convertor(value)
-        except (ValueError, TypeError), detail:
+        except (ValueError, TypeError) as detail:
             raise detail.__class__('(option: "%s"; value: %r)\n%s'
                                    % (name, value, ' '.join(detail.args)))
     return options
@@ -502,7 +502,7 @@ east_asian_widths = {'W': 2,   # Wide
 column widths."""
 
 def east_asian_column_width(text):
-    if isinstance(text, types.UnicodeType):
+    if isinstance(text, str):
         total = 0
         for c in text:
             total += east_asian_widths[unicodedata.east_asian_width(c)]
@@ -563,7 +563,7 @@ class DependencyList:
         if not filename in self.list:
             self.list.append(filename)
             if self.file is not None:
-                print >>self.file, filename
+                print(filename, file=self.file)
 
     def close(self):
         """

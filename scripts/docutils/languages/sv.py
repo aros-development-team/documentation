@@ -16,44 +16,44 @@ Swedish language mappings for language-dependent features of Docutils.
 __docformat__ = 'reStructuredText'
 
 labels = {
-    'author':       u'F\u00f6rfattare',
-    'authors':      u'F\u00f6rfattare',
-    'organization': u'Organisation',
-    'address':      u'Adress',
-    'contact':      u'Kontakt',
-    'version':      u'Version',
-    'revision':     u'Revision',
-    'status':       u'Status',
-    'date':         u'Datum',
-    'copyright':    u'Copyright',
-    'dedication':   u'Dedikation',
-    'abstract':     u'Sammanfattning',
-    'attention':    u'Observera!',
-    'caution':      u'Varning!',
-    'danger':       u'FARA!',
-    'error':        u'Fel',
-    'hint':         u'V\u00e4gledning',
-    'important':    u'Viktigt',
-    'note':         u'Notera',
-    'tip':          u'Tips',
-    'warning':      u'Varning',
-    'contents':     u'Inneh\u00e5ll' }
+    'author':       'F\u00f6rfattare',
+    'authors':      'F\u00f6rfattare',
+    'organization': 'Organisation',
+    'address':      'Adress',
+    'contact':      'Kontakt',
+    'version':      'Version',
+    'revision':     'Revision',
+    'status':       'Status',
+    'date':         'Datum',
+    'copyright':    'Copyright',
+    'dedication':   'Dedikation',
+    'abstract':     'Sammanfattning',
+    'attention':    'Observera!',
+    'caution':      'Varning!',
+    'danger':       'FARA!',
+    'error':        'Fel',
+    'hint':         'V\u00e4gledning',
+    'important':    'Viktigt',
+    'note':         'Notera',
+    'tip':          'Tips',
+    'warning':      'Varning',
+    'contents':     'Inneh\u00e5ll' }
 """Mapping of node class name to label text."""
 
 bibliographic_fields = {
     # 'Author' and 'Authors' identical in Swedish; assume the plural:
-    u'f\u00f6rfattare': 'authors',
-    u' n/a':            'author',
-    u'organisation':    'organization',
-    u'adress':          'address',
-    u'kontakt':         'contact',
-    u'version':         'version',
-    u'revision':        'revision',
-    u'status':          'status',
-    u'datum':           'date',
-    u'copyright':       'copyright',
-    u'dedikation':      'dedication', 
-    u'sammanfattning':  'abstract' }
+    'f\u00f6rfattare': 'authors',
+    ' n/a':            'author',
+    'organisation':    'organization',
+    'adress':          'address',
+    'kontakt':         'contact',
+    'version':         'version',
+    'revision':        'revision',
+    'status':          'status',
+    'datum':           'date',
+    'copyright':       'copyright',
+    'dedikation':      'dedication', 
+    'sammanfattning':  'abstract' }
 """Swedish (lowcased) to canonical name mapping for bibliographic fields."""
 
 author_separators = [';', ',']

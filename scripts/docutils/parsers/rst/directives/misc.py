@@ -17,7 +17,7 @@ from docutils.parsers.rst import directives, roles, states
 from docutils.transforms import misc
 
 try:
-    import urllib2
+    import urllib.request, urllib.error, urllib.parse
 except ImportError:
     urllib2 = None
 
@@ -48,7 +48,7 @@ def include(name, arguments, options, content, lineno,
             source_path=path, encoding=encoding,
             error_handler=state.document.settings.input_encoding_error_handler,
             handle_io_errors=None)
-    except IOError, error:
+    except IOError as error:
         severe = state_machine.reporter.severe(
               'Problems with "%s" directive path:\n%s: %s.'
               % (name, error.__class__.__name__, error),
@@ -56,13 +56,13 @@ def include(name, arguments, options, content, lineno,
         return [severe]
     try:
         include_text = include_file.read()
-    except UnicodeError, error:
+    except UnicodeError as error:
         severe = state_machine.reporter.severe(
               'Problem with "%s" directive:\n%s: %s'
               % (name, error.__class__.__name__, error),
               nodes.literal_block(block_text, block_text), line=lineno)
         return [severe]
-    if options.has_key('literal'):
+    if 'literal' in options:
         literal_block = nodes.literal_block(include_text, include_text,
                                             source=path)
         literal_block.line = 1
@@ -89,7 +89,7 @@ def raw(name, arguments, options, content, lineno,
     """
     if ( not state.document.settings.raw_enabled
          or (not state.document.settings.file_insertion_enabled
-             and (options.has_key('file') or options.has_key('url'))) ):
+             and ('file' in options or 'url' in options)) ):
         warning = state_machine.reporter.warning(
               '"%s" directive disabled.' % name,
               nodes.literal_block(block_text, block_text), line=lineno)
@@ -97,15 +97,15 @@ def raw(name, arguments, options, content, lineno,
     attributes = {'format': ' '.join(arguments[0].lower().split())}
     encoding = options.get('encoding', state.document.settings.input_encoding)
     if content:
-        if options.has_key('file') or options.has_key('url'):
+        if 'file' in options or 'url' in options:
             error = state_machine.reporter.error(
                   '"%s" directive may not both specify an external file and '
                   'have content.' % name,
                   nodes.literal_block(block_text, block_text), line=lineno)
             return [error]
         text = '\n'.join(content)
-    elif options.has_key('file'):
-        if options.has_key('url'):
+    elif 'file' in options:
+        if 'url' in options:
             error = state_machine.reporter.error(
                   'The "file" and "url" options may not be simultaneously '
                   'specified for the "%s" directive.' % name,
@@ -121,21 +121,21 @@ def raw(name, arguments, options, content, lineno,
                 source_path=path, encoding=encoding,
                 error_handler=state.document.settings.input_encoding_error_handler,
                 handle_io_errors=None)
-        except IOError, error:
+        except IOError as error:
             severe = state_machine.reporter.severe(
                   'Problems with "%s" directive path:\n%s.' % (name, error),
                   nodes.literal_block(block_text, block_text), line=lineno)
             return [severe]
         try:
             text = raw_file.read()
-        except UnicodeError, error:
+        except UnicodeError as error:
             severe = state_machine.reporter.severe(
                   'Problem with "%s" directive:\n%s: %s'
                   % (name, error.__class__.__name__, error),
                   nodes.literal_block(block_text, block_text), line=lineno)
             return [severe]
         attributes['source'] = path
-    elif options.has_key('url'):
+    elif 'url' in options:
         if not urllib2:
             severe = state_machine.reporter.severe(
                   'Problems with the "%s" directive and its "url" option: '
@@ -145,8 +145,8 @@ def raw(name, arguments, options, content, lineno,
             return [severe]
         source = options['url']
         try:
-            raw_text = urllib2.urlopen(source).read()
-        except (urllib2.URLError, IOError, OSError), error:
+            raw_text = urllib.request.urlopen(source).read()
+        except (urllib.error.URLError, IOError, OSError) as error:
             severe = state_machine.reporter.severe(
                   'Problems with "%s" directive URL "%s":\n%s.'
                   % (name, options['url'], error),
@@ -157,7 +157,7 @@ def raw(name, arguments, options, content, lineno,
             error_handler=state.document.settings.input_encoding_error_handler)
         try:
             text = raw_file.read()
-        except UnicodeError, error:
+        except UnicodeError as error:
             severe = state_machine.reporter.severe(
                   'Problem with "%s" directive:\n%s: %s'
                   % (name, error.__class__.__name__, error),
@@ -227,19 +227,19 @@ def unicode_directive(name, arguments, options, content, lineno,
             nodes.literal_block(block_text, block_text), line=lineno)
         return [error]
     substitution_definition = state_machine.node
-    if options.has_key('trim'):
+    if 'trim' in options:
         substitution_definition.attributes['ltrim'] = 1
         substitution_definition.attributes['rtrim'] = 1
-    if options.has_key('ltrim'):
+    if 'ltrim' in options:
         substitution_definition.attributes['ltrim'] = 1
-    if options.has_key('rtrim'):
+    if 'rtrim' in options:
         substitution_definition.attributes['rtrim'] = 1
     codes = unicode_comment_pattern.split(arguments[0])[0].split()
     element = nodes.Element()
     for code in codes:
         try:
             decoded = directives.unicode_code(code)
-        except ValueError, err:
+        except ValueError as err:
             error = state_machine.reporter.error(
                 'Invalid character code: %s\n%s: %s'
                 % (code, err.__class__.__name__, err),
@@ -325,15 +325,15 @@ def role(name, arguments, options, content, lineno,
         (arguments, options, content, content_offset) = (
             state.parse_directive_block(content[1:], content_offset, base_role,
                                         option_presets={}))
-    except states.MarkupError, detail:
+    except states.MarkupError as detail:
         error = state_machine.reporter.error(
             'Error in "%s" directive:\n%s.' % (name, detail),
             nodes.literal_block(block_text, block_text), line=lineno)
         return messages + [error]
-    if not options.has_key('class'):
+    if 'class' not in options:
         try:
             options['class'] = directives.class_option(new_role_name)
-        except ValueError, detail:
+        except ValueError as detail:
             error = state_machine.reporter.error(
                 'Invalid argument for "%s" directive:\n%s.'
                 % (name, detail),
@@ -349,7 +349,7 @@ def default_role(name, arguments, options, content, lineno,
                  content_offset, block_text, state, state_machine):
     """Set the default interpreted text role."""
     if not arguments:
-        if roles._roles.has_key(''):
+        if '' in roles._roles:
             # restore the "default" default role
             del roles._roles['']
         return []
