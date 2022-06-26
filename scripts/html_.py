@@ -50,18 +50,18 @@ class Standard( Container ):
         self.name       = name
         self.attributes = attributes
 
-        if 'CLASS' in self.attributes:
+        if self.attributes.has_key( 'CLASS' ):
             self.attributes['class'] = self.attributes['CLASS']
             del self.attributes['CLASS']
             
         if defaults:
-            for key in list(defaults.keys()):
+            for key in defaults.keys():
                 if key not in self.attributes: 
                     self.attributes[key] = defaults[key]
 
     def __str__( self ):
         result  = '<' + self.name
-        for name in list(self.attributes.keys()):
+        for name in self.attributes.keys():
             result += ' ' + name + '="' + str( self.attributes[name] ) + '"'
         result += '>'
         result += Container.__str__( self )
@@ -76,18 +76,18 @@ class StandardEmpty( Node ):
         self.name       = name
         self.attributes = attributes
 
-        if 'CLASS' in self.attributes:
+        if self.attributes.has_key( 'CLASS' ):
             self.attributes['class'] = self.attributes['CLASS']
             del self.attributes['CLASS']
         
         if defaults:
-            for key in list(defaults.keys()):
+            for key in defaults.keys():
                 if key not in self.attributes:
                     self.attributes[key] = defaults[key]
                     
     def __str__( self ):
         result  = '<' + self.name
-        for name in list(self.attributes.keys()):
+        for name in self.attributes.keys():
             result += ' ' + name + '="' + str( self.attributes[name] ) + '"'
         result += '>'
 

@@ -23,7 +23,7 @@ except ImportError:
     csv = None
 
 try:
-    import urllib.request, urllib.error, urllib.parse
+    import urllib2
 except ImportError:
     urllib2 = None
 
@@ -86,13 +86,13 @@ if csv:
         quoting = csv.QUOTE_MINIMAL
 
         def __init__(self, options):
-            if 'delim' in options:
+            if options.has_key('delim'):
                 self.delimiter = str(options['delim'])
-            if 'keepspace' in options:
+            if options.has_key('keepspace'):
                 self.skipinitialspace = False
-            if 'quote' in options:
+            if options.has_key('quote'):
                 self.quotechar = str(options['quote'])
-            if 'escape' in options:
+            if options.has_key('escape'):
                 self.doublequote = False
                 self.escapechar = str(options['escape'])
             csv.Dialect.__init__(self)
@@ -115,7 +115,7 @@ def csv_table(name, arguments, options, content, lineno,
              content_offset, block_text, state, state_machine):
     try:
         if ( not state.document.settings.file_insertion_enabled
-             and ('file' in options or 'url' in options) ):
+             and (options.has_key('file') or options.has_key('url')) ):
             warning = state_machine.reporter.warning(
                 'File and URL access deactivated; ignoring "%s" directive.' %
                 name, nodes.literal_block(block_text,block_text), line=lineno)
@@ -139,9 +139,9 @@ def csv_table(name, arguments, options, content, lineno,
         col_widths = get_column_widths(
             max_cols, name, options, lineno, block_text, state_machine)
         extend_short_rows_with_empty_cells(max_cols, (table_head, table_body))
-    except SystemMessagePropagation as detail:
+    except SystemMessagePropagation, detail:
         return [detail.args[0]]
-    except csv.Error as detail:
+    except csv.Error, detail:
         error = state_machine.reporter.error(
             'Error with CSV data in "%s" directive:\n%s' % (name, detail),
             nodes.literal_block(block_text, block_text), line=lineno)
@@ -189,7 +189,7 @@ def get_csv_data(name, options, content, lineno, block_text,
     """
     encoding = options.get('encoding', state.document.settings.input_encoding)
     if content:                         # CSV data is from directive content
-        if 'file' in options or 'url' in options:
+        if options.has_key('file') or options.has_key('url'):
             error = state_machine.reporter.error(
                   '"%s" directive may not both specify an external file and '
                   'have content.' % name,
@@ -197,8 +197,8 @@ def get_csv_data(name, options, content, lineno, block_text,
             raise SystemMessagePropagation(error)
         source = content.source(0)
         csv_data = content
-    elif 'file' in options:       # CSV data is from an external file
-        if 'url' in options:
+    elif options.has_key('file'):       # CSV data is from an external file
+        if options.has_key('url'):
             error = state_machine.reporter.error(
                   'The "file" and "url" options may not be simultaneously '
                   'specified for the "%s" directive.' % name,
@@ -216,12 +216,12 @@ def get_csv_data(name, options, content, lineno, block_text,
                     =state.document.settings.input_encoding_error_handler,
                 handle_io_errors=None)
             csv_data = csv_file.read().splitlines()
-        except IOError as error:
+        except IOError, error:
             severe = state_machine.reporter.severe(
                   'Problems with "%s" directive path:\n%s.' % (name, error),
                   nodes.literal_block(block_text, block_text), line=lineno)
             raise SystemMessagePropagation(severe)
-    elif 'url' in options:        # CSV data is from a URL
+    elif options.has_key('url'):        # CSV data is from a URL
         if not urllib2:
             severe = state_machine.reporter.severe(
                   'Problems with the "%s" directive and its "url" option: '
@@ -231,8 +231,8 @@ def get_csv_data(name, options, content, lineno, block_text,
             raise SystemMessagePropagation(severe)
         source = options['url']
         try:
-            csv_text = urllib.request.urlopen(source).read()
-        except (urllib.error.URLError, IOError, OSError, ValueError) as error:
+            csv_text = urllib2.urlopen(source).read()
+        except (urllib2.URLError, IOError, OSError, ValueError), error:
             severe = state_machine.reporter.severe(
                   'Problems with "%s" directive URL "%s":\n%s.'
                   % (name, options['url'], error),
@@ -253,7 +253,7 @@ def process_header_option(options, state_machine, lineno):
     source = state_machine.get_source(lineno - 1)
     table_head = []
     max_header_cols = 0
-    if 'header' in options:       # separate table header in option
+    if options.has_key('header'):       # separate table header in option
         rows, max_header_cols = parse_csv_data_into_rows(
             options['header'].split('\n'), HeaderDialect(), source, options)
         table_head.extend(rows)
@@ -269,7 +269,7 @@ def parse_csv_data_into_rows(csv_data, dialect, source, options):
         row_data = []
         for cell in row:
             # decode UTF-8 back to Unicode
-            cell_text = str(cell, 'utf-8')
+            cell_text = unicode(cell, 'utf-8')
             cell_data = (0, 0, 0, statemachine.StringList(
                 cell_text.splitlines(), source=source))
             row_data.append(cell_data)
@@ -308,7 +308,7 @@ def check_table_dimensions(rows, header_rows, stub_columns, name, lineno,
 
 def get_column_widths(max_cols, name, options, lineno, block_text,
                       state_machine):
-    if 'widths' in options:
+    if options.has_key('widths'):
         col_widths = options['widths']
         if len(col_widths) != max_cols:
             error = state_machine.reporter.error(
@@ -356,7 +356,7 @@ def list_table(name, arguments, options, content, lineno,
         check_table_dimensions(
             table_data, header_rows, stub_columns, name, lineno,
             block_text, state_machine)
-    except SystemMessagePropagation as detail:
+    except SystemMessagePropagation, detail:
         return [detail.args[0]]
     table_node = build_table_from_list(table_data, col_widths,
                                        header_rows, stub_columns)

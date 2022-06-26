@@ -290,7 +290,7 @@ class HTMLTranslator(nodes.NodeVisitor):
         text = text.replace(">", "&gt;")
         text = text.replace("@", "&#64;") # may thwart some address harvesters
         # Replace the non-breaking space character with the HTML entity:
-        text = text.replace('\u00a0', "&nbsp;")
+        text = text.replace(u'\u00a0', "&nbsp;")
         return text
 
     def cloak_mailto(self, uri):
@@ -327,16 +327,16 @@ class HTMLTranslator(nodes.NodeVisitor):
         prefix = []
         atts = {}
         ids = []
-        for (name, value) in list(attributes.items()):
+        for (name, value) in attributes.items():
             atts[name.lower()] = value
         classes = node.get('classes', [])
-        if 'class' in atts:
+        if atts.has_key('class'):
             classes.append(atts['class'])
         if classes:
             atts['class'] = ' '.join(classes)
-        assert 'id' not in atts
+        assert not atts.has_key('id')
         ids.extend(node.get('ids', []))
-        if 'ids' in atts:
+        if atts.has_key('ids'):
             ids.extend(atts['ids'])
             del atts['ids']
         if ids:
@@ -355,9 +355,9 @@ class HTMLTranslator(nodes.NodeVisitor):
                     # *inside* the element, as the first child.
                     suffix += '<span id="%s"></span>' % id
         # !!! next 2 lines to be removed in Docutils 0.5:
-        if 'id' in atts and tagname in self.named_tags:
+        if atts.has_key('id') and tagname in self.named_tags:
             atts['name'] = atts['id']   # for compatibility with old browsers
-        attlist = list(atts.items())
+        attlist = atts.items()
         attlist.sort()
         parts = [tagname]
         for name, value in attlist:
@@ -365,14 +365,14 @@ class HTMLTranslator(nodes.NodeVisitor):
             # value, but this isn't supported by XHTML.
             assert value is not None
             if isinstance(value, ListType):
-                values = [str(v) for v in value]
+                values = [unicode(v) for v in value]
                 parts.append('%s="%s"' % (name.lower(),
                                           self.attval(' '.join(values))))
             else:
                 try:
-                    uval = str(value)
+                    uval = unicode(value)
                 except TypeError:       # for Python 2.1 compatibility:
-                    uval = str(str(value))
+                    uval = unicode(str(value))
                 parts.append('%s="%s"' % (name.lower(), self.attval(uval)))
         if empty:
             infix = ' /'
@@ -740,9 +740,9 @@ class HTMLTranslator(nodes.NodeVisitor):
             tagname = 'td'
             del atts['class']
         node.parent.column += 1
-        if 'morerows' in node:
+        if node.has_key('morerows'):
             atts['rowspan'] = node['morerows'] + 1
-        if 'morecols' in node:
+        if node.has_key('morecols'):
             atts['colspan'] = node['morecols'] + 1
             node.parent.column += node['morecols']
         self.body.append(self.starttag(node, tagname, '', **atts))
@@ -761,9 +761,9 @@ class HTMLTranslator(nodes.NodeVisitor):
         usable.
         """
         atts = {}
-        if 'start' in node:
+        if node.has_key('start'):
             atts['start'] = node['start']
-        if 'enumtype' in node:
+        if node.has_key('enumtype'):
             atts['class'] = node['enumtype']
         # @@@ To do: prefix, suffix. How? Change prefix/suffix to a
         # single "format" attribute? Use CSS2?
@@ -962,26 +962,26 @@ class HTMLTranslator(nodes.NodeVisitor):
     def visit_image(self, node):
         atts = {}
         atts['src'] = node['uri']
-        if 'width' in node:
+        if node.has_key('width'):
             atts['width'] = node['width']
-        if 'height' in node:
+        if node.has_key('height'):
             atts['height'] = node['height']
-        if 'scale' in node:
-            if Image and not ('width' in node
-                              and 'height' in node):
+        if node.has_key('scale'):
+            if Image and not (node.has_key('width')
+                              and node.has_key('height')):
                 try:
                     im = Image.open(str(atts['src']))
                 except (IOError, # Source image can't be found or opened
                         UnicodeError):  # PIL doesn't like Unicode paths.
                     pass
                 else:
-                    if 'width' not in atts:
+                    if not atts.has_key('width'):
                         atts['width'] = str(im.size[0])
-                    if 'height' not in atts:
+                    if not atts.has_key('height'):
                         atts['height'] = str(im.size[1])
                     del im
             for att_name in 'width', 'height':
-                if att_name in atts:
+                if atts.has_key(att_name):
                     match = re.match(r'([0-9.]+)(\S*)$', atts[att_name])
                     assert match
                     atts[att_name] = '%s%s' % (
@@ -989,7 +989,7 @@ class HTMLTranslator(nodes.NodeVisitor):
                         match.group(2))
         style = []
         for att_name in 'width', 'height':
-            if att_name in atts:
+            if atts.has_key(att_name):
                 if re.match(r'^[0-9.]+$', atts[att_name]):
                     # Interpret unitless values as pixels.
                     atts[att_name] += 'px'
@@ -1005,7 +1005,7 @@ class HTMLTranslator(nodes.NodeVisitor):
             suffix = ''
         else:
             suffix = '\n'
-        if 'align' in node:
+        if node.has_key('align'):
             if node['align'] == 'center':
                 # "align" attribute is set in surrounding "div" element.
                 self.body.append('<div align="center" class="align-center">')
@@ -1242,7 +1242,7 @@ class HTMLTranslator(nodes.NodeVisitor):
         raise nodes.SkipNode
 
     def visit_reference(self, node):
-        if 'refuri' in node:
+        if node.has_key('refuri'):
             suffix = '.' + self.settings.target_suffix
             href = node['refuri']
             if ( self.settings.cloak_email_addresses
@@ -1260,7 +1260,7 @@ class HTMLTranslator(nodes.NodeVisitor):
                 if len( words ) > 1:
                     href = href + '#' + words[1]
         else:
-            assert 'refid' in node, \
+            assert node.has_key('refid'), \
                    'References must have "refuri" or "refid" attribute.'
             href = '#' + node['refid']
         atts = {'href': href, 'class': 'reference'}
@@ -1414,8 +1414,8 @@ class HTMLTranslator(nodes.NodeVisitor):
         self.body.append('</table>\n')
 
     def visit_target(self, node):
-        if not ('refuri' in node or 'refid' in node
-                or 'refname' in node):
+        if not (node.has_key('refuri') or node.has_key('refid')
+                or node.has_key('refname')):
             self.body.append(self.starttag(node, 'span', '', CLASS='target'))
             self.context.append('</span>')
         else:

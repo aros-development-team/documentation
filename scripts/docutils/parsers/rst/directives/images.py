@@ -31,7 +31,7 @@ def align(argument):
 
 def image(name, arguments, options, content, lineno,
           content_offset, block_text, state, state_machine):
-    if 'align' in options:
+    if options.has_key('align'):
         # check for align_v values only
         if isinstance(state, states.SubstitutionDef):
             if options['align'] not in align_v_values:
@@ -53,7 +53,7 @@ def image(name, arguments, options, content, lineno,
     reference = directives.uri(arguments[0])
     options['uri'] = reference
     reference_node = None
-    if 'target' in options:
+    if options.has_key('target'):
         block = states.escape2null(options['target']).splitlines()
         block = [line for line in block]
         target_type, data = state.parse_target(block, block_text, lineno)

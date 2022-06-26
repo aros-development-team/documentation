@@ -98,15 +98,15 @@ def move_if_changed(tmpfilename, targetfilename):
     """
     if os.path.exists(targetfilename):
         if not filecmp.cmp(tmpfilename, targetfilename, shallow=False):
-            print(tmpfilename, "moved to", targetfilename)
+            print tmpfilename, "moved to", targetfilename
             shutil.move(tmpfilename, targetfilename)
             return
     else:
-        print(tmpfilename, "moved to", targetfilename)
+        print tmpfilename, "moved to", targetfilename
         shutil.move(tmpfilename, targetfilename)
         return
 
-    print(tmpfilename, "removed")
+    print tmpfilename, "removed"
     os.remove(tmpfilename)
 
 
@@ -164,12 +164,12 @@ class AutoDoc(object):
                 self.titles[current_title] += (" " + line.expandtabs())[4:] + "\n"
 
         # check for empty chapters, because we don't want to print them
-        for title, content in self.titles.items():
+        for title, content in self.titles.iteritems():
             if content.strip() == "":
                 self.titles[title] = ""
 
         # parse "see also"
-        if "SEE ALSO" in self.titles:
+        if self.titles.has_key("SEE ALSO"):
             self.titles["XREF"] = []
             for ref in SPLIT_REGX.split(self.titles["SEE ALSO"]):
                 xref = XREF_REGX.match(ref)
@@ -197,8 +197,8 @@ class AutoDoc(object):
                         # header
                         self.titles["XREF"].append((XREF_KIND_HEADER, header, ""))
                     else:
-                        print("*" * 20)
-                        print(self.titles["SEE ALSO"])
+                        print "*" * 20
+                        print self.titles["SEE ALSO"]
                         raise ValueError("XREF parsing error")
 
     def __cmp__(self, other):
@@ -218,7 +218,7 @@ class AutoDoc(object):
 
         for title in titles:
             title_key = title.upper()
-            if title_key != "SEE ALSO" and title_key in self.titles:
+            if title_key != "SEE ALSO" and self.titles.has_key(title_key):
                 lines = self.titles[title_key]
                 if len(lines) > 0:
                     os.write(fdesc, title + "\n")
@@ -238,7 +238,7 @@ class AutoDoc(object):
         path_to_header - relative path from target document to directory with header files
         """
 
-        if "XREF" in self.titles:
+        if self.titles.has_key("XREF"):
             if len(self.titles["XREF"]) > 0:
                 os.write(fdesc, "See also\n~~~~~~~~\n\n")
                 for kind, name1, name2 in self.titles["XREF"]:
@@ -352,11 +352,11 @@ class LibAutoDoc(AutoDoc):
         self.parameters = []
 
         if "NAME" not in self.titles:
-            print(content)
+            print content
             raise ValueError("Field 'NAME' is missing")
         self.docname = self.titles["NAME"].strip()
         if self.docname == "":
-            print(content)
+            print content
             raise ValueError("Field 'NAME' is empty")
         self.docfilename = self.docname.lower()
 
@@ -370,7 +370,7 @@ class LibAutoDoc(AutoDoc):
             self.docfilename = self.docname.lower()
 
             #search for parameter/type
-            if "SYNOPSIS" in self.titles:
+            if self.titles.has_key("SYNOPSIS"):
                 for par in LIBFUNC_REGX.findall(self.titles["SYNOPSIS"]):
                     self.parameters.append(par)
 
@@ -510,7 +510,7 @@ class ShellDocList(object):
 
         filenames = glob.glob(os.path.join(srcdir, "*.c"))
         for filename in filenames:
-            print("Reading from file", filename)
+            print "Reading from file", filename
             filehandle = open(filename)
             content = filehandle.read() # read whole file
             for ad_entry in AD_REGX.findall(content):
@@ -536,7 +536,7 @@ class ShellDocList(object):
         targetdir - directory which should be listed
         """
 
-        print("Creating index file")
+        print "Creating index file"
         os.write(fdesc, ".. This document is automatically generated. Don't edit it!\n\n")
         os.write(fdesc, "=======================\n")
         os.write(fdesc, "Using AROS by the Shell\n")
@@ -564,7 +564,7 @@ class ShellDocList(object):
 
         for doc in self.doclist:
             filename = os.path.join(targetdir, doc.docfilename + ".en")
-            print("Writing to file", filename)
+            print "Writing to file", filename
             (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
             doc.write(tempfd, titles)
             doc.write_xref(tempfd, "../../developers/autodocs", "../../developers/headerfiles")
@@ -573,7 +573,7 @@ class ShellDocList(object):
 
         # create index page
         filename = os.path.join(targetdir, "index.en")
-        print("Writing to file", filename)
+        print "Writing to file", filename
         (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
         self.write_index(tempfd, targetdir)
         os.close(tempfd)
@@ -614,7 +614,7 @@ class LibDocList(object):
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
-                print("Reading from file", filename)
+                print "Reading from file", filename
                 filehandle = open(filename)
                 content = filehandle.read() # read whole file
                 for ad_entry in AD_REGX.findall(content):
@@ -638,7 +638,7 @@ class LibDocList(object):
 
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en")
-            print("Writing to file", filename)
+            print "Writing to file", filename
             (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
 
             #create header
@@ -730,15 +730,15 @@ class HiddDocList(object):
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
-                print("Reading from file", filename)
+                print "Reading from file", filename
                 filehandle = open(filename)
                 content = filehandle.read() # read whole file
                 for ad_entry in AD_REGX.findall(content):
                     adoc = HiddAutoDoc(ad_entry)
                     if adoc.docname != "":
-                        if "LOCATION" in adoc.titles:
+                        if adoc.titles.has_key("LOCATION"):
                             classname = adoc.titles["LOCATION"].strip()
-                            if classname in self.doclist:
+                            if self.doclist.has_key(classname):
                                 self.doclist[classname].append(adoc)
                             else:
                                 self.doclist[classname] = [adoc]
@@ -747,7 +747,7 @@ class HiddDocList(object):
 
                 filehandle.close()
 
-        for _, value in self.doclist.items():
+        for _, value in self.doclist.iteritems():
             value.sort()
 
     def write(self, targetdir, titles):
@@ -764,7 +764,7 @@ class HiddDocList(object):
 
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en")
-            print("Writing to file", filename)
+            print "Writing to file", filename
             (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
 
             # create header
@@ -780,11 +780,11 @@ class HiddDocList(object):
             # create list of classes
             if len(self.doclist) > 1: # only when more than one class exists
                 os.write(tempfd, "Classes\n-------\n\n")
-                for classname, doclist in self.doclist.items():
+                for classname, doclist in self.doclist.iteritems():
                     os.write(tempfd, "+ `" + classname + "`_\n")
                 os.write(tempfd, "\n----------\n\n")
 
-            for classname, doclist in self.doclist.items():
+            for classname, doclist in self.doclist.iteritems():
                 if len(self.doclist) > 1:
                     os.write(tempfd, classname + "\n" + len(classname) * "-" + "\n\n")
 
@@ -879,7 +879,7 @@ def create_module_docs():
 
     # print index file
     filename = os.path.join(targetdir, "index.en")
-    print("Writing to file", filename)
+    print "Writing to file", filename
     (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
     os.write(tempfd, "======================\n")
     os.write(tempfd, "Autodocs for Modules\n")
@@ -893,13 +893,13 @@ def create_module_docs():
 
     # print function index
     filename = os.path.join(targetdir, "functionindex.en")
-    print("Writing to file", filename)
+    print "Writing to file", filename
     (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
     function_index.write(tempfd)
     os.close(tempfd)
     move_if_changed(tempfilename, filename)
 
-    print("Done")
+    print "Done"
 
 
 def create_lib_docs_dir(srcdir, targetdir, titles, function_index):
@@ -967,7 +967,7 @@ def create_shell_docs():
     for sdir in srcdirs:
         shelldocs.read(sdir)
     shelldocs.write(targetdir, shell_titles)
-    print("Done")
+    print "Done"
 
 def create_apps_docs():
     """Create the application docs.
@@ -985,7 +985,7 @@ def create_apps_docs():
     for sdir in srcdirs:
         appsdocs.read(sdir)
     appsdocs.write(targetdir, apps_titles)
-    print("Done")
+    print "Done"
 
 def create_all_docs():
     """Create all docs.

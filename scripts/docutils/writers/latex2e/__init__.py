@@ -260,12 +260,12 @@ class Babel:
         return text.replace('"', self.double_quote_replacment)
 
     def get_language(self):
-        if self.language in self._ISO639_TO_BABEL:
+        if self._ISO639_TO_BABEL.has_key(self.language):
             return self._ISO639_TO_BABEL[self.language]
         else:
             # support dialects.
             l = self.language.split("_")[0]
-            if l in self._ISO639_TO_BABEL:
+            if self._ISO639_TO_BABEL.has_key(l):
                 return self._ISO639_TO_BABEL[l]
         return None
 
@@ -386,7 +386,7 @@ class Table:
     def set(self,attr,value):
         self._attrs[attr] = value
     def get(self,attr):
-        if attr in self._attrs:
+        if self._attrs.has_key(attr):
             return self._attrs[attr]
         return None
     def get_vertical_bar(self):
@@ -752,7 +752,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
                 #"iso-8859-8": ""   # hebrew
                 #"iso-8859-10": ""   # latin6, more complete iso-8859-4
              }
-        if docutils_encoding.lower() in tr:
+        if tr.has_key(docutils_encoding.lower()):
             return tr[docutils_encoding.lower()]
         return docutils_encoding.translate(string.maketrans("",""),"_-").lower()
 
@@ -760,20 +760,20 @@ class LaTeXTranslator(nodes.NodeVisitor):
         return self.language.labels[docutil_label]
 
     latex_equivalents = {
-        '\u00A0' : '~',
-        '\u2013' : '{--}',
-        '\u2014' : '{---}',
-        '\u2018' : '`',
-        '\u2019' : '\'',
-        '\u201A' : ',',
-        '\u201C' : '``',
-        '\u201D' : '\'\'',
-        '\u201E' : ',,',
-        '\u2020' : '{\\dag}',
-        '\u2021' : '{\\ddag}',
-        '\u2026' : '{\\dots}',
-        '\u2122' : '{\\texttrademark}',
-        '\u21d4' : '{$\\Leftrightarrow$}',
+        u'\u00A0' : '~',
+        u'\u2013' : '{--}',
+        u'\u2014' : '{---}',
+        u'\u2018' : '`',
+        u'\u2019' : '\'',
+        u'\u201A' : ',',
+        u'\u201C' : '``',
+        u'\u201D' : '\'\'',
+        u'\u201E' : ',,',
+        u'\u2020' : '{\\dag}',
+        u'\u2021' : '{\\ddag}',
+        u'\u2026' : '{\\dots}',
+        u'\u2122' : '{\\texttrademark}',
+        u'\u21d4' : '{$\\Leftrightarrow$}',
     }
 
     def unicode_to_latex(self,text):
@@ -781,7 +781,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/252124
         # Only some special chracters are translated, for documents with many
         # utf-8 chars one should use the LaTeX unicode package.
-        for uchar in list(self.latex_equivalents.keys()):
+        for uchar in self.latex_equivalents.keys():
             text = text.replace(uchar,self.latex_equivalents[uchar])
         return text
 
@@ -799,10 +799,10 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # compile the regexps once. do it here so one can see them.
         #
         # first the braces.
-        if 'encode_re_braces' not in self.__dict__:
+        if not self.__dict__.has_key('encode_re_braces'):
             self.encode_re_braces = re.compile(r'([{}])')
         text = self.encode_re_braces.sub(r'{\\\1}',text)
-        if 'encode_re_bslash' not in self.__dict__:
+        if not self.__dict__.has_key('encode_re_bslash'):
             # find backslash: except in the form '{\{}' or '{\}}'.
             self.encode_re_bslash = re.compile(r'(?<!{)(\\)(?![{}]})')
         # then the backslash: except in the form from line above:
@@ -1017,9 +1017,9 @@ class LaTeXTranslator(nodes.NodeVisitor):
             self.body.append('\\cite{')
         else:
             href = ''
-            if 'refid' in node:
+            if node.has_key('refid'):
                 href = node['refid']
-            elif 'refname' in node:
+            elif node.has_key('refname'):
                 href = self.document.nameids[node['refname']]
             self.body.append('[\\hyperlink{%s}{' % href)
 
@@ -1234,17 +1234,17 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # IN WORK BUG TODO HACK continues here
         # multirow in LaTeX simply will enlarge the cell over several rows
         # (the following n if n is positive, the former if negative).
-        if 'morerows' in node and 'morecols' in node:
+        if node.has_key('morerows') and node.has_key('morecols'):
             raise NotImplementedError('Cells that '
             'span multiple rows *and* columns are not supported, sorry.')
-        if 'morerows' in node:
+        if node.has_key('morerows'):
             count = node['morerows'] + 1
             self.active_table.set_rowspan(self.active_table.get_entry_number()-1,count)
             self.body.append('\\multirow{%d}{%s}{' % \
                     (count,self.active_table.get_column_width()))
             self.context.append('}')
             # BUG following rows must have empty cells.
-        elif 'morecols' in node:
+        elif node.has_key('morecols'):
             # the vertical bar before column is missing if it is the first column.
             # the one after always.
             if self.active_table.get_entry_number() == 1:
@@ -1291,10 +1291,10 @@ class LaTeXTranslator(nodes.NodeVisitor):
                 'lowerroman':'roman',
                 'upperroman':'Roman' }
         enum_suffix = ""
-        if 'suffix' in node:
+        if node.has_key('suffix'):
             enum_suffix = node['suffix']
         enum_prefix = ""
-        if 'prefix' in node:
+        if node.has_key('prefix'):
             enum_prefix = node['prefix']
         if self.compound_enumerators:
             pref = ""
@@ -1306,9 +1306,9 @@ class LaTeXTranslator(nodes.NodeVisitor):
             for counter in self._enumeration_counters:
                 enum_prefix += counter + '.'
         enum_type = "arabic"
-        if 'enumtype' in node:
+        if node.has_key('enumtype'):
             enum_type = node['enumtype']
-        if enum_type in enum_style:
+        if enum_style.has_key(enum_type):
             enum_type = enum_style[enum_type]
         counter_name = "listcnt%d" % self._enum_cnt;
         self._enumeration_counters.append("\\%s{%s}" % (enum_type,counter_name))
@@ -1318,7 +1318,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         self.body.append('{\n')
         self.body.append('\\usecounter{%s}\n' % counter_name)
         # set start after usecounter, because it initializes to zero.
-        if 'start' in node:
+        if node.has_key('start'):
             self.body.append('\\addtocounter{%s}{%d}\n' \
                     % (counter_name,node['start']-1))
         ## set rightmargin equal to leftmargin
@@ -1382,7 +1382,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
             self.body.append(':]')
 
     def visit_figure(self, node):
-        if 'align' not in node.attributes:
+        if not node.attributes.has_key('align'):
             align = 'center'
         else:
             align = 'flush'+node.attributes['align']
@@ -1424,9 +1424,9 @@ class LaTeXTranslator(nodes.NodeVisitor):
             self.body.append("\\footnotemark["+self.encode(node.astext())+"]")
             raise nodes.SkipNode
         href = ''
-        if 'refid' in node:
+        if node.has_key('refid'):
             href = node['refid']
-        elif 'refname' in node:
+        elif node.has_key('refname'):
             href = self.document.nameids[node['refname']]
         format = self.settings.footnote_references
         if format == 'brackets':
@@ -1496,14 +1496,14 @@ class LaTeXTranslator(nodes.NodeVisitor):
         post = []
         include_graphics_options = ""
         inline = isinstance(node.parent, nodes.TextElement)
-        if 'scale' in attrs:
+        if attrs.has_key('scale'):
             # Could also be done with ``scale`` option to
             # ``\includegraphics``; doing it this way for consistency.
             pre.append('\\scalebox{%f}{' % (attrs['scale'] / 100.0,))
             post.append('}')
-        if 'width' in attrs:
+        if attrs.has_key('width'):
             include_graphics_options = '[width=%s]' % attrs['width']
-        if 'align' in attrs:
+        if attrs.has_key('align'):
             align_prepost = {
                 # By default latex aligns the top of an image.
                 (1, 'top'): ('', ''),
@@ -1750,11 +1750,11 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # BUG: hash_char "#" is trouble some in LaTeX.
         # mbox and other environment do not like the '#'.
         hash_char = '\\#'
-        if 'refuri' in node:
+        if node.has_key('refuri'):
             href = node['refuri'].replace('#',hash_char)
-        elif 'refid' in node:
+        elif node.has_key('refid'):
             href = hash_char + node['refid']
-        elif 'refname' in node:
+        elif node.has_key('refname'):
             href = hash_char + self.document.nameids[node['refname']]
         else:
             raise AssertionError('Unknown reference.')
@@ -1851,7 +1851,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
 
     def visit_table(self, node):
         if self.active_table.is_open():
-            print('nested tables are not supported')
+            print 'nested tables are not supported'
             raise AssertionError
         self.active_table.open()
         self.body.append('\n' + self.active_table.get_opening())
@@ -1862,8 +1862,8 @@ class LaTeXTranslator(nodes.NodeVisitor):
 
     def visit_target(self, node):
         # BUG: why not (refuri or refid or refname) means not footnote ?
-        if not ('refuri' in node or 'refid' in node
-                or 'refname' in node):
+        if not (node.has_key('refuri') or node.has_key('refid')
+                or node.has_key('refname')):
             for id in node['ids']:
                 self.body.append('\\hypertarget{%s}{' % id)
             self.context.append('}' * len(node['ids']))

@@ -97,11 +97,11 @@ class Input(TransformSpec):
             if not enc:
                 continue
             try:
-                decoded = str(data, enc, self.error_handler)
+                decoded = unicode(data, enc, self.error_handler)
                 self.successful_encoding = enc
                 # Return decoded, removing BOMs.
-                return decoded.replace('\ufeff', '')
-            except (UnicodeError, LookupError) as error:
+                return decoded.replace(u'\ufeff', u'')
+            except (UnicodeError, LookupError), error:
                 pass
         if error is not None:
             error_details = '\n(%s: %s)' % (error.__class__.__name__, error)
@@ -206,14 +206,14 @@ class FileInput(Input):
             if source_path:
                 try:
                     self.source = open(source_path)
-                except IOError as error:
+                except IOError, error:
                     if not handle_io_errors:
                         raise
-                    print('%s: %s' % (error.__class__.__name__,
-                                                    error), file=sys.stderr)
-                    print((
+                    print >>sys.stderr, '%s: %s' % (error.__class__.__name__,
+                                                    error)
+                    print >>sys.stderr, (
                         'Unable to open source file for reading (%r).  Exiting.'
-                        % source_path), file=sys.stderr)
+                        % source_path)
                     sys.exit(1)
             else:
                 self.source = sys.stdin
@@ -278,13 +278,13 @@ class FileOutput(Output):
     def open(self):
         try:
             self.destination = open(self.destination_path, 'w')
-        except IOError as error:
+        except IOError, error:
             if not self.handle_io_errors:
                 raise
-            print('%s: %s' % (error.__class__.__name__,
-                                            error), file=sys.stderr)
-            print(('Unable to open destination file for writing '
-                                 '(%r).  Exiting.' % self.destination_path), file=sys.stderr)
+            print >>sys.stderr, '%s: %s' % (error.__class__.__name__,
+                                            error)
+            print >>sys.stderr, ('Unable to open destination file for writing '
+                                 '(%r).  Exiting.' % self.destination_path)
             sys.exit(1)
         self.opened = 1
 
@@ -342,7 +342,7 @@ class NullInput(Input):
 
     def read(self):
         """Return a null string."""
-        return ''
+        return u''
 
 
 class NullOutput(Output):

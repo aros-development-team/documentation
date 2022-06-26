@@ -74,7 +74,7 @@ def createCategories( file ):
             categories[c.category] = c
 
     # Link categories
-    for key, value in categories.items():
+    for key, value in categories.iteritems():
         if value.parentcategory != None and value.parentcategory != 'everything':
             if value.parentcategory in categories:
                 categories[value.parentcategory].subcategories.append( value )

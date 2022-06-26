@@ -29,7 +29,7 @@ import re
 import warnings
 from types import IntType, SliceType, StringType, UnicodeType, \
      TupleType, ListType, ClassType
-from collections import UserString
+from UserString import UserString
 
 
 # ==============================
@@ -52,7 +52,7 @@ class Node:
     line = None
     """The line number (1-based) of the beginning of this Node in `source`."""
 
-    def __bool__(self):
+    def __nonzero__(self):
         """
         Node instances are always true, even if they're empty.  A node is more
         than a simple container.  Its boolean "truth" does not depend on
@@ -367,7 +367,7 @@ class Element(Node):
         for att in self.list_attributes:
             self.attributes[att] = []
 
-        for att, value in list(attributes.items()):
+        for att, value in attributes.items():
             att = att.lower()
             if att in self.list_attributes:
                 # mutable list; make a copy for this node
@@ -413,7 +413,7 @@ class Element(Node):
 
     def __unicode__(self):
         if self.children:
-            return '%s%s%s' % (self.starttag(),
+            return u'%s%s%s' % (self.starttag(),
                                  ''.join([str(c) for c in self.children]),
                                  self.endtag())
         else:
@@ -435,7 +435,7 @@ class Element(Node):
         return '</%s>' % self.tagname
 
     def emptytag(self):
-        return '<%s/>' % ' '.join([self.tagname] +
+        return u'<%s/>' % ' '.join([self.tagname] +
                                     ['%s="%s"' % (n, v)
                                      for n, v in self.attlist()])
 
@@ -451,7 +451,7 @@ class Element(Node):
             assert key.step in (None, 1), 'cannot handle slice with stride'
             return self.children[key.start:key.stop]
         else:
-            raise TypeError('element index must be an integer, a slice, or '
+            raise TypeError, ('element index must be an integer, a slice, or '
                               'an attribute name string')
 
     def __setitem__(self, key, item):
@@ -466,7 +466,7 @@ class Element(Node):
                 self.setup_child(node)
             self.children[key.start:key.stop] = item
         else:
-            raise TypeError('element index must be an integer, a slice, or '
+            raise TypeError, ('element index must be an integer, a slice, or '
                               'an attribute name string')
 
     def __delitem__(self, key):
@@ -478,7 +478,7 @@ class Element(Node):
             assert key.step in (None, 1), 'cannot handle slice with stride'
             del self.children[key.start:key.stop]
         else:
-            raise TypeError('element index must be an integer, a simple '
+            raise TypeError, ('element index must be an integer, a simple '
                               'slice, or an attribute name string')
 
     def __add__(self, other):
@@ -501,13 +501,13 @@ class Element(Node):
 
     def non_default_attributes(self):
         atts = {}
-        for key, value in list(self.attributes.items()):
+        for key, value in self.attributes.items():
             if self.is_not_default(key):
                 atts[key] = value
         return atts
 
     def attlist(self):
-        attlist = list(self.non_default_attributes().items())
+        attlist = self.non_default_attributes().items()
         attlist.sort()
         return attlist
 
@@ -515,10 +515,10 @@ class Element(Node):
         return self.attributes.get(key, failobj)
 
     def hasattr(self, attr):
-        return attr in self.attributes
+        return self.attributes.has_key(attr)
 
     def delattr(self, attr):
-        if attr in self.attributes:
+        if self.attributes.has_key(attr):
             del self.attributes[attr]
 
     def setdefault(self, key, failobj=None):
@@ -602,7 +602,7 @@ class Element(Node):
                        'Losing "%s" attribute: %s' % (att, self[att])
         self.parent.replace(self, new)
 
-    def first_child_matching_class(self, childclass, start=0, end=sys.maxsize):
+    def first_child_matching_class(self, childclass, start=0, end=sys.maxint):
         """
         Return the index of the first child whose class exactly matches.
 
@@ -622,7 +622,7 @@ class Element(Node):
         return None
 
     def first_child_not_matching_class(self, childclass, start=0,
-                                       end=sys.maxsize):
+                                       end=sys.maxint):
         """
         Return the index of the first child whose class does *not* match.
 
@@ -897,18 +897,18 @@ class document(Root, Structural, Element):
 
     def set_id(self, node, msgnode=None):
         for id in node['ids']:
-            if id in self.ids and self.ids[id] is not node:
+            if self.ids.has_key(id) and self.ids[id] is not node:
                 msg = self.reporter.severe('Duplicate ID: "%s".' % id)
                 if msgnode != None:
                     msgnode += msg
         if not node['ids']:
             for name in node['names']:
                 id = self.settings.id_prefix + make_id(name)
-                if id and id not in self.ids:
+                if id and not self.ids.has_key(id):
                     break
             else:
                 id = ''
-                while not id or id in self.ids:
+                while not id or self.ids.has_key(id):
                     id = (self.settings.id_prefix +
                           self.settings.auto_id_prefix + str(self.id_start))
                     self.id_start += 1
@@ -949,7 +949,7 @@ class document(Root, Structural, Element):
            The new target is invalidated regardless.
         """
         for name in node['names']:
-            if name in self.nameids:
+            if self.nameids.has_key(name):
                 self.set_duplicate_name_id(node, id, name, msgnode, explicit)
             else:
                 self.nameids[name] = id
@@ -964,10 +964,10 @@ class document(Root, Structural, Element):
                 level = 2
                 if old_id is not None:
                     old_node = self.ids[old_id]
-                    if 'refuri' in node:
+                    if node.has_key('refuri'):
                         refuri = node['refuri']
                         if old_node['names'] \
-                               and 'refuri' in old_node \
+                               and old_node.has_key('refuri') \
                                and old_node['refuri'] == refuri:
                             level = 1   # just inform if refuri's identical
                     if level > 1:
@@ -998,7 +998,7 @@ class document(Root, Structural, Element):
                 msgnode += msg
 
     def has_name(self, name):
-        return name in self.nameids
+        return self.nameids.has_key(name)
 
     # "note" here is an imperative verb: "take note of".
     def note_implicit_target(self, target, msgnode=None):
@@ -1058,7 +1058,7 @@ class document(Root, Structural, Element):
 
     def note_substitution_def(self, subdef, def_name, msgnode=None):
         name = whitespace_normalize_name(def_name)
-        if name in self.substitution_defs:
+        if self.substitution_defs.has_key(name):
             msg = self.reporter.error(
                   'Duplicate substitution definition name: "%s".' % name,
                   base_node=subdef)
@@ -1296,12 +1296,12 @@ class system_message(Special, BackLinkable, PreBibliographic, Element):
         try:
             Element.__init__(self, '', *children, **attributes)
         except:
-            print('system_message: children=%r' % (children,))
+            print 'system_message: children=%r' % (children,)
             raise
 
     def astext(self):
         line = self.get('line', '')
-        return '%s:%s: (%s/%s) %s' % (self['source'], line, self['type'],
+        return u'%s:%s: (%s/%s) %s' % (self['source'], line, self['type'],
                                        self['level'], Element.astext(self))
 
 
@@ -1350,7 +1350,7 @@ class pending(Special, Invisible, Element):
               '     .transform: %s.%s' % (self.transform.__module__,
                                           self.transform.__name__),
               '     .details:']
-        details = list(self.details.items())
+        details = self.details.items()
         details.sort()
         for key, value in details:
             if isinstance(value, Node):
