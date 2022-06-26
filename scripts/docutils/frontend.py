@@ -33,7 +33,7 @@ import os.path
 import sys
 import types
 import warnings
-import configparser as CP
+import ConfigParser as CP
 import codecs
 import docutils
 try:
@@ -53,7 +53,7 @@ def store_multiple(option, opt, value, parser, *args, **kwargs):
     """
     for attribute in args:
         setattr(parser.values, attribute, None)
-    for key, value in list(kwargs.items()):
+    for key, value in kwargs.items():
         setattr(parser.values, key, value)
 
 def read_config_file(option, opt, value, parser):
@@ -62,7 +62,7 @@ def read_config_file(option, opt, value, parser):
     """
     try:
         new_settings = parser.get_config_file_settings(value)
-    except ValueError as error:
+    except ValueError, error:
         parser.error(error)
     parser.values.update(new_settings, parser)
 
@@ -71,8 +71,9 @@ def validate_encoding(setting, value, option_parser,
     try:
         codecs.lookup(value)
     except LookupError:
-        raise LookupError('setting "%s": unknown encoding: "%s"'
-                           % (setting, value))
+        raise (LookupError('setting "%s": unknown encoding: "%s"'
+                           % (setting, value)),
+               None, sys.exc_info()[2])
     return value
 
 def validate_encoding_error_handler(setting, value, option_parser,
@@ -81,15 +82,17 @@ def validate_encoding_error_handler(setting, value, option_parser,
         codecs.lookup_error(value)
     except AttributeError:              # prior to Python 2.3
         if value not in ('strict', 'ignore', 'replace', 'xmlcharrefreplace'):
-            raise LookupError(
+            raise (LookupError(
                 'unknown encoding error handler: "%s" (choices: '
-                '"strict", "ignore", "replace", or "xmlcharrefreplace")' % value)
+                '"strict", "ignore", "replace", or "xmlcharrefreplace")' % value),
+                   None, sys.exc_info()[2])
     except LookupError:
-        raise LookupError(
+        raise (LookupError(
             'unknown encoding error handler: "%s" (choices: '
             '"strict", "ignore", "replace", "backslashreplace", '
             '"xmlcharrefreplace", and possibly others; see documentation for '
-            'the Python ``codecs`` module)' % value)
+            'the Python ``codecs`` module)' % value),
+               None, sys.exc_info()[2])
     return value
 
 def validate_encoding_and_error_handler(
@@ -116,11 +119,12 @@ def validate_encoding_and_error_handler(
 
 def validate_boolean(setting, value, option_parser,
                      config_parser=None, config_section=None):
-    if isinstance(value, bytes):
+    if isinstance(value, types.StringType):
         try:
             return option_parser.booleans[value.strip().lower()]
         except KeyError:
-            raise LookupError('unknown boolean value: "%s"' % value)
+            raise (LookupError('unknown boolean value: "%s"' % value),
+                   None, sys.exc_info()[2])
     return value
 
 def validate_nonnegative_int(setting, value, option_parser,
@@ -138,11 +142,12 @@ def validate_threshold(setting, value, option_parser,
         try:
             return option_parser.thresholds[value.lower()]
         except (KeyError, AttributeError):
-            raise LookupError('unknown threshold: %r.' % value)
+            raise (LookupError('unknown threshold: %r.' % value),
+                   None, sys.exc_info[2])
 
 def validate_colon_separated_string_list(
     setting, value, option_parser, config_parser=None, config_section=None):
-    if isinstance(value, bytes):
+    if isinstance(value, types.StringType):
         value = value.split(':')
     else:
         last = value.pop()
@@ -175,9 +180,9 @@ def make_paths_absolute(pathdict, keys, base_path=None):
     if base_path is None:
         base_path = os.getcwd()
     for key in keys:
-        if key in pathdict:
+        if pathdict.has_key(key):
             value = pathdict[key]
-            if isinstance(value, list):
+            if isinstance(value, types.ListType):
                 value = [make_one_path_absolute(base_path, path)
                          for path in value]
             elif value:
@@ -206,8 +211,8 @@ class Values(optparse.Values):
         if isinstance(other_dict, Values):
             other_dict = other_dict.__dict__
         other_dict = other_dict.copy()
-        for setting in list(option_parser.lists.keys()):
-            if (hasattr(self, setting) and setting in other_dict):
+        for setting in option_parser.lists.keys():
+            if (hasattr(self, setting) and other_dict.has_key(setting)):
                 value = getattr(self, setting)
                 if value:
                     value += other_dict[setting]
@@ -236,10 +241,11 @@ class Option(optparse.Option):
                 value = getattr(values, setting)
                 try:
                     new_value = self.validator(setting, value, parser)
-                except Exception as error:
-                    raise optparse.OptionValueError(
+                except Exception, error:
+                    raise (optparse.OptionValueError(
                         'Error in option "%s":\n    %s: %s'
-                        % (opt, error.__class__.__name__, error))
+                        % (opt, error.__class__.__name__, error)),
+                           None, sys.exc_info()[2])
                 setattr(values, setting, new_value)
             if self.overrides:
                 setattr(values, self.overrides, None)
@@ -508,7 +514,7 @@ class OptionParser(optparse.OptionParser, docutils.SettingsSpec):
         if read_config_files and not self.defaults['_disable_config']:
             try:
                 config_settings = self.get_standard_config_settings()
-            except ValueError as error:
+            except ValueError, error:
                 self.error(error)
             self.set_defaults(**config_settings.__dict__)
 
@@ -569,7 +575,7 @@ class OptionParser(optparse.OptionParser, docutils.SettingsSpec):
                 continue
             for section in (tuple(component.config_section_dependencies or ())
                             + (component.config_section,)):
-                if section in applied:
+                if applied.has_key(section):
                     continue
                 applied[section] = 1
                 settings.update(parser.get_section(section), self)
@@ -639,7 +645,7 @@ section "Old-Format Configuration Files".
 """
 
     def read(self, filenames, option_parser):
-        if type(filenames) in (bytes, str):
+        if type(filenames) in (types.StringType, types.UnicodeType):
             filenames = [filenames]
         for filename in filenames:
             CP.ConfigParser.read(self, filename)
@@ -653,8 +659,8 @@ section "Old-Format Configuration Files".
         options = self.get_section('options')
         if not self.has_section('general'):
             self.add_section('general')
-        for key, value in list(options.items()):
-            if key in self.old_settings:
+        for key, value in options.items():
+            if self.old_settings.has_key(key):
                 section, setting = self.old_settings[key]
                 if not self.has_section(section):
                     self.add_section(section)
@@ -682,12 +688,12 @@ section "Old-Format Configuration Files".
                         new_value = option.validator(
                             setting, value, option_parser,
                             config_parser=self, config_section=section)
-                    except Exception as error:
-                        raise ValueError(
+                    except Exception, error:
+                        raise (ValueError(
                             'Error in config file "%s", section "[%s]":\n'
                             '    %s: %s\n        %s = %s'
                             % (filename, section, error.__class__.__name__,
-                               error, setting, value))
+                               error, setting, value)), None, sys.exc_info()[2])
                     self.set(section, setting, new_value)
                 if option.overrides:
                     self.set(section, option.overrides, None)

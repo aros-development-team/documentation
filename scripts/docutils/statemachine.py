@@ -173,7 +173,7 @@ class StateMachine:
 
     def unlink(self):
         """Remove circular references to objects no longer required."""
-        for state in list(self.states.values()):
+        for state in self.states.values():
             state.unlink()
         self.states = None
 
@@ -208,15 +208,15 @@ class StateMachine:
         self.line_offset = -1
         self.current_state = self.initial_state
         if self.debug:
-            print((
+            print >>sys.stderr, (
                 '\nStateMachine.run: input_lines (line_offset=%s):\n| %s'
-                % (self.line_offset, '\n| '.join(self.input_lines))), file=sys.stderr)
+                % (self.line_offset, '\n| '.join(self.input_lines)))
         transitions = None
         results = []
         state = self.get_state()
         try:
             if self.debug:
-                print(('\nStateMachine.run: bof transition'), file=sys.stderr)
+                print >>sys.stderr, ('\nStateMachine.run: bof transition')
             context, result = state.bof(context)
             results.extend(result)
             while 1:
@@ -226,32 +226,32 @@ class StateMachine:
                         if self.debug:
                             source, offset = self.input_lines.info(
                                 self.line_offset)
-                            print((
+                            print >>sys.stderr, (
                                 '\nStateMachine.run: line (source=%r, '
                                 'offset=%r):\n| %s'
-                                % (source, offset, self.line)), file=sys.stderr)
+                                % (source, offset, self.line))
                         context, next_state, result = self.check_line(
                             context, state, transitions)
                     except EOFError:
                         if self.debug:
-                            print((
+                            print >>sys.stderr, (
                                 '\nStateMachine.run: %s.eof transition'
-                                % state.__class__.__name__), file=sys.stderr)
+                                % state.__class__.__name__)
                         result = state.eof(context)
                         results.extend(result)
                         break
                     else:
                         results.extend(result)
-                except TransitionCorrection as exception:
+                except TransitionCorrection, exception:
                     self.previous_line() # back up for another try
                     transitions = (exception.args[0],)
                     if self.debug:
-                        print((
+                        print >>sys.stderr, (
                               '\nStateMachine.run: TransitionCorrection to '
                               'state "%s", transition %s.'
-                              % (state.__class__.__name__, transitions[0])), file=sys.stderr)
+                              % (state.__class__.__name__, transitions[0]))
                     continue
-                except StateCorrection as exception:
+                except StateCorrection, exception:
                     self.previous_line() # back up for another try
                     next_state = exception.args[0]
                     if len(exception.args) == 1:
@@ -259,10 +259,10 @@ class StateMachine:
                     else:
                         transitions = (exception.args[1],)
                     if self.debug:
-                        print((
+                        print >>sys.stderr, (
                               '\nStateMachine.run: StateCorrection to state '
                               '"%s", transition %s.'
-                              % (next_state, transitions[0])), file=sys.stderr)
+                              % (next_state, transitions[0]))
                 else:
                     transitions = None
                 state = self.get_state(next_state)
@@ -283,10 +283,11 @@ class StateMachine:
         """
         if next_state:
             if self.debug and next_state != self.current_state:
-                print(('\nStateMachine.get_state: Changing state from '
+                print >>sys.stderr, \
+                      ('\nStateMachine.get_state: Changing state from '
                        '"%s" to "%s" (input line %s).'
                        % (self.current_state, next_state,
-                          self.abs_line_number())), file=sys.stderr)
+                          self.abs_line_number()))
             self.current_state = next_state
         try:
             return self.states[self.current_state]
@@ -377,7 +378,7 @@ class StateMachine:
                                                     flush_left)
             self.next_line(len(block) - 1)
             return block
-        except UnexpectedIndentationError as error:
+        except UnexpectedIndentationError, error:
             block, source, lineno = error
             self.next_line(len(block) - 1) # advance to last line of block
             raise
@@ -406,24 +407,24 @@ class StateMachine:
             transitions =  state.transition_order
         state_correction = None
         if self.debug:
-            print((
+            print >>sys.stderr, (
                   '\nStateMachine.check_line: state="%s", transitions=%r.'
-                  % (state.__class__.__name__, transitions)), file=sys.stderr)
+                  % (state.__class__.__name__, transitions))
         for name in transitions:
             pattern, method, next_state = state.transitions[name]
             match = self.match(pattern)
             if match:
                 if self.debug:
-                    print((
+                    print >>sys.stderr, (
                           '\nStateMachine.check_line: Matched transition '
                           '"%s" in state "%s".'
-                          % (name, state.__class__.__name__)), file=sys.stderr)
+                          % (name, state.__class__.__name__))
                 return method(match, context, next_state)
         else:
             if self.debug:
-                print((
+                print >>sys.stderr, (
                       '\nStateMachine.check_line: No match in state "%s".'
-                      % state.__class__.__name__), file=sys.stderr)
+                      % state.__class__.__name__)
             return state.no_match(context, transitions)
 
     def match(self, pattern):
@@ -442,7 +443,7 @@ class StateMachine:
         added.
         """
         statename = state_class.__name__
-        if statename in self.states:
+        if self.states.has_key(statename):
             raise DuplicateStateError(statename)
         self.states[statename] = state_class(self, self.debug)
 
@@ -457,16 +458,16 @@ class StateMachine:
         """
         Initialize `self.states`.
         """
-        for state in list(self.states.values()):
+        for state in self.states.values():
             state.runtime_init()
 
     def error(self):
         """Report error details."""
         type, value, module, line, function = _exception_data()
-        print('%s: %s' % (type, value), file=sys.stderr)
-        print('input line %s' % (self.abs_line_number()), file=sys.stderr)
-        print(('module %s, line %s, function %s'
-                             % (module, line, function)), file=sys.stderr)
+        print >>sys.stderr, '%s: %s' % (type, value)
+        print >>sys.stderr, 'input line %s' % (self.abs_line_number())
+        print >>sys.stderr, ('module %s, line %s, function %s'
+                             % (module, line, function))
 
     def attach_observer(self, observer):
         """
@@ -630,9 +631,9 @@ class State:
         Exceptions: `DuplicateTransitionError`, `UnknownTransitionError`.
         """
         for name in names:
-            if name in self.transitions:
+            if self.transitions.has_key(name):
                 raise DuplicateTransitionError(name)
-            if name not in transitions:
+            if not transitions.has_key(name):
                 raise UnknownTransitionError(name)
         self.transition_order[:0] = names
         self.transitions.update(transitions)
@@ -645,7 +646,7 @@ class State:
 
         Exception: `DuplicateTransitionError`.
         """
-        if name in self.transitions:
+        if self.transitions.has_key(name):
             raise DuplicateTransitionError(name)
         self.transition_order[:0] = [name]
         self.transitions[name] = transition
@@ -1116,7 +1117,7 @@ class ViewList:
     # indexing a list with a slice object; they just work).
 
     def __getitem__(self, i):
-        if isinstance(i, slice):
+        if isinstance(i, types.SliceType):
             assert i.step in (None, 1),  'cannot handle slice with stride'
             return self.__class__(self.data[i.start:i.stop],
                                   items=self.items[i.start:i.stop],
@@ -1125,7 +1126,7 @@ class ViewList:
             return self.data[i]
 
     def __setitem__(self, i, item):
-        if isinstance(i, slice):
+        if isinstance(i, types.SliceType):
             assert i.step in (None, 1), 'cannot handle slice with stride'
             if not isinstance(item, ViewList):
                 raise TypeError('assigning non-ViewList to ViewList slice')
@@ -1266,7 +1267,7 @@ class ViewList:
         self.parent = None
 
     def sort(self, *args):
-        tmp = list(zip(self.data, self.items))
+        tmp = zip(self.data, self.items)
         tmp.sort(*args)
         self.data = [entry[0] for entry in tmp]
         self.items = [entry[1] for entry in tmp]
@@ -1299,7 +1300,7 @@ class StringList(ViewList):
 
     """A `ViewList` with string-specific methods."""
 
-    def trim_left(self, length, start=0, end=sys.maxsize):
+    def trim_left(self, length, start=0, end=sys.maxint):
         """
         Trim `length` characters off the beginning of each item, in-place,
         from index `start` to `end`.  No whitespace-checking is done on the
@@ -1411,7 +1412,7 @@ class StringList(ViewList):
             return                      # new in Python 2.4
         for i in range(len(self.data)):
             line = self.data[i]
-            if isinstance(line, str):
+            if isinstance(line, types.UnicodeType):
                 new = []
                 for char in line:
                     new.append(char)

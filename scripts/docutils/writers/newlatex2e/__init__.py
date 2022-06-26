@@ -230,9 +230,9 @@ class LaTeXTranslator(nodes.SparseNodeVisitor):
     unicode_map.update({
         # We have AE or T1 encoding, so "``" etc. work.  The macros
         # from unimap.py may *not* work.
-        '\u201C': '{``}',
-        '\u201D': "{''}",
-        '\u201E': '{,,}',
+        u'\u201C': '{``}',
+        u'\u201D': "{''}",
+        u'\u201E': '{,,}',
         })
 
     character_map = {
@@ -637,7 +637,7 @@ class LaTeXTranslator(nodes.SparseNodeVisitor):
                 numatts += len(value)
             else:
                 self.append(r'\Dattr{}{%s}{%s}{%s}{' %
-                            (key, self.encode(str(value), attval=key),
+                            (key, self.encode(unicode(value), attval=key),
                              node_name))
                 if not pass_contents:
                     self.append('}')
@@ -655,7 +655,7 @@ class LaTeXTranslator(nodes.SparseNodeVisitor):
         # Move IDs into TextElements.  This won't work for images.
         # Need to review this.
         for node in document.traverse(nodes.Element):
-            if 'ids' in node and not isinstance(node,
+            if node.has_key('ids') and not isinstance(node,
                                                       nodes.TextElement):
                 next_text_element = node.next_node(nodes.TextElement)
                 if next_text_element:
@@ -683,7 +683,7 @@ class LaTeXTranslator(nodes.SparseNodeVisitor):
                 skip_parent = 1
             except nodes.SkipNode:
                 raise
-            except (nodes.SkipChildren, nodes.SkipSiblings) as instance:
+            except (nodes.SkipChildren, nodes.SkipSiblings), instance:
                 tree_pruning_exception = instance
             except nodes.SkipDeparture:
                 raise NotImplementedError(
@@ -700,7 +700,7 @@ class LaTeXTranslator(nodes.SparseNodeVisitor):
                     if not isinstance(value, ListType) and not ':' in name:
                         macro = r'\DcurrentN%sA%s' % (node_name, name)
                         self.append(r'\def%s{%s}' % (
-                            macro, self.encode(str(value), attval=name)))
+                            macro, self.encode(unicode(value), attval=name)))
                         attribute_deleters.append(r'\let%s=\relax' % macro)
             self.context.append('\n'.join(attribute_deleters))
             if self.pass_contents(node):

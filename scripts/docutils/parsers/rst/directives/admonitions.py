@@ -29,7 +29,7 @@ def make_admonition(node_class, name, arguments, options, content, lineno,
         textnodes, messages = state.inline_text(title_text, lineno)
         admonition_node += nodes.title(title_text, '', *textnodes)
         admonition_node += messages
-        if 'class' in options:
+        if options.has_key('class'):
             classes = options['class']
         else:
             classes = ['admonition-' + nodes.make_id(title_text)]

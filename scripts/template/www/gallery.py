@@ -4,7 +4,7 @@
 
 import os
 from html import *
-from configparser import ConfigParser
+from ConfigParser import ConfigParser
 
 def makePicture( path, description, language ):
     LANG_DIR   = 'targets/www/template/languages'

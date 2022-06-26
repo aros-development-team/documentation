@@ -99,7 +99,7 @@ class DocstringFormattingVisitor(nodes.SparseNodeVisitor):
         visitation, so parser instances are cached.
         """
         parser_name = parsers._parser_aliases.get(parser_name, parser_name)
-        if parser_name not in self.parsers:
+        if not self.parsers.has_key(parser_name):
             cls = parsers.get_parser_class(parser_name)
             self.parsers[parser_name] = cls()
         return self.parsers[parser_name]

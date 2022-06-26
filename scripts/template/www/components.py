@@ -42,7 +42,7 @@ class Tree( Container ):
                     )
                 
                 if colspan >= 2:
-                    tr.append( TD( child, colspan=repr(colspan) ) )
+                    tr.append( TD( child, colspan=`colspan` ) )
                 else:
                     tr.append( TD( child ) )
 

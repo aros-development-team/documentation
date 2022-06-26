@@ -242,7 +242,7 @@ class IndirectHyperlinks(Transform):
             del target.multiply_indirect
         if reftarget.hasattr('refuri'):
             target['refuri'] = reftarget['refuri']
-            if 'refid' in target:
+            if target.has_key('refid'):
                 del target['refid']
         elif reftarget.hasattr('refid'):
             target['refid'] = reftarget['refid']
@@ -259,7 +259,7 @@ class IndirectHyperlinks(Transform):
         target.resolved = 1
 
     def nonexistent_indirect_target(self, target):
-        if target['refname'] in self.document.nameids:
+        if self.document.nameids.has_key(target['refname']):
             self.indirect_target_error(target, 'which is a duplicate, and '
                                        'cannot be used as a unique reference')
         else:
@@ -475,17 +475,17 @@ class Footnotes(Transform):
           # Entries 1-4 and 6 below are from section 12.51 of
           # The Chicago Manual of Style, 14th edition.
           '*',                          # asterisk/star
-          '\u2020',                    # dagger &dagger;
-          '\u2021',                    # double dagger &Dagger;
-          '\u00A7',                    # section mark &sect;
-          '\u00B6',                    # paragraph mark (pilcrow) &para;
+          u'\u2020',                    # dagger &dagger;
+          u'\u2021',                    # double dagger &Dagger;
+          u'\u00A7',                    # section mark &sect;
+          u'\u00B6',                    # paragraph mark (pilcrow) &para;
                                         # (parallels ['||'] in CMoS)
           '#',                          # number sign
           # The entries below were chosen arbitrarily.
-          '\u2660',                    # spade suit &spades;
-          '\u2665',                    # heart suit &hearts;
-          '\u2666',                    # diamond suit &diams;
-          '\u2663',                    # club suit &clubs;
+          u'\u2660',                    # spade suit &spades;
+          u'\u2665',                    # heart suit &hearts;
+          u'\u2666',                    # diamond suit &diams;
+          u'\u2663',                    # club suit &clubs;
           ]
 
     def apply(self):
@@ -507,7 +507,7 @@ class Footnotes(Transform):
             while 1:
                 label = str(startnum)
                 startnum += 1
-                if label not in self.document.nameids:
+                if not self.document.nameids.has_key(label):
                     break
             footnote.insert(0, nodes.label('', label))
             for name in footnote['names']:
@@ -602,12 +602,12 @@ class Footnotes(Transform):
         """
         for footnote in self.document.footnotes:
             for label in footnote['names']:
-                if label in self.document.footnote_refs:
+                if self.document.footnote_refs.has_key(label):
                     reflist = self.document.footnote_refs[label]
                     self.resolve_references(footnote, reflist)
         for citation in self.document.citations:
             for label in citation['names']:
-                if label in self.document.citation_refs:
+                if self.document.citation_refs.has_key(label):
                     reflist = self.document.citation_refs[label]
                     self.resolve_references(citation, reflist)
 
@@ -668,11 +668,11 @@ class Substitutions(Transform):
         for ref in subreflist:
             refname = ref['refname']
             key = None
-            if refname in defs:
+            if defs.has_key(refname):
                 key = refname
             else:
                 normed_name = refname.lower()
-                if normed_name in normed:
+                if normed.has_key(normed_name):
                     key = normed[normed_name]
             if key is None:
                 msg = self.document.reporter.error(
@@ -688,14 +688,14 @@ class Substitutions(Transform):
                 subdef = defs[key]
                 parent = ref.parent
                 index = parent.index(ref)
-                if  ('ltrim' in subdef.attributes
-                     or 'trim' in subdef.attributes):
+                if  (subdef.attributes.has_key('ltrim')
+                     or subdef.attributes.has_key('trim')):
                     if index > 0 and isinstance(parent[index - 1],
                                                 nodes.Text):
                         parent.replace(parent[index - 1],
                                        parent[index - 1].rstrip())
-                if  ('rtrim' in subdef.attributes
-                     or 'trim' in subdef.attributes):
+                if  (subdef.attributes.has_key('rtrim')
+                     or subdef.attributes.has_key('trim')):
                     if  (len(parent) > index + 1
                          and isinstance(parent[index + 1], nodes.Text)):
                         parent.replace(parent[index + 1],
@@ -766,7 +766,7 @@ class TargetNotes(Transform):
                 continue
             footnote = self.make_target_footnote(target['refuri'], refs,
                                                  notes)
-            if target['refuri'] not in notes:
+            if not notes.has_key(target['refuri']):
                 notes[target['refuri']] = footnote
                 nodelist.append(footnote)
         # Take care of anonymous references.
@@ -776,13 +776,13 @@ class TargetNotes(Transform):
             if ref.hasattr('refuri'):
                 footnote = self.make_target_footnote(ref['refuri'], [ref],
                                                      notes)
-                if ref['refuri'] not in notes:
+                if not notes.has_key(ref['refuri']):
                     notes[ref['refuri']] = footnote
                     nodelist.append(footnote)
         self.startnode.replace_self(nodelist)
 
     def make_target_footnote(self, refuri, refs, notes):
-        if refuri in notes:  # duplicate?
+        if notes.has_key(refuri):  # duplicate?
             footnote = notes[refuri]
             assert len(footnote['names']) == 1
             footnote_name = footnote['names'][0]
@@ -875,7 +875,7 @@ class DanglingReferencesVisitor(nodes.SparseNodeVisitor):
                 if resolver_function(node):
                     break
             else:
-                if refname in self.document.nameids:
+                if self.document.nameids.has_key(refname):
                     msg = self.document.reporter.error(
                         'Duplicate target name, cannot be used as a unique '
                         'reference: "%s".' % (node['refname']), base_node=node)

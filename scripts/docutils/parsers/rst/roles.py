@@ -103,14 +103,14 @@ def role(role_name, language_module, lineno, reporter):
     messages = []
     msg_text = []
 
-    if normname in _roles:
+    if _roles.has_key(normname):
         return _roles[normname], messages
 
     if role_name:
         canonicalname = None
         try:
             canonicalname = language_module.roles[normname]
-        except AttributeError as error:
+        except AttributeError, error:
             msg_text.append('Problem retrieving role entry from language '
                             'module %r: %s.' % (language_module, error))
         except KeyError:
@@ -137,7 +137,7 @@ def role(role_name, language_module, lineno, reporter):
         messages.append(message)
 
     # Look the role up in the registry, and return it.
-    if canonicalname in _role_registry:
+    if _role_registry.has_key(canonicalname):
         role_fn = _role_registry[canonicalname]
         register_local_role(normname, role_fn)
         return role_fn, messages
@@ -173,7 +173,7 @@ def set_implicit_options(role_fn):
     """
     if not hasattr(role_fn, 'options') or role_fn.options is None:
         role_fn.options = {'class': directives.class_option}
-    elif 'class' not in role_fn.options:
+    elif not role_fn.options.has_key('class'):
         role_fn.options['class'] = directives.class_option
 
 def register_generic_role(canonical_name, node_class):
@@ -295,7 +295,7 @@ def rfc_reference_role(role, rawtext, text, lineno, inliner,
 register_canonical_role('rfc-reference', rfc_reference_role)
 
 def raw_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
-    if 'format' not in options:
+    if not options.has_key('format'):
         msg = inliner.reporter.error(
             'No format (Writer name) is associated with this role: "%s".\n'
             'The "raw" role cannot be used directly.\n'
@@ -341,7 +341,7 @@ def set_classes(options):
     Auxiliary function to set options['classes'] and delete
     options['class'].
     """
-    if 'class' in options:
-        assert 'classes' not in options
+    if options.has_key('class'):
+        assert not options.has_key('classes')
         options['classes'] = options['class']
         del options['class']
