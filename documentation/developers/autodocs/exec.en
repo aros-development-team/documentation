@@ -2950,7 +2950,7 @@ Synopsis
 ::
 
  void Debug(
-          unsigned long flags );
+          ULONG flags );
 
 Function
 ~~~~~~~~

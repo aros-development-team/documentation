@@ -256,7 +256,7 @@ Synopsis
 ~~~~~~~~
 ::
 
- ULONG GetVLayerAttr(
+ IPTR GetVLayerAttr(
           struct VLayerHandle * VLayerHandle,
           ULONG AttrNum );
 

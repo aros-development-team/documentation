@@ -1445,7 +1445,7 @@ Result
 See also
 ~~~~~~~~
 
-`fgetc()`_ `getc()`_ `__posixc_fputc()`_ `putc()`_ 
+`__posixc_fgetc()`_ `getc()`_ `__posixc_fputc()`_ `putc()`_ 
 
 ----------
 

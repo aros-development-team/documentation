@@ -30,7 +30,7 @@ Synopsis
 
  LONG ActivateCxObj(
           CxObj * co,
-          LONG true );
+          LONG actv );
 
 Function
 ~~~~~~~~
@@ -39,7 +39,7 @@ Function
 
  Activates/deactivates a given commodity object. (An inactive object
  doesn't perform its function on its input - it just passes it on to
- the next object.) The activation depends on the value of 'true'; if
+ the next object.) The activation depends on the value of 'actv'; if
  it's TRUE the object is activated, if it's FALSE it's deactivated.
      All objects are created in the active state except for brokers;
  remember to activate your broker when you have linked your other
@@ -52,7 +52,7 @@ Inputs
 
 
  co   - a pointer to a commodity object
- true - boolean telling whether the object should be activated or
+ actv - boolean telling whether the object should be activated or
         deactivated
 
 
