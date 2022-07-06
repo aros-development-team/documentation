@@ -59,11 +59,11 @@ Synopsis
 ::
 
  APTR MUI_AllocAslRequest(
-          unsigned long reqType,
+          ULONG reqType,
           struct TagItem * tagList );
  
  APTR MUI_AllocAslRequestTags(
-          unsigned long reqType,
+          ULONG reqType,
           TAG tag, ... );
 
 Function

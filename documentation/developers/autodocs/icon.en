@@ -29,7 +29,7 @@ Synopsis
  BOOL AddFreeList(
           struct FreeList * freelist,
           APTR mem,
-          unsigned long size );
+          IPTR size );
 
 Function
 ~~~~~~~~
