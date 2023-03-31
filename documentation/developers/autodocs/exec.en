@@ -6493,16 +6493,18 @@ Function
 ~~~~~~~~
 ::
 
-     This function will shut down the operating system.
+     This function attempts to shut down registered handlers
+     before rebooting the system, or entering a powered off state.
 
 
 Inputs
 ~~~~~~
 ::
 
-     action - what to do:
-      * SD_ACTION_POWEROFF   - power off the machine.
-      * SD_ACTION_COLDREBOOT - cold reboot the machine (not only AROS).
+     action - which process to perform:
+      * SD_ACTION_POWEROFF   - power off/halt the hardware.
+      * SD_ACTION_COLDREBOOT - cold reboot the hardware.
+      * SD_ACTION_WARMREBOOT - soft reboot the operating system.
 
 
 Result
