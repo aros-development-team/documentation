@@ -6900,7 +6900,7 @@ Synopsis
  LONG VFPrintf(
           BPTR file,
           CONST_STRPTR format,
-          const IPTR * argarray );
+          RAWARG argarray );
 
 Function
 ~~~~~~~~
