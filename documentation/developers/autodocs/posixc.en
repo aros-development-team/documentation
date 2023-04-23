@@ -46,21 +46,21 @@ posixc
 `mrand48()`_                            `nanosleep()`_                          `nrand48()`_                            `open()`_                               
 `opendir()`_                            `pclose()`_                             `perror()`_                             `pipe()`_                               
 `popen()`_                              `posix_memalign()`_                     `putc()`_                               `putenv()`_                             
-`putw()`_                               `read()`_                               `readdir64()`_                          `remove()`_                             
-`rename()`_                             `rewinddir()`_                          `rmdir()`_                              `scandir64()`_                          
-`seed48()`_                             `seekdir()`_                            `setegid()`_                            `setenv()`_                             
-`seteuid()`_                            `setgid()`_                             `setgrent()`_                           `setlinebuf()`_                         
-`setpwent()`_                           `setrlimit()`_                          `setsid()`_                             `setuid()`_                             
-`sigaction()`_                          `sigaddset()`_                          `sigdelset()`_                          `sigemptyset()`_                        
-`sigfillset()`_                         `sigismember()`_                        `siglongjmp()`_                         `sigpending()`_                         
-`sigprocmask()`_                        `sigsuspend()`_                         `sleep()`_                              `srand48()`_                            
-`stat64()`_                             `statfs()`_                             `swab()`_                               `symlink()`_                            
-`sysconf()`_                            `tcgetattr()`_                          `tcgetpgrp()`_                          `tcsetattr()`_                          
-`telldir()`_                            `tempnam()`_                            `times()`_                              `truncate()`_                           
-`ttyname()`_                            `umask()`_                              `uname()`_                              `unlink()`_                             
-`unsetenv()`_                           `updatestdio()`_                        `usleep()`_                             `utime()`_                              
-`utimes()`_                             `vfork()`_                              `wait()`_                               `waitpid()`_                            
-`write()`_                              
+`putw()`_                               `read()`_                               `readdir64()`_                          `realpath()`_                           
+`remove()`_                             `rename()`_                             `rewinddir()`_                          `rmdir()`_                              
+`scandir64()`_                          `seed48()`_                             `seekdir()`_                            `setegid()`_                            
+`setenv()`_                             `seteuid()`_                            `setgid()`_                             `setgrent()`_                           
+`setlinebuf()`_                         `setpwent()`_                           `setrlimit()`_                          `setsid()`_                             
+`setuid()`_                             `sigaction()`_                          `sigaddset()`_                          `sigdelset()`_                          
+`sigemptyset()`_                        `sigfillset()`_                         `sigismember()`_                        `siglongjmp()`_                         
+`sigpending()`_                         `sigprocmask()`_                        `sigsuspend()`_                         `sleep()`_                              
+`srand48()`_                            `stat64()`_                             `statfs()`_                             `swab()`_                               
+`symlink()`_                            `sysconf()`_                            `tcgetattr()`_                          `tcgetpgrp()`_                          
+`tcsetattr()`_                          `telldir()`_                            `tempnam()`_                            `times()`_                              
+`truncate()`_                           `ttyname()`_                            `umask()`_                              `uname()`_                              
+`unlink()`_                             `unsetenv()`_                           `updatestdio()`_                        `usleep()`_                             
+`utime()`_                              `utimes()`_                             `vfork()`_                              `wait()`_                               
+`waitpid()`_                            `write()`_                              
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -6680,6 +6680,27 @@ See also
 ~~~~~~~~
 
 `read()`_ `opendir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+
+----------
+
+realpath()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  char *realpath(
+     const char *path, char *resolved_path)
+
+
+Notes
+~~~~~
+::
+
+     Not implemented.
+
+
 
 ----------
 
