@@ -861,8 +861,8 @@ def create_module_docs():
     # add some docs for linker libs in AROS/compiler
     subdirs = (os.path.join(TOPDIR, "compiler", "alib"),
                os.path.join(TOPDIR, "compiler", "arossupport"),
-               os.path.join(TOPDIR, "compiler", "stdc"),
-               os.path.join(TOPDIR, "compiler", "posixc"))
+               os.path.join(TOPDIR, "compiler", "crt/stdc"),
+               os.path.join(TOPDIR, "compiler", "crt/posixc"))
 
     for docpath in subdirs:
         libdocs = LibDocList()
@@ -975,6 +975,7 @@ def create_apps_docs():
 
     srcdirs = (os.path.join(TOPDIR, "workbench", "tools", "commodities"),
                os.path.join(TOPDIR, "workbench", "tools", "WiMP"),
+               os.path.join(TOPDIR, "workbench", "tools", "BoingIconBar"),
                os.path.join(TOPDIR, "workbench", "tools"))
 
     targetdir = os.path.join("documentation", "users", "applications") # relative to main build script

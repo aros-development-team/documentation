@@ -12,7 +12,8 @@ stdc
 `--background_C99--`_                   `--background_locale--`_                `--background_string--`_                `--background_wchar--`_                 
 `__stdc_assert()`_                      `__stdc_get_errorptr()`_                `__stdc_gmtoffset()`_                   `__stdc_jmp2exit()`_                    
 `__stdc_program_end()`_                 `__stdc_program_startup()`_             `__stdc_set_errorptr()`_                `__stdc_set_exitjmp()`_                 
-`__stdc_strerror()`_                    `__stdcio_assert()`_                    `__vcformat()`_                         `_Exit()`_                              
+`__stdc_strerror()`_                    `__stdcio_assert()`_                    `__stdcio_get_environptr()`_            `__stdcio_get_envlistptr()`_            
+`__stdcio_set_environptr()`_            `__stdcio_set_envlistptr()`_            `__vcformat()`_                         `_Exit()`_                              
 `abort()`_                              `abs()`_                                `asctime()`_                            `asctime_r()`_                          
 `asprintf()`_                           `assert()`_                             `atexit()`_                             `atof()`_                               
 `atoi()`_                               `atol()`_                               `atoll()`_                              `bsearch()`_                            
@@ -32,31 +33,31 @@ stdc
 `localeconv()`_                         `localtime()`_                          `localtime_r()`_                        `malloc()`_                             
 `malloc_align()`_                       `mblen()`_                              `mbstowcs()`_                           `mbtowc()`_                             
 `memchr()`_                             `memcmp()`_                             `memcpy()`_                             `memmove()`_                            
-`memset()`_                             `mktime()`_                             `on_exit()`_                            `printf()`_                             
-`putc()`_                               `putchar()`_                            `puts()`_                               `qsort()`_                              
-`raise()`_                              `rand()`_                               `realloc()`_                            `realloc_nocopy()`_                     
-`remove()`_                             `rename()`_                             `rewind()`_                             `scanf()`_                              
-`setbuf()`_                             `setlocale()`_                          `setvbuf()`_                            `signal()`_                             
-`snprintf()`_                           `sprintf()`_                            `srand()`_                              `sscanf()`_                             
-`stccpy()`_                             `stcd_l()`_                             `stch_l()`_                             `stcl_d()`_                             
-`stcl_h()`_                             `stcl_o()`_                             `stco_l()`_                             `stcu_d()`_                             
-`stpblk()`_                             `stpcpy()`_                             `stpsym()`_                             `strcasecmp()`_                         
-`strcasestr()`_                         `strcat()`_                             `strchr()`_                             `strcmp()`_                             
-`strcoll()`_                            `strcpy()`_                             `strcspn()`_                            `strdup()`_                             
-`strerror()`_                           `strftime()`_                           `strlcat()`_                            `strlcpy()`_                            
-`strlen()`_                             `strlwr()`_                             `strncasecmp()`_                        `strncat()`_                            
-`strncmp()`_                            `strncpy()`_                            `strndup()`_                            `strnlen()`_                            
-`strpbrk()`_                            `strrchr()`_                            `strrev()`_                             `strsep()`_                             
-`strspn()`_                             `strstr()`_                             `strtod()`_                             `strtof()`_                             
-`strtoimax()`_                          `strtok()`_                             `strtok_r()`_                           `strtol()`_                             
-`strtold()`_                            `strtoll()`_                            `strtoul()`_                            `strtoull()`_                           
-`strtoumax()`_                          `strupr()`_                             `strxfrm()`_                            `system()`_                             
-`time()`_                               `tmpfile()`_                            `tmpnam()`_                             `ungetc()`_                             
-`vasprintf()`_                          `vfprintf()`_                           `vfscanf()`_                            `vprintf()`_                            
-`vscanf()`_                             `vsnprintf()`_                          `vsprintf()`_                           `vsscanf()`_                            
-`wcscat()`_                             `wcscmp()`_                             `wcscpy()`_                             `wcslen()`_                             
-`wcsncmp()`_                            `wcsncpy()`_                            `wcstombs()`_                           `wctomb()`_                             
-
+`memset()`_                             `mktime()`_                             `on_exit()`_                            `perror()`_                             
+`printf()`_                             `putc()`_                               `putchar()`_                            `puts()`_                               
+`qsort()`_                              `raise()`_                              `rand()`_                               `realloc()`_                            
+`realloc_nocopy()`_                     `remove()`_                             `rename()`_                             `rewind()`_                             
+`scanf()`_                              `setbuf()`_                             `setlocale()`_                          `setvbuf()`_                            
+`signal()`_                             `snprintf()`_                           `sprintf()`_                            `srand()`_                              
+`sscanf()`_                             `stccpy()`_                             `stcd_l()`_                             `stch_l()`_                             
+`stcl_d()`_                             `stcl_h()`_                             `stcl_o()`_                             `stco_l()`_                             
+`stcu_d()`_                             `stpblk()`_                             `stpcpy()`_                             `stpsym()`_                             
+`strcasecmp()`_                         `strcasestr()`_                         `strcat()`_                             `strchr()`_                             
+`strcmp()`_                             `strcoll()`_                            `strcpy()`_                             `strcspn()`_                            
+`strdup()`_                             `strerror()`_                           `strftime()`_                           `strlcat()`_                            
+`strlcpy()`_                            `strlen()`_                             `strlwr()`_                             `strncasecmp()`_                        
+`strncat()`_                            `strncmp()`_                            `strncpy()`_                            `strndup()`_                            
+`strnlen()`_                            `strpbrk()`_                            `strrchr()`_                            `strrev()`_                             
+`strsep()`_                             `strspn()`_                             `strstr()`_                             `strtod()`_                             
+`strtof()`_                             `strtoimax()`_                          `strtok()`_                             `strtok_r()`_                           
+`strtol()`_                             `strtold()`_                            `strtoll()`_                            `strtoul()`_                            
+`strtoull()`_                           `strtoumax()`_                          `strupr()`_                             `strxfrm()`_                            
+`system()`_                             `time()`_                               `tmpfile()`_                            `tmpnam()`_                             
+`ungetc()`_                             `vasprintf()`_                          `vfprintf()`_                           `vfscanf()`_                            
+`vprintf()`_                            `vscanf()`_                             `vsnprintf()`_                          `vsprintf()`_                           
+`vsscanf()`_                            `wcscat()`_                             `wcscmp()`_                             `wcscpy()`_                             
+`wcslen()`_                             `wcsncmp()`_                            `wcsncpy()`_                            `wcstombs()`_                           
+`wctomb()`_                             
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -636,6 +637,166 @@ See also
 ~~~~~~~~
 
 `assert()`_ 
+
+----------
+
+__stdcio_get_environptr()
+=========================
+
+Synopsis
+~~~~~~~~
+::
+
+  char ***__stdcio_get_environptr(
+     void)
+
+
+Function
+~~~~~~~~
+::
+
+     This function the get pointer to the child environ global variable
+     currently used by posixc.library.
+
+
+Inputs
+~~~~~~
+::
+
+     -
+
+
+Result
+~~~~~~
+::
+
+     environptr - ptr to the child environ variable (== &environ).
+                  NULL is return if envirion emulation is disabled.
+
+
+
+See also
+~~~~~~~~
+
+`__stdcio_set_environptr()`_ 
+
+----------
+
+__stdcio_get_envlistptr()
+=========================
+
+Synopsis
+~~~~~~~~
+::
+
+  char ***__stdcio_get_envlistptr(
+     void)
+
+
+Inputs
+~~~~~~
+::
+
+     -
+
+
+Notes
+~~~~~
+::
+
+     Private - do not use!
+
+
+
+See also
+~~~~~~~~
+
+`__stdcio_set_envlistptr()`_ 
+
+----------
+
+__stdcio_set_environptr()
+=========================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __stdcio_set_environptr(
+     char ***environptr)
+
+
+Function
+~~~~~~~~
+::
+
+     This function is called to enable environ emulation mode.
+
+
+Inputs
+~~~~~~
+::
+
+     environptr - ptr to the child environ variable (== &environ).
+
+
+Result
+~~~~~~
+::
+
+     0 on fail, other value on success
+
+
+Notes
+~~~~~
+::
+
+     This function will enable environ emulation. This means that
+     all current DOS local variables are converted to the 'var=value'
+     format and be accessible through char **environ.
+
+
+Bugs
+~~~~
+::
+
+     At the moment only a static list is supported. getenv() and setenv()
+     don't use this yet so changes done with these functions are not
+     reflected in environ.
+     This is still TODO.
+
+
+
+See also
+~~~~~~~~
+
+`__stdcio_get_environptr()`_ `__stdcio_getenv()`_ `setenv()`_ 
+
+----------
+
+__stdcio_set_envlistptr()
+=========================
+
+Synopsis
+~~~~~~~~
+::
+
+  int __stdcio_set_envlistptr(
+     char ***envlistptr)
+
+
+Notes
+~~~~~
+::
+
+     Private - do not use!
+
+
+
+See also
+~~~~~~~~
+
+`__stdcio_get_envlistptr()`_ 
 
 ----------
 
@@ -4640,6 +4801,37 @@ Synopsis
      void (*func)(int, void *),
      void *arg)
 
+
+
+----------
+
+perror()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  void perror(
+     const char *string
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     looks up the language-dependent error message string affiliated with an error
+     number and writes it, followed by a newline, to the standard error stream.
+
+
+Inputs
+~~~~~~
+::
+
+     string - the string to prepend the error message. If NULL only the error
+              message will be printed, otherwise the error message will be
+              separated from string by a colon.
 
 
 ----------
