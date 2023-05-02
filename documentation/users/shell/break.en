@@ -65,6 +65,20 @@ Function
      respond to CTRL-C.
 
 
+Inputs
+~~~~~~
+::
+
+     PROCESS     --  Process Identification number.
+     PORT        --  Public port name.
+     NAME        --  Process Name. Wildcards are supported.
+     ALL         --  All signals are sent.
+     C           --  Signal CTRL-C is sent.
+     D           --  Signal CTRL-D is sent.
+     E           --  Signal CTRL-E is sent.
+     F           --  Signal CTRL-F is sent.
+
+
 Example
 ~~~~~~~
 ::
@@ -81,5 +95,9 @@ Example
      1.SYS:> BREAK NAME c:dhcpclient
 
          Send the CTRL-C signal to the process named "c:dhcpclient".
+
+     1.SYS:> BREAK NAME COPY#?
+
+         Send the CTRL-C signal to the process which matches the pattern COPY#?.
 
 

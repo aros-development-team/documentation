@@ -9,7 +9,8 @@ kernel
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`KrnAddIRQHandler()`_                   `KrnGetSystemAttr()`_                   `KrnScheduleCPU()`_                     
+`KrnAddIRQHandler()`_                   `KrnFmtAlertInfo()`_                    `KrnGetSystemAttr()`_                   `KrnScheduleCPU()`_                     
+
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -68,6 +69,20 @@ See also
 ~~~~~~~~
 
 `KrnRemIRQHandler()`_ 
+
+----------
+
+KrnFmtAlertInfo()
+=================
+
+Synopsis
+~~~~~~~~
+::
+
+ void KrnFmtAlertInfo(
+          STRPTR * TemplatePtr,
+          IPTR ** ParamPtr );
+
 
 ----------
 
