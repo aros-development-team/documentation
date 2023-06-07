@@ -81,7 +81,7 @@ Synopsis
 
  void KrnFmtAlertInfo(
           STRPTR * TemplatePtr,
-          IPTR ** ParamPtr );
+          IPTR * ParamPtr );
 
 
 ----------
