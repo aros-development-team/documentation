@@ -219,7 +219,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                             src = '%(ROOT)simages/noeupatents-small.png', alt = 'No EU patents',
                             border = 0
                         ),
-                        href = 'http://stopsoftwarepatents.eu/'
+                        href = 'https://endsoftwarepatents.org/'
                     )
                 )
             )
@@ -272,7 +272,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                     name = 'map',
                     contents = [
                         Area(shape = 'rect', coords = '25,78,85,95',   alt = 'http://www.aros.org', href = 'http://aros.sourceforge.net/'),
-                        Area(shape = 'rect', coords = '100,78,168,95', alt = 'AROS-Exec',           href = 'https://ae.amigalife.org'),
+                        Area(shape = 'rect', coords = '100,78,168,95', alt = 'AROS-Exec',           href = 'https://ae.arosworld.org/'),
                         Area(shape = 'rect', coords = '180,78,240,95', alt = 'AROS-Exec Archives',  href = 'http://archives.aros-exec.org'),
                         Area(shape = 'rect', coords = '260,78,350,95', alt = 'Power2People',        href = 'https://power2people.org/')
                     ]
