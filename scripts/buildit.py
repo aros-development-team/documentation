@@ -252,7 +252,12 @@ def makeNews():
 
         # Set up translated title dictionary
         config = gallery.ConfigParser()
+        # First open template to determine the charset. Use ISO 8859-15 for now.
         with codecs.open(os.path.join('targets/www/template/languages', lang), 'r', encoding='iso-8859-15') as configfile:
+            config.read_file(configfile)
+        charset = config.get('meta', 'charset')
+        # Open template again with the correct charset.
+        with codecs.open(os.path.join('targets/www/template/languages', lang), 'r', encoding=charset) as configfile:
             config.read_file(configfile)
         _T = {}
         for option in config['titles']:
