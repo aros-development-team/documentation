@@ -4,7 +4,7 @@
 
 .. Include:: introduction/index-abstract.cs
 
-`Více zde... <introduction/index>`__
+`Vï¿½ce zde... <introduction/index>`__
 
 .. raw:: html
 
@@ -17,7 +17,7 @@
 
 .. Include:: download-abstract.en
 
-`Více zde... <download>`__
+`Vï¿½ce zde... <download>`__
 
 .. raw:: html
 
@@ -48,28 +48,28 @@
    <!-- The direct downloads block is disabled so that users go to the downloads section where they should learn about using distribution instead of nightly
    <table style="text-align: justify; width:100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
-   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Pøímá sta¾ení:<br>
+   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Pï¿½ï¿½mï¿½ staï¿½enï¿½:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Noèní sestavení jsou automaticky vytváøena ka¾dou noc pøímo z posledních zdrojových kódù. Pokud si chce¹ AROS live CD jen vyzkou¹et, stáhni si jeho bootovatelný obraz "boot ISO" pro tvou platformu (i386 nebo PPC).<br><br>
+   Noï¿½nï¿½ sestavenï¿½ jsou automaticky vytvï¿½ï¿½ena kaï¿½dou noc pï¿½ï¿½mo z poslednï¿½ch zdrojovï¿½ch kï¿½dï¿½. Pokud si chceï¿½ AROS live CD jen vyzkouï¿½et, stï¿½hni si jeho bootovatelnï¿½ obraz "boot ISO" pro tvou platformu (i386 nebo PPC).<br><br>
    <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Nejnovìj¹í pøíspìvky v archivu:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href="http://archives.aros-exec.org">AROS archiv</a> obsahuje nejnovìj¹í systémový obsah poskytnutý na¹í komunitou a je primárním úlo¾i¹tìm pro u¾ivatelské aplikace, témata, grafiku a dodateènou dokumentaci.<br><br>
+   Nejnovï¿½jï¿½ï¿½ pï¿½ï¿½spï¿½vky v archivu:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href="http://archives.aros-exec.org">AROS archiv</a> obsahuje nejnovï¿½jï¿½ï¿½ systï¿½movï¿½ obsah poskytnutï¿½ naï¿½ï¿½ komunitou a je primï¿½rnï¿½m ï¿½loï¿½iï¿½tï¿½m pro uï¿½ivatelskï¿½ aplikace, tï¿½mata, grafiku a dodateï¿½nou dokumentaci.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Poslední pøíspìvky na AROS-EXEC fóru:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> je primární komunitní stránka AROSu. Mù¾ete zde vyhledat pomoc, zjistit co se dìje v rámci komunity nového a sdílet svoje my¹lenky.<br><br>
+   Poslednï¿½ pï¿½ï¿½spï¿½vky na AROS-EXEC fï¿½ru:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://www.arosworld.org/>AROSWorld</a> je primï¿½rnï¿½ komunitnï¿½ strï¿½nka AROSu. Mï¿½ï¿½ete zde vyhledat pomoc, zjistit co se dï¿½je v rï¿½mci komunity novï¿½ho a sdï¿½let svoje myï¿½lenky.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
    <?php if ($win_ie56) { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.gif\" align=\"middle\">"; } else { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.png\" align=\"middle\">"; } ?>
-   Odbìr novinek:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   Odbï¿½r novinek:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    </td></tr></table>
    </td></tr></table>
 

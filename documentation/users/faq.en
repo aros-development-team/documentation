@@ -3,7 +3,7 @@ Frequently Asked Questions
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright ï¿½ 1995-2020, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -17,12 +17,12 @@ General questions
 Can I ask a question?
 ---------------------
 
-Of course you can. Please go to the `AROS-Exec forum`__ and
+Of course you can. Please go to the `AROSWorld forum`__ and
 read the threads and ask everything you want. This FAQ will
 be updated with the users' questions, but the forum will be
 more up-to-date.
 
-__ https://ae.amigalife.org
+__ https://www.arosworld.org/
 
 
 What is AROS all about?
@@ -196,11 +196,11 @@ What do I do if AROS won't compile?
 -----------------------------------
 
 Please post a message with details (for example, the error messages you
-get) on the Help forum at `AROS-Exec`__ or become a developer and
+get) on the Help forum at `AROSWorld`__ or become a developer and
 subscribe to the AROS Slack channel and post it there, and someone will
 try to help you.
 
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
 Will AROS have memory protection, SVM, RT, ...?

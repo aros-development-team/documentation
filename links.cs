@@ -3,7 +3,7 @@ Odkazy
 ======
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright ¦ 1995-2007, The AROS Development Team
+:Copyright: Copyright ï¿½ 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -16,11 +16,11 @@ Zdroje AROSu
 
 + `Team AROS`__
 
-  Team AROS je hlavní tým pro podporu AROSu.
+  Team AROS je hlavnï¿½ tï¿½m pro podporu AROSu.
 
-+ `AROS-Exec`__
++ `AROSWorld`__
 
-  Komunitní web AROSu, diskuzní fórum, novinky, galerie
+  Komunitnï¿½ web AROSu, diskuznï¿½ fï¿½rum, novinky, galerie
 
 + `Archiv softwaru pro AROS`__
                                                                
@@ -30,23 +30,23 @@ Zdroje AROSu
 
 + `AROS na ohloh.net`__
 
-  Ohloh pìknì ukazuje vývoj AROSu grafickým zpùsobem.
+  Ohloh pï¿½knï¿½ ukazuje vï¿½voj AROSu grafickï¿½m zpï¿½sobem.
 
-+ `Mapa u¾ivatelù AROSu`__
++ `Mapa uï¿½ivatelï¿½ AROSu`__
 
 + `AROS pro Amigu`__
 
-  AfA OS nahrazuje hlavní knihovny AmigaOS jejich pokroèilej¹ími AROS protìj¹ky.
+  AfA OS nahrazuje hlavnï¿½ knihovny AmigaOS jejich pokroï¿½ilejï¿½ï¿½mi AROS protï¿½jï¿½ky.
 
 + `AROS World`__
-  Nový web AROSu urèený pro stránky u¾ivatelské komunity
+  Novï¿½ web AROSu urï¿½enï¿½ pro strï¿½nky uï¿½ivatelskï¿½ komunity
 
 + `AROS na WikiPedii`__
 
 + `Dokumentace AROSu na WikiBooks`__
 
 __ http://www.teamaros.org/
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 __ http://archives.aros-exec.org/
 __ http://aros.aminet.net/
 __ http://www.aros.bbs.pl/
@@ -58,16 +58,16 @@ __ http://en.wikipedia.org/wiki/AROS_Research_Operating_System
 __ http://en.wikibooks.org/wiki/Aros
 
 
-Èlánky o AROSu
+ï¿½lï¿½nky o AROSu
 ==============
 
 ===============================================  ==================  ==========
-Název                                            Autor               Datum
+Nï¿½zev                                            Autor               Datum
 ===============================================  ==================  ==========
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    13.09.2006
 `"Test: AROS"`__ (in German mag. AmigaFuture)    Ingo Schmitz        05.05.2005
 `"AROS"`__ (in German mag. Amiga-Magazin)        Martin Steigerwald  13.09.2003
-`"If you like Amiga, you'll love AROS"`__        Elwood              Neznámé   
+`"If you like Amiga, you'll love AROS"`__        Elwood              Neznï¿½mï¿½   
 `"AROS: Native AmigaOS For Your PC"`__           John Chandler       21.10.2001
 `"AROS: The Amiga Research Operating System`__   John Chandler       02.10.1999
 ===============================================  ==================  ==========
@@ -79,18 +79,18 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Pokud zná¹ nìjaké dal¹í èlánky o AROSu, které zde nemáme uvedeny, `kontaktuj nás`_
-prosím, abychom je mohli pøidat. Díky.
+Pokud znï¿½ nï¿½jakï¿½ dalï¿½ï¿½ ï¿½lï¿½nky o AROSu, kterï¿½ zde nemï¿½me uvedeny, `kontaktuj nï¿½s`_
+prosï¿½m, abychom je mohli pï¿½idat. Dï¿½ky.
 
 
-Èlánky, které AROS zmíòují
+ï¿½lï¿½nky, kterï¿½ AROS zmï¿½ï¿½ujï¿½
 ==========================
 
 ===============================================  ==============  ==========
-Název                                            Autor           Datum
+Nï¿½zev                                            Autor           Datum
 ===============================================  ==============  ==========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  13.08.2002
-`Interview with Martin Blom`__                   Johan Forsberg  Neznámé
+`Interview with Martin Blom`__                   Johan Forsberg  Neznï¿½mï¿½
 `"A Nudge In The Right Direction"`__             John Chandler   02.07.2002
 `"What Are The Odds...?"`__                      John Chandler   31.07.2001
 `"May Update"`__                                 John Chandler   07.05.2001
@@ -114,11 +114,11 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Pokud zná¹ nìjaké dal¹í èlánky, v kterých je AROS zmínìn, a my je zde nemáme zaøazeny,
-`kontaktuj nás`_ prosím, abychom je mohli pøidat. Díky.
+Pokud znï¿½ nï¿½jakï¿½ dalï¿½ï¿½ ï¿½lï¿½nky, v kterï¿½ch je AROS zmï¿½nï¿½n, a my je zde nemï¿½me zaï¿½azeny,
+`kontaktuj nï¿½s`_ prosï¿½m, abychom je mohli pï¿½idat. Dï¿½ky.
 
 
-Osobní stránky vývojáøù
+Osobnï¿½ strï¿½nky vï¿½vojï¿½ï¿½ï¿½
 =======================
 
 + `Aaron Digulla`__
@@ -153,17 +153,17 @@ __ http://cataclysm.cx/
 __ http://www.in-berlin.de/User/jroger/index.html
 
 
-Rùzné
+Rï¿½znï¿½
 =====
 
-+ `Zpátky ke koøenùm`__
++ `Zpï¿½tky ke koï¿½enï¿½m`__
 
   .. Image:: images/bttr.jpeg
 
-  Skvìlá nostalgická sí», kde mù¾e¹ najít licencované i volnì ¹iøitelné Amiga hry.
+  Skvï¿½lï¿½ nostalgickï¿½ sï¿½ï¿½, kde mï¿½ï¿½eï¿½ najï¿½t licencovanï¿½ i volnï¿½ ï¿½iï¿½itelnï¿½ Amiga hry.
 
 
 __ http://www.back2roots.org/
 
 
-.. _`kontaktuj nás`: contact
+.. _`kontaktuj nï¿½s`: contact

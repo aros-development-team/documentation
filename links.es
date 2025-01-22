@@ -3,7 +3,7 @@ Enlaces
 =======
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright ¦ 1995-2007, The AROS Development Team
+:Copyright: Copyright ï¿½ 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -18,9 +18,9 @@ Recursos de AROS
 
   El TeamAROS es un grupo de apoyo base para AROS.
 
-+  `AROS-Exec <https://ae.amigalife.org>`__
++  `AROSWorld <https://www.arosworld.org/>`__
 
-  El sitio web de la Comunidad AROS, los foros, las noticias, las galerías
+  El sitio web de la Comunidad AROS, los foros, las noticias, las galerï¿½as
 
 + `El archivo de software para AROS`__
 
@@ -31,16 +31,16 @@ Recursos de AROS
 + `AROS for Amiga`__
   
   El OS AfA reemplaza las bibliotecas centrales de AmigaOS con sus 
-  contrapartes AROS más avanzadas.
+  contrapartes AROS mï¿½s avanzadas.
   
 + `AROS World <http://arosworld.org>`__
   Un nuevo sitio web AROS, previsto para ser el sitio web de la comunidad de usuarios
                                                                
-+ `La sección AROS en Aminet <http://aros.aminet.net/>`__
++ `La secciï¿½n AROS en Aminet <http://aros.aminet.net/>`__
 
 + `AROS en la WikiPedia <http://en.wikipedia.org/wiki/AROS_Research_Operating_System>`__
 
-+ `La documentación de AROS en los WikiBooks <http://en.wikibooks.org/wiki/Aros>`__
++ `La documentaciï¿½n de AROS en los WikiBooks <http://en.wikibooks.org/wiki/Aros>`__
   
 __ http://www.teamaros.org/
 __ http://archives.aros-exec.org/
@@ -48,10 +48,10 @@ __ http://www.aros.bbs.pl/
 __ http://www.frappr.com/arosusers
 __ http://amidevcpp.amiga-world.de/afa_binarie_upload.php
 
-Artículos sobre AROS
+Artï¿½culos sobre AROS
 ====================
 ================================================  ==================  ===========
-Título                                            Autor               Fecha
+Tï¿½tulo                                            Autor               Fecha
 ================================================  ==================  ===========
 `"Onboard the Last Train to Amiga Neverland"`__   Dmitar Butrovski    2006-09-13
 `"AROS"`__ (en la revista alemana Amiga-Magazin)  Martin Steigerwald  2003-09-13
@@ -66,14 +66,14 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Si conoces algún artículo sobre AROS que nosotros no hemos mencionado 
-en la lista, por favor contáctanos así podamos añadirlo. Gracias.
+Si conoces algï¿½n artï¿½culo sobre AROS que nosotros no hemos mencionado 
+en la lista, por favor contï¿½ctanos asï¿½ podamos aï¿½adirlo. Gracias.
 
-Artículos que mencionan a AROS
+Artï¿½culos que mencionan a AROS
 ==============================
 
 ===============================================  ==============  ===========
-Título                                           Autor           Fecha
+Tï¿½tulo                                           Autor           Fecha
 ===============================================  ==============  ===========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  2002-08-13
 `Entrevista a Martin Blom`__                     Johan Forsberg  Desconocida
@@ -100,8 +100,8 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Si sabes de algún artículo que menciona a AROS que no hemos listado aquí, 
-por favor contáctanos así podamos agregalo. Gracias.
+Si sabes de algï¿½n artï¿½culo que menciona a AROS que no hemos listado aquï¿½, 
+por favor contï¿½ctanos asï¿½ podamos agregalo. Gracias.
 
 Los sitios de los desarrolladores
 =================================
@@ -133,14 +133,14 @@ __ http://homes.hallertau.net/~oli/
 __ http://www.in-berlin.de/User/jroger/index.html
 
 
-Misceláneo
+Miscelï¿½neo
 ==========
 + `Phoenix Developer Consortium`__
 
   .. Image:: images/phoenix.jpeg
   
   El Phoenix Developer Consortium apoya el desarrollo de plataformas de 
-  computación alternativas trabajando con los desarrolladores principales y 
+  computaciï¿½n alternativas trabajando con los desarrolladores principales y 
   los externos, proporcionando los recursos para ese desarrollo.
 
 

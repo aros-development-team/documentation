@@ -7,7 +7,7 @@ Status update
 
 Dit is de eerste status update van 2006. Om te beginnen willen we alle
 AROS gebruikers, sponsors en enthousiastelingen bedanken voor hun steun
-en inzet! Aan het begin van 2005 had `AROS-Exec`__ ongeveer 250 leden,
+en inzet! Aan het begin van 2005 had AROS Exec ongeveer 250 leden,
 dat is inmiddels verdubbeld naar meer dan 500 (wat nog altijd groeit).
 Gedurende deze maanden heeft AROS enkele hoofddoelen bereikt zoals
 netwerk ondersteuning, CVS naar Subversion migratie en een PPC port.
@@ -26,12 +26,11 @@ informatie is weggehaald. U zult de resultaten van zijn werk overal op
 de website vinden. Matthias heeft ook ExecuteStartup ingestuurd, een 
 kleine tool die applicaties start die zich in de SYS:WBstartup map bevinden.
 
-__ https://ae.amigalife.org
 
 Netwerk voorzieningen
 ---------------------
 
 Dankzij Nick Andrews en Jack Patton heeft AROS nu ook IRC en Telnet 
-cliënten. Om het netwerken op de hosted versie van AROS mogelijk te 
+cliï¿½nten. Om het netwerken op de hosted versie van AROS mogelijk te 
 maken, heeft Michal Schulz een .tap interface hidd ingebouwd voor 
 alle Unix doelen. 

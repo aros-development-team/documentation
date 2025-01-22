@@ -7,10 +7,10 @@ Download
    Falls Du ein **Anwender** bist, der AROS ausprobieren will, verwende
    bitte die Links im **Distributionen**-Abschnitt, um eine gut
    ausgestattete AROS-Distribution herunterzuladen. Die 'Nightly Builds',
-   die Du am Ende dieser Seite findest, sind nur für Entwickler und Tester
-   gedacht. Die 'Nightly Builds' sind nicht für Anwender konfiguriert,
+   die Du am Ende dieser Seite findest, sind nur fï¿½r Entwickler und Tester
+   gedacht. Die 'Nightly Builds' sind nicht fï¿½r Anwender konfiguriert,
    sie sind manchmal instabil und es fehlen die ganzen Programme, die
-   die Verwendung von AROS für Endbenutzer interessant machen.
+   die Verwendung von AROS fï¿½r Endbenutzer interessant machen.
 
 .. Contents::
 
@@ -22,13 +22,13 @@ Icaros Desktop LIVE!
 .. image:: /images/icaroslive_logo.png
    :align: left
 
-`Icaros Desktop LIVE!`__ ist eine vollständige Distribution des
-AROS-Betriebssystems. Sie kommt auf einer boot-fähigen DVD-ROM und läuft
-direkt auf Deinem PC (die Hardware muss von AROS unterstützt werden) oder
+`Icaros Desktop LIVE!`__ ist eine vollstï¿½ndige Distribution des
+AROS-Betriebssystems. Sie kommt auf einer boot-fï¿½higen DVD-ROM und lï¿½uft
+direkt auf Deinem PC (die Hardware muss von AROS unterstï¿½tzt werden) oder
 in einer virtuellen Maschine wie VMWare oder `VirtualBox`__. Sie
 kann auf eine Festplatte in eine eigene Partition installiert werden und
 kann mit anderen Betriebssystemen wie Microsoft Windows koexistieren. Eine
-Kurzreferenz und ein paar PDF-Handbücher sind enthalten.
+Kurzreferenz und ein paar PDF-Handbï¿½cher sind enthalten.
 
 __ http://live.icarosdesktop.org/
 __ https://www.virtualbox.org/
@@ -40,9 +40,9 @@ AspireOS
 .. image:: /images/aspireos_logo.png
    :align: left
 
-`AspireOS`__ ist eine leichtgewichtige Distribution, welche ursprünglich für
+`AspireOS`__ ist eine leichtgewichtige Distribution, welche ursprï¿½nglich fï¿½r
 Netbooks wie den Acer Aspire One entwickelt wurde. Sie versucht, die Dinge
-so einfach wie möglich zu halten. Die enthaltenen Programme wurden gut
+so einfach wie mï¿½glich zu halten. Die enthaltenen Programme wurden gut
 getestet.
 
 __ https://sites.google.com/site/arosaspireone/
@@ -51,7 +51,7 @@ __ https://sites.google.com/site/arosaspireone/
 AROS Broadway
 -------------
 
-`AROS Broadway`__ ist die Distribution für ARES-Computer. Sie funktioniert
+`AROS Broadway`__ ist die Distribution fï¿½r ARES-Computer. Sie funktioniert
 aber auch mit jedem AROS-kompatiblen PC.
 
 __ http://www.aros-broadway.de/index.html
@@ -60,8 +60,8 @@ __ http://www.aros-broadway.de/index.html
 AROS Vision
 -----------
 
-`AROS Vision`__ ist eine Distribution für M68k-Amigas. Um gut zu laufen braucht
-sie einen leistungsfähigen Amiga oder einen Emulator wie WinUAE.
+`AROS Vision`__ ist eine Distribution fï¿½r M68k-Amigas. Um gut zu laufen braucht
+sie einen leistungsfï¿½higen Amiga oder einen Emulator wie WinUAE.
 
 __ http://www.aros-platform.de/download.htm
 
@@ -72,27 +72,27 @@ Nightly Builds (ABIv1)
 
 `Nightly builds`__ werden, wie der Name sagt, jede Nacht aus dem aktuellen
 Sourcecode vom Subversionbaum erstellt. Sie wurden jedoch nicht getestet
-und können Fehler enthalten. Meistens funktionieren sie aber ganz gut.
+und kï¿½nnen Fehler enthalten. Meistens funktionieren sie aber ganz gut.
 
 Diese Builds sind auf Quellen der neuen `ABI`__ aufgebaut. **Sie sind
 nicht kompatibel mit bestehenden AROS-Distributionen oder mit AROS-Software
 von den AROS-Archiven oder vom Aminet.**
 
 Berichte bitte Fehler, die dir beim Testen auffallen, an den `Bug Tracker`__.
-Verwende bitte für Diskussionen das `AROS-Exec`__ Forum.
+Verwende bitte fï¿½r Diskussionen das `AROSWorld`__ Forum.
 
 __ nightly1
 __ https://de.wikipedia.org/wiki/Bin%C3%A4rschnittstelle
 __ http://sourceforge.net/p/aros/bugs/
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
 Nightly Builds (ABIv0)
 ======================
 
-Weil fast alle verfügbare AROS-Software und Distributionen für die
-alte ABIv0 ABI vorhanden ist, stellen wir `diese Builds`__ für die
-i386-Plattform weiter zur Verfügung.
+Weil fast alle verfï¿½gbare AROS-Software und Distributionen fï¿½r die
+alte ABIv0 ABI vorhanden ist, stellen wir `diese Builds`__ fï¿½r die
+i386-Plattform weiter zur Verfï¿½gung.
 
 __ nightly
 
@@ -101,9 +101,9 @@ __ nightly
 Snapshots (ABIv1)
 =================
 
-`Snapshots`__ sind unregelmäßige, nicht automatisierte Builds von AROS. Sie wurden
+`Snapshots`__ sind unregelmï¿½ï¿½ige, nicht automatisierte Builds von AROS. Sie wurden
 von Entwicklern erzeugt, die aus irgend einem Grund keine Nightly Builds erstellen
-können. Sie sind nicht ungewartet, deshalb berichte bitte Fehler an den `Bug Tracker`__.
+kï¿½nnen. Sie sind nicht ungewartet, deshalb berichte bitte Fehler an den `Bug Tracker`__.
 
 __ snapshots1
 __ http://sourceforge.net/p/aros/bugs/
@@ -113,6 +113,6 @@ Snapshots (ABIv0)
 =================
 
 Wie bei den Nightly Builds stellen wir einen Satz `Snapshots`__, welche
-auf Quellen des ABIv0-Zweiges aufgebaut ist, zur Verfügung.
+auf Quellen des ABIv0-Zweiges aufgebaut ist, zur Verfï¿½gung.
 
 __ snapshots

@@ -1,9 +1,9 @@
 ====================
-FAQ - Usein kysyttyä
+FAQ - Usein kysyttyï¿½
 ====================
 
 :Authors:   Aaron Digulla, Adam Chodorowski
-:Copyright: Copyright © 1995-2004, The AROS Development Team
+:Copyright: Copyright ï¿½ 1995-2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,7 +11,7 @@ FAQ - Usein kysyttyä
 .. Contents::
 
 
-Mistä AROS:issa on oikein kyse? 
+Mistï¿½ AROS:issa on oikein kyse? 
 -------------------------------
 
 Lueha esittely_.
@@ -19,304 +19,304 @@ Lueha esittely_.
 .. _esittely: ../../introduction/index
 
 
-Mikä on AROS:in laillinen status?
+Mikï¿½ on AROS:in laillinen status?
 ---------------------------------
 
-Eurooppalainen laki sanoo että on laillista soveltaa takaperoisia suunnittelu
-tekniikoita yhteistoiminnan saavuttamiseen. Se sanoo myös että on laitonta
-levittää näillä keinoilla saavutettua tietoa. Käytännössä tämä tarkoittaa sitä
-että on sallittua purkaa ohjelmisto tai resurssi ja kirjoittaa jotain joka on
+Eurooppalainen laki sanoo ettï¿½ on laillista soveltaa takaperoisia suunnittelu
+tekniikoita yhteistoiminnan saavuttamiseen. Se sanoo myï¿½s ettï¿½ on laitonta
+levittï¿½ï¿½ nï¿½illï¿½ keinoilla saavutettua tietoa. Kï¿½ytï¿½nnï¿½ssï¿½ tï¿½mï¿½ tarkoittaa sitï¿½
+ettï¿½ on sallittua purkaa ohjelmisto tai resurssi ja kirjoittaa jotain joka on
 sen kanssa yhteensopiva (esim. olisi laillista purkaa Word osiin
 kirjoittaakseen ohjelman joka muuntaa Word:in dokumentteja ASCII muotoiseksi
 tekstiksi).
 
 Rajoituksia tottakai on: ei ole sallittua purkaa ohjelmistoa jos siten saatava
-tieto voidaan hankkia muilla keinoin. Etkä saa levittää muille prosessissa
-oppimaasi tietoa. Kirja kuten "Windows sisältä" on täten laiton, tai ainakin
-hyvin hämärällä rajamaalla laillisuuden suhteen.
+tieto voidaan hankkia muilla keinoin. Etkï¿½ saa levittï¿½ï¿½ muille prosessissa
+oppimaasi tietoa. Kirja kuten "Windows sisï¿½ltï¿½" on tï¿½ten laiton, tai ainakin
+hyvin hï¿½mï¿½rï¿½llï¿½ rajamaalla laillisuuden suhteen.
 
-Koska vältämme purkutekniikoita ja sen sijaan käytämme yleisesti saatavilla
-olevaa tietoa (esim. ohjelmointi oppaita) joka ei putoa lain hämärälle
-puolelle, ei yllä mainittu suoraan koske AROS:ia. Mikä on merkityksellisintä
+Koska vï¿½ltï¿½mme purkutekniikoita ja sen sijaan kï¿½ytï¿½mme yleisesti saatavilla
+olevaa tietoa (esim. ohjelmointi oppaita) joka ei putoa lain hï¿½mï¿½rï¿½lle
+puolelle, ei yllï¿½ mainittu suoraan koske AROS:ia. Mikï¿½ on merkityksellisintï¿½
 on lain sanoma: on laillista kirjoittaa sellaisia ohjelmia jotka ovat
-yhteensopivia muiden ohjelmien kanssa. Tästä syystä uskomme että AROS on lain
+yhteensopivia muiden ohjelmien kanssa. Tï¿½stï¿½ syystï¿½ uskomme ettï¿½ AROS on lain
 suojaama.
 
-Patentit ja otsikkotiedostot ovat eri asia. Voimme käyttää patentoituja
+Patentit ja otsikkotiedostot ovat eri asia. Voimme kï¿½yttï¿½ï¿½ patentoituja
 algoritmeja euroopassa koska eurooppalainen laki ei salli algoritmeja
-patentoitavan. Mutta koodia joka käyttää USA:ssa patentoituja algoritmeja ei
-voida maahantuoda USA:an. Esimerkkejä patentoiduista algoritmeista
-AmigaOS:issa ovat näytön raahaus ja valikoiden täsmällinen toiminta. Tästä
-syystä vältämme toteuttamasta näitä ominaisuuksia täsmälleen samalla tavoin.
-Otsikkotiedostojen pitää toisaalta olla yhteensopivia mutta niin erilaisia
-alkuperäisestä kuin vain on mahdollista.
+patentoitavan. Mutta koodia joka kï¿½yttï¿½ï¿½ USA:ssa patentoituja algoritmeja ei
+voida maahantuoda USA:an. Esimerkkejï¿½ patentoiduista algoritmeista
+AmigaOS:issa ovat nï¿½ytï¿½n raahaus ja valikoiden tï¿½smï¿½llinen toiminta. Tï¿½stï¿½
+syystï¿½ vï¿½ltï¿½mme toteuttamasta nï¿½itï¿½ ominaisuuksia tï¿½smï¿½lleen samalla tavoin.
+Otsikkotiedostojen pitï¿½ï¿½ toisaalta olla yhteensopivia mutta niin erilaisia
+alkuperï¿½isestï¿½ kuin vain on mahdollista.
 
-Välttääksemme ongelmia haimme virallista hyväksyntää Amiga Inc.:iltä. He ovat
-melko positiivisia yritystämme kohtaan mutta huolissaan laillisista
-seuraamuksista. Suosittelemme että otat tosiasiana sen että Amiga Inc. ei
-lähettänyt meille nk. "cease and desist" kirjeitä positiivisena merkkinä.
-Molemminpuolista hyvää tahtoa lukuunottamatta ei ikävä kyllä vielä ole tehty
+Vï¿½lttï¿½ï¿½ksemme ongelmia haimme virallista hyvï¿½ksyntï¿½ï¿½ Amiga Inc.:iltï¿½. He ovat
+melko positiivisia yritystï¿½mme kohtaan mutta huolissaan laillisista
+seuraamuksista. Suosittelemme ettï¿½ otat tosiasiana sen ettï¿½ Amiga Inc. ei
+lï¿½hettï¿½nyt meille nk. "cease and desist" kirjeitï¿½ positiivisena merkkinï¿½.
+Molemminpuolista hyvï¿½ï¿½ tahtoa lukuunottamatta ei ikï¿½vï¿½ kyllï¿½ vielï¿½ ole tehty
 laillisesti sitovaa sopimusta.
 
 
-Miksi tähtäätte vain 3.1 yhteensopivuuteen?
+Miksi tï¿½htï¿½ï¿½tte vain 3.1 yhteensopivuuteen?
 -------------------------------------------
 
-On ollut keskusteluja edistyneen käyttöjärjestelmän kirjoittamisesta jolla
-olisi AmigaOS:in ominaisuudet. Tämä idea pudotettiin pelistä hyvällä syyllä.
-Ensinnäkin kaikki ovat sitä mieltä että nykyistä AmigaOS:ia pitäisi parantaa,
-mutta kukaan ei tiedä miten se tehdään tai edes olisi samaa mieltä siitä että
-mitä pitäisi parannella ja mikä on tärkeää. Jotkut esimerkiksi tahtovat
-muistin suojausta mutta eivät ole valmiita maksamaan hintaa siitä (eli
+On ollut keskusteluja edistyneen kï¿½yttï¿½jï¿½rjestelmï¿½n kirjoittamisesta jolla
+olisi AmigaOS:in ominaisuudet. Tï¿½mï¿½ idea pudotettiin pelistï¿½ hyvï¿½llï¿½ syyllï¿½.
+Ensinnï¿½kin kaikki ovat sitï¿½ mieltï¿½ ettï¿½ nykyistï¿½ AmigaOS:ia pitï¿½isi parantaa,
+mutta kukaan ei tiedï¿½ miten se tehdï¿½ï¿½n tai edes olisi samaa mieltï¿½ siitï¿½ ettï¿½
+mitï¿½ pitï¿½isi parannella ja mikï¿½ on tï¿½rkeï¿½ï¿½. Jotkut esimerkiksi tahtovat
+muistin suojausta mutta eivï¿½t ole valmiita maksamaan hintaa siitï¿½ (eli
 saatavilla olevan ohjelmiston uudelleen kirjoittamista ja nopeuden
-vähenemistä).
+vï¿½henemistï¿½).
 
-Lopulta keskustelut päättyivät lähes sotatilaan tai vanhojen argumenttien
-kierrätykseen. Joten päätimme aloittaa jostain jonka tiedämme miten hallita.
-Sitten kun olemme saaneet tarpeeksi kokemusta nähdäksemme mikä on mahdollista
-taikka mahdotonta voimme päättää parannuksista.
+Lopulta keskustelut pï¿½ï¿½ttyivï¿½t lï¿½hes sotatilaan tai vanhojen argumenttien
+kierrï¿½tykseen. Joten pï¿½ï¿½timme aloittaa jostain jonka tiedï¿½mme miten hallita.
+Sitten kun olemme saaneet tarpeeksi kokemusta nï¿½hdï¿½ksemme mikï¿½ on mahdollista
+taikka mahdotonta voimme pï¿½ï¿½ttï¿½ï¿½ parannuksista.
 
-Tahdomme olla myös binääri-yhteensopivia alkuperäisen AmigaOS:in kanssa
-Amigassa. Syy tälle on se että uudella käyttöjärjestelmä ilman ohjelmia ei ole
-mahdollisuuksia selviytyä. Siitä syystä yritämme tehdä siirtymisen
-alkuperäisestä käyttöjärjestelmästä uuteen niin kivuttomaksi kuin vain
-mahdollista (mutta emme siinä määrin että AROS:in parantelu muuttuisi
+Tahdomme olla myï¿½s binï¿½ï¿½ri-yhteensopivia alkuperï¿½isen AmigaOS:in kanssa
+Amigassa. Syy tï¿½lle on se ettï¿½ uudella kï¿½yttï¿½jï¿½rjestelmï¿½ ilman ohjelmia ei ole
+mahdollisuuksia selviytyï¿½. Siitï¿½ syystï¿½ yritï¿½mme tehdï¿½ siirtymisen
+alkuperï¿½isestï¿½ kï¿½yttï¿½jï¿½rjestelmï¿½stï¿½ uuteen niin kivuttomaksi kuin vain
+mahdollista (mutta emme siinï¿½ mï¿½ï¿½rin ettï¿½ AROS:in parantelu muuttuisi
 mahdottomaksi). Kuten tavallista, kaikella on hintansa ja koetamme varoen
-päättää mikä se hinta on ja että kaikki ovat valmiita sen maksamaan.
+pï¿½ï¿½ttï¿½ï¿½ mikï¿½ se hinta on ja ettï¿½ kaikki ovat valmiita sen maksamaan.
 
 
-Ettekö voi tehdä ominaisuutta XYZ?
+Ettekï¿½ voi tehdï¿½ ominaisuutta XYZ?
 ----------------------------------
 
 Emme, koska:
 
-a) Jos se olisi todella tärkeä, se löytyisi jo alkuperäisestä
-   käyttöjärjestelmästä. :-)
-b) Mikset tee sitä itse ja lähetä meille?
+a) Jos se olisi todella tï¿½rkeï¿½, se lï¿½ytyisi jo alkuperï¿½isestï¿½
+   kï¿½yttï¿½jï¿½rjestelmï¿½stï¿½. :-)
+b) Mikset tee sitï¿½ itse ja lï¿½hetï¿½ meille?
 
-Syy tähän asenteeseen on se että on paljon niitä jotka ajattelevat heidän
-esittämänsä ominaisuuden olevan sen kaikkein tärkeimmän ja ettei AROS:illa ole
-tulevaisuutta jos kyseistä ominaisuutta ei toteuteta heti paikalla. Meidän
-kantamme on se että AmigaOS, jonka AROS tähtää toteuttamaan, voi tehdä kaiken
-sen mitä modernilta käyttöjärjestelmältä odotetaan. Näemme kyllä että on
+Syy tï¿½hï¿½n asenteeseen on se ettï¿½ on paljon niitï¿½ jotka ajattelevat heidï¿½n
+esittï¿½mï¿½nsï¿½ ominaisuuden olevan sen kaikkein tï¿½rkeimmï¿½n ja ettei AROS:illa ole
+tulevaisuutta jos kyseistï¿½ ominaisuutta ei toteuteta heti paikalla. Meidï¿½n
+kantamme on se ettï¿½ AmigaOS, jonka AROS tï¿½htï¿½ï¿½ toteuttamaan, voi tehdï¿½ kaiken
+sen mitï¿½ modernilta kï¿½yttï¿½jï¿½rjestelmï¿½ltï¿½ odotetaan. Nï¿½emme kyllï¿½ ettï¿½ on
 alueita joilla AmigaOS:ia voisi parantaa, mutta jos me teemme sen, kuka
-kirjoittaa loput käyttöjärjestelmästä? Loppujen lopuksi meillä olisi paljon
-mukavia parannuksia alkuperäiseen AmigaOS:iin, jotka rikkoisivat suurimman
-osan saatavilla olevista ohjelmistoista, eivätkä olisi minkään arvoisia koska
-loput käyttöjärjestelmästä puuttuisi.
+kirjoittaa loput kï¿½yttï¿½jï¿½rjestelmï¿½stï¿½? Loppujen lopuksi meillï¿½ olisi paljon
+mukavia parannuksia alkuperï¿½iseen AmigaOS:iin, jotka rikkoisivat suurimman
+osan saatavilla olevista ohjelmistoista, eivï¿½tkï¿½ olisi minkï¿½ï¿½n arvoisia koska
+loput kï¿½yttï¿½jï¿½rjestelmï¿½stï¿½ puuttuisi.
 
-Täten olemme päättäneet torjua kaikki yritykset toteuttaa uusia ominaisuuksia
-käyttöjärjestelmään ennen kuin se on enemmän taikka vähemmän valmistunut.
-Olemme melko lähellä mainittua tilaa ja AROS:iin on toteutettu muutamia
+Tï¿½ten olemme pï¿½ï¿½ttï¿½neet torjua kaikki yritykset toteuttaa uusia ominaisuuksia
+kï¿½yttï¿½jï¿½rjestelmï¿½ï¿½n ennen kuin se on enemmï¿½n taikka vï¿½hemmï¿½n valmistunut.
+Olemme melko lï¿½hellï¿½ mainittua tilaa ja AROS:iin on toteutettu muutamia
 innovaatioita joita ei ole AmigaOS:issa.
 
 
 Kuinka yhteensopiva AROS on AmigaOS:in kanssa?
 ----------------------------------------------
 
-Erittäin yhteensopiva. Odotamme että AROS ajaa Amigalla olemassa olevia
-ohjelmia ongelmitta. Muulle raudalle olemassa olevat ohjelmat täytyy kääntää
-uudelleen. Tarjoamme esiprosessoijan jota voit käyttää koodillesi muuttamaan
+Erittï¿½in yhteensopiva. Odotamme ettï¿½ AROS ajaa Amigalla olemassa olevia
+ohjelmia ongelmitta. Muulle raudalle olemassa olevat ohjelmat tï¿½ytyy kï¿½ï¿½ntï¿½ï¿½
+uudelleen. Tarjoamme esiprosessoijan jota voit kï¿½yttï¿½ï¿½ koodillesi muuttamaan
 ja/tai varoittamaan sellaisesta koodista joka ei toimi AROS:issa.
 
-Tätä nykyä ohjelmien porttaus AmigaOS:ista AROS:iin on suurimmalta osalta
-pelkkää uudelleen kääntämistä, muutaman harvan viilauksen kera. On toki
-ohjelmia joihin tämä ei päde, mutta suurin osa uusista ohjelmista kääntyy
+Tï¿½tï¿½ nykyï¿½ ohjelmien porttaus AmigaOS:ista AROS:iin on suurimmalta osalta
+pelkkï¿½ï¿½ uudelleen kï¿½ï¿½ntï¿½mistï¿½, muutaman harvan viilauksen kera. On toki
+ohjelmia joihin tï¿½mï¿½ ei pï¿½de, mutta suurin osa uusista ohjelmista kï¿½ï¿½ntyy
 kakistelematta.
 
 
 Mille raudalle AROS on saatavilla? 
 ----------------------------------
 
-Tällä hetkellä AROS on saatavilla melko käyttökelpoisessa muodossa sekä
-natiivina että isännöitynä (ajettuna Linux:issa, FreeBSD:ssä taikka NetBSD:ssä)
-i386-arkkitehtuurissa (esim. IBM PC AT yhteensopivat kloonit) ja isännöitynä
-(Linux:illa ja NetBSD:llä) m68k arkkitehtuurissa (esim. Amiga, Atari ja
-Macintosh). SUN SPARC:ille (isännöity Solaris:illa) ja Palm-yhteensopiville
-(natiivina) on järjestelmä siirretty vaihtelevalla menestyksellä.
+Tï¿½llï¿½ hetkellï¿½ AROS on saatavilla melko kï¿½yttï¿½kelpoisessa muodossa sekï¿½
+natiivina ettï¿½ isï¿½nnï¿½itynï¿½ (ajettuna Linux:issa, FreeBSD:ssï¿½ taikka NetBSD:ssï¿½)
+i386-arkkitehtuurissa (esim. IBM PC AT yhteensopivat kloonit) ja isï¿½nnï¿½itynï¿½
+(Linux:illa ja NetBSD:llï¿½) m68k arkkitehtuurissa (esim. Amiga, Atari ja
+Macintosh). SUN SPARC:ille (isï¿½nnï¿½ity Solaris:illa) ja Palm-yhteensopiville
+(natiivina) on jï¿½rjestelmï¿½ siirretty vaihtelevalla menestyksellï¿½.
 
 
 Tuleeko AROS PPC:lle?
 ---------------------
 
-Meiltä kysytään säännöllisesti tuleeko AROS PPC:lle. Vastaus on aina ollut
-sama: monet kysyvät sitä, mutta kukaan ei ole vielä tarjoutunut tekemään sitä.
+Meiltï¿½ kysytï¿½ï¿½n sï¿½ï¿½nnï¿½llisesti tuleeko AROS PPC:lle. Vastaus on aina ollut
+sama: monet kysyvï¿½t sitï¿½, mutta kukaan ei ole vielï¿½ tarjoutunut tekemï¿½ï¿½n sitï¿½.
 
 
-Miksi käytätte Linux:ia ja X11:ta?
+Miksi kï¿½ytï¿½tte Linux:ia ja X11:ta?
 ----------------------------------
 
-Käytämme Linux:ia ja X11:ta nopeuttaaksemme kehitystyötä. Esimerkiksi, jos
+Kï¿½ytï¿½mme Linux:ia ja X11:ta nopeuttaaksemme kehitystyï¿½tï¿½. Esimerkiksi, jos
 toteutat uuden funktion ikkunan avaamiseksi, voit yksinkertaisesti kirjoittaa
-kyseisen funktion eikä sinun tarvitse kirjoittaa satoja muita funktioita
-layers.library:yn, graphics.library:yn, läjään laiteajureita ja sen semmoisiin
+kyseisen funktion eikï¿½ sinun tarvitse kirjoittaa satoja muita funktioita
+layers.library:yn, graphics.library:yn, lï¿½jï¿½ï¿½n laiteajureita ja sen semmoisiin
 joita funktiosi saattaa tarvita.
 
-Päämäärähän AROS:illa on olla itsenäinen Linux:ista ja X11:sta (mutta silti
-ajettavissa niillä tahdottaessa), mikä on hitaasti muuttumassa todellisuudeksi
-natiivien AROS versioiden muodossa. Tarvitsemme yhä Linux:ia kehitystyöhön,
-koska hyviä kehitys työkaluja ei ole vielä AROS:ille portattu GCC:tä
+Pï¿½ï¿½mï¿½ï¿½rï¿½hï¿½n AROS:illa on olla itsenï¿½inen Linux:ista ja X11:sta (mutta silti
+ajettavissa niillï¿½ tahdottaessa), mikï¿½ on hitaasti muuttumassa todellisuudeksi
+natiivien AROS versioiden muodossa. Tarvitsemme yhï¿½ Linux:ia kehitystyï¿½hï¿½n,
+koska hyviï¿½ kehitys tyï¿½kaluja ei ole vielï¿½ AROS:ille portattu GCC:tï¿½
 lukuunottamatta.
 
 
-Miksi X11:ta "autorepeat" lopettaa toiminnan AROS:in ajon jälkeen?
+Miksi X11:ta "autorepeat" lopettaa toiminnan AROS:in ajon jï¿½lkeen?
 ------------------------------------------------------------------
 
-Tämä on pitkään säilynyt vika AROS:issa. Aja seuraava komento poistuttuasi
-AROS:ista saadaksesi "autorepeat":in takaisin päälle::
+Tï¿½mï¿½ on pitkï¿½ï¿½n sï¿½ilynyt vika AROS:issa. Aja seuraava komento poistuttuasi
+AROS:ista saadaksesi "autorepeat":in takaisin pï¿½ï¿½lle::
 
     > xset r on
 
 
-Kuinka aiotte tehdä AROS:ista siirrettävän?
+Kuinka aiotte tehdï¿½ AROS:ista siirrettï¿½vï¿½n?
 -------------------------------------------
 
 Yksi suurimmista uusista ominaisuuksista AROS:issa AmigaOS:iin verraten on
-HIDD (Hardware Independed Device Drivers) järjestelmä, joka sallii meidän
-porttaavan AROS:in eri raudalle melkoisen helposti. Käyttöjärjestelmän
-ydinkirjastot eivät keskustele suoraan raudan kanssa, vaan toimivat HIDD:ien
-välityksellä, jotka ovat koodattu olio-orientoituvaa järjestelmää käyttäen
-joka tekee HIDD:ien vaihtamisen ja koodin uudelleen käytön helpoksi.
+HIDD (Hardware Independed Device Drivers) jï¿½rjestelmï¿½, joka sallii meidï¿½n
+porttaavan AROS:in eri raudalle melkoisen helposti. Kï¿½yttï¿½jï¿½rjestelmï¿½n
+ydinkirjastot eivï¿½t keskustele suoraan raudan kanssa, vaan toimivat HIDD:ien
+vï¿½lityksellï¿½, jotka ovat koodattu olio-orientoituvaa jï¿½rjestelmï¿½ï¿½ kï¿½yttï¿½en
+joka tekee HIDD:ien vaihtamisen ja koodin uudelleen kï¿½ytï¿½n helpoksi.
 
 
-Miksi ajattelette että AROS tulee menestymään?
+Miksi ajattelette ettï¿½ AROS tulee menestymï¿½ï¿½n?
 ----------------------------------------------
 
-Kuulemme päivät pitkät monilta ettei AROS tule menestymään. Useimmat heistä
-eivät joko tiedä mitä me olemme tekemässä tai ajattelevat että Amiga on jo
-kuollut. Kun olemme selvittäneet ensin mainituille mitä teemme, useimmat
-heistä toteavat että se on sittenkin mahdollista. Viimeksi mainitut ovatkin
-vaikeampi pala. No, onko Amiga kuollut? Ne jotka vielä käyttävät Amigoitaan
-todennäköisesti kertovat ettei se kuollut ole. Räjähtikö A500:si tai A4000:si
+Kuulemme pï¿½ivï¿½t pitkï¿½t monilta ettei AROS tule menestymï¿½ï¿½n. Useimmat heistï¿½
+eivï¿½t joko tiedï¿½ mitï¿½ me olemme tekemï¿½ssï¿½ tai ajattelevat ettï¿½ Amiga on jo
+kuollut. Kun olemme selvittï¿½neet ensin mainituille mitï¿½ teemme, useimmat
+heistï¿½ toteavat ettï¿½ se on sittenkin mahdollista. Viimeksi mainitut ovatkin
+vaikeampi pala. No, onko Amiga kuollut? Ne jotka vielï¿½ kï¿½yttï¿½vï¿½t Amigoitaan
+todennï¿½kï¿½isesti kertovat ettei se kuollut ole. Rï¿½jï¿½htikï¿½ A500:si tai A4000:si
 kun Commodore meni konkurssiin? Hajosiko se samalla kuin Amiga Technologies?
 
-Tosiasia on että Amigalle ei tehdä paljoa ohjelmia (vaikkakin Aminet näyttää
-puksuttavan varsin hyvin eteenpäin) ja rautaa kehitetään hitaasi (mutta
-näyttää siltä että hämmästyttävimmät laitteet ilmestyvät juuri nyt).
-Amiga-yhteisö (joka on yhä hengissä) näyttää istuvan aloillaan ja odottavan.
+Tosiasia on ettï¿½ Amigalle ei tehdï¿½ paljoa ohjelmia (vaikkakin Aminet nï¿½yttï¿½ï¿½
+puksuttavan varsin hyvin eteenpï¿½in) ja rautaa kehitetï¿½ï¿½n hitaasi (mutta
+nï¿½yttï¿½ï¿½ siltï¿½ ettï¿½ hï¿½mmï¿½styttï¿½vimmï¿½t laitteet ilmestyvï¿½t juuri nyt).
+Amiga-yhteisï¿½ (joka on yhï¿½ hengissï¿½) nï¿½yttï¿½ï¿½ istuvan aloillaan ja odottavan.
 Ja jos joku julkaisee tuotteen joka on hiukan kuin Amiga vuonna 1984, laite
-lähtee nousuun. Kukapa tietää, ehkä sen mukana tulee CD jossa lukee "AROS".
+lï¿½htee nousuun. Kukapa tietï¿½ï¿½, ehkï¿½ sen mukana tulee CD jossa lukee "AROS".
 :-)
 
 
-Mitä teen jos AROS ei käänny?
+Mitï¿½ teen jos AROS ei kï¿½ï¿½nny?
 -----------------------------
 
-Lähetä virheilmoitus yksityiskohtineen "Help"-ryhmään `AROS-Exec`__:in
-keskusteluryhmässä tai liity kehittäjiin ja tilaa AROS Developer postituslista
-ja lähetä se sinne, niin joku koettaa auttaa sinua.
+Lï¿½hetï¿½ virheilmoitus yksityiskohtineen "Help"-ryhmï¿½ï¿½n `AROSWorld`__:in
+keskusteluryhmï¿½ssï¿½ tai liity kehittï¿½jiin ja tilaa AROS Developer postituslista
+ja lï¿½hetï¿½ se sinne, niin joku koettaa auttaa sinua.
 
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
 Tuleeko AROS:ille muistin suojausta, SVM, RT, ...?
 --------------------------------------------------
 
-Useat sadat Amiga expertit (ainakin he kuvittelivat itsestään sellaisia) ovat
-yrittäneet vähintään kolme vuotta löytää keinoa toteuttaa muisin suojausta
-(MP) AmigaOS:ille. He epäonnistuivat. Sinun tulisi hyväksyä se tosiasia että
-normaalissa AmigaOS:issa ei tule koskaan olemaan sellaista MP:tä kuin
-UNIX:eissa tai Windows NT:ssä.
+Useat sadat Amiga expertit (ainakin he kuvittelivat itsestï¿½ï¿½n sellaisia) ovat
+yrittï¿½neet vï¿½hintï¿½ï¿½n kolme vuotta lï¿½ytï¿½ï¿½ keinoa toteuttaa muisin suojausta
+(MP) AmigaOS:ille. He epï¿½onnistuivat. Sinun tulisi hyvï¿½ksyï¿½ se tosiasia ettï¿½
+normaalissa AmigaOS:issa ei tule koskaan olemaan sellaista MP:tï¿½ kuin
+UNIX:eissa tai Windows NT:ssï¿½.
 
 Mutta kaikkea ei ole menetetty. Suunnitelmissa on integroida AROS:iin
 MP-variantti joka sallii suojata ainakin sellaiset ohjelmat jotka ovat
-suojauksesta tietoisia. Muutamat ponnistelut tällä alueella näyttävät erittäin
-lupaavilta. Ja onko se todella ongelma jos koneesi kaatuu? Anna kun selitän,
-ennen kuin naulaat minut puuhun. :-) Ongelma ei ole siinä että kone kaatuu,
+suojauksesta tietoisia. Muutamat ponnistelut tï¿½llï¿½ alueella nï¿½yttï¿½vï¿½t erittï¿½in
+lupaavilta. Ja onko se todella ongelma jos koneesi kaatuu? Anna kun selitï¿½n,
+ennen kuin naulaat minut puuhun. :-) Ongelma ei ole siinï¿½ ettï¿½ kone kaatuu,
 vaan:
 
-1. Sinulla ei ole mitään ideaa siitä että miksi se kaatui. Periaatteessa
-   lopulta päädyt tökkimään sumun peittämää suota sadan jalan kepillä.
-2. Menetät työsi. Koneen uudellen käynnistys ei ole isokaan juttu.
+1. Sinulla ei ole mitï¿½ï¿½n ideaa siitï¿½ ettï¿½ miksi se kaatui. Periaatteessa
+   lopulta pï¿½ï¿½dyt tï¿½kkimï¿½ï¿½n sumun peittï¿½mï¿½ï¿½ suota sadan jalan kepillï¿½.
+2. Menetï¿½t tyï¿½si. Koneen uudellen kï¿½ynnistys ei ole isokaan juttu.
 
-Järjestelmä jonka koetamme rakentaa tulee vähintäänkin varoittamaan jos jotain
-epäilyttävää on tapahtumassa ja kertoo yksityiskohtaisesti mitä tapahtui siinä
-tapauksessa kun kone on kaatumassa ja antaa sinun tallentaa työsi *ennen*
-kaatumista. Rakenteilla on myös tapa tarkistaa mitä tallennetaa jotta voit
+Jï¿½rjestelmï¿½ jonka koetamme rakentaa tulee vï¿½hintï¿½ï¿½nkin varoittamaan jos jotain
+epï¿½ilyttï¿½vï¿½ï¿½ on tapahtumassa ja kertoo yksityiskohtaisesti mitï¿½ tapahtui siinï¿½
+tapauksessa kun kone on kaatumassa ja antaa sinun tallentaa tyï¿½si *ennen*
+kaatumista. Rakenteilla on myï¿½s tapa tarkistaa mitï¿½ tallennetaa jotta voit
 olla varma ettet jatka viallisella tiedolla.
 
-Sama koskee SVM:ää ("swappable virtual memory"), RT:tä ("resource tracking")
-ja SMP:tä ("symmetric multiprocessing"). Olemme tällä hetkellä
-suunnittelemassa kuinka ne toteutetaan ja varmistamassa että kyseisten
-ominaisuuksien lisääminen on kivutonta. Nämä kuitenkaan eivät ole etusijalla
-juuri nyt. Erittäin perustavaa laatua oleva RT on tosin jo lisätty.
+Sama koskee SVM:ï¿½ï¿½ ("swappable virtual memory"), RT:tï¿½ ("resource tracking")
+ja SMP:tï¿½ ("symmetric multiprocessing"). Olemme tï¿½llï¿½ hetkellï¿½
+suunnittelemassa kuinka ne toteutetaan ja varmistamassa ettï¿½ kyseisten
+ominaisuuksien lisï¿½ï¿½minen on kivutonta. Nï¿½mï¿½ kuitenkaan eivï¿½t ole etusijalla
+juuri nyt. Erittï¿½in perustavaa laatua oleva RT on tosin jo lisï¿½tty.
 
 
 Voinko tulla beta-testaajaksi?
 ------------------------------
 
-Tottakai, ei mitään ongelmaa siinä. Tosiasiassa tahdomme niin useita
+Tottakai, ei mitï¿½ï¿½n ongelmaa siinï¿½. Tosiasiassa tahdomme niin useita
 beta-testaajia kuin vain mahdollista, joten kaikki ovat tervetulleita! Emme
-tosin pidä listaa beta-testaajista, joten kaikki mitä sinun tulee tehdä on
-ladata AROS, testata mitä vain tahdot ja lähettää meille siitä raportti.
+tosin pidï¿½ listaa beta-testaajista, joten kaikki mitï¿½ sinun tulee tehdï¿½ on
+ladata AROS, testata mitï¿½ vain tahdot ja lï¿½hettï¿½ï¿½ meille siitï¿½ raportti.
 
 
-Mikä on AROS:in ja UAE:n suhde?
+Mikï¿½ on AROS:in ja UAE:n suhde?
 -------------------------------
 
-UAE on Amiga emulaattori ja siten sillä on jonkin verran erilaiset päämäärät
+UAE on Amiga emulaattori ja siten sillï¿½ on jonkin verran erilaiset pï¿½ï¿½mï¿½ï¿½rï¿½t
 kuin AROS:illa. UAE:n on tarkoitus olla yhteensopiva jopa pelien ja rautaa
-suoraan käsittelevän koodin kanssa, kun taas AROS tahtoo natiiveja ohjelmia.
-Tästä syystä AROS on paljon nopeampi kuin UAE, mutta voit ajaa useampia
+suoraan kï¿½sittelevï¿½n koodin kanssa, kun taas AROS tahtoo natiiveja ohjelmia.
+Tï¿½stï¿½ syystï¿½ AROS on paljon nopeampi kuin UAE, mutta voit ajaa useampia
 ohjelmia UAE:lla.
 
-Olemme löyhässä yhteydessä UAE:n kirjoittajan kanssa ja on hyvät
-mahdollisuudet sille että UAE:n koodi ilmaantuu AROS:iin ja toisin päin.
-Esimerkiksi UAE:n kehittäjät ovat kiinnostuneita käyttöjärjestelmästä koska
+Olemme lï¿½yhï¿½ssï¿½ yhteydessï¿½ UAE:n kirjoittajan kanssa ja on hyvï¿½t
+mahdollisuudet sille ettï¿½ UAE:n koodi ilmaantuu AROS:iin ja toisin pï¿½in.
+Esimerkiksi UAE:n kehittï¿½jï¿½t ovat kiinnostuneita kï¿½yttï¿½jï¿½rjestelmï¿½stï¿½ koska
 UAE voisi ajaa joitain ohjelmia paljon nopeammin jos osa tai kaikki
-käyttöjärjestelmän funktiot voitaisiin korvata natiivilla koodilla. Ja
-toisaalta taas AROS hyötyisi integroidusta Amiga emulaatiosta.
+kï¿½yttï¿½jï¿½rjestelmï¿½n funktiot voitaisiin korvata natiivilla koodilla. Ja
+toisaalta taas AROS hyï¿½tyisi integroidusta Amiga emulaatiosta.
 
-Koska suurinta osaa ohjelmista ei ole saatavilla AROS:iin alusta lähtien, on
+Koska suurinta osaa ohjelmista ei ole saatavilla AROS:iin alusta lï¿½htien, on
 Fabio Alemagna portannut UAE:n AROS:ille jotta voit ajaa vanhoja ohjelmia
 ainakin emulaatiossa.
 
 
-Mikä on AROS:in suhde Haage & Partner:iin?
+Mikï¿½ on AROS:in suhde Haage & Partner:iin?
 ------------------------------------------
 
-Haage & Partner käytti osia AROS:ista AmigaOS 3.5:ssä ja 3.9:ssä, esimerkiksi
-colorwheel ja gradientslider objekteja ja SetENV komentoa. Tämä tarkoittaa
-sitä että tavallaa AROS:ista on tullut osa virallista AmigaOS:ia. Tämä tosin
-ei tarkoita sitä että AROS:in ja Haage & Partner:in välillä olisi virallista
-suhdetta. AROS on Open Source projekti ja kuka tahansa voi käyttää koodiamme
-omissa projekteissaan niin kauan kuin he noudattavat lisenssiämme.
+Haage & Partner kï¿½ytti osia AROS:ista AmigaOS 3.5:ssï¿½ ja 3.9:ssï¿½, esimerkiksi
+colorwheel ja gradientslider objekteja ja SetENV komentoa. Tï¿½mï¿½ tarkoittaa
+sitï¿½ ettï¿½ tavallaa AROS:ista on tullut osa virallista AmigaOS:ia. Tï¿½mï¿½ tosin
+ei tarkoita sitï¿½ ettï¿½ AROS:in ja Haage & Partner:in vï¿½lillï¿½ olisi virallista
+suhdetta. AROS on Open Source projekti ja kuka tahansa voi kï¿½yttï¿½ï¿½ koodiamme
+omissa projekteissaan niin kauan kuin he noudattavat lisenssiï¿½mme.
 
 
-Mikä on AROS:in suhde MorphOS:iin?
+Mikï¿½ on AROS:in suhde MorphOS:iin?
 ----------------------------------
 
 AROS:in ja MorphOS:in suhde on samankaltainen kuin AROS:in ja Haage &
-Partner:in suhde. MorphOS käyttää osia AROS:ista nopeuttaakseen
-kehitystyötään; lisenssiämme noudattaen. Ja kuten Haage & Partner:in kanssa,
-tämä hyödyttää molempia sillä MorphOS tiimi saa vauhtia kehitykseen AROS:ilta
-ja AROS saa hyviä parannuksia lähdekoodiin MorphOS tiimiltä. AROS:illa ja
-MorphOS:illa ei ole virallista suhdetta; tämä on yksinkertaisesti vain kuinka
+Partner:in suhde. MorphOS kï¿½yttï¿½ï¿½ osia AROS:ista nopeuttaakseen
+kehitystyï¿½tï¿½ï¿½n; lisenssiï¿½mme noudattaen. Ja kuten Haage & Partner:in kanssa,
+tï¿½mï¿½ hyï¿½dyttï¿½ï¿½ molempia sillï¿½ MorphOS tiimi saa vauhtia kehitykseen AROS:ilta
+ja AROS saa hyviï¿½ parannuksia lï¿½hdekoodiin MorphOS tiimiltï¿½. AROS:illa ja
+MorphOS:illa ei ole virallista suhdetta; tï¿½mï¿½ on yksinkertaisesti vain kuinka
 Open Source kehitys toimii.
 
 
-Mitä ohjelmointikieliä on saatavilla?
+Mitï¿½ ohjelmointikieliï¿½ on saatavilla?
 -------------------------------------
 
-Suurin osa AROS:ille tehtävästä kehityksestä on tehty ANSI C:tä käyttäen ja
-lähdekoodin ristiin kääntäen eri käyttöjärjestelmässä, esim. Linux, FreeBSD
-tai NetBSD. Fabio Alemagna on saanut valmiiksi esiporttauksen GCC:stä i386
-natiiviin, mutta sitä ei ole vielä ISO:ssa tai integroituna
-käännösjärjestelmään.
+Suurin osa AROS:ille tehtï¿½vï¿½stï¿½ kehityksestï¿½ on tehty ANSI C:tï¿½ kï¿½yttï¿½en ja
+lï¿½hdekoodin ristiin kï¿½ï¿½ntï¿½en eri kï¿½yttï¿½jï¿½rjestelmï¿½ssï¿½, esim. Linux, FreeBSD
+tai NetBSD. Fabio Alemagna on saanut valmiiksi esiporttauksen GCC:stï¿½ i386
+natiiviin, mutta sitï¿½ ei ole vielï¿½ ISO:ssa tai integroituna
+kï¿½ï¿½nnï¿½sjï¿½rjestelmï¿½ï¿½n.
 
 Kielet jotka ovat natiivina saatavana ovat Python_, Regina_ ja False_:
 
-+ Python on hyvän suunnittelun ja ominaisuuksiensa vuoksi melkoisen suosituksi
++ Python on hyvï¿½n suunnittelun ja ominaisuuksiensa vuoksi melkoisen suosituksi
   kohonnut skriptauskieli (olio-orientoitunut, modulaarinen, useita
-  käyttökelpoisia moduuleja mukana, selvä syntaksi, ...). Erillinen projekti
-  aloitettiin AROS portille joka löytyy osoitteesta
+  kï¿½yttï¿½kelpoisia moduuleja mukana, selvï¿½ syntaksi, ...). Erillinen projekti
+  aloitettiin AROS portille joka lï¿½ytyy osoitteesta
   http://pyaros.sourceforge.net/.
 
-+ Regina on siirrettävä ANSI:a mukaileva REXX tulkki. AROS portin tavoitteena
++ Regina on siirrettï¿½vï¿½ ANSI:a mukaileva REXX tulkki. AROS portin tavoitteena
   on olla yhteensopiva klassisen AmigaOS:in ARexx tulkin kanssa.
 
-+ False voidaan lukea eksoottiseksi kieleksi, joten sitä tuskin käytetään
-  vakavaan kehitystyöhön, vaikkakin todella hauska se voi olla. :-)
++ False voidaan lukea eksoottiseksi kieleksi, joten sitï¿½ tuskin kï¿½ytetï¿½ï¿½n
+  vakavaan kehitystyï¿½hï¿½n, vaikkakin todella hauska se voi olla. :-)
 
 .. _Python: http://www.python.org/
 .. _Regina: http://regina-rexx.sourceforge.net/
@@ -328,20 +328,20 @@ Miksei AROS:issa ole m68k emulaattoria?
 
 Ajaaksemme vanhoja Amiga ohjelmia AROS:issa, olemme portanneet UAE_:n
 AROS:ille. AROS:in versio UAE:sta on luultavasti hieman muita UAE:n versioita
-nopeampi koska AROS vaatii vähemmän resursseja koneelta kuin muut
-käyttöjärjestelmät (mikä tarkoittaa että UAE:lla on käytössään enemmän
+nopeampi koska AROS vaatii vï¿½hemmï¿½n resursseja koneelta kuin muut
+kï¿½yttï¿½jï¿½rjestelmï¿½t (mikï¿½ tarkoittaa ettï¿½ UAE:lla on kï¿½ytï¿½ssï¿½ï¿½n enemmï¿½n
 konetehoa), ja koetamme saada UAE:n Kickstart ROM:in kutsumaan AROS:in
-funktioita joka antaa sille hieman lisää parannusta. Tämä tosin pitää
+funktioita joka antaa sille hieman lisï¿½ï¿½ parannusta. Tï¿½mï¿½ tosin pitï¿½ï¿½
 paikkansa vain natiivissa AROS:issa.
 
 Miksemme yksinkertaisesti toetuta virtuaalista m68k CPU:ta ajamaan ohjelmia
-AROS:issa? No, ongelma tässä on että m68k ohjelmisto odottaa tiedon olevan nk.
-"big endian" muodossa kun taas AROS toimii myös "little endian"
-prosessoreilla. Ongelma tässä on taas sitten se, että "little endian"-rutiinit
-AROS:in ytimessä joutuisivat työskentelemään emulaatiossa "big endian"
-tiedolla. Automaattinen muunnos näyttää mahdottomalta (esim.: AmigaOS:issa on
-rakenteessa kenttä joka joskus sisältää ULONG:in ja joskus kaksi WORD:iä)
-koska emme voi tietää miten pari tavua muistia on enkoodattu.
+AROS:issa? No, ongelma tï¿½ssï¿½ on ettï¿½ m68k ohjelmisto odottaa tiedon olevan nk.
+"big endian" muodossa kun taas AROS toimii myï¿½s "little endian"
+prosessoreilla. Ongelma tï¿½ssï¿½ on taas sitten se, ettï¿½ "little endian"-rutiinit
+AROS:in ytimessï¿½ joutuisivat tyï¿½skentelemï¿½ï¿½n emulaatiossa "big endian"
+tiedolla. Automaattinen muunnos nï¿½yttï¿½ï¿½ mahdottomalta (esim.: AmigaOS:issa on
+rakenteessa kenttï¿½ joka joskus sisï¿½ltï¿½ï¿½ ULONG:in ja joskus kaksi WORD:iï¿½)
+koska emme voi tietï¿½ï¿½ miten pari tavua muistia on enkoodattu.
 
 .. _UAE: http://www.amigaemulator.org/
 
@@ -349,17 +349,17 @@ koska emme voi tietää miten pari tavua muistia on enkoodattu.
 Tuleeko AROS:ista Kickstart ROM:ia?
 -----------------------------------
 
-Ehkä, jos joku tekee natiivin Amiga porttauksen AROS:ista ja tekee kaiken
-tarvittavan työn luodakseen Kickstart ROM:in. Tällä hetkellä ei vielä kukaan
-ole tuohon työhön ilmoittautunut.
+Ehkï¿½, jos joku tekee natiivin Amiga porttauksen AROS:ista ja tekee kaiken
+tarvittavan tyï¿½n luodakseen Kickstart ROM:in. Tï¿½llï¿½ hetkellï¿½ ei vielï¿½ kukaan
+ole tuohon tyï¿½hï¿½n ilmoittautunut.
 
 
-Kuinka käytän AROS:in levykuvia UAE:ssa?
+Kuinka kï¿½ytï¿½n AROS:in levykuvia UAE:ssa?
 ----------------------------------------
 
-Levykuva voidaan liittää nk. hardfile:nä ja sen jälkeen käyttää 1.4 MB
-kovalevynä UAE:sssa. Kun olet tallentanut haluamasi tiedostot hardfile
-levykuvalle (tai mitä sitten sille olitkaan tekemässä), voit kirjoittaa sen
+Levykuva voidaan liittï¿½ï¿½ nk. hardfile:nï¿½ ja sen jï¿½lkeen kï¿½yttï¿½ï¿½ 1.4 MB
+kovalevynï¿½ UAE:sssa. Kun olet tallentanut haluamasi tiedostot hardfile
+levykuvalle (tai mitï¿½ sitten sille olitkaan tekemï¿½ssï¿½), voit kirjoittaa sen
 disketille.
 
 Hardfile:n geometria on seuraavanlainen::
@@ -370,21 +370,21 @@ Hardfile:n geometria on seuraavanlainen::
     Block Size = 90
 
 
-Kuinka käytän AROS:in levykuvia isännöidyissä AROS:eissa?
+Kuinka kï¿½ytï¿½n AROS:in levykuvia isï¿½nnï¿½idyissï¿½ AROS:eissa?
 ---------------------------------------------------------
 
 Kopioi levykuva AROS:in DiskImages hakemistoon (SYS:DiskImages, esim.
-bin/linux-i386/AROS/DiskImages) ja nimeä se uudelleen "Unit0":ksi. AROS:in
-käynnistyksen jälkeen voit liittää levykuvan komennolla::
+bin/linux-i386/AROS/DiskImages) ja nimeï¿½ se uudelleen "Unit0":ksi. AROS:in
+kï¿½ynnistyksen jï¿½lkeen voit liittï¿½ï¿½ levykuvan komennolla::
 
     > mount AFD0: 
 
 
-Mikä on Zune?
+Mikï¿½ on Zune?
 -------------
 
-Siinä tapauksessa että luit tältä saitilta Zunesta, on se uudelleen
-kirjoitettu Open Source versio MUI:sta, joka on vahva (käyttäjä- ja
-kehittäjäystävällisyydessä) olio-orientoitunut shareware GUI työkalupaketti ja
-de-facto standardi AmigaOS:issa. Zune on AROS kehityksessä suosittava GUI
-työkalupaketti. Nimi itsessään ei tarkoita mitään - se vain kuulostaa hyvältä.
+Siinï¿½ tapauksessa ettï¿½ luit tï¿½ltï¿½ saitilta Zunesta, on se uudelleen
+kirjoitettu Open Source versio MUI:sta, joka on vahva (kï¿½yttï¿½jï¿½- ja
+kehittï¿½jï¿½ystï¿½vï¿½llisyydessï¿½) olio-orientoitunut shareware GUI tyï¿½kalupaketti ja
+de-facto standardi AmigaOS:issa. Zune on AROS kehityksessï¿½ suosittava GUI
+tyï¿½kalupaketti. Nimi itsessï¿½ï¿½n ei tarkoita mitï¿½ï¿½n - se vain kuulostaa hyvï¿½ltï¿½.

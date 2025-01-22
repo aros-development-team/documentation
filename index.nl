@@ -64,7 +64,7 @@
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
    Laatste AROS-EXEC forum berichten:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> is de primaire AROS community site. Ontvang hulp, leer wat er speelt in de community, en post uw gedachten over AROS.<br><br>
+   <a href=https://www.arosworld.org/>AROSWorld</a> is de primaire AROS community site. Ontvang hulp, leer wat er speelt in de community, en post uw gedachten over AROS.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">

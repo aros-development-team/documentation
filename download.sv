@@ -4,12 +4,12 @@ Nerladdning
 
 .. Note::
 
-   Om du vill **testa AROS** så rekommenderar vi att du laddar ner
-   **distributioner**, vilka är fullt utrustade och testade AROS-paket.
-   "Nightly builds" (nattkompilationer), som du hittar längst ner, är enbart
-   till för utvecklare och testare. Nightly builds är inte enkla att använda,
-   är inte alltid stabila och de saknar de flesta program som en vanlig
-   användare troligen skulle efterfråga.
+   Om du vill **testa AROS** sï¿½ rekommenderar vi att du laddar ner
+   **distributioner**, vilka ï¿½r fullt utrustade och testade AROS-paket.
+   "Nightly builds" (nattkompilationer), som du hittar lï¿½ngst ner, ï¿½r enbart
+   till fï¿½r utvecklare och testare. Nightly builds ï¿½r inte enkla att anvï¿½nda,
+   ï¿½r inte alltid stabila och de saknar de flesta program som en vanlig
+   anvï¿½ndare troligen skulle efterfrï¿½ga.
 
 
 .. Contents::
@@ -23,13 +23,13 @@ Icaros Desktop LIVE!
 .. image:: /images/icaroslive_logo.png
    :align: left
 
-`Icaros`__ är en välfylld distribution riktad till kraftfullare
-skrivbordsdatorer. Den kan antingen köras via en Live DVD (eller CD för den
-nedbantade versionen) utan att installeras på din dator (den måste dock
-fortfarande ha AROS-stödd hårdvara), via en datorsimulator som VMWare eller
-`VirtualBox`__ eller så kan man installera den på en hårddisk. Den kan även
-installeras parallellt med andra OS som Microsoft Windows på en egen partition
-(kräver kunskap i GRUB). Inkluderas gör även en användarhandbok i PDF-format.
+`Icaros`__ ï¿½r en vï¿½lfylld distribution riktad till kraftfullare
+skrivbordsdatorer. Den kan antingen kï¿½ras via en Live DVD (eller CD fï¿½r den
+nedbantade versionen) utan att installeras pï¿½ din dator (den mï¿½ste dock
+fortfarande ha AROS-stï¿½dd hï¿½rdvara), via en datorsimulator som VMWare eller
+`VirtualBox`__ eller sï¿½ kan man installera den pï¿½ en hï¿½rddisk. Den kan ï¿½ven
+installeras parallellt med andra OS som Microsoft Windows pï¿½ en egen partition
+(krï¿½ver kunskap i GRUB). Inkluderas gï¿½r ï¿½ven en anvï¿½ndarhandbok i PDF-format.
 
 __ http://live.icarosdesktop.org/
 __ https://www.virtualbox.org/
@@ -41,9 +41,9 @@ AspireOS
 .. image:: /images/aspireos_logo.png
    :align: left
 
-`AspireOS`__ är en resurseffektiv distribution, ursprungligen gjord med
-netbooks såsom Acer Aspire One i åtanke. Dess filosofi är att vara så simpel
-och nerbantad som möjligt. Alla inkluderade program är väl testade.
+`AspireOS`__ ï¿½r en resurseffektiv distribution, ursprungligen gjord med
+netbooks sï¿½som Acer Aspire One i ï¿½tanke. Dess filosofi ï¿½r att vara sï¿½ simpel
+och nerbantad som mï¿½jligt. Alla inkluderade program ï¿½r vï¿½l testade.
 
 __ https://www.aspireos.com/
 
@@ -51,8 +51,8 @@ __ https://www.aspireos.com/
 AROS Broadway
 -------------
 
-`AROS Broadway`__ är den distribution som medföljer ARES-datorerna som
-standard, men det fungerar lika på på andra AROS-kompatibla datorer.
+`AROS Broadway`__ ï¿½r den distribution som medfï¿½ljer ARES-datorerna som
+standard, men det fungerar lika pï¿½ pï¿½ andra AROS-kompatibla datorer.
 
 __ http://www.aros-broadway.de/index.html
 
@@ -60,8 +60,8 @@ __ http://www.aros-broadway.de/index.html
 AROS Vision
 -----------
 
-`AROS Vision`__ är distributionen för M68K-Amigor. För att fungera
-tillfredsställande krävs antingen en kraftig Amiga eller en emulator som
+`AROS Vision`__ ï¿½r distributionen fï¿½r M68K-Amigor. Fï¿½r att fungera
+tillfredsstï¿½llande krï¿½vs antingen en kraftig Amiga eller en emulator som
 Win UAE.
 
 __ http://www.aros-platform.de/download.htm
@@ -71,11 +71,11 @@ __ http://www.aros-platform.de/download.htm
 Snapshots
 =========
 
-`Snapshots`__ är icke regelbundet utgivna och icke automatiserade versioner
-av AROS. De är skapade av utvecklare som av någon anledning inte kan använda
+`Snapshots`__ ï¿½r icke regelbundet utgivna och icke automatiserade versioner
+av AROS. De ï¿½r skapade av utvecklare som av nï¿½gon anledning inte kan anvï¿½nda
 sig av vanliga nightly builds.
 
-Dessa versioner är inte övergivna, så använd den vanliga kanalen för att
+Dessa versioner ï¿½r inte ï¿½vergivna, sï¿½ anvï¿½nd den vanliga kanalen fï¿½r att
 rapportera buggar (`bug tracker`__).
 
 __ snapshots
@@ -87,30 +87,30 @@ Nightly Builds
 ==============
 
 `Nightly builds`__ betyder "nattkompilationer" och, precis som namnet antyder,
-skapas varje kväll direkt från "Subversion tree" och innehåller den senaste
-koden. Men de är inte testade och kan innehålla oförutsedda buggar. Oftast
-fungerar de utmärkt dock.
+skapas varje kvï¿½ll direkt frï¿½n "Subversion tree" och innehï¿½ller den senaste
+koden. Men de ï¿½r inte testade och kan innehï¿½lla ofï¿½rutsedda buggar. Oftast
+fungerar de utmï¿½rkt dock.
 
-Var snäll och rapportera alla buggar du hittar via buggrapportkanalen
-(`bug tracker`__). För andra viktiga ärenden kan du kontakta oss via
-`AROS-Exec`__-forumet.
+Var snï¿½ll och rapportera alla buggar du hittar via buggrapportkanalen
+(`bug tracker`__). Fï¿½r andra viktiga ï¿½renden kan du kontakta oss via
+`AROSWorld`__-forumet.
 
 __ nightly
 __ http://sourceforge.net/p/aros/bugs/
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
 
 Nightly Builds (ABIv1)
 ======================
 
-AROS håller på att övergå till en ny `ABI`__. En egen uppsättning nightly
-builds har skapats för denna experimentella källkod, men `dessa`__ är bara
-användbara för utvecklare som vill hålla sig uppdaterade om ABI-övergången.
-**AVIv1 är inte kompatibel med någon distribution eller AROS-mjukvara från
-AROS Archives eller Aminet.** Användare som vill testa nyheter och buggfixade
-versioner av AROS som ännu inte implementerats i distributionerna bör endast
-använda de vanliga nightly builds.
+AROS hï¿½ller pï¿½ att ï¿½vergï¿½ till en ny `ABI`__. En egen uppsï¿½ttning nightly
+builds har skapats fï¿½r denna experimentella kï¿½llkod, men `dessa`__ ï¿½r bara
+anvï¿½ndbara fï¿½r utvecklare som vill hï¿½lla sig uppdaterade om ABI-ï¿½vergï¿½ngen.
+**AVIv1 ï¿½r inte kompatibel med nï¿½gon distribution eller AROS-mjukvara frï¿½n
+AROS Archives eller Aminet.** Anvï¿½ndare som vill testa nyheter och buggfixade
+versioner av AROS som ï¿½nnu inte implementerats i distributionerna bï¿½r endast
+anvï¿½nda de vanliga nightly builds.
 
 __ http://en.wikipedia.org/wiki/Application_binary_interface
 __ nightly1

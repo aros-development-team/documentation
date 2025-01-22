@@ -1,9 +1,9 @@
 =======================
-Информация для контакта
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 =======================
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright Љ 1995-2006, The AROS Development Team
+:Copyright: Copyright пїЅ 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,7 +11,7 @@
 .. Contents::
 
 
-Ответственное лицо
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 ==================
 
 The main contact person for the AROS Development Team is Aaron "Optimizer"
@@ -22,7 +22,7 @@ You can reach him by sending a mail to `digulla@aros.org`__.
 __ mailto:digulla@aros.org
 
 
-Списки рассылки
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ===============
 
 There are a couple of AROS related mailing lists available, which are the main
@@ -93,18 +93,18 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-bootlogs
 .. _`bug database`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 
 
-Форумы
+пїЅпїЅпїЅпїЅпїЅпїЅ
 ======
 
-AROS-Exec__ is the official community portal for AROS. There you can find the
+AROSWorld__ is the official community portal for AROS. There you can find the
 latest news related to AROS, online discussion forums, picture galleries, and
 much more. It's the perfect meeting place for AROS users from all over the
 world.
 
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
-Каналы IRC 
+пїЅпїЅпїЅпїЅпїЅпїЅ IRC 
 ==========
 
 There is an official IRC channel for AROS, unsurprisingly named `#aros`__, on

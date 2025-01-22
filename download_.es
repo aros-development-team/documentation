@@ -7,18 +7,18 @@ Descargas
 .. Note::
 
    Cuando descargues las nightly builds, debes usar un gestor de descargas que 
-   pueda continuar una descarga interrumpida, o una utilidad de línea de comandos 
+   pueda continuar una descarga interrumpida, o una utilidad de lï¿½nea de comandos 
    como wget (puedes usar "wget -c" para conseguir el resto de un archivo 
    parcialmente descargado por otro programa).
 
-Las instantáneas
+Las instantï¿½neas
 ================
 
-A partir del 1° de marzo de 2007, las Instatáneas (Snapshots) de AROS 
-no estarán más disponibles. En su lugar, animamos a todos quienes quieran 
-probar AROS a que descarguen la más reciente nightly build. AROS está 
-creciendo realmente rápido, y las Instatáneas a menudo contienen código 
-obsoleto. También pensamos que las nightly builds son más útiles desde el 
+A partir del 1ï¿½ de marzo de 2007, las Instatï¿½neas (Snapshots) de AROS 
+no estarï¿½n mï¿½s disponibles. En su lugar, animamos a todos quienes quieran 
+probar AROS a que descarguen la mï¿½s reciente nightly build. AROS estï¿½ 
+creciendo realmente rï¿½pido, y las Instatï¿½neas a menudo contienen cï¿½digo 
+obsoleto. Tambiï¿½n pensamos que las nightly builds son mï¿½s ï¿½tiles desde el 
 punto de vista de una prueba beta: por favor, usen el `bug tracker`__ 
 para informar sobre los errores (bugs).
 
@@ -28,19 +28,19 @@ __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 Las nightly builds
 ==================
 
-Como su nombre implica, las nightly builds se hacen automáticamente cada 
-noche directamente desde el árbol de Subversion y contiene el código más 
+Como su nombre implica, las nightly builds se hacen automï¿½ticamente cada 
+noche directamente desde el ï¿½rbol de Subversion y contiene el cï¿½digo mï¿½s 
 reciente. Sin embargo, no han sido probadas de ninguna manera y pueden contener 
-errores. Aunque la mayoría de las veces, ellas funcionan bien.
+errores. Aunque la mayorï¿½a de las veces, ellas funcionan bien.
 
 Por favor informa de los errores que pudieras descubrir mientras usas 
-estas builds a través del `bug tracker`__. Por cualquier otra necesidad, 
-siéntete en libertad de comunicarte con nosotros a través de los foros de `AROS-Exec`__.
+estas builds a travï¿½s del `bug tracker`__. Por cualquier otra necesidad, 
+siï¿½ntete en libertad de comunicarte con nosotros a travï¿½s de los foros de `AROSWorld`__.
 
 .. raw:: html
 
    <?php virtual( "/cgi-bin/files?type=nightly&lang=es" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
