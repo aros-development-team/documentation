@@ -181,7 +181,7 @@ VM for Linux/FreeBSD
 QEMU on Linux is quite easy to set up. All you need is to apt-get the package
 on Debian/Ubuntu/Knoppix/DSL or use any other package manager for other
 distributions or download and unpack the archive manually. You can get the
-archive from the `QEMU Website <http://fabrice.bellard.free.fr/qemu/>`__.
+archive from the `QEMU Website <https://www.qemu.org/index.html>`__.
 
 Also there's an VMware VM available for Linux. Check the `VMWare website
 <http://www.vmware.com>`__.
@@ -192,7 +192,7 @@ VM for Windows
 
 QEMU on Windows is almost the same thing as on Linux. The difference is in
 networking and some other issues. You can find useful information and packages
-on `QEMU On Windows page <http://www1.interq.or.jp/t-takeda/top.html>`__ .
+on `QEMU On Windows page <https://www.qemu.org/download/#windows>`__ .
 Also there's nice GUI for QEMU called
 `QEMU Manager <http://www.davereyn.co.uk/>`__, including the QEMU and KQEMU
 package. There are also some GUI's for QEMU for some systems, which can be
@@ -860,6 +860,6 @@ interest.
 
 
 .. _Linux: http://www.linux.org/
-.. _UAE:   http://amiga.technology/
+.. _UAE:   https://amiga.technology/uae/
 .. _install: installation
 
