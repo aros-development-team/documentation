@@ -161,7 +161,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                     A
                     (
                         Img( src = '%(ROOT)simages/trustec-small.png', border = 0, alt = 'Trustsec' ),
-                        href = 'http://www.trustsec.de/'
+                        href = 'https://www.trustsec.de/'
                     )
                 )
             ),
@@ -271,9 +271,9 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 Map(
                     name = 'map',
                     contents = [
-                        Area(shape = 'rect', coords = '25,78,85,95',   alt = 'http://www.aros.org', href = 'http://aros.sourceforge.net/'),
+                        Area(shape = 'rect', coords = '25,78,85,95',   alt = 'http://www.aros.org', href = 'https://aros.sourceforge.io/'),
                         Area(shape = 'rect', coords = '100,78,168,95', alt = 'AROS-Exec',           href = 'https://ae.arosworld.org/'),
-                        Area(shape = 'rect', coords = '180,78,240,95', alt = 'AROS-Exec Archives',  href = 'http://archives.aros-exec.org'),
+                        Area(shape = 'rect', coords = '180,78,240,95', alt = 'AROS-Exec Archives',  href = 'https://archives.aros-exec.org/'),
                         Area(shape = 'rect', coords = '260,78,350,95', alt = 'Power2People',        href = 'https://power2people.org/')
                     ]
                 ),
