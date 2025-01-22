@@ -4,7 +4,7 @@
 
 .. Include:: introduction/index-abstract.fi
 
-`Lue lisää ... <introduction/index>`__
+`Lue lisï¿½ï¿½ ... <introduction/index>`__
 
 .. raw:: html
 
@@ -17,7 +17,7 @@
 
 .. Include:: download-abstract.en
 
-`Lue lisää ... <download>`__
+`Lue lisï¿½ï¿½ ... <download>`__
 
 .. raw:: html
 
@@ -64,7 +64,7 @@
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
    Latest AROS-EXEC forum posts:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href="https://ae.amigalife.org">AROS-EXEC</a> is the AROS primary community site. Get help with AROS, find out what is happening in the community, and post your thoughts.<br><br>
+   <a href="https://www.arosworld.org/">AROSWorld</a> is the AROS primary community site. Get help with AROS, find out what is happening in the community, and post your thoughts.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">

@@ -6,41 +6,41 @@ Descarregar
 
 .. Note::
 
-   Quando descarregar construções nocturnas (nightly builds), terá que usar um gestor de descargas
-   que possa continuar uma descarga interrompida, ou um utilitário de linha de comando como
-   wget (poderá usar "wget -c" para obter o resto de um ficheiro parcialmente
+   Quando descarregar construï¿½ï¿½es nocturnas (nightly builds), terï¿½ que usar um gestor de descargas
+   que possa continuar uma descarga interrompida, ou um utilitï¿½rio de linha de comando como
+   wget (poderï¿½ usar "wget -c" para obter o resto de um ficheiro parcialmente
    descarregado por outro programa).
 
 Snapshots
 =========
 
-A partir do 1º de Março de 2007, Snapshots do AROS não estarão mais disponíveis.
-Nós gostariamos de encorajar todos os que gostariam de experimentar O AROS a descarregar a
-última construção nocturna (nightly build). AROS está a crescer realmente rápido, e 
-Snapshots regularmente contém código obsuleto. Nós achamos que as construções nocturnas 
-(nightly builds) são mais úteis do ponto de vista do teste à versão experimental (Beta): por favor
+A partir do 1ï¿½ de Marï¿½o de 2007, Snapshots do AROS nï¿½o estarï¿½o mais disponï¿½veis.
+Nï¿½s gostariamos de encorajar todos os que gostariam de experimentar O AROS a descarregar a
+ï¿½ltima construï¿½ï¿½o nocturna (nightly build). AROS estï¿½ a crescer realmente rï¿½pido, e 
+Snapshots regularmente contï¿½m cï¿½digo obsuleto. Nï¿½s achamos que as construï¿½ï¿½es nocturnas 
+(nightly builds) sï¿½o mais ï¿½teis do ponto de vista do teste ï¿½ versï¿½o experimental (Beta): por favor
 use o `bug tracker`__ para reportar erros.
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 
 
 
-Construções Nocturnas (Nightly builds)
+Construï¿½ï¿½es Nocturnas (Nightly builds)
 ======================================
 
-Construções Nocturnas são feitas, como o nome indica, automáticamente todas as noites 
-directamente da árvore do Subversion e contém os últimos códigos. Contudo, 
-estes não foram testados sobe qualquer forma e poderão conter erros. Na maior parte 
+Construï¿½ï¿½es Nocturnas sï¿½o feitas, como o nome indica, automï¿½ticamente todas as noites 
+directamente da ï¿½rvore do Subversion e contï¿½m os ï¿½ltimos cï¿½digos. Contudo, 
+estes nï¿½o foram testados sobe qualquer forma e poderï¿½o conter erros. Na maior parte 
 do tempo eles funcionam muito bem.
 
-Por favor informe erros que possa encontrar enquanto usa estas construções pelo
+Por favor informe erros que possa encontrar enquanto usa estas construï¿½ï¿½es pelo
 `bug tracker`__. Para qualquer outra necessidade, por favor sinta-se livre para nos contactar
-pelos foruns `AROS-Exec`__ .
+pelos foruns `AROSWorld`__ .
 
 .. raw:: html
 
    <?php virtual( "/cgi-bin/files?type=nightly&lang=pt" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 

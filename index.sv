@@ -4,7 +4,7 @@
 
 .. Include:: introduction/index-abstract.sv
 
-`Läs mer... <introduction/index>`__
+`Lï¿½s mer... <introduction/index>`__
 
 .. raw:: html
 
@@ -17,7 +17,7 @@
 
 .. Include:: download-abstract.sv
 
-`Läs mer... <download>`__
+`Lï¿½s mer... <download>`__
 
 .. raw:: html
 
@@ -50,21 +50,21 @@
    <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
    else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Direct Downloads:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Nightly builds skapas automatiskt varje natt, direkt från den senaste källkoden. Om du vill prova en AROS live CD, ladda ner "boot ISO" för din plattform (i386 or PPC).<br><br>
+   Nightly builds skapas automatiskt varje natt, direkt frï¿½n den senaste kï¿½llkoden. Om du vill prova en AROS live CD, ladda ner "boot ISO" fï¿½r din plattform (i386 or PPC).<br><br>
    <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
    Latest ARCHIVE submissions:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   På <a href=http://archives.aros-exec.org>The AROS archives</a> hittar du det nyaste materialet för AROS, här hittar du program, teman, grafik och ytterligare dokumentation.<br><br>
+   Pï¿½ <a href=http://archives.aros-exec.org>The AROS archives</a> hittar du det nyaste materialet fï¿½r AROS, hï¿½r hittar du program, teman, grafik och ytterligare dokumentation.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Senaste inläggen på AROS-EXEC forumet:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> är den primära AROS community-sidan. Här kan du få hjälp, hålla koll på vad som händer inom AROS-världen och posta dina tankar om AROS.<br><br>
+   Senaste inlï¿½ggen pï¿½ AROS-EXEC forumet:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://www.arosworld.org/>AROSWorld</a> ï¿½r den primï¿½ra AROS community-sidan. Hï¿½r kan du fï¿½ hjï¿½lp, hï¿½lla koll pï¿½ vad som hï¿½nder inom AROS-vï¿½rlden och posta dina tankar om AROS.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">

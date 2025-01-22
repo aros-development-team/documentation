@@ -8,39 +8,39 @@ Lataus
 Snapshotit
 ==========
 
-Tilannekuvia (nk. snapshotteja) julkaistaan tiheämmin kuin täysiä versioita,
-mutta harvemmin kuin öisiä käännöksiä. Toisin kuin öisiä käännöksiä, on näitä
-testattu ainakin ohimennen muutamissa ympäristöissä, joten yleisesti ottaen
-näiden tulisi olla vakaampia. Mutta toisaalta, mukana ei ole viimeisintä
+Tilannekuvia (nk. snapshotteja) julkaistaan tiheï¿½mmin kuin tï¿½ysiï¿½ versioita,
+mutta harvemmin kuin ï¿½isiï¿½ kï¿½ï¿½nnï¿½ksiï¿½. Toisin kuin ï¿½isiï¿½ kï¿½ï¿½nnï¿½ksiï¿½, on nï¿½itï¿½
+testattu ainakin ohimennen muutamissa ympï¿½ristï¿½issï¿½, joten yleisesti ottaen
+nï¿½iden tulisi olla vakaampia. Mutta toisaalta, mukana ei ole viimeisintï¿½
 koodia.
 
-Raportoi näitä käyttäessäsi löytämäsi viat `vikaseurannan`__ kautta. Muissa
-tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
+Raportoi nï¿½itï¿½ kï¿½yttï¿½essï¿½si lï¿½ytï¿½mï¿½si viat `vikaseurannan`__ kautta. Muissa
+tarpeissa ota meihin yhteyttï¿½ `AROSWorld`__:in kautta.
 
 .. raw:: html
 
    <?php virtual( "/cgi-bin/files?type=snapshots&lang=fi" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
 
-Öiset käännökset
+ï¿½iset kï¿½ï¿½nnï¿½kset
 ================
 
-Öiset käännökset tehdään, kuten nimestä näkyy, automaattisesti joka yö suoraan
-Subversion-puusta ja ne sisältävät uusinta koodia. Koska näitä ei ole
-kuitenkaan testattu missään muodossa, saattavat öiset käännökset huonolla
-tuurilla sisältää toimimatonta ja/tai erittäin bugista koodia. Suurimman osan
+ï¿½iset kï¿½ï¿½nnï¿½kset tehdï¿½ï¿½n, kuten nimestï¿½ nï¿½kyy, automaattisesti joka yï¿½ suoraan
+Subversion-puusta ja ne sisï¿½ltï¿½vï¿½t uusinta koodia. Koska nï¿½itï¿½ ei ole
+kuitenkaan testattu missï¿½ï¿½n muodossa, saattavat ï¿½iset kï¿½ï¿½nnï¿½kset huonolla
+tuurilla sisï¿½ltï¿½ï¿½ toimimatonta ja/tai erittï¿½in bugista koodia. Suurimman osan
 ajasta ne kuitenkin toimivat moitteetta.
 
-Raportoi näitä käyttäessäsi löytämäsi viat `vianseurannan`__ välityksellä.
-Muissa tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
+Raportoi nï¿½itï¿½ kï¿½yttï¿½essï¿½si lï¿½ytï¿½mï¿½si viat `vianseurannan`__ vï¿½lityksellï¿½.
+Muissa tarpeissa ota meihin yhteyttï¿½ `AROSWorld`__:in kautta.
 
 .. raw:: html
 
    <?php virtual( "/cgi-bin/files?type=nightly&lang=fi" ); ?>
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ https://ae.amigalife.org/
+__ https://www.arosworld.org/
 
