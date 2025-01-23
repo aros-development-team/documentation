@@ -25,50 +25,6 @@ Distributions
    <table style="width: 80%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="2" cellspacing="0">
 
    <tr><td colspan=2>
-   <h1>Icaros Desktop LIVE!<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   </td></tr>
-   <tr>
-   <td style="background-color: #ffffff;"><img alt="icaros-logo" src="/images/icaroslive_logo.png"></td>
-   <td><a href="http://vmwaros.blogspot.com/p/download.html">Icaros Desktop LIVE!</a> is a complete distribution of the AROS desktop
-   operating system for x86 based PC's. It comes on a bootable live DVD-ROM or CD-ROM that runs directly on your
-   PC (its hardware components must already be supported by AROS) or in a virtual machine such as
-   <a href="https://www.vmware.com/uk/products/workstation-player.html">VMWare</a> or 
-   <a href="https://www.virtualbox.org/">VirtualBox</a>. It can be installed on the hard drive and can coexist with
-   installed OSes such as Microsoft Windows, in a dedicated partition. A quick reference guide and some AROS PDF manuals
-   are included.</td>
-   </tr>
-
-   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
-   <tr><td colspan=2>
-   <h1>AspireOS<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   </td></tr>
-   <tr>
-   <td style="background-color: #ffffff;"><img alt="aspireos-logo" src="/images/aspireos_logo.png"></td>
-   <td><a href="https://sites.google.com/site/arosaspireone/">AspireOS</a> is a lightweight distribution, originally
-   designed for x86 based netbooks such as the Acer Aspire One. It tries to keep things as simple as possible. The
-   programs included are well tested.</td>
-   </tr>
-   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
-   <tr><td colspan=2>
-   <h1>AROS Broadway<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   </td></tr>
-   <tr>
-   <td style="background-color: #ffffff;"></td>
-   <td><a href="http://www.aros-broadway.de/index.html">AROS Broadway</a> is a native AROS distribution, built for the
-   'ARES' Computer line. This distribution should also work on any AROS compatible PC.</td>
-   </tr>
-   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
-   <tr><td colspan=2>
-   <h1>AROS Vision<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   </td></tr>
-   <tr>
-   <td style="background-color: #ffffff;"></td>
-   <td>The <a href="http://www.aros-platform.de/download.htm">AROS Vision</a> distribution is targeted at real M68k Amigas.
-   For the best experience, a powerful Amiga or an emulator such as WinUAE is recommended.</td>
-   </tr>
-   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
-
-   <tr><td colspan=2>
    <h1>AROS One<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
    </td></tr>
    <tr>
@@ -83,8 +39,44 @@ Distributions
    </td></tr>
    <tr>
    <td style="background-color: #ffffff;"><img alt="tinyaros logo" src="/images/tinyaros_logo.jpg"></td>
-   <td><a href="http://tinyaros.flazio.com">Tiny AROS</a> is distribution for x86 systems based on ABIv0 that looks like the workbench 3.1.
+   <td><a href="http://www.tinyaros.it/">Tiny AROS</a> is distribution for x86 systems based on ABIv0 that looks like the workbench 3.1.
    It installs in a few minutes but contains all the relevant software of the current scene. You can download extra packages separately.</td>
+   </tr>
+
+   <tr><td colspan=2>
+   <h1>Icaros Desktop LIVE!<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td style="background-color: #ffffff;"><img alt="icaros-logo" src="/images/icaroslive_logo.png"></td>
+   <td><a href="http://vmwaros.blogspot.com/p/download.html">Icaros Desktop LIVE!</a> is a complete distribution of the AROS desktop
+   operating system for x86 based PC's. It comes on a bootable live DVD-ROM or CD-ROM that runs directly on your
+   PC (its hardware components must already be supported by AROS) or in a virtual machine such as
+   <a href="https://www.vmware.com/">VMWare</a> or 
+   <a href="https://www.virtualbox.org/">VirtualBox</a>. It can be installed on the hard drive and can coexist with
+   installed OSes such as Microsoft Windows, in a dedicated partition. A quick reference guide and some AROS PDF manuals
+   are included.</td>
+   </tr>
+
+   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
+   <tr><td colspan=2>
+   <h1>AROS Vision<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td style="background-color: #ffffff;"></td>
+   <td>The <a href="https://www.aros-vision.de/">AROS Vision</a> distribution is targeted at real M68k Amigas.
+   For the best experience, a powerful Amiga or an emulator such as WinUAE is recommended.</td>
+   </tr>
+   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
+
+   <tr><td style="background-color: #ffffff;" colspan=2>&nbsp;</td></tr>
+   <tr><td colspan=2>
+   <h1>AspireOS<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   </td></tr>
+   <tr>
+   <td style="background-color: #ffffff;"><img alt="aspireos-logo" src="/images/aspireos_logo.png"></td>
+   <td><a href="https://sites.google.com/site/arosaspireone/">AspireOS</a> is a lightweight distribution, originally
+   designed for x86 based netbooks such as the Acer Aspire One. It tries to keep things as simple as possible. The
+   programs included are well tested.</td>
    </tr>
 
    </table>
