@@ -136,7 +136,7 @@ def makePictures():
                     continue
 
                 outstr = '\n<div class="gallerygroup">\n<a name=%s>\n' % name
-                output += outstr.encode("ascii")
+                output += outstr
                 output += convertWWW(pathAltLang('overview', lang, path), lang, options)
 
                 pictureNames = os.listdir(path)
@@ -154,10 +154,10 @@ def makePictures():
                         convertWWW(pathAltLang(os.path.splitext(picturePath)[0], lang),
                                    lang, options), lang
                     )
-                    output += outstr.encode("ascii")
+                    output += outstr
 
                 outstr = '</a>\n</div>\n'
-                output += outstr.encode("ascii")
+                output += outstr
 
             if lang == DEFAULTLANG:
                 strings = {
@@ -324,7 +324,7 @@ def convertWWW(src, language, options=None):
     return ''.join(
         publisher.writer.body_pre_docinfo +
         publisher.writer.body
-    ).encode(encoding)
+    )
 
 
 # processWWW
