@@ -2,13 +2,13 @@ Sponsors
 ========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 
-Les compagines suivantes, organisations et individus ont contribué:
+Les compagines suivantes, organisations et individus ont contribuÃ©:
 
 + Trustec__
    
@@ -16,9 +16,9 @@ Les compagines suivantes, organisations et individus ont contribué:
      
      <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
-  Les personnes sympa de Trustec donnent l'espace et la bande passante nécessaire
+  Les personnes sympa de Trustec donnent l'espace et la bande passante nÃ©cessaire
   au serveur d'AROS, au serveur CVS, au serveur FTP et aux nombreuses mailing lists.
-  Si vous avez besoin d'un développement sous Java en Allemagne, contactez-les !
+  Si vous avez besoin d'un dÃ©veloppement sous Java en Allemagne, contactez-les !
 
 + Genesi__
 
@@ -26,8 +26,8 @@ Les compagines suivantes, organisations et individus ont contribué:
   
      <a href="http://www.pegasosppc.com/"><img border="0" src="/images/genesi.gif"></a>
 
-  Genesi a généreusement doné une carte mère PegasOS, dans un effort de fournir
-  AROS à cette plateforme. Merci !
+  Genesi a gÃ©nÃ©reusement donÃ© une carte mÃ¨re PegasOS, dans un effort de fournir
+  AROS Ã  cette plateforme. Merci !
 
 + SourceForge__
 
@@ -36,14 +36,14 @@ Les compagines suivantes, organisations et individus ont contribué:
      <a href="http://www.sourceforge.net/"><img border="0" src="/images/sourceforge.png"></a>
 
   Sourceforge fournit plusieurs services tels qu'un serveur web avec des
-  extensions de scripts et des bases de données SQL, des mailing lists,
-  une base de donnée des bugs, et un system de distribution de fichiers.
+  extensions de scripts et des bases de donnÃ©es SQL, des mailing lists,
+  une base de donnÃ©e des bugs, et un system de distribution de fichiers.
 
 + Yann Vernier
 + Randal Vice
 
 
-Les organisations suivantes et individus ont sponsorisé le développement:
+Les organisations suivantes et individus ont sponsorisÃ© le dÃ©veloppement:
 
 + `Team AROS`__
 + `Norsk Amigaforening`__
@@ -58,7 +58,7 @@ Les organisations suivantes et individus ont sponsorisé le développement:
 + Rune Jensen
 + Joshua Dolan
 + Matthew Parsons
-+ Jean-Pierre Rivière
++ Jean-Pierre RiviÃ¨re
 
 __ http://www.trustsec.de/
 __ http://www.pegasosppc.com/

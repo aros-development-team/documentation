@@ -1,9 +1,9 @@
 ==========================
-Courte introduction à AROS
+Courte introduction Ã  AROS
 ==========================
 
 :Authors:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Almost finished, I think...
@@ -15,59 +15,59 @@ Courte introduction à AROS
 Objectifs
 =========
 
-Les objectifs du projet AROS sont de créer un OS qui:
+Les objectifs du projet AROS sont de crÃ©er un OS qui:
 
 1. est compatible autant que possible avec AmigaOS 3.1.
 
-2. peut être porté à différents types de configurations matérielles et processeurs
+2. peut Ãªtre portÃ© Ã  diffÃ©rents types de configurations matÃ©rielles et processeurs
    comme le x86, PowerPC, Alpha, Sparc, HPPA, etc.
 
-3. devrait être compatible au niveau binaire exécutable et dans les codes
-   source avec les autres configurations matérielles.
+3. devrait Ãªtre compatible au niveau binaire exÃ©cutable et dans les codes
+   source avec les autres configurations matÃ©rielles.
   
-4. doit pouvoir démarrer d'une façon autonome qui s'initialise à partir du disque
-   dur et comme émulation qui ouvre une fenêtre sur un OS existant pour développer
-   des logiciels et pour lancer des applications Amiga et natives en même temps.
+4. doit pouvoir dÃ©marrer d'une faÃ§on autonome qui s'initialise Ã  partir du disque
+   dur et comme Ã©mulation qui ouvre une fenÃªtre sur un OS existant pour dÃ©velopper
+   des logiciels et pour lancer des applications Amiga et natives en mÃªme temps.
 
-5. Améliorer les contionnalités d'AmigaOS.
+5. AmÃ©liorer les contionnalitÃ©s d'AmigaOS.
 
 Pour atteindre ce but, nous employons un certain nombre de techniques. Tout d'abord, 
-nous avons une utilisation massive d'Internet. Vous pouvez participer à notre projet 
-même si vous ne pouvez écrire qu'une simple fonction d'OS. La version en cours de
-la source est accessible 24/24 tous les jours et les patches correctifs peuvent être 
-fusionnées à tout moment. Une petite base de données où sont répertoriées les tâches
+nous avons une utilisation massive d'Internet. Vous pouvez participer Ã  notre projet 
+mÃªme si vous ne pouvez Ã©crire qu'une simple fonction d'OS. La version en cours de
+la source est accessible 24/24 tous les jours et les patches correctifs peuvent Ãªtre 
+fusionnÃ©es Ã  tout moment. Une petite base de donnÃ©es oÃ¹ sont rÃ©pertoriÃ©es les tÃ¢ches
 assure que le travail n'est pasfait en double. 
 
 
 Historique
 ==========
 
-Il y a quelques années, en 1993, la situation de l'Amiga était vue quelque peu
-pire que d'habitude et quelques fan d'Amiga se réunirent et discutère de ce qui
-devrait être fait pour promouvoir de notre machine bien aimée. Immédiatement,
-la raison principale de l'absence de succès de l'Amiga est devenue claire :
-c'était la propagation, ou plutôt son manque. L'Amiga devrait obtenir une base
-plus étendue pour la rendre plus attrayante, afin que chacun l'emploie et
-développe dessus. Ainsi des plans ont été faits pour atteindre ce but. Un des
-objectifs était de fixer les bugs de l'AmigaOS, un autre était de rendre ce
-système d'exdploitation plus moderne. Le projet AOS était né.
+Il y a quelques annÃ©es, en 1993, la situation de l'Amiga Ã©tait vue quelque peu
+pire que d'habitude et quelques fan d'Amiga se rÃ©unirent et discutÃ¨re de ce qui
+devrait Ãªtre fait pour promouvoir de notre machine bien aimÃ©e. ImmÃ©diatement,
+la raison principale de l'absence de succÃ¨s de l'Amiga est devenue claire :
+c'Ã©tait la propagation, ou plutÃ´t son manque. L'Amiga devrait obtenir une base
+plus Ã©tendue pour la rendre plus attrayante, afin que chacun l'emploie et
+dÃ©veloppe dessus. Ainsi des plans ont Ã©tÃ© faits pour atteindre ce but. Un des
+objectifs Ã©tait de fixer les bugs de l'AmigaOS, un autre Ã©tait de rendre ce
+systÃ¨me d'exdploitation plus moderne. Le projet AOS Ã©tait nÃ©.
 
-Mais exactement qu'est ce qu'était un bug ? Et comment les bugs devraient-ils
-être fixés ? Quels sont les dispositifs qu'un OS *modern* doit avoir ? Et
-comment doivent-ils être mis en place dans l'AmigaOS ?
+Mais exactement qu'est ce qu'Ã©tait un bug ? Et comment les bugs devraient-ils
+Ãªtre fixÃ©s ? Quels sont les dispositifs qu'un OS *modern* doit avoir ? Et
+comment doivent-ils Ãªtre mis en place dans l'AmigaOS ?
 
-Deux ans après, les gens argumentaient toujours sur ce sujet et aucune ligne de
-code n'avait été écrite (ou du moins, personne n'avait jamais vu de code). Les
-discussions étaient toujours du type où quelqu'un déclarait "nous devons avoir..."
-et quelqu'un répondait "lis les anciens messages" ou "c'est impossible à faire,
-parce que..." qui a était suivi de "tu as tord car..." et ainsi de suite.
+Deux ans aprÃ¨s, les gens argumentaient toujours sur ce sujet et aucune ligne de
+code n'avait Ã©tÃ© Ã©crite (ou du moins, personne n'avait jamais vu de code). Les
+discussions Ã©taient toujours du type oÃ¹ quelqu'un dÃ©clarait "nous devons avoir..."
+et quelqu'un rÃ©pondait "lis les anciens messages" ou "c'est impossible Ã  faire,
+parce que..." qui a Ã©tait suivi de "tu as tord car..." et ainsi de suite.
 
 Pendant l'hiver de 1995, Aaron Digulla en eu assez de cette situation et envoya
-un RFC (Request For Comments) à la mailing list d'AOS dans laquelle il demanda
-ce que devait être la base minimale commune. Plusieurs options eurent été données
+un RFC (Request For Comments) Ã  la mailing list d'AOS dans laquelle il demanda
+ce que devait Ãªtre la base minimale commune. Plusieurs options eurent Ã©tÃ© donnÃ©es
 et la conclusion fut que presque chacun voulait voir un OS libre et compatible
 avec AmigaOS 3.1 (Kickstart 40.68) sur lequel d'autres discussions pourraient
-être basées, pour voir ce qui est possible et ce qui n'est pas.
+Ãªtre basÃ©es, pour voir ce qui est possible et ce qui n'est pas.
 
-Ainsi le travail commença et AROS naquit.
+Ainsi le travail commenÃ§a et AROS naquit.
 

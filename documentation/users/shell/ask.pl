@@ -9,7 +9,7 @@
 Ask
 ===
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	PROMPT/A
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -29,9 +29,9 @@ Funkcja
 ~~~~~~~~
 ::
 
-	Oczekuje od uøytkownika na wej∂cie. Moøliwymi wej∂ciamu s±
-	y dla yes (tak) i n lub Return dla no (nie). Wybieraj±c y
-	zwracany jest kod b≥Ídu 5.
+	Oczekuje od u≈ºytkownika na wej≈õcie. Mo≈ºliwymi wej≈õciamu sƒÖ
+	y dla yes (tak) i n lub Return dla no (nie). WybierajƒÖc y
+	zwracany jest kod b≈Çƒôdu 5.
 
 
 Parametry
@@ -39,10 +39,10 @@ Parametry
 ::
 
 
-	PROMPT	--	ci±g jest wy∂wietlany w oknie
+	PROMPT	--	ciƒÖg jest wy≈õwietlany w oknie
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

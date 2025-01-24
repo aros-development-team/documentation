@@ -15,18 +15,18 @@ Le nightly builds della versione PPC-hosted di AROS sono finalmente
 disponibili nella nostra pagina dei `download`__.
 
 Christoph Szczecina ha aggiunto un supporto iniziale alla copia dei 
-file per mezzo del drag'n'drop, rendendo Wanderer un filino pi˘ 
-usabile. Questa aggiunta Ë del tutto preliminare e permette di 
-copiare un singolo file per volta tra due directory, ma Ë gi‡ un
+file per mezzo del drag'n'drop, rendendo Wanderer un filino pi√π 
+usabile. Questa aggiunta √® del tutto preliminare e permette di 
+copiare un singolo file per volta tra due directory, ma √® gi√† un
 importante passo avanti. Chi vuole sperimentare questa aggiunta
-puÚ farlo scaricando una delle ultime nightly build. Altri 
-programmatori hanno poi aggiunto la possibilit‡ di vedere le icone 
+pu√≤ farlo scaricando una delle ultime nightly build. Altri 
+programmatori hanno poi aggiunto la possibilit√† di vedere le icone 
 come elenco e di salvare la posizione delle finestre.
 
 Staf Verhaegen sta aggiornando la documentazione per i programmatori. 
 Molte cose sono cambiate negli ultimi ventiquattro mesi, e la nostra 
 manualistica cominciava a essere un po' obsoleta. Ma, grazie a Staf, 
-chi vuole avvicinarsi alla programmazione di/su AROS puÚ contare su 
+chi vuole avvicinarsi alla programmazione di/su AROS pu√≤ contare su 
 strumenti migliori, a partire da questo sito.
 
 Grazie a Bernd Roesch e Georg Steger, tutte le funzioni necessarie 
@@ -42,7 +42,7 @@ AROS in the news
 
 OSNews ha pubblicato un `articolo`__ sui problemi che circondano la 
 ri-generazione di vecchi sistemi operativi, prendendo come esempio le 
-due piattaforme AMIGA e OS/2. Una delle soluzioni contemplate Ë 
+due piattaforme AMIGA e OS/2. Una delle soluzioni contemplate √® 
 proprio AROS.
 
 The AROS Show ha intervistato il nostro project-leader Aaron Digulla.
@@ -55,19 +55,19 @@ Software
 --------
 
 *AutoDocReader*, un software per la lettura di documentazione in 
-formato autodoc Ë stato portato su AROS. Anche *AmiGG* 0.44.3 Ë stato 
+formato autodoc √® stato portato su AROS. Anche *AmiGG* 0.44.3 √® stato 
 convertito, da Marcin Kielesinski. Si tratta del primo Instant 
 Messenger per AROS, e supporta due protocolli molto famosi in 
-Polonia: Gadu-Gadu e Tlen. AmiGG puÚ anche notificare la presenza di 
+Polonia: Gadu-Gadu e Tlen. AmiGG pu√≤ anche notificare la presenza di 
 nuovi messaggi nella casella di posta elettronica. Potete trovare due 
-screenshots `qui`__ e `qui`__, mentre il file binario Ë `qui`__.
+screenshots `qui`__ e `qui`__, mentre il file binario √® `qui`__.
 
-*Murks!* Ë un ambiente di sviluppo integrato (IDE) per AROS. Murks! 
+*Murks!* √® un ambiente di sviluppo integrato (IDE) per AROS. Murks! 
 usa lo stesso Project File Format di AmiDevCpp e per tanto 
-l'interscambio dei dati Ë assicurato. Per usare Murks!, dovete avere 
+l'interscambio dei dati √® assicurato. Per usare Murks!, dovete avere 
 gcc per AROS native installato sul sistema. Gli utenti di Windows 
 possono provare Murks! grazie all'ultima versione di WinAros 
-che gi‡ contiene gcc. Tutti i link del caso si trovano su `AROS-
+che gi√† contiene gcc. Tutti i link del caso si trovano su `AROS-
 EXEC`__.
 
 __ http://ministerq.integradesign.org/31.PNG

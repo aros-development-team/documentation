@@ -2,8 +2,8 @@
 Recursos de Usuario
 ===================
 
-+ `Cómo instalar`__
-+ `Cómo usar`__
++ `CÃ³mo instalar`__
++ `CÃ³mo usar`__
 + `Los comandos del Shell`__
 + `Aplicaciones`__
 + `FAQ`__

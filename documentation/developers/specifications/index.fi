@@ -3,16 +3,16 @@ Spesifikaatiot
 ==============
 
 :Author:    Adam Chodorowski
-:Copyright: Copyright © 2001-2003, The AROS Development Team
+:Copyright: Copyright ¬© 2001-2003, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
-T‰‰lt‰ lˆyd‰t AROS Development Team:in julkaisemat viralliset spesifikaatiot.
-N‰m‰ dokumentoivat menettelytavat joita j‰rjestelm‰yst‰v‰llisten ohjelmien
-tulee noudattaa, laajennukset alkuper‰iseen AmigaOS API:in ja muut
+T√§√§lt√§ l√∂yd√§t AROS Development Team:in julkaisemat viralliset spesifikaatiot.
+N√§m√§ dokumentoivat menettelytavat joita j√§rjestelm√§yst√§v√§llisten ohjelmien
+tulee noudattaa, laajennukset alkuper√§iseen AmigaOS API:in ja muut
 AROS-spesifiset tekniset yksityiskohdat.
 
-T‰ll‰ hetkell‰ ei lopullisia spesifikaatioita ole viel‰ julkaistu, mutta
+T√§ll√§ hetkell√§ ei lopullisia spesifikaatioita ole viel√§ julkaistu, mutta
 useita ehdotelmia on tarjolla keskustelua varten.
 
 
@@ -20,9 +20,9 @@ Ehdotukset
 ==========
 
 Alla linkitetyt dokumentit ovat spesifikaatiehdotuksia ja ne tulevat
-sellaisenaan todenn‰kˆisesti muuttumaan ennen kuin ne hyv‰ksyt‰‰n
-virallisiksi. Ne saattavat olla myˆs vanhentuneita jos parempi toteutustapa on
-lˆytynyt joka ei v‰ltt‰m‰tt‰ vastaa t‰m‰n hetken toteutusta.
+sellaisenaan todenn√§k√∂isesti muuttumaan ennen kuin ne hyv√§ksyt√§√§n
+virallisiksi. Ne saattavat olla my√∂s vanhentuneita jos parempi toteutustapa on
+l√∂ytynyt joka ei v√§ltt√§m√§tt√§ vastaa t√§m√§n hetken toteutusta.
 
 + `The AROS filesystem interface <drafts/filesystem-interface>`__
 + `Home directories <drafts/home-directories>`__

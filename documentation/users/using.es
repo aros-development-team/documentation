@@ -1,5 +1,5 @@
 ==============================
-GuÌa para los Usuarios de AROS
+Gu√≠a para los Usuarios de AROS
 ==============================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Sergey Mineychev
@@ -10,77 +10,77 @@ GuÌa para los Usuarios de AROS
 
 .. Warning::
 
-   °Este documento est· en curso! Es muy probable que algunas partes
-   contengan informaciÛn incorrecta o simplemente falten.
+   ¬°Este documento est√° en curso! Es muy probable que algunas partes
+   contengan informaci√≥n incorrecta o simplemente falten.
    Si quieres ayudar a rectificar esto, por favor ponte en contacto
    con nosotros.
 
 .. Contents::
 
-IntroducciÛn
+Introducci√≥n
 ============
 
-Esta es la GuÌa para el Usuario del Sistema Operativo de InvestigaciÛn AROS. 
-Es para *todos* los que tengan interÈs en AROS ya que intenta proporcionar 
-la informaciÛn sobre AROS en diferentes niveles de adelanto. IntentarÈ cubrir 
+Esta es la Gu√≠a para el Usuario del Sistema Operativo de Investigaci√≥n AROS. 
+Es para *todos* los que tengan inter√©s en AROS ya que intenta proporcionar 
+la informaci√≥n sobre AROS en diferentes niveles de adelanto. Intentar√© cubrir 
 todo en profundidad, pero de un modo que no necesites aprender lo que no 
 *quieras* aprender.
 
-øQuiÈn deberÌa leer esta guÌa?
+¬øQui√©n deber√≠a leer esta gu√≠a?
 ------------------------------
 
-Esta guÌa te ayudar· a habituarte a AROS. Est· escrita para todos los 
-interesados en AROS. Ten presente que est·s usando software que est· en etapa
-BETA y en investigaciÛn. En este momento es divertido para jugar y brillante para
-programar. Entonces espero que tu interÈs en AROS se explique por una de estas 
-dos razones. Si llegaste aquÌ pensando que AROS es un OS Multimedia listo para
-Internet, etc., bueno, podrÌas estar en lo correcto, pero ---no est· finalizado---,
-asÌ que sÈ paciente, chico. Si creÌas que AROS era una m·quina para hacer jugo o
-un Proyecto Gratuito, est·s por completo en el lugar equivocado.
+Esta gu√≠a te ayudar√° a habituarte a AROS. Est√° escrita para todos los 
+interesados en AROS. Ten presente que est√°s usando software que est√° en etapa
+BETA y en investigaci√≥n. En este momento es divertido para jugar y brillante para
+programar. Entonces espero que tu inter√©s en AROS se explique por una de estas 
+dos razones. Si llegaste aqu√≠ pensando que AROS es un OS Multimedia listo para
+Internet, etc., bueno, podr√≠as estar en lo correcto, pero ---no est√° finalizado---,
+as√≠ que s√© paciente, chico. Si cre√≠as que AROS era una m√°quina para hacer jugo o
+un Proyecto Gratuito, est√°s por completo en el lugar equivocado.
 
 
-øCÛmo deberÌas leer esta guÌa?
+¬øC√≥mo deber√≠as leer esta gu√≠a?
 ------------------------------
 
-Esta guÌa est· ordenada de "simple" a "avanzada". Puedes empezar a leer
-cualquier capÌtulo que contenga informaciÛn que es nueva para tÌ. Pero
-quiz·s m·s importante, deberÌas dejar de leer cualquier capÌtulo que
-contenga informaciÛn que vaya m·s all· de tu interÈs. De esta manera
-puedes aprender por tÌ mismo los temas avanzados empezando desde cero,
-o puedes detenerte temprano si crees que sÛlo quieres usar AROS, y no
-programar. La gente con formaciÛn en Amiga puede saltar la introducciÛn,
+Esta gu√≠a est√° ordenada de "simple" a "avanzada". Puedes empezar a leer
+cualquier cap√≠tulo que contenga informaci√≥n que es nueva para t√≠. Pero
+quiz√°s m√°s importante, deber√≠as dejar de leer cualquier cap√≠tulo que
+contenga informaci√≥n que vaya m√°s all√° de tu inter√©s. De esta manera
+puedes aprender por t√≠ mismo los temas avanzados empezando desde cero,
+o puedes detenerte temprano si crees que s√≥lo quieres usar AROS, y no
+programar. La gente con formaci√≥n en Amiga puede saltar la introducci√≥n,
 y empezar en "Desarrollando para la plataforma de AROS" si nunca han
 programado un Amiga antes, o ir directamente a "Desarrollando desde AROS"
-si ya lo hicieron. AsÌ que hay un punto de partida y uno de llegada para
+si ya lo hicieron. As√≠ que hay un punto de partida y uno de llegada para
 todos.
 
-Es importante comprender que esta guÌa es sobre AROS, no sobre Amiga.
-Entonces si posees un Amiga de hace aÒos, tambiÈn podrÌas necesitar leer
-"Usando AROS". Esto no es para avergonzarse: notar·s que usar AROS es
+Es importante comprender que esta gu√≠a es sobre AROS, no sobre Amiga.
+Entonces si posees un Amiga de hace a√±os, tambi√©n podr√≠as necesitar leer
+"Usando AROS". Esto no es para avergonzarse: notar√°s que usar AROS es
 ligeramente diferente de usar AmigaOS. Esto se debe a que nuestro
-Workbench no est· finalizado. En este momento, el sistema funciona en
-gran medida a travÈs de un reemplazo del shell AmigaDOS (o CLI para
-los usuarios m·s viejos), aunque tenemos un Workbench y puedes navegar 
-por los discos y lanzar las aplicaciones con Èl, las operaciones de
-archivo no est·n completas. Los viejos programadores del Amiga deberÌan
-leer "diferencias con la programaciÛn del Amiga" del capÌtulo 4 para
-tener una visiÛn de las diferencias.
+Workbench no est√° finalizado. En este momento, el sistema funciona en
+gran medida a trav√©s de un reemplazo del shell AmigaDOS (o CLI para
+los usuarios m√°s viejos), aunque tenemos un Workbench y puedes navegar 
+por los discos y lanzar las aplicaciones con √©l, las operaciones de
+archivo no est√°n completas. Los viejos programadores del Amiga deber√≠an
+leer "diferencias con la programaci√≥n del Amiga" del cap√≠tulo 4 para
+tener una visi√≥n de las diferencias.
 
 Usando AROS
 ===========
 
-AROS-alojado: øUn sistema operativo dentro de otro sistema operativo?
+AROS-alojado: ¬øUn sistema operativo dentro de otro sistema operativo?
 ---------------------------------------------------------------------
 
-AROS se desarrollÛ originalmente en Linux_ ejecut·ndose en una 
-computadora basada en Intel. Aunque se ejecuta en muchas otras m·quinas y Sistemas
-Operativos. Esto puede sonar extraÒo: øUn OS funcionando encima de otro OS,
-es eso emulaciÛn, correcto?
+AROS se desarroll√≥ originalmente en Linux_ ejecut√°ndose en una 
+computadora basada en Intel. Aunque se ejecuta en muchas otras m√°quinas y Sistemas
+Operativos. Esto puede sonar extra√±o: ¬øUn OS funcionando encima de otro OS,
+es eso emulaci√≥n, correcto?
 
-Un bonito tÈrmino para lo que hace el AROS-alojado es "emulaciÛn de la API".
-API es el acrÛnimo de tres letras de Interfaz del Programador de AplicaciÛn.
-En espaÒol a secas: una API proporciona funciones (en lenguaje C) que un
-programador puede usar. La API AmigaOS consiste de un montÛn de llamadas de
+Un bonito t√©rmino para lo que hace el AROS-alojado es "emulaci√≥n de la API".
+API es el acr√≥nimo de tres letras de Interfaz del Programador de Aplicaci√≥n.
+En espa√±ol a secas: una API proporciona funciones (en lenguaje C) que un
+programador puede usar. La API AmigaOS consiste de un mont√≥n de llamadas de
 biblioteca que un programador Amiga puede usar para hacer un programa Amiga.
 AROS emula la API del AmigaOS: intenta proveer las mismas llamadas de 
 biblioteca que AmigaOS. Un emulador de la Amiga, como UAE_; emula la *computadora*
@@ -89,220 +89,220 @@ como ser capaz de ejecutar los binarios de los juegos Amiga en un hardware
 diferente, y sus desventajas, como no ser capaz de usar el emulador como
 un OS "real", sobre un procesador "real". AROS-alojado funciona sobre un
 procesador "real". Pero no es un "real" OS, *a menos* que lo ejecutes de una
-manera que no necesite Linux. …ste es el llamado AROS "nativo".
+manera que no necesite Linux. √âste es el llamado AROS "nativo".
 
 AROS puede funcionar de modo nativo en las computadoras Intel y Amiga, pero
 no tan bien como funciona sobre Linux. Las funciones de biblioteca de AROS
-se hacen para funcionar primero bajo Linux, usando internamente el n˙cleo
+se hacen para funcionar primero bajo Linux, usando internamente el n√∫cleo
 y las llamadas de biblioteca de Linux. De esta manera un programador tiene
-la oportunidad para molestarse con los detalles tÈcnicos en una etapa posterior.
-En este momento hay personas que est·n trabajando en hacer el AROS "nativo"
-m·s usable. Los resultados son muy impresionantes y es perfectamente posible
-usar AROS-nativo como un real (y el ˙nico) Sistema Operativo en una m·quina
+la oportunidad para molestarse con los detalles t√©cnicos en una etapa posterior.
+En este momento hay personas que est√°n trabajando en hacer el AROS "nativo"
+m√°s usable. Los resultados son muy impresionantes y es perfectamente posible
+usar AROS-nativo como un real (y el √∫nico) Sistema Operativo en una m√°quina
 compatible IBM PC.
 
-Por supuesto, AROS no es *solamente* un emulador de API. TambiÈn intenta
+Por supuesto, AROS no es *solamente* un emulador de API. Tambi√©n intenta
 proporcionar reemplazos para todo el software de sistema del AmigaOS3.1,
-y ver·s tambiÈn unas pocas demos y juegos que son entregados con AROS, sÛlo
-para mostar que funcionan - °podremos estar en un 77% del sistema completo,
+y ver√°s tambi√©n unas pocas demos y juegos que son entregados con AROS, s√≥lo
+para mostar que funcionan - ¬°podremos estar en un 77% del sistema completo,
 pero ya tenemos a Quake andando!
 
 Usando AROS "nativo" en i386
 ----------------------------
-AROS nativo est· en este momento bajo intenso desarrollo. Si quieres ver
-trucos fenomenales, prueba AROS en Linux. Pero si (tambiÈn) est·s interesado en
+AROS nativo est√° en este momento bajo intenso desarrollo. Si quieres ver
+trucos fenomenales, prueba AROS en Linux. Pero si (tambi√©n) est√°s interesado en
 el gran trabajo que los programadores han hecho, puedes probarlo
 en modo "nativo".
 
-Las instrucciones para instalar AROS nativo varÌan dependiendo de la plataforma
-que uses. Debido a que "nativo" est· en continuo desarrollo, los *resultados*
-de instalarlo pueden variar seg˙n la edad del cÛdigo que uses.
+Las instrucciones para instalar AROS nativo var√≠an dependiendo de la plataforma
+que uses. Debido a que "nativo" est√° en continuo desarrollo, los *resultados*
+de instalarlo pueden variar seg√∫n la edad del c√≥digo que uses.
 
 Sobre i386 hay diferentes medios de arranque. Primero y principal el
-conjunto de binarios ˙tiles es un LiveCD que puedes conseguir en la secciÛn
-de Descargas. Puede ser o una instant·nea o una nightly build (la primera
-es m·s estable pero anticuada, la ˙ltima tiene los cambios m·s recientes
+conjunto de binarios √∫tiles es un LiveCD que puedes conseguir en la secci√≥n
+de Descargas. Puede ser o una instant√°nea o una nightly build (la primera
+es m√°s estable pero anticuada, la √∫ltima tiene los cambios m√°s recientes
 pero puede ser en casos raros inestable). Segundo es el disquete de arranque
-AROS, que est· previsto para arrancar los sistemas que son incapaces de
-arrancar desde CD. …ste tiene un conjunto mÌnimo de caracterÌsticas pero asÌ
-tambiÈn un tamaÒo chico. Si no tienes una unidad de CD todavÌa se te puede
+AROS, que est√° previsto para arrancar los sistemas que son incapaces de
+arrancar desde CD. √âste tiene un conjunto m√≠nimo de caracter√≠sticas pero as√≠
+tambi√©n un tama√±o chico. Si no tienes una unidad de CD todav√≠a se te puede
 mostrar una parte de AROS.
 
-Entonces, despuÈs de descargar el archivo AROS LiveCD desemp·calo y graba
-la imagen ISO a un CD-R(W). Si tu propÛsito es usar AROS en una m·quina
-virtual, puedes usar la ISO como un archivo. Una vez que el disco estÈ listo,
+Entonces, despu√©s de descargar el archivo AROS LiveCD desemp√°calo y graba
+la imagen ISO a un CD-R(W). Si tu prop√≥sito es usar AROS en una m√°quina
+virtual, puedes usar la ISO como un archivo. Una vez que el disco est√© listo,
 puedes reiniciar tu PC con el LiveCD. Si tu sistema no soporta arrancar desde
-CD, tambiÈn descarga y copia el disquete de arranque AROS a un disquete (con
-Rawrite o Winimage, por ejemplo) y arranca desde Èste, dejando el CD en su 
+CD, tambi√©n descarga y copia el disquete de arranque AROS a un disquete (con
+Rawrite o Winimage, por ejemplo) y arranca desde √©ste, dejando el CD en su 
 unidad (se ve sensacionalmente parecido a AmigaOS). Puedes pasear por el CD con
 el Wanderer (o con el Shell), jugar algunos juegos/demos incluidos en los
 programas contribuido en el CD, mirar en los fundamentos del sistema hasta que
-te aburras. TambiÈn es posible agregar archivos a una imagen ISO y conseguir
-alg˙n software extra escrito para AROS, y regrabar el LiveCD. Por ahora aquÌ
-termina la parte simple de usar un AROS-nativo. Para probar todas las dem·s
-caracterÌsticas se necesita install_ el sistema al disco duro (real o virtual).
-Este proceso no se puede llamar f·cil, y debe ser tratado como experimental.
-Est· descripto en el Documento de InstalaciÛn. De cualquier modo, recuerda que
-el trabajo sigue y pronto podr·s tener m·s de AROS nativo - °mantÈnte en contacto!
+te aburras. Tambi√©n es posible agregar archivos a una imagen ISO y conseguir
+alg√∫n software extra escrito para AROS, y regrabar el LiveCD. Por ahora aqu√≠
+termina la parte simple de usar un AROS-nativo. Para probar todas las dem√°s
+caracter√≠sticas se necesita install_ el sistema al disco duro (real o virtual).
+Este proceso no se puede llamar f√°cil, y debe ser tratado como experimental.
+Est√° descripto en el Documento de Instalaci√≥n. De cualquier modo, recuerda que
+el trabajo sigue y pronto podr√°s tener m√°s de AROS nativo - ¬°mant√©nte en contacto!
 
-Usando AROS "nativo" i386 en m·quinas virtuales
+Usando AROS "nativo" i386 en m√°quinas virtuales
 -----------------------------------------------
-Actualmente las tecnologÌas de *VirtualizaciÛn* est·n desarrolladas para un
-reemplazo casi completo de una m·quina real, han sido atizadas por las 
+Actualmente las tecnolog√≠as de *Virtualizaci√≥n* est√°n desarrolladas para un
+reemplazo casi completo de una m√°quina real, han sido atizadas por las 
 crecientes velocidades de las CPU.
-Puedes hacer una m·quina *virtual* dentro de tu sistema (el "anfitriÛn") y lanzar AROS
-en ella, sin preocuparte por ninguna falla y relanzar r·pidamente el sistema 
-"invitado" si sucediÛ algo. 
+Puedes hacer una m√°quina *virtual* dentro de tu sistema (el "anfitri√≥n") y lanzar AROS
+en ella, sin preocuparte por ninguna falla y relanzar r√°pidamente el sistema 
+"invitado" si sucedi√≥ algo. 
 
-Hay un n˙mero de paquetes de m·quina virtual gratuitos, los m·s conocido son 
-QEMU (gratuito, de fuente abierta, para la mayorÌa de los sistemas anfitriÛn),
-VMWare Player (gratuito; tambiÈn hay un completo servidor VMWare gratuito que 
-requiere un n˙mero de serie que es gratis) y Microsoft VirtualPC (VPC) (gratis).
+Hay un n√∫mero de paquetes de m√°quina virtual gratuitos, los m√°s conocido son 
+QEMU (gratuito, de fuente abierta, para la mayor√≠a de los sistemas anfitri√≥n),
+VMWare Player (gratuito; tambi√©n hay un completo servidor VMWare gratuito que 
+requiere un n√∫mero de serie que es gratis) y Microsoft VirtualPC (VPC) (gratis).
 
-En vez de tener casi la misma configuraciÛn de AROS dentro de la MV, hay una
-diferencia en la configuraciÛn de la MV misma.
+En vez de tener casi la misma configuraci√≥n de AROS dentro de la MV, hay una
+diferencia en la configuraci√≥n de la MV misma.
 
 VM para Linux/FreeBSD
 """""""""""""""""""""
-QEMU en Linux es bastante f·cil de configurar. Todo lo que se necesita es usar apt-get
+QEMU en Linux es bastante f√°cil de configurar. Todo lo que se necesita es usar apt-get
 en Debian/Ubuntu/Knoppix/DSL o usar cualquier otro administrador de
 paquetes para las otras distribuciones o descargar y desempacar el archivo
 manualmente. Puedes obtener el archivo del `sitio web de QEMU <http://fabrice.bellard.free.fr/qemu/>`__. 
 
-TambiÈn hay una MV VMWare disponible para Linux. Revisa el `sitio web de VMWare
+Tambi√©n hay una MV VMWare disponible para Linux. Revisa el `sitio web de VMWare
 <http://www.vmware.com>`__.
 
 VM para Windows
 """""""""""""""
 
-QEMU en Windoes es casi la misma cosa que en Linux. La diferencia est· en la red
-y en algunos otros temas. Puedes hallar informaciÛn ˙til y los paquetes en
-`la p·gina de QEMU en Windows <http://www.h7.dion.ne.jp/~qemu-win/>`__ . 
-TambiÈn hay una bonita GUI para QEMU llamada QEMU Manager, que incluye el 
+QEMU en Windoes es casi la misma cosa que en Linux. La diferencia est√° en la red
+y en algunos otros temas. Puedes hallar informaci√≥n √∫til y los paquetes en
+`la p√°gina de QEMU en Windows <http://www.h7.dion.ne.jp/~qemu-win/>`__ . 
+Tambi√©n hay una bonita GUI para QEMU llamada QEMU Manager, que incluye el 
 paquete QEMU.
 
-QEMU debe ser lanzado como una aplicaciÛn de consola con algunos par·metros dados.
-M·s tarde revisaremos algunos de las opciones en otras secciones, lo que significa
-que debes agregarlas a tu cadena de lanzamiento (o un guiÛn).
+QEMU debe ser lanzado como una aplicaci√≥n de consola con algunos par√°metros dados.
+M√°s tarde revisaremos algunos de las opciones en otras secciones, lo que significa
+que debes agregarlas a tu cadena de lanzamiento (o un gui√≥n).
 
 .. Note::  
 
-	QEMU es un virtualizador r·pido, aunque su velocidad se puede acelerar m·s 
-	instalando el mÛdulo de n˙cleo KQEMU (y agregando la opciÛn -kernel-kqemu si
-	est· en Windows). Pero recuerda que KQEMU puede hacer al sistema invitado
+	QEMU es un virtualizador r√°pido, aunque su velocidad se puede acelerar m√°s 
+	instalando el m√≥dulo de n√∫cleo KQEMU (y agregando la opci√≥n -kernel-kqemu si
+	est√° en Windows). Pero recuerda que KQEMU puede hacer al sistema invitado
 	inestable.
-	No uses la combinaciÛn ALT+TAB para liberar el bloqueo del teclado, usa
-	CTRL+ALT, de otro modo la tecla TAB puede quedar apretada y daÒar el
+	No uses la combinaci√≥n ALT+TAB para liberar el bloqueo del teclado, usa
+	CTRL+ALT, de otro modo la tecla TAB puede quedar apretada y da√±ar el
 	archivo editado recientemente.
     
 Usar `VMWare <http://www.vmware.com/products/free_virtualization.html>`__
-o VPC es incluso m·s f·cil de configurar.
-Todo lo que necesitas es instalar alg˙n hardware virtual como la tarjeta de red
-o de sonido y crear un HDD (unidad de disco rÌgido) virtual. Todo es 
+o VPC es incluso m√°s f√°cil de configurar.
+Todo lo que necesitas es instalar alg√∫n hardware virtual como la tarjeta de red
+o de sonido y crear un HDD (unidad de disco r√≠gido) virtual. Todo es 
 administrado por una simple GUI.
 
 VM para MacOS
 """""""""""""
 
-Para las Macs PPC funcionando con el OS 9 o 10.X solamente est· disponible 
+Para las Macs PPC funcionando con el OS 9 o 10.X solamente est√° disponible 
 el emulador de i386 `Virtual PC <http://www.microsoft.com/mac/products/virtualpc/virtualpc.aspx?pid=virtualpc>`__.
-Pero no soporta a las Macs Intel. VPC es tambiÈn un producto comercial caro. El
-mÈtodo alternativo para obtenerlo es comprando Office 2004 que viene con una copia
-gratis de la versiÛn m·s reciente (VPC 7). Advierte que el Mac VPC es esencialmente un
-emulador, con una velocidad limitada y es demandante de una m·quina PPC razonablemente
-r·pida (mira en el sitio web para m·s detalles).
+Pero no soporta a las Macs Intel. VPC es tambi√©n un producto comercial caro. El
+m√©todo alternativo para obtenerlo es comprando Office 2004 que viene con una copia
+gratis de la versi√≥n m√°s reciente (VPC 7). Advierte que el Mac VPC es esencialmente un
+emulador, con una velocidad limitada y es demandante de una m√°quina PPC razonablemente
+r√°pida (mira en el sitio web para m√°s detalles).
 
 Para las Macs Intel (OS X) QEMU ha sido transferido y renombrado como 
 `Q <http://www.kju-app.org/kju/>`__ . Viene como un binario Intel y es gratis.
-Q no soporta la virtualizaciÛn directa a˙n (o al otro mÛdulo de aceleraciÛn del
-n˙cleo i386), haciendo que en el momento alcance sÛlo parte de la velocidad posible.
+Q no soporta la virtualizaci√≥n directa a√∫n (o al otro m√≥dulo de aceleraci√≥n del
+n√∫cleo i386), haciendo que en el momento alcance s√≥lo parte de la velocidad posible.
 
-Otra opciÛn (venidera) para la MV en Intel ser· el virtualizador `VMware Fusion`__,
-esperado para comienzos del 2007. La versiÛn beta 33141 ya soporta arrancar el 
-AROS LiveCD, con la condiciÛn que estÈ deshabilitado el soporte de la unidad de disquete
-en los par·metros de arranque de GRUB (sÛlo resalta tu selecciÛn en el men˙ de GRUB,
-aprieta 'e' dos veces, agrega nofdc a la lÌnea de comandos, aprieta return, despuÈs 'b'.
+Otra opci√≥n (venidera) para la MV en Intel ser√° el virtualizador `VMware Fusion`__,
+esperado para comienzos del 2007. La versi√≥n beta 33141 ya soporta arrancar el 
+AROS LiveCD, con la condici√≥n que est√© deshabilitado el soporte de la unidad de disquete
+en los par√°metros de arranque de GRUB (s√≥lo resalta tu selecci√≥n en el men√∫ de GRUB,
+aprieta 'e' dos veces, agrega nofdc a la l√≠nea de comandos, aprieta return, despu√©s 'b'.
 Si has instalado AROS en el HD (disco duro), puedes hacer el cambio permanente en el archivo
 menu.lst).
 
 __ http://www.vmware.com/whatsnew/macsignupform.html
 
-TodavÌa otro producto de MV Mac Intel es Parallels, un producto comercial, aunque a un menor
-costo que VPC. Por favor advierte que todavÌa falla en arrancar AROS. Lo mismo se aplica al menor
+Todav√≠a otro producto de MV Mac Intel es Parallels, un producto comercial, aunque a un menor
+costo que VPC. Por favor advierte que todav√≠a falla en arrancar AROS. Lo mismo se aplica al menor
 PC Parallels Workstation 2.1.
 
-..  Note::  Los usuarios de las (primeras) port·tiles Mac Intel que funcionan relativamente
+..  Note::  Los usuarios de las (primeras) port√°tiles Mac Intel que funcionan relativamente
 			recalentadas pueden beneficiarse de usar la `SMC fan control utility`__.
-			Permite ajustar la velocidad del ventilador para una mayor ventilaciÛn de tu
-			m·quina, manteniendo bajas las temperaturas durante las cargas de trabajo pesadas.
-			Mientras que es considerado seguro para usar, °todavÌa considera los riesgos involucrados!
+			Permite ajustar la velocidad del ventilador para una mayor ventilaci√≥n de tu
+			m√°quina, manteniendo bajas las temperaturas durante las cargas de trabajo pesadas.
+			Mientras que es considerado seguro para usar, ¬°todav√≠a considera los riesgos involucrados!
 
 __ http://81.169.182.62/~eidac/software/page5/page5.html
 
-Im·genes de discos virtuales
+Im√°genes de discos virtuales
 """"""""""""""""""""""""""""
 
-Si has considerado instalar AROS al HD de la m·quina virtual, puedes crear
-el HDD virtual en QEMU usando el programa qemu-img (reemplaza <tamaÒo> con
-el tamaÒo necesario en bytes, M o G para Mega o Giga) con el comando::
+Si has considerado instalar AROS al HD de la m√°quina virtual, puedes crear
+el HDD virtual en QEMU usando el programa qemu-img (reemplaza <tama√±o> con
+el tama√±o necesario en bytes, M o G para Mega o Giga) con el comando::
     
     qemu-img create -f qcow aros.img <size>
 
-QEMU Winaros est· `aquÌ <http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_QEMU.zip>`__ 
-y VirtualPC `aquÌ <http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_VPC.zip>`__ .
-Un conjunto de im·genes de disco pre-instaladas con AROS o vacÌas est· disponible para hacer
-la ejecuciÛn de AROS en una MV m·s f·cil. WinAros es un ambiente pre-instalado de AROS
-en una imagen de HD, compatible con las famosas m·quinas virtual de QEMU y 
+QEMU Winaros est√° `aqu√≠ <http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_QEMU.zip>`__ 
+y VirtualPC `aqu√≠ <http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_VPC.zip>`__ .
+Un conjunto de im√°genes de disco pre-instaladas con AROS o vac√≠as est√° disponible para hacer
+la ejecuci√≥n de AROS en una MV m√°s f√°cil. WinAros es un ambiente pre-instalado de AROS
+en una imagen de HD, compatible con las famosas m√°quinas virtual de QEMU y 
 Microsoft VirtualPC, ambas disponibles gratuitamente en la red. Puedes descargar
 ambas versiones de WinAros del `sitio web <http://amidevcpp.amiga-world.de/afa_binarie_upload.php>`__.
 
-El Kit de InstalaciÛn para AROS (IKAROS) es un conjunto de im·genes de disco virtual
+El Kit de Instalaci√≥n para AROS (IKAROS) es un conjunto de im√°genes de disco virtual
 para los diferentes virtualizadores, incluyendo QEMU y VMWare, ya particionadas,
-formateadas, y listas para instalar AROS. Sus beneficios son el pequeÒo tamaÒo
+formateadas, y listas para instalar AROS. Sus beneficios son el peque√±o tama√±o
 de archivo, pues no incluyen una gran cantidad de archivos, y la posibilidad para
-instalar versiones frescas de AROS, que lo hacen ˙til para probar las nightly
-builds. Permite la instalaciÛn f·cil de las nuevas versiones sin enredarse
-con la configuraciÛn de la particiÛn. Est·n incluidas las instrucciones de
-instalaciÛn. Por favor revisa `los Archives de Aros-Exec <http://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
-en la secciÛn (emu/misc) para las puestas al dÌa.
+instalar versiones frescas de AROS, que lo hacen √∫til para probar las nightly
+builds. Permite la instalaci√≥n f√°cil de las nuevas versiones sin enredarse
+con la configuraci√≥n de la partici√≥n. Est√°n incluidas las instrucciones de
+instalaci√≥n. Por favor revisa `los Archives de Aros-Exec <http://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
+en la secci√≥n (emu/misc) para las puestas al d√≠a.
 
 Usando el AfA en m68k
 ---------------------
-En una Amiga (m68K), puedes poner el cÛdigo nativo en alguna parte de
-tu disco rÌgido, apretar dos veces en el Ìcono "boot", hacer un reset 
+En una Amiga (m68K), puedes poner el c√≥digo nativo en alguna parte de
+tu disco r√≠gido, apretar dos veces en el √≠cono "boot", hacer un reset 
 y disfrutar de un completo sistema Amiga. Esto se debe a que no es *realmente*
-nativo. El programa de arranque sÛlo reemplaza temporalmente una pocas
+nativo. El programa de arranque s√≥lo reemplaza temporalmente una pocas
 bibliotecas del AmigaOS con las de AROS. Por supuesto que esto es bueno
-para el propÛsito de probar, pero al final todavÌa ejecutas el bueno y viejo
-AmigaOS y no AROS nativo. Esto cambiar· a medida que construyamos un sistema
-AROS 68k m·s completo. Este sistema es llamando AfA (AROS para Amigas).
+para el prop√≥sito de probar, pero al final todav√≠a ejecutas el bueno y viejo
+AmigaOS y no AROS nativo. Esto cambiar√° a medida que construyamos un sistema
+AROS 68k m√°s completo. Este sistema es llamando AfA (AROS para Amigas).
 
 
 Usando AROS alojado en Linux o en FreeBSD
 -----------------------------------------
 
 
-Una vez que conseguiste los binarios para tu sistema, ya sea compil·ndolos
-o descargando los pre-compilados, deberÌas ir al directorio "bin/$TARGET/AROS",
+Una vez que conseguiste los binarios para tu sistema, ya sea compil√°ndolos
+o descargando los pre-compilados, deber√≠as ir al directorio "bin/$TARGET/AROS",
 donde $TARGET es tu sistema (algo como "linux-i386"). Ejecuta el archivo
-"aros" ("./aros"). El reemplazo del Workbench, "Wanderer", se iniciar·. 
+"aros" ("./aros"). El reemplazo del Workbench, "Wanderer", se iniciar√°. 
 
-Hay unas opciones de lÌnea de comandos para el ejecutable de aros que se podrÌan
-usar. Puedes obtener la lista con la opciÛn ./aros -h.
+Hay unas opciones de l√≠nea de comandos para el ejecutable de aros que se podr√≠an
+usar. Puedes obtener la lista con la opci√≥n ./aros -h.
 
 Falta agregar...
 
-Ya que "Wanderer" es muy limitado preferir·s trabajar con el Shell.
-Puedes iniciarlo desde el men˙ "Wanderer/Shell". Ahora deberÌas tipear los comandos,
-y el m·s importante es "dir": te mostrar· los contenidos del directorio.
-El directorio llamado "C" contiene todos los comandos, por lo que serÌa ˙til
+Ya que "Wanderer" es muy limitado preferir√°s trabajar con el Shell.
+Puedes iniciarlo desde el men√∫ "Wanderer/Shell". Ahora deber√≠as tipear los comandos,
+y el m√°s importante es "dir": te mostrar√° los contenidos del directorio.
+El directorio llamado "C" contiene todos los comandos, por lo que ser√≠a √∫til
 mostrar su contenido con "dir c:". El Shell se comporta como el shell AmigaDOS,
 y los comandos en "C" se comportan como sus equivalentes de AmigaDOS. (Nota
 para la gente de UNIX: para dirigirse al directorio padre usen "/" y no "..":
-esto se ver· feo porque AROS piensa que el ".." de Linux es un directorio normal.
-No deberÌan usar "./" como el prefijo para dirigir un comando al interior del directorio
-actual, sino dejarlo vacÌo). Una vez que lo uses, prueba ejecutar algunos
-programas (especialmente los "Demos" y "Games") para tener una impresiÛn
+esto se ver√° feo porque AROS piensa que el ".." de Linux es un directorio normal.
+No deber√≠an usar "./" como el prefijo para dirigir un comando al interior del directorio
+actual, sino dejarlo vac√≠o). Una vez que lo uses, prueba ejecutar algunos
+programas (especialmente los "Demos" y "Games") para tener una impresi√≥n
 de las capacidades de AROS.
 
 Usando AROS alojado en PPC
@@ -314,86 +314,86 @@ Queda para que alguine lo escriba...
 Los fundamentos de AROS
 =======================
 
-Lo b·sico de la GUI Zune de AROS
+Lo b√°sico de la GUI Zune de AROS
 --------------------------------
 
-La abreviatura GUI significa Graphical User Interface (Interface/icie Gr·fica de Usuario),
+La abreviatura GUI significa Graphical User Interface (Interface/icie Gr√°fica de Usuario),
 y se aplica a todos los medios usados por el OS para interactuar con el usuario 
-de un modo diferente a la interface de lÌnea de comandos (CLI). Para aquellos 
-que nunca han usado alg˙n OS de la marca Amiga, ser· ˙til darles algunos fundamentos
-de GUI para ayudarlos a usar nuestro sistema. No obstante, algo ser· especÌfico de AROS.
+de un modo diferente a la interface de l√≠nea de comandos (CLI). Para aquellos 
+que nunca han usado alg√∫n OS de la marca Amiga, ser√° √∫til darles algunos fundamentos
+de GUI para ayudarlos a usar nuestro sistema. No obstante, algo ser√° espec√≠fico de AROS.
 
-Un sistema Amiga usa principios definidos y comunes, como ya habr·s notado.
-Primero, cualquier opciÛn de men˙ de la ventana de cualquier aplicaciÛn no est·
-anexada a esa ventana - se moviÛ a la franja superior, donde se puede
+Un sistema Amiga usa principios definidos y comunes, como ya habr√°s notado.
+Primero, cualquier opci√≥n de men√∫ de la ventana de cualquier aplicaci√≥n no est√°
+anexada a esa ventana - se movi√≥ a la franja superior, donde se puede
 acceder con facilidad. Para hacerlo, selecciona la ventana que necesites, mueve
-el puntero del ratÛn al extremo superior de la pantalla. Entonces, si presionas
-el botÛn derecho allÌ, puedes ver un men˙ descender, representando las opciones
-de nuestra aplicaciÛn. SÌ, se ve como el MacOS. TambiÈn puedes hacer que el men˙
-aparezca en cualquier lugar de la pantalla, en donde presiones el botÛn izquierdo
-del ratÛn. Para hacer esto, ... Por ejemplo, si ninguna ventana de aplicaciÛn 
-es seleccionada, entonces podr·s ver el men˙ del Wanderer.
+el puntero del rat√≥n al extremo superior de la pantalla. Entonces, si presionas
+el bot√≥n derecho all√≠, puedes ver un men√∫ descender, representando las opciones
+de nuestra aplicaci√≥n. S√≠, se ve como el MacOS. Tambi√©n puedes hacer que el men√∫
+aparezca en cualquier lugar de la pantalla, en donde presiones el bot√≥n izquierdo
+del rat√≥n. Para hacer esto, ... Por ejemplo, si ninguna ventana de aplicaci√≥n 
+es seleccionada, entonces podr√°s ver el men√∫ del Wanderer.
 
-Ahora, consideremos a nuestro escritorio - como ya probablemente sabr·s, se llama
-Wanderer. øQuÈ es? Bueno, Wanderer es una aplicaciÛn, igual que cualquier otra.
+Ahora, consideremos a nuestro escritorio - como ya probablemente sabr√°s, se llama
+Wanderer. ¬øQu√© es? Bueno, Wanderer es una aplicaci√≥n, igual que cualquier otra.
 De hecho, es el administrador de archivos de AROS, que te permite escoger y
-operar con archivos (todavÌa la funciÛn no est· completa), lanzar programas,
-obtener informaciÛn del sistema, lanzar el CLI (la ventana de comandos) y otras
-funciones. Por lo general, se abre a lo ancho de la pantalla y act˙a como tu 
-escritorio (los Ìconos en el escritorio representan los vol˙menens y los discos
-con los que puedes trabajar). Puede ser puesto a un lado desmarcando la opciÛn
-Backdrop (TelÛn), que se halla en el men˙ del Wanderer (ørecuerdan en el p·rrafo previo?).
-DespuÈs de eso, el Wanderer se convierte en otra ventana que puedes mover, cambiar
-de tamaÒo, etc. AsÌ que, puedes ver, no es como el escritorio de Windows o de otro
+operar con archivos (todav√≠a la funci√≥n no est√° completa), lanzar programas,
+obtener informaci√≥n del sistema, lanzar el CLI (la ventana de comandos) y otras
+funciones. Por lo general, se abre a lo ancho de la pantalla y act√∫a como tu 
+escritorio (los √≠conos en el escritorio representan los vol√∫menens y los discos
+con los que puedes trabajar). Puede ser puesto a un lado desmarcando la opci√≥n
+Backdrop (Tel√≥n), que se halla en el men√∫ del Wanderer (¬ørecuerdan en el p√°rrafo previo?).
+Despu√©s de eso, el Wanderer se convierte en otra ventana que puedes mover, cambiar
+de tama√±o, etc. As√≠ que, puedes ver, no es como el escritorio de Windows o de otro
 OS fijo en su lugar. Por supuesto, incluso puedes no usar el Wanderer y usar tu
 administrador de archivos preferido (p.e. Directory Opus).
 
-Pero, øcÛmo se comportar·n entonces las aplicaciones? øEn dÛnde se abrir·n las 
-ventanas? Est· el tÈrmino `pantalla` -una pantalla es el lugar en donde tu 
-ventana est· preparada para abrirse. Dicho esto, si la aplicaciÛn va a abrirse 
-en la pantalla del Wanderer, se ver· como usualmente pasa en otro OS, tu app 
-aparecer· como una ventana en el escritorio. Por otra parte, la ventana puede
+Pero, ¬øc√≥mo se comportar√°n entonces las aplicaciones? ¬øEn d√≥nde se abrir√°n las 
+ventanas? Est√° el t√©rmino `pantalla` -una pantalla es el lugar en donde tu 
+ventana est√° preparada para abrirse. Dicho esto, si la aplicaci√≥n va a abrirse 
+en la pantalla del Wanderer, se ver√° como usualmente pasa en otro OS, tu app 
+aparecer√° como una ventana en el escritorio. Por otra parte, la ventana puede
 abrirse en una pantalla propia- se ve como que captura la pantalla entera. Pero
 puedes intercambiar las pantallas con un gadget en la esquina superior derecha
-de la pantalla (esto tambiÈn se aplica a una sola ventana). AsÌ que puedes
+de la pantalla (esto tambi√©n se aplica a una sola ventana). As√≠ que puedes
 intercambiar entre Wanderer, Directory Opus y cualquier otra app abierta en su
 propia pantalla. Este comportamiento viene de la historia del Amiga.
 
 Bien, ha llegado la hora de decir algo sobre las ventanas. Una ventana de AROS
 tiene botones de control para manipularla, llamados gadgets (que se pueden
-traducir como un tipo interactivo de elemento gr·fico). Primero, el de la esquina
+traducir como un tipo interactivo de elemento gr√°fico). Primero, el de la esquina
 superior izquierda de una ventana permite cerrarla. El siguiente en la parte derecha
 permite minimizar/maximizar la ventana. Y el restante se usa para poner la ventana
-atr·s o adelante igual que como intercambiamos entre las pantallas. Las ventanas
+atr√°s o adelante igual que como intercambiamos entre las pantallas. Las ventanas
 pueden no tener gadgets (se ven como la demo Kitty -que incluso no tiene bordes
-aunque todavÌa conserva una forma bien curvada) o tener un conjunto diferente.
+aunque todav√≠a conserva una forma bien curvada) o tener un conjunto diferente.
 
 Los contenidos de la ventana consisten de algunos elementos usuales vistos en 
 cualquier GUI - botones, listas, cadenas de texto, cualquier otro tipo de gadget.
-Si una aplicaciÛn tiene previsto cambiar cualquier preferencia del sistema o de una
-aplicaciÛn lo usual es llamarla *Pref* y tiene su conjunto de botones para operar.
+Si una aplicaci√≥n tiene previsto cambiar cualquier preferencia del sistema o de una
+aplicaci√≥n lo usual es llamarla *Pref* y tiene su conjunto de botones para operar.
 Por lo general, estos botones son: TEST (aplica todos los cambios hechos por Pref
 pero no guarda los cambios, y cierra la ventana), SAVE (guarda 
 los cambios y cierra la ventana), USE (aplica los cambios y cierra la ventana, 
 pero no los guarda), CANCEL (descarta todos los cambios y cierra la ventana).
 
-TambiÈn, de la historia de Amiga la unidad de colocaciÛn de archivos se llama
-cajÛn en vez del carpeta/directorio de otros sistemas, pero su significado
-es el mismo. Trad˙celo como directorio si est·s inseguro.
+Tambi√©n, de la historia de Amiga la unidad de colocaci√≥n de archivos se llama
+caj√≥n en vez del carpeta/directorio de otros sistemas, pero su significado
+es el mismo. Trad√∫celo como directorio si est√°s inseguro.
 
 Como en el original Amiga, AROS dispone de teclas especiales, usadas para ejecutar
-comandos r·pidos. Las teclas Windows izquierda y derecha (en el teclado de PC) 
+comandos r√°pidos. Las teclas Windows izquierda y derecha (en el teclado de PC) 
 reemplazan a las teclas Amiga originales y se usan en diferentes combinacions para
 lanzar comandos.
 
-Otro nombre desconocido que puedes encontrar en AROS es Zune. øQuÈ es Zune? Es la
-biblioteca de GUI desarrollada para reemplazar en la mejor tradiciÛn a MUI (Magic
-USER Interface), ampliamente usada en Amiga. øPero hay una aplicaciÛn llamada
+Otro nombre desconocido que puedes encontrar en AROS es Zune. ¬øQu√© es Zune? Es la
+biblioteca de GUI desarrollada para reemplazar en la mejor tradici√≥n a MUI (Magic
+USER Interface), ampliamente usada en Amiga. ¬øPero hay una aplicaci√≥n llamada
 Zune? Puedes hallar Zune Pref que te permite establecer las configuraciones para
 las aplicaciones basadas en Zune en conjunto o individualmente. Por ejemplo, 
 para establecer las preferencias de Zune para Wanderer puedes seleccionar
-GUI prefs de su men˙, o para establecer las prefs de Zune para otras apps 
-puedes usarlo como el comando del CLI Zune <nombre de la aplicaciÛn>.
+GUI prefs de su men√∫, o para establecer las prefs de Zune para otras apps 
+puedes usarlo como el comando del CLI Zune <nombre de la aplicaci√≥n>.
 
 Falta para terminar...
 
@@ -401,64 +401,64 @@ Falta para terminar...
 AROS CLI (Command Line Interface)
 ---------------------------------
 
-Falta - Un resumen y comparaciÛn de los comandos del CLI...
+Falta - Un resumen y comparaci√≥n de los comandos del CLI...
 
-AROS tiene su CLI, la Interface de LÌnea de Comandos, que expande en gran
+AROS tiene su CLI, la Interface de L√≠nea de Comandos, que expande en gran
 medida las capacidades del OS. Quienes usaron el AmigaOS pueden notar que se
 ve muy parecido al AmigaDOS. Hay algunos fundamentos del CLI descriptos en
-`introducciÛn <shell/introduction>`__ para los comandos del CLI. 
+`introducci√≥n <shell/introduction>`__ para los comandos del CLI. 
 
 En este momento no necesitas tipear todos los comandos al final - ahora hay
-un ingeniosa finalizaciÛn con el tabulador similar a la de las consolas linux.
-Esto tambiÈn te permite agregar los nombres de archivo o escogerlos de una lista.
+un ingeniosa finalizaci√≥n con el tabulador similar a la de las consolas linux.
+Esto tambi√©n te permite agregar los nombres de archivo o escogerlos de una lista.
 
 Falta terminar...
 
 Los programas de sistema de AROS
 --------------------------------
 
-Hemos mencionado a las aplicaciones, asÌ que es bueno dar una descripciÛn  de
+Hemos mencionado a las aplicaciones, as√≠ que es bueno dar una descripci√≥n  de
 sus funciones. Entonces, hay grupos de aplicaciones de sistema de AROS reunidas
 en directorios separados:
 
 	+ C - el lugar de todos los comandos del sistema usados en el CLI.
-	+ Classes - el lugar de los datatypes, im·genes de gadget y las clases de
+	+ Classes - el lugar de los datatypes, im√°genes de gadget y las clases de
 	            Zune.
 	+ Devs - donde los archivos relacionados con dispositivos (controladores,
-	         keymaps) y los datatypes est·n ubicados.
+	         keymaps) y los datatypes est√°n ubicados.
 	+ Extras - donde residen todos los programas contribuidos.
-	+ Fonts - aquÌ puedes hallar todas las fuentes del sistema. Cualquier fuente
+	+ Fonts - aqu√≠ puedes hallar todas las fuentes del sistema. Cualquier fuente
               adicional debe ser agregada (asignada) a este directorio.
-	+ Libs - donde est·n ubicadas las bibliotecas del sistema.
-	+ Locale - guarda los archivos de cat·logo de las traducciones de las 
+	+ Libs - donde est√°n ubicadas las bibliotecas del sistema.
+	+ Locale - guarda los archivos de cat√°logo de las traducciones de las 
 		       apps de AROS.
-	+ Prefs - tiene los programas de ediciÛn de las preferencias.
+	+ Prefs - tiene los programas de edici√≥n de las preferencias.
 	+ S - contiene algunos guiones de tiempo-de-lanzamiento del sistema.
 	+ System - el lugar para algunos controles del sistema.
-	+ Tools - el lugar de algunas apps del sistema usadas com˙nmente.
-	+ Utilities - el lugar de algunas apps no tan usadas pero todavÌa ˙tiles.
+	+ Tools - el lugar de algunas apps del sistema usadas com√∫nmente.
+	+ Utilities - el lugar de algunas apps no tan usadas pero todav√≠a √∫tiles.
 
-En vez de aplicaciones, hay otros programas de ejecuciÛn permanente llamados
+En vez de aplicaciones, hay otros programas de ejecuci√≥n permanente llamados
 *tasks*.
 
-Otro tipo de aplicaciones AROS son los *Commodities*. …stas son aplicaciones que
-pueden ayudarte a hacer tu sistema m·s cÛmodo. Por ejemplo, las ventanas de AROS no
-se ponen delante de las otras cuando t˙ aprietas en ellas, y puedes encontrarlo
-incÛmodo. Para acomodar esa comportamiento puedes usar el commodity de AROS 
+Otro tipo de aplicaciones AROS son los *Commodities*. √âstas son aplicaciones que
+pueden ayudarte a hacer tu sistema m√°s c√≥modo. Por ejemplo, las ventanas de AROS no
+se ponen delante de las otras cuando t√∫ aprietas en ellas, y puedes encontrarlo
+inc√≥modo. Para acomodar esa comportamiento puedes usar el commodity de AROS 
 ClickToFront. Se lo puede encontrar debajo de los otras commodities en el directorio 
-SYS:Tools/Commodities. Cuando aprietas dos veces en Èl, la ventana se pondr· 
+SYS:Tools/Commodities. Cuando aprietas dos veces en √©l, la ventana se pondr√° 
 encima de las otras si es dos veces apretada. Otro ejemplo es el commodity
-Opaque - que te permite mover las ventanas con sus contenidos. TambiÈn est· 
+Opaque - que te permite mover las ventanas con sus contenidos. Tambi√©n est√° 
 el commodity Exchange que te permite manipular los commodities lanzados 
-y tener informaciÛn sobre ellos. Por lo general los commodities no abren 
+y tener informaci√≥n sobre ellos. Por lo general los commodities no abren 
 ninguna ventana (propia).
 
 Para operar con archivos de diferentes tipos los sistemas como Amiga usan los
 *datatypes*. Un datatype es un tipo de biblioteca del sistema que 
 permite a los programa leer y/o escribir a tales archivos sin conocer la
-implementaciÛn del formato.
+implementaci√≥n del formato.
 
-Y si cavamos un poco m·s profundo hay algunos tÈrminos del sistema que se
+Y si cavamos un poco m√°s profundo hay algunos t√©rminos del sistema que se
 pueden explicar. AROS usa *handlers* para comunicarse con los sistemas de 
 archivo y *HIDD* para comunicarse con el hardware.
 
@@ -470,133 +470,133 @@ Ajustando el AROS instalado
 Configurando el Locale
 ----------------------
 
-AROS se est· convirtiendo en un sistema verdaderamente internacional en
-estos dÌas, siendo traducido a muchos idiomas. La traducciÛn no es muy
-difÌcil, y el n˙mero de los traductores de AROS se est· incrementando.
-Cuando el soporte para Unicode sea implementado, podr· ser traducido a
+AROS se est√° convirtiendo en un sistema verdaderamente internacional en
+estos d√≠as, siendo traducido a muchos idiomas. La traducci√≥n no es muy
+dif√≠cil, y el n√∫mero de los traductores de AROS se est√° incrementando.
+Cuando el soporte para Unicode sea implementado, podr√° ser traducido a
 cada idioma usado.
-Si sientes que puedes darle AROS a tu paÌs, tanto el OS como la documentaciÛn,
+Si sientes que puedes darle AROS a tu pa√≠s, tanto el OS como la documentaci√≥n,
 no dudes en ponerte en contacto con nosotros y ofrecer tu ayuda.
 
 Sobre el idioma. Primero, dependiendo de las fuentes usadas debes establecer
 las fuentes lanzando SYS:Pres/Fonts y designar Fonts para diferentes textos
-del sistema, Icons (usada para las etiquetas de los Ìconos), Screen 
-(usada en la pantalla com˙n) y System (usada en la ventana del CLI). Si tu
-idioma usa un conjunto diferente de la ISO (por ejemplo, cirÌlico CP-1251)
-las fuentes *deben* estar en el cÛdigo de p·gina correcto. Actualmente AROS
+del sistema, Icons (usada para las etiquetas de los √≠conos), Screen 
+(usada en la pantalla com√∫n) y System (usada en la ventana del CLI). Si tu
+idioma usa un conjunto diferente de la ISO (por ejemplo, cir√≠lico CP-1251)
+las fuentes *deben* estar en el c√≥digo de p√°gina correcto. Actualmente AROS
 puede usar dos tipos de fuentes - las fuentes bitmap de Amiga (que se
-pueden usar directamente) y TrueType (a travÈs del administrador FreeType 2,
-que todavÌa tiene algunas cuestiones con los cÛdigos de p·gina no ISO).
-Las fuentes bitmap son de alg˙n cÛdigo de p·gina en particular, y las TTF
+pueden usar directamente) y TrueType (a trav√©s del administrador FreeType 2,
+que todav√≠a tiene algunas cuestiones con los c√≥digos de p√°gina no ISO).
+Las fuentes bitmap son de alg√∫n c√≥digo de p√°gina en particular, y las TTF
 pueden ser Unicode. 
 
-øCÛmo puedes cambiar el locale de AROS? Necesitas lanzar el pref Locale 
-en SYS:Prefs. AllÌ puedes ver una lista de los locales soportados y
-seleccionar tu preferido. En la segunda p·gina de este Pref puedes seleccionar
-el paÌs usado (esto da el formato correcto para la moneda y la fecha/hora).
-Y la ˙ltima pestaÒa te permite cambiar la zona horaria a la que se usa en tu ubicaciÛn.
+¬øC√≥mo puedes cambiar el locale de AROS? Necesitas lanzar el pref Locale 
+en SYS:Prefs. All√≠ puedes ver una lista de los locales soportados y
+seleccionar tu preferido. En la segunda p√°gina de este Pref puedes seleccionar
+el pa√≠s usado (esto da el formato correcto para la moneda y la fecha/hora).
+Y la √∫ltima pesta√±a te permite cambiar la zona horaria a la que se usa en tu ubicaci√≥n.
 
-DespuÈs que has hecho los cambios a las fuentes reinicia el sistema, y debes
+Despu√©s que has hecho los cambios a las fuentes reinicia el sistema, y debes
 poder de ver todo el contenido traducido.
 
-AsÌ que ahora podemos leer, pero øpodemos escribir en nuestro idioma?. Para
-hacerlo debes cambiar la distribuciÛn del teclado.
+As√≠ que ahora podemos leer, pero ¬øpodemos escribir en nuestro idioma?. Para
+hacerlo debes cambiar la distribuci√≥n del teclado.
 
-Las configuraciones del teclado y del ratÛn son administradas por el pref
-Input. Puedes cambiar la distribuciÛn y apretar *Use* aunque podemos hacerlo
-mejor. Esta herramienta tambiÈn te permite guardar los preajustes - igual
-que cualquier aplicaciÛn tiene un men˙, te permite guardar tus preferencias 
+Las configuraciones del teclado y del rat√≥n son administradas por el pref
+Input. Puedes cambiar la distribuci√≥n y apretar *Use* aunque podemos hacerlo
+mejor. Esta herramienta tambi√©n te permite guardar los preajustes - igual
+que cualquier aplicaci√≥n tiene un men√∫, te permite guardar tus preferencias 
 en un archivo con el nombre dado y mantener diferentes configuraciones de 
-locales. Esto ˙ltimo es lo que usaremos para conmutar nuestras distribuciones de 
-teclado. Escoge tu distribuciÛn de teclado de la lista y aprieta el botÛn
-izquierdo para abrir el men˙ contextual. DespuÈs ingresa el nombre de tu
+locales. Esto √∫ltimo es lo que usaremos para conmutar nuestras distribuciones de 
+teclado. Escoge tu distribuci√≥n de teclado de la lista y aprieta el bot√≥n
+izquierdo para abrir el men√∫ contextual. Despu√©s ingresa el nombre de tu
 preajuste a la cadena File, digamos, *locale1* y aprieta Ok para guardarlo
-en el directorio SYS:Prefs/Presets. Ahora escoge la distribuciÛn American (PC)
+en el directorio SYS:Prefs/Presets. Ahora escoge la distribuci√≥n American (PC)
 y repite el guardado de preajustes, digamos, con el nombre *english*. Estos
-preajustes se pueden usar m·s tarde para conmutar las distribuciones. Aprieta
+preajustes se pueden usar m√°s tarde para conmutar las distribuciones. Aprieta
 *Cancel* para salir.
 
-Est· el commodity FKey que te permite asignar acciones a algunas
-combinaciones de teclas. Ahora lancÈmoslo y asignemos la conmutaciÛn del
-locale. DespuÈs que hagas doble click en el Ìcono de FKey, se lanza el
-Exchange, escoge la FKey de la lista y aprieta el botÛn *Show*. Esto invocar·
-la ventana FKey. Puedes ver en la lista que ALT TAB est· asignado a la conmutaciÛn
-de ventanas. Ahora aprieta enter en la primera combinaciÛn, digamos, *ALT Z* y ve al 
-panel derecho. Escoge *Launch the program* del men˙ descendente e ingresa como
+Est√° el commodity FKey que te permite asignar acciones a algunas
+combinaciones de teclas. Ahora lanc√©moslo y asignemos la conmutaci√≥n del
+locale. Despu√©s que hagas doble click en el √≠cono de FKey, se lanza el
+Exchange, escoge la FKey de la lista y aprieta el bot√≥n *Show*. Esto invocar√°
+la ventana FKey. Puedes ver en la lista que ALT TAB est√° asignado a la conmutaci√≥n
+de ventanas. Ahora aprieta enter en la primera combinaci√≥n, digamos, *ALT Z* y ve al 
+panel derecho. Escoge *Launch the program* del men√∫ descendente e ingresa como
 argumento SYS:Prefs/Input. Anexa el switch USE y el nombre del preajuste
 *english* a la cadena como se muestra::
 
     SYS:Prefs/Input USE SYS:Prefs/Presets/english
 
-Aprieta el botÛn *New* para agregar la otra combinaciÛn. Ahora establece
-la combinaciÛn para tu locale como se mostrÛ arriba, reemplazando el nombre
-*english* con el nombre de tu preajuste. Aprieta de nuevo el botÛn *New* y
-despuÈs *Save Settings*. Ya puedes usar las combinaciones definidas para 
+Aprieta el bot√≥n *New* para agregar la otra combinaci√≥n. Ahora establece
+la combinaci√≥n para tu locale como se mostr√≥ arriba, reemplazando el nombre
+*english* con el nombre de tu preajuste. Aprieta de nuevo el bot√≥n *New* y
+despu√©s *Save Settings*. Ya puedes usar las combinaciones definidas para 
 conmutar entre las distribuciones.
 
 Instalando el software
 ----------------------
 
-En este momento no hay un sistema instalador en AROS. Instalar una aplicaciÛn
-por lo general significa que tienes que extraerla en alg˙n directorio en la
-unidad de disco duro o en el ramdisk. DespuÈs algunos programas requieren que hagas
+En este momento no hay un sistema instalador en AROS. Instalar una aplicaci√≥n
+por lo general significa que tienes que extraerla en alg√∫n directorio en la
+unidad de disco duro o en el ramdisk. Despu√©s algunos programas requieren que hagas
 asignaciones, lo que se hace con el comando Assign en el CLI, y algunas
 adiciones a los guiones de inicio.
 Por ejemplo, Lunapaint necesita que Lunapaint: sea asignado al directorio
-en que fue extraÌdo para que funcione correctamente. Puedes hacerlo con el
+en que fue extra√≠do para que funcione correctamente. Puedes hacerlo con el
 comando 
 
     Assign Lunapaint: Disk:Path/Lunapaint
 
-Pero si no quieres tipear este comando despuÈs de reiniciar para lanzarlo 
-de nuevo, debes ponerlo en el guiÛn S:User-Startup.
+Pero si no quieres tipear este comando despu√©s de reiniciar para lanzarlo 
+de nuevo, debes ponerlo en el gui√≥n S:User-Startup.
 Para hacer esto, tipea este comando en el prompt del CLI::
 
     :> edit SYS:S/User-Startup
     
-DespuÈs inserta la asignaciÛn de Lunapaint (u otro programa) al final del
-archivo. Guarda los cambios y lo tendr·s arreglado.
+Despu√©s inserta la asignaci√≥n de Lunapaint (u otro programa) al final del
+archivo. Guarda los cambios y lo tendr√°s arreglado.
 
 Otra manera es usar el directorio ENVARC:SYS/Packages. Todo lo que necesitas
-es crear un archivo de texto con el nombre de tu aplicaciÛn y poner la ruta
-a tu aplicaciÛn en ese archivo. DespuÈs crea un directorio llamado S en el 
-directorio del programa y pon el archivo package-startup allÌ. Esta manera es
-m·s segura, pero puede no serte tanto del estilo Amiga.
+es crear un archivo de texto con el nombre de tu aplicaci√≥n y poner la ruta
+a tu aplicaci√≥n en ese archivo. Despu√©s crea un directorio llamado S en el 
+directorio del programa y pon el archivo package-startup all√≠. Esta manera es
+m√°s segura, pero puede no serte tanto del estilo Amiga.
 
 
 Configurando la red
 -------------------
 
 Para comunicarse con otras computadoras en una red, AROS usa una pila TCP, la
-AROSTCP, que es un puerto del AmiTCP. Este software est· ubicado en el directorio
-/Extras/Networking/Stacks/AROSTCP. Configurarlo no es f·cil pero est· en 
-desarrollo un tipo de herramienta GUI. Adem·s entÈrate de que hay muy pocos
-programas de red en AROS (pero algunas interesantes herramientas est·n en
+AROSTCP, que es un puerto del AmiTCP. Este software est√° ubicado en el directorio
+/Extras/Networking/Stacks/AROSTCP. Configurarlo no es f√°cil pero est√° en 
+desarrollo un tipo de herramienta GUI. Adem√°s ent√©rate de que hay muy pocos
+programas de red en AROS (pero algunas interesantes herramientas est√°n en
 desarrollo para ser presentadas pronto).
 
-Primero, necesitas configurar el lado de tu m·quina de la red. Esta parte puede
-diferir dependiendo de tu hardware. En una m·quina real necesitas instalar la
-tarjeta de red (NIC) soportada y enchufar el cable. En una m·quina virtual debes
-configurar la implementaciÛn de la NIC y revisar si est· soportada por AROS
-(al menos, las de QEMU y VMWare lo est·n).
+Primero, necesitas configurar el lado de tu m√°quina de la red. Esta parte puede
+diferir dependiendo de tu hardware. En una m√°quina real necesitas instalar la
+tarjeta de red (NIC) soportada y enchufar el cable. En una m√°quina virtual debes
+configurar la implementaci√≥n de la NIC y revisar si est√° soportada por AROS
+(al menos, las de QEMU y VMWare lo est√°n).
 
 La red en QEMU/Linux
 """"""""""""""""""""
 
 Lee los consejos para lanzar AROS sobre Linux QEMU anteriores.
 
-DespuÈs que esto estÈ habilitado podemos ir al siguiente punto.
+Despu√©s que esto est√© habilitado podemos ir al siguiente punto.
 
 La segunda parte es configurar AROSTCP en AROS para que funcione.
 
 En los sistemas linux se necesitan algunos pasos para hacer que la red en la
-m·quina virtual funcione.
+m√°quina virtual funcione.
 
-Se debe cargar el mÛdulo tun (t˙nel):: 
+Se debe cargar el m√≥dulo tun (t√∫nel):: 
 
     #> modprobe tun
 
-DespuÈs, el n˙cleo debe convertirse en un ruter::
+Despu√©s, el n√∫cleo debe convertirse en un ruter::
 
     #> echo 1 > /proc/sys/net/ipv4/ip_forward
 
@@ -604,27 +604,27 @@ Luego se debe agregar una regla al firewall::
 
     #> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-Para terminar, todavÌa siendo root, inicia Qemu con::
+Para terminar, todav√≠a siendo root, inicia Qemu con::
 
     #> qemu -cdrom aros.iso -m 48
 
-El mÛdulo tun de Linux, por omisiÛn, crea un gateway para la red sintÈtica
+El m√≥dulo tun de Linux, por omisi√≥n, crea un gateway para la red sint√©tica
 en 172.20.0.0/16 con un gateway en 172.20.0.1.
-Digamos que nuestra m·quina alojada en Qemu est· en 172.20.0.10.
+Digamos que nuestra m√°quina alojada en Qemu est√° en 172.20.0.10.
 Digamos que tu LAN es 192.168.0.0/24 con un DNS en 192.168.0.1 (o en
 cualquier parte en Internet, no importa).
 
 *Para QEMU en Windows la red en modo usuario debe ser reemplazada con 10.0.2.16
-para el anfitriÛn y 10.0.2.2 para el gateway, o usar el adaptador TAP,
+para el anfitri√≥n y 10.0.2.2 para el gateway, o usar el adaptador TAP,
 que es mejor. Recuerda configurar tu firewall para que los paquetes de 
 QEMU puedan pasar.*
 
-Tienes que editar tres archivos en el cajÛn SYS:extras/Networking/stacks/AROSTCP/db:
-En *hosts* quita o comenta cualquier entrada. Por ahora los anfitriones estar·n
+Tienes que editar tres archivos en el caj√≥n SYS:extras/Networking/stacks/AROSTCP/db:
+En *hosts* quita o comenta cualquier entrada. Por ahora los anfitriones estar√°n
 hosts, interfaces y netdb-myhost.
 en netdb-myhost.
-En *interfaces* quita el comentario al renglÛn prm-rtl8029.device (QEMU est·
-emulando esta NIC entre otras, puedes usar pcnet32.device para VMWare), edÌtalo
+En *interfaces* quita el comentario al rengl√≥n prm-rtl8029.device (QEMU est√°
+emulando esta NIC entre otras, puedes usar pcnet32.device para VMWare), ed√≠talo
 (cambia una cadena *IP=* a la que estaba arriba)::
 
     eth0 DEV=DEVS:networks/prm-rtl8029.device UNIT=0 NOTRACKING IP=172.20.0.10 UP
@@ -639,7 +639,7 @@ dominio, el gatewary::
 
 El directorio db puede residir en cualquier parte, pon su ruta en el archivo
 ENVARC:AROSTCP/Config, te aconsejo que copies los archivos db en el directorio
-(creado) ENVARC:AROSTCP/db, de ese modo el archivo Config serÌa::
+(creado) ENVARC:AROSTCP/db, de ese modo el archivo Config ser√≠a::
 
     ENV:AROSTCP/db
 
@@ -664,8 +664,8 @@ Edita SYS:Extras/Networking/Stacks/AROSTCP/S/Package-Startup::
         EndIf
     EndIf
 
-El archivo Sys:extras/Networking/Stacks/AROSTCP/S/Startnet deberÌa ser
-algo asÌ::
+El archivo Sys:extras/Networking/Stacks/AROSTCP/S/Startnet deber√≠a ser
+algo as√≠::
 
     ; $VER: AROSTCP-startnet 1.0 (01/08/06)
     ; AROSTCP-startnet (c) The AROS Dev Team.
@@ -678,7 +678,7 @@ algo asÌ::
     ; echo "Wait for Stack Failed"
     EndIf
 
-DespuÈs del arranque, prueba con::
+Despu√©s del arranque, prueba con::
 
     ifconfig -a
 
@@ -690,7 +690,7 @@ Debes ver una salida como esto::
             address: 52:54:00:12:34:56
             inet 172.20.0.10 netmask 0xff000000 broadcast 172.255.255.255
 
-Si puedes ver la cadena eth0 entonces tu interface de red est· levantada. Puedes
+Si puedes ver la cadena eth0 entonces tu interface de red est√° levantada. Puedes
 probarla lanzando estos comandos::
 
     AROS:>ping 172.20.0.1
@@ -703,16 +703,16 @@ probarla lanzando estos comandos::
     3 packets transmitted, 3 packets received, 0% packets loss
     round trip min/avg/max = x/xx/xx ms
 
-Una salida como Èsta significa que los paquetes de nuestra interface 
-alcanzaron el gateway en la direcciÛn 172.20.0.1. Si obtienes los errores
+Una salida como √©sta significa que los paquetes de nuestra interface 
+alcanzaron el gateway en la direcci√≥n 172.20.0.1. Si obtienes los errores
 de Host unreachable, entonces revisa tus configuraciones AROSTCP y las opciones
-de la m·quina virtual.
+de la m√°quina virtual.
 
-En Windows: Para hacer una red externa accesible a la m·quina virtual debes
+En Windows: Para hacer una red externa accesible a la m√°quina virtual debes
 configurar el ruteo desde nuestra red virtual a una real, como hacer
-que un sistema anfitriÛn funcione como un router. Para Linux esto ya est· hecho.
+que un sistema anfitri√≥n funcione como un router. Para Linux esto ya est√° hecho.
 
-Puedes hacer incluso m·s pruebas haciendo ping a los otros anfitriones e
+Puedes hacer incluso m√°s pruebas haciendo ping a los otros anfitriones e
 intentar usar las aplicaciones de red que puedes encontrar en Archives.aros-exec.org,
 como ftp y AIRCos. Si usas un programa FTP con tu servidor FTP, recuerda
 que solamente funciona con servidores ftp pasivos, y configura tu servidor
@@ -722,36 +722,36 @@ de este modo.
 La red en QEMU/Windows
 """"""""""""""""""""""
 
-Configurar QEMU para que funcione en Windows es relativamente m·s difÌcil que
-para Linux. Primero, aseg˙rate que pusiste tu Firewall en el modo aprendizaje
-(o prep·ralo para recibir nuevas reglas) o deshabilÌtalo por completo. El 
+Configurar QEMU para que funcione en Windows es relativamente m√°s dif√≠cil que
+para Linux. Primero, aseg√∫rate que pusiste tu Firewall en el modo aprendizaje
+(o prep√°ralo para recibir nuevas reglas) o deshabil√≠talo por completo. El 
 Firewall puede bloquear las transferencias a la MV.
 
-Hay dos maneras para usar la red con QEMU sobre Windows. Primero y lo m·s
+Hay dos maneras para usar la red con QEMU sobre Windows. Primero y lo m√°s
 probado es usar la interface tap. Para usarla debes descargar el paquete 
-de `OpenVPN <http://openvpn.net>`__ 2.0 para Windows (solamente XP). DespuÈs de
-que lo instales, tendr·s una conexiÛn de red extra en estado de desconexiÛn.
-C·mbiale el nombre a, digamos, eth0. DespuÈs ve a las propiedad de la 
-conexiÛn eth0 y pon una direcciÛn IP en las propiedades del protocolo TCP-IP.
-Debes poner la direcciÛn IP en *otra* subred diferente de tu IP base (si 
+de `OpenVPN <http://openvpn.net>`__ 2.0 para Windows (solamente XP). Despu√©s de
+que lo instales, tendr√°s una conexi√≥n de red extra en estado de desconexi√≥n.
+C√°mbiale el nombre a, digamos, eth0. Despu√©s ve a las propiedad de la 
+conexi√≥n eth0 y pon una direcci√≥n IP en las propiedades del protocolo TCP-IP.
+Debes poner la direcci√≥n IP en *otra* subred diferente de tu IP base (si 
 tienes una 192.168.0.x, entonces pon, digamos, la misma 10.0.2.2) y la
-m·scara de red 255.255.255.0. *Reinicia*. DespuÈs reemplaza las opciones 
-del renglÛn de inicio en QEMU (o agrÈgalas si no estaban) -net nic -net tap,
-ifname=eth0. Luego pon AROS como se describiÛ arriba para la red en modo 
-usuario. FÌjate que necesitar·s los privilegios de administrador para instalar
+m√°scara de red 255.255.255.0. *Reinicia*. Despu√©s reemplaza las opciones 
+del rengl√≥n de inicio en QEMU (o agr√©galas si no estaban) -net nic -net tap,
+ifname=eth0. Luego pon AROS como se describi√≥ arriba para la red en modo 
+usuario. F√≠jate que necesitar√°s los privilegios de administrador para instalar
 el adaptador TAP OpenVPN.
 
-La segunda opciÛn es usar una pila de red de modo usuario que se lance por 
-omisiÛn (o usar los switches "-net nic -net user", que ahora est·n predeterminados).
-Las opciones dadas son para la versiÛn 0.8 o superior de QEMU. La configuraciÛn del 
-lado AROS es similar a la que se usÛ en Linux pero necesitar·s usar la siguiente
-direcciÛn IP para configurar y probar: 10.0.2.16 para la IP de la m·quina
+La segunda opci√≥n es usar una pila de red de modo usuario que se lance por 
+omisi√≥n (o usar los switches "-net nic -net user", que ahora est√°n predeterminados).
+Las opciones dadas son para la versi√≥n 0.8 o superior de QEMU. La configuraci√≥n del 
+lado AROS es similar a la que se us√≥ en Linux pero necesitar√°s usar la siguiente
+direcci√≥n IP para configurar y probar: 10.0.2.16 para la IP de la m√°quina
 AROS (en vez de 172.20.0.10), 10.0.2.2 para el gateway (en vez de 
 172.20.0.1). Este modo puede funcionar sin que el usuario tenga los privilegios
 administrativos, pero *puede hacer que algunas aplicaciones AROS dejen de 
 funcionar apropiadamente (como el cliente FTP)*.
 
-Hay disponibles algunas guÌas en como configurar la red de QEMU en Windows:
+Hay disponibles algunas gu√≠as en como configurar la red de QEMU en Windows:
 
     + Para `VLan <http://www.h7.dion.ne.jp/~qemu-win/HowToNetwork-en.html>`__
     + Para `Tap <http://www.h7.dion.ne.jp/~qemu-win/TapWin32-en.html>`__
@@ -759,9 +759,9 @@ Hay disponibles algunas guÌas en como configurar la red de QEMU en Windows:
 La red en VMWare
 """""""""""""""" 
 
-La red del lado de VMWare es relativamente f·cil de configurar. Todo lo que
-necesitas es agregar la NIC a la configuraciÛn de tu MV y asignar la IP a la 
-nueva conexiÛn de red, asociada con esa tarjeta. Las otras notas de uso son 
+La red del lado de VMWare es relativamente f√°cil de configurar. Todo lo que
+necesitas es agregar la NIC a la configuraci√≥n de tu MV y asignar la IP a la 
+nueva conexi√≥n de red, asociada con esa tarjeta. Las otras notas de uso son 
 las mismas que para QEMU, excepto para el tipo de adaptador en el archivo
 en SYS:Extras/Networking/Stacks/AROSTCP/db/interfaces ::
 
@@ -770,12 +770,12 @@ en SYS:Extras/Networking/Stacks/AROSTCP/db/interfaces ::
 La red en una PC real
 """""""""""""""""""""
 
-En una PC real necesitar·s hacer todo lo que puedes hacer para cualquier OS 
--preparar el hardware a conectar en la caja AROS -cables, concentrador y dem·s.
-DespuÈs debes configurar el lado AROS del mismo modo que arriba, reemplazando las 
+En una PC real necesitar√°s hacer todo lo que puedes hacer para cualquier OS 
+-preparar el hardware a conectar en la caja AROS -cables, concentrador y dem√°s.
+Despu√©s debes configurar el lado AROS del mismo modo que arriba, reemplazando las 
 direcciones IP por las aceptables para tu LAN para una caja AROS, el gateway
 y el DNS. Configurar la tarjeta de red en el archivo *interfaces* quitando el 
-comentario al renglÛn que corresponde a tu tarjeta.
+comentario al rengl√≥n que corresponde a tu tarjeta.
 
 Por terminar...
 
@@ -784,35 +784,35 @@ Configurando el sonido
 
 Actualmente no hay mucho de sonido en AROS. Primero, en este momento no hay
 controladores funcionando para las tarjetas de sonido implementadas en la 
-m·quina virtual (la usual sb16/es) asÌ que la ˙nica maneta de probrar obtener
+m√°quina virtual (la usual sb16/es) as√≠ que la √∫nica maneta de probrar obtener
 sonido es usar AROS-nativo en una pc con una tarjeta real SB Live/Audigy.
-TambiÈn est·n soportados los codecs que siguen la norma AC97.
+Tambi√©n est√°n soportados los codecs que siguen la norma AC97.
 
-El sonido AHI en AROS tambiÈn soporta las opciones sin sonido (VOID) y de
+El sonido AHI en AROS tambi√©n soporta las opciones sin sonido (VOID) y de
 escritura en disco.
 
 Queda para que alguien siga escribiendo...
 
-ø…sa es toda la informaciÛn del usuario en esta guÌa?
+¬ø√âsa es toda la informaci√≥n del usuario en esta gu√≠a?
 =====================================================
 
-Este capÌtulo deberÌa haberte contado cÛmo conseguir, instalar y usar AROS.
-DespuÈs de haber probado ejecutar cada programa en los directorios C, Demos,
-Utilites, Tools, Games, etc., te podrÌas extraÒ·r si eso es todo. °SÌ,
-eso es todo lo que un "Usuario" puede hacer con AROS! Pero cuando alg˙n 
-nuevo cÛdigo importante de usuario estÈ listo, por supuesto ser· agregado
-a esta guÌa.
+Este cap√≠tulo deber√≠a haberte contado c√≥mo conseguir, instalar y usar AROS.
+Despu√©s de haber probado ejecutar cada programa en los directorios C, Demos,
+Utilites, Tools, Games, etc., te podr√≠as extra√±√°r si eso es todo. ¬°S√≠,
+eso es todo lo que un "Usuario" puede hacer con AROS! Pero cuando alg√∫n 
+nuevo c√≥digo importante de usuario est√© listo, por supuesto ser√° agregado
+a esta gu√≠a.
 
-Si crees que no te proporcionÈ suficiente informaciÛn sobre la compilaciÛn,
-la instalaciÛn, Subversion, el shell, etc., podrÌa ser bueno que sepas
-que tengo razones para eso. Primero, ya hay mucha informaciÛn disponible, 
-y serÌa innecesario adem·s de injusto sÛlo copiar esa informaciÛn en este
-documento. Segundo, estamos hablando de informaciÛn muy particular. Alguno
-de los lectores podrÌa estar interesado en compilar el cÛdigo fuente, otros
-podrÌan querer saber todo acerca del shell de Amiga. Entonces, para mantener
-legible esta guÌa, solamente dirigo a los lugares donde puedes encontrar esa
-informaciÛn, en vez de proporcionarla aquÌ. T˙, el lector, puedes entonces 
-decidir eso es de tu interÈs.
+Si crees que no te proporcion√© suficiente informaci√≥n sobre la compilaci√≥n,
+la instalaci√≥n, Subversion, el shell, etc., podr√≠a ser bueno que sepas
+que tengo razones para eso. Primero, ya hay mucha informaci√≥n disponible, 
+y ser√≠a innecesario adem√°s de injusto s√≥lo copiar esa informaci√≥n en este
+documento. Segundo, estamos hablando de informaci√≥n muy particular. Alguno
+de los lectores podr√≠a estar interesado en compilar el c√≥digo fuente, otros
+podr√≠an querer saber todo acerca del shell de Amiga. Entonces, para mantener
+legible esta gu√≠a, solamente dirigo a los lugares donde puedes encontrar esa
+informaci√≥n, en vez de proporcionarla aqu√≠. T√∫, el lector, puedes entonces 
+decidir eso es de tu inter√©s.
 
 
 .. _Linux: http://www.linux.org/

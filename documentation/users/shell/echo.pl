@@ -9,7 +9,7 @@
 Echo
 ====
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	STRING/M,NOLINE/S,FIRST/K/N,LEN/K/N,TO/K
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Wy∂wietla ci±g znakÛw.
+	Wy≈õwietla ciƒÖg znak√≥w.
 
 
 Parametry
@@ -38,10 +38,10 @@ Parametry
 ::
 
 
-	STRING -- ci±g do wy∂wietlenia
-	NOLINE -- brak nowej linii po ci±gu
-	FIRST  -- pierwszy wy∂wietlony znak
-	LEN    -- liczba znakÛw do wy∂wietlenia
-	TO     -- plik lub urz±dzenie jako wyj∂cie
+	STRING -- ciƒÖg do wy≈õwietlenia
+	NOLINE -- brak nowej linii po ciƒÖgu
+	FIRST  -- pierwszy wy≈õwietlony znak
+	LEN    -- liczba znak√≥w do wy≈õwietlenia
+	TO     -- plik lub urzƒÖdzenie jako wyj≈õcie
 
 

@@ -1,71 +1,71 @@
 ====================================
-Manual para la Documentación de AROS
+Manual para la DocumentaciÃ³n de AROS
 ====================================
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright Š 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
 
 .. Warning::
 
-   ¡Este documento no está terminado! Es muy probable que muchas partes
-   estén anticuadas, contengan información incorrecta o simplemente
-   falten. Si quieres ayudar a rectificar esto, por favor contáctanos.
+   Â¡Este documento no estÃ¡ terminado! Es muy probable que muchas partes
+   estÃ©n anticuadas, contengan informaciÃ³n incorrecta o simplemente
+   falten. Si quieres ayudar a rectificar esto, por favor contÃ¡ctanos.
 
-Este manual describe el sistema de documentación de AROS. Está dirigido
-a los escritores de la documentación como también a los
-desarrolladores que deseen extender o enredarse con el sistema en sí.
-Con este fin, el manual está separado en tres partes: una 
-introducción común, el modo de escribir la documentación y 
-por último las notas técnicas y las especificaciones. Además de
-informar sobre el uso del sistema, el segundo capítulo también contiene
+Este manual describe el sistema de documentaciÃ³n de AROS. EstÃ¡ dirigido
+a los escritores de la documentaciÃ³n como tambiÃ©n a los
+desarrolladores que deseen extender o enredarse con el sistema en sÃ­.
+Con este fin, el manual estÃ¡ separado en tres partes: una 
+introducciÃ³n comÃºn, el modo de escribir la documentaciÃ³n y 
+por Ãºltimo las notas tÃ©cnicas y las especificaciones. AdemÃ¡s de
+informar sobre el uso del sistema, el segundo capÃ­tulo tambiÃ©n contiene
 algunas directrices generales a seguir cuando se escriba la 
-documentación de AROS.
+documentaciÃ³n de AROS.
 
 
 .. Contents::
 
 
-Introducción
+IntroducciÃ³n
 ============
 
-La documentación es vital para cualquier proyecto, al hacerlo *útil*. Lo
+La documentaciÃ³n es vital para cualquier proyecto, al hacerlo *Ãºtil*. Lo
 usual, en un proyecto con tan limitados esfuerzos de desarrollador como
-el nuestro, es que la documentación esté considerablemente demorada o ausente.
-Además, la mayoría de los programadores no son tan buenos escribiendo 
-documentos, así que lo que ya se escribió en general no es legible. Se 
+el nuestro, es que la documentaciÃ³n estÃ© considerablemente demorada o ausente.
+AdemÃ¡s, la mayorÃ­a de los programadores no son tan buenos escribiendo 
+documentos, asÃ­ que lo que ya se escribiÃ³ en general no es legible. Se 
 necesitan combinar los esfuerzos de los desarrolladores y de los usuarios
-para que la documentación llegue a la meta de un "AROS Ultimate
-Documentary". Así que si sabes de algunos usuarios que puedan ayudarnos, 
-¡sólo permíteles! =)
+para que la documentaciÃ³n llegue a la meta de un "AROS Ultimate
+Documentary". AsÃ­ que si sabes de algunos usuarios que puedan ayudarnos, 
+Â¡sÃ³lo permÃ­teles! =)
 
 
-*FIXME: ¿Escribir algo más?*
+*FIXME: Â¿Escribir algo mÃ¡s?*
 
 
-Escribir la documentación
+Escribir la documentaciÃ³n
 =========================
 
-El formato de la documentación que usamos es ReStructuredText (o para
-abreviar ReST) como está especificado en el `Docutils Project`__.
-ReST es una sintaxis de marcas de texto plano, extensible, fácil
+El formato de la documentaciÃ³n que usamos es ReStructuredText (o para
+abreviar ReST) como estÃ¡ especificado en el `Docutils Project`__.
+ReST es una sintaxis de marcas de texto plano, extensible, fÃ¡cil
 de leer y de escribir y del tipo "obtienes lo que ves".
 
-Puede describirse como un híbrido entre una sintaxis de marcas 
-implícita y una de marcas explícita, que lo hace fácil de aprender 
+Puede describirse como un hÃ­brido entre una sintaxis de marcas 
+implÃ­cita y una de marcas explÃ­cita, que lo hace fÃ¡cil de aprender 
 y muy legible, y a la vez poderoso y extensible. La `Introduction to
 reStructuredText`__ contiene algunos buenos puntos sobre las metas
 que tiene la sintaxis.
 
-Dado que el formato es básicamente texto plano es muy fácil de aprender
-simplemente inspeccionando la documentación existente y usando el sentido
-común, no obstante se recomienda al menos una ligera lectura del
-`ReStructuredText Primer`__ antes de empezar a trabajar en la documentación
+Dado que el formato es bÃ¡sicamente texto plano es muy fÃ¡cil de aprender
+simplemente inspeccionando la documentaciÃ³n existente y usando el sentido
+comÃºn, no obstante se recomienda al menos una ligera lectura del
+`ReStructuredText Primer`__ antes de empezar a trabajar en la documentaciÃ³n
 de AROS.
 
-Para más información sobre el formato, se recomienda leer los siguientes
+Para mÃ¡s informaciÃ³n sobre el formato, se recomienda leer los siguientes
 documentos:
 
 + `Quick reStructuredText Reference`__
@@ -75,14 +75,14 @@ __ http://docutils.sourceforge.net/docs/ref/rst/introduction.html
 __ http://docutils.sourceforge.net/docs/user/rst/quickstart.html
 __ http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
-El archivo de la documentación
+El archivo de la documentaciÃ³n
 ------------------------------
 
-Para cambiar o escribir la documentación necesitas descargar del
+Para cambiar o escribir la documentaciÃ³n necesitas descargar del
 `subversion archive <svn>`_ 'documentation'. El archivo contiene:
 
 + algunos documentos comunes como contact.en, links.en, etc.
-+ un directorio 'documentation' con la documentación del usuario y del
++ un directorio 'documentation' con la documentaciÃ³n del usuario y del
   desarrollador
 + un directorio 'scripts' con los guiones usados para compilar los
   targets HTML y WWW
@@ -101,73 +101,73 @@ Puedes crear directorios adicionales en 'documentation/users' y en
 los subdirectorios. Se recomienda que crees un archivo 'index.en' en
 los nuevos directorios.
 
-La internacionalización
+La internacionalizaciÃ³n
 -----------------------
 
 El build system soporta I18n para el target 'www'. Tienes que
 agregar un sufijo de idioma al nombre del archivo del documento (por ej.
 commands.en).
-Actualmente hay soporte para el inglés (.en), alemán (.de), finés (.fi),
-italiano (.it), ruso (.ru), sueco (.sv) y holandés (.nl). Si deseas 
-traducir la documentación a más idiomas entonces por favor ponte en
-contacto con nosotros a través de la `website mailing list`__.
+Actualmente hay soporte para el inglÃ©s (.en), alemÃ¡n (.de), finÃ©s (.fi),
+italiano (.it), ruso (.ru), sueco (.sv) y holandÃ©s (.nl). Si deseas 
+traducir la documentaciÃ³n a mÃ¡s idiomas entonces por favor ponte en
+contacto con nosotros a travÃ©s de la `website mailing list`__.
 
 Cuando creas un enlace a un documento tienes que omitir el sufijo
 (por ej. \`Commands <user/commands>\`_). Pero si usas el directorio
 'include' para los documentos traducidos debes dejar el sufijo.
 
-El build system usa la versión en inglés cuando no está disponible
-la traducción de una página.
+El build system usa la versiÃ³n en inglÃ©s cuando no estÃ¡ disponible
+la traducciÃ³n de una pÃ¡gina.
 
 __ http://aros.sourceforge.net/contact.php#mailing-lists
 
-El código de muestra
+El cÃ³digo de muestra
 --------------------
 
-El directorio 'documentation/developers/samplecode' está para los ejemplos
-en código fuente. El contenido se copia sin modificar a los targets.
+El directorio 'documentation/developers/samplecode' estÃ¡ para los ejemplos
+en cÃ³digo fuente. El contenido se copia sin modificar a los targets.
            
-Las imágenes
+Las imÃ¡genes
 ------------
 
-Los nombres y las rutas de las imágenes están hard-coded en el guión
-de python 'buildit.py'. Si quieres agregar imágenes tienes que cambiar
-el guión. Siéntete en libertad de hacer un pedido
-de característica en la lista de correo del desarrollador si quieres que
+Los nombres y las rutas de las imÃ¡genes estÃ¡n hard-coded en el guiÃ³n
+de python 'buildit.py'. Si quieres agregar imÃ¡genes tienes que cambiar
+el guiÃ³n. SiÃ©ntete en libertad de hacer un pedido
+de caracterÃ­stica en la lista de correo del desarrollador si quieres que
 esto se cambie.
 
-Envío
+EnvÃ­o
 -----
 
-Antes que envíes los documentos nuevos o modificados deberías 
+Antes que envÃ­es los documentos nuevos o modificados deberÃ­as 
 `build`__ ambos targets HTML y WWW localmente. Busca los mensajes de
-error y repáralos. Comprueba el resultado en un navegador web. Lo normal
+error y repÃ¡ralos. Comprueba el resultado en un navegador web. Lo normal
 es que los cambios sean aplicados a http://aros.sourceforge.net/ algunas horas
-después de su envío.
+despuÃ©s de su envÃ­o.
 
 __ building_
 
  
-Notas técnicas
+Notas tÃ©cnicas
 ==============
 
 Las bases de datos
 ------------------
 
-Hay varias pequeñas bases de datos, que puedes encontrar en el directorio
-``db``, que están en texto plano pero usan un par de formatos ligeramente
-diferentes. Principalmente, esto es un artefacto histórico y quizás debería
-ser rectificado en el futuro, pero por ahora es más fácil mantenerlos
-tal como están.
+Hay varias pequeÃ±as bases de datos, que puedes encontrar en el directorio
+``db``, que estÃ¡n en texto plano pero usan un par de formatos ligeramente
+diferentes. Principalmente, esto es un artefacto histÃ³rico y quizÃ¡s deberÃ­a
+ser rectificado en el futuro, pero por ahora es mÃ¡s fÃ¡cil mantenerlos
+tal como estÃ¡n.
 
 
 credits
 ~~~~~~~
 
-Esto es una lista de las personas que han contribuído con AROS. El
+Esto es una lista de las personas que han contribuÃ­do con AROS. El
 build system crea el archivo 'credits.en'. Este archivo se usa en
-ambos targets WWW y HTML. Por favor fíjate que también deberías
-cambiar el archivo workbench/system/AboutAROS/db/credits en el depósito
+ambos targets WWW y HTML. Por favor fÃ­jate que tambiÃ©n deberÃ­as
+cambiar el archivo workbench/system/AboutAROS/db/credits en el depÃ³sito
 de AROS.
 
 
@@ -181,7 +181,7 @@ dicho;autor. El build system copia este archivo al target HTML.
 mirrors
 ~~~~~~~
 
-Puesto que AROS está alojado en Sourceforge no hay servidores 
+Puesto que AROS estÃ¡ alojado en Sourceforge no hay servidores 
 espejo. Este archivo es ignorado por el build system.
 
 
@@ -194,8 +194,8 @@ por un largo tiempo y no es usado para los targets.
 
 Sizes
 ~~~~~
-Los archivos ``aros.size`` y ``contrib.size`` no se usan más y es 
-probable que serán borrados.
+Los archivos ``aros.size`` y ``contrib.size`` no se usan mÃ¡s y es 
+probable que serÃ¡n borrados.
 
 
 Building
@@ -204,17 +204,17 @@ Building
 Requerimientos
 ~~~~~~~~~~~~~~
 
-Necesitarás lo siguiente para compilar la documentación de AROS 
+NecesitarÃ¡s lo siguiente para compilar la documentaciÃ³n de AROS 
 desde cero:
 
 + Python__ 2.2.1
 
-Para construir el sitio web necesitarás adicionalmente:
+Para construir el sitio web necesitarÃ¡s adicionalmente:
 
 + The `Python Imaging Library`__ 1.1.3
 
 MacOS X viene con Python pre-instalado, pero para compilar el
-sitio web necesitarás:
+sitio web necesitarÃ¡s:
 
 + The `MacPorts`__ package 
 
@@ -228,24 +228,24 @@ __ https://trac.macports.org/browser/trunk/dports/python/py-pil/
 Setting up
 ~~~~~~~~~~
 
-Antes de que empieces a compilar la documentación, podría ser necesario
-algún ajuste si la versión necesaria del interpretador Python
-no se llama "python" en tu sistema. Si no es así, simplemente puedes 
-saltar esta sección.
+Antes de que empieces a compilar la documentaciÃ³n, podrÃ­a ser necesario
+algÃºn ajuste si la versiÃ³n necesaria del interpretador Python
+no se llama "python" en tu sistema. Si no es asÃ­, simplemente puedes 
+saltar esta secciÃ³n.
 
-Primero, copia los ajustes por omisión::
+Primero, copia los ajustes por omisiÃ³n::
 
     % cd AROS/documentation/scripts/config
     % cp defaults user
 
-Después, edita el archivo ``user`` y asegúrate que las variables son
-correctas para tu sistema. Un archivo de configuración de ejemplo 
-podría verse algo así::
+DespuÃ©s, edita el archivo ``user`` y asegÃºrate que las variables son
+correctas para tu sistema. Un archivo de configuraciÃ³n de ejemplo 
+podrÃ­a verse algo asÃ­::
 
     PYTHON=python
 
-``PYTHON`` indica el nombre del interpretador de Python; podría también
-ser una ruta absoluta si no lo tienes en la ruta de búsqueda. Podrías 
+``PYTHON`` indica el nombre del interpretador de Python; podrÃ­a tambiÃ©n
+ser una ruta absoluta si no lo tienes en la ruta de bÃºsqueda. PodrÃ­as 
 necesitar establecerlo a ``python2`` o ``python2.2`` en algunos sistemas.
 
 
@@ -257,52 +257,52 @@ En este momento hay dos targets soportados:
 + ``www`` 
   
   Este target genera el sitio web de AROS que incluye toda la 
-  documentación, las novedades-noticias, las galerías de fotografías
-  con miniaturas y la información del estado. La documentación
-  se integrará satisfactoriamente con el resto del sitio.
+  documentaciÃ³n, las novedades-noticias, las galerÃ­as de fotografÃ­as
+  con miniaturas y la informaciÃ³n del estado. La documentaciÃ³n
+  se integrarÃ¡ satisfactoriamente con el resto del sitio.
 
 + ``html``
   
-  Este target genera el HTML separado de la documentación, adecuado
-  para la visión offline y la inclusión en los paquetes de documentación.
+  Este target genera el HTML separado de la documentaciÃ³n, adecuado
+  para la visiÃ³n offline y la inclusiÃ³n en los paquetes de documentaciÃ³n.
   
   
 Procedimiento
 ~~~~~~~~~~~~~
 
-Para compilar un target específico, simplemente invoca el guión de compilación
+Para compilar un target especÃ­fico, simplemente invoca el guiÃ³n de compilaciÃ³n
 con el nombre del target como primer argumento. El directorio actual
-necesita ser la raíz del árbol de la documentación. Por ejemplo, para
+necesita ser la raÃ­z del Ã¡rbol de la documentaciÃ³n. Por ejemplo, para
 compilar el sitio web haz::
 
     > cd AROS/documentation
     > ./build www
 
-Si quieres compilar la documentación HTML separada::
+Si quieres compilar la documentaciÃ³n HTML separada::
 
     > cd AROS/documentation
     > ./build html
 
-Consejo: agregar un sufijo de idioma (por ej. en, du o it) después del nombre
-del target dará solamente las páginas para ese lenguaje. Todas las
-páginas faltantes o no traducidas serán substituídas por sus contrapartes
-en inglés. Esto resulta en tiempos de compilación enormemente reducidos. ::
+Consejo: agregar un sufijo de idioma (por ej. en, du o it) despuÃ©s del nombre
+del target darÃ¡ solamente las pÃ¡ginas para ese lenguaje. Todas las
+pÃ¡ginas faltantes o no traducidas serÃ¡n substituÃ­das por sus contrapartes
+en inglÃ©s. Esto resulta en tiempos de compilaciÃ³n enormemente reducidos. ::
 
     > cd AROS/documentation
     > ./build www du
 
 
-Los archivos generados serán puesto en ``../bin/documentation/<target-name>``,
+Los archivos generados serÃ¡n puesto en ``../bin/documentation/<target-name>``,
 por ej. ``../bin/documentation/www`` para el target ``www``. Los
-archivos específicos de un lenguajes son puesto en ``../bin/documentation/<target-name>/<language-name>``.
+archivos especÃ­ficos de un lenguajes son puesto en ``../bin/documentation/<target-name>/<language-name>``.
 
-Adicionalmente, hay un target ``clean``, que borrará entero el 
+Adicionalmente, hay un target ``clean``, que borrarÃ¡ entero el 
 directorio ``../bin/documentation``.
 
 .. Note::
 
     Actualmente hay muchos archivos intermedios generados en
-    los directorios fuente, así que no puedes ponerlos en un sistema de
+    los directorios fuente, asÃ­ que no puedes ponerlos en un sistema de
     archivo de solo-lectura. Si haz descargado los fuentes desde SVN
-    no necesitas preocuparte: los archivos generados son ignorados según
+    no necesitas preocuparte: los archivos generados son ignorados segÃºn
     sea apropiado.

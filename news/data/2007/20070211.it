@@ -7,12 +7,12 @@ Status Update
 
 Solo una breve status update per annunciare che tutti i problemi 
 iniziali del drag & drop, nella versione native di AROS, sono 
-stati risolti. Wanderer è molto più stabile e quasi completo, 
-non blocca più l'intero sistema operativo cercando di copiare 
-i file da una finestra all'altra. È stata aggiunta anche una 
+stati risolti. Wanderer Ã¨ molto piÃ¹ stabile e quasi completo, 
+non blocca piÃ¹ l'intero sistema operativo cercando di copiare 
+i file da una finestra all'altra. Ãˆ stata aggiunta anche una 
 finestra che mostra il progresso delle operazioni di copia.
 
-Tutte le nuove caratteristiche sono già disponibili nelle ultime 
+Tutte le nuove caratteristiche sono giÃ  disponibili nelle ultime 
 nightly build, ma non nella snapshot corrente. Per tanto 
 suggeriamo a chiunque voglia provare AROS di scaricare la 
 nightly build della notte scorsa.

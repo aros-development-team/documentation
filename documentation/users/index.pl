@@ -1,11 +1,11 @@
 ===============
-Dla u¿ytkownika
+Dla uÅ¼ytkownika
 ===============
 
-+ `Jak zainstalowaæ`__
-+ `Jak u¿ywaæ`__
++ `Jak zainstalowaÄ‡`__
++ `Jak uÅ¼ywaÄ‡`__
 + `Komendy Shella`__
-+ `Najczê¶ciej zadawane pytania (FAQ)`__
++ `NajczÄ™Å›ciej zadawane pytania (FAQ)`__
 
 __ installation  
 __ using  

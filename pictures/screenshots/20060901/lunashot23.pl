@@ -1,2 +1,2 @@
-Wspania≥y program rysunkowy "M0ns00n" Titlestad'a, Lunapaint v0.2.3
-wersja robocza. Pe≥na obs≥uga datatypÛw... i wiele innych zmian.
+Wspania≈Çy program rysunkowy "M0ns00n" Titlestad'a, Lunapaint v0.2.3
+wersja robocza. Pe≈Çna obs≈Çuga datatyp√≥w... i wiele innych zmian.

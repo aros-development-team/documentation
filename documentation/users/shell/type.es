@@ -20,7 +20,7 @@ Synopsis
      FROM/A/M,TO/K,OPT/K,HEX/S,NUMBER/S
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
@@ -41,11 +41,11 @@ Entradas
 ::
 
 
-     FROM   -- uno o más archivos a mostrar
+     FROM   -- uno o mÃ¡s archivos a mostrar
      TO     -- imprime la salida en un archivo
      OPT    -- H o N (vea HEX o NUMBER)
      HEX    -- muestra la salida en formato hexadecimal
-     NUMBER -- las líneas están numeradas
+     NUMBER -- las lÃ­neas estÃ¡n numeradas
                HEX y NUMBER son mutuamente excluyentes
 
 

@@ -3,7 +3,7 @@ Wprowadzenie do komend AROS'a
 =============================
 
 :Authors:   Matthias Rustler 
-:Copyright: Copyright © 2006, The AROS Development Team
+:Copyright: Copyright Å  2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Draft
@@ -15,103 +15,103 @@ Wprowadzenie do komend AROS'a
 -----------------
 
 AROS posiada konsole 'Shell'. 
-Mo¿esz j± uruchomiæ z menu Wanderer>Shell. Okno z aktualnym katalogiem zostanie
-otworzone. Okno poleceñ bêdzie zawiera³o numer CLI oraz aktualn± ¶cie¿kê.
+MoÅ¼esz jÄ… uruchomiÄ‡ z menu Wanderer>Shell. Okno z aktualnym katalogiem zostanie
+otworzone. Okno poleceÅ„ bÄ™dzie zawieraÅ‚o numer CLI oraz aktualnÄ… Å›cieÅ¼kÄ™.
 
-Shell posiada historiê. Mo¿esz mieæ do niej dostêp poprzez kursor w górê i w 
-dó³.
+Shell posiada historiÄ™. MoÅ¼esz mieÄ‡ do niej dostÄ™p poprzez kursor w gÃ³rÄ™ i w 
+dÃ³Å‚.
 
-Jest tutaj wiele udogodnieñ. Je¶li wpiszesz pierwsze litery komendy 
-lub obiektu i wci¶niesz tabulator, Shell szuka pasuj±cego wyrazu. Je¶li jednak 
-bêdzie wiêcej mo¿liwo¶ci to pojawi siê lista ASL z mo¿liwo¶ci± wyboru.
+Jest tutaj wiele udogodnieÅ„. JeÅ›li wpiszesz pierwsze litery komendy 
+lub obiektu i wciÅ›niesz tabulator, Shell szuka pasujÄ…cego wyrazu. JeÅ›li jednak 
+bÄ™dzie wiÄ™cej moÅ¼liwoÅ›ci to pojawi siÄ™ lista ASL z moÅ¼liwoÅ›ciÄ… wyboru.
 
-W AROS komendy i nazwy plików mog± byæ pisane mieszanymi [wielkimi/ma³ymi] 
+W AROS komendy i nazwy plikÃ³w mogÄ… byÄ‡ pisane mieszanymi [wielkimi/maÅ‚ymi] 
 literami.
 
-AROS szuka komend w aktualnym katalogu i ¶cie¿kach wyszukiwania.
-Mo¿esz podgl±daæ i zmieniaæ ¶cie¿ki dziêki komendzie `path <path>`_
+AROS szuka komend w aktualnym katalogu i Å›cieÅ¼kach wyszukiwania.
+MoÅ¼esz podglÄ…daÄ‡ i zmieniaÄ‡ Å›cieÅ¼ki dziÄ™ki komendzie `path <path>`_
 
 
-Niektóre potrzebne komendy
+NiektÃ³re potrzebne komendy
 --------------------------
 + `CD <cd>`_		-- zmienia katalog
-+ `DIR <dir>`_		-- pokazuje zawarto¶æ katalogu
++ `DIR <dir>`_		-- pokazuje zawartoÅ›Ä‡ katalogu
 + `COPY <copy>`_	-- kopiuje pliki i katalogi
 + `DELETE <delete>`_	-- usuwa pliki i katalogi
 + `INFO <info>`_	-- pokazuje dostepne dyski
 + `MAKEDIR <makedir>`_	-- tworzy katalogi
 + `RENAME <rename>`_	-- zmienia nazwe plikom i katalogom
-+ `TYPE <type>`_	-- pokazuje zawarto¶æ plików tekstowych
++ `TYPE <type>`_	-- pokazuje zawartoÅ›Ä‡ plikÃ³w tekstowych
 
-¦cie¿ka
+ÅšcieÅ¼ka
 -------
-G³ówna ¶cie¿ka rozpoczyna siê od nazwy i dwukropka (:),
-katalogi s± oddzielone uko¶nikiem (/).
-Nazwa dysku mo¿e byæ nazw± urz±dzenia (dh0:), woluminem (workbench:) lub
+GÅ‚Ã³wna Å›cieÅ¼ka rozpoczyna siÄ™ od nazwy i dwukropka (:),
+katalogi sÄ… oddzielone ukoÅ›nikiem (/).
+Nazwa dysku moÅ¼e byÄ‡ nazwÄ… urzÄ…dzenia (dh0:), woluminem (workbench:) lub
 logicznym dyskiem (zobacz `assign <assign>`_ komenda)
 
 ::
   
-	Przyk³ad: dh0:dir1/dir2/file.dat
+	PrzykÅ‚ad: dh0:dir1/dir2/file.dat
 
-Je¶li chcesz dodaæ aktualny katalog do ¶cie¿ek wyszukiwania to mo¿esz to zrobiæ 
-po prostu pisz±c path "".
+JeÅ›li chcesz dodaÄ‡ aktualny katalog do Å›cieÅ¼ek wyszukiwania to moÅ¼esz to zrobiÄ‡ 
+po prostu piszÄ…c path "".
 
 ::
 
-	Przyk³ad: copy from ram:x to ""
+	PrzykÅ‚ad: copy from ram:x to ""
 
 
-Sam dwukropek oznacza katalog aktualnej ¶cie¿ki.
-Gdy ¶cie¿ka zaczyna siê od dwukropka wtedy wskazuje na g³ówny katalog podanej 
-¶cie¿ki.
+Sam dwukropek oznacza katalog aktualnej Å›cieÅ¼ki.
+Gdy Å›cieÅ¼ka zaczyna siÄ™ od dwukropka wtedy wskazuje na gÅ‚Ã³wny katalog podanej 
+Å›cieÅ¼ki.
 
-Jeden uko¶nik (/) oznacza przej¶cie do katalogu wy¿ej, dwa oznaczaj± dwa wy¿ej,
+Jeden ukoÅ›nik (/) oznacza przejÅ›cie do katalogu wyÅ¼ej, dwa oznaczajÄ… dwa wyÅ¼ej,
 i tak analogicznie.
 
-Gdy nazwa zawiera spacje, nazwy musz± byæ ujête w nawiasy.
+Gdy nazwa zawiera spacje, nazwy muszÄ… byÄ‡ ujÄ™te w nawiasy.
 
 ::
 
-	Przyk³ad: type "nazwa z odstêpami"
+	PrzykÅ‚ad: type "nazwa z odstÄ™pami"
 
 Szablon komend
 --------------
-Znak zapytania po komendzie pokazuje jej dostêpne opcje. Nastêpnie komenda jest w
-trybie, w którym czeka na podanie parametrów.
+Znak zapytania po komendzie pokazuje jej dostÄ™pne opcje. NastÄ™pnie komenda jest w
+trybie, w ktÃ³rym czeka na podanie parametrÃ³w.
 
 ::
 
-	Przyk³ad: copy ?
+	PrzykÅ‚ad: copy ?
 	FROM/M,TO/A,ALL/S,QUIET/S,BUF=BUFFER/K/N,CLONE/S,DATES/S,NOPRO/S,COM/S,NOREQ/S
 
-S³owa kluczowe mog± posiadaæ nastêpuj±ce opcje::
+SÅ‚owa kluczowe mogÄ… posiadaÄ‡ nastÄ™pujÄ…ce opcje::
 
-	/A -- argument musi byæ podany
-	/K -- s³owo kluczowe musi byæ wpisane, gdy jest podany argument
-	/S -- prze³±cznik; tylko s³owo kluczowe jest potrzebne
+	/A -- argument musi byÄ‡ podany
+	/K -- sÅ‚owo kluczowe musi byÄ‡ wpisane, gdy jest podany argument
+	/S -- przeÅ‚Ä…cznik; tylko sÅ‚owo kluczowe jest potrzebne
 	/N -- argument numeryczny
-	/M -- wiêcej ni¿ jeden argument musi byæ podany
+	/M -- wiÄ™cej niÅ¼ jeden argument musi byÄ‡ podany
 	/F -- reszta linii komend
-	=  -- skrót; opcjonalnie mo¿esz u¿yæ skrótu
+	=  -- skrÃ³t; opcjonalnie moÅ¼esz uÅ¼yÄ‡ skrÃ³tu
 
-Gdy wywo³ujesz komendê mo¿esz u¿yæ nastêpuj±cej formy::
+Gdy wywoÅ‚ujesz komendÄ™ moÅ¼esz uÅ¼yÄ‡ nastÄ™pujÄ…cej formy::
 
-	Przyk³ad: copy from=a.dat to=b.dat
+	PrzykÅ‚ad: copy from=a.dat to=b.dat
   
 Wzorce
 ------
-Niektóre komendy zezwalaj± na u¿ycie wzorców::
+NiektÃ³re komendy zezwalajÄ… na uÅ¼ycie wzorcÃ³w::
 
 	?  -- jeden znak
-	#? -- zero lub wiêcej znaków
-	#x -- zero lub wiêcej x
+	#? -- zero lub wiÄ™cej znakÃ³w
+	#x -- zero lub wiÄ™cej x
 	~  -- zaprzeczenie
 	|  -- lub
 	() -- grupa
-	[] -- zasiêg
+	[] -- zasiÄ™g
 
-	Przyk³ad::
+	PrzykÅ‚ad::
 
 	dir #?.info
 	dir #?~(.info)
@@ -124,43 +124,43 @@ Przekierowania
 ::
 
 	>	przekierowuje do pliku
-	>>	przekierowuje do pliku, do³±czaj±c
-	<	przekierowuje z pliku, b±d¼ urz±dzenia
+	>>	przekierowuje do pliku, doÅ‚Ä…czajÄ…c
+	<	przekierowuje z pliku, bÄ…dÅº urzÄ…dzenia
 	
-	Przyk³ad: dir >ram:a 
+	PrzykÅ‚ad: dir >ram:a 
 
 Potok
 -----
-Je¶li chcesz przekierowaæ wyj¶cie jednej komendy do drugiej, mo¿esz u¿yæ potoku.
-Musisz po³±czyæ komendy takim znakiem \| . Musi byæ przynajmniej jedna spacja
+JeÅ›li chcesz przekierowaÄ‡ wyjÅ›cie jednej komendy do drugiej, moÅ¼esz uÅ¼yÄ‡ potoku.
+Musisz poÅ‚Ä…czyÄ‡ komendy takim znakiem \| . Musi byÄ‡ przynajmniej jedna spacja
 przed i po \|::
 
-	Przyk³ad: dir | innakomenda
+	PrzykÅ‚ad: dir | innakomenda
 	
 	
-Lecz co je¶li druga komenda chce odzczytaæ wej¶cie z pliku? Rozwi±zanie polega
-na u¿yciu nieistniej±cego urz±dzenia 'in:'::
+Lecz co jeÅ›li druga komenda chce odzczytaÄ‡ wejÅ›cie z pliku? RozwiÄ…zanie polega
+na uÅ¼yciu nieistniejÄ…cego urzÄ…dzenia 'in:'::
   
-	Przyk³ad: dir | more in:  
+	PrzykÅ‚ad: dir | more in:  
 
-Urz±dzenia specjalne
+UrzÄ…dzenia specjalne
 --------------------
-+ ram:	mo¿esz u¿ywaæ RamDysku jak twardego dysku. Lecz po ponownym uruchomieniu
-	zawarto¶æ jest wyczyszczona. 
-+ nil:	je¶li nie chcesz aby wyj¶cie z komendy zostawa³o wy¶wietlane, mo¿esz
-	u¿yæ urz±dzenia 'nil:'. Przyk³ad Dir >nil:
++ ram:	moÅ¼esz uÅ¼ywaÄ‡ RamDysku jak twardego dysku. Lecz po ponownym uruchomieniu
+	zawartoÅ›Ä‡ jest wyczyszczona. 
++ nil:	jeÅ›li nie chcesz aby wyjÅ›cie z komendy zostawaÅ‚o wyÅ›wietlane, moÅ¼esz
+	uÅ¼yÄ‡ urzÄ…dzenia 'nil:'. PrzykÅ‚ad Dir >nil:
 
 Uruchamianie w nowym procesie
 -----------------------------
-Normalnie komenda blokuje Shell, a¿ do jej zakoñczenia. Mo¿esz uruchomiæ komendy
-w nowych procesach dziêki 'Run <run>'_ .
+Normalnie komenda blokuje Shell, aÅ¼ do jej zakoÅ„czenia. MoÅ¼esz uruchomiÄ‡ komendy
+w nowych procesach dziÄ™ki 'Run <run>'_ .
 
 ::
 
-	Przyk³ad: run dir #?
+	PrzykÅ‚ad: run dir #?
 
 Pliki .info
 -----------
-Pliki z rozszerzeniem '.info' odgrywaj± wa¿n± rolê w Wanderer. Zawieraj±
+Pliki z rozszerzeniem '.info' odgrywajÄ… waÅ¼nÄ… rolÄ™ w Wanderer. ZawierajÄ…
 obrazek do ikony i kilka dodatkowych informacji. Gdy korzystasz z komend Shell
-musisz pliki '.info' wzi±æ pod uwagê.
+musisz pliki '.info' wziÄ…Ä‡ pod uwagÄ™.

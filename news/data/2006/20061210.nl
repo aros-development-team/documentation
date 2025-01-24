@@ -13,10 +13,10 @@ weer een stukje beter maken.
 De nightly builds van de PPC-gehoste versie van AROS zijn nu eindelijk beschikbaar
 op onze `download pagina`__.
 
-Christoph Szczecina heeft de eerste ondersteuning geïmplementeerd voor 
-het drag'n'drop kopiëren van bestanden in de Wanderer, wat een makkelijke
+Christoph Szczecina heeft de eerste ondersteuning geÃ¯mplementeerd voor 
+het drag'n'drop kopiÃ«ren van bestanden in de Wanderer, wat een makkelijke
 aanpak toestaat van het bestand management. Deze vroege aanpassing staat
-nog alleen toe een enkel bestand te kopiëren van één directory naar een andere, 
+nog alleen toe een enkel bestand te kopiÃ«ren van Ã©Ã©n directory naar een andere, 
 maar het is een begin. Beta testers zullen de nieuwe feature terugvinden in de 
 laatste nightly build. Andere ontwikkelaars hebben tevens het opslaan 
 van venster posities en datzelfde voor de icoon lijstweergave toegevoegd.
@@ -56,10 +56,10 @@ voor AROS. Het ondersteund twee in Polen zeer populaire protocollen, te weten:
 Gadu-Gadu en Tlen. AmiGG ondersteund tevens mail notificaties. 
 U kunt `hier`__ en `hier`__ screenshots vinden, de binaries zijn `hier`__ te vinden.
 
-*Murks!* is een Geïntegreerde Ontwikkelings Omgeving voor AROS. Murks! gebruikt
+*Murks!* is een GeÃ¯ntegreerde Ontwikkelings Omgeving voor AROS. Murks! gebruikt
 hetzelfde Project Bestand Formaat dat AmiDevCpp gebruikt, wat het uitwisselen 
 van data mogelijk maakt. Om Murks! te gebruiken moet u wel de AROS native gcc
-geïnstalleerd hebben op uw systeem; Windows gebruikers kunnen Murks! proberen
+geÃ¯nstalleerd hebben op uw systeem; Windows gebruikers kunnen Murks! proberen
 met de recentste WinAros versie die deze native gcc bevat. De volledige aankondiging 
 is te lezen op `AROS-EXEC`__.
 

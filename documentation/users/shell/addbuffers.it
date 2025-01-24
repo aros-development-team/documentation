@@ -41,7 +41,7 @@ Funzione
      specifico. Aggiungendo buffers si accelera l'accessosul disco ma ha uno
      svnataggio sull'uso della memoria di sistema (512 bytes per buffer).
      Specificando un numero negativo si sottraggono buffers dal drive.
-     Se solo l'argomento  DRIVE Ë specificato, sar‡ solo visualizzato
+     Se solo l'argomento  DRIVE √® specificato, sar√† solo visualizzato
      il numero di buffers per quel drive senza alcun reale cambiamento
      all'allocazione.
 
@@ -51,7 +51,7 @@ Inputs
 ::
 
 
-     DRIVE    --  il drive dove verr‡ alterata l'allocazione dei buffers
+     DRIVE    --  il drive dove verr√† alterata l'allocazione dei buffers
      BUFFERS  --  il numero di buffers da aggiungere (o sottrarre nel caso 
      			  di numeri negativi) da un drive.
 

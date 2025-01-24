@@ -1,49 +1,49 @@
 ===================
-Vánoèní aktualizace
+VÃ¡noÄnÃ­ aktualizace
 ===================
 
 :Autor:   Paolo Besser
 :Datum:   24.12.2007
 
-Veselé Vánoce a ¹»astnı novı rok! Tento rok byl velmi dùle¾itı
-pro vıvoj, profilování a ¹íøení AROSu. A my bychom
-chtìli velmi podìkovat v¹em fanou¹kùm, testerùm a pøispìvatelùm
-AROSu za vynikající vısledky, kterıch ná¹/tvùj operaèní systém dosáhl.
+VeselÃ© VÃ¡noce a Å¡Å¥astnÃ½ novÃ½ rok! Tento rok byl velmi dÅ¯leÅ¾itÃ½
+pro vÃ½voj, profilovÃ¡nÃ­ a Å¡Ã­Å™enÃ­ AROSu. A my bychom
+chtÄ›li velmi podÄ›kovat vÅ¡em fanouÅ¡kÅ¯m, testerÅ¯m a pÅ™ispÄ›vatelÅ¯m
+AROSu za vynikajÃ­cÃ­ vÃ½sledky, kterÃ½ch nÃ¡Å¡/tvÅ¯j operaÄnÃ­ systÃ©m dosÃ¡hl.
 
-Zde je pár "milníkù", kterıch v roce 2007 AROS dosáhl.
+Zde je pÃ¡r "milnÃ­kÅ¯", kterÃ½ch v roce 2007 AROS dosÃ¡hl.
 
-Leden: po letech potıkání se s pøíkazy shellu a s problémy s DOpusem
-se kopírování stalo jednodu¹¹í s Wanderer drag'n'drop (táhni a pus»).
+Leden: po letech potÃ½kÃ¡nÃ­ se s pÅ™Ã­kazy shellu a s problÃ©my s DOpusem
+se kopÃ­rovÃ¡nÃ­ stalo jednoduÅ¡Å¡Ã­ s Wanderer drag'n'drop (tÃ¡hni a pusÅ¥).
 
-Únor: tap rozhraní bylo pøidáno do hostovaného AROSu,
-dokonèení sí»ové podpory.
+Ãšnor: tap rozhranÃ­ bylo pÅ™idÃ¡no do hostovanÃ©ho AROSu,
+dokonÄenÃ­ sÃ­Å¥ovÃ© podpory.
  
-Bøezen: AROS získal podporu file-systems paketù, zvı¹ení
-kompatibility a spojitosti s pùvodní AmigaOS a bylo umo¾nìno
-spravování FAT oddílù. AROS také vylep¹il TCP/IP
-stack s novou verzí AROSTCP a pøidal podporu USB.
+BÅ™ezen: AROS zÃ­skal podporu file-systems paketÅ¯, zvÃ½Å¡enÃ­
+kompatibility a spojitosti s pÅ¯vodnÃ­ AmigaOS a bylo umoÅ¾nÄ›no
+spravovÃ¡nÃ­ FAT oddÃ­lÅ¯. AROS takÃ© vylepÅ¡il TCP/IP
+stack s novou verzÃ­ AROSTCP a pÅ™idal podporu USB.
 
-Duben: Wanderer má novı systém pro úpravu vzhledu, kterı dovoluje
-pøizpùsobit okna tématy. Byla také vylep¹ena podpora pro skripty
+Duben: Wanderer mÃ¡ novÃ½ systÃ©m pro Ãºpravu vzhledu, kterÃ½ dovoluje
+pÅ™izpÅ¯sobit okna tÃ©maty. Byla takÃ© vylepÅ¡ena podpora pro skripty
 LUA a ARexx.
 
-Kvìten: AROS zmìnil své jméno na 'AROS Research Operating System' a
-web aros.org dostal novou tváø. Wanderer teï mù¾e zobrazovat ikony
-nebo v¹echny soubory. Zrodil se také novı komunitní portál - ArosWorld.org.
+KvÄ›ten: AROS zmÄ›nil svÃ© jmÃ©no na 'AROS Research Operating System' a
+web aros.org dostal novou tvÃ¡Å™. Wanderer teÄ mÅ¯Å¾e zobrazovat ikony
+nebo vÅ¡echny soubory. Zrodil se takÃ© novÃ½ komunitnÃ­ portÃ¡l - ArosWorld.org.
 
-Èerven: u¾ivatelé AROSu rozhodli o oficiálním pozadí pro okna a pracovní
-plochu ve velmi zábavné soutì¾i.
+ÄŒerven: uÅ¾ivatelÃ© AROSu rozhodli o oficiÃ¡lnÃ­m pozadÃ­ pro okna a pracovnÃ­
+plochu ve velmi zÃ¡bavnÃ© soutÄ›Å¾i.
 
-Záøí: AROS byl pøedstaven Amiga komunitì pøi konferenci na Pianeta Amiga.
-Také bylo naportováno MUIbase a HivelyTracker.
+ZÃ¡Å™Ã­: AROS byl pÅ™edstaven Amiga komunitÄ› pÅ™i konferenci na Pianeta Amiga.
+TakÃ© bylo naportovÃ¡no MUIbase a HivelyTracker.
 
-Øíjen: AROS má novı instalátor, kterı èiní instalaci na pevnı disk
-jednodu¹¹í. AROS teï mù¾e bezpeènì pøebıvat na disku spoleènì s
+Å˜Ã­jen: AROS mÃ¡ novÃ½ instalÃ¡tor, kterÃ½ ÄinÃ­ instalaci na pevnÃ½ disk
+jednoduÅ¡Å¡Ã­. AROS teÄ mÅ¯Å¾e bezpeÄnÄ› pÅ™ebÃ½vat na disku spoleÄnÄ› s
 Microsoft Windows.
 
-Listopad: AROS udìlal obrovskı krok vpøed se svou novou 64 bitovou
-verzí.
+Listopad: AROS udÄ›lal obrovskÃ½ krok vpÅ™ed se svou novou 64 bitovou
+verzÃ­.
 
-Prosinec: Byly ohlá¹eny dvì nové distribuce AROSu, Velocity
+Prosinec: Byly ohlÃ¡Å¡eny dvÄ› novÃ© distribuce AROSu, Velocity
 a VmwAROS.
 

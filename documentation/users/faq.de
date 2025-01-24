@@ -3,7 +3,7 @@ Frequently Asked Questions
 ==========================
 
 :Autoren:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright © 1995-2007, The AROS Development Team
+:Copyright: Copyright Â© 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Datum:     $Date$
 :Status:    Erledigt.
@@ -16,8 +16,8 @@ Allgemeine Fragen
 Kann ich eine Frage stellen?
 ----------------------------
 
-Natürlich können Sie. Bitte gehen Sie ins `AROS-Exec forum`__ und
-lesen Sie die Beiträge und fragen Sie alles was Sie möchten. Dieses
+NatÃ¼rlich kÃ¶nnen Sie. Bitte gehen Sie ins `AROS-Exec forum`__ und
+lesen Sie die BeitrÃ¤ge und fragen Sie alles was Sie mÃ¶chten. Dieses
 FAQ wird mit den Fragen der Benutzer aktualisiert, allerdings bleibt
 das Forum immer aktueller.
 
@@ -27,131 +27,131 @@ __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
 Was ist AROS?
 -------------
 
-Bitte lesen Sie die Einführung_.
+Bitte lesen Sie die EinfÃ¼hrung_.
 
-.. _einführung: ../../introduction/index
+.. _einfÃ¼hrung: ../../introduction/index
 
 
 Was ist der rechtliche Status von AROS?
 ---------------------------------------
 
-Die Europäische Gesetzgebung sagt, dass es legal ist Reverse Engineering Techniken
-anzuwenden um Interoperabilität zu erreichen. Sie sagt ebenfalls aus, dass es
+Die EuropÃ¤ische Gesetzgebung sagt, dass es legal ist Reverse Engineering Techniken
+anzuwenden um InteroperabilitÃ¤t zu erreichen. Sie sagt ebenfalls aus, dass es
 nicht legal ist das gewonnene Wissen aus derartigen Techniken zu verteilen. 
-Grundsätzlich bedeutet es, dass man jede Software disassemblieren oder Auswerten
-darf um etwas Kompatibles zu schreiben (zum Beispiel wäre es legal Word zu 
+GrundsÃ¤tzlich bedeutet es, dass man jede Software disassemblieren oder Auswerten
+darf um etwas Kompatibles zu schreiben (zum Beispiel wÃ¤re es legal Word zu 
 disassemblieren um ein Programm zu schreiben, das Worddokumente in ASCII Text
 umsetzt).
 
-Natürlich sind EInschränkungen vorhanden: Es ist nicht erlaubt Software zu disassemblieren
-wenn die gewonnene Information aus diesem Prozess für andere Zwecke verwendet werden kann.
+NatÃ¼rlich sind EInschrÃ¤nkungen vorhanden: Es ist nicht erlaubt Software zu disassemblieren
+wenn die gewonnene Information aus diesem Prozess fÃ¼r andere Zwecke verwendet werden kann.
 Man darf das Gelernte auch nicht and Dritte weitergeben. Ein Buch wie z.B.
-"Windows inside" ist daher illegal oder zumindest von fragwürdiger Legalität.
+"Windows inside" ist daher illegal oder zumindest von fragwÃ¼rdiger LegalitÃ¤t.
 
 Das oben genannte trifft nicht direkt auf AROS zu, da wir 
-Disassemblierungstechniken vermeiden und stattdessen allgemein verfügbares
-Wissen verwenden (welches auch Programmierhandbücher beinhaltet), das nicht unter
-irgendeine NDA fällt. Was hier zählt ist die Absicht des Gesetzes: Es ist
+Disassemblierungstechniken vermeiden und stattdessen allgemein verfÃ¼gbares
+Wissen verwenden (welches auch ProgrammierhandbÃ¼cher beinhaltet), das nicht unter
+irgendeine NDA fÃ¤llt. Was hier zÃ¤hlt ist die Absicht des Gesetzes: Es ist
 erlaubt Software zu schreiben, die mit anderer Software kompatibel ist.
-Daher glauben wir, dass AROS durch das Gesetz geschützt ist.
+Daher glauben wir, dass AROS durch das Gesetz geschÃ¼tzt ist.
 
-Obwohl Patente und Header Dateien ein anderes Thema darstellen. In Europa können
-wir patentierte Algorithmen einsetzen, da die europäische Gesetzgebung keine
-Patente auf Algorithmen zulässt. Allerdings kann Code patentierte Algorithmen
+Obwohl Patente und Header Dateien ein anderes Thema darstellen. In Europa kÃ¶nnen
+wir patentierte Algorithmen einsetzen, da die europÃ¤ische Gesetzgebung keine
+Patente auf Algorithmen zulÃ¤sst. Allerdings kann Code patentierte Algorithmen
 verwendet, die in den USA patentiert sind nicht in die USA importiert werden.
 Beispiele solcher patentierter Algorithmen in AmigaOS beinhalten das ziehen
-von Bildschirmen und die besondere Art und Weise in der Menüs arbeiten. Daher 
+von Bildschirmen und die besondere Art und Weise in der MenÃ¼s arbeiten. Daher 
 vermeiden wir es diese Funktionen in exakt derselben Weise zu implementieren.
-Header Dateien müssen dagegen zum Original kompatibel aber so unterschiedlich
-wie möglich sein.
+Header Dateien mÃ¼ssen dagegen zum Original kompatibel aber so unterschiedlich
+wie mÃ¶glich sein.
 
-Um jeglichen Ärger zu vermeiden haben wir ein offizielles "OK" von Amiga Inc.
-angefragt. Sie äußerten sich positiv über die Bemühungen, aber Sie zeigten
-sich unsicher über die rechtlichen Konsequenzen. Wir schlagen vor Sie
-akzeptieren die Tatsache dass Amiga Inc. uns keine Unterlassungserklärung
-zukommen lies als ein positives Zeichen. Unglücklicherweise wurde keine
-rechtsgültige Vereinbarung getroffen, außer beidseitigen guten Absichten.
+Um jeglichen Ã„rger zu vermeiden haben wir ein offizielles "OK" von Amiga Inc.
+angefragt. Sie Ã¤uÃŸerten sich positiv Ã¼ber die BemÃ¼hungen, aber Sie zeigten
+sich unsicher Ã¼ber die rechtlichen Konsequenzen. Wir schlagen vor Sie
+akzeptieren die Tatsache dass Amiga Inc. uns keine UnterlassungserklÃ¤rung
+zukommen lies als ein positives Zeichen. UnglÃ¼cklicherweise wurde keine
+rechtsgÃ¼ltige Vereinbarung getroffen, auÃŸer beidseitigen guten Absichten.
 
 
-Warum streben Sie nur eine Kompatibilität mit 3.1 an?
+Warum streben Sie nur eine KompatibilitÃ¤t mit 3.1 an?
 -----------------------------------------------------
 
-Es gab Diskussionen über das Schreiben eines fortgeschrittenen Betriebssystems
-mit den Funktionen des AmigaOS. Dies wurde aus guten Gründen fallen gelassen.
+Es gab Diskussionen Ã¼ber das Schreiben eines fortgeschrittenen Betriebssystems
+mit den Funktionen des AmigaOS. Dies wurde aus guten GrÃ¼nden fallen gelassen.
 Jeder ist erstmal damit einverstanden, dass das aktuelle AmigaOS verbessert 
 werden sollte aber keiner hat die Kenntnis wie dies zu bewerkstelligen ist
-oder zumindest einen Konsenz was zu verbessern wäre oder was wichtig ist.
-Zum Beispiel wollen einige Speicherschutz ohne den Preis dafür zu zahlen
-(Grundlegende Überarbeitung verfügbarer Software und Geschwindigkeitseinbußen).
+oder zumindest einen Konsenz was zu verbessern wÃ¤re oder was wichtig ist.
+Zum Beispiel wollen einige Speicherschutz ohne den Preis dafÃ¼r zu zahlen
+(Grundlegende Ãœberarbeitung verfÃ¼gbarer Software und GeschwindigkeitseinbuÃŸen).
 
-Schließlich endeten die Diskussionen entweder in heftigen Debatten oder die
+SchlieÃŸlich endeten die Diskussionen entweder in heftigen Debatten oder die
 selben alten Argumente wurden immer wieder wiederholt. Also entschieden
-wir uns mit etwas zu beginnen mit dem wir umzugehen wußten. Wenn wir dann die
-Erfahrung haben zu sehen was möglich ist oder nicht entscheiden wir über
+wir uns mit etwas zu beginnen mit dem wir umzugehen wuÃŸten. Wenn wir dann die
+Erfahrung haben zu sehen was mÃ¶glich ist oder nicht entscheiden wir Ã¼ber
 Verbesserungen.
 
-Wir wollen auch kompatibel mit dem ursprünglichen AmigaOS auf dem Amiga sein. Der Grund
-dafür ist nur dass ein neues Betriebssystem ohne Programme die es ausführen
-kann keine Überlebenschance hat. Daher versuchen wir den Übergang des ursprünglichen
-Betriebssystems in ein Neues so schmerzfrei wie möglich zu gestalten (aber nicht
-so weit, dass wir AROS anschließend nicht verbessern könnten). Alles hat wie
+Wir wollen auch kompatibel mit dem ursprÃ¼nglichen AmigaOS auf dem Amiga sein. Der Grund
+dafÃ¼r ist nur dass ein neues Betriebssystem ohne Programme die es ausfÃ¼hren
+kann keine Ãœberlebenschance hat. Daher versuchen wir den Ãœbergang des ursprÃ¼nglichen
+Betriebssystems in ein Neues so schmerzfrei wie mÃ¶glich zu gestalten (aber nicht
+so weit, dass wir AROS anschlieÃŸend nicht verbessern kÃ¶nnten). Alles hat wie
 allgemein bekannt seinen Preis und wir versuchen mit Vorsicht zu entscheiden was
-dieser Preis bedeuten könnte und ob wir und jeder andere bereit ist diesen
+dieser Preis bedeuten kÃ¶nnte und ob wir und jeder andere bereit ist diesen
 zu bezahlen.
 
 
-Können Sie nicht die Funktion XYZ umsetzen?
+KÃ¶nnen Sie nicht die Funktion XYZ umsetzen?
 -------------------------------------------
 
 Nein, da:
 
-a) Wenn es wiklich wichtig gewesen wäre, dann wäre es bereits im ursprünglichen Betriebssystem. :-) 
+a) Wenn es wiklich wichtig gewesen wÃ¤re, dann wÃ¤re es bereits im ursprÃ¼nglichen Betriebssystem. :-) 
 b) Warum machen Sie es nicht selbst und senden uns einen Patch?
 
-Der Grund für diese Einstellung ist dass es viele Menschen gibt die denken
-dass Ihre Funktion die Wichtigste ist und dass AROS keine Zukunft hätte
+Der Grund fÃ¼r diese Einstellung ist dass es viele Menschen gibt die denken
+dass Ihre Funktion die Wichtigste ist und dass AROS keine Zukunft hÃ¤tte
 wenn diese Funktion nicht sofort integriert wird. Unsere Einstellung ist,
-daß AmigaOS - das AROS implementieren soll - alles kann was ein modernes
-Betriebssystem können sollte. Wir sehen dass es Bereiche gibt in welchen
-AmigaOS verbessert werden könnte, aber wer würde den Rest des Betriebssystems
-schreiben, wenn wir das tun würden? Am Ende würden wir eine Vielzahl an netten
-Verbesserungen für das ursprüngliche AmigaOS haben, welche den Grpßteil der
-verfügbaren Software inkompatibel machen würden aber nichts Wert wären da
+daÃŸ AmigaOS - das AROS implementieren soll - alles kann was ein modernes
+Betriebssystem kÃ¶nnen sollte. Wir sehen dass es Bereiche gibt in welchen
+AmigaOS verbessert werden kÃ¶nnte, aber wer wÃ¼rde den Rest des Betriebssystems
+schreiben, wenn wir das tun wÃ¼rden? Am Ende wÃ¼rden wir eine Vielzahl an netten
+Verbesserungen fÃ¼r das ursprÃ¼ngliche AmigaOS haben, welche den GrpÃŸteil der
+verfÃ¼gbaren Software inkompatibel machen wÃ¼rden aber nichts Wert wÃ¤ren da
 der Rest des Betriebssystems fehlt.
 
-Wir haben uns daher entschieden jeden Versuch größere neue Funktionen in das
+Wir haben uns daher entschieden jeden Versuch grÃ¶ÃŸere neue Funktionen in das
 Betriebssystem zu implementieren abzuwehren bis es mehr oder weniger komplett ist.
 Wir kommen diesem Ziel nun sehr nahe und es gab einige Innovationen die in AROS
-eingebaut wurden und nicht in AmigaOS verfügbar sind.
+eingebaut wurden und nicht in AmigaOS verfÃ¼gbar sind.
 
 Wie kompatibel ist AROS mit AmigaOS?
 ------------------------------------
 
 Sehr kompatibel. Wir erwarten dass AROS bestehende Software auf dem Amiga
-ohne Probleme ausführen wird. Auf anderer Hardware muß die bestehende
+ohne Probleme ausfÃ¼hren wird. Auf anderer Hardware muÃŸ die bestehende
 Software neu kompiliert werden. Wir werden einen Preprozessor anbieten den
-Sie mit Ihrem Code ausführen können und jeden Code ändert oder Warnungen
-zu solchem Code ausgibt der inkompatibel zu AROS sein könnte.
+Sie mit Ihrem Code ausfÃ¼hren kÃ¶nnen und jeden Code Ã¤ndert oder Warnungen
+zu solchem Code ausgibt der inkompatibel zu AROS sein kÃ¶nnte.
 
 Das Portieren von AmigaOS zu AROS besteht meistens aus einer einfachen Neukompilierung
-mit vereinzelten Änderungen hier und da. Es gibt natülich Programme für die das nicht
-zutrifft, allerdings gilt es für die Neuesten.
+mit vereinzelten Ã„nderungen hier und da. Es gibt natÃ¼lich Programme fÃ¼r die das nicht
+zutrifft, allerdings gilt es fÃ¼r die Neuesten.
 
 
-Für welche Hardwarearchitekturen ist AROS verfügbar?
+FÃ¼r welche Hardwarearchitekturen ist AROS verfÃ¼gbar?
 ----------------------------------------------------
 
-Im Moment ist AROS nativ und gehostet (unter Linux und FreeBSD) für die
+Im Moment ist AROS nativ und gehostet (unter Linux und FreeBSD) fÃ¼r die
 i386 Architektur (d.h. IBM PC AT kompatible Systeme) in einem sehr 
-einsatzfähigen Zustand verfügbar. Es sind Portierungen in unterschiedlichen
-Vollständigkeitsgraden auf dem Weg für SUN SPARC (gehostet unter Solaris)
+einsatzfÃ¤higen Zustand verfÃ¼gbar. Es sind Portierungen in unterschiedlichen
+VollstÃ¤ndigkeitsgraden auf dem Weg fÃ¼r SUN SPARC (gehostet unter Solaris)
 und zu Palm kompatible Handhelds (nativ).
 
 
 Wird es eine Portierung von AROS auf PPC geben?
 -----------------------------------------------
 
-Es gibt aktuell Anstrenungen um AROS auf den PPC zu portieren, zunächst
+Es gibt aktuell Anstrenungen um AROS auf den PPC zu portieren, zunÃ¤chst
 unter Linux gehostet.
 
 
@@ -159,15 +159,15 @@ Warum verwenden Sie Linux und X11?
 ----------------------------------
 
 Wir verwenden Linux und X11 um die Entwicklungszeit zu reduzieren. Wenn Sie zum
-Beispiel eine neue Funktion schreiben, die ein Fenster öffnet, dann können Sie
+Beispiel eine neue Funktion schreiben, die ein Fenster Ã¶ffnet, dann kÃ¶nnen Sie
 einfach diese eine Funktion schreiben, ohne hunderte anderer Funktionen in der
-layers.library, graphics.library, eine Reihe Gerätetreiber und den Rest zu schreiben
-den die Funktion möglicherweise verwendet.
+layers.library, graphics.library, eine Reihe GerÃ¤tetreiber und den Rest zu schreiben
+den die Funktion mÃ¶glicherweise verwendet.
 
-Das Ziel für AROS ist natürlich unabhängig von Linux und X11 zu sein (aber es
+Das Ziel fÃ¼r AROS ist natÃ¼rlich unabhÃ¤ngig von Linux und X11 zu sein (aber es
 wird weiterhin dort laufen wenn die Menschen das wirklich wollen) und das wird
-mit den nativen AROS Versionen langsam zu einer Realität. Wir müssen immer noch
-Linux für die Entwicklung verwenden, da einige Entwicklungswerkzeuge noch nicht
+mit den nativen AROS Versionen langsam zu einer RealitÃ¤t. Wir mÃ¼ssen immer noch
+Linux fÃ¼r die Entwicklung verwenden, da einige Entwicklungswerkzeuge noch nicht
 nach AROS portiert wurden. 
 
 
@@ -175,10 +175,10 @@ Wie stellen sie sich vor AROS portabel zu machen?
 -------------------------------------------------
 
 Eine der wichtigsten neuen Funktionen im Vergleich zu AmigaOS von AROS ist das 
-HIDD (hardwareunabhängige Gerätetreiber) System, das es uns erlaubt AROS
-sehr einfach auf neue Hardware zu portieren. Grundsätzlich haben die zentralen 
+HIDD (hardwareunabhÃ¤ngige GerÃ¤tetreiber) System, das es uns erlaubt AROS
+sehr einfach auf neue Hardware zu portieren. GrundsÃ¤tzlich haben die zentralen 
 Bibliotheken des Betriebssystems keinen Durchgriff auf die Hardware sondern
-gehen nur über die HIDDs, die mit einem objektorientierten System programmiert
+gehen nur Ã¼ber die HIDDs, die mit einem objektorientierten System programmiert
 wurden das den Austausch der HIDDs und die Wiederverwendung des Quellcodes
 vereinfacht.
 
@@ -186,21 +186,21 @@ vereinfacht.
 Warum denken Sie, dass es AROS schafft?
 ---------------------------------------
 
-Wir hören von vielen Menschen täglich, dass AROS es nicht schafft. Die meisten
+Wir hÃ¶ren von vielen Menschen tÃ¤glich, dass AROS es nicht schafft. Die meisten
 davon wissen nicht was wir tun oder denken dass der Amiga bereits tot ist.
-Wenn wir den zuvor genannten erklärt haben was wir tun bestätigen die meisten
-dass es möglich ist. Die letzteren machen mehr Probleme. Gut, ist der Amiga schon tot?
+Wenn wir den zuvor genannten erklÃ¤rt haben was wir tun bestÃ¤tigen die meisten
+dass es mÃ¶glich ist. Die letzteren machen mehr Probleme. Gut, ist der Amiga schon tot?
 Diejenigen die Ihre Amigas immer noch im Einsatz haben werden ihnen vermutlich
 sagen dass er es nicht ist. Ist Ihr A500 oder A400 explodiert als Commodore
 pleite ging? Explodierte er als es Amiga Technologies tat?
 
-Fakt ist, dass nur wenig neue Software für den Amiga entwickelt wird (obwohl
+Fakt ist, dass nur wenig neue Software fÃ¼r den Amiga entwickelt wird (obwohl
 Aminet immer noch ganz nett vor sich hin tuckert) und dass Hardware auch
-langsamer entwickelt wird (aber die meisten überasschenden Entwickungen
+langsamer entwickelt wird (aber die meisten Ã¼berasschenden Entwickungen
 tauchen gerade heute auf). Die Amiga Community (die immer noch am Leben ist)
-scheint da zu sitzen und abzuwarten. Und wenn einer ein Produkt veröffentlicht
+scheint da zu sitzen und abzuwarten. Und wenn einer ein Produkt verÃ¶ffentlicht
 dass ein wenig wie der Amiga von 1984 ist dann wird diese Maschine wieder einen
-Boom erleben. Und wer weiß, vielleicht bekommen Sie mit der Maschine eine CD
+Boom erleben. Und wer weiÃŸ, vielleicht bekommen Sie mit der Maschine eine CD
 mit dem Aufdruck "AROS". :-)
 
 
@@ -215,66 +215,66 @@ und jemand wird versuchen Ihnen zu helfen.
 __ https://ae.amigalife.org/
 
 
-Wird AROS Speicherschutzm, SVM, RT... unterstützen?
+Wird AROS Speicherschutzm, SVM, RT... unterstÃ¼tzen?
 ---------------------------------------------------
 
 Viele hundert Amiga Experten (das ist zumindest das was sie von sich selbst behaupteten)
-haben drei Jahre lang versucht einen Weg zu finden Speicherschutz (MP) für AmigaOS
+haben drei Jahre lang versucht einen Weg zu finden Speicherschutz (MP) fÃ¼r AmigaOS
 zu implementieren. Sie haben versagt. Sie sollten es als Tastache akzeptieren dass
 das normale AmigaOS niemals MP wie Unix oder Windows NT haben wird.
 
-Aber es ist nocht nicht alles verloren. Es gibt Pläne eine Variante des MP in
-AROS zu integrieren die zumindest Speicherschutz für Programme ermöglicht, die
+Aber es ist nocht nicht alles verloren. Es gibt PlÃ¤ne eine Variante des MP in
+AROS zu integrieren die zumindest Speicherschutz fÃ¼r Programme ermÃ¶glicht, die
 Kenntnis davon haben. Einige Fortschritte in diesem Bereich sehen sehr vielversprechend
-aus. Ist es denn wirklich ein Problem wenn Ihre Maschine abstürzt? Lassen Sie mich
-erklären, bevor Sie mich an einen Baum fesseln. :-) Das Problem ist nicht, dass die
-Maschine abstürzt, sondern:
+aus. Ist es denn wirklich ein Problem wenn Ihre Maschine abstÃ¼rzt? Lassen Sie mich
+erklÃ¤ren, bevor Sie mich an einen Baum fesseln. :-) Das Problem ist nicht, dass die
+Maschine abstÃ¼rzt, sondern:
 
-1. Sie haben keine sinnvolle Idee warum sie abstürzt. Grundsätzlich finden Sie sich
+1. Sie haben keine sinnvolle Idee warum sie abstÃ¼rzt. GrundsÃ¤tzlich finden Sie sich
    am Ende wieder wie Sie mit einem 30 Meter langen Pfosten in einem von dickem Nebel
    umgebenen Sumpf herumstochern.
-2. Sie verlieren Ihre Arbeit. Der Neustart der Maschine ist tatsächlich keine Option.
+2. Sie verlieren Ihre Arbeit. Der Neustart der Maschine ist tatsÃ¤chlich keine Option.
 
-Wir können versuchen ein System zu konstruieren, dass zumindest alarmiert wenn etwas
-merkwürdiges passiert und das Ihnen im Detail zeigt was passierte als die Maschine
-abstürzte und das es Ihnen ermöglicht Ihre Arbeit zu speichern und *dann* abstürzt.
-Es wird auch Möglichkeiten geben zu prüfen was gespeichert wurde, damit Sie sicher sein
-können dass Sie nicht mit zerstörten Daten weitermachen.
+Wir kÃ¶nnen versuchen ein System zu konstruieren, dass zumindest alarmiert wenn etwas
+merkwÃ¼rdiges passiert und das Ihnen im Detail zeigt was passierte als die Maschine
+abstÃ¼rzte und das es Ihnen ermÃ¶glicht Ihre Arbeit zu speichern und *dann* abstÃ¼rzt.
+Es wird auch MÃ¶glichkeiten geben zu prÃ¼fen was gespeichert wurde, damit Sie sicher sein
+kÃ¶nnen dass Sie nicht mit zerstÃ¶rten Daten weitermachen.
 
-Das selbe gilt für SVM (ausgelagerter virtueller Speicher), RT (Resourcenverwaltung)
+Das selbe gilt fÃ¼r SVM (ausgelagerter virtueller Speicher), RT (Resourcenverwaltung)
 und SMP (symetrisches Multiprocessing). Wir planen aktuell wie diese implementiert
-werden um sicherzustellen dass das hinzufügen dieser Funktionen Schmerzfrei ist.
-Dennoch haben diese im Moment nicht die höchste Priorität. Sehr grundlegendes RT
-wurde dennoch bereits hinzugefügt.
+werden um sicherzustellen dass das hinzufÃ¼gen dieser Funktionen Schmerzfrei ist.
+Dennoch haben diese im Moment nicht die hÃ¶chste PrioritÃ¤t. Sehr grundlegendes RT
+wurde dennoch bereits hinzugefÃ¼gt.
 
 
 Kann ich ein Betatester werden?
 -------------------------------
 
-Na klar, kein Problem. Tatsächlich möchten wir so viele Betatester wie
-nur irgend möglich - es ist jeder willkommen! Wir haben jedoch keine Liste
-der Betatester, also ist alles was Sie tun müssen AROS herunter zu laden und
-zu testen was sie möchten und uns einen Bericht zu senden.
+Na klar, kein Problem. TatsÃ¤chlich mÃ¶chten wir so viele Betatester wie
+nur irgend mÃ¶glich - es ist jeder willkommen! Wir haben jedoch keine Liste
+der Betatester, also ist alles was Sie tun mÃ¼ssen AROS herunter zu laden und
+zu testen was sie mÃ¶chten und uns einen Bericht zu senden.
 
 
 Wie ist die Beziehung zwsichen AROS und UAE?
 --------------------------------------------
 
 UAE ist ein Amiga Emulator und hat als solches ein wenig von AROS abweichende Ziele.
-UAE möchte auch für Spiele und Hardwarenahen Code Binärkompatibel sein, während
+UAE mÃ¶chte auch fÃ¼r Spiele und Hardwarenahen Code BinÃ¤rkompatibel sein, wÃ¤hrend
 AROS native Anwendungen erfordert. Daher ist AROS sehr viel schneller als
-UAE aber Sie können mehr Software unter UAE ausführen.
+UAE aber Sie kÃ¶nnen mehr Software unter UAE ausfÃ¼hren.
 
 Wir sind in losem Kontakt mit dem Autor von UAE und es besteht eine gute Chance,
 dass Quellcode von UAE in AROS auftauchen wird und umgekehrt. Beispielsweise
 sind die UE Entwickler an dem Quellcode des Betriebssystems interessiert, da
-UAE einige Anwendungen sehr viel schneller ausführen kann, wenn einige oder
-alle Betriebssystemfunktionen mit nativem Code ersetzt werden können. Auf der
+UAE einige Anwendungen sehr viel schneller ausfÃ¼hren kann, wenn einige oder
+alle Betriebssystemfunktionen mit nativem Code ersetzt werden kÃ¶nnen. Auf der
 anderen Seite kann AROS von einer integrierten Amiga Emulation profitieren.
 
-Da die meisten Anwendungen nicht von Anfang an für AROS verfügbar sind hat
+Da die meisten Anwendungen nicht von Anfang an fÃ¼r AROS verfÃ¼gbar sind hat
 Fabio Alemagna UAE nach AROS portiert, damit die alten Anwendungen zumindest
-in einem Emulationsfenster ausgeführt werden können.
+in einem Emulationsfenster ausgefÃ¼hrt werden kÃ¶nnen.
 
 Im Contrib ist auch `E-UAE`__ enthalten das UAE verbessert mit einigen Funktionen
 von `WinUAE`__ ist.
@@ -298,46 +298,46 @@ sie beachten die Lizenz.
 Was ist die Beziehung zwischen AROS und Morphos?
 ------------------------------------------------
 
-Die Beziehung zwischen AROS und MorphOS ist grundsätzlich die selbe wie zwischen
+Die Beziehung zwischen AROS und MorphOS ist grundsÃ¤tzlich die selbe wie zwischen
 AROS und Haage & Partner. MorphOS verwendet Teile von AROS um Ihren Entwicklungsfortschritt 
 zu beschleunigen - unter den Bestimmungen unserer Lizenz. Wie auch mit Haage & Partner
-ist das gut für beide Teams da MorphOS durch AROS eine Beschleunigung in seiner 
-Entwicklung wiederfährt und AROS vom MorphOS Team gute Verbesserungen in unserem
-Quellcode erhält. Es besteht keine formale Beziehung zwischen AROS und MorphOS -
+ist das gut fÃ¼r beide Teams da MorphOS durch AROS eine Beschleunigung in seiner 
+Entwicklung wiederfÃ¤hrt und AROS vom MorphOS Team gute Verbesserungen in unserem
+Quellcode erhÃ¤lt. Es besteht keine formale Beziehung zwischen AROS und MorphOS -
 so fuktioniert einfach Open Source Entwicklung.
 
 
-Welche Programmiersprachen sind verfügbar?
+Welche Programmiersprachen sind verfÃ¼gbar?
 ------------------------------------------
 
-Die meisten Entwicklungen wurden durch platformübergreifende Kompilierung
+Die meisten Entwicklungen wurden durch platformÃ¼bergreifende Kompilierung
 der Quellcodes unter einem anderen Betriebssystem wie Linux oder FreeBSD
-durchgeführt. Fabio Alemagna hat eine erste Portierung von GCC in die
-native i386 Version durchgeführt. Allerdings befindet es sich momentan
+durchgefÃ¼hrt. Fabio Alemagna hat eine erste Portierung von GCC in die
+native i386 Version durchgefÃ¼hrt. Allerdings befindet es sich momentan
 noch nicht auf der ISO bzw. es ist noch nicht im Buildsystem integriert.
 
-Die verfügbaren Sprachen sind Python_, Regina_, Lua_, Hollywood_ and False_:
+Die verfÃ¼gbaren Sprachen sind Python_, Regina_, Lua_, Hollywood_ and False_:
 
 + Python ist eine Skriptsprache die wegen ihres netten Designes und Funktionen
   (objektorientierte Programmierung, Modulsystem mit vielen integrierten 
-  nützlichen Modulen, klarer Befehlssatz, ...) sehr populär wurde. Ein
-  getrenntes Projekt wurde für die Portierung nach AROS initiiert und kann
+  nÃ¼tzlichen Modulen, klarer Befehlssatz, ...) sehr populÃ¤r wurde. Ein
+  getrenntes Projekt wurde fÃ¼r die Portierung nach AROS initiiert und kann
   unter http://pyaros.sourceforge.net/ gefunden werden. 
 
-+ Regina ist ein portabler ANSI kompatibler REXX interpreter. Das Ziel für
-  die AROS Portierung ist die Kompatibilität mit dem ARexx interpreter für
++ Regina ist ein portabler ANSI kompatibler REXX interpreter. Das Ziel fÃ¼r
+  die AROS Portierung ist die KompatibilitÃ¤t mit dem ARexx interpreter fÃ¼r
   das klassische AmigaOS.
 
-+ Lua ist eine mächtige, schnelle, leichtgewichtige und einbettungsfähige
++ Lua ist eine mÃ¤chtige, schnelle, leichtgewichtige und einbettungsfÃ¤hige
   Skriptsprache. Die AROS Portierung wurde durch zwei Module erweitert:
-  siamiga und zulu. Das erste verfügt über einige einfache Grafikkommandos,
+  siamiga und zulu. Das erste verfÃ¼gt Ã¼ber einige einfache Grafikkommandos,
   das letztere ist eine Schnittstelle zu Zune.
 
-+ Hollywood ist eine kommerzielle Programmiersprache für Multimedia Anwendungen
-  inklusive Spiele. Die CD-ROM enthält eine Version für i386-aros.
++ Hollywood ist eine kommerzielle Programmiersprache fÃ¼r Multimedia Anwendungen
+  inklusive Spiele. Die CD-ROM enthÃ¤lt eine Version fÃ¼r i386-aros.
 
 + False kann als exotische Sprache klassifiziert und kann daher nicht
-  für ernsthafte Enticklungen verwendet werden, obwohl es viel Spaß machen kann. :-)
+  fÃ¼r ernsthafte Enticklungen verwendet werden, obwohl es viel SpaÃŸ machen kann. :-)
 
 .. _Python: http://www.python.org/
 .. _Regina: http://regina-rexx.sourceforge.net/
@@ -349,21 +349,21 @@ Die verfügbaren Sprachen sind Python_, Regina_, Lua_, Hollywood_ and False_:
 Warum gibt es keinen m68k Emulator in AROS?
 -------------------------------------------
 
-Um alte Amiga Programme unter AROS betreiben zu können haben wir UAE_ nach AROS
+Um alte Amiga Programme unter AROS betreiben zu kÃ¶nnen haben wir UAE_ nach AROS
 portiert. Die AROS Version von UAE wird vermutlich ein wenig schneller sein als
 andere UAE Versionen, da AROS weniger Resourcen beansprucht als andere 
-Betriebssysteme (was bedeutet das UAE mehr CPU Zeit erhält), und wir werden
+Betriebssysteme (was bedeutet das UAE mehr CPU Zeit erhÃ¤lt), und wir werden
 versuchen das Kickstart ROM von UAE patchen, um AROS Funktionen zu nutzen was
-eine weitere kleine Verbesserung geben wird. Natürlich trifft dies nur
-für native "Flavours" von AROS zu und nicht auf die gehosteten.
+eine weitere kleine Verbesserung geben wird. NatÃ¼rlich trifft dies nur
+fÃ¼r native "Flavours" von AROS zu und nicht auf die gehosteten.
 
 Aber weshalb implementieren wir nicht einfach eien virtuelle m68k CPU um die Software
-direkt unter AROS auszuführen? Nun das Problem ist, dass m68k Software die Daten im
-Big Endian Format erwatet, während AROS auch auf Little Endian CPUs ausgeführt werden
+direkt unter AROS auszufÃ¼hren? Nun das Problem ist, dass m68k Software die Daten im
+Big Endian Format erwatet, wÃ¤hrend AROS auch auf Little Endian CPUs ausgefÃ¼hrt werden
 kann. Das Problem dabei ist, dass Little Endian Routinen im AROS Kern mit den
-Big Endian Daten der Emulation arbeiten müsste. Eine automatische Konvertierung erscheint
+Big Endian Daten der Emulation arbeiten mÃ¼sste. Eine automatische Konvertierung erscheint
 unmoglich (nur ein Beispiel: es gibt ein Feld in einer Struktur von AmigaOS welches
-manchmal ULONG und manchmal zwei WORDs enthält), da wir nicht festlegen können
+manchmal ULONG und manchmal zwei WORDs enthÃ¤lt), da wir nicht festlegen kÃ¶nnen
 wie eine Menge an Bytes im RAM codiert werden soll.
 
 .. _UAE: http://www.amigaemulator.org/
@@ -372,7 +372,7 @@ wie eine Menge an Bytes im RAM codiert werden soll.
 Wird es ein AROS Kickstart ROM geben? 
 -------------------------------------
 
-Es könnte sein, wenn jemand eine nativen Amiga Portierung von AROS durchführt 
+Es kÃ¶nnte sein, wenn jemand eine nativen Amiga Portierung von AROS durchfÃ¼hrt 
 und all die andere Arbeit erledigt um ein Kickstart ROM zu erstellen. Im Moment
 hat sich keiner um den Job beworben.
 
@@ -383,10 +383,10 @@ Fragen zur Software
 Wie kann ich auf die AROS Diskettenabbilder von UAE aus zugreifen?
 ------------------------------------------------------------------
 
-Die Floppy Diskettenabbilder können als Hardfile gemountet und dann in UAE 
-als 1,4 MB Festplatte verwendet werden. Nachdem Sie die Dateien die Sie benötigen
-in ein Hardfile Diskettenabbild (oder wo immer sie möchten) übertragen haben
-können Sie es auf eine Floppy schreiben.
+Die Floppy Diskettenabbilder kÃ¶nnen als Hardfile gemountet und dann in UAE 
+als 1,4 MB Festplatte verwendet werden. Nachdem Sie die Dateien die Sie benÃ¶tigen
+in ein Hardfile Diskettenabbild (oder wo immer sie mÃ¶chten) Ã¼bertragen haben
+kÃ¶nnen Sie es auf eine Floppy schreiben.
 
 Die Geometrie eines Hardfiles sieht wie folgt aus::
 
@@ -401,7 +401,7 @@ Wie kann ich AROS Diskettenabbilder von einem gehosteten AROS "Flavour" aus ansp
 
 Kopieren Sie das Diskettenabbild vom DiskImages Verzeichnis in AROS (Sys:DiskImages.
 z.B. bin/linux-i386/AROS/DiskImages) und benennen Sie es um in "Unit0". Nach dem
-Start von AROS können Sie das Diskettenabbild mounten mit::
+Start von AROS kÃ¶nnen Sie das Diskettenabbild mounten mit::
 
     > mount ADF0: 
 
@@ -409,45 +409,45 @@ Start von AROS können Sie das Diskettenabbild mounten mit::
 Was ist Zune?
 -------------
 
-Falls Sie auf dieser Seite über Zune lesen: Es ist einfach eine Open Source
-Neuimplementierung von MUI, das ein mächtiges (sowohl Benutzer- als auch
+Falls Sie auf dieser Seite Ã¼ber Zune lesen: Es ist einfach eine Open Source
+Neuimplementierung von MUI, das ein mÃ¤chtiges (sowohl Benutzer- als auch
 Entwicklerfreundlich) objektorientierte Shareware GUI Toolkit ist und faktisch
 der Standard auf AmigaOS. Zune ist das bevorzugte GUI Toolkit zur Entwicklung
-nativer AROS Anwendungen. Der Name selbst bedeutet nichts, er hört sich nur 
+nativer AROS Anwendungen. Der Name selbst bedeutet nichts, er hÃ¶rt sich nur 
 gut an.
 
 
-Wie kann ich meine Präferenzen auf Standardwerte zurücksetzen?
+Wie kann ich meine PrÃ¤ferenzen auf Standardwerte zurÃ¼cksetzen?
 --------------------------------------------------------------
 
-Öffnen Sie die CLI Shell in AROS, wechseln Sie nach ENVARC: und löschen
-Sie alle relevanten Dateien der Präferenzen, die Sie wiederherstellen möchten.
+Ã–ffnen Sie die CLI Shell in AROS, wechseln Sie nach ENVARC: und lÃ¶schen
+Sie alle relevanten Dateien der PrÃ¤ferenzen, die Sie wiederherstellen mÃ¶chten.
 
 
 Was ist der Grafik- und anderer Speicher in Wanderer?
 -----------------------------------------------------
 
-Diese Speicheraufteilung ist größtenteils ein Relikt der Amiga Vergangenheit,
+Diese Speicheraufteilung ist grÃ¶ÃŸtenteils ein Relikt der Amiga Vergangenheit,
 als Grafikspeicher der Anwendungsspeicher war, bevor anderer Speicher, genannt FAST
-RAM hinzugefügt wurde; Ein Speicher in dem Anwendungen abgelegt wurden, während
+RAM hinzugefÃ¼gt wurde; Ein Speicher in dem Anwendungen abgelegt wurden, wÃ¤hrend
 Grafiken, Sounds und einige Systemstrukturen immer noch im Grafikspeicher verblieben.
 
 Im gehosteten AROS gibt es keinen anderen Speicher (FAST) als den Grafikspeicher. 
-Auf nativem AROS kann Grafikspeicher eine maximale Größe von 16MB besitzen, obwohl
+Auf nativem AROS kann Grafikspeicher eine maximale GrÃ¶ÃŸe von 16MB besitzen, obwohl
 es nicht den Zustand des Grafikkartenspeichers reflektiert... Es hat keinen Bezug
 zum Speicher auf Ihrer Grafikkarte.
 
 
-*Die in die Länge gezogene Antwort*
+*Die in die LÃ¤nge gezogene Antwort*
 Grafikspeicher in i386-native bezeichnet die unteren 16 MB des Speichers im
-System. Diese unteren 16MB ist der Bereich in dem ISA Karten DMA Zugriff ausführen
-können. Speicheranforderung mit MEMF_DMA oder MEMF_CHIP werden aus diesem Bereich
+System. Diese unteren 16MB ist der Bereich in dem ISA Karten DMA Zugriff ausfÃ¼hren
+kÃ¶nnen. Speicheranforderung mit MEMF_DMA oder MEMF_CHIP werden aus diesem Bereich
 bedient, alle anderen Anforderungen aus dem restlichen (FAST) Speicher.
 
-Verwenden Sie das C:Avail HUMAN Kommando für mehr Informationen.
+Verwenden Sie das C:Avail HUMAN Kommando fÃ¼r mehr Informationen.
 
 
-Was macht überhaupt das Wanderer Kommando Snapshot <all/window> ? 
+Was macht Ã¼berhaupt das Wanderer Kommando Snapshot <all/window> ? 
 -----------------------------------------------------------------
 
 Dieses Kommando speichert die Iconpositionen aller (oder eines) Fensters.
@@ -456,40 +456,40 @@ Dieses Kommando speichert die Iconpositionen aller (oder eines) Fensters.
 Wie kann ich den Bildschirmschoner/Hintergrund anpassen?
 --------------------------------------------------------
 
-Im Moment ist die einzige Möglichkeit den Bildschrimschoner anzupassen einen
+Im Moment ist die einzige MÃ¶glichkeit den Bildschrimschoner anzupassen einen
 Eigenen zu schreiben. Das Blanker Commodity kann mit Exchange angepasst werden,
 aber es kann nur "starfield" mit einer definierbaren Anzahl von Sternen darstellen.
-Der Hintergrund in Wanderer wird mit dem Präferenzwerkzeug Prefs/Wanderer
-eingestellt. Der Hintergrund in Zune wird mit dem Präferenzwerkzeug Prefs/Zune
-eingestellt. Sie können auch Ihre ausgewählten Zune Präferenzen mit dem Zune
-Kommando <application> ändern.
+Der Hintergrund in Wanderer wird mit dem PrÃ¤ferenzwerkzeug Prefs/Wanderer
+eingestellt. Der Hintergrund in Zune wird mit dem PrÃ¤ferenzwerkzeug Prefs/Zune
+eingestellt. Sie kÃ¶nnen auch Ihre ausgewÃ¤hlten Zune PrÃ¤ferenzen mit dem Zune
+Kommando <application> Ã¤ndern.
 
 
 Ich habe das gehostete AROS gestartet, aber es funktioniert nicht
 -----------------------------------------------------------------
 
-Wenn Sie root sind und AROS beim Start abstürzt, führen Sie "xhost +" vor
-"sudo && ./aros -m 20" aus. Sie müssen auch wie gezeigt mit der Option -m 
+Wenn Sie root sind und AROS beim Start abstÃ¼rzt, fÃ¼hren Sie "xhost +" vor
+"sudo && ./aros -m 20" aus. Sie mÃ¼ssen auch wie gezeigt mit der Option -m 
 etwas Speicher zuweisen. Das Leerzeichen zwischen "-m" und dem Wert ist
 wichtig. Vergessen Sie auch nicht die Option BackingStore im Abschnitt Device
 Ihrer xorg.conf.
 
 
-Welche Kommandozeilenoptionen sind für das gehostete AROS verfügbar?
+Welche Kommandozeilenoptionen sind fÃ¼r das gehostete AROS verfÃ¼gbar?
 --------------------------------------------------------------------
 
-Sie erhalten eine Liste davon durch Ausführen des Kommandos ./aros -h.
+Sie erhalten eine Liste davon durch AusfÃ¼hren des Kommandos ./aros -h.
 
 
 Wie kann ich schwarze Fenster unter gehostetem AROS aktualisieren lassen?
 -------------------------------------------------------------------------
 
-Sie müssen folgenden Text (wie er ist!) im Abschnitt "Device" Ihrer
+Sie mÃ¼ssen folgenden Text (wie er ist!) im Abschnitt "Device" Ihrer
 /etc/X11/xorg.conf (oder XFree.conf) angeben::
     
     Option  "BackingStore"
 
-Lesen Sie auch Installation__ für weitere Details.
+Lesen Sie auch Installation__ fÃ¼r weitere Details.
 
 __ installation#running
 
@@ -499,27 +499,27 @@ Welche AROS-nativen Kernel Optionen werden in der GRUB Zeile verwendet?
 
 Hier einige::
 
-    nofdc           - Deaktiviert den Floppy Treiber vollständig.
+    nofdc           - Deaktiviert den Floppy Treiber vollstÃ¤ndig.
     noclick         - Deaktiviert die Diskwechselerkennung der Floppy (und das Klicken)
     ATA=32bit       - Aktiviert 32-Bit I/O im Festplattentreiber (Sicher)
     forcedma        - Erzwingt die Aktivierung von DMA im Festplattentreiber  (sollte sicher sein, aber       
-                      könnte nicht)
+                      kÃ¶nnte nicht)
     gfx=<hidd name> - Verwende den genannten HIDD als Grafiktreiber
     lib=<name>      - Lade und initialisiere den genannten HIDD/die genannte Bibliothek
 
-Bitte beachten das diese Kommandos Groß-/Kleinschreibung berücksichtigen.
+Bitte beachten das diese Kommandos GroÃŸ-/Kleinschreibung berÃ¼cksichtigen.
 
 
-Wie kann ich Dateien in eine Virtuelle Maschine mit AROS übertragen?
+Wie kann ich Dateien in eine Virtuelle Maschine mit AROS Ã¼bertragen?
 --------------------------------------------------------------------
 
 Der erste und einfachste Weg ist Dateien in ein ISO Image zu kopieren und diese
 in der VM zu mounten. Es gibt eine Menge Programme die ISOs erstellen/bearbeiten
-können wie UltraISO, WinImage ider mkisofs. Zweitens können Sie das Netzwerk
-in AROS und auf der Host Maschine einen FTP Server einrichten. Dann können Sie
-einen FTP Client in AROS verwenden, um Dateien zu übertragen (look oder MarranoFTP).
-Das ist trickreich genug um an diesem Punkt aufzuhören. Die Benutzerdokumentation
-enthält ein Kapitel über Netzwerke - lesen Sie es. Weiterhin gibt es jetzt ein
+kÃ¶nnen wie UltraISO, WinImage ider mkisofs. Zweitens kÃ¶nnen Sie das Netzwerk
+in AROS und auf der Host Maschine einen FTP Server einrichten. Dann kÃ¶nnen Sie
+einen FTP Client in AROS verwenden, um Dateien zu Ã¼bertragen (look oder MarranoFTP).
+Das ist trickreich genug um an diesem Punkt aufzuhÃ¶ren. Die Benutzerdokumentation
+enthÃ¤lt ein Kapitel Ã¼ber Netzwerke - lesen Sie es. Weiterhin gibt es jetzt ein
 vielversprechendes Werkzeug (AFS Util) das es erlaubt Dateien aus
 AROS AFFS/OFS Festplatten und Disketten auszulesen (noch nicht zu schreiben).
 
@@ -531,20 +531,20 @@ F: Ich habe AROS mit gcc4 kompiliert und herausgefunden, dass das gehostete AROS
 Segmentierungsfehler mit -m > 20 aufweist und wenn ich AROS nativ kompiliere
 startet es nicht (Schwarzer Bildschirm)
 
-A: -fno-strict-aliasing in scripts/aros-gcc.in hinzufügen und nochmals neu 
+A: -fno-strict-aliasing in scripts/aros-gcc.in hinzufÃ¼gen und nochmals neu 
 kompilieren.
 
 
-Ist es möglich ein DOS Skript zu erstellen, das bei der Installation eines Pakets automatisch ausgeführt wird? 
+Ist es mÃ¶glich ein DOS Skript zu erstellen, das bei der Installation eines Pakets automatisch ausgefÃ¼hrt wird? 
 --------------------------------------------------------------------------------------------------------------
 
-Dieses Skript sollte einige Assigns ausführen und der PATH Variable einen String hinzufügen.
+Dieses Skript sollte einige Assigns ausfÃ¼hren und der PATH Variable einen String hinzufÃ¼gen.
 
-1) Erstellen Sie ein Unterverzeichnis S und fügen Sie eine Datei mit dem Namen 'Package-Startup'
+1) Erstellen Sie ein Unterverzeichnis S und fÃ¼gen Sie eine Datei mit dem Namen 'Package-Startup'
 mit den DOS Kommandos ein.
 
 2) Erzeugen Sie eine Variable in der Datei envarc:sys/packages, die den Pfad zum Verzeichnis Ihres
-Setup Pakets enthält.
+Setup Pakets enthÃ¤lt.
 
 Beispiel Verzeichnisstruktur::
 
@@ -552,10 +552,10 @@ Beispiel Verzeichnisstruktur::
     sys:Extras/myappdir/S
     sys:Extras/myappdir/S/Package-Startup
     
-Die Variable in nvarc:sys/packages könnte den Namen 'myapp' haben (Namen sind nicht
-ausschlaggebend), der Inhalt wäre dann in 'sys:extras/myappdir'
+Die Variable in nvarc:sys/packages kÃ¶nnte den Namen 'myapp' haben (Namen sind nicht
+ausschlaggebend), der Inhalt wÃ¤re dann in 'sys:extras/myappdir'
 
-Das Package-Startup Skript würde dann von der Startsequenz (Datei startup-sequence) aufgerufen werden.
+Das Package-Startup Skript wÃ¼rde dann von der Startsequenz (Datei startup-sequence) aufgerufen werden.
     
 
 Wie kann ich das Shell Fenster leeren? Wie kann ich es permanent machen?
@@ -565,7 +565,7 @@ Geben Sie dieses Kommando in der Shell ein::
 
     Echo "*E[0;0H*E[J* "
     
-Sie können Ihre Datei S:Shell-Startup bearbeiten und diese Zeile irgendwo einfügen,
+Sie kÃ¶nnen Ihre Datei S:Shell-Startup bearbeiten und diese Zeile irgendwo einfÃ¼gen,
 damit haben Sie ein neues "Cls" Kommando::
 
     Alias Cls "Echo *"*E[0;0H*E[J*" "
@@ -579,7 +579,7 @@ mit einer modifizierten Eingabeaufforderung zu starten::
     Prompt "*n*e[>1m*e[33;41m*e[1m%N/%R - *e[30;41m%S>*e[0m*e[32;41m "
     date
 
-Mehr über Drucker Escape Sequenzen::
+Mehr Ã¼ber Drucker Escape Sequenzen::
 
     Esc[0m
     Standard Einstellung
@@ -603,40 +603,40 @@ Bedeutung der Werte::
 
     30 graues Zeichen -- 40 graue Umrandung -- >0 grauer Hintergrund ---- 0 alle Attribute aus
     31 schwarzes Zeichen - 41 schwarze Umrandung - >1 schwarzer Hintergrund --- 1 dick
-    32 weißes Zeichen - 42 weiße Umrandung - >2 weißer Hintergrund --- 2 dünn
+    32 weiÃŸes Zeichen - 42 weiÃŸe Umrandung - >2 weiÃŸer Hintergrund --- 2 dÃ¼nn
     33 blaues Zeichen -- 43 blaue Umrandung -- >3 blauer Hintergrund ---- 3 kursiv
     34 graues Zeichen -- 44 graue Umrandung -- >4 grauer Hintergrund ---- 4 unterstreichen
     35 schwarzes Zeichen - 45 schwarze Umrandung - >5 schwarzer Hintergrund --- 7 umgekehrte Darstellung
-    36 weißes Zeichen - 46 weiße Umrandung - >6 weißer Hintergrund --- 8 unsichtbar
+    36 weiÃŸes Zeichen - 46 weiÃŸe Umrandung - >6 weiÃŸer Hintergrund --- 8 unsichtbar
     37 blaues Zeichen -- 47 blaue Umrandung -- >7 blauer Hintergrund
 
-Diese Werte können durch Trennung per Semikolon kombiniert werden.
+Diese Werte kÃ¶nnen durch Trennung per Semikolon kombiniert werden.
 
 
 Wie kann ich ein gehostetes AROS im Vollbildschirm Modus starten?
 -----------------------------------------------------------------
 
 Geben Sie "export AROS_X11_FULLSCREEN=1" in einer Shell ein. Starten Sie AROS und
-ändern Sie die Bildschirmauflösung im ScreenMode Voreinsteller. Beenden Sie AROS
+Ã¤ndern Sie die BildschirmauflÃ¶sung im ScreenMode Voreinsteller. Beenden Sie AROS
 und starten Sie es wieder neu.
 
 
-Wie kann ich AROS Icons mit 2 Zuständen erstellen?
+Wie kann ich AROS Icons mit 2 ZustÃ¤nden erstellen?
 --------------------------------------------------
 
-AROS Icons sind im Moment umbenannte PNG Dateien. Aber wenn Sie Icons in zwei Zuständen
-(normal/ausgewählt) möchten können Sie folgendes Kommando verwenden::
+AROS Icons sind im Moment umbenannte PNG Dateien. Aber wenn Sie Icons in zwei ZustÃ¤nden
+(normal/ausgewÃ¤hlt) mÃ¶chten kÃ¶nnen Sie folgendes Kommando verwenden::
 
     join img_1.png img_2.png TO img.info
     
 
-Wie kann ein ISO Image in AROS gemountet werden? Und kann ich auf diese Art meine nächtlichen Builds aktualisieren?
+Wie kann ein ISO Image in AROS gemountet werden? Und kann ich auf diese Art meine nÃ¤chtlichen Builds aktualisieren?
 -------------------------------------------------------------------------------------------------------------------
 
 + Holen Sie die ISO nach AROS (mit wget oder sonst irgendwie)
 + Kopieren Sie die ISO nach sys:DiskImages (Der Ordner muss erstellt werden falls er nicht existiert). 
-+ Ändern Sie den Namen der ISO in diesem Verzeichnis nach Unit0.
-+ Sie müssen folgenden Eintrag in der Datei Devs:Mountlist vornehmen ::
++ Ã„ndern Sie den Namen der ISO in diesem Verzeichnis nach Unit0.
++ Sie mÃ¼ssen folgenden Eintrag in der Datei Devs:Mountlist vornehmen ::
 
     ISO:
     FileSystem = cdrom.handler
@@ -644,20 +644,20 @@ Wie kann ein ISO Image in AROS gemountet werden? Und kann ich auf diese Art mein
     Unit = 0
 
 + Dann mounten Sie die ISO:
-  Sie können alles von ISO: kopieren. Zusätzlich können Sie ein Skript wie dieses erstellen, 
-  um den nächlichen Build einzuspielen.::
+  Sie kÃ¶nnen alles von ISO: kopieren. ZusÃ¤tzlich kÃ¶nnen Sie ein Skript wie dieses erstellen, 
+  um den nÃ¤chlichen Build einzuspielen.::
 
         copy ISO:boot/aros-pc-i386.gz sys:boot/
         copy ISO:C sys:C all quiet
         copy ISO:Classes sys:Classes all quiet
         copy ISO:Demos sys:Demos all quiet
 
-Und so weiter für jedes Verzeichnis außer Prefs, Extras:Networking/Stacks und 
-devs:mountlist selbst. Prefs müssen beibehalten werden, wenn Sie es möchten.
-Sie können auch AROSTcp anweisen seine Einstellungen in ein separates Verzeichnis
+Und so weiter fÃ¼r jedes Verzeichnis auÃŸer Prefs, Extras:Networking/Stacks und 
+devs:mountlist selbst. Prefs mÃ¼ssen beibehalten werden, wenn Sie es mÃ¶chten.
+Sie kÃ¶nnen auch AROSTcp anweisen seine Einstellungen in ein separates Verzeichnis
 abzulegen.
 
-Wenn Sie alles überschreiben wollen, führen Sie nur folgenden Befehl aus::
+Wenn Sie alles Ã¼berschreiben wollen, fÃ¼hren Sie nur folgenden Befehl aus::
 
     copy ISO:C sys:C all quiet newer  
     
@@ -684,7 +684,7 @@ Erstellen Sie ein mountfile (Textdatei) mit drei magischen Zeilen::
 + Nennen Sie diese irgendwie, z.B. PC0. Setzen Sie in den Eigenschaften des Icons 
   dieser Datei das Standardwerkzeug auf c:mount (oder kopieren Sie mountfile nach
   devs:dosdrivers oder sys:storage/dosdrivers).
-+ Führen Sie einen Doppelklick auf das Icon aus.
++ FÃ¼hren Sie einen Doppelklick auf das Icon aus.
 + Legen Sie eine mit FAT formatierte Diskette ein..
 + Sehen Sie wie das Icon auf dem Wanderer Desktop erscheint.
 
@@ -692,16 +692,16 @@ Erstellen Sie ein mountfile (Textdatei) mit drei magischen Zeilen::
 Wie kann eine echte FAT Festplattenpartition mit dem FAT.handler gemountet werden?
 ----------------------------------------------------------------------------------
 
-Zunächst müssen Sie die Laufwerksgeometrie auslesen und einige Werte abschreiben.
-Sie können HDToolbox oder Linux fdisk dafür verwenden. Der Wert BlocksPerTrack
-wird aus dem Wert sectors/track genommen. Bitte beachten Sie, daß dies überhaupt
+ZunÃ¤chst mÃ¼ssen Sie die Laufwerksgeometrie auslesen und einige Werte abschreiben.
+Sie kÃ¶nnen HDToolbox oder Linux fdisk dafÃ¼r verwenden. Der Wert BlocksPerTrack
+wird aus dem Wert sectors/track genommen. Bitte beachten Sie, daÃŸ dies Ã¼berhaupt
 nichts mit der phyisikalischen Plattengeometrie zu tun hat - FAT verwendet dies nur
 als Multiplikator. Wenn Sie Zylinder erhalten z.B. von HDToolbox oder unter 
 Verwendung von Linux fdisk wie folgt::
 
     sudo fdisk -u -l /dev/hda, 
     
-Dann müssen Sie BlocksPerTrack=63 setzen. 
+Dann mÃ¼ssen Sie BlocksPerTrack=63 setzen. 
 Um sicherzustellen, dass Sie Nummern in Zylindern haben suchen Sie bitte
 nach Units=Zylinder in der Ausgabe. Wenn Sie die Ausgabe von fdisk in Sektoren
 (Units=Sektoren) erhalten, dann setzen Sie BlocksPerTrack=1.
@@ -729,35 +729,35 @@ Erstellen Sie ein mountfile (Textdatei) mit folgenden Zeilen::
 + Nennen Sie es irgendwie, zum Beispiel FAT0.
 + Setzen Sie im Icon dieser Datei in den Eigenschaften das Standardwerkzeug auf c:mount 
   (oder kopieren Sie das mountfile nach devs:dosdrivers oder sys:storage/dosdrivers).
-+ Führen Sie ein Doppelklick auf das Icon aus.
++ FÃ¼hren Sie ein Doppelklick auf das Icon aus.
 + Sehen Sie wie das Icon auf dem Wanderer Desktop erscheint.
 
-Anmerkung: Formel zur Zählung der Blöcke:
+Anmerkung: Formel zur ZÃ¤hlung der BlÃ¶cke:
 Block = ((highcyl - lowcyl) x surfaces + head) x blockspertrack + sec
 
 
 Fragen zur Hardware
 ===================
 
-Wo kann ich die AROS Hardware Kompatibilitätsliste finden?                   
+Wo kann ich die AROS Hardware KompatibilitÃ¤tsliste finden?                   
 ----------------------------------------------------------
 
-Sie können eine auf der `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__
-Seite finden. Es können weitere durch AROS Anwender erstellte Listen vorhanden sein.
+Sie kÃ¶nnen eine auf der `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__
+Seite finden. Es kÃ¶nnen weitere durch AROS Anwender erstellte Listen vorhanden sein.
 
 
 Warum kann AROS nicht von meinem SLAVE - IDE - Laufwerk starten?
 ----------------------------------------------------------------
 
 Nun, AROS sollte starten wenn das Laufwerk SLAVE ist, allerdings nur dann wenn
-es auch ein MASTER Laufwerk gibt. Das ist eine korrekte Verbindung mit Rücksicht
+es auch ein MASTER Laufwerk gibt. Das ist eine korrekte Verbindung mit RÃ¼cksicht
 auf die IDE Spezifikation und AROS setzt diese um.
 
 
-Mein System hängt sich mit einem roten Zeiger auf dem Bildschirm oder einem leeren Bildschirm auf
+Mein System hÃ¤ngt sich mit einem roten Zeiger auf dem Bildschirm oder einem leeren Bildschirm auf
 -------------------------------------------------------------------------------------------------
 
-Ein Grund dafür kann der Einsatz einer seriellen Maus sein (diese werden momentan nicht unterstützt).
-Sie müssen momentan für AROS eine PS/2 Maus verwenden. Ein weiterer Grund könnte es sein, wenn Sie
-im Startmenü einen nicht durch Ihre Hardware unterstützte Auflösung ausgewählt haben. Starten
+Ein Grund dafÃ¼r kann der Einsatz einer seriellen Maus sein (diese werden momentan nicht unterstÃ¼tzt).
+Sie mÃ¼ssen momentan fÃ¼r AROS eine PS/2 Maus verwenden. Ein weiterer Grund kÃ¶nnte es sein, wenn Sie
+im StartmenÃ¼ einen nicht durch Ihre Hardware unterstÃ¼tzte AuflÃ¶sung ausgewÃ¤hlt haben. Starten
 Sie neu und probieren Sie es mit einem Anderen.

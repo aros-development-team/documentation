@@ -3,7 +3,7 @@ Porttaukset
 ===========
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -14,140 +14,140 @@ Porttaukset
 Johdanto
 ========
 
-Koska AROS on siirrett‰v‰ ("portattava") k‰yttˆj‰rjestelm‰ on se saatavilla
-useille eri alustoille. AROS:in "portti" on juuri sit‰ mit‰ sill‰
-tarkoitetaankin, AROS:in versio joka on siirretty jollekin m‰‰r‰tylle
+Koska AROS on siirrett√§v√§ ("portattava") k√§ytt√∂j√§rjestelm√§ on se saatavilla
+useille eri alustoille. AROS:in "portti" on juuri sit√§ mit√§ sill√§
+tarkoitetaankin, AROS:in versio joka on siirretty jollekin m√§√§r√§tylle
 alustalle.
 
 
 Tyypit
 ------
 
-Porttaukset on jaettu kahteen p‰‰ryhm‰‰n, tai tyyppiin, nimitt‰in "natiiviin"
-ja "is‰nnˆityyn".
+Porttaukset on jaettu kahteen p√§√§ryhm√§√§n, tai tyyppiin, nimitt√§in "natiiviin"
+ja "is√§nn√∂ityyn".
 
-Natiivit versiot pyˆriv‰t suoraan raudalla ja niill‰ on tietokoneen t‰ydellinen
-kontrolli hallussaan. N‰m‰ tulevat olemaan AROS:in suositeltu ajotapa
-tulevaisuudessa koska se antaa ylivoimaisen tehoedun, mutta jotka ovat t‰ll‰
-hetkell‰ liian keskener‰isi‰ ollakseen (ohjelmistosuunnitteluun)
-k‰yttˆkelpoisia.
+Natiivit versiot py√∂riv√§t suoraan raudalla ja niill√§ on tietokoneen t√§ydellinen
+kontrolli hallussaan. N√§m√§ tulevat olemaan AROS:in suositeltu ajotapa
+tulevaisuudessa koska se antaa ylivoimaisen tehoedun, mutta jotka ovat t√§ll√§
+hetkell√§ liian keskener√§isi√§ ollakseen (ohjelmistosuunnitteluun)
+k√§ytt√∂kelpoisia.
 
-Is‰nnˆidyt portit pyˆriv‰t jonkin toisen k‰yttˆj‰rjestelm‰n alaisuudessa
-eiv‰tk‰ ne voi k‰sitell‰ rautaa suoraan vaan k‰ytt‰v‰t is‰nt‰j‰rjestelm‰n
-valmiuksia hyv‰kseen. T‰st‰ on etuna se ett‰ n‰iden porttien luominen on
-helpompaa koska ruohonjuuritason ajureita ei tarvitse tehd‰. Ja koska AROS
-kehitys ei ole viel‰ itse-is‰nnˆity‰ (emme voi k‰‰nt‰‰ AROS:ia AROS:issa),
-nopeuttaa se suuresti ohjelmointia koska voimme k‰ytt‰‰ ohjelmointiymp‰ristˆ‰
-ja AROS:ia rinta rinnan tuhlaamatta aikaa uudellen k‰ynnistyksiin koodia
+Is√§nn√∂idyt portit py√∂riv√§t jonkin toisen k√§ytt√∂j√§rjestelm√§n alaisuudessa
+eiv√§tk√§ ne voi k√§sitell√§ rautaa suoraan vaan k√§ytt√§v√§t is√§nt√§j√§rjestelm√§n
+valmiuksia hyv√§kseen. T√§st√§ on etuna se ett√§ n√§iden porttien luominen on
+helpompaa koska ruohonjuuritason ajureita ei tarvitse tehd√§. Ja koska AROS
+kehitys ei ole viel√§ itse-is√§nn√∂ity√§ (emme voi k√§√§nt√§√§ AROS:ia AROS:issa),
+nopeuttaa se suuresti ohjelmointia koska voimme k√§ytt√§√§ ohjelmointiymp√§rist√∂√§
+ja AROS:ia rinta rinnan tuhlaamatta aikaa uudellen k√§ynnistyksiin koodia
 testattaessa.
 
 
-Nime‰minen
+Nime√§minen
 ----------
 
-Eri AROS porttien nimet ovat muotoa <cpu>-<alusta>, miss‰ <cpu> on
+Eri AROS porttien nimet ovat muotoa <cpu>-<alusta>, miss√§ <cpu> on
 arkkitehtuurin CPU ja <alusta> on alustan symbolinen nimi. Alusta portille on
 joko rautaan perustuva natiiviversioille, kuten "pc" tai "amiga", taikka
-is‰nt‰j‰rjestelm‰n nimi, kuten "linux" tai "freebsd". Siin‰ tapauksessa ett‰
-aiheesta itsest‰‰n ei selvi‰ mist‰ portista on kyse, lis‰t‰‰n "AROS/" portin
+is√§nt√§j√§rjestelm√§n nimi, kuten "linux" tai "freebsd". Siin√§ tapauksessa ett√§
+aiheesta itsest√§√§n ei selvi√§ mist√§ portista on kyse, lis√§t√§√§n "AROS/" portin
 nimen eteen, esim. "AROS/i386-pc".
 
 
-Siirrett‰vyys
+Siirrett√§vyys
 -------------
 
-Ajettavat AROS ohjelmat tietylle CPU:lle ovat siirrett‰viss‰ suoraan samaa
-CPU:ta k‰yt‰v‰lle erilaiselle alustalle. T‰m‰ tarkoittaa sit‰ ett‰
-"i386-pc":lle k‰‰nnetyt ohjelmat toimivat vallan mainiosti "i386-linux":issa
-sek‰ "i386-freebsd":ss‰.
+Ajettavat AROS ohjelmat tietylle CPU:lle ovat siirrett√§viss√§ suoraan samaa
+CPU:ta k√§yt√§v√§lle erilaiselle alustalle. T√§m√§ tarkoittaa sit√§ ett√§
+"i386-pc":lle k√§√§nnetyt ohjelmat toimivat vallan mainiosti "i386-linux":issa
+sek√§ "i386-freebsd":ss√§.
 
 
 Olemassa olevat porttaukset
 ===========================
 
-Alla on lista kaikista niist‰ AROS porteista jotka ovat toimintakuntoisia
-ja/tai aktiivisen kehitystyˆn alaisia. Kaikkia n‰it‰ ei ole viel‰ julkisesti
-saatavilla sill‰ ne voivat olla liian keskener‰isi‰ tai saattavat vaatia
-k‰‰nnˆkseen sellaisia resursseja joita meill‰ ei juuri t‰ll‰ hetkell‰ ole
-k‰sill‰.
+Alla on lista kaikista niist√§ AROS porteista jotka ovat toimintakuntoisia
+ja/tai aktiivisen kehitysty√∂n alaisia. Kaikkia n√§it√§ ei ole viel√§ julkisesti
+saatavilla sill√§ ne voivat olla liian keskener√§isi√§ tai saattavat vaatia
+k√§√§nn√∂kseen sellaisia resursseja joita meill√§ ei juuri t√§ll√§ hetkell√§ ole
+k√§sill√§.
 
 
 AROS/i386-pc
 ------------
 
 :Tyyppi:      Natiivi
-:Status:      Toimii, keskener‰inen ajurituki
-:Yll‰pidetty: Kyll‰
+:Status:      Toimii, keskener√§inen ajurituki
+:Yll√§pidetty: Kyll√§
 
 AROS/i386-pc on AROS:in natiivi versio IBM PC AT yhteensopiville tietokoneille
-jotka k‰ytt‰v‰t x86 perheen prosessoreita. Nimi on hieman harhaanjohtava koska
-AROS/i386-pc tosiasiassa vaatii v‰hint‰‰n 486-tasoisen CPU:n 386:ssa
-olemassa olemattomien k‰skyjen k‰ytˆn vuoksi.
+jotka k√§ytt√§v√§t x86 perheen prosessoreita. Nimi on hieman harhaanjohtava koska
+AROS/i386-pc tosiasiassa vaatii v√§hint√§√§n 486-tasoisen CPU:n 386:ssa
+olemassa olemattomien k√§skyjen k√§yt√∂n vuoksi.
 
-T‰m‰ portti toimii melko hyvin, mutta meill‰ on vain eritt‰in perustavaa
-laatua oleva ajurituki. Yksi suurimmista rajoitteista on se ett‰ meill‰ on
-kiihdytetty tuki ainoastaan nVidia:n grafikkaraudalle. Muita n‰yttˆkortteja
-joudutaan k‰ytt‰m‰‰n geneerisill‰ (ei-kiihdytetyill‰) VGA ja VBE ajureilla.
-Lis‰‰ ajureita on tyˆn alla mutta kehitys on hidasta koska meill‰ on
-kutakuinkin 2.5 rautahakkeria. T‰m‰ portti on saatavilla.
+T√§m√§ portti toimii melko hyvin, mutta meill√§ on vain eritt√§in perustavaa
+laatua oleva ajurituki. Yksi suurimmista rajoitteista on se ett√§ meill√§ on
+kiihdytetty tuki ainoastaan nVidia:n grafikkaraudalle. Muita n√§ytt√∂kortteja
+joudutaan k√§ytt√§m√§√§n geneerisill√§ (ei-kiihdytetyill√§) VGA ja VBE ajureilla.
+Lis√§√§ ajureita on ty√∂n alla mutta kehitys on hidasta koska meill√§ on
+kutakuinkin 2.5 rautahakkeria. T√§m√§ portti on saatavilla.
 
 
 AROS/m68k-pp
 ------------
 
 :Tyyppi:      Natiivi
-:Status:      Osittain toimiva (emulaattorissa), keskener‰inen ajurituki
-:Yll‰pidetty: Kyll‰
+:Status:      Osittain toimiva (emulaattorissa), keskener√§inen ajurituki
+:Yll√§pidetty: Kyll√§
 
-AROS/m68k-pp on AROS:in natiivi versio Palm-tyypin k‰mmenkoneisiin ja
-yhteensopiviin ("pp" tarkoittaa "palm pilot":ia, joka oli t‰m‰n kaltaisten
-laitteiden edell‰k‰vij‰). T‰m‰ tarkoittaa sit‰ ett‰ voit ottaa tulevaisuudessa
+AROS/m68k-pp on AROS:in natiivi versio Palm-tyypin k√§mmenkoneisiin ja
+yhteensopiviin ("pp" tarkoittaa "palm pilot":ia, joka oli t√§m√§n kaltaisten
+laitteiden edell√§k√§vij√§). T√§m√§ tarkoittaa sit√§ ett√§ voit ottaa tulevaisuudessa
 AROS:in taskuun mukaasi kun matkustat...
 
-T‰m‰ portti on todella raakile. Se toimii suurimmaksi osaksi (pyˆrien
-emulaattorin alla koska kukaan ei ole viel‰ tahtonut uhrata kallista
-laitteistoaan) mutta tyˆt‰ on viel‰ paljon teht‰v‰n‰. Grafiikka-ajuri on
-olemassa mutta syˆtteelle ei viel‰ yht‰‰n. T‰t‰ porttia ei ole saatavilla
-t‰ll‰ hetkell‰.
+T√§m√§ portti on todella raakile. Se toimii suurimmaksi osaksi (py√∂rien
+emulaattorin alla koska kukaan ei ole viel√§ tahtonut uhrata kallista
+laitteistoaan) mutta ty√∂t√§ on viel√§ paljon teht√§v√§n√§. Grafiikka-ajuri on
+olemassa mutta sy√∂tteelle ei viel√§ yht√§√§n. T√§t√§ porttia ei ole saatavilla
+t√§ll√§ hetkell√§.
 
 
 AROS/i386-linux
 ---------------
 
-:Tyyppi:      Is‰nnˆity
+:Tyyppi:      Is√§nn√∂ity
 :Status:      Toimii
-:Yll‰pidetty: Kyll‰
+:Yll√§pidetty: Kyll√§
 
-AROS/i386-linux on is‰nnˆity versio AROS:ista joka toimii Linux
-k‰yttˆj‰rjestelm‰n alaisuudessa [#]_ x86 perheen prosessoreilla.
+AROS/i386-linux on is√§nn√∂ity versio AROS:ista joka toimii Linux
+k√§ytt√∂j√§rjestelm√§n alaisuudessa [#]_ x86 perheen prosessoreilla.
 
-T‰m‰ on AROS:in t‰ydellisin versio ominaisuuksia vertailtaessa sill‰ suurin
-osa kehitt‰jist‰ k‰ytt‰‰ Linux:ia AROS:in ohjelmistokehityksess‰ ja ajureita
-on huomattavasti v‰hemm‰n teht‰v‰n‰ kuin muille alustoille. T‰m‰ portti on
+T√§m√§ on AROS:in t√§ydellisin versio ominaisuuksia vertailtaessa sill√§ suurin
+osa kehitt√§jist√§ k√§ytt√§√§ Linux:ia AROS:in ohjelmistokehityksess√§ ja ajureita
+on huomattavasti v√§hemm√§n teht√§v√§n√§ kuin muille alustoille. T√§m√§ portti on
 saatavilla.
 
 
 AROS/i386-freebsd
 -----------------
 
-:Tyyppi:      Is‰nnˆity
+:Tyyppi:      Is√§nn√∂ity
 :Status:      Toimii
-:Yll‰pidetty: Kyll‰ (5.x)
+:Yll√§pidetty: Kyll√§ (5.x)
 
-AROS/i386-freebsd on is‰nnˆity versio AROS:ista FreeBSD k‰yttˆj‰rjestelm‰lle
+AROS/i386-freebsd on is√§nn√∂ity versio AROS:ista FreeBSD k√§ytt√∂j√§rjestelm√§lle
 joka toimii x86 perheen prosessoreilla.
 
-T‰m‰ portti on suhteellisen t‰ydellinen koska suurin osa sen koodista on
-yhteist‰ AROS/i386-linux:in kanssa, mutta koska kovin moni kehitt‰jist‰ ei
-k‰yt‰ FreeBSD:t‰, laahaa kehitys hitusen j‰ljess‰. Koetamme tehd‰
-AROS/i386-freebsd k‰‰nnˆksen snapshotteja luodessamme, mutta aina t‰m‰ ei ole
-mahdollista, joten t‰m‰ ei ole aina saatavilla uusimpana versiona.
+T√§m√§ portti on suhteellisen t√§ydellinen koska suurin osa sen koodista on
+yhteist√§ AROS/i386-linux:in kanssa, mutta koska kovin moni kehitt√§jist√§ ei
+k√§yt√§ FreeBSD:t√§, laahaa kehitys hitusen j√§ljess√§. Koetamme tehd√§
+AROS/i386-freebsd k√§√§nn√∂ksen snapshotteja luodessamme, mutta aina t√§m√§ ei ole
+mahdollista, joten t√§m√§ ei ole aina saatavilla uusimpana versiona.
 
 
 Alaviitteet
 ===========
 
-.. [#] Tied‰mme kyll‰ ett‰ Linux on tosiasiassa vain kernel eik‰ koko
-       k‰yttˆj‰rjestelm‰, mutta on huomattavasti k‰tev‰mp‰‰ kirjoittaa noin
-       kuin "k‰yttˆj‰rjestelmille jotka pohjautuvat Linux kerneliin, joihinkin
-       yleisiin GNU tyˆkaluihin ja X ikkunointij‰rjestelm‰‰n".
+.. [#] Tied√§mme kyll√§ ett√§ Linux on tosiasiassa vain kernel eik√§ koko
+       k√§ytt√∂j√§rjestelm√§, mutta on huomattavasti k√§tev√§mp√§√§ kirjoittaa noin
+       kuin "k√§ytt√∂j√§rjestelmille jotka pohjautuvat Linux kerneliin, joihinkin
+       yleisiin GNU ty√∂kaluihin ja X ikkunointij√§rjestelm√§√§n".

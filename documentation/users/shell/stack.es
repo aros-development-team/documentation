@@ -26,19 +26,19 @@ Synopsis
      SIZE/N
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
      C:
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
-     Stack pone el tamaÒo de pila por omisiÛn del actual shell. Este el 
-     tamaÒo de la pila de los comandos que se ejecutan en el Shell. Si
-     usas Stack sin argumentos, el tamaÒo actual de la pila ser· mostrado.
+     Stack pone el tama√±o de pila por omisi√≥n del actual shell. Este el 
+     tama√±o de la pila de los comandos que se ejecutan en el Shell. Si
+     usas Stack sin argumentos, el tama√±o actual de la pila ser√° mostrado.
 
 

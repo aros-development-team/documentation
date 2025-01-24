@@ -747,7 +747,7 @@ Inputs
 
          SC_COLLATE1
              This sorts using the "primary sorting order". This
-             means that characters such as 'e' and 'é' will be
+             means that characters such as 'e' and 'Ã©' will be
              considered the same. This method also ignores
              case.
 
@@ -757,7 +757,7 @@ Inputs
              and should be used when presenting data to a user.
 
              The first pass is the same as SC_COLLATE1, meaning
-             that two strings such as "role" and "rôle" would
+             that two strings such as "role" and "rÃ´le" would
              be sorted identically. The second pass will
              compare the diacritical marks.
 

@@ -1,15 +1,15 @@
 ===========
-Mise ‡ jour
+Mise √† jour
 ===========
 
 :Auteur:   Paolo Besser
 :Date:     2006-09-15
 
 La localisation du site Aros.org continue. Samuel Atlan travaille sur la
-`traduction FranÁaise`__ du site. Cela prendra un certain temps, mais les
-premiËres pages sont d'ores et dÈj‡ disponibles ‡ partir du menu en haut ‡
-gauche Notez Ègalement une petite nouveautÈ sur aros.org : vous pouvez
-dÈsormais consulter votre site localisÈ en ajoutant le prÈfixe national ‡
+`traduction Fran√ßaise`__ du site. Cela prendra un certain temps, mais les
+premi√®res pages sont d'ores et d√©j√† disponibles √† partir du menu en haut √†
+gauche Notez √©galement une petite nouveaut√© sur aros.org : vous pouvez
+d√©sormais consulter votre site localis√© en ajoutant le pr√©fixe national √†
 l'adresse url standard. PAr exemple, l'adresse du site en italien est
 *www.aros.org/it*, celle en russe *www.aros.org/ru* etc.
 
@@ -18,11 +18,11 @@ __ http://www.aros.org/fr/
 AROS dans les news
 ------------------
 
-Vous pouvez lire une jolie `review`__ Ècrite par Dmitar Butrovski sur
+Vous pouvez lire une jolie `review`__ √©crite par Dmitar Butrovski sur
 `OSnews.com`__. Il s'agit de l'un des articles les plus complets  sur
-AROS, couvrant la majoritÈ des composants du systËme d'exploitation.
+AROS, couvrant la majorit√© des composants du syst√®me d'exploitation.
 Si vous ne savez pas encore exactement ce qu'est AROS, vous pourrez
-vous en faire une bonne idÈe.
+vous en faire une bonne id√©e.
 
 __ http://osnews.com/story.php?news_id=15819
 __ http://osnews.com
@@ -30,28 +30,28 @@ __ http://osnews.com
 Logiciel
 --------
 
-La nouvelle version 1.20 du cÈlËbre Èmulateur Commodore 8-bit *VICE*
+La nouvelle version 1.20 du c√©l√®bre √©mulateur Commodore 8-bit *VICE*
 est disponible pour toutes les plateformes Amiga, AROS inclus. Vous
 pouvez le trouver `ici`__.
 
-*WinAros* est un environnement AROS prÈinstallÈ sur une image HD,
-compatible avec la cÈlËbre machine virtuelle QEMU et Microsoft VirtualPC,
-les deux sont disponibles gratuitement sur internet. Vous pouvez tÈlÈcharger
+*WinAros* est un environnement AROS pr√©install√© sur une image HD,
+compatible avec la c√©l√®bre machine virtuelle QEMU et Microsoft VirtualPC,
+les deux sont disponibles gratuitement sur internet. Vous pouvez t√©l√©charger
 `QEMU Winaros ici`__ et `VirtualPC one ici`__. Heinz-Raphael Reinke a
-Ègalement Ècrit un guide d'installation complet `AROS installation on hard disk`__ 
-en PDF. Si vous prÈfÈrez, il y a Ègalement une `version Allemande`__.
+√©galement √©crit un guide d'installation complet `AROS installation on hard disk`__ 
+en PDF. Si vous pr√©f√©rez, il y a √©galement une `version Allemande`__.
 Vous aurez besoin d'Adobe Acrobat Reader, FoxIt Reader ou aPDF/xPDF
 pour les lire. 
 
 *Installation Kit for AROS (IKAROS)* est un set d'images de disque virtuels
-disponibles pour diffÈrentes machines virtuelles dont QEMU et VMware, dÈj‡
-partitionnÈs, formatÈs, et utilisables pour installer AROS. Ses bÈnÈfices
-sont la taille rÈduite du package et le faible nombre de fichiers, ainsi que
-la possibilitÈ d'installer des nouvelles versions d'AROS ce qui le rend utile
-pour tester les nighty builds. Il permet Ègalement une installation facile
+disponibles pour diff√©rentes machines virtuelles dont QEMU et VMware, d√©j√†
+partitionn√©s, format√©s, et utilisables pour installer AROS. Ses b√©n√©fices
+sont la taille r√©duite du package et le faible nombre de fichiers, ainsi que
+la possibilit√© d'installer des nouvelles versions d'AROS ce qui le rend utile
+pour tester les nighty builds. Il permet √©galement une installation facile
 des nouvelles versions sans devoir passer par le partitionnement des disques.
 Les instructions d'installation sont incluses.
-Veuillez consulter `Aros-Exec`__ pour des mises ‡ jour rÈcentes.
+Veuillez consulter `Aros-Exec`__ pour des mises √† jour r√©centes.
 
 
 __ http://www.viceteam.org/amigaos.html

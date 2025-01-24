@@ -20,7 +20,7 @@ Synopsis
      COMMAND/K/F,FROM
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
@@ -41,9 +41,9 @@ Entradas
 ::
 
 
-     COMMAND  --  la l韓ea de comandos a ejecutar
+     COMMAND  --  la l铆nea de comandos a ejecutar
 
-     FROM     --  gui髇 a llamar antes de la interacci髇 del usuario.
+     FROM     --  gui贸n a llamar antes de la interacci贸n del usuario.
 
 
 
@@ -54,7 +54,7 @@ Ejemplo
 
      shell FROM S:Startup-Sequence
 
-     Inicia un shell y ejecuta el gui髇 de inicio.
+     Inicia un shell y ejecuta el gui贸n de inicio.
 
 
 Notas
@@ -62,11 +62,11 @@ Notas
 ::
 
 
- El archivo de gui髇 no es un gui髇 en sentido estricto (ya que no podr韆s
- usar ning鷑 .key, .bra o .ket ni cosas similares).
+ El archivo de gui贸n no es un gui贸n en sentido estricto (ya que no podr铆as
+ usar ning煤n .key, .bra o .ket ni cosas similares).
 
 
-Mira tambi閚
+Mira tambi茅n
 ~~~~~~~~~~~~
 ::
 

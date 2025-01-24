@@ -1,38 +1,38 @@
 =================================
-Manual para la DepuraciÛn de AROS
+Manual para la Depuraci√≥n de AROS
 =================================
 
 :Authors:   David Le Corfec
-:Copyright: Copyright © 2004, The AROS Development Team
+:Copyright: Copyright ¬© 2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
 
-Este manual explica las varias opciones para la depuraciÛn de AROS.
+Este manual explica las varias opciones para la depuraci√≥n de AROS.
 
 .. Contents::
 
 
 ------------
-IntroducciÛn
+Introducci√≥n
 ------------
 
-Para la mayorÌa de los desarrolladores, la manera m·s f·cil para desarrollar
+Para la mayor√≠a de los desarrolladores, la manera m√°s f√°cil para desarrollar
 y depurar es usar el puerto de AROS hosted en Linux (que es la 
-configuraciÛn m·s popular) o en BSD. De esta manera puedes usar GDB en Linux
-para depurar AROS. Necesitar·s pasar ``--enable-debug`` al guiÛn de
+configuraci√≥n m√°s popular) o en BSD. De esta manera puedes usar GDB en Linux
+para depurar AROS. Necesitar√°s pasar ``--enable-debug`` al gui√≥n de
 configure antes de compilar AROS. Ten cuidado, las informaciones de 
-depuraciÛn pueden decuplicar el tamaÒo de disco ocupado por el ·rbol de AROS.
+depuraci√≥n pueden decuplicar el tama√±o de disco ocupado por el √°rbol de AROS.
 
-Los desarrolladores de hardware de bajo nivel usar·n de preferencia la
-salida de depuraciÛn en serie/serial en el puerto nativo.
+Los desarrolladores de hardware de bajo nivel usar√°n de preferencia la
+salida de depuraci√≥n en serie/serial en el puerto nativo.
 
-Los desarrolladores de aplicaciÛn necesitar·n asegurarse que sus programas
+Los desarrolladores de aplicaci√≥n necesitar√°n asegurarse que sus programas
 liberan todos los recursos que tomen. AROS proporciona algunas herramientas
 para hacer esto.
 
 -------------------------------------
-Imprimir las sentencias de depuraciÛn
+Imprimir las sentencias de depuraci√≥n
 -------------------------------------
 
 ::
@@ -42,21 +42,21 @@ Imprimir las sentencias de depuraciÛn
     ...
     D(bug("value1=%ld, path=%s", value, path));
 
-``D()`` se expandir· a nada si ``DEBUG`` es 0 o indefinido.
+``D()`` se expandir√° a nada si ``DEBUG`` es 0 o indefinido.
 El uso es el mismo que de ``printf()``.
-En el AROS hosted, la salida ser· mostrada en la consola donde AROS
+En el AROS hosted, la salida ser√° mostrada en la consola donde AROS
 fue iniciado.
 
 ------------------------------
 Con AROS alojado: Usando GDB
 ------------------------------
 
-Puedes ejecutar AROS en GDB, o usar GDB despuÈs de que AROS ha terminado 
+Puedes ejecutar AROS en GDB, o usar GDB despu√©s de que AROS ha terminado 
 y deja un vaciado de la memoria. No olvides compilar AROS con la 
-depuraciÛn habilitada (``./configure --enable-debug``).
+depuraci√≥n habilitada (``./configure --enable-debug``).
 
 
-La depuraciÛn en vivo
+La depuraci√≥n en vivo
 =====================
 
 Inicia GDB igual que abajo::
@@ -77,18 +77,18 @@ Luego ejecuta AROS con::
     (gdb) r
     Starting program: /AROS/bin/linux-i386/AROS/aros 
     (... lots of debug output follow ...)
-    (... sigue mucha salida de depuraciÛn ...)
+    (... sigue mucha salida de depuraci√≥n ...)
 
-Puedes pasarle argumentos a AROS ubic·ndolos despuÈs del comando ``r``.
+Puedes pasarle argumentos a AROS ubic√°ndolos despu√©s del comando ``r``.
 Usa Ctrl-C en el shell para interrumpir AROS y volver al prompt de GDB.
 Usa ``help`` para tener ayuda, o ``q`` para salir :)
 
 
-La depuraciÛn post-mortem
+La depuraci√≥n post-mortem
 =========================
 
-Primero, tienes que habilitar la generaciÛn del vaciado de la memoria,
-usando, por ej. ulimit si el shell es Bash. DespuÈs ejecuta AROS y
+Primero, tienes que habilitar la generaci√≥n del vaciado de la memoria,
+usando, por ej. ulimit si el shell es Bash. Despu√©s ejecuta AROS y
 genera el vaciado de la memoria::
 
     > cd /AROS/bin/linux-i386/AROS/
@@ -123,17 +123,17 @@ el nombre del archivo con la memoria volcada::
     (gdb)
 
 
-GDG (los comandos b·sicos)
+GDG (los comandos b√°sicos)
 ==========================
 
-El comando ``help`` entrega la ayuda para todos los comandos de GDB. InvÛcalo
+El comando ``help`` entrega la ayuda para todos los comandos de GDB. Inv√≥calo
 directamente para tener una lista del tema de ayuda conocido, o sigue un
-tema o el nombre (o abreviaciÛn) de un comando.
+tema o el nombre (o abreviaci√≥n) de un comando.
 Se te anima a leer la ayuda online de todos los comandos que
-brevemente ser·n presentados aquÌ.
+brevemente ser√°n presentados aqu√≠.
 
 El comando ``bt`` (backtrace) imprime un backtrace de todos los marcos
-de la pila. AquÌ est· un backtrace despuÈs de interrumpir AROS con
+de la pila. Aqu√≠ est√° un backtrace despu√©s de interrumpir AROS con
 Ctrl-C en la consola GDB::
 
     Program received signal SIGINT, Interrupt.
@@ -146,28 +146,28 @@ Ctrl-C en la consola GDB::
     Previous frame inner to this frame (corrupt stack?)
     (gdb) 
 
-El marco m·s interno es el #0.
+El marco m√°s interno es el #0.
 
-Para imprimir el valor de una expresiÛn accesible del marco actual,
+Para imprimir el valor de una expresi√≥n accesible del marco actual,
 usa ``p`` (print, imprimir)::
 
     (gdb) p SysBase
     $1 = (struct ExecBase *) 0x40231290
 
 El comando imprimir de GDB es muy poderoso.
-Entiende la sintaxis de C, asÌ que puedes imprimir cualquier expresiÛn
-v·lida::
+Entiende la sintaxis de C, as√≠ que puedes imprimir cualquier expresi√≥n
+v√°lida::
 
     (gdb) p SysBase->IntVects[2]
     $2 = {iv_Data = 0x0, iv_Code = 0x8052f30 <SoftIntDispatch>, iv_Node = 0x4023c528}
 
-TambiÈn puedes usar ``print`` como una calculadora hexadecimal, como::
+Tambi√©n puedes usar ``print`` como una calculadora hexadecimal, como::
 
     (gdb) p 0x42 + 0xc0de
     $1 = 49440
 
-Para mostrar el resultado en hexadecimal, usa ``p/x`` (fÌjate cÛmo 
-puedes llamar una expresiÛn anterior)::
+Para mostrar el resultado en hexadecimal, usa ``p/x`` (f√≠jate c√≥mo 
+puedes llamar una expresi√≥n anterior)::
 
     (gdb) p/x $1
     $2 = 0xc120
@@ -178,24 +178,24 @@ Para moverte entre marcos, usa el comando ``f`` (frame, marco)::
     #1  0x080531d5 in idleTask (sysBase=0x40231290) at idletask.c:23
     23              sigsuspend(&sigs);
 
-Para mostrar diez renglones del cÛdigo fuente en torno a la posiciÛn
-actual, usa ``l`` (list), que tambiÈn se puede usar para mostrar un
-renglÛn especÌfico.
+Para mostrar diez renglones del c√≥digo fuente en torno a la posici√≥n
+actual, usa ``l`` (list), que tambi√©n se puede usar para mostrar un
+rengl√≥n espec√≠fico.
 
-Si est·s haciendo la depuraciÛn en vivo:
+Si est√°s haciendo la depuraci√≥n en vivo:
 
 + Para ejecutar un programa (o volver a ejecutarlo desde el principio)
-  hasta que lo interrumpas, o se llegue a un punto de interrupciÛn, o
-  se cuelgue, usa el comando ``r`` (run) (con los par·metros opcionales
-  que se pasar·n al programa);
+  hasta que lo interrumpas, o se llegue a un punto de interrupci√≥n, o
+  se cuelgue, usa el comando ``r`` (run) (con los par√°metros opcionales
+  que se pasar√°n al programa);
 
-+ Para pasar las intrucciones de una por vez, usa ``s`` o ``n`` (el ˙ltimo
-  procesar· las llamadas a subrutinas en un paso);
++ Para pasar las intrucciones de una por vez, usa ``s`` o ``n`` (el √∫ltimo
+  procesar√° las llamadas a subrutinas en un paso);
 
-+ Para situar un punto de interrupciÛn, usa ``b`` seguido del n˙mero
-  renglÛn o la funciÛn;
++ Para situar un punto de interrupci√≥n, usa ``b`` seguido del n√∫mero
+  rengl√≥n o la funci√≥n;
 
-+ Para proseguir la ejecuciÛn del programa mientras est· en el depurador
++ Para proseguir la ejecuci√≥n del programa mientras est√° en el depurador
   usa ``c``.
 
 Usa ``q`` para salir::
@@ -205,32 +205,32 @@ Usa ``q`` para salir::
     >
 
 
-GDB (especÌfico para AROS)
+GDB (espec√≠fico para AROS)
 ==========================
 
-Los comandos de GDB especÌficos para AROS son suministrados en
+Los comandos de GDB espec√≠ficos para AROS son suministrados en
 ``/AROS/_gdbinit``, que se instala en ``/AROS/bin/linux-i386/AROS/.gdbinit``.
 GDB lee este archivo al iniciarse, y contiene los siguientes comandos::
 
-    findaddr - Muestra el mÛdulo que contiene la direcciÛn dada.
-    thistask - Imprime informaciÛn sobre la tarea en ejecuciÛn.
+    findaddr - Muestra el m√≥dulo que contiene la direcci√≥n dada.
+    thistask - Imprime informaci√≥n sobre la tarea en ejecuci√≥n.
     liblist - Lista las bibliotecas actuales del sistema.
     devlist - Lista los dispositivos actuales del sistema.
     resourcelist - Lista los recursos actuales del sistema.
     residentlist - Lista los residentes del sistema.
     taskready - Lista las tareas actuales listas para ejecutarse.
     taskwait - Lista las tareas que esperan un evento.
-    modlist - Lista todos los mÛdulos cargados en la memoria.
+    modlist - Lista todos los m√≥dulos cargados en la memoria.
     printtaglist - Muestra la taglist dada.
 
-De esta lista, ``findaddr`` es esencial para una apropiada depuraciÛn
-del cÛdigo no-ROM (bibliotecas compartidas, aplicaciones...)
+De esta lista, ``findaddr`` es esencial para una apropiada depuraci√≥n
+del c√≥digo no-ROM (bibliotecas compartidas, aplicaciones...)
 
 Usar findaddr
 -------------
 
-M·s a menudo querr·s depurar bibliotecas o aplicaciones, pero un
-backtrace te da una o m·s direcciones sin resolver::
+M√°s a menudo querr√°s depurar bibliotecas o aplicaciones, pero un
+backtrace te da una o m√°s direcciones sin resolver::
 
     Core was generated by `aros'.
     Program terminated with signal 11, Segmentation fault.
@@ -257,16 +257,16 @@ backtrace te da una o m·s direcciones sin resolver::
     #5  0x8042bfe0 in ?? ()
     #6  0x404ca36c in ?? ()
 
-Usa ``findaddr`` con cualquier direcciÛn que quieras resolver (probablemente
-la m·s interna)::
+Usa ``findaddr`` con cualquier direcci√≥n que quieras resolver (probablemente
+la m√°s interna)::
 
     (gdb) findaddr 0x402bd919
     Searching in the loaded modules...
     Address found in System:Tests/Zune/list1, which is loaded at 0x402bd454.
     If this is an executable, its .text section starts at 0x402bd460
 
-DespuÈs usar·s el comando ``add-symbol-file`` para cargar el archivo
-encontrado en la direcciÛn hallada del texto::
+Despu√©s usar√°s el comando ``add-symbol-file`` para cargar el archivo
+encontrado en la direcci√≥n hallada del texto::
 
     (gdb) add-symbol-file Tests/Zune/list1 0x402bd460
     add symbol table from file "Tests/Zune/list1" at
@@ -294,7 +294,7 @@ Con suerte ha resuelto las direcciones::
     #9  0x00000001 in ?? ()
     #10 0x402a6888 in ?? ()
 
-AsÌ que con suerte puedes encontrar el error::
+As√≠ que con suerte puedes encontrar el error::
 
     (gdb) f 1
     #1  0x402bd919 in main () at list1.c:107
@@ -305,7 +305,7 @@ Repite para las direcciones restantes que deseas resolver.
 Usando thistask
 ---------------
 
-Muestra informaciÛn variada de la tarea que se est· ejecutando. No sorprende,
+Muestra informaci√≥n variada de la tarea que se est√° ejecutando. No sorprende,
 son los datos que puedes hallar en ``SysBase->ThisTask``::
 
     (gdb) thistask 
@@ -318,16 +318,16 @@ Consejos y trucos
 =================
 
 
-Un punto de interrupciÛn inducido por el programa en i386
+Un punto de interrupci√≥n inducido por el programa en i386
 ---------------------------------------------------------
 
 Si insertas::
 
     asm("int $3");
 
-en el cÛdigo C, se generar· una trace excepction durante la ejecuciÛn.
-Puede ser muy ˙til mientras ejecutas con GDB, para ingresar a la
-depuraciÛn interactiva cuando una condiciÛn especÌfica ocurre::
+en el c√≥digo C, se generar√° una trace excepction durante la ejecuci√≥n.
+Puede ser muy √∫til mientras ejecutas con GDB, para ingresar a la
+depuraci√≥n interactiva cuando una condici√≥n espec√≠fica ocurre::
 
     if (byteSize == 112)
         asm("int $3");
@@ -336,24 +336,24 @@ depuraciÛn interactiva cuando una condiciÛn especÌfica ocurre::
 Resource tracking
 -----------------
 
-El Resource Tracking igual al de los otros OS no est· disponible
-en AROS en este momento, asÌ que tendr·s que encargarte de liberar
-los recursos por tÌ mismo. AquÌ encontrar·s algunas herramientas que te
-ayudar·n a comprobar que tu programa estÈ limpio.
+El Resource Tracking igual al de los otros OS no est√° disponible
+en AROS en este momento, as√≠ que tendr√°s que encargarte de liberar
+los recursos por t√≠ mismo. Aqu√≠ encontrar√°s algunas herramientas que te
+ayudar√°n a comprobar que tu programa est√© limpio.
 
 Siguiendo a la memoria con Mungwall
 ===================================
 
-Si est· configurado con ``--enable-debug``, AROS habilita ``Mungwall``.
-que vigila una pequeÒa zona antes y despuÈs de tus asignaciones para verificar
-que no escribas fuera de los lÌmites. Esta comprobaciÛn se hace en las
-rutinas de asignaciÛn de memoria, o en cualquier momento si se invoca
+Si est√° configurado con ``--enable-debug``, AROS habilita ``Mungwall``.
+que vigila una peque√±a zona antes y despu√©s de tus asignaciones para verificar
+que no escribas fuera de los l√≠mites. Esta comprobaci√≥n se hace en las
+rutinas de asignaci√≥n de memoria, o en cualquier momento si se invoca
 ``AvailMem(MEMF_CLEAR)``.
 
-La herramienta de lÌnea de comando ``CheckMem`` llama a esta funciÛn, e
-informa a la salida de depuraciÛn (serial para el nativo, o la terminal
-para el hospedado). Si no se detecta ninguna violaciÛn de lÌmite, informar·
-la cantidad actual de asignaciones y su tamaÒo total::
+La herramienta de l√≠nea de comando ``CheckMem`` llama a esta funci√≥n, e
+informa a la salida de depuraci√≥n (serial para el nativo, o la terminal
+para el hospedado). Si no se detecta ninguna violaci√≥n de l√≠mite, informar√°
+la cantidad actual de asignaciones y su tama√±o total::
 
     === MUNGWALL MEMORY CHECK ============
     
@@ -362,61 +362,61 @@ la cantidad actual de asignaciones y su tamaÒo total::
 LeakWatch
 =========
 
-…sta es una herramienta tonta pero ˙til. Caza la memoria
+√âsta es una herramienta tonta pero √∫til. Caza la memoria
 total y los objetos de Exec: las bibliotecas, los dispositivos, las
-fuentes, los recursos, los puertos y los sem·foros.
-Dispara un flush de objetos sin uso que est·n a˙n en la memoria para
-informar el monto real de memoria despuÈs de que algunos recursos son
+fuentes, los recursos, los puertos y los sem√°foros.
+Dispara un flush de objetos sin uso que est√°n a√∫n en la memoria para
+informar el monto real de memoria despu√©s de que algunos recursos son
 cerrados.
 
-Lanza ``LeakWatch`` en su propio shell, despuÈs usa las siguientes
+Lanza ``LeakWatch`` en su propio shell, despu√©s usa las siguientes
 teclas:
 
 + ``Ctrl-C`` para salir :)
 + ``Ctrl-D`` para mostrar el estado actual de los recursos
 + ``Ctrl-E`` para mostrar las diferencias de recursos desde que lo lanzaste
-+ ``Ctrl-F`` para mostrar las diferencias de recursos desde el ˙ltimo
-  momento en que t˙ apretaste ``Ctrl-F``.
++ ``Ctrl-F`` para mostrar las diferencias de recursos desde el √∫ltimo
+  momento en que t√∫ apretaste ``Ctrl-F``.
 
-``Ctrl-F`` es la tecla m·s ˙til: apriÈtala antes de ejecutar tu programa,
-y despuÈs de salir de Èl. No deberÌa informar ning˙n recurso. En el caso
+``Ctrl-F`` es la tecla m√°s √∫til: apri√©tala antes de ejecutar tu programa,
+y despu√©s de salir de √©l. No deber√≠a informar ning√∫n recurso. En el caso
 opuesto:
 
-+ Verifica que ning˙n otro programa estÈ asignando recursos en ese momento.
-+ Repite la ejecuciÛn para ver si los leaks son consistentes.
-+ Estrecha el lugar donde el leak ocurre reduciendo las caracterÌsticas
-  que usas, despuÈs comenta el cÛdigo.
++ Verifica que ning√∫n otro programa est√© asignando recursos en ese momento.
++ Repite la ejecuci√≥n para ver si los leaks son consistentes.
++ Estrecha el lugar donde el leak ocurre reduciendo las caracter√≠sticas
+  que usas, despu√©s comenta el c√≥digo.
 
-Si piensas que tu programa disparÛ un leak en una biblioteca de AROS,
-busca un programa de prueba existente o escribe uno pequeÒo que use
+Si piensas que tu programa dispar√≥ un leak en una biblioteca de AROS,
+busca un programa de prueba existente o escribe uno peque√±o que use
 las llamadas que hacen leak, para asegurarte que el leak realmente
-viene de allÌ.
+viene de all√≠.
 
-Herramientas miscel·neas del CLI
+Herramientas miscel√°neas del CLI
 ================================
 
-TambiÈn hay herramientas de depuraciÛn m·s simples que est·n en ``C:``.
+Tambi√©n hay herramientas de depuraci√≥n m√°s simples que est√°n en ``C:``.
 
 
 El Shell de AROS
 ----------------
 
 Tipea en el Shell ``set __debug_mem`` para habilitar los informes de la 
-memoria disponible antes y despuÈs de cada comando, asÌ como la
-diferencia de memoria. En esencia lo mismo que ``LeakWatch`` sÛlo que 
+memoria disponible antes y despu√©s de cada comando, as√≠ como la
+diferencia de memoria. En esencia lo mismo que ``LeakWatch`` s√≥lo que 
 para la memoria.
 
 Avail
 -----
 
-Usa ``Avail`` para mostrar informaciones sobre la memoria. El par·metro
-FLUSH forzar· que sean expurgados los objetos no usados.
+Usa ``Avail`` para mostrar informaciones sobre la memoria. El par√°metro
+FLUSH forzar√° que sean expurgados los objetos no usados.
 
 Liblist
 -------
 
-Muestra una lista de las bibliotecas que estÈn abiertas en ese momento como tambiÈn
-alguna informaciÛn sobre la versiÛn y la cantidad abierta.
+Muestra una lista de las bibliotecas que est√©n abiertas en ese momento como tambi√©n
+alguna informaci√≥n sobre la versi√≥n y la cantidad abierta.
 
 Devlist
 -------
@@ -426,44 +426,44 @@ Lo mismo que ``Liblist``, pero para los Dispositivos de Exec.
 Consejos y trucos
 =================
 
-La revisiÛn de Mungwall en el planificador
+La revisi√≥n de Mungwall en el planificador
 ------------------------------------------
 
 Un ingenioso truco de ``Mungwall`` es modificar el planificador
-para que llame a ``AvailMem(MEMF_CLEAR)`` en cada conmutaciÛn de tarea,
-cuando tengas una extraÒa corrupciÛn de memoria que no puedas 
-rastrear por otros medios. De esta manera forzar·s un revisiÛn de la
-memoria despuÈs de que cada tarea tenga su quantum de tiempo.
+para que llame a ``AvailMem(MEMF_CLEAR)`` en cada conmutaci√≥n de tarea,
+cuando tengas una extra√±a corrupci√≥n de memoria que no puedas 
+rastrear por otros medios. De esta manera forzar√°s un revisi√≥n de la
+memoria despu√©s de que cada tarea tenga su quantum de tiempo.
 Es lento, pero no hay modo en que el culpable pueda escapar.
 
 
 Memory leaks
 ------------
 
-+ Identifica cu·nto est· leaked, y en cu·ntas asignaciones:
-  para conseguir el tamaÒo del leak como tambiÈn la cantidad
-  de asignaciones, ejecuta ``checkmem`` antes y despuÈs del
++ Identifica cu√°nto est√° leaked, y en cu√°ntas asignaciones:
+  para conseguir el tama√±o del leak como tambi√©n la cantidad
+  de asignaciones, ejecuta ``checkmem`` antes y despu√©s del
   programa sospechoso, luego resta las cifras dadas (no te olvides
-  de flush antes de cada ``checkmem``, se hace autom·ticamente
-  si ``__debug_mem`` est· establecido).
+  de flush antes de cada ``checkmem``, se hace autom√°ticamente
+  si ``__debug_mem`` est√° establecido).
 
 + Ten cuidado con los efectos laterales de ``Mungwall``:
-  96 bytes son agregados a cada asignaciÛn. Solamente ``checkmem`` te
-  dar· los tamaÒos correctos asignados.
+  96 bytes son agregados a cada asignaci√≥n. Solamente ``checkmem`` te
+  dar√° los tama√±os correctos asignados.
 
-+ øFue asignado por ``AllocVec()`` o por ``AllocMem()``? Agrega algunos
-  bytes al tamaÒo que ``AllocVec`` tiene para asignar al principio
-  de ``rom/exec/allocvec.c`` y revisa si el tamaÒo del leak varÌa
++ ¬øFue asignado por ``AllocVec()`` o por ``AllocMem()``? Agrega algunos
+  bytes al tama√±o que ``AllocVec`` tiene para asignar al principio
+  de ``rom/exec/allocvec.c`` y revisa si el tama√±o del leak var√≠a
   de acuerdo.
 
-+ Intenta identificar la asignaciÛn de leaking enviando una excepciÛn
-  de trace (``asm("int $3")`` en i386) para un tamaÒo especÌfico de
-  asignaciÛn en ``rom/exec/allocvec.c`` o en ``rom/exec/allocmem.c``.
-  Por supuesto necesitar·s ejecutar tu programa con GDB para que esto
-  sea ˙til. Usa ``bt`` y otros comandos de GDB para identificar la 
-  causa de cada asignaciÛn sospechosa.
++ Intenta identificar la asignaci√≥n de leaking enviando una excepci√≥n
+  de trace (``asm("int $3")`` en i386) para un tama√±o espec√≠fico de
+  asignaci√≥n en ``rom/exec/allocvec.c`` o en ``rom/exec/allocmem.c``.
+  Por supuesto necesitar√°s ejecutar tu programa con GDB para que esto
+  sea √∫til. Usa ``bt`` y otros comandos de GDB para identificar la 
+  causa de cada asignaci√≥n sospechosa.
 
-+ Cuando apuntes a la ubicaciÛn posible del leak, modifica su tamaÒo
-  de asignaciÛn (por ej. sumando un arreglo de caracteres al final de
-  la struct asignada) y revisa si el tamaÒo del leak crece de acuerdo.
++ Cuando apuntes a la ubicaci√≥n posible del leak, modifica su tama√±o
+  de asignaci√≥n (por ej. sumando un arreglo de caracteres al final de
+  la struct asignada) y revisa si el tama√±o del leak crece de acuerdo.
 

@@ -20,7 +20,7 @@ Synopsis
      NAME
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -41,6 +41,6 @@ Resultado
 ::
 
 
-     Los códigos de error DOS normales.
+     Los cÃ³digos de error DOS normales.
 
 

@@ -1,21 +1,21 @@
 =========
-Участники
+РЈС‡Р°СЃС‚РЅРёРєРё
 =========
 
-Координирование
+РљРѕРѕСЂРґРёРЅРёСЂРѕРІР°РЅРёРµ
 ===============
 
 + Aaron Digulla
 
 
-"Духовенство" =)
+"Р”СѓС…РѕРІРµРЅСЃС‚РІРѕ" =)
 ================
 
 + Ola "4pLaY" Stokka
 + Matt Parsons
 
 
-HIDD-подсистема
+HIDD-РїРѕРґСЃРёСЃС‚РµРјР°
 ===============
 
 + Aaron Digulla
@@ -54,7 +54,7 @@ Intuition
 + Staf Verhaegen
 
 
-Графика
+Р“СЂР°С„РёРєР°
 =======
 
 + Aaron Digulla
@@ -78,7 +78,7 @@ Intuition
 + Flavio Stanchina
 
 
-Команды Shell
+РљРѕРјР°РЅРґС‹ Shell
 =============
 
 + Martin Recktenwald
@@ -137,7 +137,7 @@ Zune
 + Adam Chodorowski
 
 
-Ядро
+РЇРґСЂРѕ
 ====
 
 + Iain Templeton
@@ -156,7 +156,7 @@ DOS
 + The MorphOS team
 
 
-Библиотека ссылок C и слой POSIX
+Р‘РёР±Р»РёРѕС‚РµРєР° СЃСЃС‹Р»РѕРє C Рё СЃР»РѕР№ POSIX
 =================================
 
 + Aaron Digulla
@@ -176,7 +176,7 @@ Datatypes
 + Stephan Rupprecht
 
 
-Документация
+Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ
 ============
 
 + Adam Chodorowski
@@ -191,7 +191,7 @@ Datatypes
 + Daniel Holmen
 
 
-Перевод
+РџРµСЂРµРІРѕРґ
 =============
 
 + Henning Kiel
@@ -203,7 +203,7 @@ Datatypes
 + Tomasz Paul
 
 
-Искусство
+РСЃРєСѓСЃСЃС‚РІРѕ
 =========
 
 + Eric W. Schwartz
@@ -219,7 +219,7 @@ Datatypes
 + Adam Chodorowski
 
 
-Сайт
+РЎР°Р№С‚
 ====
 
 + Adam Chodorowski

@@ -3,7 +3,7 @@ Lyhyt johdanto AROS:iin
 =======================
 
 :Authors:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Almost finished, I think...
@@ -12,61 +12,61 @@ Lyhyt johdanto AROS:iin
 .. Include:: index-abstract.fi
 
 
-P‰‰m‰‰r‰t
+P√§√§m√§√§r√§t
 =========
 
-AROS projektin p‰‰m‰‰r‰n‰ on luoda k‰yttˆj‰rjestelm‰ joka:
+AROS projektin p√§√§m√§√§r√§n√§ on luoda k√§ytt√∂j√§rjestelm√§ joka:
 
 1. On niin yhteensopiva AmigaOS 3.1:n kanssa kuin vain on mahdollista.
 
-2. Voidaan siirt‰‰ eri arkkitehtuureille ja prosessoreille kuten x86, PowerPC,
-   Alpha, Sparc, HPPA, sek‰ muille.
+2. Voidaan siirt√§√§ eri arkkitehtuureille ja prosessoreille kuten x86, PowerPC,
+   Alpha, Sparc, HPPA, sek√§ muille.
 
-3. Tulisi olla bin‰‰riyhteensopiva Amigassa ja l‰hdekoodiltaan yhteensopivan
+3. Tulisi olla bin√§√§riyhteensopiva Amigassa ja l√§hdekoodiltaan yhteensopivan
    mille tahansa muulle raudalle.
 
-4. Voidaan k‰ytt‰‰ itsen‰isen‰ versiona joka k‰ynnistyy suoraan kovalevylt‰ ja
-   emulaationa joka avaa olemassaolevalla k‰yttˆj‰rjestelm‰ll‰ mahdollisuuden
-   tuottaa ohjelmia ja ajaa Amigan sek‰ natiiveja ohjelmia saman aikaisesti.
+4. Voidaan k√§ytt√§√§ itsen√§isen√§ versiona joka k√§ynnistyy suoraan kovalevylt√§ ja
+   emulaationa joka avaa olemassaolevalla k√§ytt√∂j√§rjestelm√§ll√§ mahdollisuuden
+   tuottaa ohjelmia ja ajaa Amigan sek√§ natiiveja ohjelmia saman aikaisesti.
 
 5. Parantaa AmigaOS:in toiminnallisuutta.
 
-T‰m‰n p‰‰m‰‰r‰n saavuttamiseksi k‰yt‰mme lukuisia tekniikoita. Kaikkein
-ensinn‰ k‰yt‰mme eritt‰in paljon internetti‰. Voit ottaa osaa projektiin
-vaikket osaisi kirjoittaa kuin yhden k‰yttˆj‰rjestelm‰funktion. Kaikkein
-tuorein versio l‰hdekoodista on saatavilla 24h vuorokaudessa ja korjauksia
-voidaan liitt‰‰ siihen milloin tahansa. Pieni avointen teht‰vien tietokanta
-varmistaa ettei tyˆt‰ tehd‰ p‰‰llekk‰in.
+T√§m√§n p√§√§m√§√§r√§n saavuttamiseksi k√§yt√§mme lukuisia tekniikoita. Kaikkein
+ensinn√§ k√§yt√§mme eritt√§in paljon internetti√§. Voit ottaa osaa projektiin
+vaikket osaisi kirjoittaa kuin yhden k√§ytt√∂j√§rjestelm√§funktion. Kaikkein
+tuorein versio l√§hdekoodista on saatavilla 24h vuorokaudessa ja korjauksia
+voidaan liitt√§√§ siihen milloin tahansa. Pieni avointen teht√§vien tietokanta
+varmistaa ettei ty√∂t√§ tehd√§ p√§√§llekk√§in.
 
 
 Historia
 ========
 
-Jossain vaiheessa vuoden 1993 tienoilla Amigan tilanne n‰ytti tavallista
-huonommalta ja muutamat Amiga fanit kokoontuivat keskustelemaan mit‰ pit‰isi
-tehd‰ rakastetun koneen suosion kasvattamiseksi. V‰littˆm‰sti selvisi p‰‰syy
-Amigan menestyksen puutteelle: lis‰‰ntyminen, tai siis sen puute. Amigan
-tulisi saada laajemmalle levinnyt pohja jotta siit‰ tulisi enemm‰n jokaista
-kiinnostavan k‰ytt‰‰ ja jolle tuottaa ohjelmia. T‰ten suunnitelmia tehtiin
-kuinka saavuttaa tuo p‰‰m‰‰r‰. Yksi suunnitelmista oli korjata AmigaOS:in viat
-ja toinen oli luoda moderni k‰yttˆj‰rjestelm‰. AOS projekti syntyi.
+Jossain vaiheessa vuoden 1993 tienoilla Amigan tilanne n√§ytti tavallista
+huonommalta ja muutamat Amiga fanit kokoontuivat keskustelemaan mit√§ pit√§isi
+tehd√§ rakastetun koneen suosion kasvattamiseksi. V√§litt√∂m√§sti selvisi p√§√§syy
+Amigan menestyksen puutteelle: lis√§√§ntyminen, tai siis sen puute. Amigan
+tulisi saada laajemmalle levinnyt pohja jotta siit√§ tulisi enemm√§n jokaista
+kiinnostavan k√§ytt√§√§ ja jolle tuottaa ohjelmia. T√§ten suunnitelmia tehtiin
+kuinka saavuttaa tuo p√§√§m√§√§r√§. Yksi suunnitelmista oli korjata AmigaOS:in viat
+ja toinen oli luoda moderni k√§ytt√∂j√§rjestelm√§. AOS projekti syntyi.
 
-Mutta mik‰ t‰sm‰lleen ottaen luettiin viaksi? Ja kuinka ne korjata? Mit‰ ovat
-ne ominaisuudet joita nk. *modernin* k‰yttˆj‰rjestelm‰n tulisi omata? Ja
+Mutta mik√§ t√§sm√§lleen ottaen luettiin viaksi? Ja kuinka ne korjata? Mit√§ ovat
+ne ominaisuudet joita nk. *modernin* k√§ytt√∂j√§rjestelm√§n tulisi omata? Ja
 kuinka ne toteutettaisiin AmigaOS:iin?
 
-Kaksi vuotta myˆhemmin olivat ihmiset yh‰ kiistelem‰ss‰ t‰st‰ eik‰ edes yht‰
-rivi‰ koodia oltu saatu kasaan (tai ainakaan kukaan ei ollut sit‰ koodia
-n‰hnyt). Keskustelut seurasivat yh‰ tuttua kaavaa jossa joku sanoi ett‰
-"meill‰ tulee olla ..." johon joku toinen vastasi "lue vanhat mailit" tai
-"t‰m‰ on mahdoton toteuttaa, koska ..." johon pikaisesti tuli vastaus "olet
-v‰‰r‰ss‰ koska ..." ja niin edelleen.
+Kaksi vuotta my√∂hemmin olivat ihmiset yh√§ kiistelem√§ss√§ t√§st√§ eik√§ edes yht√§
+rivi√§ koodia oltu saatu kasaan (tai ainakaan kukaan ei ollut sit√§ koodia
+n√§hnyt). Keskustelut seurasivat yh√§ tuttua kaavaa jossa joku sanoi ett√§
+"meill√§ tulee olla ..." johon joku toinen vastasi "lue vanhat mailit" tai
+"t√§m√§ on mahdoton toteuttaa, koska ..." johon pikaisesti tuli vastaus "olet
+v√§√§r√§ss√§ koska ..." ja niin edelleen.
 
-Talvella 1995 Aaron Digulla tymp‰‰ntyi tilanteeseen ja postitti RFC:n (request
-for comments) AOS:in postituslistalle jossa kysyttiin mik‰ olisi yleinen
-l‰htˆkohta. Useita vaihtoehtoja annettiin ja p‰‰telm‰ oli ett‰ l‰hes kaikki
-tahtoivat n‰hd‰ avoimen k‰yttˆj‰rjestelm‰n joka oli AmigaOS 3.1 yhteensopiva
-(Kickstart 40.68) mihin tulevat keskustelut voitiin pohjata ja katsoa mik‰ on
-mahdollista ja mik‰ ei.
+Talvella 1995 Aaron Digulla tymp√§√§ntyi tilanteeseen ja postitti RFC:n (request
+for comments) AOS:in postituslistalle jossa kysyttiin mik√§ olisi yleinen
+l√§ht√∂kohta. Useita vaihtoehtoja annettiin ja p√§√§telm√§ oli ett√§ l√§hes kaikki
+tahtoivat n√§hd√§ avoimen k√§ytt√∂j√§rjestelm√§n joka oli AmigaOS 3.1 yhteensopiva
+(Kickstart 40.68) mihin tulevat keskustelut voitiin pohjata ja katsoa mik√§ on
+mahdollista ja mik√§ ei.
 
-Tyˆskentely alkoi ja AROS oli syntynyt.
+Ty√∂skentely alkoi ja AROS oli syntynyt.

@@ -9,7 +9,7 @@
 SetDefaultFont
 ==============
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FONTNAME/A,FONTSIZE/N/A,SCREEN/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,7 +29,7 @@ Funkcja
 ~~~~~~~
 ::
 
-	Ustawia domy¶ln± czcionkê systemow±/ekranow±.
+	Ustawia domyÅ›lnÄ… czcionkÄ™ systemowÄ…/ekranowÄ….
      
 
 Parametry
@@ -42,7 +42,7 @@ Parametry
 	SCREEN	--	ekran do zmiany czcionki
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -54,6 +54,6 @@ Opis
 ~~~~
 ::
 
-	Czcionka systemowa musi byæ nieproporcjonalna
+	Czcionka systemowa musi byÄ‡ nieproporcjonalna
 
 

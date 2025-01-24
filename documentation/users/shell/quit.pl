@@ -9,7 +9,7 @@
 Quit
 ====
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	RC/N
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,6 +30,6 @@ Parametry
 ::
 
 
-	RC   --  kod b≥Ídu
+	RC   --  kod b≈Çƒôdu
 
 

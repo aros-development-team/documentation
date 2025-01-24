@@ -34,7 +34,7 @@ Introductie
 
 De server beheert een centraal "archief", wat de hoofd database is die alle
 algemene code bevat van het project. Individuele ontwikkelaars hebben hun eigen
-"werkende kopieën". Dit zijn lokale kopieën van de database, gemaakt op een 
+"werkende kopieÃ«n". Dit zijn lokale kopieÃ«n van de database, gemaakt op een 
 specifieke tijd, welke ook de aanpassingen bevatten van de ontwikkelaar die nog
 niet geupload zijn naar de server. Wanneer een ontwikkelaar zijn veranderingen
 wil delen met de rest van het team, "commit" hij deze naar de server via een client 
@@ -50,7 +50,7 @@ UNIX
 ----
 
 Draait u Linux, FreeBSD of een andere moderne UNIX kloon, dan hoeft u alleen
-de officiële SVN software te installeren, versie 1.0 of hoger voor uw OS. De meeste
+de officiÃ«le SVN software te installeren, versie 1.0 of hoger voor uw OS. De meeste
 Linux distributies worden met SVN geleverd. 
 
 Er is ook een cross-platform QT GUI frontend voor SVN getiteld `eSVN <http://esvn.umputun.com/>`__, 
@@ -67,8 +67,8 @@ voordat u SVN acties uitvoert.
 AmigaOS
 -------
 
-Als u AmigaOS draait, dan heeft u een TCP/IP stack en een geïnstalleerde SVN port
-nodig. Één optie is de Amiga port van Olaf Barthel die op AmiNET__ gevonden kan
+Als u AmigaOS draait, dan heeft u een TCP/IP stack en een geÃ¯nstalleerde SVN port
+nodig. Ã‰Ã©n optie is de Amiga port van Olaf Barthel die op AmiNET__ gevonden kan
 worden (zoek naar "subversion").
 
 __ http://main.aminet.net/
@@ -95,7 +95,7 @@ __ http://www.tortoisesvn.net/
 MacOS X
 -------
 
-Als u MacOS X draait kunt u één van de verschillende SVN ports gebruiken, waaronder
+Als u MacOS X draait kunt u Ã©Ã©n van de verschillende SVN ports gebruiken, waaronder
 Martin Ott's `Subversion OSX overzetting`__. Het is aangeraden daarna ook een extra SVN GUI client te installeren
 zoals `svnX`__. svnX is op moment de meest up-to-date SVN client voor OS X. Het ondersteund
 onder andere integratie met de freeware `Textwrangler`__ texteditor (voormalig BBedit Lite).
@@ -135,7 +135,7 @@ op de volgende manier::
 
     > svn checkout https://svn.aros.org/svn/aros/trunk/AROS
 
-Dit zal een map met de naam AROS creëren en deze vullen met alle sources. Dit kan
+Dit zal een map met de naam AROS creÃ«ren en deze vullen met alle sources. Dit kan
 enige tijd duren als u een langzame netwerk verbinding heeft.
 De aparte "contrib" module bevat programma's van derden die naar AROS overgezet zijn.
 U moet ook hier een checkout toepassen mocht u alle AROS soorten willen bouwen::

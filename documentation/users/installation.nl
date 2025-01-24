@@ -3,7 +3,7 @@ AROS Installatie Gids
 =====================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey, Sergey Mineychev
-:Copyright: Copyright ² 1995-2006, The AROS Development Team
+:Copyright: Copyright Â² 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Needs to be updated for some AROS ports. Can be translated.
@@ -132,7 +132,7 @@ Mochten er problemen zijn, raadpleeg dan de FAQ voor informatie over uw soort ha
     We raden op moment af om AROS/i386-pc te installeren op een hard disk [#]_.
     Echter, u zult AROS wel moeten installeren om sommige van de features te zien en te testen;
     een oplossing moeten we hier daarom wel vermelden. We raden u in dat geval aan om ieder geval **niet**
-    te installeren op uw 'werk' machine of één waarvan de HD belangrijke informatie
+    te installeren op uw 'werk' machine of Ã©Ã©n waarvan de HD belangrijke informatie
     bevat! We nemen geen verantwoordelijkheid voor enig verlies van data tijdens de installatie.
     Tot slot zijn foutrapporten over de installatie altijd welkom.
     
@@ -146,7 +146,7 @@ Het maakt de installatie eenvoudiger, sinds u geen installatie-marathon
 hoeft te doorlopen door het systeem op verschillende floppies te zetten.
 
 Gezien nog niemand AROS op CDROM verkoopt (of op enige andere media), heeft u wel een
-CD brander nodig om zelf de installatie schijf te creëren. 
+CD brander nodig om zelf de installatie schijf te creÃ«ren. 
 
 CDROM
 ^^^^^
@@ -225,7 +225,7 @@ Bereid eerst uw HD voor - ofwel een echte of een virtuele drive image - op
 de installatie. Voor een echte drive kan dit betekenen dat u deze in moet pluggen
 (altijd een goed begin) om deze vervolgens op te zetten via uw BIOS. Voor de virtualiser's of
 emulator's virtuele schijf, zult u waarschijnlijk een optie moeten kiezen om een
-nieuw schijfbestand te creëren. Deze kunt u daarna als één van de opstartschijven instellen
+nieuw schijfbestand te creÃ«ren. Deze kunt u daarna als Ã©Ã©n van de opstartschijven instellen
 van uw virtuele PC (let wel, de CD drive moet het eerste opstart apparaat zijn tijdens de 
 installatie).
 
@@ -267,7 +267,7 @@ de HD naam geeft ons om te beginnen meer informatie:
     Partition Table: <type van de huidige PT; moet 'unknown' zijn na cleanup>
     Partitions: <nummer van partities op de HD; moet 0 zijn nu we net zijn gestart>
 
-Nu moeten we een nieuwe partitie tabel creëren. Voor een PC moeten we een *PC-MBR* type
+Nu moeten we een nieuwe partitie tabel creÃ«ren. Voor een PC moeten we een *PC-MBR* type
 tabel aanmaken. Hiervoor moet u de *Create Table* knop aanklikken en uit de lijst *PC-MBR*
 kiezen. Kies OK.
 
@@ -299,7 +299,7 @@ We behandelen nu beiden opties.
 
 *FFS in RDB*
 Klik op de *Create Table* knop, selecteer *RDB tabel* en klik OK. Om de veranderingen
-op te slaan, ga *één niveau* omhoog door de *Parent* knop te kiezen. Selecteer nu de
+op te slaan, ga *Ã©Ã©n niveau* omhoog door de *Parent* knop te kiezen. Selecteer nu de
 HD naam opnieuw en klik de *Save Changes* knop. Antwoord tweemaal *Yes* in het confirmatie
 dialoogvenster. Sluit nu HDToolbox en herstart de machine.
 
@@ -309,15 +309,15 @@ dialoogvenster. Sluit nu HDToolbox en herstart de machine.
 Na het opstarten, open HDToolbox (u kon het raden). De informatie voor onze
 Partitie 0 moet dezelfde zijn, behalve dat de partitietabel nu als RDB ingesteld staat (of niet).
 Nu moet deze partitie nog actief gemaakt worden. Klik hiervoor op de *Switches* knop, vink de
-*Active* checkbox en klik *OK*. En dan? Jawel, bewaar de veranderingen, door één niveau omhoog
+*Active* checkbox en klik *OK*. En dan? Jawel, bewaar de veranderingen, door Ã©Ã©n niveau omhoog
 te gaan en te klikken op de betreffende knop. Sluit en herstart.
 
 Waarom trouwens al dit herstarten? Wel, HDToolbox en de systeem libraries zijn verre van compleet en
 bevatten nog aardig wat bugs; het herstarten nu helpt om deze naar hun initiale stap terug te zetten.
-(In de toekomst zal dit overigens in één keer kunnen én ook via een nette installer.)
+(In de toekomst zal dit overigens in Ã©Ã©n keer kunnen Ã©n ook via een nette installer.)
 
 Na het opstarten, moet HDToolbox ons tonen dat Partitie 0 actief is geworden. Nu moeten we onze
-disk creëren en daar AROS op installeren. Ga één niveau omlaag door te klikken op de "Partition 0"
+disk creÃ«ren en daar AROS op installeren. Ga Ã©Ã©n niveau omlaag door te klikken op de "Partition 0"
 optie. Klik nu op de Add Entry knop en kies alle lege ruimte. Nu zult u hier een "DH0" optie zien,
 welke onze schijf is. Erop klikken geeft de volgende informatie::
 
@@ -377,19 +377,19 @@ Dat is het. Tijd voor de pre-installatie herstart.
 .. Note:: Mocht dit alles zo saai lijken dat u het niet kunt uitstaan? Er is  
           enige opluchting mocht u AROS alleen willen gebruiken in een virtual machine. 
           Om te beginnen, kunt u een pre-installatie pakket downloaden, zoals *WinAROS/WinAROS
-          Lite* - dit systeem is al geïnstalleerd, maar kan oud zijn. Ten tweede 
+          Lite* - dit systeem is al geÃ¯nstalleerd, maar kan oud zijn. Ten tweede 
           kunt u in de `AROS Archives`_ zoeken voor de *Installation Kit* die
-          kant-en-klare virtuele HD's bevat, waarop direct geïnstalleerd kan worden.
+          kant-en-klare virtuele HD's bevat, waarop direct geÃ¯nstalleerd kan worden.
           U kunt dan dus de vorige procedure overslaan en direct een nieuwe AROS versie installeren. 
 
 
-Het systeem kopiëren
+Het systeem kopiÃ«ren
 ^^^^^^^^^^^^^^^^^^^^
 
 Na de herstart, zal het opvallen dat u de AROS HD op uw desktop ziet, en dat deze
 leeg is. We gaan deze nu vullen met bestanden.
 
-Nu Drag`n`Drop ondersteuning is geïmplementeerd in AROS, kan het hele systeem
+Nu Drag`n`Drop ondersteuning is geÃ¯mplementeerd in AROS, kan het hele systeem
 simpelweg gekopieerd worden door deze te slepen van de LiveCD naar de DH0: map.
 Het is dan alleen nog nodig het bestand dh0:boot/grub/menu.lst te vervangen met
 dh0:boot/grub/menu_dh.lst.DH0.
@@ -399,7 +399,7 @@ deze 'normaal' gebruikt worden. Tenminste, we gaan het proberen. Dus hierbij de 
 manier om te installeren.
 
 1. Start *InstallAROS* in de Tools map. U zult het welkomst scherm zien
-dat u dezelfde dingen verteld als ik u net deed - we gebruiken een alpha versie. 
+dat u dezelfde dingen verteldÂ als ik u net deed - we gebruiken een alpha versie. 
 Tijd om het ook eens echt te gebruiken ;) Er is een *Proceed* knop voor u om op te klikken. 
 Daarna zal u de AROS Publieke Licentie zien, die u moet accepteren om verder te gaan. 
 Daarna volgt het installatie opties venster (als het nee zegt, vink dan de relevante box *uit*)::
@@ -417,7 +417,7 @@ Daarna volgt het installatie opties venster (als het nee zegt, vink dan de relev
     Install Development Software    []
         <Nee. Trouwens nu alleen nog een loze optie>
     Show Bootloader Options         [V]
-        <Ja, de bootloader zal anders niet geïnstalleerd worden>
+        <Ja, de bootloader zal anders niet geÃ¯nstalleerd worden>
 
 Laat me opmerken dat *Show Partitioning Options* onkiesbaar en grijs kan staan
 in geval dat de installer geen geschikte partitie kon vinden. Nadat u alle punten die 
@@ -430,29 +430,29 @@ daarna de mogelijke installatie doelen::
     DH0  <dat is correct>
     
     Use 'Work' Partition                        [] 
-        <vink uit, we installeren nu alles-in-één>
+        <vink uit, we installeren nu alles-in-Ã©Ã©n>
     Copy Extras and Developer Files to Work?    [] 
         <zelfde als boven>
     Work drive ... <overgeslagen>
     
 Nu we alles uitgevinkt hebben, klik *Proceed*. Het scherm met de bootloader
 opties verschijnt nu. Hier kunnen we alleen selecteren of GRUB, de *GRand Unified Bootloader*,
-geïnstalleerd moet worden naar DH0 en op welk apparaat. Klik nogmaals *Proceed*. 
+geÃ¯nstalleerd moet worden naar DH0 en op welk apparaat. Klik nogmaals *Proceed*. 
 
 Nu zal het venster zeggen dat we klaar zijn om te installeren. Klik nog een keer op *Proceed*. 
 
 Hierna verschijnt de voortgangsmeter als de bestanden worden gekopieerd. Wacht een
 moment tot dit proces eindigt. Daarna zal het eind scherm verschijnen met een *Reboot*
-vinkje. Vink deze aan en kies Proceed. Dit is dan nog niet alles - er is nog één laatste stap te gaan.
+vinkje. Vink deze aan en kies Proceed. Dit is dan nog niet alles - er is nog Ã©Ã©n laatste stap te gaan.
 Onze machine zal nu herstarten met dezelfde instellingen als eerder, vanaf de Live CD.
 
 De bootloader installeren
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nu zien we nog steeds onze AROS schijf, met alle bestanden erop. 
-De bootloader was al geïnstalleerd, dus wat missen we nog? 
+De bootloader was al geÃ¯nstalleerd, dus wat missen we nog? 
 Wel: heeft u een verse nightly build gebruikt dan moet 'GRUB <http://en.wikipedia.org/wiki/GRUB>'__ 
-al geïnstalleerd staan en werkend zijn. U kunt dan deze stap overslaan. Zo niet, lees a.u.b. verder.
+al geÃ¯nstalleerd staan en werkend zijn. U kunt dan deze stap overslaan. Zo niet, lees a.u.b. verder.
 
 Voor oudere versies (voor nov. 2006):
 Er was een bug in GRUB, welke voorkwam dat de installatie de eerste keer correct plaatsvond.
@@ -463,12 +463,12 @@ de laatste klik wordt GRUB ge-herinstalleerd en zal er een scherm verschijnen da
 schrijven te bevestigen. Antwoord ja zo vaak als nodig is, sluit het Install programma en zet de 
 machine uit.
 
-Alternatief kan GRUB ook geïnstalleerd worden via shell met dit commando::
+Alternatief kan GRUB ook geÃ¯nstalleerd worden via shell met dit commando::
 
     c:install-i386-pc device ata.device unit 0 PN <pn> grub dh0:boot/grub kernel dh0:boot/aros-i386.gz
 
 waar PN <pn> (of PARTITIONNUMBER <pn>) het nummer is van de partitie waar de GRUB 
-bootloader wordt geïnstalleerd.
+bootloader wordt geÃ¯nstalleerd.
 
 
 Klaarmaken om te starten
@@ -483,7 +483,7 @@ Mocht iets fout gaan, dan kunnen er antwoorden zijn...
 Problemen oplossen
 ^^^^^^^^^^^^^^^^^^
 
-Het installatie proces is één van de meest gevraagde onderwerpen op onze forums,
+Het installatie proces is Ã©Ã©n van de meest gevraagde onderwerpen op onze forums,
 meestal door nieuwelingen. U kunt ook de FAQ bekijken voor antwoorden op u vragen.
 
 AROS installeren naast andere systemen
@@ -523,7 +523,7 @@ Installatie
 Installatie:
 
 + kopieer de map AfA_OS_Libs naar uw sys: Amigaschijf Bootpartitie.
-  Mocht dit u niet aanstaan dan kunt u deze ook elders kopiëren en vervolgens
+  Mocht dit u niet aanstaan dan kunt u deze ook elders kopiÃ«ren en vervolgens
   de AfA_OS: map assignen naar de map waar de AfA_OS_Libs zich bevinden. 
 + kopieer Libs:freetype2.library naar uw sys:libs map
 + kopieer C:AfA_OS_Loader naar uw sys:fonts map

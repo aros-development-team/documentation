@@ -1,6 +1,6 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
@@ -8,7 +8,7 @@ news:             Noticias
 news-archive-for: News archive for
 mirrors:          Servidores Espejo
 contents:         Contenidos
-search:           Búsqueda
+search:           BÃºsqueda
 visitors:         Visitantes
 sponsors:         Auspiciantes
 
@@ -17,15 +17,15 @@ sponsors:         Auspiciantes
 home:             Portada
 news:             Noticias
 archive:          Archivo
-introduction:     Introdución
+introduction:     IntroduciÃ³n
 status:           Estado
 screenshots:      Capturas de Pantalla
 ports:            Puertos
 license:          Licencia
 download:         Descargas
-documentation:    Documentación
+documentation:    DocumentaciÃ³n
 users:            Usuarios
-installation:     Instalación
+installation:     InstalaciÃ³n
 using:            Modo de Uso
 shell:            Comandos del Shell
 applications:     Aplicaciones
@@ -35,22 +35,22 @@ hwcompat:         Hardware Compatibility
 glossary:         Glossary
 translators:      Translators
 developers:       Desarrolladores
-contribute:       Contribución
+contribute:       ContribuciÃ³n
 issue-tracker:    Rastreo de Errores
 working-with-git: Trabajando con Git
-compiling:        Compilación
+compiling:        CompilaciÃ³n
 application-development-manual: Manual para el desarrollo de aplicaciones
 zune-application-development-manual: Manual para el desarrollo de aplicaciones con Zune
 system-development-manual: Manual para el desarrollo del sistema
-debugging-manual: Manual para la depuración
+debugging-manual: Manual para la depuraciÃ³n
 reference:        Referencia
 specifications:   Especificaciones
-ui-style-guide:   Guía de Estilo de la IU
+ui-style-guide:   GuÃ­a de Estilo de la IU
 testing:          Testing
-documenting:      Documentación
+documenting:      DocumentaciÃ³n
 porting:          Porting
-translating:      Traducción
-summaries:        Resúmenes
+translating:      TraducciÃ³n
+summaries:        ResÃºmenes
 links:            Enlaces
 contact:          Contacto
 slack:            Slack
@@ -58,19 +58,19 @@ mailing-lists:    Listas de correo
 forums:           Foros
 community:        Community Resources
 irc-channels:     Canales de IRC
-credits:          Créditos
+credits:          CrÃ©ditos
 acknowledgements: Reconocimientos
 roadmap:          Itinerario
-pictures:         Fotografías
+pictures:         FotografÃ­as
 developers-together: Los Desarrolladores en grupo
 sponsors:         Auspiciantes
-linking:          Vinculación
+linking:          VinculaciÃ³n
 
 [misc]
 
 go:               Ir a
 search:           Buscar
-copyright:        Copyright © 1995-2025, The AROS Development Team. All rights reserved.
-trademarks:       Amiga® is a trademark of Amiga Inc. All other trademarks belong to their respective owners.
-read-more:        Leer más...
-large-image:      Tamaño grande...
+copyright:        Copyright Â© 1995-2025, The AROS Development Team. All rights reserved.
+trademarks:       AmigaÂ® is a trademark of Amiga Inc. All other trademarks belong to their respective owners.
+read-more:        Leer mÃ¡s...
+large-image:      TamaÃ±o grande...

@@ -1,11 +1,11 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
 news:             Neues
-news-archive-for: Nachrichtenarchiv für
+news-archive-for: Nachrichtenarchiv fÃ¼r
 mirrors:          Spiegel
 contents:         Inhalt
 search:           Suche
@@ -46,11 +46,11 @@ system-development-manual:      System Entwicklungs Handbuch
 debugging-manual: Debugging Handbuch
 reference:        Referenz
 specifications:   Spezifikationen
-ui-style-guide:   Benutzeroberflächen Richtlinien
+ui-style-guide:   BenutzeroberflÃ¤chen Richtlinien
 testing:          Testing
 documenting:      Dokumentierung
 porting:          Portierung
-translating:      Übersetzung
+translating:      Ãœbersetzung
 summaries:        Zusammenfassungen
 links:            Links
 contact:          Kontakt
@@ -58,7 +58,7 @@ slack:            Slack
 mailing-lists:    Mailinglisten
 forums:           Foren
 community:        Community Resources
-irc-channels:     IRC-Kanäle
+irc-channels:     IRC-KanÃ¤le
 credits:          Danksagung
 acknowledgements: Acknowledgements
 pictures:         Bilder
@@ -71,7 +71,7 @@ linking:          Verlinkung
 
 go:               Gehe zu
 search:           Suche
-copyright:        Copyright © 1995-2025, The AROS Development Team. All rights reserved.
-trademarks:       Amiga®, AmigaOS®, Workbench und Intuition sind eingetragene Warenzeichen von Amiga Inc. Alle anderen Warenzeichen gehören dem jeweiligen Besitzer.
+copyright:        Copyright Â© 1995-2025, The AROS Development Team. All rights reserved.
+trademarks:       AmigaÂ®, AmigaOSÂ®, Workbench und Intuition sind eingetragene Warenzeichen von Amiga Inc. Alle anderen Warenzeichen gehÃ¶ren dem jeweiligen Besitzer.
 read-more:        Mehr dazu...
-large-image:      Originalgröße ...
+large-image:      OriginalgrÃ¶ÃŸe ...

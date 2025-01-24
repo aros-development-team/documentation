@@ -20,7 +20,7 @@ Synopsis
      NAME/M,MD5SUM/S,VERSION/N,REVISION/N,FILE/S,FULL/S,RES/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Imprime o revisa la versi髇 y la informaci髇 de revisi髇 de un
+     Imprime o revisa la versi贸n y la informaci贸n de revisi贸n de un
      archivo, biblioteca o dispositivo.
        
 
@@ -43,15 +43,15 @@ Entradas
 
 
      NAME      -- el nombre de un archivo, biblioteca o dispositivo a 
-                  revisar. Si no se especifica, se imprime la versi髇 y
-                  revisi髇 de Kickstart.
+                  revisar. Si no se especifica, se imprime la versi贸n y
+                  revisi贸n de Kickstart.
      MD5SUM    -- FIXME what is that?
-     VERSION   -- revisa la versi髇 y devuelve el c骴igo de error 5 
-                  (advertencia) si la versi髇 del archivo es menor.
-     REVISION  -- revisa la revisi髇 y devuelve el c骴igo de error 5
-                  (advertencia) si la revisi髇 del archivo es menor.
+     VERSION   -- revisa la versi贸n y devuelve el c贸digo de error 5 
+                  (advertencia) si la versi贸n del archivo es menor.
+     REVISION  -- revisa la revisi贸n y devuelve el c贸digo de error 5
+                  (advertencia) si la revisi贸n del archivo es menor.
      FILE      -- lee de un archivo e ignora las bibliotecas y dispositivos cargados.
-     FULL      -- imprime informaci髇 adicional
-     RES       -- consigue la versi髇 de los comandos residentes
+     FULL      -- imprime informaci贸n adicional
+     RES       -- consigue la versi贸n de los comandos residentes
      
 

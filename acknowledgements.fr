@@ -2,13 +2,13 @@
 Remerciements
 =============
 
-Ce produit inclut des logiciels développés par l'université de Californie,
+Ce produit inclut des logiciels dÃ©veloppÃ©s par l'universitÃ© de Californie,
 Berkeley et ses collaborateurs.
 
-Ce logiciel est basé en partie sur le travail de l'Independent JPEG Group.
-Ce logiciel est basé en partie sur le travail de FreeType Team.
-Ce logiciel est basé en partie sur le travail de Catharon Productions, Inc.
+Ce logiciel est basÃ© en partie sur le travail de l'Independent JPEG Group.
+Ce logiciel est basÃ© en partie sur le travail de FreeType Team.
+Ce logiciel est basÃ© en partie sur le travail de Catharon Productions, Inc.
 
-Le format d'échange graphique (Graphics Interchange Format(c)) est la propriété sous Copyright de CompuServe Incorporated.
+Le format d'Ã©change graphique (Graphics Interchange Format(c)) est la propriÃ©tÃ© sous Copyright de CompuServe Incorporated.
 
-GIF(sm) est une marque de service de la propriété de CompuServe Incorporated.
+GIF(sm) est une marque de service de la propriÃ©tÃ© de CompuServe Incorporated.

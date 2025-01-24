@@ -39,17 +39,17 @@ Funzione
 ::
 
 
-     ASSIGN crea un riferimento ad un file o directory. Un riferimento Ë
-     un nome di un'unit‡ logica che rende molto conveniente la specificazione
+     ASSIGN crea un riferimento ad un file o directory. Un riferimento √®
+     un nome di un'unit√† logica che rende molto conveniente la specificazione
      di oggetti definiti facendo uso del riferimento invece che dei loro percorsi.
 
      Se sono dati gli argomenti NAME e TARGET, ASSIGN assegna il nome logico dato
-     ad un obiettivo specifico. SE il NOME dato Ë gi‡ assegnato ad un file o
+     ad un obiettivo specifico. SE il NOME dato √® gi√† assegnato ad un file o
      directory il nuovo obiettivo si sostituisce al precedente.
      Due punti devono essere inlcusi dopo l'argomento NOME.
 
-     Se Ë dato solo l'argomento NOME, ogni assegnazione a quel nome sar‡ rimossa.
-     Se non si d‡ nessun argomento si avr‡ la lista di ogni assegnazione logica.
+     Se √® dato solo l'argomento NOME, ogni assegnazione a quel nome sar√† rimossa.
+     Se non si d√† nessun argomento si avr√† la lista di ogni assegnazione logica.
 
 
 Inputs
@@ -58,23 +58,23 @@ Inputs
 
 
      NAME      --  Il nome che dovrebbe essere assegnato al file o directory
-     TARGET    --  una o pi˘ files o directory a cui assegnare il NOME
+     TARGET    --  una o pi√π files o directory a cui assegnare il NOME
      LIST      --  lista di tutte le assegnazioni fatte
      EXISTS    --  visualizza l'obiettivo di una assegnazione specifica. Se il nome 
-                   non Ë assegnato, mette la flag su WARN
+                   non √® assegnato, mette la flag su WARN
      DISMOUNT  --  rimuove il volume o nome della periferica dalla lista dos
      DEFER     --  crea un ASSIGN ad una path o directory che non ha bisogno di
                    esistere al momento dell'assegnazione. La prima volta che 
-                   il NOME Ë riferito il NOME Ë limitato all'oggetto
-     PATH      --  Path Ë assegnato con una assegnazione non legata. Questo significa
-                   che l'assegnazione Ë rivalutata ogni volta sia fatto un riferimento 
+                   il NOME √® riferito il NOME √® limitato all'oggetto
+     PATH      --  Path √® assegnato con una assegnazione non legata. Questo significa
+                   che l'assegnazione √® rivalutata ogni volta sia fatto un riferimento 
                    ad un NOME. Come per DEFER, la path non ha bisogno di esistere 
                    quando viene eseguito un comando ASSIGN.
      ADD       --  Non rimpiazza l'ASSIGN ma crea un altro oggetto per il NOME (multi-assigns)
      REMOVE    --  rimuove un ASSIGN
-     VOLS      --  mostra i volumi assegnati se nella modalit‡ LIST
-     DIRS      --  mostra le directory assegnate se nella modalit‡ LIST
-     DEVICES   --  mostra le periferiche assegnate se nella modalit‡ LIST
+     VOLS      --  mostra i volumi assegnati se nella modalit√† LIST
+     DIRS      --  mostra le directory assegnate se nella modalit√† LIST
+     DEVICES   --  mostra le periferiche assegnate se nella modalit√† LIST
 
 
 

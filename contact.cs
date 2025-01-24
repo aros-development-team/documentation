@@ -1,9 +1,9 @@
 ===================
-Kontaktní informace
+KontaktnÃ­ informace
 ===================
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright Å  1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,13 +11,13 @@ Kontaktní informace
 .. Contents::
 
 
-Kontaktní osoba
+KontaktnÃ­ osoba
 ===============
 
-Hlavní kontaktní osobou AROS vıvojového tımu je Aaron "Optimizer"
-Digulla. Pokud se chce¹ obrátit na tım jako celek, napø. nabídnout
-sponzorskı dar nebo jinou formu spolupráce, je on tím správnım, na koho se obrátit.
-Mù¾e¹ mu poslat e-mail na `digulla@aros.org`__.
+HlavnÃ­ kontaktnÃ­ osobou AROS vÃ½vojovÃ©ho tÃ½mu je Aaron "Optimizer"
+Digulla. Pokud se chceÅ¡ obrÃ¡tit na tÃ½m jako celek, napÅ™. nabÃ­dnout
+sponzorskÃ½ dar nebo jinou formu spoluprÃ¡ce, je on tÃ­m sprÃ¡vnÃ½m, na koho se obrÃ¡tit.
+MÅ¯Å¾eÅ¡ mu poslat e-mail na `digulla@aros.org`__.
 
 __ mailto:digulla@aros.org
 
@@ -25,70 +25,70 @@ __ mailto:digulla@aros.org
 Mailing listy
 =============
 
-Máme nìkolik mailing listù tıkajících se AROSu, které jsou hlavními informaèními
-a diskuzními kanály o AROSu pro vıvojáøe. K dispozici jsou následující:
+MÃ¡me nÄ›kolik mailing listÅ¯ tÃ½kajÃ­cÃ­ch se AROSu, kterÃ© jsou hlavnÃ­mi informaÄnÃ­mi
+a diskuznÃ­mi kanÃ¡ly o AROSu pro vÃ½vojÃ¡Å™e. K dispozici jsou nÃ¡sledujÃ­cÃ­:
 
 + `AROS Developer`__
 
-  Vıvojáøskı mailing list, kde se konají diskuze o vıvoji AROSu. Do tohoto listu
-  se také dennì zasílá stav noèního sestavení. Vıvojáøùm je **vøele**
-  doporuèeno se k tomuto listu pøipojit, proto¾e jinak bude tì¾ké udr¾et krok
-  s aktuálním vıvojem.
-  Zatím v nìm není *pøíli¹* mnoho AROS vıvojáøù, tak¾e jeho objem je vìt¹inou
-  pomìrnì nízkı, ale pokud se objeví vá¹nivá diskuze, mù¾e se objem zvı¹it.
+  VÃ½vojÃ¡Å™skÃ½ mailing list, kde se konajÃ­ diskuze o vÃ½voji AROSu. Do tohoto listu
+  se takÃ© dennÄ› zasÃ­lÃ¡ stav noÄnÃ­ho sestavenÃ­. VÃ½vojÃ¡Å™Å¯m je **vÅ™ele**
+  doporuÄeno se k tomuto listu pÅ™ipojit, protoÅ¾e jinak bude tÄ›Å¾kÃ© udrÅ¾et krok
+  s aktuÃ¡lnÃ­m vÃ½vojem.
+  ZatÃ­m v nÄ›m nenÃ­ *pÅ™Ã­liÅ¡* mnoho AROS vÃ½vojÃ¡Å™Å¯, takÅ¾e jeho objem je vÄ›tÅ¡inou
+  pomÄ›rnÄ› nÃ­zkÃ½, ale pokud se objevÃ­ vÃ¡Å¡nivÃ¡ diskuze, mÅ¯Å¾e se objem zvÃ½Å¡it.
 
-  .. Poznámka:: Pøihlá¹ení k odbìru tohoto listu nejsou zpracovávány automaticky,
-                ale ka¾dı po¾adavek je ovìøen administrátorem listu, tak¾e
-                mù¾e bıt urèité spo¾dìní mezi po¾adavkem o pøihlá¹ení k odbìru
-                a okam¾ikem, kdy se opravdu stane¹ èlenem.
+  .. PoznÃ¡mka:: PÅ™ihlÃ¡Å¡enÃ­ k odbÄ›ru tohoto listu nejsou zpracovÃ¡vÃ¡ny automaticky,
+                ale kaÅ¾dÃ½ poÅ¾adavek je ovÄ›Å™en administrÃ¡torem listu, takÅ¾e
+                mÅ¯Å¾e bÃ½t urÄitÃ© spoÅ¾dÄ›nÃ­ mezi poÅ¾adavkem o pÅ™ihlÃ¡Å¡enÃ­ k odbÄ›ru
+                a okamÅ¾ikem, kdy se opravdu staneÅ¡ Älenem.
 
 + `AROS CVS`__
 
-  Read-only mailing list pro vıvojáøe, kam jsou automaticky zasílány
-  SVN logy v¾dy, kdy¾ je nìco zapsáno na SVN server. Oproti denním
-  SVN logùm posílanım do AROS Developer listu, kde maily obsahují shrnutí
-  celé èinnosti, která se odehrála na SVN serveru bìhem dne, jsou zde
-  zasílány samostatné maily *okam¾itì* pøi ka¾dé zaznamenané aktivitì. Pokud tedy
-  chce¹ zpìtnou vazbu od SVN serveru v témìø reálném èase, je tento list urèen
-  pro tebe. Jeho objem v¹ak mù¾e bıt dosti vysokı.
+  Read-only mailing list pro vÃ½vojÃ¡Å™e, kam jsou automaticky zasÃ­lÃ¡ny
+  SVN logy vÅ¾dy, kdyÅ¾ je nÄ›co zapsÃ¡no na SVN server. Oproti dennÃ­m
+  SVN logÅ¯m posÃ­lanÃ½m do AROS Developer listu, kde maily obsahujÃ­ shrnutÃ­
+  celÃ© Äinnosti, kterÃ¡ se odehrÃ¡la na SVN serveru bÄ›hem dne, jsou zde
+  zasÃ­lÃ¡ny samostatnÃ© maily *okamÅ¾itÄ›* pÅ™i kaÅ¾dÃ© zaznamenanÃ© aktivitÄ›. Pokud tedy
+  chceÅ¡ zpÄ›tnou vazbu od SVN serveru v tÃ©mÄ›Å™ reÃ¡lnÃ©m Äase, je tento list urÄen
+  pro tebe. Jeho objem vÅ¡ak mÅ¯Å¾e bÃ½t dosti vysokÃ½.
 
 + `AROS Website`__
 
-  Do tohoto listu posílá maily sestavovací skript webu,
-  tak¾e ti, kteøí provádí zmìny v dokumentaci nebo doká¾í opravit
-  nefunkèní vìci, by se mìli pøihlásit k jeho odbìru.
+  Do tohoto listu posÃ­lÃ¡ maily sestavovacÃ­ skript webu,
+  takÅ¾e ti, kteÅ™Ã­ provÃ¡dÃ­ zmÄ›ny v dokumentaci nebo dokÃ¡Å¾Ã­ opravit
+  nefunkÄnÃ­ vÄ›ci, by se mÄ›li pÅ™ihlÃ¡sit k jeho odbÄ›ru.
 
-Pou¾ij následující odkazy na administraèní stránky pro získání informací
-o pøihlá¹ení k mailing listu a odhlá¹ení se z nìj, pøístupu k archivùm
-a dal¹ích u¾iteènıch funkcích.
+PouÅ¾ij nÃ¡sledujÃ­cÃ­ odkazy na administraÄnÃ­ strÃ¡nky pro zÃ­skÃ¡nÃ­ informacÃ­
+o pÅ™ihlÃ¡Å¡enÃ­ k mailing listu a odhlÃ¡Å¡enÃ­ se z nÄ›j, pÅ™Ã­stupu k archivÅ¯m
+a dalÅ¡Ã­ch uÅ¾iteÄnÃ½ch funkcÃ­ch.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
 __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 
-.. _`databázi chyb`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
+.. _`databÃ¡zi chyb`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 
 
-Fóra
+FÃ³ra
 ====
 
-AROS-Exec__ je oficiální komunitní portál AROSu. Mù¾e¹ zde najít poslední
-novinky tıkající se AROSu, online diskuzní fóra, obrázkové galerie a mnoho
-dal¹ího. Je to ideální místo pro setkávání u¾ivatelù AROSu z celého
-svìta.
+AROS-Exec__ je oficiÃ¡lnÃ­ komunitnÃ­ portÃ¡l AROSu. MÅ¯Å¾eÅ¡ zde najÃ­t poslednÃ­
+novinky tÃ½kajÃ­cÃ­ se AROSu, online diskuznÃ­ fÃ³ra, obrÃ¡zkovÃ© galerie a mnoho
+dalÅ¡Ã­ho. Je to ideÃ¡lnÃ­ mÃ­sto pro setkÃ¡vÃ¡nÃ­ uÅ¾ivatelÅ¯ AROSu z celÃ©ho
+svÄ›ta.
 
 __ https://ae.amigalife.org/
 
 
-IRC kanály
+IRC kanÃ¡ly
 ==========
 
-Máme oficiální IRC kanál pro AROS, neèekanì nazvanı `#aros`__, na síti
-FreeNode__. Pøipoj se prosím k `irc.freenode.net`__, kterı tì pøesmìruje 
-na bli¾¹í server. Tento kanál je urèen k diskutování o v¹em, co se tıká
-AROSu, vèetnì vıvoje a toho, jak jej roz¹íøit po svìtì. V mimoøádnıch
-situacích, kdy je hlavní kanál hodnì zahlcenı, jsou diskuze tıkající
-se vıvoje pøesunuty na `#aros.dev`__.
+MÃ¡me oficiÃ¡lnÃ­ IRC kanÃ¡l pro AROS, neÄekanÄ› nazvanÃ½ `#aros`__, na sÃ­ti
+FreeNode__. PÅ™ipoj se prosÃ­m k `irc.freenode.net`__, kterÃ½ tÄ› pÅ™esmÄ›ruje 
+na bliÅ¾Å¡Ã­ server. Tento kanÃ¡l je urÄen k diskutovÃ¡nÃ­ o vÅ¡em, co se tÃ½kÃ¡
+AROSu, vÄetnÄ› vÃ½voje a toho, jak jej rozÅ¡Ã­Å™it po svÄ›tÄ›. V mimoÅ™Ã¡dnÃ½ch
+situacÃ­ch, kdy je hlavnÃ­ kanÃ¡l hodnÄ› zahlcenÃ½, jsou diskuze tÃ½kajÃ­cÃ­
+se vÃ½voje pÅ™esunuty na `#aros.dev`__.
 
 __ irc://irc.freenode.net/aros
 __ http://www.freenode.net/

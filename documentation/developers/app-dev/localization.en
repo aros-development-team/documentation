@@ -235,7 +235,7 @@ rather than `language`.
 e.g.::
 
     FlexCat myapp.cd NEWCTFILE=deutsch.ct
-    FlexCat myapp.cd NEWCTFILE=français.ct
+    FlexCat myapp.cd NEWCTFILE=franÃ§ais.ct
 
 The result file will look like this::
 
@@ -318,7 +318,7 @@ Typical source layout of a localized application::
             mmakefile.src
             myapp.cd
             deutsch.cd
-            français.ct
+            franÃ§ais.ct
             ...
 
 Resulting binary layout::
@@ -327,7 +327,7 @@ Resulting binary layout::
     Catalogs
         deutsch
             MyApp.catalog
-        français
+        franÃ§ais
             MyApp.catalog
         ...
 

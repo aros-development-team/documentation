@@ -3,7 +3,7 @@ Contributo
 ==========
 
 :Autor:			Adam Chodorowski
-:Direitos de CÛpia:	Copyright © 1995-2020, A equipa de Desenvolvimento AROS
+:Direitos de C√≥pia:	Copyright ¬© 1995-2020, A equipa de Desenvolvimento AROS
 :Estado:		Feito.
 
 .. Contents::
@@ -13,61 +13,61 @@ Precisamos da sua ajuda!
 ========================
 
 Temos muito poucos desenvolvidores activos, que infelizmente significa que o progresso
-È bastante baixo. Simplesmente precisamos de mais pessoas para nos ajudar! Existe um
-n˙mero enorme de tarefas que a necessitar de desenvolvidores dedicados. Dimensionam-se
-de grandes projectos a pequenos, de 'explorar' equipamento, atÈ sistemas de alto nÌvel
-a programaÁ„o de aplicaÁıes. Existe basicamente algo para todos que deseje contribuir,
-independentemente de o qu„o proeficiente È na codificaÁ„o!
+√© bastante baixo. Simplesmente precisamos de mais pessoas para nos ajudar! Existe um
+n√∫mero enorme de tarefas que a necessitar de desenvolvidores dedicados. Dimensionam-se
+de grandes projectos a pequenos, de 'explorar' equipamento, at√© sistemas de alto n√≠vel
+a programa√ß√£o de aplica√ß√µes. Existe basicamente algo para todos que deseje contribuir,
+independentemente de o qu√£o proeficiente √© na codifica√ß√£o!
 
-Para aqueles que n„o s„o programadores, existe ainda muitas tarefas onde poder· ajudar!
-Isto incluÌ escrever documentos, traduzir programas e DocumentaÁ„o para outras lÌnguas,
-criar belos gr·ficos e procurar erros.
-Estas s„o t„o importantes como codificar!
+Para aqueles que n√£o s√£o programadores, existe ainda muitas tarefas onde poder√° ajudar!
+Isto inclu√≠ escrever documentos, traduzir programas e Documenta√ß√£o para outras l√≠nguas,
+criar belos gr√°ficos e procurar erros.
+Estas s√£o t√£o importantes como codificar!
 
 
-Tarefas DisponÌveis
+Tarefas Dispon√≠veis
 ===================
 
-Esta È a lista de algumas tarefas em que nÛs precisamos de ajuda e onde ninguÈm
-est· actualmente a trablhar. N„o È de nenhum modo uma lista completa, simplesmente
-contÈm as tarefas mais proemintes onde precisamos de ajuda no AROS.
+Esta √© a lista de algumas tarefas em que n√≥s precisamos de ajuda e onde ningu√©m
+est√° actualmente a trablhar. N√£o √© de nenhum modo uma lista completa, simplesmente
+cont√©m as tarefas mais proemintes onde precisamos de ajuda no AROS.
 
 
-ProgramaÁ„o
+Programa√ß√£o
 -----------
 
 + Implementar bibliotecas em falta, recursos, dispositivos ou partes destes. 
-  Veja a reportagem de estado detalhada para saber que bits est„o em falta.
+  Veja a reportagem de estado detalhada para saber que bits est√£o em falta.
 
 + Implementando ou melhorando condutores de dispositivos de equipamento:
   
   - AROS/m68k-pp:
     
-    + Gr·ficos
-    + Entradas (Ecr„ t·ctil, butıes)
+    + Gr√°ficos
+    + Entradas (Ecr√£ t√°ctil, but√µes)
     + Som
  
   - AROS/i386-pc:
     
-    + Condutores de placas gr·ficas especÌficas (temos sÛ gerais, n„o temos as muito bem
+    + Condutores de placas gr√°ficas espec√≠ficas (temos s√≥ gerais, n√£o temos as muito bem
       acelaradas). Uma lista curta desejada:
       
-      - nVidia TNT/TNT2/GeForce (comeÁada, mas incompleta) 
+      - nVidia TNT/TNT2/GeForce (come√ßada, mas incompleta) 
       - S3 Virge
       - Matrox Millenium
     
     + USB
     + SCSI
-    + IDE chipsets especÌficos
+    + IDE chipsets espec√≠ficos
     + Som
     + ...qualquer outra coisa que possa pensar.
 
-  - Suporte a impressoras genÈricas.
+  - Suporte a impressoras gen√©ricas.
  
-  - Suporte a som genÈrico.
+  - Suporte a som gen√©rico.
 
 + Aportar para outras arquitecturas. Alguns exemplos de equipamento para o qual 
-  n„o existe manutenÁ„o ao existente porto AROS ou tenha sido comeÁado:
+  n√£o existe manuten√ß√£o ao existente porto AROS ou tenha sido come√ßado:
 
   - Amiga, ambos m68k e PPC.
   - Atari.
@@ -88,18 +88,18 @@ ProgramaÁ„o
   - WBPattern
   - Workbench 
  
-+ Melhorar a ligaÁ„o ‡ biblioteca C
++ Melhorar a liga√ß√£o √† biblioteca C
 
-  Isto significa implementar funÁıes ANSI em falta (e algum POSIX) na clib,
+  Isto significa implementar fun√ß√µes ANSI em falta (e algum POSIX) na clib,
   para tornar facilitado aportar programas UNIX (ex. GCC, make e binutils). A
-  maior falta È o suporte para o estilo de sinalizaÁ„o POSIX, mas existem algumas
-  funÁıes tambÈm.
+  maior falta √© o suporte para o estilo de sinaliza√ß√£o POSIX, mas existem algumas
+  fun√ß√µes tamb√©m.
 
 + Implemetar mais datatypes (tipos de dados) e melhorar os existentes
 
-  O n˙mero de datatypes disponiveis no AROS È bastante pequeno. Alguns exemplos de
+  O n√∫mero de datatypes disponiveis no AROS √© bastante pequeno. Alguns exemplos de
   datatypes que necessitam de melhoramento para se tornarem utilizaveis ou necessidade de
-  implementaÁ„o do nada:
+  implementa√ß√£o do nada:
 
   - amigaguide.datatype
   - sound.datatype
@@ -119,82 +119,82 @@ ProgramaÁ„o
     ferramentas de desenvolvimento GNU.
   
 
-DocumentaÁ„o
+Documenta√ß√£o
 ------------
 
-+ Escrever documentaÁ„o do utilizador. Isto consiste em escrever um Guia de Utilizados geral
-  para principiantes e avanÁados, e tambÈm documentaÁ„o de referencia para todos os programas
-  padr„o AROS.
++ Escrever documenta√ß√£o do utilizador. Isto consiste em escrever um Guia de Utilizados geral
+  para principiantes e avan√ßados, e tamb√©m documenta√ß√£o de referencia para todos os programas
+  padr√£o AROS.
 
-+ Escrever documentaÁ„o do desenvolvidor. Contudo esta est· um pouco em melhor estado
-  do que a documentaÁ„o do utilizador, existe ainda muito trabalho para fazer. Como Por exemplo,
-  n„o existe um tutorial programadores principiantes ainda. O equivalente
++ Escrever documenta√ß√£o do desenvolvidor. Contudo esta est√° um pouco em melhor estado
+  do que a documenta√ß√£o do utilizador, existe ainda muito trabalho para fazer. Como Por exemplo,
+  n√£o existe um tutorial programadores principiantes ainda. O equivalente
   aos Manuais do Kernel ROM para o AROS seria realmente muito bom de ter.
 
 
-TraduÁıes
+Tradu√ß√µes
 ---------
 
-+ Traduzir o AROS em si para mais lÌnguas. Actualmente, sÛ as seguintes
-  lÌnguas est·o mais ou menos completamente suportadas:
++ Traduzir o AROS em si para mais l√≠nguas. Actualmente, s√≥ as seguintes
+  l√≠nguas est√°o mais ou menos completamente suportadas:
 
-  - InglÍs
-  - Alem„o
+  - Ingl√™s
+  - Alem√£o
   - Svenska
   - Norsk
   - Italiano
 
-+ Traduzir a documentaÁ„o e o portal para mais lÌnguas. Actualmente, est·
-  somente totalmente disponivel em InglÍs. Partes tÍm sido traduzidas para
++ Traduzir a documenta√ß√£o e o portal para mais l√≠nguas. Actualmente, est√°
+  somente totalmente disponivel em Ingl√™s. Partes t√™m sido traduzidas para
   Norsk, mas existe ainda muito a fazer.
 
 
 Outros
 ------
 
-+ Coordenar do desenho do Interface de Gr·ficos do Utilizador (GUI) para os programas AROS,
++ Coordenar do desenho do Interface de Gr√°ficos do Utilizador (GUI) para os programas AROS,
   como os programas preferidos,ferramentas e utilitarios.
 
 
-Juntando-se ‡ Equipa
+Juntando-se √† Equipa
 ====================
 
-Que juntar-se ao esforÁo de desenvolvimentos? ”ptimo! Ent„o junte-se ‡s `listas de eCorrespondÍncia
-de desenvolvimento`__ em que esteja interessado (pelo menos a subscriÁ„o ‡ lista de desenvolvimento principal È altamente recomend·vel) e requira o accesso ao repositÛrio de Subvers„o.
-… tudo. :)
+Que juntar-se ao esfor√ßo de desenvolvimentos? √ìptimo! Ent√£o junte-se √†s `listas de eCorrespond√™ncia
+de desenvolvimento`__ em que esteja interessado (pelo menos a subscri√ß√£o √† lista de desenvolvimento principal √© altamente recomend√°vel) e requira o accesso ao reposit√≥rio de Subvers√£o.
+√â tudo. :)
 
-Escreva uma eCarta para a lista de desenvolvimento contendo uma breve introduÁ„o
-sobre si e em que quer ajudar cam a sua determinaÁ„o. Se tem qualquer problema,
-n„o exite em nos corresponder para a lista ou pergunte pelo nos `canais de IRC`__.
-TambÈm, antes de comeÁar a trabalhar em algo especifico, escreva uma eCarta para
-a lista declarando o que estar· para fazer ou actualize a tarefa de base de dados.
-Assim nÛs poderemos ter a certeza de que duas pessoas n„o trabalharam na mesma
+Escreva uma eCarta para a lista de desenvolvimento contendo uma breve introdu√ß√£o
+sobre si e em que quer ajudar cam a sua determina√ß√£o. Se tem qualquer problema,
+n√£o exite em nos corresponder para a lista ou pergunte pelo nos `canais de IRC`__.
+Tamb√©m, antes de come√ßar a trabalhar em algo especifico, escreva uma eCarta para
+a lista declarando o que estar√° para fazer ou actualize a tarefa de base de dados.
+Assim n√≥s poderemos ter a certeza de que duas pessoas n√£o trabalharam na mesma
 tarefa por engano...
 
 __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
 
 
-O repositÛrio de Subvers„o
+O reposit√≥rio de Subvers√£o
 --------------------------
 
-O repositÛrio AROS est· a correr com um servidor de subvers„o protegido por palavra-passe,
+O reposit√≥rio AROS est√° a correr com um servidor de subvers√£o protegido por palavra-passe,
 o que significa que tem de requerer acesso a isso para poder colaborar no desenvolvimento.
-A palavra-passe est· num formato encriptado, que poder· gerar, com a nossa
-`ferramenta de encriptaÁ„o de palavras-passe online`__.
+A palavra-passe est√° num formato encriptado, que poder√° gerar, com a nossa
+`ferramenta de encripta√ß√£o de palavras-passe online`__.
 
 Envie a palavra-passe encriptada juntamente com o seu nome de utilizador preferido e
 o seu nome real para `Aaron Digulla`__ e espere por uma resposta. Para facilitar uma
-resposta r·pida, marque o assunto como "Access to the AROS SVN server" e o corpo
+resposta r√°pida, marque o assunto como "Access to the AROS SVN server" e o corpo
 com "Please add <username> <password>", ex.::
 
     Please add digulla xx1LtbDbOY4/E
 
-Poder· levar alguns de dias porque Aaron est· muito ocupado. Seja paciente. 
+Poder√° levar alguns de dias porque Aaron est√° muito ocupado. Seja paciente. 
 
-Para informaÁıes sobre como usar o servidor SVN AROS, leia "`Trabalhando com o SVN`__".
-Mesmo se j· esteja habituado a usar a SVN È ˙tli que dÍ uma olhadela,
-porque contÈm informaÁ„o e conselhos especificos para o repositÛrio AROS
+Para informa√ß√µes sobre como usar o servidor SVN AROS, leia "`Trabalhando com o SVN`__".
+Mesmo se j√° esteja habituado a usar a SVN √© √∫tli que d√™ uma olhadela,
+porque cont√©m informa√ß√£o e conselhos especificos para o reposit√≥rio AROS
 (exemplo: como se ligar a ele).
 
 __ http://aros.sourceforge.net/tools/password.html 

@@ -1,22 +1,22 @@
 ===================
-Mise à jour de Noël
+Mise Ã  jour de NoÃ«l
 ===================
 
 :Auteur:   Paolo Besser
 :Date:     2006-12-23
 
-Joyeux Noël et bonne année à tous ! catte année a été importante
-pour le développement d'AROS, et nous tenons à remercier tous les fans
-d'AROS, les testeurs et les collaborateurs pour les résultats
-magnifiques que notre système d'exploitation a obtenu.
+Joyeux NoÃ«l et bonne annÃ©e Ã  tous ! catte annÃ©e a Ã©tÃ© importante
+pour le dÃ©veloppement d'AROS, et nous tenons Ã  remercier tous les fans
+d'AROS, les testeurs et les collaborateurs pour les rÃ©sultats
+magnifiques que notre systÃ¨me d'exploitation a obtenu.
 
-En attendant les premières mises à jour de 2007, pourquoi ne pas écouter
+En attendant les premiÃ¨res mises Ã  jour de 2007, pourquoi ne pas Ã©couter
 un peu de musique avec AROSAmp, le premier lecteur MP3 avec interface
 graphique disponible sur AROS ? Vous le trouverez `ici`__
 
 Et si vous souhaitez regarder vos vieilles photos, vous serez probablement
-intéressé par `le viewer de Pawel Stefanski`__ pour Morphos qui a récemment
-été pourté à AROS. 
+intÃ©ressÃ© par `le viewer de Pawel Stefanski`__ pour Morphos qui a rÃ©cemment
+Ã©tÃ© pourtÃ© Ã  AROS. 
 
 __ http://archives.aros-exec.org/index.php?function=browse&cat=audio
 __ http://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer

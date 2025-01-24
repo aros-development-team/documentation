@@ -6,10 +6,10 @@
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS är ett resurssnålt, effektivt och flexibelt operativsystem, gjord för att
-hjälpa dig få ut det mesta av din dator. Det är ett oberoende, fritt och
-plattformsöverskridande projekt med målet att vara kompatibelt med AmigaOS på
-API-nivå (på samma sätt som Wine, men olikt UAE), men förbättrat på flertalet
-områden. Källkoden är tillgänglig under en "öppen-källkod"-licens vilket
-tillåter att vem som helst får göra förbättringar.
+AROS Ã¤r ett resurssnÃ¥lt, effektivt och flexibelt operativsystem, gjord fÃ¶r att
+hjÃ¤lpa dig fÃ¥ ut det mesta av din dator. Det Ã¤r ett oberoende, fritt och
+plattformsÃ¶verskridande projekt med mÃ¥let att vara kompatibelt med AmigaOS pÃ¥
+API-nivÃ¥ (pÃ¥ samma sÃ¤tt som Wine, men olikt UAE), men fÃ¶rbÃ¤ttrat pÃ¥ flertalet
+omrÃ¥den. KÃ¤llkoden Ã¤r tillgÃ¤nglig under en "Ã¶ppen-kÃ¤llkod"-licens vilket
+tillÃ¥ter att vem som helst fÃ¥r gÃ¶ra fÃ¶rbÃ¤ttringar.
 

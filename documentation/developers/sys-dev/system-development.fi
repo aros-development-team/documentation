@@ -1,17 +1,17 @@
 =================================
-AROS j‰rjestelm‰n kehitysmanuaali
+AROS j√§rjestelm√§n kehitysmanuaali
 =================================
 
 :Authors:   Aaron Digulla, Bernardo Innocenti
-:Copyright: Copyright © 2001, The AROS Development Team
+:Copyright: Copyright ¬© 2001, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
 .. Warning::
 
-   T‰m‰ dokumentti ei ole valmis! On eritt‰in todenn‰kˆist‰ ett‰ monet osat
-   ovat ajastaan j‰ljess‰, sis‰lt‰v‰t ep‰kuranttia tietoa tai puuttuvat
-   kokonaan. Jos tahdot auttaa tilanteen korjaamisessa, ota meihin yhteytt‰.
+   T√§m√§ dokumentti ei ole valmis! On eritt√§in todenn√§k√∂ist√§ ett√§ monet osat
+   ovat ajastaan j√§ljess√§, sis√§lt√§v√§t ep√§kuranttia tietoa tai puuttuvat
+   kokonaan. Jos tahdot auttaa tilanteen korjaamisessa, ota meihin yhteytt√§.
 
 .. Contents::
 
@@ -19,64 +19,64 @@ AROS j‰rjestelm‰n kehitysmanuaali
 Lisensointimenettely
 --------------------
 
-L‰hes kaikki AROS Development Team:in kirjoittama koodi on lisensoitu AROS
-Public License:n (APL) alla, ja t‰m‰ on suositeltu vaihtoehto kaikelle uudelle
+L√§hes kaikki AROS Development Team:in kirjoittama koodi on lisensoitu AROS
+Public License:n (APL) alla, ja t√§m√§ on suositeltu vaihtoehto kaikelle uudelle
 koodille joka projektille kirjoitetaan.
 
-Ymm‰rr‰mme kyll‰ ettei t‰m‰ ole aina mahdollista; esimerkiksi usein me
-tahdomme k‰ytt‰‰ ulkopuolisten kirjoittamia kirjastoja ja ohjelmia ilman ett‰
-meid‰n tarvitsee keksi‰ pyˆr‰‰ uudelleen. T‰st‰ syyst‰ on sallittua tuoda
+Ymm√§rr√§mme kyll√§ ettei t√§m√§ ole aina mahdollista; esimerkiksi usein me
+tahdomme k√§ytt√§√§ ulkopuolisten kirjoittamia kirjastoja ja ohjelmia ilman ett√§
+meid√§n tarvitsee keksi√§ py√∂r√§√§ uudelleen. T√§st√§ syyst√§ on sallittua tuoda
 Subversion varastoon koodia jota ei ole lisensoitu APL:n alaisuudessa niin
-kauan kuin koodin lisenssi t‰ytt‰‰ alla mainitut ehdot.
+kauan kuin koodin lisenssi t√§ytt√§√§ alla mainitut ehdot.
 
 
-"contrib"-polun l‰hdekoodin vaatimukset
+"contrib"-polun l√§hdekoodin vaatimukset
 =======================================
 
-Sis‰llytt‰‰ksesi l‰hdekoodia "contrib"-polkuum t‰ytyy seuraavien ehtojen
+Sis√§llytt√§√§ksesi l√§hdekoodia "contrib"-polkuum t√§ytyy seuraavien ehtojen
 toteutua:
 
-1. Lisenssin t‰ytyy antaa meid‰n:
+1. Lisenssin t√§ytyy antaa meid√§n:
 
-   a. Levitt‰‰ l‰hdekoodia.
-   b. Levitt‰‰ bin‰‰ri‰.
+   a. Levitt√§√§ l√§hdekoodia.
+   b. Levitt√§√§ bin√§√§ri√§.
 
-   Jos muutokset l‰hdekoodiin ovat tarpeellisia jotta se saadaan k‰‰ntym‰‰n ja
-   toimimaan AROS:issa, t‰ytyy lisenssin sallia meid‰n muokata ja levitt‰‰
-   muokattua koodia sek‰ l‰hdekoodina ett‰ bin‰‰rin‰.
+   Jos muutokset l√§hdekoodiin ovat tarpeellisia jotta se saadaan k√§√§ntym√§√§n ja
+   toimimaan AROS:issa, t√§ytyy lisenssin sallia meid√§n muokata ja levitt√§√§
+   muokattua koodia sek√§ l√§hdekoodina ett√§ bin√§√§rin√§.
 
-2. Lisenssin t‰ytyy olla selv‰sti ilmaistu tiedostossa ``LEGAL`` jonka tulee
-   sijaita kyseisen l‰hdekoodin juurihakemistossa.
+2. Lisenssin t√§ytyy olla selv√§sti ilmaistu tiedostossa ``LEGAL`` jonka tulee
+   sijaita kyseisen l√§hdekoodin juurihakemistossa.
 
 
-AROS:in juuripolun l‰hdekoodin vaatimukset
+AROS:in juuripolun l√§hdekoodin vaatimukset
 ==========================================
 
-Jotta voit sis‰llytt‰‰ sellaista l‰hdekoodia jota ei ole lisensoitu APL:n
-alaisuudessa AROS:in juuripolkuun, t‰ytyy seuraavien ehtojen toteutua:
+Jotta voit sis√§llytt√§√§ sellaista l√§hdekoodia jota ei ole lisensoitu APL:n
+alaisuudessa AROS:in juuripolkuun, t√§ytyy seuraavien ehtojen toteutua:
 
-1. L‰hdekoodin t‰ytyy rakentaa jokin komponentti tai olla riippuvaisen jostain
-   toisesta komponentista (joka voi olla tai olla olematta APL:‰‰) jonka
-   tahdomme sis‰llytt‰‰ AROS:in bin‰‰rijakeluun.
+1. L√§hdekoodin t√§ytyy rakentaa jokin komponentti tai olla riippuvaisen jostain
+   toisesta komponentista (joka voi olla tai olla olematta APL:√§√§) jonka
+   tahdomme sis√§llytt√§√§ AROS:in bin√§√§rijakeluun.
 
-2. Lisenssin t‰ytyy olla Open Source:a kuten on m‰‰ritetty Open Source
-   Initiative:ssa (OSI), tarkoittaen sit‰ ett‰ meill‰ tulee olla oikeus:
+2. Lisenssin t√§ytyy olla Open Source:a kuten on m√§√§ritetty Open Source
+   Initiative:ssa (OSI), tarkoittaen sit√§ ett√§ meill√§ tulee olla oikeus:
 
-   a. Tehd‰ muutoksia.
-   b. Levitt‰‰ l‰hdekoodia (muutoksineen).
-   c. Levitt‰‰ bin‰‰ri‰ (mahdollisesti muutettuun l‰hdekoodiin pohjautuvaa).
+   a. Tehd√§ muutoksia.
+   b. Levitt√§√§ l√§hdekoodia (muutoksineen).
+   c. Levitt√§√§ bin√§√§ri√§ (mahdollisesti muutettuun l√§hdekoodiin pohjautuvaa).
 
 3. Lisenssi ei saa olla ristiriidassa APL:n kanssa:
 
-   a. Jos koodista valmistuu itsen‰inen ohjelma, l‰hes mik‰ tahansa lisenssi
-      joka t‰ytt‰‰ kohdan 2. ehdot on sallittu.
-   b. Jos koodista valmistuu kirjasto, lisenssin t‰ytyy sallia sen
-      linkitt‰misen ilman ongelmia ohjelmiin ja kirjastoihin jotka k‰ytt‰v‰t
-      eri lisenssi‰. T‰m‰ tarkoittaa sit‰ ett‰ GPL:n alaisuudessa julkaistut
-      kirjastot eiv‰t ole sallittuja (toisin kuin LGPL:n alaiset).
+   a. Jos koodista valmistuu itsen√§inen ohjelma, l√§hes mik√§ tahansa lisenssi
+      joka t√§ytt√§√§ kohdan 2. ehdot on sallittu.
+   b. Jos koodista valmistuu kirjasto, lisenssin t√§ytyy sallia sen
+      linkitt√§misen ilman ongelmia ohjelmiin ja kirjastoihin jotka k√§ytt√§v√§t
+      eri lisenssi√§. T√§m√§ tarkoittaa sit√§ ett√§ GPL:n alaisuudessa julkaistut
+      kirjastot eiv√§t ole sallittuja (toisin kuin LGPL:n alaiset).
 
-4. Lisenssi tulee ilmet‰ selv‰ sanaisesti tiedostossa ``LEGAL`` jonka tulee
-   sijaita kyseess‰ olevan l‰hdekoodin juurihakemistossa.
+4. Lisenssi tulee ilmet√§ selv√§ sanaisesti tiedostossa ``LEGAL`` jonka tulee
+   sijaita kyseess√§ olevan l√§hdekoodin juurihakemistossa.
 
 
 ---------------------
@@ -86,47 +86,47 @@ Sovitut koodaustyylit
 Yleinen tyyli
 =============
 
-T‰t‰ koodia yll‰pit‰v‰t monet ja siksi sinun tulee pit‰‰ mieless‰si muutamia
-seikkoja kun l‰het‰t l‰hdekoodia:
+T√§t√§ koodia yll√§pit√§v√§t monet ja siksi sinun tulee pit√§√§ mieless√§si muutamia
+seikkoja kun l√§het√§t l√§hdekoodia:
 
-+ Pid‰ asiat yksinkertaisina
-+ Pid‰ l‰hdekoodi siistin‰
-+ Tied‰ mit‰ olet tekem‰ss‰
-+ Kerro mit‰ olet tekem‰ss‰
-+ Muista ett‰ kirjoitat koodin kerran mutta se luetaan usein useiden toimesta
++ Pid√§ asiat yksinkertaisina
++ Pid√§ l√§hdekoodi siistin√§
++ Tied√§ mit√§ olet tekem√§ss√§
++ Kerro mit√§ olet tekem√§ss√§
++ Muista ett√§ kirjoitat koodin kerran mutta se luetaan usein useiden toimesta
 
 
 Kommentit
 =========
 
-AROS k‰ytt‰‰ osaa l‰hdekoodin kommenteista luomaan sille dokumentaation. T‰st‰
-syyst‰ t‰ytyy pit‰yty‰ tietyss‰ formaatissa jotta tyˆkalut lˆyt‰v‰t hakemansa
-tiedon. Kaikki muut kommentit ohitetaan, mutta niiden tulisi selvitt‰‰ mit‰
-ajattelit koodia kirjoittaessasi. Jos et saa selvityst‰ mieleesi, ‰l‰ kirjoita
-koodia kahdesti t‰ll‰ tavoin::
+AROS k√§ytt√§√§ osaa l√§hdekoodin kommenteista luomaan sille dokumentaation. T√§st√§
+syyst√§ t√§ytyy pit√§yty√§ tietyss√§ formaatissa jotta ty√∂kalut l√∂yt√§v√§t hakemansa
+tiedon. Kaikki muut kommentit ohitetaan, mutta niiden tulisi selvitt√§√§ mit√§
+ajattelit koodia kirjoittaessasi. Jos et saa selvityst√§ mieleesi, √§l√§ kirjoita
+koodia kahdesti t√§ll√§ tavoin::
 
-    /* T‰m‰ lis‰‰ 1 t:hen */
+    /* T√§m√§ lis√§√§ 1 t:hen */
     t++;
     
-Mit‰ tulisi kirjoittaa on::
+Mit√§ tulisi kirjoittaa on::
 
-    /* Jatka seuraavalla elementill‰ */
+    /* Jatka seuraavalla elementill√§ */
     t++;
 
 
 Funktioiden prototyypit ja otsikot
 ==================================
 
-Jokaisella AROS:in funktiolla t‰ytyy olla t‰ydellinen ANSI C prototyyppi.
-Prototyypit tulisi koota yhteen otsikkotiedostoon per l‰hdetiedosto jos niit‰
-tarvitaan vain muutamissa tiedostoissa (ei tarvetta k‰‰nt‰‰ koko projektia
-uudelleen jos muutat funktiota jota k‰ytet‰‰n vain yhdess‰ paikassa), tai
-yhteen otsikkotiedostoon per hakemisto jos funktiota k‰ytet‰‰n yleisesti
-kyseisess‰ hakemistossa, taikka yhteen otsikkotiedostoon per looginen ryhm‰
+Jokaisella AROS:in funktiolla t√§ytyy olla t√§ydellinen ANSI C prototyyppi.
+Prototyypit tulisi koota yhteen otsikkotiedostoon per l√§hdetiedosto jos niit√§
+tarvitaan vain muutamissa tiedostoissa (ei tarvetta k√§√§nt√§√§ koko projektia
+uudelleen jos muutat funktiota jota k√§ytet√§√§n vain yhdess√§ paikassa), tai
+yhteen otsikkotiedostoon per hakemisto jos funktiota k√§ytet√§√§n yleisesti
+kyseisess√§ hakemistossa, taikka yhteen otsikkotiedostoon per looginen ryhm√§
 (esim. yksi yhteinen otsikkotiedosto kaikille kirjaston funktioille).
 
-Funktion otsikon (eli kommentin ennen funktiota) tulee olla erityisess‰
-muodossa koska AutoDoc:it muodostetaan siit‰. T‰ss‰ siit‰ esimerkki
+Funktion otsikon (eli kommentin ennen funktiota) tulee olla erityisess√§
+muodossa koska AutoDoc:it muodostetaan siit√§. T√§ss√§ siit√§ esimerkki
 (tiedostosta ``AROS/exec/addhead.c``)::
 
     /*****************************************************************************
@@ -308,7 +308,7 @@ INTERNALS
 Muotoilu
 ========
 
-T‰ss‰ esimerkki kuinka muotoilla AROS koodia::
+T√§ss√§ esimerkki kuinka muotoilla AROS koodia::
 
     {
         /* a */
@@ -351,89 +351,89 @@ T‰ss‰ esimerkki kuinka muotoilla AROS koodia::
     }
 
 
-N‰ytt‰‰ rumalta, vai kuinka? :-) Ok, t‰ss‰ s‰‰nnˆt:
+N√§ytt√§√§ rumalta, vai kuinka? :-) Ok, t√§ss√§ s√§√§nn√∂t:
 
-+ Jos useilla riveill‰ on samankaltaista koodia, asemoi ne toistensa alle (ks.
++ Jos useilla riveill√§ on samankaltaista koodia, asemoi ne toistensa alle (ks.
   a ja b);
 
-+ Sijoita v‰li operandien ja operaattoreiden v‰liin
++ Sijoita v√§li operandien ja operaattoreiden v√§liin
 
 + Sijoita aaltosulut ``{}``, hakasulut ``[]`` ja sulut ``()`` toistensa alle
-  (d) jos niiden v‰lill‰ on paljon koodia. Hakasulut ja sulut voivat olla
-  yhdell‰ rivill‰ jos koodia ei ole paljon (c)
+  (d) jos niiden v√§lill√§ on paljon koodia. Hakasulut ja sulut voivat olla
+  yhdell√§ rivill√§ jos koodia ei ole paljon (c)
 
-+ Sisenn‰ 4:ll‰ v‰lilyˆnnill‰. Kaksi sisennystasoa voidaan merkit‰ yhdell‰
++ Sisenn√§ 4:ll√§ v√§lily√∂nnill√§. Kaksi sisennystasoa voidaan merkit√§ yhdell√§
   tabulaattorilla.
   
-  Syyt t‰h‰n ovat:
+  Syyt t√§h√§n ovat:
   
-  1. Vaikka jotkut editorit voivat k‰ytt‰‰ mielivaltaisia tabulaattorikokoja,
-     on hieman vaikeaa kertoa toisenlaiselle editorille mit‰ kokoa on k‰ytetty
+  1. Vaikka jotkut editorit voivat k√§ytt√§√§ mielivaltaisia tabulaattorikokoja,
+     on hieman vaikeaa kertoa toisenlaiselle editorille mit√§ kokoa on k√§ytetty
      koodia kirjoitettaessa.
-  2. Suurin osa AROS:in koodista on kirjoitettu n‰in ja omasi tulisi n‰ytt‰‰
+  2. Suurin osa AROS:in koodista on kirjoitettu n√§in ja omasi tulisi n√§ytt√§√§
      samalta kuin kaikki muukin.
-  3. Voit tulostaa koodin mill‰ tahansa printterill‰ ilman erikoisia tyˆkaluja
+  3. Voit tulostaa koodin mill√§ tahansa printterill√§ ilman erikoisia ty√∂kaluja
      korjaamaan tabulaattorikokoja.
   4. Suurin osa editoreista omaa nk. "smart tab" ominaisuuden joka tekee juuri
-     t‰m‰n. Jos omasi ei sit‰ tue, kirjoita vikaraportti...
+     t√§m√§n. Jos omasi ei sit√§ tue, kirjoita vikaraportti...
 
 + Jos sinulla on funktio joka ottaa useita argumentteja (d, e) tulisi sinun
   sijoittaa sulut omille riveilleen ja jokainen argumentti omalleen (d) tai
-  asemoida ensimm‰inen argumentti avautuvan sulun per‰‰n (e) ja seuraavat
-  argumentit omille riveilleen siten ett‰ pilkku on niiden edell‰. Sulkeva
-  sulku sijaitsee omalla rivill‰‰n, asemoituna samalle kohdalle kuin alkava
+  asemoida ensimm√§inen argumentti avautuvan sulun per√§√§n (e) ja seuraavat
+  argumentit omille riveilleen siten ett√§ pilkku on niiden edell√§. Sulkeva
+  sulku sijaitsee omalla rivill√§√§n, asemoituna samalle kohdalle kuin alkava
   lauseke (esim. a ilman avautuvia sulkuja tai `printf()`).
 
-+ K‰yt‰ yht‰ tyhj‰‰ rivi‰ erottamaan loogisia lohkoja. Pitkien kommenttien
-  edell‰ ja j‰lkeen tulisi olla tyhj‰ rivi. Lyhyiden kommenttien tulisi
-  sijaita juuri ennen koodia jota ne kuvailevat ja ainoastaan yksi tyhj‰ rivi
-  yl‰puolellaan.
++ K√§yt√§ yht√§ tyhj√§√§ rivi√§ erottamaan loogisia lohkoja. Pitkien kommenttien
+  edell√§ ja j√§lkeen tulisi olla tyhj√§ rivi. Lyhyiden kommenttien tulisi
+  sijaita juuri ennen koodia jota ne kuvailevat ja ainoastaan yksi tyhj√§ rivi
+  yl√§puolellaan.
 
 
 ROM:iin kirjoitettavissa olevan koodin kirjoittaminen
 =====================================================
 
-AROS moduuleissa oleva koodi tulisi kirjoitta sill‰ tavoin ett‰ se voidaan
+AROS moduuleissa oleva koodi tulisi kirjoitta sill√§ tavoin ett√§ se voidaan
 valaa ROM:iin, FlashRAM:iin tai jonkin muun tyyppiseen vain lukua varten
-olevaan muistiin. Seuraavana esitelty ohjelmointityyli on tarkoitettu tekem‰‰n
-siit‰ mahdollista. Tottakai se p‰tee kaikkiin Kickstart moduuleihin ja
-koodiin joka saatetaan sijoittaa RAM:iin, on jaettua ja/tai linkitet‰‰n
+olevaan muistiin. Seuraavana esitelty ohjelmointityyli on tarkoitettu tekem√§√§n
+siit√§ mahdollista. Tottakai se p√§tee kaikkiin Kickstart moduuleihin ja
+koodiin joka saatetaan sijoittaa RAM:iin, on jaettua ja/tai linkitet√§√§n
 toisiin moduuleihin.
 
-+ ROM moduuleilla ei tule olla .data tai .bss lohkoja. K‰yt‰nnˆss‰ t‰m‰
-  tarkoittaa sit‰ ett‰ meid‰n tulee p‰‰st‰ eroon kaikesta ei-pysyv‰st‰
-  globaalista datasta. Amigan Kickstart todistaa ett‰ se on sek‰ mahdollista
-  ett‰ myˆs helppoa.
++ ROM moduuleilla ei tule olla .data tai .bss lohkoja. K√§yt√§nn√∂ss√§ t√§m√§
+  tarkoittaa sit√§ ett√§ meid√§n tulee p√§√§st√§ eroon kaikesta ei-pysyv√§st√§
+  globaalista datasta. Amigan Kickstart todistaa ett√§ se on sek√§ mahdollista
+  ett√§ my√∂s helppoa.
 
-  Jos tˆrm‰‰t ulkoiseen muuttujaan (staattinen taikka ei) jota koodi muokkaa,
-  koeta p‰‰st‰ siit‰ eroon tai siirr‰ se kirjaston/laitteen ytimeen (tai
-  laitek‰sittelij‰si noodiin tai luokkasi nk. "userdata":an).
+  Jos t√∂rm√§√§t ulkoiseen muuttujaan (staattinen taikka ei) jota koodi muokkaa,
+  koeta p√§√§st√§ siit√§ eroon tai siirr√§ se kirjaston/laitteen ytimeen (tai
+  laitek√§sittelij√§si noodiin tai luokkasi nk. "userdata":an).
 
-+ Yll‰ mainittu p‰tee myˆs kirjastoihin. Jos olet kirjoittamassa kirjastoa,
-  j‰rjest‰ kaikkien muiden kirjastojen perustukset oman kirjastosi ytimeen.
++ Yll√§ mainittu p√§tee my√∂s kirjastoihin. Jos olet kirjoittamassa kirjastoa,
+  j√§rjest√§ kaikkien muiden kirjastojen perustukset oman kirjastosi ytimeen.
   BOOPSI luokat voivat varastoida kirjastojen perustat (osoittimia) luokkansa
   yksityisen datan alueella.
 
 + Koeta asettaa kaikki globaali data `static` ja `const` tyyppiseksi. Voit
-  k‰ytt‰‰ myˆs `CONST_STRPTR` ja `CONST_APTR` tyyppej‰ jotka on m‰‰ritelty
-  tiedostossa ``<exec/types.h>``. `static const`:in k‰ytt‰minen sallii
-  k‰‰nt‰j‰n siirt‰‰ tieto ".text" alueelle (elik‰ koodin sekaan). Jos sinun
-  t‰ytyy antaa jokin n‰ist‰ globaaleista toiselle funktiolle, koeta m‰‰ritt‰‰
-  sen prototyyppi k‰ytt‰m‰‰n myˆskin `const`:ia. Huomioi ett‰ OS 3.5:st‰
-  l‰htien Olaf Barthel on vihdoin k‰ytt‰m‰‰n `const`:ia <clib/#?_protos.h>
+  k√§ytt√§√§ my√∂s `CONST_STRPTR` ja `CONST_APTR` tyyppej√§ jotka on m√§√§ritelty
+  tiedostossa ``<exec/types.h>``. `static const`:in k√§ytt√§minen sallii
+  k√§√§nt√§j√§n siirt√§√§ tieto ".text" alueelle (elik√§ koodin sekaan). Jos sinun
+  t√§ytyy antaa jokin n√§ist√§ globaaleista toiselle funktiolle, koeta m√§√§ritt√§√§
+  sen prototyyppi k√§ytt√§m√§√§n my√∂skin `const`:ia. Huomioi ett√§ OS 3.5:st√§
+  l√§htien Olaf Barthel on vihdoin k√§ytt√§m√§√§n `const`:ia <clib/#?_protos.h>
   otsikkotiedostoissa.
 
-+ **ƒLƒ KOSKAAN** koeta muokata puskureita jotka k‰ytt‰j‰ l‰hett‰‰ syˆtteen‰.
-  Syˆte parametrin konsepti sis‰ltyy usein funktion kuvaukseen. Esimerkiksi
-  tiedostonimi joka `Open()`:ille annetaan on selv‰sti syˆtemuuttuja eik‰
-  `Open()`:in tule sit‰ muokata vaikka se palauttaisikin syˆtteen ennalleen
-  myˆhemmin. Pid‰ mieless‰ se ett‰ puskuri voi sijaita vain luettavaksi
-  tarkoitetussa muistissa tai olla jaettuna useiden monis‰ikeisen ohjelman
-  instanssien v‰lill‰.
++ **√ÑL√Ñ KOSKAAN** koeta muokata puskureita jotka k√§ytt√§j√§ l√§hett√§√§ sy√∂tteen√§.
+  Sy√∂te parametrin konsepti sis√§ltyy usein funktion kuvaukseen. Esimerkiksi
+  tiedostonimi joka `Open()`:ille annetaan on selv√§sti sy√∂temuuttuja eik√§
+  `Open()`:in tule sit√§ muokata vaikka se palauttaisikin sy√∂tteen ennalleen
+  my√∂hemmin. Pid√§ mieless√§ se ett√§ puskuri voi sijaita vain luettavaksi
+  tarkoitetussa muistissa tai olla jaettuna useiden monis√§ikeisen ohjelman
+  instanssien v√§lill√§.
 
-+ Koeta v‰ltt‰‰ sellaisia is‰nt‰j‰rjestelm‰n kutsuja kuten `malloc()` ja
-  `free()` jos voit niiden sijaan k‰ytt‰‰ `AllocMem()` ja `FreeMem()` kutsuja.
-  T‰m‰ siksi koska osoittimet tarkastavat makrot olettavat lˆyt‰v‰ns‰
++ Koeta v√§ltt√§√§ sellaisia is√§nt√§j√§rjestelm√§n kutsuja kuten `malloc()` ja
+  `free()` jos voit niiden sijaan k√§ytt√§√§ `AllocMem()` ja `FreeMem()` kutsuja.
+  T√§m√§ siksi koska osoittimet tarkastavat makrot olettavat l√∂yt√§v√§ns√§
   osoittimen Exec:in muistilokeroista `TypeOfMem()` funktion avulla.
 
   
@@ -441,69 +441,69 @@ toisiin moduuleihin.
 Porttaus
 --------
 
-T‰m‰ osa kuvaa kuinka portata AROS uudenlaiselle raudalle.
+T√§m√§ osa kuvaa kuinka portata AROS uudenlaiselle raudalle.
 
-1. Valitse kuvaava nimi CPU:lle (kuten i386, m68k, hppa, sparc) ja lis‰‰
+1. Valitse kuvaava nimi CPU:lle (kuten i386, m68k, hppa, sparc) ja lis√§√§
    "-emul" (kuten i386-emul) jos porttauksesti tulee ajettavaksi toisen
-   j‰rjestelm‰n alaisuudessa tai "-native" (kuten m68k-native) jos porttaus
-   tulee toimimaan itsen‰isen‰ k‰yttˆj‰rjestelm‰n‰.
+   j√§rjestelm√§n alaisuudessa tai "-native" (kuten m68k-native) jos porttaus
+   tulee toimimaan itsen√§isen√§ k√§ytt√∂j√§rjestelm√§n√§.
 
-2. Valitse tunnistenimi j‰rjestelm‰llesi (kuten sgi, linux, amiga, jne.).
+2. Valitse tunnistenimi j√§rjestelm√§llesi (kuten sgi, linux, amiga, jne.).
 
-3. Muokkaa "configure" skripti‰ tunnistamaan rautasi tyyppi ja s‰‰d‰ muuttujat
-   siten miten j‰rjestelm‰si vaatii.
+3. Muokkaa "configure" skripti√§ tunnistamaan rautasi tyyppi ja s√§√§d√§ muuttujat
+   siten miten j√§rjestelm√§si vaatii.
 
    KERNEL
-    K‰ytt‰m‰si CPU:n tyyppi (ks. 1.)
+    K√§ytt√§m√§si CPU:n tyyppi (ks. 1.)
 
    ARCH
-    J‰rjestelm‰si tunnistenimi (ks. 2.)
+    J√§rjestelm√§si tunnistenimi (ks. 2.)
 
    SYS_CC
-    C-k‰‰nt‰j‰si nimi
+    C-k√§√§nt√§j√§si nimi
 
    COMMON_CFLAGS
-    valinnat jotka annetaan jokaiselle C-k‰‰nt‰j‰n kutsulle (kuten -g -Wall
+    valinnat jotka annetaan jokaiselle C-k√§√§nt√§j√§n kutsulle (kuten -g -Wall
 	-O0 jne.)
 
    ILDFLAGS
-    Liput ja valinnat jotka annetaan k‰‰nt‰j‰lle linkitys vaiheessa jottei se
-	k‰yt‰ standardi kirjastoja tai startup moduuleja (GCC:lle valinnat ovat
-	-nostartfiles -nostdlib -Xlinker -i). T‰t‰ k‰ytet‰‰n luomaan ajettavia AROS
-	ohjelmia. N‰iss‰ ei tule olla yht‰‰n selvitt‰m‰tˆnt‰ symbolia ja kaikkien
-	viittausten tulee olla t‰ytetty.
+    Liput ja valinnat jotka annetaan k√§√§nt√§j√§lle linkitys vaiheessa jottei se
+	k√§yt√§ standardi kirjastoja tai startup moduuleja (GCC:lle valinnat ovat
+	-nostartfiles -nostdlib -Xlinker -i). T√§t√§ k√§ytet√§√§n luomaan ajettavia AROS
+	ohjelmia. N√§iss√§ ei tule olla yht√§√§n selvitt√§m√§t√∂nt√§ symbolia ja kaikkien
+	viittausten tulee olla t√§ytetty.
 
    RANLIB
-    Sis‰lt‰‰ ranlib -ohjelmasi nimen. Jos sellaista ei ole, k‰yt‰ siin‰
-	tapauksessa "true":a (tai jonkin muun komennon nime‰ joka ei v‰lit‰
-	annetuista parametreista eik‰ palauta virhekoodia).
+    Sis√§lt√§√§ ranlib -ohjelmasi nimen. Jos sellaista ei ole, k√§yt√§ siin√§
+	tapauksessa "true":a (tai jonkin muun komennon nime√§ joka ei v√§lit√§
+	annetuista parametreista eik√§ palauta virhekoodia).
 
-4. Aja "make". Sen ajo keskeytyy koska $(KERNEL):i‰ ei viel‰ ole, mutta
-   sit‰ ennen asettaa muutamia t‰rkeit‰ tiedostoja ja hakemistopuita.
+4. Aja "make". Sen ajo keskeytyy koska $(KERNEL):i√§ ei viel√§ ole, mutta
+   sit√§ ennen asettaa muutamia t√§rkeit√§ tiedostoja ja hakemistopuita.
 
 5. Tee kopio i386-emul:ista $(KERNEL):ksi ja muunna kaikki assembler
-   l‰hdekoodit x86:sta CPU:llesi.
+   l√§hdekoodit x86:sta CPU:llesi.
 
-6. Asuta $(KERNEL)/. On suositeltavaa ett‰ teet kopion i386-emul:ista koska se
-   on ajanmukaisin versio kernelist‰.
+6. Asuta $(KERNEL)/. On suositeltavaa ett√§ teet kopion i386-emul:ista koska se
+   on ajanmukaisin versio kernelist√§.
 
-7. Aja "make machine". T‰m‰ k‰‰nt‰‰ ohjelman ja ajaa sen. Tulosta voidaan
-   k‰ytt‰‰ $(KERNEL)/machine.h -tiedoston muokkaamiseen.
+7. Aja "make machine". T√§m√§ k√§√§nt√§√§ ohjelman ja ajaa sen. Tulosta voidaan
+   k√§ytt√§√§ $(KERNEL)/machine.h -tiedoston muokkaamiseen.
 
 8. Aja "make machine.i" $(KERNEL):in alla. Se luo "machine.i" tiedoston jota
-   tarvitaan k‰‰nt‰m‰‰n assembler tiedostot. "machine.i" sis‰lt‰‰ suuren
-   m‰‰r‰n j‰rjestelm‰vakioiden arvoja (funktioiden vektoreiden offsetteja,
-   rakenteiden kenttien offsettej‰ ja j‰rjestelm‰lippuja).
+   tarvitaan k√§√§nt√§m√§√§n assembler tiedostot. "machine.i" sis√§lt√§√§ suuren
+   m√§√§r√§n j√§rjestelm√§vakioiden arvoja (funktioiden vektoreiden offsetteja,
+   rakenteiden kenttien offsettej√§ ja j√§rjestelm√§lippuja).
 
-9. Muokkaa kaikkia #?.s tiedostoja $(KERNEL):iss‰ ja kehit‰ CPU:llesi sopivat
-   konekielikoodit. K‰‰nt‰‰ksesi tiedostot, aja "make".
+9. Muokkaa kaikkia #?.s tiedostoja $(KERNEL):iss√§ ja kehit√§ CPU:llesi sopivat
+   konekielikoodit. K√§√§nt√§√§ksesi tiedostot, aja "make".
 
-10. Siirry p‰‰hakemistoon ja aja "make". Jos virheit‰ esiintyy, korjaa ne ja
-    ja toista kunnes virheit‰ ei en‰‰ esiinny.
+10. Siirry p√§√§hakemistoon ja aja "make". Jos virheit√§ esiintyy, korjaa ne ja
+    ja toista kunnes virheit√§ ei en√§√§ esiinny.
 
-11. Siirry bin/$(ARCH)/AROS hakemistoon ja k‰ynnist‰ "aros". Jos kaikki toimii
-    niin kuin pit‰‰, tulisi eteesi avautua AROS:in n‰yttˆ. Koska ei ole tapaa
-    jolla k‰yttˆj‰rjestelm‰ voidaan sammuttaa "siististi", t‰ytyy sinun
-    k‰ytt‰‰ CTRL-C:t‰ terminaalissa josta AROS:in k‰ynnistit sen toiminnan
-    keskeytt‰‰ksesi (tai klikata p‰‰n‰ytˆn sulkumerkki‰ jos sill‰ sellainen
+11. Siirry bin/$(ARCH)/AROS hakemistoon ja k√§ynnist√§ "aros". Jos kaikki toimii
+    niin kuin pit√§√§, tulisi eteesi avautua AROS:in n√§ytt√∂. Koska ei ole tapaa
+    jolla k√§ytt√∂j√§rjestelm√§ voidaan sammuttaa "siististi", t√§ytyy sinun
+    k√§ytt√§√§ CTRL-C:t√§ terminaalissa josta AROS:in k√§ynnistit sen toiminnan
+    keskeytt√§√§ksesi (tai klikata p√§√§n√§yt√∂n sulkumerkki√§ jos sill√§ sellainen
     on).

@@ -26,21 +26,21 @@ Synopsis
      LOAD/S,SAVE/S,RESET/S
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
      C:SetClock
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
      SetClock se puede usar para:
-         o Cargar la hora desde el reloj respaldado por la baterÌa,
-         o Guardar la hora al reloj respaldado por la baterÌa,
-         o Restablecer el reloj respaldado por la baterÌa.
+         o Cargar la hora desde el reloj respaldado por la bater√≠a,
+         o Guardar la hora al reloj respaldado por la bater√≠a,
+         o Restablecer el reloj respaldado por la bater√≠a.
 
 
 Ejemplo
@@ -50,23 +50,23 @@ Ejemplo
 
      SetClock LOAD
 
-         pondr· la hora del sistema desde el reloj respaldado por la
-         baterÌa. En la mayorÌa de los sistemas esto se har· 
-         autom·ticamente durante el inicio del sistema.
+         pondr√° la hora del sistema desde el reloj respaldado por la
+         bater√≠a. En la mayor√≠a de los sistemas esto se har√° 
+         autom√°ticamente durante el inicio del sistema.
 
      SetClock SAVE
 
-         pondr· la hora del reloj respaldado por la baterÌa de la
+         pondr√° la hora del reloj respaldado por la bater√≠a de la
          hora actual del reloj del sistema.
 
      SetClock RESET
 
-         restablecer· el reloj respaldado por la baterÌa al valor
+         restablecer√° el reloj respaldado por la bater√≠a al valor
          del 1 de enero de 1978 00:00:00. Esto hace si tuvo un
          error y no responde a los comandos normales load y save.
 
 
-Mire tambiÈn
+Mire tambi√©n
 ~~~~~~~~~~~~
 ::
 

@@ -1,4 +1,4 @@
-About(Om) dialogrutan var nyss uppdaterad för att visa ännu mer information,
-inte endast för att vara extremt hänförande. Du kan även se den fina ACSII-logotypen
-av Jostein "Taxi" Klemmetsrud som används nr bilden inte är tillgängligt (Till
-exempel på diskett).
+About(Om) dialogrutan var nyss uppdaterad fÃ¶r att visa Ã¤nnu mer information,
+inte endast fÃ¶r att vara extremt hÃ¤nfÃ¶rande. Du kan Ã¤ven se den fina ACSII-logotypen
+av Jostein "Taxi" Klemmetsrud som anvÃ¤nds nr bilden inte Ã¤r tillgÃ¤ngligt (Till
+exempel pÃ¥ diskett).

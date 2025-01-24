@@ -20,7 +20,7 @@ Synopsis
      FONTNAME/A,FONTSIZE/N/A,SCREEN/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Establece la Fuente del sistema/pantalla por omisi髇.
+     Establece la Fuente del sistema/pantalla por omisi贸n.
      
 
 Entradas
@@ -42,9 +42,9 @@ Entradas
 
 
      FONTNAME  --  el nombre de la fuente
-     FONTSIZE  --  el tama駉 de la fuente
+     FONTSIZE  --  el tama帽o de la fuente
      SCREEN    --  si se especifica establece lafuente de pantalla
-                   por omisi髇, de otro modo, establece la misma
+                   por omisi贸n, de otro modo, establece la misma
                    del sistema.
 
 
@@ -60,6 +60,6 @@ Notas
 ~~~~~
 ::
 
-     La fuente del sistema por omisi髇 debe ser monoespaciada
+     La fuente del sistema por omisi贸n debe ser monoespaciada
      (no proporcional).
 

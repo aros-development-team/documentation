@@ -6,7 +6,7 @@
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-Het AROS Research Operating System is een lichtgewicht, efficiënt en
+Het AROS Research Operating System is een lichtgewicht, efficiÃ«nt en
 flexibel desktop besturingssysteem, ontworpen om u te helpen het meeste
 van u computer te maken. Het is een onafhankelijk, overzetbaar en gratis
 project, gericht om compatibel te zijn met AmigaOS op het API niveau

@@ -1,9 +1,9 @@
 =============================
-Руководство пользователя AROS 
+Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ AROS 
 =============================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright Љ 1995-2006, The AROS Development Team
+:Copyright: Copyright Р‰ 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished; only converted to reST. Needs heavy updating.
@@ -17,7 +17,7 @@
 .. Contents::
 
 
-Введение
+Р’РІРµРґРµРЅРёРµ
 ========
 
 This is the Amiga Research Operating System User's Guide. It is meant to get 
@@ -27,7 +27,7 @@ everything in depth, but in such a way that you don't need to learn what you
 don't *want* to learn.
 
 
-Кому следует читать это руководство
+РљРѕРјСѓ СЃР»РµРґСѓРµС‚ С‡РёС‚Р°С‚СЊ СЌС‚Рѕ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ
 -----------------------------------
 
 This guide will help you getting used with AROS. It is written for everybody 
@@ -41,7 +41,7 @@ boy. If you thought AROS was a Grapefruit-Machine or a Free Money Project, you
 are entirely in the wrong place.
 
 
-Как следует читать это руководство
+РљР°Рє СЃР»РµРґСѓРµС‚ С‡РёС‚Р°С‚СЊ СЌС‚Рѕ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ
 ----------------------------------
 
 This guide is ordered from "simple" to "advanced". You can start 
@@ -64,10 +64,10 @@ older users), although we do have a Workbench, you can not navigate disks with
 it yet. Old Amiga programmers should read "differences with Amiga programming" 
 from chapter 4 to get an overview of the differences. 
 
-Работа в AROS
+Р Р°Р±РѕС‚Р° РІ AROS
 =============
 
-Операционная система в операционной системе ?
+РћРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° РІ РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ СЃРёСЃС‚РµРјРµ ?
 ---------------------------------------------
 
 AROS is originally developed on Linux_ running on an Intel-based

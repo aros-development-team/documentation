@@ -1,5 +1,5 @@
 ===============================
-AROS:in k‰‰nt‰minen ajettavaksi
+AROS:in k√§√§nt√§minen ajettavaksi
 ===============================
 
 :Authors:   + Flavio Stanchina
@@ -13,11 +13,11 @@ AROS:in k‰‰nt‰minen ajettavaksi
 :Date:      $Date$
 :Status:    Done.
 :Abstract:
-  T‰m‰ dokumentti selvent‰‰ kuinka AROS k‰‰nnet‰‰n ajettavaan muotoon. AROS:in
-  kehitys ei ole viel‰ t‰ll‰ hetkell‰ toimintakuntoinen puhtaasti natiivin
-  AROS:in alaisuudessa, eli et voi k‰‰nt‰‰ AROS:ia itse‰‰n AROS:in
-  alaisuudessa. K‰‰nt‰‰ksesi ja kehitt‰‰ksesi AROS:ille, tarvitset Linux tai
-  FreeBSD/NetBSD j‰rjestelm‰n.
+  T√§m√§ dokumentti selvent√§√§ kuinka AROS k√§√§nnet√§√§n ajettavaan muotoon. AROS:in
+  kehitys ei ole viel√§ t√§ll√§ hetkell√§ toimintakuntoinen puhtaasti natiivin
+  AROS:in alaisuudessa, eli et voi k√§√§nt√§√§ AROS:ia itse√§√§n AROS:in
+  alaisuudessa. K√§√§nt√§√§ksesi ja kehitt√§√§ksesi AROS:ille, tarvitset Linux tai
+  FreeBSD/NetBSD j√§rjestelm√§n.
 
 
 .. Contents::
@@ -26,9 +26,9 @@ AROS:in k‰‰nt‰minen ajettavaksi
 Vaatimukset
 ===========
 
-Tarvitset seuraavan litanian ohjelmia AROS:in k‰‰ntˆˆn:
+Tarvitset seuraavan litanian ohjelmia AROS:in k√§√§nt√∂√∂n:
 
-+ GCC 3.2.2+ (4.0.0 kˆhii pahasti; viimeisin toimivaksi testattu on 3.4.x)
++ GCC 3.2.2+ (4.0.0 k√∂hii pahasti; viimeisin toimivaksi testattu on 3.4.x)
 + GNU Binutils
 + GNU Make
 + GNU AWK (GAWK) 3.1.2+ - muutkin awk:it saattavat sopia
@@ -39,20 +39,20 @@ Tarvitset seuraavan litanian ohjelmia AROS:in k‰‰ntˆˆn:
 + Automake
 + Yleiset komennot kuten cp, mv, sort, uniq, head, ...
 
-Jos tahdot k‰‰nt‰‰ is‰nnˆidyn version i386-linux tai i386-freebsd:st‰,
-tarvitset viel‰ seuraavat:
+Jos tahdot k√§√§nt√§√§ is√§nn√∂idyn version i386-linux tai i386-freebsd:st√§,
+tarvitset viel√§ seuraavat:
 
 + X11 development otsikot ja kirjastot
 
 
-L‰hdekoodi
+L√§hdekoodi
 ==========
 
-Voit ladata AROS:in l‰hdekoodin joko `lataussivulta`__ tai Subversion:ia
-k‰ytt‰en (joka tosin vaatii ett‰ `hankit k‰yttˆoikeuden`__). Ensin mainitussa
-tapauksessa ``source`` paketin hankkiminen riitt‰‰ (ellet tahdo k‰‰nt‰‰ myˆs
-"contrib" ohjelmia). J‰lkimm‰isess‰ tapauksessa sinun tulee kuitata ulos
-(checkout) ``AROS`` moduuli sek‰ ``necessary`` moduuli jos tahdot k‰‰nt‰‰
+Voit ladata AROS:in l√§hdekoodin joko `lataussivulta`__ tai Subversion:ia
+k√§ytt√§en (joka tosin vaatii ett√§ `hankit k√§ytt√∂oikeuden`__). Ensin mainitussa
+tapauksessa ``source`` paketin hankkiminen riitt√§√§ (ellet tahdo k√§√§nt√§√§ my√∂s
+"contrib" ohjelmia). J√§lkimm√§isess√§ tapauksessa sinun tulee kuitata ulos
+(checkout) ``AROS`` moduuli sek√§ ``necessary`` moduuli jos tahdot k√§√§nt√§√§
 i386-pc portin.
 
 __ ../../download
@@ -65,89 +65,89 @@ Rakentaminen
 Konfigurointi
 -------------
 
-Kaikkein ensimm‰isen‰ sinun tulee ajaa ``configure`` skripti joka sijaitsee
-AROS:in l‰hdekoodin juurihakemistossa::
+Kaikkein ensimm√§isen√§ sinun tulee ajaa ``configure`` skripti joka sijaitsee
+AROS:in l√§hdekoodin juurihakemistossa::
 
     > cd AROS
     > ./configure
 
-Voit m‰‰ritt‰‰ useita eri optioita configure:lle. Seuraavat optiot ovat
-kaikkien kohteiden k‰ytett‰viss‰:
+Voit m√§√§ritt√§√§ useita eri optioita configure:lle. Seuraavat optiot ovat
+kaikkien kohteiden k√§ytett√§viss√§:
 
 ``--enable-debug=LIST [default: none]``
-  Asettaa eri tyyppisi‰ debug optioita k‰yttˆˆn. Pilkkuja ja v‰lej‰ (v‰lilyˆnti
-  taikka tabulaattori, siin‰ tapauksessa ett‰ optiot ymp‰rˆid‰‰n sitaatein)
-  voidaan k‰ytt‰‰ erottimina eri tyyppien v‰lill‰. Jos mit‰‰n tyyppej‰ ei
-  anneta, otetaan oletusarvoisesti k‰yttˆˆn ``all``. Jos ``--enable-debug``
-  j‰tet‰‰n kokonaan pois, k‰ytet‰‰n oletusarvoisesti moodia ``none``. K‰ytˆss‰
+  Asettaa eri tyyppisi√§ debug optioita k√§ytt√∂√∂n. Pilkkuja ja v√§lej√§ (v√§lily√∂nti
+  taikka tabulaattori, siin√§ tapauksessa ett√§ optiot ymp√§r√∂id√§√§n sitaatein)
+  voidaan k√§ytt√§√§ erottimina eri tyyppien v√§lill√§. Jos mit√§√§n tyyppej√§ ei
+  anneta, otetaan oletusarvoisesti k√§ytt√∂√∂n ``all``. Jos ``--enable-debug``
+  j√§tet√§√§n kokonaan pois, k√§ytet√§√§n oletusarvoisesti moodia ``none``. K√§yt√∂ss√§
   olevat tyypit:
     
   ``none``
-     Poistaa debuggauksen k‰ytˆst‰ kokonaan.
+     Poistaa debuggauksen k√§yt√∂st√§ kokonaan.
   
   ``all``
-     Kytkee kaikki alla mainitut tyypit k‰yttˆˆn.
+     Kytkee kaikki alla mainitut tyypit k√§ytt√∂√∂n.
   
   ``stack``
-     Kytkee pinon (stack) debuggauksen k‰yttˆˆn.
+     Kytkee pinon (stack) debuggauksen k√§ytt√∂√∂n.
   
   ``mungwall``
-     Kytkee nk. mungwall muistin debuggauksen k‰yttˆˆn.
+     Kytkee nk. mungwall muistin debuggauksen k√§ytt√∂√∂n.
   
   ``modules``
-     Kytkee moduulien debuggauksen k‰yttˆˆn.
+     Kytkee moduulien debuggauksen k√§ytt√∂√∂n.
 
 
-Is‰nnˆity AROS/i386-linux taikka AROS/i386-freebsd
+Is√§nn√∂ity AROS/i386-linux taikka AROS/i386-freebsd
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-Sinun ei tarvitse m‰‰ritt‰‰ ``--target`` optiota n‰ille kohteille. Seuraavat
-optiot ovat k‰ytett‰viss‰ is‰nnˆidyille k‰‰nnˆksille:
+Sinun ei tarvitse m√§√§ritt√§√§ ``--target`` optiota n√§ille kohteille. Seuraavat
+optiot ovat k√§ytett√§viss√§ is√§nn√∂idyille k√§√§nn√∂ksille:
 
 ``--with-resolution=WIDTHxHEIGHTxDEPTH [default: 800x600x8]``
-    Asettaa oletus resoluution ja v‰risyvyyden jota AROS k‰ytt‰‰.
+    Asettaa oletus resoluution ja v√§risyvyyden jota AROS k√§ytt√§√§.
     
 ``--enable-xshm-extension [default: enabled]``
-    Ottaa k‰yttˆˆn X11 MIT-SHM laajennuksen. Ollessaan k‰ytˆss‰ t‰m‰ antaa
-	huomattavasti enemm‰n suorituskyky‰, mutta ei toimi kovinkaan hyvin jos
-	olet k‰ytt‰m‰ss‰ et‰n‰yttˆ‰/-p‰‰tett‰.
+    Ottaa k√§ytt√∂√∂n X11 MIT-SHM laajennuksen. Ollessaan k√§yt√∂ss√§ t√§m√§ antaa
+	huomattavasti enemm√§n suorituskyky√§, mutta ei toimi kovinkaan hyvin jos
+	olet k√§ytt√§m√§ss√§ et√§n√§ytt√∂√§/-p√§√§tett√§.
 
-Et voi ristiin k‰‰nt‰‰ n‰it‰ kohteita.
+Et voi ristiin k√§√§nt√§√§ n√§it√§ kohteita.
 
 
 Natiivi AROS/i386-pc
 """"""""""""""""""""
 
-K‰‰nt‰‰ksesi i386-pc portin, t‰ytyy sinun antaa ``--target=pc-i386``
-configure:lle. i386-pc:lle spesifisi‰ optioita ovat:
+K√§√§nt√§√§ksesi i386-pc portin, t√§ytyy sinun antaa ``--target=pc-i386``
+configure:lle. i386-pc:lle spesifisi√§ optioita ovat:
 
 ``--with-serial-debug=N [default: disabled]``
-    Ottaa k‰yttˆˆn sarjaportin kautta toimivan debuggauksen, l‰hett‰en
+    Ottaa k√§ytt√∂√∂n sarjaportin kautta toimivan debuggauksen, l√§hett√§en
 	tulosteet porttiin ``N``.
 
-Et voi ristiin k‰‰nt‰‰ t‰t‰ kohdetta.
+Et voi ristiin k√§√§nt√§√§ t√§t√§ kohdetta.
 
 
-K‰‰nnˆs
+K√§√§nn√∂s
 -------
 
-Aloittaaksesi k‰‰nt‰misen, aja::
+Aloittaaksesi k√§√§nt√§misen, aja::
 
     > make
 
-Jos k‰yt‰t FreeBSD:t‰ tai jotain muuta j‰rjestelm‰‰ joka ei k‰yt‰ GNU Make:a
-j‰rjestelm‰n make komentona, siin‰ tapauksessa tulee sinun k‰ytt‰‰ GNU Make:n
-komentoa yll‰mainitun sijaan. Esimerkiksi FreeBSD:ss‰ sinun tulee asentaa GNU
+Jos k√§yt√§t FreeBSD:t√§ tai jotain muuta j√§rjestelm√§√§ joka ei k√§yt√§ GNU Make:a
+j√§rjestelm√§n make komentona, siin√§ tapauksessa tulee sinun k√§ytt√§√§ GNU Make:n
+komentoa yll√§mainitun sijaan. Esimerkiksi FreeBSD:ss√§ sinun tulee asentaa GNU
 Make ja ajaa komento::
 
     > gmake
 
 
-Is‰nnˆity AROS/i386-linux tai AROS/i386-freebsd
+Is√§nn√∂ity AROS/i386-linux tai AROS/i386-freebsd
 """""""""""""""""""""""""""""""""""""""""""""""
 
-Jos olet rakentamassa is‰nnˆity‰ i386-linux tai i386-freebsd k‰‰nnˆst‰, tulisi
-sinun ajaa seuraava jotta saat asianmukaisen n‰pp‰imistˆtuen k‰yttˆˆn::
+Jos olet rakentamassa is√§nn√∂ity√§ i386-linux tai i386-freebsd k√§√§nn√∂st√§, tulisi
+sinun ajaa seuraava jotta saat asianmukaisen n√§pp√§imist√∂tuen k√§ytt√∂√∂n::
 
     > make default-x11keymaptable
 
@@ -155,33 +155,33 @@ sinun ajaa seuraava jotta saat asianmukaisen n‰pp‰imistˆtuen k‰yttˆˆn::
 Natiivi AROS/i386-pc
 """"""""""""""""""""
 
-Jos olet rakentamassa natiivia i386-pc k‰‰nnˆst‰, on k‰ynnistysdisketin
-image ``bin/pc-i386/gen/rom/boot/aros.bin`` kunhan k‰‰nnˆs on valmis. Sen
-lis‰ksi voit tehd‰ k‰ynnistys-CD:n ISO imagen ajamalla::
+Jos olet rakentamassa natiivia i386-pc k√§√§nn√∂st√§, on k√§ynnistysdisketin
+image ``bin/pc-i386/gen/rom/boot/aros.bin`` kunhan k√§√§nn√∂s on valmis. Sen
+lis√§ksi voit tehd√§ k√§ynnistys-CD:n ISO imagen ajamalla::
 
     > make bootiso-pc-i386
 
-ISO image lˆytyy ``distfiles/aros-pc-i386.iso``:na.
+ISO image l√∂ytyy ``distfiles/aros-pc-i386.iso``:na.
 
 
 Liitteet
 ========
 
-Useiden kohteiden rakentaminen samasta l‰hdekoodista
+Useiden kohteiden rakentaminen samasta l√§hdekoodista
 ----------------------------------------------------
 
-Jos aiot k‰‰nt‰‰ useita eri kohteita samasta hakemistopuusta niin t‰ytyy sinun
-konfiguroida jokainen k‰‰nnˆsmalli erikseen. Voit lis‰t‰ kohteita milloin
-tahansa. Viimeinen konfiguroitavaksi m‰‰ritetty kohde tulee peruskohteeksi.
+Jos aiot k√§√§nt√§√§ useita eri kohteita samasta hakemistopuusta niin t√§ytyy sinun
+konfiguroida jokainen k√§√§nn√∂smalli erikseen. Voit lis√§t√§ kohteita milloin
+tahansa. Viimeinen konfiguroitavaksi m√§√§ritetty kohde tulee peruskohteeksi.
 
-Valitaksesi jonkin m‰‰r‰tyn kohteen k‰‰nnett‰v‰ksi, aja make n‰in::
+Valitaksesi jonkin m√§√§r√§tyn kohteen k√§√§nnett√§v√§ksi, aja make n√§in::
 
     > AROS_TARGET_ARCH=$ARCH AROS_TARGET_CPU=$CPU make
 
-Miss‰ ``$ARCH`` on haluamasi arkkitehtuuri ja ``$CPU`` sen prosessorin tyyppi.
-Esim. k‰‰nt‰‰ksesi AROS/i386-pc version, aja::
+Miss√§ ``$ARCH`` on haluamasi arkkitehtuuri ja ``$CPU`` sen prosessorin tyyppi.
+Esim. k√§√§nt√§√§ksesi AROS/i386-pc version, aja::
 
     > AROS_TARGET_ARCH=pc AROS_TARGET_CPU=i386 make
 
-Jos k‰‰nn‰t useita versioita jotka kaikki k‰ytt‰v‰t samaa CPU:ta, ei sinun
-tarvitse m‰‰ritell‰ muita kuin ``AROS_TARGET_ARCH`` koska CPU pysyy samana.
+Jos k√§√§nn√§t useita versioita jotka kaikki k√§ytt√§v√§t samaa CPU:ta, ei sinun
+tarvitse m√§√§ritell√§ muita kuin ``AROS_TARGET_ARCH`` koska CPU pysyy samana.

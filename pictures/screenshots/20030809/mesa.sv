@@ -1,1 +1,1 @@
-Några enkla demos av den tidiga (och i utveckling) Mesa-portningen.
+NÃ¥gra enkla demos av den tidiga (och i utveckling) Mesa-portningen.

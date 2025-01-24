@@ -1,2 +1,2 @@
-Fabio Alemagna en el jardÌn de su casa, sac·ndose una fotografÌa por diversiÛn 
-(aunque no parece estar disfrut·ndolo mucho...) :)
+Fabio Alemagna en el jard√≠n de su casa, sac√°ndose una fotograf√≠a por diversi√≥n 
+(aunque no parece estar disfrut√°ndolo mucho...) :)

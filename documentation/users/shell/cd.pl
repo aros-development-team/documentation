@@ -9,7 +9,7 @@
 CD
 ==
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	DIR
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -38,6 +38,6 @@ Parametry
 ::
 
 
-     DIR -- ∂cieøka zmiany katalogu
+     DIR -- ≈õcie≈ºka zmiany katalogu
 
 

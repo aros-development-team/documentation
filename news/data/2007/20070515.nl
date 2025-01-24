@@ -8,7 +8,7 @@ Status Update
 Nieuwe naam, nieuwe site
 ------------------------
 
-Welkom op de nieuwe AROS.org website! AROS heeft zowel een nieuwe officiële
+Welkom op de nieuwe AROS.org website! AROS heeft zowel een nieuwe officiÃ«le
 naam alsook een nieuw gezicht op het Internet. Vanaf nu staat AROS simpelweg
 voor "AROS Research Operating System", wat vrij vertaald naar "AROS onderzoek besturingssysteem".
 Mocht u een fansite, mailing lijst of zoiets dergerlijks over AROS onderhouden, 

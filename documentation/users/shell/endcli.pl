@@ -9,7 +9,7 @@
 EndCli
 ======
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 

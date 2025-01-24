@@ -5,31 +5,31 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   08.09.2007
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-Michal Schulz pracuje na nízkoúrovòové komponentì exec.library
-pro x86-64 verzi AROSu - plánovaè a ovladaèe pøeru¹ení.
-Hodnì byl zmìnìn kód bootstrapu a podaøilo se zkompilovat nìkolik
-knihoven (také díky nadlidskému vıkonu Henninga Kiela, kterı opravil
-zdrojové kódy pro 64 bitovou kompabilitu) do samostatnıch modulù. Jinımi slovy
-64 bitové jádro je témìø pøipraveno pro bootování, multitasking a inicializaci
+Michal Schulz pracuje na nÃ­zkoÃºrovÅˆovÃ© komponentÄ› exec.library
+pro x86-64 verzi AROSu - plÃ¡novaÄ a ovladaÄe pÅ™eruÅ¡enÃ­.
+HodnÄ› byl zmÄ›nÄ›n kÃ³d bootstrapu a podaÅ™ilo se zkompilovat nÄ›kolik
+knihoven (takÃ© dÃ­ky nadlidskÃ©mu vÃ½konu Henninga Kiela, kterÃ½ opravil
+zdrojovÃ© kÃ³dy pro 64 bitovou kompabilitu) do samostatnÃ½ch modulÅ¯. JinÃ½mi slovy
+64 bitovÃ© jÃ¡dro je tÃ©mÄ›Å™ pÅ™ipraveno pro bootovÃ¡nÃ­, multitasking a inicializaci
 cesty autoinit exec.library.
 
-Pokud jsi instaloval star¹í noèní sestavení AROSu, pøejdi prosím
-do download sekce a stáhni si nové. Bylo provedeno hodnì dùle¾itıch
-oprav chyb a také nìjaká kosmetická vylep¹ení.
-Po skonèení na¹í soutì¾e máme dva "oficiální" wallpapery, které jsou instalovány
-ve vıchozím nastavení: pro pracovní plochu je to `"AROS rose" od d980`__ a
+Pokud jsi instaloval starÅ¡Ã­ noÄnÃ­ sestavenÃ­ AROSu, pÅ™ejdi prosÃ­m
+do download sekce a stÃ¡hni si novÃ©. Bylo provedeno hodnÄ› dÅ¯leÅ¾itÃ½ch
+oprav chyb a takÃ© nÄ›jakÃ¡ kosmetickÃ¡ vylepÅ¡enÃ­.
+Po skonÄenÃ­ naÅ¡Ã­ soutÄ›Å¾e mÃ¡me dva "oficiÃ¡lnÃ­" wallpapery, kterÃ© jsou instalovÃ¡ny
+ve vÃ½chozÃ­m nastavenÃ­: pro pracovnÃ­ plochu je to `"AROS rose" od d980`__ a
 pro okna `"AROS"`__ od Wespera.
 
-Pokud plánuje¹ strávit pár dní v Tuscany (Itálie) bìhem 22. a 23.
-záøí, nezapomeò nav¹tívit Empoli. V sobotu 22. v 16 hodin bude AROS
-presentován na `Pianeta Amiga 2007`__.
+Pokud plÃ¡nujeÅ¡ strÃ¡vit pÃ¡r dnÃ­ v Tuscany (ItÃ¡lie) bÄ›hem 22. a 23.
+zÃ¡Å™Ã­, nezapomeÅˆ navÅ¡tÃ­vit Empoli. V sobotu 22. v 16 hodin bude AROS
+presentovÃ¡n na `Pianeta Amiga 2007`__.
 
-Pro AROS bylo naportováno nìkolik dal¹ích u¾iteènıch aplikací. Nedávno
-to byla relaèní databáze MUIbase a editor modulù formátu AHX
-`Hively Tracker`__. Obojí mù¾e¹ jako obvykle najít v `Archivu`__.
+Pro AROS bylo naportovÃ¡no nÄ›kolik dalÅ¡Ã­ch uÅ¾iteÄnÃ½ch aplikacÃ­. NedÃ¡vno
+to byla relaÄnÃ­ databÃ¡ze MUIbase a editor modulÅ¯ formÃ¡tu AHX
+`Hively Tracker`__. ObojÃ­ mÅ¯Å¾eÅ¡ jako obvykle najÃ­t v `Archivu`__.
 
 
 __ http://ist-krieg.de/gallery/v/kyynel/projekte/aroswallpapercompetition/preselection/d980-04_aros-rose.jpg.html

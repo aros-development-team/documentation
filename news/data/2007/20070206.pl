@@ -5,46 +5,46 @@ Status Update
 :Autor:   Paolo Besser
 :Data:     2007-02-06
 
-Rozpocz±³ siê nowy rok rozwoju AROS-a i prawdopodobnie nie móg³ siê rozpocz±æ 
-lepiej. S± dwie du¿e nowo¶ci dla wszystkich u¿ytkowników AROS-a.
+RozpoczÄ…Å‚ siÄ™ nowy rok rozwoju AROS-a i prawdopodobnie nie mÃ³gÅ‚ siÄ™ rozpoczÄ…Ä‡ 
+lepiej. SÄ… dwie duÅ¼e nowoÅ›ci dla wszystkich uÅ¼ytkownikÃ³w AROS-a.
 
-Pierwsza, ¿e dzia³a funkcja drag & drop! To oznacza, ¿e mo¿na u¿yæ Wanderera
-zarówno do kopiowania plików z jednego katalogu do drugiego jak i otwieraæ pliki  
-upuszczaj±c je nad ikon± programu. Ten "cud" stworzyli Christoph Szczecina 
-i Darius Brewka. Oto `krótki film`__ pokazuj±cy dzia³anie drag & drop w AROS-ie!
+Pierwsza, Å¼e dziaÅ‚a funkcja drag & drop! To oznacza, Å¼e moÅ¼na uÅ¼yÄ‡ Wanderera
+zarÃ³wno do kopiowania plikÃ³w z jednego katalogu do drugiego jak i otwieraÄ‡ pliki  
+upuszczajÄ…c je nad ikonÄ… programu. Ten "cud" stworzyli Christoph Szczecina 
+i Darius Brewka. Oto `krÃ³tki film`__ pokazujÄ…cy dziaÅ‚anie drag & drop w AROS-ie!
 
-Problemy ze stabilno¶ci± wersji natywnej s± aktualnie ¶ledzone i powinny 
-byæ rozwi±zane w najbli¿szych dniach. 
+Problemy ze stabilnoÅ›ciÄ… wersji natywnej sÄ… aktualnie Å›ledzone i powinny 
+byÄ‡ rozwiÄ…zane w najbliÅ¼szych dniach. 
 
-Robert Norris ukoñczy³ pracê na sieci± w wersji linux hosted. 
-Interfejs Tap pracuje i mo¿na go znale¼æ w ostatnich nightly builds.
+Robert Norris ukoÅ„czyÅ‚ pracÄ™ na sieciÄ… w wersji linux hosted. 
+Interfejs Tap pracuje i moÅ¼na go znaleÅºÄ‡ w ostatnich nightly builds.
 
-William Ouwehand stworzy³ `holendersk± wersjê Aros.org`__.
-Zosta³a te¿ dodana `Instrukcja kompilacji AROS-a`__ dla Ubuntu Linux, 
-któr± przygotowa³ Christoph Szczecina.
+William Ouwehand stworzyÅ‚ `holenderskÄ… wersjÄ™ Aros.org`__.
+ZostaÅ‚a teÅ¼ dodana `Instrukcja kompilacji AROS-a`__ dla Ubuntu Linux, 
+ktÃ³rÄ… przygotowaÅ‚ Christoph Szczecina.
 
-Nic Andrews przygotowa³ inicjaln± wersjê driverów dla kart sieciowych
-RTL 8139 i VIA Rhine. Nadal s± w trakcie tworzenia, lecz prawdopodobnie
-ich ukoñczenie nie zajmie du¿o czasu. TeamAROS utworzy³ bounty dla sterownika
+Nic Andrews przygotowaÅ‚ inicjalnÄ… wersjÄ™ driverÃ³w dla kart sieciowych
+RTL 8139 i VIA Rhine. Nadal sÄ… w trakcie tworzenia, lecz prawdopodobnie
+ich ukoÅ„czenie nie zajmie duÅ¼o czasu. TeamAROS utworzyÅ‚ bounty dla sterownika
 VIA Rhine.
 
 Informacje o nowych archiwach
 -----------------------------
 
-Z wa¿niejszych Ostatnio dodanych archiwów nale¿y wymieniæ: 
+Z waÅ¼niejszych Ostatnio dodanych archiwÃ³w naleÅ¼y wymieniÄ‡: 
 
-- `Lunapaint`__ jest coraz lepszy! Dostêpna jest wersja 0.3.1, 
-  zawieraj±ca kilka nowych narzêdzi i nowych cech.
+- `Lunapaint`__ jest coraz lepszy! DostÄ™pna jest wersja 0.3.1, 
+  zawierajÄ…ca kilka nowych narzÄ™dzi i nowych cech.
 
-- `Martin's Server Suite`__, port dla AROS-a i innych systemów operacyjnych
-  serwerów Snug HTTP server i Yet Another FTP Server.
-  Mo¿esz obejrzeæ `zrzut ekranu`__ pokazuj±cy serwery pracuj±ce w systemie AROS. 
+- `Martin's Server Suite`__, port dla AROS-a i innych systemÃ³w operacyjnych
+  serwerÃ³w Snug HTTP server i Yet Another FTP Server.
+  MoÅ¼esz obejrzeÄ‡ `zrzut ekranu`__ pokazujÄ…cy serwery pracujÄ…ce w systemie AROS. 
 
-- `Jhead`__ jest komend± do obróbki tagów Exif, "niegraficznej" czê¶ci plików JPEG,
-  które tworzy wiêkszo¶æ aparatów cyfrowych.
+- `Jhead`__ jest komendÄ… do obrÃ³bki tagÃ³w Exif, "niegraficznej" czÄ™Å›ci plikÃ³w JPEG,
+  ktÃ³re tworzy wiÄ™kszoÅ›Ä‡ aparatÃ³w cyfrowych.
 
-- `Potrace`__ to narzêdzie do tracingu obrazów rastrowych, czyli transformacji 
-  rastrów do wyg³adzonych obrazów wektorowych. 
+- `Potrace`__ to narzÄ™dzie do tracingu obrazÃ³w rastrowych, czyli transformacji 
+  rastrÃ³w do wygÅ‚adzonych obrazÃ³w wektorowych. 
 
 __ http://archives.aros-exec.org/share/video/aros-dnd.avi
 __ http://www.aros.org/nl

@@ -2,14 +2,14 @@
 Statusuppdatering
 =================
 
-:Författare:   Paolo Besser
+:FÃ¶rfattare:   Paolo Besser
 :Datum:     2006-06-20
 
-Tack vare Matthias Rustlers så finns aros.org nu också på `Tyska`__, vilken
-du hittar på www.aros.org/de/.
-Men du behöver inte komma ihåg varje språks hemsida eftersom
-vi har lagt till en internationell meny på vänstersidan. Bara välj ditt
-favoritspråk och skapa ett bokmärke för bekväm åtkomst.
+Tack vare Matthias Rustlers sÃ¥ finns aros.org nu ocksÃ¥ pÃ¥ `Tyska`__, vilken
+du hittar pÃ¥ www.aros.org/de/.
+Men du behÃ¶ver inte komma ihÃ¥g varje sprÃ¥ks hemsida eftersom
+vi har lagt till en internationell meny pÃ¥ vÃ¤nstersidan. Bara vÃ¤lj ditt
+favoritsprÃ¥k och skapa ett bokmÃ¤rke fÃ¶r bekvÃ¤m Ã¥tkomst.
 
 __ http://www.aros.org/de/index.php
 

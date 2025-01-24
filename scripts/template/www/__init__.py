@@ -19,7 +19,7 @@ def makeTemplates():
     def makeTemplate( language, dst ):
         # Setup translation dictionaries
         config = ConfigParser()
-        with codecs.open(os.path.join( LANG_DIR, language ), 'r', encoding='iso-8859-15') as configfile:
+        with codecs.open(os.path.join( LANG_DIR, language ), 'r', encoding='utf-8') as configfile:
             config.read_file(configfile)
 
         charset = config.get( 'meta', 'charset' )

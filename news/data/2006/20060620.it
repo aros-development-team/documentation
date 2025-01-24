@@ -7,7 +7,7 @@ Status update
 
 Grazie a Matthias Rustler, prosegue la traduzione di aros.org `in tedesco`__, 
 disponibile all'url www.aros.org/index.de.php. Ma non serve ricordare gli 
-indirizzi di tutte le home page localizzate: per la vostra comodità, abbiamo 
+indirizzi di tutte le home page localizzate: per la vostra comoditÃ , abbiamo 
 inserito un simpatico menu internazionale a sinistra. Fate click sulla lingua 
 che preferite e create un segnalibro sul vostro browser!
 
@@ -18,10 +18,10 @@ __ http://www.aros.org/de/index.php
 Nuova snapshot PPC!
 -------------------
 
-C'è una nuova snapshot disponibile per la versione hsoted PPC di AROS. 
+C'Ã¨ una nuova snapshot disponibile per la versione hsoted PPC di AROS. 
 Potete scaricarla dal `sito di Sourceforge`__. Ecco le note di pubblicazione: 
-"Questa versione ha bisogno di glibc 2.3.2 o più recente. Dovete assegnare 
-ad AROS più RAM rispetto ai 16 MB di default (che lascia circa 4 MB per le 
+"Questa versione ha bisogno di glibc 2.3.2 o piÃ¹ recente. Dovete assegnare 
+ad AROS piÃ¹ RAM rispetto ai 16 MB di default (che lascia circa 4 MB per le 
 applicazioni). Lanciate AROS usando il comando: ./aros -m64. In questo modo 
 allocherete 64 MB. Come per tutte le altre versioni hosted sotto X11 dovrete 
 aggiungere Option "BackingStore" alla sezione Device di xorg.conf"

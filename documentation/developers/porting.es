@@ -3,7 +3,7 @@ PORTING GUIDE
 =============
 
 :Authors:   Johann Samuellson, Matthias Rustler
-:Copyright: Copyright © 2006, The AROS Development Team
+:Copyright: Copyright ¬© 2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Beta
@@ -13,24 +13,24 @@ PORTING GUIDE
 .. Contents::
 
 
-IntroductiÛn
+Introducti√≥n
 ============
 
-Esta guÌa es sobre la transferencia del software que viene con guionees 
+Esta gu√≠a es sobre la transferencia del software que viene con guionees 
 configure o make a AROS.
-Esto es verdad para la mayorÌa del software de fuente abierta del mundo Linux.
+Esto es verdad para la mayor√≠a del software de fuente abierta del mundo Linux.
 Se basa en un `documento`__ escrito por Johan Samuellson para el AmigaOS4.
 
 __ http://www.os4depot.net/index.php?function=showfile&file=document/manual/spots-pfd.lha
 
-øQuÈ transferir?
+¬øQu√© transferir?
 ----------------
 
-* El lenguaje con mejor soporte es C. A C++ le faltan algunas caracterÌsticas.
+* El lenguaje con mejor soporte es C. A C++ le faltan algunas caracter√≠sticas.
 
-* Mira quÈ paquetes adicionales se necesitan para el software que quieres
+* Mira qu√© paquetes adicionales se necesitan para el software que quieres
   transferir. No puedes simplemente transferir cuando se necesitan bibliotecas
-  de GUI como GTK o QT. ⁄nicamente se puede transferir de modo directo el
+  de GUI como GTK o QT. √önicamente se puede transferir de modo directo el
   software que se ejecuta en modo consola.
 
 * Cuando quieras trasferir juegos, mira si usan la `libSDL`__. Evita el
@@ -41,9 +41,9 @@ __ http://www.libsdl.org
 Conseguir el SDK reciente
 -------------------------
 
-La manera m·s f·cil de transferir para AROS es desde una caja Linux,
+La manera m√°s f√°cil de transferir para AROS es desde una caja Linux,
 porque en general tiene todas las herramientas necesarias. Mira en la
-`GuÌa de Desarrollo`__ para la informaciÛn sobre la instalaciÛn del SDK.
+`Gu√≠a de Desarrollo`__ para la informaci√≥n sobre la instalaci√≥n del SDK.
 
 __ app-dev/introduction.php#compiling-on-linux-with-gcc
 
@@ -51,46 +51,46 @@ __ app-dev/introduction.php#compiling-on-linux-with-gcc
 Los fundamentos
 ---------------
 
-Lo primero que debes hacer es revisar cÛmo compilar tu proyecto.
-Si hay un archivo llamado *configure* en el directorio raÌz del archive,
-eso significa que tendr·s que configurarlo para tu plataforma. Mira en la
-descripciÛn del siguiente capÌtulo sobre cÛmo hacer eso.
+Lo primero que debes hacer es revisar c√≥mo compilar tu proyecto.
+Si hay un archivo llamado *configure* en el directorio ra√≠z del archive,
+eso significa que tendr√°s que configurarlo para tu plataforma. Mira en la
+descripci√≥n del siguiente cap√≠tulo sobre c√≥mo hacer eso.
 
-Luego de que el proyecto estÈ apropiadamente configurado es el momento
+Luego de que el proyecto est√© apropiadamente configurado es el momento
 de hacer rodar al compilador.
 Empieza a compilar tu proyecto tipeando ``make``.
 
 Empero, si no hay un archivo llamado *configure*, busca uno llamado
-*Makefile*. EdÌtalo para que se ajuste con AROS y compila el proyecto
+*Makefile*. Ed√≠talo para que se ajuste con AROS y compila el proyecto
 con ``make``.
 
-Si todo est· compilado y enlazado ya est·s listo para probar tu puerto.
-Un problema muy com˙n es que no encuentre sus archivos de datos, y se
-cuelgue. Corrige las rutas como se describe en el capÌtulo corregir-las-rutas,
+Si todo est√° compilado y enlazado ya est√°s listo para probar tu puerto.
+Un problema muy com√∫n es que no encuentre sus archivos de datos, y se
+cuelgue. Corrige las rutas como se describe en el cap√≠tulo corregir-las-rutas,
 y ejecuta de nuevo. 
 
-Luego quita la informaciÛn de depuraciÛn de los binarios para hacerlos 
-m·s pequeÒos.
+Luego quita la informaci√≥n de depuraci√≥n de los binarios para hacerlos 
+m√°s peque√±os.
 
-°Listo! Ya tienes el puerto. °Ahora c·rgalo en http://archives.aros-exec.org
+¬°Listo! Ya tienes el puerto. ¬°Ahora c√°rgalo en http://archives.aros-exec.org
 y en http://www.aminet.net!
 
 
-CÛmo configurar
+C√≥mo configurar
 ===============
 
-En Linux, los paquetes que tienen un guiÛn configure por lo general se
+En Linux, los paquetes que tienen un gui√≥n configure por lo general se
 instalan con tres pasos::
 
     ./configure
     make
     sudo make install
 
-Lo que hace que la configuraciÛn de AROS sea m·s difÌcil que, por ej. para 
+Lo que hace que la configuraci√≥n de AROS sea m√°s dif√≠cil que, por ej. para 
 AmigaOS4 es el hecho que estamos usando un compilador cruzado.
 
-Tipea ``./configure --help`` para ver las opciones que est·n disponibles.
-Si falla la configuraciÛn podemos intentar deshabilitar algunas caracterÌsticas.
+Tipea ``./configure --help`` para ver las opciones que est√°n disponibles.
+Si falla la configuraci√≥n podemos intentar deshabilitar algunas caracter√≠sticas.
 
 Un ejemplo simple
 -----------------
@@ -104,33 +104,33 @@ Un ejemplo simple
 .. Hint::
 
     Tiene sentido escribir un comando de configure en un archivo de texto. De
-    esta manera podemos f·cilmente ejecutarlo de nuevo escribiendo ``sh build.sh``.
-    Pero antes que ejecutemos de nuevo al guiÛn tenemos que hacer ``rm -f config.cache``
-    para volver al estado inicial el proceso de configuraciÛn.
+    esta manera podemos f√°cilmente ejecutarlo de nuevo escribiendo ``sh build.sh``.
+    Pero antes que ejecutemos de nuevo al gui√≥n tenemos que hacer ``rm -f config.cache``
+    para volver al estado inicial el proceso de configuraci√≥n.
 
 
-AquÌ est· la explicaciÛn de las opciones que usamos arriba:
+Aqu√≠ est√° la explicaci√≥n de las opciones que usamos arriba:
 
 ``CC=i386-aros-gcc``
     Queremos usar el compilador para AROS. De otro modo obtendremos un binario para Linux.
 
 ``--build=local --host=i686-aros``
-    Indica al guiÛn configure que haga una compilaciÛn cruzada para i686-aros.
+    Indica al gui√≥n configure que haga una compilaci√≥n cruzada para i686-aros.
 
 ``--disable-nls --without-x --without-pic --disable-shared``
-    Deshabilita algunas caracterÌsticas que no est·n soportadas por AROS.
+    Deshabilita algunas caracter√≠sticas que no est√°n soportadas por AROS.
 
 
 .. Warning::
 
-    No hagas ``sudo make install`` porque esto instalar· tu aplicaciÛn en alguna
+    No hagas ``sudo make install`` porque esto instalar√° tu aplicaci√≥n en alguna
     ruta de Linux como */usr/local*.
 
 
-Ejemplo de SDL (instalaciÛn manual)
+Ejemplo de SDL (instalaci√≥n manual)
 -----------------------------------
 
-El siguiente ejemplo es para `Ltris`__, pero deberÌa ser similar para las otras
+El siguiente ejemplo es para `Ltris`__, pero deber√≠a ser similar para las otras
 aplicaciones SDL::
 
     ./configure CC=i386-aros-gcc  LDFLAGS="-nix" \
@@ -153,9 +153,9 @@ aplicaciones SDL::
     applications. Without this option it would call the Linux version of *sdl_config*, which
     would give wrong results.
 
-DespuÈs de una ejecuciÛn exitosa del guiÛn configure y de *make* tenemos que
+Despu√©s de una ejecuci√≥n exitosa del gui√≥n configure y de *make* tenemos que
 copiar el binario de ltris y los archivos de datos de modo que el binario
-encuentre a Èstos::
+encuentre a √©stos::
 
     ltris
         ltris (binary)
@@ -168,7 +168,7 @@ encuentre a Èstos::
 __ http://lgames.sourceforge.net/index.php?project=LTris
 
 
-Ejemplo de SDL (instalaciÛn semiautom·tica)
+Ejemplo de SDL (instalaci√≥n semiautom√°tica)
 -------------------------------------------
 
 Podemos usar casi las mismas opciones de arriba::
@@ -182,10 +182,10 @@ Podemos usar casi las mismas opciones de arriba::
 ``--bindir=/PROGDIR`` 
     Evita se cree un subdiretorio *bin*.
 
-No olvides la opciÛn *--prefix* o sino instalar· los archivos de AROS en alguna 
+No olvides la opci√≥n *--prefix* o sino instalar√° los archivos de AROS en alguna 
 de las rutas de Linux.
 
-Ahora puedes recompilar tu proyecto (``make distclean``, ejecuta el guiÛn
+Ahora puedes recompilar tu proyecto (``make distclean``, ejecuta el gui√≥n
 configure, ``make``). Ahora podremos invocar ``sudo make install``. Pero es
 mejor dar primero los siguientes pasos:
 
@@ -193,8 +193,8 @@ mejor dar primero los siguientes pasos:
 + sudo chmod a+rwx /PROGDIR
 
 Esto tiene la ventaja que podemos acceder a */PROGDIR* sin los derechos de root.
-Ahora finalmente podemos hacer ``make install``, que instalar· el juego en 
-*/PROGDIR*. Como Èste no es un buen lugar tenemos que copiarlo a un lugar en
+Ahora finalmente podemos hacer ``make install``, que instalar√° el juego en 
+*/PROGDIR*. Como √©ste no es un buen lugar tenemos que copiarlo a un lugar en
 donde AROS pueda alcanzarlo (por ej. cp -r /PROGDIR ~/AROS/games/ltris).
 
 Recuerda hacer ``rm -rf /PROGDIR/*`` antes de compilar otro proyecto.
@@ -205,71 +205,71 @@ Errores comunes que pueden ocurrir cuando configures
 
 Obtengo errores como target or host i686-aros isn't available.
 
-SoluciÛn:
-  El guiÛn *config.sub* probablemente sea viejo o no estÈ. Ejecuta ``autoconf``
-  en el directorio raÌz del paquete. Si eso no ayuda, copia una versiÛn reciente
+Soluci√≥n:
+  El gui√≥n *config.sub* probablemente sea viejo o no est√©. Ejecuta ``autoconf``
+  en el directorio ra√≠z del paquete. Si eso no ayuda, copia una versi√≥n reciente
   del archivo *config.sub* de por ej. */usr/share/automake*.
 
 .. _autoconf: http://ftp.gnu.org/gnu/autoconf/
 
-Obtengo errores como Èste:
+Obtengo errores como √©ste:
   checking for IMG_Load in -lSDL_image... no
 
-SoluciÛn:
-  Estamos enlazando con bibliotecas est·ticas, y necesitamos decir con
-  exactitud con quÈ enlazar. Ubica este renglÛn en el guiÛn configure::
+Soluci√≥n:
+  Estamos enlazando con bibliotecas est√°ticas, y necesitamos decir con
+  exactitud con qu√© enlazar. Ubica este rengl√≥n en el gui√≥n configure::
 
     LIBS="-lSDL_image $LIBS"
 
   SDL_image depende de algunas bibliotecas para que funcione correctamente,
-  agrÈgalas de este modo::
+  agr√©galas de este modo::
 
     LIBS="-lSDL_image -lpng -ljpeg -lz $LIBS"
 
 
-Obtengo errores como Èste:
+Obtengo errores como √©ste:
   checking for Mix_OpenAudio in -lSDL_mixer... no
 
 Solution:
-  Estamos enlazando con bibliotecas est·ticas, y necesitamos decir con
-  exactitud con quÈ enlazar. Ubica este renglÛn en el guiÛn configure::
+  Estamos enlazando con bibliotecas est√°ticas, y necesitamos decir con
+  exactitud con qu√© enlazar. Ubica este rengl√≥n en el gui√≥n configure::
 
     LIBS="-lSDL_mixer $LIBS"
 
   SDL_mixer depende de algunas bibliotecas para que funcione correctamente,
-  agrÈgalas de este modo::
+  agr√©galas de este modo::
 
     LIBS="-lSDL_mixer -lvorbisfile -lvorbis -logg $LIBS"
 
 
-Lo mismo sucede cuando configure est· buscando SDL_ttf, y ahora sabes
-por quÈ. Necesitamos especificar algunas bibliotecas m·s en las que
-depende SDL_ttf. Necsita -lfreetype y -lz. DejarÈ el resto para tÌ 
+Lo mismo sucede cuando configure est√° buscando SDL_ttf, y ahora sabes
+por qu√©. Necesitamos especificar algunas bibliotecas m√°s en las que
+depende SDL_ttf. Necsita -lfreetype y -lz. Dejar√© el resto para t√≠ 
 como un ejercicio.
 
-Si has agregado las dependencias necesarias al guiÛn configure, y 
-todavÌa no funciona puede deberse a archivos faltantes en el SDK.
-Por ej. no est·n incluidas las bibliotecas SDL.
+Si has agregado las dependencias necesarias al gui√≥n configure, y 
+todav√≠a no funciona puede deberse a archivos faltantes en el SDK.
+Por ej. no est√°n incluidas las bibliotecas SDL.
 
 This is not recommended, but if there is no other way...
-Si todavÌa no funciona, y est· seguro que tienes la biblioteca
-instalada, prueba con quitar toda la secciÛn donde revisa la
+Si todav√≠a no funciona, y est√° seguro que tienes la biblioteca
+instalada, prueba con quitar toda la secci√≥n donde revisa la
 biblioteca que falla en el archivo configure.
 
-Ahora deberÌas estar listo para build tu proyecto. Cuando transfieras
+Ahora deber√≠as estar listo para build tu proyecto. Cuando transfieras
 apps de unix siempre tipea ``make``.
 
 
 Crear un makefile a mano
 ========================
 
-Este makefile se podrÌa usar is el build system es un mess y quieres 
+Este makefile se podr√≠a usar is el build system es un mess y quieres 
 simplificarlo un poco, alterarlo para que se ajuste a tus necesidades.
 Lo usual es que solamente necesites modificar un makefile existente, cambia
-el nombre del compilador de C (de otro modo crearÌa binarios para Linux) y
+el nombre del compilador de C (de otro modo crear√≠a binarios para Linux) y
 agrega algunas bibliotecas de enlazado.
 
-AquÌ est· la explicaciÛn de lo que significan las banderas.
+Aqu√≠ est√° la explicaci√≥n de lo que significan las banderas.
  
 CC
     El nombre del ejecutable del compilador de C.
@@ -282,16 +282,16 @@ STRIP
 
 CFLAGS
     Tells the compiler where to find the includes (-I) etc.
-    Indica al compilador dÛnde hallar los includes (-I) etc.
+    Indica al compilador d√≥nde hallar los includes (-I) etc.
 
 LDFLAGS
-    Indica al enlazador quÈ bibliotecas incluir (-l) y dÛnde
+    Indica al enlazador qu√© bibliotecas incluir (-l) y d√≥nde
     hallarlas (-L).
 
 OBJS
     El compilador (GCC/G++) compila a archivos objeto (#?.o) de tus
-    archivos .c que despuÈs son enlazados juntos para convertirse en
-    un archivo ejecutable. Especifica aquÌ los nombres de los archivos
+    archivos .c que despu√©s son enlazados juntos para convertirse en
+    un archivo ejecutable. Especifica aqu√≠ los nombres de los archivos
     objeto.
 
 OUTPUT
@@ -327,14 +327,14 @@ Usar el build system
 ====================
 
 El build system contiene algunos guiones para configurar los paquetes. La gran 
-ventaja de usar el build system es que puedes transferir f·cilmente a diferentes 
+ventaja de usar el build system es que puedes transferir f√°cilmente a diferentes 
 sabores de AROS.
 
 + %build_with_configure
 + %fetch_and_build
 + %fetch_and_build_gnu_development
 
-Mira en el archivo $(TOP/config/make.tmpl para una explicaciÛn de los argumentos. En
+Mira en el archivo $(TOP/config/make.tmpl para una explicaci√≥n de los argumentos. En
 *$(TOP)/contrib/gnu* ahora puedes hallar muchos paquetes GNU.
 
 
@@ -344,7 +344,7 @@ Misc
 Convertir las rutas unix a rutas AROS
 -------------------------------------
 
-øCÛmo convierto las rutas Unix en rutas AROS? Intercambia *getenv("HOME")* por *"/PROGDIR/"*
+¬øC√≥mo convierto las rutas Unix en rutas AROS? Intercambia *getenv("HOME")* por *"/PROGDIR/"*
 
 Ejemplos::
 
@@ -357,19 +357,19 @@ Ejemplos::
     old: sprintf(rc_dir, "%s/.gngeo/romrc.d", getenv("HOME"));
     new: sprintf(rc_dir, "%sgngeo/romrc.d", "/PROGDIR/");
 
-FÌjate que quitÈ "/." en el ˙ltimo ejemplo.
+F√≠jate que quit√© "/." en el √∫ltimo ejemplo.
 
 Las rutas a los directorios de los datos a menudo se establecen durante 
-el proceso de configure haciendo *-DDATADIR=*. Si Èste es el caso establece a
-*-DDATADIR=/PROGDIR/*. TambiÈn es com˙n que el directorio de los datos 
-se establezca en los makefiles. Ubica *DATADIR=* y c·mbialo a *DDATADIR=/PROGDIR/*
+el proceso de configure haciendo *-DDATADIR=*. Si √©ste es el caso establece a
+*-DDATADIR=/PROGDIR/*. Tambi√©n es com√∫n que el directorio de los datos 
+se establezca en los makefiles. Ubica *DATADIR=* y c√°mbialo a *DDATADIR=/PROGDIR/*
 
 
 Defines
 -------
 
-Los defines se establecen en general en *config.h*, si algo est· mal configurado,
-puedes cambiarlo ahÌ usando *#define* y *#undef*.
+Los defines se establecen en general en *config.h*, si algo est√° mal configurado,
+puedes cambiarlo ah√≠ usando *#define* y *#undef*.
 
 Un ejemplo de define que considera todos los sabores de AmigaOS::
 
@@ -379,7 +379,7 @@ Un ejemplo de define que considera todos los sabores de AmigaOS::
           blah blah blah
   #endif
 
-Un ejemplo de define que sÛlo considera a AROS::
+Un ejemplo de define que s√≥lo considera a AROS::
 
   #ifdef __AROS__
 	  blah blah blah
@@ -391,7 +391,7 @@ Un ejemplo de define que considera a BeOS y a AROS::
 
   #if !defined(__BEOS__) && !defined(__AROS__)
 
-Un ejemplo m·s complejo::
+Un ejemplo m√°s complejo::
 
   #ifdef GP2X
 	char *gngeo_dir="save/";
@@ -403,7 +403,7 @@ Un ejemplo m·s complejo::
 
 Algunos paquetes de fuente abierta ya han adoptado a los sistemas operativos
 de la familia Amiga. Si encuentras algo como *#ifdef __AMIGA* en el fuente
-puedes probar agregar el define a las opciones de configuraciÛn (por ej.
+puedes probar agregar el define a las opciones de configuraci√≥n (por ej.
 CFLAGS="-nix -D__AMIGA__").
 
 
@@ -411,13 +411,13 @@ Entender los mensajes de error
 ------------------------------
 
 Error: No return statement in function returning non-void 
-  No hay un *return* en una funciÛn que necesita uno.
+  No hay un *return* en una funci√≥n que necesita uno.
 
 Error: Control reaches end of non-void function
-  Se llegÛ al final de una funciÛn que necesita devolver un valor, pero no hay ningun *return*.
+  Se lleg√≥ al final de una funci√≥n que necesita devolver un valor, pero no hay ningun *return*.
 
 Error: May be used uninitialized in this function
-  La variable no est· inicializada.
+  La variable no est√° inicializada.
 
 Warning: implicit declaration of function 'blah blah'
   Necesitas incluir una cabecera.
@@ -429,55 +429,55 @@ Errores comunes
 warning: incompatible implicit declaration of built-in function 'exit';
 warning: incompatible implicit declaration of built-in function 'abort'::
   
-    soluciÛn: #include <stdlib.h>
+    soluci√≥n: #include <stdlib.h>
 
 warning: implicit declaration of function 'strlen';
 warning: incompatible implicit declaration of built-in function 'strlen'::
 
-    soluciÛn: #include <string.h>
+    soluci√≥n: #include <string.h>
 
 warning: implicit declaration of function 'memcpy';
 warning: incompatible implicit declaration of built-in function 'memcpy'::
 
-    soluciÛn: #include <string.h>
+    soluci√≥n: #include <string.h>
 
 error: memory.h: No such file or directory::
 
-    soluciÛn: #include <string.h>
+    soluci√≥n: #include <string.h>
 
 error: malloc.h: No such file or directory::
 
-    soluciÛn: #include <stdlib.h>
+    soluci√≥n: #include <stdlib.h>
 
 warning: incompatible implicit declaration of built-in function 'printf'::
 
-    soluciÛn: #include <stdio.h>
+    soluci√≥n: #include <stdio.h>
 
 warning: implicit declaration of function 'MyRemove'::
 
-    soluciÛn: #define MyRemove Remove
+    soluci√≥n: #define MyRemove Remove
 
 
 Consejos y trucos
 -----------------
 
-øCÛmo hago una b˙squeda de cadenas de texto usando GREP?
+¬øC√≥mo hago una b√∫squeda de cadenas de texto usando GREP?
 
 ::
 
   grep -R "I am looking for this" *
 
-øCÛmo hago un archivo DIFF con mis cambios?
+¬øC√≥mo hago un archivo DIFF con mis cambios?
 
 ::
 
   diff originalfile.c mychangedfile.c >./originalfile.patch
 
-Mi ejecutable se cuelga, øcÛmo lo depuro?
-  Mira en el `Manual para la DepuraciÛn <debugging>`_. Puedes usar sys:utilites/snoopy
-  para descubrir quÈ intenta hacer tu aplicaciÛn.
+Mi ejecutable se cuelga, ¬øc√≥mo lo depuro?
+  Mira en el `Manual para la Depuraci√≥n <debugging>`_. Puedes usar sys:utilites/snoopy
+  para descubrir qu√© intenta hacer tu aplicaci√≥n.
 
-øCÛmo dirigo las advertencias y errores de GCC a un archivo de texto?
+¬øC√≥mo dirigo las advertencias y errores de GCC a un archivo de texto?
 
 ::
 

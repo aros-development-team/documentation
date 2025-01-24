@@ -3,7 +3,7 @@ ABI V1
 ======
 
 :Author:    Staf Verhaegen, Marcus Weiss
-:Copyright: Copyright © 2008-2010, The AROS Development Team
+:Copyright: Copyright Â© 2008-2010, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
@@ -587,7 +587,7 @@ Pros & Cons
 Example of assembler stub::
 
     /*
-    Copyright © 2008, The AROS Development Team. All rights reserved.
+    Copyright Â© 2008, The AROS Development Team. All rights reserved.
         $Id$
 
         Desc: alib variadic stubs

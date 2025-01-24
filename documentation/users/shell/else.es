@@ -12,7 +12,7 @@ Else
 
  Else 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -20,13 +20,13 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
      Separa los bloques 'verdadero' y 'falso' de una sentencia SI. El bloque
-     que sigue a un comando ELSE se ejecuta si la condición en la sentencia
+     que sigue a un comando ELSE se ejecuta si la condiciÃ³n en la sentencia
      previa SI era falsa.
 
 
@@ -42,7 +42,7 @@ Ejemplo
      EndIf
 
 
-También mira
+TambiÃ©n mira
 ~~~~~~~~~~~~
 ::
 

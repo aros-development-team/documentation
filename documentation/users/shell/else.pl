@@ -9,7 +9,7 @@
 Else
 ====
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -22,11 +22,11 @@ Funkcja
 ::
 
 	Oddziela 'true' i 'false' z komendy If. Wszystko po komendzie Else
-	jest wykonywane tylko wtedy, gdy gdy niespe≥niony zosta≥ warunek.
+	jest wykonywane tylko wtedy, gdy gdy niespe≈Çniony zosta≈Ç warunek.
 
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -38,7 +38,7 @@ Przyk≥ad
      EndIf
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

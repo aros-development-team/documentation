@@ -3,20 +3,20 @@ Guida all'installazione di AROS
 ===============================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey, Giuseppe Puglisi
-:Copyright: Copyright © 1995-2004, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done. 
 :Abstract:
-    Questa guida vi accompagner‡ attraverso i passi necessari per installare 
+    Questa guida vi accompagner√† attraverso i passi necessari per installare 
     AROS. 
 
     .. Attenzione:: 
     
-        AROS Ë ancora un software in stadio alpha. Questo significa che al momento 
-        ci si diverte di pi˘ giocandoci e sviluppandoci sopra. Se siete venuti 
-	qui perchË pensavate che AROS fosse completo e pienamente utilizzabile 
-	come sistema operativo, resterete abbastanza delusi. AROS non Ë ancora 
+        AROS √® ancora un software in stadio alpha. Questo significa che al momento 
+        ci si diverte di pi√π giocandoci e sviluppandoci sopra. Se siete venuti 
+	qui perch√® pensavate che AROS fosse completo e pienamente utilizzabile 
+	come sistema operativo, resterete abbastanza delusi. AROS non √® ancora 
 	a questo punto, ma ci stiamo lentamente muovendo nella giusta direzione.
 
 
@@ -26,22 +26,22 @@ Guida all'installazione di AROS
 Downloading
 ===========
 
-AROS Ë attualmente sotto intenso sviluppo. CiÚ significa che dovrete scegliere 
-tra stabilit‡ e features. Attualmente ci sono due tipi di package disponibili 
+AROS √® attualmente sotto intenso sviluppo. Ci√≤ significa che dovrete scegliere 
+tra stabilit√† e features. Attualmente ci sono due tipi di package disponibili 
 per il download: le snapshots e le nightly builds.
 
 Le snapshots vengono realizzate saltuariamente, solitamente quando si accumula 
-una quantit‡ consistente di modifiche di AROS dall'ultima snapshot e qualcuno 
+una quantit√† consistente di modifiche di AROS dall'ultima snapshot e qualcuno 
 si sente motivato per crearne una nuova. In poche parole, al momento non esiste 
 una programmazione regolare delle uscite. Anche se realizzate saltuariamente, 
-e noi cerchiamo di produrle quando AROS Ë particolarmente stabile, non vi garantiamo 
+e noi cerchiamo di produrle quando AROS √® particolarmente stabile, non vi garantiamo 
 che la snapshots saranno esenti da bug o perfettamente funzionanti sulla vostra 
-macchina specifica. Detto questo, cerchiamo di testare le snapshots su pi˘ 
+macchina specifica. Detto questo, cerchiamo di testare le snapshots su pi√π 
 macchine possibili, quindi in pratica dovrebbero funzionare relativamente bene.
 
 Le Nightly builds vengono realizzate, come la parola inglese suggerisce, 
 automaticamente ogni notte direttamente dall'albero Subversion, e contengono 
-il codice pi˘ recente.
+il codice pi√π recente.
 In ogni caso, non vengono testate in alcun modo, possono contenere bug e causare 
 grossi problemi al vostro sistema, nel caso peggiore addirittura distruggerlo 
 se siete davvero sfortunati. Comunque nella maggior parte dei casi, funzionano bene.
@@ -72,7 +72,7 @@ Estrazione
 """"""""""
 
 Dato che AROS/i386-linux e AROS/i386-freebsd sono versioni hosted di AROS, 
-l'installazione Ë facile. Semplicemente prendete i giusti archivi per la vostra 
+l'installazione √® facile. Semplicemente prendete i giusti archivi per la vostra 
 piattaforma dalla `pagina download`_ ed estraeteli dove preferite::
 
     > tar -vxjf AROS-<version>-i386-<platform>-system.tar.bz2
@@ -95,8 +95,8 @@ Dopo aver estratto tutti i files, potrete lanciare AROS digitando:
     
     A meno che stiate utilizzando XFree86 3.x o superiore, potreste notare che 
     la finestra di AROS non si aggiorni correttamente (per esempio quando 
-    un'altra finestra gli passa sopra). Questo Ë dovuto al fatto che AROS 
-    usa la funzionalit‡ "backinstore" di X, che Ë disabilitata per default 
+    un'altra finestra gli passa sopra). Questo √® dovuto al fatto che AROS 
+    usa la funzionalit√† "backinstore" di X, che √® disabilitata per default 
     in XFree86 4.0 e seguenti. Per abilitarla, aggiungete la seguente riga alla 
     sezione device della vostra scheda video, nel file di configurazione di X 
     (che si chiama solitamente ``/etc/X11/xorg.conf``, ``/etc/X11/XF86Config-4`` 
@@ -120,7 +120,7 @@ AROS/i386-pc
 .. Note:: 
     
     Attualmente non forniamo supporto per installare AROS/i386-pc su un hard disk,
-    pertanto in questo capitolo vi verr‡ spiegato solo come creare un supporto 
+    pertanto in questo capitolo vi verr√† spiegato solo come creare un supporto 
     di installazione ed avviare da esso. 
 
 
@@ -128,41 +128,41 @@ Supporto di installazione
 """""""""""""""""""""""""
 
     	
-    Sebbene AROS puÚ essere installato in un disco rigido, bisogna sempre 
-    essere consapevoli del fatto che nell'installer Ë nota la presenza di bug. 
+    Sebbene AROS pu√≤ essere installato in un disco rigido, bisogna sempre 
+    essere consapevoli del fatto che nell'installer √® nota la presenza di bug. 
     Non dovrebbe rimuovere o cancellare alcuna partizione se non ha chiesto di farlo, 
-    ma questo non puÚ essere garantito. 
+    ma questo non pu√≤ essere garantito. 
     Quindi notate che in genere **NON DOVRESTE** installare AROS in una macchina funzionante
-    il quale HD contiene dati di valore, dato che ci puÚ essere una possibile perdita
-    Non ci prendiamo alcuna responsabilit‡ per ogni perdita di dati che puÚ accadere.
+    il quale HD contiene dati di valore, dato che ci pu√≤ essere una possibile perdita
+    Non ci prendiamo alcuna responsabilit√† per ogni perdita di dati che pu√≤ accadere.
     Ogni bug report sull'installazione sarebbe apprezzata.
 
-Avrai bisogno di una PC-AT *PCI-based* PC-AT (basata su i486 o pi˘ nuova) con PS/2
+Avrai bisogno di una PC-AT *PCI-based* PC-AT (basata su i486 o pi√π nuova) con PS/2
 o mouse USB,tastiera AT o USB, hard disk IDE e CD-ROM su ATA o SATA parallela
 configurata in legacy mode, un adattatore (S)VGA e un monitor.
-Almeno 24 MB of RAM Ë richiesta. Una scheda VGA VESA-compliant Ë raccomandata.
+Almeno 24 MB of RAM √® richiesta. Una scheda VGA VESA-compliant √® raccomandata.
 Per adesso ci sono drivers 2D accelerati (HIDDs) per alcune schede ATI o nVidia.
 
 Possono essere utilizzate anche la maggior parte delle macchine virtuali. QEMU,
 VMware (Server/Workstation/Fusion), Q, Bochs, virtualbox e MS VPC sembrano funzionare 
 bene col floppy disattivato.
-IcAROS Ë una buona soluzione per chi non vuole stare a farsi problemi.
+IcAROS √® una buona soluzione per chi non vuole stare a farsi problemi.
 
 AROS ha drivers per diverse schede network.
-Pi˘ dettagli sono disponibili nelle FAQ.
+Pi√π dettagli sono disponibili nelle FAQ.
 
 Se vuoi provare il suono in AROS, la migliore scelta al momento sono le schede basate su
 Creative 10k.
 
 Il port x86-64 ha requisiti simili, tranne, naturalmente, che ha bisogno di un PC
-compatibile con il 64-bit. Il chipset Ë correntemente limitato. Questo port Ë ancora ai primi 
+compatibile con il 64-bit. Il chipset √® correntemente limitato. Questo port √® ancora ai primi 
 passi, quindi per piacere riportate i bug che potreste trovare.
 
 
 Media di installazione
 """"""""""""""""""""""
 
-Il media di installazione raccomandato per AROS/pc-i386 Ë il CDROM, dato che 
+Il media di installazione raccomandato per AROS/pc-i386 √® il CDROM, dato che 
 riusciamo a far stare l'intero sistema in un solo disco, mentre IcAROS ha bisogno di un DVD
 
 Datoche nessuno vende dei CDROM di AROS (o qualunque media per il proposito),
@@ -179,7 +179,7 @@ Scrittura
 Semplicemente scarica l'immagine ISO dalla`pagina di download`_ (raccomandiamo l'uso
 di un download manager come wget) e masterizzzala su un CD usando il tuo programma preferito. 
 Ci sono molti programmi freeware per scrivere CD per ogni gusto e sistema, e puntiamo 
-gli utnti Windows  ad usare`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - Ë gratis, 
+gli utnti Windows  ad usare`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - √® gratis, 
 piccolo, velocee semplice. Qualche altro esempio?
 CDBurnerXP, DeepBurn, AstroBurn, e in linux ci sono k3B, Brasero 
 e altri. Per Amiga (e speriamo bene anche per AROS in futuro, AROS) puoi usare FryingPan.
@@ -188,20 +188,20 @@ e altri. Per Amiga (e speriamo bene anche per AROS in futuro, AROS) puoi usare F
 Booting
 '''''''
 
-Si puÚ fare boot dal CD di AROS andando a modificare dei parametri nella bios per mettere il CD 
-come primo per priorit‡. In molti sistemi per default p disabilitata.
-Il boot Ë completamente automatico, e se tutto andr‡ bene si vedr‡ il desktop di aros.
+Si pu√≤ fare boot dal CD di AROS andando a modificare dei parametri nella bios per mettere il CD 
+come primo per priorit√†. In molti sistemi per default p disabilitata.
+Il boot √® completamente automatico, e se tutto andr√† bene si vedr√† il desktop di aros.
 
 Se il computer non supporta il boot dal CD (cosa molto improbabile) si possono scaricare il floppy
 per fare poi boot dal CD. Basta inserirli entrambi e riavviare il computer.
-AROS far‡ boot dal floppy ma poi, una volta caricati i driver per il CD, cambier‡ e legger‡ sul CD i files necessari per l'avvio.
+AROS far√† boot dal floppy ma poi, una volta caricati i driver per il CD, cambier√† e legger√† sul CD i files necessari per l'avvio.
 
 
 Floppy
 ^^^^^^
 
-In questi giorni i floppy non si usano pi˘ per tenere interi sistemi operativi, ma 
-in AROS sono ancora usati per i computer (come gi‡ accennato prima) che non supportano 
+In questi giorni i floppy non si usano pi√π per tenere interi sistemi operativi, ma 
+in AROS sono ancora usati per i computer (come gi√† accennato prima) che non supportano 
 direttamente il boot da CD
 
 
@@ -211,33 +211,33 @@ Scrittura su floppy
 Per creare un floppy di boot avrai bisogno di scaricarlo dalla `pagina di download`_, 
 quindi si estrae l'archivio e si scrive l'immagine su un floppy disk.
 Se stai usando un sistema basato UNIX (come Linux o FreeBSD), 
-si puÚ fare con i seguenti comandi::
+si pu√≤ fare con i seguenti comandi::
 
     > cd AROS-<version>-pc-i386-boot-floppy
     > dd if=aros.bin of=/dev/fd0
 
 Se stai usando windows hai bisogno di prendere rawrite_ per scrivere immagini su i floppy.
-Leggere la documentaazione di rawrite_ per vedere le modalit‡ di uso.
-C'Ë anche una versione GUI per win chiamata rawwritewin.
+Leggere la documentaazione di rawrite_ per vedere le modalit√† di uso.
+C'√® anche una versione GUI per win chiamata rawwritewin.
 
 
 Boot
 ''''
 
-Basta inserire il floppy prima dell'avvio, il resto Ë automatico.
-Se tutto va bene si vedr‡ il desktop di AROS
+Basta inserire il floppy prima dell'avvio, il resto √® automatico.
+Se tutto va bene si vedr√† il desktop di AROS
 
 
 Installare sull'hard drive
 """"""""""""""""""""""""""
 
-Bene, nota che sei stato **AVVERTITO** che l'installazione su HD Ë in fase di
-testing e che al momento Ë **pericoloso** per i tuoi dati, quindi Ë meglio avere
+Bene, nota che sei stato **AVVERTITO** che l'installazione su HD √® in fase di
+testing e che al momento √® **pericoloso** per i tuoi dati, quindi √® meglio avere
 la certezza che nell'hard disk non siano contenuti dati importanti, o che ci sia una backup.
-Usare una macchina virtuale Ë raccomandato, dato che minimizzza i danni potenziali 
+Usare una macchina virtuale √® raccomandato, dato che minimizzza i danni potenziali 
 riducendoli in un file. Inoltre permette ad AROS di essere usata in tutta sicurezza e
-affidabilit‡, oltre al fatto che potr‡ andare su qualunque tipo di macchina.
-Ci sono diversi programmi adibiti alla creazione di macchine virtuali, pi˘ famosi possono
+affidabilit√†, oltre al fatto che potr√† andare su qualunque tipo di macchina.
+Ci sono diversi programmi adibiti alla creazione di macchine virtuali, pi√π famosi possono
 essere virtualbox, VmWare, parallels, Qemu, W, VirtualPC.
 Esiste a tal proposito la distribuzione IcAROS.
 
@@ -246,12 +246,12 @@ Preparazione
 ^^^^^^^^^^^^
 
 Per prima cosa bisogna impostare il tuo hard disk - sia reale che virtuale - per l'uso.
-Per un drive reale, questo puÚ includere inserirlo nella macchine (sempre un buon inizio) e 
-configurarlo nella BIOS. Per un Hard disk virtualizzato o emulato probabilmente verr‡ richiesto di 
-crearne uno nuovo oppure sar‡ configurato automaticamente, dipende dal programma.
+Per un drive reale, questo pu√≤ includere inserirlo nella macchine (sempre un buon inizio) e 
+configurarlo nella BIOS. Per un Hard disk virtualizzato o emulato probabilmente verr√† richiesto di 
+crearne uno nuovo oppure sar√† configurato automaticamente, dipende dal programma.
 Una volta creata l'immagine e impostata come connessa alla macchina virtuale / emulatore
-va messa nella lista di Boot (ma sicuramente sar‡ gi‡ fatto tutto automaticamente dall'applicazione)
-Inoltre il CD dovr‡ essere messo prima dell'hard disk altrimenti, se installato precedentemente 
+va messa nella lista di Boot (ma sicuramente sar√† gi√† fatto tutto automaticamente dall'applicazione)
+Inoltre il CD dovr√† essere messo prima dell'hard disk altrimenti, se installato precedentemente 
 un altro sistema operativo, potrebbe non fare partire AROS)
 
 Se seguenti opzioni dipendono da che cosa hai intenzione di fare.
@@ -260,24 +260,24 @@ Se seguenti opzioni dipendono da che cosa hai intenzione di fare.
 Installare solo AROS
 ^^^^^^^^^^^^^^^^^^^^
 
-La situazione pi˘ semplice si verifica quando AROS Ë il solo sistema sull'intero
+La situazione pi√π semplice si verifica quando AROS √® il solo sistema sull'intero
 disco, o quando nel disco ci sono dati inutili. Si possono anche utilizzare Hard disks 
 addizionali per AROS.
 
-Al corrente l'installazione Ë preparata dal programma InstallAROS che Ë localizzato nel
+Al corrente l'installazione √® preparata dal programma InstallAROS che √® localizzato nel
 drawer *tools* nel CD di boot. Si lancia facendo doppio click sull'icona. Una volta
 lanciato mostra la schermata di benvenuto. Quindi fare click sul pulsante ``Proceed`` 
 nell'installer per andare alla schermata delle opzioni.
 
-Si puÚ subito notare la periferica corrente di installazione (ata.device) e la sua unit‡ (0),
+Si pu√≤ subito notare la periferica corrente di installazione (ata.device) e la sua unit√† (0),
 che rappresenta il tuo primo hard disk. Se intendi installare su un disco diverso basta cambiare 
-il numero. Per trovare il numero  si puÚ facilmente usare */tools/HDToolbox*.
+il numero. Per trovare il numero  si pu√≤ facilmente usare */tools/HDToolbox*.
 L'opzione ``Only use free space`` deve essere selezionata se vuoi tenere la partizione corrente
-cosÏ come Ë, altrimenti si seleziona ``Wipe disk`` per *formattare* il disco.
-Si puÚ impostare la dimensione della partizione di AROS se serve, e aggiungere la partizione 
+cos√¨ come √®, altrimenti si seleziona ``Wipe disk`` per *formattare* il disco.
+Si pu√≤ impostare la dimensione della partizione di AROS se serve, e aggiungere la partizione 
 addizionale WORK per installarci programmi.
-Dopo aver fatto click su ``Proceed`` ancora, installAROS creer‡ le partizioni e 
-chieder‡ di riavviare. Dopo il riavvio andr‡ fatto avviare InstallAROS ancora.
+Dopo aver fatto click su ``Proceed`` ancora, installAROS creer√† le partizioni e 
+chieder√† di riavviare. Dopo il riavvio andr√† fatto avviare InstallAROS ancora.
 
 Ora si dovrebbe vedere l'opzione ``Use existing AROS partitions`` selezionata. 
 ``Proceed`` con questa. Si vedranno inoltre alcune opzioni extra (viste di default)
@@ -296,11 +296,11 @@ sistema operativo. ``Install Extra Software`` permette l'installazione di progra
 (nella drawer /Extras e, se selszionato, nella partizione WORK). ``Install Development Software``
 permette l'installazione del software di sviluppo, come dei linguaggi di programmazione e 
 programmi di debugging.``Install Bootloader`` permette l'installazione del bootloader GRUB nel
-master boot record dell'hard disk (ci sono alcune situazioni dove non Ë necessario installarlo).
+master boot record dell'hard disk (ci sono alcune situazioni dove non √® necessario installarlo).
 Fai le tue scelte e premi il pulsante ``Proceed``. 
 
-Nella schermata successiva si puÚ scegliere che partizioni si vogliono formattare, e dove si 
-vuole copiare i files se la partizione WORK Ë usata per avere copiati i files su di essa::
+Nella schermata successiva si pu√≤ scegliere che partizioni si vogliono formattare, e dove si 
+vuole copiare i files se la partizione WORK √® usata per avere copiati i files su di essa::
 
     Destination Partition     [x] Format Partition
     DH0
@@ -314,13 +314,13 @@ vuole copiare i files se la partizione WORK Ë usata per avere copiati i files su
 
 Dopo aver fatto le scelte e aver proceduto con l'installazione verranno visualizzate le
 opzioni per l'installazione di GRUB (periferica e percorso).
-Procedendo si vedr‡ l'ultima schermata prima dell'instalalzione vera e prioria, che avvertir‡ 
-sullo stota dell'installer di AROD pre-alpha. L'ultimo click ``Proceed`` e si vedr‡ che 
-l'installer far‡ il suo lavoro. Potrai vedere delle impostazioni riguardo il tipo di tastiera e le 
+Procedendo si vedr√† l'ultima schermata prima dell'instalalzione vera e prioria, che avvertir√† 
+sullo stota dell'installer di AROD pre-alpha. L'ultimo click ``Proceed`` e si vedr√† che 
+l'installer far√† il suo lavoro. Potrai vedere delle impostazioni riguardo il tipo di tastiera e le 
 impostazioni locali, quindi i files saranno copiati. Attendete la fine dell'installazione.
 
-Dopo che l'installazione di AROS sar‡ completata si puÚ rimuovere il liveCD dal drive e
-riavviare la macchina per controllare se tutto Ë andato bene.
+Dopo che l'installazione di AROS sar√† completata si pu√≤ rimuovere il liveCD dal drive e
+riavviare la macchina per controllare se tutto √® andato bene.
 
 
 Installare AROS assieme a Windows o DOS
@@ -329,16 +329,16 @@ Installare AROS assieme a Windows o DOS
 Installare AROS dovrebbe essere semplice (assumendo che avete Windows Xp).
 Generalmente avrete solo bisogno di seguire i messsaggi dell'installer come spiegato prima per
 far si che funzioni bene.
-L'installer Ë fatto per trovare autometicamente le precedenti installazioni di Windows e metterle
+L'installer √® fatto per trovare autometicamente le precedenti installazioni di Windows e metterle
 nella lista di GRUB. Controllare il capitolo sottostante sulla installazione standalone per farlo.
-Ne avrai in ogni momento bisogno di ripristinare il precedente bootloadre NT, si puÚ usare il
+Ne avrai in ogni momento bisogno di ripristinare il precedente bootloadre NT, si pu√≤ usare il
 comando ``fixmbr`` nella console di recupero dal disco di installazzione di Windows.
  
-Si potrebbero presentare problemi con le versioni pi˘ vecchie e pi˘ nuove di windows (come 98
+Si potrebbero presentare problemi con le versioni pi√π vecchie e pi√π nuove di windows (come 98
 e vista).
 Per installare con vista si possono seguire passi simili a quelli usati per linux con l'installaer 
 GRUB.
-In alcuni casi GRUB puÚ essere installato e fare boot con vista, avrai solo bisogno di
+In alcuni casi GRUB pu√≤ essere installato e fare boot con vista, avrai solo bisogno di
 aggiungere un'entrata nel menu del file /boot/grub/menu.lst::
 
     title Windows Vista
@@ -348,25 +348,25 @@ aggiungere un'entrata nel menu del file /boot/grub/menu.lst::
 
 Se preferisci usare il bootloader di vista, puoi usare dei programmi come EasyBCD.
 
-Da fare (e da tradurre) di pi˘...
+Da fare (e da tradurre) di pi√π...
 
 
 Installare AROS insieme a Linux/BSD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installare AROS insieme a Linux o sistemi BSD Ë circa la stessa cosa di windows.
+Installare AROS insieme a Linux o sistemi BSD √® circa la stessa cosa di windows.
 Avrai bisogno di creare dello spazio libero per AROS con degli strumenti. Quindi usa 
 InstallAROSnper fare la partizionatura e formattazione della partizione di AROS e la copia 
 del sistema su esso (puoi anche aggiungere la partizione WORK se ne hai intenzione);
-sarebbe meglio perÚ non installare il bootloader togliendo il check dalla casella seguente::
+sarebbe meglio per√≤ non installare il bootloader togliendo il check dalla casella seguente::
 
     [ ] Install Bootloader
 
-Dopo che l'installer avr‡ finito di copiare i files chieder‡ di riavviare il computer.
-Dopo il reboot partir‡ normalmente con linux/BSD, e da lÏ sar‡ necessario configurare il bootoader.
+Dopo che l'installer avr√† finito di copiare i files chieder√† di riavviare il computer.
+Dopo il reboot partir√† normalmente con linux/BSD, e da l√¨ sar√† necessario configurare il bootoader.
 AROS usa un bootloader patchato, capace di caricare il kernel da AFFS. Ma non avrai bisogno di 
 usarlo se metti il kernel di AROS nella cartella di boot del sistema (di solito /boot) e usi il 
-bootloader GRUB gi‡ presente nella installazione precedente. Basta copiare dal livecd 
+bootloader GRUB gi√† presente nella installazione precedente. Basta copiare dal livecd 
 ``/boot/aros-i386.gz`` nella cartella ``/boot``. Quindi metti delle linee alla fine del file 
 ``/boot/grub/menu.lst`` per abilitare l'entrata di AROS nel menu::
 
@@ -377,43 +377,43 @@ bootloader GRUB gi‡ presente nella installazione precedente. Basta copiare dal l
     boot
 
 Puoi cambiare i parametri del kernel per impostare la risoluzione dello schermo. L'opzione
-'floppy=disabled' disabilita la periferica floppy, che non Ë neanche tanto utile in questi 
-giorni e puÚ causare dei problemi con l'avvio di AROS in alcuni casi.
+'floppy=disabled' disabilita la periferica floppy, che non √® neanche tanto utile in questi 
+giorni e pu√≤ causare dei problemi con l'avvio di AROS in alcuni casi.
 
-Se invece hai intenzione di usare qualunque altro tipo di bootloader come LILO invece non sar‡
-semplice quanto in grub (non Ë facile far partire AROS con lilo). Dovrai in qualche maniera 
+Se invece hai intenzione di usare qualunque altro tipo di bootloader come LILO invece non sar√†
+semplice quanto in grub (non √® facile far partire AROS con lilo). Dovrai in qualche maniera 
 far capire a LILO di fare partire la procedura di avvio interna di AROS e impostarlo per fare 
 partire un kernel.
 
-Dopo il riavvio si dovrebbe gi‡ vedere AROS nella lista di boot di grub.
+Dopo il riavvio si dovrebbe gi√† vedere AROS nella lista di boot di grub.
 
 Installare AROS con altri sistemi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ci sono tanti altri sistemi che la piattaforma di AROS puÚ supportare.
+Ci sono tanti altri sistemi che la piattaforma di AROS pu√≤ supportare.
 SE il tuo sistema usa come bootloader GRUB, il processo dovrebbe essere simile a quello 
-per linux. In caso contrario, ricordate sempre che tutto ciÚ di cui avrai bisogno per fare 
-avviare AROS Ë di copiare i files del kernel in una partizione che GRUB possa leggere e impostarlo
+per linux. In caso contrario, ricordate sempre che tutto ci√≤ di cui avrai bisogno per fare 
+avviare AROS √® di copiare i files del kernel in una partizione che GRUB possa leggere e impostarlo
 per mettere l'opzione nella lista.
 
-Da fare (e da tradurre) di pi˘...
+Da fare (e da tradurre) di pi√π...
 
 Installazione manuale 
 ^^^^^^^^^^^^^^^^^^^^^
 
 *quasi deprecato*  E' sempre raccomandato usare InstallAROS.                                               DEPRECATED
  
-Dato che InstallAROS Ë utile adesso, le informazioni seguenti saranno una sorta di
+Dato che InstallAROS √® utile adesso, le informazioni seguenti saranno una sorta di
 ***deprecato*** ma ancora potrebbero essere utili, quindi saranno mantenute per propositi informativi.
      
 .. Nota:: 
     Nonostante AROS possa essere installato su un Hard Disk, siete sempre avvertiti che
-    HDToolBox Ë un programma che si sa contenga bugs. Non dovrebbe rimuovere o distruggere
+    HDToolBox √® un programma che si sa contenga bugs. Non dovrebbe rimuovere o distruggere
     alcuna partizone, se altrimenti non specificato, ma purtroppo non possiamo garantire questa
     certezza al 100%. Quindi per piacere tenete conto che ***NON DOVRESTE*** installare AROS
-    in una macchina funzionante con dati importanti all'interno, dato che c'Ë una grande 
-    probabilit‡ di perdita di dati. Non ci prendiamo alcuna responsabilit‡ per alcuna 
-    perdita che puÚ avvenire. Qualunque bug trovato nel processo di installazione sarebbe 
+    in una macchina funzionante con dati importanti all'interno, dato che c'√® una grande 
+    probabilit√† di perdita di dati. Non ci prendiamo alcuna responsabilit√† per alcuna 
+    perdita che pu√≤ avvenire. Qualunque bug trovato nel processo di installazione sarebbe 
     utile per noi.
 
 **Partizionamento**

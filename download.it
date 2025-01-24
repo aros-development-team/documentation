@@ -22,14 +22,14 @@ Icaros Desktop LIVE!
 .. image:: /images/icaroslive_logo.png
    :align: left
 
-`Icaros Desktop LIVE!`__ è una distrubuzione completa del sistema operativo 
-Aros Desktop. é formato da un DVD-ROM live che può partire direttamente
+`Icaros Desktop LIVE!`__ Ã¨ una distrubuzione completa del sistema operativo 
+Aros Desktop. Ã© formato da un DVD-ROM live che puÃ² partire direttamente
 dal tuo PC (ma i componenti hardware devono essere supportati da AROS).
-Può essere installato sull'hard disk e coesistere con Windows Xp in una 
+PuÃ² essere installato sull'hard disk e coesistere con Windows Xp in una 
 partizione dedicata (configurazione manuale necessaria). Una quick reference 
 guide e alcuni PDF sono stati inclusi. Questa versione viene rilasciata con 
-anche una macchina virtuale basata su Qemu che può permettere agli utenti
-windows di provare la distrubuzione in un ambiente più sicuro (anche se più
+anche una macchina virtuale basata su Qemu che puÃ² permettere agli utenti
+windows di provare la distrubuzione in un ambiente piÃ¹ sicuro (anche se piÃ¹
 lento).
 
 __ http://live.icarosdesktop.org/
@@ -60,14 +60,14 @@ Nightly build
    Per scaricare correttamente una nightly build, consigliamo vivamente 
    l'uso di un download manager che possa recuperare un download 
    interrotto, oppure il comando wget (con "wget -c" per scaricare la 
-   porzione rimanente di un file già scaricato in parte da un altro 
+   porzione rimanente di un file giÃ  scaricato in parte da un altro 
    programma).
 
 Le nightly build vengono create automaticamente ogni notte a partire 
-dal codice sorgente più aggiornato. Siccome si tratta di versioni in 
-piena fase di sviluppo, è possibile che non si compilino o che non funzionino
+dal codice sorgente piÃ¹ aggiornato. Siccome si tratta di versioni in 
+piena fase di sviluppo, Ã¨ possibile che non si compilino o che non funzionino
 correttamente. Per cortesia, se trovate errori segnalateceli attraverso lo
-strumento apposito, il `bug tracker`__. Per qualsiasi altra necessità, non 
+strumento apposito, il `bug tracker`__. Per qualsiasi altra necessitÃ , non 
 esitate a contattarci per mezzo dei forum di `AROS-Exec`__.
 
 .. raw:: html

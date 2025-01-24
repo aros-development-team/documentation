@@ -1,1 +1,1 @@
-Mer sidor i Zune-inställningarna.
+Mer sidor i Zune-instÃ¤llningarna.

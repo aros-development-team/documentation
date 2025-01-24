@@ -5,23 +5,23 @@ Status update
 :Autor:   Paolo Besser
 :Data:     2006-09-15
 
-T³umaczenie Aros.org trwa. Samuel Atlan pracuje nad t³umaczeniem na jêzyk
-`francuski`__ . Przygotowanie ca³o¶ci zajmie trochê czasu, ale pierwsze strony
-s± ju¿ dostêpne z menu po lewej stronie. Nale¿y odnotowaæ tak¿e now± cechê
-aros.org: przet³umaczone strony mo¿na wczytaæ dodaj±c swój narodowy prefiks
-do standardowego adresu url. Np. mo¿na otworzyæ w³osk± stronê g³ówn± przy
-pomocy *www.aros.org/it*, rosyjsk± *www.aros.org/ru* itd.
+TÅ‚umaczenie Aros.org trwa. Samuel Atlan pracuje nad tÅ‚umaczeniem na jÄ™zyk
+`francuski`__ . Przygotowanie caÅ‚oÅ›ci zajmie trochÄ™ czasu, ale pierwsze strony
+sÄ… juÅ¼ dostÄ™pne z menu po lewej stronie. NaleÅ¼y odnotowaÄ‡ takÅ¼e nowÄ… cechÄ™
+aros.org: przetÅ‚umaczone strony moÅ¼na wczytaÄ‡ dodajÄ…c swÃ³j narodowy prefiks
+do standardowego adresu url. Np. moÅ¼na otworzyÄ‡ wÅ‚oskÄ… stronÄ™ gÅ‚Ã³wnÄ… przy
+pomocy *www.aros.org/it*, rosyjskÄ… *www.aros.org/ru* itd.
 
 __ http://www.aros.org/fr/
 
 AROS w newsach
 --------------
 
-Przeczytajcie proszê sympatyczn± `recenzjê`__ Dmitara Butrovskiego, któr±
-opublikowa³ na `OSnews.com`__. To jeden z bardziej kompletnych artyku³ów
-AROS-a, opisuj±cy wszystkie jego w³a¶ciwo¶ci i wszystkie strony naszego
-sympatycznego systemu operacyjnego. Je¶li jeszcze nie wiesz czym jest AROS, 
-to lektura tego artyku³u mo¿e okazaæ siê dobrym pomys³em.
+Przeczytajcie proszÄ™ sympatycznÄ… `recenzjÄ™`__ Dmitara Butrovskiego, ktÃ³rÄ…
+opublikowaÅ‚ na `OSnews.com`__. To jeden z bardziej kompletnych artykuÅ‚Ã³w
+AROS-a, opisujÄ…cy wszystkie jego wÅ‚aÅ›ciwoÅ›ci i wszystkie strony naszego
+sympatycznego systemu operacyjnego. JeÅ›li jeszcze nie wiesz czym jest AROS, 
+to lektura tego artykuÅ‚u moÅ¼e okazaÄ‡ siÄ™ dobrym pomysÅ‚em.
 
 __ http://osnews.com/story.php?news_id=15819
 __ http://osnews.com
@@ -29,26 +29,26 @@ __ http://osnews.com
 Oprogramowanie
 --------------
 
-Nowa wersja 1.20 znanego emulatora 8-bitowych komputerów Commodore *VICE* 
-jest dostêpna dla wszystkich platform amigowych, w tym AROS-a. Mo¿esz j± 
-znale¼æ `tutaj`__.
+Nowa wersja 1.20 znanego emulatora 8-bitowych komputerÃ³w Commodore *VICE* 
+jest dostÄ™pna dla wszystkich platform amigowych, w tym AROS-a. MoÅ¼esz jÄ… 
+znaleÅºÄ‡ `tutaj`__.
 
-*WinAros* to preinstalowane ¶rodowisko AROS-a w postaci obrazu dysku,
+*WinAros* to preinstalowane Å›rodowisko AROS-a w postaci obrazu dysku,
 kompatybilne ze znanymi maszynami wirtualnymi QEMU i VirtualPC Microsoftu,
-obu bezp³atnie dostêpnymi w sieci. Mo¿esz pobraæ `QEMU Winaros tutaj`__
-i `VirtualPC Winaros tutaj`__. Heinz-Raphael Reinke przygotowa³ kompletn±
-instrukcjê `AROS installation on hard disk`__ w formacie PDF. Je¶li wolisz, 
-jest tak¿e `wersja niemiecka`__. Potrzebujesz Adobe Acrobat Reader, FoxIt 
-Reader lub aPDF/xPDF by j± przeczytaæ. 
+obu bezpÅ‚atnie dostÄ™pnymi w sieci. MoÅ¼esz pobraÄ‡ `QEMU Winaros tutaj`__
+i `VirtualPC Winaros tutaj`__. Heinz-Raphael Reinke przygotowaÅ‚ kompletnÄ…
+instrukcjÄ™ `AROS installation on hard disk`__ w formacie PDF. JeÅ›li wolisz, 
+jest takÅ¼e `wersja niemiecka`__. Potrzebujesz Adobe Acrobat Reader, FoxIt 
+Reader lub aPDF/xPDF by jÄ… przeczytaÄ‡. 
 
-*Installation Kit for AROS (IKAROS)* to zestaw wirtualnych obrazów dysków
-ró¿nych emulatorów jak QEMU i VMware, podzielonych ju¿ na partycje,
-sformatowanych, i gotowych do instalacji AROS-a. Co wa¿ne archiwum ma
-niewielki rozmiar, gdy¿ nie zawiera wielu plików. Szybka instalacja
-¶wie¿ych wersji AROS-a, mo¿e byæ przydatna dla celów testowych nightly
-builds. Pakiet umo¿liwia ³atw± instalacjê nowych wersji bez potrzeby 
-partycjonowania. Do³±czono instrukcjê instalacji.
-Proszê sprawdzaj `Aros-Exec`__ w poszukiwaniu informacji o uaktualnieniach.
+*Installation Kit for AROS (IKAROS)* to zestaw wirtualnych obrazÃ³w dyskÃ³w
+rÃ³Å¼nych emulatorÃ³w jak QEMU i VMware, podzielonych juÅ¼ na partycje,
+sformatowanych, i gotowych do instalacji AROS-a. Co waÅ¼ne archiwum ma
+niewielki rozmiar, gdyÅ¼ nie zawiera wielu plikÃ³w. Szybka instalacja
+Å›wieÅ¼ych wersji AROS-a, moÅ¼e byÄ‡ przydatna dla celÃ³w testowych nightly
+builds. Pakiet umoÅ¼liwia Å‚atwÄ… instalacjÄ™ nowych wersji bez potrzeby 
+partycjonowania. DoÅ‚Ä…czono instrukcjÄ™ instalacji.
+ProszÄ™ sprawdzaj `Aros-Exec`__ w poszukiwaniu informacji o uaktualnieniach.
 
 
 __ http://www.viceteam.org/amigaos.html

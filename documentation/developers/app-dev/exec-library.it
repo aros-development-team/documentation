@@ -4,7 +4,7 @@ Manuale di sviluppo applicazioni AROS
 
 :Authors:   Staf Verhaegen, Sebastian Rittau, Stefan Rieken, Matt Parsons,
             Adam Chodorowski, Fabio Alemagna, Matthias Rustler
-:Copyright: Copyright © 1995-2006, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished; integration started (looong way left to go).
@@ -14,7 +14,7 @@ Manuale di sviluppo applicazioni AROS
 
 .. Warning::
 
-   Questo documento non Ë completato! E' molto probabile che molte parti non
+   Questo documento non √® completato! E' molto probabile che molte parti non
    siano aggiornate, contengano informazioni scorrette o semplicemente mancanti.
    Se vuoi aiutarci a migliorarlo, contattaci!
 
@@ -77,15 +77,15 @@ in AROS, quindi dovreste includere quasi sempre ``exec/types.h``.
 IPTR
 ^^^^
 
-C'Ë anche un'altra importante definizione di tipo, `IPTR`. E' molto
-importante in AROS, in quanto Ë l'unico modo di dichiarare un campo che puÚ
+C'√® anche un'altra importante definizione di tipo, `IPTR`. E' molto
+importante in AROS, in quanto √® l'unico modo di dichiarare un campo che pu√≤
 contenere un intero o un puntatore.
 
 .. Note:: AmigaOS non conosce questo tipo. Se state portanto un programma da
           AmigaOS ad AROS, cercate nel sorgente tutte le occorrente di `ULONG`
           che possono contenere anche dei puntatori e cambiatele in `IPTR`. Se
-          non lo fate, il vostro programma non funzioner‡ su sistemi dotati di
-          puntatori a pi˘ di 32 bit (per esempio i DEC Alpha che hanno
+          non lo fate, il vostro programma non funzioner√† su sistemi dotati di
+          puntatori a pi√π di 32 bit (per esempio i DEC Alpha che hanno
           puntatori a 64 bit).
 
 
@@ -93,11 +93,11 @@ BPTR
 ^^^^
 
 I cosidetti `BPTR` sono sempre stati un problema in AmigaOS e questo problema
-Ë stato ereditato da AROS. In versioni di AROS con compatibilit‡ binaria, un
+√® stato ereditato da AROS. In versioni di AROS con compatibilit√† binaria, un
 `BPTR` equivale a un quarto del puntatore reale. Se, per esempio, un puntatore
 punta all'indirizzo ``$80000`` il puntatore `BPTR` che punta allo stesso
-indirizzo conterr‡ ``$20000``. Sui sistemi senza compatibilit‡ binaria, un
-`BPTR` Ë uguale a un `APTR`.
+indirizzo conterr√† ``$20000``. Sui sistemi senza compatibilit√† binaria, un
+`BPTR` √® uguale a un `APTR`.
 
 Per la conversione tra un puntatore normale e un `BPTR` usate questa macro::
 
@@ -106,17 +106,17 @@ Per la conversione tra un puntatore normale e un `BPTR` usate questa macro::
     APTR BADDR( BPTR bptr );
     BPTR MKBADDR( APTR ptr );
 
-Esiste anche una cosa chiamata `BSTR` che Ë un tipo speciale di stringa. Non ne
-parleremo qui perchË Ë una cosa usata molto raramente.
+Esiste anche una cosa chiamata `BSTR` che √® un tipo speciale di stringa. Non ne
+parleremo qui perch√® √® una cosa usata molto raramente.
 
 
 Storia
 ^^^^^^
 
-Quando iniziÚ il suo sviluppo, Amiga fu progettato come una pura console da
+Quando inizi√≤ il suo sviluppo, Amiga fu progettato come una pura console da
 gioco modulare. Come tale, non aveva alcun bisogno di gestione del filesystem.
-Il sistema operativo fu creato senza questo in mente. Ma Commodore, che comprÚ
-Amiga, volle un computer completo al posto di un'altra console da gioco. CosÏ,
+Il sistema operativo fu creato senza questo in mente. Ma Commodore, che compr√≤
+Amiga, volle un computer completo al posto di un'altra console da gioco. Cos√¨,
 poco tempo dopo la presentazione iniziale di Amiga, c'era bisogno di un file
 system. Invece di perdere tempo a svilupparne uno custom, fu portato su Amiga
 il filesystem di un sistema operativo chiamato TRIPOS. Sfortunatamente, TRIPOS
@@ -132,12 +132,12 @@ Liste Exec
 ^^^^^^^^^^
 
 AROS implementa un sistema di liste linkate, le cosiddette liste exec. Una
-lista linkata Ë costituita da una serie di nodi, ognuno di essi punta all'altro.
+lista linkata √® costituita da una serie di nodi, ognuno di essi punta all'altro.
 Sono definiti due tipi di nodi in `exec/nodes.h`:
 
 `struct MinNode`
-    Ë il modo base. Non avete bisogno di conoscerne la struttura, in quanto
-    ogni possibile azione di su essi Ë gestita da qualche funzione di libreria.
+    √® il modo base. Non avete bisogno di conoscerne la struttura, in quanto
+    ogni possibile azione di su essi √® gestita da qualche funzione di libreria.
 
 `struct Node`
     estende la struttura semplice `MinNode`. Fornisce alcuni campi aggiuntivi:
@@ -149,20 +149,20 @@ Sono definiti due tipi di nodi in `exec/nodes.h`:
         E' definita una lista di tipi in `exec/nodes.h`.        
 
     `ln_Pri`
-        Una priorit‡, usata per ordinare la lista.
+        Una priorit√†, usata per ordinare la lista.
 
 Entrambe le strutture possono essere integrate in altre strutture. Per esempio
 `struct Library` (definita in `exec/libraries.h`) contiene una struct `Node`
 all'inizio. In questo modo tutte le librerie possono essere contenute in una
-lista. Il campo `ln_Name` punta al nome della libreria, `ln_Type` Ë settato a
-`NT_LIBRARY` per fare vedere che questo nodo Ë una librerie e `ln_Pri`
+lista. Il campo `ln_Name` punta al nome della libreria, `ln_Type` √® settato a
+`NT_LIBRARY` per fare vedere che questo nodo √® una librerie e `ln_Pri`
 riflette l' *importanza* di una libreria.
 
 Ovviamente, abbiamo bisogno di contenitori di liste. Questi sono definiti in
 ``exec/lists.h``. Come per i nodi, per le liste abbiamo due tipi diversi:
 
 `struct MinList`
-    Ë la lista minimale. Non avete bisogno di conoscerne i membri; guardatela
+    √® la lista minimale. Non avete bisogno di conoscerne i membri; guardatela
     come una scatola nera.
 
 `struct List`
@@ -170,7 +170,7 @@ Ovviamente, abbiamo bisogno di contenitori di liste. Questi sono definiti in
     `struct Node`.
 
 Le `MinList` hanno dei `MinNode` come membri, mentre le `List` usano i `Node`.
-Non sono intercambiabili. Mentre Ë tecnicamente possibile usare i `Node` nelle
+Non sono intercambiabili. Mentre √® tecnicamente possibile usare i `Node` nelle
 `MinList`, perdereste tutti i vantaggi.
 
 FIXME: Macros
@@ -198,7 +198,7 @@ E' possibile aggiungere nodi alle liste le seguenti funzioni di exec.library::
 
 Con `AddHead()` e `AddTail()` un ``node`` viene inserito rispettivamente
 all'inizio o alla fine di una ``list``. `Enqueue` inserisce un ``node`` a
-seconda del suo campo ``ln_Pri``. Un nodo puÚ essere inserito dopo un altro
+seconda del suo campo ``ln_Pri``. Un nodo pu√≤ essere inserito dopo un altro
 usanto `Insert()`. In questo caso, bisogna fornire ``pred``, il puntatore al
 nodo che precede ``node``.
 
@@ -223,15 +223,15 @@ E' possibile cercare un nodo in un lista usando::
 
     struct Node *FindName( struct List *list, STRPTR name );
 
-``name`` Ë il puntatore a una stringa che deve essere confrontata con il campo
-``ln_Name`` dei nodi in ``list``. Il confronto Ë case-sensitive! Se ``name``
-corrisponde a un qualunque campo ``ln_Name``, verr‡ ritornato un puntatore al
-nodo corrispondente. Se non viene trovato alcun nodo verr‡ restituito ``NULL``.
+``name`` √® il puntatore a una stringa che deve essere confrontata con il campo
+``ln_Name`` dei nodi in ``list``. Il confronto √® case-sensitive! Se ``name``
+corrisponde a un qualunque campo ``ln_Name``, verr√† ritornato un puntatore al
+nodo corrispondente. Se non viene trovato alcun nodo verr√† restituito ``NULL``.
 
 .. Note::
 
     Se usate `FindName()` su una lista, questa non deve contenere alcuna
-    ``struct MinList``. Altrimenti la memoria verr‡ corrotta!
+    ``struct MinList``. Altrimenti la memoria verr√† corrotta!
 
 Nell'esempio seguente, creiamo una lista, ci aggiungiamo tre nodi, ne cerchiamo
 uno per nome e quindi lo rimuoviamo::
@@ -249,7 +249,7 @@ uno per nome e quindi lo rimuoviamo::
     struct Node node1 =
     {
         NULL, NULL,    /* Ancora nessun precedecessore e successore */
-        NT_UNKNOWN, 0, /* Tipo sconosciuto, priorit‡ ignorata */
+        NT_UNKNOWN, 0, /* Tipo sconosciuto, priorit√† ignorata */
         "Primo nodo"   /* Il nome del nodo */
     };
 
@@ -302,50 +302,50 @@ Macro
 AROS definisce alcune macro in vari file header. Tutte le macro fanno il
 casting dei loro parametri al tipo corretto, quindi dovete fornire un input
 valido ma potete stare sicuri del cast (le macro sono concepite per rendere la
-vita pi˘ semplice).
+vita pi√π semplice).
 
 ``NEWLIST(list)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Inizializza una lista. Non dovete mai usare una lista prima di averla
     inizializzata.
 
 ``GetHead(list)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Restituisce un puntatore al primo nodo della lista o ``NULL`` se la lista
-    Ë vuota.
+    √® vuota.
 
 ``GetTail(list)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Restituisce un puntatore all'ultimo nodo della lista o ``NULL`` se la lista
-    Ë vuota.
+    √® vuota.
 
 ``GetSucc(node)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Restituisce un puntatore al prossimo nodo della lista o ``NULL`` se non ce
     ne sono.
 
 ``GetPred(list)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Restituisce un puntatore al precedente nodo della lista o ``NULL`` se non ce
-    ne sono pi˘.
+    ne sono pi√π.
 
 ``ForeachNode(list,node)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Itera attraverso una lista. Un blocco di codice deve seguire questa macro.
-    Il blocco non verr‡ eseguito se la lista Ë vuota. Quando la lista termina
-    `node` non contiene ``NULL`` ma ``node->ln_Succ`` sar‡ ``NULL``. Non potete
+    Il blocco non verr√† eseguito se la lista √® vuota. Quando la lista termina
+    `node` non contiene ``NULL`` ma ``node->ln_Succ`` sar√† ``NULL``. Non potete
     usare questa macro se volete cancellare i nodi di una lista (es. non potete
     chiamare `Remove()` dentro il blocco di codice che segue questa macro).
     Usate `ForeachNodeSafe()` se volete cancellare dei nodi.
@@ -371,33 +371,33 @@ vita pi˘ semplice).
             printf ("La lista non contiene un nodo con nome \"end\"\n");
 
 ``ForeachNodeSafe(list,node,tmpNode)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Itera attraverso una lista. Un blocco di codice deve seguire questa macro.
-    Il blocco non verr‡ eseguito se la lista Ë vuota. Quando la lista termina
-    `node` non contiene ``NULL`` ma ``node->ln_Succ`` sar‡ ``NULL``. Potete
+    Il blocco non verr√† eseguito se la lista √® vuota. Quando la lista termina
+    `node` non contiene ``NULL`` ma ``node->ln_Succ`` sar√† ``NULL``. Potete
     usare questa macro con codice che cancella i nodi della lista.
 
 ``SetNodeName(node,name)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
-    Assegna un nome nuovo a un nodo. Il nome non viene copiato, la macro far‡
+    Assegna un nome nuovo a un nodo. Il nome non viene copiato, la macro far√†
     semplicemente puntatore `ln_Name` a ``name``.
-    La macro far‡ il casting di `node` a ``struct Node *``
+    La macro far√† il casting di `node` a ``struct Node *``
     quindi accertatevi che `node` sia un nodo completo.
 
 ``GetNodeName(node)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Ritorna il nome del nodoo. 
-    La macro far‡ il casting di `node` a ``struct Node *``
+    La macro far√† il casting di `node` a ``struct Node *``
     quindi accertatevi che `node` sia un nodo completo.
     
 ``ListLength(list,count)``
-    :Compatibile: SÏ
+    :Compatibile: S√¨
     :Posizione:   exec/lists.h
 
     Questo memorizza in `count` il numero di nodi nella `list`.
@@ -407,11 +407,11 @@ vita pi˘ semplice).
 Gestione della memoria
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In un programma avete bisogno di memoria pressocchË per ogni cosa. Si possono
+In un programma avete bisogno di memoria pressocch√® per ogni cosa. Si possono
 fare molte cose usando lo stack. Ma spesso avete bisogno di blocchi di memoria
-pi˘ grandi o non volete usare lo stack per qualche motivo. In questi casi
+pi√π grandi o non volete usare lo stack per qualche motivo. In questi casi
 dovete allocare la memoria voi stessi. exec.library fornisce diversi modi per
-allocare la memoria. Le due funzioni pi˘ importanti sono::
+allocare la memoria. Le due funzioni pi√π importanti sono::
 
     #include <proto/exec.h>
 
@@ -419,9 +419,9 @@ allocare la memoria. Le due funzioni pi˘ importanti sono::
     APTR AllocVec( ULONG size, ULONG flags );
 
 Entrambe le funzioni restituiscono un puntatore a un'area di memoria della
-grandezza specificata in ``size``. Se non c'Ë sufficiente memoria disponibile,
-verr‡ restituito ``NULL`` al posto del puntatore. Dovete controllare questa
-eventualit‡ prima di usare la memoria. Se la memoria Ë stata allocata con
+grandezza specificata in ``size``. Se non c'√® sufficiente memoria disponibile,
+verr√† restituito ``NULL`` al posto del puntatore. Dovete controllare questa
+eventualit√† prima di usare la memoria. Se la memoria √® stata allocata con
 successo, potete farne quello che volete.
 
 Potete specificare dei ``flags`` aggiuntivi per ottenere tipi speciali di
@@ -435,7 +435,7 @@ MEMF_LOCAL
 
 MEMF_CHIP
     Restituisce memoria accessibile dai chip grafici e sonori. Questo tipo di
-    memoria Ë necessario per alcune funzioni.
+    memoria √® necessario per alcune funzioni.
 
 MEMF_FAST
     Restituisce memoria non accessibile dai chip grafici e sonori. *Normalmente
@@ -446,24 +446,24 @@ MEMF_FAST
 MEMF_PUBLIC
     Questo flag deve essere settato se la memoria che state allocando deve
     essere accessibile ad altri task. Se non lo settate, la memoria allocata
-    Ë *privata* per il vostro task. Questo problema verr‡ discusso in dettaglio
+    √® *privata* per il vostro task. Questo problema verr√† discusso in dettaglio
     nel capitolo su
     .. FIXME:: *inter-task communication*.
 
 MEMF_REVERSE
-    Se questo flag Ë settato, verr‡ invertito l'ordine di ricerca di blocchi di
+    Se questo flag √® settato, verr√† invertito l'ordine di ricerca di blocchi di
     memoria liberi. I blocchi che si trovano alla fine della memoria libera
     verranno trovati per primi.
 
 MEMF_NO_EXPUNGE
-    Normalmente, se non viene trovata libera la quantit‡ di memoria richista,
+    Normalmente, se non viene trovata libera la quantit√† di memoria richista,
     AROS tenta di liberare la memoria non utilizzata, per esempio liberando la
-    memoria da librerie non utilizzate. Se questo flag Ë settato, questo
+    memoria da librerie non utilizzate. Se questo flag √® settato, questo
     comportamento viene disabilitato.
 
 La memoria allocata con queste funzioni *deve essere liberata* dopo l'uso con
-una delle seguenti funzioni. *Ricordatevi che non dovete usare memoria che Ë
-gi‡ stata liberata.*::
+una delle seguenti funzioni. *Ricordatevi che non dovete usare memoria che √®
+gi√† stata liberata.*::
 
     #include <proto/exec.h>
 
@@ -481,8 +481,8 @@ mentre dovete farlo se usate `AllocMem()`.
 Allocare Regioni Multiple di Memoria in una volta sola
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A volte c'Ë bisogno di effettuare allocazioni multiple di memoria in una volta
-sola. Il metodo usuale Ë chiamare `AllocVed()` con la grandezza complessiva di
+A volte c'√® bisogno di effettuare allocazioni multiple di memoria in una volta
+sola. Il metodo usuale √® chiamare `AllocVed()` con la grandezza complessiva di
 tutti i blocchi di memoria e quindi tenere dei puntatori relativi al puntatore
 restituito dall'allocazione. Ma cosa fareste se avete bisogno di diversi tipi
 di memoria, con diversi ``MEMF_`` settati? Potete fare allocazioni multiple o
@@ -515,8 +515,8 @@ definizione di questa struttura in ``exec/memory.h``::
     };
 
 L'array ``ml_ME`` di ``struct MemList`` ha un numero variabile di elementi. Il
-numero dei suoi elementi Ë settato in ``ml_NumEntries``. La struct ``MemEntry``
-descrive una singola unit‡ di memoria. Vengono memorizzate la sua grandezza
+numero dei suoi elementi √® settato in ``ml_NumEntries``. La struct ``MemEntry``
+descrive una singola unit√† di memoria. Vengono memorizzate la sua grandezza
 (``me_Length``), le sue richieste (es. ``MEMF_``, in ``me_Un.meu_Reqs``) e
 possibilmente un puntatore a un blocco di memoria (``me_Un.meu_Addr``). La
 struct ``MemList`` che passiamo a ``oldlist``, deve avere settato il campo
@@ -525,7 +525,7 @@ struct ``MemEntry`` deve avere settati i campi ``me_Length`` e ``me_Un.meu_Reqs`
 Gli altri campi vengono ignorati. La funzione restituisce un puntatore a una
 copia della struct ``MemEntry``, passata in ``oldlist``, con tutti i campi
 rilevanti settati (specialmente ``me_Un.meu_Addr``). Viene segnalato un errore
-settando il bit pi˘ significativo del puntatore che viene restituito. Quindi
+settando il bit pi√π significativo del puntatore che viene restituito. Quindi
 dovete sempre controllarlo, prima di utilizzare il puntatore ritornato. La
 memoria allocata con `AllocEntry()` deve essere liberata usando `FreeMem()`.
 
@@ -534,20 +534,20 @@ Memory Pools
 ^^^^^^^^^^^^
 
 AROS gestisce diversi cosiddetti memory-pools. Ogni memory-pool contiene una
-lista di aree di memoria. Il memory-pool pi˘ importante Ë quello che contiene
+lista di aree di memoria. Il memory-pool pi√π importante √® quello che contiene
 tutta la memoria libera del sistema. Ma potete anche creare dei memory-pool voi
 stessi. Questo ha alcuni vantaggi:
 
 + Ogni volta che allocate della memoria, la memoria nel sistema diventa sempre
-  pi˘ frammentata. Questa frammentazione fa sÏ che i blocchi di memoria
-  disponibili diventino sempre pi˘ piccoli. In questo modo le allocazioni pi˘
+  pi√π frammentata. Questa frammentazione fa s√¨ che i blocchi di memoria
+  disponibili diventino sempre pi√π piccoli. In questo modo le allocazioni pi√π
   grandi falliranno. Per prevenire questo problema vengono introdotti i
   memory-pool. Invece di allocare molti piccoli blocchi di memoria, le routine
   di gestione dei pool allocano grossi blocchi e quindi restituiscono piccoli
   blocchi di essi, quando vengono fatte le richieste di memoria.
 
-+ I memory-pool privati hanno l'abilit‡ di tenere traccia di tutte le
-  allocazioni che avete fatto, cosicchË tutta la memoria in un pool potr‡ essere
++ I memory-pool privati hanno l'abilit√† di tenere traccia di tutte le
+  allocazioni che avete fatto, cosicch√® tutta la memoria in un pool potr√† essere
   liberata con una semplice chiamata di funzione (ma potete anche liberare la
   memoria individualmente).
 
@@ -562,26 +562,26 @@ I `flags` specificano il tipo di memoria che volete ottenere dalla funzione
 `AllocPooled()`. Tutte le definizioni ``MEMF_`` descritte sopra sono permesse
 anche qui.
 
-`puddleSize` Ë la grandezza dei blocchi di memoria allocati dalle funzioni di
+`puddleSize` √® la grandezza dei blocchi di memoria allocati dalle funzioni di
 pooling. Normalmente, una grandezza dieci volte superiore alla grandezza di
-memoria media che avete bisogno di allocare, Ë una buona opzione. Ma non di
+memoria media che avete bisogno di allocare, √® una buona opzione. Ma non di
 meno il `puddleSize` non dovrebbe essere troppo grande. Normalmente potreste
 limitarlo a circa ``50kb``. Nota bene, questi sono solo suggerimenti, non reali
 limitazioni.
 
-Infine, `threshSize` specifica quanto puÚ essere grande la memoria che si deve
-allocare, cosÏcchË nessun nuovo blocco viene allocato automaticamente. Se, per
-esempio, il `threshSize` Ë settato a 25kb e volete allocare una porzione di
+Infine, `threshSize` specifica quanto pu√≤ essere grande la memoria che si deve
+allocare, cos√¨cch√® nessun nuovo blocco viene allocato automaticamente. Se, per
+esempio, il `threshSize` √® settato a 25kb e volete allocare una porzione di
 memoria grande 30kb, non viene cercata la lista interna di blocchi, ma invece
-la memoria verr‡ allocata direttamente. Se la memoria da allocare fosse di soli
+la memoria verr√† allocata direttamente. Se la memoria da allocare fosse di soli
 20kb, allora per prima cosa verrebbe fatta una ricerca nella lista dei blocchi
 per trovare una porzione di memoria di quella grandezza. Ovviamente, `threshSize`
-*non deve* essere pi˘ grande di `puddleSize` non dovrebbe essere neanche troppo
-piccolo. La met‡ di `puddleSize` Ë un buon compromesso.
+*non deve* essere pi√π grande di `puddleSize` non dovrebbe essere neanche troppo
+piccolo. La met√† di `puddleSize` √® un buon compromesso.
 
 `CreatePool()` ritorna un puntatore privato a una struttura-pool che deve essere
-salvato per usi futuri. Se non Ë disponibile memoria per la struttura-pool,
-allora verr‡ restituito ``NULL``. Dovete controllare sempre il verificarsi di
+salvato per usi futuri. Se non √® disponibile memoria per la struttura-pool,
+allora verr√† restituito ``NULL``. Dovete controllare sempre il verificarsi di
 questa condizione.
 
 Dopo l'uso, tutti i memory-pool devono essere distrutti chiamando::
@@ -590,11 +590,11 @@ Dopo l'uso, tutti i memory-pool devono essere distrutti chiamando::
 
     void DeletePool( APTR pool );
 
-Questa funzione cancella il `pool` che le Ë stato passato. Inoltre, tutta la
-memoria allocata in quel pool verr‡ liberata. In questo modo, non avete bisogno
+Questa funzione cancella il `pool` che le √® stato passato. Inoltre, tutta la
+memoria allocata in quel pool verr√† liberata. In questo modo, non avete bisogno
 di ricordare ogni singolo pezzo di memoria che avete allocato in quel pool.
-Baster‡ chiamare `DeletePool()` alla fine. Ricordate di fare attenzione a non
-utilizzare memoria dopo che il suo pool Ë stato cancellato.
+Baster√† chiamare `DeletePool()` alla fine. Ricordate di fare attenzione a non
+utilizzare memoria dopo che il suo pool √® stato cancellato.
 
 Se volete allocare memoria da un pool, dovete chiamare::
 
@@ -603,18 +603,18 @@ Se volete allocare memoria da un pool, dovete chiamare::
     void *AllocPooled( APTR pool, ULONG size );
 
 A prescindere dal `pool` da cui allocare memoria, deve essere specificata la
-grandezza (`size`) della memoria da allocare. Verr‡ restituito un puntatore a
+grandezza (`size`) della memoria da allocare. Verr√† restituito un puntatore a
 un blocco di memoria della grandezza richista o ``NULL`` per indicare che non
-c'Ë sufficiente memoria disponibile.
+c'√® sufficiente memoria disponibile.
 
-La memoria allocata con `AllocPooled()` puÚ essere liberata sia distruggendo
+La memoria allocata con `AllocPooled()` pu√≤ essere liberata sia distruggendo
 l'intero pool con `DeletePool()` o individualmente chiamando::
 
     #include <proto/exec.h>
 
     void FreePooled( APTR pool, void *memory, ULONG size );
 
-Questa funzione libera esattamente un pezzo di memoria che Ë stato
+Questa funzione libera esattamente un pezzo di memoria che √® stato
 precedentemente allocato usando `AllocPooled()`. Devono essere specificato come
 argomenti: il puntatore alla memoria `memory` resituito da `AllocPooled()`, la
 sua grandezza `size` e il pool in cui si trova.
@@ -622,10 +622,10 @@ sua grandezza `size` e il pool in cui si trova.
 .. Note::
 
     Potreste chiedervi: "Se `DeletePool()` cancella tutta la memoria di un pool,
-    perchË mai dovrei usare `FreePooled()`?" La risposta Ë semplice: per
-    risparmiare memoria. Normalmente Ë un buono stile quello di liberare memoria
-    immediatamente quando non ne avete pi˘ bisogno. Ma a volta Ë pi˘ semplice
-    liberare un memory-pool dopo un mucchio di allocazioni. CiÚ nonostante,
+    perch√® mai dovrei usare `FreePooled()`?" La risposta √® semplice: per
+    risparmiare memoria. Normalmente √® un buono stile quello di liberare memoria
+    immediatamente quando non ne avete pi√π bisogno. Ma a volta √® pi√π semplice
+    liberare un memory-pool dopo un mucchio di allocazioni. Ci√≤ nonostante,
     non dovreste usare questa caratteristica, se non ne siete sicuri, quando
     il memory-pool viene cancellato. Immaginate un programma come questi (non
     provate a compilarlo, non compilerebbe)::
@@ -639,7 +639,7 @@ sua grandezza `size` e il pool in cui si trova.
             APTR pool;
             APTR mem;
 
-            /* Creiamo il nostro memory pool e testiamo se Ë stato creato con
+            /* Creiamo il nostro memory pool e testiamo se √® stato creato con
                successo. */
             pool = CreatePool(MEMF_ANY, 50*1024, 25*1024);
             if (pool)
@@ -681,11 +681,11 @@ sua grandezza `size` e il pool in cui si trova.
             }
         }
 
-    Ogni volta che il bottone ``Fai azione`` Ë rilasciato, viene allocata un
+    Ogni volta che il bottone ``Fai azione`` √® rilasciato, viene allocata un
     po' di memoria. Questa memoria viene liberata alla fine del programma,
-    quando viene chiamata `DeletePool()`. Ovviamente, pi˘ a lungo il programma
-    viene utilizzato, pi˘ memoria verr‡ impegnata. E' questo il motivo per cui
-    Ë molto meglio liberare la memoria dopo l'uso. Questo viene implementato
+    quando viene chiamata `DeletePool()`. Ovviamente, pi√π a lungo il programma
+    viene utilizzato, pi√π memoria verr√† impegnata. E' questo il motivo per cui
+    √® molto meglio liberare la memoria dopo l'uso. Questo viene implementato
     sostituendo la parte tra ``case DOACTION:`` e ``case QUIT:`` con::
 
         mem = AllocPooled(pool, 10*1024);
@@ -720,7 +720,7 @@ Dovete liberare ogni blocco di memoria allocato con `Allocate()` con::
     void Deallocate( struct MemHeader *mh, APTR mem, ULONG size );
 
 Dovete passare a `Deallocate()` gli stessi ``mh`` e ``size`` passati ad
-`Allocate()` e, in aggiunta, il puntatore che vi Ë stato restituito da essa.
+`Allocate()` e, in aggiunta, il puntatore che vi √® stato restituito da essa.
 
 intuition.library fornisce un altro modo per gestire memory pool con le funzioni
 `AllocRemember()` e `FreeRemember()`. Notate, tuttavia, che queste sono
@@ -738,13 +738,13 @@ un indirizzo specifico. Per farlo usate::
     void *AllocAbs( ULONG size, APTR address );
 
 Questa funzione prova ad allocare `size` bytes all'indirizzo `address`. Se ci
-riesce, verr‡ restituito un puntatore all'indirizzo richiesto. Se nel blocco
-richiesto c'Ë della memoria gi‡ allocata o non Ë disponibile nel sistema,
-allora verr‡ restituito ``NULL``.
+riesce, verr√† restituito un puntatore all'indirizzo richiesto. Se nel blocco
+richiesto c'√® della memoria gi√† allocata o non √® disponibile nel sistema,
+allora verr√† restituito ``NULL``.
 
 .. Warning::
 
-    L'inizio del blocco di memoria richiesto verr‡ usato da exec per
+    L'inizio del blocco di memoria richiesto verr√† usato da exec per
     memorizzare i dati del nodo (la grandezza esatta si calcola con 
     ``(2*sizeof (void *)) )``. Per questo, *non dovete scrivere* all'inizio
     del blocco di memoria! A causa di questi ostacoli non dovreste usare
@@ -762,7 +762,7 @@ Per ottenere la grandezza della memoria disponibile, usate la funzione::
 
     ULONG AvailMem( ULONG type );
 
-Il parametri `type` Ë rappresentato da alcuni dei seguenti flag, definiti in
+Il parametri `type` √® rappresentato da alcuni dei seguenti flag, definiti in
 `exec/memory.h`:
 
 ``MEMF_ANY``
@@ -773,11 +773,11 @@ Il parametri `type` Ë rappresentato da alcuni dei seguenti flag, definiti in
     e sonori.
 
 ``MEMF_FAST``
-    Restituisci la grandezza della memoria che non Ë accessibile ai chip
+    Restituisci la grandezza della memoria che non √® accessibile ai chip
     grafici e sonori.
 
 ``MEMF_LARGEST``
-    Ritorna solo il blocco pi˘ grande, al posto di tutta la memoria del tipo
+    Ritorna solo il blocco pi√π grande, al posto di tutta la memoria del tipo
     specificato.
 
 Potreste specificato anche altri flag ``MEMF_``, ma verrebbero ignorati.
@@ -796,13 +796,13 @@ Ecco un programma per elencare la memoria disponibile nel sistema::
 
     int main(int argc, char *argv[])
     {
-        printf("Memoria totale libera: %h, blocco pi˘ grande: %h\n",
+        printf("Memoria totale libera: %h, blocco pi√π grande: %h\n",
         AvailMem(MEMF_ANY), AvailMem(MEMF_ANY|MEMF_LARGEST));
 
-        printf("Memoria chip libera:  %h, blocco pi˘ grande: %h\n",
+        printf("Memoria chip libera:  %h, blocco pi√π grande: %h\n",
         AvailMem(MEMF_CHIP), AvailMem(MEMF_CHIP|MEMF_LARGEST));
 
-        printf("Memoria fast libera:  %h, blocco pi˘ grande: %h\n",
+        printf("Memoria fast libera:  %h, blocco pi√π grande: %h\n",
         AvailMem(MEMF_FAST), AvailMem(MEMF_FAST|MEMF_LARGEST));
     }
 
@@ -810,7 +810,7 @@ Ecco un programma per elencare la memoria disponibile nel sistema::
 Aggiungere memoria al sistema
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Questo capitolo Ë solo per interessarvi, se volete scrivere un driver per un
+Questo capitolo √® solo per interessarvi, se volete scrivere un driver per un
 componente hardware che aggiunge memoria al sistema::
 
     #include <proto/exec.h>
@@ -829,18 +829,18 @@ l'indirizzo `address` e la grandezza `size` della memoria da aggiungere. In
     La vostra memoria non deve essere accessibile ai chip grafici e sonori.
 
 ``MEMF_CHIP``
-    La vostra memoria sar‡ accessibile ai chip grafici e sonori.
+    La vostra memoria sar√† accessibile ai chip grafici e sonori.
 
-Potete fornire una priorit‡ `priority`, con la quale la vostra memoria sar‡
-aggiunta alla lista di memoria. La regola gerale Ë: Pi˘ veloce Ë la vostra
-memoria, pi˘ alta dovrebbe essere la sua priorit‡. Se non sapete cosa
+Potete fornire una priorit√† `priority`, con la quale la vostra memoria sar√†
+aggiunta alla lista di memoria. La regola gerale √®: Pi√π veloce √® la vostra
+memoria, pi√π alta dovrebbe essere la sua priorit√†. Se non sapete cosa
 specificare qui, fornite ``0``. Infine, potete specificare un nome `name`, con
-il quale la vostra memoria puÚ essere identificata dal sistema e dagli utenti.
+il quale la vostra memoria pu√≤ essere identificata dal sistema e dagli utenti.
 Potete specificate ``NULL`` al posto di un nome, ma dare un nome alla vostra
-memoria Ë raccomandato.
+memoria √® raccomandato.
 
-Una volta che la vostra memoria Ë stata aggiunta alla lista della memoria
-libera, non puÚ essere pi˘ rimossa.
+Una volta che la vostra memoria √® stata aggiunta alla lista della memoria
+libera, non pu√≤ essere pi√π rimossa.
 
 
 Situazioni di scarsa memoria

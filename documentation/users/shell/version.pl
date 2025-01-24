@@ -9,7 +9,7 @@
 Version
 =======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	NAME/M,MD5SUM/S,VERSION/N,REVISION/N,FILE/S,FULL/S,RES/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,7 +29,7 @@ Funkcja
 ~~~~~~~
 ::
 
-	Wy¶wietla lub sprawdza wersjê pliku.
+	WyÅ›wietla lub sprawdza wersjÄ™ pliku.
 
        
 
@@ -38,15 +38,15 @@ Parametry
 ::
 
 
-	NAME	--	nazwa pliku, je¶li nie podano pliku to wy¶wietla
-			wersjê i wydanie Kickstart'u
+	NAME	--	nazwa pliku, jeÅ›li nie podano pliku to wyÅ›wietla
+			wersjÄ™ i wydanie Kickstart'u
 	MD5SUM	--	#FIXME what is that?
-	VERSION	--	sprawdza wersjê i je¶li by³a mniejsz zwraca kod b³êdu 5.
-	REVISION--	sprawdza wydanie i je¶li jest mniejsza zwraca kod b³êdu
-			5 (WARN/Ostrze¿enie)
-	FILE	--	wczytuje bezpo¶rednio z pliku i ignoruje wszystkie 
-			za³adowane do pamiêci
-	FULL	--	wy¶wietla dodatkow± informacje
-	RES	--	pobiera wersjê komend rezydentnych
+	VERSION	--	sprawdza wersjÄ™ i jeÅ›li byÅ‚a mniejsz zwraca kod bÅ‚Ä™du 5.
+	REVISION--	sprawdza wydanie i jeÅ›li jest mniejsza zwraca kod bÅ‚Ä™du
+			5 (WARN/OstrzeÅ¼enie)
+	FILE	--	wczytuje bezpoÅ›rednio z pliku i ignoruje wszystkie 
+			zaÅ‚adowane do pamiÄ™ci
+	FULL	--	wyÅ›wietla dodatkowÄ… informacje
+	RES	--	pobiera wersjÄ™ komend rezydentnych
      
 

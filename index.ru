@@ -5,7 +5,7 @@
 
 .. Include:: introduction/index-abstract.ru
 
-`Подробнее... <introduction/index>`__
+`РџРѕРґСЂРѕР±РЅРµРµ... <introduction/index>`__
 
 .. raw:: html
 
@@ -18,7 +18,7 @@
 
 .. Include:: download-abstract.ru
 
-`Подробнее... <download>`__
+`РџРѕРґСЂРѕР±РЅРµРµ... <download>`__
 
 .. raw:: html
 
@@ -49,20 +49,20 @@
    <!-- The direct downloads block is disabled so that users go to the downloads section where they should learn about using distribution instead of nightly
    <table style="text-align: justify; width:100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";} else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>
-   Скачать:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Ночные сборки собираются автоматически каждую ночь из самых свежих исходников и содержат все последние изменения в коде. Чтобы опробовать загрузочный диск с AROS, выберите "boot ISO" нужной вам архитектуры (i386 или PPC).<br><br>
+   РЎРєР°С‡Р°С‚СЊ:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   РќРѕС‡РЅС‹Рµ СЃР±РѕСЂРєРё СЃРѕР±РёСЂР°СЋС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РєР°Р¶РґСѓСЋ РЅРѕС‡СЊ РёР· СЃР°РјС‹С… СЃРІРµР¶РёС… РёСЃС…РѕРґРЅРёРєРѕРІ Рё СЃРѕРґРµСЂР¶Р°С‚ РІСЃРµ РїРѕСЃР»РµРґРЅРёРµ РёР·РјРµРЅРµРЅРёСЏ РІ РєРѕРґРµ. Р§С‚РѕР±С‹ РѕРїСЂРѕР±РѕРІР°С‚СЊ Р·Р°РіСЂСѓР·РѕС‡РЅС‹Р№ РґРёСЃРє СЃ AROS, РІС‹Р±РµСЂРёС‚Рµ "boot ISO" РЅСѓР¶РЅРѕР№ РІР°Рј Р°СЂС…РёС‚РµРєС‚СѓСЂС‹ (i386 РёР»Рё PPC).<br><br>
    <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Последние файлы<br>на AROS-Archives:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br><a href=http://archives.aros-exec.org>
-   The AROS archives</a> хранят последние разработки ПО от нашего сообщества, а также являются основным хранилищем приложений, тем, графики и различной документации, созданных пользователями.<br><br>
+   РџРѕСЃР»РµРґРЅРёРµ С„Р°Р№Р»С‹<br>РЅР° AROS-Archives:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br><a href=http://archives.aros-exec.org>
+   The AROS archives</a> С…СЂР°РЅСЏС‚ РїРѕСЃР»РµРґРЅРёРµ СЂР°Р·СЂР°Р±РѕС‚РєРё РџРћ РѕС‚ РЅР°С€РµРіРѕ СЃРѕРѕР±С‰РµСЃС‚РІР°, Р° С‚Р°РєР¶Рµ СЏРІР»СЏСЋС‚СЃСЏ РѕСЃРЅРѕРІРЅС‹Рј С…СЂР°РЅРёР»РёС‰РµРј РїСЂРёР»РѕР¶РµРЅРёР№, С‚РµРј, РіСЂР°С„РёРєРё Рё СЂР°Р·Р»РёС‡РЅРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё, СЃРѕР·РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРјРё.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Последние темы форума AROS-EXEC:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> - основной сайт сообщества AROS. Здесь просят помощи, узнают новости сообщества и делятся своими соображениями об AROS.<br><br>
+   РџРѕСЃР»РµРґРЅРёРµ С‚РµРјС‹ С„РѕСЂСѓРјР° AROS-EXEC:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://ae.amigalife.org>AROS-EXEC</a> - РѕСЃРЅРѕРІРЅРѕР№ СЃР°Р№С‚ СЃРѕРѕР±С‰РµСЃС‚РІР° AROS. Р—РґРµСЃСЊ РїСЂРѕСЃСЏС‚ РїРѕРјРѕС‰Рё, СѓР·РЅР°СЋС‚ РЅРѕРІРѕСЃС‚Рё СЃРѕРѕР±С‰РµСЃС‚РІР° Рё РґРµР»СЏС‚СЃСЏ СЃРІРѕРёРјРё СЃРѕРѕР±СЂР°Р¶РµРЅРёСЏРјРё РѕР± AROS.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">

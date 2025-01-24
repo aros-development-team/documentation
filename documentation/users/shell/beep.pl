@@ -16,7 +16,7 @@ Format
 	Beep
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 

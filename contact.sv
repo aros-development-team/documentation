@@ -3,7 +3,7 @@ Kontaktinformation
 ==================
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright Â© 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -13,10 +13,10 @@ Kontaktinformation
 
 Kontakperson
 ============
-Den primära kontaktpersonen för teamet som utvecklar AROS är Aaron "Optimizer"
-Digulla. Om du vill ha kontakt med AROS som projekt, till exempel för att diskutera
-sponsoravtal eller andra former av samarbete, så är det personen att kontakta.
-Du kan nå honom genom att skicka email till `digulla@aros.org`__.
+Den primÃ¤ra kontaktpersonen fÃ¶r teamet som utvecklar AROS Ã¤r Aaron "Optimizer"
+Digulla. Om du vill ha kontakt med AROS som projekt, till exempel fÃ¶r att diskutera
+sponsoravtal eller andra former av samarbete, sÃ¥ Ã¤r det personen att kontakta.
+Du kan nÃ¥ honom genom att skicka email till `digulla@aros.org`__.
 
 __ mailto:digulla@aros.org
 
@@ -24,42 +24,42 @@ __ mailto:digulla@aros.org
 Mailinglistor
 =============
 
-Det finns ett antal AROS-relaterade mailinglistor, vilka är de viktigaste kanalerna
-för information och diskussion om AROS för utvecklare. Följande mailinglistor finns
-tillgängliga:
+Det finns ett antal AROS-relaterade mailinglistor, vilka Ã¤r de viktigaste kanalerna
+fÃ¶r information och diskussion om AROS fÃ¶r utvecklare. FÃ¶ljande mailinglistor finns
+tillgÃ¤ngliga:
 
 + `AROS Developer`__
 
-  Det här är listan för utvecklare där diskussioner om utvecklingen av AROS sker.
-  Här postas också statusen från den nattliga kompileringen av AROS. Det är 
-  **starkt** rekommenderat att utvecklare går med i den här listan eftersom det
-  annars är svårt att hålla sig uppdaterad med den senaste utvecklingen.
-  Eftersom det inte finns så många utvecklare inom AROS, så är mängden email
-  ganska liten men den kan bli ganska hög om en het diskussion kommer igång.
+  Det hÃ¤r Ã¤r listan fÃ¶r utvecklare dÃ¤r diskussioner om utvecklingen av AROS sker.
+  HÃ¤r postas ocksÃ¥ statusen frÃ¥n den nattliga kompileringen av AROS. Det Ã¤r 
+  **starkt** rekommenderat att utvecklare gÃ¥r med i den hÃ¤r listan eftersom det
+  annars Ã¤r svÃ¥rt att hÃ¥lla sig uppdaterad med den senaste utvecklingen.
+  Eftersom det inte finns sÃ¥ mÃ¥nga utvecklare inom AROS, sÃ¥ Ã¤r mÃ¤ngden email
+  ganska liten men den kan bli ganska hÃ¶g om en het diskussion kommer igÃ¥ng.
 
-  .. Note:: Begäran om prenumeration på den här listan hanteras inte automatiskt
-            utan varje begäran kontrolleras av listans administratörer. Detta
-            innebär att det kan ta ett litet tag från det att du skickar in 
-            en begäran tills dess att du blir en medlem.
+  .. Note:: BegÃ¤ran om prenumeration pÃ¥ den hÃ¤r listan hanteras inte automatiskt
+            utan varje begÃ¤ran kontrolleras av listans administratÃ¶rer. Detta
+            innebÃ¤r att det kan ta ett litet tag frÃ¥n det att du skickar in 
+            en begÃ¤ran tills dess att du blir en medlem.
   
 + `AROS CVS`__
 
-  På denna lista för utvecklare postas loggar från Subversion-servern så fort något
-  sänder in ändringar ("commit"). I motsats till den dagliga samlings-loggen som 
-  postas på AROS Developer-listan, där varje mail innehåller hela dagens aktiviteter
-  på Subversion-servern, så skickas det separata email för varje insänd ändring
-  *omedelbart* för varje loggad aktivitet. Så om du vill ha nästan realtids-information
-  om vad som händer på Subversion-servern så är det här listan för dig.
-  Volymen av mail på denna lista kan vara ganska hög.
+  PÃ¥ denna lista fÃ¶r utvecklare postas loggar frÃ¥n Subversion-servern sÃ¥ fort nÃ¥got
+  sÃ¤nder in Ã¤ndringar ("commit"). I motsats till den dagliga samlings-loggen som 
+  postas pÃ¥ AROS Developer-listan, dÃ¤r varje mail innehÃ¥ller hela dagens aktiviteter
+  pÃ¥ Subversion-servern, sÃ¥ skickas det separata email fÃ¶r varje insÃ¤nd Ã¤ndring
+  *omedelbart* fÃ¶r varje loggad aktivitet. SÃ¥ om du vill ha nÃ¤stan realtids-information
+  om vad som hÃ¤nder pÃ¥ Subversion-servern sÃ¥ Ã¤r det hÃ¤r listan fÃ¶r dig.
+  Volymen av mail pÃ¥ denna lista kan vara ganska hÃ¶g.
 
 + `AROS Website`__
 
-  Skriptsystemet som skapar hemsidan skickar mail till den här listan.
-  De som jobbar med dokumentationen eller kan laga saker om  något händer
-  med websidan bör prenumerera på denna.
+  Skriptsystemet som skapar hemsidan skickar mail till den hÃ¤r listan.
+  De som jobbar med dokumentationen eller kan laga saker om  nÃ¥got hÃ¤nder
+  med websidan bÃ¶r prenumerera pÃ¥ denna.
 
-Följ länkarna till de administrativa sidorna för information om hur man
-prenumererar, avbryter prenumerationerer, listarkiv och andra användbara
+FÃ¶lj lÃ¤nkarna till de administrativa sidorna fÃ¶r information om hur man
+prenumererar, avbryter prenumerationerer, listarkiv och andra anvÃ¤ndbara
 funktioner.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
@@ -72,20 +72,20 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 Forum
 =====
 
-AROS-Exec__ är den officella community-portalen för AROS. Här finner du de
+AROS-Exec__ Ã¤r den officella community-portalen fÃ¶r AROS. HÃ¤r finner du de
 senaste nyheterna om AROS, diskussionsforum, bildgallerier och mycket mer. Det
-är den perfekta mötesplatsen för AROS-användare från hela världen.
+Ã¤r den perfekta mÃ¶tesplatsen fÃ¶r AROS-anvÃ¤ndare frÃ¥n hela vÃ¤rlden.
 
 __ https://ae.amigalife.org/
 
 IRC-Kanaler
 ===========
 
-Det finns en officiell IRC-kanal för AROS, föga förvånande döpt till `#aros`__, på
-FreeNode__-nätverket. Vänligen anslut till `irc.freenode.net`__ som vidarebefodrar 
-dig till en server nära dig. Den är till för att diskutera allt möjligt som är relaterat
-med AROS inklusive utveckling och planer att ta över världen. Vid sällsynta tillfällen
-när det är väldigt mycket prat i huvudkanalen flyttar diskussioner relaterade till
+Det finns en officiell IRC-kanal fÃ¶r AROS, fÃ¶ga fÃ¶rvÃ¥nande dÃ¶pt till `#aros`__, pÃ¥
+FreeNode__-nÃ¤tverket. VÃ¤nligen anslut till `irc.freenode.net`__ som vidarebefodrar 
+dig till en server nÃ¤ra dig. Den Ã¤r till fÃ¶r att diskutera allt mÃ¶jligt som Ã¤r relaterat
+med AROS inklusive utveckling och planer att ta Ã¶ver vÃ¤rlden. Vid sÃ¤llsynta tillfÃ¤llen
+nÃ¤r det Ã¤r vÃ¤ldigt mycket prat i huvudkanalen flyttar diskussioner relaterade till
 utveckling till `#aros.dev`__.
 
 __ irc://irc.freenode.net/aros

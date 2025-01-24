@@ -1,1 +1,1 @@
-Je kunt het draaien in één groot venster.
+Je kunt het draaien in Ã©Ã©n groot venster.

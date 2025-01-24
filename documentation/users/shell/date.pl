@@ -9,7 +9,7 @@
 Date
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	DAY,DATE,TIME,TO=VER/K
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Wy¶wietla b±d¼ ustawia czas i datê.
+	WyÅ›wietla bÄ…dÅº ustawia czas i datÄ™.
 
 
 Parametry
@@ -38,16 +38,16 @@ Parametry
 ::
 
 
-	DAY	--	ustawia dzieñ wg nazwy (monday, tuesday, ... , tomorrow,
+	DAY	--	ustawia dzieÅ„ wg nazwy (monday, tuesday, ... , tomorrow,
 			 yesterday)
-	DATE	--	ustawia datê do formatu DD-MMM-RR.
-			Dla MMM mo¿e to byæ liczba lub trzy litery z miesi±ca w
-			jêzyku angielskim.        
+	DATE	--	ustawia datÄ™ do formatu DD-MMM-RR.
+			Dla MMM moÅ¼e to byÄ‡ liczba lub trzy litery z miesiÄ…ca w
+			jÄ™zyku angielskim.        
 	TIME	--	ustawia czas do formatu GG:MM:SS
-	TO	--	wyj¶cie zapisuje do pliku.          
+	TO	--	wyjÅ›cie zapisuje do pliku.          
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 

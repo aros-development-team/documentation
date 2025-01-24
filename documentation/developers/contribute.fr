@@ -1,16 +1,16 @@
 Nous avons besoin de votre aide!
 ================================
 
-Nous avons seulement quelques dÈveloppeurs actifs ce qui signifie que les
-progrËs sont trËs lents. Nous nÈcessitons plus de personnes pour nous aider !
-Il y a un nombre important de t‚ches ‡ assigner ‡ des dÈveloppeurs. Cela va
-des petits projets jusqu'au bidouillage matÈriel, en passant par le systËme de
+Nous avons seulement quelques d√©veloppeurs actifs ce qui signifie que les
+progr√®s sont tr√®s lents. Nous n√©cessitons plus de personnes pour nous aider !
+Il y a un nombre important de t√¢ches √† assigner √† des d√©veloppeurs. Cela va
+des petits projets jusqu'au bidouillage mat√©riel, en passant par le syst√®me de
 haut niveau et la programmation d'applications. En pratique, il y a toujours
-quelque chose ‡ faire pour chacun qui souhaite contribuer, sans tenir compte du
+quelque chose √† faire pour chacun qui souhaite contribuer, sans tenir compte du
 niveau de codage.
 
-Pour ceux qui ne sont pas programmeurs, il y a d'autres t‚ches qui peuvent aider !
-Ceci inclut la rÈdaction de la documentation, la traduction de programmes et de
-documentation, la crÈation de jolis graphiques et la dÈtection des bugs.
+Pour ceux qui ne sont pas programmeurs, il y a d'autres t√¢ches qui peuvent aider !
+Ceci inclut la r√©daction de la documentation, la traduction de programmes et de
+documentation, la cr√©ation de jolis graphiques et la d√©tection des bugs.
 
-Ces t‚ches sont aussi importantes que le codage mÍme !
+Ces t√¢ches sont aussi importantes que le codage m√™me !

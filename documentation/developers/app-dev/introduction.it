@@ -4,7 +4,7 @@ Manuale di sviluppo applicazioni AROS
 
 :Authors:   Staf Verhaegen, Sebastian Rittau, Stefan Rieken, Matt Parsons,
             Adam Chodorowski, Fabio Alemagna, Matthias Rustler
-:Copyright: Copyright ä 1995-2006, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished; integration started (looong way left to go).
@@ -19,7 +19,7 @@ Manuale di sviluppo applicazioni AROS
 
 .. Warning::
 
-   Questo documento non Ë completato! E' probabile che ci siano molte parti
+   Questo documento non √® completato! E' probabile che ci siano molte parti
    non aggiornate, che contengono informazioni scorrette o del tutto mancanti.
    Se ci volete aiutare a rettificarlo, contattateci.
 
@@ -43,7 +43,7 @@ concetti basilari come il `linking`.
 Il programma "Hello, World!"
 ----------------------------
 
-Quello che segue Ë un programma che visualizza il messaggio "Hello, World!" -
+Quello che segue √® un programma che visualizza il messaggio "Hello, World!" -
 una tradizione dei programmatori da generazioni. Il file `helloworld.c` ha il
 seguente contenuto::
 
@@ -59,16 +59,16 @@ seguente contenuto::
 Compilare nell'albero dei sorgenti AROS con il build system
 -----------------------------------------------------------
 
-Se avete il vostro albero dei sorgenti di AROS e avete compilato AROS lÏ, potete
+Se avete il vostro albero dei sorgenti di AROS e avete compilato AROS l√¨, potete
 usare il build system di AROS per compilare programmi per AROS. Potete farlo
 mettendo il codice sorgente del programma da qualche parte nell'albero dei
 sorgenti di AROS. La directory 'local' nella directory principale dei sorgenti
-di AROS puÚ essere usata per metterci del codice. Creiamo prima una directory
-lÏ, assumendo che siete nella prima directory dei sorgenti di AROS::
+di AROS pu√≤ essere usata per metterci del codice. Creiamo prima una directory
+l√¨, assumendo che siete nella prima directory dei sorgenti di AROS::
 
   % mkdir local/helloworld
 
-Inserite il file helloworld.c lÏ e un file aggiuntivo per le istruzioni di
+Inserite il file helloworld.c l√¨ e un file aggiuntivo per le istruzioni di
 build chiamato `mmakefile.src` con i seguenti contenuti::
 
   include $(TOP)/config/make.cfg
@@ -83,7 +83,7 @@ del programma helloworld con il seguente comando::
 Adesso troverete nell'albero binario di AROS il programma compilato come
 `local/helloworld/HelloWorld`.
 
-Il sistema di build di AROS Ë concepito per facilitarvi la vita quando fare il
+Il sistema di build di AROS √® concepito per facilitarvi la vita quando fare il
 build di binari con dipendenze non banali. Questo viene spiegato in un
 `capitolo separato`__
 
@@ -93,7 +93,7 @@ __ buildsystem
 Compilare su Linux con GCC
 --------------------------
 
-Sotto AROS/hosted state usando una versione configurata del GCC Linux. C'Ë una
+Sotto AROS/hosted state usando una versione configurata del GCC Linux. C'√® una
 differenza che dipende dal fatto se usate la versione compilata di AROS
 (i386-linux-system) o compilate voi il sorgente:
 
@@ -102,7 +102,7 @@ differenza che dipende dal fatto se usate la versione compilata di AROS
   Dovete scaricare il pacchetto `i386-all-sdk`. Scompattatelo, spostatevi nella
   directory che viene creata e lanciate da root lo script incluso (es.
   ``sudo AROS-SDK-Install``.) Lo script fa alcune domande, ma potete usare i
-  valori di default. Il prossimo passo Ë aggiungere un path. Come questo si
+  valori di default. Il prossimo passo √® aggiungere un path. Come questo si
   possa fare dipende dalla shell che state usando. Supponendo che state usando
   Bash e avete i valori di default per il path: aprite /home/*user*/.bashrc e
   aggiungere la riga ``PATH=/usr/local/aros-sdk/bin:"${PATH}"`` alla fine del
@@ -110,8 +110,8 @@ differenza che dipende dal fatto se usate la versione compilata di AROS
 
 + auto-compilato
 
-  Il path del compilatore AROS Ë `AROS/bin/linux-i386/tools`. Aggiungete questo
-  path come spiegato sopra. Il nome del compilatore Ë `i386-linux-aros-gcc`.  
+  Il path del compilatore AROS √® `AROS/bin/linux-i386/tools`. Aggiungete questo
+  path come spiegato sopra. Il nome del compilatore √® `i386-linux-aros-gcc`.  
   
 Potete compilare il programma con il seguente comando da una shell Linux::
 
@@ -121,7 +121,7 @@ Troverete strumenti aggiuntivi nel path del compilatroe C AROS:
 versioni AROS di ld, ranlib, il compilatore catalog Flexcat, etc.
 
 .. Note:: Se state usando i386-linux-aros-strip dovete aggiungere i parametri
-   `--strip-unneeded --remove-section .comment`. Altrimenti strip creer‡ binari
+   `--strip-unneeded --remove-section .comment`. Altrimenti strip creer√† binari
    corrotti.
 
 
@@ -147,16 +147,16 @@ Concetti
 File Include
 ------------
 
-AROS ha una variet‡ di file include. Sono posti in `sys:Development/include`.
+AROS ha una variet√† di file include. Sono posti in `sys:Development/include`.
 La sottodirectory `proto` contiene file include con i prototipi di funzione per
 le librerie condivise. In `libraries` ci sono gli header con le strutture e i
-define. Alcune delle librerie pi˘ grandi come `Intuition` hanno la loro propria
+define. Alcune delle librerie pi√π grandi come `Intuition` hanno la loro propria
 directory con gli headers.
 
 Librerie condivise di AROS
 --------------------------
 
-Le librerie condivise sono la magia che fa funzionare AROS. Ogni libreria Ë una
+Le librerie condivise sono la magia che fa funzionare AROS. Ogni libreria √® una
 collezione di funzioni che svolgono certi compiti. Normalmente funzioni con
 compiti simili sono contenute in una libreria. Per esempio tutte le funzioni
 basilari di gestione della memoria sono contenute in `exec.library`.
@@ -170,11 +170,11 @@ una libreria specifica come parte del kernel.
 Uno sguardo generale alle librerie core di AROS
 ...............................................
 
-Qui c'Ë una lista di alcune librerie importanti e delle loro funzioni.
+Qui c'√® una lista di alcune librerie importanti e delle loro funzioni.
 Non dovete ricordarle tutte, in quanto verranno discusse in dettaglio
 successivamente.
 
-+ `exec.library` Ë la libreria pi˘ importante. E' responsabile della gestione
++ `exec.library` √® la libreria pi√π importante. E' responsabile della gestione
   delle cose di base come gestire i `tasks` (es. i programmi), `memoria`,
   `librerie` e tante altre cose.
 
@@ -183,12 +183,12 @@ successivamente.
   capitolo e gli `hooks`. A parte questo, utility contiene una miscellanea di
   piccole funzioni utili.
 
-+ `dos.library` Ë responsabile della gestione dei file e di alcune funzioni
++ `dos.library` √® responsabile della gestione dei file e di alcune funzioni
   basilari di I/O. Senza dos, AROS non sarebbe in grado di accedere ai file.
 
 + `intuition.library` gestisce `interfacce utente grafiche (GUI)`. Con Intuition
   potete creare `finestre` e `gadgets` e gestirle di conseguenza. Ci sono altre
-  librerie che lavorano sopra intuition e forniscono funzioni GUI pi˘
+  librerie che lavorano sopra intuition e forniscono funzioni GUI pi√π
   sofisticate e specializzate. Ad esempio ci sono `gadtools.library`, che
   implementa alcuni altri gadget complessi e `asl.library`, che fornisce delle
   finestre di richiesta di file e altro.  
@@ -198,9 +198,9 @@ FIXME: Aggiungere Zune, graphics, ...
 Come funzionano le librerie di AROS
 ...................................
 
-Il termine `libreria` normalmente fa riferimento a un oggetto il cui compito Ë
+Il termine `libreria` normalmente fa riferimento a un oggetto il cui compito √®
 collezionare in un singolo posto funzioni che i programmi potrebbero voler usare
-pi˘ spesso di altre, e generalmente queste funzioni servono a uno scopo comune,
+pi√π spesso di altre, e generalmente queste funzioni servono a uno scopo comune,
 quindi ci possono essere librerie per fare il parsing di file, per gestire la
 localizzazione e altri tipi di task che un programma potrebbe voler eseguire.
 
@@ -214,7 +214,7 @@ parte dei sistemi le librerie run-time sono condivise tra i programmi che
 girano in modo da occupare la memoria per un'istanza della libreria. In questi
 casi vengono chiamate `librerie condivise`.
 
-Mentre le librerie link-time vengono gestite pi˘ o meno allo stesso modo da
+Mentre le librerie link-time vengono gestite pi√π o meno allo stesso modo da
 tutti i sistemi operativi, in quanto sono indipendenti dal sistema operativo
 stesso, le librerie run-time possono essere gestite in maniera diversa da OS
 diversi.
@@ -222,24 +222,24 @@ diversi.
 Prima che una libreria possa essere usata in un programma, deve essere `aperta`.
 Questo viene fatto da una funzione di exec chiamata ``OpenLibrary``. Quando una
 libreria viene aperta con successo viene restituito un puntatore alla cosiddetta
-`base della libreria` (library base). La library base Ë una zona della memoria
+`base della libreria` (library base). La library base √® una zona della memoria
 che contiene sia i vettori delle funzioni che i dati propri della libreria [#]_.
-Quando le librerie vengono aperte sono libere di scegliere se la loro base sar‡
-la stessa per tutte le istanze o se una nuova sar‡ allocata ogni volta. Quando
+Quando le librerie vengono aperte sono libere di scegliere se la loro base sar√†
+la stessa per tutte le istanze o se una nuova sar√† allocata ogni volta. Quando
 viene invocata una funzione della libreria la maggior parte delle volte la
 library base viene passata alla funzione in modo che i dati al suo interno
-possono essere usati dentro la libreria [#]_. Una libreria puÚ essere parte o
+possono essere usati dentro la libreria [#]_. Una libreria pu√≤ essere parte o
 l'intero dato nella library base pubblica definendo un tipo per la base.
-Se questo Ë il caso troverete il tipo nel file inclue `proto/libname.h`. Alcune
-librerie pi˘ vecchie usavano questo meccanismo ma le librerie pi˘ recenti non
+Se questo √® il caso troverete il tipo nel file inclue `proto/libname.h`. Alcune
+librerie pi√π vecchie usavano questo meccanismo ma le librerie pi√π recenti non
 rendono nulla pubblico e il solo modo di cambiare lo stato interno della
-libreria Ë quello di usare le funzioni disponibili.
+libreria √® quello di usare le funzioni disponibili.
 
 .. [#] Se conoscete il C++, potreste pensare la tabella dei vettori come una
        `VTable` usata per i metodi virtuali, e il puntatore alla base della
        libreria come al puntatore `this`.
 
-.. [#] Il passaggio della base della libreria puÚ essere esplicito o implicito,
+.. [#] Il passaggio della base della libreria pu√≤ essere esplicito o implicito,
        a seconda della convenzione usata dalla libreria. Diversi meccanismi
        possono essere usati per il passaggio implicito della base: Macro del
        preprocessore C, funzioni inline, variabili globali, ...
@@ -247,19 +247,19 @@ libreria Ë quello di usare le funzioni disponibili.
 Come usare le librerie condivise di AROS
 ........................................
 
-Come gi‡ spiegato della sezione precedente, le librerie devono essere aperte
+Come gi√† spiegato della sezione precedente, le librerie devono essere aperte
 prima che le loro funzioni possano essere usate. L'unica libreria che non deve
-essere aperta prima Ë la `exec.library`. Exec Ë sempre aperta e il vostro
+essere aperta prima √® la `exec.library`. Exec √® sempre aperta e il vostro
 compilatore sa come accedervi. Inoltre, dovete includere un header per far
-conoscere il prototipo delle funzioni al codice. Questo file include Ë nella
+conoscere il prototipo delle funzioni al codice. Questo file include √® nella
 directory proto, quindi se volete usare le funzioni della `dos.library` dovete
 usare la riga seguente::
 
   #include <proto/dos.h>
 
-Il vostro compilatore o ambiente di build puÚ inoltre aprire alcune librerie
+Il vostro compilatore o ambiente di build pu√≤ inoltre aprire alcune librerie
 per voi, quindi non dovete aprirle manualmente. Leggete il manuale del vostro
-compilatore per imparare questa funzionalit‡. Nei paragrafi che seguono verr‡
+compilatore per imparare questa funzionalit√†. Nei paragrafi che seguono verr√†
 spiegato il modo con cui questo viene fatto dai tools AROS e come aprire le
 librerie manualmente.
 
@@ -292,13 +292,13 @@ principali:
 - workbench.library
 
 Potete disabilitare l'auto apertura di queste librerie specificando il flag
-``-nostdlibs`` al compilatore gcc. Per le librerie pi˘ vecchie fornite da AROS
-potete usare la corrispondente libreria link-time che avr‡ cura di aprire la
+``-nostdlibs`` al compilatore gcc. Per le librerie pi√π vecchie fornite da AROS
+potete usare la corrispondente libreria link-time che avr√† cura di aprire la
 libreria. Quindi, se i vostri programmi usano la reqtools.library aggiungete
 ``-lreqtools`` al comando gcc.
 
 .. Note:: Ricapitolando: quando usate il compilatore GCC AROS l'uso delle
-   librerie condivise diventa molto semplice e puÚ essere gestito in due passi:
+   librerie condivise diventa molto semplice e pu√≤ essere gestito in due passi:
 
    + Usare un istruzione include per dichiarare le funzioni della libreria::
 
@@ -312,7 +312,7 @@ libreria. Quindi, se i vostri programmi usano la reqtools.library aggiungete
 Apertura automatica con il build system di AROS
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-L'auto apertura delle librerie con il build system Ë molto a quella con il
+L'auto apertura delle librerie con il build system √® molto a quella con il
 compilatore gcc di AROS. Analogamente allo specificare l'opzione ``-l`` 
 specificate le librerie che usate con il parametro ``uselibs`` alle macro
 ``%build_prog`` e ``%build_module``. Maggiori informazioni potete trovarle nel
@@ -332,30 +332,30 @@ Per aprire una libreria dovete usare una funzione di `exec.library`::
 `OpenLibrary()` prende due argomenti:
 
 name
-    punta al nome della libreria. Normalmente questo Ë semplicemente il nome, ma
-    puÚ anche essere il path completo (assoluto o relativo) della libreria.    
+    punta al nome della libreria. Normalmente questo √® semplicemente il nome, ma
+    pu√≤ anche essere il path completo (assoluto o relativo) della libreria.    
 
     .. Note:: I path non funzionano con le librerie kernel-based (es. librerie
               incluse nel kernel). Usate solo path assoluti, se sapete
               esattamente quello che state facendo!
 
 version
-    Ë la versione minima della libreria da aprire. Se la libreria specificata
-    viene trovata, ma la sua versione Ë inferiore a quella specificata in
-    `version`, la libreria non verr‡ aperta, ma verr‡ restituito un errore.
-    Le versioni sono importanti, perchË le librerie sono concepite per essere
+    √® la versione minima della libreria da aprire. Se la libreria specificata
+    viene trovata, ma la sua versione √® inferiore a quella specificata in
+    `version`, la libreria non verr√† aperta, ma verr√† restituito un errore.
+    Le versioni sono importanti, perch√® le librerie sono concepite per essere
     espandibili. Alcune funzioni sono disponibili solo a partire da una certa
     versione della libreria. Per esempio la funzione `AllocVec()` della
-    `exec.library` Ë stata introdotta nella versione 36 della libreria. Se
+    `exec.library` √® stata introdotta nella versione 36 della libreria. Se
     provate a chiamare questa funzione con una versione inferiore della
     `exec.library` installata, succederanno cose imprevedibili (molto
-    probabilmente l'applicazione crasher‡).
+    probabilmente l'applicazione crasher√†).
     
 La seguente procedura viene usata per caricare la libreria da aprire:
 
-1. Prima, il nome della libreria viene cercato nella lista delle librerie gi‡
-   caricate. Se questa libreria Ë stata caricata in memoria precedentemente (es.
-   da un programma diverso) ed Ë ancora lÏ, va tutto been e `OpenLibrary()`
+1. Prima, il nome della libreria viene cercato nella lista delle librerie gi√†
+   caricate. Se questa libreria √® stata caricata in memoria precedentemente (es.
+   da un programma diverso) ed √® ancora l√¨, va tutto been e `OpenLibrary()`
    torna subito.
 
    Le librerie nel kernel sono sempre sulla lista delle librerie caricate.
@@ -364,18 +364,18 @@ La seguente procedura viene usata per caricare la libreria da aprire:
              usare il giusto case in `name`. Normalmente tutti i caratteri in
              un nome di libreria sono minuscoli.
 
-2. Se la libreria non viene trovata nella lista e in `name` Ë stato specificato
+2. Se la libreria non viene trovata nella lista e in `name` √® stato specificato
    un path, viene tentata l'apertura del file specificato. Se questa fallisce,
    `OpenLibrary()` restituisce un errore.
 
 3. Se viene specificato solo il nome della libreria, questa viene cercata prima
-   nella `directory corrente`. Se non viene trovata lÏ, viene cercata nella
+   nella `directory corrente`. Se non viene trovata l√¨, viene cercata nella
    directory `LIBS:`.
 
 
 `OpenLibrary()` restituisce un puntatore a una struttura, che descrive la
 libreria (`struct Library *` definita in ``exec/libraries.h``) o `NULL`, che
-significa che l'apertura della libreria Ë fallita per qualche ragione. Il
+significa che l'apertura della libreria √® fallita per qualche ragione. Il
 puntatore risultante deve essere memorizzato per il compilatore. Normalmente
 viene memorizzato in una variabile della forma: `<nomelibreria>Base`, es.
 `IntuitionBase` per il puntatore alla *intuition.library*.
@@ -383,7 +383,7 @@ viene memorizzato in una variabile della forma: `<nomelibreria>Base`, es.
 Dopo aver aperto la libreria, potete usarne le funzioni semplicemente
 chiamandole come qualunque altra funzione nel vostro programma. Ma per far
 sapere al compilatore cosa fare dovete includere il file header specifico per
-la libreria. Questo Ë normalmente chiamato *proto/<nomelibreria>.h* per i
+la libreria. Questo √® normalmente chiamato *proto/<nomelibreria>.h* per i
 compilatori C.
 
 Quando avete finito di usare la libreria dovete chiuderla per liberare le
@@ -393,13 +393,13 @@ risorse da essa occupate. Questa operazione viene eseguite con::
 
     void CloseLibrary( struct Library *base );
 
-`CloseLibrary()` chiude la libreria puntata da `base`. Questo puntatore puÚ
+`CloseLibrary()` chiude la libreria puntata da `base`. Questo puntatore pu√≤
 anche essere `NULL`, in quel caso `CloseLibrary()` non fa nulla.
 
 Dimostreremo l'uso delle librerie creando un piccolo programma, un hello-world
 grafico. Invece di stampare ``Hello World!`` in console, lo faremo apparire in
-un requester. Una funzione per mostrare un requester Ë `EasyRequestArgs()`,
-che Ë una funzione di *intuition.library*. Non parleremo del suo utilizzo qui.
+un requester. Una funzione per mostrare un requester √® `EasyRequestArgs()`,
+che √® una funzione di *intuition.library*. Non parleremo del suo utilizzo qui.
 Per maggiori informazioni, guardate la sezione sui `Requesters`.
 
 
@@ -412,7 +412,7 @@ Esempio d'uso delle librerie::
     #include <proto/intuition.h>     /* EasyRequestArgs() */
     #include <intuition/intuition.h> /* struct EasyStruct */
 
-    /* Questa variabile conterr‡ il puntatore a intuition.library */    
+    /* Questa variabile conterr√† il puntatore a intuition.library */    
     struct IntuitionBase *IntuitionBase;
 
     int main(int argc, char *argv[])
@@ -424,12 +424,12 @@ Esempio d'uso delle librerie::
         };
         
         /* Prima, apriamo intuition.library. Ci serve la versione 36 o
-           successiva, perchË EasyRequestArgs() Ë stata introdotta in questa
+           successiva, perch√® EasyRequestArgs() √® stata introdotta in questa
            versione di intuition.library
         */
         IntuitionBase = (struct IntuitionBase *)OpenLibrary("intuition.library", 36);        
 
-        /* Dobbiamo controllare se intuition.library Ë stata aperta con
+        /* Dobbiamo controllare se intuition.library √® stata aperta con
            successo. In caso contrario, non dobbiamo chiamarne funzioni, quindi
            usciamo immediatamente con un errore.
         */
@@ -452,31 +452,31 @@ Versioning delle librerie
 .........................
 
 Le librerie condivise possono evolvere nel tempo e possono essere introdotte
-nuove funzionalit‡. Quando un programma usa una caratteristica di una versione
-recente e viene lanciato su una macchina che ha una versione pi˘ vecchia della
-libreria, probabilmente causer‡ un crash. Per questo Ë stato introdotto il
-versioning delle librerie, cosicchË i programmi possono controllare la versione
-di una libreria e uscire elegantemente o ridurre le funzionalit‡. Su AROS e sui
+nuove funzionalit√†. Quando un programma usa una caratteristica di una versione
+recente e viene lanciato su una macchina che ha una versione pi√π vecchia della
+libreria, probabilmente causer√† un crash. Per questo √® stato introdotto il
+versioning delle librerie, cosicch√® i programmi possono controllare la versione
+di una libreria e uscire elegantemente o ridurre le funzionalit√†. Su AROS e sui
 sistemi amiga-like la versione viene determinata da un numero maggiore e un
 numero minore (chiamati anche rispettivamente versione e revisione). Un nuovo
 numero maggiore indica l'introduzione di nuove caratteristiche e un numero
 minore incrementato indica alcune ottimizzazioni o bug fix ma mantenendo la
-compatibilit‡. Una versione di una libreria viene spesso presentata cosÏ:
-maggiore.minore [#]_ e puÚ essere recuperata col comando dos version:
+compatibilit√†. Una versione di una libreria viene spesso presentata cos√¨:
+maggiore.minore [#]_ e pu√≤ essere recuperata col comando dos version:
 
   5.System:> version dos.library
   dos.library 41.7
 
 Durante l'apertura di una libreria potete fornire un numero di versione e
-l'apertura fallir‡ se la versione della libreria Ë minore di questo valore::
+l'apertura fallir√† se la versione della libreria √® minore di questo valore::
 
   mylibbase = OpenLibrary("my.library", 2);
 
-Questo restituir‡ NULL se solo la versione 1 della my.library Ë installata. Se
-usate l'apertura automatica delle libreria, la libreria verr‡ aperta con la
-versione della libreria usate durante la fase di linking. La versione puÚ essere
+Questo restituir√† NULL se solo la versione 1 della my.library √® installata. Se
+usate l'apertura automatica delle libreria, la libreria verr√† aperta con la
+versione della libreria usate durante la fase di linking. La versione pu√≤ essere
 sovrascritta con una variabile chiamata libbasename_version. Al momento la
-versione della dos.library Ë la 41 e ciÚ significa che i programmi compilati
+versione della dos.library √® la 41 e ci√≤ significa che i programmi compilati
 gireranno solo su altri sistemi che hanno la versione 41 della dos.library. Se
 siete sicuri di usare funzioni fino alla versione 36 potete lasciare il
 programma su questi sistemi con la seguente istruzione da qualche parte nel
@@ -484,15 +484,15 @@ vostro codice::
 
   const LONG DOSBase_version = 36;
   
-La conseguenza per le librerie Ë che devono sempre essere retrocompatibili: se
-la versione della tua libreria Ë la 41 ma il programma Ë stato compilato per la
+La conseguenza per le librerie √® che devono sempre essere retrocompatibili: se
+la versione della tua libreria √® la 41 ma il programma √® stato compilato per la
 versione 36 deve sempre girare senza problemi. Per questo una funzione a un
 certo punto della tabella di lookup deve sempre eseguire la stessa funzione
 anche nella nuova versione della libreria.
 
 Se volete proprio cambiare il comportamento di una funzione con un certo nome
 potreste farlo mettendola in un altro punto della tabella di lookup. Alla
-vecchia locazione mettete la funzione di compatibilit‡ che Ë ancora
+vecchia locazione mettete la funzione di compatibilit√† che √® ancora
 compatibile col comportamento nelle versioni vecchie della libreria. Questo
 viene fatto ad esempio per la funzione exec `OpenLibrary`, nella prima versione
 di AmigaOS essa non aveva un parametro di versione e fu messa alla locazione 68.
@@ -501,8 +501,8 @@ un parametro di versione e fu messa alla locazione 92. La funzione nella
 posizione 68 fu rinominata `OldOpenLibrary`.
 
 .. [#] Contrariamente a quanto alcune persone pensano, la versione
-       la versione maggiore.minore non Ë un valore numerico: la revisione
-       successiva a 1.9 Ë 1.10 e 1.09 non Ë un numero di versione valido su
+       la versione maggiore.minore non √® un valore numerico: la revisione
+       successiva a 1.9 √® 1.10 e 1.09 non √® un numero di versione valido su
        AmigaOS.
 
 Differenze con altri systemi di librerie run-time
@@ -518,31 +518,31 @@ Caricamento delle librerie condivise
 
 Su AROS le librerie a collegamento dinamico sono oggetti ELF riallocabili. La
 prima volta che una libreria viene aperta viene caricata da disco e riallocata
-con l'indirizzo iniziale su cui Ë stata caricata. I sistemi AROS e amiga like
+con l'indirizzo iniziale su cui √® stata caricata. I sistemi AROS e amiga like
 condividono una grossa regione di memoria tra tutto il codice che gira sul
 sistema. Questo significa che tutti i programmi possono usare la libreria
-caricata nella memoria su cui Ë stata caricata.
+caricata nella memoria su cui √® stata caricata.
 
 Altri sistemi, inclusi Windows e UNIX, hanno un diverso spazio di indirizzamento
 virtuale per ogni processo. Anche qui l' OS tenta di caricare la libreria
 condivisa una volta sola e quindi prova a mappare la stessa libreria nello
-spazio di indirizzo di ognuno dei processi che la usano. La libreria puÚ cosÏ
+spazio di indirizzo di ognuno dei processi che la usano. La libreria pu√≤ cos√¨
 essere localizzata a indirizzi diversi in spazi diversi e l'OS deve gestire
 questa situazione.
 
 Su Windows uno cerca di localizzare la libreria condivisa a una certa locazione
 di memoria e prova a mapparla nella stessa memoria in ogni processo che usa
-quella libreria. Se ciÚ non Ë possibile la libreria verr‡ duplicata in memoria.
+quella libreria. Se ci√≤ non √® possibile la libreria verr√† duplicata in memoria.
 Su molti sistemi UNIX questo problema viene evitato lasciando generare al
 compilatore del codice indipendente dalla posizione, es. codice che funziona
 a ogni posizione in memoria senza dover riallocare il codice. A seconda
-dell'architettura, questo tipo di codice puÚ avere pi˘ o meno impatto sulla
-velocit‡ del codice generato.
+dell'architettura, questo tipo di codice pu√≤ avere pi√π o meno impatto sulla
+velocit√† del codice generato.
 
 Linking dinamico delle funzioni
 '''''''''''''''''''''''''''''''
 
-I programmatori che usano linguaggi a pi˘ alto livello per accedere alle
+I programmatori che usano linguaggi a pi√π alto livello per accedere alle
 funzioni in una libreria condivisa useranno il nome della funzione che vogliono
 usare. Quando un microprocessore esegue un programma usa indirizzi di memoria
 per saltare a una certa funzione. A un certo punto il nome usato dal
@@ -552,13 +552,13 @@ Su amiga, la traduzione avviene quando il codice viene compilato o quando un
 programma o un modulo vengono linkati. Ogni libbase di una libreria AROS
 contiene una tabella di lookup per le funzioni della libreria. Durante la
 compilazione (o il linking) il nome di una funzione viene tradotto in una
-posizione in questa tabella dove puÚ essere trovato l'indirizzo della funzione
+posizione in questa tabella dove pu√≤ essere trovato l'indirizzo della funzione
 [#]_. Le funzioni delle librerie condivise di AROS vengono quindi raggiunte
 con un livello di indirezione. A seconda delle architetture CPU questo livello
-di indirezione puÚ avere pi˘ o meno influenza sulla velocit‡ del codice.
+di indirezione pu√≤ avere pi√π o meno influenza sulla velocit√† del codice.
 Fortunatamente tipi simili di indirezione sono usati per chiamare le funzioni
 virtuali delle classi C++ e le moderne CPU sono ottimizzate per gestire le
-indirezioni senza (grossi) impatti sulla velocit‡. Quando la tabella di lookup
+indirezioni senza (grossi) impatti sulla velocit√†. Quando la tabella di lookup
 viene legata alla libbase ha bisogno di essere duplicata per le librerie che
 usano una base per ogni opener.
 
@@ -567,7 +567,7 @@ indirizzo viene fatta quando il programma viene caricato e linkato a run-time
 con la libreria condivisa [#]_. Quando un programma viene linkato in fase di
 compilazione viene messa una lista di librerie nell'eseguibile insieme a una
 lista delle funzioni utilizzate. Queste liste sono stringhe ASCII. Quando il
-programma viene quindi caricato, convertir‡ i nomi di funzioni ai loro
+programma viene quindi caricato, convertir√† i nomi di funzioni ai loro
 indirizzi (o a un puntatore a una tabella di lookup). Prima vengono aperte le
 librerie nella lista di librerie, dopo ognuna delle funzioni viene localizzata
 nelle librerie. Vengono usati meccanismi diversi per il lookup dei nomi delle
@@ -585,25 +585,25 @@ variabile globale nel sorgente della vostra libreria nel modo seguente::
 
   int globvar;
   
-Questo creer‡ una variabile globale accessibile in tutte le parti della
+Questo creer√† una variabile globale accessibile in tutte le parti della
 libreria. Una volta che la libreria condivisa viene caricata in memoria, la tua
-variabile verr‡ caricata anch'essa nella memoria occupata dalla libreria e sar‡
+variabile verr√† caricata anch'essa nella memoria occupata dalla libreria e sar√†
 sempre nella stessa locazione fino a quando la libreria non viene scaricata
 dalla memoria. Le variabili statiche definite in una funzione vengono gestite
 in modo analogo. Questo significa anche che il codice nella libreria che
-accede a una variabile globale andr‡ sempre nella stessa locazione a
+accede a una variabile globale andr√† sempre nella stessa locazione a
 prescindere da quante volte la libreria viene aperta o da quale programma ha
 chiamato il codice della libreria. Ottualmente il solo modo di avere una
-variabile che ha un valore diverso per ogni apertura della libreria Ë avere una
+variabile che ha un valore diverso per ogni apertura della libreria √® avere una
 libreria con una base per ogni apertura e memorizzate la libreria in questa
 base. Al momento anche le variabili globali non vengono esportate dalle
 librerie condivise di AROS. Possono essere utilizzate solo all'interno della
 libreria stessa, i programmi che usano una libreria non possono accedere alle
 variabili globali della libreria direttamente. Per questo le variabili nelle
 librerie condivise di AROS sono gestite in modo diverso da quelle nelle
-librerie link-time. Una variabile globale definita in una libreria link-time Ë
-anche accessibile dal programma a cui Ë stata linkata la libreria e ogni
-programma linkato con la stessa libreria link-time avr‡ la propria versione
+librerie link-time. Una variabile globale definita in una libreria link-time √®
+anche accessibile dal programma a cui √® stata linkata la libreria e ogni
+programma linkato con la stessa libreria link-time avr√† la propria versione
 della variabile globale.
 
 Su UNIX, le librerie condivise furono introdotte dopo che le librerie link-time
@@ -611,12 +611,12 @@ furono usate pesantemente. Uno degli obiettivi di progettazione fu quello di
 rendere il comportamento delle librerie condivise lo stesso di quelle link-time.
 Per questo viene effettuata una copia delle variabili ogni volta che un
 programma apre una libreria condivisa. In questo modo, ogni programma che ha
-aperto una libreria condivisa avr‡ il proprio insieme di variabili globali.
+aperto una libreria condivisa avr√† il proprio insieme di variabili globali.
 Inoltre, anche le variabili globali di una libreria condivisa vengono
-automaticamente esportate da quella libreria, cosicchË possano essere usate
+automaticamente esportate da quella libreria, cosicch√® possano essere usate
 direttamente nel programma che usa quella libreria.
 
-Su Windows Ë possibile decidere il comportamento delle variabili globali, se
+Su Windows √® possibile decidere il comportamento delle variabili globali, se
 renderlo come quello di AROS o come quello di UNIX, ma di default vengono
 gestite come quelle di UNIX.
 
@@ -632,7 +632,7 @@ difficult to port to AROS.
 
 .. Note::
    La spiegazione in questo paragrafo descrive come funzionava la gestione
-   dei dati nelle librerie condivise al momento in cui il testo Ë stato
+   dei dati nelle librerie condivise al momento in cui il testo √® stato
    scritto. A quel tempo c'erano ancora discussioni su come estendere tutto
    questo per permettere anche gestioni simili a quelle effettuate da altri
    tipi di libreria.
@@ -640,22 +640,22 @@ difficult to port to AROS.
 Librerie che usano altre librerie
 '''''''''''''''''''''''''''''''''
 
-Una libreria puÚ aprire un'altra libreria. Quando una libreria apre un'altra
+Una libreria pu√≤ aprire un'altra libreria. Quando una libreria apre un'altra
 libreria ottiene il libbase per quella libreria. Questo significa che una
-libreria che ha una base per ogni opener ritorner‡ un libbase unico a un'altra
+libreria che ha una base per ogni opener ritorner√† un libbase unico a un'altra
 libreria. Quando un programma apre una libreria con una base per ogni opener
-otterr‡ indietro un libbase. Adesso, quando il programma apre una seconda
-libreria che apre di nuovo la prima libreria allora verr‡ usato un libbase
+otterr√† indietro un libbase. Adesso, quando il programma apre una seconda
+libreria che apre di nuovo la prima libreria allora verr√† usato un libbase
 diverso nella seconda libreria e nel programma. I programmatori di librerie con
-un libbase per opener devono tenere conto di tutto ciÚ.
+un libbase per opener devono tenere conto di tutto ci√≤.
 
-Come discusso precedentemente su UNIX e Windows tutto Ë basato sui processi.
+Come discusso precedentemente su UNIX e Windows tutto √® basato sui processi.
 Quando un programma viene caricato viene creato un nuovo processo, ogni
 libreria condivisa usata in quel processo viene linkata dinamicamente una volta
 sola a quel processo. Questo significa che un programma e una libreria
 condivisa che accedono entrambe a una seconda libreria condivisa useranno la
 stessa istanza di quella libreria condivisa. Inoltre questo comportamento
-diverso puÚ rendere difficile portare librerie condivise da UNIX/Windows.
+diverso pu√≤ rendere difficile portare librerie condivise da UNIX/Windows.
 
 .. Note::
    Ancora, la spiegazione in questo paragrafo descrive come funzionaba la
@@ -664,11 +664,11 @@ diverso puÚ rendere difficile portare librerie condivise da UNIX/Windows.
    In quel momento c'era anche una discussione su come estendere tutto questo
    per permettere una gestione simile a quella di altri tipi di libreria.   
 
-.. [#] In realt‡, in certi casi, questa tabella puÚ contenere qualcosa in pi˘
+.. [#] In realt√†, in certi casi, questa tabella pu√≤ contenere qualcosa in pi√π
        dei soli puntatori a funzioni. Su AROS per 68k, infatti, dove la
-       compatibilit‡ binaria con AmigaOS (TM) Ë un problema, ogni voce della
+       compatibilit√† binaria con AmigaOS (TM) √® un problema, ogni voce della
        tabella contiene un'istruzione JMP seguita dall'indirizzo della funzione
-       (che Ë parte, quindi, dell'opcode del JMP), e i programmi dell'utente
+       (che √® parte, quindi, dell'opcode del JMP), e i programmi dell'utente
        non saltano all'indirizzo nel vettore, ma saltano al vettore stesso, e
        quindi l'istruzione JMP reindirizza il flusso del programma alla giusta
        funzione.
@@ -683,11 +683,11 @@ qualche problema con funzioni complesse che potrebbero richiedere un gran
 numero di argomenti. Per evitare questo problema furono introdotte le
 cosidette taglist (liste di tag). In ``utility/tagitem.h`` troviamo una
 struttura `TagItem`, che contiene i membri `ti_Tag` e `ti_Data`. Una taglist
-contiene un array di queste strutture. La dimensione della lista non Ë
-limitata. Il campo `ti_Tag` Ë un identificatore (spesso chiamato Tag) che
-dichiara cosa contiene `ti_Data`. `ti_Data` puÚ essere sia un intero che un
+contiene un array di queste strutture. La dimensione della lista non √®
+limitata. Il campo `ti_Tag` √® un identificatore (spesso chiamato Tag) che
+dichiara cosa contiene `ti_Data`. `ti_Data` pu√≤ essere sia un intero che un
 puntatore. E' garantito che sia almeno delle dimensioni di una long-word o di
-un puntatore (che Ë pi˘ grande).
+un puntatore (che √® pi√π grande).
 
 Nella descrizione di una funzione che usa una tag-list, sono elencati tutti i
 possibili tag. Le funzioni devono ignorare i tag sconosciuti e usare i valori
@@ -705,12 +705,12 @@ Ci sono alcuni tag speciali che tutte le funzioni comprendono (definiti in
 
 `TAG_IGNORE`
     Significa che il contenuto di `ti_Data` deve essere ignorato. Questo tag
-    Ë particolarmente utile per l'inclusione condizionale dei tag.    
+    √® particolarmente utile per l'inclusione condizionale dei tag.    
 
 `TAG_MORE`
-    Usando questo tag, potete collegare insieme pi˘ taglist. `ti_Data` punta a
-    un'altra taglist. L'elaborazione della taglist corrente sar‡ interrotta e
-    quella nuova verr‡ elaborata al posto suo. Questo tag determina, inoltre,
+    Usando questo tag, potete collegare insieme pi√π taglist. `ti_Data` punta a
+    un'altra taglist. L'elaborazione della taglist corrente sar√† interrotta e
+    quella nuova verr√† elaborata al posto suo. Questo tag determina, inoltre,
     la taglist corrente.    
 
 `TAG_SKIP`
@@ -721,7 +721,7 @@ Potete sempre fornire `NULL` al posto di un puntatore a una taglist. Tutte le
 funzioni devono essere in grado di gestire i puntatori `NULL`. Sono equivalenti
 a delle taglist con `TAG_DONE` come primo tag.
 
-Una funzione che ha bisogno di una taglist Ë::
+Una funzione che ha bisogno di una taglist √®::
 
     #include <proto/intuition.h>
 
@@ -730,7 +730,7 @@ Una funzione che ha bisogno di una taglist Ë::
         struct NewWindow *newwin, struct TagList *taglist
     );
 
-Questa funzione sar‡ discussa in dettaglio nel 
+Questa funzione sar√† discussa in dettaglio nel 
 .. FIXME:: *capitolo sulle finestre*
 
 Per ora dovete solo sapere che questa funzione apre una nuova finestra.
@@ -744,7 +744,7 @@ WA_Height   Altezza finestra in pixel        UWORD
 WA_Title    Titolo della finestra            STRPTR
 ==========  ===============================  ========
 
-Un'altra funzione che ci serve per il nostro piccolo esempio Ë::
+Un'altra funzione che ci serve per il nostro piccolo esempio √®::
 
     #include <proto/intuition.h>
 
@@ -809,7 +809,7 @@ una finestra che dice "Hello World!" nella barra del titolo, per due secondi::
         return error;
     }
 
-Ovviamente, questo metodo di settare le taglist Ë abbastanza complicato. CosÏ
+Ovviamente, questo metodo di settare le taglist √® abbastanza complicato. Cos√¨
 per la maggior parte delle funzioni che usano le taglist sono disponibili delle
 scorciatoie. La link-library `amiga.lib` fornisce queste scorciatoie per tutte
 le funzioni interne di AROS. Queste versioni varargs possono essere usate in
@@ -839,14 +839,14 @@ Il nostro esempio di sopra avrebbe questo aspetto, usando la versione vararg di
 
     [...]
 
-Pi˘ semplice, non Ë vero?
+Pi√π semplice, non √® vero?
 
 
 Ottenere maggiore documentazione
 ================================
 
-Un "Hello, World!" non Ë un museo del Talento dei Programmatori, quindi
-potreste chiedervi se c'Ë di pi˘ per AROS. Certo che c'Ë. Ma questa guida non Ë
+Un "Hello, World!" non √® un museo del Talento dei Programmatori, quindi
+potreste chiedervi se c'√® di pi√π per AROS. Certo che c'√®. Ma questa guida non √®
 una Guida del Programmatore e neanche una Guida Di Riferimento. Questo genere
 di guide potrebbero essere scritte in futuro, ma per ora, le migliori guide
 per il programmatore AROS che potete trovare sono i libri che sono stati

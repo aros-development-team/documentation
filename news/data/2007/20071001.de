@@ -8,54 +8,54 @@ Status Update
 Aktuelle Neuigkeiten
 --------------------
 
-Brandheiße Neuigkeiten! Neil Cafferkey hat einen brandneuen `installer`__
-für AROS ausgeliefert das klarere und sichere Installationen auf Festplatten
-ermöglicht. Folgendes sind die neuen Funktionen:
+BrandheiÃŸe Neuigkeiten! Neil Cafferkey hat einen brandneuen `installer`__
+fÃ¼r AROS ausgeliefert das klarere und sichere Installationen auf Festplatten
+ermÃ¶glicht. Folgendes sind die neuen Funktionen:
 
-- Installationslaufwerk und Partitionen können jetzt angegeben werden.
+- Installationslaufwerk und Partitionen kÃ¶nnen jetzt angegeben werden.
 - Das Erstellen von Arbeitspartitionen funktioniert jetzt.
-- Parititionsgrößen können nun angegeben werden und vorhandene Partitionen werden nicht geändert.
-- Windows wird nun zum GRUB-Startmenü hinzugefügt, wenn eine vorhandene Windows-Systempartition gefunden wird
-- Die Spracheinstellungen können während der Installation angegeben werden.
+- ParititionsgrÃ¶ÃŸen kÃ¶nnen nun angegeben werden und vorhandene Partitionen werden nicht geÃ¤ndert.
+- Windows wird nun zum GRUB-StartmenÃ¼ hinzugefÃ¼gt, wenn eine vorhandene Windows-Systempartition gefunden wird
+- Die Spracheinstellungen kÃ¶nnen wÃ¤hrend der Installation angegeben werden.
 
 
 Bitte beachten Sie dennoch dass es sich um Beta Software handelt. Anbei einige
 Warnungen von Neil: "Der neue Festplatteninstaller ist ab sofort auf der
-nächtlichen ISO enthalten und bereit zum Testen. Allerdings gibt es aktuell
+nÃ¤chtlichen ISO enthalten und bereit zum Testen. Allerdings gibt es aktuell
 einen Fehler entweder in Wanderer oder FFS der umgangen werden muss. Nach dem
-Starten des Installers müssen Sie Wanderer beenden bevor Sie weitermachen (es
-sei denn Sie möchten keine Partitionen formatieren).
+Starten des Installers mÃ¼ssen Sie Wanderer beenden bevor Sie weitermachen (es
+sei denn Sie mÃ¶chten keine Partitionen formatieren).
 Seien Sie sehr vorsichtig mit dieser Installer-Version, z.B. bieten
 Sie ihm keine Maschine mit nicht gesicherten wertvollen Daten an. Er sollte
 alle vorhandenen Partitionen beibehalten wenn es gefordert ist, aber keiner
-außer mir hat das bislang getestet."
+auÃŸer mir hat das bislang getestet."
 
-Wenn Sie eine Testmaschine ohne wichtige Daten darauf haben, dann wäre es
-sehr tüchtig von Ihnen den nächtlichen Build von 10-01 (oder neuer) herunter zu
-laden und uns dabei zu helfen Fehler zu finden. Sie können den Bugtracker
+Wenn Sie eine Testmaschine ohne wichtige Daten darauf haben, dann wÃ¤re es
+sehr tÃ¼chtig von Ihnen den nÃ¤chtlichen Build von 10-01 (oder neuer) herunter zu
+laden und uns dabei zu helfen Fehler zu finden. Sie kÃ¶nnen den Bugtracker
 verwenden oder eine Nachricht in dieser AROS-Exec `Diskussion`__ hinterlassen.
 
 
-Präsentation von AROS
+PrÃ¤sentation von AROS
 ---------------------
 
-Wie zuvor auf dieser Webseite angekündigt war AROS ein Gaststar
-auf der `Pianeta Amiga 2007`__. Während der bekannten Amiga Show
-hat Paolo Besser AROS einer Nische interessierter Amigaanhänger
+Wie zuvor auf dieser Webseite angekÃ¼ndigt war AROS ein Gaststar
+auf der `Pianeta Amiga 2007`__. WÃ¤hrend der bekannten Amiga Show
+hat Paolo Besser AROS einer Nische interessierter AmigaanhÃ¤nger
 vorgestellt. Das Ereignis wurde von einigen wichtigen IT News
 Seiten wie `TGM Online`__ und `HW Upgrade`__ begleitet. Ein Bericht
 der Show wurde von der `The AROS Show`__ (Lesen Sie es `hier`__)
-veröffentlicht. Sie können sich auch auf YouTube ein nettes `Video`__ 
+verÃ¶ffentlicht. Sie kÃ¶nnen sich auch auf YouTube ein nettes `Video`__ 
 ansehen.
 
 AROS Weltweit
 -------------
 
-Unsere Webseite hat einige neue Dokumentationsübersetzungen erhalten - namentlich
+Unsere Webseite hat einige neue DokumentationsÃ¼bersetzungen erhalten - namentlich
 in griechisch (von Ioannis Koniaris), spanisch (von Ariel Gomez) und tschechisch
-(von  Petr Novak), mit der üblichen und erforderlichen Hilfe von Neil Cafferkey.
-Schwedische (von Jon Anderson) und russische (von Softy) Übersetzungen kommen
-demnächst. Auch kommen weitere Updates in weiteren Sprachen (von... Ihnen!?).
+(von  Petr Novak), mit der Ã¼blichen und erforderlichen Hilfe von Neil Cafferkey.
+Schwedische (von Jon Anderson) und russische (von Softy) Ãœbersetzungen kommen
+demnÃ¤chst. Auch kommen weitere Updates in weiteren Sprachen (von... Ihnen!?).
 
 __ http://mama.indstate.edu/users/nova/installer.jpg
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319

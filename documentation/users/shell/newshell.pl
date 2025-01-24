@@ -9,7 +9,7 @@
 NewShell
 ========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	WINDOW,FROM
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,11 +29,11 @@ Funkcja
 ~~~~~~~
 ::
 
-	Tworzy nowe okno CLI w nowym oknie konsoli. To okno stanie siê aktywne.
-	Nowe CLI dziedziczy wiêkszo¶æ atrybutów poprzedniej konsoli jak aktualny
-	katalog, rozmiar stosu, liniê poleceñ i inne. Jednak kolejne okno jest
-	niezale¿ne od poprzedniego.
-	Okno nale¿±ce do nowej konsoli mo¿e byæ okre¶lone dziêki s³owu 
+	Tworzy nowe okno CLI w nowym oknie konsoli. To okno stanie siÄ™ aktywne.
+	Nowe CLI dziedziczy wiÄ™kszoÅ›Ä‡ atrybutÃ³w poprzedniej konsoli jak aktualny
+	katalog, rozmiar stosu, liniÄ™ poleceÅ„ i inne. Jednak kolejne okno jest
+	niezaleÅ¼ne od poprzedniego.
+	Okno naleÅ¼Ä…ce do nowej konsoli moÅ¼e byÄ‡ okreÅ›lone dziÄ™ki sÅ‚owu 
 	kluczowemu WINDOW.
 	
 
@@ -43,41 +43,41 @@ Parametr
 ::
 
 
-	WINDOW	--	Okre¶lenie okna konsoli
+	WINDOW	--	OkreÅ›lenie okna konsoli
 
-	X	--	liczba pikseli od lewej krawêdzi ekranu                                
-	Y	--	liczba pikseli od górnej krawêdzi ekranu
-	WIDTH	--	szeroko¶æ okna konsoli
-	HEIGHT	--	wysoko¶æ okna konsoli
-	TITLE	--	tekst, który pokazuje siê w pasku tytu³owym
-	AUTO	--	okno automatycznie siê pojawia, gdy program potrzebuje
-			wyj¶cia lub wej¶cia
-	ALT	--	okno uruchamia siê o okre¶lonym rozmiarze i pozycji, gdy
-			przycisk powiêkszania zostanie wci¶niêty
+	X	--	liczba pikseli od lewej krawÄ™dzi ekranu                                
+	Y	--	liczba pikseli od gÃ³rnej krawÄ™dzi ekranu
+	WIDTH	--	szerokoÅ›Ä‡ okna konsoli
+	HEIGHT	--	wysokoÅ›Ä‡ okna konsoli
+	TITLE	--	tekst, ktÃ³ry pokazuje siÄ™ w pasku tytuÅ‚owym
+	AUTO	--	okno automatycznie siÄ™ pojawia, gdy program potrzebuje
+			wyjÅ›cia lub wejÅ›cia
+	ALT	--	okno uruchamia siÄ™ o okreÅ›lonym rozmiarze i pozycji, gdy
+			przycisk powiÄ™kszania zostanie wciÅ›niÄ™ty
 	BACKDROP--	okno bez ramek
-	CLOSE	--	za³±cza przycisk wyj¶cia
+	CLOSE	--	zaÅ‚Ä…cza przycisk wyjÅ›cia
 	INACTIVE--	okno nie jest aktywowane przy uruchomieniu
-	NOBORDER--	okno bez ramek, tylko p. rozmiaru, g³êbi i powiêkszania 
-			s± dostêpne
+	NOBORDER--	okno bez ramek, tylko p. rozmiaru, gÅ‚Ä™bi i powiÄ™kszania 
+			sÄ… dostÄ™pne
 	NOCLOSE	--	okno nie posiada p. zamykania
-	NODEPTH	--	okno nie posiada p. g³êbi
-	NODRAG	--	okno nie mo¿e byæ przemieszczane; za³±cza NOCLOSE
+	NODEPTH	--	okno nie posiada p. gÅ‚Ä™bi
+	NODRAG	--	okno nie moÅ¼e byÄ‡ przemieszczane; zaÅ‚Ä…cza NOCLOSE
 	NOSIZE	--	okno nie posiada przycisku rozmiaru
-	SCREEN	--	nazwa ekranu publicznego, na którym ma byæ otworzone 
+	SCREEN	--	nazwa ekranu publicznego, na ktÃ³rym ma byÄ‡ otworzone 
 			okno
-	SIMPLE	--	tekst nie zostaje usuniêty po zmianie rozmiaru
+	SIMPLE	--	tekst nie zostaje usuniÄ™ty po zmianie rozmiaru
 	SMART	--	tekst jest wymazywany przy zmianie rozmiaru
-	WAIT	--	okno mo¿e zostaæ zamkniête po wci¶niêciu p. zamykania
+	WAIT	--	okno moÅ¼e zostaÄ‡ zamkniÄ™te po wciÅ›niÄ™ciu p. zamykania
 			lub po kombinacji CTRL-\
-	FROM	--	plik do wykonania przed uruchomieniem konsoli,je¶li nic
+	FROM	--	plik do wykonania przed uruchomieniem konsoli,jeÅ›li nic
 			nie jest podane to S:Shell-Startup zostaje wykonany
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
-	NewShell "CON:10/10/640/480/Moja w³asna konsola/CLOSE"
+	NewShell "CON:10/10/640/480/Moja wÅ‚asna konsola/CLOSE"
 
 

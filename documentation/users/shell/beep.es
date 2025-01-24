@@ -20,18 +20,18 @@ Formato
      Beep
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
-     BEEP produce un pitido a través del procedimiento DisplayBeep(NULL)
-     de Intuición.
+     BEEP produce un pitido a travÃ©s del procedimiento DisplayBeep(NULL)
+     de IntuiciÃ³n.
 
 

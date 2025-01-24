@@ -5,57 +5,57 @@ Status Update
 :Author:   Paolo Besser
 :Date:     2007-10-01
 
-Últimas noticias
+Ãšltimas noticias
 ----------------
 
-¡Presten atención! Neil Cafferkey ha enviado un nuevo `instalador`__
-para AROS, que permite una instalación más limpia y segura en los
-discos duros. Tiene las siguientes características nuevas:
+Â¡Presten atenciÃ³n! Neil Cafferkey ha enviado un nuevo `instalador`__
+para AROS, que permite una instalaciÃ³n mÃ¡s limpia y segura en los
+discos duros. Tiene las siguientes caracterÃ­sticas nuevas:
 
-- Ahora se pueden especificar la unidad y las particiones de instalación.
-- Ahora sí funciona la creación de la partición Works (Trabajos).
-- También se puede especificar el tamaño de la partición y se pueden
+- Ahora se pueden especificar la unidad y las particiones de instalaciÃ³n.
+- Ahora sÃ­ funciona la creaciÃ³n de la particiÃ³n Works (Trabajos).
+- TambiÃ©n se puede especificar el tamaÃ±o de la particiÃ³n y se pueden
   preservar las particiones existentes.
-- Se añadió Windows al menú de arranque de GRUB si hay alguna partición de ese sistema.
-- Se puede establecer el locale durante la instalación.
+- Se aÃ±adiÃ³ Windows al menÃº de arranque de GRUB si hay alguna particiÃ³n de ese sistema.
+- Se puede establecer el locale durante la instalaciÃ³n.
 
-Sin embargo, fíjate que es un programa todavía en etapa beta. Neil hizo
-las siguientes advertencias: "El nuevo instalador de HD está incluido en
+Sin embargo, fÃ­jate que es un programa todavÃ­a en etapa beta. Neil hizo
+las siguientes advertencias: "El nuevo instalador de HD estÃ¡ incluido en
 la ISO nightly listo para ser probado. No obstante, hay un defecto o en
-el Wanderer o en el FFS que necesita ser esquivado. Después de iniciar
+el Wanderer o en el FFS que necesita ser esquivado. DespuÃ©s de iniciar
 el instalador, necesitas salir del Wanderer antes de continuar (a menos
-que no vayas a formatear alguna partición).
-Sé más cuidadoso que lo normal con esta versión del instalador, o sea, 
-no lo uses con una máquina con datos valiosos sin copias de resguardo.
-Debería preservar las particiones existentes si se le solicita, pero
-esta característica no ha sido por nadie más además de mí".
+que no vayas a formatear alguna particiÃ³n).
+SÃ© mÃ¡s cuidadoso que lo normal con esta versiÃ³n del instalador, o sea, 
+no lo uses con una mÃ¡quina con datos valiosos sin copias de resguardo.
+DeberÃ­a preservar las particiones existentes si se le solicita, pero
+esta caracterÃ­stica no ha sido por nadie mÃ¡s ademÃ¡s de mÃ­".
 
-Si tienes una máquina de prueba sin datos importantes, serías muy listo
+Si tienes una mÃ¡quina de prueba sin datos importantes, serÃ­as muy listo
 si descargaras la nightly build del 10-01 (o posterior) y nos ayudaras
 en hallar los errores. Puedes usar el Rastreador de Errores o poner
-un mensaje en esta `discusión`__ de AROS-Exec.
+un mensaje en esta `discusiÃ³n`__ de AROS-Exec.
 
 
-Demostración de AROS
+DemostraciÃ³n de AROS
 --------------------
 
-Como ya se anticipó en este sitio, AROS fue la estrella invitada
+Como ya se anticipÃ³ en este sitio, AROS fue la estrella invitada
 del `Pianeta Amiga 2007`__. Durante esta popular muestra Amiga,
-Paolo Besser ha presentado AROS a un coto de interesados compañeros
+Paolo Besser ha presentado AROS a un coto de interesados compaÃ±eros
 de Amiga. El evento fue anunciado por algunos importantes sitios de
-noticias de TI como `TGM Online`__ y `HW Upgrade`__. Se publicó un
-informe de `The AROS Show`__ (léelo `aquí`__). Puedes ver un lindo
+noticias de TI como `TGM Online`__ y `HW Upgrade`__. Se publicÃ³ un
+informe de `The AROS Show`__ (lÃ©elo `aquÃ­`__). Puedes ver un lindo
 `video`__ en YouTube.
 
 AROS en el mundo
 ----------------
 
-Nuestro sitio web tiene nuevas traducciones de la documentación
-- a saber, al griego (por Ioannis Koniaris), al español (por Ariel Gómez) y
+Nuestro sitio web tiene nuevas traducciones de la documentaciÃ³n
+- a saber, al griego (por Ioannis Koniaris), al espaÃ±ol (por Ariel GÃ³mez) y
 al checo (por Petr Novak), con la ayuda usual y necesaria de Neil Cafferkey.
 Las actualizaciones de las traducciones al sueco (por Jon Anderson) y al
-ruso (por Softy) vendrán pronto. También les seguirán las actualizaciones
-a más idiomas (¿por ... tí?).
+ruso (por Softy) vendrÃ¡n pronto. TambiÃ©n les seguirÃ¡n las actualizaciones
+a mÃ¡s idiomas (Â¿por ... tÃ­?).
 
 __ http://mama.indstate.edu/users/nova/installer.jpg
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319

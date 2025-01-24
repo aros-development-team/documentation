@@ -2,13 +2,13 @@ Sponsorer
 =========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 
-Följande företag, organisationer och individer har donerat resurser:
+FÃ¶ljande fÃ¶retag, organisationer och individer har donerat resurser:
 
 + Trustec__
    
@@ -16,8 +16,8 @@ Följande företag, organisationer och individer har donerat resurser:
      
      <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
-  De snälla personerna på Trustec donerar utrymme och bandbredd till AROS
-  webbserver, SVN-server, FTP-server och flera mailinglistor. Om du är i behov
+  De snÃ¤lla personerna pÃ¥ Trustec donerar utrymme och bandbredd till AROS
+  webbserver, SVN-server, FTP-server och flera mailinglistor. Om du Ã¤r i behov
   av Java-utveckling eller kurser i Tyskland, kontakta dem!
 
 + Genesi__
@@ -26,8 +26,8 @@ Följande företag, organisationer och individer har donerat resurser:
   
      <a href="http://www.pegasosppc.com/"><img border="0" src="/images/genesi.gif"></a>
 
-  Genesi har varit generösa och donerat ett Pegasos moderkort för att möjliggöra ett
-  försök att porta AROS till den plattforman, tack!
+  Genesi har varit generÃ¶sa och donerat ett Pegasos moderkort fÃ¶r att mÃ¶jliggÃ¶ra ett
+  fÃ¶rsÃ¶k att porta AROS till den plattforman, tack!
 
 + SourceForge__
 
@@ -35,15 +35,15 @@ Följande företag, organisationer och individer har donerat resurser:
   
      <a href="http://www.sourceforge.net/"><img border="0" src="/images/sourceforge.png"></a>
 
-  SourceForge försörjer oss med flera tjänster, såsom webbserver med möjligheter
-  att köra skript, SQL-databas, mailinglistor, buggdatabas och ett distribuerat
-  system för distribution av filer.
+  SourceForge fÃ¶rsÃ¶rjer oss med flera tjÃ¤nster, sÃ¥som webbserver med mÃ¶jligheter
+  att kÃ¶ra skript, SQL-databas, mailinglistor, buggdatabas och ett distribuerat
+  system fÃ¶r distribution av filer.
 
 + Yann Vernier
 + Randal Vice
 
 
-Följande organisationer och individer har sponsrat utvecklingsarbete:
+FÃ¶ljande organisationer och individer har sponsrat utvecklingsarbete:
 
 + `Team AROS`__
 + `Norsk Amigaforening`__
@@ -58,7 +58,7 @@ Följande organisationer och individer har sponsrat utvecklingsarbete:
 + Rune Jensen
 + Joshua Dolan
 + Matthew Parsons
-+ Jean-Pierre Rivière
++ Jean-Pierre RiviÃ¨re
 
 __ http://www.trustsec.de/
 __ http://www.pegasosppc.com/

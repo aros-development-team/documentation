@@ -18,14 +18,14 @@ Format
 	Lock <drive> [ON|OFF] [<passkey>]
 
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
 	DRIVE/A,ON/S,OFF/S,PASSKEY
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -36,25 +36,25 @@ Funkcja
 ~~~~~~~
 ::
 
-	Lock sprawi, øe okre∂lone urz±dzenie lub partycja bÍd± zabezpieczone
+	Lock sprawi, ≈ºe okre≈õlone urzƒÖdzenie lub partycja bƒôdƒÖ zabezpieczone
 	przed zapisem lub odbezpieczone. To zabezpieczenie przed zapisem jest
-	obs≥ugiwane przez system plikÛw woluminu. W zwi±zku z czym zapis bÍdzie
-	moøliwy po ponownym restarcie.
-	Jest takøe moøliwe podanie has≥a, ktÛre bÍdzie chroni≥o przed zmian±
-	stanu. To samo has≥o, ktÛre zosta≥o uøyte do zabezpieczenia jest uøywane
-	do odbezpieczania. Has≥o moøe mieÊ dowoln± d≥ugo∂Ê.
+	obs≈Çugiwane przez system plik√≥w woluminu. W zwiƒÖzku z czym zapis bƒôdzie
+	mo≈ºliwy po ponownym restarcie.
+	Jest tak≈ºe mo≈ºliwe podanie has≈Ça, kt√≥re bƒôdzie chroni≈Ço przed zmianƒÖ
+	stanu. To samo has≈Ço, kt√≥re zosta≈Ço u≈ºyte do zabezpieczenia jest u≈ºywane
+	do odbezpieczania. Has≈Ço mo≈ºe mieƒá dowolnƒÖ d≈Çugo≈õƒá.
 
-	Wolumin MUSI byÊ urz±dzeniem lub g≥Ûwnym woluminem, a nie przypisem.
+	Wolumin MUSI byƒá urzƒÖdzeniem lub g≈Ç√≥wnym woluminem, a nie przypisem.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
      
 	1.SYS:> Lock Work:
 
-	To zablokuje przed zapisem wolumin Work, ale nie zabezpieczy go has≥em.
+	To zablokuje przed zapisem wolumin Work, ale nie zabezpieczy go has≈Çem.
 	
 
 	1.SYS:> Lock Work:
@@ -62,7 +62,7 @@ Przyk≥ad
 	Can't create directory Work:Test
 	MakeDir: Disk is write-protected
 
-	Wolumin jest zablokowany, wiÍc nie jest moøliwe stworzenie katalogu.
+	Wolumin jest zablokowany, wiƒôc nie jest mo≈ºliwe stworzenie katalogu.
 	
 
 	1.SYS:> Lock Work: OFF
@@ -72,6 +72,6 @@ Przyk≥ad
 
 	1.SYS:> Lock Work: MojeHaslo
 
-	Tutaj uøywamy has≥a "MojeHaslo"
+	Tutaj u≈ºywamy has≈Ça "MojeHaslo"
 
 

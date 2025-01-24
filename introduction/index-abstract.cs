@@ -1,14 +1,14 @@
 .. raw:: html
 
-   <h1>Úvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+   <h1>Ãšvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 .. raw:: html
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS Research Operating System je velmi jednoduchı, vıkonnı a flexibilní
-desktopovı operaèní systém urèenı k tomu, abych ti pomohl vytì¾it maximum
-z tvého poèítaèe. Je to nezávislı, pøenosnı a svobodnı projekt, kterı se
-sna¾í bıt kompatibilní s AmigaOS na úrovni API (jako Wine, ne v¹ak jako UAE),
-pøi souèasném zlep¹ování v mnoha oblastech. Zdrojové kódy jsou dostupné
-pod open source licencí, která je dovoluje komukoli zdokonalovat.
+AROS Research Operating System je velmi jednoduchÃ½, vÃ½konnÃ½ a flexibilnÃ­
+desktopovÃ½ operaÄnÃ­ systÃ©m urÄenÃ½ k tomu, abych ti pomohl vytÄ›Å¾it maximum
+z tvÃ©ho poÄÃ­taÄe. Je to nezÃ¡vislÃ½, pÅ™enosnÃ½ a svobodnÃ½ projekt, kterÃ½ se
+snaÅ¾Ã­ bÃ½t kompatibilnÃ­ s AmigaOS na Ãºrovni API (jako Wine, ne vÅ¡ak jako UAE),
+pÅ™i souÄasnÃ©m zlepÅ¡ovÃ¡nÃ­ v mnoha oblastech. ZdrojovÃ© kÃ³dy jsou dostupnÃ©
+pod open source licencÃ­, kterÃ¡ je dovoluje komukoli zdokonalovat.

@@ -7,51 +7,51 @@ Download
 Distribuce
 ==========
 
-Distribuce jsou pøedkonfigurované a testované verze AROSu.
-Obsahují øadu u¾iteènıch aplikací, které nevycházejí v hlavních
-AROS.org binárkách a pro u¾ivatele budou jistì velmi zajímavé. Nemusejí
-mít nejnovìj¹í systémové jádro, ale jejich stabilita a u¾ivatelská pøívìtivost
-je mnohem vìt¹í ne¾ u noèních sestavení. Pokud jsi u¾ivatel, kterı se zajímá
-o to, co mù¾e AROS nabídnout, pou¾ij k získání zku¹eností s AROSem distribuce.
+Distribuce jsou pÅ™edkonfigurovanÃ© a testovanÃ© verze AROSu.
+ObsahujÃ­ Å™adu uÅ¾iteÄnÃ½ch aplikacÃ­, kterÃ© nevychÃ¡zejÃ­ v hlavnÃ­ch
+AROS.org binÃ¡rkÃ¡ch a pro uÅ¾ivatele budou jistÄ› velmi zajÃ­mavÃ©. NemusejÃ­
+mÃ­t nejnovÄ›jÅ¡Ã­ systÃ©movÃ© jÃ¡dro, ale jejich stabilita a uÅ¾ivatelskÃ¡ pÅ™Ã­vÄ›tivost
+je mnohem vÄ›tÅ¡Ã­ neÅ¾ u noÄnÃ­ch sestavenÃ­. Pokud jsi uÅ¾ivatel, kterÃ½ se zajÃ­mÃ¡
+o to, co mÅ¯Å¾e AROS nabÃ­dnout, pouÅ¾ij k zÃ­skÃ¡nÃ­ zkuÅ¡enostÃ­ s AROSem distribuce.
 
 VmwAROS VE
 ----------
 
-VmwAROS VE je vydávána jako obraz pevného disku, kterı mù¾e bì¾et ve virtualizaèním
+VmwAROS VE je vydÃ¡vÃ¡na jako obraz pevnÃ©ho disku, kterÃ½ mÅ¯Å¾e bÄ›Å¾et ve virtualizaÄnÃ­m
 softwaru VMware (`Player`__, Fusion, Server, Workstation). Distribuce
-obsahuje øadu pøedinstalovaného softwaru - hry, emailového klienta,
-textovı editor, editor obrázkù, vıvojové prostøedí, sadu kompilátorù, webovı prohlí¾eè,
-IRC klienta a dal¹í! Sí»ové pøipojení lze snadno nastavit
-ruèní konfigurací nebo pøes DHCP klienta. Mù¾e¹ ji rozbìhnout na tvıch Windows,
-Linuxu nebo Macu! Také lze nahrávat a stahovat soubory z AROSu pou¾itím
-v distribuci vestavìného ftp serveru.
+obsahuje Å™adu pÅ™edinstalovanÃ©ho softwaru - hry, emailovÃ©ho klienta,
+textovÃ½ editor, editor obrÃ¡zkÅ¯, vÃ½vojovÃ© prostÅ™edÃ­, sadu kompilÃ¡torÅ¯, webovÃ½ prohlÃ­Å¾eÄ,
+IRC klienta a dalÅ¡Ã­! SÃ­Å¥ovÃ© pÅ™ipojenÃ­ lze snadno nastavit
+ruÄnÃ­ konfiguracÃ­ nebo pÅ™es DHCP klienta. MÅ¯Å¾eÅ¡ ji rozbÄ›hnout na tvÃ½ch Windows,
+Linuxu nebo Macu! TakÃ© lze nahrÃ¡vat a stahovat soubory z AROSu pouÅ¾itÃ­m
+v distribuci vestavÄ›nÃ©ho ftp serveru.
 
-Informace o nejnovìj¹í verzi nalezne¹ `zde`__. Hlavní stránka
+Informace o nejnovÄ›jÅ¡Ã­ verzi nalezneÅ¡ `zde`__. HlavnÃ­ strÃ¡nka
 distribuce je `zde`__.
 
 VmwAROS Live!
 -------------
 
-Zalo¾ena na stejné technologii jako VmwAROS, zaji¹»uje distribuce VmwAROS Live!
-dobøe pøedkonfigurované a k pou¾ití pøipravené prostøedí ve formì LiveCD.
-CD mù¾e¹ spustit na jakémkoli AROSem podporovaném PC-x86 hardwaru a pak si jen u¾ívat systém
-bì¾ící bez pou¾ití virtualizaèního softwaru. Chce¹-li z AROSu získat
-víc, mù¾e¹ tuto distribuci nainstalovat na pevnı disk a
-pak ji pou¾ívat jako alternativní systémem pro tvùj Windows nebo Linux.
+ZaloÅ¾ena na stejnÃ© technologii jako VmwAROS, zajiÅ¡Å¥uje distribuce VmwAROS Live!
+dobÅ™e pÅ™edkonfigurovanÃ© a k pouÅ¾itÃ­ pÅ™ipravenÃ© prostÅ™edÃ­ ve formÄ› LiveCD.
+CD mÅ¯Å¾eÅ¡ spustit na jakÃ©mkoli AROSem podporovanÃ©m PC-x86 hardwaru a pak si jen uÅ¾Ã­vat systÃ©m
+bÄ›Å¾Ã­cÃ­ bez pouÅ¾itÃ­ virtualizaÄnÃ­ho softwaru. ChceÅ¡-li z AROSu zÃ­skat
+vÃ­c, mÅ¯Å¾eÅ¡ tuto distribuci nainstalovat na pevnÃ½ disk a
+pak ji pouÅ¾Ã­vat jako alternativnÃ­ systÃ©mem pro tvÅ¯j Windows nebo Linux.
 
-Informace o nejnovìj¹í verzi nalezne¹ `zde`__. Hlavní stránka
+Informace o nejnovÄ›jÅ¡Ã­ verzi nalezneÅ¡ `zde`__. HlavnÃ­ strÃ¡nka
 distribuce je `zde`__.
 
 WinAROS
 -------
 
-WinAROS je distribuce, která k svému hostování pou¾ívá virtualizaèní software QEMU.
-Tato distribuce mù¾e bì¾et pod qemu na Windows nebo Linuxu. Distribuce
-obsahuje pøedkonfigurované balíèky C/C++ pøekladaèù a také Murks!IDE - nejlep¹í
-(a jediné) integrované vıvojové prostøedí (IDE) pro nativní AROS, co¾ ji dìlá dobrou
-volbou pro zaèínající vıvojáøe.
+WinAROS je distribuce, kterÃ¡ k svÃ©mu hostovÃ¡nÃ­ pouÅ¾Ã­vÃ¡ virtualizaÄnÃ­ software QEMU.
+Tato distribuce mÅ¯Å¾e bÄ›Å¾et pod qemu na Windows nebo Linuxu. Distribuce
+obsahuje pÅ™edkonfigurovanÃ© balÃ­Äky C/C++ pÅ™ekladaÄÅ¯ a takÃ© Murks!IDE - nejlepÅ¡Ã­
+(a jedinÃ©) integrovanÃ© vÃ½vojovÃ© prostÅ™edÃ­ (IDE) pro nativnÃ­ AROS, coÅ¾ ji dÄ›lÃ¡ dobrou
+volbou pro zaÄÃ­najÃ­cÃ­ vÃ½vojÃ¡Å™e.
 
-Hlavní stránka distribuce je `zde`__.
+HlavnÃ­ strÃ¡nka distribuce je `zde`__.
 
 __ http://vmware.com/products/player
 __ http://ve.vmwaros.org
@@ -65,33 +65,33 @@ __ http://amidevcpp.amiga-world.de/WinAros.php
 Snapshoty
 =========
 
-Poèínaje 1. bøeznem 2007 nejsou Snapshoty AROSu ji¾ více
-dostupné. Chceme povzbudit v¹echny, kteøí by chtìli vyzkou¹et AROS, aby si místo
-nich stáhli buï distribuci nebo poslední noèní sestavení. AROS
-roste opravdu rychle a Snapshoty èasto obsahovaly zastaralı kód. Také
-si myslíme, ¾e noèní sestavení jsou z hlediska beta testování
-u¾iteènìj¹í: k nahlá¹ení chyb prosím pou¾ij `bug tracker`__.
+PoÄÃ­naje 1. bÅ™eznem 2007 nejsou Snapshoty AROSu jiÅ¾ vÃ­ce
+dostupnÃ©. Chceme povzbudit vÅ¡echny, kteÅ™Ã­ by chtÄ›li vyzkouÅ¡et AROS, aby si mÃ­sto
+nich stÃ¡hli buÄ distribuci nebo poslednÃ­ noÄnÃ­ sestavenÃ­. AROS
+roste opravdu rychle a Snapshoty Äasto obsahovaly zastaralÃ½ kÃ³d. TakÃ©
+si myslÃ­me, Å¾e noÄnÃ­ sestavenÃ­ jsou z hlediska beta testovÃ¡nÃ­
+uÅ¾iteÄnÄ›jÅ¡Ã­: k nahlÃ¡Å¡enÃ­ chyb prosÃ­m pouÅ¾ij `bug tracker`__.
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 
-Noèní sestavení
+NoÄnÃ­ sestavenÃ­
 ===============
 
-Noèní sestavení jsou vytváøena, jak u¾ název napovídá, automaticky ka¾dou noc
-pøímo z SVN stromu a obsahují poslední kód. Nebyly
-v¹ak ¾ádnım zpùsobem testovány a mohou obsahovat chyby. Vìt¹inou
-ale fungují dobøe.
+NoÄnÃ­ sestavenÃ­ jsou vytvÃ¡Å™ena, jak uÅ¾ nÃ¡zev napovÃ­dÃ¡, automaticky kaÅ¾dou noc
+pÅ™Ã­mo z SVN stromu a obsahujÃ­ poslednÃ­ kÃ³d. Nebyly
+vÅ¡ak Å¾Ã¡dnÃ½m zpÅ¯sobem testovÃ¡ny a mohou obsahovat chyby. VÄ›tÅ¡inou
+ale fungujÃ­ dobÅ™e.
 
-Oznamuj prosím chyby, které objeví¹ bìhem pou¾ívání tìchto sestavení prostøednictvím
-`bug trackeru`__. V pøípadì jakékoli potøeby nás neváhej kontaktovat
-prostøednictvím fóra `AROS-Exec`__.
+Oznamuj prosÃ­m chyby, kterÃ© objevÃ­Å¡ bÄ›hem pouÅ¾Ã­vÃ¡nÃ­ tÄ›chto sestavenÃ­ prostÅ™ednictvÃ­m
+`bug trackeru`__. V pÅ™Ã­padÄ› jakÃ©koli potÅ™eby nÃ¡s nevÃ¡hej kontaktovat
+prostÅ™ednictvÃ­m fÃ³ra `AROS-Exec`__.
 
-.. Poznámka::
+.. PoznÃ¡mka::
 
-   Pro stahování noèních sestavení pou¾ívej správce stahování (download manager),
-   kterı umo¾òuje pokraèovat v pøeru¹eném stahování, nebo utilitu pøíkazové øadky jako
-   tøeba wget (pou¾itím "wget -c" získá¹ zbytek souboru, kterı byl èásteènì
-   sta¾en i jinım programem).
+   Pro stahovÃ¡nÃ­ noÄnÃ­ch sestavenÃ­ pouÅ¾Ã­vej sprÃ¡vce stahovÃ¡nÃ­ (download manager),
+   kterÃ½ umoÅ¾Åˆuje pokraÄovat v pÅ™eruÅ¡enÃ©m stahovÃ¡nÃ­, nebo utilitu pÅ™Ã­kazovÃ© Å™adky jako
+   tÅ™eba wget (pouÅ¾itÃ­m "wget -c" zÃ­skÃ¡Å¡ zbytek souboru, kterÃ½ byl ÄÃ¡steÄnÄ›
+   staÅ¾en i jinÃ½m programem).
 
 .. raw:: html
 

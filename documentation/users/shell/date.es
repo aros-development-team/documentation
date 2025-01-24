@@ -20,7 +20,7 @@ Synopsis
      DAY,DATE,TIME,TO=VER/K
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
@@ -41,10 +41,10 @@ Entradas
 ::
 
 
-     DAY  -- pone la fecha por nombre (lunes, martes, ..., mañana, ayer)
+     DAY  -- pone la fecha por nombre (lunes, martes, ..., maÃ±ana, ayer)
      DATE -- pone la fecha con el formato DD--MMM--YY.
-             Para MMM ya sea el número o las tres primeras letras del
-             mes en inglés.
+             Para MMM ya sea el nÃºmero o las tres primeras letras del
+             mes en inglÃ©s.
      TIME -- pone la hora con el formato HH:MM:SS
      TO   -- la salida es enviada a un archivo.
 

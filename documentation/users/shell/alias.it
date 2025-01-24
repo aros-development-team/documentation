@@ -38,7 +38,7 @@ Funzione
 
 
      Alias ti permette di creare dei nomi alternativi per gli altri 
-     comandi di DOS. Se Alias Ë usato senza parametri, visualizzer‡
+     comandi di DOS. Se Alias √® usato senza parametri, visualizzer√†
      la lista corrente di Aliases definiti nella shell corrente.
 
      Usando due parentesi quadre con dentro un alias ti permette di 
@@ -71,7 +71,7 @@ Esempio
      Alias DF "Type [] number"
 
          Scrivendo "DF S:Shell-Startup" nella shell, stai eseguendo il 
-         comando "Type S:Shell-Startup number". Questo visualizzer‡ i contenuti
+         comando "Type S:Shell-Startup number". Questo visualizzer√† i contenuti
          del file S:Shell-Startup nella shell con i numeri delle linee dalla
          parte a sinistra.
 

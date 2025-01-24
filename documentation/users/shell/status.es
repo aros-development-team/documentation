@@ -20,7 +20,7 @@ Synopsis
      PROCESS/N,FULL/S,TCB/S,CLI=ALL/S,COM=COMMAND/K
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:c
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Muestra informaci髇 sobre los procesos que se est醤 ejecutando
+     Muestra informaci贸n sobre los procesos que se est谩n ejecutando
      dentro de los Shell/CLI.
 
 
@@ -42,11 +42,11 @@ Entradas
 ::
 
 
-     PROCESS      --  El n鷐ero de identificaci髇 del proceso.
+     PROCESS      --  El n煤mero de identificaci贸n del proceso.
 
-     FULL         --  Muestra toda la informaci髇 sobre los procesos.
+     FULL         --  Muestra toda la informaci贸n sobre los procesos.
 
-     TCB          --  Igual que Full, excepto que esta opci髇 omite
+     TCB          --  Igual que Full, excepto que esta opci贸n omite
                       el nombre del proceso.
 
      CLI=ALL      --  Default. Muestra todos los procesos.
@@ -60,7 +60,7 @@ Resultado
 ::
 
 
-     Los c骴igos de error DOS normales.
+     Los c贸digos de error DOS normales.
 
 
 Ejemplo
@@ -85,7 +85,7 @@ Ejemplo
          Process  6: stk  4000, pri   2 Loaded as command: ToolsDaemon
 
 
-Vea tambi閚
+Vea tambi茅n
 ~~~~~~~~~~~
 ::
 

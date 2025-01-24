@@ -1,9 +1,9 @@
 ============
-Archiv zpráv
+Archiv zprÃ¡v
 ============
 
-Tady mù¾e¹ najít staré zpravodajské èlánky, které byly publikovány na tomto webu
-bìhem leto¹ního roku i døívìj¹ích let. K shlédnutí jsou zprávy z následujících let:
+Tady mÅ¯Å¾eÅ¡ najÃ­t starÃ© zpravodajskÃ© ÄlÃ¡nky, kterÃ© byly publikovÃ¡ny na tomto webu
+bÄ›hem letoÅ¡nÃ­ho roku i dÅ™Ã­vÄ›jÅ¡Ã­ch let. K shlÃ©dnutÃ­ jsou zprÃ¡vy z nÃ¡sledujÃ­cÃ­ch let:
 
 + `2016 <2016>`__
 + `2015 <2015>`__

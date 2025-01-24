@@ -1,1 +1,1 @@
-V pr·ci.
+V pr√°ci.

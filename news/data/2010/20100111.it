@@ -5,44 +5,44 @@ Aggiornamento
 :Author:   Paolo Besser
 :Date:     11-01-2010
 
-Ultime novit‡
+Ultime novit√†
 -------------
 
-» passato parecchio tempo dall'ultimo aggiornamento di questa pagina,
-ma le novit‡ di certo non mancano. 
+√à passato parecchio tempo dall'ultimo aggiornamento di questa pagina,
+ma le novit√† di certo non mancano. 
 
 Prima di tutto, Chris "platon42" Hodges ha portato su AROS il suo stack
 USB Poseidon e lo ha rilasciato sotto i termini della licenza APL: dopo
-un intenso lavoro di adattamento e correzione, AROS puÚ finalmente
+un intenso lavoro di adattamento e correzione, AROS pu√≤ finalmente
 gestire i controller USB 1.1 e 2.0. Qualsiasi dispositivo dovrebbe essere
 correttamente riconosciuto e, nel caso di mouse, tastiere e altri sistemi
 di input, anche gestiti direttamente. Funzionano anche diverse chiavette
 USB e altri dispositivi di storage. Altri purtroppo no, a causa del
 nostro fat.handler su cui stiamo comunque indagando. Altre periferiche
-verranno supportate solo in seguito, se qualcuno scriver‡ i driver
+verranno supportate solo in seguito, se qualcuno scriver√† i driver
 necessari.
 
-Grazie a Poseidon, AROS adesso puÚ effettuare il boot da unit‡ CD-ROM e
-DVD-ROM esterne. Questo ne permette l'installazione su una vasta quantit‡
+Grazie a Poseidon, AROS adesso pu√≤ effettuare il boot da unit√† CD-ROM e
+DVD-ROM esterne. Questo ne permette l'installazione su una vasta quantit√†
 di portatili e netbook come l'`Aspire One A150 di Acer`__. Quest'ultimo
-si qualifica gi‡ come una buona piattaforma per AROS: Steve Jones e Davy
+si qualifica gi√† come una buona piattaforma per AROS: Steve Jones e Davy
 Wenzler hanno realizzato un `driver HD Audio`__ per il sistema iMica__
 che funziona anche su di esso, oltre che su una buona scelta di schede
 madri con lo stesso chipset. La distribuzione `Icaros Desktop`__ prevede
-inoltre un piccolo hack che permette di avviare AROS in modalit‡ VESA, con
+inoltre un piccolo hack che permette di avviare AROS in modalit√† VESA, con
 la risoluzione di 1024x600 pixel, sui computer con GPU GMA9x0.
 
-Il programma TCPPrefs di Przemyslaw "Qus" Szczygielski Ë stato inserito
-tra le preferenze ufficiali di AROS, per cui non Ë pi˘ necessario
+Il programma TCPPrefs di Przemyslaw "Qus" Szczygielski √® stato inserito
+tra le preferenze ufficiali di AROS, per cui non √® pi√π necessario
 modificare file testuali e script per collegarsi a Internet. Matthias
 Rustler ha portato Scout, per cui chiudere le finestre e i programmi
-impiantati Ë molto pi˘ semplice di prima. La stabilit‡ del Kernel, in
-ogni caso, Ë migliorata parecchio grazie al lavoro di Neil Cafferkey e
+impiantati √® molto pi√π semplice di prima. La stabilit√† del Kernel, in
+ogni caso, √® migliorata parecchio grazie al lavoro di Neil Cafferkey e
 Pavel Fedin.
 
 Neil Cafferkey ha migliorato notevolmente il nostro ata.device, 
-aggiungendo il supporto di una buona quantit‡ di controller Serial-ATA.
-In ogni caso, qualunque dispositivo SATA che puÚ essere impostato dal
+aggiungendo il supporto di una buona quantit√† di controller Serial-ATA.
+In ogni caso, qualunque dispositivo SATA che pu√≤ essere impostato dal
 BIOS per essere visto come IDE, dovrebbe funzionare con AROS.
 
 Stanislaw Szymczyk prosegue il suo lavoro su OWB. Ultimamente ha 
@@ -54,8 +54,8 @@ accedere a numerose web-applications.
 
 Yannick "Yannickescu" Erb ha portato su AROS giochi divertenti come
 Open Tyrian, Super Methane Brothers e SDL Ball e, soprattutto, ha
-realizzato ZuneARC, una GUI standardizzata per tutte le utilit‡ di
-compressione gi‡ disponibili su AROS in riga di comando. Potete trovare
+realizzato ZuneARC, una GUI standardizzata per tutte le utilit√† di
+compressione gi√† disponibili su AROS in riga di comando. Potete trovare
 questa e altre interessanti applicazioni sul `suo sito`__. Altri
 giochi sono stati convertiti da Fishy_fis, utente di AROS-EXEC.org.
 Non perdete il suo porting di DOSBox!
@@ -81,8 +81,8 @@ cose, tuttavia, gli utenti dovranno fornire un'installazione funzionante
 del Kickstart e di AmigaOS 3.x, magari partendo dal sempreverde `Amiga
 Forever`__ di Cloanto.
 
-Dietro le quinti, Staf Verhaegen Ë sempre al lavoro su una ABI standard
-per AROS. La speranza Ë che i frutti dei suoi sforzi trovino compimento
+Dietro le quinti, Staf Verhaegen √® sempre al lavoro su una ABI standard
+per AROS. La speranza √® che i frutti dei suoi sforzi trovino compimento
 entro l'anno.
 
 __ http://vmwaros.blogspot.com/2009/12/icaros-desktop-got-sound-on-imica-and.html

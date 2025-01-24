@@ -1,1 +1,1 @@
-Okno novÈho instal·toru AROSu od Neila Cafferkeyho.
+Okno nov√©ho instal√°toru AROSu od Neila Cafferkeyho.

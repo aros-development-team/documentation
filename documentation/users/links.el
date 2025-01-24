@@ -1,9 +1,9 @@
 =========
-Συνδέσεις
+Ξ£Ο…Ξ½Ξ΄Ξ­ΟƒΞµΞΉΟ‚
 =========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Β© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Empty.

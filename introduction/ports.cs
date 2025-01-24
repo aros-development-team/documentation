@@ -3,7 +3,7 @@ Porty
 =====
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright Š 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,146 +11,146 @@ Porty
 .. Contents::
 
 
-Úvod
+Ãšvod
 ====
 
-Vzhledem k tomu, ¾e AROS je pøenosnı operaèní systém, je k dispozici pro nìkolik
-rùznıch platforem. "Port" AROSu je pøesnì to, co znamená, to jest verze
-AROSu upravená pro urèitou platformu.
+Vzhledem k tomu, Å¾e AROS je pÅ™enosnÃ½ operaÄnÃ­ systÃ©m, je k dispozici pro nÄ›kolik
+rÅ¯znÃ½ch platforem. "Port" AROSu je pÅ™esnÄ› to, co znamenÃ¡, to jest verze
+AROSu upravenÃ¡ pro urÄitou platformu.
 
 
-Pøíchutì - flavors
+PÅ™Ã­chutÄ› - flavors
 ------------------
 
-Porty jsou rozdìleny na dvì hlavní varianty, v terminologii AROSu také "flavors",
-jmenovitì "nativní" a "hostované".
+Porty jsou rozdÄ›leny na dvÄ› hlavnÃ­ varianty, v terminologii AROSu takÃ© "flavors",
+jmenovitÄ› "nativnÃ­" a "hostovanÃ©".
 
-Nativní porty bì¾í pøímo na hardwaru a mají absolutní kontrolu nad
-poèítaèem. V budoucnu se stanou doporuèovanım zpùsobem pro bìh AROSu,
-proto¾e poskytují lep¹í úèinnost i vıkon, ale v souèasné dobì jsou pøíli¹
-neúplné, aby mohly bıt pou¾ívány (pøinejmen¹ím pro vıvoj).
+NativnÃ­ porty bÄ›Å¾Ã­ pÅ™Ã­mo na hardwaru a majÃ­ absolutnÃ­ kontrolu nad
+poÄÃ­taÄem. V budoucnu se stanou doporuÄovanÃ½m zpÅ¯sobem pro bÄ›h AROSu,
+protoÅ¾e poskytujÃ­ lepÅ¡Ã­ ÃºÄinnost i vÃ½kon, ale v souÄasnÃ© dobÄ› jsou pÅ™Ã­liÅ¡
+neÃºplnÃ©, aby mohly bÃ½t pouÅ¾Ã­vÃ¡ny (pÅ™inejmenÅ¡Ã­m pro vÃ½voj).
 
-Hostované porty bì¾í na jiném operaèním systému a k hardwaru nepøistupují
-pøímo, ale pou¾ívají prostøedky poskytované hostitelskım OS.
-Vıhodou hostovanıch portù je jejich jednodu¹¹í programování, proto¾e není
-nutné psát low-level ovladaèe. A vzhledem k tomu, ¾e vıvoj AROSu je¹tì
-není self-hosted (sebehostitelskı - nelze kompilovat AROS z AROSu), vıraznì urychlují
-programování, proto¾e vedle sebe mù¾e bì¾et vıvojové prostøedí i AROS
-a pro vyzkou¹ení nového kódu není tøeba ztrácet èas neustálım restartováním.
+HostovanÃ© porty bÄ›Å¾Ã­ na jinÃ©m operaÄnÃ­m systÃ©mu a k hardwaru nepÅ™istupujÃ­
+pÅ™Ã­mo, ale pouÅ¾Ã­vajÃ­ prostÅ™edky poskytovanÃ© hostitelskÃ½m OS.
+VÃ½hodou hostovanÃ½ch portÅ¯ je jejich jednoduÅ¡Å¡Ã­ programovÃ¡nÃ­, protoÅ¾e nenÃ­
+nutnÃ© psÃ¡t low-level ovladaÄe. A vzhledem k tomu, Å¾e vÃ½voj AROSu jeÅ¡tÄ›
+nenÃ­ self-hosted (sebehostitelskÃ½ - nelze kompilovat AROS z AROSu), vÃ½raznÄ› urychlujÃ­
+programovÃ¡nÃ­, protoÅ¾e vedle sebe mÅ¯Å¾e bÄ›Å¾et vÃ½vojovÃ© prostÅ™edÃ­ i AROS
+a pro vyzkouÅ¡enÃ­ novÃ©ho kÃ³du nenÃ­ tÅ™eba ztrÃ¡cet Äas neustÃ¡lÃ½m restartovÃ¡nÃ­m.
 
 
-Pojmenování
+PojmenovÃ¡nÃ­
 -----------
 
-Rùzné porty AROSu jsou pojmenovány ve tvaru <procesor>-<platforma>, kde <procesor> je
-procesor architektury a <platforma> je symbolickı název platformy.
-Platforma portu mù¾e bıt buï hardwarová, jako napø. "pc" nebo "amiga",
-u nativních portù, nebo operaèní systém, jako napø. "linux" nebo "freebsd",
-u hostovanıch portù. V pøípadech, kdy není zøejmé, ¾e se jedná o AROS, pøidá
-se na zaèátek názvu portu "AROS/", napøíklad "AROS/i386-pc".
+RÅ¯znÃ© porty AROSu jsou pojmenovÃ¡ny ve tvaru <procesor>-<platforma>, kde <procesor> je
+procesor architektury a <platforma> je symbolickÃ½ nÃ¡zev platformy.
+Platforma portu mÅ¯Å¾e bÃ½t buÄ hardwarovÃ¡, jako napÅ™. "pc" nebo "amiga",
+u nativnÃ­ch portÅ¯, nebo operaÄnÃ­ systÃ©m, jako napÅ™. "linux" nebo "freebsd",
+u hostovanÃ½ch portÅ¯. V pÅ™Ã­padech, kdy nenÃ­ zÅ™ejmÃ©, Å¾e se jednÃ¡ o AROS, pÅ™idÃ¡
+se na zaÄÃ¡tek nÃ¡zvu portu "AROS/", napÅ™Ã­klad "AROS/i386-pc".
 
 
-Pøenositelnost
+PÅ™enositelnost
 --------------
 
-AROS spustitelné soubory pro konkrétní procesor jsou pøenosné na v¹echny porty,
-které tento procesor pou¾ívají, co¾ znamená, ¾e spustitelné soubory kompilované pro
-"i386-pc" budou v pohodì pracovat na "i386-linux" i "i386-freebsd".
+AROS spustitelnÃ© soubory pro konkrÃ©tnÃ­ procesor jsou pÅ™enosnÃ© na vÅ¡echny porty,
+kterÃ© tento procesor pouÅ¾Ã­vajÃ­, coÅ¾ znamenÃ¡, Å¾e spustitelnÃ© soubory kompilovanÃ© pro
+"i386-pc" budou v pohodÄ› pracovat na "i386-linux" i "i386-freebsd".
 
 
-Souèasné porty
+SouÄasnÃ© porty
 ==============
 
-Ní¾e je uveden seznam v¹ech portù AROSu, které jsou v provozuschopném stavu
-a/nebo aktivnì vyvíjeny. Ne v¹echny z nich jsou dostupné ke sta¾ení, proto¾e nemusí
-bıt buï dostateènì kompletní nebo mají kompilaèní po¾adavky, které nemù¾eme
-v¾dy splnit kvùli omezenım zdrojùm.
+NÃ­Å¾e je uveden seznam vÅ¡ech portÅ¯ AROSu, kterÃ© jsou v provozuschopnÃ©m stavu
+a/nebo aktivnÄ› vyvÃ­jeny. Ne vÅ¡echny z nich jsou dostupnÃ© ke staÅ¾enÃ­, protoÅ¾e nemusÃ­
+bÃ½t buÄ dostateÄnÄ› kompletnÃ­ nebo majÃ­ kompilaÄnÃ­ poÅ¾adavky, kterÃ© nemÅ¯Å¾eme
+vÅ¾dy splnit kvÅ¯li omezenÃ½m zdrojÅ¯m.
 
 
 AROS/i386-pc a x86-64
 ---------------------
 
-:Varianta:  Nativní
-:Stav:      Funkèní, neúplná podpora ovladaèù
-:Udr¾ována: Ano
+:Varianta:  NativnÃ­
+:Stav:      FunkÄnÃ­, neÃºplnÃ¡ podpora ovladaÄÅ¯
+:UdrÅ¾ovÃ¡na: Ano
 
-AROS/i386-pc je nativní port AROSu na bì¾né IBM PC AT poèítaèe a
-kompatibilní pou¾ívající x86 (nebo x86-64) rodinu procesorù. Název je tak trochu
-zavádìjící, proto¾e AROS/i386-pc ve skuteènosti vy¾aduje tøídu procesoru alespoò 486
-kvùli pou¾ití nìjakıch instrukcí, které na 386 nejsou dostupné. Tento stroj musí bıt
-té¾ zalo¾en na PCI sbìrnici.
+AROS/i386-pc je nativnÃ­ port AROSu na bÄ›Å¾nÃ© IBM PC AT poÄÃ­taÄe a
+kompatibilnÃ­ pouÅ¾Ã­vajÃ­cÃ­ x86 (nebo x86-64) rodinu procesorÅ¯. NÃ¡zev je tak trochu
+zavÃ¡dÄ›jÃ­cÃ­, protoÅ¾e AROS/i386-pc ve skuteÄnosti vyÅ¾aduje tÅ™Ã­du procesoru alespoÅˆ 486
+kvÅ¯li pouÅ¾itÃ­ nÄ›jakÃ½ch instrukcÃ­, kterÃ© na 386 nejsou dostupnÃ©. Tento stroj musÃ­ bÃ½t
+tÃ©Å¾ zaloÅ¾en na PCI sbÄ›rnici.
 
-Tento port funguje pomìrnì dobøe, ale máme pouze nejzákladnìj¹í podporu
-ovladaèù. Jedním z nejvìt¹ích omezení je, ¾e v souèasné dobì mù¾eme
-nabídnout grafickou akceleraci pouze kartám s èipem nVidia a ATI. Ostatní
-grafické adaptéry musí bıt pou¾ívány s generickımi VGA a VBE grafickımi
-ovladaèi (bez akcelerace). Pracuje se na více ovladaèích, ale jejich
-vıvoj je ponìkud pomalej¹í, proto¾e máme jen asi 2.5 hardwarovıch specialistù.
-Tento port je k dispozici ke sta¾ení.
+Tento port funguje pomÄ›rnÄ› dobÅ™e, ale mÃ¡me pouze nejzÃ¡kladnÄ›jÅ¡Ã­ podporu
+ovladaÄÅ¯. JednÃ­m z nejvÄ›tÅ¡Ã­ch omezenÃ­ je, Å¾e v souÄasnÃ© dobÄ› mÅ¯Å¾eme
+nabÃ­dnout grafickou akceleraci pouze kartÃ¡m s Äipem nVidia a ATI. OstatnÃ­
+grafickÃ© adaptÃ©ry musÃ­ bÃ½t pouÅ¾Ã­vÃ¡ny s generickÃ½mi VGA a VBE grafickÃ½mi
+ovladaÄi (bez akcelerace). Pracuje se na vÃ­ce ovladaÄÃ­ch, ale jejich
+vÃ½voj je ponÄ›kud pomalejÅ¡Ã­, protoÅ¾e mÃ¡me jen asi 2.5 hardwarovÃ½ch specialistÅ¯.
+Tento port je k dispozici ke staÅ¾enÃ­.
 
 
 AROS/m68k-pp
 ------------
 
-:Variatna:  Nativní
-:Stav:      Èásteènì funkèní (v emulátoru), neúplná podpora ovladaèù
-:Udr¾ována: Ano
+:Variatna:  NativnÃ­
+:Stav:      ÄŒÃ¡steÄnÄ› funkÄnÃ­ (v emulÃ¡toru), neÃºplnÃ¡ podpora ovladaÄÅ¯
+:UdrÅ¾ovÃ¡na: Ano
 
-AROS/m68k-pp je nativní port AROSu pro kapesní poèítaèe øady Palm
-a kompatibliní ("pp" znamená "palm pilot", co¾ bylo jméno prvního
-handheldu této øady). To znamená, ¾e v budoucnu bude mo¾né
+AROS/m68k-pp je nativnÃ­ port AROSu pro kapesnÃ­ poÄÃ­taÄe Å™ady Palm
+a kompatiblinÃ­ ("pp" znamenÃ¡ "palm pilot", coÅ¾ bylo jmÃ©no prvnÃ­ho
+handheldu tÃ©to Å™ady). To znamenÃ¡, Å¾e v budoucnu bude moÅ¾nÃ©
 nosit AROS s sebou v kapse...
 
-Tento port je v souèasné dobì velmi nedodìlanı. Vìt¹inou funguje (bì¾í v emulátoru,
-proto¾e nikdo zatím je¹tì nechce riskovat po¹kození drahého hardwaru), ale stále
-je na nìm spousta práce. Má grafickı ovladaè, ale ¾ádnı pro vstup.
-Tento port není v souèasné dobì k dispozici ke sta¾ení.
+Tento port je v souÄasnÃ© dobÄ› velmi nedodÄ›lanÃ½. VÄ›tÅ¡inou funguje (bÄ›Å¾Ã­ v emulÃ¡toru,
+protoÅ¾e nikdo zatÃ­m jeÅ¡tÄ› nechce riskovat poÅ¡kozenÃ­ drahÃ©ho hardwaru), ale stÃ¡le
+je na nÄ›m spousta prÃ¡ce. MÃ¡ grafickÃ½ ovladaÄ, ale Å¾Ã¡dnÃ½ pro vstup.
+Tento port nenÃ­ v souÄasnÃ© dobÄ› k dispozici ke staÅ¾enÃ­.
 
 
 AROS/i386-linux
 ---------------
 
-:Varianta:  Hostovaná
-:Stav:      Funkèní
-:Udr¾ována: Ano
+:Varianta:  HostovanÃ¡
+:Stav:      FunkÄnÃ­
+:UdrÅ¾ovÃ¡na: Ano
 
-AROS/i386-linux je hostovanı port AROSu pro operaèní systém Linux [#]_
-bì¾ící na procesorech rodiny x86.
+AROS/i386-linux je hostovanÃ½ port AROSu pro operaÄnÃ­ systÃ©m Linux [#]_
+bÄ›Å¾Ã­cÃ­ na procesorech rodiny x86.
 
-Je to rozhodnì nejkompletnìj¹í port, proto¾e vìt¹ina vıvojáøù
-v souèasné dobì k vıvoji AROSu pou¾ívá Linux a je daleko ménì
-ovladaèù, které se pro nìj musí psát. Tento port je k dispozici ke sta¾ení.
+Je to rozhodnÄ› nejkompletnÄ›jÅ¡Ã­ port, protoÅ¾e vÄ›tÅ¡ina vÃ½vojÃ¡Å™Å¯
+v souÄasnÃ© dobÄ› k vÃ½voji AROSu pouÅ¾Ã­vÃ¡ Linux a je daleko mÃ©nÄ›
+ovladaÄÅ¯, kterÃ© se pro nÄ›j musÃ­ psÃ¡t. Tento port je k dispozici ke staÅ¾enÃ­.
 
 
 AROS/i386-freebsd
 -----------------
 
-:Varianta:  Hostovaná
-:Stav:      Funkèní
-:Udr¾ována: Ano (5.x)
+:Varianta:  HostovanÃ¡
+:Stav:      FunkÄnÃ­
+:UdrÅ¾ovÃ¡na: Ano (5.x)
 
-AROS/i386-freebsd je hostovanı port AROSu pro operaèní systém FreeBSD
-bì¾ící na procesorech rodiny x86.
+AROS/i386-freebsd je hostovanÃ½ port AROSu pro operaÄnÃ­ systÃ©m FreeBSD
+bÄ›Å¾Ã­cÃ­ na procesorech rodiny x86.
 
-Tento port je pomìrnì kompletní, proto¾e sdílí vìt¹inu kódù s portem AROS/i386-linux,
-ale vzhledem k tomu, ¾e není mnoho vıvojáøù, kteøí pou¾ívají FreeBSD,
-zùstává trochu pozadu. Sna¾íme se sestavovat AROS/i386-freebsd, kdy¾ dìláme
-snapshoty, ale ne v¾dy je to mo¾né, tak¾e nemusí bıt poka¾dé k dispozici
-ke sta¾ení.
+Tento port je pomÄ›rnÄ› kompletnÃ­, protoÅ¾e sdÃ­lÃ­ vÄ›tÅ¡inu kÃ³dÅ¯ s portem AROS/i386-linux,
+ale vzhledem k tomu, Å¾e nenÃ­ mnoho vÃ½vojÃ¡Å™Å¯, kteÅ™Ã­ pouÅ¾Ã­vajÃ­ FreeBSD,
+zÅ¯stÃ¡vÃ¡ trochu pozadu. SnaÅ¾Ã­me se sestavovat AROS/i386-freebsd, kdyÅ¾ dÄ›lÃ¡me
+snapshoty, ale ne vÅ¾dy je to moÅ¾nÃ©, takÅ¾e nemusÃ­ bÃ½t pokaÅ¾dÃ© k dispozici
+ke staÅ¾enÃ­.
 
 
 AROS/ppc-linux
 --------------
 
-:Varianta:  Hostovaná
-:Stav:      Funkèní
-:Udr¾ována: Ano
+:Varianta:  HostovanÃ¡
+:Stav:      FunkÄnÃ­
+:UdrÅ¾ovÃ¡na: Ano
 
-AROS/ppc-linux je hostovanı port AROSu pro operaèní systém Linux
-bì¾ící na procesorech rodiny PPC.
+AROS/ppc-linux je hostovanÃ½ port AROSu pro operaÄnÃ­ systÃ©m Linux
+bÄ›Å¾Ã­cÃ­ na procesorech rodiny PPC.
 
-Pøedkompilovaná verze mù¾e bıt sta¾ena ze `Sourceforge`__.
-Pøestavení vy¾aduje opravenou verzi gcc3.4.3. Diff soubor se nachází v contrib/gnu/gcc.
+PÅ™edkompilovanÃ¡ verze mÅ¯Å¾e bÃ½t staÅ¾ena ze `Sourceforge`__.
+PÅ™estavenÃ­ vyÅ¾aduje opravenou verzi gcc3.4.3. Diff soubor se nachÃ¡zÃ­ v contrib/gnu/gcc.
 
 __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
 
@@ -158,9 +158,9 @@ __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
 Dodatek
 =======
 
-.. [#] Ano, víme, ¾e Linux je vlastnì jen jádro a ne celı 0S, ale
-       je mnohem krat¹í napsat Linux, ne¾ "operaèní systém zalo¾enı na
-       linuxovém jádøe, nìkteré bì¾né GNU nástroje a X window
-       system". Tato optimalizace rozsahu je ov¹em negována tím, ¾e se musí psát
-       toto vysvìtlení pro pedantské ètenáøe, ale stejnì...
+.. [#] Ano, vÃ­me, Å¾e Linux je vlastnÄ› jen jÃ¡dro a ne celÃ½ 0S, ale
+       je mnohem kratÅ¡Ã­ napsat Linux, neÅ¾ "operaÄnÃ­ systÃ©m zaloÅ¾enÃ½ na
+       linuxovÃ©m jÃ¡dÅ™e, nÄ›kterÃ© bÄ›Å¾nÃ© GNU nÃ¡stroje a X window
+       system". Tato optimalizace rozsahu je ovÅ¡em negovÃ¡na tÃ­m, Å¾e se musÃ­ psÃ¡t
+       toto vysvÄ›tlenÃ­ pro pedantskÃ© ÄtenÃ¡Å™e, ale stejnÄ›...
 

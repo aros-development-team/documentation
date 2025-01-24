@@ -13,19 +13,19 @@ pacchetti DOS nell'archivio dei sorgenti di AROS, insieme a un
 handler di sola lettura per il filesystem FAT. Ecco una 
 descrizione scritta di suo pugno:
 
-"packet.handler è un filesystem in uno stile "proxy" per AROS 
+"packet.handler Ã¨ un filesystem in uno stile "proxy" per AROS 
 che si occupa delle chiamate FSA/IOFileSys e le converte in 
 pacchetti DOS, spedendoli all'handler apposito.
 
-La cosa più importante da sapere sul packet.handler è che è stato 
+La cosa piÃ¹ importante da sapere sul packet.handler Ã¨ che Ã¨ stato 
 progettato per riprodurre l'ambiente dei gestori di AmigaOS nel 
-modo più fedele possibile, per minimizzare il lavoro necessario a 
+modo piÃ¹ fedele possibile, per minimizzare il lavoro necessario a 
 convertire i filesystem.
 
-fat.handler è un gestore FAT12/16/32. Può soltanto leggere e 
-ha ancora qualche bug, ma chiarisce il concetto. C'è ancora 
+fat.handler Ã¨ un gestore FAT12/16/32. PuÃ² soltanto leggere e 
+ha ancora qualche bug, ma chiarisce il concetto. C'Ã¨ ancora 
 molto da fare prima che io consideri la taglia completata, e 
-qualsiasi commento è benvenuto.
+qualsiasi commento Ã¨ benvenuto.
 
 I pacchetti DOS e l'handler FAT saranno disponibili a partire 
 dalle prossime nightly build.
@@ -35,18 +35,18 @@ Miscellanea
 
 Pavel Fedin ha aggiunto il supporto VESA 1.2, permettendo ad 
 altre (vecchie) schede video di funzionare correttamente con 
-AROS. Ha aggiunto anche la possibilità di gestire il cambio di 
-modalità VESA durante il bootstrap, rendendo il driver più 
+AROS. Ha aggiunto anche la possibilitÃ  di gestire il cambio di 
+modalitÃ  VESA durante il bootstrap, rendendo il driver piÃ¹ 
 indipendente da una versione customizzata di GRUB.
 
 Neil Cafferkey ha corretto il supporto dei dischi a 64-bit. 
-Ora la partizione di boot può essere oltre i 4 GB.
+Ora la partizione di boot puÃ² essere oltre i 4 GB.
 
 Hogne Titlestad ha pubblicato la versione 0.3.2 del suo 
 incredibile programma di disegno `Lunapaint`__, dopo aver aggiunto 
 uno strumento di testo. Potete vedere `una foto qui`__.
 
-`KGB Archiver`__ di Tomasz Pawlak è stato portato su AROS da 
+`KGB Archiver`__ di Tomasz Pawlak Ã¨ stato portato su AROS da 
 FOrest. Lo trovate negli `Archivi`__
 
 E ora una notizia che riguarda unicamente la versione italiana 

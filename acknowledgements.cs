@@ -1,15 +1,15 @@
 ==========
-Podìkování
+PodÄ›kovÃ¡nÃ­
 ==========
 
-Tento produkt obsahuje software vyvinutı Kalifornskou univerzitou -
-Berkeley a jejími spolupracovníky.
+Tento produkt obsahuje software vyvinutÃ½ Kalifornskou univerzitou -
+Berkeley a jejÃ­mi spolupracovnÃ­ky.
 
-Tento software je z èásti zalo¾en na práci 'Independent JPEG Group'.
+Tento software je z ÄÃ¡sti zaloÅ¾en na prÃ¡ci 'Independent JPEG Group'.
 
-Tento software je z èásti zalo¾en na práci 'FreeType Team'.
+Tento software je z ÄÃ¡sti zaloÅ¾en na prÃ¡ci 'FreeType Team'.
 
-Tento software je z èásti zalo¾en na práci 'Catharon Productions, Inc'.
+Tento software je z ÄÃ¡sti zaloÅ¾en na prÃ¡ci 'Catharon Productions, Inc'.
 
-Formát GIF (Graphics Interchange Format(c)) je autorskım vlastnictvím 'CompuServe Incorporated'.
-GIF(sm) je servisní znaèka majetku 'CompuServe Incorporated'.
+FormÃ¡t GIF (Graphics Interchange Format(c)) je autorskÃ½m vlastnictvÃ­m 'CompuServe Incorporated'.
+GIF(sm) je servisnÃ­ znaÄka majetku 'CompuServe Incorporated'.

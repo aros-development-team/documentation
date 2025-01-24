@@ -1,3 +1,3 @@
-Här är Freetype Manager, som används för att installera och konfigurera
-nya Truetype-typsnitt i systemet. Inte så användarvänligt, men du kan pilla
-på varje liten detalj. Ännu viktigare, det fungerar. :-)
+HÃ¤r Ã¤r Freetype Manager, som anvÃ¤nds fÃ¶r att installera och konfigurera
+nya Truetype-typsnitt i systemet. Inte sÃ¥ anvÃ¤ndarvÃ¤nligt, men du kan pilla
+pÃ¥ varje liten detalj. Ã„nnu viktigare, det fungerar. :-)

@@ -3,7 +3,7 @@ Avustaminen
 ===========
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2020, The AROS Development Team
 :Status:    Done. 
 
 .. Contents::
@@ -12,34 +12,34 @@ Avustaminen
 Tarvitsemme apuasi!
 ===================
 
-Meill‰ on v‰h‰nlaisesti kehitt‰ji‰, joka ik‰v‰ kyll‰ tarkoittaa sit‰, ett‰
-edistyminen on melko hidasta. Me yksinkertaisesti tarvitsemme enemm‰n ihmisi‰
-apuun! Teht‰vi‰ joissa tarvitaan antaumuksellisia kehitt‰ji‰ on valtava lista.
-Ne ulottuvat pienist‰ projekteista suuriin, raudan tasolta korkeamman tason
-j‰rjestelm‰n kautta ohjelmistojen koodaamiseen. Teht‰v‰‰ on periaatteessa
-kaikille jotka tahtovat ottaa kehitystyˆhˆn osaa, riippumatta siit‰ kuinka
+Meill√§ on v√§h√§nlaisesti kehitt√§ji√§, joka ik√§v√§ kyll√§ tarkoittaa sit√§, ett√§
+edistyminen on melko hidasta. Me yksinkertaisesti tarvitsemme enemm√§n ihmisi√§
+apuun! Teht√§vi√§ joissa tarvitaan antaumuksellisia kehitt√§ji√§ on valtava lista.
+Ne ulottuvat pienist√§ projekteista suuriin, raudan tasolta korkeamman tason
+j√§rjestelm√§n kautta ohjelmistojen koodaamiseen. Teht√§v√§√§ on periaatteessa
+kaikille jotka tahtovat ottaa kehitysty√∂h√∂n osaa, riippumatta siit√§ kuinka
 taitava olet ohjelmoimaan!
 
-Teille jotka ette ole ohjelmoijia, on teillekin runsaasti teht‰vi‰ joissa
-voitte avustaa! T‰m‰ sis‰lt‰‰ esim. dokumentaation kirjoittamista, ohjelmien
-ja dokumenttien k‰‰nt‰mist‰ eri kielille, kauniin grafiikan luomista, sek‰
-bugien mets‰styst‰. N‰m‰ teht‰v‰t ovat aivan yht‰ t‰rkeit‰ kuin ohjelmointikin!
+Teille jotka ette ole ohjelmoijia, on teillekin runsaasti teht√§vi√§ joissa
+voitte avustaa! T√§m√§ sis√§lt√§√§ esim. dokumentaation kirjoittamista, ohjelmien
+ja dokumenttien k√§√§nt√§mist√§ eri kielille, kauniin grafiikan luomista, sek√§
+bugien mets√§styst√§. N√§m√§ teht√§v√§t ovat aivan yht√§ t√§rkeit√§ kuin ohjelmointikin!
 
 
-Avoinna olevat teht‰v‰t
+Avoinna olevat teht√§v√§t
 =======================
 
-T‰m‰ on lista joistain teht‰vist‰ joissa tarvitsemme apua ja joiden parissa
-kukaan ei ole t‰ll‰ hetkell‰ tyˆskentelem‰ss‰. Lista ei ole mill‰‰n muotoa
-t‰ydellinen, sis‰lt‰en vain t‰rkeimm‰t asiat joissa apua AROS:issa
+T√§m√§ on lista joistain teht√§vist√§ joissa tarvitsemme apua ja joiden parissa
+kukaan ei ole t√§ll√§ hetkell√§ ty√∂skentelem√§ss√§. Lista ei ole mill√§√§n muotoa
+t√§ydellinen, sis√§lt√§en vain t√§rkeimm√§t asiat joissa apua AROS:issa
 tarvitsemme.
 
 
 Ohjelmointi
 -----------
 
-+ Puuttuvien kirjastojen, resurssien, laitteiden taikka n‰iden osien toteutus.
-  Tarkista yksityiskohtaisesta status raportista tieto siit‰ mit‰ osia
++ Puuttuvien kirjastojen, resurssien, laitteiden taikka n√§iden osien toteutus.
+  Tarkista yksityiskohtaisesta status raportista tieto siit√§ mit√§ osia
   puuttuu.
 
 + Rauta-ajureiden toteutus taikka parantelu:
@@ -47,38 +47,38 @@ Ohjelmointi
   - AROS/m68k-pp:
     
     + Grafiikka
-    + Syˆte (kosketusn‰yttˆ, n‰pp‰imet)
-    + ƒ‰ni
+    + Sy√∂te (kosketusn√§ytt√∂, n√§pp√§imet)
+    + √Ñ√§ni
  
   - AROS/i386-pc:
     
-    + Erityiset ajurit n‰yttˆkorteille (olemassa on vain yleiset, ei kovinkaan
+    + Erityiset ajurit n√§ytt√∂korteille (olemassa on vain yleiset, ei kovinkaan
 	  erikoisesti kiihdytetyt versiot). Lyhyt toivelista:
       
-      - nVidia TNT/TNT2/GeForce (aloitettu mutta keskener‰inen) 
+      - nVidia TNT/TNT2/GeForce (aloitettu mutta keskener√§inen) 
       - S3 Virge
       - Matrox Millenium
     
     + USB
     + SCSI
     + Erityiset IDE piirisarjat
-    + ƒ‰ni
-    + ... ja mit‰ tahansa muuta mik‰ mieleen tulee.
+    + √Ñ√§ni
+    + ... ja mit√§ tahansa muuta mik√§ mieleen tulee.
 
   - Yleinen tulostin tuki.
  
-  - Yleinen ‰‰nituki.
+  - Yleinen √§√§nituki.
 
-+ Porttaus muille arkkitehtuureille. Muutamia esimerkkej‰ raudata joille
-  meill‰ ei ole yll‰pidetty‰ AROS porttia tai joille ei sellaista ole
++ Porttaus muille arkkitehtuureille. Muutamia esimerkkej√§ raudata joille
+  meill√§ ei ole yll√§pidetty√§ AROS porttia tai joille ei sellaista ole
   aloitettu:
 
-  - Amiga, sek‰ m68k ett‰ PPC.
+  - Amiga, sek√§ m68k ett√§ PPC.
   - Atari.
   - HP 300 sarja.
   - SUN Sparc.
   - iPaq.
-  - Macintosh, sek‰ m68k ett‰ PPC.
+  - Macintosh, sek√§ m68k ett√§ PPC.
 
 + Puuttuvien Preferences muokkaimien toteutus:
 
@@ -94,16 +94,16 @@ Ohjelmointi
  
 + C linkityskirjaston parantelu
 
-  T‰m‰ tarkoittaa clib:ist‰ puuttuvien ANSI- (ja joidenkin POSIX-) funktioiden
+  T√§m√§ tarkoittaa clib:ist√§ puuttuvien ANSI- (ja joidenkin POSIX-) funktioiden
   toteuttamista UNIX ohjelmien (esim. GCC, make ja binutils) porttauksen
   helpottamiseksi. Suurin puute on POSIX-tyyppisen signaloinnin puute, mutta
   joitain muitakin funktioita uupuu.
 
 + Uusien datatyyppien (datatype) toteuttaminen ja olemassa olevien parantelu
 
-  AROS:ille olemassa olevien datatyyppien m‰‰r‰ on melko pieni. Joitain
-  esimerkkej‰ datatyypeist‰ jotka tarvitsevat parantelua ollakseen
-  k‰yttˆkelpoisia tai jotka tarvitsevat alusta saakka toteuttamisen:
+  AROS:ille olemassa olevien datatyyppien m√§√§r√§ on melko pieni. Joitain
+  esimerkkej√§ datatyypeist√§ jotka tarvitsevat parantelua ollakseen
+  k√§ytt√∂kelpoisia tai jotka tarvitsevat alusta saakka toteuttamisen:
 
   - amigaguide.datatype
   - sound.datatype
@@ -119,29 +119,29 @@ Ohjelmointi
 + Ulkoisten ohjelmien porttaus:
 
   - Tekstieditorit kuten ViM ja Emacs.
-  - Kehitysymp‰ristˆ joka sis‰lt‰‰ GCC:n, make:n, binutils:in ja muut GNU
-	kehitystyˆkalut.
+  - Kehitysymp√§rist√∂ joka sis√§lt√§√§ GCC:n, make:n, binutils:in ja muut GNU
+	kehitysty√∂kalut.
 
 
 Dokumentointi
 -------------
 
-+ K‰ytt‰jille suunnatun dokumentaation kirjoitus. T‰m‰ k‰sitt‰‰ yleisen
-  k‰yttˆoppaan kirjoittamisen niin aloittelijoille kuin experteillekin, sek‰
++ K√§ytt√§jille suunnatun dokumentaation kirjoitus. T√§m√§ k√§sitt√§√§ yleisen
+  k√§ytt√∂oppaan kirjoittamisen niin aloittelijoille kuin experteillekin, sek√§
   referenssidokumentaation kaikille standardeille AROS ohjelmille.
 
-+ Kehitt‰jille suunnatun dokumentaation kirjoitus. Vaikka t‰m‰ onkin hieman
-  paremmalla mallilla kuin k‰ytt‰jille tarkoitettu dokumentaation, on silti
-  paljon teht‰v‰‰ j‰ljell‰. Esimerkiksi, olemassa ei ole hyv‰‰ oppimateriaalia
++ Kehitt√§jille suunnatun dokumentaation kirjoitus. Vaikka t√§m√§ onkin hieman
+  paremmalla mallilla kuin k√§ytt√§jille tarkoitettu dokumentaation, on silti
+  paljon teht√§v√§√§ j√§ljell√§. Esimerkiksi, olemassa ei ole hyv√§√§ oppimateriaalia
   aloitteleville ohjelmoijille. ROM Kernel Manual:eja vastaavien saaminen
-  AROS:ille olisi eritt‰in mukavaa.
+  AROS:ille olisi eritt√§in mukavaa.
 
 
-K‰‰nnˆkset
+K√§√§nn√∂kset
 ----------
 
-+ AROS:in k‰‰nt‰minen useammille kielille. T‰ll‰ hetkell‰ vain seuraavat
-  kielet ovat enemm‰n taikka v‰hemm‰n tuettuja:
++ AROS:in k√§√§nt√§minen useammille kielille. T√§ll√§ hetkell√§ vain seuraavat
+  kielet ovat enemm√§n taikka v√§hemm√§n tuettuja:
 
   - English
   - Deutsch
@@ -149,31 +149,31 @@ K‰‰nnˆkset
   - Norsk
   - Italiano
 
-+ Dokumentaation ja web sivuston k‰‰ntˆ useammille kielille. T‰ll‰ hetkell‰
-  sivusto on kokonaisuudessaan saatavilla vain englanniksi. Osia on k‰‰nnetty
-  norjaksi ja suomeksi, mutta paljon on viel‰ teht‰v‰‰.
++ Dokumentaation ja web sivuston k√§√§nt√∂ useammille kielille. T√§ll√§ hetkell√§
+  sivusto on kokonaisuudessaan saatavilla vain englanniksi. Osia on k√§√§nnetty
+  norjaksi ja suomeksi, mutta paljon on viel√§ teht√§v√§√§.
 
 
 Muuta
 -----
 
-+ AROS:in GUI-suunnittelun koordinointi, kuten prefs ohjelma ja tyˆkalut.
++ AROS:in GUI-suunnittelun koordinointi, kuten prefs ohjelma ja ty√∂kalut.
 
 
 Tiimiin liittyminen
 ===================
 
-Tahdotko ottaa osaa kehitystyˆhˆn? Mahtavaa! Liity niille `kehitt‰jien
-postituslistoille`__ jotka kiinnostavat (ainakin p‰‰listalle liittyminen on
-*eritt‰in* suositeltavaa) ja pyyd‰ k‰yttˆoikeudet Subversion varastoon. Siin‰
+Tahdotko ottaa osaa kehitysty√∂h√∂n? Mahtavaa! Liity niille `kehitt√§jien
+postituslistoille`__ jotka kiinnostavat (ainakin p√§√§listalle liittyminen on
+*eritt√§in* suositeltavaa) ja pyyd√§ k√§ytt√∂oikeudet Subversion varastoon. Siin√§
 se. :-)
 
-Kehotamme kirjoittamaan lyhyen mailin kehityslistalle joka sis‰lt‰‰ esittelyn
-itsest‰si ja jotain tietoa siit‰ miten tahdot avustaa. Jos jotain ongelmia
-ilmenee, ‰l‰ ep‰rˆi postittaa listalle tai kysell‰ `IRC kanavilla`__. Ennen
-kuin alat tyˆskentelem‰‰n jonkin m‰‰r‰tyn asian kimpussa, ilmoita listalle
-mit‰ aiot tehd‰ tai p‰ivit‰ teht‰v‰tietokantaan. N‰in voimme varmistua
-etteiv‰t useat tee vahingossa yht‰ ja samaa.
+Kehotamme kirjoittamaan lyhyen mailin kehityslistalle joka sis√§lt√§√§ esittelyn
+itsest√§si ja jotain tietoa siit√§ miten tahdot avustaa. Jos jotain ongelmia
+ilmenee, √§l√§ ep√§r√∂i postittaa listalle tai kysell√§ `IRC kanavilla`__. Ennen
+kuin alat ty√∂skentelem√§√§n jonkin m√§√§r√§tyn asian kimpussa, ilmoita listalle
+mit√§ aiot tehd√§ tai p√§ivit√§ teht√§v√§tietokantaan. N√§in voimme varmistua
+etteiv√§t useat tee vahingossa yht√§ ja samaa.
 
 __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
@@ -182,26 +182,26 @@ __ ../../contact#irc-channels
 Subversion varasto
 ------------------
 
-AROS:in s‰ilytyspaikka pyˆrii salasanalla suojatussa Subversion palvelimessa,
-joka tarkoittaa sit‰ ett‰ sinun on pyydett‰v‰ k‰yttˆoikeus sille jotta voit
-ottaa osaa kehitystyˆhˆn. Salasanat ovat salatussa muodossa, jonka voit
+AROS:in s√§ilytyspaikka py√∂rii salasanalla suojatussa Subversion palvelimessa,
+joka tarkoittaa sit√§ ett√§ sinun on pyydett√§v√§ k√§ytt√∂oikeus sille jotta voit
+ottaa osaa kehitysty√∂h√∂n. Salasanat ovat salatussa muodossa, jonka voit
 generoida `online password encryption tool`__:illamme. 
 
-L‰het‰ koodattu salasanasi yhdess‰ k‰ytt‰j‰- ja oikean nimesi kanssa `Aaron
+L√§het√§ koodattu salasanasi yhdess√§ k√§ytt√§j√§- ja oikean nimesi kanssa `Aaron
 Digulla`__:lle ja odota vastausta. Nopeuttaaksesi prosessia aseta viestisi
 aiheeksi "Access to the AROS CVS server" ja viestin rungoksi "Please add
 <username> <password>", esim.::
 
     Please add digulla xx1LtbDbOY4/E
 
-Koska Aaron on melkoisen kiireinen, voi vastaukseen menn‰ pari p‰iv‰‰, joten
-ole k‰rsiv‰llinen.
+Koska Aaron on melkoisen kiireinen, voi vastaukseen menn√§ pari p√§iv√§√§, joten
+ole k√§rsiv√§llinen.
 
-Saadaksesi tietoon miten AROS Subversion palvelinta k‰ytet‰‰n, lue `CVS:n
-kanssa tyˆskentely`__ l‰vitse kertaalleen. Vaikka tiet‰isit kuinka
-Subversion:ia k‰ytet‰‰n, on silti hyˆdyllist‰ k‰yd‰ mainittu dokumentti
-l‰vitse sill‰ se sis‰lt‰‰ tietoa ja vinkkej‰ koskien eritoten AROS:ia (esim.
-kuinka j‰rjestelm‰‰n kirjaudutaan).
+Saadaksesi tietoon miten AROS Subversion palvelinta k√§ytet√§√§n, lue `CVS:n
+kanssa ty√∂skentely`__ l√§vitse kertaalleen. Vaikka tiet√§isit kuinka
+Subversion:ia k√§ytet√§√§n, on silti hy√∂dyllist√§ k√§yd√§ mainittu dokumentti
+l√§vitse sill√§ se sis√§lt√§√§ tietoa ja vinkkej√§ koskien eritoten AROS:ia (esim.
+kuinka j√§rjestelm√§√§n kirjaudutaan).
 
 __ http://aros.sourceforge.net/tools/password.html 
 __ mailto:digulla@aros.org?subject=[AROS]

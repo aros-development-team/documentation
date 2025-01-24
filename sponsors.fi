@@ -2,13 +2,13 @@ Tukijat
 =======
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 
-Seuraavat yritykset, organisaation ja yksityishenkilät ovat lahjoittaneet
+Seuraavat yritykset, organisaation ja yksityishenkilÃ¤t ovat lahjoittaneet
 resursseja:
 
 + Trustec__
@@ -18,8 +18,8 @@ resursseja:
      <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
   
   Trustec:in mukavat ihmiset ovat lahjoittaneet tilaa ja kaistaa AROS:in
-  web-, CVS- ja FTP-palvelimille, sekä useille postituslistoille. Jos tarvitset
-  Java-kehitystä tai kursseja Saksassa, ota heihin yhteyttä!
+  web-, CVS- ja FTP-palvelimille, sekÃ¤ useille postituslistoille. Jos tarvitset
+  Java-kehitystÃ¤ tai kursseja Saksassa, ota heihin yhteyttÃ¤!
 
 + Genesi__
 
@@ -36,15 +36,15 @@ resursseja:
   
      <a href="http://www.sourceforge.net/"><img border="0" src="/images/sourceforge.png"></a>
 
-  SourceForge pitää huolen useista palveluistamme, kuten skriptausta tukevasta
+  SourceForge pitÃ¤Ã¤ huolen useista palveluistamme, kuten skriptausta tukevasta
   web-palvelimesta, SQL tietokannasta, postituslistoista, vikatietokannasta ja
-  hajautetusta tiedostojen jako järjestelmästä.
+  hajautetusta tiedostojen jako jÃ¤rjestelmÃ¤stÃ¤.
 
 + Yann Vernier
 + Randal Vice
 
 
-Seuraavat organisaatiot ja yksityishenkilöt ovat tukeneet kehitystyötä:
+Seuraavat organisaatiot ja yksityishenkilÃ¶t ovat tukeneet kehitystyÃ¶tÃ¤:
 
 + `Team AROS`__
 + `Norsk Amigaforening`__
@@ -59,7 +59,7 @@ Seuraavat organisaatiot ja yksityishenkilöt ovat tukeneet kehitystyötä:
 + Rune Jensen
 + Joshua Dolan
 + Matthew Parsons
-+ Jean-Pierre Rivière
++ Jean-Pierre RiviÃ¨re
 
 __ http://www.trustsec.de/
 __ http://www.pegasosppc.com/

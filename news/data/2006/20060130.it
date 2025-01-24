@@ -5,21 +5,21 @@ Aggiornamento
 :Autore:   Paolo Besser
 :Data:     2006-01-30
 
-Questo è il primo aggiornamento del 2006 e, per prima cosa, ci sembra
+Questo Ã¨ il primo aggiornamento del 2006 e, per prima cosa, ci sembra
 giusto ringraziare gli utenti, gli sponsor e tuttii fan di AROS:
 all'inizio del 2005 `AROS-Exec`__ contava circa 250 membri iscritti,
-ora questo numero è raddoppiato e supera i 500 (crescendo sempre di
-più!). In questi mesi AROS ha raggiunto traguardi importanti come il
+ora questo numero Ã¨ raddoppiato e supera i 500 (crescendo sempre di
+piÃ¹!). In questi mesi AROS ha raggiunto traguardi importanti come il
 supporto di rete, la migrazione da CVS a Subversion e il porting per
-architetture PPC. Sempre più applicazioni sono state convertite o
-create ex novo, innumerevoli errori sono stati corretti, e adesso c'è
+architetture PPC. Sempre piÃ¹ applicazioni sono state convertite o
+create ex novo, innumerevoli errori sono stati corretti, e adesso c'Ã¨
 perfino una versione di AROS che gira sotto gli AmigaOS classici, in
-modo da modernizzarli. Siamo certi che il 2006 sarà un anno davvero
+modo da modernizzarli. Siamo certi che il 2006 sarÃ  un anno davvero
 interessante per AROS. E ora, proseguiamo con le notizie vere e
 proprie:
 
 Georg Steger ha corretto le preferenze per il mouse, in modo da rendere
-più precisi la ricognizione dei movimenti del mouse e il movimento del
+piÃ¹ precisi la ricognizione dei movimenti del mouse e il movimento del
 puntatore sullo schermo.
 
 Matthias Rustler aggiornato la documentazione per utenti e

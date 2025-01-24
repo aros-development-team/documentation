@@ -1,21 +1,21 @@
 ======================
-Aktualno¶ci ¶wi±teczne
+AktualnoÅ›ci Å›wiÄ…teczne
 ======================
 
 :Autor:   Paolo Besser
 :Data:     2006-12-23
 
-Weso³ych ¦wi±t Bo¿ego Narodzenia i Szczê¶liwego Nowego Roku! To by³ 
-wa¿ny rok w rozwoju AROSa i chcemy podziêkowaæ wszystkim fanom 
-AROSa, testerom i wspó³pracownikom za wy¶mienite wyniki, jakie  
-osi±gn±³ nasz system operacyjny.
+WesoÅ‚ych ÅšwiÄ…t BoÅ¼ego Narodzenia i SzczÄ™Å›liwego Nowego Roku! To byÅ‚ 
+waÅ¼ny rok w rozwoju AROSa i chcemy podziÄ™kowaÄ‡ wszystkim fanom 
+AROSa, testerom i wspÃ³Å‚pracownikom za wyÅ›mienite wyniki, jakie  
+osiÄ…gnÄ…Å‚ nasz system operacyjny.
 
-W oczekiwaniu na pierwsze wie¶ci z 2007 roku dlaczego nie pos³uchaæ 
-kolêd z AROSAmp, pierwszego odtwarzacza mp3 z graficznym interfejsem 
-u¿ytkownika dla AROSa? Mo¿esz go znale¼æ `tutaj`__
+W oczekiwaniu na pierwsze wieÅ›ci z 2007 roku dlaczego nie posÅ‚uchaÄ‡ 
+kolÄ™d z AROSAmp, pierwszego odtwarzacza mp3 z graficznym interfejsem 
+uÅ¼ytkownika dla AROSa? MoÅ¼esz go znaleÅºÄ‡ `tutaj`__
 
-A je¶li chcesz obejrzeæ swoje stare zdjêcia cyfrowe, mo¿e zainteresujesz 
-siê `przegl±dark± Paw³a Stefanskiego`__ dla Morphosa, który zosta³ 
+A jeÅ›li chcesz obejrzeÄ‡ swoje stare zdjÄ™cia cyfrowe, moÅ¼e zainteresujesz 
+siÄ™ `przeglÄ…darkÄ… PawÅ‚a Stefanskiego`__ dla Morphosa, ktÃ³ry zostaÅ‚ 
 ostatnio portowany na AROSa. 
 
 __ http://archives.aros-exec.org/index.php?function=browse&cat=audio

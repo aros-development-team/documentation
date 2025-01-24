@@ -28,7 +28,7 @@ AROS betekend kunst
 -------------------
 
 Hogne "M0ns00n" Titlestad heeft Lunapaint v0.2 vrijgegeven voor i368/AROS. Het 
-tekenprogramma kan projecten openen en opslaan, animaties creëren en 
+tekenprogramma kan projecten openen en opslaan, animaties creÃ«ren en 
 afbeeldingen exporteren. De eerdere stabiliteit problemen onder 'hosted' AROS 
 zijn inmiddels verholpen, ook werkt Lunapaint prima onder 'native' AROS. 
 U kunt `hier screenshots`__ bekijken van Lunapaint. Een mooi (Engelstalig) 

@@ -6,7 +6,7 @@
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS on siirrett‰v‰ ja vapaa tyˆpˆyt‰ k‰yttˆj‰rjestelm‰ joka t‰ht‰‰ olemaan
-yhteensopiva AmigaOS:n kanssa, sek‰ parantaen sit‰ monilla alueilla.
-L‰hdekoodi on saatavilla Open Source -lisenssin alla, joka sallii kenen tahansa
-vapaasti parannella sit‰.
+AROS on siirrett√§v√§ ja vapaa ty√∂p√∂yt√§ k√§ytt√∂j√§rjestelm√§ joka t√§ht√§√§ olemaan
+yhteensopiva AmigaOS:n kanssa, sek√§ parantaen sit√§ monilla alueilla.
+L√§hdekoodi on saatavilla Open Source -lisenssin alla, joka sallii kenen tahansa
+vapaasti parannella sit√§.

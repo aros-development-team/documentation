@@ -9,7 +9,7 @@
 Eval
 ====
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	VALUE1/A,OP,VALUE2/M,TO/K,LFORMAT/K
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -29,12 +29,12 @@ Funkcja
 ~~~~~~~
 ::
 	
-	Oblicza warto∂ci liczbowe i wy∂wietla wynik. Wynik jest wy∂wietlany na
-	standardowe wyj∂cie, je∂li argument TO nie jest podany, ktÛry zapisuje
-	wyj∂cie do pliku. DziÍki LFORMAT moøliwe jest okre∂lenie rodzaju 
-	wyj∂cia. Liczby oznaczone 0x lub #x s± rozumiane jako hex, a te # lub 0,
-	jako Ûsemkowe. Znaki alfabetu s± rozpoznawane przez znak apostrofy
-	('), i s± obliczane jak ich oznaczenia w ASCII.
+	Oblicza warto≈õci liczbowe i wy≈õwietla wynik. Wynik jest wy≈õwietlany na
+	standardowe wyj≈õcie, je≈õli argument TO nie jest podany, kt√≥ry zapisuje
+	wyj≈õcie do pliku. Dziƒôki LFORMAT mo≈ºliwe jest okre≈õlenie rodzaju 
+	wyj≈õcia. Liczby oznaczone 0x lub #x sƒÖ rozumiane jako hex, a te # lub 0,
+	jako √≥semkowe. Znaki alfabetu sƒÖ rozpoznawane przez znak apostrofy
+	('), i sƒÖ obliczane jak ich oznaczenia w ASCII.
 
 
 Parametry
@@ -44,33 +44,33 @@ Parametry
 
 	VALUE1,
 	OP,
-	VALUE2      --  Wyraøenie do obliczenia, oto dozwolone operatory:
+	VALUE2      --  Wyra≈ºenie do obliczenia, oto dozwolone operatory:
 
 		Operator              Symbol
 		----------------------------------
 		dodawanie		+
 		odejmowanie		-
-		mnoøenie		*
+		mno≈ºenie		*
 		dzielenie		/
-		modu≥			mod, M, m, %
+		modu≈Ç			mod, M, m, %
 		logiczne i		&
 		logiczne lub		|
 		zaprzeczenie logiczne	~
 		lewy shift		lsh, L, l
 		prawy shift		rsh, R, r
-		warto∂Ê ujemna		-
-		alternatywa roz≥±czna	xor, X, x
-		***warto∂Ê bitu		eqv, E, e
+		warto≈õƒá ujemna		-
+		alternatywa roz≈ÇƒÖczna	xor, X, x
+		***warto≈õƒá bitu		eqv, E, e
 
-	TO          --  Plik w ktÛrym zostanie zapisane wyj∂cie
-	LFORMAT     --  Rodzaje parametrÛw takie jak w printf().
-			Oto moøliwe opcje:
+	TO          --  Plik w kt√≥rym zostanie zapisane wyj≈õcie
+	LFORMAT     --  Rodzaje parametr√≥w takie jak w printf().
+			Oto mo≈ºliwe opcje:
                       
-			%x  --  wyj∂cie hex
-			%o  --  wyj∂cie Ûsemkowe
-			%n  --  wyj∂cie dziesiÍtne
-			%c  --  wyj∂cie znakowe (znak ANSI)
+			%x  --  wyj≈õcie hex
+			%o  --  wyj≈õcie √≥semkowe
+			%n  --  wyj≈õcie dziesiƒôtne
+			%c  --  wyj≈õcie znakowe (znak ANSI)
                              
-			Ustawiaj±c *n w LFORMAT, nowa linia bÍdzie utoworzona.
+			UstawiajƒÖc *n w LFORMAT, nowa linia bƒôdzie utoworzona.
 
 

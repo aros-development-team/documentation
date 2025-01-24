@@ -13,7 +13,7 @@ Format
 ~~~~~~
 ::
 
-	Fault <numer b≥Ídu>
+	Fault <numer b≈Çƒôdu>
 
 
 Synopsis
@@ -23,7 +23,7 @@ Synopsis
 	NUMBERS/N/M
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~~
 ::
 
@@ -34,11 +34,11 @@ Funkcja
 ~~~~~~~
 ::
 
-	Fault wy∂wietla informacje o kodzie b≥Ídu. Moøe byÊ podanych wiele
-	kodÛw b≥Ídu w tym samym czasie, ale musz± byÊ oddzielone spacj±.
+	Fault wy≈õwietla informacje o kodzie b≈Çƒôdu. Mo≈ºe byƒá podanych wiele
+	kod√≥w b≈Çƒôdu w tym samym czasie, ale muszƒÖ byƒá oddzielone spacjƒÖ.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -46,7 +46,7 @@ Przyk≥ad
 	1.SYS:> Fault 205
 	Fault 205: object not found
 
-	Tutaj jest przyk≥ad zapytania o kod b≥Ídu 205, i odpowiedº komendy
+	Tutaj jest przyk≈Çad zapytania o kod b≈Çƒôdu 205, i odpowied≈∫ komendy
 	o nieznalezionym obiekcie.
 
 

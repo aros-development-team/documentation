@@ -1,42 +1,42 @@
 ===============================================
-Spou¹tìní klasickıch Amiga aplikací z Wandereru
+SpouÅ¡tÄ›nÃ­ klasickÃ½ch Amiga aplikacÃ­ z Wandereru
 ===============================================
 
 :Authors:   Matthias Rustler
-:Copyright: Copyright © 2007, The AROS Development Team
+:Copyright: Copyright Å  2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 .. Contents::
 
-Úvod
+Ãšvod
 ----
 
-E-UAE umí emulovat klasickı Amiga hardware a umo¾òuje spou¹tìt aplikace
-pod moderním hardwarem a moderními operaèními systémy. Dokonce je mo¾né
-spustit E-UAE pomocí ikony z Wandereru takovım zpùsobem, ¾e nahraje pøímo
-i tebou zvolenou aplikaci. Trik je v tom, ¾e pou¾ijeme skript, kterı spustí
-E-UAE s urèitımi parametry. Skript dostane ikonu "iconx" s obecnım
-(default tool) nástrojem.
+E-UAE umÃ­ emulovat klasickÃ½ Amiga hardware a umoÅ¾Åˆuje spouÅ¡tÄ›t aplikace
+pod modernÃ­m hardwarem a modernÃ­mi operaÄnÃ­mi systÃ©my. Dokonce je moÅ¾nÃ©
+spustit E-UAE pomocÃ­ ikony z Wandereru takovÃ½m zpÅ¯sobem, Å¾e nahraje pÅ™Ã­mo
+i tebou zvolenou aplikaci. Trik je v tom, Å¾e pouÅ¾ijeme skript, kterÃ½ spustÃ­
+E-UAE s urÄitÃ½mi parametry. Skript dostane ikonu "iconx" s obecnÃ½m
+(default tool) nÃ¡strojem.
 
 
-Pøíprava E-UAE
+PÅ™Ã­prava E-UAE
 --------------
 
-Program E-UAE pro AROS najde¹ v contrib archivu v noèních buildech a cesta je
+Program E-UAE pro AROS najdeÅ¡ v contrib archivu v noÄnÃ­ch buildech a cesta je
 *System:Extras/Emu/E-UAE*.
 
-Pro spu¹tìní E-UAE potøebuje¹ soubor ROM. Legální zpùsob jak jej získat je
-koupit si Cloanto Amiga Forever nebo Amiga Classix CD-Roms. Nebo jej mù¾e¹
-vykopírovat ze skuteèné Amigy pomocí nástroje zvaného "TransRom". Zkopíruj
-image soubory nìkam na pevnı disk, kde má¹ ulo¾enı AROS. Následující pøíklad
-pøedpokládá, ¾e jsi vytvoøil adresáø s názvem "uae" na disk "work:". (Tip:
-obrazy (images) z Cloanto CD jsou kryptovány. Bude¹ potøebovat
-je¹tì soubor rom.key.)
+Pro spuÅ¡tÄ›nÃ­ E-UAE potÅ™ebujeÅ¡ soubor ROM. LegÃ¡lnÃ­ zpÅ¯sob jak jej zÃ­skat je
+koupit si Cloanto Amiga Forever nebo Amiga Classix CD-Roms. Nebo jej mÅ¯Å¾eÅ¡
+vykopÃ­rovat ze skuteÄnÃ© Amigy pomocÃ­ nÃ¡stroje zvanÃ©ho "TransRom". ZkopÃ­ruj
+image soubory nÄ›kam na pevnÃ½ disk, kde mÃ¡Å¡ uloÅ¾enÃ½ AROS. NÃ¡sledujÃ­cÃ­ pÅ™Ã­klad
+pÅ™edpoklÃ¡dÃ¡, Å¾e jsi vytvoÅ™il adresÃ¡Å™ s nÃ¡zvem "uae" na disk "work:". (Tip:
+obrazy (images) z Cloanto CD jsou kryptovÃ¡ny. BudeÅ¡ potÅ™ebovat
+jeÅ¡tÄ› soubor rom.key.)
 
-V editoru uprav stávající konfiguraèní soubor *System:Extras/Emu/E-UAE/.uaerc*
-Minimálnì by jsi mìl urèit cesty k ROM obrazùm. Pøíklad::
+V editoru uprav stÃ¡vajÃ­cÃ­ konfiguraÄnÃ­ soubor *System:Extras/Emu/E-UAE/.uaerc*
+MinimÃ¡lnÄ› by jsi mÄ›l urÄit cesty k ROM obrazÅ¯m. PÅ™Ã­klad::
 
     amiga.rom_path     = work:uae
     amiga.use_dither   = false
@@ -50,103 +50,103 @@ Minimálnì by jsi mìl urèit cesty k ROM obrazùm. Pøíklad::
     #kickstart_key_file = $(FILE_PATH)/rom.key
     sound_output       = none
 
-A teï si udìláme test. Otevøi shell pro cestu *System:Extras/Emu/E-UAE*
-a napi¹ *i386-aros-uae*. Pokud se po chvíli objeví Workbench disketa,
-(napø. ruka u Kickstartu 1.3 nebo zají¾dìjící disketa u Kickstartu 3.1)
-tak jsi zdolal první pøeká¾ku. I kdy¾ u¾ to takto bì¾í, tak pøesto vìnuj
-pozornost chybovım hlá¹kám a sna¾ se je opravit.
+A teÄ si udÄ›lÃ¡me test. OtevÅ™i shell pro cestu *System:Extras/Emu/E-UAE*
+a napiÅ¡ *i386-aros-uae*. Pokud se po chvÃ­li objevÃ­ Workbench disketa,
+(napÅ™. ruka u Kickstartu 1.3 nebo zajÃ­Å¾dÄ›jÃ­cÃ­ disketa u Kickstartu 3.1)
+tak jsi zdolal prvnÃ­ pÅ™ekÃ¡Å¾ku. I kdyÅ¾ uÅ¾ to takto bÄ›Å¾Ã­, tak pÅ™esto vÄ›nuj
+pozornost chybovÃ½m hlÃ¡Å¡kÃ¡m a snaÅ¾ se je opravit.
 
 
-Nastavení
+NastavenÃ­
 ---------
 
-E-UAE má hodnì konfigurovatelnıch mo¾ností, které se ukládají do konfiguraèních
-souborù a také má nìkolik mo¾ností v pøíkazové øádce. Podívej se na dokumentaci
-pro E-UAE. Kdy¾ spustí¹ E-UAE takto: ``i386-aros-uae -f config1 -option1
+E-UAE mÃ¡ hodnÄ› konfigurovatelnÃ½ch moÅ¾nostÃ­, kterÃ© se uklÃ¡dajÃ­ do konfiguraÄnÃ­ch
+souborÅ¯ a takÃ© mÃ¡ nÄ›kolik moÅ¾nostÃ­ v pÅ™Ã­kazovÃ© Å™Ã¡dce. PodÃ­vej se na dokumentaci
+pro E-UAE. KdyÅ¾ spustÃ­Å¡ E-UAE takto: ``i386-aros-uae -f config1 -option1
 -option2``, nejprve se nahraje soubor *.uaerc*. Pak se nahraje soubor
-s parametrem -f a pøepí¹e se pøede¹lé nastavení. Poté se pou¾ijí mo¾nosti
-dané pøíkazovım øádkem, a znovu se pøepí¹ou mo¾nosti nastavené pøedtím.
+s parametrem -f a pÅ™epÃ­Å¡e se pÅ™edeÅ¡lÃ© nastavenÃ­. PotÃ© se pouÅ¾ijÃ­ moÅ¾nosti
+danÃ© pÅ™Ã­kazovÃ½m Å™Ã¡dkem, a znovu se pÅ™epÃ­Å¡ou moÅ¾nosti nastavenÃ© pÅ™edtÃ­m.
 
-Doporuèujeme, aby jsi vytvoøil konfiguraèní soubory, které emulují
-skuteèné poèítaèe:
+DoporuÄujeme, aby jsi vytvoÅ™il konfiguraÄnÃ­ soubory, kterÃ© emulujÃ­
+skuteÄnÃ© poÄÃ­taÄe:
 
 * a500-13.uaerc: 68000 processor, ecs, kick1.3, no acceleration
 * a1200-31.uaerc: 68020, aga, kick 3.1, additional memory
 * a4000-31.uaerc: no limits
 
-Tady je pøíklad pro *a500-13.uaerc*::
+Tady je pÅ™Ã­klad pro *a500-13.uaerc*::
 
     cpu_type=68000
     cpu_speed=real
     kickstart_rom_file=$(FILE_PATH)/kick13.rom
 
-Psaní konfiguraèních souborù je nejslo¾itìj¹í èást této pøíruèky.
-Pokud má¹ Amiga Classix CDRom mù¾e¹ na nìm vyhledat pár rad ohlednì psaní
-konfiguraèních souborù. Nebo mù¾e¹ napsat ``i386-aros-uae -h >uaecommands``
-a dostane¹ se ke startovnímu bodu se v¹emi mo¾nımi volbami.
+PsanÃ­ konfiguraÄnÃ­ch souborÅ¯ je nejsloÅ¾itÄ›jÅ¡Ã­ ÄÃ¡st tÃ©to pÅ™Ã­ruÄky.
+Pokud mÃ¡Å¡ Amiga Classix CDRom mÅ¯Å¾eÅ¡ na nÄ›m vyhledat pÃ¡r rad ohlednÄ› psanÃ­
+konfiguraÄnÃ­ch souborÅ¯. Nebo mÅ¯Å¾eÅ¡ napsat ``i386-aros-uae -h >uaecommands``
+a dostaneÅ¡ se ke startovnÃ­mu bodu se vÅ¡emi moÅ¾nÃ½mi volbami.
 
 
-Instalování aplikací
+InstalovÃ¡nÃ­ aplikacÃ­
 --------------------
 
-Potøebuje¹ soubory s obrazy (images) diskù aplikací, které bude¹ chtít spustit.
-Tyto obrazy mají pøíponu *.adf*. Mù¾e¹ si je ulo¾it na libovolné místo.
-Napøíklad my pou¾íváme *work:uae*.
+PotÅ™ebujeÅ¡ soubory s obrazy (images) diskÅ¯ aplikacÃ­, kterÃ© budeÅ¡ chtÃ­t spustit.
+Tyto obrazy majÃ­ pÅ™Ã­ponu *.adf*. MÅ¯Å¾eÅ¡ si je uloÅ¾it na libovolnÃ© mÃ­sto.
+NapÅ™Ã­klad my pouÅ¾Ã­vÃ¡me *work:uae*.
 
 
-Vytváøení a spou¹tìní skriptù z ikony
+VytvÃ¡Å™enÃ­ a spouÅ¡tÄ›nÃ­ skriptÅ¯ z ikony
 -------------------------------------
 
-V dal¹ím kroku si vytvoøí¹ pomocí textového editoru skript, kterım bude¹
-spou¹tìt E-UAE. Tento pøíklad u hry Zarathrusta má 2 diskety:
+V dalÅ¡Ã­m kroku si vytvoÅ™Ã­Å¡ pomocÃ­ textovÃ©ho editoru skript, kterÃ½m budeÅ¡
+spouÅ¡tÄ›t E-UAE. Tento pÅ™Ã­klad u hry Zarathrusta mÃ¡ 2 diskety:
 
 
     cd system:emu/e-uae
     i386-aros-uae -f work:uae/a500-13.uaerc -0 work:uae/Zarathrusta1.adf -1 work:uae/Zarathrusta2.adf
 
-První øádek urèuje aktuální adresáø pro E-UAE. Potom spustí¹ E-UAE pomocí
-konfiguraèního souboru *a500-13.uaerc* a vlo¾í¹ obraz disku do mechaniky 0 a 1.
+PrvnÃ­ Å™Ã¡dek urÄuje aktuÃ¡lnÃ­ adresÃ¡Å™ pro E-UAE. Potom spustÃ­Å¡ E-UAE pomocÃ­
+konfiguraÄnÃ­ho souboru *a500-13.uaerc* a vloÅ¾Ã­Å¡ obraz disku do mechaniky 0 a 1.
 
-Ulo¾í¹ soubor jako *Zarathrusta* ve *work:uae*.
+UloÅ¾Ã­Å¡ soubor jako *Zarathrusta* ve *work:uae*.
 
-A nakonec pøidá¹ ikonu ke skriptu. Poté co otevøe¹ adresáø *work:uae*
+A nakonec pÅ™idÃ¡Å¡ ikonu ke skriptu. PotÃ© co otevÅ™eÅ¡ adresÃ¡Å™ *work:uae*
 ve Wandereru, klikni na ikonu skriptu a zvol si *Icon/Information*
-v menu. Napi¹ *c:iconx* jako default tool. (IconX tool spou¹tí textové soubory
-jako DOSové skripty). Na stránce Tooltypes information o ikonì napi¹
-*WINDOW=con:0/20//600/Zarathrusta/AUTO*. Toto má za následek vytvoøení
-vìt¹ího vıstupního okna, tak¾e nebude problém se ètením chybovıch hlá¹ek.
+v menu. NapiÅ¡ *c:iconx* jako default tool. (IconX tool spouÅ¡tÃ­ textovÃ© soubory
+jako DOSovÃ© skripty). Na strÃ¡nce Tooltypes information o ikonÄ› napiÅ¡
+*WINDOW=con:0/20//600/Zarathrusta/AUTO*. Toto mÃ¡ za nÃ¡sledek vytvoÅ™enÃ­
+vÄ›tÅ¡Ã­ho vÃ½stupnÃ­ho okna, takÅ¾e nebude problÃ©m se ÄtenÃ­m chybovÃ½ch hlÃ¡Å¡ek.
 
-Dvojklikem na ikonu spustí¹ E-UAE s danou aplikací.
+Dvojklikem na ikonu spustÃ­Å¡ E-UAE s danou aplikacÃ­.
 
 
-Pevné disky
+PevnÃ© disky
 -----------
 
-E-UAE umo¾òuje pou¾ívat adresáøe hostovaného systému buï jako hardfiles nebo
-jako pevné disky. Podrobnìj¹í informace nalezne¹ v souboru
-*Extras/Emu/E-UAE/docs/configuration.txt*. Následující pøíklad ti uká¾e,
-*jakım zpùsobem mù¾e¹ pou¾ívat adresáøe *work:uae/workbench*
-*a *work:uae/programs* jako pevnı disk::
+E-UAE umoÅ¾Åˆuje pouÅ¾Ã­vat adresÃ¡Å™e hostovanÃ©ho systÃ©mu buÄ jako hardfiles nebo
+jako pevnÃ© disky. PodrobnÄ›jÅ¡Ã­ informace nalezneÅ¡ v souboru
+*Extras/Emu/E-UAE/docs/configuration.txt*. NÃ¡sledujÃ­cÃ­ pÅ™Ã­klad ti ukÃ¡Å¾e,
+*jakÃ½m zpÅ¯sobem mÅ¯Å¾eÅ¡ pouÅ¾Ã­vat adresÃ¡Å™e *work:uae/workbench*
+*a *work:uae/programs* jako pevnÃ½ disk::
 
     filesystem2=rw,:Workbench:work:uae/workbench,0
     filesystem2=rw,:Programs:work:uae/programs,-1
 
-Na takovı disk dokonce mù¾e¹ i nainstalovat AmigaOS a nabootovat z nìj.
-Disk, ze kterého by mìl systém bootnout musí mít nejvy¹¹í bootovací prioritu
-(je to ten poslední parametr v mo¾nostech filesystem2).
+Na takovÃ½ disk dokonce mÅ¯Å¾eÅ¡ i nainstalovat AmigaOS a nabootovat z nÄ›j.
+Disk, ze kterÃ©ho by mÄ›l systÃ©m bootnout musÃ­ mÃ­t nejvyÅ¡Å¡Ã­ bootovacÃ­ prioritu
+(je to ten poslednÃ­ parametr v moÅ¾nostech filesystem2).
 
 
 Grafika
 -------
 
-Bohu¾el, AROS E-UAE nemá emulaci Picasso, tzn. ¾e jsi omezenı na 256
+BohuÅ¾el, AROS E-UAE nemÃ¡ emulaci Picasso, tzn. Å¾e jsi omezenÃ½ na 256
 barev na obrazovce.
 
-Nìkolik rad, jak získat lep¹í rozli¹ení a vıkon:
+NÄ›kolik rad, jak zÃ­skat lepÅ¡Ã­ rozliÅ¡enÃ­ a vÃ½kon:
 
-+ V konfiguraci pou¾ívej volbu *chipmem_size = 16*. To poskytne 16*512 = 8 MB Chip Ram.
-+ Dále pou¾ívej volbu *z3mem_size=x* kde *x* musí bıt nìco z øady 1,2,4,6,8,16,32.
-+ Zvol si High Res Laced v nastavení Screenmodu v Prefs.
-+ Pou¾ívej nejvy¹¹í mo¾né nastavení v Overscanu v Prefs.
-+ Nainstaluj si nástroj *FBlit*. kterı vyu¾ívá urèité patche k tomu,
-  aby se pou¾ívala Fast Ram namísto Chip RAM.
++ V konfiguraci pouÅ¾Ã­vej volbu *chipmem_size = 16*. To poskytne 16*512 = 8 MB Chip Ram.
++ DÃ¡le pouÅ¾Ã­vej volbu *z3mem_size=x* kde *x* musÃ­ bÃ½t nÄ›co z Å™ady 1,2,4,6,8,16,32.
++ Zvol si High Res Laced v nastavenÃ­ Screenmodu v Prefs.
++ PouÅ¾Ã­vej nejvyÅ¡Å¡Ã­ moÅ¾nÃ© nastavenÃ­ v Overscanu v Prefs.
++ Nainstaluj si nÃ¡stroj *FBlit*. kterÃ½ vyuÅ¾Ã­vÃ¡ urÄitÃ© patche k tomu,
+  aby se pouÅ¾Ã­vala Fast Ram namÃ­sto Chip RAM.

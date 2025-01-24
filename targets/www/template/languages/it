@@ -1,10 +1,10 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
-news:             Novità
+news:             NovitÃ 
 news-archive-for: Archivio notizie per
 mirrors:          Mirror
 contents:         Contenuti
@@ -15,7 +15,7 @@ sponsors:         Sponsor
 [navigation]
 
 home:             Home
-news:             Novità
+news:             NovitÃ 
 archive:          Archivio
 introduction:     Introduzione
 status:           Stato
@@ -70,7 +70,7 @@ linking:          Collegamenti
 
 go:               Vai
 search:           Cerca
-copyright:        Copyright © 1995-2025, The AROS Development Team. Tutti i diritti riservati.
-trademarks:       Amiga® è un marchio registrato di Amiga Inc. Tutti i diritti sui marchi vanno ai legittimi proprietari.
-read-more:        Per saperne di più...
+copyright:        Copyright Â© 1995-2025, The AROS Development Team. Tutti i diritti riservati.
+trademarks:       AmigaÂ® Ã¨ un marchio registrato di Amiga Inc. Tutti i diritti sui marchi vanno ai legittimi proprietari.
+read-more:        Per saperne di piÃ¹...
 large-image:      Dimensioni originali...

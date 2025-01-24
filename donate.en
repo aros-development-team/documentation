@@ -45,15 +45,15 @@
    
    	    <div class="amountlabel" id="GBP">
    	      <input type="radio" name="amount" value="0" id="amount1_G" onchange="checkAmount(value)">
-   	      <label for="amount1_G"> £0 </label>
+   	      <label for="amount1_G"> Â£0 </label>
    	      <input type="radio" name="amount" value="10" id="amount2_G" onchange="checkAmount(value)" checked="checked">
-   	      <label for="amount2_G"> £10 </label>
+   	      <label for="amount2_G"> Â£10 </label>
    	      <input type="radio" name="amount" value="15" id="amount3_G" onchange="checkAmount(value)">
-   	      <label for="amount3_G"> £15 </label>
+   	      <label for="amount3_G"> Â£15 </label>
    	      <input type="radio" name="amount" value="25" id="amount4_G" onchange="checkAmount(value)">
-   	      <label for="amount4_G"> £25 </label>
+   	      <label for="amount4_G"> Â£25 </label>
    	      <input type="radio" name="amount" value="" id="freeamount_G" onchange="checkAmount(value)">
-   	      <label for="freeamount_G" id="freeamountLabelBG">£
+   	      <label for="freeamount_G" id="freeamountLabelBG">Â£
    	      <input type="number" name="given_amount" min="0" value="" size="1" id="freeamountLabel"
    	        onchange="freeamount_G.value=value; checkAmount(value)" onfocus="checkIt('freeamount_G',freeamount_G.checked)">
    	      </label>
