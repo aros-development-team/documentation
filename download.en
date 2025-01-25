@@ -51,7 +51,7 @@ Distributions
    <td><a href="http://vmwaros.blogspot.com/p/download.html">Icaros Desktop LIVE!</a> is a complete distribution of the AROS desktop
    operating system for x86 based PC's. It comes on a bootable live DVD-ROM or CD-ROM that runs directly on your
    PC (its hardware components must already be supported by AROS) or in a virtual machine such as
-   <a href="https://www.vmware.com/">VMWare</a> or 
+   <a href="https://www.vmware.com/">VMWare</a> or
    <a href="https://www.virtualbox.org/">VirtualBox</a>. It can be installed on the hard drive and can coexist with
    installed OSes such as Microsoft Windows, in a dedicated partition. A quick reference guide and some AROS PDF manuals
    are included.</td>
@@ -91,7 +91,7 @@ from the Git repository, and they contain the latest code. However,
 they have not been tested in any way and may contain bugs. Most of the
 time, though, they work just fine. `Download link`__
 
-These builds are based on sources of the new `ABI`__. **They are not 
+These builds are based on sources of the new `ABI`__. **They are not
 compatible with existing AROS distributions or with the AROS software
 available from The AROS Archives or Aminet.**
 
