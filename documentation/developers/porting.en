@@ -3,7 +3,7 @@ PORTING GUIDE
 =============
 
 :Authors:   Johann Samuellson, Matthias Rustler
-:Copyright: Copyright © 2006, The AROS Development Team
+:Copyright: Copyright ï¿½ 2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Beta
@@ -72,7 +72,7 @@ Strip the binaries in order to remove debugging information and making them
 smaller.
 
 OK, you're done now, upload it to http://archives.aros-exec.org and
-http://www.aminet.net!
+http://www.aminet.net
 
 
 
@@ -165,7 +165,7 @@ binary and the data files in such a way that the binary finds the data files::
                 sounds
 
 
-__ http://lgames.sourceforge.net/index.php?project=LTris
+__ https://lgames.sourceforge.io/LTris/
 
 
 SDL example (semi-automatic installation)
