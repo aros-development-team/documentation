@@ -20,7 +20,7 @@ Synopsis
      TIME/N,SEC=SECS/S,MIN=MINS/S,UNTIL/K
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
@@ -42,7 +42,7 @@ Entradas
 ::
 
 
-     TIME      --  el número de unidades de tiempo a esperar (por omisión en segundos)
+     TIME      --  el nÃºmero de unidades de tiempo a esperar (por omisiÃ³n en segundos)
      SEC=SECS  --  pone la unidad de tiempo a segundos
      MIN=MINS  --  pone la unidad de tiempo a minutos
      UNTIL     --  espera hasta que se alcanza la hora especificada. La hora

@@ -2,20 +2,20 @@
 Credits
 =======
 
-Συντονισμός
+Ξ£Ο…Ξ½Ο„ΞΏΞ½ΞΉΟƒΞΌΟΟ‚
 ===========
 
 + Aaron Digulla
 
 
-Προώθηση
+Ξ ΟΞΏΟΞΈΞ·ΟƒΞ·
 ========
 
 + Ola "4pLaY" Stokka
 + Matt Parsons
 
 
-Υποσύστημα HIDD
+Ξ¥Ο€ΞΏΟƒΟΟƒΟ„Ξ·ΞΌΞ± HIDD
 ===============
 
 + Aaron Digulla
@@ -28,7 +28,7 @@ Credits
 + Sven Drieling
 
 
-Διαίσθηση
+Ξ”ΞΉΞ±Ξ―ΟƒΞΈΞ·ΟƒΞ·
 =========
 
 + Stefan Berger
@@ -54,7 +54,7 @@ Credits
 + Staf Verhaegen
 
 
-Γραφικά
+Ξ“ΟΞ±Ο†ΞΉΞΊΞ¬
 =======
 
 + Aaron Digulla
@@ -78,7 +78,7 @@ Credits
 + Flavio Stanchina
 
 
-Εντολές κελύφους
+Ξ•Ξ½Ο„ΞΏΞ»Ξ­Ο‚ ΞΊΞµΞ»ΟΟ†ΞΏΟ…Ο‚
 ================
 
 + Martin Recktenwald
@@ -91,7 +91,7 @@ Credits
 + Fabio Alemagna
 
 
-Σταθμός Εργασίας
+Ξ£Ο„Ξ±ΞΈΞΌΟΟ‚ Ξ•ΟΞ³Ξ±ΟƒΞ―Ξ±Ο‚
 ================
 
 + Adam Chodorowski
@@ -101,7 +101,7 @@ Credits
 + Paul Smith
 
 
-Εργαλεία
+Ξ•ΟΞ³Ξ±Ξ»ΞµΞ―Ξ±
 ========
 
 + Adam Chodorowski
@@ -110,12 +110,12 @@ Credits
 + Henning Kiel
 
 
-Προτιμήσεις
+Ξ ΟΞΏΟ„ΞΉΞΌΞ®ΟƒΞµΞΉΟ‚
 ===========
 
 + Georg Steger
 + Peter Eriksson
-+ Nico Franηois
++ Nico FranΞ·ois
 + Magnus Holmgren
 
 
@@ -137,7 +137,7 @@ Zune
 + Adam Chodorowski
 
 
-Πυρήνας
+Ξ Ο…ΟΞ®Ξ½Ξ±Ο‚
 =======
 
 + Iain Templeton
@@ -156,7 +156,7 @@ DOS
 + The MorphOS team
 
 
-Βιβλιοθήκη συνδέσεων C και POSIX layer
+Ξ’ΞΉΞ²Ξ»ΞΉΞΏΞΈΞ®ΞΊΞ· ΟƒΟ…Ξ½Ξ΄Ξ­ΟƒΞµΟ‰Ξ½ C ΞΊΞ±ΞΉ POSIX layer
 ======================================
 
 + Aaron Digulla
@@ -165,7 +165,7 @@ DOS
 + Henning Kiel
 
 
-Τύποι δεδομένων
+Ξ¤ΟΟ€ΞΏΞΉ Ξ΄ΞµΞ΄ΞΏΞΌΞ­Ξ½Ο‰Ξ½
 ===============
 
 + Johan Alfredsson
@@ -176,7 +176,7 @@ DOS
 + Stephan Rupprecht
 
 
-Τεκμηρίωση
+Ξ¤ΞµΞΊΞΌΞ·ΟΞ―Ο‰ΟƒΞ·
 ==========
 
 + Adam Chodorowski
@@ -191,7 +191,7 @@ DOS
 + Daniel Holmen
 
 
-Μετάφραση
+ΞΞµΟ„Ξ¬Ο†ΟΞ±ΟƒΞ·
 =========
 
 + Henning Kiel
@@ -201,7 +201,7 @@ DOS
 + Ioannis Koniaris
 
 
-Καλλιτεχνία
+ΞΞ±Ξ»Ξ»ΞΉΟ„ΞµΟ‡Ξ½Ξ―Ξ±
 ===========
 
 + Eric W. Schwartz
@@ -217,7 +217,7 @@ DOS
 + Adam Chodorowski
 
 
-Ιστοσελίδα
+Ξ™ΟƒΟ„ΞΏΟƒΞµΞ»Ξ―Ξ΄Ξ±
 ==========
 
 + Adam Chodorowski

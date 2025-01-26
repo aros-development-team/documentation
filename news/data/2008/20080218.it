@@ -5,7 +5,7 @@ Aggiornamento
 :Author:   Paolo Besser
 :Date:     18-02-2008
 
-Ultime novit‡
+Ultime novit√†
 -------------
 
 Michal Shulz sta lavorando alacremente al porting di AROS sulla
@@ -18,9 +18,9 @@ indirizzamento a 32 bit. Il caricamento del sistema avviene come
 nella versione x86_64, mettendo tutti i dati di sola lettura al di
 sopra della base del kernel e tutti i dati modificabili al di sotto
 di essa. Dato che sono cattivo per definizione, il nocciolo del mio
-AROS per SAM440 riserver‡ per se stesso tutto lo spazio al di sotto
-della sua collocazione fisica. Questa memoria (pochi megabyte) sar‡
-impiegata come un pool locale per il kernel e sar‡ impedito qualsiasi
+AROS per SAM440 riserver√† per se stesso tutto lo spazio al di sotto
+della sua collocazione fisica. Questa memoria (pochi megabyte) sar√†
+impiegata come un pool locale per il kernel e sar√† impedito qualsiasi
 tipo di accesso da parte dell'utente."
 
 Nic Andrews sta lavorando su Wanderer, allo scopo di migliorarlo e di
@@ -28,9 +28,9 @@ eliminare alcuni bug fastidiosi. Adesso sta "smanettando un po' per
 riscrivere il codice per il rendering della classe iconslist di 
 Wanderer. Il traguardo a breve termine consiste nel permettere alle
 finestre delle icone di bufferizzare il disegno di icone e sfondo, 
-in modo che, per esempio, usare la modalit‡ tiled rendering per gli
+in modo che, per esempio, usare la modalit√† tiled rendering per gli
 sfondi di iconlist non causi un visibile tremolio, come avviene
-adesso". » possibile leggere informazioni pi˘ dettagliate sul 
+adesso". √à possibile leggere informazioni pi√π dettagliate sul 
 `suo blog`__.
 
 
@@ -40,13 +40,13 @@ Navighiamo su Internet
 Michael Grunditz ha pubblicato le prime beta di `SimpleMail`__ 0.32 
 per l'AROS Research Operating System. SimpleMail dispone di quasi tutte 
 le caratteristiche necessarie in un programma di posta elettronica
-moderno, e sta ancora crescendo. Si puÚ scaricare la versione corrente
+moderno, e sta ancora crescendo. Si pu√≤ scaricare la versione corrente
 dal sito degli `Archivi`__.
 
 Robert Norris sta facendo enormi progressi con Traveller, il suo 
 browser web basato su Webkit. Per farlo funzionare correttamente, deve
 ancora realizzare alcune feature mancanti e portare librerie, tuttavia
-il suo porting di Cairo.library Ë a buon punto ed Ë gi‡ riuscito a
+il suo porting di Cairo.library √® a buon punto ed √® gi√† riuscito a
 visualizzare alcune pagine web quasi correttamente. Una `foto molto
 promettente`__ si trova sul `suo blog`__.
 
@@ -54,25 +54,25 @@ promettente`__ si trova sul `suo blog`__.
 Altre news
 ----------
 
-Jo„o "Hardwired" Ralha sta realizzando alcuni manuali su AROS in 
-formato PDF (in Inglese). Tuttavia, non sono ancora terminati ed Ë in 
+Jo√£o "Hardwired" Ralha sta realizzando alcuni manuali su AROS in 
+formato PDF (in Inglese). Tuttavia, non sono ancora terminati ed √® in 
 cerca di aiuto. I odcumenti disponibili per il download sono il `Manuale per l'utente di AROS`__ (completo al 50%), il
 `Manuale della Shell di AROS`__ (70%) e la `Guida all'installazione 
-di AROS`__ (25%). L'autore puÚ essere contattato attraverso il `suo
+di AROS`__ (25%). L'autore pu√≤ essere contattato attraverso il `suo
 sito`__.
 
 Alain Greppin ha portato TeXlive su AROS, incassando una bounty. 
-Informazioni pi˘ dettagliate sul `suo sito`__.
+Informazioni pi√π dettagliate sul `suo sito`__.
 
 Tomek 'Error' Wiszkowski ha realizzato Frying Pan, un'applicazione
 per scrivere CD e DVD. Ha pubblicato anche `alcune foto`__ su AROS-Exec.org.
-La versione 1.3 (shareware) per AROS puÚ essere scaricata dal 
+La versione 1.3 (shareware) per AROS pu√≤ essere scaricata dal 
 `suo sito`__. Per farla funzionare, ha apportato anche alcune 
 modifiche al device ATA di AROS.
 
 ...e, per chiunque non se ne fosse ancora accorto, il filesystem 
-FFS ora dispone di una procedura di validazione automatica. Mai pi˘
-partizioni di sistema a sola lettura, pressocchÈ inutilizzabili!
+FFS ora dispone di una procedura di validazione automatica. Mai pi√π
+partizioni di sistema a sola lettura, pressocch√© inutilizzabili!
 
 
 __ http://msaros.blogspot.com/2008/01/ive-promised-to-show-you-some.html

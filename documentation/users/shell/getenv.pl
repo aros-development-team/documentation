@@ -9,7 +9,7 @@
 Getenv
 ======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	NAME/A
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Przechwytuje informacje zachowane w globalnych warto∂ciach.
+	Przechwytuje informacje zachowane w globalnych warto≈õciach.
 
 
 Parametry
@@ -46,7 +46,7 @@ Result
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 
 Example
@@ -56,10 +56,10 @@ Example
 
 	Getenv Kickstart
 
-	Tutaj Getenv pobiera wersjÍ Kickstart'u.
+	Tutaj Getenv pobiera wersjƒô Kickstart'u.
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

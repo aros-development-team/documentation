@@ -2,10 +2,10 @@
 
    <h1>Distributioner<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
-Detta är förkonfigurerade och vältestade versioner av AROS. De innehåller
-många användbara program som inte följer med från start och är de som är mest
-intressanta för vanliga användare. De kanske saknar den senaste versionen av
-AROS, men de är mycket stabilare och mer användarvänliga än nightly builds.
-Om du är en som är nyfiken på vad AROS har att erbjuda så rekommenderar vi att
-du använder distributioner för bästa möjliga upplevelse.
+Detta Ã¤r fÃ¶rkonfigurerade och vÃ¤ltestade versioner av AROS. De innehÃ¥ller
+mÃ¥nga anvÃ¤ndbara program som inte fÃ¶ljer med frÃ¥n start och Ã¤r de som Ã¤r mest
+intressanta fÃ¶r vanliga anvÃ¤ndare. De kanske saknar den senaste versionen av
+AROS, men de Ã¤r mycket stabilare och mer anvÃ¤ndarvÃ¤nliga Ã¤n nightly builds.
+Om du Ã¤r en som Ã¤r nyfiken pÃ¥ vad AROS har att erbjuda sÃ¥ rekommenderar vi att
+du anvÃ¤nder distributioner fÃ¶r bÃ¤sta mÃ¶jliga upplevelse.
 

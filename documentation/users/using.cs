@@ -1,5 +1,5 @@
 =========================
-AROS u¾ivatelskı prùvodce
+AROS uÅ¾ivatelskÃ½ prÅ¯vodce
 =========================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Sergey Mineychev
@@ -10,14 +10,14 @@ AROS u¾ivatelskı prùvodce
 
 .. Warning::
 
-   Tento dokument je ve vıvoji! Je velmi pravdìpodobné, ¾e nìkteré èásti 
-   obsahují nepøesné informace nebo prostì úplnì chybí. 
-   Pokud nám to chcete pomoci napravit, kontaktujte nás prosím.
+   Tento dokument je ve vÃ½voji! Je velmi pravdÄ›podobnÃ©, Å¾e nÄ›kterÃ© ÄÃ¡sti 
+   obsahujÃ­ nepÅ™esnÃ© informace nebo prostÄ› ÃºplnÄ› chybÃ­. 
+   Pokud nÃ¡m to chcete pomoci napravit, kontaktujte nÃ¡s prosÃ­m.
 
 .. Contents::
 
 
-Úvod
+Ãšvod
 ====
 
 This is the Amiga Research Operating System User's Guide. It is meant to
@@ -27,7 +27,7 @@ advancedness. I try to cover everything in depth, but in such a way that
 you don't need to learn what you don't *want* to learn.
 
 
-Kdo by mìl èíst tohoto prùvodce
+Kdo by mÄ›l ÄÃ­st tohoto prÅ¯vodce
 -------------------------------
 
 This guide will help you getting used with AROS. It is written for

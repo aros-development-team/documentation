@@ -1,1 +1,1 @@
-Èeká jako mnozí dal¹í na Amiga Inc na WoA (World of Amiga) 1999.
+ÄŒekÃ¡ jako mnozÃ­ dalÅ¡Ã­ na Amiga Inc na WoA (World of Amiga) 1999.

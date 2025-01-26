@@ -1,10 +1,10 @@
 ========
-Ligações
+LigaÃ§Ãµes
 ========
 
 :Autores:		Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Direitos de Cópia:	Copyright © 1995-2006, A equipa de desenvolvimento AROS
-:Versão:		$Revision$
+:Direitos de CÃ³pia:	Copyright Â© 1995-2006, A equipa de desenvolvimento AROS
+:VersÃ£o:		$Revision$
 :Data:			$Date$
 :Estado:		Feito.
 
@@ -16,10 +16,10 @@ Artigos sobre AROS
 ==================
 
 ===============================================  ==================  ==========
-Título                                            Autor              Data
+TÃ­tulo                                            Autor              Data
 ===============================================  ==================  ==========
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    2006-09-13
-`"AROS"`__ (na revista alemã Amiga-Magazin)      Martin Steigerwald  2003-09-13
+`"AROS"`__ (na revista alemÃ£ Amiga-Magazin)      Martin Steigerwald  2003-09-13
 `"If you like Amiga, you'll love AROS"`__        Elwood              Desconhecido   
 `"AROS: Native AmigaOS For Your PC"`__           John Chandler       2001-10-21 
 `"AROS: The Amiga Research Operating System`__   John Chandler       1999-10-02
@@ -31,15 +31,15 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Se conhece algum artigo sobre o AROS que não tenhamos mencionado, por favor 
-contacte-nos para que possamos incluí-lo. Obrigado. 
+Se conhece algum artigo sobre o AROS que nÃ£o tenhamos mencionado, por favor 
+contacte-nos para que possamos incluÃ­-lo. Obrigado. 
 
 
 Artigos que mencionam o AROS
 ============================
 
 ===============================================  ==============  ==========
-Título                                            Autor          Data
+TÃ­tulo                                            Autor          Data
 ===============================================  ==============  ==========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  2002-08-13
 `Interview with Martin Blom`__                   Johan Forsberg  Desconhecido
@@ -66,11 +66,11 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Se conhece algum artigo que mencione AROS e que nós não tenhamos listado aqui,
+Se conhece algum artigo que mencione AROS e que nÃ³s nÃ£o tenhamos listado aqui,
 por favor contacte-nos para que possamos adiciona-lo. Obrigado.
 
 
-Páginas pessoais de Desenvolvidores
+PÃ¡ginas pessoais de Desenvolvidores
 ===================================
 
 + `Aaron Digulla`__
@@ -106,13 +106,13 @@ Miscelania
 
   .. Image:: images/phoenix.jpeg
   
-  O consorcio Phoenix Developer suporta o desenvolvimento de plataformas de computação
-  alternativas trabalhando com o núcleo e 3ºs desenvolvidores e 
+  O consorcio Phoenix Developer suporta o desenvolvimento de plataformas de computaÃ§Ã£o
+  alternativas trabalhando com o nÃºcleo e 3Âºs desenvolvidores e 
   providenciando recursos para esse desenvolvimento.
 
 + `Equipa AROS`__ 
 
-  TeamAROS é a raiz do apoio para com o AROS.
+  TeamAROS Ã© a raiz do apoio para com o AROS.
 
 + `Arquivo de software AROS`__
 
@@ -122,7 +122,7 @@ Miscelania
 
 + `AROS para Amiga`__
   
-  AfA OS repõem as bibliotecas núcleo do AmigaOS com as suas peças AROS mais avançadas.
+  AfA OS repÃµem as bibliotecas nÃºcleo do AmigaOS com as suas peÃ§as AROS mais avanÃ§adas.
 
 
 __ http://phinixi.com/

@@ -1,10 +1,10 @@
 .. This document is automatically generated. Don't edit it!
 
 ==================
-Команды Shell(CLI)
+РљРѕРјР°РЅРґС‹ Shell(CLI)
 ==================
 
-`Введение <introduction>`_
+`Р’РІРµРґРµРЅРёРµ <introduction>`_
 
 `All_commands <allcommands>`__
 

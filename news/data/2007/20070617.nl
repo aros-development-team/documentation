@@ -14,7 +14,7 @@ Mondialisering van AROS zet zich voort! Ioannis Koniaris heeft
 De laatste weken hebben we enkele technische problemen met onze
 compilatie-machine gehad, dus verontschuldigen wij ons als u geen
 geactualiseerde nachtelijke compilatie heeft kunnen downloaden. Maar het
-probleem is opgelost met een gloednieuwe compilatie-machine, geïnstalleerd
+probleem is opgelost met een gloednieuwe compilatie-machine, geÃ¯nstalleerd
 door Robert Norris.
 
 Drie nieuwe interessante premies zijn onlangs op TeamAROS geplaatst: Kijk

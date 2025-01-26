@@ -1,11 +1,11 @@
-Här har vi några nya funktioner i icon-library. Du kan se den nya effekten 
-för de valda ikonerna ("S"-mappen är vald här, därför är den ljusare än de
-andra ikonerna). Ikon-namnen ritas nu upp med en outline, för att bli 
-synliga även på en mörk bakgrund (detta kommer naturligtvis även att vara
-konfigurerbart för användarna i framtiden).
+HÃ¤r har vi nÃ¥gra nya funktioner i icon-library. Du kan se den nya effekten 
+fÃ¶r de valda ikonerna ("S"-mappen Ã¤r vald hÃ¤r, dÃ¤rfÃ¶r Ã¤r den ljusare Ã¤n de
+andra ikonerna). Ikon-namnen ritas nu upp med en outline, fÃ¶r att bli 
+synliga Ã¤ven pÃ¥ en mÃ¶rk bakgrund (detta kommer naturligtvis Ã¤ven att vara
+konfigurerbart fÃ¶r anvÃ¤ndarna i framtiden).
 
-Vi kan även se fil-identifikationen i bruk: text-filerna i "S"-mappen får
-speciella def_Text-ikoner, medans filen "AROS.png" får den generella
-projekt-ikonen. Vi har inte så många ikoner just nu, men om de fanns
-tillgängliga så skulle "AROS.png" få en def_Picture-ikon (Eller även kanske
-en def_PNG-ikon om det fanns tillgängligt).
+Vi kan Ã¤ven se fil-identifikationen i bruk: text-filerna i "S"-mappen fÃ¥r
+speciella def_Text-ikoner, medans filen "AROS.png" fÃ¥r den generella
+projekt-ikonen. Vi har inte sÃ¥ mÃ¥nga ikoner just nu, men om de fanns
+tillgÃ¤ngliga sÃ¥ skulle "AROS.png" fÃ¥ en def_Picture-ikon (Eller Ã¤ven kanske
+en def_PNG-ikon om det fanns tillgÃ¤ngligt).

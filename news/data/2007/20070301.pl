@@ -5,16 +5,16 @@ Status Update
 :Autor:   Paolo Besser
 :Data:     2007-03-01
 
-Rozpoczynaj±c od dzisiaj, nie bêd± ju¿ dostêpne archiwa "AROS snapshots".
+RozpoczynajÄ…c od dzisiaj, nie bÄ™dÄ… juÅ¼ dostÄ™pne archiwa "AROS snapshots".
 Proponujemy w ich miejsce pobieranie kompilacji z ostatniej nocy (nightly 
-build). AROS rozwija siê naprawdê szybko i snapshots zawiera³y czêsto 
-nieaktualny kod. Uwa¿amy ponadto, ¿e nocne kompilacje s± du¿o bardziej  
-przydatne z punktu widzenia betatestera, poniewa¿ zawieraj± ostatnio
-dodane w³a¶ciwo¶ci: proszê u¿ywaæ `bugtrackera`__ do zg³aszania b³êdów.
+build). AROS rozwija siÄ™ naprawdÄ™ szybko i snapshots zawieraÅ‚y czÄ™sto 
+nieaktualny kod. UwaÅ¼amy ponadto, Å¼e nocne kompilacje sÄ… duÅ¼o bardziej  
+przydatne z punktu widzenia betatestera, poniewaÅ¼ zawierajÄ… ostatnio
+dodane wÅ‚aÅ›ciwoÅ›ci: proszÄ™ uÅ¼ywaÄ‡ `bugtrackera`__ do zgÅ‚aszania bÅ‚Ä™dÃ³w.
 
-Z powodu update'u serwerów Sourceforge, ostatnie nocne kompilacje nie
-by³y dostêpne. Obecnie prace ju¿ zakoñczono i wszystko powinno powróciæ
-do normalno¶ci.
+Z powodu update'u serwerÃ³w Sourceforge, ostatnie nocne kompilacje nie
+byÅ‚y dostÄ™pne. Obecnie prace juÅ¼ zakoÅ„czono i wszystko powinno powrÃ³ciÄ‡
+do normalnoÅ›ci.
 
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 

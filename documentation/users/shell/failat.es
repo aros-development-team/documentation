@@ -26,49 +26,49 @@ Synopsis
      RCLIM/N
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
      C:
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
-     FailAt establece el lÌmite para el cÛdigo devuelto del actual guiÛn
-     del shell. Si alg˙n comando del guiÛn devuelve un cÛdigo de falla
-     igual o mayor que Èste el guiÛn abortar·.
+     FailAt establece el l√≠mite para el c√≥digo devuelto del actual gui√≥n
+     del shell. Si alg√∫n comando del gui√≥n devuelve un c√≥digo de falla
+     igual o mayor que √©ste el gui√≥n abortar√°.
 
-     Los cÛdigos de falla comunes son:
+     Los c√≥digos de falla comunes son:
          0   - No hay error
          5   - Advertencia
          10  - Error
          20  - Falla
 
-     El valor normal para el lÌmite del cÛdigo devuelto es 10.
+     El valor normal para el l√≠mite del c√≥digo devuelto es 10.
 
 
 Ejemplo
 ~~~~~~~
 ::
 
-     Si tenemos un guiÛn con los comandos
+     Si tenemos un gui√≥n con los comandos
 
          Copy RAM:SomeFile DF0:
          Echo "Done!"
 
-     y el archivo RAM:SomeFile no existe, el comando Copy devolver·:
+     y el archivo RAM:SomeFile no existe, el comando Copy devolver√°:
 
          Copy: object not found
          Copy: returned with error code 20
 
-     y el guiÛn abortar·. Sin embargo, si incluyes el comando
+     y el gui√≥n abortar√°. Sin embargo, si incluyes el comando
 
          FailAt 21
 
-     entonces el guiÛn se completar· porque el cÛdigo devuelto de Copy
-     es menor que el lÌmite para el cÛdigo devuelto.
+     entonces el gui√≥n se completar√° porque el c√≥digo devuelto de Copy
+     es menor que el l√≠mite para el c√≥digo devuelto.
 
 

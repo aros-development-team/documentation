@@ -1,2 +1,2 @@
-AquÌ est·n las obras ganadoras de nuestro Concurso de Wallpapers, incorporadas
+Aqu√≠ est√°n las obras ganadoras de nuestro Concurso de Wallpapers, incorporadas
 ya en las nightly builds.

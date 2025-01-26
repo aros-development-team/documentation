@@ -6,7 +6,7 @@ Aggiornamento natalizio
 :Data:     2008-12-21
 
 Per prima cosa, vi auguriamo un Buon Natale ed un Felice  2009! 
-Il 2008 Ë stato un anno importante per lo sviluppo di AROS, dato
+Il 2008 √® stato un anno importante per lo sviluppo di AROS, dato
 che tante cose sono successe negli ultimi dodici mesi e tanti progetti 
 sono stati fondati nel frattempo. Ecco un sommario di essi...
 
@@ -14,21 +14,21 @@ Ultimi Aggiornamenti
 --------------------
 
 Stanislaw Szymczyk ha reso AROS auto-compilabile. Questo vuol dire
-che si potr‡ compilare AROS (o le sue parti) su AROS stesso, senza il 
+che si potr√† compilare AROS (o le sue parti) su AROS stesso, senza il 
 bisogno di uno strumento esterno. Una catena di sviluppo quasi completa 
-Ë gi‡ disponibilenelle nightly builds, mentre alcuni strumenti necessari
+√® gi√† disponibilenelle nightly builds, mentre alcuni strumenti necessari
 sono disponibili attraverso `Gli archivi`__. Puoi leggere altro su questo 
 da `Cogville`__.
 
 Krzysztof Smiechowicz sta facendo cose molto utili per AROS. Ha appena
-portato `MPlayer`__, cosÏ ci possiamo guardare i nostri filmati 
+portato `MPlayer`__, cos√¨ ci possiamo guardare i nostri filmati 
 in vari formati di compressione, tra i quali AVI, MPEG, MOV, DIVX,
-XVID e molti altri. MPlayer Ë oltretutto anche un buon riproduttore musicale.
+XVID e molti altri. MPlayer √® oltretutto anche un buon riproduttore musicale.
 
 Paolo Besser ha rilasciato la versione 1.0 della sua distribuzione VmwAROS,
 sia un `Live-DVD`__ avviabile e installabile , che una macchina virtuale 
 preconfigurata (`qui`__), introducendo tante (`nuove caratteristiche`__.)  
-VmwAROS Ë adattata sia agli utenti finali che agli sviluppatori, dato che 
+VmwAROS √® adattata sia agli utenti finali che agli sviluppatori, dato che 
 include giochi, applicazioni, networking e una suite completa 
 per lo sviluppo sulla piattaforma AROS. Gli utenti Amiga Former Amiga 
 users possono essere interessati in `AmiBridge`__, uno 
@@ -48,13 +48,13 @@ Presto (o tardi) su una casella AROS vicina a te...
 ---------------------------------------------------
 
 Di solito non parliamo di progetti in attesa in questa pagina.
-Preferiamo annunciare solo risultati concreti che abbiamo gi‡ raggiunto.
-Ma dato che Ë natale un'eccezione sarebbe carina; Ecco alcuni dei progetti 
+Preferiamo annunciare solo risultati concreti che abbiamo gi√† raggiunto.
+Ma dato che √® natale un'eccezione sarebbe carina; Ecco alcuni dei progetti 
 in AROS nei quali stiamo lavorando.
 
-Michal Schulz sta lavorando alla `mass storage bounty`__, il quale obiettivo Ë 
+Michal Schulz sta lavorando alla `mass storage bounty`__, il quale obiettivo √® 
 quello di "produzione di un dispositivo DOS che possiamo utilizzare per montare 
-un filesystem su una chiavetta USB". Michal ha gi‡ ha gi‡ raggiunto dei risultati 
+un filesystem su una chiavetta USB". Michal ha gi√† ha gi√† raggiunto dei risultati 
 interessanti, dei quali parla nel suo `blog`__ personale. Michal Schulz sta anche 
 ancora portando AROSalle piattaforme Efika PPC.
 
@@ -67,7 +67,7 @@ AROS ABI v1. Si possono vedere alcuni progressi nella sua documentazione `here`_
 
 Matthias Rustler sta portanto Ignition su AROS, una applicazione da foglio di calcolo 
 recentemente ri-rilasciata sotto i termini della licenza GPL.
-Ha gi‡ fatto progressi interessanti. `Questo screenshot`__
+Ha gi√† fatto progressi interessanti. `Questo screenshot`__
 sembra fantastico.
 
 

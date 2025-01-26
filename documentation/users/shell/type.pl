@@ -9,7 +9,7 @@
 Type
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FROM/A/M,TO/K,OPT/K,HEX/S,NUMBER/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Wy¶wietla zawarto¶æ pliku
+	WyÅ›wietla zawartoÅ›Ä‡ pliku
      
 
 Parametry
@@ -38,15 +38,15 @@ Parametry
 ::
 
 
-	FROM	--	jeden lub wiêcej plików do wy¶wietlenia
+	FROM	--	jeden lub wiÄ™cej plikÃ³w do wyÅ›wietlenia
 	TO	--	wynik do pliku
 	OPT	--	H lub N (zobacz HEX i NUMBER)
-	HEX	--	wyj¶cie w HEX
-	NUMBER	--	linie s± numerowane
-		HEX i NUMBER zajemnie siê wykluczaj±
+	HEX	--	wyjÅ›cie w HEX
+	NUMBER	--	linie sÄ… numerowane
+		HEX i NUMBER zajemnie siÄ™ wykluczajÄ…
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 

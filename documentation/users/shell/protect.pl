@@ -9,7 +9,7 @@
 Protect
 =======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	FILE/A,FLAGS,ADD/S,SUB/S,ALL/S,QUIET/S
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -29,10 +29,10 @@ Funkcja
 ~~~~~~~
 ::
 
-	Dodaje b±dº usuwa bity ochronne z obiektu.
+	Dodaje bƒÖd≈∫ usuwa bity ochronne z obiektu.
 	
-	Protect obs≥uguje wzorce i rekurencyjne katalogi, ustawiaj±c wiele
-	warto∂ci w tym samym czasie.
+	Protect obs≈Çuguje wzorce i rekurencyjne katalogi, ustawiajƒÖc wiele
+	warto≈õci w tym samym czasie.
 
 Parametry
 ~~~~~~~~~
@@ -43,7 +43,7 @@ Parametry
 	FLAGS  --  One or more of the following flags:
 
 		S - Skrypt
-		P - Plik moøe byÊ rezydentny
+		P - Plik mo≈ºe byƒá rezydentny
 		A - Archiwalny
 		R - Odczytywalny
 		W - Zapisywalny
@@ -61,10 +61,10 @@ Wynik
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -74,7 +74,7 @@ Przyk≥ad
 	Recurses the ram: volume and attaches the executable bit.
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

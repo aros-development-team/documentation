@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: pt_br.py 5567 2008-06-03 01:11:03Z goodger $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -29,7 +27,7 @@ labels = {
       'copyright': u'Copyright',
       'dedication': u'Dedicat\u00F3ria',
       'abstract': u'Resumo',
-      'attention': u'Atten\u00E7\u00E3o!',
+      'attention': u'Aten\u00E7\u00E3o!',
       'caution': u'Cuidado!',
       'danger': u'PERIGO!',
       'error': u'Erro',

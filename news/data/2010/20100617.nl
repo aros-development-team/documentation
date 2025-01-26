@@ -17,7 +17,7 @@ of een netbook, zoals de Acer Aspire One A150, gebruiken.
 
 Krzysztof "Deadwood" Smiechowicz is behoorlijk opgeschoten met zijn conversie
 van Gallium3D naar AROS: Hij heeft nu 2D- en 3D-versnellende functies
-geïntegreerd in één enkel stuurprogramma genaamd Nouveau, die 2D-versnelling
+geÃ¯ntegreerd in Ã©Ã©n enkel stuurprogramma genaamd Nouveau, die 2D-versnelling
 ondersteund voor bijna alle GeForce GPU's beginnende bij de antieke GeForce 2
 kaarten tot en met de recente GTX 200 series. 3D-functionaliteit is echter
 alleen beschikbaar voor GeForce FX (5x00) en nieuwere kaarten. Sommige
@@ -44,7 +44,7 @@ Neil Cafferkey heeft onze ondersteuning van FAT-partities behoorlijk
 verbeterd, en heeft er ook voor gezorgd dat AROS te installeren is op USB
 pendrives (en er vanaf kan worden opgestart). Dit betekent dat de reguliere
 nachtelijke compilaties, maar ook `Icaros Desktop versie 1.2.2`__ nu kunnen
-worden geïnstalleerd op netbooks en andere USB-opstartbare computers, door
+worden geÃ¯nstalleerd op netbooks en andere USB-opstartbare computers, door
 gebruik te maken van een geheugenstick in plaats van een DVD. Paolo Besser
 heeft een volledige `how-to`__ geschreven in PDF-formaat en heeft deze op
 de Icaros website geplaatst.
@@ -73,8 +73,8 @@ tevens recentelijk voor een EFIKA-versie van AROS gezorgd.
 Nick "Kalamatee" Andrews heeft Wanderer enigzins verbeterd en enkele lang
 openstaande fouten verholpen. Wanneer per ongeluk een lade op zichzelf
 geplaatst wordt, zal AROS deze niet meer oneindig blijven proberen te
-kopiëren, en de desktop van AROS kan nu worden bevolkt door gebruik te maken
-van de "leave out"/"put away"-opties, die nu eindelijk zijn geïmplementeerd.
+kopiÃ«ren, en de desktop van AROS kan nu worden bevolkt door gebruik te maken
+van de "leave out"/"put away"-opties, die nu eindelijk zijn geÃ¯mplementeerd.
 Hij werkt tevens aan een ikoon- en lijstweergave zodat bestanden nu kunnen
 worden weergegeven op basis van details en kunnen worden gesorteerd naar
 wens.

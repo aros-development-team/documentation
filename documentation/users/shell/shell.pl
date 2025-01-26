@@ -9,7 +9,7 @@
 Shell
 =====
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	COMMAND/K/F,FROM
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -40,11 +40,11 @@ Parametry
 
 	COMMAND	--	linia komend do uruchomienia
 
-	FROM	--	skrypt do uruchomienia przed uøywaniem
+	FROM	--	skrypt do uruchomienia przed u≈ºywaniem
 
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -58,11 +58,11 @@ Opis
 ~~~~
 ::
 
-	Skrypt  nie jest skryptem w znaczeniu wykonywalnym (jako, øe nie moøesz
-	uøywaÊ .key, .bra lub .ket i podobnych rzeczy).
+	Skrypt  nie jest skryptem w znaczeniu wykonywalnym (jako, ≈ºe nie mo≈ºesz
+	u≈ºywaƒá .key, .bra lub .ket i podobnych rzeczy).
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

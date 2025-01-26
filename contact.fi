@@ -3,7 +3,7 @@ Yhteydenotto tiedot
 ===================
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright � 1995-2009, The AROS Development Team
+:Copyright: Copyright © 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,13 +11,13 @@ Yhteydenotto tiedot
 .. Contents::
 
 
-Yhteyshenkil�
+Yhteyshenkilö
 =============
 
-AROS Development Team:in p��asiallinen yhteyshenkil� on Aaron "Optimizer"
-Digulla. Jos tahdot k��nty� tiimin puoleen kokonaisuutena, esim. esitt��ksesi
-sponsorisopimusta tai muunlaista yhteisty�t�, on h�n henkil� jolle puhua.
-Tavoitat h�net l�hett�m�ll� mailia osoitteeseen `digulla@aros.org`__.
+AROS Development Team:in pääasiallinen yhteyshenkilö on Aaron "Optimizer"
+Digulla. Jos tahdot kääntyä tiimin puoleen kokonaisuutena, esim. esittääksesi
+sponsorisopimusta tai muunlaista yhteistyötä, on hän henkilö jolle puhua.
+Tavoitat hänet lähettämällä mailia osoitteeseen `digulla@aros.org`__.
 
 __ mailto:digulla@aros.org
 
@@ -25,30 +25,30 @@ __ mailto:digulla@aros.org
 Postituslistat
 ==============
 
-AROS:iin liittyvi� postituslistoja on olemassa muutamia, jotka ovat tiedon ja AROS-aiheisten keskusteluiden p��kanavia kehitt�jille. Tarjolla ovat seuraavat listat:
+AROS:iin liittyviä postituslistoja on olemassa muutamia, jotka ovat tiedon ja AROS-aiheisten keskusteluiden pääkanavia kehittäjille. Tarjolla ovat seuraavat listat:
 
 + `AROS Developer`__
 
-  T�m� on kehitt�jien postituslista jolla keskustelut AROS:in kehitt�misen
-  tiimoilta pidet��n. My�s CVS-logit ja �isten k��nn�sten tila postitetaan
-  p�ivitt�in t�lle listalle. On **eritt�in** suositeltavaa kaikkien
-  kehitt�jien liitty� t�lle listalle, sill� muutoin t�m�n hetkisen
-  kehitystilanteen seuraaminen on melkoisen vaikeaa. Koska AROS-kehitt�ji� ei
+  Tämä on kehittäjien postituslista jolla keskustelut AROS:in kehittämisen
+  tiimoilta pidetään. Myös CVS-logit ja öisten käännösten tila postitetaan
+  päivittäin tälle listalle. On **erittäin** suositeltavaa kaikkien
+  kehittäjien liittyä tälle listalle, sillä muutoin tämän hetkisen
+  kehitystilanteen seuraaminen on melkoisen vaikeaa. Koska AROS-kehittäjiä ei
   kuitenkaan ole mahdottoman montaa, on listan liikenne yleisesti ottaen melko
-  v�h�ist�, mutta voi muuttua vilkkaaksi jos keskustelut kuumenevat.
+  vähäistä, mutta voi muuttua vilkkaaksi jos keskustelut kuumenevat.
 
-  .. Note:: T�lle listalle liittymist� ei ole automatisoitu. Listan
-            yll�pito tarkistaa kaikki liittymispyynn�t, joten voi menn� tovi
-            pyynn�n l�hett�misest� ennen kuin olet listan j�sen.
+  .. Note:: Tälle listalle liittymistä ei ole automatisoitu. Listan
+            ylläpito tarkistaa kaikki liittymispyynnöt, joten voi mennä tovi
+            pyynnön lähettämisestä ennen kuin olet listan jäsen.
 
 + `AROS CVS`__
 
-  T�m� on vain lukua varten tarkoitettu kehitt�jien postituslista jolle
-  CVS-logit l�hetet��n automaattisesti aina kun muutoksia tapahtuu. Toisin
-  kuin AROS Development -listalle l�hetetyt CVS-logit, jossa postit sis�lt�v�t
-  koosteen koko p�iv�n tapahtumista, t�lle listalle l�hetet��n
-  yksitt�isilmoitus *v�litt�m�sti* muutoksen tapahtuessa. Joten jos tahdot
-  liki reaaliaikaisen palautteen CVS-palvelimen tapahtumista, on t�m� lista
+  Tämä on vain lukua varten tarkoitettu kehittäjien postituslista jolle
+  CVS-logit lähetetään automaattisesti aina kun muutoksia tapahtuu. Toisin
+  kuin AROS Development -listalle lähetetyt CVS-logit, jossa postit sisältävät
+  koosteen koko päivän tapahtumista, tälle listalle lähetetään
+  yksittäisilmoitus *välittömästi* muutoksen tapahtuessa. Joten jos tahdot
+  liki reaaliaikaisen palautteen CVS-palvelimen tapahtumista, on tämä lista
   tarkoitettu sinulle. Listan liikenne voi olla ajoittain suurta.
   
 + `AROS Website`__ 
@@ -57,8 +57,8 @@ AROS:iin liittyvi� postituslistoja on olemassa muutamia, jotka ovat tiedon ja 
   so those who commit changes to the documentation or can fix stuff
   if something explodes should subscribe to it.
 
-Saadaksesi tietoa kuinka liitty� ja erota listoilta, sek� kuinka arkistoja
-k�ytet��n, seuraa alla olevia linkkej�.
+Saadaksesi tietoa kuinka liittyä ja erota listoilta, sekä kuinka arkistoja
+käytetään, seuraa alla olevia linkkejä.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
@@ -67,12 +67,12 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 .. _`vikatietokantaan`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 
 
-Keskusteluryhm�t
+Keskusteluryhmät
 ================
 
-AROSWorld__ on AROS:in virallinen yhteis�portaali. Sielt� l�yd�t viimeisimm�t
-AROS:iin liittyv�t uutiset, keskusteluryhm�t, kuvagalleriat ja paljon muuta.
-Se on t�ydellinen kohtauspaikka AROS-k�ytt�jille kaikkialta maailmassa.
+AROS-Exec__ on AROS:in virallinen yhteisöportaali. Sieltä löydät viimeisimmät
+AROS:iin liittyvät uutiset, keskusteluryhmät, kuvagalleriat ja paljon muuta.
+Se on täydellinen kohtauspaikka AROS-käyttäjille kaikkialta maailmassa.
 
 __ https://www.arosworld.org/
 
@@ -81,11 +81,11 @@ IRC kanavat
 ===========
 
 AROS:in virallinen IRC kanava, `#aros`__, sijaitsee FreeNode__ -verkossa. Ota
-yhteytt� `irc.freenode.net`__:iin joka sitten ohjaa sinut l�himm�lle
-palvelimelle. Kanava on tarkoitettu kaikelle AROS:iin liittyv�lle,
-mukaanlukien sen kehitt�minen ja kuinka valloittaa maailman. Niiss� harvoissa
-tilanteissa jolloin p��kanava on eritt�in ruuhkainen, kehitykseen liittyv�t
-keskustelut siirret��n `#aros.dev`__:iin.
+yhteyttä `irc.freenode.net`__:iin joka sitten ohjaa sinut lähimmälle
+palvelimelle. Kanava on tarkoitettu kaikelle AROS:iin liittyvälle,
+mukaanlukien sen kehittäminen ja kuinka valloittaa maailman. Niissä harvoissa
+tilanteissa jolloin pääkanava on erittäin ruuhkainen, kehitykseen liittyvät
+keskustelut siirretään `#aros.dev`__:iin.
 
 __ irc://irc.freenode.net/aros
 __ http://www.freenode.net/

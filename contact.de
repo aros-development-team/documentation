@@ -15,7 +15,7 @@ Ansprechpartner
 ===============
 
 Der Leiter des AROS-Entwicklungsteams ist Aaron "Optimizer" Digulla. Er ist der
-Ansprechpartner, wenn Du das Team als Ganzes ansprechen willst, z. B. f�r ein
+Ansprechpartner, wenn Du das Team als Ganzes ansprechen willst, z. B. für ein
 Sponsorenabkommen oder andere Formen der Zusammenarbeit. Du kannst ihn per E-Mail
 an `digulla@aros.org`__ erreichen.
 
@@ -25,40 +25,40 @@ __ mailto:digulla@aros.org
 Mailinglisten
 =============
 
-Es gibt ein paar AROS-bezogene Mailinglisten, welche die Hauptinformationskan�le
-f�r AROS-Entwickler darstellen. Folgende Mailinglisten sind vorhanden:
+Es gibt ein paar AROS-bezogene Mailinglisten, welche die Hauptinformationskanäle
+für AROS-Entwickler darstellen. Folgende Mailinglisten sind vorhanden:
 
 + `AROS Developer`__
 
-  Auf dieser Mailingliste finden Diskussionen �ber die Entwicklung von AROS statt.
-  Die Statusberichte der Nightly-Builds werden t�glich an diese Mailing-Liste
-  geschickt. Auch die Eintr�ge in die `Fehlerdatenbank` werden hier
-  ver�ffentlicht. Es wird jedem Entwickler empfohlen, diese Mailingliste zu,
+  Auf dieser Mailingliste finden Diskussionen über die Entwicklung von AROS statt.
+  Die Statusberichte der Nightly-Builds werden täglich an diese Mailing-Liste
+  geschickt. Auch die Einträge in die `Fehlerdatenbank` werden hier
+  veröffentlicht. Es wird jedem Entwickler empfohlen, diese Mailingliste zu,
   abbonieren, da es sonst schwierig wird, auf dem neusten Stand zu bleiben. Da es
   nicht so viele Entwickler gibt, ist das Volumen der Liste im Allgemeinen recht
   niedrig. Es kann aber sehr viel werden, wenn hitzige Diskussionen stattfinden.
   
-  .. Note:: Abonnement-Anfragen f�r diese Liste werden nicht automatisch gehandhabt,
-            sondern jede Anfrage wird vom Listenverwalter gepr�ft. Deshalb kann
-            es einige Verz�gerung geben zwischen der Anfrage und der Erteilung der
+  .. Note:: Abonnement-Anfragen für diese Liste werden nicht automatisch gehandhabt,
+            sondern jede Anfrage wird vom Listenverwalter geprüft. Deshalb kann
+            es einige Verzögerung geben zwischen der Anfrage und der Erteilung der
             Mitgliedschaft.
 
 
 + `AROS CVS`__
 
   Von dieser Liste mit Subversion-Protokollen kann nur gelesen werden. Wenn Du ein
-  ann�herndes Echtzeit-Feedback des Subversion-Servers   m�chtest, ist dies die
-  richtige Liste f�r Dich. Das Volumen der Liste kann recht gro� werden.
+  annäherndes Echtzeit-Feedback des Subversion-Servers   möchtest, ist dies die
+  richtige Liste für Dich. Das Volumen der Liste kann recht groß werden.
   
 + `AROS Website`__
 
   Das Skript, das die Webseite erstellt, sendet Mails an diese Liste. Diejenigen,
-  die �nderungen an der Dokumentation vornehmen oder helfen k�nnen, wenn etwas
+  die Änderungen an der Dokumentation vornehmen oder helfen können, wenn etwas
   nicht funktioniert, sollten diese Liste abonnieren.
 
 
-Folge den Links auf die Verwaltungsseiten, um Informationen �ber Anmeldung, Abmeldung,
-Zugang zu den Archiven und weitern n�tzlichen Funktionen zu bekommen.
+Folge den Links auf die Verwaltungsseiten, um Informationen über Anmeldung, Abmeldung,
+Zugang zu den Archiven und weitern nützlichen Funktionen zu bekommen.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
@@ -70,21 +70,21 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 Foren
 =====
 
-AROSWorld__ ist das offizielle Community-Portal f�r AROS. Hier kannst Du die aktuellsten
+AROS-Exec__ ist das offizielle Community-Portal für AROS. Hier kannst Du die aktuellsten
 Neuigkeiten, Diskussionsforen, Bildergalerien und vieles weitere finden.
-Dies ist der perfekte Treffpunkt f�r AROS-Benutzer aus der ganzen Welt.
+Dies ist der perfekte Treffpunkt für AROS-Benutzer aus der ganzen Welt.
 
 __ https://www.arosworld.org/
 
 
-IRC-Kan�le
+IRC-Kanäle
 ==========
 
-Es gibt einen offiziellen IRC-Kanal f�r AROS im FreeNode__-Netzwerk, der erwartungsgem��
+Es gibt einen offiziellen IRC-Kanal für AROS im FreeNode__-Netzwerk, der erwartungsgemäß
 den Namen `#aros`__ hat. Verbinde bitte mit `irc.freenode.net`__, dies wird Dich an
-einen Server in Deiner N�he weiterleiten. Diskutiert wird �ber alles was mit AROS
-zu tun hat, einschlie�lich Entwicklung und wie die Welt �bernommen werden kann. In
-seltenen F�llen, wenn der Hauptkanal zu geschw�tzig ist, finden entwicklungsbezogene
+einen Server in Deiner Nähe weiterleiten. Diskutiert wird über alles was mit AROS
+zu tun hat, einschließlich Entwicklung und wie die Welt übernommen werden kann. In
+seltenen Fällen, wenn der Hauptkanal zu geschwätzig ist, finden entwicklungsbezogene
 Diskussionen in `#aros.dev`__ statt.
 
 __ http://www.freenode.net/

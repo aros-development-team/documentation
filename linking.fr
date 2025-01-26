@@ -1,16 +1,16 @@
 =============
-Référencement 
+RÃ©fÃ©rencement 
 =============
 
 :Author:    Adam Chodorowski
-:Copyright: Copyright © 2001, The AROS Development Team
+:Copyright: Copyright Â© 2001, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
-Une façon d'encourager le développement d'AROS que nous recommandons
-particulièrement est de référencer ce site web à partir du votre. Vous
-pouvez utiliser les jolies bannières suivantes, réalisées par Cyb0rg / Resistance:
+Une faÃ§on d'encourager le dÃ©veloppement d'AROS que nous recommandons
+particuliÃ¨rement est de rÃ©fÃ©rencer ce site web Ã  partir du votre. Vous
+pouvez utiliser les jolies banniÃ¨res suivantes, rÃ©alisÃ©es par Cyb0rg / Resistance:
 
 	.. Image:: /images/aros-banner.gif
 		:align: center
@@ -24,7 +24,7 @@ pouvez utiliser les jolies bannières suivantes, réalisées par Cyb0rg / Resistanc
 		:align: center
 		:class: bannerimage
 
-Forum bannières (S33k_100):
+Forum banniÃ¨res (S33k_100):
 
 	.. Image:: /images/aros-sigbar-user.png
 		:align: center
@@ -34,6 +34,6 @@ Forum bannières (S33k_100):
 		:align: center
 		:class: bannerimage
 
-Veuillez référencer directement http://www.aros.org/ et non les sites mirroirs
-qui peuvent changer au cours du temps. Pensez également à effectuer une copie
-locale de l'image de la bannière pour réduire l'utilisation de la bande passante.
+Veuillez rÃ©fÃ©rencer directement http://www.aros.org/ et non les sites mirroirs
+qui peuvent changer au cours du temps. Pensez Ã©galement Ã  effectuer une copie
+locale de l'image de la banniÃ¨re pour rÃ©duire l'utilisation de la bande passante.

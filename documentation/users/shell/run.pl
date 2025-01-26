@@ -9,7 +9,7 @@
 Run
 ===
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	COMMAND/F
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Uruchamia program w osobnym procesie. To znaczy, ¿e nie blokuje CLI.
+	Uruchamia program w osobnym procesie. To znaczy, Å¼e nie blokuje CLI.
 
 
 Parametry
@@ -45,8 +45,8 @@ Opis
 ~~~~
 ::
 
-	¯eby mo¿liwe by³o zamkniêcie aktualnego okna konsoli Shell, przekieruj
-	program nastêpuj±co:
+	Å»eby moÅ¼liwe byÅ‚o zamkniÄ™cie aktualnego okna konsoli Shell, przekieruj
+	program nastÄ™pujÄ…co:
 
 	Run >NIL: program argumenty
 

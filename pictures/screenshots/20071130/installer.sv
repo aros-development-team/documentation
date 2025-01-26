@@ -1,1 +1,1 @@
-Ett fönster med den nya AROS-installern från Neil Cafferkey.
+Ett fÃ¶nster med den nya AROS-installern frÃ¥n Neil Cafferkey.

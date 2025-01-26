@@ -37,9 +37,9 @@ Funzione
 ::
 
 
-     Genera un sommario della memoria usata e la disponibilità nel sistema.
-     Per liberare la memoria inutilizzata che è allocata (librerie, periferiche,
-     fonts e altra memoria non in uso), si può usare l'opzione FLUSH. (ricorda niente, la parola?)
+     Genera un sommario della memoria usata e la disponibilitÃ  nel sistema.
+     Per liberare la memoria inutilizzata che Ã¨ allocata (librerie, periferiche,
+     fonts e altra memoria non in uso), si puÃ² usare l'opzione FLUSH. (ricorda niente, la parola?)
 
 
 Inputs
@@ -51,7 +51,7 @@ Inputs
      FAST   --  mostra solo la memoria "fast"
      TOTAL  --  Mostra le informazioni senza tener conto del tipo di memoria
      FLUSH  --  ripulisce la memoria dai dati non necessari
-     HUMAN  --  mostra valori più facili da leggere (gigabytes come "G",
+     HUMAN  --  mostra valori piÃ¹ facili da leggere (gigabytes come "G",
                 megabytes come "M", kilobytes come "K")
 
 

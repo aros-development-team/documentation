@@ -20,7 +20,7 @@ Synopsis
      DRIVE/A, NAME/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 

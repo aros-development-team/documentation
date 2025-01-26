@@ -22,14 +22,14 @@ Icaros Desktop LIVE!
 .. image:: /images/icaroslive_logo.png
    :align: left
 
-`Icaros Desktop LIVE!`__ � una distrubuzione completa del sistema operativo 
-Aros Desktop. � formato da un DVD-ROM live che pu� partire direttamente
+`Icaros Desktop LIVE!`__ è una distrubuzione completa del sistema operativo 
+Aros Desktop. é formato da un DVD-ROM live che può partire direttamente
 dal tuo PC (ma i componenti hardware devono essere supportati da AROS).
-Pu� essere installato sull'hard disk e coesistere con Windows Xp in una 
+Può essere installato sull'hard disk e coesistere con Windows Xp in una 
 partizione dedicata (configurazione manuale necessaria). Una quick reference 
 guide e alcuni PDF sono stati inclusi. Questa versione viene rilasciata con 
-anche una macchina virtuale basata su Qemu che pu� permettere agli utenti
-windows di provare la distrubuzione in un ambiente pi� sicuro (anche se pi�
+anche una macchina virtuale basata su Qemu che può permettere agli utenti
+windows di provare la distrubuzione in un ambiente più sicuro (anche se più
 lento).
 
 __ http://live.icarosdesktop.org/
@@ -60,15 +60,15 @@ Nightly build
    Per scaricare correttamente una nightly build, consigliamo vivamente 
    l'uso di un download manager che possa recuperare un download 
    interrotto, oppure il comando wget (con "wget -c" per scaricare la 
-   porzione rimanente di un file gi� scaricato in parte da un altro 
+   porzione rimanente di un file già scaricato in parte da un altro 
    programma).
 
 Le nightly build vengono create automaticamente ogni notte a partire 
-dal codice sorgente pi� aggiornato. Siccome si tratta di versioni in 
-piena fase di sviluppo, � possibile che non si compilino o che non funzionino
+dal codice sorgente più aggiornato. Siccome si tratta di versioni in 
+piena fase di sviluppo, è possibile che non si compilino o che non funzionino
 correttamente. Per cortesia, se trovate errori segnalateceli attraverso lo
-strumento apposito, il `bug tracker`__. Per qualsiasi altra necessit�, non 
-esitate a contattarci per mezzo dei forum di `AROSWorld`__.
+strumento apposito, il `bug tracker`__. Per qualsiasi altra necessità, non 
+esitate a contattarci per mezzo dei forum di `AROS-Exec`__.
 
 .. raw:: html
 

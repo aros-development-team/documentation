@@ -5,23 +5,23 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   17.06.2007
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-Roz¹iøování AROSu po svìtì pokraèuje! Ioannis Koniaris pøelo¾il `AROS.org do Øeètiny`__.
+RozÅ¡iÅ™ovÃ¡nÃ­ AROSu po svÄ›tÄ› pokraÄuje! Ioannis Koniaris pÅ™eloÅ¾il `AROS.org do Å˜eÄtiny`__.
 
-V posledních tıdnech jsme mìli technické potí¾e s na¹ím sestavovacím strojem,
-omlouváme se, pokud jsi nemohl stáhnout aktualizované noèní sestavení. Problém
-byl vyøe¹en se zbrusu novım sestavovacím strojem, o co¾ se postaral Robert Norris.
+V poslednÃ­ch tÃ½dnech jsme mÄ›li technickÃ© potÃ­Å¾e s naÅ¡Ã­m sestavovacÃ­m strojem,
+omlouvÃ¡me se, pokud jsi nemohl stÃ¡hnout aktualizovanÃ© noÄnÃ­ sestavenÃ­. ProblÃ©m
+byl vyÅ™eÅ¡en se zbrusu novÃ½m sestavovacÃ­m strojem, o coÅ¾ se postaral Robert Norris.
 
-Na "Team AROS" byly nedávno otevøeny tøi nové zajímavé "bounties":
-podívej se prosím na `AROS na SAM440`__, `validátor disku`__ a
-`vytvoøení nové AROS distribuce`__.
+Na "Team AROS" byly nedÃ¡vno otevÅ™eny tÅ™i novÃ© zajÃ­mavÃ© "bounties":
+podÃ­vej se prosÃ­m na `AROS na SAM440`__, `validÃ¡tor disku`__ a
+`vytvoÅ™enÃ­ novÃ© AROS distribuce`__.
 
-Chceme nesmírnì podìkovat v¹em, kdo jsou zapojeni do chodu AROSu:
-v posledních tıdnech jsme do na¹í `soutì¾e`__ obd¾eli spoustu wallpaperù a
-také nìjaké nové `bannery`__. Pokud má¹ vlastní web, nebo jsi aktivním úèastníkem
-diskuzních fór, mù¾e¹ pomoci AROSu proniknout pou¾itím odkazù na (tvoji jazykovou
+Chceme nesmÃ­rnÄ› podÄ›kovat vÅ¡em, kdo jsou zapojeni do chodu AROSu:
+v poslednÃ­ch tÃ½dnech jsme do naÅ¡Ã­ `soutÄ›Å¾e`__ obdÅ¾eli spoustu wallpaperÅ¯ a
+takÃ© nÄ›jakÃ© novÃ© `bannery`__. Pokud mÃ¡Å¡ vlastnÃ­ web, nebo jsi aktivnÃ­m ÃºÄastnÃ­kem
+diskuznÃ­ch fÃ³r, mÅ¯Å¾eÅ¡ pomoci AROSu proniknout pouÅ¾itÃ­m odkazÅ¯ na (tvoji jazykovou
 verzi) Aros.org.
 
 

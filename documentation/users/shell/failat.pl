@@ -16,14 +16,14 @@ Format
 	FailAt <limit>
 
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
 	RCLIM/N
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -34,38 +34,38 @@ Funkcja
 ~~~~~~~
 ::
 
-	FailAt ustawia limit kodu b³êdu w skrypcie. Je¶li jaka¶ komenda zwróci
-	kod b³êdu wiêkszy b±d¼ równy tej warto¶ci to skrypt zostaje przerwany.
+	FailAt ustawia limit kodu bÅ‚Ä™du w skrypcie. JeÅ›li jakaÅ› komenda zwrÃ³ci
+	kod bÅ‚Ä™du wiÄ™kszy bÄ…dÅº rÃ³wny tej wartoÅ›ci to skrypt zostaje przerwany.
 
-	Wspólne kody b³êdów:
-         0   - Brak b³êdu
-         5   - Ostrze¿enie
-         10  - B³±d
-         20  - Powa¿ny b³±d
+	WspÃ³lne kody bÅ‚Ä™dÃ³w:
+         0   - Brak bÅ‚Ä™du
+         5   - OstrzeÅ¼enie
+         10  - BÅ‚Ä…d
+         20  - PowaÅ¼ny bÅ‚Ä…d
 
 	Standardowo limit wynosi 10.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
-	Je¶li mamy skrypt z komendami
+	JeÅ›li mamy skrypt z komendami
 
          Copy RAM:PewienPlik DF0:
-         Echo "Skoñczone!"
+         Echo "SkoÅ„czone!"
 
-	i plik RAM:PewienPlik który nie istnieje
+	i plik RAM:PewienPlik ktÃ³ry nie istnieje
 
          Copy: object not found
          Copy: returned with error code 20
 
-	skrypt siê zatrzyma. Ale je¶li wcze¶niej zadeklarujesz komende
+	skrypt siÄ™ zatrzyma. Ale jeÅ›li wczeÅ›niej zadeklarujesz komende
 
 	FailAt 21
 	
-	wtedy skrypt zostaje wykonywany dalej dopóki nadal kody b³êdów bêd±
-	ni¿sze od limitu.
+	wtedy skrypt zostaje wykonywany dalej dopÃ³ki nadal kody bÅ‚Ä™dÃ³w bÄ™dÄ…
+	niÅ¼sze od limitu.
 
 
 

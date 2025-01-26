@@ -3,7 +3,7 @@ Veel gestelde vragen (FAQ)
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright � 1995-2004, The AROS Development Team
+:Copyright: Copyright © 1995-2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -53,7 +53,7 @@ Daarom geloven we dat AROS beschermd is door de wet.
 Patenten en header files zijn echter een ander geval. We kunnen gepatenteerde
 algoritmes in Europa gebruiken sinds de Europese wet hierop geen patenten toestaat. 
 Echter, code die algoritmen gebruikt die in de VS gepatenteerd zijn, mogen niet 
-ge�mporteerd worden in de VS. Voorbeelden van gepatenteerde algoritmes
+geïmporteerd worden in de VS. Voorbeelden van gepatenteerde algoritmes
 in AmigaOS zijn het slepen van schermen en de manier waarop bepaald menu's werken.
 We vermijden daarom deze functies op precies dezelfde manier te implementeren.
 Header files zijn een uitzondering: deze moeten compatibel zijn, maar zoveel
@@ -153,7 +153,7 @@ Waarom gebruiken jullie Linux en X11?
 
 We gebruiken Linux en X11 om de ontwikkeling te versnellen. Ter voorbeeld: het 
 implementeren van een nieuwe functie om een venster te openen kan simpelweg via
-��n enkele functie worden gedaan, zonder het moeten schrijven van honderden functies 
+één enkele functie worden gedaan, zonder het moeten schrijven van honderden functies 
 in de layers.library, graphics.library en een reeks van
 andere device drivers die deze functie misschien zou aanroepen. 
 
@@ -171,7 +171,7 @@ Een van de grote nieuwe features in AROS in vergelijking met AmigaOS is de
 HIDD (Hardware Onafhankelijke Device Drivers) systeem, dat ons toestaat AROS
 vrij makkelijk naar andere hardware over te zetten. In essentie roepen de kern
 OS libraries niet meer rechtstreeks de hardware aan, maar doen dit via de
-HIDDs. Deze zijn geprogrammeerd volgens een object geori�nteerd systeem dat het 
+HIDDs. Deze zijn geprogrammeerd volgens een object georiënteerd systeem dat het 
 makkelijk maakt HIDDs te vervangen en code te hergebruiken.
 
 
@@ -220,7 +220,7 @@ Maar niet alles is verloren. Er zijn plannen om een variant van MP in AROS
 te integreren, die bescherming toestaat aan nieuwe programma's die hierop berekend
 zijn. Enkele van de ontwikkelingen in dit gebied lijken veelbelovend. Toch, kritisch
 bekeken, is het eigenlijk wel een probleem als uw machine vastloopt? Laat ons uitleggen,
-voordat u ge�rriteerd raakt. :-) Het probleem is eigenlijk niet dat de machine 
+voordat u geïrriteerd raakt. :-) Het probleem is eigenlijk niet dat de machine 
 vastloopt, maar dat:
 
 1. U heeft geen idee waarom deze vastliep. Kortgezegde komt dit erop neer
@@ -229,7 +229,7 @@ vastloopt, maar dat:
 
 Wat we wel kunnen proberen is een systeem te maken dat op zijn minst waarschuwt
 als iets dubieus aan de hand is, wat u daarna verteld wat er gebeurde toen de
-machine vastliep �n u tevens toestaat uw werk op te slaan om *daarna* te crashen. 
+machine vastliep én u tevens toestaat uw werk op te slaan om *daarna* te crashen. 
 Er zal ook een mogelijk komen om hetgeen u opgeslagen hebt te controleren 
 zodat u verder kunt werken zonder kapotte data.
 
@@ -237,7 +237,7 @@ Hetzelfde geld voor SVM (swappable virtual memory), RT (resource tracking) en
 SMP (symmetric multiprocessing). We plannen op moment hoe we deze willen 
 implementeren, zodat het toevoegen van deze features uiteindelijk vlekkeloos zal
 verlopen. Desondanks hebben deze nu niet de hoogste prioriteit. Een simpele
-variant van RT is desondanks al ge�mplementeerd. 
+variant van RT is desondanks al geïmplementeerd. 
 
 
 Kan ik een beta tester worden?
@@ -253,16 +253,16 @@ Wat is de relatie tussen AROS en UAE?
 -------------------------------------
 
 UAE is een Amiga emulator en heeft daardoor andere doelstellingen dan AROS.
-UAE streeft ernaar ��k binair compatibel te zijn voor spellen en hardware aansprekende
+UAE streeft ernaar óók binair compatibel te zijn voor spellen en hardware aansprekende
 code, terwijl AROS ten doel heeft eigen native applicaties te hebben. Daardoor
 is AROS sneller dan UAE, maar kan er aan de andere kant weer meer software 
 gedraaid worden onder UAE.
 
 We hebben los contact met de maker van UAE, wat de kans groot maakt dat er
 code van UAE in AROS zal verschijnen en visa versa. Ter voorbeeld: de UAE ontwikkelaars
-zijn ge�nteresseerd in de broncode van het OS omdat UAE sommige applicaties veel
+zijn geïnteresseerd in de broncode van het OS omdat UAE sommige applicaties veel
 sneller zou kunnen draaien als sommige of alle OS functies vervangen konden worden
-met native code. AROS op haar beurt kan profijt trekken van een ge�ntegreerde
+met native code. AROS op haar beurt kan profijt trekken van een geïntegreerde
 Amiga emulatie.
 
 Gezien de meeste programma's vanaf de start niet beschikbaar waren voor AROS, heeft
@@ -275,7 +275,7 @@ Wat is de relatie tussen AROS en Haage & Partner?
 
 Haage & Partner hebben delen van AROS gebruikt in AmigaOS 3.5 en 3.9, waaronder
 het kleurenwiel, de kleurverloop-slider gadgets en het SetENV commando. Dit betekend
-dat AROS, op een manier, deel is geworden van het offici�le AmigaOS. Het wil 
+dat AROS, op een manier, deel is geworden van het officiële AmigaOS. Het wil 
 echter niet zeggen dat er een formele relatie is tussen AROS en Haage & Partner.
 AROS is een open source project, waarvan iedereen de code in eigen projecten mag
 gebruiken -indien- zij de de licentie volgen. 
@@ -299,13 +299,13 @@ Welke programmeer talen zijn beschikbaar?
 Het grootste deel van de ontwikkeling voor AROS gebeurd met ANSI C, door
 de bronnen te crosscompilen onder verschillende besturingssystemen zoals
 Linux of FreeBSD. Fabio Alemagna heeft een vroege GCC port gemaakt voor
-i386 native. Deze is echter nog niet bijgevoegd op de ISO of ge�ntegreerd in het
+i386 native. Deze is echter nog niet bijgevoegd op de ISO of geïntegreerd in het
 build systeem.
 
 Tot de talen die native beschikbaar zijn behoren Python_, Regina_ en False_:
 
 + Python is een scripting taal die erg populair geworden is, o.a. vanwege het goede
-  ontwerp en de features (object-geori�nteerd programmeren, module systeem, 
+  ontwerp en de features (object-georiënteerd programmeren, module systeem, 
   veel bijgesloten en handige modules, opgeruimde syntax, ...). Een apart
   project is inmiddels gestart voor de AROS port en kan gevonden worden op 
   http://pyaros.sourceforge.net/.
@@ -387,7 +387,7 @@ Wat is Zune?
 
 In geval je op deze site de naam Zune gelezen hebt: het is een open source
 implementatie van MUI, wat een krachtige (als in gebruikers- en ontwikkelaars-
-vriendelijk) object-geori�nteerd shareware GUI toolkit is, tevens de-facto standaard
+vriendelijk) object-georiënteerd shareware GUI toolkit is, tevens de-facto standaard
 onder AmigaOS. Zune is de geprefereerde GUI toolkit voor de ontwikkeling van 
 native AROS applicaties. En betreft de naam zelf, het betekend niets, maar klinkt
 goed.
@@ -425,13 +425,13 @@ Gebruik het C:Avail HUMAN CLI commando voor meer geheugen informatie.
 Wat doet de Wanderer Snapshot <all/window> actie eigenlijk? 
 -----------------------------------------------------------
 
-Dit commando onthoud de icoon positie voor alle (of ��n) vensters.
+Dit commando onthoud de icoon positie voor alle (of één) vensters.
 
 Hoe verander ik de screensaver/achtergrond?
 -------------------------------------------
 
 De enigste methode om de screensaver te veranderen -op moment- is door er zelf 
-��n te schrijven. De Blanker commodity kan getuned worden met Exchange, maar het
+één te schrijven. De Blanker commodity kan getuned worden met Exchange, maar het
 kan alleen maar een "sterrenveld" tonen met een gegeven aantal sterren.
 De achtergrond in Wanderer wordt ingesteld via de Pref tool Prefs/Wanderer.
 De achtergrond van Zune Windows wordt ingesteld via de Zune prefs Prefs/Zune. U
@@ -475,7 +475,7 @@ Dit zijn er enkele::
 
 Deze zijn hoofdletter gevoelig. 
 
-Hoe kan ik bestanden kopi�ren naar een virtuele machine met AROS?
+Hoe kan ik bestanden kopiëren naar een virtuele machine met AROS?
 -----------------------------------------------------------------
 
 De eerste en simpelste manier om de bestanden op een ISO image te zetten en
@@ -494,7 +494,7 @@ Hardware vragen
 Waar kan ik een AROS Hardware Compatibiliteit lijst vinden?
 -----------------------------------------------------------
 
-U kunt er ��n vinden op de `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__ 
+U kunt er één vinden op de `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__ 
 pagina. Er kunnen ook andere lijsten zijn gemaakt door AROS gebruikers (meer informatie volgt).
 
 Waarom kan AROS niet van een IDE harddrive in SLAVE mode starten? 
@@ -507,7 +507,7 @@ te zijn volgens de IDE specificatie, welke AROS volgt.
 Mijn systeem hangt met een rode cursor op een (leeg) scherm
 -----------------------------------------------------------
 
-��n reden hiervoor kan het gebruik van een seri�le muis zijn (deze worden nog 
+Één reden hiervoor kan het gebruik van een seriële muis zijn (deze worden nog 
 niet ondersteund). U moet voorlopig nog een PS/2 muis gebruiken met AROS. Een andere
 reden kan zijn dat u in het bootmenu een video modus hebt gekozen die niet 
 ondersteund wordt door uw hardware. Reboot en probeer een andere modus.

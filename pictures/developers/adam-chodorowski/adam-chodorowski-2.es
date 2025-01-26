@@ -1,1 +1,1 @@
-Adam en la feria AmiGBG 2002, tipeando en su port·til.
+Adam en la feria AmiGBG 2002, tipeando en su port√°til.

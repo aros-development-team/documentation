@@ -1,6 +1,6 @@
 [meta]
 
-charset:          iso-8859-2
+charset:          utf-8
 
 [titles]
 
@@ -9,12 +9,12 @@ news-archive-for: News archive for
 mirrors:          Serwery lustrzane
 contents:         Na stronach
 search:           Szukaj
-visitors:         Odwiedzaj±cy
+visitors:         OdwiedzajÄ…cy
 sponsors:         Sponsorzy
 
 [navigation]
 
-home:             Strona g³ówna
+home:             Strona gÅ‚Ã³wna
 news:             Newsy
 archive:          Archiwum
 introduction:     Wprowadzenie
@@ -24,24 +24,24 @@ ports:            Porty
 license:          Licencja
 download:         Download
 documentation:    Dokumentacja
-users:            U¿ytkownicy
+users:            UÅ¼ytkownicy
 installation:     Instalacja
-using:            U¿ytkowanie
+using:            UÅ¼ytkowanie
 shell:            Komendy shella
 applications:     Applications
 faq:              FAQ
 howto:            HowTo
-hwcompat:         Kompatybilny sprzêt
+hwcompat:         Kompatybilny sprzÄ™t
 glossary:         Glossary
 translators:      Translators
-developers:       Programi¶ci
-contribute:       Wspó³praca
+developers:       ProgramiÅ›ci
+contribute:       WspÃ³Å‚praca
 roadmap:          Roadmap
 issue-tracker:    Bug Tracker
 working-with-git: Praca z Git
 compiling:        Kompilowanie
-application-development-manual: Podrêcznik programisty
-zune-application-development-manual: Zune - podrêcznik programisty
+application-development-manual: PodrÄ™cznik programisty
+zune-application-development-manual: Zune - podrÄ™cznik programisty
 system-development-manual:      System Development Manual
 debugging-manual: Debugging Manual
 reference:        Reference
@@ -50,7 +50,7 @@ ui-style-guide:   UI Style Guide
 testing:          Testing
 documenting:      Documenting
 porting:          Porting
-translating:      T³umaczenie
+translating:      TÅ‚umaczenie
 summaries:        Summaries
 links:            Linki
 contact:          Kontakt
@@ -58,7 +58,7 @@ slack:            Slack
 mailing-lists:    Listy dyskusyjne
 forums:           Forum
 community:        Community Resources
-irc-channels:     Kana³y IRC
+irc-channels:     KanaÅ‚y IRC
 credits:          Credits
 acknowledgements: Acknowledgements
 pictures:         Obrazy
@@ -70,7 +70,7 @@ linking:          Linkowanie
 
 go:               Go
 search:           Szukaj
-copyright:        Copyright (C) 1995-2025, The AROS Development Team. Wszystkie prawa zastrze¿one.
-trademarks:       Amiga(R), AmigaOS(R), Workbench i Intuition are znakami towarowymi Amiga Inc. Wszystkie inne znaki towarowe nale¿± do ich prawnych w³a¶cicieli.
-read-more:        Czytaj wiêcej...
-large-image:      Powiêkszenie...
+copyright:        Copyright (C) 1995-2025, The AROS Development Team. Wszystkie prawa zastrzeÅ¼one.
+trademarks:       Amiga(R), AmigaOS(R), Workbench i Intuition are znakami towarowymi Amiga Inc. Wszystkie inne znaki towarowe naleÅ¼Ä… do ich prawnych wÅ‚aÅ›cicieli.
+read-more:        Czytaj wiÄ™cej...
+large-image:      PowiÄ™kszenie...

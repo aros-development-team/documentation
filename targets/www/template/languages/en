@@ -1,6 +1,6 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
@@ -70,7 +70,7 @@ linking:          Linking
 
 go:               Go
 search:           Search
-copyright:        Copyright © 1995-2025, The AROS Development Team. All rights reserved.
-trademarks:       Amiga® is a trademark of Amiga Inc. All other trademarks belong to their respective owners.
+copyright:        Copyright Â© 1995-2025, The AROS Development Team. All rights reserved.
+trademarks:       AmigaÂ® is a trademark of Amiga Inc. All other trademarks belong to their respective owners.
 read-more:        Read more...
 large-image:      Large version...

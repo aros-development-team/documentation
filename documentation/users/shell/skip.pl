@@ -9,7 +9,7 @@
 Skip
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	LABEL, BACK/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,8 +29,8 @@ Funkcja
 ~~~~~~~
 ::
 
-	Pomija komendy w skrypcie a¿ do okre¶lonej etykiety (zadeklarowanej
-	komend± Lab) lub komendy EndSkip.
+	Pomija komendy w skrypcie aÅ¼ do okreÅ›lonej etykiety (zadeklarowanej
+	komendÄ… Lab) lub komendy EndSkip.
 
 
 Parametry
@@ -38,12 +38,12 @@ Parametry
 ::
 
 
-	LABEL	--	Etykieta do pominiêcia.  
+	LABEL	--	Etykieta do pominiÄ™cia.  
 
-	BACK	--	Okre¶æ to je¶li etykieta pojawia siê przed komend± Skip.
+	BACK	--	OkreÅ›Ä‡ to jeÅ›li etykieta pojawia siÄ™ przed komendÄ… Skip.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

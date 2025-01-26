@@ -8,45 +8,45 @@ Stav aktualizace
 Distribuce
 ----------
 
-Nedávno byly vydány dvì AROS distribuce. VmwAROS LIVE! a
-nová verze WinAROS. První je bootovatelné a instalovatelné
-pøedkonfigufované prostøedí zalo¾ené na VmwAROS virtuálním stroji,
-druhá je QEMU uzpùsobenı kompletní virtuální stroj s IDE a
-aktualizovanım vıvojovım prostøedím. Podrobnìj¹í informace jsou dostupné na na¹í
-`download stránce`__. Vyzıváme u¾ivatele a vıvojáøe aplikací, aby si
-tyto distribuce stáhli.
+NedÃ¡vno byly vydÃ¡ny dvÄ› AROS distribuce. VmwAROS LIVE! a
+novÃ¡ verze WinAROS. PrvnÃ­ je bootovatelnÃ© a instalovatelnÃ©
+pÅ™edkonfigufovanÃ© prostÅ™edÃ­ zaloÅ¾enÃ© na VmwAROS virtuÃ¡lnÃ­m stroji,
+druhÃ¡ je QEMU uzpÅ¯sobenÃ½ kompletnÃ­ virtuÃ¡lnÃ­ stroj s IDE a
+aktualizovanÃ½m vÃ½vojovÃ½m prostÅ™edÃ­m. PodrobnÄ›jÅ¡Ã­ informace jsou dostupnÃ© na naÅ¡Ã­
+`download strÃ¡nce`__. VyzÃ½vÃ¡me uÅ¾ivatele a vÃ½vojÃ¡Å™e aplikacÃ­, aby si
+tyto distribuce stÃ¡hli.
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-Krysztof Smiechowicz a Alain Greppin poskytli veøejnosti binární
-balíèek gcc/g++ 3.3.1 pro architekturu i386 - zalo¾enı na Fabiovıch
-opravách, ke sta¾ení z Archivu. To je samozøejmì dobrá zpráva pro
-v¹echny, kdo se zajímají o vıvoj a portování softwaru na AROS,
-ale není jedinou: v Archivu mù¾e¹ najít také novou verzi Murks!IDE
-s podporou pro C++ - nejlep¹í integrované vıvojové prostøedí pro AROS,
-které nám pøinesli Krysztof Smiechowicz a Heinz-Raphael Reinke.
+Krysztof Smiechowicz a Alain Greppin poskytli veÅ™ejnosti binÃ¡rnÃ­
+balÃ­Äek gcc/g++ 3.3.1 pro architekturu i386 - zaloÅ¾enÃ½ na FabiovÃ½ch
+opravÃ¡ch, ke staÅ¾enÃ­ z Archivu. To je samozÅ™ejmÄ› dobrÃ¡ zprÃ¡va pro
+vÅ¡echny, kdo se zajÃ­majÃ­ o vÃ½voj a portovÃ¡nÃ­ softwaru na AROS,
+ale nenÃ­ jedinou: v Archivu mÅ¯Å¾eÅ¡ najÃ­t takÃ© novou verzi Murks!IDE
+s podporou pro C++ - nejlepÅ¡Ã­ integrovanÃ© vÃ½vojovÃ© prostÅ™edÃ­ pro AROS,
+kterÃ© nÃ¡m pÅ™inesli Krysztof Smiechowicz a Heinz-Raphael Reinke.
 
-Nastal také èas na provedení velkıch oprav. Krysztof Smiechowicz zaèal
-pøezkoumávat úplnost API, zatímco Barry Nelson prozkoumal, protøídil a
-zaèal spravovat ná¹ bug tracker. Vìt¹ina z u¾ opravenıch chyb byla
-odstranìna ze seznamu.
+Nastal takÃ© Äas na provedenÃ­ velkÃ½ch oprav. Krysztof Smiechowicz zaÄal
+pÅ™ezkoumÃ¡vat Ãºplnost API, zatÃ­mco Barry Nelson prozkoumal, protÅ™Ã­dil a
+zaÄal spravovat nÃ¡Å¡ bug tracker. VÄ›tÅ¡ina z uÅ¾ opravenÃ½ch chyb byla
+odstranÄ›na ze seznamu.
 
-Nic Andrews a Alain Greppin koneènì implementovali grub2 do AROSu.
-Nic také na Aros-Exec ukázal `snímek obrazovky`__. Skvìlou zprávou je,
-¾e u¾ivatelé se mohou koneènì zbavit pomalıch FFS oddílù a spou¹tìt
-systémové soubory z SFS oddílù. Tato mo¾nost je¹tì není doporuèována, proto¾e
-stále existují urèité nedostatky v kompatibilitì s nìkterımi AROS
+Nic Andrews a Alain Greppin koneÄnÄ› implementovali grub2 do AROSu.
+Nic takÃ© na Aros-Exec ukÃ¡zal `snÃ­mek obrazovky`__. SkvÄ›lou zprÃ¡vou je,
+Å¾e uÅ¾ivatelÃ© se mohou koneÄnÄ› zbavit pomalÃ½ch FFS oddÃ­lÅ¯ a spouÅ¡tÄ›t
+systÃ©movÃ© soubory z SFS oddÃ­lÅ¯. Tato moÅ¾nost jeÅ¡tÄ› nenÃ­ doporuÄovÃ¡na, protoÅ¾e
+stÃ¡le existujÃ­ urÄitÃ© nedostatky v kompatibilitÄ› s nÄ›kterÃ½mi AROS
 aplikacemi.
 
-Alain Greppin dokonèil AROS DHCP "bounty" s pøíkazem dhclient.
-AROS teï mù¾e získat IP adresu automaticky. Také naportoval
+Alain Greppin dokonÄil AROS DHCP "bounty" s pÅ™Ã­kazem dhclient.
+AROS teÄ mÅ¯Å¾e zÃ­skat IP adresu automaticky. TakÃ© naportoval
 `TeXlive`__.
 
-Tomasz Wiszkowski a Michal Schulz pracují na zdokonalení ata.device.
-Byla pøidána poèáteèní podpora pro nìkteré chipsety Serial ATA:
-"SATA øadièe podporující re¾im dìdìní operací (legacy operation mode) by nyní mìly bıt
-funkèní (ale to neznamená, ¾e bychom získali podporu AHCI)".
+Tomasz Wiszkowski a Michal Schulz pracujÃ­ na zdokonalenÃ­ ata.device.
+Byla pÅ™idÃ¡na poÄÃ¡teÄnÃ­ podpora pro nÄ›kterÃ© chipsety Serial ATA:
+"SATA Å™adiÄe podporujÃ­cÃ­ reÅ¾im dÄ›dÄ›nÃ­ operacÃ­ (legacy operation mode) by nynÃ­ mÄ›ly bÃ½t
+funkÄnÃ­ (ale to neznamenÃ¡, Å¾e bychom zÃ­skali podporu AHCI)".
 
 __ http://aros.sourceforge.net/download.php
 __ http://i175.photobucket.com/albums/w131/Kalamatee/AROS/grub2gfx-1.jpg

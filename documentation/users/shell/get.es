@@ -20,7 +20,7 @@ Synopsis
      NAME/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicación
      Workbench:c
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Recupera la información almacenada en una variable local dada.
+     Recupera la informaciÃ³n almacenada en una variable local dada.
 
 
 Entradas
@@ -50,7 +50,7 @@ Resultado
 ::
 
 
-     Los códigos de error DOS normales.
+     Los cÃ³digos de error DOS normales.
 
 
 Ejemplo
@@ -60,11 +60,11 @@ Ejemplo
 
      Get Result2
 
-         Esto recuperará el código devuelto secundario del último comando
+         Esto recuperarÃ¡ el cÃ³digo devuelto secundario del Ãºltimo comando
          que fue ejecutado.
 
 
-También vea
+TambiÃ©n vea
 ~~~~~~~~~~~
 ::
 

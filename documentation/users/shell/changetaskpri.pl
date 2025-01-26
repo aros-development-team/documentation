@@ -16,14 +16,14 @@ Format
 	ChangeTaskPri <priority> [ PROCESS <process number> ]
 
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
 	PRI=PRIORITY/A/N,PROCESS/K/N
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -34,21 +34,21 @@ Funkcja
 ~~~~~~~
 ::
 
-	Komenda ChangeTaskPri jest u¿ywana do zmiany aktualnego priorytetu
-	zadania. Jako, ¿e AROS jest wielozadaniowym systemem operacyjnym,
-	mo¿esz okre¶liæ które zadanie bêdzie pobiera³o wiêcej mocy procesora,
-	poprzez zmianê jego priorytetu.
+	Komenda ChangeTaskPri jest uÅ¼ywana do zmiany aktualnego priorytetu
+	zadania. Jako, Å¼e AROS jest wielozadaniowym systemem operacyjnym,
+	moÅ¼esz okreÅ›liÄ‡ ktÃ³re zadanie bÄ™dzie pobieraÅ‚o wiÄ™cej mocy procesora,
+	poprzez zmianÄ™ jego priorytetu.
 
-	Warto¶æ priorytetu mo¿e byæ w granicach od -128 do 127, jednak
-	warto¶ci wiêksze od 4 nie s± zalecane, jako ¿e mog± one zak³ócaæ
-	wa¿ne procesy systemowe. Wiêksza warto¶æ daje procesowi wiêksze
+	WartoÅ›Ä‡ priorytetu moÅ¼e byÄ‡ w granicach od -128 do 127, jednak
+	wartoÅ›ci wiÄ™ksze od 4 nie sÄ… zalecane, jako Å¼e mogÄ… one zakÅ‚Ã³caÄ‡
+	waÅ¼ne procesy systemowe. WiÄ™ksza wartoÅ›Ä‡ daje procesowi wiÄ™ksze
 	zasoby procesora CPU.
 
-	Mo¿esz u¿ywaæ komendy STATUS, aby sprawdziæ listê zadañ, które s±
-	uruchomione i ich numery procesów.
+	MoÅ¼esz uÅ¼ywaÄ‡ komendy STATUS, aby sprawdziÄ‡ listÄ™ zadaÅ„, ktÃ³re sÄ…
+	uruchomione i ich numery procesÃ³w.
 	
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -62,7 +62,7 @@ Przyk³ad
         Aktualny proces ustawia na priorytet 1.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

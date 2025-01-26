@@ -3,7 +3,7 @@ Enlaces
 =======
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright � 1995-2007, The AROS Development Team
+:Copyright: Copyright Š 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -20,7 +20,7 @@ Recursos de AROS
 
 +  `AROSWorld <https://www.arosworld.org/>`__
 
-  El sitio web de la Comunidad AROS, los foros, las noticias, las galer�as
+  El sitio web de la Comunidad AROS, los foros, las noticias, las galerías
 
 + `El archivo de software para AROS`__
 
@@ -31,16 +31,16 @@ Recursos de AROS
 + `AROS for Amiga`__
   
   El OS AfA reemplaza las bibliotecas centrales de AmigaOS con sus 
-  contrapartes AROS m�s avanzadas.
+  contrapartes AROS más avanzadas.
   
 + `AROS World <http://arosworld.org>`__
   Un nuevo sitio web AROS, previsto para ser el sitio web de la comunidad de usuarios
                                                                
-+ `La secci�n AROS en Aminet <http://aros.aminet.net/>`__
++ `La sección AROS en Aminet <http://aros.aminet.net/>`__
 
 + `AROS en la WikiPedia <http://en.wikipedia.org/wiki/AROS_Research_Operating_System>`__
 
-+ `La documentaci�n de AROS en los WikiBooks <http://en.wikibooks.org/wiki/Aros>`__
++ `La documentación de AROS en los WikiBooks <http://en.wikibooks.org/wiki/Aros>`__
   
 __ http://www.teamaros.org/
 __ http://archives.aros-exec.org/
@@ -48,10 +48,10 @@ __ http://www.aros.bbs.pl/
 __ http://www.frappr.com/arosusers
 __ http://amidevcpp.amiga-world.de/afa_binarie_upload.php
 
-Art�culos sobre AROS
+Artículos sobre AROS
 ====================
 ================================================  ==================  ===========
-T�tulo                                            Autor               Fecha
+Título                                            Autor               Fecha
 ================================================  ==================  ===========
 `"Onboard the Last Train to Amiga Neverland"`__   Dmitar Butrovski    2006-09-13
 `"AROS"`__ (en la revista alemana Amiga-Magazin)  Martin Steigerwald  2003-09-13
@@ -66,14 +66,14 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Si conoces alg�n art�culo sobre AROS que nosotros no hemos mencionado 
-en la lista, por favor cont�ctanos as� podamos a�adirlo. Gracias.
+Si conoces algún artículo sobre AROS que nosotros no hemos mencionado 
+en la lista, por favor contáctanos así podamos añadirlo. Gracias.
 
-Art�culos que mencionan a AROS
+Artículos que mencionan a AROS
 ==============================
 
 ===============================================  ==============  ===========
-T�tulo                                           Autor           Fecha
+Título                                           Autor           Fecha
 ===============================================  ==============  ===========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  2002-08-13
 `Entrevista a Martin Blom`__                     Johan Forsberg  Desconocida
@@ -100,8 +100,8 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Si sabes de alg�n art�culo que menciona a AROS que no hemos listado aqu�, 
-por favor cont�ctanos as� podamos agregalo. Gracias.
+Si sabes de algún artículo que menciona a AROS que no hemos listado aquí, 
+por favor contáctanos así podamos agregalo. Gracias.
 
 Los sitios de los desarrolladores
 =================================
@@ -133,14 +133,14 @@ __ http://homes.hallertau.net/~oli/
 __ http://www.in-berlin.de/User/jroger/index.html
 
 
-Miscel�neo
+Misceláneo
 ==========
 + `Phoenix Developer Consortium`__
 
   .. Image:: images/phoenix.jpeg
   
   El Phoenix Developer Consortium apoya el desarrollo de plataformas de 
-  computaci�n alternativas trabajando con los desarrolladores principales y 
+  computación alternativas trabajando con los desarrolladores principales y 
   los externos, proporcionando los recursos para ese desarrollo.
 
 

@@ -1,1 +1,1 @@
-Här visas vinnarna i bakgrundsbildstävlingen, integrerade i våra "nightly builds".
+HÃ¤r visas vinnarna i bakgrundsbildstÃ¤vlingen, integrerade i vÃ¥ra "nightly builds".

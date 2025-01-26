@@ -1,15 +1,15 @@
 =================
-Tillkännagivanden
+TillkÃ¤nnagivanden
 =================
 
-Denna produkt innehåller mjukvara utvecklad av University of California,
+Denna produkt innehÃ¥ller mjukvara utvecklad av University of California,
 Berkeley och deras medarbetare.
 
-Denna mjukvara är delvis baserad på arbeten från the Independent JPEG Group.
+Denna mjukvara Ã¤r delvis baserad pÃ¥ arbeten frÃ¥n the Independent JPEG Group.
 
-Denna mjukvara är delvis baserad på arbeten från the FreeType Team.
+Denna mjukvara Ã¤r delvis baserad pÃ¥ arbeten frÃ¥n the FreeType Team.
 
-Denna mjukvara är delvis baserad på arbeten från Catharon Productions, Inc.
+Denna mjukvara Ã¤r delvis baserad pÃ¥ arbeten frÃ¥n Catharon Productions, Inc.
 
-Graphics Interchange Format(c) är upphovsrättskyddad egendom tillhörande CompuServer Incorporated.
-GIF(sm) är ett Service Mark tillhörande CompuServer Incorporated.
+Graphics Interchange Format(c) Ã¤r upphovsrÃ¤ttskyddad egendom tillhÃ¶rande CompuServer Incorporated.
+GIF(sm) Ã¤r ett Service Mark tillhÃ¶rande CompuServer Incorporated.

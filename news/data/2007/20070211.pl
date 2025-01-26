@@ -5,13 +5,13 @@ Status Update
 :Autor:   Paolo Besser
 :Data:     2007-02-11
 
-Tym razem tylko ma³e uzupe³nienie. B³êdy w inicjalnym drag'n'drop 
-w natywnej wersji AROS-a zosta³y wyeliminowane. Wanderer jest ju¿ 
-prawie w pe³ni funkcjonalny i nie powoduje zawieszeñ podczas 
-kopiowania plików z jednego okna do drugiego. Zosta³o takze dodane
-okno postêpu operacji.
+Tym razem tylko maÅ‚e uzupeÅ‚nienie. BÅ‚Ä™dy w inicjalnym drag'n'drop 
+w natywnej wersji AROS-a zostaÅ‚y wyeliminowane. Wanderer jest juÅ¼ 
+prawie w peÅ‚ni funkcjonalny i nie powoduje zawieszeÅ„ podczas 
+kopiowania plikÃ³w z jednego okna do drugiego. ZostaÅ‚o takze dodane
+okno postÄ™pu operacji.
 
-Wszystkie te nowe cechy s± ju¿ dostêpne w ostatnich nightly 
-builds (nie ma ich w bie¿±cym snapshot), tak wiêc sugerujemy ka¿demu
-zainteresowanemu spróbowaniem AROS-a ¶ci±ganie kompilacji z ostatniej 
+Wszystkie te nowe cechy sÄ… juÅ¼ dostÄ™pne w ostatnich nightly 
+builds (nie ma ich w bieÅ¼Ä…cym snapshot), tak wiÄ™c sugerujemy kaÅ¼demu
+zainteresowanemu sprÃ³bowaniem AROS-a Å›ciÄ…ganie kompilacji z ostatniej 
 nocy.

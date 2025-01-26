@@ -1,7 +1,5 @@
-# Authors: David Goodger
-# Contact: goodger@python.org
-# Revision: $Revision$
-# Date: $Date$
+# $Id: examples.py 7320 2012-01-19 22:33:02Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -17,7 +15,8 @@ from docutils import core, io
 
 
 def html_parts(input_string, source_path=None, destination_path=None,
-               input_encoding='unicode', doctitle=1, initial_header_level=1):
+               input_encoding='unicode', doctitle=True,
+               initial_header_level=1):
     """
     Given an input string, returns a dictionary of HTML document parts.
 
@@ -52,7 +51,7 @@ def html_parts(input_string, source_path=None, destination_path=None,
 
 def html_body(input_string, source_path=None, destination_path=None,
               input_encoding='unicode', output_encoding='unicode',
-              doctitle=1, initial_header_level=1):
+              doctitle=True, initial_header_level=1):
     """
     Given an input string, returns an HTML fragment as a string.
 
@@ -74,13 +73,17 @@ def html_body(input_string, source_path=None, destination_path=None,
     return fragment
 
 def internals(input_string, source_path=None, destination_path=None,
-              input_encoding='unicode'):
+              input_encoding='unicode', settings_overrides=None):
     """
     Return the document tree and publisher, for exploring Docutils internals.
 
     Parameters: see `html_parts()`.
     """
-    overrides = {'input_encoding': input_encoding}
+    if settings_overrides:
+        overrides = settings_overrides.copy()
+    else:
+        overrides = {}
+    overrides['input_encoding'] = input_encoding
     output, pub = core.publish_programmatically(
         source_class=io.StringInput, source=input_string,
         source_path=source_path,

@@ -2,20 +2,20 @@
 Recursos del Desarrollador
 ==========================
 
-+ `C髆o contribuir`__
++ `C贸mo contribuir`__
 + `Acceso y uso de Git`__
-+ `C髆o compilar`__
++ `C贸mo compilar`__
 + `El Manual para el Desarrollo de Aplicaciones`__
 + `El Manual para el Desarrollo de Aplicaciones con Zune`__
 + `El Manual para el Desarrollo del Sistema`__
 + `El Manual del subsistema PCI`__
-+ `El Manual para la Depuraci髇`__
++ `El Manual para la Depuraci贸n`__
 + `Referencia`__
 + `Especificaciones`__
-+ `Documentaci髇`__
++ `Documentaci贸n`__
 + `Porting`__
-+ `Res鷐enes`__
-+ `Enlaces 鷗iles`__
++ `Res煤menes`__
++ `Enlaces 煤tiles`__
 
 __ contribute
 __ git

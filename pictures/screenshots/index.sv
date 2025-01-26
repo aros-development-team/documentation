@@ -1,4 +1,4 @@
 ===========
-Skärmdumpar
+SkÃ¤rmdumpar
 ===========
 

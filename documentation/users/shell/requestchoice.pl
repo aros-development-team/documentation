@@ -9,7 +9,7 @@
 RequestChoice
 =============
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	TITLE/A,BODY/A,GADGETS/A/M,PUBSCREEN/K
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,7 +29,7 @@ Funkcja
 ~~~~~~~
 ::
 
-	Pozwala na u¿ycie EasyRequest() w skryptach AmigaDOS.
+	Pozwala na uÅ¼ycie EasyRequest() w skryptach AmigaDOS.
 
 
 Parametry
@@ -37,13 +37,13 @@ Parametry
 ::
 
 
-	TITLE		- Tytu³ okna zapytania.
+	TITLE		- TytuÅ‚ okna zapytania.
 
-	BODY		- Tekst wy¶wietlany w oknie zapytania.
+	BODY		- Tekst wyÅ›wietlany w oknie zapytania.
 
-	GADGETS		- Tekst dla przycisków.
+	GADGETS		- Tekst dla przyciskÃ³w.
 
-	PUBSCREEN	- Nazwa ekranu publicznego na którym siê uruchomi.
+	PUBSCREEN	- Nazwa ekranu publicznego na ktÃ³rym siÄ™ uruchomi.
 
 
 Wynik
@@ -51,40 +51,40 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdu.
+	Standardowe kody bÅ‚Ä™du.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
-	RequestChoice "To jest tytu³" "To jest*Nopis" Dobra|Poniechaj
+	RequestChoice "To jest tytuÅ‚" "To jest*Nopis" Dobra|Poniechaj
 	
-	Tutaj wszystko mówi za siebie, oprócz "*N". To jest odpowiednik
-	'\n' w jêzyku C, ¿eby wstawiæ now± liniê. Okno zapytania zostanie
+	Tutaj wszystko mÃ³wi za siebie, oprÃ³cz "*N". To jest odpowiednik
+	'\n' w jÄ™zyku C, Å¼eby wstawiÄ‡ nowÄ… liniÄ™. Okno zapytania zostanie
 	otworzone w Workbench Screen.
 
 
-	RequestChoice Title="Kolejny tytu³" Body="A to jest*Nkolejny opis"
+	RequestChoice Title="Kolejny tytuÅ‚" Body="A to jest*Nkolejny opis"
 	Gadgets=Dobra|Poniechaj PubScreen=DOPUS.1
 
-	To robi dok³adnie to samo, ale na ekranie publicznym Directory Opus.
+	To robi dokÅ‚adnie to samo, ale na ekranie publicznym Directory Opus.
 
 
 Opis
 ~~~~
 ::
 
-	Aby umie¶ciæ now± liniê nale¿y w opisie wstawiæ *n lub *N .
+	Aby umieÅ›ciÄ‡ nowÄ… liniÄ™ naleÅ¼y w opisie wstawiÄ‡ *n lub *N .
 	
-	Aby umie¶cic cudzys³ów nale¿y u¿yæ *" .
+	Aby umieÅ›cic cudzysÅ‚Ã³w naleÅ¼y uÅ¼yÄ‡ *" .
 	
 	Szablon CLI daje GADGETS opcje jako ALWAYS; jest to odmienne od 
-	orginalnego programu. Dziêki temu nie musimy sprawdzaæ, czy gad¿et 
-	zosta³ podany.
+	orginalnego programu. DziÄ™ki temu nie musimy sprawdzaÄ‡, czy gadÅ¼et 
+	zostaÅ‚ podany.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

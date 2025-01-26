@@ -9,7 +9,7 @@
 Delete
 ======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	Delete { (name | pattern) } [ALL] [QUIET] [FORCE]
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,15 +29,15 @@ Funkcja
 ~~~~~~~
 ::
 
-	Usuwa pliki i katalogi. Mo¿esz usuwaæ kilka plików i katalogów, 
-	okre¶laj±c je osobno lub poprzez u¿ycie wzorców. Aby anulowaæ
-	usuwanie, po prostu wci¶nij CTRL-C. Komenda poinformuje u¿ytkownika
-	je¶li ten usuwa pliki z bitami ochronnymi.
-	Delete nie mo¿e usuwaæ katalogów, które nie s± puste, chyba, ¿e opcja
-	ALL jest za³±czona. Aby powstrzymaæ wy¶wietlanie usuwanych plików nale¿y
-	u¿yæ opcji QUIET. Je¶li bit ochronny jest zniesiony dla pliku
-	lub katalogu wtedy nie mo¿e zostaæ on usuniêty, ale mo¿na wymusiæ
-	usuniêcie dziêki podaniu opcji FORCE.
+	Usuwa pliki i katalogi. MoÅ¼esz usuwaÄ‡ kilka plikÃ³w i katalogÃ³w, 
+	okreÅ›lajÄ…c je osobno lub poprzez uÅ¼ycie wzorcÃ³w. Aby anulowaÄ‡
+	usuwanie, po prostu wciÅ›nij CTRL-C. Komenda poinformuje uÅ¼ytkownika
+	jeÅ›li ten usuwa pliki z bitami ochronnymi.
+	Delete nie moÅ¼e usuwaÄ‡ katalogÃ³w, ktÃ³re nie sÄ… puste, chyba, Å¼e opcja
+	ALL jest zaÅ‚Ä…czona. Aby powstrzymaÄ‡ wyÅ›wietlanie usuwanych plikÃ³w naleÅ¼y
+	uÅ¼yÄ‡ opcji QUIET. JeÅ›li bit ochronny jest zniesiony dla pliku
+	lub katalogu wtedy nie moÅ¼e zostaÄ‡ on usuniÄ™ty, ale moÅ¼na wymusiÄ‡
+	usuniÄ™cie dziÄ™ki podaniu opcji FORCE.
 
 
 
@@ -46,13 +46,13 @@ Parametry
 ::
 
 
-	FILE/M/A  --  pliki lub katalogi do usuniêcia (mog± zawieraæ wzorce)
-	ALL/S     --  rekurencyjne usuwanie katalogów
-	QUIET/S   --  nie wy¶wietlaj, które obiekty s± usuwane
-	FORCE/S   --  usuñ obiekty, nawet wtedy, gdy s± chronione
+	FILE/M/A  --  pliki lub katalogi do usuniÄ™cia (mogÄ… zawieraÄ‡ wzorce)
+	ALL/S     --  rekurencyjne usuwanie katalogÃ³w
+	QUIET/S   --  nie wyÅ›wietlaj, ktÃ³re obiekty sÄ… usuwane
+	FORCE/S   --  usuÅ„ obiekty, nawet wtedy, gdy sÄ… chronione
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 

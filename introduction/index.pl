@@ -1,12 +1,12 @@
 =============================
-Krótkie wprowadzenie do AROSa
+KrÃ³tkie wprowadzenie do AROSa
 =============================
 
 :Autorzy:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
 :Prawa autorskie: Copyright (C) 1995-2002, The AROS Development Team
 :Wersja:   $Revision$
 :Data:      $Date$
-:Status:    Prawie skoñczony, jak s±dzê...
+:Status:    Prawie skoÅ„czony, jak sÄ…dzÄ™...
 
 
 .. Include:: index-abstract.pl
@@ -15,56 +15,56 @@ Krótkie wprowadzenie do AROSa
 Cele
 ====
 
-Celem projektu AROS jest stworzenie systemu operacyjnego, który:
+Celem projektu AROS jest stworzenie systemu operacyjnego, ktÃ³ry:
 
-1. Jest najbardziej jak to mo¿liwe kompatybilny z AmigaOS 3.1.
+1. Jest najbardziej jak to moÅ¼liwe kompatybilny z AmigaOS 3.1.
 
-2. Mo¿e byæ portowany na ró¿ne architektury sprzêtowe i procesory, 
+2. MoÅ¼e byÄ‡ portowany na rÃ³Å¼ne architektury sprzÄ™towe i procesory, 
    takie jak x86, PowerPC, Alpha, Sparc, HPPA i inne.
 
-3. Powinien byæ kompatybilny na poziomie binariów z Amig± i na poziomie ¼róde³
-   kompatybilny z ka¿dym innym sprzêtem.
+3. Powinien byÄ‡ kompatybilny na poziomie binariÃ³w z AmigÄ… i na poziomie ÅºrÃ³deÅ‚
+   kompatybilny z kaÅ¼dym innym sprzÄ™tem.
   
-4. Mo¿e dzia³aæ jako samodzielny system, uruchamiaj±cy siê bezpo¶rednio z dysku twardego
-   i jako emulacja, otwieraj±ca okno w systemie gospodarza by umo¿liwiæ programowanie i
-   uruchamianie natywnych amigowych programów w tym samym czasie.
+4. MoÅ¼e dziaÅ‚aÄ‡ jako samodzielny system, uruchamiajÄ…cy siÄ™ bezpoÅ›rednio z dysku twardego
+   i jako emulacja, otwierajÄ…ca okno w systemie gospodarza by umoÅ¼liwiÄ‡ programowanie i
+   uruchamianie natywnych amigowych programÃ³w w tym samym czasie.
 
-5. Ma funkcjonalno¶æ ulepszon± w stosunku do AmigaOS.
+5. Ma funkcjonalnoÅ›Ä‡ ulepszonÄ… w stosunku do AmigaOS.
 
-By osi±gn±æ te cele, zastosowali¶my szereg technik. Przede wszystkim intensywnie wykorzystujemy 
-Internet. Mo¿esz wzi±æ udzia³ w naszym projekcie nawet je¶li chcesz napisaæ jedn± 
-funkcjê systemu operacyjnego. Najbardziej aktualna wersja ¼róde³ jest dostêpna 24 godziny na dobê
-a zmiany w nich mog± byæ wprowadzane w dowolnym czasie.  Niewielka baza danych z otwartymi zadaniami 
-pozwala unikn±æ dublowania pracy.
+By osiÄ…gnÄ…Ä‡ te cele, zastosowaliÅ›my szereg technik. Przede wszystkim intensywnie wykorzystujemy 
+Internet. MoÅ¼esz wziÄ…Ä‡ udziaÅ‚ w naszym projekcie nawet jeÅ›li chcesz napisaÄ‡ jednÄ… 
+funkcjÄ™ systemu operacyjnego. Najbardziej aktualna wersja ÅºrÃ³deÅ‚ jest dostÄ™pna 24 godziny na dobÄ™
+a zmiany w nich mogÄ… byÄ‡ wprowadzane w dowolnym czasie.  Niewielka baza danych z otwartymi zadaniami 
+pozwala uniknÄ…Ä‡ dublowania pracy.
 
 
 Historia
 ========
 
-Jaki¶ czas temu w roku 1993, sytuacja Amigi pogorszy³a siê i niektórzy z jej
-fanów zaczêli siê zastanawiaæ nad tym, co nale¿a³oby zrobiæ, by podnie¶æ presti¿ 
-ich ukochanego komputera. Nagle g³ówny powód braku sukcesu Amigi sta³ siê jasny: 
-to by³o rozpowszechnienie a w³a¶ciwie jego brak. Amiga powinna byæ bardziej powszechna 
-by staæ siê bardziej atrakcyjn± dla u¿ytkowników i developerów. Zaplanowano osi±gniêcie 
-tego celu. Jednym z planów by³o naprawienie bugów AmigaOS, innym stworzenie z niego 
-nowoczesnego systemu operacyjnego. Narodzi³ siê projekt AOS.
+JakiÅ› czas temu w roku 1993, sytuacja Amigi pogorszyÅ‚a siÄ™ i niektÃ³rzy z jej
+fanÃ³w zaczÄ™li siÄ™ zastanawiaÄ‡ nad tym, co naleÅ¼aÅ‚oby zrobiÄ‡, by podnieÅ›Ä‡ prestiÅ¼ 
+ich ukochanego komputera. Nagle gÅ‚Ã³wny powÃ³d braku sukcesu Amigi staÅ‚ siÄ™ jasny: 
+to byÅ‚o rozpowszechnienie a wÅ‚aÅ›ciwie jego brak. Amiga powinna byÄ‡ bardziej powszechna 
+by staÄ‡ siÄ™ bardziej atrakcyjnÄ… dla uÅ¼ytkownikÃ³w i developerÃ³w. Zaplanowano osiÄ…gniÄ™cie 
+tego celu. Jednym z planÃ³w byÅ‚o naprawienie bugÃ³w AmigaOS, innym stworzenie z niego 
+nowoczesnego systemu operacyjnego. NarodziÅ‚ siÄ™ projekt AOS.
 
-Lecz w³a¶ciwie co by³o bugiem? I jak nale¿y te bugi naprawiæ? Jakie cechy powinien 
-posiadaæ tak zwany *nowoczesny* system operacyjny? I jak powinny byæ one 
+Lecz wÅ‚aÅ›ciwie co byÅ‚o bugiem? I jak naleÅ¼y te bugi naprawiÄ‡? Jakie cechy powinien 
+posiadaÄ‡ tak zwany *nowoczesny* system operacyjny? I jak powinny byÄ‡ one 
 zaimplementowane do AmigaOS?
 
-Dwa lata pó¼niej, ludzie nadal spierali siê w tym temacie i nie napisano ani  
-jednej linii kodu (w ka¿dym razie nikt nie zobaczy³ tego kodu). Dyskusje 
-zaczyna³y siê od "musimy mieæ ..." nastêpnie kto¶ odpowiada³ "przeczytaj stare maile" 
-lub "to jest niemo¿liwe do zrobienia poniewa¿ ..." po czym nastêpowa³o "mylisz siê bo ..." 
+Dwa lata pÃ³Åºniej, ludzie nadal spierali siÄ™ w tym temacie i nie napisano ani  
+jednej linii kodu (w kaÅ¼dym razie nikt nie zobaczyÅ‚ tego kodu). Dyskusje 
+zaczynaÅ‚y siÄ™ od "musimy mieÄ‡ ..." nastÄ™pnie ktoÅ› odpowiadaÅ‚ "przeczytaj stare maile" 
+lub "to jest niemoÅ¼liwe do zrobienia poniewaÅ¼ ..." po czym nastÄ™powaÅ‚o "mylisz siÄ™ bo ..." 
 itp. 
 
-Zim± 1995 roku, Aaron Digulla mia³ ju¿ do¶æ tej sytuacji i wys³a³ RFC (request for comments) 
-na listê dyskusyjn± AOS, w którym zapyta³ jakie powinny byæ wymagania minimalne. 
-Zaproponowano szereg wariantów i w rezultacie okaza³o siê, ¿ê praktycznie wszyscy
-chcieliby zobaczyæ otwarty system operacyjny, kompatybilny z AmigaOS 3.1 (Kickstart 40.68). 
-Na tej bazie mia³y siê opieraæ wszystkie dalsze dyskusje by ustaliæ co jest mo¿liwe a co nie.
+ZimÄ… 1995 roku, Aaron Digulla miaÅ‚ juÅ¼ doÅ›Ä‡ tej sytuacji i wysÅ‚aÅ‚ RFC (request for comments) 
+na listÄ™ dyskusyjnÄ… AOS, w ktÃ³rym zapytaÅ‚ jakie powinny byÄ‡ wymagania minimalne. 
+Zaproponowano szereg wariantÃ³w i w rezultacie okazaÅ‚o siÄ™, Å¼Ä™ praktycznie wszyscy
+chcieliby zobaczyÄ‡ otwarty system operacyjny, kompatybilny z AmigaOS 3.1 (Kickstart 40.68). 
+Na tej bazie miaÅ‚y siÄ™ opieraÄ‡ wszystkie dalsze dyskusje by ustaliÄ‡ co jest moÅ¼liwe a co nie.
 
 
-Tak rozpoczê³y siê prace i narodzi³ siê AROS.
+Tak rozpoczÄ™Å‚y siÄ™ prace i narodziÅ‚ siÄ™ AROS.
 

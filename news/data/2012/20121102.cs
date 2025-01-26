@@ -5,15 +5,15 @@ AROS na AmiWestu 2012
 :Autor:   Jason McMullan
 :Datum:   2012-11-02
 
-V rámci akce AmiWest 2012, Samuel Crow a Jason McMullan pøedvedli AROS v1
-bì¾ící na systémech Sam460ex od `ACube`__, FPGA Arcade Replay od
+V rÃ¡mci akce AmiWest 2012, Samuel Crow a Jason McMullan pÅ™edvedli AROS v1
+bÄ›Å¾Ã­cÃ­ na systÃ©mech Sam460ex od `ACube`__, FPGA Arcade Replay od
 `FPGA Arcade`__ a na Raspberry PI od `Raspberry PI Foundation`__.
 
-Jason McMullan mìl 20-minutovou  `presentation`__ ohlednì pùvodu a souèasného
-vıvoje AROSu, a byl èlenem diskuzní skupiny debatující na téma souèasného
-stavu a budoucnosti operaèních systémù z rodiny AmigaOS.
+Jason McMullan mÄ›l 20-minutovou  `presentation`__ ohlednÄ› pÅ¯vodu a souÄasnÃ©ho
+vÃ½voje AROSu, a byl Älenem diskuznÃ­ skupiny debatujÃ­cÃ­ na tÃ©ma souÄasnÃ©ho
+stavu a budoucnosti operaÄnÃ­ch systÃ©mÅ¯ z rodiny AmigaOS.
 
-Bìhem show byla v¹em pøíchozím rozdávána DVD s distribucemi `Icaros`__
+BÄ›hem show byla vÅ¡em pÅ™Ã­chozÃ­m rozdÃ¡vÃ¡na DVD s distribucemi `Icaros`__
 (pc-i386, ABI v0) a `AROS Vision`__ (amiga-m68k).
 
 

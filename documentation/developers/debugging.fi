@@ -3,12 +3,12 @@ AROS Debuggausopas
 ==================
 
 :Authors:   David Le Corfec
-:Copyright: Copyright © 2004, The AROS Development Team
+:Copyright: Copyright ¬© 2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
 
-T‰m‰ manuaali selvitt‰‰ AROS:in debuggaukselle oleelliset optiot.
+T√§m√§ manuaali selvitt√§√§ AROS:in debuggaukselle oleelliset optiot.
 
 
 .. Contents::
@@ -18,19 +18,19 @@ T‰m‰ manuaali selvitt‰‰ AROS:in debuggaukselle oleelliset optiot.
 Esittely
 --------
 
-Suurimmalle osalle kehitt‰jist‰ on helpointa koodata ja debugata k‰ytt‰m‰ll‰
-AROS:ia joka toimii Linux:issa (mik‰ onkin suosituin ymp‰ristˆ) tai BSD:ss‰.
-T‰ll‰ tavoin voit k‰ytt‰‰ GDB:t‰ AROS:in debuggaamiseen. Ennen AROS:in
-k‰‰nt‰mist‰ t‰ytyy configure skripti ajaa parametrilla ``--enable-debug``.
-Huomaa ett‰ debuggauksessa tarvittava tieto voi moninkertaistaa AROS:in
+Suurimmalle osalle kehitt√§jist√§ on helpointa koodata ja debugata k√§ytt√§m√§ll√§
+AROS:ia joka toimii Linux:issa (mik√§ onkin suosituin ymp√§rist√∂) tai BSD:ss√§.
+T√§ll√§ tavoin voit k√§ytt√§√§ GDB:t√§ AROS:in debuggaamiseen. Ennen AROS:in
+k√§√§nt√§mist√§ t√§ytyy configure skripti ajaa parametrilla ``--enable-debug``.
+Huomaa ett√§ debuggauksessa tarvittava tieto voi moninkertaistaa AROS:in
 vaatiman levytilan.
 
-Matalan tason raudalle v‰‰nt‰j‰t todenn‰kˆisesti mieluummin k‰ytt‰v‰t
-sarjaportin v‰lityksell‰ toimivaa debuggausta natiiviporttaukseen.
+Matalan tason raudalle v√§√§nt√§j√§t todenn√§k√∂isesti mieluummin k√§ytt√§v√§t
+sarjaportin v√§lityksell√§ toimivaa debuggausta natiiviporttaukseen.
 
-Ohjelmistosuunnittelijoiden t‰ytyy varmistaa ett‰ heid‰n ohjelmansa
-vapauttavat kaikki varaamansa resurssit. AROS:in mukana tulee muutama tyˆkalu
-t‰h‰n tarkoitukseen.
+Ohjelmistosuunnittelijoiden t√§ytyy varmistaa ett√§ heid√§n ohjelmansa
+vapauttavat kaikki varaamansa resurssit. AROS:in mukana tulee muutama ty√∂kalu
+t√§h√§n tarkoitukseen.
 
 ---------------
 Debug tulosteet
@@ -43,25 +43,25 @@ Debug tulosteet
     ...
     D(bug("value1=%ld, path=%s", value, path));
 
-``D()`` makro laajeneen ei-miksik‰‰n jos ``DEBUG`` on 0 tai j‰tetty
-m‰‰ritt‰m‰tt‰. K‰yt‰ ``bug()`` makroa/funktiota jos sinun tarvitsee pakottaa
-jotain tulostetta n‰kyviin riippumatta ``DEBUG``:in arvosta. K‰yttˆ on
-samanlainen kuin ``printf()`` funktiolla. Is‰nnˆidyss‰ versiossa tuloste n‰kyy
-siin‰ konsolissa josta AROS k‰ynnistettiin.
+``D()`` makro laajeneen ei-miksik√§√§n jos ``DEBUG`` on 0 tai j√§tetty
+m√§√§ritt√§m√§tt√§. K√§yt√§ ``bug()`` makroa/funktiota jos sinun tarvitsee pakottaa
+jotain tulostetta n√§kyviin riippumatta ``DEBUG``:in arvosta. K√§ytt√∂ on
+samanlainen kuin ``printf()`` funktiolla. Is√§nn√∂idyss√§ versiossa tuloste n√§kyy
+siin√§ konsolissa josta AROS k√§ynnistettiin.
 
 ----------------------------
-Is‰nnˆity AROS: GDB:n k‰yttˆ
+Is√§nn√∂ity AROS: GDB:n k√§ytt√∂
 ----------------------------
 
-Voit ajaa AROS:in joko GDB:n alaisuudessa taikka k‰ytt‰‰ GDB:t‰ AROS:in
-kaatumisen j‰tt‰m‰lle core dump:ille. ƒl‰ unohda k‰‰nt‰‰ AROS:ia debug
+Voit ajaa AROS:in joko GDB:n alaisuudessa taikka k√§ytt√§√§ GDB:t√§ AROS:in
+kaatumisen j√§tt√§m√§lle core dump:ille. √Ñl√§ unohda k√§√§nt√§√§ AROS:ia debug
 moodissa (``./configure --enable-debug; make``).
 
 
 Ajon aikainen debuggaus
 =======================
 
-K‰ynnist‰ GDB::
+K√§ynnist√§ GDB::
 
     > cd /AROS/bin/linux-i386/AROS/
     > gdb aros
@@ -74,23 +74,23 @@ K‰ynnist‰ GDB::
     This GDB was configured as "i386-linux"...
     (gdb) 
 
-K‰ynnist‰ sitten AROS::
+K√§ynnist√§ sitten AROS::
 
     (gdb) r
     Starting program: /AROS/bin/linux-i386/AROS/aros 
     (... lots of debug output follow ...)
 
-Voit antaa AROS:ille argumentteja kirjoittamalla ne ``r`` komennon per‰‰n.
-Keskeyt‰ AROS:in ajo CTRL-C:ll‰, joka palauttaa sinut takaisin GDB:n
-promptiin. K‰yt‰ komentoa ``help`` apua varten ja ``q`` poistuaksesi GDB:st‰
+Voit antaa AROS:ille argumentteja kirjoittamalla ne ``r`` komennon per√§√§n.
+Keskeyt√§ AROS:in ajo CTRL-C:ll√§, joka palauttaa sinut takaisin GDB:n
+promptiin. K√§yt√§ komentoa ``help`` apua varten ja ``q`` poistuaksesi GDB:st√§
 :-)
 
 
-Kaatumisen j‰lkeinen debuggaus
+Kaatumisen j√§lkeinen debuggaus
 ==============================
 
-Ensinn‰kin on sinun sallittava code dump tiedostojen luonti, esim. k‰ytt‰en
-``ulimit`` komentoa Bash shelliss‰. Sen j‰lkeen aja AROS luodaksesi code
+Ensinn√§kin on sinun sallittava code dump tiedostojen luonti, esim. k√§ytt√§en
+``ulimit`` komentoa Bash shelliss√§. Sen j√§lkeen aja AROS luodaksesi code
 dump:in::
 
     > cd /AROS/bin/linux-i386/AROS/
@@ -98,8 +98,8 @@ dump:in::
     > ./aros
     Quit (core dumped)
 
-Nyt voit k‰ynnist‰‰ GDB:n antaen sille argumentteina ajettavan aros tiedoston
-sek‰ core tiedoston::
+Nyt voit k√§ynnist√§√§ GDB:n antaen sille argumentteina ajettavan aros tiedoston
+sek√§ core tiedoston::
 
     > gdb aros core
     GNU gdb 6.0-debian
@@ -128,14 +128,14 @@ sek‰ core tiedoston::
 GDB (peruskomennot)
 ===================
 
-Komento ``help`` antaa apua kaikista GDB:n komennoista. Voit kutsua sit‰ jojo
+Komento ``help`` antaa apua kaikista GDB:n komennoista. Voit kutsua sit√§ jojo
 suoraan saadaksesi listan tunnetuista aiheista, taikka antaen sille aiheen
 taikka komennon nimen (tai sen lyhenteen) josta olet tietoa kaipailemassa.
-Suosittelen lukemaan kaikkien seuraavaksi l‰pi k‰ymiemme komentojen avusteet.
+Suosittelen lukemaan kaikkien seuraavaksi l√§pi k√§ymiemme komentojen avusteet.
 
-Komento ``bt`` (backtrace) tulostaa j‰lkiseurannan pinossa olevista
-"kehyksist‰" (frames). T‰ss‰ esimerkkiseuranta CTRL-C:ll‰ tapahtuneen
-keskeytyksen j‰lkeen::
+Komento ``bt`` (backtrace) tulostaa j√§lkiseurannan pinossa olevista
+"kehyksist√§" (frames). T√§ss√§ esimerkkiseuranta CTRL-C:ll√§ tapahtuneen
+keskeytyksen j√§lkeen::
 
     Program received signal SIGINT, Interrupt.
     0x40125607 in sigsuspend () from /lib/libc.so.6
@@ -149,52 +149,52 @@ keskeytyksen j‰lkeen::
 
 Sisin kehys on #0.
 
-Tulostaaksesi t‰m‰n hetkisest‰ kehyksest‰ saatavilla olevan lauseen arvon
-k‰yt‰ ``p`` (print) komentoa::
+Tulostaaksesi t√§m√§n hetkisest√§ kehyksest√§ saatavilla olevan lauseen arvon
+k√§yt√§ ``p`` (print) komentoa::
 
     (gdb) p SysBase
     $1 = (struct ExecBase *) 0x40231290
 
-GDB:n ``print`` komento on eritt‰in tehokas. Se ymm‰rt‰‰ C syntaksia joten voit
-tulostaa mink‰ tahansa kelvollisen lauseen::
+GDB:n ``print`` komento on eritt√§in tehokas. Se ymm√§rt√§√§ C syntaksia joten voit
+tulostaa mink√§ tahansa kelvollisen lauseen::
 
     (gdb) p SysBase->IntVects[2]
     $2 = {iv_Data = 0x0, iv_Code = 0x8052f30 <SoftIntDispatch>, iv_Node = 0x4023c528}
 
-Voit k‰ytt‰‰ ``print`` komentoa vaikka hex laskimena::
+Voit k√§ytt√§√§ ``print`` komentoa vaikka hex laskimena::
 
     (gdb) p 0x42 + 0xc0de
     $1 = 49440
 
-N‰ytt‰‰ksesi tuloksen samassa hex muodossa, k‰yt‰ ``p/x`` komentoa (huomaa
+N√§ytt√§√§ksesi tuloksen samassa hex muodossa, k√§yt√§ ``p/x`` komentoa (huomaa
 kuinka kutsumme aiemman lauseen uudelleen)::
 
     (gdb) p/x $1
     $2 = 0xc120
 
-Siirty‰ksesi kehyksest‰ toiseen, k‰yt‰ ``f`` (frame) komentoa::
+Siirty√§ksesi kehyksest√§ toiseen, k√§yt√§ ``f`` (frame) komentoa::
 
     (gdb) f 1
     #1  0x080531d5 in idleTask (sysBase=0x40231290) at idletask.c:23
     23              sigsuspend(&sigs);
 
-N‰ytt‰‰ksesi t‰m‰n hetkisen kohdan ymp‰rilt‰ 10 l‰hdekoodirivi‰, k‰yt‰ ``l``
-(list) komentoa, jota voi k‰ytt‰‰ myˆs jonkin t‰smennetyn rivin n‰yttˆˆn.
+N√§ytt√§√§ksesi t√§m√§n hetkisen kohdan ymp√§rilt√§ 10 l√§hdekoodirivi√§, k√§yt√§ ``l``
+(list) komentoa, jota voi k√§ytt√§√§ my√∂s jonkin t√§smennetyn rivin n√§ytt√∂√∂n.
 
-Jos olet tekem‰ss‰ ajon aikaista debuggausta:
+Jos olet tekem√§ss√§ ajon aikaista debuggausta:
 
-+ Ajaaksesi ohjelman (tai k‰ynnist‰‰ksesi sen alusta) kunnes keskeyt‰t sen,
-  taikka ajo tˆrm‰‰ asetettuun keskeytyspisteeseen tai se kaatuu, k‰yt‰
++ Ajaaksesi ohjelman (tai k√§ynnist√§√§ksesi sen alusta) kunnes keskeyt√§t sen,
+  taikka ajo t√∂rm√§√§ asetettuun keskeytyspisteeseen tai se kaatuu, k√§yt√§
   komentoa ``r`` (run), joko ilman vapaaehtoisia parametreja (jotka annetaan
   ajettavalle ohjelmalle) taikka sitten niiden kera;
 
-+ Askeltaaksesi k‰skyj‰ k‰yt‰ komentoja ``s`` ja ``n`` (joista j‰lkimm‰inen
-  k‰sittelee alirutiinien kutsut yhdell‰ kertaa);
++ Askeltaaksesi k√§skyj√§ k√§yt√§ komentoja ``s`` ja ``n`` (joista j√§lkimm√§inen
+  k√§sittelee alirutiinien kutsut yhdell√§ kertaa);
 
-+ Asettaaksesi keskeytyspisteen (breakpoint), k‰yt‰ komentoa ``b`` rivinumeron
++ Asettaaksesi keskeytyspisteen (breakpoint), k√§yt√§ komentoa ``b`` rivinumeron
   tai funktion kera.
 
-+ Jatkaaksesi keskeytetty‰ ajoa, k‰yt‰ komentoa ``c``.
++ Jatkaaksesi keskeytetty√§ ajoa, k√§yt√§ komentoa ``c``.
 
 Komennolla ``q`` poistut debuggerista::
 
@@ -203,32 +203,32 @@ Komennolla ``q`` poistut debuggerista::
     >
 
 
-GDB (AROS-spesifist‰)
+GDB (AROS-spesifist√§)
 =====================
 
-AROS-spesifiset GDB komennot lˆytyv‰t tiedostosta ``/AROS/_gdbinit`` joka
-asentuu tiedostoksi ``/AROS/bin/linux-i386/AROS/.gdbinit``. GDB lataa t‰m‰n
-k‰ynnistyess‰‰n ja se sis‰lt‰‰ seuraavat komennot::
+AROS-spesifiset GDB komennot l√∂ytyv√§t tiedostosta ``/AROS/_gdbinit`` joka
+asentuu tiedostoksi ``/AROS/bin/linux-i386/AROS/.gdbinit``. GDB lataa t√§m√§n
+k√§ynnistyess√§√§n ja se sis√§lt√§√§ seuraavat komennot::
 
-    findaddr - N‰ytt‰‰ moduulin joka sis‰lt‰‰ annetun osoitteen
-    thistask - Tulostaa t‰ll‰ hetkell‰ pyˆriv‰n teht‰v‰n (task) tiedot
-    liblist - Listaa t‰ll‰ hetkell‰ muistissa olevat kirjastot
-    devlist - Listaa t‰m‰n hetkiset laitteet
-    resourcelist - Listaa t‰m‰n hetkiset resurssit
+    findaddr - N√§ytt√§√§ moduulin joka sis√§lt√§√§ annetun osoitteen
+    thistask - Tulostaa t√§ll√§ hetkell√§ py√∂riv√§n teht√§v√§n (task) tiedot
+    liblist - Listaa t√§ll√§ hetkell√§ muistissa olevat kirjastot
+    devlist - Listaa t√§m√§n hetkiset laitteet
+    resourcelist - Listaa t√§m√§n hetkiset resurssit
     residentlist - Listaa muistiin ladatut komennot, jne.
-    taskready - Listaa ajovalmiit teht‰v‰t
-    taskwait - Listaa tapahtumaa odottelevat teht‰v‰t
+    taskready - Listaa ajovalmiit teht√§v√§t
+    taskwait - Listaa tapahtumaa odottelevat teht√§v√§t
     modlist - Listaa kaikki muistiin ladatut moduulit
-    printtaglist - N‰ytt‰‰ annetun taglist:in
+    printtaglist - N√§ytt√§√§ annetun taglist:in
 
-N‰ist‰ ``findaddr`` on oleellinen debugattaessa ei-ROM koodia (jaettuja
+N√§ist√§ ``findaddr`` on oleellinen debugattaessa ei-ROM koodia (jaettuja
 kirjastoja, ohjelmia, ...).
 
-findaddr komennon k‰yttˆ
+findaddr komennon k√§ytt√∂
 ------------------------
 
 Useimmiten tahdot debugata kirjastoja taikka ohjelmia, mutta backtrace antaa
-sinulle yhden taikka useampia selvitt‰m‰ttˆmi‰ osoitteita::
+sinulle yhden taikka useampia selvitt√§m√§tt√∂mi√§ osoitteita::
 
     Core was generated by `aros'.
     Program terminated with signal 11, Segmentation fault.
@@ -255,15 +255,15 @@ sinulle yhden taikka useampia selvitt‰m‰ttˆmi‰ osoitteita::
     #5  0x8042bfe0 in ?? ()
     #6  0x404ca36c in ?? ()
 
-K‰yt‰ ``findaddr``:ia mille tahansa selvitt‰m‰ttˆm‰lle osoitteelle
-(luultavasti sisimm‰lle)::
+K√§yt√§ ``findaddr``:ia mille tahansa selvitt√§m√§tt√∂m√§lle osoitteelle
+(luultavasti sisimm√§lle)::
 
     (gdb) findaddr 0x402bd919
     Searching in the loaded modules...
     Address found in System:Tests/Zune/list1, which is loaded at 0x402bd454.
     If this is an executable, its .text section starts at 0x402bd460
 
-Seuraavaksi k‰yt‰ ``add-symbol-file`` komentoa ladataksesi annetun tiedoston
+Seuraavaksi k√§yt√§ ``add-symbol-file`` komentoa ladataksesi annetun tiedoston
 annettuun osoitteeseen::
 
     (gdb) add-symbol-file Tests/Zune/list1 0x402bd460
@@ -272,7 +272,7 @@ annettuun osoitteeseen::
     (y or n) y
     Reading symbols from Tests/Zune/list1...done.
 
-Toivottavasti t‰m‰ selvitti osoitteet::
+Toivottavasti t√§m√§ selvitti osoitteet::
 
     (gdb) bt
     #0  0x080c8830 in Intuition_SetAttrsA (object=0x317ceb, tagList=0x402f7504, 
@@ -292,19 +292,19 @@ Toivottavasti t‰m‰ selvitti osoitteet::
     #9  0x00000001 in ?? ()
     #10 0x402a6888 in ?? ()
 
-Joten toivottavasti lˆyd‰t sitten virheenkin::
+Joten toivottavasti l√∂yd√§t sitten virheenkin::
 
     (gdb) f 1
     #1  0x402bd919 in main () at list1.c:107
     107             set(3243243, MUIA_Window_Open, TRUE);
 
-Toista sama kaikille j‰ljell‰ oleville osoitteille jotka tahdot selvitt‰‰.
+Toista sama kaikille j√§ljell√§ oleville osoitteille jotka tahdot selvitt√§√§.
 
-thistask komennon k‰yttˆ
+thistask komennon k√§ytt√∂
 ------------------------
 
-Komento n‰ytt‰‰ monenlaista tietoa t‰ll‰ hetkell‰ ajossa olevasta teht‰v‰st‰
-(task). Ei pit‰isi olla suuri yll‰tys ett‰ kyseinen informaatio lˆytyy
+Komento n√§ytt√§√§ monenlaista tietoa t√§ll√§ hetkell√§ ajossa olevasta teht√§v√§st√§
+(task). Ei pit√§isi olla suuri yll√§tys ett√§ kyseinen informaatio l√∂ytyy
 osoitteesta ``SysBase->ThisTask``::
 
     (gdb) thistask 
@@ -313,19 +313,19 @@ osoitteesta ``SysBase->ThisTask``::
     40231fb8 00000000 00000000    40960      872 -128    1 Idle Task
 
 
-Vinkkej‰ ja trikkej‰
+Vinkkej√§ ja trikkej√§
 ====================
 
 Ohjelman aiheuttama keskeytyspiste x86:lla
 ------------------------------------------
 
-Jos lis‰‰t rivin::
+Jos lis√§√§t rivin::
 
     asm("int $3");
 
 C-koodiin, aiheuttaa se nk. "trace exception" poikkeuksen ajon aikana.
-Kyseinen poikkeus voi olla eritt‰in hyˆdyllinen GDB:ll‰ ajettaessa
-p‰‰st‰ksemme interaktiiviseen tilaan kun jokin m‰‰r‰tty ehto t‰yttyy::
+Kyseinen poikkeus voi olla eritt√§in hy√∂dyllinen GDB:ll√§ ajettaessa
+p√§√§st√§ksemme interaktiiviseen tilaan kun jokin m√§√§r√§tty ehto t√§yttyy::
 
     if (byteSize == 112)
         asm("int $3");
@@ -335,24 +335,24 @@ Resurssien seuranta
 -------------------
 
 Resurssien seurantaa (Resource Tracking, tai RT) sellaisena kuin se tunnetaan
-useissa muissa k‰yttˆj‰rjestelmiss‰ ei ole t‰ll‰ hetkell‰ AROS:issa
-saatavilla, joten sinun t‰ytyy pit‰‰ itse huoli resurssien vapauttamisesta.
-Lˆyd‰t t‰‰lt‰ muutamia tyˆkaluja jotka auttavat tarkistamaan ett‰ ohjelmasi on
+useissa muissa k√§ytt√∂j√§rjestelmiss√§ ei ole t√§ll√§ hetkell√§ AROS:issa
+saatavilla, joten sinun t√§ytyy pit√§√§ itse huoli resurssien vapauttamisesta.
+L√∂yd√§t t√§√§lt√§ muutamia ty√∂kaluja jotka auttavat tarkistamaan ett√§ ohjelmasi on
 siisti.
 
 Muistin seuranta Mungwall:illa
 ==============================
 
 Jos AROS on konfiguroitu ``--enable-debug``:illa, ``Mungwall`` saadaan
-k‰yttˆˆn. Se pit‰‰ kirjaa pienist‰ alueista muistia ennen ja j‰lkeen varaamaasi
-muistia tarkistaakseen ettet kirjoita ohi rajojen. T‰m‰ tarkistus tehd‰‰n
+k√§ytt√∂√∂n. Se pit√§√§ kirjaa pienist√§ alueista muistia ennen ja j√§lkeen varaamaasi
+muistia tarkistaakseen ettet kirjoita ohi rajojen. T√§m√§ tarkistus tehd√§√§n
 muistin varaus ja vapautus rutiineissa, tai kutsuttaessa
 ``AvailMem(MEMF_CLEAR)``.
 
-``CheckMem`` komentorivityˆkalu kutsuu t‰t‰ funktiota ja raportoi debug
-tulosteeseen (sarjaporttiin natiivissa ja konsoliin is‰nnˆidyss‰ versiossa).
-Jos rajanrikkomis virheit‰ ei ole havaittu se raportoi t‰m‰n hetkisen varausten
-lukum‰‰r‰n ja niiden yhteiskoon.
+``CheckMem`` komentorivity√∂kalu kutsuu t√§t√§ funktiota ja raportoi debug
+tulosteeseen (sarjaporttiin natiivissa ja konsoliin is√§nn√∂idyss√§ versiossa).
+Jos rajanrikkomis virheit√§ ei ole havaittu se raportoi t√§m√§n hetkisen varausten
+lukum√§√§r√§n ja niiden yhteiskoon.
 
     === MUNGWALL MEMORY CHECK ============
     
@@ -361,76 +361,76 @@ lukum‰‰r‰n ja niiden yhteiskoon.
 LeakWatch
 =========
 
-LeakWatch on tyhm‰ mutta avulias tyˆkalu. Se pit‰‰ kirjaa kokonais muistista
+LeakWatch on tyhm√§ mutta avulias ty√∂kalu. Se pit√§√§ kirjaa kokonais muistista
 ja Exec objekteista: kirjastoista, laitteista, fonteista, resursseista,
-porteista ja semaforeista. Se aiheuttaa k‰ytt‰m‰ttˆmien objektien poiston
-muistista raportoidakseen todellisen muistin m‰‰r‰n sen j‰lkeen kun joitain
+porteista ja semaforeista. Se aiheuttaa k√§ytt√§m√§tt√∂mien objektien poiston
+muistista raportoidakseen todellisen muistin m√§√§r√§n sen j√§lkeen kun joitain
 resursseja on suljettu.
 
-K‰ynnist‰ ``LeakWatch`` omassa shelliss‰‰n k‰ytt‰en sitten seuraavia
-n‰pp‰imi‰ sen kontrollointiin:
+K√§ynnist√§ ``LeakWatch`` omassa shelliss√§√§n k√§ytt√§en sitten seuraavia
+n√§pp√§imi√§ sen kontrollointiin:
 
 + ``Ctrl-C`` poistumiseen :-)
-+ ``Ctrl-D`` n‰ytt‰m‰‰n resurssien t‰m‰n hetkisen tilan
-+ ``Ctrl-E`` n‰ytt‰m‰‰n resurssien eron k‰ynnistyksest‰ asti
-+ ``Ctrl-F`` n‰ytt‰m‰‰n resurssien eron edelliseen ``Ctrl-F`` painallukseen
++ ``Ctrl-D`` n√§ytt√§m√§√§n resurssien t√§m√§n hetkisen tilan
++ ``Ctrl-E`` n√§ytt√§m√§√§n resurssien eron k√§ynnistyksest√§ asti
++ ``Ctrl-F`` n√§ytt√§m√§√§n resurssien eron edelliseen ``Ctrl-F`` painallukseen
   verrattuna.
 
-``Ctrl-F`` on kaikkein hyˆdyllisin n‰pp‰in komento: k‰yt‰ sit‰ ennen
-ohjelmasi ajoa ja sen ajon j‰lkeen. Yht‰‰n resurssia ei tulisi raportoida.
+``Ctrl-F`` on kaikkein hy√∂dyllisin n√§pp√§in komento: k√§yt√§ sit√§ ennen
+ohjelmasi ajoa ja sen ajon j√§lkeen. Yht√§√§n resurssia ei tulisi raportoida.
 Mutta jos tilanne on toinen:
 
-+ Tarkista ett‰ mik‰‰n toinen ohjelma ei ole varaamassa resursseja t‰ll‰
-  hetkell‰.
++ Tarkista ett√§ mik√§√§n toinen ohjelma ei ole varaamassa resursseja t√§ll√§
+  hetkell√§.
 + Toista ajot. Tarkista ovatko vuodot vakioita.
-+ Rajaa paikat joissa vuoto voi tapahtua v‰hent‰m‰ll‰ ominaisuuksia joita
-  k‰yt‰t ja sen j‰lkeen pois kommentoimalla koodia.
++ Rajaa paikat joissa vuoto voi tapahtua v√§hent√§m√§ll√§ ominaisuuksia joita
+  k√§yt√§t ja sen j√§lkeen pois kommentoimalla koodia.
 
-Jos oletat ett‰ ohjelmasi aiheutti vuodon AROS kirjastossa, etsi olemassa
-oleva testiohjelma tai kirjoita sellainen joka k‰ytt‰‰ vuotavia kutsuja
-tarkistaaksesi ett‰ tilanne on juuri sellainen kuin oletat.
+Jos oletat ett√§ ohjelmasi aiheutti vuodon AROS kirjastossa, etsi olemassa
+oleva testiohjelma tai kirjoita sellainen joka k√§ytt√§√§ vuotavia kutsuja
+tarkistaaksesi ett√§ tilanne on juuri sellainen kuin oletat.
 
 
-Sekalaisia CLI tyˆkaluja
+Sekalaisia CLI ty√∂kaluja
 ========================
 
-``C:`` hakemistossa on joitan simppeleit‰ debuggaus tyˆkaluja.
+``C:`` hakemistossa on joitan simppeleit√§ debuggaus ty√∂kaluja.
 
 
 AROS Shell
 ----------
 
-K‰skyt‰ ``set __debug_mem`` Shelliss‰ kytke‰ksesi vapaan muistin raportoinnin
-ennen ja j‰lkeen komentojen ajon, sek‰ muistin m‰‰r‰n erot. P‰‰asiassa kuten
-``LeakWatch`` pelk‰lle muistille.
+K√§skyt√§ ``set __debug_mem`` Shelliss√§ kytke√§ksesi vapaan muistin raportoinnin
+ennen ja j√§lkeen komentojen ajon, sek√§ muistin m√§√§r√§n erot. P√§√§asiassa kuten
+``LeakWatch`` pelk√§lle muistille.
 
 Avail
 -----
 
-K‰yt‰ komentoa ``Avail`` n‰ytt‰m‰‰n tietoa muistista. FLUSH parametri pakottaa
-k‰ytt‰m‰ttˆm‰t objektit siivottavaksi muistista.
+K√§yt√§ komentoa ``Avail`` n√§ytt√§m√§√§n tietoa muistista. FLUSH parametri pakottaa
+k√§ytt√§m√§tt√∂m√§t objektit siivottavaksi muistista.
 
 Liblist
 -------
 
-Liblist n‰ytt‰‰ listan t‰ll‰ hetkell‰ avoinna olevista kirjastoista sek‰
-sellaista tietoa kuin versio ja avausten lukum‰‰r‰.
+Liblist n√§ytt√§√§ listan t√§ll√§ hetkell√§ avoinna olevista kirjastoista sek√§
+sellaista tietoa kuin versio ja avausten lukum√§√§r√§.
 
 Devlist
 -------
 
 Kuten ``Liblist``, mutta Exec laitteille.
 
-Vinkkej‰ ja trikkej‰
+Vinkkej√§ ja trikkej√§
 ====================
 
 Mungwall tarkistukset ajoittimessa
 ----------------------------------
 
-N‰pp‰r‰ ``Mungwall`` trikki on muokata ajoitin (scheduler) kutsumaan
-``AvailMem(MEMF_CLEAR)`` jokaisen teht‰v‰n vaihdon yhteydess‰ jos tˆrm‰‰t
-sellaiseen muistin korruptioon jota et saa muuten paikannettua. T‰ll‰ tavoin
-pakotat muistin tarkistettavaksi aina kun teht‰v‰ on k‰ytt‰nyt aikalohkonsa.
+N√§pp√§r√§ ``Mungwall`` trikki on muokata ajoitin (scheduler) kutsumaan
+``AvailMem(MEMF_CLEAR)`` jokaisen teht√§v√§n vaihdon yhteydess√§ jos t√∂rm√§√§t
+sellaiseen muistin korruptioon jota et saa muuten paikannettua. T√§ll√§ tavoin
+pakotat muistin tarkistettavaksi aina kun teht√§v√§ on k√§ytt√§nyt aikalohkonsa.
 Hidasta, mutta ei ole keinoa jolla syyllinen karkaisi.
 
 
@@ -438,27 +438,27 @@ Muistivuodot
 ------------
 
 + Totea kuinka paljon muistia on vuotanut ja montako varausta on tehty:
-  saadaksesi selville vuodon koon sek‰ varausten m‰‰r‰n, aja komento
-  ``checkmem`` ennen ja j‰lkeen ep‰ilytt‰v‰n ohjelman ajon (‰l‰ unohda huuhtoa
-  muistia ennen jokaista ``checkmem``:in k‰yttˆ‰; jos ``__debug_mem`` on
+  saadaksesi selville vuodon koon sek√§ varausten m√§√§r√§n, aja komento
+  ``checkmem`` ennen ja j√§lkeen ep√§ilytt√§v√§n ohjelman ajon (√§l√§ unohda huuhtoa
+  muistia ennen jokaista ``checkmem``:in k√§ytt√∂√§; jos ``__debug_mem`` on
   asetettu, tapahtuu se automaattisesti).
 
 + Huomioi ``Mungwall``:in sivuefektit:
-  96 tavua lis‰t‰‰n jokaiseen varaukseen. Ainoastaan ``checkmem`` antaa
+  96 tavua lis√§t√§√§n jokaiseen varaukseen. Ainoastaan ``checkmem`` antaa
   sinulle todelliset varausten koot.
 
-+ Varattiinko muisti ``AllocVec()`` vai ``AllocMem()`` funktiolla? Lis‰‰
-  joitain tavuja m‰‰r‰‰n jonka ``AllocVec`` varaa ``rom/exec/allocvec.c``:n
++ Varattiinko muisti ``AllocVec()`` vai ``AllocMem()`` funktiolla? Lis√§√§
+  joitain tavuja m√§√§r√§√§n jonka ``AllocVec`` varaa ``rom/exec/allocvec.c``:n
   alussa ja tarkista muuttuuko vuodon koko vastaavasti.
 
-+ Koeta identifioida vuotava ohjelma l‰hett‰m‰ll‰ trace exception
-  (``asm("int $3)`` x86:ssa) m‰‰r‰tyn varauskoon yhteydess‰
-  ``rom/exec/allocvec.c``:ss‰ tai ``rom/exec/allocmem.c``:ss‰. Ohjelma on
-  tottakai ajettava GDB:ss‰ jotta t‰st‰ olisi jotain hyˆty‰. K‰yt‰ ``bt``
-  ja muita GDB:n komentoja m‰‰ritt‰‰ksesi syyn jokaiselle ep‰ilytt‰v‰lle
++ Koeta identifioida vuotava ohjelma l√§hett√§m√§ll√§ trace exception
+  (``asm("int $3)`` x86:ssa) m√§√§r√§tyn varauskoon yhteydess√§
+  ``rom/exec/allocvec.c``:ss√§ tai ``rom/exec/allocmem.c``:ss√§. Ohjelma on
+  tottakai ajettava GDB:ss√§ jotta t√§st√§ olisi jotain hy√∂ty√§. K√§yt√§ ``bt``
+  ja muita GDB:n komentoja m√§√§ritt√§√§ksesi syyn jokaiselle ep√§ilytt√§v√§lle
   varaukselle.
 
-+ Kun huomaat mahdollisen vuotokohdan, muuta varauksen kokoa (esim. lis‰‰m‰ll‰
++ Kun huomaat mahdollisen vuotokohdan, muuta varauksen kokoa (esim. lis√§√§m√§ll√§
   char taulukon varatun struktuurin loppuun) ja tarkista muuttuuko vuodon koko
   vastaavasti.
 

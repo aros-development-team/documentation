@@ -1,9 +1,9 @@
 ========================
-Curta introduÁ„o ao AROS
+Curta introdu√ß√£o ao AROS
 ========================
 
 :Authors:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Almost finished, I think...
@@ -15,56 +15,56 @@ Curta introduÁ„o ao AROS
 Objectivos
 ==========
 
-Os objectivos do projecto AROS È criar um Sistema Operativo que:
+Os objectivos do projecto AROS √© criar um Sistema Operativo que:
 
-1. È o mais possÌvel compativel com AmigaOS 3.1.
+1. √© o mais poss√≠vel compativel com AmigaOS 3.1.
 
 2. possa ser aportado para diferentes tipos de arquitecturas de equipamento e
    processadores, com x86, PowerPC, Alpha, Sparc, HPPA e outros.
 
-3. dever· ter bin·rio compativel no Amiga e fontes compativeis em qualquer
+3. dever√° ter bin√°rio compativel no Amiga e fontes compativeis em qualquer
    outro equipamento.
   
-4. possa correr como uma vers„o que permaneÁa sÛ (standalone) que arranque
+4. possa correr como uma vers√£o que permane√ßa s√≥ (standalone) que arranque
    directamente do disco rigido como um emulador que abra uma janela no sistema
-   operativo existente para desenvolver programas e corra Amiga e aplicaÁıes nativos
+   operativo existente para desenvolver programas e corra Amiga e aplica√ß√µes nativos
    ao mesmo tempo.
 
 5. melhore sobre as funcionalidades do AmigaOS.
 
-Para atingir este objectivo, usamos um certo n˙mero de tÈcnicas. Primerio que tudo,
-fazemos um uso intensivo da Internet. Poder· participar no nosso projecto mesmo que
-sÛ consiga escrever uma ˙nica funÁ„o do Sistema Operativo. A vers„o mais actual da
-fonte È acessivel 24 horas por dia e remendos (patches) podem ser fundidos nas fontes
+Para atingir este objectivo, usamos um certo n√∫mero de t√©cnicas. Primerio que tudo,
+fazemos um uso intensivo da Internet. Poder√° participar no nosso projecto mesmo que
+s√≥ consiga escrever uma √∫nica fun√ß√£o do Sistema Operativo. A vers√£o mais actual da
+fonte √© acessivel 24 horas por dia e remendos (patches) podem ser fundidos nas fontes
 a qualquer altura. Uma pequena base de dados com tarefas abertas certifica-se de
-que o trabalho n„o È duplicado.
+que o trabalho n√£o √© duplicado.
 
 
-HistÛria
+Hist√≥ria
 ========
 
-A algum tempo a tr·s no ano de 1993, a situaÁ„o para o Amiga parecia de algum mode
+A algum tempo a tr√°s no ano de 1993, a situa√ß√£o para o Amiga parecia de algum mode
 pior do que o normal e alguns fans do Amiga juntaram-se e discutiram o que deveria
-ser feito para aumentar a aceitaÁ„o da nossa amada m·quina. Imediatamente a raz„o
-principal para o sucesso em falta do Amiga tornou-se claro: foi a propagaÁ„o, ou
-melhor a falta disso. O Amiga deveria obter um principio de propagaÁ„o mais vasto
-para torna-lo mais atractivo para todos usarem e desenvolverem para ele. Ent„o planos
+ser feito para aumentar a aceita√ß√£o da nossa amada m√°quina. Imediatamente a raz√£o
+principal para o sucesso em falta do Amiga tornou-se claro: foi a propaga√ß√£o, ou
+melhor a falta disso. O Amiga deveria obter um principio de propaga√ß√£o mais vasto
+para torna-lo mais atractivo para todos usarem e desenvolverem para ele. Ent√£o planos
 foram feitos para atingir esse objectivo. Um dos planos foi arranjar os erros do AmigaOS,
 outro foi torna-lo num Sistema Operativo moderno. O projecto AOS nasceu.
 
 Mas exactamente o que era um erro? E como deveriam os erros ser arranjados? Quais eram
-as caracteristicas que um Sistema Operativo deveria ter ent„o chamadas de *modernas*?
+as caracteristicas que um Sistema Operativo deveria ter ent√£o chamadas de *modernas*?
 E como deveriam elas ser implementadas no AmigaOS?
 
-Dois anos mais tarde, pessoas ainda estavam a discutir sobre isto e nem uma linha de cÛdigo
-tinha sido escrita (ou pelo menos ninguem tinha visto esse cÛdigo). Discussıes caontinuaram
-a ser o padr„o onde alguÈm definiu que "NÛs temos de ter ..." e alguÈm respondeu "leiam a
-velha correspondÍncia" ou "isto È impossÌvel de fazer, porque ...", que foi brevemente
-seguido por "VocÍs est„o errados porque ..." e asim sucessivamente.
+Dois anos mais tarde, pessoas ainda estavam a discutir sobre isto e nem uma linha de c√≥digo
+tinha sido escrita (ou pelo menos ninguem tinha visto esse c√≥digo). Discuss√µes caontinuaram
+a ser o padr√£o onde algu√©m definiu que "N√≥s temos de ter ..." e algu√©m respondeu "leiam a
+velha correspond√™ncia" ou "isto √© imposs√≠vel de fazer, porque ...", que foi brevemente
+seguido por "Voc√™s est√£o errados porque ..." e asim sucessivamente.
 
-No inverno de 1995, Aaron Digulla fartou-se desta situaÁ„o e publicou um RFC (requerido para coment·rios) para a lista de correio AOS na qual ele perguntava o que a minima base comum
-poderia ser. V·rias opiniıes foram dadas e a conclus„o foi que quase todos gostariam
+No inverno de 1995, Aaron Digulla fartou-se desta situa√ß√£o e publicou um RFC (requerido para coment√°rios) para a lista de correio AOS na qual ele perguntava o que a minima base comum
+poderia ser. V√°rias opini√µes foram dadas e a conclus√£o foi que quase todos gostariam
 de ver um Sistema Operativo aberto que fosse compativel com AmigaOS 3.1 (Kickstart 40.68)
-na qual discussıes profundas poderiam ser fundadas, para ver o que seria possivel e o que n„o.
+na qual discuss√µes profundas poderiam ser fundadas, para ver o que seria possivel e o que n√£o.
 
-Ent„o o trabalho comeÁou e o AROS nasceu.
+Ent√£o o trabalho come√ßou e o AROS nasceu.

@@ -3,38 +3,38 @@ Manual para el Desarrollo del Sistema AROS
 ==========================================
 
 :Authors:   Aaron Digulla, Bernardo Innocenti
-:Copyright: Copyright © 2001, The AROS Development Team
+:Copyright: Copyright ¬© 2001, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
 .. Warning::
 
-   °Este documento no est· terminado! Es muy probable que muchas
-   partes estÈn desactualizadas, contengan informaciÛn incorrecta o
+   ¬°Este documento no est√° terminado! Es muy probable que muchas
+   partes est√©n desactualizadas, contengan informaci√≥n incorrecta o
    simplemente falten. Si quieres ayudar a rectificar esto,
-   por favor, cont·ctanos.
+   por favor, cont√°ctanos.
 
 .. Contents::
 
 --------------------------
-PolÌtica de licenciamiento
+Pol√≠tica de licenciamiento
 --------------------------
 
-Casi todo el cÛdigo escrito por el AROS Development Team est· licenciado con
-la AROS Public License (APL), y es la elecciÛn recomendada para todo el
-nuevo cÛdigo escrito para el proyecto.
+Casi todo el c√≥digo escrito por el AROS Development Team est√° licenciado con
+la AROS Public License (APL), y es la elecci√≥n recomendada para todo el
+nuevo c√≥digo escrito para el proyecto.
 
 Sin embargo, nos damos cuenta que esto no siempre es posible; por ejemplo,
 a menudo queremos usar las buenas bibliotecas y aplicaciones de terceros en vez 
 de inventar la rueda otra vez por nosotros mismos. Por lo tanto se permite importar
-cÛdigo ajeno en el depÛsito SVN que no estÈ licenciado con la APL, mientras
-la licencia de ese cÛdigo satisfaga los siguientes requerimientos.
+c√≥digo ajeno en el dep√≥sito SVN que no est√© licenciado con la APL, mientras
+la licencia de ese c√≥digo satisfaga los siguientes requerimientos.
 
 
-Requerimientos sobre el cÛdigo fuente del ·rbol contrib
+Requerimientos sobre el c√≥digo fuente del √°rbol contrib
 =======================================================
 
-Para incluir cÛdigo fuente en el ·rbol contrib, se deben cumplir los
+Para incluir c√≥digo fuente en el √°rbol contrib, se deben cumplir los
 siguientes requerimientos:
 
 1. La licencia nos debiera permitir:
@@ -42,24 +42,24 @@ siguientes requerimientos:
    a. Redistribuir los fuentes.
    b. Redistribuir los binarios.
 
-   En el caso que sean necesarios cambios al cÛdigo fuente para poderlo
-   compilar y hacerlo funcionar en AROS, entonces la licencia adem·s nos debiera
+   En el caso que sean necesarios cambios al c√≥digo fuente para poderlo
+   compilar y hacerlo funcionar en AROS, entonces la licencia adem√°s nos debiera
    permitir hacer las modificaciones y redistribuir los fuentes y binarios que
    contengan aquellas modificaciones.
 
 2. La licencia debe estar expresada por escrito en un archivo llamado LEGAL
-   ubicado en el directorio raÌz de los fuentes a los que se aplica.
+   ubicado en el directorio ra√≠z de los fuentes a los que se aplica.
 
    
-Requerimientos en el cÛdigo fuente en el ·rbol principal de AROS
+Requerimientos en el c√≥digo fuente en el √°rbol principal de AROS
 ================================================================
 
-Para incluir cÛdigo fuente ajeno, que no estÈ licenciado con la APL en el
-·rbol principal de AROS se deben cumplir los siguientes requerimientos:
+Para incluir c√≥digo fuente ajeno, que no est√© licenciado con la APL en el
+√°rbol principal de AROS se deben cumplir los siguientes requerimientos:
 
-1. Que el cÛdigo fuente se necesite para build alg˙n componente o sea necesario
-   para alg˙n otro componente (que podrÌa o no ser APL) que querramos que estÈ
-   incluÌdo en la distribuciÛn base binaria de AROS.
+1. Que el c√≥digo fuente se necesite para build alg√∫n componente o sea necesario
+   para alg√∫n otro componente (que podr√≠a o no ser APL) que querramos que est√©
+   inclu√≠do en la distribuci√≥n base binaria de AROS.
 
 2. Que la licencia deba ser de fuente abierta como se define en la
    Open Source Initiative (OSI), lo que significa que debe permitirnos:
@@ -71,42 +71,42 @@ Para incluir cÛdigo fuente ajeno, que no estÈ licenciado con la APL en el
 3. Que la licencia no tenga conflictos con la APL:
    
    a. Si se trata de un programa separado, casi toda licencia que cumple con
-      (2) est· permitida.
+      (2) est√° permitida.
 
    b. Si se trata de una biblioteca, la licencia debe permitir enlazar con
-      programas y bibliotecas que usen una licencia diferente sin ning˙n 
-      problema. Esto significa que las bibliotecas que estÈn cubiertas por
+      programas y bibliotecas que usen una licencia diferente sin ning√∫n 
+      problema. Esto significa que las bibliotecas que est√©n cubiertas por
       la GPL (no la LGPL) no se permiten.
 
 4. La licencia debe estar expresada por escrito en un archivo llamado LEGAL
-   ubicado en el directorio raÌz de los fuentes a los que se aplica.
+   ubicado en el directorio ra√≠z de los fuentes a los que se aplica.
    
 
 ----------------------------
-Convenciones de codificaciÛn
+Convenciones de codificaci√≥n
 ----------------------------
 
 Estilo general
 ==============
 
-Este cÛdigo es usado por mucha gente y por lo tanto debieras tener algunas
-cosas en mente cuando envÌes cÛdigo fuente:
+Este c√≥digo es usado por mucha gente y por lo tanto debieras tener algunas
+cosas en mente cuando env√≠es c√≥digo fuente:
 
 + Conservar simple las cosas
-+ Conservar limpio el cÛdigo
-+ Siempre debes saber quÈ haces
-+ DÌ lo que est·s haciendo
-+ Recuerda que el cÛdigo se escribe una vez pero se lee muchas otras y por bastantes personas
++ Conservar limpio el c√≥digo
++ Siempre debes saber qu√© haces
++ D√≠ lo que est√°s haciendo
++ Recuerda que el c√≥digo se escribe una vez pero se lee muchas otras y por bastantes personas
 
 
 Los comentarios
 ===============
 
-AROS usa parte de los comentarios en los fuentes para generar la documentaciÛn.
+AROS usa parte de los comentarios en los fuentes para generar la documentaci√≥n.
 Por lo tanto, es necesario mantener cierto formato para que las herramientas
-puedan encontrar su informaciÛn. Los otros comentarios son ignorados aunque
-deberÌan explicar lo que pensabas cuando escribÌas el cÛdigo. Si de verdad
-no puedes pensar en una explicaciÛn, entonces no escribas the code a 
+puedan encontrar su informaci√≥n. Los otros comentarios son ignorados aunque
+deber√≠an explicar lo que pensabas cuando escrib√≠as el c√≥digo. Si de verdad
+no puedes pensar en una explicaci√≥n, entonces no escribas the code a 
 second time like this::
 
 
@@ -119,18 +119,18 @@ Lo que pensamos de esto es::
     t++;
 
 
-Los prototipos y las cabeceras de funciÛn
+Los prototipos y las cabeceras de funci√≥n
 =========================================
 
-Toda funciÛn en AROS debe tener un prototipo ANSI C completo. Los prototipos
-deberÌan estar reunidos en una cabecera por archivo si son necesarios para
+Toda funci√≥n en AROS debe tener un prototipo ANSI C completo. Los prototipos
+deber√≠an estar reunidos en una cabecera por archivo si son necesarios para
 unos pocos archivos (no se necesita recompilar el proyecto entero si cambias
-una funciÛn que se usa una sola vez), en una cabecera por directorio si es
-muy usada en ese directorio, o en una cabecera por grupo lÛgico (por ej.
+una funci√≥n que se usa una sola vez), en una cabecera por directorio si es
+muy usada en ese directorio, o en una cabecera por grupo l√≥gico (por ej.
 una cabecera para todas las funciones en una biblioteca).
 
-La cabecera de funciÛn (es decir, el comentario que precede a la funciÛn) debe
-tener un formato especial porque los AutoDocs se generan de allÌ. AquÌ est·
+La cabecera de funci√≥n (es decir, el comentario que precede a la funci√≥n) debe
+tener un formato especial porque los AutoDocs se generan de all√≠. Aqu√≠ est√°
 un ejemplo (de <filename>AROS/exec/addhead.c</filename>)::
 
     /*****************************************************************************
@@ -178,26 +178,26 @@ un ejemplo (de <filename>AROS/exec/addhead.c</filename>)::
     ******************************************************************************/
     {
 
-Como ves, los comentarios se usan para mezclar el prototipo de funciÛn y la
+Como ves, los comentarios se usan para mezclar el prototipo de funci√≥n y la
 cabecera en uno.
 
 NAME 
-    Este campo contiene todos los prototipos necesarios para usar la funciÛn
-    desde el punto de vista del usuario, y el nombre de la funciÛn en una
+    Este campo contiene todos los prototipos necesarios para usar la funci√≥n
+    desde el punto de vista del usuario, y el nombre de la funci√≥n en una
     macro `AROS_LH#?()` (Library Header, Cabecera de Biblioteca). Estas macros
-    se usan para hacer que el mismo cÛdigo funcione en diferente hardware. El
-    nombre depende de la cantidad de par·metros y si la funciÛn necesita de la
+    se usan para hacer que el mismo c√≥digo funcione en diferente hardware. El
+    nombre depende de la cantidad de par√°metros y si la funci√≥n necesita de la
     de la biblioteca base. `AddHead()` no, y por lo tanto se anexa una "I" al
     nombre de la macro. Si se necesita la biblioteca base (como lo hace `AddTask()`),
     entonces se omite la "I".
 
-    Si la funciÛn no es parte de una biblioteca compartidad y sus argumentos 
+    Si la funci√≥n no es parte de una biblioteca compartidad y sus argumentos 
     deben ser pasados a ciertos registros (por ej. las callback hooks), debes 
-    usar las macros `AROS_UFH#?()` (User Function Header, Cabecera de FunciÛn del
-    Usuario) en lugar de `AROS_LH#?()`. AÒade la cantidad de argumentos a esta
+    usar las macros `AROS_UFH#?()` (User Function Header, Cabecera de Funci√≥n del
+    Usuario) en lugar de `AROS_LH#?()`. A√±ade la cantidad de argumentos a esta
     macro. Dado que nunca tiene una base, el campo LOCATION se debe omitir
     y no se necesita agregar la "I" al nombre de la macro. Un ejemplo para una
-    callback hook `foo()` serÌa::
+    callback hook `foo()` ser√≠a::
 
         AROS_UFH3(ULONG, foo,
             AROS_UFHA(struct Hook, hook,  A0),
@@ -207,8 +207,8 @@ NAME
 
     (Nota que los registros no necesitan tener un orden en particular).
 
-    Si la funciÛn no es parte de una biblioteca compartidad y sus argumentos no
-    necesitatn estar en registros especÌficos, no necesitas las macros `AROS_#?H#?()`::
+    Si la funci√≥n no es parte de una biblioteca compartidad y sus argumentos no
+    necesitatn estar en registros espec√≠ficos, no necesitas las macros `AROS_#?H#?()`::
 
         /*****************************************************************************
 
@@ -228,58 +228,58 @@ NAME
         *****************************************************************************/
         
 SYNOPSIS 
-    Este campo contiene todos los argumentos de la funciÛn uno
+    Este campo contiene todos los argumentos de la funci√≥n uno
     por uno en las macros `AROS_LHA()` (Library Header Argument, Argumento de
     la Cabecera de Biblioteca). Estas macros aseguran que el argumento respectivo
-    es puesto en el registro correcto de la CPU cuando se invoca la funciÛn
+    es puesto en el registro correcto de la CPU cuando se invoca la funci√≥n
     (si es posible y es necesario). El primer argumento para la macro es el
-    tipo del par·metro seguido del nombre del par·metro y el registro en el
-    que el par·metro espera estar. Los nombres v·lidos para los registros son
+    tipo del par√°metro seguido del nombre del par√°metro y el registro en el
+    que el par√°metro espera estar. Los nombres v√°lidos para los registros son
     D0, D1, D2 hasta D7 y A0 hasta A6.
 
-    Si la funciÛn no es parte de una biblioteca pero los argumentos deben ser
+    Si la funci√≥n no es parte de una biblioteca pero los argumentos deben ser
     pasados a los registros, entonces usa las macros `AROS_UFHA()` (User 
-    Function Header Argument, Argumento de la Cabecera de FunciÛn del Usuario)
-    que toma los mismos par·metros que las macros `AROS_LHA()`. No olvides
-    cerrar los parÈntesis de la `AROS_UFC`.
+    Function Header Argument, Argumento de la Cabecera de Funci√≥n del Usuario)
+    que toma los mismos par√°metros que las macros `AROS_LHA()`. No olvides
+    cerrar los par√©ntesis de la `AROS_UFC`.
 
-    Si la funciÛn no es parte de una biblioteca y los argumentos no necesitan
+    Si la funci√≥n no es parte de una biblioteca y los argumentos no necesitan
     ser pasados a los registros, no son necesarias las macros.
 
 LOCATION
     Este campo solamente es necesario para las bibliotecas compartidas. Contiene
-    los ˙ltimos cuatro par·metros de la macro `AROS_LH#?()` que son el tipo de
-    la biblioteca, el nombre de la variable, en quÈ biblioteca base se espera la
-    funciÛn, el desplazamiento de la funciÛn en la tabla de salto (el primer
-    vector tiene 1 y el primer vector que podrÌa ser usado por una funciÛn es 5)
+    los √∫ltimos cuatro par√°metros de la macro `AROS_LH#?()` que son el tipo de
+    la biblioteca, el nombre de la variable, en qu√© biblioteca base se espera la
+    funci√≥n, el desplazamiento de la funci√≥n en la tabla de salto (el primer
+    vector tiene 1 y el primer vector que podr√≠a ser usado por una funci√≥n es 5)
     y el nombre de la biblioteca.
 
 FUNCTION
-    Este campo contiene una descripciÛn de la funciÛn.
+    Este campo contiene una descripci√≥n de la funci√≥n.
 
 INPUTS
-    Este campo contiene una lista de todos los par·metros de la forma
-    "nombre - descripciÛn" o "nombre, nombre, nombre - descripciÛn". La descripciÛn
-    deberÌa decir quÈ es el par·metro y quÈ valores puede tener. There is 
-    no point es explicar el par·metro dos veces, en FUNCTION y aquÌ. Si la funciÛn
-    no tiene par·metros, pon "None." aquÌ.
+    Este campo contiene una lista de todos los par√°metros de la forma
+    "nombre - descripci√≥n" o "nombre, nombre, nombre - descripci√≥n". La descripci√≥n
+    deber√≠a decir qu√© es el par√°metro y qu√© valores puede tener. There is 
+    no point es explicar el par√°metro dos veces, en FUNCTION y aqu√≠. Si la funci√≥n
+    no tiene par√°metros, pon "None." aqu√≠.
 
 RESULT
-    Lo que devuelve la funciÛn. Esto incluye los valores devueltos y los 
-    valores pasados en los argumentos de la funciÛn. Si la funciÛn puede fallar,
-    deberÌas explicar quÈ regresa en caso de falla y por quÈ podrÌa fallar.
+    Lo que devuelve la funci√≥n. Esto incluye los valores devueltos y los 
+    valores pasados en los argumentos de la funci√≥n. Si la funci√≥n puede fallar,
+    deber√≠as explicar qu√© regresa en caso de falla y por qu√© podr√≠a fallar.
 
 NOTES
     Las cosas importantes que el usuario debiera conocer o tener en cuenta.
 
 EXAMPLE
-    Este ejemplo deberÌa contener un ejemplo pequeÒo o con todas las caracterÌsticas.
-    Una buena manera de presentar un ejemplo es escribir algo de cÛdigo que pruebe
-    la funciÛn, ponlo en `#ifdef TEST` en alguna parte del archivo y pon 
-    "See below" aquÌ. Si necesitas que haya comentarios en el cÛdigo, tienes dos maneras.
-    Si solamente necesitas comentarios breves de un renglÛn, usa el estilo
-    de C++ (``//``). Todo desde ``//`` hasta el final del renglÛn es el comentario.
-    Si necesitas comentar m·s, entonces puedes terminar el comentario despuÈs de
+    Este ejemplo deber√≠a contener un ejemplo peque√±o o con todas las caracter√≠sticas.
+    Una buena manera de presentar un ejemplo es escribir algo de c√≥digo que pruebe
+    la funci√≥n, ponlo en `#ifdef TEST` en alguna parte del archivo y pon 
+    "See below" aqu√≠. Si necesitas que haya comentarios en el c√≥digo, tienes dos maneras.
+    Si solamente necesitas comentarios breves de un rengl√≥n, usa el estilo
+    de C++ (``//``). Todo desde ``//`` hasta el final del rengl√≥n es el comentario.
+    Si necesitas comentar m√°s, entonces puedes terminar el comentario despu√©s de
     `EXAMPLE` y usar `#ifdef EXAMPLE` para enmascarar el ejemplo::
 
             EXAMPLE */
@@ -300,23 +300,23 @@ BUGS
 
 SEE ALSO
     Este campo contiene una lista de las otras funciones y documentos que
-    podrÌan ser de interÈs. Esto incluye la funciÛn que necesitas para inicializar,
-    crear o destruir un objeto que necesite esta funciÛn, las funciones 
+    podr√≠an ser de inter√©s. Esto incluye la funci√≥n que necesitas para inicializar,
+    crear o destruir un objeto que necesite esta funci√≥n, las funciones 
     que hagan cosas similares u opuestas a las del objeto principal.
 
-    Por ejemplo, `SetAttrs()` deberÌa contener aquÌ las funciones para crear, 
+    Por ejemplo, `SetAttrs()` deber√≠a contener aqu√≠ las funciones para crear, 
     destruir y manipular los objetos BOOPSI pero no las taglists.
 
 INTERNALS
-    Este campo deberÌa contener la informaciÛn para los otros desarrolladores que
-    sea irrelevante para el usuario, por ejemplo una explicaciÛn del algoritmo
-    de la funciÛn o sus dependencias.
+    Este campo deber√≠a contener la informaci√≥n para los otros desarrolladores que
+    sea irrelevante para el usuario, por ejemplo una explicaci√≥n del algoritmo
+    de la funci√≥n o sus dependencias.
 
 
 Formateo
 ========
 
-AquÌ est· un ejemplo de cÛmo se formatea el cÛdigo de AROS::
+Aqu√≠ est√° un ejemplo de c√≥mo se formatea el c√≥digo de AROS::
 
     {
         /* a */
@@ -359,91 +359,91 @@ AquÌ est· un ejemplo de cÛmo se formatea el cÛdigo de AROS::
     }
 
 
-Se ve feo, øeh? :-) De acuerdo, aquÌ vienen las reglas:
+Se ve feo, ¬øeh? :-) De acuerdo, aqu√≠ vienen las reglas:
 
-+ Si varios renglones tienen cÛdigo similar, pon las cosas similares
++ Si varios renglones tienen c√≥digo similar, pon las cosas similares
   una debajo de la otra (mira a y b);
 
 + Pon espacios entre los operandos y los operadores
 
-+ Pon las aperturas y cierres de llaves ``{}``, corchetes ``[]`` y parÈntesis
-  ``()`` alineadas (d) si hay mucho cÛdigo en el bloque que encierran (c).
-  Los corchetes y los parÈntesis pueden estar en el mismo renglÛn si el
-  cÛdigo entre ellos es pequeÒo (c)
++ Pon las aperturas y cierres de llaves ``{}``, corchetes ``[]`` y par√©ntesis
+  ``()`` alineadas (d) si hay mucho c√≥digo en el bloque que encierran (c).
+  Los corchetes y los par√©ntesis pueden estar en el mismo rengl√≥n si el
+  c√≥digo entre ellos es peque√±o (c)
 
-+ La sangrÌa debe ser de 4 espacios. Dos niveles de sangrÌa pueden abreviarse
-  con una tabulaciÛn.
++ La sangr√≠a debe ser de 4 espacios. Dos niveles de sangr√≠a pueden abreviarse
+  con una tabulaci√≥n.
 
   Las razones para esto son:
   
-  1. Mientras que algunos editores pueden usar tamaÒos arbitrarios para las
-     tabulaciones, es un poco complicado indicarle a otro editor quÈ
-     tamaÒo de tabulaciÛn se usÛ en el editor con que se escribiÛ el cÛdigo.
-  2. La mayorÌa del cÛdigo en AROS fue escrito de esta manera y tu cÛdigo
-     deberÌa verse como el resto.
-  3. Puedes imprimir este cÛdigo en cualquier impresora sin la necesidad
+  1. Mientras que algunos editores pueden usar tama√±os arbitrarios para las
+     tabulaciones, es un poco complicado indicarle a otro editor qu√©
+     tama√±o de tabulaci√≥n se us√≥ en el editor con que se escribi√≥ el c√≥digo.
+  2. La mayor√≠a del c√≥digo en AROS fue escrito de esta manera y tu c√≥digo
+     deber√≠a verse como el resto.
+  3. Puedes imprimir este c√≥digo en cualquier impresora sin la necesidad
      de herramientas especiales para "arreglar" las tabulaciones.
-  4. La mayorÌa de los editores tienen tabulaciones inteligentes que hacen
+  4. La mayor√≠a de los editores tienen tabulaciones inteligentes que hacen
      exactamente esto. Si tu editor no lo hace, escribe un informe de error.
 
-+ Si tienes una funciÛn con muchos argumentos (d, e) deberÌas poner los
-  parÈntesis en renglones aparte y cada argumento en su propio renglÛn (d)
-  o poner el primer argumento detr·s del parÈntesis de apertura (e) y
-  los sucesivos argumentos en un renglÛn distinto con una coma delante.
-  El parÈntesis de cierre debe estar en su propio renglÛn y alineado
-  con el comienzo de la expresiÛn (es decir, el a y no el parÈntesis de
++ Si tienes una funci√≥n con muchos argumentos (d, e) deber√≠as poner los
+  par√©ntesis en renglones aparte y cada argumento en su propio rengl√≥n (d)
+  o poner el primer argumento detr√°s del par√©ntesis de apertura (e) y
+  los sucesivos argumentos en un rengl√≥n distinto con una coma delante.
+  El par√©ntesis de cierre debe estar en su propio rengl√≥n y alineado
+  con el comienzo de la expresi√≥n (es decir, el a y no el par√©ntesis de
   apertura o el `printf()`).
 
-+ Usa un renglÛn vacÌo para separar los bloques lÛgicos. Los comentarios 
-  largos deberÌan tener un renglÛn vacÌo antes y despuÈs, los comentarios
-  cortos deberÌan suceder al cÛdigo que explican con un ˙nico renglÛn
-  vacÌo de separaciÛn.
++ Usa un rengl√≥n vac√≠o para separar los bloques l√≥gicos. Los comentarios 
+  largos deber√≠an tener un rengl√≥n vac√≠o antes y despu√©s, los comentarios
+  cortos deber√≠an suceder al c√≥digo que explican con un √∫nico rengl√≥n
+  vac√≠o de separaci√≥n.
 
 
-Escribir el cÛdigo para ROM
+Escribir el c√≥digo para ROM
 ===========================
 
-El cÛdigo de los mÛdulos de AROS deberÌa ser escrito de modo que se
+El c√≥digo de los m√≥dulos de AROS deber√≠a ser escrito de modo que se
 ajuste para incorporarlo en una ROM, FlashRAM u otro tipo de memoria
-de solo-lectura. Est·n previstas las siguientes reglas de estilo de 
-codificaciÛn para que eso sea posible. Por supuesto, que se aplican
-a todos los mÛdulos Kickstart y al cÛdigo que podrÌa ser residente,
-compartido o enlazado a otros mÛdulos.
+de solo-lectura. Est√°n previstas las siguientes reglas de estilo de 
+codificaci√≥n para que eso sea posible. Por supuesto, que se aplican
+a todos los m√≥dulos Kickstart y al c√≥digo que podr√≠a ser residente,
+compartido o enlazado a otros m√≥dulos.
 
-+ Los mÛdulos ROM no deben tener las secciones .data y .bss.
-  B·sicamente, necesitamos quitar todos los datos globales no constantes.
-  El Amiga Kickstart autÈntico prueba que es posible y f·cil lograr esto.
++ Los m√≥dulos ROM no deben tener las secciones .data y .bss.
+  B√°sicamente, necesitamos quitar todos los datos globales no constantes.
+  El Amiga Kickstart aut√©ntico prueba que es posible y f√°cil lograr esto.
 
-  Si encuentras una variable externa (est·tica o no) que sea 
-  modificada por el cÛdigo, prueba a quitarla o moverla a la base de
+  Si encuentras una variable externa (est√°tica o no) que sea 
+  modificada por el c√≥digo, prueba a quitarla o moverla a la base de
   biblioteca/dispositivo (o en el nodo dispositivo de tu manejador o en los
   datos de usuario de tu clase).
 
-+ Lo de arriba tambiÈn se aplica a las bases de las bibliotecas. Si est·s
++ Lo de arriba tambi√©n se aplica a las bases de las bibliotecas. Si est√°s
   escribiendo una biblioteca, pon las bases de las otras bibliotecas en
   la estructura base de tu propia bibliteca. Las clases BOOPSI pueden
   almacenar las bases de la biblioteca en sus datos privados de la clase.
 
 + Intenta establecer los atributos `static` y `const` para todos tu datos
-  globales. TambiÈn puedes usar los tipos `CONST_STRPTR` y `CONST_APTR`
+  globales. Tambi√©n puedes usar los tipos `CONST_STRPTR` y `CONST_APTR`
   definidos en <exec/types.h>. Usar `static const` permite que el 
-  compilador mueva los datos al segmento ".text" (m·s conocido como cÛdigo).
-  Si necesitas pasar estas variables globales a otra funciÛn, prueba a 
-  cambiar su prototipo para usar `const` tambiÈn. FÌjate que, del OS 3.5,
+  compilador mueva los datos al segmento ".text" (m√°s conocido como c√≥digo).
+  Si necesitas pasar estas variables globales a otra funci√≥n, prueba a 
+  cambiar su prototipo para usar `const` tambi√©n. F√≠jate que, del OS 3.5,
   Olaf Barthel ha cambiado para usar `const` en las cabeceras <clib/#?_protos.h>.
 
-+ **NUNCA JAM¡S** toques los b˙feres pasados por el usuario como
-  un par·metro "input". El concepto de los par·metros de entrada 
-  est· implÌcito en la descripciÛn de la funciÛn. Por ejemplo,
++ **NUNCA JAM√ÅS** toques los b√∫feres pasados por el usuario como
+  un par√°metro "input". El concepto de los par√°metros de entrada 
+  est√° impl√≠cito en la descripci√≥n de la funci√≥n. Por ejemplo,
   el nombre de archivo pasado a `Open()` claramente es una variable
   de entrada y `Open()` no debe mess con ella, incluso si va a 
-  dejarla como estaba despuÈs. Ten en cuenta, que el b˙fer podrÌa
+  dejarla como estaba despu√©s. Ten en cuenta, que el b√∫fer podr√≠a
   estar en una memoria de solo-lectura o compartida entre varias
   instancias de un programa residente o multihilo.
 
-+ Intenta evitar las llamadas del OS anfitriÛn como `malloc()` y
++ Intenta evitar las llamadas del OS anfitri√≥n como `malloc()` y
   `free()` si puedes usar `AllocMem()` y `FreeMem()`. Porque
-  las macros de depuraciÛn que revisan el puntero se basan en
+  las macros de depuraci√≥n que revisan el puntero se basan en
   encontrar al puntero dentro de los bloques de memoria de Exec
   con `TypeOfMem()`.
   
@@ -454,13 +454,13 @@ Porting
 Este archivo describe como pasar AROS a un nuevo tipo de hardware.
 
 1. Selecciona un nombre identificatorio para tu CPU (por ej. i386, m68k,
-   hppa, sparc) y aÒ·dele "-emul" (por ej. i386-emul) si tu puerto
-   se ejecutar· como un "sub-OS" o "-native" (por ej. m68k-native) si el
-   puerto ser· un OS separado.
+   hppa, sparc) y a√±√°dele "-emul" (por ej. i386-emul) si tu puerto
+   se ejecutar√° como un "sub-OS" o "-native" (por ej. m68k-native) si el
+   puerto ser√° un OS separado.
 
 2. Selecciona un nombre identificatorio para tu sistema (por ej. sgi, linux, amiga, etc.).
 
-3. Edita "configure" y make reconocer· tu tipo de hardware y acomodar· las
+3. Edita "configure" y make reconocer√° tu tipo de hardware y acomodar√° las
    numerosas variables que necesite tu sistema.
 
    KERNEL
@@ -473,46 +473,46 @@ Este archivo describe como pasar AROS a un nuevo tipo de hardware.
    	El nombre de tu compilador de C
     
    COMMON_CFLAGS
-   	Las opciones que deberÌas ser consideradas por cada invocaciÛn al
+   	Las opciones que deber√≠as ser consideradas por cada invocaci√≥n al
 	compilador de C (por ej. -g -Wall -O0 etc.)
    
    ILDFLAGS
    	Las banderas que debes darle al compilador cuando enlaces para
-	evitar usar cualquier biblioteca est·ndar o mÛdulos de inicio
+	evitar usar cualquier biblioteca est√°ndar o m√≥dulos de inicio
 	(para GCC las opciones son -nostartfiles -nostdlib -Xlinker -i).
 	Esto se usa para crear los ejecutables de AROS. Estos ejecutables 
-	no deben tener ning˙n sÌmbolo sin resolver y todas las referencias
+	no deben tener ning√∫n s√≠mbolo sin resolver y todas las referencias
 	deben estar verificadas.
     
    RANLIB
    	contiene el nombre de tu programa ranlib. Si no tienes uno
 	especifica "true" (o el nombre de cualquier otro comando del shell
-	que sencillamente ignore todos los par·metros y no devuelva 
-	ning˙n cÛdigo de error).
+	que sencillamente ignore todos los par√°metros y no devuelva 
+	ning√∫n c√≥digo de error).
 
-4. Tipea "make". Abortar· porque no hay $(KERNEL) a˙n, pero configurar·
-   algunos archivos importantes y ·rboles de directorio.
+4. Tipea "make". Abortar√° porque no hay $(KERNEL) a√∫n, pero configurar√°
+   algunos archivos importantes y √°rboles de directorio.
 
 5. Haz una copia de i386-emul a $(KERNEL) y convierte todos fuentes en
    ensamblador de x86 a tu CPU.
 
 6. Llena $(KERNEL)/. Se recomienda que hagas una copia de i386-emul, porque
-   es la versiÛn m·s al dÌa del n˙cleo.
+   es la versi√≥n m√°s al d√≠a del n√∫cleo.
 
-7. Tipea "make machine". Compilar· un programa y lo ejecutar·. La salida
+7. Tipea "make machine". Compilar√° un programa y lo ejecutar√°. La salida
    se puede usar para modificar $(KERNEL)/machine.h.
 
-8. Ejecuta "make machine.i" en $(KERNEL). Generar· el archivo "machine.i"
-   que necesitar·s para compilar los archivos en ensamblador. "machine.i"
+8. Ejecuta "make machine.i" en $(KERNEL). Generar√° el archivo "machine.i"
+   que necesitar√°s para compilar los archivos en ensamblador. "machine.i"
    contiene los valores de numerosas constantes del sistema (los
-   desplazamientos de los vectores de funciÛn, los desplazamientos de los
+   desplazamientos de los vectores de funci√≥n, los desplazamientos de los
    campos de estructura y las banderas del sistema).
 
-9. Edita todos los archivos #?.s en $(KERNEL) y genera el cÛdigo m·quina
+9. Edita todos los archivos #?.s en $(KERNEL) y genera el c√≥digo m√°quina
    adecuado para tu CPU. Para compilar los archivos, tipea "make".
 
-10. Ve al directorio principal y tipea "make". Si hay alg˙n error, escrÌbelos,
-    luego corrÌgelos y sigue con el paso 10.
+10. Ve al directorio principal y tipea "make". Si hay alg√∫n error, escr√≠belos,
+    luego corr√≠gelos y sigue con el paso 10.
 
 11. Ve a bin/$(ARCH)/AROS e inicia "arosshell". Ahora puedes escribir algunos
     comandos (por ej. "dir all", "list" o "demowin"). Si todo va bien, tienes

@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@python.org
-# Revision: $Revision$
-# Date: $Date$
+# $Id: __init__.py 8705 2021-04-17 12:41:26Z grubert $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -28,12 +26,6 @@ Modules:
 - statemachine.py: A finite state machine specialized for
   regular-expression-based text filters.
 
-- urischemes.py: Contains a complete mapping of known URI addressing
-  scheme names to descriptions.
-
-- utils.py: Contains the ``Reporter`` system warning class and miscellaneous
-  utilities.
-
 Subpackages:
 
 - languages: Language-specific mappings of terms.
@@ -46,27 +38,101 @@ Subpackages:
 - transforms: Modules used by readers and writers to modify DPS
   doctrees.
 
+- utils: Contains the ``Reporter`` system warning class and miscellaneous
+  utilities used by readers, writers, and transforms.
+
+  utils/urischemes.py: Contains a complete mapping of known URI addressing
+  scheme names to descriptions.
+
+- utils/math: Contains functions for conversion of mathematical notation
+  between different formats (LaTeX, MathML, text, ...).
+
 - writers: Format-specific output translators.
 """
 
+import sys
+from collections import namedtuple
+
+
 __docformat__ = 'reStructuredText'
 
-__version__ = '0.4'
-"""``major.minor.micro`` version number.  The micro number is bumped for API
-changes, for new functionality, and for interim project releases.  The minor
-number is bumped whenever there is a significant project release.  The major
-number will be bumped when the project is feature-complete, and perhaps if
-there is a major change in the design."""
+__version__ = '0.17.1'
+"""Docutils version identifier (complies with PEP 440)::
+
+    major.minor[.micro][releaselevel[serial]][.dev]
+
+For version comparison operations, use `__version_info__` (see, below)
+rather than parsing the text of `__version__`.
+
+See 'Version Numbering' in docs/dev/policies.txt.
+"""
+
+# from functools import total_ordering
+# @total_ordering
+class VersionInfo(namedtuple('VersionInfo',
+                             'major minor micro releaselevel serial release')):
+
+    def __new__(cls, major=0, minor=0, micro=0,
+                releaselevel='final', serial=0, release=True):
+        releaselevels = ('alpha', 'beta', 'candidate', 'final')
+        if releaselevel not in releaselevels:
+            raise ValueError('releaselevel must be one of %r.'
+                             % (releaselevels, ))
+        if releaselevel == 'final':
+            if not release:
+                raise ValueError('releaselevel "final" must not be used '
+                             'with development versions (leads to wrong '
+                             'version ordering of the related __version__')
+            if serial != 0:
+                raise ValueError('"serial" must be 0 for final releases')
+
+        return super(VersionInfo, cls).__new__(cls, major, minor, micro,
+                                               releaselevel, serial, release)
+
+    def __lt__(self, other):
+        if isinstance(other, tuple):
+            other = VersionInfo(*other)
+        return tuple.__lt__(self, other)
+
+    def __gt__(self, other):
+        if isinstance(other, tuple):
+            other = VersionInfo(*other)
+        return tuple.__gt__(self, other)
+
+    def __le__(self, other):
+        if isinstance(other, tuple):
+            other = VersionInfo(*other)
+        return tuple.__le__(self, other)
+
+    def __ge__(self, other):
+        if isinstance(other, tuple):
+            other = VersionInfo(*other)
+        return tuple.__ge__(self, other)
+
+__version_info__ = VersionInfo(
+    major=0,
+    minor=17,
+    micro=1,
+    releaselevel='final', # one of 'alpha', 'beta', 'candidate', 'final'
+    # pre-release serial number (0 for final releases and active development):
+    serial=0,
+    release=True # True for official releases and pre-releases
+    )
+"""Comprehensive version information tuple. See 'Version Numbering' in
+docs/dev/policies.txt."""
 
 __version_details__ = 'release'
-"""Extra version details (e.g. 'snapshot 2005-05-29, r3410', 'repository',
-'release'), modified automatically & manually."""
+"""Optional extra version details (e.g. 'snapshot 2005-05-29, r3410').
+(For development and release status see `__version_info__`.)
+"""
 
-class ApplicationError(StandardError): pass
+
+class ApplicationError(Exception): pass
+
 class DataError(ApplicationError): pass
 
 
-class SettingsSpec:
+class SettingsSpec(object):
 
     """
     Runtime setting specification base class.
@@ -82,22 +148,32 @@ class SettingsSpec:
 
     - Option group title (string or `None` which implies no group, just a list
       of single options).
-    
+
     - Description (string or `None`).
-    
+
     - A sequence of option tuples.  Each consists of:
 
       - Help text (string)
-      
+
       - List of option strings (e.g. ``['-Q', '--quux']``).
-      
-      - Dictionary of keyword arguments.  It contains arguments to the
-        OptionParser/OptionGroup ``add_option`` method, possibly with the
-        addition of a 'validator' keyword (see the
-        `docutils.frontend.OptionParser.validators` instance attribute).  Runtime
-        settings names are derived implicitly from long option names
+
+      - Dictionary of keyword arguments sent to the OptionParser/OptionGroup
+        ``add_option`` method.
+
+        Runtime setting names are derived implicitly from long option names
         ('--a-setting' becomes ``settings.a_setting``) or explicitly from the
-        'dest' keyword argument.  See optparse docs for more details.
+        'dest' keyword argument.
+
+        Most settings will also have a 'validator' keyword & function.  The
+        validator function validates setting values (from configuration files
+        and command-line option arguments) and converts them to appropriate
+        types.  For example, the ``docutils.frontend.validate_boolean``
+        function, **required by all boolean settings**, converts true values
+        ('1', 'on', 'yes', and 'true') to 1 and false values ('0', 'off',
+        'no', 'false', and '') to 0.  Validators need only be set once per
+        setting.  See the `docutils.frontend.validate_*` functions.
+
+        See the optparse docs for more details.
 
     - More triples of group title, description, options, as many times as
       needed.  Thus, `settings_spec` tuples can be simply concatenated.
@@ -153,9 +229,10 @@ class TransformSpec:
     unknown_reference_resolvers = ()
     """List of functions to try to resolve unknown references.  Unknown
     references have a 'refname' attribute which doesn't correspond to any
-    target in the document.  Called when FinalCheckVisitor is unable to find a
-    correct target.  The list should contain functions which will try to
-    resolve unknown references, with the following signature::
+    target in the document.  Called when the transforms in
+    `docutils.tranforms.references` are unable to find a correct target.  The
+    list should contain functions which will try to resolve unknown
+    references, with the following signature::
 
         def reference_resolver(node):
             '''Returns boolean: true if resolved, false if not.'''
@@ -184,7 +261,7 @@ class Component(SettingsSpec, TransformSpec):
 
     supported = ()
     """Names for this component.  Override in subclasses."""
-    
+
     def supports(self, format):
         """
         Is `format` supported by this component?

@@ -31,19 +31,19 @@ Fantastisch nieuws
 Michal Schulz vordert met de toetsenbord driver voor zijn USB stack. 
 Hij heeft een eerste commit gemaakt die al vrij goed werkt 
 (toetsen worden correct afgehandeld, alleen de LEDs werken nog niet). 
-Hou a.u.b. wel rekening dat AROS alleen nog compatibel is met de UHCI USB 
+Hou a.u.b. wel rekening dat AROSÂ alleen nog compatibel is met de UHCI USB 
 controllers. 
 
 Het SFS bestandssysteem compileert nu automatisch. Dit staat de gebruiker toe om 
 SFS partities te mounten en gebruiken op een veiligere en makkelijkere manier. 
 Pavel Fedin heeft het format commando geupdate om met verschillende bestandssystemen
-om te gaan. Om nu een SFS partitie te formatteren, moet u deze eerst creëren met HDToolBox, 
-het type veranderen naar SFS en daarna het volgende shell commando uitvoeren:
+om te gaan. Om nu een SFS partitie te formatteren,Â moet u deze eerst creÃ«ren met HDToolBox, 
+het type veranderen naar SFSÂ en daarna het volgende shell commando uitvoeren:
 
   FORMAT DRIVE=DH1: NAME=MijnVolume
 
-Let wel: GRUB kan AROS nog niet booten vanaf SFS. U zult dus een kleine
-FSS (of EXT3, FAT) partitie moeten creëren om alle kernel en opstart bestanden op te 
+Let wel: GRUB kanÂ AROS nog niet booten vanaf SFS. U zult dus een kleine
+FSS (of EXT3, FAT) partitie moeten creÃ«ren om alle kernel en opstart bestanden op te 
 zetten, zodat GRUB zijn werk kan doen.
 
 Pavel werkt op moment aan een nieuw CD bestandssysteem genaamd
@@ -61,7 +61,7 @@ Er is een nieuw rx commando in AROS, dat wacht om al uw ARexx scripts uit te voe
 
 Dankzij Bernd Roesch, kan ZUNE nu ook overweg met MUI4 afbeeldingen (.mim bestanden). 
 Pavel Fedin heeft een crash verholpen in de 'pendisplay class' die optreed als er geen
-vrije 'pens' op het scherm zijn. Tot slot zijn enkele Gorilla Iconen toegevoegd door Paolo Besser. 
+vrije 'pens'Â op het scherm zijn. Tot slot zijn enkele Gorilla Iconen toegevoegd door Paolo Besser. 
 
 
 __ https://ae.amigalife.org/modules/xcgal/displayimage.php?pid=239

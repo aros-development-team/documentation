@@ -9,7 +9,7 @@
 Rename
 ======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -19,7 +19,7 @@ Sk³adnia
 	FROM/A/M,TO=AS/A,QUIET/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -31,8 +31,8 @@ Funkcja
 ~~~~~~~
 ::
 
-	Zmienia nazwê obiektu. Rename mo¿e byæ u¿yty tak jak UNIX'owy mv,
-	który przenosi plik/pliki do innej lokacji na dysku.
+	Zmienia nazwÄ™ obiektu. Rename moÅ¼e byÄ‡ uÅ¼yty tak jak UNIX'owy mv,
+	ktÃ³ry przenosi plik/pliki do innej lokacji na dysku.
 
 
 Parametry
@@ -40,13 +40,13 @@ Parametry
 ::
 
 
-	FROM	--	Nazwa(y) pliku(ów) do przeniesienia. Mo¿e byæ podanych 
-			wiele plików.
+	FROM	--	Nazwa(y) pliku(Ã³w) do przeniesienia. MoÅ¼e byÄ‡ podanych 
+			wiele plikÃ³w.
 
 
-	TO|AS	--	Nazwa jak± chcemy przypisaæ nowemu plikowi.
+	TO|AS	--	Nazwa jakÄ… chcemy przypisaÄ‡ nowemu plikowi.
 
-	QUIET	--	Brak wyj¶cia do konsoli.
+	QUIET	--	Brak wyjÅ›cia do konsoli.
 
 
 Wynik
@@ -54,10 +54,10 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -71,6 +71,6 @@ Przyk³ad
 	Rename from ram:a to ram:b quiet
 	Rename from=ram:a to=ram:b quiet
 
-	Wszystkie wersje, zmiana nazwy z "a" do "b", i brak jest wyj¶cia do
+	Wszystkie wersje, zmiana nazwy z "a" do "b", i brak jest wyjÅ›cia do
 	konsoli(QUIET).
 

@@ -2,8 +2,8 @@
 Archive news
 ============
 
-Ici vous trouverez les anciennes news qui ont été publiées sur ce site
-web au cours des années précédentes. Les articles des années qui suivent
+Ici vous trouverez les anciennes news qui ont Ã©tÃ© publiÃ©es sur ce site
+web au cours des annÃ©es prÃ©cÃ©dentes. Les articles des annÃ©es qui suivent
 sont disponibles:
 
 + `2020 <2020>`__

@@ -8,14 +8,14 @@ Lataus
 Snapshotit
 ==========
 
-Tilannekuvia (nk. snapshotteja) julkaistaan tihe�mmin kuin t�ysi� versioita,
-mutta harvemmin kuin �isi� k��nn�ksi�. Toisin kuin �isi� k��nn�ksi�, on n�it�
-testattu ainakin ohimennen muutamissa ymp�rist�iss�, joten yleisesti ottaen
-n�iden tulisi olla vakaampia. Mutta toisaalta, mukana ei ole viimeisint�
+Tilannekuvia (nk. snapshotteja) julkaistaan tiheämmin kuin täysiä versioita,
+mutta harvemmin kuin öisiä käännöksiä. Toisin kuin öisiä käännöksiä, on näitä
+testattu ainakin ohimennen muutamissa ympäristöissä, joten yleisesti ottaen
+näiden tulisi olla vakaampia. Mutta toisaalta, mukana ei ole viimeisintä
 koodia.
 
-Raportoi n�it� k�ytt�ess�si l�yt�m�si viat `vikaseurannan`__ kautta. Muissa
-tarpeissa ota meihin yhteytt� `AROSWorld`__:in kautta.
+Raportoi näitä käyttäessäsi löytämäsi viat `vikaseurannan`__ kautta. Muissa
+tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
 
 .. raw:: html
 
@@ -25,17 +25,17 @@ __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
 __ https://www.arosworld.org/
 
 
-�iset k��nn�kset
+Öiset käännökset
 ================
 
-�iset k��nn�kset tehd��n, kuten nimest� n�kyy, automaattisesti joka y� suoraan
-Subversion-puusta ja ne sis�lt�v�t uusinta koodia. Koska n�it� ei ole
-kuitenkaan testattu miss��n muodossa, saattavat �iset k��nn�kset huonolla
-tuurilla sis�lt�� toimimatonta ja/tai eritt�in bugista koodia. Suurimman osan
+Öiset käännökset tehdään, kuten nimestä näkyy, automaattisesti joka yö suoraan
+Subversion-puusta ja ne sisältävät uusinta koodia. Koska näitä ei ole
+kuitenkaan testattu missään muodossa, saattavat öiset käännökset huonolla
+tuurilla sisältää toimimatonta ja/tai erittäin bugista koodia. Suurimman osan
 ajasta ne kuitenkin toimivat moitteetta.
 
-Raportoi n�it� k�ytt�ess�si l�yt�m�si viat `vianseurannan`__ v�lityksell�.
-Muissa tarpeissa ota meihin yhteytt� `AROSWorld`__:in kautta.
+Raportoi näitä käyttäessäsi löytämäsi viat `vianseurannan`__ välityksellä.
+Muissa tarpeissa ota meihin yhteyttä `AROS-Exec`__:in kautta.
 
 .. raw:: html
 

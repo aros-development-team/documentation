@@ -1,96 +1,96 @@
 =====================================
-Ännu ett (ej kalender) år i återblick
+Ã„nnu ett (ej kalender) Ã¥r i Ã¥terblick
 =====================================
 
-:Författare:   Neil Cafferkey
+:FÃ¶rfattare:   Neil Cafferkey
 :Datum:        2012-10-21
 
-Ännu ett år har passerat. Ett år av programmering istället för
-nyhetsuppdatering och ytterligare en samling höjdpunkter att förmedla.
+Ã„nnu ett Ã¥r har passerat. Ett Ã¥r av programmering istÃ¤llet fÃ¶r
+nyhetsuppdatering och ytterligare en samling hÃ¶jdpunkter att fÃ¶rmedla.
 
-Ny Webbläsare
+Ny WebblÃ¤sare
 -------------
 
-AROS användbarhet tog ett stort steg frammåt i.o.m. att den modernare och
+AROS anvÃ¤ndbarhet tog ett stort steg frammÃ¥t i.o.m. att den modernare och
 webbstandard-kompatibla Odyssey Web Browser (OWB) portades till AROS. Baserad
-på WebKit-motorn, inkluderar Odyssey en JIT Javaskript kompilator och har stöd
-för surfning via flikar, HTML5, CSS, SVG och SSL. Odyssey erbjuder även med
-sitt grafiska användar gränssnitt (GUI), hantering av bokmärken, historik,
-lösenordshantering med mera.
+pÃ¥ WebKit-motorn, inkluderar Odyssey en JIT Javaskript kompilator och har stÃ¶d
+fÃ¶r surfning via flikar, HTML5, CSS, SVG och SSL. Odyssey erbjuder Ã¤ven med
+sitt grafiska anvÃ¤ndar grÃ¤nssnitt (GUI), hantering av bokmÃ¤rken, historik,
+lÃ¶senordshantering med mera.
 
 
 Plattformar
 -----------
 
-Supporten för ARM-arkitekturen har fortsatt att mogna och variera sig, via
-nattliga uppdateringar så finns det numera Linux-underbyggda AROS ARM system
-tillgängliga. Ett speciellt intresse finns i att använda AROS på ARM-baserade
-Raspberry Pi system, vilket nu börjar bli möjligt då en Linux-understödd
-AROSvariant har börjat se dagens ljus för just detta system.
+Supporten fÃ¶r ARM-arkitekturen har fortsatt att mogna och variera sig, via
+nattliga uppdateringar sÃ¥ finns det numera Linux-underbyggda AROS ARM system
+tillgÃ¤ngliga. Ett speciellt intresse finns i att anvÃ¤nda AROS pÃ¥ ARM-baserade
+Raspberry Pi system, vilket nu bÃ¶rjar bli mÃ¶jligt dÃ¥ en Linux-understÃ¶dd
+AROSvariant har bÃ¶rjat se dagens ljus fÃ¶r just detta system.
 
-Vidare så har arbetet med andra plattformar för AROS fortsatt. Den
-windows-underbyggda versionen har fått ett antal programfel åtgärdade och är
+Vidare sÃ¥ har arbetet med andra plattformar fÃ¶r AROS fortsatt. Den
+windows-underbyggda versionen har fÃ¥tt ett antal programfel Ã¥tgÃ¤rdade och Ã¤r
 numera betydligt stabilare, samtidigt som kompatibiliteten med original-Amigan
-har fortsatt att förbättrats.
+har fortsatt att fÃ¶rbÃ¤ttrats.
 
 
-Nätverk
+NÃ¤tverk
 -------
 
-Trådlös nätverks hantering har mognat i.o.m. två nya WPA-kompatibla
-drivrutiner. Den ena för Realtek RTL8187B-baserade USB-nätverkskort. Den andra
-är en uppdaterad version av Prism-II-drivrutinen, som var den första
-drivrutinen för trådlösa nätverk redan 2005. Ett grafik baserat hjälpmedel för
-att skanna och ansluta till trådlösa nätverk har också sett dagens ljus under
-året.
+TrÃ¥dlÃ¶s nÃ¤tverks hantering har mognat i.o.m. tvÃ¥ nya WPA-kompatibla
+drivrutiner. Den ena fÃ¶r Realtek RTL8187B-baserade USB-nÃ¤tverkskort. Den andra
+Ã¤r en uppdaterad version av Prism-II-drivrutinen, som var den fÃ¶rsta
+drivrutinen fÃ¶r trÃ¥dlÃ¶sa nÃ¤tverk redan 2005. Ett grafik baserat hjÃ¤lpmedel fÃ¶r
+att skanna och ansluta till trÃ¥dlÃ¶sa nÃ¤tverk har ocksÃ¥ sett dagens ljus under
+Ã¥ret.
 
-Mobilt bredband är numera betydligt enklare att konfigurera och använda. Fler
-USB-enheter och telefoner stöds. AROS kan numera hantera delade SMB enheter.
-Dock begränsas detta till äldre windows och linux versioner samt NAS enheter.
+Mobilt bredband Ã¤r numera betydligt enklare att konfigurera och anvÃ¤nda. Fler
+USB-enheter och telefoner stÃ¶ds. AROS kan numera hantera delade SMB enheter.
+Dock begrÃ¤nsas detta till Ã¤ldre windows och linux versioner samt NAS enheter.
 
 
-Andra förbättringar
+Andra fÃ¶rbÃ¤ttringar
 -------------------
 
-Begynnande skrivarstöd har initierats till AROS. Komponenter till dom nya
-strukturerna inkluderar ett grafiskt gränssnitt, en postscript-skrivarerutin
-samt flera traditionella tillbehör som t.ex. en grafisk fildump och en
+Begynnande skrivarstÃ¶d har initierats till AROS. Komponenter till dom nya
+strukturerna inkluderar ett grafiskt grÃ¤nssnitt, en postscript-skrivarerutin
+samt flera traditionella tillbehÃ¶r som t.ex. en grafisk fildump och en
 Printfiles-funktion. Utskrifter kan omdirigeras till USB, Parallell eller
 Serieport eller alternativt till en fil.
 
-Vår Intel GMA drivrutin har fått 3D support för vissa chip-revisioner, dock
-har GMA hårdvaran begränsade möjligheter jämfört med modernare nVidia och
-AMD-kort. Många äldre spel (av vilka flera har portats på senare tid) fungerar
-dock bra. Vi har också fått en OpenGL-drivrutin till Linux-underbyggda
+VÃ¥r Intel GMA drivrutin har fÃ¥tt 3D support fÃ¶r vissa chip-revisioner, dock
+har GMA hÃ¥rdvaran begrÃ¤nsade mÃ¶jligheter jÃ¤mfÃ¶rt med modernare nVidia och
+AMD-kort. MÃ¥nga Ã¤ldre spel (av vilka flera har portats pÃ¥ senare tid) fungerar
+dock bra. Vi har ocksÃ¥ fÃ¥tt en OpenGL-drivrutin till Linux-underbyggda
 3D-grafik-system och en uppdaterad nVidia drivrutin.
 
-Utbudet av ljud drivrutiner tillgängliga för AROS har förbättrats, bl.a. med
-drivrutiner till ES137x och CMI8738 ljud-chippen. Den förstnämnda är speciellt
-intressant då den erbjuder utgående ljud under VMWare. Vår HD Audio drivrutin
-har också fått en bredare kompatibilitet vad gäller ljudåtergivning och
-inspelnings lägen.
+Utbudet av ljud drivrutiner tillgÃ¤ngliga fÃ¶r AROS har fÃ¶rbÃ¤ttrats, bl.a. med
+drivrutiner till ES137x och CMI8738 ljud-chippen. Den fÃ¶rstnÃ¤mnda Ã¤r speciellt
+intressant dÃ¥ den erbjuder utgÃ¥ende ljud under VMWare. VÃ¥r HD Audio drivrutin
+har ocksÃ¥ fÃ¥tt en bredare kompatibilitet vad gÃ¤ller ljudÃ¥tergivning och
+inspelnings lÃ¤gen.
 
-Förbättringar har gjorts gällande diskåtkomst från AROS. Vi har nu en
-AHCI-drivrutin som tillhandahåller grundläggande SATA-tjänster på flera
-moderna maskiner. Tilläggas kan även att standard windows-partitoner nu kan
-läsas tack vare en tidig version av en NTFS hanterare och skrivhastigheten
-till FAT-partitoner har förbättrats. Nya open source CD-brännar-programmet
-Frying Pan är nu en standard komponent i AROS.
+FÃ¶rbÃ¤ttringar har gjorts gÃ¤llande diskÃ¥tkomst frÃ¥n AROS. Vi har nu en
+AHCI-drivrutin som tillhandahÃ¥ller grundlÃ¤ggande SATA-tjÃ¤nster pÃ¥ flera
+moderna maskiner. TillÃ¤ggas kan Ã¤ven att standard windows-partitoner nu kan
+lÃ¤sas tack vare en tidig version av en NTFS hanterare och skrivhastigheten
+till FAT-partitoner har fÃ¶rbÃ¤ttrats. Nya open source CD-brÃ¤nnar-programmet
+Frying Pan Ã¤r nu en standard komponent i AROS.
 
-Sist men inte minst ledde vårt "papercuts" initiativ till att många mindre
-men irriterande programfel har rättats till i hela AROS systemet.
+Sist men inte minst ledde vÃ¥rt "papercuts" initiativ till att mÃ¥nga mindre
+men irriterande programfel har rÃ¤ttats till i hela AROS systemet.
 
 
 Vidare utveckling
 -----------------
 
-AROS har nu fått sin första utgåva för original (MC680x0) Amiga-plattformar,
-`AROS Vision`__. Såväl som till AROS-systemet självt, AROS Vision inkluderar många
+AROS har nu fÃ¥tt sin fÃ¶rsta utgÃ¥va fÃ¶r original (MC680x0) Amiga-plattformar,
+`AROS Vision`__. SÃ¥vÃ¤l som till AROS-systemet sjÃ¤lvt, AROS Vision inkluderar mÃ¥nga
 fritt distribuerbara 3:e-parts-AmigaOS-systemkomponenter och applikationer.
 
-En annan ny AROS utgåva är `AEROS`__, som riktar sig till att kombinera det
-bästa från AROS och Linux i en väl samansvetsad miljö. För nuvarande finns
-versioner för x86 och ARM baserade system.
+En annan ny AROS utgÃ¥va Ã¤r `AEROS`__, som riktar sig till att kombinera det
+bÃ¤sta frÃ¥n AROS och Linux i en vÃ¤l samansvetsad miljÃ¶. FÃ¶r nuvarande finns
+versioner fÃ¶r x86 och ARM baserade system.
 
 __ http://www.natami-news.de/html/aros_vision.html
 __ http://www.aeros-os.org/

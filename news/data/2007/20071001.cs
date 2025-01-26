@@ -5,56 +5,56 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   01.10.2007
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-Neuvìøitelná zpráva! Neil Cafferkey komitnul zbrusu novı `instalátor`__ 
-AROSu, kterı umo¾òuje èist¹í a bezpeènìj¹í instalaci na pevné disky. 
-Tady jsou jeho nové funkce:
+NeuvÄ›Å™itelnÃ¡ zprÃ¡va! Neil Cafferkey komitnul zbrusu novÃ½ `instalÃ¡tor`__ 
+AROSu, kterÃ½ umoÅ¾Åˆuje ÄistÅ¡Ã­ a bezpeÄnÄ›jÅ¡Ã­ instalaci na pevnÃ© disky. 
+Tady jsou jeho novÃ© funkce:
 
-- Mù¾e bıt urèena instalaèní jednotka a oddíl.
-- Funguje vytvoøení pracovního oddílu (Work partition).
-- Mohou bıt urèeny velikosti oddílu a souèasné oddíly mohou bıt zachovány.
-- Pokud je nalezen systémovı oddíl s Windows, je automaticky doplnìn do spou¹tìcího menu GRUBu.
-- Místní nastavení (locale) mù¾e bıt specifikováno bìhem instalace.
+- MÅ¯Å¾e bÃ½t urÄena instalaÄnÃ­ jednotka a oddÃ­l.
+- Funguje vytvoÅ™enÃ­ pracovnÃ­ho oddÃ­lu (Work partition).
+- Mohou bÃ½t urÄeny velikosti oddÃ­lu a souÄasnÃ© oddÃ­ly mohou bÃ½t zachovÃ¡ny.
+- Pokud je nalezen systÃ©movÃ½ oddÃ­l s Windows, je automaticky doplnÄ›n do spouÅ¡tÄ›cÃ­ho menu GRUBu.
+- MÃ­stnÃ­ nastavenÃ­ (locale) mÅ¯Å¾e bÃ½t specifikovÃ¡no bÄ›hem instalace.
 
 
-Pozor, stále se jedná o beta (testovací) software. Pár varování
-od Neila: "Novı instalátor je zaøazen do noèních sestavení
-a je pøipraven k testování. Nicménì je v souèasné dobì chyba ve Wandereru
-nebo v souborovém systému FFS. Na jejím odstranìní se pracuje.
-Pokud bude¹ formátovat oddíly, je tøeba po spu¹tìní instalátoru pøed dal¹ím
-pokraèováním ukonèit Wanderer.
-Buï s touto verzí instalátoru je¹tì víc opatrnìj¹í, ne¾ kdykoli jindy - tzn.
-nepou¾ívat poèítaè s nezazálohovanımi cennımi daty. Mìly by bıt
-zachovány v¹echny existující oblasti (pokud je o to po¾ádáno), ale nikdo
-jinı ne¾ já to netestoval."
+Pozor, stÃ¡le se jednÃ¡ o beta (testovacÃ­) software. PÃ¡r varovÃ¡nÃ­
+od Neila: "NovÃ½ instalÃ¡tor je zaÅ™azen do noÄnÃ­ch sestavenÃ­
+a je pÅ™ipraven k testovÃ¡nÃ­. NicmÃ©nÄ› je v souÄasnÃ© dobÄ› chyba ve Wandereru
+nebo v souborovÃ©m systÃ©mu FFS. Na jejÃ­m odstranÄ›nÃ­ se pracuje.
+Pokud budeÅ¡ formÃ¡tovat oddÃ­ly, je tÅ™eba po spuÅ¡tÄ›nÃ­ instalÃ¡toru pÅ™ed dalÅ¡Ã­m
+pokraÄovÃ¡nÃ­m ukonÄit Wanderer.
+BuÄ s touto verzÃ­ instalÃ¡toru jeÅ¡tÄ› vÃ­c opatrnÄ›jÅ¡Ã­, neÅ¾ kdykoli jindy - tzn.
+nepouÅ¾Ã­vat poÄÃ­taÄ s nezazÃ¡lohovanÃ½mi cennÃ½mi daty. MÄ›ly by bÃ½t
+zachovÃ¡ny vÅ¡echny existujÃ­cÃ­ oblasti (pokud je o to poÅ¾Ã¡dÃ¡no), ale nikdo
+jinÃ½ neÅ¾ jÃ¡ to netestoval."
 
-Pokud vlastní¹ testovací stroj (bez dùle¾itıch dat), bylo by skvìlé, pokud
-by sis stáhnul noèní sestavení z 10.01.2007 (nebo pozdìj¹í) a pomohl
-nám najít chyby. Mù¾e¹ pou¾ít Bug Tracker nebo poslat zprávu do AROS-Exec
+Pokud vlastnÃ­Å¡ testovacÃ­ stroj (bez dÅ¯leÅ¾itÃ½ch dat), bylo by skvÄ›lÃ©, pokud
+by sis stÃ¡hnul noÄnÃ­ sestavenÃ­ z 10.01.2007 (nebo pozdÄ›jÅ¡Ã­) a pomohl
+nÃ¡m najÃ­t chyby. MÅ¯Å¾eÅ¡ pouÅ¾Ã­t Bug Tracker nebo poslat zprÃ¡vu do AROS-Exec
 `diskuze`__. 
 
 
-Pøedstavení AROSu
+PÅ™edstavenÃ­ AROSu
 -----------------
 
-Jak u¾ bylo na tomto webu uvedeno, AROS byl jednou z hvìzd
-`Pianeta Amiga 2007`__. Bìhem populární Amiga show, 
-Paolo Besser pøedstavil AROS zájemcùm z øad u¾ivatelù Amigy.
-Tato událost byla zveøejnìna nìkolika vıznamnımi zpravodajskımi weby ze svìta IT
-jako `TGM Online`__ a `HW Upgrade`__. Zpráva z této show 
-byla publikována na `The AROS Show`__ (pøeèíst si ji mù¾e¹ `zde`__). Také se
-mù¾e¹ podívat na zajímavé `video`__ na YouTube.
+Jak uÅ¾ bylo na tomto webu uvedeno, AROS byl jednou z hvÄ›zd
+`Pianeta Amiga 2007`__. BÄ›hem populÃ¡rnÃ­ Amiga show, 
+Paolo Besser pÅ™edstavil AROS zÃ¡jemcÅ¯m z Å™ad uÅ¾ivatelÅ¯ Amigy.
+Tato udÃ¡lost byla zveÅ™ejnÄ›na nÄ›kolika vÃ½znamnÃ½mi zpravodajskÃ½mi weby ze svÄ›ta IT
+jako `TGM Online`__ a `HW Upgrade`__. ZprÃ¡va z tÃ©to show 
+byla publikovÃ¡na na `The AROS Show`__ (pÅ™eÄÃ­st si ji mÅ¯Å¾eÅ¡ `zde`__). TakÃ© se
+mÅ¯Å¾eÅ¡ podÃ­vat na zajÃ­mavÃ© `video`__ na YouTube.
 
-AROS ve svìtì
+AROS ve svÄ›tÄ›
 -------------
 
-Ná¹ web má nìkolik novì pøelo¾enıch dokumentací - jmenovitì do øeètiny (Ioannis
-Koniaris), ¹panìl¹tiny (Ariel Gomez) a èe¹tiny (Petr Novák), s obvyklou
-a nezbytnou pomocí od Neila Cafferkeyho. ©védská (Jon Anderson) a
-ruská (Softy) aktualizace pøekladu se objeví ji¾ brzy. Také se tu jistì co nejdøíve objeví
-mnohé dal¹í aktualizace do ostatních jazykù (od... Tebe?).
+NÃ¡Å¡ web mÃ¡ nÄ›kolik novÄ› pÅ™eloÅ¾enÃ½ch dokumentacÃ­ - jmenovitÄ› do Å™eÄtiny (Ioannis
+Koniaris), Å¡panÄ›lÅ¡tiny (Ariel Gomez) a ÄeÅ¡tiny (Petr NovÃ¡k), s obvyklou
+a nezbytnou pomocÃ­ od Neila Cafferkeyho. Å vÃ©dskÃ¡ (Jon Anderson) a
+ruskÃ¡ (Softy) aktualizace pÅ™ekladu se objevÃ­ jiÅ¾ brzy. TakÃ© se tu jistÄ› co nejdÅ™Ã­ve objevÃ­
+mnohÃ© dalÅ¡Ã­ aktualizace do ostatnÃ­ch jazykÅ¯ (od... Tebe?).
 
 __ http://mama.indstate.edu/users/nova/installer.jpg
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319

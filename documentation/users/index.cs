@@ -1,10 +1,10 @@
 ====================
-Zdroje pro uæivatele
+Zdroje pro u≈æivatele
 ====================
 
 + `Jak na instalaci`__
-+ `PouæÌv·nÌ`__
-+ `P¯Ìkazy shellu`__
++ `Pou≈æ√≠v√°n√≠`__
++ `P≈ô√≠kazy shellu`__
 + `Aplikace`__
 + `FAQ`__
 

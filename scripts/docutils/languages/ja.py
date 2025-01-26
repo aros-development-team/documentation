@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-# Author: Hisashi Morita
-# Contact: hisashim@kt.rim.or.jp
-# Revision: $Revision$
-# Date: $Date$
+# $Id: ja.py 4564 2006-05-21 20:44:42Z wiemann $
+# Author: Hisashi Morita <hisashim@kt.rim.or.jp>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please

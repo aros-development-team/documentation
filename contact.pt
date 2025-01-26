@@ -1,10 +1,10 @@
 ======================
-Informa��o de Contacto
+Informação de Contacto
 ======================
 
 :Autor:			Adam Chodorowski, Matthias Rustler 
-:Direito de C�pia:	Copyright � 1995-2009, A equipa de desenvolvidores AROS
-:Vers�o:		$Revision$
+:Direito de Cópia:	Copyright © 1995-2009, A equipa de desenvolvidores AROS
+:Versão:		$Revision$
 :Date:			$Date$
 :Estado:		Feito.
 
@@ -14,10 +14,10 @@ Informa��o de Contacto
 Pessoa para Contacto
 ====================
 
-A pessoa para contacto principal para a equipa de desenvolvimento AROS � Aaron "Optimizer"
-Digulla. Se quiser endere�ar � equipa como um todo, Ex. se quiser propor
-um neg�cio de patrocinio ou outra forma de coopera��o, esta � a pessoa para falar sobre. 
-Pode chegar a ele enviando eCorrespond�ncia para `digulla@aros.org`__.
+A pessoa para contacto principal para a equipa de desenvolvimento AROS é Aaron "Optimizer"
+Digulla. Se quiser endereçar à equipa como um todo, Ex. se quiser propor
+um negócio de patrocinio ou outra forma de cooperação, esta é a pessoa para falar sobre. 
+Pode chegar a ele enviando eCorrespondência para `digulla@aros.org`__.
 
 __ mailto:digulla@aros.org
 
@@ -25,43 +25,43 @@ __ mailto:digulla@aros.org
 Lista de eCorreio
 =================
 
-Existe um conjunto Caixas de eCorreio dispon�veis, pelo que s�o o principal
-canal de informa��o e discuss�o sobre AROS para desenvolvidores. A seguinte 
-lista de eCorreio est� disponivel:
+Existe um conjunto Caixas de eCorreio disponíveis, pelo que são o principal
+canal de informação e discussão sobre AROS para desenvolvidores. A seguinte 
+lista de eCorreio está disponivel:
 
 + `Desenvolvidores AROS`__
 
-  Esta � a lista de eCorreio do desenvolvidor, onde discuss�es sobre desenvolvimento
-  do AROS s�o seguradas. Tamb�m, o estado das constru��es nocturnas s�o afixadas di�riamente para esta
-  lista. � altamente **recomend�vel** a desenvolvidores inscreverem-se nesta lista, como
-  de outro modo ser� muito dif�cil manter-lo actualizado dos desenvolvimentos em curso.
-  Como n�o h� muitos desenvolvidores AROS, o  volume nesta lista � geralmente bastante baixo,
-  mas pode tornar-se bastante movimentada se uma discuss�o se torna acesa.
+  Esta é a lista de eCorreio do desenvolvidor, onde discussões sobre desenvolvimento
+  do AROS são seguradas. Também, o estado das construções nocturnas são afixadas diáriamente para esta
+  lista. É altamente **recomendável** a desenvolvidores inscreverem-se nesta lista, como
+  de outro modo será muito difícil manter-lo actualizado dos desenvolvimentos em curso.
+  Como não há muitos desenvolvidores AROS, o  volume nesta lista é geralmente bastante baixo,
+  mas pode tornar-se bastante movimentada se uma discussão se torna acesa.
 
 
-  .. Note:: A subscri��o para esta lista n�o � assegurada autom�ticamente, 
-            mas todo  requerimento � verificado pelo administrador da lista. Poder� 
-            ent�o ocorrer um atraso desde o tempo do requerimento de subscri��o 
-            at� se tornar um membro.
+  .. Note:: A subscrição para esta lista não é assegurada automáticamente, 
+            mas todo  requerimento é verificado pelo administrador da lista. Poderá 
+            então ocorrer um atraso desde o tempo do requerimento de subscrição 
+            até se tornar um membro.
 
-+ `Sistema de Vers�es Concorrentes (CVS) AROS`__
++ `Sistema de Versões Concorrentes (CVS) AROS`__
 
-  Esta � uma lista de eCorreio para desenvolvidores onde registos de Subvers�es (Subversion) s�o
-  autom�ticamente afixados quando algo � depositado no servidor de Subvers�es. Em contraste 
-  � fixa��o di�ria dos registos de Subvers�o na lista de desenvolvidores AROS, onde a eCorrespond�ncia 
-  cont�m um resumo de toda a actividade que se passou no servidor de Subvers�o durante o dia,
-  eCorrespond�ncia individual � enviada *imediatamente* para toda a actividade registada. Ent�o se
-  quiser resposta em quase tempo real no servidor de Subvers�o, esta � a lista para
+  Esta é uma lista de eCorreio para desenvolvidores onde registos de Subversões (Subversion) são
+  automáticamente afixados quando algo é depositado no servidor de Subversões. Em contraste 
+  à fixação diária dos registos de Subversão na lista de desenvolvidores AROS, onde a eCorrespondência 
+  contém um resumo de toda a actividade que se passou no servidor de Subversão durante o dia,
+  eCorrespondência individual é enviada *imediatamente* para toda a actividade registada. Então se
+  quiser resposta em quase tempo real no servidor de Subversão, esta é a lista para
   si. O volume para esta lista pode tornar-se bastante alto.
 
 + `Portal AROS`__
 
-  O construtor de gui�es do portal envia eCorrespond�ncia para esta lista,
-  assim todos aqueles que depositam altera��es a documenta��o ou resolvem problemas
-  se algo se danificar dever�o subscreve-la.
+  O construtor de guiões do portal envia eCorrespondência para esta lista,
+  assim todos aqueles que depositam alterações a documentação ou resolvem problemas
+  se algo se danificar deverão subscreve-la.
 
-Siga as liga��es para as p�ginas administrativas para obter informa��o em como
-subscrever, desistir de subscri��o, acesso a arquivos e outras fun��es �teis.
+Siga as ligações para as páginas administrativas para obter informação em como
+subscrever, desistir de subscrição, acesso a arquivos e outras funções úteis.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
@@ -73,9 +73,9 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 Forums
 ======
 
-AROSWorld__ � o portal oficial da comunidade para o AROS. A� poder� encontrar as
-�ltimas novidades relacionadas com o AROS, foruns de discuss�o, galeria de imagens, e
-muito mais. � o local perfeito para conhecer utilizadores AROS de toda a parte do 
+AROS-Exec__ é o portal oficial da comunidade para o AROS. Aí poderá encontrar as
+últimas novidades relacionadas com o AROS, foruns de discussão, galeria de imagens, e
+muito mais. É o local perfeito para conhecer utilizadores AROS de toda a parte do 
 globo.
 
 __ https://www.arosworld.org/
@@ -85,10 +85,10 @@ Canais IRC
 ============
 
 Existe um canal de IRC oficial para o AROS, sem surpreender chamado `#aros`__, na
-rede FreeNode__. Conecte-se por favor a `irc.freenode.net`__, no qual o ir� 
+rede FreeNode__. Conecte-se por favor a `irc.freenode.net`__, no qual o irá 
 redireccionar para um servidor perto de si. Serve para discutir tudo e qualquer aspecto
-relaccionado com o AROS, inclu�ndo desenvolvimento e como dominar o mundo. Em raras 
-ocasi�es, se o canal est� com muito ru�do, discuss�es relativas a desenvolvimento
+relaccionado com o AROS, incluíndo desenvolvimento e como dominar o mundo. Em raras 
+ocasiões, se o canal está com muito ruído, discussões relativas a desenvolvimento
 muda-se para `#aros.dev`__.
 
 __ irc://irc.freenode.net/aros

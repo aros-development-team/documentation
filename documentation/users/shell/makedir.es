@@ -20,7 +20,7 @@ Synopsis
      NAME/M,ALL/S
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Crea un(los) directorio(s) vacío(s) con el(los) nombre(s) especificado(s).
+     Crea un(los) directorio(s) vacÃ­o(s) con el(los) nombre(s) especificado(s).
 
 
 Entradas
@@ -41,7 +41,7 @@ Entradas
 ::
 
 
-     NAME  --  los nombres de los directorios que deberán crearse.
+     NAME  --  los nombres de los directorios que deberÃ¡n crearse.
      ALL   --  crea directorios intermedios.
 
 
@@ -50,6 +50,6 @@ Notas
 ::
 
 
-     MakeDir no crea un ícono para un nuevo directorio.
+     MakeDir no crea un Ã­cono para un nuevo directorio.
 
 

@@ -5,68 +5,68 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   18.02.2008
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-Michal Schulz usilovnì pracuje na portování AROSu na desku SAM440
-od Acube Systems a dosahuje zajímavıch `vısledkù`__. Zde je nìkolik
-slov z jeho posledního pøíspìvku na `jeho blogu`__: "Rozhodl jsem se oddìlit
-jádro (a knihovny nahrávané spoleènì s ním) od u¾ivatelského prostoru.
-Jádro je nahráno nìkde v prvních 16MB pamìti RAM a pak pøemístìno
-na virtuální adresu v horní èásti 32-bitového adresového prostoru.
-Bootstrap loader pracuje stejnım zpùsobem, jakım pracoval x86_64 bootstrap.
-Celá èást pamìti nahoru od jádra je pouze pro ètení (read-only) a celá
-èást dolù od jádra je zapisovatelná (writable). Proto¾e jsem od pøírody
-zlı, moje jádro SAM440 AROSu si bude nenasytnì brát ve¹kerou pamì»
-*pod* svım fyzickım umístìním pro sebe. Tato pamì» (nìkolik megabajtù)
-bude pou¾ita jako místní úlo¾i¹tì pro kernel a bude zamezeno jakékoli
-formì pøístupu ze strany u¾ivatele."
+Michal Schulz usilovnÄ› pracuje na portovÃ¡nÃ­ AROSu na desku SAM440
+od Acube Systems a dosahuje zajÃ­mavÃ½ch `vÃ½sledkÅ¯`__. Zde je nÄ›kolik
+slov z jeho poslednÃ­ho pÅ™Ã­spÄ›vku na `jeho blogu`__: "Rozhodl jsem se oddÄ›lit
+jÃ¡dro (a knihovny nahrÃ¡vanÃ© spoleÄnÄ› s nÃ­m) od uÅ¾ivatelskÃ©ho prostoru.
+JÃ¡dro je nahrÃ¡no nÄ›kde v prvnÃ­ch 16MB pamÄ›ti RAM a pak pÅ™emÃ­stÄ›no
+na virtuÃ¡lnÃ­ adresu v hornÃ­ ÄÃ¡sti 32-bitovÃ©ho adresovÃ©ho prostoru.
+Bootstrap loader pracuje stejnÃ½m zpÅ¯sobem, jakÃ½m pracoval x86_64 bootstrap.
+CelÃ¡ ÄÃ¡st pamÄ›ti nahoru od jÃ¡dra je pouze pro ÄtenÃ­ (read-only) a celÃ¡
+ÄÃ¡st dolÅ¯ od jÃ¡dra je zapisovatelnÃ¡ (writable). ProtoÅ¾e jsem od pÅ™Ã­rody
+zlÃ½, moje jÃ¡dro SAM440 AROSu si bude nenasytnÄ› brÃ¡t veÅ¡kerou pamÄ›Å¥
+*pod* svÃ½m fyzickÃ½m umÃ­stÄ›nÃ­m pro sebe. Tato pamÄ›Å¥ (nÄ›kolik megabajtÅ¯)
+bude pouÅ¾ita jako mÃ­stnÃ­ ÃºloÅ¾iÅ¡tÄ› pro kernel a bude zamezeno jakÃ©koli
+formÄ› pÅ™Ã­stupu ze strany uÅ¾ivatele."
 
 Nic Andrews pracuje na Wandereru, aby ho zdokonalil a opravil
-nìkolik otravnıch chyb. V souèasné dobì "trochu pøepracovává
-renderovací kód pro tøídu Wanderer iconlist. Prùbì¾nım cílem je
-umo¾nit vykreslování ikon/pozadí z vyrovnávací pamìti tak,
-¾e napøíklad s pou¾itím kachlového vykreslování (tiled rendering) pro pozadí
-iconlistu nebude zpùsobováno znatelné blikání ikon, jak se to dìlo doteï".
-Podrobnìj¹í informace o jeho práci jsou zveøejnìny na `jeho blogu`__.
+nÄ›kolik otravnÃ½ch chyb. V souÄasnÃ© dobÄ› "trochu pÅ™epracovÃ¡vÃ¡
+renderovacÃ­ kÃ³d pro tÅ™Ã­du Wanderer iconlist. PrÅ¯bÄ›Å¾nÃ½m cÃ­lem je
+umoÅ¾nit vykreslovÃ¡nÃ­ ikon/pozadÃ­ z vyrovnÃ¡vacÃ­ pamÄ›ti tak,
+Å¾e napÅ™Ã­klad s pouÅ¾itÃ­m kachlovÃ©ho vykreslovÃ¡nÃ­ (tiled rendering) pro pozadÃ­
+iconlistu nebude zpÅ¯sobovÃ¡no znatelnÃ© blikÃ¡nÃ­ ikon, jak se to dÄ›lo doteÄ".
+PodrobnÄ›jÅ¡Ã­ informace o jeho prÃ¡ci jsou zveÅ™ejnÄ›ny na `jeho blogu`__.
 
 
-Internet jednodu¹eji
+Internet jednoduÅ¡eji
 --------------------
 
-Michael Grunditz oficiálnì uvolnil první verzi `SimpleMail`__ 0.32 beta
-pro AROS Research Operating System. SimpleMail má vìt¹inu funkcí,
-které jsou v souèasnıch moderních email klientech zapotøebí a stále
-se dál vyvíjí. Aktuální verze mù¾e bıt sta¾ena z `Archivu`__.
+Michael Grunditz oficiÃ¡lnÄ› uvolnil prvnÃ­ verzi `SimpleMail`__ 0.32 beta
+pro AROS Research Operating System. SimpleMail mÃ¡ vÄ›tÅ¡inu funkcÃ­,
+kterÃ© jsou v souÄasnÃ½ch modernÃ­ch email klientech zapotÅ™ebÃ­ a stÃ¡le
+se dÃ¡l vyvÃ­jÃ­. AktuÃ¡lnÃ­ verze mÅ¯Å¾e bÃ½t staÅ¾ena z `Archivu`__.
 
-Robert Norris udìlal znaènı pokrok s Travellerem (jeho webovı prohlí¾eè pro AROS
-zalo¾enı na Webkitu). Aby v¹echno správnì fungovalo, je stále zapotøebí
-dokódovat nìkolik chybìjících funkcí a knihoven, nicménì jeho port Cairo.library
-je na dobré cestì a celkem dobøe uspìl pøi zobrazování nìkolika stránek.
-Opravdu slibné `snímky obrazovky`__ byly publikovány na `jeho
+Robert Norris udÄ›lal znaÄnÃ½ pokrok s Travellerem (jeho webovÃ½ prohlÃ­Å¾eÄ pro AROS
+zaloÅ¾enÃ½ na Webkitu). Aby vÅ¡echno sprÃ¡vnÄ› fungovalo, je stÃ¡le zapotÅ™ebÃ­
+dokÃ³dovat nÄ›kolik chybÄ›jÃ­cÃ­ch funkcÃ­ a knihoven, nicmÃ©nÄ› jeho port Cairo.library
+je na dobrÃ© cestÄ› a celkem dobÅ™e uspÄ›l pÅ™i zobrazovÃ¡nÃ­ nÄ›kolika strÃ¡nek.
+Opravdu slibnÃ© `snÃ­mky obrazovky`__ byly publikovÃ¡ny na `jeho
 blogu`__.
 
 
-Dal¹í zprávy
+DalÅ¡Ã­ zprÃ¡vy
 ------------
 
-Joao "Hardwired" Ralha nedávno napsal nìkolik dobrıch pøíruèek pro AROS.
-Nicménì nejsou je¹tì dokonèené a on v souèasné dobì hledá nìkoho, kdo mu pomù¾e.
-Dostupné dokumenty jsou `AROS u¾ivatelská pøíruèka`__ (50% kompletních),
-`AROS pøíruèka pro shell`__ (70%) a `AROS instalaèní pøíruèka`__ (25%).
-Autor je k dosa¾ení na `jeho webu`__.
+Joao "Hardwired" Ralha nedÃ¡vno napsal nÄ›kolik dobrÃ½ch pÅ™Ã­ruÄek pro AROS.
+NicmÃ©nÄ› nejsou jeÅ¡tÄ› dokonÄenÃ© a on v souÄasnÃ© dobÄ› hledÃ¡ nÄ›koho, kdo mu pomÅ¯Å¾e.
+DostupnÃ© dokumenty jsou `AROS uÅ¾ivatelskÃ¡ pÅ™Ã­ruÄka`__ (50% kompletnÃ­ch),
+`AROS pÅ™Ã­ruÄka pro shell`__ (70%) a `AROS instalaÄnÃ­ pÅ™Ã­ruÄka`__ (25%).
+Autor je k dosaÅ¾enÃ­ na `jeho webu`__.
 
-Alain Greppin naportoval TeXlive na AROS, ("bounty" dokonèeno). Více informací
-o tomto poèinu na `jeho webu`__.
+Alain Greppin naportoval TeXlive na AROS, ("bounty" dokonÄeno). VÃ­ce informacÃ­
+o tomto poÄinu na `jeho webu`__.
 
 Tomek 'Error' Wiszkowski pracuje na Frying Pan, aplikaci
-pro vypalování CD/DVD. Na AROS-Exec.org zveøejnil `nìkolik snímkù obrazovky`__.
-Verze 1.3 pro AROS (shareware) mù¾e bıt sta¾ena z `webu
-této aplikace`__. Aby správnì fungovala, opravil také nìkolik chyb
-v ATA rozhraní AROSu.
+pro vypalovÃ¡nÃ­ CD/DVD. Na AROS-Exec.org zveÅ™ejnil `nÄ›kolik snÃ­mkÅ¯ obrazovky`__.
+Verze 1.3 pro AROS (shareware) mÅ¯Å¾e bÃ½t staÅ¾ena z `webu
+tÃ©to aplikace`__. Aby sprÃ¡vnÄ› fungovala, opravil takÃ© nÄ›kolik chyb
+v ATA rozhranÃ­ AROSu.
 
-... a pro v¹echny, kdo si toho nev¹imli: souborovı systém AROS FFS nedávno získal vlastnost
-pro kontrolu a opravu integrity na vadnıch oddílech. U¾ ¾ádné nepou¾itelné read-only oddíly!
+... a pro vÅ¡echny, kdo si toho nevÅ¡imli: souborovÃ½ systÃ©m AROS FFS nedÃ¡vno zÃ­skal vlastnost
+pro kontrolu a opravu integrity na vadnÃ½ch oddÃ­lech. UÅ¾ Å¾Ã¡dnÃ© nepouÅ¾itelnÃ© read-only oddÃ­ly!
 
 
 __ http://msaros.blogspot.com/2008/01/ive-promised-to-show-you-some.html

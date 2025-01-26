@@ -1,6 +1,6 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
@@ -19,10 +19,10 @@ news:             News
 archive:          Archive
 introduction:     Introduction
 status:           Status
-screenshots:      Copies d'écran
+screenshots:      Copies d'Ã©cran
 ports:            Ports
 license:          License
-download:         Téléchargement
+download:         TÃ©lÃ©chargement
 documentation:    Documentation
 users:            Utilisateurs
 installation:     Installation
@@ -34,24 +34,24 @@ howto:            HowTo
 hwcompat:         Hardware Compatibility
 glossary:         Glossary
 translators:      Translators
-developers:       Développeurs
+developers:       DÃ©veloppeurs
 contribute:       Contributions
 roadmap:          Roadmap
 issue-tracker:    Bug Tracker
 working-with-git: Travailler avec Git
 compiling:        Compilation
-application-development-manual: Manuel de développement d'applications
-zune-application-development-manual: Manuel de développement de Zune
-system-development-manual: Manuel de developpement du système
+application-development-manual: Manuel de dÃ©veloppement d'applications
+zune-application-development-manual: Manuel de dÃ©veloppement de Zune
+system-development-manual: Manuel de developpement du systÃ¨me
 debugging-manual: Manuel de Debogage
-reference:        Référence
-specifications:   Spécifications
+reference:        RÃ©fÃ©rence
+specifications:   SpÃ©cifications
 ui-style-guide:   UI Style Guide
 testing:          Testing
 documenting:      Documentation
 porting:          Porting
 translating:      Traduction
-summaries:        Résumés
+summaries:        RÃ©sumÃ©s
 links:            Liens
 contact:          Contact
 slack:            Slack
@@ -59,18 +59,18 @@ mailing-lists:    Mailing lists
 forums:           Forums
 community:        Community Resources
 irc-channels:     IRC channels
-credits:          Crédits
+credits:          CrÃ©dits
 acknowledgements: Acknowledgements
 pictures:         Images
-developers-together: Développeurs ensemble
+developers-together: DÃ©veloppeurs ensemble
 sponsors:         Sponsors
-linking:          Référencement
+linking:          RÃ©fÃ©rencement
 
 [misc]
 
-go:               Aller à
+go:               Aller Ã 
 search:           Rechercher
-copyright:        Copyright © 1995-2025, L'équipe de développement AROS. Tous droits réservés.
-trademarks:       Amiga®, AmigaOS®, Workbench et Intuition sont des marques de Amiga Inc. Les autres marques appartiennent à leur propritaires respectifs.
+copyright:        Copyright Â© 1995-2025, L'Ã©quipe de dÃ©veloppement AROS. Tous droits rÃ©servÃ©s.
+trademarks:       AmigaÂ®, AmigaOSÂ®, Workbench et Intuition sont des marques de Amiga Inc. Les autres marques appartiennent Ã  leur propritaires respectifs.
 read-more:        Lire plus...
 large-image:      Plus grand...

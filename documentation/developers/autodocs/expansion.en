@@ -789,7 +789,7 @@ Function
 ::
 
      This routine will remove the given ConfigDev from the list
-     of Configuration Devices in the system.
+     of Configuration DevicesÂ in the system.
 
 
 Inputs

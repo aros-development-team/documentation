@@ -2,9 +2,9 @@
 Archivo de noticias
 ===================
 
-Aquí puedes encontrar las noticias viejas que se han publicado en este 
-sitio web durante este año y en los anteriores. Están disponibles las 
-noticias de los siguientes años:
+AquÃ­ puedes encontrar las noticias viejas que se han publicado en este 
+sitio web durante este aÃ±o y en los anteriores. EstÃ¡n disponibles las 
+noticias de los siguientes aÃ±os:
 
 + `2020 <2020>`__
 + `2016 <2016>`__

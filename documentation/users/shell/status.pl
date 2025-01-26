@@ -9,7 +9,7 @@
 Status
 ======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	PROCESS/N,FULL/S,TCB/S,CLI=ALL/S,COM=COMMAND/K
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Wy∂wietla informacje o procesach CLI.
+	Wy≈õwietla informacje o procesach CLI.
 
 
 Parametry
@@ -40,15 +40,15 @@ Parametry
 
 	PROCESS		--	Numer procesu.
 
-	FULL		--	Wy∂wietla wszystkie dostÍpne informacje o 
+	FULL		--	Wy≈õwietla wszystkie dostƒôpne informacje o 
 				procesach.
 
 	TCB		--	Jak dla FULL, ale bez nazw.
 
-	CLI=ALL		--	Domy∂lny. Wy∂wietla wszystkie procesy.
+	CLI=ALL		--	Domy≈õlny. Wy≈õwietla wszystkie procesy.
 
-	COM=COMMAND	--	Pokazuje numer procesu, ø±danej komendy. Okre∂l
-				nazwÍ komendy.
+	COM=COMMAND	--	Pokazuje numer procesu, ≈ºƒÖdanej komendy. Okre≈õl
+				nazwƒô komendy.
 
 
 Wynik
@@ -56,10 +56,10 @@ Wynik
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -81,7 +81,7 @@ Przyk≥ad
 	Process  6: stk  4000, pri   2 Loaded as command: ToolsDaemon
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

@@ -16,14 +16,14 @@ Format
 	SetClock {LOAD|SAVE|RESET}
 
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
 	LOAD/S,SAVE/S,RESET/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -34,42 +34,42 @@ Funkcja
 ~~~~~~~
 ::
 
-	SetClock mo¿e byæ wykorzystywany do:
-		o	Wczytywania czasu z zegara sprzêtowego, podtrzymywanego
-			bateri±
-		o	Zapisywania czasu z zegara sprzêtowego, podtrzymywanego
-			bateri±
-		o	Resetowania czasu z zegara sprzêtowego, podtrzymywanego
-			bateri±
+	SetClock moÅ¼e byÄ‡ wykorzystywany do:
+		o	Wczytywania czasu z zegara sprzÄ™towego, podtrzymywanego
+			bateriÄ…
+		o	Zapisywania czasu z zegara sprzÄ™towego, podtrzymywanego
+			bateriÄ…
+		o	Resetowania czasu z zegara sprzÄ™towego, podtrzymywanego
+			bateriÄ…
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
 	SetClock LOAD
 	
-	Ustawia czas ze sprzêtowego zegara. W wiêkszo¶ci przypadków jest to 
-	robione automatycznie, wiêc nie ma potrzeby uruchamiaæ tego rêcznie,
-	przydaje siê to tylko wtedy, gdy zegar, jest w rozszerzeniu, które
-	nie za³atwia tego samodzielnie.
+	Ustawia czas ze sprzÄ™towego zegara. W wiÄ™kszoÅ›ci przypadkÃ³w jest to 
+	robione automatycznie, wiÄ™c nie ma potrzeby uruchamiaÄ‡ tego rÄ™cznie,
+	przydaje siÄ™ to tylko wtedy, gdy zegar, jest w rozszerzeniu, ktÃ³re
+	nie zaÅ‚atwia tego samodzielnie.
 	
 
 	SetClock SAVE
 
-	Ustawia czas z programowego zegara. Zapisuje czas do sprzêtowego zegara.
+	Ustawia czas z programowego zegara. Zapisuje czas do sprzÄ™towego zegara.
 
 
 	SetClock RESET
 	
-	Resetuje datê do pierwszego stycznia tysi±c dziewiêæset 
-	siedemdziesi±tego ósmego roku, a czas do godziny zero. Najczê¶ciej
-	wykorzystuje siê t± opcjê do naprawy zegara sprzêtowego, gdy zapis i 
-	odczyt nie dzia³a prawid³owo.
+	Resetuje datÄ™ do pierwszego stycznia tysiÄ…c dziewiÄ™Ä‡set 
+	siedemdziesiÄ…tego Ã³smego roku, a czas do godziny zero. NajczÄ™Å›ciej
+	wykorzystuje siÄ™ tÄ… opcjÄ™ do naprawy zegara sprzÄ™towego, gdy zapis i 
+	odczyt nie dziaÅ‚a prawidÅ‚owo.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

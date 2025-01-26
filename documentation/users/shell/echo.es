@@ -20,7 +20,7 @@ Synopsis
      STRING/M,NOLINE/S,FIRST/K/N,LEN/K/N,TO/K
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
@@ -45,6 +45,6 @@ Entradas
      NOLINE -- sin retorno de carro al final de la cadena.
      FIRST  -- el primer caracter mostrado.
      LEN    -- la cantidad de caracteres a mostrar.
-     TO     -- el archivo o dispositivo donde se mostrará.
+     TO     -- el archivo o dispositivo donde se mostrarÃ¡.
 
 

@@ -1,3 +1,3 @@
-Postêp prac nad koncepcyjnym GUI dla narzêdzia konfiguracyjnego TCPIP (pracuje
-nad nim Kalamatee). Strona profilu pozwala wybraæ/importowaæ/eksportowaæ
-kompletny profil/konfiguracjê Pozwala tak¿e ustawiæ zmienne Env dotycz±ce AROSTCP.
+PostÄ™p prac nad koncepcyjnym GUI dla narzÄ™dzia konfiguracyjnego TCPIP (pracuje
+nad nim Kalamatee). Strona profilu pozwala wybraÄ‡/importowaÄ‡/eksportowaÄ‡
+kompletny profil/konfiguracjÄ™ Pozwala takÅ¼e ustawiÄ‡ zmienne Env dotyczÄ…ce AROSTCP.

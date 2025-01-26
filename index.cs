@@ -4,7 +4,7 @@
 
 .. Include:: introduction/index-abstract.cs
 
-`V�ce zde... <introduction/index>`__
+`Více zde... <introduction/index>`__
 
 .. raw:: html
 
@@ -17,7 +17,7 @@
 
 .. Include:: download-abstract.en
 
-`V�ce zde... <download>`__
+`Více zde... <download>`__
 
 .. raw:: html
 
@@ -48,28 +48,28 @@
    <!-- The direct downloads block is disabled so that users go to the downloads section where they should learn about using distribution instead of nightly
    <table style="text-align: justify; width:100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
-   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>P��m� sta�en�:<br>
+   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Přímá stažení:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   No�n� sestaven� jsou automaticky vytv��ena ka�dou noc p��mo z posledn�ch zdrojov�ch k�d�. Pokud si chce� AROS live CD jen vyzkou�et, st�hni si jeho bootovateln� obraz "boot ISO" pro tvou platformu (i386 nebo PPC).<br><br>
+   Noční sestavení jsou automaticky vytvářena každou noc přímo z posledních zdrojových kódů. Pokud si chceš AROS live CD jen vyzkoušet, stáhni si jeho bootovatelný obraz "boot ISO" pro tvou platformu (i386 nebo PPC).<br><br>
    <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Nejnov�j�� p��sp�vky v archivu:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href="http://archives.aros-exec.org">AROS archiv</a> obsahuje nejnov�j�� syst�mov� obsah poskytnut� na�� komunitou a je prim�rn�m �lo�i�t�m pro u�ivatelsk� aplikace, t�mata, grafiku a dodate�nou dokumentaci.<br><br>
+   Nejnovější příspěvky v archivu:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href="http://archives.aros-exec.org">AROS archiv</a> obsahuje nejnovější systémový obsah poskytnutý naší komunitou a je primárním úložištěm pro uživatelské aplikace, témata, grafiku a dodatečnou dokumentaci.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Posledn� p��sp�vky na AROS-EXEC f�ru:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://www.arosworld.org/>AROSWorld</a> je prim�rn� komunitn� str�nka AROSu. M��ete zde vyhledat pomoc, zjistit co se d�je v r�mci komunity nov�ho a sd�let svoje my�lenky.<br><br>
+   Poslední příspěvky na AROS-EXEC fóru:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://ae.amigalife.org>AROS-EXEC</a> je primární komunitní stránka AROSu. Můžete zde vyhledat pomoc, zjistit co se děje v rámci komunity nového a sdílet svoje myšlenky.<br><br>
    </td></tr></tbody></table>
 
    <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
    <?php if ($win_ie56) { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.gif\" align=\"middle\">"; } else { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.png\" align=\"middle\">"; } ?>
-   Odb�r novinek:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   Odběr novinek:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    </td></tr></table>
    </td></tr></table>
 

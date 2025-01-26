@@ -16,14 +16,14 @@ Format
 	Stack [[SIZE] (rozmiar stosu)]
 
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
 	SIZE/N
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -34,6 +34,6 @@ Funkcja
 ~~~~~~~
 ::
 	
-	Stack ustawia domy∂lny rozmiar stosu aktualnego CLI. Jest to rozmiar
-	stosu dla komend CLI. Je∂li brak argumentÛw to zostanie 
-	wy∂wietlony aktualny rozmiar stosu.
+	Stack ustawia domy≈õlny rozmiar stosu aktualnego CLI. Jest to rozmiar
+	stosu dla komend CLI. Je≈õli brak argument√≥w to zostanie 
+	wy≈õwietlony aktualny rozmiar stosu.

@@ -3,7 +3,7 @@ Introduzione alla shell AROS
 ============================
 
 :Authors:   Matthias Rustler 
-:Copyright: Copyright © 2006, The AROS Development Team
+:Copyright: Copyright Â© 2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Draft
@@ -15,16 +15,16 @@ Introduzione alla shell AROS
 -------------
 
 AROS ha un'interfaccia a riga di comando, la 'Shell'.
-Potete avviarla dal menu Wanderer>Shell. Verrà aperta una finestra con il
+Potete avviarla dal menu Wanderer>Shell. VerrÃ  aperta una finestra con il
 percorso della finestra AROS corrente. Il prompt, normalmente, visualizza il
 numero della Shell e il path corrente.
 
 La Shell ha la sua storia dei comandi. Potete accedervi con i tasti freccia su
-e giù.
+e giÃ¹.
 
-C'è una funzione di completamente. Se scrivete le prime lettere di un comando
+C'Ã¨ una funzione di completamente. Se scrivete le prime lettere di un comando
 o di un nome di file e premete il tasto tab, la Shell cerca il nome
-corrispondente. Se ci sono più possibilità si aprirà una finestra dove potete
+corrispondente. Se ci sono piÃ¹ possibilitÃ  si aprirÃ  una finestra dove potete
 selezionare una voce.
 
 I comandi e i nomi di file di AROS sono case insensitive. Potete usare case
@@ -63,11 +63,11 @@ semplicemente scrivere "".
   Esempio: copy from ram:x to ""
   
 Un due punti da solo significa la directory di base del path corrente.
-Quando un percorso inizia con un due punti, allora è relativo alla directory di
+Quando un percorso inizia con un due punti, allora Ã¨ relativo alla directory di
 base del path specificato.
 
 Uno slash all'inizio del path significa: vai al livello superiore. Due slash
-significano vai sopra di due livelli e così via.
+significano vai sopra di due livelli e cosÃ¬ via.
 
 Quando un path contiene spazi deve essere scritto tra virgolette.
 
@@ -78,7 +78,7 @@ Quando un path contiene spazi deve essere scritto tra virgolette.
 Template dei comandi
 --------------------
 Un punto interrogativo dopo il comando visualizza il template dei parametri del
-comando. Il comando passa quindi in una modalità in cui attende che scriviate i
+comando. Il comando passa quindi in una modalitÃ  in cui attende che scriviate i
 parametri.
 
 ::
@@ -88,15 +88,15 @@ parametri.
 
 Le parole chiave possono avere le seguenti opzioni::
 
-  /A -- l'argomento è obbligatorio
+  /A -- l'argomento Ã¨ obbligatorio
   /K -- la parola chiave deve essere scritta quando si usa quest'argomento
   /S -- switch; scrivete semplicemente la parola chiave per accedere allo switch
   /N -- argomento numerico
-  /M -- è possibile specificare più di un argomento
+  /M -- Ã¨ possibile specificare piÃ¹ di un argomento
   /F -- resto della riga di comando
   =  -- abbreviazione; potete opzionamente usare l'abbreviazione
 
-Quando si chiama un comando, si può usare '=' per distinguere gli assegnamenti
+Quando si chiama un comando, si puÃ² usare '=' per distinguere gli assegnamenti
 tra parola chiave e valore::
 
   Esempio: copy from=a.dat to=b.dat
@@ -106,8 +106,8 @@ Patterns
 Alcuni comandi ammettono i pattern per i parametri nomi di file::
 
   ?  -- un carattere arbitrario
-  #? -- zero o più caratteri arbitrari
-  #x -- zero o più x
+  #? -- zero o piÃ¹ caratteri arbitrari
+  #x -- zero o piÃ¹ x
   ~  -- negazione
   |  -- or
   () -- raggruppa
@@ -139,7 +139,7 @@ spazio prima e dopo il \|::
   Esempio: dir | altrocomando
   
 Ma come fare se il secondo comando vuole leggere l'input da un file? La
-soluzione è quella di usare il dispositivo fittizio 'in:'::
+soluzione Ã¨ quella di usare il dispositivo fittizio 'in:'::
 
   Esempio: dir | more in:  
 
@@ -168,7 +168,7 @@ lavorate con i comandi di shell dovete tenere conto dei file Info.
 Scripts
 -------
 Puoi scrivere programmi di comandi da shell in un editor di testo. Quindi possono essere
-eseguiti dal comando `Execute <execute>`_ command. Un altra possibilità è quella
+eseguiti dal comando `Execute <execute>`_ command. Un altra possibilitÃ  Ã¨ quella
 di mettere la flag 's' col comando `Protect <protect>`_. Basta scrivere il nome dello
 script per avviarlo. Se ci sono dei comandi che si vuole avviare ogni volta AROS parte, 
 vanno scritti in un file col nome 's:user-startup'.

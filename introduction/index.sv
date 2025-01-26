@@ -3,7 +3,7 @@ Kort introduktion till AROS
 ===========================
 
 :Authors:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright Â© 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Almost finished, I think...
@@ -12,62 +12,62 @@ Kort introduktion till AROS
 .. Include:: index-abstract.sv
 
 
-Mål
+MÃ¥l
 ===
 
-AROS-projektets mål är att skapa ett operativsystem som:
+AROS-projektets mÃ¥l Ã¤r att skapa ett operativsystem som:
 
-1. Är så kompatibelt med AmigaOS 3.1 som möjligt.
+1. Ã„r sÃ¥ kompatibelt med AmigaOS 3.1 som mÃ¶jligt.
 
-2. Kan portas till olika former av hårdvaruarkitekturer och processorer, såsom
+2. Kan portas till olika former av hÃ¥rdvaruarkitekturer och processorer, sÃ¥som
    x86, PowerPC, Alpha, Sparc, HPPA och andra.
 
-3. Vara kompatibel på binär nivå när man kör den på Amiga-hårdvara och
-   källkodskompatibel på annan hårdvara.
+3. Vara kompatibel pÃ¥ binÃ¤r nivÃ¥ nÃ¤r man kÃ¶r den pÃ¥ Amiga-hÃ¥rdvara och
+   kÃ¤llkodskompatibel pÃ¥ annan hÃ¥rdvara.
   
-4. Kan köras som en fristående version som startar direkt från hårddisk eller
-   som en emulerad version som öppnar ett fönster, vilket tillåter att man kan
-   köra Amiga och övriga applikationer samtidigt.
+4. Kan kÃ¶ras som en fristÃ¥ende version som startar direkt frÃ¥n hÃ¥rddisk eller
+   som en emulerad version som Ã¶ppnar ett fÃ¶nster, vilket tillÃ¥ter att man kan
+   kÃ¶ra Amiga och Ã¶vriga applikationer samtidigt.
 
-5. Förbättrar funktionaliteten hos AmigaOS.
+5. FÃ¶rbÃ¤ttrar funktionaliteten hos AmigaOS.
 
-För att nå dessa mål använder vi ett antal olika arbetssätt. Allra främst
-använder vi oss av Internet. Du kan vara med i vårat projekt även om bara kan
+FÃ¶r att nÃ¥ dessa mÃ¥l anvÃ¤nder vi ett antal olika arbetssÃ¤tt. Allra frÃ¤mst
+anvÃ¤nder vi oss av Internet. Du kan vara med i vÃ¥rat projekt Ã¤ven om bara kan
 skriva en enda funktion i operativsystemet. Den mest uppdaterade versionen av
-källkoden finns tillgänglig dygnet runt och patchar kan integreras när som
-helst. En liten databas med öppna jobb säkerställer att samma jobb inte utförs
+kÃ¤llkoden finns tillgÃ¤nglig dygnet runt och patchar kan integreras nÃ¤r som
+helst. En liten databas med Ã¶ppna jobb sÃ¤kerstÃ¤ller att samma jobb inte utfÃ¶rs
 av flera personer samtidigt.
 
 
 Historia
 ========
 
-Runt 1993 såg situationen för Amiga värre ut än någonsin och hängivna
-supportrar samlades för att diskutera vad som kunde göras för att rädda vår
-älskade maskin. Vissa ansåg att det var viktigt att Amigan blev mer accepterad
-i vidare kretsar och att dess framgångslöshet berodde på dess begränsade
-spridning. Planer utvecklades för att uppnå detta mål. En av dessa planer var
-att åtgärda buggarna i AmigaOS, en annan var att utveckla AmigaOS till ett
-modernt operativsystem. Dessa var några av anledningarna till att
+Runt 1993 sÃ¥g situationen fÃ¶r Amiga vÃ¤rre ut Ã¤n nÃ¥gonsin och hÃ¤ngivna
+supportrar samlades fÃ¶r att diskutera vad som kunde gÃ¶ras fÃ¶r att rÃ¤dda vÃ¥r
+Ã¤lskade maskin. Vissa ansÃ¥g att det var viktigt att Amigan blev mer accepterad
+i vidare kretsar och att dess framgÃ¥ngslÃ¶shet berodde pÃ¥ dess begrÃ¤nsade
+spridning. Planer utvecklades fÃ¶r att uppnÃ¥ detta mÃ¥l. En av dessa planer var
+att Ã¥tgÃ¤rda buggarna i AmigaOS, en annan var att utveckla AmigaOS till ett
+modernt operativsystem. Dessa var nÃ¥gra av anledningarna till att
 AROS-projektet startades.
 
-När Amigan gick i graven verkade det vettigast att köpa ut AmigaOS källkod.
-Tills dess fokuserade man på vad som faktiskt behövde göras. Som vad som
-egentligen skulle räknas som buggar och vad var det bästa sättet att fixa dem?
-Vad ska ett så kallat modernt OS ha för funktioner? Och hur skulle de
+NÃ¤r Amigan gick i graven verkade det vettigast att kÃ¶pa ut AmigaOS kÃ¤llkod.
+Tills dess fokuserade man pÃ¥ vad som faktiskt behÃ¶vde gÃ¶ras. Som vad som
+egentligen skulle rÃ¤knas som buggar och vad var det bÃ¤sta sÃ¤ttet att fixa dem?
+Vad ska ett sÃ¥ kallat modernt OS ha fÃ¶r funktioner? Och hur skulle de
 implementeras i OSet?
 
-Två år senare så var debatten fortfarande inte avslutad och eftersom källkoden
-fortfarande inte var tillgänglig så hade inte en enda rad kod skapats.
-Diskussionerna tenderade att upprepas och urarta till bråk kring vad som var
-och inte var genomförbart.
+TvÃ¥ Ã¥r senare sÃ¥ var debatten fortfarande inte avslutad och eftersom kÃ¤llkoden
+fortfarande inte var tillgÃ¤nglig sÃ¥ hade inte en enda rad kod skapats.
+Diskussionerna tenderade att upprepas och urarta till brÃ¥k kring vad som var
+och inte var genomfÃ¶rbart.
 
-Vintern 1995 tröttnade Aaron Digulla på situationen och postade en RFC
-("Request for comments") till AOS e-postlista och frågade vad som var det
-minsta gemensamma kravet på OS:et skulle kunna vara. Flera alternativ
-presenterades och slutsatsen blev att nästan alla ville ha ett öppet
+Vintern 1995 trÃ¶ttnade Aaron Digulla pÃ¥ situationen och postade en RFC
+("Request for comments") till AOS e-postlista och frÃ¥gade vad som var det
+minsta gemensamma kravet pÃ¥ OS:et skulle kunna vara. Flera alternativ
+presenterades och slutsatsen blev att nÃ¤stan alla ville ha ett Ã¶ppet
 operativsystem som var kompatibelt med AmigaOS 3.1 (Kickstart 40.68).
-Alla fortsatta diskussioner om vad som kunde göras var nu baserat på detta mål
-i åtanke.
+Alla fortsatta diskussioner om vad som kunde gÃ¶ras var nu baserat pÃ¥ detta mÃ¥l
+i Ã¥tanke.
 
-Arbetet med AROS tog sin början.
+Arbetet med AROS tog sin bÃ¶rjan.

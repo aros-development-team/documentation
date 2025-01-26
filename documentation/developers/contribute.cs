@@ -3,71 +3,71 @@ Contribute
 ==========
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright Å  1995-2020, The AROS Development Team
 :Status:    Done. 
 
 .. Contents::
 
 
-Potøebujeme tvou pomoc!
+PotÅ™ebujeme tvou pomoc!
 =======================
 
-Máme pomìrnì málo aktivních vıvojáøù, co¾ bohu¾el znamená, ¾e vıvoj je docela
-pomalı. Zkrátka potøebujeme více lidí, kteøí by nám pomohli! Existuje je¹tì
-velké mno¾ství úkolù, které potøebují oddané vıvojáøe. Sahají od velkıch
-projektù k malım, od hardwarového hackování, pøes vysokoúrovòovı systém
-k programování aplikací. V podstatì se pro ka¾dého, kdo by chtìl pøispìt,
-nìco najde, bez ohledu na to, jak zdatnı je v programování!
+MÃ¡me pomÄ›rnÄ› mÃ¡lo aktivnÃ­ch vÃ½vojÃ¡Å™Å¯, coÅ¾ bohuÅ¾el znamenÃ¡, Å¾e vÃ½voj je docela
+pomalÃ½. ZkrÃ¡tka potÅ™ebujeme vÃ­ce lidÃ­, kteÅ™Ã­ by nÃ¡m pomohli! Existuje jeÅ¡tÄ›
+velkÃ© mnoÅ¾stvÃ­ ÃºkolÅ¯, kterÃ© potÅ™ebujÃ­ oddanÃ© vÃ½vojÃ¡Å™e. SahajÃ­ od velkÃ½ch
+projektÅ¯ k malÃ½m, od hardwarovÃ©ho hackovÃ¡nÃ­, pÅ™es vysokoÃºrovÅˆovÃ½ systÃ©m
+k programovÃ¡nÃ­ aplikacÃ­. V podstatÄ› se pro kaÅ¾dÃ©ho, kdo by chtÄ›l pÅ™ispÄ›t,
+nÄ›co najde, bez ohledu na to, jak zdatnÃ½ je v programovÃ¡nÃ­!
 
-Pro ty, kdo nejsou programátory, máme je¹tì stále mnoho úkolù, s kterımi
-nám mohou pomoci! Napøíklad psaní dokumentace, pøekládání programù a
-dokumentace do dal¹ích jazykù, vytváøení grafiky a odchytávání chyb.
-Tyto úkoly jsou stejnì tak dùle¾ité jako programování!
+Pro ty, kdo nejsou programÃ¡tory, mÃ¡me jeÅ¡tÄ› stÃ¡le mnoho ÃºkolÅ¯, s kterÃ½mi
+nÃ¡m mohou pomoci! NapÅ™Ã­klad psanÃ­ dokumentace, pÅ™eklÃ¡dÃ¡nÃ­ programÅ¯ a
+dokumentace do dalÅ¡Ã­ch jazykÅ¯, vytvÃ¡Å™enÃ­ grafiky a odchytÃ¡vÃ¡nÃ­ chyb.
+Tyto Ãºkoly jsou stejnÄ› tak dÅ¯leÅ¾itÃ© jako programovÃ¡nÃ­!
 
 
-Aktuální úkoly
+AktuÃ¡lnÃ­ Ãºkoly
 ==============
 
-Zde je seznam nìkterıch úkolù, se kterımi potøebujeme pomoci, a na kterıch
-momentálnì nikdo nedìlá. Nejedná se o kompletní seznam v¹ech úkolù, ale
-obsahuje ty úkoly, které pova¾ujeme za dùle¾ité.
+Zde je seznam nÄ›kterÃ½ch ÃºkolÅ¯, se kterÃ½mi potÅ™ebujeme pomoci, a na kterÃ½ch
+momentÃ¡lnÄ› nikdo nedÄ›lÃ¡. NejednÃ¡ se o kompletnÃ­ seznam vÅ¡ech ÃºkolÅ¯, ale
+obsahuje ty Ãºkoly, kterÃ© povaÅ¾ujeme za dÅ¯leÅ¾itÃ©.
 
 
-Programování
+ProgramovÃ¡nÃ­
 ------------
 
-+ Implementace chybìjících knihoven, zdrojù, zaøízení nebo jejich souèástí.
-  Podívej se na detailní zprávu o vıvoji, aby jsi zjistil více informací
-  o èástech, které chybí.
++ Implementace chybÄ›jÃ­cÃ­ch knihoven, zdrojÅ¯, zaÅ™Ã­zenÃ­ nebo jejich souÄÃ¡stÃ­.
+  PodÃ­vej se na detailnÃ­ zprÃ¡vu o vÃ½voji, aby jsi zjistil vÃ­ce informacÃ­
+  o ÄÃ¡stech, kterÃ© chybÃ­.
 
 
-+ Implementace nebo zdokonalení ovladaèù hardware zaøízení:
++ Implementace nebo zdokonalenÃ­ ovladaÄÅ¯ hardware zaÅ™Ã­zenÃ­:
   
   - AROS/m68k-pp:
     
     + Grafika
-    + Vstup (dotyková obrazovka, tlaèítka)
+    + Vstup (dotykovÃ¡ obrazovka, tlaÄÃ­tka)
     + Zvuk
  
   - AROS/i386-pc:
 
-    + Konkrétní ovladaèe grafickıch karet (máme pouze obecné, ne zrovna
-      pøíli¹ akcelerované). Krátkı seznam pøání:
+    + KonkrÃ©tnÃ­ ovladaÄe grafickÃ½ch karet (mÃ¡me pouze obecnÃ©, ne zrovna
+      pÅ™Ã­liÅ¡ akcelerovanÃ©). KrÃ¡tkÃ½ seznam pÅ™Ã¡nÃ­:
       
-      - nVidia TNT/TNT2/GeForce (zaèlo se, ale nedokonèilo) 
+      - nVidia TNT/TNT2/GeForce (zaÄlo se, ale nedokonÄilo) 
       - S3 Virge
       - Matrox Millenium
     
-    + chybí USB classes
+    + chybÃ­ USB classes
     + SCSI
-    + Konkrétní IDE èipsety
+    + KonkrÃ©tnÃ­ IDE Äipsety
     + Zvuk
-    + ... cokoliv, na co bys mohl pøijít.
+    + ... cokoliv, na co bys mohl pÅ™ijÃ­t.
 
-  - V¹eobecná podpora tiskáren.
+  - VÅ¡eobecnÃ¡ podpora tiskÃ¡ren.
  
-+ Portování na dal¹í architektury. Nìkolik pøíkladù hardwaru, pro
-  kterı AROS je¹tì nemá port nebo zaèal bıt portován:
++ PortovÃ¡nÃ­ na dalÅ¡Ã­ architektury. NÄ›kolik pÅ™Ã­kladÅ¯ hardwaru, pro
+  kterÃ½ AROS jeÅ¡tÄ› nemÃ¡ port nebo zaÄal bÃ½t portovÃ¡n:
 
   - Amiga, m68k i PPC.
   - Atari.
@@ -76,25 +76,25 @@ Programování
   - iPaq.
   - Macintosh, m68k i PPC.
 
-+ Implementace chybìjících editorù nastavení:
++ Implementace chybÄ›jÃ­cÃ­ch editorÅ¯ nastavenÃ­:
 
   - Overscan
   - Paleta
   - Pointer
-  - Tiskárna
+  - TiskÃ¡rna
  
-+ Zdokonalování knihovny C link
++ ZdokonalovÃ¡nÃ­ knihovny C link
 
-  Tedy implementace chybìjících ANSI (a nìkterıch POSIX) funkcí v clib,
-  aby se usnadnilo portování UNIX softwaru (napø. GCC, make a binutils).
-  Nejdùle¾itìj¹í vìc, která chybí, je podpora POSIX style signaling,
-  ale i jiné funkce.
+  Tedy implementace chybÄ›jÃ­cÃ­ch ANSI (a nÄ›kterÃ½ch POSIX) funkcÃ­ v clib,
+  aby se usnadnilo portovÃ¡nÃ­ UNIX softwaru (napÅ™. GCC, make a binutils).
+  NejdÅ¯leÅ¾itÄ›jÅ¡Ã­ vÄ›c, kterÃ¡ chybÃ­, je podpora POSIX style signaling,
+  ale i jinÃ© funkce.
 
-+ Implementace více datatypù a vylep¹ení tìch stávajících
++ Implementace vÃ­ce datatypÅ¯ a vylepÅ¡enÃ­ tÄ›ch stÃ¡vajÃ­cÃ­ch
 
-  Poèet datatypù obsa¾enıch v AROSu je pomìrnì malı. Nìkteré datatypy,
-  které potøebují vylep¹ení, aby byly pou¾itelné nebo potøebují
-  implementaci úplnì od základu:
+  PoÄet datatypÅ¯ obsaÅ¾enÃ½ch v AROSu je pomÄ›rnÄ› malÃ½. NÄ›kterÃ© datatypy,
+  kterÃ© potÅ™ebujÃ­ vylepÅ¡enÃ­, aby byly pouÅ¾itelnÃ© nebo potÅ™ebujÃ­
+  implementaci ÃºplnÄ› od zÃ¡kladu:
 
   - amigaguide.datatype
   - sound.datatype
@@ -107,94 +107,94 @@ Programování
     + cdxl.datatype
     
   
-+ Portování programù tøetích stran:
++ PortovÃ¡nÃ­ programÅ¯ tÅ™etÃ­ch stran:
 
-  - Textové editory jako jsou ViM a Emacs.
-  - Balík vıvojovıch nástrojù, které zahrnují GCC, make, binutils a dal¹í
-    GNU vıvojáøské nástroje.
+  - TextovÃ© editory jako jsou ViM a Emacs.
+  - BalÃ­k vÃ½vojovÃ½ch nÃ¡strojÅ¯, kterÃ© zahrnujÃ­ GCC, make, binutils a dalÅ¡Ã­
+    GNU vÃ½vojÃ¡Å™skÃ© nÃ¡stroje.
   - AmigaOS Open Source software jako je SimpleMail, YAM, Jabbwerwocky
 
 
 Dokumentace
 -----------
 
-+ Psaní u¾ivatelské dokumentace. Tıká se psaní hlavních U¾ivatelskıch
-  pøíruèek pro zaèáteèníky a experty, a také dokumentace na v¹echny
-  standardní AROS programy.
++ PsanÃ­ uÅ¾ivatelskÃ© dokumentace. TÃ½kÃ¡ se psanÃ­ hlavnÃ­ch UÅ¾ivatelskÃ½ch
+  pÅ™Ã­ruÄek pro zaÄÃ¡teÄnÃ­ky a experty, a takÃ© dokumentace na vÅ¡echny
+  standardnÃ­ AROS programy.
 
-+ Psaní vıvojáøské dokumentace. Tøeba¾e je tato práce v pokroèilej¹ím
-  stádiu ne¾ u¾ivatelská dokumentace, stále je toho je¹tì hodnì zpracovávat.
-  Pro pøíklad, zatím nemáme ¾ádnou dobrou pøíruèku pro zaèínající programátory.
-  Bylo by taky hezké mít ekvivalent k ROM Kernel manuálùm pro AROS.
++ PsanÃ­ vÃ½vojÃ¡Å™skÃ© dokumentace. TÅ™ebaÅ¾e je tato prÃ¡ce v pokroÄilejÅ¡Ã­m
+  stÃ¡diu neÅ¾ uÅ¾ivatelskÃ¡ dokumentace, stÃ¡le je toho jeÅ¡tÄ› hodnÄ› zpracovÃ¡vat.
+  Pro pÅ™Ã­klad, zatÃ­m nemÃ¡me Å¾Ã¡dnou dobrou pÅ™Ã­ruÄku pro zaÄÃ­najÃ­cÃ­ programÃ¡tory.
+  Bylo by taky hezkÃ© mÃ­t ekvivalent k ROM Kernel manuÃ¡lÅ¯m pro AROS.
 
 
-Pøeklad
+PÅ™eklad
 -------
 
-+ Pøekládání samotného AROSu do více jazykù. Nyní jsou více èi ménì kompletnì
-  podporovány pouze tyto jazyky:
++ PÅ™eklÃ¡dÃ¡nÃ­ samotnÃ©ho AROSu do vÃ­ce jazykÅ¯. NynÃ­ jsou vÃ­ce Äi mÃ©nÄ› kompletnÄ›
+  podporovÃ¡ny pouze tyto jazyky:
 
-  - Angliètina
-  - Nìmèina
-  - ©véd¹tina
-  - Nor¹tina
-  - Ital¹tina
-  - Francouz¹tina
-  - Ru¹tina
+  - AngliÄtina
+  - NÄ›mÄina
+  - Å vÃ©dÅ¡tina
+  - NorÅ¡tina
+  - ItalÅ¡tina
+  - FrancouzÅ¡tina
+  - RuÅ¡tina
 
-+ Pøeklad dokumentace a internetovıch stránek do více jazykù. Aktuálnì je
-  web kompletní pouze v angliètinì. Pøekládá se pozvolna i do dal¹ích jazykù,
-  ale zbıvá je¹tì hodnì práce.
++ PÅ™eklad dokumentace a internetovÃ½ch strÃ¡nek do vÃ­ce jazykÅ¯. AktuÃ¡lnÄ› je
+  web kompletnÃ­ pouze v angliÄtinÄ›. PÅ™eklÃ¡dÃ¡ se pozvolna i do dalÅ¡Ã­ch jazykÅ¯,
+  ale zbÃ½vÃ¡ jeÅ¡tÄ› hodnÄ› prÃ¡ce.
 
 
-Ostatní
+OstatnÃ­
 -------
 
 + Koordinace GUI designu pro AROS programy, jako jsou prefs programy,
-  nástroje a utility.
+  nÃ¡stroje a utility.
 
 
-Pøipoj se k tımu
+PÅ™ipoj se k tÃ½mu
 ================
 
-Chce¹ se pøipojit k vıvojáøskému tımu? Skvìle! V tom pøípadì se pøihla¹ k
-`vıvojáøskému mailing listu`__, o kterı se zajímá¹ (*vøele* doporuèujeme pøipojit
-se alespoò k hlavnímu vıvojáøskému listu) a po¾ádej o pøístup k Subversion
-repozitáøi. A je to. :)
+ChceÅ¡ se pÅ™ipojit k vÃ½vojÃ¡Å™skÃ©mu tÃ½mu? SkvÄ›le! V tom pÅ™Ã­padÄ› se pÅ™ihlaÅ¡ k
+`vÃ½vojÃ¡Å™skÃ©mu mailing listu`__, o kterÃ½ se zajÃ­mÃ¡Å¡ (*vÅ™ele* doporuÄujeme pÅ™ipojit
+se alespoÅˆ k hlavnÃ­mu vÃ½vojÃ¡Å™skÃ©mu listu) a poÅ¾Ã¡dej o pÅ™Ã­stup k Subversion
+repozitÃ¡Å™i. A je to. :)
 
-Napi¹ krátkı mejlík na vıvojáøskı list, nìco o sobì, co dìlá¹ a jakım zpùsobem
-bys rád pomohl. Pokud bude¹ mít nìjakı problém, neváhej poslat email do listu
-nebo se zeptej na nìkterém z `IRC kanálù`__. Také, ne¾ zaène¹ dìlat na nìèem
-konkrétním, napi¹ email do listu s tím, co bude¹ dìlat, nebo aktualizuj
-databázi úkolù. Takto se dá pøedejít tomu, aby nìkolik lidí dìlalo
-nedopatøením na jednom a tom samém úkolu...
+NapiÅ¡ krÃ¡tkÃ½ mejlÃ­k na vÃ½vojÃ¡Å™skÃ½ list, nÄ›co o sobÄ›, co dÄ›lÃ¡Å¡ a jakÃ½m zpÅ¯sobem
+bys rÃ¡d pomohl. Pokud budeÅ¡ mÃ­t nÄ›jakÃ½ problÃ©m, nevÃ¡hej poslat email do listu
+nebo se zeptej na nÄ›kterÃ©m z `IRC kanÃ¡lÅ¯`__. TakÃ©, neÅ¾ zaÄneÅ¡ dÄ›lat na nÄ›Äem
+konkrÃ©tnÃ­m, napiÅ¡ email do listu s tÃ­m, co budeÅ¡ dÄ›lat, nebo aktualizuj
+databÃ¡zi ÃºkolÅ¯. Takto se dÃ¡ pÅ™edejÃ­t tomu, aby nÄ›kolik lidÃ­ dÄ›lalo
+nedopatÅ™enÃ­m na jednom a tom samÃ©m Ãºkolu...
 
 
 __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
 
 
-Subversion repozitáø
+Subversion repozitÃ¡Å™
 --------------------
 
-AROS repozitáø bì¾í na Subversion serveru, kterı je chránìnı heslem,
-co¾ znamená, ¾e musí¹ po¾ádat o pøístup, aby jsi se mohl podílet na vıvoji.
-Hesla jsou kryptována, kryptované heslo si mù¾e¹ vytvoøit pomocí na¹eho
-`online kryptovacího nástroje hesla`__.
+AROS repozitÃ¡Å™ bÄ›Å¾Ã­ na Subversion serveru, kterÃ½ je chrÃ¡nÄ›nÃ½ heslem,
+coÅ¾ znamenÃ¡, Å¾e musÃ­Å¡ poÅ¾Ã¡dat o pÅ™Ã­stup, aby jsi se mohl podÃ­let na vÃ½voji.
+Hesla jsou kryptovÃ¡na, kryptovanÃ© heslo si mÅ¯Å¾eÅ¡ vytvoÅ™it pomocÃ­ naÅ¡eho
+`online kryptovacÃ­ho nÃ¡stroje hesla`__.
 
-Po¹li prosím kryptované heslo spoleènì s tvım vlastním u¾ivatelskım jménem
-a skuteènım jménem na adresu `Aarona Digully`__ a poèkej na odezvu. Aby jsi
-urychlil proces pøístupu, napi¹ do pøedmìtu zprávy toto "Access to the
-AROS SVN server" a do tìla napi¹ "Please add <username> <password>", napø.::
+PoÅ¡li prosÃ­m kryptovanÃ© heslo spoleÄnÄ› s tvÃ½m vlastnÃ­m uÅ¾ivatelskÃ½m jmÃ©nem
+a skuteÄnÃ½m jmÃ©nem na adresu `Aarona Digully`__ a poÄkej na odezvu. Aby jsi
+urychlil proces pÅ™Ã­stupu, napiÅ¡ do pÅ™edmÄ›tu zprÃ¡vy toto "Access to the
+AROS SVN server" a do tÄ›la napiÅ¡ "Please add <username> <password>", napÅ™.::
 
     Please add digulla xx1LtbDbOY4/E
 
-Mù¾e to trvat nìkolik dní, jeliko¾ Aaron je hodnì vytí¾enı, tak¾e mìj trpìlivost. 
+MÅ¯Å¾e to trvat nÄ›kolik dnÃ­, jelikoÅ¾ Aaron je hodnÄ› vytÃ­Å¾enÃ½, takÅ¾e mÄ›j trpÄ›livost. 
 
-Abys vìdìl, jak pou¾ívat AROS SVN server, pøeèti si prosím "`Práce s
-SVN`__". I pokud u¾ ví¹ jak pou¾ívat SVN, je stále u¾iteèné jej prostudovat,
-proto¾e obsahuje informace a rady urèené pro AROS repozitáø
-(napø. jak se do nìj zalogovat).
+Abys vÄ›dÄ›l, jak pouÅ¾Ã­vat AROS SVN server, pÅ™eÄti si prosÃ­m "`PrÃ¡ce s
+SVN`__". I pokud uÅ¾ vÃ­Å¡ jak pouÅ¾Ã­vat SVN, je stÃ¡le uÅ¾iteÄnÃ© jej prostudovat,
+protoÅ¾e obsahuje informace a rady urÄenÃ© pro AROS repozitÃ¡Å™
+(napÅ™. jak se do nÄ›j zalogovat).
 
 __ http://aros.sourceforge.net/tools/password.html 
 __ mailto:digulla@aros.org?subject=[Access%20to%20the%20AROS%20SVN%20server]

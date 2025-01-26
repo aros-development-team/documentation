@@ -9,7 +9,7 @@
 Prompt
 ======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	PROMPT
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Okre∂la liniÍ komend dla konkretnego CLI.
+	Okre≈õla liniƒô komend dla konkretnego CLI.
 
 
 Parametry
@@ -38,14 +38,14 @@ Parametry
 ::
 
 
-		PROMPT	--	Ci±g ktÛrym okre∂la siÍ wygl±d CLI, oto
-				przy≥adowe argumenty:
+		PROMPT	--	CiƒÖg kt√≥rym okre≈õla siƒô wyglƒÖd CLI, oto
+				przy≈Çadowe argumenty:
 
 		N	--	numer cli
 		S	--	nazwa aktualnego katalogu
-		R	--	kod b≥Ídu
+		R	--	kod b≈Çƒôdu
 
-	Je∂li PROMPT nie jest okre∂lone to "%N.%S> " jest uøywane za domy∂lne.
+	Je≈õli PROMPT nie jest okre≈õlone to "%N.%S> " jest u≈ºywane za domy≈õlne.
 
 
 Wynik
@@ -53,20 +53,20 @@ Wynik
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
 
 	Prompt "Tu Camelek!.%N> "	daje:
 
-	Tu Camelek!.10>			(je∂li numer CLI by≥ 10)
+	Tu Camelek!.10>			(je≈õli numer CLI by≈Ç 10)
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

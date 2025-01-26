@@ -1,17 +1,17 @@
 =======
-Zásluhy
+ZÃ¡sluhy
 =======
 
 Koordinace
 ==========
 + Aaron Digulla
 
-Roz¹iøování
+RozÅ¡iÅ™ovÃ¡nÃ­
 ===========
 + Ola "4pLaY" Stokka
 + Matt Parsons
 
-HIDD subsystém
+HIDD subsystÃ©m
 ==============
 + Aaron Digulla
 + Georg Steger
@@ -69,7 +69,7 @@ Grafika
 + Staf Verhaegen
 + Flavio Stanchina
 
-Pøíkazy shellu
+PÅ™Ã­kazy shellu
 ==============
 + Martin Recktenwald
 + Henning Kiel
@@ -90,7 +90,7 @@ Workbench
 + Nick Andrews (Kalamatee)
 + Christoph Johann Szczecina
 
-Nástroje
+NÃ¡stroje
 ========
 + Adam Chodorowski
 + Georg Steger
@@ -102,7 +102,7 @@ Preference
 ==========
 + Georg Steger
 + Peter Eriksson
-+ Nico François
++ Nico FranÃ§ois
 + Magnus Holmgren
 
 BGUI
@@ -137,7 +137,7 @@ DOS
 + Rob Howard
 + Pavel Fedin
 
-Sí»ování
+SÃ­Å¥ovÃ¡nÃ­
 ========
 + Neil Cafferkey
 + Pavel Fedin
@@ -145,7 +145,7 @@ Sí»ování
 + Nick Andrews (Kalamatee)
 + Alain Greppin
 
-C link library a POSIX rozhraní
+C link library a POSIX rozhranÃ­
 ===============================
 + Aaron Digulla
 + Fabio Alemagna
@@ -175,7 +175,7 @@ Dokumentace
 + Daniel Holmen
 + Matthias Rustler
 
-Pøeklad
+PÅ™eklad
 =======
 + Henning Kiel
 + Adam Chodorowski
@@ -187,9 +187,9 @@ Pøeklad
 + Sergey Mineychev
 + Paolo Besser
 + Petr Novak
-+ Ariel H. Gómez
++ Ariel H. GÃ³mez
 
-Umìní
+UmÄ›nÃ­
 =====
 + Eric W. Schwartz
 + Pixel Art

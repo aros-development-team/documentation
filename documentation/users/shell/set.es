@@ -20,7 +20,7 @@ Synopsis
      NAME,STRING/F
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
@@ -28,18 +28,18 @@ UbicaciÛn
      Workbench:c
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
 
      Establece una variable local en el shell actual. Si alguna variable 
-     global ya tiene ese nombre se usar· la variable local en su lugar.
+     global ya tiene ese nombre se usar√° la variable local en su lugar.
 
-     La instancia de la variable sÛlo es accesible desde el shell que la
-     definiÛ.
+     La instancia de la variable s√≥lo es accesible desde el shell que la
+     defini√≥.
 
-     Si no se especifican par·metros, se muestra la lista actual de 
+     Si no se especifican par√°metros, se muestra la lista actual de 
      variables locales.
 
 
@@ -58,7 +58,7 @@ Resultado
 ::
 
 
-     Los cÛdigo de error DOS normales.
+     Los c√≥digo de error DOS normales.
 
 
 Ejemplo
@@ -71,7 +71,7 @@ Ejemplo
          Establece una variable local llamada "Jump" al valor de "5".
 
 
-Vea tambiÈn
+Vea tambi√©n
 ~~~~~~~~~~~
 ::
 

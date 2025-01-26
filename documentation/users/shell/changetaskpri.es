@@ -33,22 +33,22 @@ Location
      Workbench:c
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
      El comando ChangeTaskPri se usa para cambiar la prioridad de
-     ejecución actual de una tarea. Como AROS es un sistema operativo
-     multitarea, puedes determinar qué tarea recibe más tiempo de CPU
+     ejecuciÃ³n actual de una tarea. Como AROS es un sistema operativo
+     multitarea, puedes determinar quÃ© tarea recibe mÃ¡s tiempo de CPU
      cambiando su prioridad.
 
      El valor de |priority| puede variar entre -128 y 127; sin embargo,
      los valores superiores a 4 no se recomiendan porque pueden hacer
      que la tarea interfiera con procesos vitales del sistema. Valores
-     más altos le darán a la tarea una mayor prioridad de la CPU.
+     mÃ¡s altos le darÃ¡n a la tarea una mayor prioridad de la CPU.
 
      Puedes usaar el comando Status para examinar la lista de las Tareas
-     que se están ejecutando junto con sus números de proceso.
+     que se estÃ¡n ejecutando junto con sus nÃºmeros de proceso.
 
 
 Ejemplo
@@ -62,10 +62,10 @@ Ejemplo
 
      1.SYS:> ChangeTaskPri 1
 
-         También establece la prioridad del proceso actual a 1.
+         TambiÃ©n establece la prioridad del proceso actual a 1.
 
 
-Mira también
+Mira tambiÃ©n
 ~~~~~~~~~~~~
 ::
 

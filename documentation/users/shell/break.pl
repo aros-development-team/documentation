@@ -16,14 +16,14 @@ Format
 	Break <process> [ALL|C|D|E|F]
 
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
 	PROCESS/N,PORT,ALL/S,C/S,D/S,E/S,F/S
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -34,43 +34,43 @@ Funkcja
 ~~~~~~~
 ::
 
-	BREAK wysy≥a jeden lub wiÍcej sygna≥Ûw do procesu CLI.
-	Argument PROCESS okre∂la numeryczn± postaÊ programu (ID) CLI,
-	do ktÛrego chcesz wys≥aÊ sygna≥.
-	Komenda STATUS wy∂wietli wszystkie aktualnie uruchomione procesy CLI
-	wraz z identyfikatorem ID. Moøesz takøe podaÊ publiczn± nazwÍ portu
-	i wys≥aÊ sygna≥y do tego portu.
+	BREAK wysy≈Ça jeden lub wiƒôcej sygna≈Ç√≥w do procesu CLI.
+	Argument PROCESS okre≈õla numerycznƒÖ postaƒá programu (ID) CLI,
+	do kt√≥rego chcesz wys≈Çaƒá sygna≈Ç.
+	Komenda STATUS wy≈õwietli wszystkie aktualnie uruchomione procesy CLI
+	wraz z identyfikatorem ID. Mo≈ºesz tak≈ºe podaƒá publicznƒÖ nazwƒô portu
+	i wys≈Çaƒá sygna≈Çy do tego portu.
 
-	Moøesz takøe wys≥aÊ wszystkie sygna≥y w tym samym momencie, dziÍki
-	opcji ALL lub kombinacji znacznikÛw CTRL-C, CTRL-D, CTRL-E i CTRL-F
-	przez ich okre∂lone opcje. Tylko gdy proces CLI ma okre∂lone ID wtedy 
-	zostanie wys≥any sygna≥ CTRL-C.
+	Mo≈ºesz tak≈ºe wys≈Çaƒá wszystkie sygna≈Çy w tym samym momencie, dziƒôki
+	opcji ALL lub kombinacji znacznik√≥w CTRL-C, CTRL-D, CTRL-E i CTRL-F
+	przez ich okre≈õlone opcje. Tylko gdy proces CLI ma okre≈õlone ID wtedy 
+	zostanie wys≈Çany sygna≈Ç CTRL-C.
 
-	Efekt uøywania komendy BREAK jest ten sam jak wybranie okna
-	konsoli i wci∂niÍciu odpowiedniej kombinacji.
+	Efekt u≈ºywania komendy BREAK jest ten sam jak wybranie okna
+	konsoli i wci≈õniƒôciu odpowiedniej kombinacji.
 
-	Znaczenie klawiszy jest nastÍpuj±ce:
+	Znaczenie klawiszy jest nastƒôpujƒÖce:
 	CTRL-C	-	Zatrzymuje proces
 	CTRL-D	-	Zatrzymuje skrypt CLI
 	CTRL-E	-	Zamyka okno procesu
 	CTRL-F	-	Aktywuj okno procesu
 
-	Nie wszystkie programy reaguj± na te sygna≥y, ale wiÍkszo∂Ê
-	powinna odpowiadaÊ na CTRL-C.
+	Nie wszystkie programy reagujƒÖ na te sygna≈Çy, ale wiƒôkszo≈õƒá
+	powinna odpowiadaƒá na CTRL-C.
 
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
      
 	1.SYS:> BREAK 1
 
-	Wy∂lij sygna≥ CTRL-C do procesu oznaczonego jako 1.
+	Wy≈õlij sygna≈Ç CTRL-C do procesu oznaczonego jako 1.
 
 	1.SYS:> BREAK 4 E
 
-	Wy∂lij sygna≥ CTRL-E do procesu oznaczonego jako 4.
+	Wy≈õlij sygna≈Ç CTRL-E do procesu oznaczonego jako 4.
 
 

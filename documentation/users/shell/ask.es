@@ -20,7 +20,7 @@ Synopsis
      PROMPT/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 
 ::
@@ -29,13 +29,13 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Pide al usuario que ingrese datos. Posibles entradas son y para sí
-     y n o Return para no. Seleccionar y establece el código de regreso
+     Pide al usuario que ingrese datos. Posibles entradas son y para sÃ­
+     y n o Return para no. Seleccionar y establece el cÃ³digo de regreso
      a 5.
 
 
@@ -48,7 +48,7 @@ Entradas
      PROMPT -- la cadena es mostrada en la ventana.
 
 
-También vea
+TambiÃ©n vea
 ~~~~~~~~~~~
 
 ::

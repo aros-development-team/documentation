@@ -9,7 +9,7 @@
 If
 ==
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	NOT/S,WARN/S,ERROR/S,FAIL/S,,EQ/K,GT/K,GE/K,VAL/S,EXISTS/K
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,9 +29,9 @@ Funkcja
 ~~~~~~~
 ::
 
-	Uruchamia sekwencjê komend wydanych po sobie, je¶li warto¶æ jest true.
-	(sekwencja nastêpuj±ca po If to linie komend zakoñczone Else lub EndIf).
-	Dla ka¿dej komendy If musi byæ EndIf. Je¶li jednak stan jest false to
+	Uruchamia sekwencjÄ™ komend wydanych po sobie, jeÅ›li wartoÅ›Ä‡ jest true.
+	(sekwencja nastÄ™pujÄ…ca po If to linie komend zakoÅ„czone Else lub EndIf).
+	Dla kaÅ¼dej komendy If musi byÄ‡ EndIf. JeÅ›li jednak stan jest false to
 	wtedy wykonywanie przeskoczy do Else lub EndIf.
 
 
@@ -40,29 +40,29 @@ Parametry
 ::
 
 
-	NOT		--	neguje warto¶æ stanu
+	NOT		--	neguje wartoÅ›Ä‡ stanu
 
-	WARN		--	True je¶li warto¶æ jest wiêksza b±d¼ równa 5.
-	ERROR		--	True je¶li warto¶æ jest wiêksza b±d¼ równa 10.
-	FAIL		--	True je¶li warto¶æ jest wiêksza b±d¼ równa 20.
+	WARN		--	True jeÅ›li wartoÅ›Ä‡ jest wiÄ™ksza bÄ…dÅº rÃ³wna 5.
+	ERROR		--	True jeÅ›li wartoÅ›Ä‡ jest wiÄ™ksza bÄ…dÅº rÃ³wna 10.
+	FAIL		--	True jeÅ›li wartoÅ›Ä‡ jest wiÄ™ksza bÄ…dÅº rÃ³wna 20.
 
-	EQ, GE, GT	--	True je¶li pierwsza warto¶æ jest równa, wiêksza
-				lub równa kolejno wiêksza od drugiej.
+	EQ, GE, GT	--	True jeÅ›li pierwsza wartoÅ›Ä‡ jest rÃ³wna, wiÄ™ksza
+				lub rÃ³wna kolejno wiÄ™ksza od drugiej.
 
-	VAL		--	Wskazuje, ¿e porównanie powinno zmieniaæ ci±gi
-				w warto¶ci numeryczne.
+	VAL		--	Wskazuje, Å¼e porÃ³wnanie powinno zmieniaÄ‡ ciÄ…gi
+				w wartoÅ›ci numeryczne.
 
-	EXISTS <ci±g>	--	True je¶li obiekt <ci±g> wystêpuje.
+	EXISTS <ciÄ…g>	--	True jeÅ›li obiekt <ciÄ…g> wystÄ™puje.
 
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
      If 500 GT 200 VAL
-         echo "500 to wiêcej ni¿ 200"
+         echo "500 to wiÄ™cej niÅ¼ 200"
      Else
          If EXISTS S:User-Startup
              echo "Skrypt User-Startup znaleziony w S:"
@@ -75,13 +75,13 @@ Opis
 ~~~~
 ::
 
-	ERROR oraz FAIL bêdzie odpowiednie dopiero wtedy je¶li poziom b³êdu
-	jest ustawiony przez FailAt (normalnie stopieñ ten wynosi 10, i je¶li
-	jaki¶ b³±d przekroczy lub bêdzie równy tej warto¶ci, to skrypt zostanie
+	ERROR oraz FAIL bÄ™dzie odpowiednie dopiero wtedy jeÅ›li poziom bÅ‚Ä™du
+	jest ustawiony przez FailAt (normalnie stopieÅ„ ten wynosi 10, i jeÅ›li
+	jakiÅ› bÅ‚Ä…d przekroczy lub bÄ™dzie rÃ³wny tej wartoÅ›ci, to skrypt zostanie
 	przerwany).
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

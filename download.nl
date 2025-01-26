@@ -28,8 +28,8 @@ Icaros Desktop LIVE!
 besturingssysteem. Het wordt geleverd op een opstartbare live DVD-ROM of
 CD-ROM die direct werkt op een PC (mits de hardware-onderdelen door AROS 
 worden ondersteund) of in een virtuele machine zoals VMWare of `VirtualBox`__.
-Het kan worden ge�nstalleerd op de harde schijf en kan bestaan naast een
-ge�nstalleerd OS zoals Microsoft Windows, op een aangewezen partitie. Een
+Het kan worden geïnstalleerd op de harde schijf en kan bestaan naast een
+geïnstalleerd OS zoals Microsoft Windows, op een aangewezen partitie. Een
 snelgids en een aantal AROS PDF-handleidingen zijn bijgevoegd.
 
 __ http://live.icarosdesktop.org/

@@ -1,9 +1,9 @@
 ======
-L�nkar
+Länkar
 ======
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright � 1995-2007, The AROS Development Team
+:Copyright: Copyright © 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,12 +11,12 @@ L�nkar
 
 .. Contents::
 
-AROS k�llor
+AROS källor
 ===========
 
 + `Team AROS`__ 
 
-  TeamAROS �r den ursprungliga supportgruppen f�r AROS.
+  TeamAROS är den ursprungliga supportgruppen för AROS.
   
 +  `AROSWorld`__
 
@@ -30,7 +30,7 @@ AROS k�llor
 
 + `AROS on ohloh.net`__
 
-  Ohlow demonstrerar AROS-utvecklingens aktivitet p� ett snyggt grafiskt vis.
+  Ohlow demonstrerar AROS-utvecklingens aktivitet på ett snyggt grafiskt vis.
 
 + `Map of AROS users`__
 
@@ -39,7 +39,7 @@ AROS k�llor
   AfA OS byter ut AmigaOS core libraries med deras mer avancerade motsvarighet i AROS.
   
 + `AROS World`__
-  En ny hemsida om AROS, avsedd f�r att vara en user community hemsida.
+  En ny hemsida om AROS, avsedd för att vara en user community hemsida.
 
 + `AROS on WikiPedia`__
 
@@ -62,7 +62,7 @@ Artiklar om AROS
 ================
 
 ===============================================  ==================  ==========
-Titel                                            F�rfattare          Datum
+Titel                                            Författare          Datum
 ===============================================  ==================  ==========
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    2006-09-13
 `"Test: AROS"`__ (in German mag. AmigaFuture)    Ingo Schmitz        2005-05-05
@@ -79,15 +79,15 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Om du k�nner till n�gon artikel om AROS som inte finns med, contact_ oss
-s� vi kan l�gga till den. Tack.
+Om du känner till någon artikel om AROS som inte finns med, contact_ oss
+så vi kan lägga till den. Tack.
 
 
-Artiklar som n�mner AROS
+Artiklar som nämner AROS
 ========================
 
 ===============================================  ==============  ==========
-Titel                                            F�rfattare      Datum
+Titel                                            Författare      Datum
 ===============================================  ==============  ==========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  2002-08-13
 `Interview with Martin Blom`__                   Johan Forsberg  Unknown
@@ -114,8 +114,8 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Om du k�nner till n�gon artikel om AROS som inte finns med, contact_ oss
-s� vi kan l�gga till den. Tack.
+Om du känner till någon artikel om AROS som inte finns med, contact_ oss
+så vi kan lägga till den. Tack.
 
 Utvecklarnas hemsidor
 =====================
@@ -152,14 +152,14 @@ __ http://cataclysm.cx/
 __ http://www.in-berlin.de/User/jroger/index.html
 
 
-�vrigt
+Övrigt
 ======
 
 + `Back to the Roots`__
 
   .. Image:: ./images/bttr.jpeg
 
-  En suver�n nostalgi-sida d�r du kan hitta licensierade och fria Amiga-spel.
+  En suverän nostalgi-sida där du kan hitta licensierade och fria Amiga-spel.
 
 
 __ http://www.back2roots.org/

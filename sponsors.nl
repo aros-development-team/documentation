@@ -2,7 +2,7 @@ Sponsors
 ========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -58,7 +58,7 @@ De volgende organisaties en individuen hebben de ontwikkeling gesponsord:
 + Rune Jensen
 + Joshua Dolan
 + Matthew Parsons
-+ Jean-Pierre Rivière
++ Jean-Pierre RiviÃ¨re
 
 __ http://www.trustsec.de/
 __ http://www.pegasosppc.com/

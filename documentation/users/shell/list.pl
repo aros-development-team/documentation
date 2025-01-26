@@ -29,7 +29,7 @@ Szablon
 	BLOCK/S,NOHEAD/S,FILES/S,DIRS/S,LFORMAT/K,ALL/S
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -41,11 +41,11 @@ Funkcja
 ~~~~~~~
 ::
 
-	Wy∂wietla szczegÛ≥owe informacje o obiektach w aktualnym katalogu lub
-	okre∂lonym.
+	Wy≈õwietla szczeg√≥≈Çowe informacje o obiektach w aktualnym katalogu lub
+	okre≈õlonym.
 	
-	Informacja o obiekcie jest przedstawiona w nowej linii, zawieraj±c
-	poniøsze dane:
+	Informacja o obiekcie jest przedstawiona w nowej linii, zawierajƒÖc
+	poni≈ºsze dane:
 	
 	nazwa
 	rozmiar (w bajtach)
@@ -58,28 +58,28 @@ Parametry
 ::
 
 
-	DIR		--	Lista katalogÛw. Je∂li siÍ skoÒczy≥y, aktualny
-				katalog zostanie wy∂wietlony.
-	PAT		--	Wy∂wietl pliki pasuj±ce do wzorca.
-	KEYS		--	Wy∂wietl rozmiar bloku kaødego obiektu.
-	DATES		--	Wy∂wietl datÍ i czas stworzenia dla obiektu.
-	NODATES		--	Nie wy∂wietlaj dat.
-	TO (nazwa)	--	Zapisz wyj∂cie do pliku.
-	SUB (ci±g)	--	Wy∂wietl tylko pliki, pasuj±ce do wzorca.
-	SINCE (data)	--	Wy∂wietl pliki nowsze od 'data'.
-	UPTO (data)	--	Wy∂wietl pliki starsze od 'data'.
-	QUICK		--	Wy∂wietl tylko nazwy plikÛw.
-	BLOCK		--	Pliki s± w blokach 512 bajtowych.
-	NOHEAD		--	Bez nag≥ÛwkÛw.
+	DIR		--	Lista katalog√≥w. Je≈õli siƒô sko≈Ñczy≈Çy, aktualny
+				katalog zostanie wy≈õwietlony.
+	PAT		--	Wy≈õwietl pliki pasujƒÖce do wzorca.
+	KEYS		--	Wy≈õwietl rozmiar bloku ka≈ºdego obiektu.
+	DATES		--	Wy≈õwietl datƒô i czas stworzenia dla obiektu.
+	NODATES		--	Nie wy≈õwietlaj dat.
+	TO (nazwa)	--	Zapisz wyj≈õcie do pliku.
+	SUB (ciƒÖg)	--	Wy≈õwietl tylko pliki, pasujƒÖce do wzorca.
+	SINCE (data)	--	Wy≈õwietl pliki nowsze od 'data'.
+	UPTO (data)	--	Wy≈õwietl pliki starsze od 'data'.
+	QUICK		--	Wy≈õwietl tylko nazwy plik√≥w.
+	BLOCK		--	Pliki sƒÖ w blokach 512 bajtowych.
+	NOHEAD		--	Bez nag≈Ç√≥wk√≥w.
 	FILES		--	Tylko pliki.
 	DIRS		--	Tylko katalogi.
-	LFORMAT		--	Okre∂la rodzaj wyj∂cia.
-	ALL		--	Zawarto∂Ê wy∂wietlana rekurencyjnie.
+	LFORMAT		--	Okre≈õla rodzaj wyj≈õcia.
+	ALL		--	Zawarto≈õƒá wy≈õwietlana rekurencyjnie.
 
-	Oto parametry dostÍpne z LFORMAT:
+	Oto parametry dostƒôpne z LFORMAT:
 
 	%A	--	atrybuty pliku
-	%B	--	rozmiar pliku w raczej blokach niø bajtach
+	%B	--	rozmiar pliku w raczej blokach ni≈º bajtach
 	%C	--	komentarz
 	%D	--	data utworzenia
 	%E	--	rozszerzenie pliku
@@ -88,8 +88,8 @@ Parametry
 	%L	--	rozmiar pliku w bajtach
 	%M	--	nazwa pliku bez rozszerzenia
 	%N	--	nazwa pliku
-	%P	--	∂cieøka pliku
-	%S	--	zast±pione przez %N i %P; przestarza≥e
+	%P	--	≈õcie≈ºka pliku
+	%S	--	zastƒÖpione przez %N i %P; przestarza≈Çe
 	%T	--	czas utworzenia
      
 
@@ -98,10 +98,10 @@ Wynik
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 
-Przyk≥ad
+Przyk≈Çad
 ~~~~~~~~
 ::
 
@@ -120,7 +120,7 @@ Przyk≥ad
 	9 files - 274 blocks used        
      
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

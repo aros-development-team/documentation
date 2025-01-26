@@ -33,7 +33,7 @@ Plantilla
      DIR/M,P=PAT/K,DATES/S,NODATES/S,TO/K,SUB/K,SINCE/K,UPTO/K,QUICK/S,BLOCK/S,NOHEAD/S,FILES/S,DIRS/S,LFORMAT/K,ALL/S
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
@@ -41,21 +41,21 @@ UbicaciÛn
      Workbench:C/
         
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
 
-     Da una lista con informaciÛn detallada sobre los archivos y los 
+     Da una lista con informaci√≥n detallada sobre los archivos y los 
      directorios en el directorio actual o en el directorio especificado
      por DIR.
 
-     La informaciÛn para cada archivo o directorio es presentada en un
-     renglÛn separado, conteniendo la siguiente informaciÛn:
+     La informaci√≥n para cada archivo o directorio es presentada en un
+     rengl√≥n separado, conteniendo la siguiente informaci√≥n:
       
      nombre
-     tamaÒo (en bytes)
-     bits de protecciÛn
+     tama√±o (en bytes)
+     bits de protecci√≥n
      hora y fecha
 
      
@@ -65,12 +65,12 @@ Entradas
 ::
 
 
-     DIR           --  El directorio a listar. Si no est·, se listar·
+     DIR           --  El directorio a listar. Si no est√°, se listar√°
                        el directorio actual.
      PAT           -- Muestra solamente los archivos que ###matching 'string'
-     KEYS          --  Muestra el n˙mero de bloque de cada archivo o 
+     KEYS          --  Muestra el n√∫mero de bloque de cada archivo o 
                        directorio.
-     DATES         -- Muestra la fecha de creaciÛn de los archivos y
+     DATES         -- Muestra la fecha de creaci√≥n de los archivos y
                        directorios.
      NODATES       --  No muestra las fechas.
      TO (nombre)   --  Escribe el listado en un archivo en vez de en stdout.
@@ -79,35 +79,35 @@ Entradas
      SINCE (fecha) --  Muestra los archivos posteriores a 'fecha'.
      UPTO (fecha)  --  Muestra los archivos anteriores a 'fecha'.
      QUICK         --  Muestra solamente los nombres de los archivos.
-     BLOCK         --  Los tamaÒos de archivo est·n en bloques de 512 bytes.
-     NOHEAD        --  No imprime ninguna cabecera de informaciÛn.
+     BLOCK         --  Los tama√±os de archivo est√°n en bloques de 512 bytes.
+     NOHEAD        --  No imprime ninguna cabecera de informaci√≥n.
      FILES         --  Muestra solamente los archivos.
      DIRS          --  Muestra solamente los directorios.
      LFORMAT       --  Especifica la salida de la lista en estilo printf.
      ALL           --  Lista los contenidos de los directorios recursivamente.
 
-     Est·n disponibles los siguientes atributos de las cadenas de LFORMAT
+     Est√°n disponibles los siguientes atributos de las cadenas de LFORMAT
 
      %A  --  los atributos del archivo
-     %B  --  el tamaÒo del archivo en bloques en vez de bytes
+     %B  --  el tama√±o del archivo en bloques en vez de bytes
      %C  --  el comentario del archivo
-     %D  --  la fecha de creaciÛn
-     %E  --  la extensiÛn del archivo
+     %D  --  la fecha de creaci√≥n
+     %E  --  la extensi√≥n del archivo
      %F  --  el nombre del volumen
-     %K  --  el n˙mero de bloques clave del archivo
-     %L  --  el tamaÒo del archivo en bytes
-     %M  --  el nombre del archivo sin la extensiÛn
+     %K  --  el n√∫mero de bloques clave del archivo
+     %L  --  el tama√±o del archivo en bytes
+     %M  --  el nombre del archivo sin la extensi√≥n
      %N  --  el nombre del archivo
      %P  --  la ruta del archivo
      %S  --  sustituido por %N y %P; ahora obsoleto
-     %T  --  la hora de creaciÛn
+     %T  --  la hora de creaci√≥n
 
 Resultado
 ~~~~~~~~~
 ::
 
 
-     Los cÛdigos devueltos DOS normales.
+     Los c√≥digos devueltos DOS normales.
 
 
 Ejemplo
@@ -129,7 +129,7 @@ Ejemplo
      9 files - 274 blocks used        
      
 
-Vea tambiÈn
+Vea tambi√©n
 ~~~~~~~~~~~
 ::
 

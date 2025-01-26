@@ -20,7 +20,7 @@ Synopsis
      FILE/A,FLAGS,ADD/S,SUB/S,ALL/S,QUIET/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:c
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Agrega o quita los bits de protecci髇 de un archivo o directorio.
+     Agrega o quita los bits de protecci贸n de un archivo o directorio.
      
      Protect permite el uso de revisiones recursivas de directorio y
      pattern matching para proteger muchas archivos/directorios
@@ -45,11 +45,11 @@ Entradas
 ::
 
 
-     FILE   --  Un archivo , un directorio o un patr髇 a ###match.
-     FLAGS  --  Una o m醩 de las siguientes banderas:
+     FILE   --  Un archivo , un directorio o un patr贸n a ###match.
+     FLAGS  --  Una o m谩s de las siguientes banderas:
 
 
-                 S - Gui髇
+                 S - Gui贸n
                  P - Puro
                  A - Archivo
                  R - Leer
@@ -59,7 +59,7 @@ Entradas
 
      ADD    --  Permite que se pongan los bits; de esto, es permitido.
      SUB    --  Permite que los bits sean limpiados y por esto no permitido.
-     ALL    --  Permite una revisi髇 recursiva del volumen/directorio.
+     ALL    --  Permite una revisi贸n recursiva del volumen/directorio.
      QUIET  --  Suprime cualquier salida al shell.
 
 
@@ -69,7 +69,7 @@ Resultado
 
 
      Standard DOS return codes.
-     Los c骴igos devueltos DOS normales.
+     Los c贸digos devueltos DOS normales.
 
 
 Ejemplo
@@ -82,7 +82,7 @@ Ejemplo
          Revisa recursivamente el volumen ram y agrega el bit de ejecutable.
 
 
-Vea tambi閚
+Vea tambi茅n
 ~~~~~~~~~~~
 ::
 

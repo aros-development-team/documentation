@@ -9,7 +9,7 @@
 Info
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	DISKS/S, VOLS=VOLUMES/S, GOODONLY/S, BLOCKS/S, DEVICES/M
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,10 +29,10 @@ Funkcja
 ~~~~~~~
 ::
 
-	Pokazuje informacje o systemie plików urz±dzeñ oraz woluminów. Gdy brak
-	argumentów, informacje o wszystkich wszystkich urz±dzeñ i woluminów s±
-	wy¶wietlane. Je¶li potrzebujemy uzyskaæ informacje o konkretnych
-	urz±dzeniach, to te nazwy mog± byæ podane jako argumenty.
+	Pokazuje informacje o systemie plikÃ³w urzÄ…dzeÅ„ oraz woluminÃ³w. Gdy brak
+	argumentÃ³w, informacje o wszystkich wszystkich urzÄ…dzeÅ„ i woluminÃ³w sÄ…
+	wyÅ›wietlane. JeÅ›li potrzebujemy uzyskaÄ‡ informacje o konkretnych
+	urzÄ…dzeniach, to te nazwy mogÄ… byÄ‡ podane jako argumenty.
 
 
 Parametry
@@ -40,14 +40,14 @@ Parametry
 ::
 
 
- DISKS     --  pokazuj nazwy dysków
+ DISKS     --  pokazuj nazwy dyskÃ³w
  VOLS      --  pokazuj etykiety
  GOODONLY  --  nie pokazuj informaci o uszkodzonych dyskach lub wolumenach
- BLOCKS    --  poka¿ dodatkowo bloki i zajêto¶æ
- DEVICES   --  nazwy urz±dzeñ
+ BLOCKS    --  pokaÅ¼ dodatkowo bloki i zajÄ™toÅ›Ä‡
+ DEVICES   --  nazwy urzÄ…dzeÅ„
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 

@@ -1,19 +1,19 @@
 ==========
-Odkazování
+OdkazovÃ¡nÃ­
 ==========
 
 :Author:    Adam Chodorowski
-:Copyright: Copyright ¦ 2001-2007, The AROS Development Team
+:Copyright: Copyright Åš 2001-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
-Skvìlı zpùsob jak ukázat tvou podporu pro AROS a zpùsob, kterı aktivnì doporuèujeme,
-je odkazovat na tento web z webu tvého. Pro tento úèel mù¾e¹ pou¾ít nìkterı
-z následujících banerù.
+SkvÄ›lÃ½ zpÅ¯sob jak ukÃ¡zat tvou podporu pro AROS a zpÅ¯sob, kterÃ½ aktivnÄ› doporuÄujeme,
+je odkazovat na tento web z webu tvÃ©ho. Pro tento ÃºÄel mÅ¯Å¾eÅ¡ pouÅ¾Ã­t nÄ›kterÃ½
+z nÃ¡sledujÃ­cÃ­ch banerÅ¯.
 
 +------------------------------------------+----------------------+
-| Obrázek                                  | Autor                |
+| ObrÃ¡zek                                  | Autor                |
 +==========================================+======================+
 | .. Image:: /images/aros-banner.gif       | Cyb0rg / Resistance  |
 |  :align: center                          |                      |
@@ -31,16 +31,16 @@ z následujících banerù.
 |  :align: center                          |                      |
 |  :class: bannerimage                     |                      |
 +------------------------------------------+----------------------+
-| .. Image:: /images/aros-banner-peta.png  | Petr Novák           |
+| .. Image:: /images/aros-banner-peta.png  | Petr NovÃ¡k           |
 |  :align: center                          |                      |
 |  :class: bannerimage                     |                      |
 +------------------------------------------+----------------------+
 
 
-Pak tu také máme "podpisové" bannery, které mù¾e¹ pou¾ívat na diskuzních fórech:
+Pak tu takÃ© mÃ¡me "podpisovÃ©" bannery, kterÃ© mÅ¯Å¾eÅ¡ pouÅ¾Ã­vat na diskuznÃ­ch fÃ³rech:
 
 +------------------------------------------+----------------------+
-| Obrázek                                  | Autor                |
+| ObrÃ¡zek                                  | Autor                |
 +==========================================+======================+
 | .. Image:: /images/aros-sigbar-user.png  | S33k_100             |
 |  :align: center                          |                      |
@@ -52,6 +52,6 @@ Pak tu také máme "podpisové" bannery, které mù¾e¹ pou¾ívat na diskuzních fórech:
 +------------------------------------------+----------------------+
 
 
-Odkazuj prosím pøímo na http://www.aros.org/ a ne na jiná zrcadla, proto¾e ty
-se mù¾ou èasem zmìnit. Také si prosím vytvoø lokální kopii obrázku k sní¾ení
-zatí¾ení na¹í sítì.
+Odkazuj prosÃ­m pÅ™Ã­mo na http://www.aros.org/ a ne na jinÃ¡ zrcadla, protoÅ¾e ty
+se mÅ¯Å¾ou Äasem zmÄ›nit. TakÃ© si prosÃ­m vytvoÅ™ lokÃ¡lnÃ­ kopii obrÃ¡zku k snÃ­Å¾enÃ­
+zatÃ­Å¾enÃ­ naÅ¡Ã­ sÃ­tÄ›.

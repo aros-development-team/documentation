@@ -3,7 +3,7 @@ Porting
 =======
 
 :Authors:   Adam Chodorowski, Paolo Besser
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Stato:    Done.
@@ -14,8 +14,8 @@ Porting
 Introduzione
 ============
 
-Poiché AROS è un sistema operativo portatile, è disponibile su diverse 
-piattaforme. Un porting è esattamente ciò che suggerisce il suo nome, 
+PoichÃ© AROS Ã¨ un sistema operativo portatile, Ã¨ disponibile su diverse 
+piattaforme. Un porting Ã¨ esattamente ciÃ² che suggerisce il suo nome, 
 ovvero una versione di AROS per una specifica piattaforma.
 
 
@@ -26,16 +26,16 @@ I porting si dividono in due grandi gruppi, or "flavors" nella terminologia
 di AROS, conosciuti coi termini inglesi "native" e "hosted". 
 
 Le versioni "native" di AROS funzionano come un qualunque sistema operativo 
-a sé stante e prendono il totale controllo dell'hardware del computer. In futuro 
+a sÃ© stante e prendono il totale controllo dell'hardware del computer. In futuro 
 diventeranno le versioni raccomandate per l'uso, ma attualmente sono ancora 
 troppo incomplete per risultare utili a qualcosa (almeno per gli sviluppatori).
 
 Le versioni "hosted" possono girare al di sopra di un altro sistema operativo, 
 facendo uso delle risorse e dei driver del medesimo. Il loro vantaggio consiste 
-nel fatto che sono più semplici da scrivere e da mantenere, in quanto non è 
+nel fatto che sono piÃ¹ semplici da scrivere e da mantenere, in quanto non Ã¨ 
 necessario programmare driver di basso livello. Inoltre, siccome lo sviluppo di 
-AROS non è ancora possibile all'interno di AROS stesso, queste versioni possono 
-velocizzare notevolmente i tempi di programmazione, in quanto non è necessario 
+AROS non Ã¨ ancora possibile all'interno di AROS stesso, queste versioni possono 
+velocizzare notevolmente i tempi di programmazione, in quanto non Ã¨ necessario 
 perdere tempo in noiosi riavvii del computer ogni volta che un errore lo manda 
 in crash. 
 
@@ -43,16 +43,16 @@ in crash.
 Denominazioni
 -------------
 
-È possibile riconoscere le versioni di AROS grazie a nomi che cominciano con 
-<cpu>-<platform>, dove <cpu> è il processore e <platform> è un nome sinbolico 
-della piattaforma. Questa porzione può essere una piattaforma hardware per le 
+Ãˆ possibile riconoscere le versioni di AROS grazie a nomi che cominciano con 
+<cpu>-<platform>, dove <cpu> Ã¨ il processore e <platform> Ã¨ un nome sinbolico 
+della piattaforma. Questa porzione puÃ² essere una piattaforma hardware per le 
 versioni "native", come "pc" o "amiga", o un sistema operativo per le versioni 
 "hosted", per esempio "linux" o "freebsd". Qualora non fosse chiaro che 
-l'argomento è AROS, di solito usiamo un prefisso del tipo "AROS/" al nome della 
+l'argomento Ã¨ AROS, di solito usiamo un prefisso del tipo "AROS/" al nome della 
 versione, per esempio "AROS/i386-pc". 
 
 
-Portatilità
+PortatilitÃ 
 -----------
 
 Gli eseguibili di AROS per una CPU specifica sono portatili su qualunque 
@@ -74,21 +74,21 @@ AROS/i386-pc
 
 :Flavour:    Native
 :Stato:     Funziona, supporto incompleto per i driver
-:Maintenuta: Sì
+:Maintenuta: SÃ¬
 
-AROS/i386-pc è il porting nativo di AROS che funziona sui comuni PC IBM 
-compatibili che adottano processori x86. Il nome può generare un po' di 
-confusione, dato che AROS/i386-pc in realtà funziona su CPU di classe 486 
+AROS/i386-pc Ã¨ il porting nativo di AROS che funziona sui comuni PC IBM 
+compatibili che adottano processori x86. Il nome puÃ² generare un po' di 
+confusione, dato che AROS/i386-pc in realtÃ  funziona su CPU di classe 486 
 o superiore, visto che usa istruzioni non comprese nei processorei 386.
 
 Questa versione funziona piuttosto bene, ma offre un supporto davvero 
-basilare ai driver. Una delle più grosse limitazioni è costituita dal fatto 
+basilare ai driver. Una delle piÃ¹ grosse limitazioni Ã¨ costituita dal fatto 
 che possiamo offrire l'accelerazione video soltanto su schede video 
 basate su processori ATI e Nvidia. Le altre schede video si possono usare 
 tramite un driver generico VGA e VBE non accelerato. Stiamo lavorando anche 
 su altri driver ovviamente, ma lo sviluppo procede a rilento in quanto 
 disponiamo soltanto di due specialisti e mezzo. 
-Questo porting è disponibile per il download.
+Questo porting Ã¨ disponibile per il download.
 
 
 AROS/m68k-pp
@@ -96,17 +96,17 @@ AROS/m68k-pp
 
 :Flavour:    Native 
 :Stato:     Funziona parzialmente in un emulatore, driver incompleti
-:Mantenuto: Sì
+:Mantenuto: SÃ¬
 
-AROS/m68k-pp è il porting nativo di AROS per la linea di palmari Palm 
+AROS/m68k-pp Ã¨ il porting nativo di AROS per la linea di palmari Palm 
 e compatibili ("pp" sta per "palm pilot", ovvero il primo modello di questa 
 linea di piccoli computer). Questo significa che in futuro potreste portarvi 
 AROS sempre con voi in un taschino...
 
-Questo port è davvero molto spartano. Più o meno funziona (in un emulatore,
+Questo port Ã¨ davvero molto spartano. PiÃ¹ o meno funziona (in un emulatore,
 visto che nessuno vuole buttare via i propri gioiellini al momento) ma mancano
-ancora un sacco di cose da fare. C'è un driver grafico ma non uno per l'input.
-Questo port non è disponibile per il download.
+ancora un sacco di cose da fare. C'Ã¨ un driver grafico ma non uno per l'input.
+Questo port non Ã¨ disponibile per il download.
 
 
 AROS/i386-linux
@@ -114,16 +114,16 @@ AROS/i386-linux
 
 :Flavour:    Hosted
 :Stato:     Funziona
-:Mantenuto: Sì
+:Mantenuto: SÃ¬
 
-AROS/i386-linux è la versione hosted di AROS per il sistema operativo Linux[#]_
+AROS/i386-linux Ã¨ la versione hosted di AROS per il sistema operativo Linux[#]_
 funzionante su processori x86. 
 
-Questa è probabilmente la versione di AROS attualmente più avanzata, 
+Questa Ã¨ probabilmente la versione di AROS attualmente piÃ¹ avanzata, 
 in quanto gli sviluppatori non devono preoccuparsi dei driver per le 
 periferiche. A chi volesse sviluppare AROS o le sue applicazioni, 
 consigliamo vivamente di scaricare questa.
-È disponibile per il download.
+Ãˆ disponibile per il download.
 
 
 AROS/i386-freebsd
@@ -131,12 +131,12 @@ AROS/i386-freebsd
 
 :Flavour:    Hosted
 :Stato:     Funziona
-:Mantenuto: Sì (5.x)
+:Mantenuto: SÃ¬ (5.x)
 
-AROS/i386-freebsd è la versione di AROS per FreeBSD su processori x86. 
+AROS/i386-freebsd Ã¨ la versione di AROS per FreeBSD su processori x86. 
 
-Questo porting è relativamente completo, in quanto condivide la maggior parte
-del codice sorgente con la versione AROS/i386-linux, purtroppo, però, ci sono 
+Questo porting Ã¨ relativamente completo, in quanto condivide la maggior parte
+del codice sorgente con la versione AROS/i386-linux, purtroppo, perÃ², ci sono 
 pochi sviluppatori che usano questo sistema operativo e la programmazione 
 prosegue a rilento. Non sempre i sorgenti sono disponibili per il download.
 
@@ -146,12 +146,12 @@ AROS/ppc-linux
 
 :Flavour:    Hosted
 :Stato:     Funziona
-:Maintained: Sì
+:Maintained: SÃ¬
 
-AROS/ppc-linux è la versione hosted di AROS per Linux che funziona 
+AROS/ppc-linux Ã¨ la versione hosted di AROS per Linux che funziona 
 sui processori PPC.
 
-Una versione pre-compilata è disponibile sul sito di `Sourceforge`__.
+Una versione pre-compilata Ã¨ disponibile sul sito di `Sourceforge`__.
 Per ricompilarla serve una versione patchata di gcc3.4.3. 
 I file diff sono disponibili nella directory contrib/gnu/gcc.
 
@@ -161,20 +161,20 @@ __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
 AROS/mingw32-i386
 ------------------
 
-Questo port è stato inteso per andare in Microsoft Windows (ad iniziare da Windows 98)
-come sistema di base. Naturalmente il port è ancora ai primi giorni, ma p tutt'ora in 
-continuo sviluppo. Il mantenitore del port è Pavel Fedin. Per fare l'output a schermo 
+Questo port Ã¨ stato inteso per andare in Microsoft Windows (ad iniziare da Windows 98)
+come sistema di base. Naturalmente il port Ã¨ ancora ai primi giorni, ma p tutt'ora in 
+continuo sviluppo. Il mantenitore del port Ã¨ Pavel Fedin. Per fare l'output a schermo 
 viene usato GDI.
 
-Il port può essere scaricato dalla Pagina di Download.
+Il port puÃ² essere scaricato dalla Pagina di Download.
 
 
 Nota 
 ====
 
-.. [#] Sì, lo sappiamo benissimo che Linux è soltanto un kernel e non il sistema 
-       operativo, ma è molto più semplice così che scrivere "sistemi operativi 
-       basati sul kernel di Linux, alcuni dei più comuni strumenti GNU e il 
-       sistema grafico X". L'ottimizzazione dello spazio usato sarà vanificata 
-       dall'esigenza di scrivere questa inutile nota a pié di pagina per i 
-       lettori più pedanti. Ma vabbè...
+.. [#] SÃ¬, lo sappiamo benissimo che Linux Ã¨ soltanto un kernel e non il sistema 
+       operativo, ma Ã¨ molto piÃ¹ semplice cosÃ¬ che scrivere "sistemi operativi 
+       basati sul kernel di Linux, alcuni dei piÃ¹ comuni strumenti GNU e il 
+       sistema grafico X". L'ottimizzazione dello spazio usato sarÃ  vanificata 
+       dall'esigenza di scrivere questa inutile nota a piÃ© di pagina per i 
+       lettori piÃ¹ pedanti. Ma vabbÃ¨...

@@ -1,15 +1,15 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
 news:             Nyheter
-news-archive-for: Nyhetsarkiv för
+news-archive-for: Nyhetsarkiv fÃ¶r
 mirrors:          Speglar
-contents:         Innehåll
-search:           Sökning
-visitors:         Besökare
+contents:         InnehÃ¥ll
+search:           SÃ¶kning
+visitors:         BesÃ¶kare
 sponsors:         Sponsorer
 
 [navigation]
@@ -19,40 +19,40 @@ news:             Nyheter
 archive:          Arkiv
 introduction:     Introduktion
 status:           Status
-screenshots:      Skärmdumpar
+screenshots:      SkÃ¤rmdumpar
 ports:            Portningar
 license:          Licens
 download:         Nerladdning
 documentation:    Dokumentation
-users:            Användare
+users:            AnvÃ¤ndare
 installation:     Installation
-using:            Användning
-faq:              Frågor och svar
+using:            AnvÃ¤ndning
+faq:              FrÃ¥gor och svar
 howto:            Hurman (Howto)
-hwcompat:         Hårdvarukompatibilitet
+hwcompat:         HÃ¥rdvarukompatibilitet
 shell:            Shell-kommandon
 applications:     Program
 glossary:         Glossary
 translators:      Translators
 developers:       Utvecklare
 contribute:       Medverka
-roadmap:          Syfte och mål (Roadmap)
+roadmap:          Syfte och mÃ¥l (Roadmap)
 issue-tracker:    Buggrapportering
 working-with-git: Arbeta med Git
 compiling:        Kompilering
-application-development-manual: Manual för programutveckling
-zune-application-development-manual: Manual för Zune programutveckling
-system-development-manual:      Manual för systemutveckling
-debugging-manual: Manual för buggfixning
+application-development-manual: Manual fÃ¶r programutveckling
+zune-application-development-manual: Manual fÃ¶r Zune programutveckling
+system-development-manual:      Manual fÃ¶r systemutveckling
+debugging-manual: Manual fÃ¶r buggfixning
 reference:        Referens
 specifications:   Specifikationer
 ui-style-guide:   UI Style Guide
 testing:          Testing
 documenting:      Dokumentering
 porting:          Porting
-translating:      Översättning
+translating:      Ã–versÃ¤ttning
 summaries:        Sammanfattningar
-links:            Länkar
+links:            LÃ¤nkar
 contact:          Kontakt
 slack:            Slack
 mailing-lists:    Mailing-listor
@@ -64,13 +64,13 @@ acknowledgements: Acknowledgements
 pictures:         Bilder
 developers-together: Utvecklare en Masse
 sponsors:         Sponsorer
-linking:          Länkning
+linking:          LÃ¤nkning
 
 [misc]
 
-go:               Gå
-search:           Sök
-copyright:        Copyright © 1995-2025, The AROS Development Team. Alla rättigheter förbehålles.
-trademarks:       Amiga®, AmigaOS®, Workbench och Intuition är varumärken som tillhör Amiga Inc. Alla andra varumärken tillhör sina respektive ägare.
-read-more:        Läs mer...
-large-image:      Större bild...
+go:               GÃ¥
+search:           SÃ¶k
+copyright:        Copyright Â© 1995-2025, The AROS Development Team. Alla rÃ¤ttigheter fÃ¶rbehÃ¥lles.
+trademarks:       AmigaÂ®, AmigaOSÂ®, Workbench och Intuition Ã¤r varumÃ¤rken som tillhÃ¶r Amiga Inc. Alla andra varumÃ¤rken tillhÃ¶r sina respektive Ã¤gare.
+read-more:        LÃ¤s mer...
+large-image:      StÃ¶rre bild...

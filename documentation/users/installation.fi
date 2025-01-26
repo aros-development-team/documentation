@@ -3,20 +3,20 @@ AROS Asennus Opas
 =================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2004, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2004, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done. 
 :Abstract:
-    T‰m‰ manuaali opastaa sinut tarpeellisten asennusaskeleiden l‰pi.
+    T√§m√§ manuaali opastaa sinut tarpeellisten asennusaskeleiden l√§pi.
 
     .. Warning:: 
         
-        AROS on alpha-laatuinen ohjelmisto. T‰m‰ tarkoittaa sit‰ ett‰ sill‰ on
-        mukava leikki‰ ja ohjelmoida sille. Jos saavuit t‰nne koska ajattelit
-        ett‰ AROS on valmis, t‰ydellinen ja t‰ysin k‰ytett‰v‰
-        k‰yttˆj‰rjestelm‰, tulet todenn‰kˆisesti pettym‰‰n. AROS ei ole t‰‰ll‰
-        viel‰, mutta olemme hitaasti etenem‰ss‰ oikeaan suuntaan.
+        AROS on alpha-laatuinen ohjelmisto. T√§m√§ tarkoittaa sit√§ ett√§ sill√§ on
+        mukava leikki√§ ja ohjelmoida sille. Jos saavuit t√§nne koska ajattelit
+        ett√§ AROS on valmis, t√§ydellinen ja t√§ysin k√§ytett√§v√§
+        k√§ytt√∂j√§rjestelm√§, tulet todenn√§k√∂isesti pettym√§√§n. AROS ei ole t√§√§ll√§
+        viel√§, mutta olemme hitaasti etenem√§ss√§ oikeaan suuntaan.
 
 
 .. Contents::
@@ -25,26 +25,26 @@ AROS Asennus Opas
 Lataaminen verkosta
 ===================
 
-AROS on rankan kehitystyˆn alla. Tulos t‰st‰ on se ett‰ sinun on valittava
-vakauden ja ominaisuuksien v‰lilt‰. T‰ll‰ hetkell‰ jaossa on kahden laisia
-bin‰‰ripaketteja:: nk. snapshotit ja ˆiset k‰‰nnˆkset.
+AROS on rankan kehitysty√∂n alla. Tulos t√§st√§ on se ett√§ sinun on valittava
+vakauden ja ominaisuuksien v√§lilt√§. T√§ll√§ hetkell√§ jaossa on kahden laisia
+bin√§√§ripaketteja:: nk. snapshotit ja √∂iset k√§√§nn√∂kset.
 
-Snapshotteja tehd‰‰n manuaalisesti ajoittain, p‰‰asiassa silloin kun AROS:iin
-on tehty suuri m‰‰r‰ k‰yttˆkelpoisia muutoksia edelliseen snapshottiin
-verrattuna ja joku tuntee olevansa tarpeeksi motivoitunut tehd‰kseen uuden
-snapshotin. Lyhyesti sanottuna meill‰ ei ole t‰ll‰ hetkell‰ vakioitua julkaisu
-aikataulua. Vaikka snapshotit tehd‰‰n ajoittain ja koetamme osua ajankohtaan
-kun AROS on erityisen vakaa, ei ole takuita siit‰ ett‰ snapshot olisi
+Snapshotteja tehd√§√§n manuaalisesti ajoittain, p√§√§asiassa silloin kun AROS:iin
+on tehty suuri m√§√§r√§ k√§ytt√∂kelpoisia muutoksia edelliseen snapshottiin
+verrattuna ja joku tuntee olevansa tarpeeksi motivoitunut tehd√§kseen uuden
+snapshotin. Lyhyesti sanottuna meill√§ ei ole t√§ll√§ hetkell√§ vakioitua julkaisu
+aikataulua. Vaikka snapshotit tehd√§√§n ajoittain ja koetamme osua ajankohtaan
+kun AROS on erityisen vakaa, ei ole takuita siit√§ ett√§ snapshot olisi
 bugi-vapaa tai toimisi laitteistossasi. Koetamme testata snapshotit monilla
 eri alustoilla, joten periaatteessa niiden tulisi toimia melko hyvin.
 
-÷iset k‰‰nnˆkset tehd‰‰n, kuten nimi jo sanoo, automaattisesti joka yˆ
-Subversion-puusta ja ne sis‰lt‰v‰t uusimman koodin. N‰it‰ k‰‰nnˆksi‰ ei ole
-kuitenkaan testattu, joten ne voivat olla pahasti rikki, eritt‰in bugisia ja
-voivat pahimmassa tapauksessa vaikka tuhota j‰rjestelm‰si huonolla tuurilla.
+√ñiset k√§√§nn√∂kset tehd√§√§n, kuten nimi jo sanoo, automaattisesti joka y√∂
+Subversion-puusta ja ne sis√§lt√§v√§t uusimman koodin. N√§it√§ k√§√§nn√∂ksi√§ ei ole
+kuitenkaan testattu, joten ne voivat olla pahasti rikki, eritt√§in bugisia ja
+voivat pahimmassa tapauksessa vaikka tuhota j√§rjestelm√§si huonolla tuurilla.
 Suurimman osan ajasta ne kuitenkin toimivat hyvin.
 
-Katso `lataussivulta`_ lis‰tietoja mit‰ snapshotteja ja ˆisi‰ k‰‰nnˆksi‰ on
+Katso `lataussivulta`_ lis√§tietoja mit√§ snapshotteja ja √∂isi√§ k√§√§nn√∂ksi√§ on
 saatavilla ja kuinka saat ne koneellesi.
 
 
@@ -57,25 +57,25 @@ AROS/i386-linux ja AROS/i386-freebsd
 Vaatimukset
 """""""""""
 
-K‰ytt‰‰ksesi AROS/i386-linux:ia tai AROS/i386-freebsd:t‰ tarvitset:
+K√§ytt√§√§ksesi AROS/i386-linux:ia tai AROS/i386-freebsd:t√§ tarvitset:
 
-+ Toimivan Linux tai FreeBSD ymp‰riston (sill‰ ei ole merkityst‰ mik‰ distro
++ Toimivan Linux tai FreeBSD ymp√§riston (sill√§ ei ole merkityst√§ mik√§ distro
   sinulla on, kunhan se on suhteellisen uusi).
 + Asennettu ja asetettu X-palvelin (esim. XFree86 tai Xorg).
 
-Siin‰ se. 
+Siin√§ se. 
 
 
 Purku
 """""
 
-Koska AROS/i386-linux ja AROS/i386-freebsd ovat nk. is‰nnˆityj‰ versioita
-AROS:ista, on niiden asennus helppoa. Sinun t‰ytyy ainoastaan hakea alustallesi
+Koska AROS/i386-linux ja AROS/i386-freebsd ovat nk. is√§nn√∂ityj√§ versioita
+AROS:ista, on niiden asennus helppoa. Sinun t√§ytyy ainoastaan hakea alustallesi
 sopivat paketit `lataussivulta`_ ja purkaa ne minne sitten tahdotkin::
 
     > tar -vxjf AROS-<version>-i386-<platform>-system.tar.bz2
 
-Jos latasit myˆs "contrib"-paketin, tahdot varmaankin purkaa myˆs sen::
+Jos latasit my√∂s "contrib"-paketin, tahdot varmaankin purkaa my√∂s sen::
 
     > tar -vxjf AROS-<version>-i386-all-contrib.tar.bz2
 
@@ -83,7 +83,7 @@ Jos latasit myˆs "contrib"-paketin, tahdot varmaankin purkaa myˆs sen::
 Ajaminen
 """"""""
 
-Kun olet purkanut kaikki tiedostot, voit ajaa AROS:in n‰in::
+Kun olet purkanut kaikki tiedostot, voit ajaa AROS:in n√§in::
 
     > cd AROS
     > ./aros
@@ -91,23 +91,23 @@ Kun olet purkanut kaikki tiedostot, voit ajaa AROS:in n‰in::
 
 .. Note:: 
     
-    Jos k‰yt‰t XFree86 4.0:aa tai uudempaa (esim. Xorg), saatat huomata ett‰
-    AROS:in n‰ytˆt sis‰lt‰v‰ ikkuna ei p‰ivity oikein (esim. kun toinen ikkuna
-    siirret‰‰n sen ylitse). T‰m‰ johtuu siit‰ ett‰ AROS k‰ytt‰‰ X:n
-    "backingstore" ominaisuutta hyv‰kseen, mutta joka on perusasetuksissa
-    poissa k‰ytˆst‰ XFree86 4.0:ssa ja uudemmissa. Jos k‰ynnist‰ X:n
-    ``startx`` komennolla, saat sen k‰yttˆˆn ``+bs`` optiolla::
+    Jos k√§yt√§t XFree86 4.0:aa tai uudempaa (esim. Xorg), saatat huomata ett√§
+    AROS:in n√§yt√∂t sis√§lt√§v√§ ikkuna ei p√§ivity oikein (esim. kun toinen ikkuna
+    siirret√§√§n sen ylitse). T√§m√§ johtuu siit√§ ett√§ AROS k√§ytt√§√§ X:n
+    "backingstore" ominaisuutta hyv√§kseen, mutta joka on perusasetuksissa
+    poissa k√§yt√∂st√§ XFree86 4.0:ssa ja uudemmissa. Jos k√§ynnist√§ X:n
+    ``startx`` komennolla, saat sen k√§ytt√∂√∂n ``+bs`` optiolla::
 
         > startx -- +bs
 
-    Jos k‰ynnist‰t X:n jollain muulla keinoin (esim. XDM), voit sen sijaan
-    lis‰t‰ seuraavan rivin n‰yttˆkortin "device"-osioon X:n asetustiedostossa
-    (yleens‰ joko ``/etc/X11/XF86Config``, ``/etc/X11/XF86Config-4``, tai
+    Jos k√§ynnist√§t X:n jollain muulla keinoin (esim. XDM), voit sen sijaan
+    lis√§t√§ seuraavan rivin n√§ytt√∂kortin "device"-osioon X:n asetustiedostossa
+    (yleens√§ joko ``/etc/X11/XF86Config``, ``/etc/X11/XF86Config-4``, tai
     ``/etc/X11/xorg.conf``)::
 
         Option "backingstore"
 
-    T‰ydellinen "device"-osio voisi n‰ytt‰‰ siten vaikka t‰lt‰::
+    T√§ydellinen "device"-osio voisi n√§ytt√§√§ siten vaikka t√§lt√§::
 
         Section "Device"
             Identifier      "Matrox G450"
@@ -122,21 +122,21 @@ AROS/i386-pc
 
 .. Note:: 
 
-    T‰ll‰ hetkell‰ emme tue AROS/i386-pc:n asennusta kovalevylle [#]_, joten
-    t‰m‰ kappale kertoo vain kuinka luot asennusmedian ja k‰ynnist‰t silt‰.
+    T√§ll√§ hetkell√§ emme tue AROS/i386-pc:n asennusta kovalevylle [#]_, joten
+    t√§m√§ kappale kertoo vain kuinka luot asennusmedian ja k√§ynnist√§t silt√§.
 
 
 Asennusmedia
 """"""""""""
 
-Suositeltava asennusmedia AROS/i386-pc:lle on CD-ROM, sill‰ siten saamme koko
-j‰rjestelm‰n yhdelle levylle (sek‰ kaiken lis‰materiaalin/-ohjelmiston). T‰m‰
-myˆskin tekee asentamisesta helpomman koska sinun ei tarvitse menett‰‰
-j‰rke‰si siirt‰ess‰si ohjelmistoa diskettipinon avulla.
+Suositeltava asennusmedia AROS/i386-pc:lle on CD-ROM, sill√§ siten saamme koko
+j√§rjestelm√§n yhdelle levylle (sek√§ kaiken lis√§materiaalin/-ohjelmiston). T√§m√§
+my√∂skin tekee asentamisesta helpomman koska sinun ei tarvitse menett√§√§
+j√§rke√§si siirt√§ess√§si ohjelmistoa diskettipinon avulla.
 
-Koska kukaan ei t‰ll‰ hetkell‰ myy AROS:ia CD-ROM:illa (tai mill‰‰n muullakaan
-medialla) t‰ytyy sinulla olla CD-poltin luodaksesi asennuslevyn itse. Jos
-sinulla ei ole CD-poltinta niin siin‰ tapauksessa joudut ik‰v‰ kyll‰
+Koska kukaan ei t√§ll√§ hetkell√§ myy AROS:ia CD-ROM:illa (tai mill√§√§n muullakaan
+medialla) t√§ytyy sinulla olla CD-poltin luodaksesi asennuslevyn itse. Jos
+sinulla ei ole CD-poltinta niin siin√§ tapauksessa joudut ik√§v√§ kyll√§
 turvautumaan disketteihin.
 
 
@@ -150,21 +150,21 @@ Lataa sopiva ISO-tiedosto `lataussivulta`_ ja polta se CD:lle suosimallasi CD
 poltto-ohjelmalla.
 
 
-K‰ynnistys
+K√§ynnistys
 ''''''''''
 
-Helpointa k‰ynnist‰‰ AROS asennus-CD:lt‰ on jos tietokoneesi tukee CD-ROM:ilta
-k‰ynnistyst‰. Saattaa olla ett‰ joudut asettamaan kyseisen asetuksen p‰‰lle
-koneesi BIOS:issa, sill‰ se on usein poissa k‰ytˆst‰. Aseta sen j‰lkeen
-asennus-CD CD-ROM asemaan ja k‰ynnist‰ kone uudelleen. K‰ynnistys on t‰ysin
-automaattinen ja jos kaikki toimii niin kuin pit‰‰, n‰et hetken kuluttua
-AROS:in n‰ytˆn.
+Helpointa k√§ynnist√§√§ AROS asennus-CD:lt√§ on jos tietokoneesi tukee CD-ROM:ilta
+k√§ynnistyst√§. Saattaa olla ett√§ joudut asettamaan kyseisen asetuksen p√§√§lle
+koneesi BIOS:issa, sill√§ se on usein poissa k√§yt√∂st√§. Aseta sen j√§lkeen
+asennus-CD CD-ROM asemaan ja k√§ynnist√§ kone uudelleen. K√§ynnistys on t√§ysin
+automaattinen ja jos kaikki toimii niin kuin pit√§√§, n√§et hetken kuluttua
+AROS:in n√§yt√∂n.
 
-Jos tietokoneesi ei tue suoraan CD:lt‰ k‰ynnist‰mist‰, voit luoda
-k‰ynnistysdisketin ja k‰ytt‰‰ sit‰ CD:n kanssa. Aseta molemmat levyt
-asemiinsa ja k‰ynnist‰ kone uudelleen. AROS aloittaa k‰ynnistymisen
-disketilt‰, mutta jatkaa tarpeelliset jutut ladattuaan (kuten CD-ROM
-tiedostoj‰rjestelm‰k‰sittelij‰n) se jatkaa k‰ynnistymist‰ CD:lt‰.
+Jos tietokoneesi ei tue suoraan CD:lt√§ k√§ynnist√§mist√§, voit luoda
+k√§ynnistysdisketin ja k√§ytt√§√§ sit√§ CD:n kanssa. Aseta molemmat levyt
+asemiinsa ja k√§ynnist√§ kone uudelleen. AROS aloittaa k√§ynnistymisen
+disketilt√§, mutta jatkaa tarpeelliset jutut ladattuaan (kuten CD-ROM
+tiedostoj√§rjestelm√§k√§sittelij√§n) se jatkaa k√§ynnistymist√§ CD:lt√§.
 
 
 Disketti
@@ -173,28 +173,28 @@ Disketti
 Kirjoitus
 '''''''''
 
-Luodaksesi k‰ynnistysdisketin pit‰‰ sinun ladata ``i386-pc-boot-floppy`` bzip2
-paketti `lataussivulta`_, purkaa se ja kirjoittaa paketista lˆytyv‰
-``aros-boot.img`` disketille. Jos olet k‰ytt‰m‰ss‰ UNIX-tyyppist‰ k‰yttˆj‰rjestelm‰‰ (kuten Linux tai FreeBSD) voit tehd‰ t‰m‰n seuraavilla komennoilla::
+Luodaksesi k√§ynnistysdisketin pit√§√§ sinun ladata ``i386-pc-boot-floppy`` bzip2
+paketti `lataussivulta`_, purkaa se ja kirjoittaa paketista l√∂ytyv√§
+``aros-boot.img`` disketille. Jos olet k√§ytt√§m√§ss√§ UNIX-tyyppist√§ k√§ytt√∂j√§rjestelm√§√§ (kuten Linux tai FreeBSD) voit tehd√§ t√§m√§n seuraavilla komennoilla::
 
     > cd AROS-i386-pc
     > dd if=aros-boot.img of=/dev/fd0
 
-Jos k‰yt‰t Windows:ia, t‰ytyy sinun hankkia itsellesi rawrite_ kirjoittaaksesi kyseisen imagen disketille. Lue rawrite_:n dokumentaatio k‰yttˆohjeita varten.
+Jos k√§yt√§t Windows:ia, t√§ytyy sinun hankkia itsellesi rawrite_ kirjoittaaksesi kyseisen imagen disketille. Lue rawrite_:n dokumentaatio k√§ytt√∂ohjeita varten.
 
 
-K‰ynnistys
+K√§ynnistys
 ''''''''''
 
-Aseta k‰ynnistysdisketti asemaan ja k‰ynnist‰ kone uudelleen. K‰ynnistys on t‰ysin automaattinen ja jos kaikki toimii niin kuin pit‰‰, on kohta edess‰si AROS:in n‰yttˆ.
+Aseta k√§ynnistysdisketti asemaan ja k√§ynnist√§ kone uudelleen. K√§ynnistys on t√§ysin automaattinen ja jos kaikki toimii niin kuin pit√§√§, on kohta edess√§si AROS:in n√§ytt√∂.
 
 
 Alaviitteet
 ===========
 
-.. [#] *On* mahdollista asentaa AROS/i386-pc kovalevylle, mutta t‰m‰ proseduuri
-       on kaukana automaattisesta ja k‰ytt‰j‰yst‰v‰llisest‰, ja tarpeelliset
-       tyˆkalut ovat tyˆn alla ja melkoisen bugisia. T‰st‰ syyst‰ emme viel‰
+.. [#] *On* mahdollista asentaa AROS/i386-pc kovalevylle, mutta t√§m√§ proseduuri
+       on kaukana automaattisesta ja k√§ytt√§j√§yst√§v√§llisest√§, ja tarpeelliset
+       ty√∂kalut ovat ty√∂n alla ja melkoisen bugisia. T√§st√§ syyst√§ emme viel√§
        virallisesti tue kovalevylle asentamista.
 
 

@@ -9,7 +9,7 @@
 EndIf
 =====
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -21,13 +21,13 @@ Funkcja
 ~~~~~~~
 ::
 
-	Koñczy If. Je¶li stan komendy If jest false, dalsze wykonywanie zostanie
-	pominiête i nast±pi przej¶cie do komendy EndIf, w przypadku, gdy nie ma
+	KoÅ„czy If. JeÅ›li stan komendy If jest false, dalsze wykonywanie zostanie
+	pominiÄ™te i nastÄ…pi przejÅ›cie do komendy EndIf, w przypadku, gdy nie ma
 	komendy Else.
 
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

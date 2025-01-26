@@ -5,26 +5,26 @@ Status Update
 :Autor:   Paolo Besser
 :Fecha:     2007-06-17
 
-Últimas noticias
+Ãšltimas noticias
 ----------------
 
-¡La globalización de AROS continúa! Ioannis Koniaris ha traducido
+Â¡La globalizaciÃ³n de AROS continÃºa! Ioannis Koniaris ha traducido
 `AROS.org al griego`__.
 
-En las últimas semanas tuvimos algunas dificultades técnicas con nuestra máquina
-de build, así que nos disculpamos si no pudiste descargar una nightly
-actualizada. Sin embargo, el problema se ha resuelto con una nueva máquina,
+En las Ãºltimas semanas tuvimos algunas dificultades tÃ©cnicas con nuestra mÃ¡quina
+de build, asÃ­ que nos disculpamos si no pudiste descargar una nightly
+actualizada. Sin embargo, el problema se ha resuelto con una nueva mÃ¡quina,
 puesta por Robert Norris.
 
 Recientemente se han presentado tres nuevas interesantes recompensas en
 TeamAROS: por favor mira en `AROS en SAM440`__, `disk validator`__ and 
-`creación de una nueva distro de AROS`__.
+`creaciÃ³n de una nueva distro de AROS`__.
 
-Realmente nos gustaría agradecer a todos los que se involucraron en la
-arte de AROS: En las últimas semanas tuvimos muchos wallpapers
-nuevos para nuestra `competición`__ y también algunos nuevos `carteles`__.
+Realmente nos gustarÃ­a agradecer a todos los que se involucraron en la
+arte de AROS: En las Ãºltimas semanas tuvimos muchos wallpapers
+nuevos para nuestra `competiciÃ³n`__ y tambiÃ©n algunos nuevos `carteles`__.
 Si tienes un sitio web o participas activamente en un foro, puedes ayudar
-a difundir AROS usando usándolos y enlazándolos a (tu traducción de) Aros.org.
+a difundir AROS usando usÃ¡ndolos y enlazÃ¡ndolos a (tu traducciÃ³n de) Aros.org.
 
 
 __ http://www.aros.org/el

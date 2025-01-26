@@ -1,7 +1,5 @@
-# Authors: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: __init__.py 8673 2021-04-07 17:57:27Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -10,12 +8,13 @@ This package contains Docutils Writer modules.
 
 __docformat__ = 'reStructuredText'
 
-
 import os.path
+import sys
+from importlib import import_module
+
 import docutils
 from docutils import languages, Component
 from docutils.transforms import universal
-
 
 class Writer(Component):
 
@@ -36,7 +35,7 @@ class Writer(Component):
         return Component.get_transforms(self) + [
             universal.Messages,
             universal.FilterMessages,
-            ]
+            universal.StripClassesAndElements,]
 
     document = None
     """The document to write (Docutils doctree); set by `write`."""
@@ -54,7 +53,7 @@ class Writer(Component):
 
     def __init__(self):
 
-        # Currently only used by HTML writer for output fragments:
+        # Used by HTML and LaTeX writer for output fragments:
         self.parts = {}
         """Mapping of document part names to fragments of `self.output`.
         Values are Unicode strings; encoding is up to the client.  The 'whole'
@@ -73,7 +72,8 @@ class Writer(Component):
         """
         self.document = document
         self.language = languages.get_language(
-            document.settings.language_code)
+            document.settings.language_code,
+            document.reporter)
         self.destination = destination
         self.translate()
         output = self.destination.write(self.output)
@@ -96,6 +96,8 @@ class Writer(Component):
     def assemble_parts(self):
         """Assemble the `self.parts` dictionary.  Extend in subclasses."""
         self.parts['whole'] = self.output
+        self.parts['encoding'] = self.document.settings.output_encoding
+        self.parts['version'] = docutils.__version__
 
 
 class UnfilteredWriter(Writer):
@@ -116,18 +118,36 @@ class UnfilteredWriter(Writer):
 
 
 _writer_aliases = {
-      'html': 'html4css1',
+      'html': 'html4css1',  # may change to html5 some day
+      'html4': 'html4css1',
+      'xhtml10': 'html4css1',
+      'html5': 'html5_polyglot',
+      'xhtml': 'html5_polyglot',
+      's5': 's5_html',
       'latex': 'latex2e',
+      'xelatex': 'xetex',
+      'luatex': 'xetex',
+      'lualatex': 'xetex',
+      'odf': 'odf_odt',                   
+      'odt': 'odf_odt',                   
+      'ooffice': 'odf_odt',                   
+      'openoffice': 'odf_odt',                   
+      'libreoffice': 'odf_odt',                   
       'pprint': 'pseudoxml',
       'pformat': 'pseudoxml',
       'pdf': 'rlpdf',
-      'xml': 'docutils_xml',
-      's5': 's5_html'}
+      'xml': 'docutils_xml'}
 
 def get_writer_class(writer_name):
     """Return the Writer class from the `writer_name` module."""
     writer_name = writer_name.lower()
-    if _writer_aliases.has_key(writer_name):
+    if writer_name in _writer_aliases:
         writer_name = _writer_aliases[writer_name]
-    module = __import__(writer_name, globals(), locals())
+    try:
+        module = import_module('docutils.writers.'+writer_name)
+    except ImportError:
+        try:
+            module = import_module(writer_name)
+        except ImportError as err:
+            raise ImportError('No writer named "%s".' % writer_name) 
     return module.Writer

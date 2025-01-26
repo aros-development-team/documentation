@@ -9,7 +9,7 @@
 Sort
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FROM/A,TO/A,COLSTART/K,CASE/S,NUMERIC/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Sortuje zawarto¶æ pliku
+	Sortuje zawartoÅ›Ä‡ pliku
      
 
 Parametry
@@ -40,8 +40,8 @@ Parametry
 
 	FROM	--	nazwa pliku do odczytu
 	TO	--	nazwa pliku do zapisu
-	COLSTART--	kolumna od której siê rozpocznie
-	CASE	--	wielkie i ma³e znaki, wielkie znaki jako pierwsze
-	NUMERIC	--	linie s± rozumiane jaki liczby
+	COLSTART--	kolumna od ktÃ³rej siÄ™ rozpocznie
+	CASE	--	wielkie i maÅ‚e znaki, wielkie znaki jako pierwsze
+	NUMERIC	--	linie sÄ… rozumiane jaki liczby
 
 

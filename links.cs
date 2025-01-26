@@ -3,7 +3,7 @@ Odkazy
 ======
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright � 1995-2007, The AROS Development Team
+:Copyright: Copyright Ś 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -16,11 +16,11 @@ Zdroje AROSu
 
 + `Team AROS`__
 
-  Team AROS je hlavn� t�m pro podporu AROSu.
+  Team AROS je hlavní tým pro podporu AROSu.
 
 + `AROSWorld`__
 
-  Komunitn� web AROSu, diskuzn� f�rum, novinky, galerie
+  Komunitní web AROSu, diskuzní fórum, novinky, galerie
 
 + `Archiv softwaru pro AROS`__
                                                                
@@ -30,16 +30,16 @@ Zdroje AROSu
 
 + `AROS na ohloh.net`__
 
-  Ohloh p�kn� ukazuje v�voj AROSu grafick�m zp�sobem.
+  Ohloh pěkně ukazuje vývoj AROSu grafickým způsobem.
 
-+ `Mapa u�ivatel� AROSu`__
++ `Mapa uživatelů AROSu`__
 
 + `AROS pro Amigu`__
 
-  AfA OS nahrazuje hlavn� knihovny AmigaOS jejich pokro�ilej��mi AROS prot�j�ky.
+  AfA OS nahrazuje hlavní knihovny AmigaOS jejich pokročilejšími AROS protějšky.
 
 + `AROS World`__
-  Nov� web AROSu ur�en� pro str�nky u�ivatelsk� komunity
+  Nový web AROSu určený pro stránky uživatelské komunity
 
 + `AROS na WikiPedii`__
 
@@ -58,16 +58,16 @@ __ http://en.wikipedia.org/wiki/AROS_Research_Operating_System
 __ http://en.wikibooks.org/wiki/Aros
 
 
-�l�nky o AROSu
+Články o AROSu
 ==============
 
 ===============================================  ==================  ==========
-N�zev                                            Autor               Datum
+Název                                            Autor               Datum
 ===============================================  ==================  ==========
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    13.09.2006
 `"Test: AROS"`__ (in German mag. AmigaFuture)    Ingo Schmitz        05.05.2005
 `"AROS"`__ (in German mag. Amiga-Magazin)        Martin Steigerwald  13.09.2003
-`"If you like Amiga, you'll love AROS"`__        Elwood              Nezn�m�   
+`"If you like Amiga, you'll love AROS"`__        Elwood              Neznámé   
 `"AROS: Native AmigaOS For Your PC"`__           John Chandler       21.10.2001
 `"AROS: The Amiga Research Operating System`__   John Chandler       02.10.1999
 ===============================================  ==================  ==========
@@ -79,18 +79,18 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Pokud zn� n�jak� dal�� �l�nky o AROSu, kter� zde nem�me uvedeny, `kontaktuj n�s`_
-pros�m, abychom je mohli p�idat. D�ky.
+Pokud znáš nějaké další články o AROSu, které zde nemáme uvedeny, `kontaktuj nás`_
+prosím, abychom je mohli přidat. Díky.
 
 
-�l�nky, kter� AROS zm��uj�
+Články, které AROS zmíňují
 ==========================
 
 ===============================================  ==============  ==========
-N�zev                                            Autor           Datum
+Název                                            Autor           Datum
 ===============================================  ==============  ==========
 `"Climbing the Kernel Mountain"`__               Emmanuel Marty  13.08.2002
-`Interview with Martin Blom`__                   Johan Forsberg  Nezn�m�
+`Interview with Martin Blom`__                   Johan Forsberg  Neznámé
 `"A Nudge In The Right Direction"`__             John Chandler   02.07.2002
 `"What Are The Odds...?"`__                      John Chandler   31.07.2001
 `"May Update"`__                                 John Chandler   07.05.2001
@@ -114,11 +114,11 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Pokud zn� n�jak� dal�� �l�nky, v kter�ch je AROS zm�n�n, a my je zde nem�me za�azeny,
-`kontaktuj n�s`_ pros�m, abychom je mohli p�idat. D�ky.
+Pokud znáš nějaké další články, v kterých je AROS zmíněn, a my je zde nemáme zařazeny,
+`kontaktuj nás`_ prosím, abychom je mohli přidat. Díky.
 
 
-Osobn� str�nky v�voj���
+Osobní stránky vývojářů
 =======================
 
 + `Aaron Digulla`__
@@ -153,17 +153,17 @@ __ http://cataclysm.cx/
 __ http://www.in-berlin.de/User/jroger/index.html
 
 
-R�zn�
+Různé
 =====
 
-+ `Zp�tky ke ko�en�m`__
++ `Zpátky ke kořenům`__
 
   .. Image:: images/bttr.jpeg
 
-  Skv�l� nostalgick� s��, kde m��e� naj�t licencovan� i voln� �i�iteln� Amiga hry.
+  Skvělá nostalgická síť, kde můžeš najít licencované i volně šiřitelné Amiga hry.
 
 
 __ http://www.back2roots.org/
 
 
-.. _`kontaktuj n�s`: contact
+.. _`kontaktuj nás`: contact

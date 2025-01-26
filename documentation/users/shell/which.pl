@@ -9,7 +9,7 @@
 Which
 =====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FILE/A, NORES/S, RES/S, ALL/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,13 +29,13 @@ Funkcja
 ~~~~~~~
 ::
 
-	Znajduje i wypisuje lokalizacjê do okre¶lonego programu lub katalogu.
-	Programy rezydentne s± oznaczone jako RESIDENT, je¶li nie to s± 
-	oznaczone jak wewnêtrzne INTERNAL.
+	Znajduje i wypisuje lokalizacjÄ™ do okreÅ›lonego programu lub katalogu.
+	Programy rezydentne sÄ… oznaczone jako RESIDENT, jeÅ›li nie to sÄ… 
+	oznaczone jak wewnÄ™trzne INTERNAL.
 	
-	Which przeszukuje rezydentn± listê, aktualny katalog, ¶cie¿ki 
-	wyszukiwania i przypis C:. Je¶li obiekt nie zosta³ znaleziony, wtedy
-	zostanie wys³any kod b³êdu 5, lecz ¿aden b³±d nie zostanie wy¶wietlony.
+	Which przeszukuje rezydentnÄ… listÄ™, aktualny katalog, Å›cieÅ¼ki 
+	wyszukiwania i przypis C:. JeÅ›li obiekt nie zostaÅ‚ znaleziony, wtedy
+	zostanie wysÅ‚any kod bÅ‚Ä™du 5, lecz Å¼aden bÅ‚Ä…d nie zostanie wyÅ›wietlony.
 
 
 Parametry
@@ -47,8 +47,8 @@ Parametry
 	NORES	--	nie zawieraj pr. rezydentnych w wyniku
 	RES	--	tylko rezydentne
 	ALL	--	szukaj we wszystkich lokalizacjach dla FILE, to 
-			spowoduje, ¿e zostanie wyszukiwane we wszystkich 
-			dostêpnych lokalizacjach, mo¿e to spowodowaæ, ¿e po 
-			kilka razy wy¶wietli po³o¿enie tego samego obiektu, np.
-			obiekt wystêpuje w aktualnym katalogu i przypisie C:
+			spowoduje, Å¼e zostanie wyszukiwane we wszystkich 
+			dostÄ™pnych lokalizacjach, moÅ¼e to spowodowaÄ‡, Å¼e po 
+			kilka razy wyÅ›wietli poÅ‚oÅ¼enie tego samego obiektu, np.
+			obiekt wystÄ™puje w aktualnym katalogu i przypisie C:
 			

@@ -5,7 +5,7 @@
 import os
 
 from html import *
-from components import *
+from .components import *
 
 def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
     navigation = Tree \

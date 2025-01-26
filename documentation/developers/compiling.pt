@@ -8,14 +8,14 @@ Compilando o AROS
             		+ Lennard voor den Dag
             		+ Aaron Digulla
             		+ Adam Chodorowski
-:Direitos de CÛpia:	Copyright (C) 2001-2008, A equipa de desenvolvimento AROS
-:Vers„o:		$Revision$
+:Direitos de C√≥pia:	Copyright (C) 2001-2008, A equipa de desenvolvimento AROS
+:Vers√£o:		$Revision$
 :Data:			$Date$
 :Estado:		Feito.
 :Abstracto:  
-    Este documento ir· explicar como compilar o AROS. Desenvolvimento do AROS È
-    Actualmente externo, o que significa que n„o pode compilar o AROS de
-    dentro do AROS. Para compilar e desenvolver para o AROS, ir· precisar de um sistema Linux ou 
+    Este documento ir√° explicar como compilar o AROS. Desenvolvimento do AROS √©
+    Actualmente externo, o que significa que n√£o pode compilar o AROS de
+    dentro do AROS. Para compilar e desenvolver para o AROS, ir√° precisar de um sistema Linux ou 
     FreeBSD.
 
 
@@ -25,121 +25,121 @@ Compilando o AROS
 Requirementos
 =============
 
-Os seguintes programas s„o requeridos para compilar AROS:
+Os seguintes programas s√£o requeridos para compilar AROS:
 
 + GCC 3.2.2+
 + GNU Binutils
 + GNU Make
-+ GNU AWK (GAWK) - outro awks pode tambÈm ser apropriado
++ GNU AWK (GAWK) - outro awks pode tamb√©m ser apropriado
 + Python 2.2.1+
 + Bison
 + Flex
 + pngtopnm and ppmtoilbm (parte do pacote netpbm)
 + Autoconf
 + Automake
-+ Utilit·rios comuns como cp, mv, sort, uniq, head, ...
++ Utilit√°rios comuns como cp, mv, sort, uniq, head, ...
 
 Se quiser compilar o portos hospedados de i386-linux ou i386-freebsd, o
-que se segue È tambÈm requerido:
+que se segue √© tamb√©m requerido:
 
-+ CabeÁalhos e livrarias de desenvolvimentos X11
++ Cabe√ßalhos e livrarias de desenvolvimentos X11
 
 
 Fontes
 ======
 
 Pode descarregar as fontes AROS quer pelo `portal de descarga`__ ou pelo
-uso do serviÁo de Subvers„o (SVN) (Que requer que `aplique para aceder`__ ). No caso
-formado, obter o pacote  ``fonte`` È suficiente (a n„o ser que queria
-compilar os programas comtribuÌdos). Em ˙ltimo caso, veja a `documentaÁ„o Subvers„o`__.
+uso do servi√ßo de Subvers√£o (SVN) (Que requer que `aplique para aceder`__ ). No caso
+formado, obter o pacote  ``fonte`` √© suficiente (a n√£o ser que queria
+compilar os programas comtribu√≠dos). Em √∫ltimo caso, veja a `documenta√ß√£o Subvers√£o`__.
 
 __ ../../download
 __ ../../documentation/developers/contribute#the-subversion-repository
 __ ../../documentation/developers/svn
 
 
-ConstruÌndo
+Constru√≠ndo
 ===========
 
 Configurando
 ------------
 
-Primeiro que tudo, ter· que correr configure na raiz das fontes AROS::
+Primeiro que tudo, ter√° que correr configure na raiz das fontes AROS::
 
     > cd AROS
     > ./configure
 
-Poder· especificar v·rias opÁıes para configurar. As opÁıes seguintes s„o
-disponÌveis para todos os alvos:
+Poder√° especificar v√°rias op√ß√µes para configurar. As op√ß√µes seguintes s√£o
+dispon√≠veis para todos os alvos:
 
 ``--enable-debug=LIST [default: none]`` 
-    Habilita diferentes tipos de correcÁ„o de erros (debug). plicas ou espaÁos em branco
-    podem ser usados para separar os itens na lista. Se n„o for fornecida uma lista ent„o ``all`` È 
-    assumido. Se ``--enable-debug`` n„o est· especificado de todo, ``none`` È o prÈ definido.
-    Tipos disponÌveis:
+    Habilita diferentes tipos de correc√ß√£o de erros (debug). plicas ou espa√ßos em branco
+    podem ser usados para separar os itens na lista. Se n√£o for fornecida uma lista ent√£o ``all`` √© 
+    assumido. Se ``--enable-debug`` n√£o est√° especificado de todo, ``none`` √© o pr√© definido.
+    Tipos dispon√≠veis:
     
     ``none``
-        Desabilita todos os tipos de correcÁ„o de erros, e correcÁıes em geral.
+        Desabilita todos os tipos de correc√ß√£o de erros, e correc√ß√µes em geral.
     
     ``all``
         Habilita todos os tipos em baixo.
         
     ``stack``
-        Habilita a correcÁ„o de erros na pilha (stack).
+        Habilita a correc√ß√£o de erros na pilha (stack).
         
     ``mungwall``
-        Habilita a correcÁ„o de erros mungwall.
+        Habilita a correc√ß√£o de erros mungwall.
         
     ``modules``
-        Habilita a correcÁ„o de erros nos mÛdulos.
+        Habilita a correc√ß√£o de erros nos m√≥dulos.
     
 
 AROS/i386-linux ou AROS/i386-freebsd hospedados
 """""""""""""""""""""""""""""""""""""""""""""""
 
-N„o tem que especificar a opÁ„o ``--target`` para contruir esses alvos. 
-As opÁıes seguintes est„o disponÌveis para construÁıes hospedadas:
+N√£o tem que especificar a op√ß√£o ``--target`` para contruir esses alvos. 
+As op√ß√µes seguintes est√£o dispon√≠veis para constru√ß√µes hospedadas:
 
 ``--with-resolution=WIDTHxHEIGHTxDEPTH [default: 800x600x8]``
-    Arma a resoluÁ„o e profundidade predefinida que o AROS ir· usar. 
+    Arma a resolu√ß√£o e profundidade predefinida que o AROS ir√° usar. 
     
 ``--enable-xshm-extension [default: enabled]``
-    Habilita o uso da extens„o MIT-SHM do X11. Habilitando-a dar· um ganho significante
-    de performance, mas poder· n„o funcionar muito bem se estiver a usar
-    ecr„ remoto.
+    Habilita o uso da extens√£o MIT-SHM do X11. Habilitando-a dar√° um ganho significante
+    de performance, mas poder√° n√£o funcionar muito bem se estiver a usar
+    ecr√£ remoto.
     
-N„o poder· compilar cruzamentos destes portos.
+N√£o poder√° compilar cruzamentos destes portos.
 
 
 Nativo AROS/i386-pc
 """""""""""""""""""
 
-Para construir o porto i386-pc, ir· necessitar de passar ``--target=pc-i386`` para configure.
-Adicionalmente, as opÁıes especificas seguintes para  i386-pc est„o disponÌveis:
+Para construir o porto i386-pc, ir√° necessitar de passar ``--target=pc-i386`` para configure.
+Adicionalmente, as op√ß√µes especificas seguintes para  i386-pc est√£o dispon√≠veis:
 
 ``--with-serial-debug=N [default: disabled]``
-    Habilita a correcÁ„o de erros da porta sÈrie, enviando a saida para a porta ``N``. 
+    Habilita a correc√ß√£o de erros da porta s√©rie, enviando a saida para a porta ``N``. 
     
-N„o poder· compilar cruzamentos destes portos.
+N√£o poder√° compilar cruzamentos destes portos.
 
 
 Compilando
 ----------
 
-Para comeÁar a compilaÁ„o, simplesmente corra::
+Para come√ßar a compila√ß√£o, simplesmente corra::
 
     > make
 
-Se isto n„o trabalhar depois de uma actualizaÁ„o de Subvers„o, poder· tentar::
+Se isto n√£o trabalhar depois de uma actualiza√ß√£o de Subvers√£o, poder√° tentar::
 
     > make clean
     > rm -rf bin/
     > ./configure {options}
     > make
 
-Se usa FreeBSD ou algum outro sistema que n„o usa GNU Make como o
-compilador do sistema, ent„o dever· substituir o comando GNU Make para o em baixo.
-Por exemplo, sobe FreeBSD ter· que instalar o porto GNU Make, ent„o correr::
+Se usa FreeBSD ou algum outro sistema que n√£o usa GNU Make como o
+compilador do sistema, ent√£o dever√° substituir o comando GNU Make para o em baixo.
+Por exemplo, sobe FreeBSD ter√° que instalar o porto GNU Make, ent√£o correr::
 
     > gmake
 
@@ -147,8 +147,8 @@ Por exemplo, sobe FreeBSD ter· que instalar o porto GNU Make, ent„o correr::
 AROS/i386-linux ou AROS/i386-freebsd hospedado
 """""""""""""""""""""""""""""""""""""""""""""""
 
-Se est· a construir uma construÁ„o i386-linux ou i386-freebsd hospedados, dever·
-adicionalmente tambÈm correr o seguinte para correctamente configurar o apoio ao teclado::
+Se est√° a construir uma constru√ß√£o i386-linux ou i386-freebsd hospedados, dever√°
+adicionalmente tamb√©m correr o seguinte para correctamente configurar o apoio ao teclado::
 
     > make default-x11keymaptable
 
@@ -156,9 +156,9 @@ adicionalmente tambÈm correr o seguinte para correctamente configurar o apoio ao
 Nativo AROS/i386-pc
 """""""""""""""""""
 
-Se est· a construir o porto nativo i386-pc, ir· encontrar uma imagem de arranque
-para disquete em ``bin/pc-i386/gen/rom/boot/aros.bin`` depois da compilaÁ„o ter
-terminado. Adicionalmente, poder· criar uma imagem ISO de arranque correndo::
+Se est√° a construir o porto nativo i386-pc, ir√° encontrar uma imagem de arranque
+para disquete em ``bin/pc-i386/gen/rom/boot/aros.bin`` depois da compila√ß√£o ter
+terminado. Adicionalmente, poder√° criar uma imagem ISO de arranque correndo::
 
     > make bootiso-pc-i386
 
@@ -167,54 +167,54 @@ A imagem ISO pode ser encontrada em ``distfiles/aros-pc-i386.iso``.
 Apendice
 ========
 
-Construindo v·rios alvos a partir da mesma fonte
+Construindo v√°rios alvos a partir da mesma fonte
 ------------------------------------------------
    
-Se pretende compilar v·rios alvos diferentes de uma ·rvore de fontes, ent„o
-primeiro tem de ir pelos passos de configuraÁ„o de cada alvo. 
-Poder· adicionar alvos a qualquer hora que queira. O ˙ltimo alvo especificado para
-configurar È o alvo predefinido.
+Se pretende compilar v√°rios alvos diferentes de uma √°rvore de fontes, ent√£o
+primeiro tem de ir pelos passos de configura√ß√£o de cada alvo. 
+Poder√° adicionar alvos a qualquer hora que queira. O √∫ltimo alvo especificado para
+configurar √© o alvo predefinido.
 
-Para seleccionar um alvo especifico quando construÌndo, simplesmente corra make assim::
+Para seleccionar um alvo especifico quando constru√≠ndo, simplesmente corra make assim::
 
     > AROS_TARGET_ARCH=$ARCH AROS_TARGET_CPU=$CPU make
     
-Onde ``$ARCH`` È a arquitectura da construÁ„o pretendida, e ``$CPU`` È o processado.
+Onde ``$ARCH`` √© a arquitectura da constru√ß√£o pretendida, e ``$CPU`` √© o processado.
 Ex., para construir AROS/i386-pc correria::
 
     > AROS_TARGET_ARCH=pc AROS_TARGET_CPU=i386 make
 
-Se est· a construir v·rios portos que usem o mesmo processador, sÛ ter· que especificar
-``AROS_TARGET_ARCH`` que o processadoras permanecer· o mesmo. 
+Se est√° a construir v√°rios portos que usem o mesmo processador, s√≥ ter√° que especificar
+``AROS_TARGET_ARCH`` que o processadoras permanecer√° o mesmo. 
 
 Compilando 'Como fazer...' (HowTo`s)
 ------------------------------------
 
-Este guia passo a passo ir· descrever como preparar o ambiente de desenvolvimento
+Este guia passo a passo ir√° descrever como preparar o ambiente de desenvolvimento
 e compilar AROS em Ubuntu Linux 6.10 "Edgy Eft". Vamos assumir que tem uma imagem (ISO)
-para cd de portais Ubuntu e tem o sistema instalado daÌ. 
-TambÈm dever· afina-lo para torna-lo capaz de aceder ‡ Internet. 
+para cd de portais Ubuntu e tem o sistema instalado da√≠. 
+Tamb√©m dever√° afina-lo para torna-lo capaz de aceder √† Internet. 
       
-Obtendo os pacotes necess·rios
+Obtendo os pacotes necess√°rios
 """"""""""""""""""""""""""""""
 
 Porque o Live CD falha pacotes precisos teremos que obte-los a partir da internet::
 
     > sudo apt-get install subversion gcc-3.4 gawk bison flex netpbm autoconf automake1.4 libx11-dev
 
-Ter· que introduzir a sua palavra passe na prompt.
+Ter√° que introduzir a sua palavra passe na prompt.
 
 Marcando a localidade para ISO8859 
 """"""""""""""""""""""""""""""""""
 
 Iremos necessitar de marcar a localidade para usar as fontes AROS e compila-las.
 Encontre a cadeia de caracteres en_US iso 8859-1 na lista fornecida pela seguinte
-aplicaÁ„o e escolha-a)::
+aplica√ß√£o e escolha-a)::
 
      > sudo apt-get install localeconf
      > sudo dpkg-reconfigure localeconf
 
-Ent„o nÛs iremos marcar a localidade da consola::
+Ent√£o n√≥s iremos marcar a localidade da consola::
 
      > sudo locale-gen "en_US"
      > sudo dpkg-reconfigure locales
@@ -223,12 +223,12 @@ Ent„o nÛs iremos marcar a localidade da consola::
 Instalando make v. 3.80
 """""""""""""""""""""""
 
-Para instalar a vers„o do make iremos necessitar, do repositÛrio adicional
-Ubuntu que ter· que ser adicionada. Lance a consola e corra::
+Para instalar a vers√£o do make iremos necessitar, do reposit√≥rio adicional
+Ubuntu que ter√° que ser adicionada. Lance a consola e corra::
 
      > sudo nano /etc/apt/sources.list
 
-Adicione essas duas linhas tambÈm::
+Adicione essas duas linhas tamb√©m::
 
     deb http://us.archive.ubuntu.com/ubuntu breezy main restricted
     deb http://us.archive.ubuntu.com/ubuntu dapper main restricted
@@ -243,17 +243,17 @@ Agora iremos usar o gestor de pacotes Synaptic. Lance-o no menu::
     System > Administration > Synaptic package manager
 
 Depois disso procure pelo pacote "make", escolha "make" na janela do lado
-direito e marque a vers„o por ''package>force version..'' "3.80 (breezy)".
+direito e marque a vers√£o por ''package>force version..'' "3.80 (breezy)".
 
 
 
 Obtenha as fontes
 """""""""""""""""
 
-Para descobrir mais instruÁıes sobre como usar o nosso RepositÛrio de Subvers„o
+Para descobrir mais instru√ß√µes sobre como usar o nosso Reposit√≥rio de Subvers√£o
 Por favor refirasse a `Working with Subversion <svn.php>`__
 
-Em relato, o comando que ter· que usar È como o seguinte::
+Em relato, o comando que ter√° que usar √© como o seguinte::
 
    > svn checkout https://svn.aros.org/svn/aros/trunk/AROS
    > cd AROS
@@ -268,12 +268,12 @@ Primeiro iremos marcar parametros e configure::
       > export CC="gcc-3.4"
       > ./configure
 
-Poder· necessitar de reabrir a consola quando ./configure encontra problemas com o compilador
+Poder√° necessitar de reabrir a consola quando ./configure encontra problemas com o compilador
 C.
 
 Finalmente, tipos::
 
       > make
 
-Isto dever· demorar um bocado (algumas horas) :) 
-Depois disso ir· obter AROS-hosted compilado.
+Isto dever√° demorar um bocado (algumas horas) :) 
+Depois disso ir√° obter AROS-hosted compilado.

@@ -20,7 +20,7 @@ Synopsis
  FILE/M/A,AS=TO/K/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,17 +28,17 @@ Ubicación
  Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
- Join crea un único gran archivo con todos los archivos listados
- poniéndolos juntos en el orden en que fueron dados. El archivo de destino
+ Join crea un Ãºnico gran archivo con todos los archivos listados
+ poniÃ©ndolos juntos en el orden en que fueron dados. El archivo de destino
  no puede tener el mismo nombre que alguno de los archivos de entrada.
- Tú debes proporcionar un nombre de archivo de destino. Los archivos
+ TÃº debes proporcionar un nombre de archivo de destino. Los archivos
  originales permanecen sin cambio. Cualquier cantidad de archivos 
- pueden ser unidos en una operación.
+ pueden ser unidos en una operaciÃ³n.
 
 
 Entradas

@@ -5,35 +5,35 @@ Status Update
 :Author:   Paolo Besser
 :Date:     2007-11-15
 
-⁄ltimas noticias
+√öltimas noticias
 ----------------
 
 AROS tuvo bastantes correcciones y mejoras en las recientes semanas.
-Por ejemplo, Neil Cafferkey corrigiÛ algunos importantes fallos en su
-amado `AROS Installer`__; Nic Andrews trabajÛ en su controlador de 
-red RTL8139; y Robert Norris arreglÛ las notificaciones de archivo,
-que antes rompÌan las preferencias; sÛlo para nombrar tres. 
+Por ejemplo, Neil Cafferkey corrigi√≥ algunos importantes fallos en su
+amado `AROS Installer`__; Nic Andrews trabaj√≥ en su controlador de 
+red RTL8139; y Robert Norris arregl√≥ las notificaciones de archivo,
+que antes romp√≠an las preferencias; s√≥lo para nombrar tres. 
 
-Robert Norris aÒadiÛ un controlador SDL para el AROS alojado en Linux.
+Robert Norris a√±adi√≥ un controlador SDL para el AROS alojado en Linux.
 Esto te permite armar un AROS alojado que no necesite de X (incluso ya 
-no tienes que instalarlo para armar AROS). En teorÌa esto podrÌa ayudar
-para tener la versiÛn alojada funcionando en otras plataforma (donde 
-exista SDL), aunque es un poco m·s lento que el controlador de X.
+no tienes que instalarlo para armar AROS). En teor√≠a esto podr√≠a ayudar
+para tener la versi√≥n alojada funcionando en otras plataforma (donde 
+exista SDL), aunque es un poco m√°s lento que el controlador de X.
 
-Matthias Rustler pasÛ la ptplay.library a AROS. Esta biblioteca reproduce
-los mÛdulos de Protracker como muestras de sonido. TambiÈn pasÛ a
-ShellPlayer, que es un reproductor de ejemplo. Ambos traspasos estar·n
-en las nightly builds, en el cajÛn Extras/Multimedia/Audio.
+Matthias Rustler pas√≥ la ptplay.library a AROS. Esta biblioteca reproduce
+los m√≥dulos de Protracker como muestras de sonido. Tambi√©n pas√≥ a
+ShellPlayer, que es un reproductor de ejemplo. Ambos traspasos estar√°n
+en las nightly builds, en el caj√≥n Extras/Multimedia/Audio.
 
-Matthias tambÌen acaba de hacer un puerto preliminar del `Wazp3D`__
+Matthias tamb√≠en acaba de hacer un puerto preliminar del `Wazp3D`__
 de Alain Thellier para AROS. Se trata de una biblioteca pensada 
 para ser compatible con la famosa Warp3D.library de AmigaOS 68040,
-y hace m·s f·cil pasar algunos juegos tridimensionales de Amiga a
-AROS. Wazp3D tambiÈn puede funcionar como un renderer por software,
-engaÒando a las aplicaciones que buscan un controlador de hardware 3D.
+y hace m√°s f√°cil pasar algunos juegos tridimensionales de Amiga a
+AROS. Wazp3D tambi√©n puede funcionar como un renderer por software,
+enga√±ando a las aplicaciones que buscan un controlador de hardware 3D.
 
-Michal Schulz diÛ otros grandes pasos con su puerto `x86-64`__ de AROS.
-Se acerca el dÌa de AROS 64 bits. Mientras tanto, Michal agregÛ
+Michal Schulz di√≥ otros grandes pasos con su puerto `x86-64`__ de AROS.
+Se acerca el d√≠a de AROS 64 bits. Mientras tanto, Michal agreg√≥
 el soporte a las instrucciones SSE.
 
 Petr Novak tradujo `aros.org al checo`__.

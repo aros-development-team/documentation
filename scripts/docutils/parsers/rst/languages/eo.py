@@ -1,7 +1,5 @@
-# Author: Marcelo Huerta San Martin
-# Contact: richieadler@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: eo.py 7119 2011-09-02 13:00:23Z milde $
+# Author: Marcelo Huerta San Martin <richieadler@users.sourceforge.net>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -21,6 +19,7 @@ directives = {
       # language-dependent: fixed
       u'atentu': 'attention',
       u'zorgu': 'caution',
+      u'code (translation required)': 'code',
       u'dangxero': 'danger',
       u'dan\u011dero': 'danger',
       u'eraro': 'error',
@@ -52,6 +51,7 @@ directives = {
       u'tabelo-csv': 'csv-table',
       u'tabelo-lista': 'list-table',
       u'meta': 'meta',
+      'math (translation required)': 'math',
       #'imagemap': 'imagemap',
       u'bildo': 'image',
       u'figuro': 'figure',
@@ -83,6 +83,7 @@ roles = {
     u'mall': 'abbreviation',
     u'komenclitero': 'acronym',
     u'kl': 'acronym',
+    u'code (translation required)': 'code',
     u'indekso': 'index',
     u'i': 'index',
     u'subskribo': 'subscript',
@@ -99,6 +100,7 @@ roles = {
     u'emfazo': 'emphasis',
     u'forta': 'strong',
     u'litera': 'literal',
+    'math (translation required)': 'math',
     u'nomita-referenco': 'named-reference',
     u'nenomita-referenco': 'anonymous-reference',
     u'piednota-referenco': 'footnote-reference',

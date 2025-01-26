@@ -1,18 +1,18 @@
 ===================
-AROS K‰ytt‰j‰n Opas
+AROS K√§ytt√§j√§n Opas
 ===================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished; only converted to reST. Needs heavy updating.
 
 .. Warning::
 
-   T‰m‰ dokumentti ei ole valmis! On todenn‰kˆist‰ ett‰ monet osat ovat
-   vanhentuneita, sis‰lt‰v‰t v‰‰r‰‰ tietoa, tai puuttuvat kokonaan. Jos tahdot
-   auttaa tilanteen korjaamisessa, ota yhteytt‰.
+   T√§m√§ dokumentti ei ole valmis! On todenn√§k√∂ist√§ ett√§ monet osat ovat
+   vanhentuneita, sis√§lt√§v√§t v√§√§r√§√§ tietoa, tai puuttuvat kokonaan. Jos tahdot
+   auttaa tilanteen korjaamisessa, ota yhteytt√§.
 
 .. Contents::
 
@@ -20,170 +20,170 @@ AROS K‰ytt‰j‰n Opas
 Esittely
 ========
 
-T‰m‰ on Amiga Research Operating System:in K‰ytt‰j‰n Opas. Tarkoituksena on
-tutustuttaa k‰ytt‰j‰t AROS:iin. Opas on *kaikille* jotka ovat kiinnostuneet
-AROS:ista, sill‰ se koettaa kattaa tietoa AROS:ista useilla edistymistasoilla.
-Koetan k‰yd‰ kaiken perusteellisesti l‰vitse, mutta sill‰ tavoin ettei sinun
-tarvitse oppia sit‰ mit‰ et *tahdo* oppia.
+T√§m√§ on Amiga Research Operating System:in K√§ytt√§j√§n Opas. Tarkoituksena on
+tutustuttaa k√§ytt√§j√§t AROS:iin. Opas on *kaikille* jotka ovat kiinnostuneet
+AROS:ista, sill√§ se koettaa kattaa tietoa AROS:ista useilla edistymistasoilla.
+Koetan k√§yd√§ kaiken perusteellisesti l√§vitse, mutta sill√§ tavoin ettei sinun
+tarvitse oppia sit√§ mit√§ et *tahdo* oppia.
 
 
-Kenen tulisi t‰m‰ opas lukea
+Kenen tulisi t√§m√§ opas lukea
 ----------------------------
 
-T‰m‰ opas auttaa sinua tottumaan AROS:iin. Opas on kirjoitettu kaikille
-AROS:ista kiinnostuneilla. AROS on t‰ll‰ hetkell‰ noin 76.95% valmis, joten
-pid‰ mieless‰ ett‰ olet k‰ytt‰m‰ss‰ ohjelmistoa joka on tutkimus- ja
-BETA-testaus vaiheessa. T‰ll‰ hetkell‰ AROS on hauska leikkikalu ja
-ohjelmointiymp‰ristˆ. Oletankin t‰ten ett‰ kiinnostuksesi AROS:ia kohtaan
-johtuu jommasta kummasta syyst‰. Jos tulit t‰nne saakka olettaen ett‰ AROS on
-multimedia internet-valmis jne. k‰yttˆj‰rjestelm‰, olet ehk‰ oikeassa, mutta
-se *ei ole valmis*, joten ole k‰rsiv‰llinen. Jos kuvittelit AROS:in olevan
-yksik‰tisen rosvon taikka "Free Money" projektin, olet t‰ysin v‰‰r‰ss‰
+T√§m√§ opas auttaa sinua tottumaan AROS:iin. Opas on kirjoitettu kaikille
+AROS:ista kiinnostuneilla. AROS on t√§ll√§ hetkell√§ noin 76.95% valmis, joten
+pid√§ mieless√§ ett√§ olet k√§ytt√§m√§ss√§ ohjelmistoa joka on tutkimus- ja
+BETA-testaus vaiheessa. T√§ll√§ hetkell√§ AROS on hauska leikkikalu ja
+ohjelmointiymp√§rist√∂. Oletankin t√§ten ett√§ kiinnostuksesi AROS:ia kohtaan
+johtuu jommasta kummasta syyst√§. Jos tulit t√§nne saakka olettaen ett√§ AROS on
+multimedia internet-valmis jne. k√§ytt√∂j√§rjestelm√§, olet ehk√§ oikeassa, mutta
+se *ei ole valmis*, joten ole k√§rsiv√§llinen. Jos kuvittelit AROS:in olevan
+yksik√§tisen rosvon taikka "Free Money" projektin, olet t√§ysin v√§√§r√§ss√§
 paikassa.
 
 
-Kuinka t‰t‰ opasta tulisi lukea
+Kuinka t√§t√§ opasta tulisi lukea
 -------------------------------
 
-Opas on j‰rjestetty "yksinkertaisesta" "edistyneeseen". Voit aloittaa mist‰
-tahansa kappaleesta joka sis‰lt‰‰ sinulle uutta tietoa. Mutta mik‰ ehk‰
-t‰rke‰mp‰‰, voit lopettaa lukemiset miss‰ tahansa kappaleessa jonka tieto
-menee kiinnostuksesi ohitse. T‰ll‰ tavoin voit oppia edistyneet aiheet
-aloittaen nollapisteest‰, tai voit lopettaa aiemmin jos aiot vain k‰ytt‰‰
-AROS:ia etk‰ ohjelmoida sille. Amiga-taustaiset voivat hyp‰t‰ esittelyn ylitse
-ja aloittaa "AROS alustalle kehityksest‰" jos eiv‰t ole ennen ohjelmoineet
-Amigalle, tai menem‰ll‰ suoraan "AROS:issa kehitt‰miseen". Aloitus- ja
-lopetuskohtia on t‰ten kaikille.
+Opas on j√§rjestetty "yksinkertaisesta" "edistyneeseen". Voit aloittaa mist√§
+tahansa kappaleesta joka sis√§lt√§√§ sinulle uutta tietoa. Mutta mik√§ ehk√§
+t√§rke√§mp√§√§, voit lopettaa lukemiset miss√§ tahansa kappaleessa jonka tieto
+menee kiinnostuksesi ohitse. T√§ll√§ tavoin voit oppia edistyneet aiheet
+aloittaen nollapisteest√§, tai voit lopettaa aiemmin jos aiot vain k√§ytt√§√§
+AROS:ia etk√§ ohjelmoida sille. Amiga-taustaiset voivat hyp√§t√§ esittelyn ylitse
+ja aloittaa "AROS alustalle kehityksest√§" jos eiv√§t ole ennen ohjelmoineet
+Amigalle, tai menem√§ll√§ suoraan "AROS:issa kehitt√§miseen". Aloitus- ja
+lopetuskohtia on t√§ten kaikille.
 
-On t‰rke‰‰ huomioida se ett‰ opas on tarkoitettu AROS:ille eik‰ Amigalle.
-Joten vaikka olisit omistanut Amigan vuosikausia, voi olla ett‰ sinun
-kannattaa lukea "AROS:in k‰ytˆst‰". T‰t‰ ei ole tarkoitettu nolaamaan: tulet
-huomaamaan ett‰ AROS:in k‰yttˆ poikkeaa hieman AmigaOS:ista. (T‰m‰ siksi, ettei Workbench ole viel‰ valmis :-). T‰ll‰ hetkell‰ koko j‰rjestelm‰ toimii AmigaDos shell:in (toiselta nimelt‰‰n CLI:n) kautta, vaikka meill‰ onkin Workbench, et voi sill‰ viel‰ navigoida levyj‰ kovin menestyksekk‰‰sti. Vanhojen Amiga-koodareiden kannattaa lukea "Erot Amigalla ohjelmointiin" kappaleesta 4 erojen yleiskuvausta varten.
+On t√§rke√§√§ huomioida se ett√§ opas on tarkoitettu AROS:ille eik√§ Amigalle.
+Joten vaikka olisit omistanut Amigan vuosikausia, voi olla ett√§ sinun
+kannattaa lukea "AROS:in k√§yt√∂st√§". T√§t√§ ei ole tarkoitettu nolaamaan: tulet
+huomaamaan ett√§ AROS:in k√§ytt√∂ poikkeaa hieman AmigaOS:ista. (T√§m√§ siksi, ettei Workbench ole viel√§ valmis :-). T√§ll√§ hetkell√§ koko j√§rjestelm√§ toimii AmigaDos shell:in (toiselta nimelt√§√§n CLI:n) kautta, vaikka meill√§ onkin Workbench, et voi sill√§ viel√§ navigoida levyj√§ kovin menestyksekk√§√§sti. Vanhojen Amiga-koodareiden kannattaa lukea "Erot Amigalla ohjelmointiin" kappaleesta 4 erojen yleiskuvausta varten.
 
-AROS:in k‰ytt‰minen
+AROS:in k√§ytt√§minen
 ===================
 
-K‰yttˆj‰rjestelm‰ k‰yttˆj‰rjestem‰n sis‰ll‰?
+K√§ytt√∂j√§rjestelm√§ k√§ytt√∂j√§rjestem√§n sis√§ll√§?
 --------------------------------------------
 
-AROS on alunperin kehitetty Intel-pohjaisessa Linux_:issa, mutta pyˆrii
-useissa muissa ymp‰ristˆiss‰ ja k‰yttˆj‰rjestelmill‰. T‰m‰ saattaa tuntua
-oudolta: k‰yttˆj‰rjestelm‰ k‰yttˆj‰rjestelm‰ss‰, mik‰ on emulointia, eikˆ?
+AROS on alunperin kehitetty Intel-pohjaisessa Linux_:issa, mutta py√∂rii
+useissa muissa ymp√§rist√∂iss√§ ja k√§ytt√∂j√§rjestelmill√§. T√§m√§ saattaa tuntua
+oudolta: k√§ytt√∂j√§rjestelm√§ k√§ytt√∂j√§rjestelm√§ss√§, mik√§ on emulointia, eik√∂?
 
-N‰pp‰r‰ termi kuvaamaan mit‰ AROS tekee on "API emulaatio". API on
+N√§pp√§r√§ termi kuvaamaan mit√§ AROS tekee on "API emulaatio". API on
 kolmikirjaiminen akronyymi sanoista Application Programmer's Interface.
-Selv‰kielisesti sanottuna API tarjoaa (C-kielisi‰) funktioita joita ohjelmoija
-voi k‰ytt‰‰. AmigaOS API koostuu lukuisista kirjastokutsuista joita
-Amiga-ohjelmoija voi k‰ytt‰‰ luomaan Amiga ohjelman. AROS emuloi AmigaOS
-API:a, yritt‰en tarjota samat kirjastokutsut kuin AmigaOS. Amiga-emulaattori,
-kuten UAE_; emuloi Amiga *tietokonetta*: prosessoria, liitetty‰ rautaa,
-kaikkea. Sill‰ on etunsa, kyeten esim. pyˆritt‰m‰‰n Amigan pelej‰ eri
-raudalla, ja haittansa, kuten kyvyttˆmyys k‰ytt‰‰ emulaattoria "aitona"
-k‰yttˆj‰rjestelm‰n‰ "aidolla" prosessorilla. AROS pyˆrii "aidolla"
-prosessorilla. Mutta se ei ole "aito" k‰yttˆj‰rjestelm‰ ellei sit‰ ajeta siten
-ettei se tarvitse Linux:ia. T‰st‰ k‰ytet‰‰n nimityst‰ "native" AROS.
+Selv√§kielisesti sanottuna API tarjoaa (C-kielisi√§) funktioita joita ohjelmoija
+voi k√§ytt√§√§. AmigaOS API koostuu lukuisista kirjastokutsuista joita
+Amiga-ohjelmoija voi k√§ytt√§√§ luomaan Amiga ohjelman. AROS emuloi AmigaOS
+API:a, yritt√§en tarjota samat kirjastokutsut kuin AmigaOS. Amiga-emulaattori,
+kuten UAE_; emuloi Amiga *tietokonetta*: prosessoria, liitetty√§ rautaa,
+kaikkea. Sill√§ on etunsa, kyeten esim. py√∂ritt√§m√§√§n Amigan pelej√§ eri
+raudalla, ja haittansa, kuten kyvytt√∂myys k√§ytt√§√§ emulaattoria "aitona"
+k√§ytt√∂j√§rjestelm√§n√§ "aidolla" prosessorilla. AROS py√∂rii "aidolla"
+prosessorilla. Mutta se ei ole "aito" k√§ytt√∂j√§rjestelm√§ ellei sit√§ ajeta siten
+ettei se tarvitse Linux:ia. T√§st√§ k√§ytet√§√§n nimityst√§ "native" AROS.
 
-AROS voi toimia nk. natiivina Intel:in ja Amiga j‰rjestelmiss‰, mutta ei aivan
-yht‰ hyvin kuin Linux:in p‰‰ll‰ toimiessaan. AROS:in kirjastofunktiot ovat
-tehdyt ensinn‰ toimimaan Linux:issa, k‰ytt‰en sis‰isesti Linux:in kerneli‰ ja
-kirjastokutsuja. T‰ll‰ tavoin ohjelmoija voi keskitty‰ ensin kokonaisuuden
-toteutukseen ja vaivata p‰‰t‰‰n teknisill‰ yksityiskohdilla myˆhemmin. V‰ki
-tyˆskentelee t‰ll‰ hetkell‰ saadakseen natiivin AROS:in vaikuttavammaksi.
-Tulokset ovat eritt‰in vaikuttavia ja on varsin mahdollista k‰ytt‰‰ AROS:ia
-aitona (ja ainoana) k‰yttˆj‰rjestelm‰n‰ IBM PC yhteensopivassa koneessa.
+AROS voi toimia nk. natiivina Intel:in ja Amiga j√§rjestelmiss√§, mutta ei aivan
+yht√§ hyvin kuin Linux:in p√§√§ll√§ toimiessaan. AROS:in kirjastofunktiot ovat
+tehdyt ensinn√§ toimimaan Linux:issa, k√§ytt√§en sis√§isesti Linux:in kerneli√§ ja
+kirjastokutsuja. T√§ll√§ tavoin ohjelmoija voi keskitty√§ ensin kokonaisuuden
+toteutukseen ja vaivata p√§√§t√§√§n teknisill√§ yksityiskohdilla my√∂hemmin. V√§ki
+ty√∂skentelee t√§ll√§ hetkell√§ saadakseen natiivin AROS:in vaikuttavammaksi.
+Tulokset ovat eritt√§in vaikuttavia ja on varsin mahdollista k√§ytt√§√§ AROS:ia
+aitona (ja ainoana) k√§ytt√∂j√§rjestelm√§n√§ IBM PC yhteensopivassa koneessa.
 
 AROS, tottakai, ei ole *vain* API emulaattori. Se koettaa tarjota kaiken
-AmigaOS3.1 ohjelmiston ja huomaat muutamia demoja ja pelej‰ toimitettavan
-AROS:in mukana, l‰hinn‰ vain n‰ytt‰m‰‰n ett‰ ne toimivat - saatamme olla vain
+AmigaOS3.1 ohjelmiston ja huomaat muutamia demoja ja pelej√§ toimitettavan
+AROS:in mukana, l√§hinn√§ vain n√§ytt√§m√§√§n ett√§ ne toimivat - saatamme olla vain
 77% valmiita, mutta Quake toimii jo!
 
 
-Natiivin AROS:in k‰yttˆ i386:lla m68k:lla
+Natiivin AROS:in k√§ytt√∂ i386:lla m68k:lla
 -----------------------------------------
 
-Natiivi AROS on t‰ll‰ hetkell‰ rankan kehitystyˆn alla. Jos haluat n‰hd‰
-hienoja trikkej‰, koeta ajaa AROS Linux:in alaisuudessa. Mutta jos olet
-kiinnostunut kuinka mahtavaa tyˆt‰ ohjelmoijat ovat tehneet, voit koettaa
-natiivia myˆskin.
+Natiivi AROS on t√§ll√§ hetkell√§ rankan kehitysty√∂n alla. Jos haluat n√§hd√§
+hienoja trikkej√§, koeta ajaa AROS Linux:in alaisuudessa. Mutta jos olet
+kiinnostunut kuinka mahtavaa ty√∂t√§ ohjelmoijat ovat tehneet, voit koettaa
+natiivia my√∂skin.
 
-AROS:in asennusohjeet vaihtelevat k‰yttˆymp‰ristˆn mukaan. Koska "natiivi" on
-rankan kehitystyˆn alla, *tulokset* AROS:in asennuksesta vaihtelevat
-k‰ytt‰m‰si koodin i‰n mukaan.
+AROS:in asennusohjeet vaihtelevat k√§ytt√∂ymp√§rist√∂n mukaan. Koska "natiivi" on
+rankan kehitysty√∂n alla, *tulokset* AROS:in asennuksesta vaihtelevat
+k√§ytt√§m√§si koodin i√§n mukaan.
 
 Amigassa voit asentaa natiivin koodin jonnekin kovalevyllesi ja tuplaklikata
-"boot"-ikonia, resetoida ja nauttia t‰ydest‰ Amiga ymp‰ristˆst‰. T‰m‰ siksi,
-koska se ei ole *oikeasti* natiivi. Boot-ohjelma vain v‰liaikaisesti korvaa
-muutamia AmigaOS:in kirjastoja AROS:in kirjastoilla. Testitarkoituksiin t‰m‰
-on tottakai hyv‰, mutta loppujen lopuksi olet k‰ytt‰m‰ss‰ vanhaa tuttua
-AmigaOS:ia etk‰ puhdasta natiivia AROS:ia. T‰m‰ tulee muuttumaan kun
-rakennamme t‰ydellisemm‰n 68k AROS j‰rjestelm‰n.
+"boot"-ikonia, resetoida ja nauttia t√§ydest√§ Amiga ymp√§rist√∂st√§. T√§m√§ siksi,
+koska se ei ole *oikeasti* natiivi. Boot-ohjelma vain v√§liaikaisesti korvaa
+muutamia AmigaOS:in kirjastoja AROS:in kirjastoilla. Testitarkoituksiin t√§m√§
+on tottakai hyv√§, mutta loppujen lopuksi olet k√§ytt√§m√§ss√§ vanhaa tuttua
+AmigaOS:ia etk√§ puhdasta natiivia AROS:ia. T√§m√§ tulee muuttumaan kun
+rakennamme t√§ydellisemm√§n 68k AROS j√§rjestelm√§n.
 
 i386:ssa sinun tulisi tallentaa nk. "boot image" levykkeelle ja nk. "contrib
-imaget" ("avustuslevyt", sis‰lt‰en pelej‰, demoja ja ohjelmia) parille muulle
-levykkeelle. Jos latasit bin‰‰rikoodin, paketissa tulisi olla mukana
-toimintaohjeet. Kun olet kirjoittanut levykkeet, voit k‰ynnist‰‰ j‰rjestelm‰n
-uudelleen "boot" levykkeelt‰. Kun j‰rjestelm‰ k‰ynnistyy, lˆyd‰t itsesi
-AROS:ista (joka n‰ytt‰‰ hyvin pitk‰lti AmigaOS:ilta). Voit leikki‰ "AmigaDOS
-Shell:ill‰"; tai pelata pelej‰/demoja "contrib"-levyilt‰ (mukana paketissa)
-kunnes kyll‰styt. AROS tunnistaa levykkeiden vaihdon, joten voit tutkia
-vapaasti "contrib"-levyjen sis‰ltˆ‰, ajellen pelej‰ ja demoja. T‰ll‰ hetkell‰
-t‰ss‰ kaikki, mutta pysy yhteydess‰ sill‰ raskasta tyˆt‰ ollaan tekem‰ss‰
-t‰ll‰ saralla. Kohta meill‰ on Workbench jonka avulla voit graafisesti
-navigoida kovalevy(j)‰si ja levykkeit‰si.
+imaget" ("avustuslevyt", sis√§lt√§en pelej√§, demoja ja ohjelmia) parille muulle
+levykkeelle. Jos latasit bin√§√§rikoodin, paketissa tulisi olla mukana
+toimintaohjeet. Kun olet kirjoittanut levykkeet, voit k√§ynnist√§√§ j√§rjestelm√§n
+uudelleen "boot" levykkeelt√§. Kun j√§rjestelm√§ k√§ynnistyy, l√∂yd√§t itsesi
+AROS:ista (joka n√§ytt√§√§ hyvin pitk√§lti AmigaOS:ilta). Voit leikki√§ "AmigaDOS
+Shell:ill√§"; tai pelata pelej√§/demoja "contrib"-levyilt√§ (mukana paketissa)
+kunnes kyll√§styt. AROS tunnistaa levykkeiden vaihdon, joten voit tutkia
+vapaasti "contrib"-levyjen sis√§lt√∂√§, ajellen pelej√§ ja demoja. T√§ll√§ hetkell√§
+t√§ss√§ kaikki, mutta pysy yhteydess√§ sill√§ raskasta ty√∂t√§ ollaan tekem√§ss√§
+t√§ll√§ saralla. Kohta meill√§ on Workbench jonka avulla voit graafisesti
+navigoida kovalevy(j)√§si ja levykkeit√§si.
 
 
-AROS:in k‰yttˆ Linux:issa ja FreeBSD:ss‰
+AROS:in k√§ytt√∂ Linux:issa ja FreeBSD:ss√§
 ----------------------------------------
 
-Kun olet saanut bin‰‰rit j‰rjestelm‰llesi, joko k‰‰nt‰en l‰hdekoodista tai
-ladaten valmiiksi k‰‰nnetyt bin‰‰rit, mene hakemistoon "bin/$TARGET/AROS",
-jossa $TARGET on j‰rjestelm‰si tyyppi (esim. linux-i386). Mit‰ sitten tulisi
-tehd‰ riippuu koodin i‰st‰. Jos sinulla on tiedosto "arosshell" hakemistossa,
-aja se ("./arosshell"). Eteesi avautuu ikkuna jossa ei ole mit‰‰n
+Kun olet saanut bin√§√§rit j√§rjestelm√§llesi, joko k√§√§nt√§en l√§hdekoodista tai
+ladaten valmiiksi k√§√§nnetyt bin√§√§rit, mene hakemistoon "bin/$TARGET/AROS",
+jossa $TARGET on j√§rjestelm√§si tyyppi (esim. linux-i386). Mit√§ sitten tulisi
+tehd√§ riippuu koodin i√§st√§. Jos sinulla on tiedosto "arosshell" hakemistossa,
+aja se ("./arosshell"). Eteesi avautuu ikkuna jossa ei ole mit√§√§n
 mielenkiintoista ja terminaalissasi on outo uusi prompti. Jos sinulla on
 arosshell:in sijasta "aros", aja se ("./aros"). Eteesi avautuu ikkuna/ruutu
-jossa n‰et Amigamaisen tyˆpˆyd‰n.
+jossa n√§et Amigamaisen ty√∂p√∂yd√§n.
 
-Arosshell:in tapauksessa edess‰si on entuudestaan tuttu terminaaliprompti.
-Voit kirjoittaa komentoja, joista ehk‰ yksi t‰rkeimmist‰ on "dir"; se n‰ytt‰‰
-sinulle hakemiston sis‰llˆn. Hakemisto nimelt‰ "C" sis‰lt‰‰ kaikki komennot,
-joten voi olla k‰yt‰nnˆllist‰ katsoa sen sis‰llys komennolla "dir C". (Huom.:
-vanhat Amigistit - t‰m‰ shell on tarkka kirjainten koosta!)  Shell k‰ytt‰ytyy
-kuten AmigaDOS shell, ja komennot "C":ss‰ k‰ytt‰ytyv‰t kuten niiden
+Arosshell:in tapauksessa edess√§si on entuudestaan tuttu terminaaliprompti.
+Voit kirjoittaa komentoja, joista ehk√§ yksi t√§rkeimmist√§ on "dir"; se n√§ytt√§√§
+sinulle hakemiston sis√§ll√∂n. Hakemisto nimelt√§ "C" sis√§lt√§√§ kaikki komennot,
+joten voi olla k√§yt√§nn√∂llist√§ katsoa sen sis√§llys komennolla "dir C". (Huom.:
+vanhat Amigistit - t√§m√§ shell on tarkka kirjainten koosta!)  Shell k√§ytt√§ytyy
+kuten AmigaDOS shell, ja komennot "C":ss√§ k√§ytt√§ytyv√§t kuten niiden
 AmigaDOS:in vastaavat. Joten jos sinulle tulee ongelmia vastaan, sinun
-kannattaisi lukea `AmigaDOS Online Reference Manual`_. (UNIX k‰ytt‰j‰t:
-edellist‰ hakemistoa kuvaa "/" tutun "..":n sijaan. T‰m‰ n‰ytt‰‰ rumalta koska
-AROS ajattelee ett‰ Linux:in ".." on tavallinen hakemisto. Sinun ei tule
-myˆsk‰‰n k‰ytt‰‰ "./":t‰ ajaessasi t‰m‰nhetkisess‰ hakemistossa olevia
-ohjelmia, vaan voit j‰tt‰‰ sen huoletta pois). Kun olet sinut
+kannattaisi lukea `AmigaDOS Online Reference Manual`_. (UNIX k√§ytt√§j√§t:
+edellist√§ hakemistoa kuvaa "/" tutun "..":n sijaan. T√§m√§ n√§ytt√§√§ rumalta koska
+AROS ajattelee ett√§ Linux:in ".." on tavallinen hakemisto. Sinun ei tule
+my√∂sk√§√§n k√§ytt√§√§ "./":t√§ ajaessasi t√§m√§nhetkisess√§ hakemistossa olevia
+ohjelmia, vaan voit j√§tt√§√§ sen huoletta pois). Kun olet sinut
 hakemistosyntaksin kanssa, koeta ajaa muutamia ohjelmia (eritoten demoja ja
-pelej‰) saadaksesi k‰sityksen AROS:in kyvyist‰.
+pelej√§) saadaksesi k√§sityksen AROS:in kyvyist√§.
 
-Aros:in tapauksessa edess‰si on AROS:in graafinen k‰yttˆymp‰ristˆ, "Wanderer",
-joka vastaa likimain AmigaOS:in Workbench:i‰. Tuplaklikkaamalla kuvakkeita
-voit liikkua hakemistoissa ja ajella ohjelmia, demoja ja pelej‰...
+Aros:in tapauksessa edess√§si on AROS:in graafinen k√§ytt√∂ymp√§rist√∂, "Wanderer",
+joka vastaa likimain AmigaOS:in Workbench:i√§. Tuplaklikkaamalla kuvakkeita
+voit liikkua hakemistoissa ja ajella ohjelmia, demoja ja pelej√§...
 
 
-T‰ss‰kˆ kaikki oppaassa oleva k‰ytt‰j‰n tieto?
+T√§ss√§k√∂ kaikki oppaassa oleva k√§ytt√§j√§n tieto?
 ----------------------------------------------
 
-Kappaleen tulisi olla kertonut kuinka saat, asennat ja k‰yt‰t AROS:ia.
-Testattuasi kaikki ohjelmat, demot, tyˆkalut, pelit ja muut, saatat mietti‰
-josko t‰ss‰ oli kaikki. Kyll‰, t‰ll‰ hetkell‰ siin‰ on kaikki mit‰ "k‰ytt‰j‰"
-voi AROS:illa tehd‰! Mutta sit‰ mukaa kun uutta t‰rke‰‰ k‰ytt‰j‰koodia
-valmistuu, se lis‰t‰‰n t‰h‰n oppaaseen, tottakai.
+Kappaleen tulisi olla kertonut kuinka saat, asennat ja k√§yt√§t AROS:ia.
+Testattuasi kaikki ohjelmat, demot, ty√∂kalut, pelit ja muut, saatat mietti√§
+josko t√§ss√§ oli kaikki. Kyll√§, t√§ll√§ hetkell√§ siin√§ on kaikki mit√§ "k√§ytt√§j√§"
+voi AROS:illa tehd√§! Mutta sit√§ mukaa kun uutta t√§rke√§√§ k√§ytt√§j√§koodia
+valmistuu, se lis√§t√§√§n t√§h√§n oppaaseen, tottakai.
 
-Jos ajattelet ett‰ en ole antanut tarpeeksi tietoa k‰‰nt‰misest‰,
-asentamisesta, CVS:st‰, shell:ist‰, jne., on hyv‰ tiet‰‰ ett‰ minulla on
-siihen syyni. Ensinn‰kin, kyseist‰ tietoa on jo paljon saatavilla ja olisi
-tarpeetonta (ja ep‰reilua) vain kopioida kyseinen tieto t‰h‰n dokumenttiin.
+Jos ajattelet ett√§ en ole antanut tarpeeksi tietoa k√§√§nt√§misest√§,
+asentamisesta, CVS:st√§, shell:ist√§, jne., on hyv√§ tiet√§√§ ett√§ minulla on
+siihen syyni. Ensinn√§kin, kyseist√§ tietoa on jo paljon saatavilla ja olisi
+tarpeetonta (ja ep√§reilua) vain kopioida kyseinen tieto t√§h√§n dokumenttiin.
 Toiseksi, olemme puhumassa nimenomaisesta tiedosta josta jotkut lukijat
-olisivat kiinnostuneita l‰hdekoodia k‰‰nt‰ess‰‰n, kun taas jotkut tahtoisivat
-tiet‰‰ kaiken Amigan shell:ist‰. Pit‰‰kseni t‰m‰n oppaan kutakuinkin
-luettavana, viittaan vain paikkoihin joista kyseist‰ tietoa saa. Sin‰ lukijana
-voit sitten p‰‰tt‰‰ mik‰ itse‰si kiinnostaa. Ja jos olet uusi AROS:in ja
-Amigan k‰ytt‰j‰, olisi sinun todellakin tullut seurata linkki‰ `AmigaDOS
-Online Reference Manual`_:iin. Usko minua, se on hyv‰ :-)
+olisivat kiinnostuneita l√§hdekoodia k√§√§nt√§ess√§√§n, kun taas jotkut tahtoisivat
+tiet√§√§ kaiken Amigan shell:ist√§. Pit√§√§kseni t√§m√§n oppaan kutakuinkin
+luettavana, viittaan vain paikkoihin joista kyseist√§ tietoa saa. Sin√§ lukijana
+voit sitten p√§√§tt√§√§ mik√§ itse√§si kiinnostaa. Ja jos olet uusi AROS:in ja
+Amigan k√§ytt√§j√§, olisi sinun todellakin tullut seurata linkki√§ `AmigaDOS
+Online Reference Manual`_:iin. Usko minua, se on hyv√§ :-)
 
 .. _Linux: http://www.linux.org/
 .. _UAE:   http://www.freiburg.linux.de/~uae/

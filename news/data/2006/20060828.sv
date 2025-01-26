@@ -2,13 +2,13 @@
 Statusuppdatering
 =================
 
-:Författare:   Paolo Besser
+:FÃ¶rfattare:   Paolo Besser
 :Datum:     2006-08-28
 
-Aros.org finns nu tillgänglig i ytterligare två språk: tack vare Sergey Mineychew
-kan du nu se hemsidan på `Rysska`__, medans Tomasz Paul fortfarande jobbar på den
-`Polska`__ översättningen. Du behöver bara klicka i menyn i övre vänstra hörnet
-för att nå de nya sidorna. Sergey jobbar också med Rysska locales till 
+Aros.org finns nu tillgÃ¤nglig i ytterligare tvÃ¥ sprÃ¥k: tack vare Sergey Mineychew
+kan du nu se hemsidan pÃ¥ `Rysska`__, medans Tomasz Paul fortfarande jobbar pÃ¥ den
+`Polska`__ Ã¶versÃ¤ttningen. Du behÃ¶ver bara klicka i menyn i Ã¶vre vÃ¤nstra hÃ¶rnet
+fÃ¶r att nÃ¥ de nya sidorna. Sergey jobbar ocksÃ¥ med Rysska locales till 
 AROS-applikationer.
 
 __ http://www.aros.org/ru/index.php

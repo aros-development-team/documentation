@@ -1,7 +1,5 @@
-# Author: Asko Soukka
-# Contact: asko.soukka@iki.fi
-# Revision: $Revision$
-# Date: $Date$
+# $Id: fi.py 4564 2006-05-21 20:44:42Z wiemann $
+# Author: Asko Soukka <asko.soukka@iki.fi>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please

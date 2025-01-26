@@ -9,7 +9,7 @@
 Setenv
 ======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	NAME,SAVE/S,STRING/F
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,16 +30,16 @@ Funkcja
 ::
 
 
-	Ustawia globaln± warto¶æ z aktualnego Shell. Te warto¶ci mog± byæ 
-	osi±galne z ka¿dego programu.
+	Ustawia globalnÄ… wartoÅ›Ä‡ z aktualnego Shell. Te wartoÅ›ci mogÄ… byÄ‡ 
+	osiÄ…galne z kaÅ¼dego programu.
 	
-	Te warto¶ci nie s± zapisywane w ENVARC:, w zwi±zku z tym zostaj± one
-	zachowywane na konkretn± sesjê systemu operacyjnego, po ponownym 
-	uruchomieniu s± wymazywane. Gdy u¿yta zostaje opcja SAVE, wtedy warto¶æ
-	zostaje zapisywana tak¿e w ENVARC:
+	Te wartoÅ›ci nie sÄ… zapisywane w ENVARC:, w zwiÄ…zku z tym zostajÄ… one
+	zachowywane na konkretnÄ… sesjÄ™ systemu operacyjnego, po ponownym 
+	uruchomieniu sÄ… wymazywane. Gdy uÅ¼yta zostaje opcja SAVE, wtedy wartoÅ›Ä‡
+	zostaje zapisywana takÅ¼e w ENVARC:
 	
-	Je¶li brak parametrów, aktualna lista parametrów globalnych zostaje 
-	wy¶wietlona.
+	JeÅ›li brak parametrÃ³w, aktualna lista parametrÃ³w globalnych zostaje 
+	wyÅ›wietlona.
 
 
 Parametry
@@ -49,30 +49,30 @@ Parametry
 
 	NAME	-	Nazwa globalnej zmiennej.
 
-	SAVE	-	Zapisz warto¶æ w ENVARC:
+	SAVE	-	Zapisz wartoÅ›Ä‡ w ENVARC:
 
-	STRING	-	Warto¶æ dla globalnej zmiennej NAME.
+	STRING	-	WartoÅ›Ä‡ dla globalnej zmiennej NAME.
 
 
 Wynik
 ~~~~~
 ::
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
 	Setenv EDITOR Ed
 	
-	Ka¿dy program korzystaj±cy z warto¶ci EDITOR, bêdzie móg³ pobraæ nazwê
-	edytora tekstowego, którego u¿ytkownik bêdzie chcia³ u¿ywaæ.
+	KaÅ¼dy program korzystajÄ…cy z wartoÅ›ci EDITOR, bÄ™dzie mÃ³gÅ‚ pobraÄ‡ nazwÄ™
+	edytora tekstowego, ktÃ³rego uÅ¼ytkownik bÄ™dzie chciaÅ‚ uÅ¼ywaÄ‡.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

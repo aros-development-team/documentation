@@ -1,11 +1,9 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: states.py 8587 2020-12-09 15:33:58Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
-This is the ``docutils.parsers.restructuredtext.states`` module, the core of
+This is the ``docutils.parsers.rst.states`` module, the core of
 the reStructuredText parser.  It defines the following:
 
 :Classes:
@@ -107,17 +105,19 @@ __docformat__ = 'reStructuredText'
 
 import sys
 import re
-import roman
-from types import TupleType
-from docutils import nodes, statemachine, utils, urischemes
+from types import FunctionType, MethodType
+
+from docutils import nodes, statemachine, utils
 from docutils import ApplicationError, DataError
 from docutils.statemachine import StateMachineWS, StateWS
 from docutils.nodes import fully_normalize_name as normalize_name
 from docutils.nodes import whitespace_normalize_name
-from docutils.utils import escape2null, unescape, column_width
+import docutils.parsers.rst
 from docutils.parsers.rst import directives, languages, tableparser, roles
 from docutils.parsers.rst.languages import en as _fallback_language_module
-
+from docutils.utils import escape2null, unescape, column_width
+from docutils.utils import punctuation_chars, roman, urischemes
+from docutils.utils import split_escaped_whitespace
 
 class MarkupError(DataError): pass
 class UnknownInterpretedRoleError(DataError): pass
@@ -126,7 +126,7 @@ class ParserError(ApplicationError): pass
 class MarkupMismatch(Exception): pass
 
 
-class Struct:
+class Struct(object):
 
     """Stores data attributes for dotted-attribute access."""
 
@@ -142,7 +142,7 @@ class RSTStateMachine(StateMachineWS):
     The entry point to reStructuredText parsing is the `run()` method.
     """
 
-    def run(self, input_lines, document, input_offset=0, match_titles=1,
+    def run(self, input_lines, document, input_offset=0, match_titles=True,
             inliner=None):
         """
         Parse `input_lines` and modify the `document` node in place.
@@ -151,7 +151,7 @@ class RSTStateMachine(StateMachineWS):
         run the StateMachine.
         """
         self.language = languages.get_language(
-            document.settings.language_code)
+            document.settings.language_code, document.reporter)
         self.match_titles = match_titles
         if inliner is None:
             inliner = Inliner()
@@ -161,7 +161,7 @@ class RSTStateMachine(StateMachineWS):
                            language=self.language,
                            title_styles=[],
                            section_level=0,
-                           section_bubble_up_kludge=0,
+                           section_bubble_up_kludge=False,
                            inliner=inliner)
         self.document = document
         self.attach_observer(document.note_source)
@@ -180,7 +180,7 @@ class NestedStateMachine(StateMachineWS):
     document structures.
     """
 
-    def run(self, input_lines, input_offset, memo, node, match_titles=1):
+    def run(self, input_lines, input_offset, memo, node, match_titles=True):
         """
         Parse `input_lines` and populate a `docutils.nodes.document` instance.
 
@@ -208,8 +208,9 @@ class RSTState(StateWS):
     """
 
     nested_sm = NestedStateMachine
+    nested_sm_cache = []
 
-    def __init__(self, state_machine, debug=0):
+    def __init__(self, state_machine, debug=False):
         self.nested_sm_kwargs = {'state_classes': state_classes,
                                  'initial_state': 'Body'}
         StateWS.__init__(self, state_machine, debug)
@@ -222,6 +223,10 @@ class RSTState(StateWS):
         self.inliner = memo.inliner
         self.document = memo.document
         self.parent = self.state_machine.node
+        # enable the reporter to determine source and source-line
+        if not hasattr(self.reporter, 'get_source_and_line'):
+            self.reporter.get_source_and_line = self.state_machine.get_source_and_line
+
 
     def goto_line(self, abs_line_offset):
         """
@@ -242,30 +247,43 @@ class RSTState(StateWS):
             'Internal error: no transition pattern match.  State: "%s"; '
             'transitions: %s; context: %s; current line: %r.'
             % (self.__class__.__name__, transitions, context,
-               self.state_machine.line),
-            line=self.state_machine.abs_line_number())
+               self.state_machine.line))
         return context, None, []
 
     def bof(self, context):
         """Called at beginning of file."""
         return [], []
 
-    def nested_parse(self, block, input_offset, node, match_titles=0,
+    def nested_parse(self, block, input_offset, node, match_titles=False,
                      state_machine_class=None, state_machine_kwargs=None):
         """
         Create a new StateMachine rooted at `node` and run it over the input
         `block`.
         """
+        use_default = 0
         if state_machine_class is None:
             state_machine_class = self.nested_sm
+            use_default += 1
         if state_machine_kwargs is None:
             state_machine_kwargs = self.nested_sm_kwargs
+            use_default += 1
         block_length = len(block)
-        state_machine = state_machine_class(debug=self.debug,
-                                            **state_machine_kwargs)
+
+        state_machine = None
+        if use_default == 2:
+            try:
+                state_machine = self.nested_sm_cache.pop()
+            except IndexError:
+                pass
+        if not state_machine:
+            state_machine = state_machine_class(debug=self.debug,
+                                                **state_machine_kwargs)
         state_machine.run(block, input_offset, memo=self.memo,
                           node=node, match_titles=match_titles)
-        state_machine.unlink()
+        if use_default == 2:
+            self.nested_sm_cache.append(state_machine)
+        else:
+            state_machine.unlink()
         new_offset = state_machine.abs_line_offset()
         # No `block.parent` implies disconnected -- lines aren't in sync:
         if block.parent and (len(block) - block_length) != 0:
@@ -277,7 +295,7 @@ class RSTState(StateWS):
                           blank_finish,
                           blank_finish_state=None,
                           extra_settings={},
-                          match_titles=0,
+                          match_titles=False,
                           state_machine_class=None,
                           state_machine_kwargs=None):
         """
@@ -339,7 +357,7 @@ class RSTState(StateWS):
         if level <= mylevel:            # sibling or supersection
             memo.section_level = level   # bubble up to parent section
             if len(style) == 2:
-                memo.section_bubble_up_kludge = 1
+                memo.section_bubble_up_kludge = True
             # back up 2 lines for underline title, 3 for overline title
             self.state_machine.previous_line(len(style) + 1)
             raise EOFError              # let parent section re-evaluate
@@ -374,7 +392,7 @@ class RSTState(StateWS):
         absoffset = self.state_machine.abs_line_offset() + 1
         newabsoffset = self.nested_parse(
               self.state_machine.input_lines[offset:], input_offset=absoffset,
-              node=section_node, match_titles=1)
+              node=section_node, match_titles=True)
         self.goto_line(newabsoffset)
         if memo.section_level <= mylevel: # can't handle next section?
             raise EOFError              # bubble up to supersection
@@ -399,22 +417,26 @@ class RSTState(StateWS):
             literalnext = 0
         textnodes, messages = self.inline_text(text, lineno)
         p = nodes.paragraph(data, '', *textnodes)
-        p.line = lineno
+        p.source, p.line = self.state_machine.get_source_and_line(lineno)
         return [p] + messages, literalnext
 
     def inline_text(self, text, lineno):
         """
         Return 2 lists: nodes (text and inline elements), and system_messages.
         """
-        return self.inliner.parse(text, lineno, self.memo, self.parent)
+        nodes, messages = self.inliner.parse(text, lineno,
+                                             self.memo, self.parent)
+        return nodes, messages
 
     def unindent_warning(self, node_name):
-        return self.reporter.warning(
-            '%s ends without a blank line; unexpected unindent.' % node_name,
-            line=(self.state_machine.abs_line_number() + 1))
+        # the actual problem is one line below the current line
+        lineno = self.state_machine.abs_line_number()+1
+        return self.reporter.warning('%s ends without a blank line; '
+                                     'unexpected unindent.' % node_name,
+                                     line=lineno)
 
 
-def build_regexp(definition, compile=1):
+def build_regexp(definition, compile=True):
     """
     Build, compile and return a regular expression based on `definition`.
 
@@ -425,7 +447,7 @@ def build_regexp(definition, compile=1):
     name, prefix, suffix, parts = definition
     part_strings = []
     for part in parts:
-        if type(part) is TupleType:
+        if isinstance(part, tuple):
             part_strings.append(build_regexp(part, None))
         else:
             part_strings.append(part)
@@ -437,19 +459,151 @@ def build_regexp(definition, compile=1):
         return regexp
 
 
-class Inliner:
+class Inliner(object):
 
     """
     Parse inline markup; call the `parse()` method.
     """
 
     def __init__(self):
-        self.implicit_dispatch = [(self.patterns.uri, self.standalone_uri),]
+        self.implicit_dispatch = []
         """List of (pattern, bound method) tuples, used by
         `self.implicit_inline`."""
 
     def init_customizations(self, settings):
-        """Setting-based customizations; run when parsing begins."""
+        # lookahead and look-behind expressions for inline markup rules
+        if getattr(settings, 'character_level_inline_markup', False):
+            start_string_prefix = u'(^|(?<!\x00))'
+            end_string_suffix = u''
+        else:
+            start_string_prefix = (u'(^|(?<=\\s|[%s%s]))' %
+                                   (punctuation_chars.openers,
+                                    punctuation_chars.delimiters))
+            end_string_suffix = (u'($|(?=\\s|[\x00%s%s%s]))' %
+                                 (punctuation_chars.closing_delimiters,
+                                  punctuation_chars.delimiters,
+                                  punctuation_chars.closers))
+        args = locals().copy()
+        args.update(vars(self.__class__))
+
+        parts = ('initial_inline', start_string_prefix, '',
+           [('start', '', self.non_whitespace_after, # simple start-strings
+             [r'\*\*',                # strong
+              r'\*(?!\*)',            # emphasis but not strong
+              r'``',                  # literal
+              r'_`',                  # inline internal target
+              r'\|(?!\|)']            # substitution reference
+             ),
+            ('whole', '', end_string_suffix, # whole constructs
+             [# reference name & end-string
+              r'(?P<refname>%s)(?P<refend>__?)' % self.simplename,
+              ('footnotelabel', r'\[', r'(?P<fnend>\]_)',
+               [r'[0-9]+',               # manually numbered
+                r'\#(%s)?' % self.simplename, # auto-numbered (w/ label?)
+                r'\*',                   # auto-symbol
+                r'(?P<citationlabel>%s)' % self.simplename] # citation reference
+               )
+              ]
+             ),
+            ('backquote',             # interpreted text or phrase reference
+             '(?P<role>(:%s:)?)' % self.simplename, # optional role
+             self.non_whitespace_after,
+             ['`(?!`)']               # but not literal
+             )
+            ]
+           )
+        self.start_string_prefix = start_string_prefix
+        self.end_string_suffix = end_string_suffix
+        self.parts = parts
+
+        self.patterns = Struct(
+          initial=build_regexp(parts),
+          emphasis=re.compile(self.non_whitespace_escape_before
+                              + r'(\*)' + end_string_suffix, re.UNICODE),
+          strong=re.compile(self.non_whitespace_escape_before
+                            + r'(\*\*)' + end_string_suffix, re.UNICODE),
+          interpreted_or_phrase_ref=re.compile(
+              r"""
+              %(non_unescaped_whitespace_escape_before)s
+              (
+                `
+                (?P<suffix>
+                  (?P<role>:%(simplename)s:)?
+                  (?P<refend>__?)?
+                )
+              )
+              %(end_string_suffix)s
+              """ % args, re.VERBOSE | re.UNICODE),
+          embedded_link=re.compile(
+              r"""
+              (
+                (?:[ \n]+|^)            # spaces or beginning of line/string
+                <                       # open bracket
+                %(non_whitespace_after)s
+                (([^<>]|\x00[<>])+)     # anything but unescaped angle brackets
+                %(non_whitespace_escape_before)s
+                >                       # close bracket
+              )
+              $                         # end of string
+              """ % args, re.VERBOSE | re.UNICODE),
+          literal=re.compile(self.non_whitespace_before + '(``)'
+                             + end_string_suffix, re.UNICODE),
+          target=re.compile(self.non_whitespace_escape_before
+                            + r'(`)' + end_string_suffix, re.UNICODE),
+          substitution_ref=re.compile(self.non_whitespace_escape_before
+                                      + r'(\|_{0,2})'
+                                      + end_string_suffix, re.UNICODE),
+          email=re.compile(self.email_pattern % args + '$',
+                           re.VERBOSE | re.UNICODE),
+          uri=re.compile(
+                (r"""
+                %(start_string_prefix)s
+                (?P<whole>
+                  (?P<absolute>           # absolute URI
+                    (?P<scheme>             # scheme (http, ftp, mailto)
+                      [a-zA-Z][a-zA-Z0-9.+-]*
+                    )
+                    :
+                    (
+                      (                       # either:
+                        (//?)?                  # hierarchical URI
+                        %(uric)s*               # URI characters
+                        %(uri_end)s             # final URI char
+                      )
+                      (                       # optional query
+                        \?%(uric)s*
+                        %(uri_end)s
+                      )?
+                      (                       # optional fragment
+                        \#%(uric)s*
+                        %(uri_end)s
+                      )?
+                    )
+                  )
+                |                       # *OR*
+                  (?P<email>              # email address
+                    """ + self.email_pattern + r"""
+                  )
+                )
+                %(end_string_suffix)s
+                """) % args, re.VERBOSE | re.UNICODE),
+          pep=re.compile(
+                r"""
+                %(start_string_prefix)s
+                (
+                  (pep-(?P<pepnum1>\d+)(.txt)?) # reference to source file
+                |
+                  (PEP\s+(?P<pepnum2>\d+))      # reference by name
+                )
+                %(end_string_suffix)s""" % args, re.VERBOSE | re.UNICODE),
+          rfc=re.compile(
+                r"""
+                %(start_string_prefix)s
+                (RFC(-|\s+)?(?P<rfcnum>\d+))
+                %(end_string_suffix)s""" % args, re.VERBOSE | re.UNICODE))
+
+        self.implicit_dispatch.append((self.patterns.uri,
+                                       self.standalone_uri))
         if settings.pep_references:
             self.implicit_dispatch.append((self.patterns.pep,
                                            self.pep_reference))
@@ -505,16 +659,15 @@ class Inliner:
             processed += self.implicit_inline(remaining, lineno)
         return processed, messages
 
-    openers = '\'"([{<'
-    closers = '\'")]}>'
-    start_string_prefix = (r'((?<=^)|(?<=[-/: \n%s]))' % re.escape(openers))
-    end_string_suffix = (r'((?=$)|(?=[-/:.,;!? \n\x00%s]))'
-                         % re.escape(closers))
-    non_whitespace_before = r'(?<![ \n])'
-    non_whitespace_escape_before = r'(?<![ \n\x00])'
-    non_whitespace_after = r'(?![ \n])'
-    # Alphanumerics with isolated internal [-._] chars (i.e. not 2 together):
-    simplename = r'(?:(?!_)\w)+(?:[-._](?:(?!_)\w)+)*'
+    # Inline object recognition
+    # -------------------------
+    # See also init_customizations().
+    non_whitespace_before = r'(?<!\s)'
+    non_whitespace_escape_before = r'(?<![\s\x00])'
+    non_unescaped_whitespace_escape_before = r'(?<!(?<!\x00)[\s\x00])'
+    non_whitespace_after = r'(?!\s)'
+    # Alphanumerics with isolated internal [-._+:] chars (i.e. not 2 together):
+    simplename = r'(?:(?!_)\w)+(?:[-._+:](?:(?!_)\w)+)*'
     # Valid URI characters (see RFC 2396 & RFC 2732);
     # final \x00 allows backslash escapes in URIs:
     uric = r"""[-_.!~*'()[\];/:@&=+$,%a-zA-Z0-9\x00]"""
@@ -532,138 +685,27 @@ class Inliner:
           %(emailc)s+(?:\.%(emailc)s*)*   # host
           %(uri_end)s                     # final URI char
           """
-    parts = ('initial_inline', start_string_prefix, '',
-             [('start', '', non_whitespace_after,  # simple start-strings
-               [r'\*\*',                # strong
-                r'\*(?!\*)',            # emphasis but not strong
-                r'``',                  # literal
-                r'_`',                  # inline internal target
-                r'\|(?!\|)']            # substitution reference
-               ),
-              ('whole', '', end_string_suffix, # whole constructs
-               [# reference name & end-string
-                r'(?P<refname>%s)(?P<refend>__?)' % simplename,
-                ('footnotelabel', r'\[', r'(?P<fnend>\]_)',
-                 [r'[0-9]+',               # manually numbered
-                  r'\#(%s)?' % simplename, # auto-numbered (w/ label?)
-                  r'\*',                   # auto-symbol
-                  r'(?P<citationlabel>%s)' % simplename] # citation reference
-                 )
-                ]
-               ),
-              ('backquote',             # interpreted text or phrase reference
-               '(?P<role>(:%s:)?)' % simplename, # optional role
-               non_whitespace_after,
-               ['`(?!`)']               # but not literal
-               )
-              ]
-             )
-    patterns = Struct(
-          initial=build_regexp(parts),
-          emphasis=re.compile(non_whitespace_escape_before
-                              + r'(\*)' + end_string_suffix),
-          strong=re.compile(non_whitespace_escape_before
-                            + r'(\*\*)' + end_string_suffix),
-          interpreted_or_phrase_ref=re.compile(
-              r"""
-              %(non_whitespace_escape_before)s
-              (
-                `
-                (?P<suffix>
-                  (?P<role>:%(simplename)s:)?
-                  (?P<refend>__?)?
-                )
-              )
-              %(end_string_suffix)s
-              """ % locals(), re.VERBOSE | re.UNICODE),
-          embedded_uri=re.compile(
-              r"""
-              (
-                (?:[ \n]+|^)            # spaces or beginning of line/string
-                <                       # open bracket
-                %(non_whitespace_after)s
-                ([^<>\x00]+)            # anything but angle brackets & nulls
-                %(non_whitespace_before)s
-                >                       # close bracket w/o whitespace before
-              )
-              $                         # end of string
-              """ % locals(), re.VERBOSE),
-          literal=re.compile(non_whitespace_before + '(``)'
-                             + end_string_suffix),
-          target=re.compile(non_whitespace_escape_before
-                            + r'(`)' + end_string_suffix),
-          substitution_ref=re.compile(non_whitespace_escape_before
-                                      + r'(\|_{0,2})'
-                                      + end_string_suffix),
-          email=re.compile(email_pattern % locals() + '$', re.VERBOSE),
-          uri=re.compile(
-                (r"""
-                %(start_string_prefix)s
-                (?P<whole>
-                  (?P<absolute>           # absolute URI
-                    (?P<scheme>             # scheme (http, ftp, mailto)
-                      [a-zA-Z][a-zA-Z0-9.+-]*
-                    )
-                    :
-                    (
-                      (                       # either:
-                        (//?)?                  # hierarchical URI
-                        %(uric)s*               # URI characters
-                        %(uri_end)s             # final URI char
-                      )
-                      (                       # optional query
-                        \?%(uric)s*
-                        %(uri_end)s
-                      )?
-                      (                       # optional fragment
-                        \#%(uric)s*
-                        %(uri_end)s
-                      )?
-                    )
-                  )
-                |                       # *OR*
-                  (?P<email>              # email address
-                    """ + email_pattern + r"""
-                  )
-                )
-                %(end_string_suffix)s
-                """) % locals(), re.VERBOSE),
-          pep=re.compile(
-                r"""
-                %(start_string_prefix)s
-                (
-                  (pep-(?P<pepnum1>\d+)(.txt)?) # reference to source file
-                |
-                  (PEP\s+(?P<pepnum2>\d+))      # reference by name
-                )
-                %(end_string_suffix)s""" % locals(), re.VERBOSE),
-          rfc=re.compile(
-                r"""
-                %(start_string_prefix)s
-                (RFC(-|\s+)?(?P<rfcnum>\d+))
-                %(end_string_suffix)s""" % locals(), re.VERBOSE))
 
     def quoted_start(self, match):
-        """Return 1 if inline markup start-string is 'quoted', 0 if not."""
+        """Test if inline markup start-string is 'quoted'.
+
+        'Quoted' in this context means the start-string is enclosed in a pair
+        of matching opening/closing delimiters (not necessarily quotes)
+        or at the end of the match.
+        """
         string = match.string
         start = match.start()
-        end = match.end()
         if start == 0:                  # start-string at beginning of text
-            return 0
+            return False
         prestart = string[start - 1]
         try:
-            poststart = string[end]
-            if self.openers.index(prestart) \
-                  == self.closers.index(poststart):   # quoted
-                return 1
-        except IndexError:              # start-string at end of text
-            return 1
-        except ValueError:              # not quoted
-            pass
-        return 0
+            poststart = string[match.end()]
+        except IndexError:          # start-string at end of text
+            return True  # not "quoted" but no markup start-string either
+        return punctuation_chars.match_chars(prestart, poststart)
 
     def inline_obj(self, match, lineno, end_pattern, nodeclass,
-                   restore_backslashes=0):
+                   restore_backslashes=False):
         string = match.string
         matchstart = match.start('start')
         matchend = match.end('start')
@@ -671,18 +713,19 @@ class Inliner:
             return (string[:matchend], [], string[matchend:], [], '')
         endmatch = end_pattern.search(string[matchend:])
         if endmatch and endmatch.start(1):  # 1 or more chars
-            text = unescape(endmatch.string[:endmatch.start(1)],
-                            restore_backslashes)
+            text = endmatch.string[:endmatch.start(1)]
+            if restore_backslashes:
+                text = unescape(text, True)
             textend = matchend + endmatch.end(1)
-            rawsource = unescape(string[matchstart:textend], 1)
-            return (string[:matchstart], [nodeclass(rawsource, text)],
+            rawsource = unescape(string[matchstart:textend], True)
+            node = nodeclass(rawsource, text)
+            return (string[:matchstart], [node],
                     string[textend:], [], endmatch.group(1))
         msg = self.reporter.warning(
               'Inline %s start-string without end-string.'
               % nodeclass.__name__, line=lineno)
-        text = unescape(string[matchstart:matchend], 1)
-        rawsource = unescape(string[matchstart:matchend], 1)
-        prb = self.problematic(text, rawsource, msg)
+        text = unescape(string[matchstart:matchend], True)
+        prb = self.problematic(text, text, msg)
         return string[:matchstart], [prb], string[matchend:], [msg], ''
 
     def problematic(self, text, rawsource, message):
@@ -724,25 +767,25 @@ class Inliner:
                         'Multiple roles in interpreted text (both '
                         'prefix and suffix present; only one allowed).',
                         line=lineno)
-                    text = unescape(string[rolestart:textend], 1)
+                    text = unescape(string[rolestart:textend], True)
                     prb = self.problematic(text, text, msg)
                     return string[:rolestart], [prb], string[textend:], [msg]
                 role = endmatch.group('suffix')[1:-1]
                 position = 'suffix'
             escaped = endmatch.string[:endmatch.start(1)]
-            rawsource = unescape(string[matchstart:textend], 1)
+            rawsource = unescape(string[matchstart:textend], True)
             if rawsource[-1:] == '_':
                 if role:
                     msg = self.reporter.warning(
                           'Mismatch: both interpreted text role %s and '
                           'reference suffix.' % position, line=lineno)
-                    text = unescape(string[rolestart:textend], 1)
+                    text = unescape(string[rolestart:textend], True)
                     prb = self.problematic(text, text, msg)
                     return string[:rolestart], [prb], string[textend:], [msg]
                 return self.phrase_ref(string[:matchstart], string[textend:],
-                                       rawsource, escaped, unescape(escaped))
+                                       rawsource, escaped)
             else:
-                rawsource = unescape(string[rolestart:textend], 1)
+                rawsource = unescape(string[rolestart:textend], True)
                 nodelist, messages = self.interpreted(rawsource, escaped, role,
                                                       lineno)
                 return (string[:rolestart], nodelist,
@@ -750,44 +793,84 @@ class Inliner:
         msg = self.reporter.warning(
               'Inline interpreted text or phrase reference start-string '
               'without end-string.', line=lineno)
-        text = unescape(string[matchstart:matchend], 1)
+        text = unescape(string[matchstart:matchend], True)
         prb = self.problematic(text, text, msg)
         return string[:matchstart], [prb], string[matchend:], [msg]
 
-    def phrase_ref(self, before, after, rawsource, escaped, text):
-        match = self.patterns.embedded_uri.search(escaped)
-        if match:
-            text = unescape(escaped[:match.start(0)])
-            uri_text = match.group(2)
-            uri = ''.join(uri_text.split())
-            uri = self.adjust_uri(uri)
-            if uri:
-                target = nodes.target(match.group(1), refuri=uri)
+    def phrase_ref(self, before, after, rawsource, escaped, text=None):
+        # `text` is ignored (since 0.16)
+        match = self.patterns.embedded_link.search(escaped)
+        if match: # embedded <URI> or <alias_>
+            text = escaped[:match.start(0)]
+            unescaped = unescape(text)
+            rawtext = unescape(text, True)
+            aliastext = match.group(2)
+            rawaliastext = unescape(aliastext, True)
+            underscore_escaped = rawaliastext.endswith(r'\_')
+            if aliastext.endswith('_') and not (underscore_escaped
+                                        or self.patterns.uri.match(aliastext)):
+                aliastype = 'name'
+                alias = normalize_name(unescape(aliastext[:-1]))
+                target = nodes.target(match.group(1), refname=alias)
+                target.indirect_reference_name = whitespace_normalize_name(
+                                                    unescape(aliastext[:-1]))
             else:
-                raise ApplicationError('problem with URI: %r' % uri_text)
+                aliastype = 'uri'
+                # remove unescaped whitespace
+                alias_parts = split_escaped_whitespace(match.group(2))
+                alias = ' '.join(''.join(part.split())
+                                 for part in alias_parts)
+                alias = self.adjust_uri(unescape(alias))
+                if alias.endswith(r'\_'):
+                    alias = alias[:-2] + '_'
+                target = nodes.target(match.group(1), refuri=alias)
+                target.referenced = 1
+            if not aliastext:
+                raise ApplicationError('problem with embedded link: %r'
+                                       % aliastext)
             if not text:
-                text = uri
+                text = alias
+                unescaped = unescape(text)
+                rawtext = rawaliastext
         else:
+            text = escaped
+            unescaped = unescape(text)
             target = None
-        refname = normalize_name(text)
+            rawtext = unescape(escaped, True)
+
+        refname = normalize_name(unescaped)
         reference = nodes.reference(rawsource, text,
-                                    name=whitespace_normalize_name(text))
+                                    name=whitespace_normalize_name(unescaped))
+        reference[0].rawsource = rawtext
+
         node_list = [reference]
+
         if rawsource[-2:] == '__':
-            if target:
-                reference['refuri'] = uri
+            if  target and (aliastype == 'name'):
+                reference['refname'] = alias
+                self.document.note_refname(reference)
+                # self.document.note_indirect_target(target) # required?
+            elif target and (aliastype == 'uri'):
+                reference['refuri'] = alias
             else:
                 reference['anonymous'] = 1
         else:
             if target:
-                reference['refuri'] = uri
                 target['names'].append(refname)
-                self.document.note_explicit_target(target, self.parent)
+                if aliastype == 'name':
+                    reference['refname'] = alias
+                    self.document.note_indirect_target(target)
+                    self.document.note_refname(reference)
+                else:
+                    reference['refuri'] = alias
+                    self.document.note_explicit_target(target, self.parent)
+                # target.note_referenced_by(name=refname)
                 node_list.append(target)
             else:
                 reference['refname'] = refname
                 self.document.note_refname(reference)
         return before, node_list, after, []
+
 
     def adjust_uri(self, uri):
         match = self.patterns.email.match(uri)
@@ -812,7 +895,7 @@ class Inliner:
     def literal(self, match, lineno):
         before, inlines, remaining, sysmessages, endstring = self.inline_obj(
               match, lineno, self.patterns.literal, nodes.literal,
-              restore_backslashes=1)
+              restore_backslashes=True)
         return before, inlines, remaining, sysmessages
 
     def inline_internal_target(self, match, lineno):
@@ -882,12 +965,13 @@ class Inliner:
                 before = before.rstrip()
         return (before, [refnode], remaining, [])
 
-    def reference(self, match, lineno, anonymous=None):
+    def reference(self, match, lineno, anonymous=False):
         referencename = match.group('refname')
         refname = normalize_name(referencename)
         referencenode = nodes.reference(
             referencename + match.group('refend'), referencename,
             name=whitespace_normalize_name(referencename))
+        referencenode[0].rawsource = referencename
         if anonymous:
             referencenode['anonymous'] = 1
         else:
@@ -902,44 +986,42 @@ class Inliner:
         return self.reference(match, lineno, anonymous=1)
 
     def standalone_uri(self, match, lineno):
-        if not match.group('scheme') or urischemes.schemes.has_key(
-              match.group('scheme').lower()):
+        if (not match.group('scheme')
+                or match.group('scheme').lower() in urischemes.schemes):
             if match.group('email'):
                 addscheme = 'mailto:'
             else:
                 addscheme = ''
             text = match.group('whole')
-            unescaped = unescape(text, 0)
-            return [nodes.reference(unescape(text, 1), unescaped,
-                                    refuri=addscheme + unescaped)]
+            refuri = addscheme + unescape(text)
+            reference = nodes.reference(unescape(text, True), text,
+                                        refuri=refuri)
+            return [reference]
         else:                   # not a valid scheme
             raise MarkupMismatch
-
-    pep_url = 'pep-%04d.html'
 
     def pep_reference(self, match, lineno):
         text = match.group(0)
         if text.startswith('pep-'):
-            pepnum = int(match.group('pepnum1'))
+            pepnum = int(unescape(match.group('pepnum1')))
         elif text.startswith('PEP'):
-            pepnum = int(match.group('pepnum2'))
+            pepnum = int(unescape(match.group('pepnum2')))
         else:
             raise MarkupMismatch
-        ref = self.document.settings.pep_base_url + self.pep_url % pepnum
-        unescaped = unescape(text, 0)
-        return [nodes.reference(unescape(text, 1), unescaped, refuri=ref)]
+        ref = (self.document.settings.pep_base_url
+               + self.document.settings.pep_file_url_template % pepnum)
+        return [nodes.reference(unescape(text, True), text, refuri=ref)]
 
     rfc_url = 'rfc%d.html'
 
     def rfc_reference(self, match, lineno):
         text = match.group(0)
         if text.startswith('RFC'):
-            rfcnum = int(match.group('rfcnum'))
+            rfcnum = int(unescape(match.group('rfcnum')))
             ref = self.document.settings.rfc_base_url + self.rfc_url % rfcnum
         else:
             raise MarkupMismatch
-        unescaped = unescape(text, 0)
-        return [nodes.reference(unescape(text, 1), unescaped, refuri=ref)]
+        return [nodes.reference(unescape(text, True), text, refuri=ref)]
 
     def implicit_inline(self, text, lineno):
         """
@@ -961,7 +1043,7 @@ class Inliner:
                             self.implicit_inline(text[match.end():], lineno))
                 except MarkupMismatch:
                     pass
-        return [nodes.Text(unescape(text), rawsource=unescape(text, 1))]
+        return [nodes.Text(text, unescape(text, True))]
 
     dispatch = {'*': emphasis,
                 '**': strong,
@@ -1017,7 +1099,7 @@ class Body(RSTState):
     enum.sequenceregexps = {}
     for sequence in enum.sequences:
         enum.sequenceregexps[sequence] = re.compile(
-              enum.sequencepats[sequence] + '$')
+              enum.sequencepats[sequence] + '$', re.UNICODE)
 
     grid_table_top_pat = re.compile(r'\+-[-+]+-\+ *$')
     """Matches the top (& bottom) of a full table)."""
@@ -1050,9 +1132,9 @@ class Body(RSTState):
               pats['enum'], re.escape(enum.formatinfo[format].suffix))
 
     patterns = {
-          'bullet': r'[-+*]( +|$)',
+          'bullet': u'[-+*\u2022\u2023\u2043]( +|$)',
           'enumerator': r'(%(parens)s|%(rparen)s|%(period)s)( +|$)' % pats,
-          'field_marker': r':(?![: ])([^:\\]|\\.)*(?<! ):( +|$)',
+          'field_marker': r':(?![: ])([^:\\]|\\.|:(?!([ `]|$)))*(?<! ):( +|$)',
           'option_marker': r'%(option)s(, %(option)s)*(  +| ?$)' % pats,
           'doctest': r'>>>( +|$)',
           'line_block': r'\|( +|$)',
@@ -1080,80 +1162,106 @@ class Body(RSTState):
         """Block quote."""
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_indented()
-        blockquote, messages = self.block_quote(indented, line_offset)
-        self.parent += blockquote
-        self.parent += messages
+        elements = self.block_quote(indented, line_offset)
+        self.parent += elements
         if not blank_finish:
             self.parent += self.unindent_warning('Block quote')
         return context, next_state, []
 
     def block_quote(self, indented, line_offset):
-        blockquote_lines, attribution_lines, attribution_offset = \
-              self.check_attribution(indented, line_offset)
-        blockquote = nodes.block_quote()
-        self.nested_parse(blockquote_lines, line_offset, blockquote)
-        messages = []
-        if attribution_lines:
-            attribution, messages = self.parse_attribution(attribution_lines,
-                                                           attribution_offset)
-            blockquote += attribution
-        return blockquote, messages
+        elements = []
+        while indented:
+            (blockquote_lines,
+             attribution_lines,
+             attribution_offset,
+             indented,
+             new_line_offset) = self.split_attribution(indented, line_offset)
+            blockquote = nodes.block_quote()
+            self.nested_parse(blockquote_lines, line_offset, blockquote)
+            elements.append(blockquote)
+            if attribution_lines:
+                attribution, messages = self.parse_attribution(
+                    attribution_lines, attribution_offset)
+                blockquote += attribution
+                elements += messages
+            line_offset = new_line_offset
+            while indented and not indented[0]:
+                indented = indented[1:]
+                line_offset += 1
+        return elements
 
-    # u'\u2014' is an em-dash:
-    attribution_pattern = re.compile(ur'(---?(?!-)|\u2014) *(?=[^ \n])')
+    # U+2014 is an em-dash:
+    attribution_pattern = re.compile(u'(---?(?!-)|\u2014) *(?=[^ \\n])',
+                                     re.UNICODE)
 
-    def check_attribution(self, indented, line_offset):
+    def split_attribution(self, indented, line_offset):
         """
-        Check for an attribution in the last contiguous block of `indented`.
+        Check for a block quote attribution and split it off:
 
-        * First line after last blank line must begin with "--" (etc.).
+        * First line after a blank line must begin with a dash ("--", "---",
+          em-dash; matches `self.attribution_pattern`).
         * Every line after that must have consistent indentation.
+        * Attributions must be preceded by block quote content.
 
-        Return a 3-tuple: (block quote lines, attribution lines,
-        attribution offset).
+        Return a tuple of: (block quote content lines, content offset,
+        attribution lines, attribution offset, remaining indented lines).
         """
-        #import pdb ; pdb.set_trace()
         blank = None
-        nonblank_seen = None
-        indent = 0
-        for i in range(len(indented) - 1, 0, -1): # don't check first line
-            this_line_blank = not indented[i].strip()
-            if nonblank_seen and this_line_blank:
-                match = self.attribution_pattern.match(indented[i + 1])
-                if match:
-                    blank = i
-                break
-            elif not this_line_blank:
-                nonblank_seen = 1
-        if blank and len(indented) - blank > 2: # multi-line attribution
-            indent = (len(indented[blank + 2])
-                      - len(indented[blank + 2].lstrip()))
-            for j in range(blank + 3, len(indented)):
-                if ( indented[j]        # may be blank last line
-                     and indent != (len(indented[j])
-                                    - len(indented[j].lstrip()))):
-                    # bad shape
-                    blank = None
-                    break
-        if blank:
-            a_lines = indented[blank + 1:]
-            a_lines.trim_left(match.end(), end=1)
-            a_lines.trim_left(indent, start=1)
-            return (indented[:blank], a_lines, line_offset + blank + 1)
+        nonblank_seen = False
+        for i in range(len(indented)):
+            line = indented[i].rstrip()
+            if line:
+                if nonblank_seen and blank == i - 1: # last line blank
+                    match = self.attribution_pattern.match(line)
+                    if match:
+                        attribution_end, indent = self.check_attribution(
+                            indented, i)
+                        if attribution_end:
+                            a_lines = indented[i:attribution_end]
+                            a_lines.trim_left(match.end(), end=1)
+                            a_lines.trim_left(indent, start=1)
+                            return (indented[:i], a_lines,
+                                    i, indented[attribution_end:],
+                                    line_offset + attribution_end)
+                nonblank_seen = True
+            else:
+                blank = i
         else:
-            return (indented, None, None)
+            return (indented, None, None, None, None)
+
+    def check_attribution(self, indented, attribution_start):
+        """
+        Check attribution shape.
+        Return the index past the end of the attribution, and the indent.
+        """
+        indent = None
+        i = attribution_start + 1
+        for i in range(attribution_start + 1, len(indented)):
+            line = indented[i].rstrip()
+            if not line:
+                break
+            if indent is None:
+                indent = len(line) - len(line.lstrip())
+            elif len(line) - len(line.lstrip()) != indent:
+                return None, None       # bad shape; not an attribution
+        else:
+            # return index of line after last attribution line:
+            i += 1
+        return i, (indent or 0)
 
     def parse_attribution(self, indented, line_offset):
         text = '\n'.join(indented).rstrip()
         lineno = self.state_machine.abs_line_number() + line_offset
         textnodes, messages = self.inline_text(text, lineno)
         node = nodes.attribution(text, '', *textnodes)
-        node.line = lineno
+        node.source, node.line = self.state_machine.get_source_and_line(lineno)
         return node, messages
 
     def bullet(self, match, context, next_state):
         """Bullet list item."""
         bulletlist = nodes.bullet_list()
+        (bulletlist.source,
+         bulletlist.line) = self.state_machine.get_source_and_line()
         self.parent += bulletlist
         bulletlist['bullet'] = match.string[0]
         i, blank_finish = self.list_item(match.end())
@@ -1199,7 +1307,7 @@ class Body(RSTState):
             enumlist['start'] = ordinal
             msg = self.reporter.info(
                 'Enumerated list start value not ordinal-1: "%s" (ordinal %s)'
-                % (text, ordinal), line=self.state_machine.abs_line_number())
+                % (text, ordinal))
             self.parent += msg
         listitem, blank_finish = self.list_item(match.end())
         enumlist += listitem
@@ -1276,7 +1384,7 @@ class Body(RSTState):
         """
         Check validity based on the ordinal value and the second line.
 
-        Return true iff the ordinal is valid and the second line is blank,
+        Return true if the ordinal is valid and the second line is blank,
         indented, or starts with the next enumerator or an auto-enumerator.
         """
         if ordinal is None:
@@ -1357,11 +1465,13 @@ class Body(RSTState):
 
     def field(self, match):
         name = self.parse_field_marker(match)
+        src, srcline = self.state_machine.get_source_and_line()
         lineno = self.state_machine.abs_line_number()
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end())
         field_node = nodes.field()
-        field_node.line = lineno
+        field_node.source = src
+        field_node.line = srcline
         name_nodes, name_messages = self.inline_text(name, lineno)
         field_node += nodes.field_name(name, '', *name_nodes)
         field_body = nodes.field_body('\n'.join(indented), *name_messages)
@@ -1382,18 +1492,18 @@ class Body(RSTState):
     def option_marker(self, match, context, next_state):
         """Option list item."""
         optionlist = nodes.option_list()
+        (optionlist.source, optionlist.line) = self.state_machine.get_source_and_line()
         try:
             listitem, blank_finish = self.option_list_item(match)
-        except MarkupError, (message, lineno):
+        except MarkupError as error:
             # This shouldn't happen; pattern won't match.
-            msg = self.reporter.error(
-                'Invalid option list marker: %s' % message, line=lineno)
+            msg = self.reporter.error(u'Invalid option list marker: %s' %
+                                      error)
             self.parent += msg
             indented, indent, line_offset, blank_finish = \
                   self.state_machine.get_first_known_indented(match.end())
-            blockquote, messages = self.block_quote(indented, line_offset)
-            self.parent += blockquote
-            self.parent += messages
+            elements = self.block_quote(indented, line_offset)
+            self.parent += elements
             if not blank_finish:
                 self.parent += self.unindent_warning('Option list')
             return [], next_state, []
@@ -1439,7 +1549,7 @@ class Body(RSTState):
         for optionstring in optionstrings:
             tokens = optionstring.split()
             delimiter = ' '
-            firstopt = tokens[0].split('=')
+            firstopt = tokens[0].split('=', 1)
             if len(firstopt) > 1:
                 # "--opt=value" form
                 tokens[:1] = firstopt
@@ -1465,12 +1575,14 @@ class Body(RSTState):
             else:
                 raise MarkupError(
                     'wrong number of option tokens (=%s), should be 1 or 2: '
-                    '"%s"' % (len(tokens), optionstring),
-                    self.state_machine.abs_line_number() + 1)
+                    '"%s"' % (len(tokens), optionstring))
         return optlist
 
     def doctest(self, match, context, next_state):
         data = '\n'.join(self.state_machine.get_text_block())
+        # TODO: prepend class value ['pycon'] (Python Console)
+        # parse with `directives.body.CodeBlock` (returns literal-block
+        # with class "code" and syntax highlight markup).
         self.parent += nodes.doctest_block(data, data)
         return [], next_state, []
 
@@ -1493,7 +1605,7 @@ class Body(RSTState):
         if not blank_finish:
             self.parent += self.reporter.warning(
                 'Line block ends without a blank line.',
-                line=(self.state_machine.abs_line_number() + 1))
+                line=lineno+1)
         if len(block):
             if block[0].indent is None:
                 block[0].indent = 0
@@ -1503,8 +1615,8 @@ class Body(RSTState):
     def line_block_line(self, match, lineno):
         """Return one line element of a line_block."""
         indented, indent, line_offset, blank_finish = \
-              self.state_machine.get_first_known_indented(match.end(),
-                                                          until_blank=1)
+            self.state_machine.get_first_known_indented(match.end(),
+                                                        until_blank=True)
         text = u'\n'.join(indented)
         text_nodes, messages = self.inline_text(text, lineno)
         line = nodes.line(text, '', *text_nodes)
@@ -1514,7 +1626,7 @@ class Body(RSTState):
 
     def nest_line_block_lines(self, block):
         for index in range(1, len(block)):
-            if block[index].indent is None:
+            if getattr(block[index], 'indent', None) is None:
                 block[index].indent = block[index - 1].indent
         self.nest_line_block_segment(block)
 
@@ -1557,7 +1669,7 @@ class Body(RSTState):
         if not blank_finish:
             msg = self.reporter.warning(
                 'Blank line required after table.',
-                line=self.state_machine.abs_line_number() + 1)
+                line=self.state_machine.abs_line_number()+1)
             self.parent += msg
         return [], next_state, []
 
@@ -1572,9 +1684,9 @@ class Body(RSTState):
                              + 1)
                 table = self.build_table(tabledata, tableline)
                 nodelist = [table] + messages
-            except tableparser.TableMarkupError, detail:
-                nodelist = self.malformed_table(
-                    block, ' '.join(detail.args)) + messages
+            except tableparser.TableMarkupError as err:
+                nodelist = self.malformed_table(block, ' '.join(err.args),
+                                                offset=err.offset) + messages
         else:
             nodelist = messages
         return nodelist, blank_finish
@@ -1583,11 +1695,11 @@ class Body(RSTState):
         messages = []
         blank_finish = 1
         try:
-            block = self.state_machine.get_text_block(flush_left=1)
-        except statemachine.UnexpectedIndentationError, instance:
-            block, source, lineno = instance.args
+            block = self.state_machine.get_text_block(flush_left=True)
+        except statemachine.UnexpectedIndentationError as err:
+            block, src, srcline = err.args
             messages.append(self.reporter.error('Unexpected indentation.',
-                                                source=source, line=lineno))
+                                                source=src, line=srcline))
             blank_finish = 0
         block.disconnect()
         # for East Asian chars:
@@ -1660,20 +1772,24 @@ class Body(RSTState):
         block.pad_double_width(self.double_width_pad_char)
         return block, [], end == limit or not lines[end+1].strip()
 
-    def malformed_table(self, block, detail=''):
+    def malformed_table(self, block, detail='', offset=0):
         block.replace(self.double_width_pad_char, '')
         data = '\n'.join(block)
         message = 'Malformed table.'
-        lineno = self.state_machine.abs_line_number() - len(block) + 1
+        startline = self.state_machine.abs_line_number() - len(block) + 1
         if detail:
             message += '\n' + detail
         error = self.reporter.error(message, nodes.literal_block(data, data),
-                                    line=lineno)
+                                    line=startline+offset)
         return [error]
 
-    def build_table(self, tabledata, tableline, stub_columns=0):
+    def build_table(self, tabledata, tableline, stub_columns=0, widths=None):
         colwidths, headrows, bodyrows = tabledata
         table = nodes.table()
+        if widths == 'auto':
+            table['classes'] += ['colwidths-auto']
+        elif widths: # "grid" or list of integers
+            table['classes'] += ['colwidths-given']
         tgroup = nodes.tgroup(cols=len(colwidths))
         table += tgroup
         for colwidth in colwidths:
@@ -1720,6 +1836,7 @@ class Body(RSTState):
                             (
                               _               # anonymous target
                             |               # *OR*
+                              (?!_)           # no underscore at the beginning
                               (?P<quote>`?)   # optional open quote
                               (?![ `])        # first char. not space or
                                               # backquote
@@ -1734,7 +1851,7 @@ class Body(RSTState):
                             [ ]?            # optional space
                             :               # end of reference name
                             ([ ]+|$)        # followed by whitespace
-                            """ % vars(Inliner), re.VERBOSE),
+                            """ % vars(Inliner), re.VERBOSE | re.UNICODE),
           reference=re.compile(r"""
                                (
                                  (?P<simple>%(simplename)s)_
@@ -1756,16 +1873,18 @@ class Body(RSTState):
                                     \|               # close delimiter
                                   )
                                   ([ ]+|$)           # followed by whitespace
-                                  """ % vars(Inliner), re.VERBOSE),)
+                                  """ % vars(Inliner),
+                                  re.VERBOSE | re.UNICODE),)
 
     def footnote(self, match):
-        lineno = self.state_machine.abs_line_number()
+        src, srcline = self.state_machine.get_source_and_line()
         indented, indent, offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end())
         label = match.group(1)
         name = normalize_name(label)
         footnote = nodes.footnote('\n'.join(indented))
-        footnote.line = lineno
+        footnote.source = src
+        footnote.line = srcline
         if name[0] == '#':              # auto-numbered
             name = name[1:]             # autonumber label
             footnote['auto'] = 1
@@ -1789,13 +1908,14 @@ class Body(RSTState):
         return [footnote], blank_finish
 
     def citation(self, match):
-        lineno = self.state_machine.abs_line_number()
+        src, srcline = self.state_machine.get_source_and_line()
         indented, indent, offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end())
         label = match.group(1)
         name = normalize_name(label)
         citation = nodes.citation('\n'.join(indented))
-        citation.line = lineno
+        citation.source = src
+        citation.line = srcline
         citation += nodes.label('', label)
         citation['names'].append(name)
         self.document.note_citation(citation)
@@ -1809,12 +1929,12 @@ class Body(RSTState):
         lineno = self.state_machine.abs_line_number()
         block, indent, offset, blank_finish = \
               self.state_machine.get_first_known_indented(
-              match.end(), until_blank=1, strip_indent=0)
+              match.end(), until_blank=True, strip_indent=False)
         blocktext = match.string[:match.end()] + '\n'.join(block)
         block = [escape2null(line) for line in block]
         escaped = block[0]
         blockindex = 0
-        while 1:
+        while True:
             targetmatch = pattern.match(escaped)
             if targetmatch:
                 break
@@ -1822,7 +1942,7 @@ class Body(RSTState):
             try:
                 escaped += block[blockindex]
             except IndexError:
-                raise MarkupError('malformed hyperlink target.', lineno)
+                raise MarkupError('malformed hyperlink target.')
         del block[:blockindex]
         block[0] = (block[0] + ' ')[targetmatch.end()-len(escaped)-1:].strip()
         target = self.make_target(block, blocktext, lineno,
@@ -1859,8 +1979,10 @@ class Body(RSTState):
             refname = self.is_reference(reference)
             if refname:
                 return 'refname', refname
-        reference = ''.join([''.join(line.split()) for line in block])
-        return 'refuri', unescape(reference)
+        ref_parts = split_escaped_whitespace(' '.join(block))
+        reference = ' '.join(''.join(unescape(part).split())
+                             for part in ref_parts)
+        return 'refuri', reference
 
     def is_reference(self, reference):
         match = self.explicit.patterns.reference.match(
@@ -1889,15 +2011,15 @@ class Body(RSTState):
 
     def substitution_def(self, match):
         pattern = self.explicit.patterns.substitution
-        lineno = self.state_machine.abs_line_number()
+        src, srcline = self.state_machine.get_source_and_line()
         block, indent, offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end(),
-                                                          strip_indent=0)
+                                                          strip_indent=False)
         blocktext = (match.string[:match.end()] + '\n'.join(block))
         block.disconnect()
         escaped = escape2null(block[0].rstrip())
         blockindex = 0
-        while 1:
+        while True:
             subdefmatch = pattern.match(escaped)
             if subdefmatch:
                 break
@@ -1905,8 +2027,7 @@ class Body(RSTState):
             try:
                 escaped = escaped + ' ' + escape2null(block[blockindex].strip())
             except IndexError:
-                raise MarkupError('malformed substitution definition.',
-                                  lineno)
+                raise MarkupError('malformed substitution definition.')
         del block[:blockindex]          # strip out the substitution marker
         block[0] = (block[0].strip() + ' ')[subdefmatch.end()-len(escaped)-1:-1]
         if not block[0]:
@@ -1916,11 +2037,13 @@ class Body(RSTState):
             block.pop()
         subname = subdefmatch.group('name')
         substitution_node = nodes.substitution_definition(blocktext)
-        substitution_node.line = lineno
+        substitution_node.source = src
+        substitution_node.line = srcline
         if not block:
             msg = self.reporter.warning(
                 'Substitution definition "%s" missing contents.' % subname,
-                nodes.literal_block(blocktext, blocktext), line=lineno)
+                nodes.literal_block(blocktext, blocktext),
+                source=src, line=srcline)
             return [msg], blank_finish
         block[0] = block[0].strip()
         substitution_node['names'].append(
@@ -1940,15 +2063,16 @@ class Body(RSTState):
             if self.disallowed_inside_substitution_definitions(node):
                 pformat = nodes.literal_block('', node.pformat().rstrip())
                 msg = self.reporter.error(
-                    'Substitution definition contains illegal element:',
+                    'Substitution definition contains illegal element <%s>:'
+                    % node.tagname,
                     pformat, nodes.literal_block(blocktext, blocktext),
-                    line=lineno)
+                    source=src, line=srcline)
                 return [msg], blank_finish
         if len(substitution_node) == 0:
             msg = self.reporter.warning(
-                  'Substitution definition "%s" empty or invalid.'
-                  % subname,
-                  nodes.literal_block(blocktext, blocktext), line=lineno)
+                  'Substitution definition "%s" empty or invalid.' % subname,
+                  nodes.literal_block(blocktext, blocktext),
+                  source=src, line=srcline)
             return [msg], blank_finish
         self.document.note_substitution_def(
             substitution_node, subname, self.parent)
@@ -1958,31 +2082,30 @@ class Body(RSTState):
         if (node['ids'] or
             isinstance(node, nodes.reference) and node.get('anonymous') or
             isinstance(node, nodes.footnote_reference) and node.get('auto')):
-            return 1
+            return True
         else:
-            return 0
+            return False
 
     def directive(self, match, **option_presets):
         """Returns a 2-tuple: list of nodes, and a "blank finish" boolean."""
         type_name = match.group(1)
-        directive_function, messages = directives.directive(
+        directive_class, messages = directives.directive(
             type_name, self.memo.language, self.document)
         self.parent += messages
-        if directive_function:
+        if directive_class:
             return self.run_directive(
-                directive_function, match, type_name, option_presets)
+                directive_class, match, type_name, option_presets)
         else:
             return self.unknown_directive(type_name)
 
-    def run_directive(self, directive_fn, match, type_name, option_presets):
+    def run_directive(self, directive, match, type_name, option_presets):
         """
         Parse a directive then run its directive function.
 
         Parameters:
 
-        - `directive_fn`: The function implementing the directive.  Uses
-          function attributes ``arguments``, ``options``, and/or ``content``
-          if present.
+        - `directive`: The class implementing the directive.  Must be
+          a subclass of `rst.Directive`.
 
         - `match`: A regular expression match object which matched the first
           line of the directive.
@@ -1996,6 +2119,9 @@ class Body(RSTState):
 
         Returns a 2-tuple: list of nodes, and a "blank finish" boolean.
         """
+        if isinstance(directive, (FunctionType, MethodType)):
+            from docutils.parsers.rst import convert_directive_function
+            directive = convert_directive_function(directive)
         lineno = self.state_machine.abs_line_number()
         initial_line_offset = self.state_machine.line_offset
         indented, indent, line_offset, blank_finish \
@@ -2006,36 +2132,46 @@ class Body(RSTState):
         try:
             arguments, options, content, content_offset = (
                 self.parse_directive_block(indented, line_offset,
-                                           directive_fn, option_presets))
-        except MarkupError, detail:
+                                           directive, option_presets))
+        except MarkupError as detail:
             error = self.reporter.error(
                 'Error in "%s" directive:\n%s.' % (type_name,
                                                    ' '.join(detail.args)),
                 nodes.literal_block(block_text, block_text), line=lineno)
             return [error], blank_finish
-        result = directive_fn(type_name, arguments, options, content, lineno,
-                              content_offset, block_text, self,
-                              self.state_machine)
+        directive_instance = directive(
+            type_name, arguments, options, content, lineno,
+            content_offset, block_text, self, self.state_machine)
+        try:
+            result = directive_instance.run()
+        except docutils.parsers.rst.DirectiveError as error:
+            msg_node = self.reporter.system_message(error.level, error.msg,
+                                                    line=lineno)
+            msg_node += nodes.literal_block(block_text, block_text)
+            result = [msg_node]
+        assert isinstance(result, list), \
+               'Directive "%s" must return a list of nodes.' % type_name
+        for i in range(len(result)):
+            assert isinstance(result[i], nodes.Node), \
+                   ('Directive "%s" returned non-Node object (index %s): %r'
+                    % (type_name, i, result[i]))
         return (result,
                 blank_finish or self.state_machine.is_next_line_blank())
 
-    def parse_directive_block(self, indented, line_offset, directive_fn,
+    def parse_directive_block(self, indented, line_offset, directive,
                               option_presets):
-        arguments = []
-        options = {}
-        argument_spec = getattr(directive_fn, 'arguments', None)
-        if argument_spec and argument_spec[:2] == (0, 0):
-            argument_spec = None
-        option_spec = getattr(directive_fn, 'options', None)
-        content_spec = getattr(directive_fn, 'content', None)
+        option_spec = directive.option_spec
+        has_content = directive.has_content
         if indented and not indented[0].strip():
             indented.trim_start()
             line_offset += 1
         while indented and not indented[-1].strip():
             indented.trim_end()
-        if indented and (argument_spec or option_spec):
-            for i in range(len(indented)):
-                if not indented[i].strip():
+        if indented and (directive.required_arguments
+                         or directive.optional_arguments
+                         or option_spec):
+            for i, line in enumerate(indented):
+                if not line.strip():
                     break
             else:
                 i += 1
@@ -2046,26 +2182,32 @@ class Body(RSTState):
             content = indented
             content_offset = line_offset
             arg_block = []
-        while content and not content[0].strip():
-            content.trim_start()
-            content_offset += 1
         if option_spec:
             options, arg_block = self.parse_directive_options(
                 option_presets, option_spec, arg_block)
-            if arg_block and not argument_spec:
-                raise MarkupError('no arguments permitted; blank line '
-                                  'required before content block')
-        if argument_spec:
+        else:
+            options = {}
+        if arg_block and not (directive.required_arguments
+                              or directive.optional_arguments):
+            content = arg_block + indented[i:]
+            content_offset = line_offset
+            arg_block = []
+        while content and not content[0].strip():
+            content.trim_start()
+            content_offset += 1
+        if directive.required_arguments or directive.optional_arguments:
             arguments = self.parse_directive_arguments(
-                argument_spec, arg_block)
-        if content and not content_spec:
+                directive, arg_block)
+        else:
+            arguments = []
+        if content and not has_content:
             raise MarkupError('no content permitted')
         return (arguments, options, content, content_offset)
 
     def parse_directive_options(self, option_presets, option_spec, arg_block):
         options = option_presets.copy()
-        for i in range(len(arg_block)):
-            if arg_block[i][:1] == ':':
+        for i, line in enumerate(arg_block):
+            if re.match(Body.patterns['field_marker'], line):
                 opt_block = arg_block[i:]
                 arg_block = arg_block[:i]
                 break
@@ -2080,15 +2222,16 @@ class Body(RSTState):
                 raise MarkupError(data)
         return options, arg_block
 
-    def parse_directive_arguments(self, argument_spec, arg_block):
-        required, optional, last_whitespace = argument_spec
+    def parse_directive_arguments(self, directive, arg_block):
+        required = directive.required_arguments
+        optional = directive.optional_arguments
         arg_text = '\n'.join(arg_block)
         arguments = arg_text.split()
         if len(arguments) < required:
             raise MarkupError('%s argument(s) required, %s supplied'
                               % (required, len(arguments)))
         elif len(arguments) > required + optional:
-            if last_whitespace:
+            if directive.final_argument_whitespace:
                 arguments = arg_text.split(None, required + optional - 1)
             else:
                 raise MarkupError(
@@ -2113,16 +2256,16 @@ class Body(RSTState):
         node = nodes.field_list()
         newline_offset, blank_finish = self.nested_list_parse(
               datalines, 0, node, initial_state='ExtensionOptions',
-              blank_finish=1)
+              blank_finish=True)
         if newline_offset != len(datalines): # incomplete parse of block
             return 0, 'invalid option block'
         try:
             options = utils.extract_extension_options(node, option_spec)
-        except KeyError, detail:
+        except KeyError as detail:
             return 0, ('unknown option: "%s"' % detail.args[0])
-        except (ValueError, TypeError), detail:
+        except (ValueError, TypeError) as detail:
             return 0, ('invalid option value: %s' % ' '.join(detail.args))
-        except utils.ExtensionOptionError, detail:
+        except utils.ExtensionOptionError as detail:
             return 0, ('invalid option data: %s' % ' '.join(detail.args))
         if blank_finish:
             return 1, options
@@ -2132,7 +2275,7 @@ class Body(RSTState):
     def unknown_directive(self, type_name):
         lineno = self.state_machine.abs_line_number()
         indented, indent, offset, blank_finish = \
-              self.state_machine.get_first_known_indented(0, strip_indent=0)
+            self.state_machine.get_first_known_indented(0, strip_indent=False)
         text = '\n'.join(indented)
         error = self.reporter.error(
               'Unknown directive type "%s".' % type_name,
@@ -2178,13 +2321,13 @@ class Body(RSTState):
                       \.\.[ ]+          # explicit markup start
                       _                 # target indicator
                       (?![ ]|$)         # first char. not space or EOL
-                      """, re.VERBOSE)),
+                      """, re.VERBOSE | re.UNICODE)),
           (substitution_def,
            re.compile(r"""
                       \.\.[ ]+          # explicit markup start
                       \|                # substitution indicator
                       (?![ ]|$)         # first char. not space or EOL
-                      """, re.VERBOSE)),
+                      """, re.VERBOSE | re.UNICODE)),
           (directive,
            re.compile(r"""
                       \.\.[ ]+          # explicit markup start
@@ -2209,7 +2352,9 @@ class Body(RSTState):
             if expmatch:
                 try:
                     return method(self, expmatch)
-                except MarkupError, (message, lineno): # never reached?
+                except MarkupError as error:
+                    lineno = self.state_machine.abs_line_number()
+                    message = ' '.join(error.args)
                     errors.append(self.reporter.warning(message, line=lineno))
                     break
         nodelist, blank_finish = self.comment(match)
@@ -2241,8 +2386,8 @@ class Body(RSTState):
     def anonymous_target(self, match):
         lineno = self.state_machine.abs_line_number()
         block, indent, offset, blank_finish \
-              = self.state_machine.get_first_known_indented(match.end(),
-                                                            until_blank=1)
+            = self.state_machine.get_first_known_indented(match.end(),
+                                                        until_blank=True)
         blocktext = match.string[:match.end()] + '\n'.join(block)
         block = [escape2null(line) for line in block]
         target = self.make_target(block, blocktext, lineno, '')
@@ -2310,7 +2455,7 @@ class RFC2822Body(Body):
         name = match.string[:match.string.find(':')]
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end(),
-                                                          until_blank=1)
+                                                          until_blank=True)
         fieldnode = nodes.field()
         fieldnode += nodes.field_name(name, name)
         fieldbody = nodes.field_body('\n'.join(indented))
@@ -2433,7 +2578,7 @@ class OptionList(SpecializedBody):
         """Option list item."""
         try:
             option_list_item, blank_finish = self.option_list_item(match)
-        except MarkupError, (message, lineno):
+        except MarkupError:
             self.invalid_input()
         self.parent += option_list_item
         self.blank_finish = blank_finish
@@ -2554,6 +2699,7 @@ class Text(RSTState):
 
     def blank(self, match, context, next_state):
         """End of paragraph."""
+        # NOTE: self.paragraph returns [ node, system_message(s) ], literalnext
         paragraph, literalnext = self.paragraph(
               context, self.state_machine.abs_line_number() - 1)
         self.parent += paragraph
@@ -2601,15 +2747,20 @@ class Text(RSTState):
                 raise statemachine.TransitionCorrection('text')
             else:
                 blocktext = context[0] + '\n' + self.state_machine.line
-                msg = self.reporter.warning(
-                    'Title underline too short.',
+                msg = self.reporter.warning('Title underline too short.',
                     nodes.literal_block(blocktext, blocktext), line=lineno)
                 messages.append(msg)
         if not self.state_machine.match_titles:
             blocktext = context[0] + '\n' + self.state_machine.line
-            msg = self.reporter.severe(
-                'Unexpected section title.',
-                nodes.literal_block(blocktext, blocktext), line=lineno)
+            # We need get_source_and_line() here to report correctly
+            src, srcline = self.state_machine.get_source_and_line()
+            # TODO: why is abs_line_number() == srcline+1
+            # if the error is in a table (try with test_tables.py)?
+            # print("get_source_and_line", srcline)
+            # print("abs_line_number", self.state_machine.abs_line_number())
+            msg = self.reporter.severe('Unexpected section title.',
+                nodes.literal_block(blocktext, blocktext),
+                source=src, line=srcline)
             self.parent += messages
             self.parent += msg
             return [], next_state, []
@@ -2623,11 +2774,11 @@ class Text(RSTState):
         startline = self.state_machine.abs_line_number() - 1
         msg = None
         try:
-            block = self.state_machine.get_text_block(flush_left=1)
-        except statemachine.UnexpectedIndentationError, instance:
-            block, source, lineno = instance.args
+            block = self.state_machine.get_text_block(flush_left=True)
+        except statemachine.UnexpectedIndentationError as err:
+            block, src, srcline = err.args
             msg = self.reporter.error('Unexpected indentation.',
-                                      source=source, line=lineno)
+                                      source=src, line=srcline)
         lines = context + list(block)
         paragraph, literalnext = self.paragraph(lines, startline)
         self.parent += paragraph
@@ -2650,7 +2801,8 @@ class Text(RSTState):
             return self.quoted_literal_block()
         data = '\n'.join(indented)
         literal_block = nodes.literal_block(data, data)
-        literal_block.line = offset + 1
+        (literal_block.source,
+         literal_block.line) = self.state_machine.get_source_and_line(offset+1)
         nodelist = [literal_block]
         if not blank_finish:
             nodelist.append(self.unindent_warning('Literal block'))
@@ -2662,7 +2814,7 @@ class Text(RSTState):
         parent_node = nodes.Element()
         new_abs_offset = self.nested_parse(
             self.state_machine.input_lines[offset:],
-            input_offset=abs_line_offset, node=parent_node, match_titles=0,
+            input_offset=abs_line_offset, node=parent_node, match_titles=False,
             state_machine_kwargs={'state_classes': (QuotedLiteralBlock,),
                                   'initial_state': 'QuotedLiteralBlock'})
         self.goto_line(new_abs_offset)
@@ -2671,20 +2823,22 @@ class Text(RSTState):
     def definition_list_item(self, termline):
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_indented()
-        definitionlistitem = nodes.definition_list_item(
+        itemnode = nodes.definition_list_item(
             '\n'.join(termline + list(indented)))
         lineno = self.state_machine.abs_line_number() - 1
-        definitionlistitem.line = lineno
+        (itemnode.source,
+         itemnode.line) = self.state_machine.get_source_and_line(lineno)
         termlist, messages = self.term(termline, lineno)
-        definitionlistitem += termlist
+        itemnode += termlist
         definition = nodes.definition('', *messages)
-        definitionlistitem += definition
+        itemnode += definition
         if termline[0][-2:] == '::':
             definition += self.reporter.info(
                   'Blank line missing before literal block (after the "::")? '
-                  'Interpreted as a definition list item.', line=line_offset+1)
+                  'Interpreted as a definition list item.',
+                  line=lineno+1)
         self.nested_parse(indented, input_offset=line_offset, node=definition)
-        return definitionlistitem, blank_finish
+        return itemnode, blank_finish
 
     classifier_delimiter = re.compile(' +: +')
 
@@ -2692,20 +2846,23 @@ class Text(RSTState):
         """Return a definition_list's term and optional classifiers."""
         assert len(lines) == 1
         text_nodes, messages = self.inline_text(lines[0], lineno)
-        term_node = nodes.term()
+        term_node = nodes.term(lines[0])
+        (term_node.source,
+         term_node.line) = self.state_machine.get_source_and_line(lineno)
         node_list = [term_node]
         for i in range(len(text_nodes)):
             node = text_nodes[i]
             if isinstance(node, nodes.Text):
-                parts = self.classifier_delimiter.split(node.rawsource)
+                parts = self.classifier_delimiter.split(node)
                 if len(parts) == 1:
                     node_list[-1] += node
                 else:
-                    
-                    node_list[-1] += nodes.Text(parts[0].rstrip())
+                    text = parts[0].rstrip()
+                    textnode = nodes.Text(text)
+                    node_list[-1] += textnode
                     for part in parts[1:]:
-                        classifier_node = nodes.classifier('', part)
-                        node_list.append(classifier_node)
+                        node_list.append(
+                            nodes.classifier(unescape(part, True), part))
             else:
                 node_list[-1] += node
         return node_list, messages
@@ -2745,8 +2902,8 @@ class Definition(SpecializedText):
 
     def indent(self, match, context, next_state):
         """Definition list item."""
-        definitionlistitem, blank_finish = self.definition_list_item(context)
-        self.parent += definitionlistitem
+        itemnode, blank_finish = self.definition_list_item(context)
+        self.parent += itemnode
         self.blank_finish = blank_finish
         return [], 'DefinitionList', []
 
@@ -2764,25 +2921,29 @@ class Line(SpecializedText):
         """Transition marker at end of section or document."""
         marker = context[0].strip()
         if self.memo.section_bubble_up_kludge:
-            self.memo.section_bubble_up_kludge = 0
+            self.memo.section_bubble_up_kludge = False
         elif len(marker) < 4:
             self.state_correction(context)
         if self.eofcheck:               # ignore EOFError with sections
-            lineno = self.state_machine.abs_line_number() - 1
+            src, srcline = self.state_machine.get_source_and_line()
+            # lineno = self.state_machine.abs_line_number() - 1
             transition = nodes.transition(rawsource=context[0])
-            transition.line = lineno
+            transition.source = src
+            transition.line = srcline - 1
+            # transition.line = lineno
             self.parent += transition
         self.eofcheck = 1
         return []
 
     def blank(self, match, context, next_state):
         """Transition marker."""
-        lineno = self.state_machine.abs_line_number() - 1
+        src, srcline = self.state_machine.get_source_and_line()
         marker = context[0].strip()
         if len(marker) < 4:
             self.state_correction(context)
         transition = nodes.transition(rawsource=marker)
-        transition.line = lineno
+        transition.source = src
+        transition.line = srcline - 1
         self.parent += transition
         return [], 'Body', []
 
@@ -2801,7 +2962,8 @@ class Line(SpecializedText):
             else:
                 msg = self.reporter.severe(
                     'Incomplete section title.',
-                    nodes.literal_block(blocktext, blocktext), line=lineno)
+                    nodes.literal_block(blocktext, blocktext),
+                    line=lineno)
                 self.parent += msg
                 return [], 'Body', []
         source = '%s\n%s\n%s' % (overline, title, underline)
@@ -2814,7 +2976,8 @@ class Line(SpecializedText):
             else:
                 msg = self.reporter.severe(
                     'Missing matching underline for section title overline.',
-                    nodes.literal_block(source, source), line=lineno)
+                    nodes.literal_block(source, source),
+                    line=lineno)
                 self.parent += msg
                 return [], 'Body', []
         elif overline != underline:
@@ -2824,7 +2987,8 @@ class Line(SpecializedText):
             else:
                 msg = self.reporter.severe(
                       'Title overline & underline mismatch.',
-                      nodes.literal_block(source, source), line=lineno)
+                      nodes.literal_block(source, source),
+                      line=lineno)
                 self.parent += msg
                 return [], 'Body', []
         title = title.rstrip()
@@ -2836,7 +3000,8 @@ class Line(SpecializedText):
             else:
                 msg = self.reporter.warning(
                       'Title overline too short.',
-                      nodes.literal_block(source, source), line=lineno)
+                      nodes.literal_block(source, source),
+                      line=lineno)
                 messages.append(msg)
         style = (overline[0], underline[0])
         self.eofcheck = 0               # @@@ not sure this is correct
@@ -2854,14 +3019,16 @@ class Line(SpecializedText):
             self.short_overline(context, blocktext, lineno, 1)
         msg = self.reporter.error(
               'Invalid section title or transition marker.',
-              nodes.literal_block(blocktext, blocktext), line=lineno)
+              nodes.literal_block(blocktext, blocktext),
+              line=lineno)
         self.parent += msg
         return [], 'Body', []
 
     def short_overline(self, context, blocktext, lineno, lines=1):
         msg = self.reporter.info(
             'Possible incomplete section title.\nTreating the overline as '
-            "ordinary text because it's so short.", line=lineno)
+            "ordinary text because it's so short.",
+            line=lineno)
         self.parent += msg
         self.state_correction(context, lines)
 
@@ -2883,7 +3050,7 @@ class QuotedLiteralBlock(RSTState):
                 'text': r''}
     initial_transitions = ('initial_quoted', 'text')
 
-    def __init__(self, state_machine, debug=0):
+    def __init__(self, state_machine, debug=False):
         RSTState.__init__(self, state_machine, debug)
         self.messages = []
         self.initial_lineno = None
@@ -2896,14 +3063,18 @@ class QuotedLiteralBlock(RSTState):
 
     def eof(self, context):
         if context:
+            src, srcline = self.state_machine.get_source_and_line(
+                                                        self.initial_lineno)
             text = '\n'.join(context)
             literal_block = nodes.literal_block(text, text)
-            literal_block.line = self.initial_lineno
+            literal_block.source = src
+            literal_block.line = srcline
             self.parent += literal_block
         else:
             self.parent += self.reporter.warning(
                 'Literal block expected; none found.',
                 line=self.state_machine.abs_line_number())
+                # src not available, because statemachine.input_lines is empty
             self.state_machine.previous_line()
         self.parent += self.messages
         return []
@@ -2921,7 +3092,7 @@ class QuotedLiteralBlock(RSTState):
         """Match arbitrary quote character on the first line only."""
         self.remove_transition('initial_quoted')
         quote = match.string[0]
-        pattern = re.compile(re.escape(quote))
+        pattern = re.compile(re.escape(quote), re.UNICODE)
         # New transition matches consistent quotes only:
         self.add_transition('quoted',
                             (pattern, self.quoted, self.__class__.__name__))
@@ -2937,7 +3108,7 @@ class QuotedLiteralBlock(RSTState):
         if context:
             self.messages.append(
                 self.reporter.error('Inconsistent literal block quoting.',
-                                    line=self.state_machine.abs_line_number()))
+                                   line=self.state_machine.abs_line_number()))
             self.state_machine.previous_line()
         raise EOFError
 

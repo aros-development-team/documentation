@@ -1,5 +1,5 @@
 ==========
-Wspó³praca
+WspÃ³Å‚praca
 ==========
 
 :Authors:   Adam Chodorowski 
@@ -12,60 +12,60 @@ Wspó³praca
 Potrzebujemy Twojej pomocy!
 ===========================
 
-Mamy niewielu aktywnych programistów, co niestety oznacza powolny postêp.
-Potrzebujemy wiêcej osób do pomocy! Jest olbrzymia liczba zadañ, które wymagaj±
-przypisanych do nich programistów. Zakres tych zadañ jest ró¿ny, od ma³ych 
-projektów po du¿e, od zadañ dotycz±cych sprzêtu po systemy wysokiego poziomu 
-i tworzenie aplikacji. W zasadzie dla ka¿dego chêtnego do pomocy znajdzie siê 
-odpowiednia praca, niezale¿nie od jego bieg³o¶ci w programowaniu!
+Mamy niewielu aktywnych programistÃ³w, co niestety oznacza powolny postÄ™p.
+Potrzebujemy wiÄ™cej osÃ³b do pomocy! Jest olbrzymia liczba zadaÅ„, ktÃ³re wymagajÄ…
+przypisanych do nich programistÃ³w. Zakres tych zadaÅ„ jest rÃ³Å¼ny, od maÅ‚ych 
+projektÃ³w po duÅ¼e, od zadaÅ„ dotyczÄ…cych sprzÄ™tu po systemy wysokiego poziomu 
+i tworzenie aplikacji. W zasadzie dla kaÅ¼dego chÄ™tnego do pomocy znajdzie siÄ™ 
+odpowiednia praca, niezaleÅ¼nie od jego biegÅ‚oÅ›ci w programowaniu!
 
-Dla tych z Was, którzy nie s± programistami jest tak¿e sporo zadañ, w których mo¿ecie
-pomóc! Pisanie dokumentacji, t³umaczenie programów i dokumentacji na inne jêzyki, 
-tworzenie ³adnej grafiki i polowanie na b³êdy. 
-Te zadania s± tak samo wa¿ne jak programowanie!
+Dla tych z Was, ktÃ³rzy nie sÄ… programistami jest takÅ¼e sporo zadaÅ„, w ktÃ³rych moÅ¼ecie
+pomÃ³c! Pisanie dokumentacji, tÅ‚umaczenie programÃ³w i dokumentacji na inne jÄ™zyki, 
+tworzenie Å‚adnej grafiki i polowanie na bÅ‚Ä™dy. 
+Te zadania sÄ… tak samo waÅ¼ne jak programowanie!
 
 
-Dostêpne zdania
+DostÄ™pne zdania
 ===============
 
-To jest lista zadañ, przy których potrzebujemy pomocy i nad którymi nikt 
-aktualnie nie pracuje. To nie jest pe³na lista, zawiera jednak najwa¿niejsze
-rzeczy, przy których potrzebna jest pomoc.
+To jest lista zadaÅ„, przy ktÃ³rych potrzebujemy pomocy i nad ktÃ³rymi nikt 
+aktualnie nie pracuje. To nie jest peÅ‚na lista, zawiera jednak najwaÅ¼niejsze
+rzeczy, przy ktÃ³rych potrzebna jest pomoc.
 
 
 Programowanie
 -------------
 
-+ Implementacja brakuj±cych bibliotek, zasobów, urz±dzeñ lub ich czê¶ci. 
-  Obejrzyj szczególowy raport o statusie, by uzyskaæ wiêcej informacji czego brakuje.
++ Implementacja brakujÄ…cych bibliotek, zasobÃ³w, urzÄ…dzeÅ„ lub ich czÄ™Å›ci. 
+  Obejrzyj szczegÃ³lowy raport o statusie, by uzyskaÄ‡ wiÄ™cej informacji czego brakuje.
 
-+ Implementacja lub poprawienie sterowników sprzêtu:
++ Implementacja lub poprawienie sterownikÃ³w sprzÄ™tu:
   
   - AROS/m68k-pp:
     
     + Grafika
-    + Urz±dzenia wej¶cia (touchscreen, buttons)
-    + D¼wiêk
+    + UrzÄ…dzenia wejÅ›cia (touchscreen, buttons)
+    + DÅºwiÄ™k
  
   - AROS/i386-pc:
     
-    + specyficzne sterowniki kart graficznych (mamy tylko ogólne, niezbyt
-      dobrze akcelerowane). Krótka lista ¿yczeñ:
+    + specyficzne sterowniki kart graficznych (mamy tylko ogÃ³lne, niezbyt
+      dobrze akcelerowane). KrÃ³tka lista Å¼yczeÅ„:
       
-      - nVidia TNT/TNT2/GeForce (rozpoczêta, lecz niekompletna) 
+      - nVidia TNT/TNT2/GeForce (rozpoczÄ™ta, lecz niekompletna) 
       - S3 Virge
       - Matrox Millenium
     
     + USB
     + SCSI
     + specyficzne chipsety IDE
-    + ...Co¶ jeszcze, co Ci przychodzi na my¶l.
+    + ...CoÅ› jeszcze, co Ci przychodzi na myÅ›l.
 
-  - Ogólna obs³uga drukarki.
+  - OgÃ³lna obsÅ‚uga drukarki.
  
 
-+ Portowanie na inne architektury. Kilka przyk³adów sprzêtu, na który nie 
-  ma jeszcze portu AROSa lub prace dopiero siê rozpoczê³y:
++ Portowanie na inne architektury. Kilka przykÅ‚adÃ³w sprzÄ™tu, na ktÃ³ry nie 
+  ma jeszcze portu AROSa lub prace dopiero siÄ™ rozpoczÄ™Å‚y:
 
   - Amiga m68k i PPC.
   - Atari.
@@ -74,7 +74,7 @@ Programowanie
   - iPaq.
   - Macintosh m68k i PPC.
 
-+ Implementacja brakuj±cych edytorów preferencji:
++ Implementacja brakujÄ…cych edytorÃ³w preferencji:
 
   - IControl
   - Overscan
@@ -88,16 +88,16 @@ Programowanie
  
 + Poprawienie biblioteki C link 
 
-  Implementacja brakuj±cych funkcji ANSI (i kilku POSIX) w clib, by u³atwiæ
-  portowanie programów UNIXowych (np. GCC, make i binutils). Najwiêksz± 
-  brakuj±c± rzecz± jest wsparcie dla POSIX style signaling, lecz jest tak¿e
+  Implementacja brakujÄ…cych funkcji ANSI (i kilku POSIX) w clib, by uÅ‚atwiÄ‡
+  portowanie programÃ³w UNIXowych (np. GCC, make i binutils). NajwiÄ™kszÄ… 
+  brakujÄ…cÄ… rzeczÄ… jest wsparcie dla POSIX style signaling, lecz jest takÅ¼e
   kilka innych funkcji.
 
-+ Implementacja wiêkszej ilo¶ci datatypów i poprawienie istniej±cych
++ Implementacja wiÄ™kszej iloÅ›ci datatypÃ³w i poprawienie istniejÄ…cych
 
-  Liczba dostêpnych w systemie AROS datatypów jest niewielka. Poni¿ej kilka 
-  przyk³adów datatypów, które wymagaj± poprawienia by by³y u¿ywalne lub 
-  musz± byæ napisane:
+  Liczba dostÄ™pnych w systemie AROS datatypÃ³w jest niewielka. PoniÅ¼ej kilka 
+  przykÅ‚adÃ³w datatypÃ³w, ktÃ³re wymagajÄ… poprawienia by byÅ‚y uÅ¼ywalne lub 
+  muszÄ… byÄ‡ napisane:
 
   - amigaguide.datatype
   - sound.datatype
@@ -110,66 +110,66 @@ Programowanie
     + cdxl.datatype
     
   
-+ Portowanie programów:
++ Portowanie programÃ³w:
 
   - Wdytory tekstu jak ViM i Emacs.
-  - Lañcuch narzêdzi developerskich, zawieraj±cy GCC, make, binutils i inne
-    narzêdzia programistyczne GNU.
+  - LaÅ„cuch narzÄ™dzi developerskich, zawierajÄ…cy GCC, make, binutils i inne
+    narzÄ™dzia programistyczne GNU.
   
 
 Dokumentacja
 -------------
 
-+ Pisanie dokumentacji u¿ytkownika. Polega to na tworzeniu ogólnej Instrukcji 
-  U¿ytkownika dla nowicjuszy i ekspertów, a tak¿e dokumentacji referencyjnej 
-  dla wszystkich standardowych programów AROSa.
++ Pisanie dokumentacji uÅ¼ytkownika. Polega to na tworzeniu ogÃ³lnej Instrukcji 
+  UÅ¼ytkownika dla nowicjuszy i ekspertÃ³w, a takÅ¼e dokumentacji referencyjnej 
+  dla wszystkich standardowych programÃ³w AROSa.
 
-+ Pisanie dokumentacji programisty. Chocia¿ jest to w nieco lepszym stanie
-  ni¿ dokumentacja u¿ytkownika, nadal jest du¿o do zrobienia. Na przyk³ad,
-  nie ma jeszcze dobrego tutoriala dla pocz±tkuj±cych programistów. 
-  Odpowiednik 'ROM Kernel Manuals for AROS' by³by naprawdê potrzebny.
++ Pisanie dokumentacji programisty. ChociaÅ¼ jest to w nieco lepszym stanie
+  niÅ¼ dokumentacja uÅ¼ytkownika, nadal jest duÅ¼o do zrobienia. Na przykÅ‚ad,
+  nie ma jeszcze dobrego tutoriala dla poczÄ…tkujÄ…cych programistÃ³w. 
+  Odpowiednik 'ROM Kernel Manuals for AROS' byÅ‚by naprawdÄ™ potrzebny.
 
 
-T³umaczenie
+TÅ‚umaczenie
 -----------
 
-+ T³umaczenie AROSa na inne jêzyki. Obecnie w mniejszym lub wiêkszym stopniu
-  obs³ugiwane s± nastêpuj±ce jêzyki:
++ TÅ‚umaczenie AROSa na inne jÄ™zyki. Obecnie w mniejszym lub wiÄ™kszym stopniu
+  obsÅ‚ugiwane sÄ… nastÄ™pujÄ…ce jÄ™zyki:
 
   - angielski
   - niemiecki
   - szwedzki
   - norweski
-  - w³oski
+  - wÅ‚oski
 
 
-+ T³umaczenie dokumentacji i strony internetowej na inne jêzyki. Obecnie 
-  kompletna strona jest dostêpna jedynie po angielsku. Czê¶æ zosta³a 
-  przet³umaczona na norweski, niemiecki, rosyjski i w³oski, lecz nadal jest 
-  du¿o do zrobienia.
++ TÅ‚umaczenie dokumentacji i strony internetowej na inne jÄ™zyki. Obecnie 
+  kompletna strona jest dostÄ™pna jedynie po angielsku. CzÄ™Å›Ä‡ zostaÅ‚a 
+  przetÅ‚umaczona na norweski, niemiecki, rosyjski i wÅ‚oski, lecz nadal jest 
+  duÅ¼o do zrobienia.
 
 
 Inne
 -----
 
-+ Kierowanie projektami GUI dla programów AROSa, takich jak prefs,
++ Kierowanie projektami GUI dla programÃ³w AROSa, takich jak prefs,
   tools i utilities.
 
-Do³±cz do zespo³u
+DoÅ‚Ä…cz do zespoÅ‚u
 =================
 
-Chcesz siê przy³±czyæ do developerów? Wspaniale! Do³±cz zatem do `listy 
-dyskusyjnej`__, która Ciê interesuje (przynajmniej zapisanie siê na 
-g³ówn± listê aros-dev jest *wysoce* wskazane) i popro¶ o dostêp do
+Chcesz siÄ™ przyÅ‚Ä…czyÄ‡ do developerÃ³w? Wspaniale! DoÅ‚Ä…cz zatem do `listy 
+dyskusyjnej`__, ktÃ³ra CiÄ™ interesuje (przynajmniej zapisanie siÄ™ na 
+gÅ‚Ã³wnÄ… listÄ™ aros-dev jest *wysoce* wskazane) i poproÅ› o dostÄ™p do
 repozytorium SVN.
 To wszystko. :)
 
-Napisanie krótkiego maila na listê dyskusyjn± zawieraj±c± informacje o sobie, 
-o tym w czym chce siê pomóc jest mile widziane. Je¶li masz jakie¶ problemy, 
-nie krêpuj siê, wy¶lij maila na listê lub spytaj na `kanale IRC`__.
-Zatem zanim rozpoczniesz pracowaæ nad czym¶ konkretnym, napisz proszê maila na 
-listê, informuj±c co chcesz robiæ lub popraw bazê zadañ. Tym sposobem 
-uchronisz innych przed prac± nad tym samym przez pomy³kê...
+Napisanie krÃ³tkiego maila na listÄ™ dyskusyjnÄ… zawierajÄ…cÄ… informacje o sobie, 
+o tym w czym chce siÄ™ pomÃ³c jest mile widziane. JeÅ›li masz jakieÅ› problemy, 
+nie krÄ™puj siÄ™, wyÅ›lij maila na listÄ™ lub spytaj na `kanale IRC`__.
+Zatem zanim rozpoczniesz pracowaÄ‡ nad czymÅ› konkretnym, napisz proszÄ™ maila na 
+listÄ™, informujÄ…c co chcesz robiÄ‡ lub popraw bazÄ™ zadaÅ„. Tym sposobem 
+uchronisz innych przed pracÄ… nad tym samym przez pomyÅ‚kÄ™...
 
 __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
@@ -178,23 +178,23 @@ __ ../../contact#irc-channels
 Repozytorium SVN
 ----------------
 
-Repozytorium AROSa pracuje na chronioym has³em serwerze subwersji, co oznacza,
-¿e musisz poprosiæ o dostêp do niego, by wspó³pracowaæ w rozwoju. Has³a s± 
-zaszyfrowane, mo¿esz je wygenerowaæ naszym `narzêdziem szyfruj±cym`__.
+Repozytorium AROSa pracuje na chronioym hasÅ‚em serwerze subwersji, co oznacza,
+Å¼e musisz poprosiÄ‡ o dostÄ™p do niego, by wspÃ³Å‚pracowaÄ‡ w rozwoju. HasÅ‚a sÄ… 
+zaszyfrowane, moÅ¼esz je wygenerowaÄ‡ naszym `narzÄ™dziem szyfrujÄ…cym`__.
 
-Napisz maila ze swoim zaszyfrowanym has³em razem z wybran± nazw± u¿ytkownika
-i nazwiskiem do `Aaron Digulla`__ i czekaj na odpowied¼. By przy¶pieszyæ odpowied¼,
-wpisz w temacie maila "Access to the AROS SVN server" a w tre¶ci "Please add 
-<u¿ytkownik> <has³o>", np.::
+Napisz maila ze swoim zaszyfrowanym hasÅ‚em razem z wybranÄ… nazwÄ… uÅ¼ytkownika
+i nazwiskiem do `Aaron Digulla`__ i czekaj na odpowiedÅº. By przyÅ›pieszyÄ‡ odpowiedÅº,
+wpisz w temacie maila "Access to the AROS SVN server" a w treÅ›ci "Please add 
+<uÅ¼ytkownik> <hasÅ‚o>", np.::
 
     Please add digulla xx1LtbDbOY4/E
 
-To mo¿e potrwaæ kilka dni, bo Aaron jest bardzo zajêty, proszê b±d¼ cierpliwy. 
+To moÅ¼e potrwaÄ‡ kilka dni, bo Aaron jest bardzo zajÄ™ty, proszÄ™ bÄ…dÅº cierpliwy. 
 
-Aby uzyskaæ informacje jak u¿ywaæ serwera SVN, przeczytaj proszê "`Praca z SVN`__".
-Nawet je¶li ju¿ wiesz jak u¿ywaæ SVN to warto tam zajrzeæ, poniewa¿ znajdziesz
-tam informacje i porady specyficzne dla repozytorium AROSa (takie jak siê do 
-niego zalogowaæ).
+Aby uzyskaÄ‡ informacje jak uÅ¼ywaÄ‡ serwera SVN, przeczytaj proszÄ™ "`Praca z SVN`__".
+Nawet jeÅ›li juÅ¼ wiesz jak uÅ¼ywaÄ‡ SVN to warto tam zajrzeÄ‡, poniewaÅ¼ znajdziesz
+tam informacje i porady specyficzne dla repozytorium AROSa (takie jak siÄ™ do 
+niego zalogowaÄ‡).
 
 __ http://aros.sourceforge.net/tools/password.html 
 __ mailto:digulla@aros.org?subject=[Access%20to%20the%20AROS%20SVN%20server]

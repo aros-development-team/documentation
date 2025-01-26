@@ -10,63 +10,63 @@ Ultime notizie
 
 Dall'ultimo aggiornamento pre-natalizio, moltissimi aggiornamenti 
 sono stati fatti in AROS, sia nel sistema stesso che per quel che 
-riguarda le applicazioni: finalmente AROS Ë molto vicino ad essere 
+riguarda le applicazioni: finalmente AROS √® molto vicino ad essere 
 un sistema usabile per gli scopi di ogni giorno.
 
 Oliver Brunner ha rilasciato recentemente la versione 0.3 di 
 Janus-UAE, la versione di E-UAE specifica per AROS figlia della 
-Integration Bounty Phase 1: AROS puÚ aprire applicazioni Amiga OS
-in finestre e schermi AROS indipendenti; l'integrazione dei menu Ë
+Integration Bounty Phase 1: AROS pu√≤ aprire applicazioni Amiga OS
+in finestre e schermi AROS indipendenti; l'integrazione dei menu √®
 attualmente in corso.
 
-La notizia pi˘ importante Ë che AROS ha finalmente il suo browser! 
-Grazie all'opera di Stanislaw Szymczyk, OWB Ë finalmente disponibile 
-per AROS, consegnandogli piena compatibilit‡ CSS e Javascript, tabbed 
+La notizia pi√π importante √® che AROS ha finalmente il suo browser! 
+Grazie all'opera di Stanislaw Szymczyk, OWB √® finalmente disponibile 
+per AROS, consegnandogli piena compatibilit√† CSS e Javascript, tabbed 
 browsing e download manager. Stanislaw ha inoltre permesso a versioni 
 alternative delle applicazioni di AROS di poter essere compilate al 
-di fuori del source tree principale. OWB Ë gi‡ alla versione 0.9.3 
+di fuori del source tree principale. OWB √® gi√† alla versione 0.9.3 
 Beta e, per farlo girare correttamente, servono delle versioni
 recenti di arosc.library, muimaster.library e codesets.library.
-OWB puÚ essere scaricato dalla `sua pagina su sand-labs`__.
+OWB pu√≤ essere scaricato dalla `sua pagina su sand-labs`__.
 
 Pavel "Sonic" Fedin sta continuando a lavorare sulla versione Hosted 
 di Windows; nel portarla avanti cerca soluzioni per astrarre il modo 
 in cui AROS dialoga con l'hardware e, questo, lo ha portato anche a 
 lavorare sull'ata.device e su altri componenti che necessitano di 
-avere un accesso pi˘ astratto al file system e all'hardware, 
+avere un accesso pi√π astratto al file system e all'hardware, 
 inclusa, recentemente, l'idea di implementare una gestione "a 
 pacchetti" di SFS. Inoltre Pavel, insieme a Jens Langner, sta 
-cercando di far cross-compilare le versioni pi˘ aggiornate delle 
+cercando di far cross-compilare le versioni pi√π aggiornate delle 
 classi Mui mcc.BetterString e mcc.TextEditor, in modo da essere non 
-pi˘ incluse in contrib ma di essere allineate con le loro versioni
+pi√π incluse in contrib ma di essere allineate con le loro versioni
 originali.
 
 Matthias "Mazze" Ruster ha rilasciato una versione alpha di Ignition; 
-al momento non puÚ salvare dati ma Ë comunque una buona occasione 
+al momento non pu√≤ salvare dati ma √® comunque una buona occasione 
 per dare un'occhiata a questa applicazione, sottovalutata nella sua 
 presenza su Amiga ma piuttosto potente e ben fatta; unico problema, 
-l'applicazione Ë tradotta solo parzialmente dal tedesco; per usarla 
-con il sistema in inglese Ë necessario rinominare il file 
+l'applicazione √® tradotta solo parzialmente dal tedesco; per usarla 
+con il sistema in inglese √® necessario rinominare il file 
 ignition_english.prefs in ignition.prefs. Potete provarla
 prelevandola `da qui`__.
 
 Nik "Kalamatee" Andrews sta operando per migliorare Wanderer: nei 
-mesi scorsi il suo lavoro ha visto migliorare la stabilit‡ 
+mesi scorsi il suo lavoro ha visto migliorare la stabilit√† 
 intrinseca di Wanderer, apparire una status bar sul fondo delle 
 finestre, ha fatto esperimenti per un albero dei cassetti a lato 
 delle finestre e, per il prossimo futuro, oltre alla richiesta
-visione in modalit‡ elenco, conta di avere Wanderer strutturato in
+visione in modalit√† elenco, conta di avere Wanderer strutturato in
 maniera modulare, dove le varie aggiunte saranno gestite appunto
 come moduli esterni.
 
 La distribuzione VmwAROS ha cambiato nome: ora si chiama 
 `Icaros Desktop`__ e, con il rilascio della `versione 1.1.1`__
-consegna i pi˘ recenti aggiornamenti del sistema, una stabilit‡ notevolmente migliorata, quasi tutte le applicazioni presenti sono state ricompilate in modo da richiedere solo una versione di 
+consegna i pi√π recenti aggiornamenti del sistema, una stabilit√† notevolmente migliorata, quasi tutte le applicazioni presenti sono state ricompilate in modo da richiedere solo una versione di 
 muimaster.library - facendo venire finalmente meno il bisogno di 
-usare switchmuimaster - Ë stata aggiunto lo script IconDress - che 
+usare switchmuimaster - √® stata aggiunto lo script IconDress - che 
 consente di cambiare il tema icone da uno stile all'altro con un solo 
-clic. La versione pi˘ recente Ë stata installata con successo in una
-macchina virtuale su un netbook, mantenendo una velocit‡ ragionevole
+clic. La versione pi√π recente √® stata installata con successo in una
+macchina virtuale su un netbook, mantenendo una velocit√† ragionevole
 e permettendo l'uso dell'audio e della rete wireless. Maggiori
 informazioni `qui`__.
 
@@ -77,15 +77,15 @@ progressi anche sul fronte del port Efika, che
 hanno portato a una maggiore robustezza del sistema, a un debug 
 report dettagliato e a una feature simile al Grim Reaper di OS4, che 
 porta il sistema in caso di errore a non crashare del tutto. Michal 
-Ë anche riuscito ad accelerare in parte il driver video ATI. 
+√® anche riuscito ad accelerare in parte il driver video ATI. 
 Parallelamente, Neil Cafferkey sta cercando di risolvere i problemi
-di ata.device con sistemi SATA, raggiungendo gi‡ da ora una migliore
-compatibilit‡ con i controller per gli hard drive.
+di ata.device con sistemi SATA, raggiungendo gi√† da ora una migliore
+compatibilit√† con i controller per gli hard drive.
 
 Recentemente ci sono stati anche alcuni cambiamenti nel modo di fare 
-boot con AROS: in sostanza se si aggiorna il sistema Ë necessario 
+boot con AROS: in sostanza se si aggiorna il sistema √® necessario 
 copiare "a mano" il file aros.boot nella root del disco che contiene 
-il sistema, altrimenti quest'ultimo non sar‡ riconosciuto come 
+il sistema, altrimenti quest'ultimo non sar√† riconosciuto come 
 bootabile.
 
 Infine l'arrivo di Steve "ClusterUK" Jones: in passato impegnato 

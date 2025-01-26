@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-# Author: David Goodger
-# Contact: goodger@python.org
-# Revision: $Revision$
-# Date: $Date$
+# $Id: ja.py 7119 2011-09-02 13:00:23Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -24,6 +22,7 @@ directives = {
     # language-dependent: fixed
     u'注目': 'attention',
     u'注意': 'caution',
+    u'code (translation required)': 'code',
     u'危険': 'danger',
     u'エラー': 'error',
     u'ヒント': 'hint',
@@ -51,6 +50,7 @@ directives = {
     #u'質問': 'questions',
     #u'問答': 'questions',
     #u'faq': 'questions',
+    u'math (translation required)': 'math',
     u'メタ': 'meta',
     #u'イメージマプ': 'imagemap',
     u'イメージ': 'image',
@@ -89,6 +89,7 @@ roles = {
     # language-dependent: fixed
     u'略': 'abbreviation',
     u'頭字語': 'acronym',
+    u'code (translation required)': 'code',
     u'インデックス': 'index',
     u'索引': 'index',
     u'添字': 'subscript',
@@ -103,6 +104,7 @@ roles = {
     u'強い': 'strong',
     u'リテラル': 'literal',
     u'整形済み': 'literal',
+    u'math (translation required)': 'math',
     u'名付参照': 'named-reference',
     u'無名参照': 'anonymous-reference',
     u'脚注参照': 'footnote-reference',

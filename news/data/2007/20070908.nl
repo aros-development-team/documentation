@@ -17,15 +17,15 @@ andere woorden, de 64-bit kernel is binnenkort in staat om op te starten,
 te multitasken en de exec.library automatisch te initialiseren.
 
 Als u een verouderde versie van een nachtelijke compilatie van AROS heeft
-geïnstalleerd, wordt u vriendelijk verzocht naar de download-afdeling te
+geÃ¯nstalleerd, wordt u vriendelijk verzocht naar de download-afdeling te
 gaan en een nieuwe versie op te halen. Er zijn veel problemen verholpen en
 er zijn ook enkele leuke cosmetische verbeteringen. Na onze competitie
-hebben we nu standaard twee "officiële" afbeeldingen geïnstalleerd:
+hebben we nu standaard twee "officiÃ«le" afbeeldingen geÃ¯nstalleerd:
 `"AROS rose" van d980`__  voor het bureaublad en `"AROS"`__ van Wesper voor
 de vensters.
 
 Mocht u van plan zijn rond 22 en 23 september een aantal dagen in Toscane
-(Italië) door te brengen, vergeet dan niet om Empoli te bezoeken. Op zaterdag
+(ItaliÃ«) door te brengen, vergeet dan niet om Empoli te bezoeken. Op zaterdag
 de 22ste om 16.00 zal daar AROS gepresenteerd worden op de
 `Pianeta Amiga 2007`__ show.
 

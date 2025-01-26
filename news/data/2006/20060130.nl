@@ -31,6 +31,6 @@ Netwerk voorzieningen
 ---------------------
 
 Dankzij Nick Andrews en Jack Patton heeft AROS nu ook IRC en Telnet 
-cli�nten. Om het netwerken op de hosted versie van AROS mogelijk te 
+cliënten. Om het netwerken op de hosted versie van AROS mogelijk te 
 maken, heeft Michal Schulz een .tap interface hidd ingebouwd voor 
 alle Unix doelen. 

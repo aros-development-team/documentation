@@ -6,8 +6,8 @@
 
   <?php include('/home/groups/a/ar/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS jest przeno¶nym i ogólnodostêpnym systemem operacyjnym,
-posiadaj±cym graficzny interfejs u¿ytkownika, d±¿±cym do kompatybilno¶ci
-z AmigaOS, jednocze¶nie przewy¿szaj±cym go w wielu obszarach. Kod
-¼ród³owy jest dostêpny pod otwart± licencj±, która pozwala go dowolnie
-modyfikowaæ.
+AROS jest przenoÅ›nym i ogÃ³lnodostÄ™pnym systemem operacyjnym,
+posiadajÄ…cym graficzny interfejs uÅ¼ytkownika, dÄ…Å¼Ä…cym do kompatybilnoÅ›ci
+z AmigaOS, jednoczeÅ›nie przewyÅ¼szajÄ…cym go w wielu obszarach. Kod
+ÅºrÃ³dÅ‚owy jest dostÄ™pny pod otwartÄ… licencjÄ…, ktÃ³ra pozwala go dowolnie
+modyfikowaÄ‡.

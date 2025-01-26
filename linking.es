@@ -3,13 +3,13 @@ Enlazado
 ===========
 
 :Author:    Adam Chodorowski
-:Copyright: Copyright ¦ 2001-2007, The AROS Development Team
+:Copyright: Copyright Å  2001-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 Una gran manera para mostrar tu apoyo hacia AROS, y una que activamente promovemos,
-es enlazar a este sitio web desde el tuyo. Para este propósito puedes usar uno
+es enlazar a este sitio web desde el tuyo. Para este propÃ³sito puedes usar uno
 de los siguiente bonitos carteles.
 
 +------------------------------------------+----------------------+
@@ -33,7 +33,7 @@ de los siguiente bonitos carteles.
 +------------------------------------------+----------------------+
 
 
-Alternativamente también hay carteles firmados para usar en los foros:
+Alternativamente tambiÃ©n hay carteles firmados para usar en los foros:
 
 +------------------------------------------+----------------------+
 | Imagen                                    | Autor               |
@@ -49,5 +49,5 @@ Alternativamente también hay carteles firmados para usar en los foros:
 
 
 Por favor enlaza directamente a http://www.aros.org/ y no a alguno de los 
-servidores espejo, ya que ellos podrían cambiar con el tiempo. También, 
+servidores espejo, ya que ellos podrÃ­an cambiar con el tiempo. TambiÃ©n, 
 haz por favor una copia local de la imagen para reducir el uso del ancho de banda.

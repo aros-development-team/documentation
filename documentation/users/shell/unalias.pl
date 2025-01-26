@@ -9,7 +9,7 @@
 Unalias
 =======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	NAME
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -31,14 +31,14 @@ Funkcja
 	
 	Usuwa poprzednio zdefiniowany alias.
 	
-	Je¶li brak parametrów, aktualna lista alias'ów zostanie wy¶wietlona.
+	JeÅ›li brak parametrÃ³w, aktualna lista alias'Ã³w zostanie wyÅ›wietlona.
 
 Parametry
 ~~~~~~~~~
 ::
 
 
-	NAME	-	Nazwa aliasu do od³±czenia.
+	NAME	-	Nazwa aliasu do odÅ‚Ä…czenia.
 
 
 Wynik
@@ -46,10 +46,10 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -57,7 +57,7 @@ Przyk³ad
 	Unalias DF
 
 
-Zobach tak¿e
+Zobach takÅ¼e
 ~~~~~~~~~~~~
 ::
 

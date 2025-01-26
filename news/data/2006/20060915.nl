@@ -19,7 +19,7 @@ AROS in het nieuws
 ------------------
 
 Neem de moeite om deze mooie (Engelstalige) `review`__ te lezen van 
-Dmitar Butrovski op `OSnews.com`__. Het is duidelijk één van de meest complete 
+Dmitar Butrovski op `OSnews.com`__. Het is duidelijk Ã©Ã©n van de meest complete 
 artikelen over AROS, waarin alle features en mogelijkheden behandeld worden van
 ons besturingssysteem. Als u nog niet wist wat AROS precies is, dan zal dit 
 artikel u een goed beeld geven.
@@ -34,7 +34,7 @@ De nieuwe 1.20 versie van de beroemde Commodore 8-bit computer lijn emulator
 *VICE* is nu beschikbaar voor alle Amiga platforms, waaronder AROS. U kunt deze
 `hier`__ vinden.
 
-*WinAros* is een voor-geïnstalleerde AROS omgeving, geïnstalleerd op een 
+*WinAros* is een voor-geÃ¯nstalleerde AROS omgeving, geÃ¯nstalleerd op een 
 HD image, compatibel met de bekende virtuele machines QEMU en 
 Microsoft VirtualPC, beiden gratis verkrijgbaar op het internet. 
 U kunt `hier QEMU Winaros`__ downloaden en de `VirtualPC versie hier`__. 

@@ -5,13 +5,13 @@ Un altro anno (non solare)
 :Author:   Neil Cafferkey
 :Date:     2012-10-21
 
-Un altro anno Ë passato, un altro anno di sviluppo anzichÈ di pubblicazione di notizie,
+Un altro anno √® passato, un altro anno di sviluppo anzich√© di pubblicazione di notizie,
 e quindi ecco un'altra selezione di punti salienti.
 
 Nuovo web browser
 -----------------
 
-L'usabilit‡ di AROS nel quotidiano ha fatto un passo da gigante col porting di un moderno
+L'usabilit√† di AROS nel quotidiano ha fatto un passo da gigante col porting di un moderno
 browser che supporti e rispetti gli standard moderni. Basato sul motore Webkit, Odyssey
 include un compilatore JIT Javascript, supporta la navigazione a schede, HTML5, CSS, SVG
 e protocollo SSL. E' anche ampiamente configurabile, con un'interfaccia utente che permette
@@ -21,28 +21,28 @@ gestione password e molto altro.
 Supporto multipiattaforma
 -------------------------
 
-Il supporto all'architettura ARM Ë cresciuto ed Ë maturato, sono disponibili infatti build notturne
+Il supporto all'architettura ARM √® cresciuto ed √® maturato, sono disponibili infatti build notturne
 di AROS (Linux-hosted). C'e' particolare interesse per questa architettura fra gli utenti per far girare
-AROS sul RaspberryPI, anche se per il momento non Ë disponibile un port nativo ma Ë AROS gira
+AROS sul RaspberryPI, anche se per il momento non √® disponibile un port nativo ma √® AROS gira
 Linux-hosted.
 
-Vi sono anche stati progressi sul fronte di altre piattaforme. La versione Windows-hosted Ë stata
-protagonista di un grande lavoro di bug-fixing ed Ë adesso molto pi˘ stabile, mentre la compatibilit‡
+Vi sono anche stati progressi sul fronte di altre piattaforme. La versione Windows-hosted √® stata
+protagonista di un grande lavoro di bug-fixing ed √® adesso molto pi√π stabile, mentre la compatibilit√†
 con l'originale piattaforma Amiga (per quanto riguarda il software legacy) continua a migliorare.
 
 Networking
 ----------
 
 Le reti wireless adesso sono supportate con l'arrivo di due nuovi driver compatibili con lo standard
-di criptazione WPA: uno per i dispositivi USB che incorporano il  chipset Realtek RTL8187B, l'altro Ë una
+di criptazione WPA: uno per i dispositivi USB che incorporano il  chipset Realtek RTL8187B, l'altro √® una
 versione aggiornata del driver Prism-II che, per primo, ha portato il wireless su AROS nel 2005. E' stata
-altresÏ creata un'utility con interfaccia grafica che permette la scansione dinamica e la connessione a reti
+altres√¨ creata un'utility con interfaccia grafica che permette la scansione dinamica e la connessione a reti
 wireless.
 
-Anche Il supporto alla banda larga via dispositivo mobile Ë maturato: Ë infatti molto pi˘ facile da
-configurare, ed Ë stato introdotto il supporto a ulteriori dispositivi USB e smartphone.
-Adesso AROS puÚ montare volumi Samba (il protocollo utilizzato da Linux per utilizzare share di rete 
-Windows), anche se al momento le funzionalit‡ sono limitate a vecchie versioni di Windows,
+Anche Il supporto alla banda larga via dispositivo mobile √® maturato: √® infatti molto pi√π facile da
+configurare, ed √® stato introdotto il supporto a ulteriori dispositivi USB e smartphone.
+Adesso AROS pu√≤ montare volumi Samba (il protocollo utilizzato da Linux per utilizzare share di rete 
+Windows), anche se al momento le funzionalit√† sono limitate a vecchie versioni di Windows,
 a Linux e dispositivi NAS autonomi.
 
 Altri miglioramenti
@@ -50,35 +50,35 @@ Altri miglioramenti
 
 E' stato introdotto un primo supporto alle stampanti in AROS. I componenti di questo nuovo framework
 includono uno strumento di configurazione da interfaccia grafica, un driver Postscript e molte utility 
-tradizionali gi‡ presenti su AmigaOS come PrintFiles e GraphicDump. L'output puÚ essere rediretto su 
+tradizionali gi√† presenti su AmigaOS come PrintFiles e GraphicDump. L'output pu√≤ essere rediretto su 
 USB, porta seriale o parallela oppure su file.
 
 Il nostro driver per Intel GMA ha guadagnato il supporto 3D per alcune revisioni di tale chipset.
-Anche se l'hardware GMA Ë piuttosto limitato circa il 3D rispetto ad altre proposte di nVidia e ATI, molti 
-vecchi giochi (molti dei quali recentemente convertiti su AROS) ne guadagnano. In questo anno Ë stato 
+Anche se l'hardware GMA √® piuttosto limitato circa il 3D rispetto ad altre proposte di nVidia e ATI, molti 
+vecchi giochi (molti dei quali recentemente convertiti su AROS) ne guadagnano. In questo anno √® stato 
 anche introdotto il supporto OpenGL per la grafica 3D per AROS Linux-hosted, con l'aggiornamento del 
 driver nVidia.
 
-La scelta dei driver audio si Ë espansa, con il supporto al chipset ES137x e CMI8738. Il primo Ë importante
-poichÈ fornisce il supporto audio per AROS quando eseguito in una macchina virtuale VMWare.
-Per il nostro driver HDAudio, infine, Ë stata migliorata la compatibilit‡ sia nelle modalit‡ riproduzione 
+La scelta dei driver audio si √® espansa, con il supporto al chipset ES137x e CMI8738. Il primo √® importante
+poich√© fornisce il supporto audio per AROS quando eseguito in una macchina virtuale VMWare.
+Per il nostro driver HDAudio, infine, √® stata migliorata la compatibilit√† sia nelle modalit√† riproduzione 
 che registrazione.
 
 Altri aspetti che hanno subito dei miglioramenti riguardano l'accesso ai dischi rigidi da parte di AROS. 
 Abbiamo un driver AHCI che porta in dote il supporto ai dischi SATA, presenti su molte moderne 
-macchine. In pi˘, le normali partizioni Windows possono essere lette usando una versione preliminare di 
-un driver NTFS; il supporto alle partizioni FAT Ë stato parimenti migliorato. La nuova versione del 
-software libero Frying Pan (per masterizzare CD) Ë adesso parte integrante dei pacchetti standard di 
+macchine. In pi√π, le normali partizioni Windows possono essere lette usando una versione preliminare di 
+un driver NTFS; il supporto alle partizioni FAT √® stato parimenti migliorato. La nuova versione del 
+software libero Frying Pan (per masterizzare CD) √® adesso parte integrante dei pacchetti standard di 
 AROS.
 
 Altri miglioramenti
 -------------------
 
-La novit‡ principale Ë stata l'introduzione di una nuova distribuzione di AROS compatibile con l'hardware
+La novit√† principale √® stata l'introduzione di una nuova distribuzione di AROS compatibile con l'hardware
 originale AMIGA (processori MC680x0); si tratta di `AROS Vision <http://www.natami-news.de/html/aros_vision.html>`__.
 Alla pari di AROS stesso, AROS Vision include una serie di applicazioni e di componenti di sistema di 
 terze parti  gratuiti e liberamente distribuibili.
 
 Un'altra nuova incarnazione di AROS si chiama `AEROS <http://www.aeros-os.org/>`__.
-L'obiettivo Ë quello di combinare le migliori funzionalit‡ di AROS e di Linux integrandole in modo 
+L'obiettivo √® quello di combinare le migliori funzionalit√† di AROS e di Linux integrandole in modo 
 trasparente in un unico ambiente. Al momento AEROS supporta le architetture x86 e ARM.

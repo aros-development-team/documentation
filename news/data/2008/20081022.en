@@ -25,7 +25,7 @@ can read something about his progresses `here`__. Michal Schulz
 has completed porting AROS to the SAM 440EP board and now he's
 porting AROS to the Efika PPC platform.
 
-Jo„o Ralha is helping us translating catalogs to Portuguese.
+Jo√£o Ralha is helping us translating catalogs to Portuguese.
 
 Krzysztof Smiechowicz has enabled GRUB2 in the nightly builds,
 changing the bootloader AROS used from the beginning. GRUB2 allows

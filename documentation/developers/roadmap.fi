@@ -3,117 +3,117 @@ AROS 1.0 roadmap
 ================
 
 :Authors:   Adam Chodorowski
-:Copyright: Copyright © 2003, The AROS Development Team
+:Copyright: Copyright ¬© 2003, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
 :Abstract:
-    T‰m‰ "tiekartta" (nk. roadmap) on tarkoitettu hamottamaan vaatimukset
-	joiden tulee t‰ytty‰ ennen kuin AROS 1.0 voidaan julkaista. Tarkoituksena
-	*ei ole* pakottaa kehitt‰ji‰ tyˆskentelem‰‰n m‰‰r‰ttyjen asioiden parissa
-	(eik‰ se ole mahdollistakaan Open Source projektissa) vaan t‰m‰ tulisi
-	n‰hd‰ suosituksena mihin kaikkeen tulisi pyrkimykset kohdistaa.
-	Toivottavasti t‰m‰ auttaa organisoimaan kehitystyˆt‰ ja saa meid‰t kaikki
+    T√§m√§ "tiekartta" (nk. roadmap) on tarkoitettu hamottamaan vaatimukset
+	joiden tulee t√§ytty√§ ennen kuin AROS 1.0 voidaan julkaista. Tarkoituksena
+	*ei ole* pakottaa kehitt√§ji√§ ty√∂skentelem√§√§n m√§√§r√§ttyjen asioiden parissa
+	(eik√§ se ole mahdollistakaan Open Source projektissa) vaan t√§m√§ tulisi
+	n√§hd√§ suosituksena mihin kaikkeen tulisi pyrkimykset kohdistaa.
+	Toivottavasti t√§m√§ auttaa organisoimaan kehitysty√∂t√§ ja saa meid√§t kaikki
 	toimimaan paremmin saman suuntaisesti.
 
 
 Porttaukset
 -----------
 
-Jotta AROS 1.0 voidaan julkaista tulee n‰iden vaatimusten t‰ytty‰ i386-pc:ll‰
+Jotta AROS 1.0 voidaan julkaista tulee n√§iden vaatimusten t√§ytty√§ i386-pc:ll√§
 ja i386-linux:illa (joihin viitataan alla nk. "pakollisina porttauksina").
 Muille alustoille tulevien versioiden ei katsota olevan oleellisia 1.0:lle
-jotta tyˆm‰‰r‰ saadaan pidetty‰ kurissa.
+jotta ty√∂m√§√§r√§ saadaan pidetty√§ kurissa.
 
 
 Vaatimukset
 -----------
 
-1. AmigaOS 3.1 API yhteensopivuus, lukuunottamatta osia joita ei pidet‰
-   siirrett‰viss‰ olevina tai jotka ovat vanhentuneita ja turhaa vaivan n‰kˆ‰.
+1. AmigaOS 3.1 API yhteensopivuus, lukuunottamatta osia joita ei pidet√§
+   siirrett√§viss√§ olevina tai jotka ovat vanhentuneita ja turhaa vaivan n√§k√∂√§.
 
-   Jotta jokin merkitt‰isiin vanhentuneeksi vaikka sen toteutus olisi
-   mahdollista siirrett‰v‰ll‰ tavalla tulisi syiden olla hyv‰t; esimerkiksi
-   jos ominaisuutta k‰ytet‰‰n eritt‰in harvoin miss‰‰n ja sen toteutukseen
-   vaaditaan paljon tyˆt‰.
+   Jotta jokin merkitt√§isiin vanhentuneeksi vaikka sen toteutus olisi
+   mahdollista siirrett√§v√§ll√§ tavalla tulisi syiden olla hyv√§t; esimerkiksi
+   jos ominaisuutta k√§ytet√§√§n eritt√§in harvoin miss√§√§n ja sen toteutukseen
+   vaaditaan paljon ty√∂t√§.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
 2. Osittainen AmigaOS 3.5 ja 3.9 yhteensopivuus. Valitsemme osat joiden koemme
-   olevan k‰yttˆkelpoisia ja joiden olemassaolo on kannattavaa. Loput
-   hyl‰t‰‰n.
+   olevan k√§ytt√∂kelpoisia ja joiden olemassaolo on kannattavaa. Loput
+   hyl√§t√§√§n.
 
-   Esimerkiksi: n‰ytt‰‰ *eritt‰in* ep‰todenn‰kˆiselt‰ ett‰ tahdomme ReAction
-   yhteensopivuutta sill‰ olemme jo p‰‰tyneet standardisoimaan Zunen GUI
-   tyˆkalupakkina (eik‰ ReAction API:n toteutus olisi mik‰‰n helppo
-   operaatio). Tottakai t‰m‰ tullaan k‰ym‰‰n keskustelemalla l‰pi ennen kuin
-   yksityiskohtaisesta listasta p‰‰tet‰‰n.
+   Esimerkiksi: n√§ytt√§√§ *eritt√§in* ep√§todenn√§k√∂iselt√§ ett√§ tahdomme ReAction
+   yhteensopivuutta sill√§ olemme jo p√§√§tyneet standardisoimaan Zunen GUI
+   ty√∂kalupakkina (eik√§ ReAction API:n toteutus olisi mik√§√§n helppo
+   operaatio). Tottakai t√§m√§ tullaan k√§ym√§√§n keskustelemalla l√§pi ennen kuin
+   yksityiskohtaisesta listasta p√§√§tet√§√§n.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-3. T‰ydellinen GUI tyˆkalusarja. T‰m‰ tarkoittaa sit‰ ett‰ Zunella on oltava
-   t‰ydellinen MUI API yhteensopivuus ja viimeistelty preferences ohjelma.
+3. T√§ydellinen GUI ty√∂kalusarja. T√§m√§ tarkoittaa sit√§ ett√§ Zunella on oltava
+   t√§ydellinen MUI API yhteensopivuus ja viimeistelty preferences ohjelma.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
 4. Vastaavat standardit ohjelmat jotka tulevat AmigaOS 3.1:n mukana.
 
-   T‰m‰ *ei* tarkoita sit‰ ett‰ meill‰ tulisi olla juuri samat ohjelmat jotka
-   toimivat t‰sm‰lleen samoin kuin AmigaOS:issa, mutta saatavilla olevan
+   T√§m√§ *ei* tarkoita sit√§ ett√§ meill√§ tulisi olla juuri samat ohjelmat jotka
+   toimivat t√§sm√§lleen samoin kuin AmigaOS:issa, mutta saatavilla olevan
    toiminnallisuuden tulisi olla saman veroisen.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-5. ƒ‰nituki, tarkoittaen sek‰ API yhteensopivuutta ett‰ perusohjelmistoa.
+5. √Ñ√§nituki, tarkoittaen sek√§ API yhteensopivuutta ett√§ perusohjelmistoa.
    Jokaiselle pakolliselle porttaukselle tulisi olla ainakin yksi ajuri.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-6. Verkkotuki. T‰m‰ sis‰lt‰‰ niin TCP/IP-stackin kuin sellaiset perusohjelmat
-   kuten email ja SSH, sek‰ *yksinkertaisen* web-selaimen. Jokaiselle
+6. Verkkotuki. T√§m√§ sis√§lt√§√§ niin TCP/IP-stackin kuin sellaiset perusohjelmat
+   kuten email ja SSH, sek√§ *yksinkertaisen* web-selaimen. Jokaiselle
    pakolliselle porttaukselle tulisi olla ainakin yksi NIC ajuri.
 
-   Web-selaimen vaatimusten ei tulisi olla korkeat, mutta sill‰ pit‰isi p‰‰st‰
-   surffaamaan netiss‰ jollain tavoin (vaikka se olisi puhtaasti
+   Web-selaimen vaatimusten ei tulisi olla korkeat, mutta sill√§ pit√§isi p√§√§st√§
+   surffaamaan netiss√§ jollain tavoin (vaikka se olisi puhtaasti
    tekstipohjainen).
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-7. Itsen‰inen kehitysymp‰ristˆ ja SDK kehitt‰jille. Tarkemmin sanoen t‰m‰
-   sis‰lt‰‰ kaiken softan mit‰ tarvitaan AROS:in k‰‰nt‰miseen, kuten GCC, GNU
-   binutils, GNU make ja sen sellaiset. AROS t‰ytyy kyet‰ k‰‰nt‰m‰‰n AROS:in
+7. Itsen√§inen kehitysymp√§rist√∂ ja SDK kehitt√§jille. Tarkemmin sanoen t√§m√§
+   sis√§lt√§√§ kaiken softan mit√§ tarvitaan AROS:in k√§√§nt√§miseen, kuten GCC, GNU
+   binutils, GNU make ja sen sellaiset. AROS t√§ytyy kyet√§ k√§√§nt√§m√§√§n AROS:in
    alaisuudessa.
 
-   ABI:n tuetuille arkkitehtuureille (vain i386 t‰ll‰ hetkell‰) tulee olla
+   ABI:n tuetuille arkkitehtuureille (vain i386 t√§ll√§ hetkell√§) tulee olla
    viimeistellyn ennen 1.0:aa. Sitten kun 1.0 julkaistaan, ABI:n tulisi olla
-   vakaa huomattavan pitk‰‰n.
+   vakaa huomattavan pitk√§√§n.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-8. Kattava dokumentaatio kehitt‰jille. T‰m‰ sis‰lt‰‰ t‰ydelliset
+8. Kattava dokumentaatio kehitt√§jille. T√§m√§ sis√§lt√§√§ t√§ydelliset
    referenssimanuaalit kirjastoille, laitteille, luokille ja kehitys
-   tyˆkalulle, sek‰ oppaat ja opetusmateriaalin esittelem‰‰n j‰rjestelm‰n
-   sisukset ja antamaan yleiskatsauksen. Siirtym‰/porttaus oppaan tulisi olla
-   myˆskin saatavilla.
+   ty√∂kalulle, sek√§ oppaat ja opetusmateriaalin esittelem√§√§n j√§rjestelm√§n
+   sisukset ja antamaan yleiskatsauksen. Siirtym√§/porttaus oppaan tulisi olla
+   my√∂skin saatavilla.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
 
-9. Kattava dokumentaatio k‰ytt‰jille. T‰m‰ sis‰lt‰‰ t‰ydellisen
-   komentoreferenssin, k‰ytˆn opetus materiaalin, sek‰ asennus-, asetus- ja
+9. Kattava dokumentaatio k√§ytt√§jille. T√§m√§ sis√§lt√§√§ t√§ydellisen
+   komentoreferenssin, k√§yt√∂n opetus materiaalin, sek√§ asennus-, asetus- ja
    muut sellaiset oppaat.
 
-   Yksityiskohdista lis‰‰ myˆhemmin ...
+   Yksityiskohdista lis√§√§ my√∂hemmin ...
     
-10.	Olennainen osa testauksesta ja vikojen mets‰styksest‰ valmiina. 1.0
-	julkaisun tulisi olla p‰‰asiallisesti vikavapaan ja *eritt‰in* vakaan.
-	Meid‰n ei tulisi p‰‰ty‰ sellaiseen fiaskoon kuin mit‰ osa Open Source
-	projekteista on k‰rsinyt ".0" julkaisuissaan.
+10.	Olennainen osa testauksesta ja vikojen mets√§styksest√§ valmiina. 1.0
+	julkaisun tulisi olla p√§√§asiallisesti vikavapaan ja *eritt√§in* vakaan.
+	Meid√§n ei tulisi p√§√§ty√§ sellaiseen fiaskoon kuin mit√§ osa Open Source
+	projekteista on k√§rsinyt ".0" julkaisuissaan.
 	
-	T‰m‰ luultavasti tarkoittaa laajaa ominaisuuksien j‰‰dytt‰mist‰, jota
-	seuraa koodin j‰‰dytt‰minen ja lukuisia v‰lill‰ olevia virstanpylv‰it‰
-	k‰ytt‰j‰ palautteelle ja testaukselle. Ominaisuuksien toteutus pyyntˆj‰ ei
-	lueta vioiksi ellei se ole jotain joka v‰ltt‰m‰tt‰ tarvitaan (mutta jota ei
-	viel‰ ole). Esimerkiksi "tarvitsemme elokuvien n‰ytt‰j‰n" ei kelpaa, mutta
-	"tekstieditorissa tulisi olla 'save' valikossa" kyll‰kin.
+	T√§m√§ luultavasti tarkoittaa laajaa ominaisuuksien j√§√§dytt√§mist√§, jota
+	seuraa koodin j√§√§dytt√§minen ja lukuisia v√§lill√§ olevia virstanpylv√§it√§
+	k√§ytt√§j√§ palautteelle ja testaukselle. Ominaisuuksien toteutus pyynt√∂j√§ ei
+	lueta vioiksi ellei se ole jotain joka v√§ltt√§m√§tt√§ tarvitaan (mutta jota ei
+	viel√§ ole). Esimerkiksi "tarvitsemme elokuvien n√§ytt√§j√§n" ei kelpaa, mutta
+	"tekstieditorissa tulisi olla 'save' valikossa" kyll√§kin.
 	
-	Yksityiskohdista lis‰‰ myˆhemmin ...
+	Yksityiskohdista lis√§√§ my√∂hemmin ...

@@ -23,7 +23,7 @@ def calculateCategoryScore( item ):
 
 def formatRowCategoryStatus(array, count, total, color):
     if count != 0:
-        array.append( TD( bgcolor = color, width = `int ( round( count * 100.0 / total, 0 ) )` + '%' ) )
+        array.append( TD( bgcolor = color, width = repr(int ( round( count * 100.0 / total, 0 ) )) + '%' ) )
 
 def formatRowCategory( item, extension ):
 
@@ -315,7 +315,7 @@ def format( root, directory, template, lang, extension, parent = None ):
             'CONTENT' : contentstr
         }
 
-    output = file( os.path.join( directory, root.category + extension ), 'w' )
+    output = open( os.path.join( directory, root.category + extension ), 'w' )
     output.write( template % strings )
     output.close()
 

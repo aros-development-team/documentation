@@ -2,12 +2,12 @@ Auspiciantes
 ============
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Â© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
-Las siguientes compañías, organizaciones e individuos han donado recursos:
+Las siguientes compaÃ±Ã­as, organizaciones e individuos han donado recursos:
 
 + Trustec__
    
@@ -15,9 +15,9 @@ Las siguientes compañías, organizaciones e individuos han donado recursos:
      
      <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
 
-  La buena gente de Trustec donó espacio de disco y ancho de banda para el 
+  La buena gente de Trustec donÃ³ espacio de disco y ancho de banda para el 
   servidor web de AROS, el servidor CVS, el servidor FTP y varias listas de 
-  correo. Si necesitas desarrollo o cursos en Java en Alemania, ¡contáctalos!
+  correo. Si necesitas desarrollo o cursos en Java en Alemania, Â¡contÃ¡ctalos!
 
 + Genesi__
 
@@ -26,7 +26,7 @@ Las siguientes compañías, organizaciones e individuos han donado recursos:
      <a href="http://www.pegasosppc.com/"><img border="0" src="/images/genesi.gif"></a>
 
   Genesi ha donado generosamente una placa madre Pegasos, en un esfuerzo para 
-  llevar AROS a esa plataforma de hardware. ¡Gracias!
+  llevar AROS a esa plataforma de hardware. Â¡Gracias!
 
 + SourceForge__
 
@@ -57,7 +57,7 @@ Las siguientes organizaciones e individuos han auspiciado el trabajo de desarrol
 + Rune Jensen
 + Joshua Dolan
 + Matthew Parsons
-+ Jean-Pierre Rivière
++ Jean-Pierre RiviÃ¨re
 
 __ http://www.trustsec.de/
 __ http://www.pegasosppc.com/

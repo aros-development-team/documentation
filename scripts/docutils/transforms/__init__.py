@@ -1,7 +1,5 @@
-# Authors: David Goodger, Ueli Schlaepfer
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: __init__.py 8358 2019-08-26 16:45:09Z milde $
+# Authors: David Goodger <goodger@python.org>; Ueli Schlaepfer
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -19,10 +17,8 @@ to Docutils components. Tree transforms serve a variety of purposes:
   transforms may be used to construct (for example) indexes and tables
   of contents.
 
-Each transform is an optional step that a Docutils Reader may choose to
-perform on the parsed document, depending on the input context. A Docutils
-Reader may also perform Reader-specific transforms before or after performing
-these standard transforms.
+Each transform is an optional step that a Docutils component may
+choose to perform on the parsed document.
 """
 
 __docformat__ = 'reStructuredText'
@@ -34,7 +30,7 @@ from docutils import languages, ApplicationError, TransformSpec
 class TransformError(ApplicationError): pass
 
 
-class Transform:
+class Transform(object):
 
     """
     Docutils transform component abstract base class.
@@ -57,7 +53,7 @@ class Transform:
         value is `None`)."""
 
         self.language = languages.get_language(
-            document.settings.language_code)
+            document.settings.language_code, document.reporter)
         """Language module local to this document."""
 
     def apply(self, **kwargs):
@@ -74,8 +70,9 @@ class Transformer(TransformSpec):
 
     def __init__(self, document):
         self.transforms = []
-        """List of transforms to apply.  Each item is a 3-tuple:
-        ``(priority string, transform class, pending node or None)``."""
+        """List of transforms to apply.  Each item is a 4-tuple:
+        ``(priority string, transform class, pending node or None, kwargs)``.
+        """
 
         self.unknown_reference_resolvers = []
         """List of hook functions which assist in resolving references"""
@@ -156,9 +153,8 @@ class Transformer(TransformSpec):
         unknown_reference_resolvers = []
         for i in components:
             unknown_reference_resolvers.extend(i.unknown_reference_resolvers)
-        decorated_list = [(f.priority, f) for f in unknown_reference_resolvers]
-        decorated_list.sort()
-        self.unknown_reference_resolvers.extend([f[1] for f in decorated_list])
+        decorated_list = sorted((f.priority, f) for f in unknown_reference_resolvers)
+        self.unknown_reference_resolvers.extend(f[1] for f in decorated_list)
 
     def apply_transforms(self):
         """Apply all of the stored transforms, in priority order."""

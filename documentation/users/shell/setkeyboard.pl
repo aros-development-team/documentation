@@ -9,7 +9,7 @@
 SetKeyboard
 ===========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	KEYMAP/A
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Ustawia uk³ad klawiatury dla aktualnego CLI.
+	Ustawia ukÅ‚ad klawiatury dla aktualnego CLI.
 
 
 Parametry
@@ -38,24 +38,24 @@ Parametry
 ::
 
 
-	KEYMAP	--	uk³ad klawiatury dla aktualnego CLI
+	KEYMAP	--	ukÅ‚ad klawiatury dla aktualnego CLI
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
 	SetKeyboard pl
 
-	Ustawia aktualn± klawiaturê na polsk±.
+	Ustawia aktualnÄ… klawiaturÄ™ na polskÄ….
 
 
 Opis
 ~~~~
 ::
 
-	Aby uczyniæ konkretny uk. klawiatury domy¶lnym dla wszystkich konsol,
-	u¿yj preferencji input do okre¶lenia tego.
+	Aby uczyniÄ‡ konkretny uk. klawiatury domyÅ›lnym dla wszystkich konsol,
+	uÅ¼yj preferencji input do okreÅ›lenia tego.
 
  

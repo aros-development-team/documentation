@@ -9,7 +9,7 @@
 AddBuffers
 ==========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	DRIVE/A, BUFFERS/N
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,13 +29,13 @@ Funkcja
 ~~~~~~~
 ::
 
-	Dodaje bufory do listy dostêpnych buforów dla okre¶lonego
-	dysku. Dodawanie buforów przy¶piesza dostêp do dysku, ale
-	zwiêksza ilo¶æ zajêtej pamiêci systemowej (512 bajtów na
-	bufor). Okre¶laj±c negatywn± liczbê buforów zmniejsza siê
-	liczbê buforów dysku.
-		Je¶li podany jest tylko argument DRIVE, to zostanie
-	podana liczba buforów dysku, bez zmiany jego warto¶ci.
+	Dodaje bufory do listy dostÄ™pnych buforÃ³w dla okreÅ›lonego
+	dysku. Dodawanie buforÃ³w przyÅ›piesza dostÄ™p do dysku, ale
+	zwiÄ™ksza iloÅ›Ä‡ zajÄ™tej pamiÄ™ci systemowej (512 bajtÃ³w na
+	bufor). OkreÅ›lajÄ…c negatywnÄ… liczbÄ™ buforÃ³w zmniejsza siÄ™
+	liczbÄ™ buforÃ³w dysku.
+		JeÅ›li podany jest tylko argument DRIVE, to zostanie
+	podana liczba buforÃ³w dysku, bez zmiany jego wartoÅ›ci.
 
 
 
@@ -44,7 +44,7 @@ Parametry
 ::
 
 
-	DRIVE	--	parametr okre¶laj±cy nazwê dysku
-	BUFFERS	--	liczba dodawanych buforów (lub odejmowanych
-			w przypadku ujemnej warto¶ci) dysku
+	DRIVE	--	parametr okreÅ›lajÄ…cy nazwÄ™ dysku
+	BUFFERS	--	liczba dodawanych buforÃ³w (lub odejmowanych
+			w przypadku ujemnej wartoÅ›ci) dysku
 

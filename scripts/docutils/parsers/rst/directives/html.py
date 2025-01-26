@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: html.py 8603 2021-01-08 15:24:32Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -12,35 +10,9 @@ __docformat__ = 'reStructuredText'
 
 import sys
 from docutils import nodes, utils
+from docutils.parsers.rst import Directive
 from docutils.parsers.rst import states
 from docutils.transforms import components
-
-
-def meta(name, arguments, options, content, lineno,
-         content_offset, block_text, state, state_machine):
-    node = nodes.Element()
-    if content:
-        new_line_offset, blank_finish = state.nested_list_parse(
-              content, content_offset, node, initial_state='MetaBody',
-              blank_finish=1, state_machine_kwargs=metaSMkwargs)
-        if (new_line_offset - content_offset) != len(content):
-            # incomplete parse of block?
-            error = state_machine.reporter.error(
-                'Invalid meta directive.',
-                nodes.literal_block(block_text, block_text), line=lineno)
-            node += error
-    else:
-        error = state_machine.reporter.error(
-            'Empty meta directive.',
-            nodes.literal_block(block_text, block_text), line=lineno)
-        node += error
-    return node.children
-
-meta.content = 1
-
-def imagemap(name, arguments, options, content, lineno,
-             content_offset, block_text, state, state_machine):
-    return []
 
 
 class MetaBody(states.SpecializedBody):
@@ -57,20 +29,21 @@ class MetaBody(states.SpecializedBody):
 
     def parsemeta(self, match):
         name = self.parse_field_marker(match)
+        name = utils.unescape(utils.escape2null(name))
         indented, indent, line_offset, blank_finish = \
               self.state_machine.get_first_known_indented(match.end())
         node = self.meta()
         pending = nodes.pending(components.Filter,
                                 {'component': 'writer',
-                                 'format': 'html',
+                                 'format': 'html,latex,odt',
                                  'nodes': [node]})
-        node['content'] = ' '.join(indented)
+        node['content'] = utils.unescape(utils.escape2null(
+                                            ' '.join(indented)))
         if not indented:
             line = self.state_machine.line
             msg = self.reporter.info(
                   'No content for meta tag "%s".' % name,
-                  nodes.literal_block(line, line),
-                  line=self.state_machine.abs_line_number())
+                  nodes.literal_block(line, line))
             return msg, blank_finish
         tokens = name.split()
         try:
@@ -82,15 +55,34 @@ class MetaBody(states.SpecializedBody):
             try:
                 attname, val = utils.extract_name_value(token)[0]
                 node[attname.lower()] = val
-            except utils.NameValueError, detail:
+            except utils.NameValueError as detail:
                 line = self.state_machine.line
                 msg = self.reporter.error(
                       'Error parsing meta tag attribute "%s": %s.'
-                      % (token, detail), nodes.literal_block(line, line),
-                      line=self.state_machine.abs_line_number())
+                      % (token, detail), nodes.literal_block(line, line))
                 return msg, blank_finish
         self.document.note_pending(pending)
         return pending, blank_finish
 
 
-metaSMkwargs = {'state_classes': (MetaBody,)}
+class Meta(Directive):
+
+    has_content = True
+
+    SMkwargs = {'state_classes': (MetaBody,)}
+
+    def run(self):
+        self.assert_has_content()
+        node = nodes.Element()
+        new_line_offset, blank_finish = self.state.nested_list_parse(
+            self.content, self.content_offset, node,
+            initial_state='MetaBody', blank_finish=True,
+            state_machine_kwargs=self.SMkwargs)
+        if (new_line_offset - self.content_offset) != len(self.content):
+            # incomplete parse of block?
+            error = self.state_machine.reporter.error(
+                'Invalid meta directive.',
+                nodes.literal_block(self.block_text, self.block_text),
+                line=self.lineno)
+            node += error
+        return node.children

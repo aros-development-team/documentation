@@ -3,7 +3,7 @@ Contact Informatie
 ==================
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright � 1995-2009, The AROS Development Team
+:Copyright: Copyright © 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -78,7 +78,7 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 Forums
 ======
 
-`AROSWorld`__ is de offici�le community portal voor AROS. Hier kunt u
+`AROS-Exec`__ is de officiële community portal voor AROS. Hier kunt u
 het laatste nieuws vinden rond AROS, online discussie forums, afbeelding
 galerijen en veel meer. Het is de perfecte ontmoetingsplaats voor AROS
 gebruiker over de hele wereld.

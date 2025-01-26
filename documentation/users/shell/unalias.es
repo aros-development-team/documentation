@@ -20,7 +20,7 @@ Synopsis
      NAME
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,14 +28,14 @@ Ubicación
      Workbench:c
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
      Quita un alias del shell definido anteriormente.
 
-     Si no se especifican parámetros, la lista actual de aliases se
+     Si no se especifican parÃ¡metros, la lista actual de aliases se
      muestra.
 
 
@@ -52,7 +52,7 @@ Resultado
 ::
 
 
-     Los códigos de error DOS normales.
+     Los cÃ³digos de error DOS normales.
 
 
 Ejemplo
@@ -63,7 +63,7 @@ Ejemplo
      Unalias DF
 
 
-Vea también
+Vea tambiÃ©n
 ~~~~~~~~~~~
 ::
 

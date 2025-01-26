@@ -20,7 +20,7 @@ Synopsis
      DISKS/S, VOLS=VOLUMES/S, GOODONLY/S, BLOCKS/S, DEVICES/M
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,15 +28,15 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
- Muestra información sobre los volúmenes y los dispositivos del sistema
- de archivos. Cuando no tiene argumentos, se presenta la información
- sobre todos los dispositivos y volúmenes hallados en el sistema. Si se
- quiere solamente la información para algunos dispositivos específicos,
+ Muestra informaciÃ³n sobre los volÃºmenes y los dispositivos del sistema
+ de archivos. Cuando no tiene argumentos, se presenta la informaciÃ³n
+ sobre todos los dispositivos y volÃºmenes hallados en el sistema. Si se
+ quiere solamente la informaciÃ³n para algunos dispositivos especÃ­ficos,
  sus nombres deben darse como argumentos.
 
 
@@ -45,14 +45,14 @@ Entradas
 ::
 
 
- DISKS     --  muestra la información sobre los dispositivos del sistema
+ DISKS     --  muestra la informaciÃ³n sobre los dispositivos del sistema
                de archivos.
- VOLS      --  muestra la información sobre los volúmenes.
- GOODONLY  --  no muestra información sobre los malo dispositivos o
-               volúmenes.
- BLOCKS    --  muestra información adicional sobre el tamaño del bloque
+ VOLS      --  muestra la informaciÃ³n sobre los volÃºmenes.
+ GOODONLY  --  no muestra informaciÃ³n sobre los malo dispositivos o
+               volÃºmenes.
+ BLOCKS    --  muestra informaciÃ³n adicional sobre el tamaÃ±o del bloque
                y la cantidad de bloques usados.
- DEVICES   --  los nombres de los dispositivos sobre los que se informará.
+ DEVICES   --  los nombres de los dispositivos sobre los que se informarÃ¡.
 
 
 Ejemplo

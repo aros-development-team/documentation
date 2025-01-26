@@ -12,7 +12,7 @@ EndIf
 
  EndIf 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -20,17 +20,17 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Finaliza un bloque If (SI). Si la condición del comando If es falsa,
-     la ejecución saltará al correspondiente comando EndIf, en caso
+     Finaliza un bloque If (SI). Si la condiciÃ³n del comando If es falsa,
+     la ejecuciÃ³n saltarÃ¡ al correspondiente comando EndIf, en caso
      que no haya un comando Else (SINO) presente.
 
 
-También mira
+TambiÃ©n mira
 ~~~~~~~~~~~~
 ::
 

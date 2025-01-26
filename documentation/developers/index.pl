@@ -1,12 +1,12 @@
 ================
-Dla programistów
+Dla programistÃ³w
 ================
 
-+ `Jak do³±czyæ`__
-+ `Git - dostêp i u¿ywanie`__
-+ `Jak kompilowaæ`__
-+ `Podrêcznik programowania`__
-+ `Zune - podrêcznik programowania`__
++ `Jak doÅ‚Ä…czyÄ‡`__
++ `Git - dostÄ™p i uÅ¼ywanie`__
++ `Jak kompilowaÄ‡`__
++ `PodrÄ™cznik programowania`__
++ `Zune - podrÄ™cznik programowania`__
 + `System development manual`__
 + `PCI subsystem manual`__
 + `Debugging manual`__

@@ -63,7 +63,7 @@ Fishy_fis. Vergeet zijn conversie van DOSBox naar AROS niet!
 
 Simone "samo" Bevilacqua heeft zijn Amiga spel BOH naar AROS
 geconverteerd, en het gedraagt zich voorbeeldig! `BOH`__ is het eerste
-commerciële spel dat beschikbaar is voor de nieuwe Amiga-platformen.
+commerciÃ«le spel dat beschikbaar is voor de nieuwe Amiga-platformen.
 
 Krzysztof "Deadwood" Smiechowicz heeft versie 7.5 van MESA naar AROS
 geconverteerd en is 3D-versnelling voor AROS aan het toevoegen, met zijn

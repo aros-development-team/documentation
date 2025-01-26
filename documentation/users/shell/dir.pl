@@ -9,7 +9,7 @@
 Dir
 ===
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	DIR,OPT/K,ALL/S,DIRS/S,FILES/S,INTER/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,10 +29,10 @@ Funkcja
 ~~~~~~~
 ::
 
-	DIR wy¶wietla obiekty w aktualnym, b±d¼ okre¶lonym katalogu. Katalogi
-	s± wy¶wietlane na pocz±tku, nastêpnie w koljeno¶ci alfabetycznej, pliki
-	s± wy¶wietlane w dwóch kolumnach. Wci¶nij CTRL-C aby anulowaæ 
-	odczytywanie katalogów.
+	DIR wyÅ›wietla obiekty w aktualnym, bÄ…dÅº okreÅ›lonym katalogu. Katalogi
+	sÄ… wyÅ›wietlane na poczÄ…tku, nastÄ™pnie w koljenoÅ›ci alfabetycznej, pliki
+	sÄ… wyÅ›wietlane w dwÃ³ch kolumnach. WciÅ›nij CTRL-C aby anulowaÄ‡ 
+	odczytywanie katalogÃ³w.
 
 
 Parametry
@@ -40,21 +40,21 @@ Parametry
 ::
 
 
-	ALL    --  Wy¶wietla rekursywnie obiekty.
-	DIRS   --  Wy¶wietla tylko katalogi.
-	FILES  --  Wy¶wietla tylko pliki.
+	ALL    --  WyÅ›wietla rekursywnie obiekty.
+	DIRS   --  WyÅ›wietla tylko katalogi.
+	FILES  --  WyÅ›wietla tylko pliki.
 	INTER  --  Tryb interaktywny.
 
-	Tryb interaktywny zatrzymuje siê przy ka¿dej nazwie z zapytaniem,
-	w którym mo¿esz wpisaæ komendy, oto one:
+	Tryb interaktywny zatrzymuje siÄ™ przy kaÅ¼dej nazwie z zapytaniem,
+	w ktÃ³rym moÅ¼esz wpisaÄ‡ komendy, oto one:
 
 
-	Return      --  Przejd¼ dalej, pomija obiekt i przechodzi do nastêpnego.
-	E/ENTER     --  Przejd¼ do katalogu.
-	DEL/DELETE  --  Usuñ plik lub pusty katalog.
-	C/COM       --  Niech obiekt bêdzie argumentem dla programu (który jest 
-			podany po C lub COM, albo podany osobno pó¼niej).
-	Q/QUIT      --  Zakoñcz tryb interaktywny.
-	B/BACK      --  Wróæ jeden poziom katalogu wy¿ej.
+	Return      --  PrzejdÅº dalej, pomija obiekt i przechodzi do nastÄ™pnego.
+	E/ENTER     --  PrzejdÅº do katalogu.
+	DEL/DELETE  --  UsuÅ„ plik lub pusty katalog.
+	C/COM       --  Niech obiekt bÄ™dzie argumentem dla programu (ktÃ³ry jest 
+			podany po C lub COM, albo podany osobno pÃ³Åºniej).
+	Q/QUIT      --  ZakoÅ„cz tryb interaktywny.
+	B/BACK      --  WrÃ³Ä‡ jeden poziom katalogu wyÅ¼ej.
 
 

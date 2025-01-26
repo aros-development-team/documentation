@@ -11,20 +11,20 @@ Wanderer cambia pelle!
 Darius Brewka e Georg Steger hanno fatto compiere ad AROS un 
 deciso balzo in avanti sul fronte della personalizzazione, grazie 
 a un nuovo sistema di decorazioni che consente di usare temi 
-grafici diversi. Allo scopo di mostrare la potenza e la flessibilit‡ 
+grafici diversi. Allo scopo di mostrare la potenza e la flessibilit√† 
 del nuovo decor system, le nightly build di AROS montano come tema 
 predefinito ICE di Damir Sijakovic's. Ma dato che un'immagine vale 
-pi˘ di mille parole, guardate un po' questa foto (la versione 
-completa Ë disponibile `qui`__):
+pi√π di mille parole, guardate un po' questa foto (la versione 
+completa √® disponibile `qui`__):
 
 .. image:: /images/20070405.jpeg
    :alt: AROS decorated desktop
    :align: center
 
-Non Ë meravigliosa? In ogni caso, stiamo cercando di rendere AROS 
-molto pi˘ bello da vedere. Quindi qualsiasi tipo di contributo 
+Non √® meravigliosa? In ogni caso, stiamo cercando di rendere AROS 
+molto pi√π bello da vedere. Quindi qualsiasi tipo di contributo 
 artistico (dalle icone ai temi, passando per gli sfondi, i gadget 
-e tutto il resto) Ë davvero ben accetto. Per cortesia, fate 
+e tutto il resto) √® davvero ben accetto. Per cortesia, fate 
 riferimento a `questa discussione su Aros-Exec`__ per ulteriori 
 informazioni. 
 
@@ -35,26 +35,26 @@ Michal Schulz sta lavorando su un driver per tastiere USB
 compatibile con il suo stack. Ha realizzato una versione iniziale 
 che dovrebbe funzionare piuttosto bene (rileva correttamente 
 i tasti, ma i LED ancora non funzionano). Vi rammentiamo che, per 
-il momento, AROS Ë compatibile solo con sistemi dotati di 
+il momento, AROS √® compatibile solo con sistemi dotati di 
 controller USB di tipo UHCI.
 
 Il filesystem SFS fa ora parte ufficialmente delle build notturne. 
 Questo dovrebbe consentire agli utenti di montare e usare le 
-partizioni SFS con maggiore facilit‡ e sicurezza. Pavel Fedin 
+partizioni SFS con maggiore facilit√† e sicurezza. Pavel Fedin 
 ha aggiornato il comando format per gestire filesystem diversi. 
 Per formattare una partizione SFS, occorre prima generarla con 
 HDToolBox e poi formattarla con questo comando:
 
   FORMAT DRIVE=DH1: NAME=MyVolume
 
-Per cortesia si noti che AROS non puÚ ancora eseguire il boot da 
+Per cortesia si noti che AROS non pu√≤ ancora eseguire il boot da 
 una partizione SFS, per cui occorre sempre creare una piccola 
 partizione FFS in cui piazzare il kernel e i file di boot, 
-altrimenti GRUB non puÚ fare il suo lavoro.
+altrimenti GRUB non pu√≤ fare il suo lavoro.
 
 Pavel sta anche lavorando su un nuovo filesystem per CD chiamato 
 CDVDFS, in grado di supportare CD e DVD con estensioni joliet (i 
-nomi lunghi di Windows). Sar‡ inserito nelle nightly build non 
+nomi lunghi di Windows). Sar√† inserito nelle nightly build non 
 appena alcuni bug che ne impediscono il funzionamento saranno 
 corretti.
 
@@ -63,13 +63,13 @@ potete leggere una lista dei bug corretti. Matthias ha inoltre
 aggiunto ad AROS una nuova commodity chiamata DepthMenu, che 
 permette di scegliere quale finestra attivare semplicemente 
 facendo clic con il tasto destro del mouse sul gadget di 
-profondit‡ di qualsiasi finestra. 
+profondit√† di qualsiasi finestra. 
 
 Staf Verhaegen ha migliorato il supporto per gli scritp di 
 ARexx/Regina. Ora AROS ha un simpaticissimo comando RX che 
 permette di avviare da Wanderer i vostri script preferiti.
 
-Grazie a Bernd Roesch, ZUNE puÚ usare le immagini MUI4 (.mim). 
+Grazie a Bernd Roesch, ZUNE pu√≤ usare le immagini MUI4 (.mim). 
 Pavel Fedin ha corretto alcuni crash nella classe pendisplay, 
 quando non ci sono pen disponibili sullo schermo. Paolo Besser, 
 infine, ha aggiunto alcune icone che mancavano, rivedendone 

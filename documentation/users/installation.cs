@@ -1,5 +1,5 @@
 =======================
-AROS prùvodce instalací
+AROS prÅ¯vodce instalacÃ­
 =======================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey, Sergey Mineychev
@@ -8,25 +8,25 @@ AROS prùvodce instalací
 :Date:      $Date$
 :Status:    Needs to be updated for some AROS ports. Can be translated.
 :Abstract:
-    Tento manuál vás provede pøes nezbytné kroky pro nainstalování
-    rùznıch druhù AROS.
+    Tento manuÃ¡l vÃ¡s provede pÅ™es nezbytnÃ© kroky pro nainstalovÃ¡nÃ­
+    rÅ¯znÃ½ch druhÅ¯ AROS.
 
     .. Warning:: 
     
-        AROS je software alfa kvality. To znamená, ¾e je v souèasné dobì spí¹e
-        zábava k hraní a cool pro vyvíjení. Pokud jste sem pøi¹li, proto¾e
-        si myslíte, ¾e AROS je dokonèenı, kompletní a plnì pou¾itelnı operaèní
-        systém, budete nejspí¹ zklamáni. AROS takovı je¹tì není, 
-        ale pomalu se pohybujeme správnım smìrem.
+        AROS je software alfa kvality. To znamenÃ¡, Å¾e je v souÄasnÃ© dobÄ› spÃ­Å¡e
+        zÃ¡bava k hranÃ­ a cool pro vyvÃ­jenÃ­. Pokud jste sem pÅ™iÅ¡li, protoÅ¾e
+        si myslÃ­te, Å¾e AROS je dokonÄenÃ½, kompletnÃ­ a plnÄ› pouÅ¾itelnÃ½ operaÄnÃ­
+        systÃ©m, budete nejspÃ­Å¡ zklamÃ¡ni. AROS takovÃ½ jeÅ¡tÄ› nenÃ­, 
+        ale pomalu se pohybujeme sprÃ¡vnÃ½m smÄ›rem.
 
 
 .. Contents::
 
 
-Stahování
+StahovÃ¡nÃ­
 =========
 
-AROS je aktuálnì pod tvrdım vıvojem. The result is that you have to choose
+AROS je aktuÃ¡lnÄ› pod tvrdÃ½m vÃ½vojem. The result is that you have to choose
 between stability and features. Currently there are two types of binary packages
 available for download: snapshots and nightly builds. 
 
@@ -55,7 +55,7 @@ Instalace
 AROS/i386-linux a AROS/i386-freebsd
 -----------------------------------
 
-Po¾adavky
+PoÅ¾adavky
 """""""""
 
 To run AROS/i386-linux or AROS/i386-freebsd you will need the following:
@@ -117,7 +117,7 @@ After having extracted all files you can launch AROS like this::
 AROS/i386-pc
 ------------
 
-Po¾adavky
+PoÅ¾adavky
 """""""""
 
 You will need an average PC (i486 or Pentum-based) with *PS/2 mouse* and PS/2 or AT keyboard, 
@@ -212,7 +212,7 @@ Simply insert the boot floppy into the drive and reboot the computer. The boot
 is fully automatic, and if everything works you should see a nice screen after
 a while.
 
-Instalace na pevnı disk
+Instalace na pevnÃ½ disk
 """""""""""""""""""""""
 
 Well, note that you have been **WARNED** that HD installation is
@@ -394,7 +394,7 @@ That's it. Time for the pre-installation reboot.
           version of AROS. 
 
 
-Kopírování systému
+KopÃ­rovÃ¡nÃ­ systÃ©mu
 ^^^^^^^^^^^^^^^^^^
 
 After reboot, you may notice that you can see our AROS HD on the desktop
@@ -459,7 +459,7 @@ screen and *Reboot* checkbox. Leave this checked and click Proceed. No,
 that isn't all yet - wait till the last step remaining. Now our machine
 will reboot with the same settings as before, from Live CD.
 
-Instalace zavadìèe
+Instalace zavadÄ›Äe
 ^^^^^^^^^^^^^^^^^^
 
 Now we still see our AROS disk, and all files are there. Haven`t we
@@ -498,14 +498,14 @@ booting from CD in VM) and check it out. Hear the drum roll? ;)
 
 If something goes wrong, there can be some answers...
 
-Øe¹ení problémù
+Å˜eÅ¡enÃ­ problÃ©mÅ¯
 ^^^^^^^^^^^^^^^
 
 Installation process is the one of most frequently ones asked about on forums,
 mostly by newbees. You can check the FAQ if there an answer to your questions.
 Any additions ? ...
 
-Instalace AROS spolu s dal¹ími systémy
+Instalace AROS spolu s dalÅ¡Ã­mi systÃ©my
 """"""""""""""""""""""""""""""""""""""
 
 In the steps described before we had installed AROS as the *only* system on HD.
@@ -516,10 +516,10 @@ AROS a Windows
 
 Let`s consider the situation when you have only Windows(tm) XP installed and 
 want to put AROS to this HDD.
-Systémy Windows NT mohou bıt instalovány na oba souborové systémy FAT a NTFS. 
-Zatímco NTFS je systém bezpeènìj¹í a robustnìj¹í, GRUB jej nepodporuje (bohu¾el)
+SystÃ©my Windows NT mohou bÃ½t instalovÃ¡ny na oba souborovÃ© systÃ©my FAT a NTFS. 
+ZatÃ­mco NTFS je systÃ©m bezpeÄnÄ›jÅ¡Ã­ a robustnÄ›jÅ¡Ã­, GRUB jej nepodporuje (bohuÅ¾el)
 
-AROS a Linux (a ostatní OS, které pou¾ívají zavadìè GRUB)
+AROS a Linux (a ostatnÃ­ OS, kterÃ© pouÅ¾Ã­vajÃ­ zavadÄ›Ä GRUB)
 
 Lets consider the situation when you want to have 3 systems on your HDD -
 Windows, Linux and AROS.  
@@ -531,7 +531,7 @@ To be continued ...
 AROS/i386-PPC-hosted
 --------------------
 
-Po¾adavky
+PoÅ¾adavky
 """""""""
 
 To be written by someone.
@@ -543,7 +543,7 @@ This is not usual native/hosted flavour of AROS, but a thing that can be called
 a *backport*. Actually, it`s a set of libraries and binaries to enhance 
 the capabilities of original AmigaOS. AfA stands for AROS for Amigas. 
 
-Po¾adavky
+PoÅ¾adavky
 """""""""
 
 To be written by someone.

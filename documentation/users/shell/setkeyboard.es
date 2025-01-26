@@ -20,7 +20,7 @@ Synopsis
      KEYMAP/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~~
 ::
 
@@ -61,6 +61,6 @@ Notas
 
      Para hacer que cierto keymap sea el de todos los shells, use
      las preferencias de entrada del programa para especificar
-     su elección.
+     su elecciÃ³n.
 
 

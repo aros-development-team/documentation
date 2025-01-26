@@ -9,7 +9,7 @@
 RequestFile
 ===========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -19,7 +19,7 @@ Sk³adnia
 	DRAWERSONLY/S,NOICONS/S,PUBSCREEN/K,INITIALVOLUMES/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -31,27 +31,27 @@ Funkcja
 ~~~~~~~
 ::
 	
-	Tworzy okno zapytania o plik. Wybrane pliki zostan± wy¶wietlone i 
-	oddzielone spacjami. Je¶li ¿aden plik nie zosta³ wybrany, wtedy zostanie
-	zwrócony kod b³êdu 5 (WARN/Ostrze¿enie).
+	Tworzy okno zapytania o plik. Wybrane pliki zostanÄ… wyÅ›wietlone i 
+	oddzielone spacjami. JeÅ›li Å¼aden plik nie zostaÅ‚ wybrany, wtedy zostanie
+	zwrÃ³cony kod bÅ‚Ä™du 5 (WARN/OstrzeÅ¼enie).
  
 
 Parametry
 ~~~~~~~~~
 ::
 
-	DRAWER		--	pocz±tkowa zawarto¶æ pola katalogu
-	FILE		--	pocz±tkowa zawarto¶æ pola pliku
-	PATTERN		--	pocz±tkowa zawarto¶æ pola wzorca (np. #?.c)
-	TITLE		--	tytu³ okna
-	POSITIVE	--	ci±g tekstowy lewego przycisku
-	NEGATIVE	--	ci±g tekstowy prawego przycisku
-	ACCEPTPATTERN	--	wy¶wietlane pliki, które pasuj± do wzorca
-	REJECTPATTERN	--	pliki, które pasuj± do wzorca nie s± wy¶wietlane
+	DRAWER		--	poczÄ…tkowa zawartoÅ›Ä‡ pola katalogu
+	FILE		--	poczÄ…tkowa zawartoÅ›Ä‡ pola pliku
+	PATTERN		--	poczÄ…tkowa zawartoÅ›Ä‡ pola wzorca (np. #?.c)
+	TITLE		--	tytuÅ‚ okna
+	POSITIVE	--	ciÄ…g tekstowy lewego przycisku
+	NEGATIVE	--	ciÄ…g tekstowy prawego przycisku
+	ACCEPTPATTERN	--	wyÅ›wietlane pliki, ktÃ³re pasujÄ… do wzorca
+	REJECTPATTERN	--	pliki, ktÃ³re pasujÄ… do wzorca nie sÄ… wyÅ›wietlane
 	SAVEMODE	--	okno zapytanie zostaje uruchomione jako zapisu
-	MULTISELECT	--	wiêcej ni¿ jeden plik mo¿e byæ zaznaczony
-	DRAWERSONLY	--	tylko katalogi s± wy¶wietlane
-	NOICONS		--	ikony (#?.info) nie s± wy¶wietlane
+	MULTISELECT	--	wiÄ™cej niÅ¼ jeden plik moÅ¼e byÄ‡ zaznaczony
+	DRAWERSONLY	--	tylko katalogi sÄ… wyÅ›wietlane
+	NOICONS		--	ikony (#?.info) nie sÄ… wyÅ›wietlane
 	PUBSCREEN	--	okno zapytania otwierane jest na podanym ekranie
 				publicznym
 	INITIALVOLUMES	--	pokazuje woluminy
@@ -62,6 +62,6 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 

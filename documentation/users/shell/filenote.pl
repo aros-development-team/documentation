@@ -9,7 +9,7 @@
 Filenote
 ========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FILE/A,COMMENT,ALL/S,QUIET/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -31,8 +31,8 @@ Funkcja
 
 	Dodaje komentarz do obiektu.
 
-	Filenote obs³uguje rekurencyjne przeszukiwanie katalogów i dodaje 
-	komentarze do ka¿dego pliku/katalogu, a dziêki wzorcom mo¿na okre¶liæ
+	Filenote obsÅ‚uguje rekurencyjne przeszukiwanie katalogÃ³w i dodaje 
+	komentarze do kaÅ¼dego pliku/katalogu, a dziÄ™ki wzorcom moÅ¼na okreÅ›liÄ‡
 	pliki.
 
 
@@ -42,21 +42,21 @@ Parametry
 ::
 
 
-	FILE	-	Zawsze musi byæ podane. Mo¿e to byæ plik z pe³n± ¶cie¿k± 
-			albo mo¿e byæ wzorzec.
+	FILE	-	Zawsze musi byÄ‡ podane. MoÅ¼e to byÄ‡ plik z peÅ‚nÄ… Å›cieÅ¼kÄ… 
+			albo moÅ¼e byÄ‡ wzorzec.
 
-	COMMENT	-	Tekst ASCII, który mo¿e byæ dodany jako komentarz do 
+	COMMENT	-	Tekst ASCII, ktÃ³ry moÅ¼e byÄ‡ dodany jako komentarz do 
 			obiektu.
 			
-			Aby stworzyæ komentarz z zamkniêtymi cudzys³owami
-			nale¿y poprzedziæ cudzys³ów gwiazdk±.
+			Aby stworzyÄ‡ komentarz z zamkniÄ™tymi cudzysÅ‚owami
+			naleÅ¼y poprzedziÄ‡ cudzysÅ‚Ã³w gwiazdkÄ….
 
 			Np.
 			Filenote FILE=RAM:test.txt COMMENT=*"witaj*"
 
 	ALL     -	Przeszukiwanie rekurencyjne.
 
-	QUIET   -	Cisza, brak wyj¶cia.
+	QUIET   -	Cisza, brak wyjÅ›cia.
 
 
 Wynik
@@ -64,10 +64,10 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -75,21 +75,21 @@ Przyk³ad
 	Filenote ram: witaj all
 
 	
-	Przeszukuje ca³y katalog w RAM: i dodaje "witaj" jako komentarz do
-	ka¿dego obiektu.
+	Przeszukuje caÅ‚y katalog w RAM: i dodaje "witaj" jako komentarz do
+	kaÅ¼dego obiektu.
 
 
 Opis
 ~~~~
 ::
 
-	Wyj¶cie z AROS'owego Filenote jest staranne i strukturalne, ni¿ ze
+	WyjÅ›cie z AROS'owego Filenote jest staranne i strukturalne, niÅ¼ ze
 	standardowej komendy Filenote.
 	
-	Nie obs³uguje jeszcze wieoprzypisowo¶ci.
+	Nie obsÅ‚uguje jeszcze wieoprzypisowoÅ›ci.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

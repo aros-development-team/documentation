@@ -3,15 +3,15 @@ Guia de Estilos do Interface do Utilizador
 ==========================================
 
 :Autor:			Adam Chodorowski
-:Direitos de CÛpia:	Copyright © 2003, The AROS Development Team
-:Vers„o:		$Revision$
+:Direitos de C√≥pia:	Copyright ¬© 2003, The AROS Development Team
+:Vers√£o:		$Revision$
 :Data:			$Date$
 
-.. ARRANJE-ME: IntroduÁ„o aqui...
+.. ARRANJE-ME: Introdu√ß√£o aqui...
 
 .. Warning::
 
-   Este documento n„o est· terminado! Se quiser ajudar a rectificar isto, por favor
+   Este documento n√£o est√° terminado! Se quiser ajudar a rectificar isto, por favor
    Contacte-nos.
 
 .. Contents::
@@ -24,8 +24,8 @@ Janelas
 Preferencias
 ============
 
-Janelas de preferencias s„o similares a janelas de dialogo, nelas existe
-uma linha de botıes e n„o existe ferramenta de fecho na barra de titulo. 
+Janelas de preferencias s√£o similares a janelas de dialogo, nelas existe
+uma linha de bot√µes e n√£o existe ferramenta de fecho na barra de titulo. 
 
 .. Figure:: /documentation/developers/ui/images/windows-prefs-titlebar.png
 
@@ -34,49 +34,49 @@ uma linha de botıes e n„o existe ferramenta de fecho na barra de titulo.
 
 .. Topic:: Racional
 
-   N„o existe ferramenta de fecho porque a sua semantica poderia ser ambigua.
-   Por outras palavras, poderia n„o ser claro ao utilizador exactamente qual o
-   efeito secund·rio seria se fecha-se a janela. Isso ir· guardar as preferencias
-   ou abandonar todas as alteraÁıes?
+   N√£o existe ferramenta de fecho porque a sua semantica poderia ser ambigua.
+   Por outras palavras, poderia n√£o ser claro ao utilizador exactamente qual o
+   efeito secund√°rio seria se fecha-se a janela. Isso ir√° guardar as preferencias
+   ou abandonar todas as altera√ß√µes?
  
-O proximo conjunto de botıes s„o senpre apresentados, posicionados horizontalmente
+O proximo conjunto de bot√µes s√£o senpre apresentados, posicionados horizontalmente
 ao longo do fundo da janela (na seguinte ordem, da esquerda para a direita):
 
     Testar (Test)
-        Aplica as definiÁıes na janela para que possa ter efeito imediatamente.
-        N„o fecha a janela.
+        Aplica as defini√ß√µes na janela para que possa ter efeito imediatamente.
+        N√£o fecha a janela.
         
     Reverter (Revert)
-        Restaura as definiÁıes na janela para o estado em que estavam quando a janela
-        foi aberta e aplica-as imediatamente. N„o fecha a janela.
+        Restaura as defini√ß√µes na janela para o estado em que estavam quando a janela
+        foi aberta e aplica-as imediatamente. N√£o fecha a janela.
         
     Salvar (Save)
-        Aplica as definiÁıes na janela imediatamente e salva-as permanentemente
-        [#]_. Fecha a janela. Se n„o for possivel salvar as definiÁıes permanentemente
-        (ex. se o disco onde seriam salvas for sÛ de escrita) este bot„o È desvanecido.
+        Aplica as defini√ß√µes na janela imediatamente e salva-as permanentemente
+        [#]_. Fecha a janela. Se n√£o for possivel salvar as defini√ß√µes permanentemente
+        (ex. se o disco onde seriam salvas for s√≥ de escrita) este bot√£o √© desvanecido.
         
     Usar (Use)
-        Aplica os definiÁıes na janela imediatamente e salva-as tempor·riamente
-        (sÛmente para esta sess„o) [#]_. Fecha a janela.
+        Aplica os defini√ß√µes na janela imediatamente e salva-as tempor√°riamente
+        (s√≥mente para esta sess√£o) [#]_. Fecha a janela.
         
     Cancelar (Cancel)
-        Restaura as definiÁıes na janela para o estado aquando da sua abertura
+        Restaura as defini√ß√µes na janela para o estado aquando da sua abertura
         e aplica-as imediatamente. Fecha a janela.
 
-.. Topic:: DisposiÁ„o
+.. Topic:: Disposi√ß√£o
 
-   Os botıes est„o divididos em dois grupos, Com o Teste (Test) e Reverter (Revert) num
-   Salvar (Save), Usar (Use) e Cancelar (Cancel) noutro onde o grupo formado est· alinhado
-   ‡ esquerda, e o ˙ltimo est· alinhado ‡ direita. Existe um espaÁo entre os dois para
-   separar-los visualmente[#]_. Todos os botıes tem a mesma dimens„o, Que dever· ser o mais
-   pequena possivel (quando redimensinando, sÛ o espaÁo entre os grupos dever· crescer
-   e n„o os botıes).
+   Os bot√µes est√£o divididos em dois grupos, Com o Teste (Test) e Reverter (Revert) num
+   Salvar (Save), Usar (Use) e Cancelar (Cancel) noutro onde o grupo formado est√° alinhado
+   √† esquerda, e o √∫ltimo est√° alinhado √† direita. Existe um espa√ßo entre os dois para
+   separar-los visualmente[#]_. Todos os bot√µes tem a mesma dimens√£o, Que dever√° ser o mais
+   pequena possivel (quando redimensinando, s√≥ o espa√ßo entre os grupos dever√° crescer
+   e n√£o os bot√µes).
         
 .. Figure:: /documentation/developers/ui/images/windows-prefs-buttons.png
 
-   Exemplos da linha de botıes numa janela de preferencias.
+   Exemplos da linha de bot√µes numa janela de preferencias.
 
 .. [#] Sslva ambos para ``ENVARC:`` e ``ENV:``.
 .. [#] Salva somente para ``ENV:``.
-.. [#] Nota que todos os botıes no grupo esquerdo n„o fecha a janela,
-       enquanto todos os botıes no grupo direito para fechar a janela.
+.. [#] Nota que todos os bot√µes no grupo esquerdo n√£o fecha a janela,
+       enquanto todos os bot√µes no grupo direito para fechar a janela.

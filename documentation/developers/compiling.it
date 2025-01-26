@@ -15,7 +15,7 @@ Compilare AROS
 :Abstract:  
 
     Questo documento spiega come compilare AROS. Lo sviluppo di AROS, al
-    momento non Ë autocontenuto, ciÚ significa che non potete compilare AROS
+    momento non √® autocontenuto, ci√≤ significa che non potete compilare AROS
     da dentro AROS. Per compilare e sviluppare AROS, avete bisogno di un
     sistema Linux o FreeBSD.
 
@@ -50,7 +50,7 @@ Sorgenti
 ========
 
 Potete scaricare i sorgenti di AROS sia dalla `pagina di download`__ o usando
-SVN (avete bisogno di `ottenere l'accesso SVN`__). Nel primo caso, Ë sufficiente
+SVN (avete bisogno di `ottenere l'accesso SVN`__). Nel primo caso, √® sufficiente
 scaricare il pacchetto ``source`` (a meno che non vogliate compilare anche i
 programmi di terzi "contrib"). Nel secondo caso, guardate la
 `documentazione subversion`__.
@@ -79,7 +79,7 @@ disponibili per tutti i target:
     Abilita diversi tipi di debug. Potete usare virgole o spazi per separare
     gli elementi della lista. Se non viene specificata alcuna lista, allora si
     assume ``all``. Se non viene specificata ``--enable-debug``, il valore di
-    default Ë ``none``. I tipi disponibili sono:    
+    default √® ``none``. I tipi disponibili sono:    
     
     ``none``
         Disabilita tutti i tipi di debug, il debug in generale.        
@@ -104,7 +104,7 @@ Non dovete specificare l'opzione ``--target`` per fare il build di questi
 target. Sono disponibili le opzioni seguenti per i build hosted:
 
 ``--with-resolution=LARGHEZZAxALTEZZAxPROFONDITA [default: 800x600x8]``
-    Setta la risoluzione e la profondit‡ di colore di default usare da AROS. 
+    Setta la risoluzione e la profondit√† di colore di default usare da AROS. 
     
 ``--enable-xshm-extension [default: abilitato]``
     Abilita l'utilizzo dell'estensione MIT-SHM di X11. Abilitarla garantisce un
@@ -161,7 +161,7 @@ AROS/i386-pc nativo
 
 Se state facendo il build del porting i386-pc nativo, troverete un'immagine di
 un floppy avviabile in ``bin/pc-i386/gen/rom/boot/aros.bin`` dopo che la
-compilazione Ë stata completata. Inoltre, potete creare una immagine ISO
+compilazione √® stata completata. Inoltre, potete creare una immagine ISO
 avviabile lanciando::
 
     > make bootiso-pc-i386
@@ -176,7 +176,7 @@ Fare il build di diversi target dallo stesso sorgente
    
 Se intendete compilare diverti target dallo stesso albero dei sorgenti, allora
 dovrete eseguire la configurazione per ognuno dei vostri target. Potete
-aggiungere dei target quando volete. L'ultimo target specificato al configure Ë
+aggiungere dei target quando volete. L'ultimo target specificato al configure √®
 il target di default.
 
 Per selezionare un target specifico durante il build, semplicemente lanciate un
@@ -184,18 +184,18 @@ make come questo::
 
     > AROS_TARGET_ARCH=$ARCH AROS_TARGET_CPU=$CPU make
     
-Dove ``$ARCH`` Ë l'architettura del build desiderati, e ``$CPU`` Ë la CPU. Es.,
+Dove ``$ARCH`` √® l'architettura del build desiderati, e ``$CPU`` √® la CPU. Es.,
 per fare il build di AROS/i386-pc lanciate::
 
     > AROS_TARGET_ARCH=pc AROS_TARGET_CPU=i386 make
 
 Se state facendo il build di diversi porting che usano la stessa CPU, dovete
-solo specificare ``AROS_TARGET_ARCH`` come CPU e la CPU rimarr‡ la stessa.
+solo specificare ``AROS_TARGET_ARCH`` come CPU e la CPU rimarr√† la stessa.
 
 Come compilare
 --------------
 
-Questa guida passo passo descriver‡ come preparare l'ambiente di sviluppo e
+Questa guida passo passo descriver√† come preparare l'ambiente di sviluppo e
 compilare AROS su Ubuntu Linux 6.10 "Edgy Eft". Assumiamo che abbiate una
 immagine CD (iso) scaricata dai siti di ubuntu e abbiate installato il sistema
 da essa. Dovreste anche configurarla per l'accesso a Internet.

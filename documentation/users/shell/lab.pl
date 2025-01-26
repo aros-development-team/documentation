@@ -9,7 +9,7 @@
 Lab
 ===
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -22,11 +22,11 @@ Funkcja
 ::
 
 
-	Deklaruje etykietê w pliku skryptowym. Ta etykieta mo¿e byæ wykorzystana
-	z komend± Skip.
+	Deklaruje etykietÄ™ w pliku skryptowym. Ta etykieta moÅ¼e byÄ‡ wykorzystana
+	z komendÄ… Skip.
 	
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
@@ -43,7 +43,7 @@ Przyk³ad
 	Echo "Brak User-Startup"
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

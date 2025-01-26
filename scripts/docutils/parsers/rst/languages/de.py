@@ -1,7 +1,7 @@
-# Authors: Engelbert Gruber; Felix Wiemann
-# Contact: grubert@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# -*- coding: utf-8 -*-
+# $Id: de.py 8006 2016-12-22 23:02:44Z milde $
+# Authors: Engelbert Gruber <grubert@users.sourceforge.net>;
+#          Lea Wiemann <LeWiemann@gmail.com>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -20,6 +20,7 @@ __docformat__ = 'reStructuredText'
 directives = {
       'achtung': 'attention',
       'vorsicht': 'caution',
+      'code': 'code',
       'gefahr': 'danger',
       'fehler': 'error',
       'hinweis': 'hint',
@@ -29,28 +30,32 @@ directives = {
       'warnung': 'warning',
       'ermahnung': 'admonition',
       'kasten': 'sidebar',
-      'seitenkasten': 'sidebar',
+      'seitenkasten': 'sidebar', # kept for backwards compatibiltity
+      'seitenleiste': 'sidebar',
       'thema': 'topic',
-      'zeilen-block': 'line-block',
+      'zeilenblock': 'line-block',
       'parsed-literal (translation required)': 'parsed-literal',
       'rubrik': 'rubric',
       'epigraph': 'epigraph',
-      'highlights (translation required)': 'highlights',
-      'pull-quote (translation required)': 'pull-quote', # kasten too ?
+      'highlights': 'highlights',
+      u'pull-quote': 'pull-quote', # commonly used in German too
+      u'seitenansprache': 'pull-quote', # cf. http://www.typografie.info/2/wiki.php?title=Seitenansprache
       'zusammengesetzt': 'compound',
       'verbund': 'compound',
-      u'container (translation required)': 'container',
+      u'container': 'container',
       #'fragen': 'questions',
       'tabelle': 'table',
       'csv-tabelle': 'csv-table',
-      'list-table (translation required)': 'list-table',
+      'listentabelle': 'list-table',
+      u'mathe': 'math',
+      u'formel': 'math',
       'meta': 'meta',
       #'imagemap': 'imagemap',
       'bild': 'image',
       'abbildung': 'figure',
-      u'unver\xe4ndert': 'raw',
+      u'unverändert': 'raw',
       u'roh': 'raw',
-      u'einf\xfcgen': 'include',
+      u'einfügen': 'include',
       'ersetzung': 'replace',
       'ersetzen': 'replace',
       'ersetze': 'replace',
@@ -58,40 +63,43 @@ directives = {
       'datum': 'date',
       'klasse': 'class',
       'rolle': 'role',
-      u'default-role (translation required)': 'default-role',
-      u'title (translation required)': 'title',
+      u'standardrolle': 'default-role',
+      u'titel': 'title',
       'inhalt': 'contents',
-      'kapitel-nummerierung': 'sectnum',
-      'abschnitts-nummerierung': 'sectnum',
-      u'linkziel-fu\xdfnoten': 'target-notes',
-      u'header (translation required)': 'header',
-      u'footer (translation required)': 'footer',
-      #u'fu\xdfnoten': 'footnotes',
+      u'kapitelnummerierung': 'sectnum',
+      u'abschnittsnummerierung': 'sectnum',
+      u'linkziel-fußnoten': 'target-notes',
+      u'kopfzeilen': 'header',
+      u'fußzeilen': 'footer',
+      #u'fußfnoten': 'footnotes',
       #'zitate': 'citations',
       }
 """German name to registered (in directives/__init__.py) directive name
 mapping."""
 
 roles = {
-      u'abk\xfcrzung': 'abbreviation',
+      u'abkürzung': 'abbreviation',
       'akronym': 'acronym',
+      u'code': 'code',
       'index': 'index',
       'tiefgestellt': 'subscript',
       'hochgestellt': 'superscript',
       'titel-referenz': 'title-reference',
       'pep-referenz': 'pep-reference',
       'rfc-referenz': 'rfc-reference',
-      'betonung': 'emphasis',
+      'betonung': 'emphasis', # for backwards compatibility
+      'betont': 'emphasis',
       'fett': 'strong',
-      u'w\xf6rtlich': 'literal',
+      u'wörtlich': 'literal',
+      u'mathe': 'math',
       'benannte-referenz': 'named-reference',
       'unbenannte-referenz': 'anonymous-reference',
-      u'fu\xdfnoten-referenz': 'footnote-reference',
+      u'fußfnoten-referenz': 'footnote-reference',
       'zitat-referenz': 'citation-reference',
       'ersetzungs-referenz': 'substitution-reference',
       'ziel': 'target',
       'uri-referenz': 'uri-reference',
-      u'unver\xe4ndert': 'raw',
+      u'unverändert': 'raw',
       u'roh': 'raw',}
 """Mapping of German role names to canonical role names for interpreted text.
 """
