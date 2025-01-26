@@ -20,7 +20,7 @@ Synopsis
      LABEL, BACK/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Salta comandos en un archivo de gui髇 hasta una cierta etiqueta
+     Salta comandos en un archivo de gui贸n hasta una cierta etiqueta
      (declarada con Lab) o hasta que se alcanza un comando EndSkip.
 
 
@@ -42,13 +42,13 @@ Entradas
 ::
 
 
-     LABEL  --  La etiqueta a d髇de saltar
+     LABEL  --  La etiqueta a d贸nde saltar
 
      BACK   --  Especifica esto si la etiqueta aparece antes de la sentencia
-                Skip en el archivo de gui髇.
+                Skip en el archivo de gui贸n.
 
 
-Mira tambi閚
+Mira tambi茅n
 ~~~~~~~~~~~~
 ::
 

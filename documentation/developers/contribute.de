@@ -3,8 +3,8 @@ Mitwirken
 =========
 
 :Autor:      Adam Chodorowski
-:Übersetzer: Henning Kiel
-:Copyright:  Copyright © 1995-2020, The AROS Development Team
+:Ãœbersetzer: Henning Kiel
+:Copyright:  Copyright Â© 1995-2020, The AROS Development Team
 :Original:   contribute.en 26356
 :Status:     Fertig
 
@@ -15,19 +15,19 @@ Wir brauchen Eure Hilfe!
 ========================
 
 Zur Zeit arbeiten nur etwa 6 aktive Entwickler an AROS, was leider
-bedeutet, dass der Fortschritt nur mäßig ist. Wir brauchen einfach
-mehr Entwickler die bei uns mit anfassen! Es gibt noch eine große
+bedeutet, dass der Fortschritt nur mÃ¤ÃŸig ist. Wir brauchen einfach
+mehr Entwickler die bei uns mit anfassen! Es gibt noch eine groÃŸe
 Anzahl an Aufgaben die darauf warten angefasst zu werden. Die
-Palette reicht von kleinen bis großen Aufgaben, von "Hardware Hacking"
+Palette reicht von kleinen bis groÃŸen Aufgaben, von "Hardware Hacking"
 bis hin zur high-level System- und Applikationsprogrammierung.
-Im prinzip ist für jeden was zu tun, der mithelfen will, egal wie
+Im prinzip ist fÃ¼r jeden was zu tun, der mithelfen will, egal wie
 erfahren Du ist in der Programmierung.
 
-Auch für diejenigen von Euch, die keine Programmierer sind, gibt es
-eine Vielzahl von Tätigkeiten mit denen Ihr uns helfen könnt! Zum
-Beispiel durch das Schreiben von Dokumentation, der Übersetzung von
+Auch fÃ¼r diejenigen von Euch, die keine Programmierer sind, gibt es
+eine Vielzahl von TÃ¤tigkeiten mit denen Ihr uns helfen kÃ¶nnt! Zum
+Beispiel durch das Schreiben von Dokumentation, der Ãœbersetzung von
 Programmen und schon vorhandener Dokumentation in andere Sprachen,
-das Kreieren von hübschen Grafiken und Icons und zu guter letzt
+das Kreieren von hÃ¼bschen Grafiken und Icons und zu guter letzt
 bei der Suche nach Bugs. Diese Aufgaben sind genau so wichtig wie
 das Programmieren selbst!
 
@@ -35,10 +35,10 @@ das Programmieren selbst!
 Freie Aufgaben
 ==============
 
-Es folgt eine Liste von Aufgaben bei denen wir noch Hilfe benötigen
-und wo zur Zeit niemand dran arbeitet. Es ist keine vollständige
+Es folgt eine Liste von Aufgaben bei denen wir noch Hilfe benÃ¶tigen
+und wo zur Zeit niemand dran arbeitet. Es ist keine vollstÃ¤ndige
 Liste, sondern soll nur die zur Zeit wichtigsten Gebiete aufzeigen,
-wo wir dringend Hilfe benötigen.
+wo wir dringend Hilfe benÃ¶tigen.
 
 
 Programmierung
@@ -46,7 +46,7 @@ Programmierung
 
 + Implementierung von fehlenden Libraries, Resources, Devices oder
   Teilen von diesen. 
-  Siehe detaillierten Status Report für mehr Information darüber, welche
+  Siehe detaillierten Status Report fÃ¼r mehr Information darÃ¼ber, welche
   Teile immer noch fehlen.
 
 + Implementierung oder Verbesserung von Hardware-Treibern:
@@ -71,9 +71,9 @@ Programmierung
     + Spezifische IDE Chipsets (z.B. Promise UltraATA)
     + ...alles sonst, was irgendwie brauchbar ist.
 
-  - Generische Drucker Unterstützung.
+  - Generische Drucker UnterstÃ¼tzung.
 
-+ Portierung auf andere Architekturen. Einige Beispiele für Hardware, auf
++ Portierung auf andere Architekturen. Einige Beispiele fÃ¼r Hardware, auf
   denen bisher kein AROS Port existiert oder gepflegt wird:
 
   - Amiga,m68k und PPC.
@@ -94,14 +94,14 @@ Programmierung
 
   Das bedeutet die Implementierung von fehlenden ANSI- (und einigen POSIX-)
   Funktionen in der clib, um die Portierung von UNIX Software (z.B. GCC,
-  make und binutils) zu vereinfachen. Der größte fehlende Teil ist die
-  Unterstützung von POSIX-style Signalen, aber auch anderen Funktionen.
+  make und binutils) zu vereinfachen. Der grÃ¶ÃŸte fehlende Teil ist die
+  UnterstÃ¼tzung von POSIX-style Signalen, aber auch anderen Funktionen.
 
 + Implementierung von mehr Datatypes und Verbessung existierender
 
-  Die Anzahl der in AROS verfügbaren Datatypes ist recht klein. Einige
-  Beispiele von Datatypes, die verbessert werden oder überhaupt erst mal geschrieben
-  werden müssen, sind:
+  Die Anzahl der in AROS verfÃ¼gbaren Datatypes ist recht klein. Einige
+  Beispiele von Datatypes, die verbessert werden oder Ã¼berhaupt erst mal geschrieben
+  werden mÃ¼ssen, sind:
 
   - amigaguide.datatype
   - sound.datatype
@@ -126,56 +126,56 @@ Dokumentation
 -------------
 
 + Benutzer-Dokumentation, bestehend aus einer allgemeinen
-  Benutzeranleitung für Anfänger und Experten, sowie einer Referenz-
-  Dokumentation für alle standard AROS-Programme.
+  Benutzeranleitung fÃ¼r AnfÃ¤nger und Experten, sowie einer Referenz-
+  Dokumentation fÃ¼r alle standard AROS-Programme.
 
 + Entwickler-Dokumentation. Obwohl dieser Punkt in einem etwas besseren
   Zustand ist als die Benutzer-Dokumentation, gibt es immer noch eine
-  Menge zu tun. Z.B. gibt es noch kein gutes Tutorial für Programmier-
-  anfänger. Ein Äquivalent zu den ROM Kernel Manuals für AROS wäre
-  ebenfalls eine schöne Sache.
+  Menge zu tun. Z.B. gibt es noch kein gutes Tutorial fÃ¼r Programmier-
+  anfÃ¤nger. Ein Ã„quivalent zu den ROM Kernel Manuals fÃ¼r AROS wÃ¤re
+  ebenfalls eine schÃ¶ne Sache.
 
 
-Übersetzungen
+Ãœbersetzungen
 -------------
 
-+ Übersetzung von AROS selbst in andere Sprachen. Zur Zeit werden nur die
-  folgenden Sprachen mehr oder weniger unterstützt:
++ Ãœbersetzung von AROS selbst in andere Sprachen. Zur Zeit werden nur die
+  folgenden Sprachen mehr oder weniger unterstÃ¼tzt:
 
   - Englisch
   - Deutsch
   - Schwedisch
   - Norwegisch
   - Italienisch
-  - Französisch
+  - FranzÃ¶sisch
   - Russisch
 
-+ Übersetzung der Dokumentation und Website in mehr Sprachen. Zur Zeit
-  ist sie komplett nur in Englisch verfügbar. Einige Teile wurden bereits
-  in andere Sprachen übersetzt, es gibt aber noch viel zu tun.
++ Ãœbersetzung der Dokumentation und Website in mehr Sprachen. Zur Zeit
+  ist sie komplett nur in Englisch verfÃ¼gbar. Einige Teile wurden bereits
+  in andere Sprachen Ã¼bersetzt, es gibt aber noch viel zu tun.
 
 
 Anderes
 -------
 
-+ Koordination des GUI-Designs für AROS-Programme, wie die Prefs, Tools
++ Koordination des GUI-Designs fÃ¼r AROS-Programme, wie die Prefs, Tools
   und Utilities.
 
 
 Mitmachen im Team
 =================
 
-Du hast Lust bekommen mitzumachen? Großartig! Melde Dich einfach bei
+Du hast Lust bekommen mitzumachen? GroÃŸartig! Melde Dich einfach bei
 einer der `Mailinglisten`__ an (zumindest die Hauptliste "aros-dev"
 ist *sehr* zu empfehlen) und fordere einen Zugang zum Subversion-Repository an.
 Das war's schon. :)
 
-Schreib eine kurze Mail an aros-dev mit einer kleinen Einführung über Dich
+Schreib eine kurze Mail an aros-dev mit einer kleinen EinfÃ¼hrung Ã¼ber Dich
 selbst und was Du gerne tun willst um uns zu helfen. Wenn Du irgendwelche
-Probleme hast, zögere nicht, sie an die Mailingliste zu schicken oder in den
+Probleme hast, zÃ¶gere nicht, sie an die Mailingliste zu schicken oder in den
 `IRC Channels`__ zu fragen. Ebenso, bevor Du mit irgendeiner speziellen
-Arbeit anfängst, teile doch bitte der Mailingliste mit, dass Du damit
-starten möchtest oder aktualisiere die Task-Database. Nur so können wir
+Arbeit anfÃ¤ngst, teile doch bitte der Mailingliste mit, dass Du damit
+starten mÃ¶chtest oder aktualisiere die Task-Database. Nur so kÃ¶nnen wir
 vermeiden, dass nicht mehrere Leute an der gleiche Sache arbeiten und
 einer am Ende umsonst gearbeitet hat...
 
@@ -186,26 +186,26 @@ __ ../../contact#irc-channels
 Das Subversion-Repository
 -------------------------
 
-Das AROS Repository liegt auf einem passwortgeschützen Subversion-Server, das
-bedeutet, dass Du einen persönlichen Zugang benötigst um Dich an der
-Entwicklung zu beteiligen. Die Passworte sind verschlüsselt und können
+Das AROS Repository liegt auf einem passwortgeschÃ¼tzen Subversion-Server, das
+bedeutet, dass Du einen persÃ¶nlichen Zugang benÃ¶tigst um Dich an der
+Entwicklung zu beteiligen. Die Passworte sind verschlÃ¼sselt und kÃ¶nnen
 mit unserem `online password encryption tool`__ generiert werden.
 
-Bitte maile Dein verschlüsseltes Passwort zusammen mit Deinem
-gewünschten Usernamen und Deinem realen Namen an `Aaron Digulla`__ und
-warte auf Antwort. Um eine schnelle Antwort zu ermöglichen, benutze
+Bitte maile Dein verschlÃ¼sseltes Passwort zusammen mit Deinem
+gewÃ¼nschten Usernamen und Deinem realen Namen an `Aaron Digulla`__ und
+warte auf Antwort. Um eine schnelle Antwort zu ermÃ¶glichen, benutze
 bitte das Subject "Access to the AROS SVN server" und im Text
 "Please add <username> <password>", z.B.:
 
     Please add digulla xx1LtbDbOY4/E
 
-Bitte exakt diesen Satz verwenden und Deinen vollen Namen nicht vergessen (entweder im Absender oder nach dem "Please add")! Es kann einige Tage in Anspruch nehmen, weil Aaron ziemlich beschäftigt
-ist, also sei geduldig ;-) Wenn Du nach einer Woche noch nichts gehört hast, dann kannst Du gerne eine Erinnerung an die gleiche Adresse senden.
+Bitte exakt diesen Satz verwenden und Deinen vollen Namen nicht vergessen (entweder im Absender oder nach dem "Please add")! Es kann einige Tage in Anspruch nehmen, weil Aaron ziemlich beschÃ¤ftigt
+ist, also sei geduldig ;-) Wenn Du nach einer Woche noch nichts gehÃ¶rt hast, dann kannst Du gerne eine Erinnerung an die gleiche Adresse senden.
 
-Zu Informationen über die Benutzung des AROS SVN Servers, lies bitte
+Zu Informationen Ã¼ber die Benutzung des AROS SVN Servers, lies bitte
 "`Working with SVN`__". Auch wenn Du schon weisst wie man SVN nutzt ist
-es dennoch nützlich dort rein zu schauen, da es Informationen und Tipps
-speziell für das AROS Repository (z.B. zum Login) enthält.
+es dennoch nÃ¼tzlich dort rein zu schauen, da es Informationen und Tipps
+speziell fÃ¼r das AROS Repository (z.B. zum Login) enthÃ¤lt.
 
 __ http://aros.sourceforge.net/tools/password.html 
 __ mailto:digulla@aros.org?subject=[Access%20to%20the%20AROS%20SVN%20server]

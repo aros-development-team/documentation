@@ -12,7 +12,7 @@ EndSkip
 
  EndSkip 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 

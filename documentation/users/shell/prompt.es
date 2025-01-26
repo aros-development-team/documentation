@@ -20,7 +20,7 @@ Synopsis
      PROMPT
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicaci髇
      Workbench:c
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
@@ -45,11 +45,11 @@ Entradas
      PROMPT  --  The prompt como una cadena. Se pueden usar los siguientes
                  comandos en un tipo de estilo printf.
 
-                 N  --  el n鷐ero de CLI
+                 N  --  el n煤mero de CLI
                  S  --  el nombre del directorio actual
-                 R  --  el c骴igo devuelto por la 鷏tima operaci髇
+                 R  --  el c贸digo devuelto por la 煤ltima operaci贸n
 
-                 Si no se especifica ning鷑 prompt "%N.%S> " se usa.
+                 Si no se especifica ning煤n prompt "%N.%S> " se usa.
 
 
 Resultado
@@ -57,7 +57,7 @@ Resultado
 ::
 
 
-     Los c骴igos devueltos DOS normales.
+     Los c贸digos devueltos DOS normales.
 
 
 Ejemplo
@@ -67,10 +67,10 @@ Ejemplo
 
      Prompt "Oepir Risti.%N> " da:
 
-     Oepir Risti.10>      (si el n鷐ero de CLI era 10)
+     Oepir Risti.10>      (si el n煤mero de CLI era 10)
 
 
-Tambi閚 vea
+Tambi茅n vea
 ~~~~~~~~~~~
 ::
 

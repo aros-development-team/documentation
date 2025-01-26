@@ -1,5 +1,5 @@
 ========================================================
-Wederom een (niet-kalender-geliëerd) jaar in vogelvlucht
+Wederom een (niet-kalender-geliÃ«erd) jaar in vogelvlucht
 ========================================================
 
 :Auteur:   Neil Cafferkey
@@ -37,10 +37,10 @@ Netwerken
 ---------
 
 Ondersteuning voor draadloze netwerken is gegroeid, met de toevoeging van
-twee nieuwe WPA-ondersteunende stuurprogramma's: één is voor de op Realtek
+twee nieuwe WPA-ondersteunende stuurprogramma's: Ã©Ã©n is voor de op Realtek
 RTL8187B-gebaseerde USB-apparaten, en de andere is een vernieuwde versie
 van het Prism-II stuurprogramma dat AROS in 2005 voor het eerst draadloos
-netwerken bracht. Ook is er een tool met grafische interface geïntroduceerd
+netwerken bracht. Ook is er een tool met grafische interface geÃ¯ntroduceerd
 welke dynamisch kan zoeken naar en verbinden met draadloze netwerken.
 
 Mobiel breedband is nu veel eenvoudiger in te stellen, en ook extra
@@ -52,11 +52,11 @@ Andere verbeteringen
 --------------------
 
 De eerste stappen voor het ondersteunen van printen in AROS zijn
-geïntroduceerd. Onderdelen van het nieuwe systeem omvatten een grafisch
+geÃ¯ntroduceerd. Onderdelen van het nieuwe systeem omvatten een grafisch
 voorkeursinstellingenprogramma, een stuurprogramma voor een PostScript
 printer en verscheidene traditionele utilities zoals PrintFiles en
 GraphicDump. Uitvoer kan worden gericht naar USB, een paralelle- of
-seriëele poort of naar een bestand.
+seriÃ«ele poort of naar een bestand.
 
 Ons stuurprogramma voor Intel-GMA heeft 3D-ondersteuning gekregen voor
 bepaalde revisies van de chip. Hoewel de GMA-hardware meer beperkte

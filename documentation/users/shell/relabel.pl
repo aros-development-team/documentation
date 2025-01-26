@@ -9,7 +9,7 @@
 Relabel
 =======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	DRIVE/A, NAME/A
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Zmienia nazwê woluminowi
+	Zmienia nazwÄ™ woluminowi
 
 
 Parametry

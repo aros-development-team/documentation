@@ -9,7 +9,7 @@
 Get
 ===
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	NAME/A
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Odczytuje informacjÍ zapisan± w okre∂lonych lokalnych warto∂ciach.
+	Odczytuje informacjƒô zapisanƒÖ w okre≈õlonych lokalnych warto≈õciach.
 
 
 Parametry
@@ -38,7 +38,7 @@ Parametry
 ::
 
 
-	NAME - nazwa lokalnej warto∂ci.
+	NAME - nazwa lokalnej warto≈õci.
 
 
 Wynik
@@ -46,7 +46,7 @@ Wynik
 ::
 
 
-	Standardowe kody b≥Ídu.
+	Standardowe kody b≈Çƒôdu.
 
 
 Example
@@ -56,10 +56,10 @@ Example
 
 	Get Result2
 
-	Tutaj odzyskujemy drugi kod b≥Ídu ostatniej komendy.
+	Tutaj odzyskujemy drugi kod b≈Çƒôdu ostatniej komendy.
 
 
-Zobacz takøe
+Zobacz tak≈ºe
 ~~~~~~~~~~~~
 ::
 

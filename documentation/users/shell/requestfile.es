@@ -22,7 +22,7 @@ Synopsis
      DRAWERSONLY/S,NOICONS/S,PUBSCREEN/K,INITIALVOLUMES/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -30,34 +30,34 @@ Ubicaci髇
      Workbench:c
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
  
-     Crea un requester de archivo. Los archivos seleccionados se mostrar醤
-     separados por espacios. Si no se selecciona ning鷑 archivo el 
-     c骴igo devuelto es 5 (advertencia).
+     Crea un requester de archivo. Los archivos seleccionados se mostrar谩n
+     separados por espacios. Si no se selecciona ning煤n archivo el 
+     c贸digo devuelto es 5 (advertencia).
  
 
 Entradas
 ~~~~~~~~
 ::
 
-     DRAWER          -- el contenido inicial del campo caj髇
+     DRAWER          -- el contenido inicial del campo caj贸n
      FILE            -- el contenido inicial del campo archivo
-     PATTERN         -- el contenido del campo patr髇 (p.e. #?.c)
-     TITLE           -- el t韙ulo del cuadro de di醠ogo
-     POSITIVE        -- la cadena para el bot髇 izquierdo
-     NEGATIVE        -- la cadena para el bot髇 derecho
-     ACCEPTPATTERN   -- solamente se muestran los archivos con igual patr髇
-     REJECTPATTERN   -- no se muestran los archivos que satisfacen el patr髇
+     PATTERN         -- el contenido del campo patr贸n (p.e. #?.c)
+     TITLE           -- el t铆tulo del cuadro de di谩logo
+     POSITIVE        -- la cadena para el bot贸n izquierdo
+     NEGATIVE        -- la cadena para el bot贸n derecho
+     ACCEPTPATTERN   -- solamente se muestran los archivos con igual patr贸n
+     REJECTPATTERN   -- no se muestran los archivos que satisfacen el patr贸n
      SAVEMODE        -- el requester se presenta como un requester guardar
-     MULTISELECT     -- se puede seleccionar m醩 de un archivo
+     MULTISELECT     -- se puede seleccionar m谩s de un archivo
      DRAWERSONLY     -- solamente se presentan los cajones
-     NOICONS         -- no se muestran los archivos de 韈ono (#?.info)
-     PUBSCREEN       -- el requester se abre en la pantalla p鷅lica dada
-     INITIALVOLUMES  -- muestra los vol鷐enes
+     NOICONS         -- no se muestran los archivos de 铆cono (#?.info)
+     PUBSCREEN       -- el requester se abre en la pantalla p煤blica dada
+     INITIALVOLUMES  -- muestra los vol煤menes
      
 
 Resultado
@@ -65,6 +65,6 @@ Resultado
 ::
 
 
-     Los c骴igos de error DOS normales.
+     Los c贸digos de error DOS normales.
 
 

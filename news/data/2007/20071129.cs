@@ -5,45 +5,45 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   29.11.2007
 
-64 BITovı AROS!
+64 BITovÃ½ AROS!
 ---------------
 
-`Michal Schulz`__ uèinil zázrak a tak zaèíná zcela nová kapitola
-v historii AROSu. Poèínaje dne¹ním dnem mù¾e¹ na na¹em webu získat
-nativní 64 bitovou verzi AROSu. Tato nová verze je samozøejmì
-vyspìlej¹í ne¾ ostatní, má omezenou ochranu pamìti a
-naèítání zavádìcích modulù. Poèáteèní limit 4 GB RAM bude odstranìn
-hned jak bude v poøádku obsluha MMU. Aby bylo mo¾né spustit 64 bitovou
-nativní verzi AROSu, je zapotøebí 64-bit x86 procesor jako AMD Athlon 64 nebo 
-poslední Intel Core2.
+`Michal Schulz`__ uÄinil zÃ¡zrak a tak zaÄÃ­nÃ¡ zcela novÃ¡ kapitola
+v historii AROSu. PoÄÃ­naje dneÅ¡nÃ­m dnem mÅ¯Å¾eÅ¡ na naÅ¡em webu zÃ­skat
+nativnÃ­ 64 bitovou verzi AROSu. Tato novÃ¡ verze je samozÅ™ejmÄ›
+vyspÄ›lejÅ¡Ã­ neÅ¾ ostatnÃ­, mÃ¡ omezenou ochranu pamÄ›ti a
+naÄÃ­tÃ¡nÃ­ zavÃ¡dÄ›cÃ­ch modulÅ¯. PoÄÃ¡teÄnÃ­ limit 4 GB RAM bude odstranÄ›n
+hned jak bude v poÅ™Ã¡dku obsluha MMU. Aby bylo moÅ¾nÃ© spustit 64 bitovou
+nativnÃ­ verzi AROSu, je zapotÅ™ebÃ­ 64-bit x86 procesor jako AMD Athlon 64 nebo 
+poslednÃ­ Intel Core2.
 
 
 VmwAROS
 -------
 
-Zrodila se nová distribuce AROSu. `VmwAROS`__ je pøedinstalované a
-pøedkonfigurované AROS prostøedí pro VMware, kompatibilní s Windows
+Zrodila se novÃ¡ distribuce AROSu. `VmwAROS`__ je pÅ™edinstalovanÃ© a
+pÅ™edkonfigurovanÃ© AROS prostÅ™edÃ­ pro VMware, kompatibilnÃ­ s Windows
 a Linux verzemi VMware Player, Server a Workstation (verze 5 nebo 6).
-Tato distribuce je stále daleko od dokonèení, nicménì byla vydána
-poèáteèní `beta verze`__ pro v¹echny odvá¾né, kteøí ji chtìjí stáhnout
-a testovat. VmwAROS si vybírá za cíl ka¾dodenní u¾ivatele, kodéry
-a v¹echny ostatní, kteøí se zajímají o vyzkou¹ení AROSu, ale nechtìjí
-ohrozit data na svém pevném disku. Pro dal¹í informace `klikni zde`__.
+Tato distribuce je stÃ¡le daleko od dokonÄenÃ­, nicmÃ©nÄ› byla vydÃ¡na
+poÄÃ¡teÄnÃ­ `beta verze`__ pro vÅ¡echny odvÃ¡Å¾nÃ©, kteÅ™Ã­ ji chtÄ›jÃ­ stÃ¡hnout
+a testovat. VmwAROS si vybÃ­rÃ¡ za cÃ­l kaÅ¾dodennÃ­ uÅ¾ivatele, kodÃ©ry
+a vÅ¡echny ostatnÃ­, kteÅ™Ã­ se zajÃ­majÃ­ o vyzkouÅ¡enÃ­ AROSu, ale nechtÄ›jÃ­
+ohrozit data na svÃ©m pevnÃ©m disku. Pro dalÅ¡Ã­ informace `klikni zde`__.
 
 
-Dal¹í zprávy
+DalÅ¡Ã­ zprÃ¡vy
 ------------
 
-U¾ivatel Aros-Exec Fishy_fis oznámil novou AROS distribuci nazvanou
-`Velocity`__ (Rychlost). První beta verze by mìla bıt uvolnìna v nejbli¾¹í dobì.
-"Velocity bude distribuována jako instalovatelné live-cd a jako VMWare obraz.
-Bude obsahovat podstatnì více (nakonfigurovaného)
-softwaru, ne¾ ISO obrazy noèních sestavení". K dispozici jsou snímky obrazovky.
+UÅ¾ivatel Aros-Exec Fishy_fis oznÃ¡mil novou AROS distribuci nazvanou
+`Velocity`__ (Rychlost). PrvnÃ­ beta verze by mÄ›la bÃ½t uvolnÄ›na v nejbliÅ¾Å¡Ã­ dobÄ›.
+"Velocity bude distribuovÃ¡na jako instalovatelnÃ© live-cd a jako VMWare obraz.
+Bude obsahovat podstatnÄ› vÃ­ce (nakonfigurovanÃ©ho)
+softwaru, neÅ¾ ISO obrazy noÄnÃ­ch sestavenÃ­". K dispozici jsou snÃ­mky obrazovky.
 
-Robert Norris pracuje na webovém prohlí¾eèi pro AROS zalo¾eném na Webkitu, nazvaném
-Traveller. Mezitím taky aktualizoval spoustu AROS knihoven
-a naportoval nìkolik u¾iteènıch kusù kódu jako libxml2, cURL, 
-OpenSSL, SQLite a dal¹í. Více informací v `jeho blogu`__.
+Robert Norris pracuje na webovÃ©m prohlÃ­Å¾eÄi pro AROS zaloÅ¾enÃ©m na Webkitu, nazvanÃ©m
+Traveller. MezitÃ­m taky aktualizoval spoustu AROS knihoven
+a naportoval nÄ›kolik uÅ¾iteÄnÃ½ch kusÅ¯ kÃ³du jako libxml2, cURL, 
+OpenSSL, SQLite a dalÅ¡Ã­. VÃ­ce informacÃ­ v `jeho blogu`__.
 
 
 __ http://msaros.blogspot.com

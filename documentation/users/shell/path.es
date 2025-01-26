@@ -20,7 +20,7 @@ Synopsis
      PATH/M,ADD/S,SHOW/S,RESET/S,REMOVE/S,QUIET/S,HEAD/S
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicación
      Workbench:c
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
      
-     Cambia la ruta de búsqueda para los comandos. Sin argumentos se muestra la ruta.
+     Cambia la ruta de bÃºsqueda para los comandos. Sin argumentos se muestra la ruta.
      
 
 Entradas
@@ -44,9 +44,9 @@ Entradas
      PATH    -- la ruta
      ADD     -- agrega la ruta
      SHOW    -- muestra la ruta
-     RESET   -- quita la ruta existente reemplazándola por una nueva.
+     RESET   -- quita la ruta existente reemplazÃ¡ndola por una nueva.
      REMOVE  -- quita la ruta dada
-     QUIET   -- suprime el cuadro de diálogo cuando no se encuentra la ruta
+     QUIET   -- suprime el cuadro de diÃ¡logo cuando no se encuentra la ruta
      HEAD    -- inserta la ruta al principio de la lista de rutas
      
 

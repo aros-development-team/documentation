@@ -9,7 +9,7 @@
 MakeLink
 ========
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FROM/A, TO/A, HARD/S, FORCE/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
 
-	Tworzy po³±czenie do pliku
+	Tworzy poÅ‚Ä…czenie do pliku
 
 
 Parametry
@@ -38,11 +38,11 @@ Parametry
 ::
 
 
-	FROM	--	Nazwa po³±czenia
-	TO	--	Nazwa obiektu, od którego zostanie utworzone po³±czenie
-	HARD	--	Je¶li okre¶lone, to zostanie utworzone po³±czenie
-			twarde, normalnie jest tworzone miêkkie			
-	FORCE	--	Wymuszenie, aby po³±czenie twarde by³o przydzielone
+	FROM	--	Nazwa poÅ‚Ä…czenia
+	TO	--	Nazwa obiektu, od ktÃ³rego zostanie utworzone poÅ‚Ä…czenie
+	HARD	--	JeÅ›li okreÅ›lone, to zostanie utworzone poÅ‚Ä…czenie
+			twarde, normalnie jest tworzone miÄ™kkie			
+	FORCE	--	Wymuszenie, aby poÅ‚Ä…czenie twarde byÅ‚o przydzielone
 			do katalogu
 
 

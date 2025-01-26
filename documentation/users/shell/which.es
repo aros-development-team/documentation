@@ -20,7 +20,7 @@ Synopsis
      FILE/A, NORES/S, RES/S, ALL/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
@@ -36,14 +36,14 @@ Funci髇
      Find and print the location of a specific program or directory.
      Resident programs are marked as RESIDENT if they are not
      interal resident in which case they are marked as INTERNAL.
-     Busca e imprime la ubicaci髇 de un programa o directorio espec韋ico.
+     Busca e imprime la ubicaci贸n de un programa o directorio espec铆fico.
      Los programas residentes son marcados como RESIDENTES si no
      son residentes internos, en cuyo caso son marcados como INTERNOS.
 
      Which busca la lista de residentes, el directorio actual, 
-     las rutas de comando y la assignaci髇 C:. Si no se encuentra
-     el elemento la bandera de condici髇 es puesta a WARN pero
-     no se imprime ning鷑 error.
+     las rutas de comando y la assignaci贸n C:. Si no se encuentra
+     el elemento la bandera de condici贸n es puesta a WARN pero
+     no se imprime ning煤n error.
 
 
 Entradas
@@ -52,10 +52,10 @@ Entradas
 
 
      FILE   --  el comando o directorio a buscar
-     NORES  --  no incluye los programas residentes en la b鷖queda
+     NORES  --  no incluye los programas residentes en la b煤squeda
      RES    --  solamente considera los programas residentes
      ALL    --  encuentra todas las ubicaciones de FILE. Esto
-                puede causar que imprima la misma ubicaci髇 varias
+                puede causar que imprima la misma ubicaci贸n varias
                 veces, por ejemplo si el directorio actual es C: y
                 FILE se encuentra en C:
 

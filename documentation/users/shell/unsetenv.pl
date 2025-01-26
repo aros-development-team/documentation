@@ -9,7 +9,7 @@
 Unsetenv
 ========
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	NAME
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Parametry
 ::
 
 
-	NAME	-	Nazwa globalnych warto∂ci do od≥±czenia.
+	NAME	-	Nazwa globalnych warto≈õci do od≈ÇƒÖczenia.
 
 
 Wynik
@@ -38,6 +38,6 @@ Wynik
 ::
 
 
-	Standardowe kody b≥ÍdÛw.
+	Standardowe kody b≈Çƒôd√≥w.
 
 

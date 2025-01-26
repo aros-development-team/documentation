@@ -21,7 +21,7 @@ Synopsis
         [NONUM] [QUIET] [QUICK] [FILE] [PATTERN] [LINES=Number]
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -29,18 +29,18 @@ Ubicación
  Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
  Search busca en los archivos contenidos en el directorio FROM una
- cadena especificada (SEARCH); si el switch ALL está especificado,
- también se busca en los subdirectorios del directorio FROM. Se presentan
+ cadena especificada (SEARCH); si el switch ALL estÃ¡ especificado,
+ tambiÃ©n se busca en los subdirectorios del directorio FROM. Se presentan
  los nombres de todos los archivos que contienen la cadena SEARCH 
- junto con el número de renglón donde se encuentra.
-      Si se aprieta CTRL-C, se deja de buscar. CTRL-D abandonará la
-      búsqueda en el archivo actual.
+ junto con el nÃºmero de renglÃ³n donde se encuentra.
+      Si se aprieta CTRL-C, se deja de buscar. CTRL-D abandonarÃ¡ la
+      bÃºsqueda en el archivo actual.
 
 
 Entradas
@@ -48,14 +48,14 @@ Entradas
 ::
 
 
- NONUM    --  no se imprimen los números de renglón
+ NONUM    --  no se imprimen los nÃºmeros de renglÃ³n
  QUIET    --  no se muestra el nombre del archivo donde se busca
- QUICK    --  la salida es más compacta
+ QUICK    --  la salida es mÃ¡s compacta
  FILE     --  busca un nombre de archivo en vez de una cadena
- PATTERN  --  cuando busca usa el ###matching de patrón
- CASE     --  cuando busca usa un ###matching de patrón sensitivo a las mayúsculas
- LINES    --  se mostrarán los renglones posteriores al renglón que
-              cumpla con el patrón.
+ PATTERN  --  cuando busca usa el ###matching de patrÃ³n
+ CASE     --  cuando busca usa un ###matching de patrÃ³n sensitivo a las mayÃºsculas
+ LINES    --  se mostrarÃ¡n los renglones posteriores al renglÃ³n que
+              cumpla con el patrÃ³n.
 
 
 Resultado
@@ -63,7 +63,7 @@ Resultado
 ::
 
 
- Si se encuentra el objeto, la bandera de condición es puesta a 0. De
+ Si se encuentra el objeto, la bandera de condiciÃ³n es puesta a 0. De
  otro modo es puesta WARN.
 
 

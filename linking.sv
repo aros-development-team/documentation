@@ -1,16 +1,16 @@
 ========
-Länkning
+LÃ¤nkning
 ========
 
 :Author:    Adam Chodorowski
-:Copyright: Copyright ¦ 2001-2007, The AROS Development Team
+:Copyright: Copyright Å  2001-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
-Ett mycket bra sätt att visa ditt stöd för AROS, och för att uppmana andra,
-är att länka till denna hemsida från din egen. Du kan använda en av nedanstående banners
-för detta ändamål.
+Ett mycket bra sÃ¤tt att visa ditt stÃ¶d fÃ¶r AROS, och fÃ¶r att uppmana andra,
+Ã¤r att lÃ¤nka till denna hemsida frÃ¥n din egen. Du kan anvÃ¤nda en av nedanstÃ¥ende banners
+fÃ¶r detta Ã¤ndamÃ¥l.
 
 +------------------------------------------+----------------------+
 | Bild                                     | Upphovsman           |
@@ -37,7 +37,7 @@ för detta ändamål.
 +------------------------------------------+----------------------+
 
 
-Alternativt så finns det även signatur-banners för användning i forum:
+Alternativt sÃ¥ finns det Ã¤ven signatur-banners fÃ¶r anvÃ¤ndning i forum:
 
 +------------------------------------------+----------------------+
 | Bild                                     | Upphovsman           |
@@ -52,6 +52,6 @@ Alternativt så finns det även signatur-banners för användning i forum:
 +------------------------------------------+----------------------+
 
 
-Var vänlig, länka direkt till http://www.aros.org/ och inte till någon av de speglade
-hemsidorna eftersom dessa kan ändras. Se även till att ha en lokal kopia av bilden för
+Var vÃ¤nlig, lÃ¤nka direkt till http://www.aros.org/ och inte till nÃ¥gon av de speglade
+hemsidorna eftersom dessa kan Ã¤ndras. Se Ã¤ven till att ha en lokal kopia av bilden fÃ¶r
 att minska bandbredden.

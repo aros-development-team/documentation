@@ -3,7 +3,7 @@ Contact
 =======
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright Â© 1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -11,13 +11,13 @@ Contact
 .. Contents::
 
 
-Personne à contacter
+Personne Ã  contacter
 ====================
 
-La personne à contacter concernant le développement d'AROS Team est Aaron "Optimizer"
-Digulla. Si vous souhaitez vous adresser à l'équipe entière, par exemple pour devenir
-sponsor ou proposer un autre type de partenariat, il s'agit de la personne à contacter.
-Vous pouvez lui envoyer un mail à `digulla@aros.org`__.
+La personne Ã  contacter concernant le dÃ©veloppement d'AROS Team est Aaron "Optimizer"
+Digulla. Si vous souhaitez vous adresser Ã  l'Ã©quipe entiÃ¨re, par exemple pour devenir
+sponsor ou proposer un autre type de partenariat, il s'agit de la personne Ã  contacter.
+Vous pouvez lui envoyer un mail Ã  `digulla@aros.org`__.
 
 __ mailto:digulla@aros.org
 
@@ -26,42 +26,42 @@ Mailing Lists
 =============
 
 Il existe quelques mailing lists qui sont les principales sources d'information
-et de discussion à propos d'AROS pour les développeurs. Les listes suivantes sont
+et de discussion Ã  propos d'AROS pour les dÃ©veloppeurs. Les listes suivantes sont
 disponibles :
 
 + `AROS Developer`__
 
-  Il s'agit de la mailing list réservée aux développeurs, où se tiennent les
-  discussions sur le développement d'AROS. la mouture quotidienne (nighty build)
-  est envoyée quotidiennement dans cette liste. Il est **hautement** recommandé
-  aux développeurs de rejoindre cette liste, car il est difficile de se tenir à
-  jour sur le développement courant. Etant donné qu'il n'y a *pas beaucoup* de
-  développeurs AROS, le volume de cette liste est généralement faible, mais elle
+  Il s'agit de la mailing list rÃ©servÃ©e aux dÃ©veloppeurs, oÃ¹ se tiennent les
+  discussions sur le dÃ©veloppement d'AROS. la mouture quotidienne (nighty build)
+  est envoyÃ©e quotidiennement dans cette liste. Il est **hautement** recommandÃ©
+  aux dÃ©veloppeurs de rejoindre cette liste, car il est difficile de se tenir Ã 
+  jour sur le dÃ©veloppement courant. Etant donnÃ© qu'il n'y a *pas beaucoup* de
+  dÃ©veloppeurs AROS, le volume de cette liste est gÃ©nÃ©ralement faible, mais elle
   peut rapidement augmenter en cas de grande discussion sur un sujet.
 
-  .. Note:: La demande d'abonnement aux listes n'est pas faite de manière automatique,
-            mais chaque demande est vérifiée par l'administrateur. Il peut donc y
-            avoir un certain délai entre le temps de la demande d'abonnement à la
-            liste et l'appartenance effective à la liste.
+  .. Note:: La demande d'abonnement aux listes n'est pas faite de maniÃ¨re automatique,
+            mais chaque demande est vÃ©rifiÃ©e par l'administrateur. Il peut donc y
+            avoir un certain dÃ©lai entre le temps de la demande d'abonnement Ã  la
+            liste et l'appartenance effective Ã  la liste.
 
 + `AROS CVS`__
 
-  Il s'agit d'une mailing list pour développeurs de faible volume où sont postés
-  les logs du serveur de Subversion. Contrairement à la liste quotidienne de la
-  Subversion postée à la liste des développeurs AROS, qui contient un résumé des
-  activités de la journée, cette liste envoie des messages *à chaque* connexion
-  répertoriée au serveur de la Subversion. Si vous souhaitez une information en
-  temps réel de l'activité du serveur, il s'agit d'une liste pour vous. Le volume
+  Il s'agit d'une mailing list pour dÃ©veloppeurs de faible volume oÃ¹ sont postÃ©s
+  les logs du serveur de Subversion. Contrairement Ã  la liste quotidienne de la
+  Subversion postÃ©e Ã  la liste des dÃ©veloppeurs AROS, qui contient un rÃ©sumÃ© des
+  activitÃ©s de la journÃ©e, cette liste envoie des messages *Ã  chaque* connexion
+  rÃ©pertoriÃ©e au serveur de la Subversion. Si vous souhaitez une information en
+  temps rÃ©el de l'activitÃ© du serveur, il s'agit d'une liste pour vous. Le volume
   de cette liste est assez important.
 
 + `AROS Website`__
 
-  Le script de construction du site web envoie des mails à cette liste. Ainsi,
-  ceux qui apportent des changements à la documentation  devraient souscrirent
-  à cette liste.
+  Le script de construction du site web envoie des mails Ã  cette liste. Ainsi,
+  ceux qui apportent des changements Ã  la documentation  devraient souscrirent
+  Ã  cette liste.
 
 Suivez les liens des pages administratives pour les informations concernant
-l'abonnement, le désabonnement, l'accès aux archives et les autres fonctions utiles.
+l'abonnement, le dÃ©sabonnement, l'accÃ¨s aux archives et les autres fonctions utiles.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
 __ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
@@ -73,8 +73,8 @@ __ http://lists.sourceforge.net/mailman/listinfo/aros-website
 Forums
 ======
 
-AROS-Exec__ est la communauté officielle du portail d'AROS. Vous pouvez y trouver
-les dernières news concernant AROS, les forums de discussion en ligne, des
+AROS-Exec__ est la communautÃ© officielle du portail d'AROS. Vous pouvez y trouver
+les derniÃ¨res news concernant AROS, les forums de discussion en ligne, des
 galleries d'images et bien plus. C'est l'endroit parfait pour les utilisateurs
 d'AROS venant du monde entier.
 
@@ -84,11 +84,11 @@ __ https://ae.amigalife.org/
 IRC Channels 
 ============
 
-Il existe un canal IRC officiel pour AROS, nommé `#aros`__ sur le réseau FreeNode__.
-Connectez-vous à `irc.freenode.net`__ qui vous redirigera vers un serveur plus
+Il existe un canal IRC officiel pour AROS, nommÃ© `#aros`__ sur le rÃ©seau FreeNode__.
+Connectez-vous Ã  `irc.freenode.net`__ qui vous redirigera vers un serveur plus
 proche. Ce canal vous permet de discuter de tout autour d'AROS, y compris le
-développement. Dans de rares occasions, si le canal principal est surchargé, les
-discussions relatives au développement se trouvent sur `#aros.dev`__.
+dÃ©veloppement. Dans de rares occasions, si le canal principal est surchargÃ©, les
+discussions relatives au dÃ©veloppement se trouvent sur `#aros.dev`__.
 
 __ irc://irc.freenode.net/aros
 __ http://www.freenode.net/

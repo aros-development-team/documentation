@@ -3,23 +3,23 @@ AROS Dokumentointiopas
 ======================
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
 
 .. Warning::
 
-   T‰m‰ dokumentti ei ole valmis! On eritt‰in todenn‰kˆist‰ ett‰ monet osat
-   ovat vanhentuneita, sis‰lt‰v‰t ep‰kuranttia tietoa taikka puuttuvat
-   kokonaan. Jos tahdot korjata tilanteen, ota meihin yhteytt‰.
+   T√§m√§ dokumentti ei ole valmis! On eritt√§in todenn√§k√∂ist√§ ett√§ monet osat
+   ovat vanhentuneita, sis√§lt√§v√§t ep√§kuranttia tietoa taikka puuttuvat
+   kokonaan. Jos tahdot korjata tilanteen, ota meihin yhteytt√§.
 
-T‰m‰ manuaali kuvailee AROS:in dokumentointij‰rjestelm‰n. T‰m‰ on tarkoitettu
-kaikkien dokumentaation kirjoittajien luettavaksi kuten myˆs niiden
-kehitt‰jien jotka tahtovat laajentaa taikka v‰rkk‰ill‰ j‰rjestelm‰n kanssa.
-T‰h‰n tarkoitukseen on manuaali jaettu kolmeen osaan: j‰rjestelm‰n yleinen
-esittely, kuinka sit‰ k‰ytet‰‰n dokumentaation kirjoittamiseen ja lopuksi
-teknisi‰ huomautuksia ja spesifikaatioita. J‰rjestelm‰n k‰yttˆtietojen lis‰ksi toinen kappale sis‰lt‰‰ myˆs joitain yleisohjeita joita tulisi seurata dokumentaatiota kirjoittaessa.
+T√§m√§ manuaali kuvailee AROS:in dokumentointij√§rjestelm√§n. T√§m√§ on tarkoitettu
+kaikkien dokumentaation kirjoittajien luettavaksi kuten my√∂s niiden
+kehitt√§jien jotka tahtovat laajentaa taikka v√§rkk√§ill√§ j√§rjestelm√§n kanssa.
+T√§h√§n tarkoitukseen on manuaali jaettu kolmeen osaan: j√§rjestelm√§n yleinen
+esittely, kuinka sit√§ k√§ytet√§√§n dokumentaation kirjoittamiseen ja lopuksi
+teknisi√§ huomautuksia ja spesifikaatioita. J√§rjestelm√§n k√§ytt√∂tietojen lis√§ksi toinen kappale sis√§lt√§√§ my√∂s joitain yleisohjeita joita tulisi seurata dokumentaatiota kirjoittaessa.
 
 
 .. Contents::
@@ -36,24 +36,24 @@ FIXME: Kirjoita ...
 Dokumentaation kirjoitus
 ------------------------
 
-Dokumentaatio formaatti jota k‰yt‰mme on nk. reStructuredText (lyhyesti ReST)
-kuten `Docutils Project`__ sen m‰‰rittelee. ReST on helposti luettavissa ja
-kirjoitettavissa, WYSIWYG, laajennettava, sek‰ selv‰kielinen
-merkint‰syntaksiltaan.
+Dokumentaatio formaatti jota k√§yt√§mme on nk. reStructuredText (lyhyesti ReST)
+kuten `Docutils Project`__ sen m√§√§rittelee. ReST on helposti luettavissa ja
+kirjoitettavissa, WYSIWYG, laajennettava, sek√§ selv√§kielinen
+merkint√§syntaksiltaan.
 
-Voit kuvailla sen olevan hybridin merkint‰syntaksin ehdottoman ja t‰sm‰llisen
-v‰limaastosta, joka tekee siit‰ helpon oppia sek‰ helposti luettavissa olevan
+Voit kuvailla sen olevan hybridin merkint√§syntaksin ehdottoman ja t√§sm√§llisen
+v√§limaastosta, joka tekee siit√§ helpon oppia sek√§ helposti luettavissa olevan
 ja silti olevan tehokkaan ja helpon laajentaa. `Introduction to
-reStructuredText`__ sis‰lt‰‰ syntaksille muutamia hyvi‰ n‰kˆkohtia ja
-p‰‰m‰‰ri‰.
+reStructuredText`__ sis√§lt√§√§ syntaksille muutamia hyvi√§ n√§k√∂kohtia ja
+p√§√§m√§√§ri√§.
 
-Koska formaatti on p‰‰asiassa selv‰kielist‰ teksti‰, on se helppo oppia
-yksinkertaisesti tutkimalla olemassa olevaa dokumentaatiota ja k‰ytt‰en
-hitusen maalaisj‰rke‰. Mutta siit‰ huolimatta on suositeltavaa k‰yd‰ ainakin
-pikaisesti `ReStructuredText Primer`__ l‰vitse ennen kuin alat tyˆskennell‰
+Koska formaatti on p√§√§asiassa selv√§kielist√§ teksti√§, on se helppo oppia
+yksinkertaisesti tutkimalla olemassa olevaa dokumentaatiota ja k√§ytt√§en
+hitusen maalaisj√§rke√§. Mutta siit√§ huolimatta on suositeltavaa k√§yd√§ ainakin
+pikaisesti `ReStructuredText Primer`__ l√§vitse ennen kuin alat ty√∂skennell√§
 AROS dokumentaation parissa.
 
-Formaatin lis‰tietoa varten ovat seuraavat dokumentit suositeltavaa luettavaa:
+Formaatin lis√§tietoa varten ovat seuraavat dokumentit suositeltavaa luettavaa:
 
 + `Quick reStructuredText Reference`__
 
@@ -63,39 +63,39 @@ __ http://docutils.sourceforge.net/docs/rst/quickstart.html
 __ http://docutils.sourceforge.net/docs/rst/quickref.html
 
 ------------------
-Teknisi‰ huomioita
+Teknisi√§ huomioita
 ------------------
 
 Tietokannat
 ===========
 
-Olemassa on useita pieni‰ tietokantoja, jotka kaikki lˆytyv‰t ``db``
+Olemassa on useita pieni√§ tietokantoja, jotka kaikki l√∂ytyv√§t ``db``
 hakemistosta, ja jotka kaikki ovat puhtaasti tekstimuotoisia tiedostoja mutta
-jotka k‰ytt‰v‰t paria hieman toisistaan poikkeavaa formaattia. T‰m‰ on
-p‰‰asiassa historiallinen artefakti joka ehk‰ tulisi oikaista tulevaisuudessa,
-mutta t‰ll‰ hetkell‰ niiden on parasta antaa olla sellaisenaan.
+jotka k√§ytt√§v√§t paria hieman toisistaan poikkeavaa formaattia. T√§m√§ on
+p√§√§asiassa historiallinen artefakti joka ehk√§ tulisi oikaista tulevaisuudessa,
+mutta t√§ll√§ hetkell√§ niiden on parasta antaa olla sellaisenaan.
 
 
 Koot
 ----
 
-Tiedostot ``aros.size`` ja ``contrib.size`` sis‰lt‰v‰t AROS:in p‰‰asiallisen
-ja "contrib" l‰hdekoodin koot Subversion varastossa. Koot otetaan ajoittain ja
-lis‰t‰‰n n‰ihin tietokantoihin, joita k‰ytet‰‰n luomaan joitain graafeja.
+Tiedostot ``aros.size`` ja ``contrib.size`` sis√§lt√§v√§t AROS:in p√§√§asiallisen
+ja "contrib" l√§hdekoodin koot Subversion varastossa. Koot otetaan ajoittain ja
+lis√§t√§√§n n√§ihin tietokantoihin, joita k√§ytet√§√§n luomaan joitain graafeja.
 
-Jokainen rivi jakautuu kolmeen tyhj‰ll‰ merkill‰/merkeill‰ rajoitettuun
-kentt‰‰n: p‰iv‰ys, koko kilotavuina ja hakemisto (t‰ss‰ j‰rjestyksess‰).
-Hakemistotieto on periaattessa liiallista tietoa ja se voidaan j‰tt‰‰
+Jokainen rivi jakautuu kolmeen tyhj√§ll√§ merkill√§/merkeill√§ rajoitettuun
+kentt√§√§n: p√§iv√§ys, koko kilotavuina ja hakemisto (t√§ss√§ j√§rjestyksess√§).
+Hakemistotieto on periaattessa liiallista tietoa ja se voidaan j√§tt√§√§
 huomiotta.
 
 .. Note::
 
-   Koot on laskettu k‰ytt‰en UNIX:in "du" komentoa. T‰m‰ tarkoittaa sit‰ ett‰
-   ne ovat jonkin verran harhaanjohtavia koska "du" mittaa levynk‰ytˆn eik‰
-   tiedostojen tarkkaa kokoa, joka taas tarkoittaa ett‰ se laskee
-   tiedostoj‰rjestelm‰ss‰ k‰ytettyjen lohkojen m‰‰r‰n per tiedosto eik‰
-   suinkaan sen sis‰lt‰m‰n datan m‰‰r‰‰. Joten jos on olemassa tiedosto joka
-   on kooltaan 66 tavua ja tiedostoj‰rjestelm‰n lohkokoko on 4096 tavua,
+   Koot on laskettu k√§ytt√§en UNIX:in "du" komentoa. T√§m√§ tarkoittaa sit√§ ett√§
+   ne ovat jonkin verran harhaanjohtavia koska "du" mittaa levynk√§yt√∂n eik√§
+   tiedostojen tarkkaa kokoa, joka taas tarkoittaa ett√§ se laskee
+   tiedostoj√§rjestelm√§ss√§ k√§ytettyjen lohkojen m√§√§r√§n per tiedosto eik√§
+   suinkaan sen sis√§lt√§m√§n datan m√§√§r√§√§. Joten jos on olemassa tiedosto joka
+   on kooltaan 66 tavua ja tiedostoj√§rjestelm√§n lohkokoko on 4096 tavua,
    ilmoittaa "du" tiedoston kooksi 4096 tavua.
 
 
@@ -111,7 +111,7 @@ Mirror
 FIXME: Kirjoita ...
 
 
-Teht‰v‰t
+Teht√§v√§t
 --------
 
 FIXME: Kirjoita ...
@@ -123,11 +123,11 @@ Koostaminen
 Vaatimukset
 -----------
 
-Tarvitset seuraavat koostaaksesi AROS dokumentaation alusta l‰htien:
+Tarvitset seuraavat koostaaksesi AROS dokumentaation alusta l√§htien:
 
 + Python__ 2.2.1
 
-Koostaaksesi myˆs web sivuston, tarvitset yll‰ mainitun lis‰ksi:
+Koostaaksesi my√∂s web sivuston, tarvitset yll√§ mainitun lis√§ksi:
 
 + The `Python Imaging Library`__ 1.1.3
 
@@ -138,70 +138,70 @@ __ http://www.pythonware.com/products/pil/
 Asetusten teko
 --------------
 
-Ennen kuin voit aloittaa dokumentaation koostamisen, voi olla tarpeen tehd‰
-joitain asetuksia jos tarvittavan Python tulkin nimi ei ole j‰rjestelm‰ss‰si
-nimetty "python":iksi. Jos se on siten nimetty, voit huoletta hyp‰t‰ t‰m‰n
+Ennen kuin voit aloittaa dokumentaation koostamisen, voi olla tarpeen tehd√§
+joitain asetuksia jos tarvittavan Python tulkin nimi ei ole j√§rjestelm√§ss√§si
+nimetty "python":iksi. Jos se on siten nimetty, voit huoletta hyp√§t√§ t√§m√§n
 osuuden ylitse.
 
-Ensinn‰ tee kopio perusasetuksista::
+Ensinn√§ tee kopio perusasetuksista::
 
     % cd AROS/documentation/scripts/config
     % cp defaults user
 
-Sitten muokkaa ``user`` tiedostoa ja varmista ett‰ muuttujat ovat oikein
-asetetut. Esimerkkin‰ annettu konfiguraatio voisi n‰ytt‰‰ t‰lt‰::
+Sitten muokkaa ``user`` tiedostoa ja varmista ett√§ muuttujat ovat oikein
+asetetut. Esimerkkin√§ annettu konfiguraatio voisi n√§ytt√§√§ t√§lt√§::
 
     PYTHON=python
 
-``PYTHON`` kertoo Python tulkin nimen; se voi olla myˆskin absoluuttinen polku
-jos sit‰ ei ole hakupolulla. Voi olla ett‰ joudut asettamaan sen esim.
-``python2`` tai ``python2.2`` joissain j‰rjestelmiss‰.
+``PYTHON`` kertoo Python tulkin nimen; se voi olla my√∂skin absoluuttinen polku
+jos sit√§ ei ole hakupolulla. Voi olla ett√§ joudut asettamaan sen esim.
+``python2`` tai ``python2.2`` joissain j√§rjestelmiss√§.
 
 
 Kohteet
 -------
 
-T‰ll‰ hetkell‰ on kaksi kohdetta tuettu:
+T√§ll√§ hetkell√§ on kaksi kohdetta tuettu:
 
 + ``www`` 
 
-  T‰m‰ kohde generoi AROS:in web sivuston joka sis‰lt‰‰ kaiken dokumentaation,
-  uutiset, kuvagalleriat pienoiskuvineen sek‰ tilannetietoa. Dokumentaatio
-  integroituu n‰pp‰r‰sti sivustoon.
+  T√§m√§ kohde generoi AROS:in web sivuston joka sis√§lt√§√§ kaiken dokumentaation,
+  uutiset, kuvagalleriat pienoiskuvineen sek√§ tilannetietoa. Dokumentaatio
+  integroituu n√§pp√§r√§sti sivustoon.
 
 + ``html``
 
-  T‰m‰ kohde generoi itsen‰isen HTML-version dokumentaatiosta, sopivan
-  n‰ytett‰v‰ksi poissa verkosta ja sis‰llytett‰v‰ksi dokumentaatiopaketteihin.
+  T√§m√§ kohde generoi itsen√§isen HTML-version dokumentaatiosta, sopivan
+  n√§ytett√§v√§ksi poissa verkosta ja sis√§llytett√§v√§ksi dokumentaatiopaketteihin.
 
 
 Menettely
 ---------
 
-Koostaaksesi m‰‰r‰tyn kohteen, kutsu build skripti‰ kohteen nimell‰ (ja
-vaihtoehtoisesti kohteen kielell‰ jos et ole koostamassa englanninkielist‰
-versiota). Tyˆhakemiston t‰ytyy olla build:ia kutsuttaessa dokumentaation
-juuripolun. Esimerkiksi koostaaksesi web sivuston, tee n‰in::
+Koostaaksesi m√§√§r√§tyn kohteen, kutsu build skripti√§ kohteen nimell√§ (ja
+vaihtoehtoisesti kohteen kielell√§ jos et ole koostamassa englanninkielist√§
+versiota). Ty√∂hakemiston t√§ytyy olla build:ia kutsuttaessa dokumentaation
+juuripolun. Esimerkiksi koostaaksesi web sivuston, tee n√§in::
 
     > cd AROS/documentation
     > ./build www
 
-Jos tahdot koostaa itsen‰isen HTML dokumentaation::
+Jos tahdot koostaa itsen√§isen HTML dokumentaation::
 
     > cd AROS/documentation
     > ./build html
 
 Generoidut tiedostot kirjoitetaan hakemistoon
 ``../bin/documentation/<target-name>``, esim.
-``../bin/documentation/www`` kohteelle ``www``. T‰m‰n lis‰ksi on olemassa
-"kohde" nimelt‰ ``clean`` joka poistaa koko ``../bin/documentation``
+``../bin/documentation/www`` kohteelle ``www``. T√§m√§n lis√§ksi on olemassa
+"kohde" nimelt√§ ``clean`` joka poistaa koko ``../bin/documentation``
 hakemiston.
 
 .. Note::
 
-   Koostaminen tuottaa melkoisen m‰‰r‰n v‰liaikaisia tiedostoja
-   l‰hdehakemistoissa, joten et voi pit‰‰ niit‰ vain luettavissa olevalla
-   medialla. Jos olet hakenut l‰hdetiedostot SVN varastosta, ei sinun tarvitse
-   huolehtia v‰liaikaisista tiedostoista tai valmiista koosteista: ne ohitetaan
+   Koostaminen tuottaa melkoisen m√§√§r√§n v√§liaikaisia tiedostoja
+   l√§hdehakemistoissa, joten et voi pit√§√§ niit√§ vain luettavissa olevalla
+   medialla. Jos olet hakenut l√§hdetiedostot SVN varastosta, ei sinun tarvitse
+   huolehtia v√§liaikaisista tiedostoista tai valmiista koosteista: ne ohitetaan
    tarvittaessa.
 

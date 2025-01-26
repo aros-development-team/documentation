@@ -3,7 +3,7 @@ Ports
 =====
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -14,62 +14,62 @@ Ports
 Introduction
 ============
 
-Puisqu'AROS est un système d'exploitation portable, il est disponible pour
-plusieurs plateformes. Un « port » d'AROS est exactement ce qu'implique le nom,
-ie. une version d'AROS portée sur une plateforme spécifique. 
+Puisqu'AROS est un systÃ¨me d'exploitation portable, il est disponible pour
+plusieurs plateformes. Un Â« port Â» d'AROS est exactement ce qu'implique le nom,
+ie. une version d'AROS portÃ©e sur une plateforme spÃ©cifique. 
 
 
 Flavors
 -------
 
-Les ports sont divisés en deux groupes principaux, ou "flavors" selon la
-terminologie d'AROS, à savoir "natif" et "accueilli".
+Les ports sont divisÃ©s en deux groupes principaux, ou "flavors" selon la
+terminologie d'AROS, Ã  savoir "natif" et "accueilli".
 
-Les ports "natifs" démarrent directement sur le matériel et ont le contrôle
-total de l'ordinateur. Ils deviendront la manière recommandée de démarrer
-AROS à l'avenir puisqu'ils ont donnent une l'exécution et l'efficacité
-supérieures, mais elles sont actuellement trop inachevées pour être utiles
-(au moins pour le développement).
+Les ports "natifs" dÃ©marrent directement sur le matÃ©riel et ont le contrÃ´le
+total de l'ordinateur. Ils deviendront la maniÃ¨re recommandÃ©e de dÃ©marrer
+AROS Ã  l'avenir puisqu'ils ont donnent une l'exÃ©cution et l'efficacitÃ©
+supÃ©rieures, mais elles sont actuellement trop inachevÃ©es pour Ãªtre utiles
+(au moins pour le dÃ©veloppement).
 
-Les ports "accueillis" démarrent sur un autre système d'exploitation et 
-n'accèdent pas au matériel directement, mais emploient les équipements fournis
+Les ports "accueillis" dÃ©marrent sur un autre systÃ¨me d'exploitation et 
+n'accÃ¨dent pas au matÃ©riel directement, mais emploient les Ã©quipements fournis
 par l'OS d'accueil. Les avantages des ports accueillis sont qu'ils sont plus
-faciles à écrire puisqu'il n'est pas nécessaire d'écrire pilotes de bas niveau.
-En outre, puisque le développement d'AROS n'est pas auto-accueili (on ne peut
-pas compiler AROS depuis AROS) la programmation est considérablement accélérée
-puisqu'on peut démarrer l'environnement de développement et AROS côte à côte
-sans perdre du temps sur des réinitialisations constante d'essayer le nouveau
+faciles Ã  Ã©crire puisqu'il n'est pas nÃ©cessaire d'Ã©crire pilotes de bas niveau.
+En outre, puisque le dÃ©veloppement d'AROS n'est pas auto-accueili (on ne peut
+pas compiler AROS depuis AROS) la programmation est considÃ©rablement accÃ©lÃ©rÃ©e
+puisqu'on peut dÃ©marrer l'environnement de dÃ©veloppement et AROS cÃ´te Ã  cÃ´te
+sans perdre du temps sur des rÃ©initialisations constante d'essayer le nouveau
 code. 
 
 
 Apellation
 ----------
 
-Les différents ports d'AROS sont nommés sous la forme <cpu>-<platform>, où le
+Les diffÃ©rents ports d'AROS sont nommÃ©s sous la forme <cpu>-<platform>, oÃ¹ le
 <cpu> est le CPU et <platform> est un nom symbolique de la plateforme. La
-plateforme d'un port peut être soit une configuration matérielle pour les ports
-natifs, comme un "pc" ou un "amiga", soit un système d'exploitation pour les
-ports accueillis, tels que le "linux" ou "freebsd". Dans les cas où il n'est
-pas évident qu'il s'agisse d'AROS le nom est commun au préfixe "AROS/", donnant
+plateforme d'un port peut Ãªtre soit une configuration matÃ©rielle pour les ports
+natifs, comme un "pc" ou un "amiga", soit un systÃ¨me d'exploitation pour les
+ports accueillis, tels que le "linux" ou "freebsd". Dans les cas oÃ¹ il n'est
+pas Ã©vident qu'il s'agisse d'AROS le nom est commun au prÃ©fixe "AROS/", donnant
 par exemple "AROS/i386-pc".
 
 
-Portabilité
+PortabilitÃ©
 -----------
 
-Les executables d'AROS pour un CPU spécifique sont portatibles à travers tous
-les ports utilisant ce CPU, ce qui signifie que les executables compilés pour
-"i386-pc" fonctionneront très bien sur "i386-linux" et "i386-freebsd".
+Les executables d'AROS pour un CPU spÃ©cifique sont portatibles Ã  travers tous
+les ports utilisant ce CPU, ce qui signifie que les executables compilÃ©s pour
+"i386-pc" fonctionneront trÃ¨s bien sur "i386-linux" et "i386-freebsd".
 
 
 Ports existants
 ===============
 
 Ci-dessous se trouve la liste de tous les ports d'AROS qui sont en cours de
-développement et/ou sont activement développés. Toutes les versions ne sont
-pas disponibles pour le téléchargement, puisqu'elles pourraient ne pas être
-assez complètes ou avoir des besoins de compilation que nous n'avons pas à 
-ce jour en raison de nos ressources limitées.
+dÃ©veloppement et/ou sont activement dÃ©veloppÃ©s. Toutes les versions ne sont
+pas disponibles pour le tÃ©lÃ©chargement, puisqu'elles pourraient ne pas Ãªtre
+assez complÃ¨tes ou avoir des besoins de compilation que nous n'avons pas Ã  
+ce jour en raison de nos ressources limitÃ©es.
 
 AROS/i386-pc
 ------------
@@ -80,82 +80,82 @@ AROS/i386-pc
 
 AROS/i386-pc est le port natif d'AROS aux ordinateurs IBM PC AT et compatibles
 qui utilisent la famille de processeurs x86. Le nom est un peu trompeur
-puisqu'AROS/i386-pc exige au moins un 486 car certaines instructions utilisées
+puisqu'AROS/i386-pc exige au moins un 486 car certaines instructions utilisÃ©es
 ne sont pas disponibles sur les 386.
 
-Ce port fonctionne plutôt bien, mais seuls les pilotes basics sont disponibles.
+Ce port fonctionne plutÃ´t bien, mais seuls les pilotes basics sont disponibles.
 Une des plus grandes limitations est que nous avons actuellement seulement les
 pilotes pour les cartes graphiques nVidia et ATI. Pour les possesseurs d'autres
-cartes graphiques, les pilotes génériques VGA et VBE (non accélérés) doivent
-être utilisés. Il y a plus de pilotes en cours de développement, mais le
-développement est lent puisque nous avons uniquement environ 2.5 hackers de
-matériel.
-Ce port est disponible en téléchargement. 
+cartes graphiques, les pilotes gÃ©nÃ©riques VGA et VBE (non accÃ©lÃ©rÃ©s) doivent
+Ãªtre utilisÃ©s. Il y a plus de pilotes en cours de dÃ©veloppement, mais le
+dÃ©veloppement est lent puisque nous avons uniquement environ 2.5 hackers de
+matÃ©riel.
+Ce port est disponible en tÃ©lÃ©chargement. 
 
 
 AROS/m68k-pp
 ------------
 
 :Flavour:    Natif 
-:Status:     Partiellement fonctionnel (dans un émulateur), pilotes incomplets
+:Status:     Partiellement fonctionnel (dans un Ã©mulateur), pilotes incomplets
 :Maintained: Oui
 
 AROS/m68k-pp est le port natif d'AROS aux Palms et autres assistants personnels
-(« pp » représente le « palm pilot », du nom des premiers assistants). Ceci
+(Â« pp Â» reprÃ©sente le Â« palm pilot Â», du nom des premiers assistants). Ceci
 signifie que vous pourriez prendre AROS avec vous dans votre poche en voyageant
-à l'avenir...
+Ã  l'avenir...
 
-Ce port est actuellement très basic. Il fonctionne la plupart du temps (dans un
-émulateur, puisque personne ne veut risquer crasher son cher matériel) mais il
-y a beaucoup de travail à faire. Il y a un pilote graphiques, mais pas de pilote
-d'entrée. 
-Ce port n'est actuellement pas disponible en téléchargement. 
+Ce port est actuellement trÃ¨s basic. Il fonctionne la plupart du temps (dans un
+Ã©mulateur, puisque personne ne veut risquer crasher son cher matÃ©riel) mais il
+y a beaucoup de travail Ã  faire. Il y a un pilote graphiques, mais pas de pilote
+d'entrÃ©e. 
+Ce port n'est actuellement pas disponible en tÃ©lÃ©chargement. 
 
 
 AROS/i386-linux
 ---------------
 
-:Flavour:    Hôte
+:Flavour:    HÃ´te
 :Status:     Fonctionnel
 :Maintained: Oui
 
-AROS/i386-linux est le port hôte d'AROS pour le système d'exploitation Linux [#]_
+AROS/i386-linux est le port hÃ´te d'AROS pour le systÃ¨me d'exploitation Linux [#]_
 fonctionnant sur processeur x86.
 
-Il s'agit du port le plus complet d'AROS, puisque la plupart des développeurs
-utilisent Linux dans le développement d'AROS, et parce qu'il y a beaucoup moins
-de pilotes à écrire.
-Ce port est disponible en téléchargement. 
+Il s'agit du port le plus complet d'AROS, puisque la plupart des dÃ©veloppeurs
+utilisent Linux dans le dÃ©veloppement d'AROS, et parce qu'il y a beaucoup moins
+de pilotes Ã  Ã©crire.
+Ce port est disponible en tÃ©lÃ©chargement. 
 
 
 AROS/i386-freebsd
 -----------------
 
-:Flavour:    Hôte
+:Flavour:    HÃ´te
 :Status:     Fonctionnel
 :Maintained: Oui (5.x)
 
-AROS/i386-freebsd est le port hôte d'AROS sur le système d'exsploitation FreeBSD
+AROS/i386-freebsd est le port hÃ´te d'AROS sur le systÃ¨me d'exsploitation FreeBSD
 fonctionnant sur processeur x86.
 
 Ce port est relativement complet car il partage une grande partie du code avec
-d'AROS/i386-linux, mais puisqu'il n'y a que peu de développeurs sous FreeBSD son
-développement est un peu lent. Nous essayons de compiler AROS/i386-freebsd
-lorsque les snapshots sont réalisés, mais cela n'est pas toujours possible, ainsi
-il n'est pas toujours disponible en téléchargement.
+d'AROS/i386-linux, mais puisqu'il n'y a que peu de dÃ©veloppeurs sous FreeBSD son
+dÃ©veloppement est un peu lent. Nous essayons de compiler AROS/i386-freebsd
+lorsque les snapshots sont rÃ©alisÃ©s, mais cela n'est pas toujours possible, ainsi
+il n'est pas toujours disponible en tÃ©lÃ©chargement.
 
 AROS/ppc-linux
 ---------------
 
-:Flavour:    Hôte
+:Flavour:    HÃ´te
 :Status:     Fonctionnel
 :Maintained: Oui
 
-AROS/ppc-linux est le port d'AROS au système d'exploitation Linux fonctionnant sur
+AROS/ppc-linux est le port d'AROS au systÃ¨me d'exploitation Linux fonctionnant sur
 processeur x86.
 
-Une version précompilée se trouve à `Sourceforge`__.
-La reconstruction nécessite gcc3.4.3. patché. Le fichier diff se trouve dans
+Une version prÃ©compilÃ©e se trouve Ã  `Sourceforge`__.
+La reconstruction nÃ©cessite gcc3.4.3. patchÃ©. Le fichier diff se trouve dans
 contrib/gnu/gcc.
 
 __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
@@ -164,8 +164,8 @@ __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
 Notes
 =========
 
-.. [#] Oui, nous savons que Linux n'est qu'un noyau et pas un système d'exploitation
-       complet, mais c'est plus facile que d'écrire "système d'exploitation basé
-       sur le noyau de Linux, certains outils GNU communs et le système X windowing".
-       Ce raccourci étant bien entendu inutile puisque ce détail a été explicité ici
-       pour le lecteur pédant, enfin...
+.. [#] Oui, nous savons que Linux n'est qu'un noyau et pas un systÃ¨me d'exploitation
+       complet, mais c'est plus facile que d'Ã©crire "systÃ¨me d'exploitation basÃ©
+       sur le noyau de Linux, certains outils GNU communs et le systÃ¨me X windowing".
+       Ce raccourci Ã©tant bien entendu inutile puisque ce dÃ©tail a Ã©tÃ© explicitÃ© ici
+       pour le lecteur pÃ©dant, enfin...

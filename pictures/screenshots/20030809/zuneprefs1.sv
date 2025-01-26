@@ -1,2 +1,2 @@
-Mer sidor i Zune-inställningar, så du kan konfigurera användarinterfacet
+Mer sidor i Zune-instÃ¤llningar, sÃ¥ du kan konfigurera anvÃ¤ndarinterfacet
 precis som *du* vill ha det.

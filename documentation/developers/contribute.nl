@@ -3,7 +3,7 @@ Meehelpen
 =========
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright Â© 1995-2020, The AROS Development Team
 :Status:    Done. 
 
 .. Contents::
@@ -22,7 +22,7 @@ ongeacht hoe goed u bent met programmeren!
 
 Voor degenen onder u die niet kunnen programmeren: ook voor u zijn er meer dan 
 genoeg zaken waarmee u ons kunt helpen! Denk aan het schrijven van de
-documentatie, vertalen van programma's in andere talen, het creëren van 
+documentatie, vertalen van programma's in andere talen, het creÃ«ren van 
 grafische afbeeldingen en/of het opsporen van fouten. Deze taken zijn uiteindelijk 
 minstens zo belangrijk als het programmeren zelf!
 
@@ -158,7 +158,7 @@ Vertaling
 Andere zaken
 ------------
 
-+ Coördinatie van het GUI ontwerp voor AROS programma's, zoals het 
++ CoÃ¶rdinatie van het GUI ontwerp voor AROS programma's, zoals het 
   prefs programma, tools en utilities.
 
 Deelnemen aan het team
@@ -167,7 +167,7 @@ Deelnemen aan het team
 Wilt u het meedoen met de ontwikkeling? Graag! Geef u dan op voor de 
 `ontwikkelaars mailing lijst`__ van uw interesse (het abonneren op de hoofd 
 ontwikkeling lijst is *zeer* aan te raden) en vraag tevens om toegang tot het 
-Subversion archief. Dat is alles. :) (Noot: enige beheersing van de Engelse óf
+Subversion archief. Dat is alles. :) (Noot: enige beheersing van de Engelse Ã³f
 Duitse taal is wel handig) 
 
 We raden u aan om daarna een mail naar de ontwikkelaars lijst te schrijven 
@@ -188,10 +188,10 @@ Het Subversion archief
 
 Het AROS broncode archief draait op een paswoord beveiligde Subversion 
 server, wat betekend dat u eerst om toegang zal moeten vragen voordat u kunt
-deelnemen aan de ontwikkeling. De paswoorden komen in een geëncrypteerde vorm, 
+deelnemen aan de ontwikkeling. De paswoorden komen in een geÃ«ncrypteerde vorm, 
 die u online kunt generen met onze `online paswoord encryptie tool`__.
 
-Mailt u daarna dit geëncrypteerde paswoord samen met uw geprefereerde 
+Mailt u daarna dit geÃ«ncrypteerde paswoord samen met uw geprefereerde 
 gebruikersnaam en uw echte naam naar `Aaron Digulla`__ en wacht op antwoord. 
 Voor een zo snel mogelijke afhandeling verzoeken wij u om a.u.b. de titel 
 in te stellen op "Access to the AROS SVN server" en het bericht zelf als 
@@ -203,7 +203,7 @@ Aaron heeft het vaak druk, wees dus a.u.b. geduldig.
 Het kan zo best enkele dagen duren eer u toegang krijgt.
 
 Voor informatie over het gebruik van de AROS SVN server verwijzen wij u door 
-naar de (nog Engelstalige) pagina "`Werken met SVN`__". Zelfs als u al het één en
+naar de (nog Engelstalige) pagina "`Werken met SVN`__". Zelfs als u al het Ã©Ã©n en
 ander af weet van SVN is het nog handig om deze pagina door te lezen. 
 Deze bevat namelijk specifieke informatie en tips gericht op het AROS archief 
 (zoals hoe in te loggen).  

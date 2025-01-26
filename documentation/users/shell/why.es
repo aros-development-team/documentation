@@ -12,7 +12,7 @@ Why
 
  Why 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -20,15 +20,15 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Imprime información adicional del por qué falló una operación.
-     Lo común es que cuando un comando falla se imprima un breve 
-     mensaje que incluye el nombre del comando que falló y unos pocos
-     detalles. Why llena con los detalles relacionados a la operación
+     Imprime informaciÃ³n adicional del por quÃ© fallÃ³ una operaciÃ³n.
+     Lo comÃºn es que cuando un comando falla se imprima un breve 
+     mensaje que incluye el nombre del comando que fallÃ³ y unos pocos
+     detalles. Why llena con los detalles relacionados a la operaciÃ³n
      fallida.
 
 

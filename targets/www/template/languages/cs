@@ -1,76 +1,76 @@
 [meta]
 
-charset:          iso-8859-2
+charset:          utf-8
 
 [titles]
 
-news:             Zprávy
+news:             ZprÃ¡vy
 news-archive-for: News archive for
 mirrors:          Zrcadla
 contents:         Obsah
-search:           Hledání
-visitors:         Náv¹tìvníci
-sponsors:         Sponzoøi
+search:           HledÃ¡nÃ­
+visitors:         NÃ¡vÅ¡tÄ›vnÃ­ci
+sponsors:         SponzoÅ™i
 
 [navigation]
 
-home:             Domù
-news:             Zprávy
-archive:          Archív
-introduction:     Úvod
+home:             DomÅ¯
+news:             ZprÃ¡vy
+archive:          ArchÃ­v
+introduction:     Ãšvod
 status:           Stav
-screenshots:      Snímky obrazovky
+screenshots:      SnÃ­mky obrazovky
 ports:            Porty
 license:          Licence
-download:         Ke sta¾ení
+download:         Ke staÅ¾enÃ­
 documentation:    Dokumentace
-users:            U¾ivatelé
+users:            UÅ¾ivatelÃ©
 installation:     Instalace
-using:            Pou¾ití
-shell:            Pøíkazy shellu
+using:            PouÅ¾itÃ­
+shell:            PÅ™Ã­kazy shellu
 applications:     Aplikace
 faq:              FAQ
 howto:            HowTo
 hwcompat:         Kompatibilita hardware
 glossary:         Glossary
 translators:      Translators
-developers:       Vıvojáøi
-contribute:       Spolupráce
-roadmap:          Plán
+developers:       VÃ½vojÃ¡Å™i
+contribute:       SpoluprÃ¡ce
+roadmap:          PlÃ¡n
 issue-tracker:    Issue tracker
-working-with-git: Práce s Git
+working-with-git: PrÃ¡ce s Git
 compiling:        Kompilace
-application-development-manual: Manuál pro vıvoj aplikací
-zune-application-development-manual: Manuál pro vıvoj Zune aplikací
-system-development-manual: Manuál pro vıvoj systému
-debugging-manual: Manuál pro ladìní
+application-development-manual: ManuÃ¡l pro vÃ½voj aplikacÃ­
+zune-application-development-manual: ManuÃ¡l pro vÃ½voj Zune aplikacÃ­
+system-development-manual: ManuÃ¡l pro vÃ½voj systÃ©mu
+debugging-manual: ManuÃ¡l pro ladÄ›nÃ­
 reference:        Reference
 specifications:   Specifikace
 ui-style-guide:   Popis designu UI
 testing:          Testing
 documenting:      Dokumentace
 porting:          Portace
-translating:      Pøeklad
-summaries:        Shrnutí
+translating:      PÅ™eklad
+summaries:        ShrnutÃ­
 links:            Odkazy
 contact:          Kontakt
 slack:            Slack
 mailing-lists:    Mailing listy
-forums:           Fóra
+forums:           FÃ³ra
 community:        Community Resources
-irc-channels:     IRC kanály
-credits:          Zásluhy
-acknowledgements: Podìkování
+irc-channels:     IRC kanÃ¡ly
+credits:          ZÃ¡sluhy
+acknowledgements: PodÄ›kovÃ¡nÃ­
 pictures:         Fotografie
-developers-together: Vıvojáøi dohromady
-sponsors:         Sponzoøi
+developers-together: VÃ½vojÃ¡Å™i dohromady
+sponsors:         SponzoÅ™i
 linking:          Propagace
 
 [misc]
 
-go:               Jít na
+go:               JÃ­t na
 search:           Hledat
 copyright:        Copyright &copy; 1995-2025, The AROS Development Team. All rights reserved.
 trademarks:       Amiga&reg; is a trademark of Amiga Inc. All other trademarks belong to their respective owners.
-read-more:        Více zde...
-large-image:      Zvìt¹it...
+read-more:        VÃ­ce zde...
+large-image:      ZvÄ›tÅ¡it...

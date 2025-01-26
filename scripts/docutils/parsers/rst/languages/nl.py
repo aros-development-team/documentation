@@ -1,7 +1,5 @@
-# Author: Martijn Pieters
-# Contact: mjpieters@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: nl.py 7119 2011-09-02 13:00:23Z milde $
+# Author: Martijn Pieters <mjpieters@users.sourceforge.net>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -21,6 +19,7 @@ directives = {
       # language-dependent: fixed
       'attentie': 'attention',
       'let-op': 'caution',
+      'code (translation required)': 'code',
       'gevaar': 'danger',
       'fout': 'error',
       'hint': 'hint',
@@ -46,6 +45,7 @@ directives = {
       'lijst-tabel': 'list-table',
       #'veelgestelde-vragen': 'questions',
       'meta': 'meta',
+      'math (translation required)': 'math',
       #'imagemap': 'imagemap',
       'beeld': 'image',
       'figuur': 'figure',
@@ -78,6 +78,7 @@ roles = {
     # 'ab': 'abbreviation',
     'acroniem': 'acronym',
     'ac': 'acronym',
+    u'code (translation required)': 'code',
     'index': 'index',
     'i': 'index',
     'inferieur': 'subscript',
@@ -96,6 +97,7 @@ roles = {
     'extra-nadruk': 'strong',
     'vet': 'strong',
     'letterlijk': 'literal',
+    'math (translation required)': 'math',
     'benoemde-referentie': 'named-reference',
     'anonieme-referentie': 'anonymous-reference',
     'voetnoot-referentie': 'footnote-reference',

@@ -9,7 +9,7 @@
 Avail
 =====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	CHIP/S, FAST/S, TOTAL/S, FLUSH/S, H=HUMAN/S        
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,10 +29,10 @@ Funkcja
 ~~~~~~~
 ::
 
-	Podaje podsumowanie pamiêci, u¿ytej i dostêpnej w systemie. Aby
-	wyczy¶ciæ nieu¿ywan± pamiêæ, która wci±¿ mo¿e byæ wykorzystywana
-	(przez biblioteki, urz±dzenia, czcionki i inne, które wystêpuj±
-	w pamiêci, ale nie s± u¿ywane), u¿yj opcji FLUSH.
+	Podaje podsumowanie pamiÄ™ci, uÅ¼ytej i dostÄ™pnej w systemie. Aby
+	wyczyÅ›ciÄ‡ nieuÅ¼ywanÄ… pamiÄ™Ä‡, ktÃ³ra wciÄ…Å¼ moÅ¼e byÄ‡ wykorzystywana
+	(przez biblioteki, urzÄ…dzenia, czcionki i inne, ktÃ³re wystÄ™pujÄ…
+	w pamiÄ™ci, ale nie sÄ… uÅ¼ywane), uÅ¼yj opcji FLUSH.
 
 
 Parametry
@@ -40,11 +40,11 @@ Parametry
 ::
 
 
-	CHIP	--	poka¿ tylko pamiêæ CHIP (graficzn±)
-	FAST	--	poka¿ tylko pamiêæ FAST (pamiêæ operacyjna)
-	TOTAL	--	poka¿ pamiêæ bez wzglêdu na rodzaj
-	FLUSH	--	wyma¿ nieaktywne czê¶ci pamiêci
-	HUMAN	--	wy¶wietl w warto¶ciach zrozumia³ych dla u¿ytkownika
+	CHIP	--	pokaÅ¼ tylko pamiÄ™Ä‡ CHIP (graficznÄ…)
+	FAST	--	pokaÅ¼ tylko pamiÄ™Ä‡ FAST (pamiÄ™Ä‡ operacyjna)
+	TOTAL	--	pokaÅ¼ pamiÄ™Ä‡ bez wzglÄ™du na rodzaj
+	FLUSH	--	wymaÅ¼ nieaktywne czÄ™Å›ci pamiÄ™ci
+	HUMAN	--	wyÅ›wietl w wartoÅ›ciach zrozumiaÅ‚ych dla uÅ¼ytkownika
 			(K jak kilobajty, M jak megabajty i G jak gigabajty)
 
 
@@ -52,7 +52,7 @@ Opis
 ~~~~
 ::
 
-	Pamiêci CHIP i FAST s± dostêpne dla komputerów Amiga i mog± byæ
-	niedostêpne dla Twojej platformy sprzêtowej.
+	PamiÄ™ci CHIP i FAST sÄ… dostÄ™pne dla komputerÃ³w Amiga i mogÄ… byÄ‡
+	niedostÄ™pne dla Twojej platformy sprzÄ™towej.
 
  

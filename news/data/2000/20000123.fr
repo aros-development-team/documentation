@@ -5,10 +5,10 @@ Divers
 :Auteur: Aaron Digulla
 :Date:   2000-01-23
 
-Il y a deux bons articles à propos d'AROS sur le net. Le premier est
+Il y a deux bons articles Ã  propos d'AROS sur le net. Le premier est
 ici__ (c'est une interview avec Aaron digulla) et l'autre est ici__
-(background et quelques détails sur AROS). Cet article est un peu
-vieux mais il est bien écrit (et est disponible en Italien__).
+(background et quelques dÃ©tails sur AROS). Cet article est un peu
+vieux mais il est bien Ã©crit (et est disponible en Italien__).
 
 __ http://elwoodb.free.fr/AROS
 __ http://amiga.eden.it/dossier/aros/aros_eng.html

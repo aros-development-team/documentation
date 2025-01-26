@@ -1,2 +1,2 @@
-Fabio Alemagna a Aaron Digulla v kavárnì 'Dolce Sosta' na ostrovì
-Ischia (blízko Naples v Itálii).
+Fabio Alemagna a Aaron Digulla v kavÃ¡rnÄ› 'Dolce Sosta' na ostrovÄ›
+Ischia (blÃ­zko Naples v ItÃ¡lii).

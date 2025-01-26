@@ -19,10 +19,10 @@ Synopsis
 
 
      DRIVE/A, BUFFERS/N
-     UNIDAD/A, BÚFERES/N
+     UNIDAD/A, BÃšFERES/N
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -30,18 +30,18 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Agrega búferes a la lista de búferes disponibles de una unidad
-     específica. Agregar búferes acelera el acceso al disco pero tiene
-     el inconveniente de usar memoria del sistema (512 bytes por búfer).
-     Especificar un número negativo resta búferes de la unidad.
+     Agrega bÃºferes a la lista de bÃºferes disponibles de una unidad
+     especÃ­fica. Agregar bÃºferes acelera el acceso al disco pero tiene
+     el inconveniente de usar memoria del sistema (512 bytes por bÃºfer).
+     Especificar un nÃºmero negativo resta bÃºferes de la unidad.
          Si se especifica solamente el argumento UNIDAD, se muestra la
-     cantidad de búferes para esa unidad sin cambiar la asignación de
-     búferes. 
+     cantidad de bÃºferes para esa unidad sin cambiar la asignaciÃ³n de
+     bÃºferes. 
 
 
 Entradas
@@ -50,8 +50,8 @@ Entradas
 ::
 
 
-     UNIDAD   --  la unidad a alterar su asignación de búferes.
-     BÚFERES  --  la cantidad de búferes a agregar (o quitar en caso de
-                  que sea un número negativo) a la unidad.
+     UNIDAD   --  la unidad a alterar su asignaciÃ³n de bÃºferes.
+     BÃšFERES  --  la cantidad de bÃºferes a agregar (o quitar en caso de
+                  que sea un nÃºmero negativo) a la unidad.
 
 

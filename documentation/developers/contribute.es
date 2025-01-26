@@ -1,44 +1,44 @@
 ============
-Contribución
+ContribuciÃ³n
 ============
 
 :Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright Â© 1995-2020, The AROS Development Team
 :Status:    Done. 
 
 .. Contents::
 
 
-¡Necesitamos tu ayuda!
+Â¡Necesitamos tu ayuda!
 ======================
 
 Tenemos muy pocos desarrolladores, lo que desafortunadamente significa que el
-progreso es bastante lento. ¡Simplemente necesitamos más gente para ayudarnos!
+progreso es bastante lento. Â¡Simplemente necesitamos mÃ¡s gente para ayudarnos!
 Hay una gran cantidad de tareas que tienen la necesidad de un desarrollador
-dedicado. Van desde los proyectos grandes a los pequeños, desde hackear el
-hardware, a través del sistema de alto nivel hasta la programación de 
-aplicaciones. Básicamente hay algo para todos los que deseen contribuir, 
-¡sin considerar cuán hábil eres en la codificación!
+dedicado. Van desde los proyectos grandes a los pequeÃ±os, desde hackear el
+hardware, a travÃ©s del sistema de alto nivel hasta la programaciÃ³n de 
+aplicaciones. BÃ¡sicamente hay algo para todos los que deseen contribuir, 
+Â¡sin considerar cuÃ¡n hÃ¡bil eres en la codificaciÃ³n!
 
-Para aquéllos que no son programadores, ¡hay bastantes tareas con las que pueden
-ayudarnos! Esto incluye escribir la documentación, traducir los programas y la
-documentación a otros idiomas, crear bonitos gráficos y cazar errores. ¡Estas
-tareas son tan importantes como la codificación!
+Para aquÃ©llos que no son programadores, Â¡hay bastantes tareas con las que pueden
+ayudarnos! Esto incluye escribir la documentaciÃ³n, traducir los programas y la
+documentaciÃ³n a otros idiomas, crear bonitos grÃ¡ficos y cazar errores. Â¡Estas
+tareas son tan importantes como la codificaciÃ³n!
 
 
 Tareas disponibles
 ==================
 
 Esta es una lista de algunas tareas con las que necesitamos ayuda y en las
-que nadie está trabajando ahora. No es una lista completa, simplemente contiene
-las cosas más destacadas con las que necesitamos ayuda en AROS.
+que nadie estÃ¡ trabajando ahora. No es una lista completa, simplemente contiene
+las cosas mÃ¡s destacadas con las que necesitamos ayuda en AROS.
 
 
-Programación
+ProgramaciÃ³n
 ------------
 
-+ Implementar las bibliotecas, recursos, dispositivos faltantes o partes de éstas.
-  Vea el informe de estado detallado para tener más información sobre lo que falta.
++ Implementar las bibliotecas, recursos, dispositivos faltantes o partes de Ã©stas.
+  Vea el informe de estado detallado para tener mÃ¡s informaciÃ³n sobre lo que falta.
 
 + Implementar o mejorar los controladores de los dispositivos de hardware:
   
@@ -47,7 +47,7 @@ Programación
     + Graphics
     + Input (touchscreen, buttons)
     + Sound
-    + Gráficos
+    + GrÃ¡ficos
     + Entrada (pantalla tactil, botones)
     + Sonido
 
@@ -56,7 +56,7 @@ Programación
     
     + Specific graphic card drivers (we only have general, not very well
       accelerated ones). A short wishlist:
-    + Los controladores de tarjetas gráficas específicas (solamente tenemos unas
+    + Los controladores de tarjetas grÃ¡ficas especÃ­ficas (solamente tenemos unas
       generales, no muy bien aceleradas. Una breve lista de deseos:
       
       - nVidia TNT/TNT2/GeForce (started, but incomplete) 
@@ -70,10 +70,10 @@ Programación
     + ...anything else you can think of.
     + las clases USB faltantes
     + SCSI
-    + los chipsets IDE específicos
+    + los chipsets IDE especÃ­ficos
     + Sonido
 
-  - Un soporte genérico de la impresora.
+  - Un soporte genÃ©rico de la impresora.
  
 + Adaptar a otras arquitecturas. Algunos ejemplos de hardware para el cual no
   hay puertos de AROS mantenidos o iniciados:
@@ -95,13 +95,13 @@ Programación
 + Mejorar la biblioteca de enlace de C
 
   Esto significa implementar las funciones ANSI (y algunas POSIX) en la clib,
-  para hacer más fácil llevar software UNIX (eg. GCC, make y binutils). La cosa
-  más grande que falta es el soporte para el señalamiento de estilo POSIX, pero
-  también otras funciones.
+  para hacer mÃ¡s fÃ¡cil llevar software UNIX (eg. GCC, make y binutils). La cosa
+  mÃ¡s grande que falta es el soporte para el seÃ±alamiento de estilo POSIX, pero
+  tambiÃ©n otras funciones.
 
-+ Implementar más datatypes y mejorar los existentes
++ Implementar mÃ¡s datatypes y mejorar los existentes
 
-  El número de datatypes disponibles en AROS es bastante pequeño. Algunos
+  El nÃºmero de datatypes disponibles en AROS es bastante pequeÃ±o. Algunos
   ejemplos de datatypes que necesitar mejorar para convertirse en usables
   o necesitan ser implementados desde cero son:
 
@@ -124,24 +124,24 @@ Programación
   - El software de fuente abierta para el AmigaOS como SimpleMail, YAM, Jabbwerwocky.
 
 
-Documentación
+DocumentaciÃ³n
 -------------
 
-+ Escribir la documentación del usuario. Esto consiste en escribir una
-  Guía de Usuario general para los novicios y los expertos, y también la 
-  documentación de referencia para todos los programas standard de AROS.
++ Escribir la documentaciÃ³n del usuario. Esto consiste en escribir una
+  GuÃ­a de Usuario general para los novicios y los expertos, y tambiÃ©n la 
+  documentaciÃ³n de referencia para todos los programas standard de AROS.
 
-+ Escribir la documentación del desarrollador. Aunque esto está un poco 
-  mejor que la documentación del usuario, todavía hay bastante trabajo
-  para hacer. Por ejemplo, todavía no hay un tutorial para los programadores
-  novicios realmente bueno. Sería agradable tener el equivalente de los Manuales 
-  del Núcleo de la ROM.
++ Escribir la documentaciÃ³n del desarrollador. Aunque esto estÃ¡ un poco 
+  mejor que la documentaciÃ³n del usuario, todavÃ­a hay bastante trabajo
+  para hacer. Por ejemplo, todavÃ­a no hay un tutorial para los programadores
+  novicios realmente bueno. SerÃ­a agradable tener el equivalente de los Manuales 
+  del NÃºcleo de la ROM.
 
-Traducción
+TraducciÃ³n
 ----------
 
-+ Traducir AROS a más idiomas. Actualmente, sólo los siguientes
-  lenguajes tienen un soporte más o menos completo:
++ Traducir AROS a mÃ¡s idiomas. Actualmente, sÃ³lo los siguientes
+  lenguajes tienen un soporte mÃ¡s o menos completo:
 
   - English
   - Deutsch
@@ -151,31 +151,31 @@ Traducción
   - French
   - Russian
 
-+ Traducir la documentación y el sitio web a más idiomas. Actualmente, está
-  disponible por completo en inglés. Se han traducido partes a otros lenguajes,
-  pero todavía queda mucho por hacer.
++ Traducir la documentaciÃ³n y el sitio web a mÃ¡s idiomas. Actualmente, estÃ¡
+  disponible por completo en inglÃ©s. Se han traducido partes a otros lenguajes,
+  pero todavÃ­a queda mucho por hacer.
 
 
 Otras
 -----
 
-+ Coordinar el diseño de la GUI para los programas AROS, como el programa Prefs,
++ Coordinar el diseÃ±o de la GUI para los programas AROS, como el programa Prefs,
   las herramientas y las utilidades.
 
 
 Unirse al equipo
 ================
 
-¿Quieres unirte al esfuerzo de desarrollo? ¡Fantástico! Entonces únete a las
-`development mailing lists`__ en las que estés interesado (al menos se 
+Â¿Quieres unirte al esfuerzo de desarrollo? Â¡FantÃ¡stico! Entonces Ãºnete a las
+`development mailing lists`__ en las que estÃ©s interesado (al menos se 
 recomienda *mucho* unirse a la lista de desarrollo principal) y pide acceso
-al depósito de Subversion. Eso es todo. :)
+al depÃ³sito de Subversion. Eso es todo. :)
 
-Escribe un breve mensaje a la lista de desarrollo que contenga una presentación
-de tí mismo y con qué estás animado para ayudar. Si tienes problemas, por favor
+Escribe un breve mensaje a la lista de desarrollo que contenga una presentaciÃ³n
+de tÃ­ mismo y con quÃ© estÃ¡s animado para ayudar. Si tienes problemas, por favor
 no dudes en enviar un mensaje a la lista o pregunta en los `IRC channels`__.
-También, antes de empezar en algo específico, por favor escribe un mensaje a la
-lista afirmando lo que estás por hacer para actualizar la base de datos de tareas.
+TambiÃ©n, antes de empezar en algo especÃ­fico, por favor escribe un mensaje a la
+lista afirmando lo que estÃ¡s por hacer para actualizar la base de datos de tareas.
 De esta manera podemos asegurar a la gente que no trabaje en la misma cosa por
 error...
 
@@ -183,26 +183,26 @@ __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
 
 
-El depósito de Subversión
+El depÃ³sito de SubversiÃ³n
 -------------------------
 
-El depósito de AROS está funcionando en un servidor Subversion protegido con contraseña,
-lo que significa que necesitas pedir acceso a él para poder colaborar en el desarrollo.
-Las contraseñas están encriptadas; la puedes generar con nuestra `online password
+El depÃ³sito de AROS estÃ¡ funcionando en un servidor Subversion protegido con contraseÃ±a,
+lo que significa que necesitas pedir acceso a Ã©l para poder colaborar en el desarrollo.
+Las contraseÃ±as estÃ¡n encriptadas; la puedes generar con nuestra `online password
 encryption tool`__.
 
-Por favor envía la contraseña encriptada junto tu nombre de usuario preferido y
+Por favor envÃ­a la contraseÃ±a encriptada junto tu nombre de usuario preferido y
 tu nombre real a `Aaron Digulla`__ y espera una respuesta. Para facilitar una
-rápida respuesta, por favor pon en el campo asunto "Acces to the AROS SVN server"
-y en el cuerpo "Please add <nombre de usuario> <contraseña>", por ej.::
+rÃ¡pida respuesta, por favor pon en el campo asunto "Acces to the AROS SVN server"
+y en el cuerpo "Please add <nombre de usuario> <contraseÃ±a>", por ej.::
 
     Please add digulla xx1LtbDbOY4/E
 
-Podría tardar un par de días porque Aaron está bastante ocupado, así que sé paciente.
+PodrÃ­a tardar un par de dÃ­as porque Aaron estÃ¡ bastante ocupado, asÃ­ que sÃ© paciente.
 
-Para información sobre cómo usar el servidor SVN de AROS, por favor lee "`Working with
-SVN`__". Incluso si ya sabes cómo usar SVN es útil que lo mires pues contiene 
-información y consejos específicos para el depósito de AROS (por ej. sobre cómo ingresar.
+Para informaciÃ³n sobre cÃ³mo usar el servidor SVN de AROS, por favor lee "`Working with
+SVN`__". Incluso si ya sabes cÃ³mo usar SVN es Ãºtil que lo mires pues contiene 
+informaciÃ³n y consejos especÃ­ficos para el depÃ³sito de AROS (por ej. sobre cÃ³mo ingresar.
 
 __ http://aros.sourceforge.net/tools/password.html 
 __ mailto:digulla@aros.org?subject=[Access%20to%20the%20AROS%20SVN%20server]

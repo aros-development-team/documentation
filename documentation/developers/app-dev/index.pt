@@ -1,34 +1,34 @@
 ============================================
-Manual de Desenvolvimento de AplicaÁıes AROS
+Manual de Desenvolvimento de Aplica√ß√µes AROS
 ============================================
 
 :Autores:		Staf Verhaegen, Sebastian Rittau, Stefan Rieken, Matt Parsons,
 			Adam Chodorowski, Fabio Alemagna, Matthias Rustler
-:Direitos de CÛpia:	Copyright (C) 1995-2008, A equipa de desenvolvimento AROS
-:Vers„o:		$Revision$
+:Direitos de C√≥pia:	Copyright (C) 1995-2008, A equipa de desenvolvimento AROS
+:Vers√£o:		$Revision$
 :Data:			$Date$
-:estado:		Por acabar; IntegraÁ„o iniciada (um caminho looongo a percorrer).
-:A fazer:		Integradas as v·rias partes. Actualizado e revisto. Completo...
+:estado:		Por acabar; Integra√ß√£o iniciada (um caminho looongo a percorrer).
+:A fazer:		Integradas as v√°rias partes. Actualizado e revisto. Completo...
 
 .. Warning::
 
-   Este documento n„o est· acabado! … altamente prov·vel que muitas partes estejam
-   desactualizadas, contenham informaÁ„o incorrecta ou estejam em falta. Se quiser
+   Este documento n√£o est√° acabado! √â altamente prov√°vel que muitas partes estejam
+   desactualizadas, contenham informa√ß√£o incorrecta ou estejam em falta. Se quiser
    ajudar a rectificar isto, por favor contacte-nos.
 
 
 -------------------
-Tabela de Conte˙dos
+Tabela de Conte√∫dos
 -------------------
 
-+ `IntroduÁ„o`__
++ `Introdu√ß√£o`__
 + `Construa o sistema`__
 + `Biblioteca Exec`__
 + `Biblioteca Dos`__
 + `Biblioteca Intuition`__
 + `Procurando recursos`__
 + `Multitarefa`__
-+ `LocalizaÁ„o`__
++ `Localiza√ß√£o`__
 
 __ introduction
 __ buildsystem

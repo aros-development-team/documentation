@@ -14,9 +14,9 @@ import types
 # (so this module can be copied to projects that don't depend on Python
 # 2.3, e.g. Optik and Docutils).
 try:
-    True, False
+    TRUE, FALSE
 except NameError:
-    (True, False) = (1, 0)
+    (TRUE, FALSE) = (1, 0)
 
 __all__ = ['TextWrapper', 'wrap', 'fill']
 
@@ -66,10 +66,10 @@ class TextWrapper:
         be broken, and some lines might be longer than 'width'.
     """
 
-    whitespace_trans = string.maketrans(_whitespace, ' ' * len(_whitespace))
+    whitespace_trans = str.maketrans(_whitespace, ' ' * len(_whitespace))
 
     unicode_whitespace_trans = {}
-    uspace = ord(u' ')
+    uspace = ord(' ')
     for x in map(ord, _whitespace):
         unicode_whitespace_trans[x] = uspace
 
@@ -88,17 +88,17 @@ class TextWrapper:
     sentence_end_re = re.compile(r'[%s]'              # lowercase letter
                                  r'[\.\!\?]'          # sentence-ending punct.
                                  r'[\"\']?'           # optional end-of-quote
-                                 % string.lowercase)
+                                 % string.ascii_lowercase)
 
 
     def __init__ (self,
                   width=70,
                   initial_indent="",
                   subsequent_indent="",
-                  expand_tabs=True,
-                  replace_whitespace=True,
-                  fix_sentence_endings=False,
-                  break_long_words=True):
+                  expand_tabs=TRUE,
+                  replace_whitespace=TRUE,
+                  fix_sentence_endings=FALSE,
+                  break_long_words=TRUE):
         self.width = width
         self.initial_indent = initial_indent
         self.subsequent_indent = subsequent_indent
@@ -121,9 +121,9 @@ class TextWrapper:
         if self.expand_tabs:
             text = text.expandtabs()
         if self.replace_whitespace:
-            if isinstance(text, types.StringType):
+            if isinstance(text, bytes):
                 text = text.translate(self.whitespace_trans)
-            elif isinstance(text, types.UnicodeType):
+            elif isinstance(text, str):
                 text = text.translate(self.unicode_whitespace_trans)
         return text
 
@@ -140,7 +140,7 @@ class TextWrapper:
           'use', ' ', 'the', ' ', '-b', ' ', 'option!'
         """
         chunks = self.wordsep_re.split(text)
-        chunks = filter(None, chunks)
+        chunks = [_f for _f in chunks if _f]
         return chunks
 
     def _fix_sentence_endings(self, chunks):

@@ -6,20 +6,20 @@ Status Update
 :Data:     2007-02-06
 
 Il 2007 non poteva cominciare meglio. Ci sono infatti due grandi 
-novit‡ riguardo AROS e siamo veramente molto felici di potervele 
+novit√† riguardo AROS e siamo veramente molto felici di potervele 
 comunicare.
 
-In primo luogo, il drag & drop finalmente funziona! Ora Ë possibile 
+In primo luogo, il drag & drop finalmente funziona! Ora √® possibile 
 sia usare Wanderer per copiare i file da una cartella all'altra, 
 sia trascinare le icone sulle applicazioni per aprire i documenti. 
-Il "miracolo" Ë avvenuto grazie a Christoph Szczecina e Darius 
-Brewka. Alcuni problemi di stabilit‡ nella versione native di AROS 
+Il "miracolo" √® avvenuto grazie a Christoph Szczecina e Darius 
+Brewka. Alcuni problemi di stabilit√† nella versione native di AROS 
 sono sotto osservazione e verranno probabilmente risolti nei prossimi 
-giorni. C'Ë anche un `breve video`__ girato con VMware che lo 
+giorni. C'√® anche un `breve video`__ girato con VMware che lo 
 dimostra.
 
 Robert Norris ha poi introdotto il supporto di rete per la versione 
-hosted di AROS. L'interfaccia virtuale tap funziona e sar‡ 
+hosted di AROS. L'interfaccia virtuale tap funziona e sar√† 
 disponibile nelle prossime nigtly build. 
 
 William Ouwenhand ha realizzato una `versione del sito per i Paesi 
@@ -29,28 +29,28 @@ AROS`__ su Ubuntu Linux.
 
 Nic Andrews ha dato il suo contributo con una versione iniziale dei 
 driver per gli adattatori di rete RTL 8139 e VIA Rhine. Sono ancora 
-in fase di lavorazione, ma forse sar‡ presto possibile usarli. Il sito 
+in fase di lavorazione, ma forse sar√† presto possibile usarli. Il sito 
 TeamAROS ha istituito una taglia per il completamento del driver per 
 VIA Rhine.
 
 
-Novit‡ dagli Archivi
+Novit√† dagli Archivi
 --------------------
 
-Le ultime novit‡ dagli Archivi comprendono:
+Le ultime novit√† dagli Archivi comprendono:
 
-- `Lunapaint`__ migliora sempre di pi˘. E ora Ë disponibile la 
-  versione 0.3.1 con un sacco di novit‡!
+- `Lunapaint`__ migliora sempre di pi√π. E ora √® disponibile la 
+  versione 0.3.1 con un sacco di novit√†!
 
-- `Martin's Server Suite`__ Ë un port per AROS e per altri sistemi 
-  operativi di Snug HTTP server e Yet Another FTP Server. C'Ë una 
+- `Martin's Server Suite`__ √® un port per AROS e per altri sistemi 
+  operativi di Snug HTTP server e Yet Another FTP Server. C'√® una 
   `foto`__ di entrambi che lavorano su un'installazione di AROS.
 
-- `Jhead`__ Ë un programma su riga di comando per manipolare le parti 
+- `Jhead`__ √® un programma su riga di comando per manipolare le parti 
   dei file dei file JPEG di tipo Exif che non riguardano l'immagine, 
   tipicamente prodotti dalle fotocamere digitali.
 
-- `Potrace`__ Ë un'utility per contornare le bitmap, il che significa 
+- `Potrace`__ √® un'utility per contornare le bitmap, il che significa 
   trasformare una mappa di pixel in un'immagine vettoriale facile da 
   scalare. 
 

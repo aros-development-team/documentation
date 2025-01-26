@@ -9,7 +9,7 @@
 Set
 ===
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	NAME,STRING/F
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,14 +29,14 @@ Funkcja
 ~~~~~~~
 ::
 
-	Ustawia warto¶ci lokalne, dla aktualnego procesu CLI. Je¶li jakie¶
-	globalne warto¶ci maj± t± sam± nazwê to lokalne zostan± u¿yte zamiast
+	Ustawia wartoÅ›ci lokalne, dla aktualnego procesu CLI. JeÅ›li jakieÅ›
+	globalne wartoÅ›ci majÄ… tÄ… samÄ… nazwÄ™ to lokalne zostanÄ… uÅ¼yte zamiast
 	globalnych.
 
-	Ten przyk³ad dzia³a tylko dla okre¶lonego Shell.
+	Ten przykÅ‚ad dziaÅ‚a tylko dla okreÅ›lonego Shell.
 	
-	Je¶li, ¿aden argument nie zosta³ podany to wy¶wietlona zostanie lista
-	lokalnych warto¶ci. 
+	JeÅ›li, Å¼aden argument nie zostaÅ‚ podany to wyÅ›wietlona zostanie lista
+	lokalnych wartoÅ›ci. 
 
 
 Parametry
@@ -44,9 +44,9 @@ Parametry
 ::
 
 
-	NAME	-	Nazwa lokalnej warto¶ci.
+	NAME	-	Nazwa lokalnej wartoÅ›ci.
 
-	STRING	-	Warto¶æ lokalnej warto¶ci NAME.
+	STRING	-	WartoÅ›Ä‡ lokalnej wartoÅ›ci NAME.
 
 
 Wynik
@@ -54,20 +54,20 @@ Wynik
 ::
 
 
-	Standardowe kody b³êdów.
+	Standardowe kody bÅ‚Ä™dÃ³w.
 
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 
 
 	Set Skok 5
 	
-	Ustawia lokaln± warto¶æ nazwan± "Skok" do warto¶ci '5'.
+	Ustawia lokalnÄ… wartoÅ›Ä‡ nazwanÄ… "Skok" do wartoÅ›ci '5'.
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

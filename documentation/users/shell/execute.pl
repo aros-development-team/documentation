@@ -9,7 +9,7 @@
 Execute
 =======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
      FILE/A
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 

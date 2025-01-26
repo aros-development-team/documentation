@@ -1,7 +1,7 @@
-# Authors: David Goodger, Ueli Schlaepfer
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: universal.py 8671 2021-04-07 12:09:51Z milde $
+# -*- coding: utf-8 -*-
+# Authors: David Goodger <goodger@python.org>; Ueli Schlaepfer; Günter Milde
+# Maintainer: docutils-develop@lists.sourceforge.net
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -21,6 +21,11 @@ import sys
 import time
 from docutils import nodes, utils
 from docutils.transforms import TransformError, Transform
+from docutils.utils import smartquotes
+
+
+if sys.version_info >= (3, 0):
+    unicode = str  # noqa
 
 
 class Decorations(Transform):
@@ -49,6 +54,10 @@ class Decorations(Transform):
     def generate_footer(self):
         # @@@ Text is hard-coded for now.
         # Should be made dynamic (language-dependent).
+        # @@@ Use timestamp from the `SOURCE_DATE_EPOCH`_ environment variable
+        # for the datestamp?
+        # See https://sourceforge.net/p/docutils/patches/132/
+        # and https://reproducible-builds.org/specs/source-date-epoch/
         settings = self.document.settings
         if settings.generator or settings.datestamp or settings.source_link \
                or settings.source_url:
@@ -88,11 +97,11 @@ class ExposeInternals(Transform):
     """
 
     default_priority = 840
-    
+
     def not_Text(self, node):
         return not isinstance(node, nodes.Text)
 
-    def apply(self): 
+    def apply(self):
         if self.document.settings.expose_internals:
             for node in self.document.traverse(self.not_Text):
                 for att in self.document.settings.expose_internals:
@@ -135,7 +144,7 @@ class FilterMessages(Transform):
     default_priority = 870
 
     def apply(self):
-        for node in self.document.traverse(nodes.system_message):
+        for node in tuple(self.document.traverse(nodes.system_message)):
             if node['level'] < self.document.reporter.report_level:
                 node.parent.remove(node)
 
@@ -167,5 +176,146 @@ class StripComments(Transform):
 
     def apply(self):
         if self.document.settings.strip_comments:
-            for node in self.document.traverse(nodes.comment):
+            for node in tuple(self.document.traverse(nodes.comment)):
                 node.parent.remove(node)
+
+
+class StripClassesAndElements(Transform):
+
+    """
+    Remove from the document tree all elements with classes in
+    `self.document.settings.strip_elements_with_classes` and all "classes"
+    attribute values in `self.document.settings.strip_classes`.
+    """
+
+    default_priority = 420
+
+    def apply(self):
+        if self.document.settings.strip_elements_with_classes:
+            self.strip_elements = set(
+                self.document.settings.strip_elements_with_classes)
+            # Iterate over a tuple as removing the current node
+            # corrupts the iterator returned by `traverse`:
+            for node in tuple(self.document.traverse(self.check_classes)):
+                node.parent.remove(node)
+
+        if not self.document.settings.strip_classes:
+            return
+        strip_classes = self.document.settings.strip_classes
+        for node in self.document.traverse(nodes.Element):
+            for class_value in strip_classes:
+                try:
+                    node['classes'].remove(class_value)
+                except ValueError:
+                    pass
+
+    def check_classes(self, node):
+        if not isinstance(node, nodes.Element):
+            return False
+        for class_value in node['classes'][:]:
+            if class_value in self.strip_elements:
+                return True
+        return False
+
+
+class SmartQuotes(Transform):
+
+    """
+    Replace ASCII quotation marks with typographic form.
+
+    Also replace multiple dashes with em-dash/en-dash characters.
+    """
+
+    default_priority = 850
+
+    nodes_to_skip = (nodes.FixedTextElement, nodes.Special)
+    """Do not apply "smartquotes" to instances of these block-level nodes."""
+
+    literal_nodes = (nodes.FixedTextElement, nodes.Special,
+                     nodes.image, nodes.literal, nodes.math,
+                     nodes.raw, nodes.problematic)
+    """Do apply smartquotes to instances of these inline nodes."""
+
+    smartquotes_action = 'qDe'
+    """Setting to select smartquote transformations.
+
+    The default 'qDe' educates normal quote characters: (", '),
+    em- and en-dashes (---, --) and ellipses (...).
+    """
+
+    def __init__(self, document, startnode):
+        Transform.__init__(self, document, startnode=startnode)
+        self.unsupported_languages = set()
+
+    def get_tokens(self, txtnodes):
+        # A generator that yields ``(texttype, nodetext)`` tuples for a list
+        # of "Text" nodes (interface to ``smartquotes.educate_tokens()``).
+        for node in txtnodes:
+            if (isinstance(node.parent, self.literal_nodes)
+                or isinstance(node.parent.parent, self.literal_nodes)):
+                yield ('literal', unicode(node))
+            else:
+                # SmartQuotes uses backslash escapes instead of null-escapes
+                txt = re.sub('(?<=\x00)([-\\\'".`])', r'\\\1', unicode(node))
+                yield ('plain', txt)
+
+    def apply(self):
+        smart_quotes = self.document.settings.setdefault('smart_quotes',
+                                                           False)
+        if not smart_quotes:
+            return
+        try:
+            alternative = smart_quotes.startswith('alt')
+        except AttributeError:
+            alternative = False
+
+        document_language = self.document.settings.language_code
+        lc_smartquotes = self.document.settings.smartquotes_locales
+        if lc_smartquotes:
+            smartquotes.smartchars.quotes.update(dict(lc_smartquotes))
+
+        # "Educate" quotes in normal text. Handle each block of text
+        # (TextElement node) as a unit to keep context around inline nodes:
+        for node in self.document.traverse(nodes.TextElement):
+            # skip preformatted text blocks and special elements:
+            if isinstance(node, self.nodes_to_skip):
+                continue
+            # nested TextElements are not "block-level" elements:
+            if isinstance(node.parent, nodes.TextElement):
+                continue
+
+            # list of text nodes in the "text block":
+            txtnodes = [txtnode for txtnode in node.traverse(nodes.Text)
+                        if not isinstance(txtnode.parent,
+                                          nodes.option_string)]
+
+            # language: use typographical quotes for language "lang"
+            lang = node.get_language_code(document_language)
+            # use alternative form if `smart-quotes` setting starts with "alt":
+            if alternative:
+                if '-x-altquot' in lang:
+                    lang = lang.replace('-x-altquot', '')
+                else:
+                    lang += '-x-altquot'
+            # drop unsupported subtags:
+            for tag in utils.normalize_language_tag(lang):
+                if tag in smartquotes.smartchars.quotes:
+                    lang = tag
+                    break
+            else: # language not supported: (keep ASCII quotes)
+                if lang not in self.unsupported_languages:
+                    self.document.reporter.warning('No smart quotes '
+                        'defined for language "%s".'%lang, base_node=node)
+                self.unsupported_languages.add(lang)
+                lang = ''
+
+            # Iterator educating quotes in plain text:
+            # (see "utils/smartquotes.py" for the attribute setting)
+            teacher = smartquotes.educate_tokens(self.get_tokens(txtnodes),
+                                attr=self.smartquotes_action, language=lang)
+
+            for txtnode, newtext in zip(txtnodes, teacher):
+                txtnode.parent.replace(txtnode, nodes.Text(newtext,
+                                       rawsource=txtnode.rawsource))
+
+        self.unsupported_languages = set() # reset

@@ -955,7 +955,7 @@ Inputs
 ::
 
      path   - the file to open
-     mode   - The mode of the stream  (same as with fopen()) must be com­patible
+     mode   - The mode of the stream  (same as with fopen()) must be comÂ­patible
               with the mode of the file  descriptor.   The  file
               position  indicator  of  the  new  stream  is  set to that
               belonging to fildes, and the error and end-of-file indicators
@@ -3842,7 +3842,7 @@ Inputs
 ::
 
      filedes - The descriptor the stream has to be associated with
-     mode    - The mode of the stream  (same as with fopen()) must be com­patible
+     mode    - The mode of the stream  (same as with fopen()) must be comÂ­patible
                with the mode of the file  descriptor.   The  file
                position  indicator  of  the  new  stream  is  set to that
                belonging to filedes, and the error and end-of-file indicators

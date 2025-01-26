@@ -50,20 +50,20 @@
    <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
    else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Downloads:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   "Nightly builds" werden automatisch jede Nacht aus dem aktuellen Quellkode erstellt. Falls Du einfach mal eine AROS-Live-CD ausprobieren willst, nimm die "boot ISO" f¸r Deine Plattform (i386 or PPC).<br><br>
+   "Nightly builds" werden automatisch jede Nacht aus dem aktuellen Quellkode erstellt. Falls Du einfach mal eine AROS-Live-CD ausprobieren willst, nimm die "boot ISO" f√ºr Deine Plattform (i386 or PPC).<br><br>
    <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
    Neuste Archiv-Uploads:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Das <a href=http://archives.aros-exec.org>AROS-Archive</a> enth‰lt die neusten Beitr‰ge der Community. Hier findest Du Anwendungsprogramme, Themes, Grafiken und zus‰tzliche Dokumentation.<br><br>
+   Das <a href=http://archives.aros-exec.org>AROS-Archive</a> enth√§lt die neusten Beitr√§ge der Community. Hier findest Du Anwendungsprogramme, Themes, Grafiken und zus√§tzliche Dokumentation.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Neueste Beitr‰ge im AROS-EXEC-Forum:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   Neueste Beitr√§ge im AROS-EXEC-Forum:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href=https://ae.amigalife.org>AROS-EXEC</a> ist die Haupt-Community-Site. Hier kannst Du Hilfe bekommen, herausfinden was los ist und Deine Gedanken zu AROS los werden.<br><br>
    </td></tr></tbody></table>
 

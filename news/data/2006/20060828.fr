@@ -1,15 +1,15 @@
 ===========
-Mise ‡ jour
+Mise √† jour
 ===========
 
 :Auteur:   Paolo Besser
 :Date:     2006-08-28
 
-Le site Aros.org est dotÈ de deux nouveaux langages: gr‚ce ‡ Sergey Mineychew
-notre site est dÈsormais `traduit en Russe`__, Tomasz Paul travaille
+Le site Aros.org est dot√© de deux nouveaux langages: gr√¢ce √† Sergey Mineychew
+notre site est d√©sormais `traduit en Russe`__, Tomasz Paul travaille
 actuellementis sur la `traduction polonaise`__. Il suffit de cliquer en haut
-‡ gauche pour consulter ces pages.
-Sergey travaille Ègalement sur les localisations d'applications AROS.
+√† gauche pour consulter ces pages.
+Sergey travaille √©galement sur les localisations d'applications AROS.
 
 __ http://www.aros.org/ru/index.php
 __ http://www.aros.org/pl/index.php

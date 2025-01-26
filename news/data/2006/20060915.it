@@ -6,13 +6,13 @@ Status update
 :Data:     2006-09-15
 
 La localizzazione di Aros.org continua. Samuel Atlan lo sta `traducendo
-in francese`__.  Ci vorr‡ un po' di tempo perchÈ l'opera sia completa,
-ma le prime pagine sono gi‡ disponibili dal menu in alto. Gi‡ che ci
-siamo, Ë giusto segnalare una novit‡ che riguarda le pagine
-internazionali: da oggi Ë possibile raggiungerle aggiungendo il
-\prefisso del vostro paese all'url tradizionale. Per esempio Ë possibile
+in francese`__.  Ci vorr√† un po' di tempo perch√© l'opera sia completa,
+ma le prime pagine sono gi√† disponibili dal menu in alto. Gi√† che ci
+siamo, √® giusto segnalare una novit√† che riguarda le pagine
+internazionali: da oggi √® possibile raggiungerle aggiungendo il
+\prefisso del vostro paese all'url tradizionale. Per esempio √® possibile
 raggiungere l'home page italiana con *www.aros.org/it*, quella russa con
-*www.aros.org/ru* e cosÏ via.
+*www.aros.org/ru* e cos√¨ via.
 
 __ http://www.aros.org/fr
 
@@ -20,10 +20,10 @@ AROS sul web
 ------------
 
 Per cortesia, leggete questa bella `recensione`__ che Dmitar Butrovski
-ha scritto su `OSnews.com`__. » sicuramente uno degli articoli pi˘
+ha scritto su `OSnews.com`__. √à sicuramente uno degli articoli pi√π
 completi su AROS, capace di analizzarlo sotto ogni punto di vista. Se
 non avete ancora provato il nostro sistema operativo e volete sapere
-com'Ë, potete farvi un'idea precisa leggendolo.
+com'√®, potete farvi un'idea precisa leggendolo.
 
 __ http://osnews.com/story.php?news_id=15819
 __ http://osnews.com
@@ -32,8 +32,8 @@ Software
 --------
 
 La nuova versione 1.20 di VICE, il famoso emulatore delle piattaforme a
-8 bit di casa Commodore, Ë disponibile per tutti i sistemi Amiga, AROS
-incluso (X86 e PPC!).  Potete scaricarla `qui`__. WinAros Ë un ambiente
+8 bit di casa Commodore, √® disponibile per tutti i sistemi Amiga, AROS
+incluso (X86 e PPC!).  Potete scaricarla `qui`__. WinAros √® un ambiente
 AROS completo, preinstallato sull'immagine di un disco fisso compatibile
 con le famose macchine virtuali QEMU e Microsoft VirtualPC, entrambe
 scaricabili liberamente su Internet. Potete scaricare `Winaros per QEMU

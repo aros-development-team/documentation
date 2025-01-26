@@ -20,7 +20,7 @@ Synopsis
      RC/N
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -33,6 +33,6 @@ Entradas
 ::
 
 
-     RC   --  el código devuelto
+     RC   --  el cÃ³digo devuelto
 
 

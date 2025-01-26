@@ -5,26 +5,26 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   26.07.2008
 
-Mise splnìna!
+Mise splnÄ›na!
 -------------
 
-I kdy¾ je poslední "Stav aktualizace" teprve tıden starı,
-objevily se dvì velké novinky a máme tu novı.
+I kdyÅ¾ je poslednÃ­ "Stav aktualizace" teprve tÃ½den starÃ½,
+objevily se dvÄ› velkÃ© novinky a mÃ¡me tu novÃ½.
 
-Michal Schulz dokonèil port nativního AROSu na základní desku
-"Samantha" SAM440EP. To je poprvé, kdy je zcela podporována jiná ne¾
-x86 základní deska, a dìlá to z AROSu operaèní systém, kterı bì¾í
-na více platformách, tak jako Linux. ACube Systems, vırobce a
-prodejce desky SAM440EP pøikládá AROS Live CD k
-jejich vlajkovım produktùm. Døívìj¹í kupci Samantha platformy si mohou
-stáhnout svoji verzi AROSu z `Michalovy stránky`__. Lidé
-zajímající se o koupi této alternativní platformy ji teï mohou získat
-za `cenu s letní slevou`__.
+Michal Schulz dokonÄil port nativnÃ­ho AROSu na zÃ¡kladnÃ­ desku
+"Samantha" SAM440EP. To je poprvÃ©, kdy je zcela podporovÃ¡na jinÃ¡ neÅ¾
+x86 zÃ¡kladnÃ­ deska, a dÄ›lÃ¡ to z AROSu operaÄnÃ­ systÃ©m, kterÃ½ bÄ›Å¾Ã­
+na vÃ­ce platformÃ¡ch, tak jako Linux. ACube Systems, vÃ½robce a
+prodejce desky SAM440EP pÅ™iklÃ¡dÃ¡ AROS Live CD k
+jejich vlajkovÃ½m produktÅ¯m. DÅ™Ã­vÄ›jÅ¡Ã­ kupci Samantha platformy si mohou
+stÃ¡hnout svoji verzi AROSu z `Michalovy strÃ¡nky`__. LidÃ©
+zajÃ­majÃ­cÃ­ se o koupi tÃ©to alternativnÃ­ platformy ji teÄ mohou zÃ­skat
+za `cenu s letnÃ­ slevou`__.
 
-Krzysztof Smiechowicz dokonèil své úsilí o pøezkoumání aktuální
-úplnosti knihoven a kompatibility s pùvodní AmigaOS 3.1
-API, s celkovım skóre 89%. To znamená, ¾e jeden z cílù AROSu
-je témìø dosa¾en. Aktuální stav mù¾e¹ vidìt `zde`__.
+Krzysztof Smiechowicz dokonÄil svÃ© ÃºsilÃ­ o pÅ™ezkoumÃ¡nÃ­ aktuÃ¡lnÃ­
+Ãºplnosti knihoven a kompatibility s pÅ¯vodnÃ­ AmigaOS 3.1
+API, s celkovÃ½m skÃ³re 89%. To znamenÃ¡, Å¾e jeden z cÃ­lÅ¯ AROSu
+je tÃ©mÄ›Å™ dosaÅ¾en. AktuÃ¡lnÃ­ stav mÅ¯Å¾eÅ¡ vidÄ›t `zde`__.
 
 __ http://msaros.blogspot.com/2008/07/sam440-bounty.html
 __ http://www.sam440.com/eng/summerfollies.html

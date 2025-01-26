@@ -20,7 +20,7 @@ Synopsis
      FROM/A, TO/A, HARD/S, FORCE/S
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
@@ -43,8 +43,8 @@ Entradas
 
      FROM   --  El nombre del enlace.
      TO     --  El nombre del archivo o directorio a enlazar.
-     HARD   --  Si es especificado el enlace será un hard-link; por
-                omisión se crea un soft-link.
+     HARD   --  Si es especificado el enlace serÃ¡ un hard-link; por
+                omisiÃ³n se crea un soft-link.
      FORCE  --  Permite que un hard-link apunte a un directorio.
 
 

@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: __init__.py 8467 2020-01-26 21:23:42Z milde $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 # Internationalization details are documented in
@@ -14,14 +12,28 @@ reStructuredText.
 
 __docformat__ = 'reStructuredText'
 
-_languages = {}
+import sys
 
-def get_language(language_code):
-    if _languages.has_key(language_code):
-        return _languages[language_code]
-    try:
-        module = __import__(language_code, globals(), locals())
-    except ImportError:
-        return None
-    _languages[language_code] = module
-    return module
+from docutils.languages import LanguageImporter
+
+class RstLanguageImporter(LanguageImporter):
+    """Import language modules.
+
+    When called with a BCP 47 language tag, instances return a module
+    with localisations for "directive" and "role" names for  from
+    `docutils.parsers.rst.languages` or the PYTHONPATH.
+
+    If there is no matching module, warn (if a `reporter` is passed)
+    and return None.
+    """
+    packages = ('docutils.parsers.rst.languages.', '')
+    warn_msg = 'rST localisation for language "%s" not found.'
+    fallback = None
+
+    def check_content(self, module):
+        """Check if we got an rST language module."""
+        if not (isinstance(module.directives, dict)
+                and isinstance(module.roles, dict)):
+            raise ImportError
+
+get_language = RstLanguageImporter()

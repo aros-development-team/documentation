@@ -1,1 +1,1 @@
-Skupina AROS vıvojáøù a fanou¹kù, ve sluneèném a velmi horkém Naples.
+Skupina AROS vÃ½vojÃ¡Å™Å¯ a fanouÅ¡kÅ¯, ve sluneÄnÃ©m a velmi horkÃ©m Naples.

@@ -5,54 +5,54 @@ Stav aktualizace
 :Autor:   Paolo Besser a Saimon69
 :Datum:   18.07.2008
 
-Poslední aktualizace
+PoslednÃ­ aktualizace
 --------------------
 
-Omlouváme se, ¾e "Stav aktualizace" pøi¹el tak pozdì, ale AROS tım
-velmi tvrdì pracuje "under the hood", aby pøinesl lep¹í
-operaèní systém. Ní¾e je spousta zajímavıch novinek, o kterıch se mluví.
+OmlouvÃ¡me se, Å¾e "Stav aktualizace" pÅ™iÅ¡el tak pozdÄ›, ale AROS tÃ½m
+velmi tvrdÄ› pracuje "under the hood", aby pÅ™inesl lepÅ¡Ã­
+operaÄnÃ­ systÃ©m. NÃ­Å¾e je spousta zajÃ­mavÃ½ch novinek, o kterÃ½ch se mluvÃ­.
 
-Stanislaw Szymczyk dokonèil port linuxem hostované verze
-na platformu x86-64, a ú¾asnì pomáhá samokompilování AROSu
-portováním potøebnıch nástrojù. Ten poslední byl abc-shell a
-dosahuje neuvìøitelnıch vısledkù.
+Stanislaw Szymczyk dokonÄil port linuxem hostovanÃ© verze
+na platformu x86-64, a ÃºÅ¾asnÄ› pomÃ¡hÃ¡ samokompilovÃ¡nÃ­ AROSu
+portovÃ¡nÃ­m potÅ™ebnÃ½ch nÃ¡strojÅ¯. Ten poslednÃ­ byl abc-shell a
+dosahuje neuvÄ›Å™itelnÃ½ch vÃ½sledkÅ¯.
 
-Krzysztof Smiechowicz kontroluje úplnost AROS API, aby bylo
-mo¾né sledovat kompatibilitu s AmigaOS a stav celého projektu.
-Vısledky si mù¾e¹ kdykoli prohlédnout na na¹í aktualizované `stavové stránce`__.
+Krzysztof Smiechowicz kontroluje Ãºplnost AROS API, aby bylo
+moÅ¾nÃ© sledovat kompatibilitu s AmigaOS a stav celÃ©ho projektu.
+VÃ½sledky si mÅ¯Å¾eÅ¡ kdykoli prohlÃ©dnout na naÅ¡Ã­ aktualizovanÃ© `stavovÃ© strÃ¡nce`__.
 
-Pavel Fedin skvìle vylep¹il funkènost HDToolBox: oddíl nyní mù¾e bıt
-pøemístìn, èi mu mù¾e bıt zmìnìna velikost. Tyto nové funkce v¹ak stále
-potøebují testování. Pavel také naportoval BHFormat a zprovoznil
-ve Wandereru formátování diskù.
+Pavel Fedin skvÄ›le vylepÅ¡il funkÄnost HDToolBox: oddÃ­l nynÃ­ mÅ¯Å¾e bÃ½t
+pÅ™emÃ­stÄ›n, Äi mu mÅ¯Å¾e bÃ½t zmÄ›nÄ›na velikost. Tyto novÃ© funkce vÅ¡ak stÃ¡le
+potÅ™ebujÃ­ testovÃ¡nÃ­. Pavel takÃ© naportoval BHFormat a zprovoznil
+ve Wandereru formÃ¡tovÃ¡nÃ­ diskÅ¯.
 
-Pavel Fedin, Krzysztof Smiechowicz a Tomasz Wiszkowski také tvrdì
-pracují na na¹ich ata.device a s ATAPI souvisejících souborech, aby se
-zbavili problémù s kompatibilitou, které znemo¾òují AROSu na nìkterıch
-konfiguracích správnì bootovat.
+Pavel Fedin, Krzysztof Smiechowicz a Tomasz Wiszkowski takÃ© tvrdÄ›
+pracujÃ­ na naÅ¡ich ata.device a s ATAPI souvisejÃ­cÃ­ch souborech, aby se
+zbavili problÃ©mÅ¯ s kompatibilitou, kterÃ© znemoÅ¾ÅˆujÃ­ AROSu na nÄ›kterÃ½ch
+konfiguracÃ­ch sprÃ¡vnÄ› bootovat.
 
-Michal Schulz stále pracuje na portování AROSu na SAM440EP.
-Nedávno vydal první pracovní `beta verzi`__, vlastníci SAMu si ji mohou
-vyzkou¹et sami. Nezkou¹ejte ji na jinıch PPC architekturách,
+Michal Schulz stÃ¡le pracuje na portovÃ¡nÃ­ AROSu na SAM440EP.
+NedÃ¡vno vydal prvnÃ­ pracovnÃ­ `beta verzi`__, vlastnÃ­ci SAMu si ji mohou
+vyzkouÅ¡et sami. NezkouÅ¡ejte ji na jinÃ½ch PPC architekturÃ¡ch,
 nebude fungovat.
 
-Gianfranco Gignina pomohl najít a opravit hodnì chyb v Zune,
-a zaèal pracovat na pøenositelné a více nezávislé verzi
-Wandereru. Cílem projektu je umo¾nit jednodu¹¹í portování Wandereru
-i na ostatní AmigaOS platformy.
+Gianfranco Gignina pomohl najÃ­t a opravit hodnÄ› chyb v Zune,
+a zaÄal pracovat na pÅ™enositelnÃ© a vÃ­ce nezÃ¡vislÃ© verzi
+Wandereru. CÃ­lem projektu je umoÅ¾nit jednoduÅ¡Å¡Ã­ portovÃ¡nÃ­ Wandereru
+i na ostatnÃ­ AmigaOS platformy.
 
-Máme tu novou, velmi cennou implementaci jazyka E na AROS:
-je to `PortablE`__ a urèitì stojí za vyzkou¹ení!
+MÃ¡me tu novou, velmi cennou implementaci jazyka E na AROS:
+je to `PortablE`__ a urÄitÄ› stojÃ­ za vyzkouÅ¡enÃ­!
 
-Nick Andrews pí¹e ovladaè pro sí»ovou kartu Intel Gigabit E1000 na AROS, kterı
-umo¾ní pøipojení k síti velkému mno¾ství základních desek, na nich¾ je tato
-karta integrována.
+Nick Andrews pÃ­Å¡e ovladaÄ pro sÃ­Å¥ovou kartu Intel Gigabit E1000 na AROS, kterÃ½
+umoÅ¾nÃ­ pÅ™ipojenÃ­ k sÃ­ti velkÃ©mu mnoÅ¾stvÃ­ zÃ¡kladnÃ­ch desek, na nichÅ¾ je tato
+karta integrovÃ¡na.
 
 Paolo Besser vydal novou verzi jeho distribuce VmwAROS 0.8b,
-která pøiná¹í lep¹í vzhled a kompatibilitu.
-Stejnì jako v minulosti, VmwAROS je k dispozici ve dvou verzích:
-`live CD`__, které bì¾í na x86 hardwaru a mù¾e bıt
-nainstalováno na pevnı disk, a `virtuální prostøedí`__ pro
+kterÃ¡ pÅ™inÃ¡Å¡Ã­ lepÅ¡Ã­ vzhled a kompatibilitu.
+StejnÄ› jako v minulosti, VmwAROS je k dispozici ve dvou verzÃ­ch:
+`live CD`__, kterÃ© bÄ›Å¾Ã­ na x86 hardwaru a mÅ¯Å¾e bÃ½t
+nainstalovÃ¡no na pevnÃ½ disk, a `virtuÃ¡lnÃ­ prostÅ™edÃ­`__ pro
 VMware.
 
 __ http://aros.sourceforge.net/it/introduction/status/everything.php

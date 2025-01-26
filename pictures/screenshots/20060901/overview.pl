@@ -1,4 +1,4 @@
 2006-09-01
 ----------
 
-Poniøej kilka prac z roku 2006. AROS przedstawia wspania≥y program rysunkowy Hogne "M0ns00n" Titlestad'a, Lunapaint v0.2.3. Rosyjska lokalizacja AROS-a. PostÍp prac nad koncepcyjnym GUI dla konfiguratora TCPIP i MesaGL (pracuje nad nimi Kalamatee). Zapowiedº klienta FTP z GUI nad ktÛrym pracuje Suppah (aka voidstar).
+Poni≈ºej kilka prac z roku 2006. AROS przedstawia wspania≈Çy program rysunkowy Hogne "M0ns00n" Titlestad'a, Lunapaint v0.2.3. Rosyjska lokalizacja AROS-a. Postƒôp prac nad koncepcyjnym GUI dla konfiguratora TCPIP i MesaGL (pracuje nad nimi Kalamatee). Zapowied≈∫ klienta FTP z GUI nad kt√≥rym pracuje Suppah (aka voidstar).

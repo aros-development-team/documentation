@@ -1,70 +1,70 @@
 =================
-Krátkı úvod AROSu
+KrÃ¡tkÃ½ Ãºvod AROSu
 =================
 
 :Authors:   Aaron Digulla, Stefan Rieken, Matt Parsons, Adam Chodorowski 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
+:Copyright: Copyright Å  1995-2009, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
-:Status:    Témìø hotovo, myslím...
+:Status:    TÃ©mÄ›Å™ hotovo, myslÃ­m...
 
 
 .. Include:: index-abstract.cs
 
 
-Cíle
+CÃ­le
 ====
 
-Cílem AROS projektu je vytvoøit OS, kterı:
+CÃ­lem AROS projektu je vytvoÅ™it OS, kterÃ½:
 
-1. Je co mo¾ná nejvíce kompatibilní se operaèním systémem AmigaOS 3.1.
+1. Je co moÅ¾nÃ¡ nejvÃ­ce kompatibilnÃ­ se operaÄnÃ­m systÃ©mem AmigaOS 3.1.
 
-2. Mù¾e bıt portován na rùzné druhy hardwarovıch architektur a
-   procesorù, jako jsou x86, PowerPC, Alpha, Sparc, HPPA a dal¹í.
+2. MÅ¯Å¾e bÃ½t portovÃ¡n na rÅ¯znÃ© druhy hardwarovÃ½ch architektur a
+   procesorÅ¯, jako jsou x86, PowerPC, Alpha, Sparc, HPPA a dalÅ¡Ã­.
 
-3. By mìl bıt kompatibilní binárnì na Amize a zdrojovì na jakémkoli jiném
+3. By mÄ›l bÃ½t kompatibilnÃ­ binÃ¡rnÄ› na Amize a zdrojovÄ› na jakÃ©mkoli jinÃ©m
    hardwaru.
 
-4. Mù¾e bì¾et jako samostatná verze, která bootuje pøímo z pevného disku, i
-   jako emulace, která otevøe okno ve stávajícím OS pro vıvoj softwaru a
-   bìh Amigy a nativních aplikací zároveò.
+4. MÅ¯Å¾e bÄ›Å¾et jako samostatnÃ¡ verze, kterÃ¡ bootuje pÅ™Ã­mo z pevnÃ©ho disku, i
+   jako emulace, kterÃ¡ otevÅ™e okno ve stÃ¡vajÃ­cÃ­m OS pro vÃ½voj softwaru a
+   bÄ›h Amigy a nativnÃ­ch aplikacÃ­ zÃ¡roveÅˆ.
 
-5. Vylep¹í funkènost systému AmigaOS.
+5. VylepÅ¡Ã­ funkÄnost systÃ©mu AmigaOS.
 
-Pro dosa¾ení tohoto cíle pou¾íváme øadu technik. V prvé øadì ve velké míøe
-vyu¾íváme internet. Na na¹em projektu se mù¾e¹ podílet, i kdy¾ umí¹ napsat
-pouze jednu jedinou funkci 0S. Poslední verze zdrojovıch kódù
-je dostupná 24 hodin dennì a opravy v nich mohou bıt kdykoli mergnuty.
-Malá databáze s otevøenımi úkoly (open tasks) zaji¹»uje, ¾e práce není duplikována.
+Pro dosaÅ¾enÃ­ tohoto cÃ­le pouÅ¾Ã­vÃ¡me Å™adu technik. V prvÃ© Å™adÄ› ve velkÃ© mÃ­Å™e
+vyuÅ¾Ã­vÃ¡me internet. Na naÅ¡em projektu se mÅ¯Å¾eÅ¡ podÃ­let, i kdyÅ¾ umÃ­Å¡ napsat
+pouze jednu jedinou funkci 0S. PoslednÃ­ verze zdrojovÃ½ch kÃ³dÅ¯
+je dostupnÃ¡ 24 hodin dennÄ› a opravy v nich mohou bÃ½t kdykoli mergnuty.
+MalÃ¡ databÃ¡ze s otevÅ™enÃ½mi Ãºkoly (open tasks) zajiÅ¡Å¥uje, Å¾e prÃ¡ce nenÃ­ duplikovÃ¡na.
 
 
 Historie
 ========
 
-Nìjakı èas zpátky (v roce 1993) vypadala situace pro Amigu ponìkud hùø
-ne¾ obvykle a nìkteøí fanou¹ci Amigy se spojili a zaèali diskutovat, co by
-se mìlo udìlat, aby se zvı¹ilo pøijetí na¹eho milovaného stroje. Hlavní dùvod
-pro chybìjící úspìch Amigy byl ihned jasnı: byla to propagace,
-tedy spí¹e její nedostatek. Amiga by mìla získat ¹ir¹í základnu, aby
-se stala atraktivnìj¹í pro v¹echny - u¾ivatele i vıvojáøe. Proto byly
-vytvoøeny plány k dosa¾ení tohoto cíle. Jedním z plánù bylo opravit chyby AmigaOS,
-dal¹ím bylo uèinit z nìj moderní operaèní systém. Zrodil se projekt AOS.
+NÄ›jakÃ½ Äas zpÃ¡tky (v roce 1993) vypadala situace pro Amigu ponÄ›kud hÅ¯Å™
+neÅ¾ obvykle a nÄ›kteÅ™Ã­ fanouÅ¡ci Amigy se spojili a zaÄali diskutovat, co by
+se mÄ›lo udÄ›lat, aby se zvÃ½Å¡ilo pÅ™ijetÃ­ naÅ¡eho milovanÃ©ho stroje. HlavnÃ­ dÅ¯vod
+pro chybÄ›jÃ­cÃ­ ÃºspÄ›ch Amigy byl ihned jasnÃ½: byla to propagace,
+tedy spÃ­Å¡e jejÃ­ nedostatek. Amiga by mÄ›la zÃ­skat Å¡irÅ¡Ã­ zÃ¡kladnu, aby
+se stala atraktivnÄ›jÅ¡Ã­ pro vÅ¡echny - uÅ¾ivatele i vÃ½vojÃ¡Å™e. Proto byly
+vytvoÅ™eny plÃ¡ny k dosaÅ¾enÃ­ tohoto cÃ­le. JednÃ­m z plÃ¡nÅ¯ bylo opravit chyby AmigaOS,
+dalÅ¡Ã­m bylo uÄinit z nÄ›j modernÃ­ operaÄnÃ­ systÃ©m. Zrodil se projekt AOS.
 
-Ale co pøesnì jsou chyby? A jak by tyto chyby mìly bıt opraveny? Jaké funkce
-musí takzvanı *moderní* OS mít? A jak by mìly bıt implementovány
+Ale co pÅ™esnÄ› jsou chyby? A jak by tyto chyby mÄ›ly bÃ½t opraveny? JakÃ© funkce
+musÃ­ takzvanÃ½ *modernÃ­* OS mÃ­t? A jak by mÄ›ly bÃ½t implementovÃ¡ny
 do AmigaOS?
 
-O dva roky pozdìji se o tom stále dohadovali a nebyl napsán
-jedinı øádek kódu (nebo alespoò nikdo nikdy ¾ádnı nevidìl). Diskuze
-byly stále o tom, ¾e nìkdo øekl "musíme mít..." a
-jinı odpovìdìl "pøeèti si staré maily" nebo "nejde to udìlat, proto¾e...",
-co¾ bylo krátce poté následováno "plete¹ se, proto¾e...", a tak dále.
+O dva roky pozdÄ›ji se o tom stÃ¡le dohadovali a nebyl napsÃ¡n
+jedinÃ½ Å™Ã¡dek kÃ³du (nebo alespoÅˆ nikdo nikdy Å¾Ã¡dnÃ½ nevidÄ›l). Diskuze
+byly stÃ¡le o tom, Å¾e nÄ›kdo Å™ekl "musÃ­me mÃ­t..." a
+jinÃ½ odpovÄ›dÄ›l "pÅ™eÄti si starÃ© maily" nebo "nejde to udÄ›lat, protoÅ¾e...",
+coÅ¾ bylo krÃ¡tce potÃ© nÃ¡sledovÃ¡no "pleteÅ¡ se, protoÅ¾e...", a tak dÃ¡le.
 
-V zimì roku 1995 byl u¾ Aaron Digulla z této situace unaven a poslal
-RFC (¾ádost o komentáøe) do AOS mailing listu, ve které se ptal, jaké
-by mìlo bıt základní spoleèné vıchodisko. K dispozici bylo nìkolik variant a závìr
-byl, ¾e témìø v¹ichni by chtìli vidìt otevøenı OS, kterı je kompatibilní s
-AmigaOS 3.1 (Kickstart 40.68). Na tomto základì se mohly stavìt dal¹í diskuze,
-aby se zjistilo, co je mo¾né a co ne.
+V zimÄ› roku 1995 byl uÅ¾ Aaron Digulla z tÃ©to situace unaven a poslal
+RFC (Å¾Ã¡dost o komentÃ¡Å™e) do AOS mailing listu, ve kterÃ© se ptal, jakÃ©
+by mÄ›lo bÃ½t zÃ¡kladnÃ­ spoleÄnÃ© vÃ½chodisko. K dispozici bylo nÄ›kolik variant a zÃ¡vÄ›r
+byl, Å¾e tÃ©mÄ›Å™ vÅ¡ichni by chtÄ›li vidÄ›t otevÅ™enÃ½ OS, kterÃ½ je kompatibilnÃ­ s
+AmigaOS 3.1 (Kickstart 40.68). Na tomto zÃ¡kladÄ› se mohly stavÄ›t dalÅ¡Ã­ diskuze,
+aby se zjistilo, co je moÅ¾nÃ© a co ne.
 
-A tak zaèala práce a AROS se narodil.
+A tak zaÄala prÃ¡ce a AROS se narodil.

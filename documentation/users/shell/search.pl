@@ -9,7 +9,7 @@
 Search
 ======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -18,7 +18,7 @@ Sk≥adnia
 		[NONUM] [QUIET] [QUICK] [FILE] [PATTERN] [LINES=Number]
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -30,12 +30,12 @@ Funkcja
 ~~~~~~~
 ::
 
-	Search przeszukuje pliki zawarte w katalogu okre∂lonym w FROM, dla
-	okre∂lonego ci±gu (SEARCH); w przypadku gdy opcja ALL jest okre∂lona,
-	podkatalogi takøe zostaj± przeszukiwane. Nazwy wszystkich plikÛw 
-	zawieraj±cych ci±g SEARCH, s± wy∂wietlane, razem z numerami linii,
-	gdzie ci±g zosta≥ znaleziony.
-	Je∂li CTRL-C zosta≥ wci∂niÍty, przeszukiwanie zostanie przerwane. CTRL-D
+	Search przeszukuje pliki zawarte w katalogu okre≈õlonym w FROM, dla
+	okre≈õlonego ciƒÖgu (SEARCH); w przypadku gdy opcja ALL jest okre≈õlona,
+	podkatalogi tak≈ºe zostajƒÖ przeszukiwane. Nazwy wszystkich plik√≥w 
+	zawierajƒÖcych ciƒÖg SEARCH, sƒÖ wy≈õwietlane, razem z numerami linii,
+	gdzie ciƒÖg zosta≈Ç znaleziony.
+	Je≈õli CTRL-C zosta≈Ç wci≈õniƒôty, przeszukiwanie zostanie przerwane. CTRL-D
 	przerwie przeszukiwanie aktualnego pliku.
 
 
@@ -44,19 +44,19 @@ Parametry
 ::
 
 
-	NONUM	--	numery linii nie zostan± wy∂wietlane
-	QUIET	--	nie wy∂wietlaj nazwy przeszukiwanego pliku
-	QUICK	--	bardziej ograniczone wyj∂cie
-	FILE	--	wyszukuje ci±gu w okre∂lonym pliku
-	PATTERN	--	uøyj wzorcÛw przy wyszukiwaniu
-	CASE	--	z uwzglÍdnieniem ma≥ych i wielkich liter
-	LINES	--	dodatkowe linie po pasuj±cym ci±gu
+	NONUM	--	numery linii nie zostanƒÖ wy≈õwietlane
+	QUIET	--	nie wy≈õwietlaj nazwy przeszukiwanego pliku
+	QUICK	--	bardziej ograniczone wyj≈õcie
+	FILE	--	wyszukuje ciƒÖgu w okre≈õlonym pliku
+	PATTERN	--	u≈ºyj wzorc√≥w przy wyszukiwaniu
+	CASE	--	z uwzglƒôdnieniem ma≈Çych i wielkich liter
+	LINES	--	dodatkowe linie po pasujƒÖcym ciƒÖgu
 
 
 Wynik
 ~~~~~
 ::
 
-	Je∂li obiekt jest znaleziony, stan jest zwracany jako 0. W przeciwnym
-	wypadku, jest WARN/Ostrzeøenie.
+	Je≈õli obiekt jest znaleziony, stan jest zwracany jako 0. W przeciwnym
+	wypadku, jest WARN/Ostrze≈ºenie.
 

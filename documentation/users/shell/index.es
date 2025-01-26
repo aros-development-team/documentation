@@ -4,7 +4,7 @@
 Comandos del shell
 ==================
 
-`Introducción <introduction>`_
+`IntroducciÃ³n <introduction>`_
 
 `AddBuffers`__
 `Alias`__

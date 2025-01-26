@@ -10,15 +10,15 @@ waarschijnlijk niet op een nog betere manier dan nu. Er zijn zo twee
 grote mededelingen voor alle AROS gebruikers.
 
 Om te beginnen, drag & drop werkt eindelijk! Het betekend dat
-de Wanderer gebruikt kan worden om bestanden van één map naar
-de andere te kopiëren, en om bestanden te openen door deze
+de Wanderer gebruikt kan worden om bestanden van Ã©Ã©n map naar
+de andere te kopiÃ«ren, en om bestanden te openen door deze
 op een applicatie icoon te laten vallen. Dit "wonder" werd gerealiseerd
 door Christoph Szczecina en Darius Brewka. Er zijn nog wel enkele
 stabiliteit problemen onder AROS native, maar deze moeten binnen enkele
 dagen opgelost zijn. U kunt hier een `kleine VMware video`__ 
 vinden dat AROS' drag & drop toont!
 
-Robert Norris heeft netwerk support geïmplementeerd voor de Linux
+Robert Norris heeft netwerk support geÃ¯mplementeerd voor de Linux
 variant van hosted AROS. De Tap interface werkt ook, die u terug 
 kunt vinden in de meest recente nightly builds.
 

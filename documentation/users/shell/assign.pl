@@ -9,7 +9,7 @@
 Assign
 ======
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -18,7 +18,7 @@ Sk³adnia
 	REMOVE/S, VOLS/S, DIRS/S, DEVICES/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,19 +29,19 @@ Sk³adnia
 Funkcja
 ~~~~~~~
 ::
-	ASSIGN tworzy odno¶nik do pliku lub katalogu. Odno¶nik jest
-	logiczn± nazw± dysku, co sprawia, ¿e bardzo wygodnie mo¿na
-	przypisaæ obiekty u¿ywaj±c przypisów zamiast ¶cie¿ek do tych
-	katalogów.
+	ASSIGN tworzy odnoÅ›nik do pliku lub katalogu. OdnoÅ›nik jest
+	logicznÄ… nazwÄ… dysku, co sprawia, Å¼e bardzo wygodnie moÅ¼na
+	przypisaÄ‡ obiekty uÅ¼ywajÄ…c przypisÃ³w zamiast Å›cieÅ¼ek do tych
+	katalogÃ³w.
 	
-	Je¶li argumenty NAME i TARGET s± podane, ASSIGN przypisze
-	logiczn± nazwê do okre¶lonej ¶cie¿ki. Je¶li NAME jest ju¿ przypisane
-	do pliku lub katalogu to nowy przypis zmieni poprzedni± ¶cie¿kê.
-	Dwukropek musi byæ podany po argumencie NAME.
+	JeÅ›li argumenty NAME i TARGET sÄ… podane, ASSIGN przypisze
+	logicznÄ… nazwÄ™ do okreÅ›lonej Å›cieÅ¼ki. JeÅ›li NAME jest juÅ¼ przypisane
+	do pliku lub katalogu to nowy przypis zmieni poprzedniÄ… Å›cieÅ¼kÄ™.
+	Dwukropek musi byÄ‡ podany po argumencie NAME.
 
-	Je¶li tylko argument NAME jest podany, to ka¿de przypisanie do
-	tego NAME jest usuwane. Je¶li brak jest argumentów, to zostan±
-	wy¶wietlone wszystkie przypisy.
+	JeÅ›li tylko argument NAME jest podany, to kaÅ¼de przypisanie do
+	tego NAME jest usuwane. JeÅ›li brak jest argumentÃ³w, to zostanÄ…
+	wyÅ›wietlone wszystkie przypisy.
 	
 
 
@@ -50,18 +50,18 @@ Parametry
 ::
 
 
-	NAME		--	nazwa, która powinna byæ przypisana do pliku lub katalogu
-	TARGET		--	jeden lub wiêcej katalogów podanych jako ¶cie¿ka
-	LIST		--	lista wszystkich stworzonych przypisów
-	EXISTS		--	je¶li nazwa NAME ju¿ wystêpuje, to zostanie zwrócony kod WARN
-	DISMOUNT	--	usuñ wolumin lub nazwê urz±dzenia NAME z dos listy
-	DEFER		--	stwórz przypis do nieistniej±cej (w chwili tworzenia) ¶cie¿ki
-	PATH		--	stwórz przypis do nieistniej±cej (w chwili tworzenia) ¶cie¿ki	
-	ADD		--	dodaje kolejn± ¶cie¿kê do nazwy przypisu NAME
+	NAME		--	nazwa, ktÃ³ra powinna byÄ‡ przypisana do pliku lub katalogu
+	TARGET		--	jeden lub wiÄ™cej katalogÃ³w podanych jako Å›cieÅ¼ka
+	LIST		--	lista wszystkich stworzonych przypisÃ³w
+	EXISTS		--	jeÅ›li nazwa NAME juÅ¼ wystÄ™puje, to zostanie zwrÃ³cony kod WARN
+	DISMOUNT	--	usuÅ„ wolumin lub nazwÄ™ urzÄ…dzenia NAME z dos listy
+	DEFER		--	stwÃ³rz przypis do nieistniejÄ…cej (w chwili tworzenia) Å›cieÅ¼ki
+	PATH		--	stwÃ³rz przypis do nieistniejÄ…cej (w chwili tworzenia) Å›cieÅ¼ki	
+	ADD		--	dodaje kolejnÄ… Å›cieÅ¼kÄ™ do nazwy przypisu NAME
 	REMOVE		--	usuwa przypis
-	VOLS		--	wy¶wietla przypisane woluminy
-	DIRS		--	wy¶wietla przypisane katalogi
-	DEVICES		--	wy¶wietla przypisane urz±dzenia
+	VOLS		--	wyÅ›wietla przypisane woluminy
+	DIRS		--	wyÅ›wietla przypisane katalogi
+	DEVICES		--	wyÅ›wietla przypisane urzÄ…dzenia
      
 
 

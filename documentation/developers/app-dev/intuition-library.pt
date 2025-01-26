@@ -1,27 +1,27 @@
 ===========================================
-Manual de Desenvolvimento de AplicaÁıe AROS
+Manual de Desenvolvimento de Aplica√ß√µe AROS
 ===========================================
 
 :Authores:		Staf Verhaegen, Sebastian Rittau, Stefan Rieken, Matt Parsons,
 			Adam Chodorowski, Fabio Alemagna, Matthias Rustler
-:Direitos de CÛpia:	Copyright © 1995-2006, A equipa de Desenvolvimento AROS
-:Vers„o:		$Revision$
+:Direitos de C√≥pia:	Copyright ¬© 1995-2006, A equipa de Desenvolvimento AROS
+:Vers√£o:		$Revision$
 :Data:      		$Date$
-:Estado:		Por acabar; IntegraÁ„o iniciada (Um cominho loooong a percorrer).
-:A fazer:		Integrar as v·rias partes. Actualizar e rever. Complete...
+:Estado:		Por acabar; Integra√ß√£o iniciada (Um cominho loooong a percorrer).
+:A fazer:		Integrar as v√°rias partes. Actualizar e rever. Complete...
 
 `Indice <index>`__
 
 .. Warning::
 
-   Este documento n„o est· terminado! … muito provavel que muitas partes
-   estejam desactualisadas, contenham informaÁ„o incorrecta ou simplesmente
+   Este documento n√£o est√° terminado! √â muito provavel que muitas partes
+   estejam desactualisadas, contenham informa√ß√£o incorrecta ou simplesmente
    em falta. Se quiser ajudar a rectificar isto, por favor contacte-nos.
 
 .. Contents::
 
 ---------------------------------------------------------------
-Interface Gr·fico do Utilizador (Graphic User Interface - GUIs)
+Interface Gr√°fico do Utilizador (Graphic User Interface - GUIs)
 ---------------------------------------------------------------
 
 Janelas
@@ -33,37 +33,37 @@ ARRANJE-ME
 Requerentes
 -----------
 
-Requerentes s„o um tipo especial de janelas_. Elas quer confrontam o utilizador
-com informaÁ„o ou requerem informaÁ„o. Requerentes interrompem sempre o fluxo
+Requerentes s√£o um tipo especial de janelas_. Elas quer confrontam o utilizador
+com informa√ß√£o ou requerem informa√ß√£o. Requerentes interrompem sempre o fluxo
 normal de trabalho do utilizador, pelo que deveram ser somente utilizadas quer
-para informar-lo de algum evento importante ou requerer informaÁ„o, sem o qual
-a aplicaÁ„o n„o pode trabalhar. Este tipo de requesiÁ„o È chamado requesiÁ„o modal.
+para informar-lo de algum evento importante ou requerer informa√ß√£o, sem o qual
+a aplica√ß√£o n√£o pode trabalhar. Este tipo de requesi√ß√£o √© chamado requesi√ß√£o modal.
 
-Exemplos de requesitores de informaÁ„o s„o requesitores que reportam erros (como
-falhas na abertura de um ficheiro) ou sobre requesitores, que mostram informaÁ„o
+Exemplos de requesitores de informa√ß√£o s√£o requesitores que reportam erros (como
+falhas na abertura de um ficheiro) ou sobre requesitores, que mostram informa√ß√£o
 sobre o programa, quando requeridos pelo utilizador.
 
-Como o nome indica, requesitores podem tambÈm requerer informaÁ„o do utilizador,
+Como o nome indica, requesitores podem tamb√©m requerer informa√ß√£o do utilizador,
 como um nome de ficheiro (usando os requesitores de ficheiros), o seu nome ou uma
-simples decis„o sim/n„o ("Abandonar aplicaÁ„o?" ("Really quit application?")).
+simples decis√£o sim/n√£o ("Abandonar aplica√ß√£o?" ("Really quit application?")).
 
-REquesitores dever„o somente aparecer, se uma aplicaÁ„o n„o conseguir prosseguir
+REquesitores dever√£o somente aparecer, se uma aplica√ß√£o n√£o conseguir prosseguir
 sem saber o que utilizador aprendeu sobre um determinado facto ou sem obter um
-certo tipo de informaÁ„o. Raz„o pela qual, a maioria dos requesitores ir„o bloquear
-a aplicaÁ„o. Isso significa que n„o ir„o atender a qualquer entrada, excepto ‡ que
-est· a no requesitor. Uma excepÁ„o s„o requasitores que s„o explicitamente requeridos
+certo tipo de informa√ß√£o. Raz√£o pela qual, a maioria dos requesitores ir√£o bloquear
+a aplica√ß√£o. Isso significa que n√£o ir√£o atender a qualquer entrada, excepto √† que
+est√° a no requesitor. Uma excep√ß√£o s√£o requasitores que s√£o explicitamente requeridos
 pelo utilizador, como os requesitore de ficheiros (file-requesters) ou os
-requesitores de informaÁ„o sobre (about-requesters). Normalmente, estes n„o dever„o
-bloquear a aplicaÁ„o.
+requesitores de informa√ß√£o sobre (about-requesters). Normalmente, estes n√£o dever√£o
+bloquear a aplica√ß√£o.
 
 
-Rquesitores f·ceis
+Rquesitores f√°ceis
 """"""""""""""""""
 
-Os ent„o chamados requesitores f·ceis s„o requesitores simples. Podem ser usados
-para quer fornecer uma informaÁ„o ou para pedir uma escolha. O n˙meros de escolhas
-È limitado a 256, mas È geralmente uma m· ideia ter mais de cinco escolhas diferentes.
-Tem de ter em conta que o comprimento do ecr„ È limitado.
+Os ent√£o chamados requesitores f√°ceis s√£o requesitores simples. Podem ser usados
+para quer fornecer uma informa√ß√£o ou para pedir uma escolha. O n√∫meros de escolhas
+√© limitado a 256, mas √© geralmente uma m√° ideia ter mais de cinco escolhas diferentes.
+Tem de ter em conta que o comprimento do ecr√£ √© limitado.
 
 ARRANJE-ME: EasyRequestArgs(), BuildEasyRequest()
 
@@ -80,7 +80,7 @@ Requesitores Asl (Font-, File- e Screenmode-)
 ARRANJE-ME
 
 
-Ecr„s
+Ecr√£s
 -----
 
 ARRANJE-ME

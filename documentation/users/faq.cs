@@ -1,81 +1,81 @@
 ==========================
-Èasto kladené otázky (FAQ)
+ÄŒasto kladenÃ© otÃ¡zky (FAQ)
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright © 1995-2007, The AROS Development Team
+:Copyright: Copyright Å  1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 .. Contents::
 
-Bì¾né otázky
+BÄ›Å¾nÃ© otÃ¡zky
 ============
 
-Mù¾u se na nìco zeptat?
+MÅ¯Å¾u se na nÄ›co zeptat?
 -----------------------
 
-Samozøejmì mù¾e¹. Pøejdi prosím na `AROS-Exec fórum`__,
-proèti si vlákna a zeptej se na co chce¹. Tyto FAQ budou postupnì aktualizovány
-podle otázek u¾ivatelù na fóru, fórum je v¹ak více aktuální.
+SamozÅ™ejmÄ› mÅ¯Å¾eÅ¡. PÅ™ejdi prosÃ­m na `AROS-Exec fÃ³rum`__,
+proÄti si vlÃ¡kna a zeptej se na co chceÅ¡. Tyto FAQ budou postupnÄ› aktualizovÃ¡ny
+podle otÃ¡zek uÅ¾ivatelÅ¯ na fÃ³ru, fÃ³rum je vÅ¡ak vÃ­ce aktuÃ¡lnÃ­.
 
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
 
 
-Co je vlastnì AROS?
+Co je vlastnÄ› AROS?
 -------------------
 
-Pøeèti si prosím úvod_.
+PÅ™eÄti si prosÃ­m Ãºvod_.
 
-.. _úvod: ../../introduction/index
+.. _Ãºvod: ../../introduction/index
 
 
-Jakı je právní stav AROSu?
+JakÃ½ je prÃ¡vnÃ­ stav AROSu?
 --------------------------
 
-Evropské právo øíká, ¾e je legalní pou¾ívat techniky zpìtného de¹ifrování
-k získání interoperability. A také øíká, ¾e je nelegální ¹íøit
-znalosti získané tìmito technikami. To v podstatì znamená, ¾e mù¾e¹
-disasemblovat jakıkoli software, aby si napsal jinı, kterı je kompatibilní
-(napøíklad by bylo legální disasemblovat Word a napsat program, kterı zkonvertuje
+EvropskÃ© prÃ¡vo Å™Ã­kÃ¡, Å¾e je legalnÃ­ pouÅ¾Ã­vat techniky zpÄ›tnÃ©ho deÅ¡ifrovÃ¡nÃ­
+k zÃ­skÃ¡nÃ­ interoperability. A takÃ© Å™Ã­kÃ¡, Å¾e je nelegÃ¡lnÃ­ Å¡Ã­Å™it
+znalosti zÃ­skanÃ© tÄ›mito technikami. To v podstatÄ› znamenÃ¡, Å¾e mÅ¯Å¾eÅ¡
+disasemblovat jakÃ½koli software, aby si napsal jinÃ½, kterÃ½ je kompatibilnÃ­
+(napÅ™Ã­klad by bylo legÃ¡lnÃ­ disasemblovat Word a napsat program, kterÃ½ zkonvertuje
 Word documenty do ASCII textu).
 
-Existují samozøejmì urèitá omezení: nesmí¹ disasemblovat software,
-pokud by informace získané tímto procesem ¹ly získat i jinım
-zpùsobem. Také nesmí¹ ostatním øici, co si se dovìdìl. Kniha jako napø. "Windows
-zevnitø" je proto nezákonná nebo alespoò na hranici zákona.
+ExistujÃ­ samozÅ™ejmÄ› urÄitÃ¡ omezenÃ­: nesmÃ­Å¡ disasemblovat software,
+pokud by informace zÃ­skanÃ© tÃ­mto procesem Å¡ly zÃ­skat i jinÃ½m
+zpÅ¯sobem. TakÃ© nesmÃ­Å¡ ostatnÃ­m Å™ici, co si se dovÄ›dÄ›l. Kniha jako napÅ™. "Windows
+zevnitÅ™" je proto nezÃ¡konnÃ¡ nebo alespoÅˆ na hranici zÃ¡kona.
 
-Vzhledem k tomu, ¾e se vyhıbáme disasemblovacím technikám a místo toho pou¾íváme
-bì¾nì dostupné znalosti (napøíklad programové manuály), které nespadají pod ¾ádnı
-NDA (non-disclosure agreement - závazek mlèenlivosti), neplatí vı¹e uvedené pøímo
-pro AROS. Co je tady dùle¾ité, je zámìr zákona: je legální psát sotware, kterı je
-kompatibilní s jinım softwarem. Tak¾e vìøíme, ¾e je AROS chránìn zákonem.
+Vzhledem k tomu, Å¾e se vyhÃ½bÃ¡me disasemblovacÃ­m technikÃ¡m a mÃ­sto toho pouÅ¾Ã­vÃ¡me
+bÄ›Å¾nÄ› dostupnÃ© znalosti (napÅ™Ã­klad programovÃ© manuÃ¡ly), kterÃ© nespadajÃ­ pod Å¾Ã¡dnÃ½
+NDA (non-disclosure agreement - zÃ¡vazek mlÄenlivosti), neplatÃ­ vÃ½Å¡e uvedenÃ© pÅ™Ã­mo
+pro AROS. Co je tady dÅ¯leÅ¾itÃ©, je zÃ¡mÄ›r zÃ¡kona: je legÃ¡lnÃ­ psÃ¡t sotware, kterÃ½ je
+kompatibilnÃ­ s jinÃ½m softwarem. TakÅ¾e vÄ›Å™Ã­me, Å¾e je AROS chrÃ¡nÄ›n zÃ¡konem.
 
-Patenty a hlavièkové soubory jsou v¹ak dal¹ím problémem. V Evropì mù¾eme pou¾ívat
-patentované algoritmy, proto¾e evropské právo nedovoluje patenty na algoritmy.
-Nicménì kód, kterı pou¾ívá algoritmy patentované v USA, by nemohl bıt dodáván
-do USA. Jako pøíklady patentovanıch algoritmù v AmigaOS uveïme "screen dragging"
-a specifickı zpùsob funkce menu. Proto se vyhıbáme implementování tìchto
-funkcí zcela stejnım zpùsobem. Na druhou stranu v¹ak musí bıt hlavièkové soubory
-kompatibilní, ale odli¹né od originálu, jak je to jen mo¾né.
+Patenty a hlaviÄkovÃ© soubory jsou vÅ¡ak dalÅ¡Ã­m problÃ©mem. V EvropÄ› mÅ¯Å¾eme pouÅ¾Ã­vat
+patentovanÃ© algoritmy, protoÅ¾e evropskÃ© prÃ¡vo nedovoluje patenty na algoritmy.
+NicmÃ©nÄ› kÃ³d, kterÃ½ pouÅ¾Ã­vÃ¡ algoritmy patentovanÃ© v USA, by nemohl bÃ½t dodÃ¡vÃ¡n
+do USA. Jako pÅ™Ã­klady patentovanÃ½ch algoritmÅ¯ v AmigaOS uveÄme "screen dragging"
+a specifickÃ½ zpÅ¯sob funkce menu. Proto se vyhÃ½bÃ¡me implementovÃ¡nÃ­ tÄ›chto
+funkcÃ­ zcela stejnÃ½m zpÅ¯sobem. Na druhou stranu vÅ¡ak musÃ­ bÃ½t hlaviÄkovÃ© soubory
+kompatibilnÃ­, ale odliÅ¡nÃ© od originÃ¡lu, jak je to jen moÅ¾nÃ©.
 
-Abychom se vyhli problémùm, po¾ádali jsme o oficiální souhlas od Amiga Inc. Oni
-na¹i snahu vidí pozitivnì, ale nejsou si jisti s právními dùsledky.
-Podotıkáme, ¾e Amiga Inc nám dosud neposlala ¾ádnı dopis "cease and desist",
-co¾ bereme jako pozitivní znamení. Bohu¾el je¹tì nedo¹lo
-k právní dohodì, a to bez ohledu na dobré úmysly obou stran.
+Abychom se vyhli problÃ©mÅ¯m, poÅ¾Ã¡dali jsme o oficiÃ¡lnÃ­ souhlas od Amiga Inc. Oni
+naÅ¡i snahu vidÃ­ pozitivnÄ›, ale nejsou si jisti s prÃ¡vnÃ­mi dÅ¯sledky.
+PodotÃ½kÃ¡me, Å¾e Amiga Inc nÃ¡m dosud neposlala Å¾Ã¡dnÃ½ dopis "cease and desist",
+coÅ¾ bereme jako pozitivnÃ­ znamenÃ­. BohuÅ¾el jeÅ¡tÄ› nedoÅ¡lo
+k prÃ¡vnÃ­ dohodÄ›, a to bez ohledu na dobrÃ© Ãºmysly obou stran.
 
 
-Proè vám jde pouze o kompatibilitu s 3.1?
+ProÄ vÃ¡m jde pouze o kompatibilitu s 3.1?
 -----------------------------------------
 
-Hodnì se diskutovalo o napsání moderního operaèního systému s vlastnostmi
-AmigaOS. Z dobrého dùvodu bylo od toho upu¹tìno. Zaprvé, v¹ichni se shodují,
-¾e souèasná AmigaOS by mohla bıt vylep¹ena, ale nikdo neví, jak to udìlat, nebo
-se dokonce shodují na tom, co má bıt vylep¹eno nebo co je dùle¾ité. Nìkteøí
-napøíklad chtìjí ochranu pamìti, ale nechtìjí za to platit (pøepsání
-dostupného softwaru a zmen¹ení rychlosti).
+HodnÄ› se diskutovalo o napsÃ¡nÃ­ modernÃ­ho operaÄnÃ­ho systÃ©mu s vlastnostmi
+AmigaOS. Z dobrÃ©ho dÅ¯vodu bylo od toho upuÅ¡tÄ›no. ZaprvÃ©, vÅ¡ichni se shodujÃ­,
+Å¾e souÄasnÃ¡ AmigaOS by mohla bÃ½t vylepÅ¡ena, ale nikdo nevÃ­, jak to udÄ›lat, nebo
+se dokonce shodujÃ­ na tom, co mÃ¡ bÃ½t vylepÅ¡eno nebo co je dÅ¯leÅ¾itÃ©. NÄ›kteÅ™Ã­
+napÅ™Ã­klad chtÄ›jÃ­ ochranu pamÄ›ti, ale nechtÄ›jÃ­ za to platit (pÅ™epsÃ¡nÃ­
+dostupnÃ©ho softwaru a zmenÅ¡enÃ­ rychlosti).
 
 In the end, the discussions ended in either flame wars or reiteration of the
 same old arguments over and over again. So we decided to start with something we
@@ -91,10 +91,10 @@ carefully what that price might be and if we and everyone else will be willing
 to pay it.
 
 
-Mù¾ete implementovat funkci XYZ?
+MÅ¯Å¾ete implementovat funkci XYZ?
 --------------------------------
 
-Ne, proto¾e: 
+Ne, protoÅ¾e: 
 
 a) If it was really important, it would be in the original OS. :-) 
 b) Why don't you do it yourself and send a patch to us?
@@ -114,7 +114,7 @@ goal now, and there have been a couple of innovations implemented in AROS that
 aren't available in AmigaOS.
 
 
-Jak je AROS kompatibilní s AmigaOS?
+Jak je AROS kompatibilnÃ­ s AmigaOS?
 -----------------------------------
 
 Very compatible. We expect that AROS will run existing software on the Amiga
@@ -127,7 +127,7 @@ recompilation, with the occasional tweak here and there. There are of course
 programs for which this is not true, but it holds for most modern ones.
 
 
-Pro jaké hardwarové platformy je AROS dostupnı?
+Pro jakÃ© hardwarovÃ© platformy je AROS dostupnÃ½?
 -----------------------------------------------
 
 Currently AROS is available in a quite usable state as native and hosted
@@ -137,14 +137,14 @@ completeness to SUN SPARC (hosted under Solaris) and Palm compatible
 handhelds (native).
 
 
-Chystá se port AROSu pro PPC?
+ChystÃ¡ se port AROSu pro PPC?
 -----------------------------
 
 There is currently an effort under way to port AROS to PPC, initially
 hosted under Linux.
 
 
-Proè pou¾íváte Linux a X11?
+ProÄ pouÅ¾Ã­vÃ¡te Linux a X11?
 ---------------------------
 
 We use Linux and X11 to speed up development. For example, if you implement
@@ -160,7 +160,7 @@ for development though, since some development tools haven't been ported to AROS
 yet.
 
 
-Jak zajistíte pøenositelnost AROSu?
+Jak zajistÃ­te pÅ™enositelnost AROSu?
 -----------------------------------
 
 One of the major new features in AROS compared to AmigaOS is the HIDD (Hardware
@@ -170,7 +170,7 @@ hardware directly but instead go through the HIDDs, which are coded using an
 object oriented system that makes it easy to replace HIDDs and reuse code.
 
 
-Proè si myslíte, ¾e to AROS zvládne?
+ProÄ si myslÃ­te, Å¾e to AROS zvlÃ¡dne?
 ------------------------------------
 
 We hear all the day from a lot of people that AROS won't make it. Most of them
@@ -190,7 +190,7 @@ that machine will boom again. And who knows, maybe you will get a CD along with
 the machine labeled "AROS". :-)
 
 
-Co mám dìlat, kdy¾ AROS nejde sestavit?
+Co mÃ¡m dÄ›lat, kdyÅ¾ AROS nejde sestavit?
 ---------------------------------------
 
 Please post a message with details (for example, the error messages you
@@ -201,7 +201,7 @@ try to help you.
 __ https://ae.amigalife.org/
 
 
-Bude mít AROS ochranu pamìti, SVM, RT, ...?
+Bude mÃ­t AROS ochranu pamÄ›ti, SVM, RT, ...?
 -------------------------------------------
 
 Several hundred Amiga experts (that's what they thought of themselves at least)
@@ -231,7 +231,7 @@ them, making sure that adding these features will be painless. However, they do
 not have the highest priority right now. Very basic RT has been added, though.
 
 
-Mohu se stát beta testerem?
+Mohu se stÃ¡t beta testerem?
 ---------------------------
 
 Sure, no problem. In fact, we want as many beta testers as possible, so
@@ -240,7 +240,7 @@ you have to do is to download AROS, test whatever you want and send us a
 report.
 
 
-Jakı je vztah mezi AROSem a UAE?
+JakÃ½ je vztah mezi AROSem a UAE?
 --------------------------------
 
 UAE is an Amiga emulator, and as such has somewhat different goals than AROS.
@@ -264,7 +264,7 @@ __ http://www.rcdrummond.net/uae/
 __ http://www.winuae.net/
 
 
-Jakı je vztah mezi AROSem a Haage & Partner?
+JakÃ½ je vztah mezi AROSem a Haage & Partner?
 --------------------------------------------
 
 Haage & Partner used parts of AROS in AmigaOS 3.5 and 3.9, for example the
@@ -275,7 +275,7 @@ source project, and anyone can use our code in their own projects provided they
 follow the license.
 
 
-Jakı je vztah mezi AROSem a MorphOS?
+JakÃ½ je vztah mezi AROSem a MorphOS?
 ------------------------------------
 
 The relationship between AROS and MorphOS is basically the same as between AROS
@@ -287,7 +287,7 @@ team. There is no formal relation between AROS and MorphOS; this is simply how
 open source development works.
 
 
-Jaké programovací jazyky jsou k dispozici?
+JakÃ© programovacÃ­ jazyky jsou k dispozici?
 ------------------------------------------
 
 Most development for AROS is done using ANSI C by crosscompiling the
@@ -324,7 +324,7 @@ The languages that are available natively are Python_, Regina_, Lua_, Hollywood_
 .. _False:  http://strlen.com/false-language
 
 
-Proè není v AROSu ¾ádnı m68k emulátor?
+ProÄ nenÃ­ v AROSu Å¾Ã¡dnÃ½ m68k emulÃ¡tor?
 --------------------------------------
 
 To make old Amiga programs run on AROS, we have ported UAE_ to AROS. AROS's
@@ -346,7 +346,7 @@ of bytes in RAM are encoded.
 .. _UAE: http://www.amigaemulator.org/
 
 
-Chystá se AROS Kickstart ROM?
+ChystÃ¡ se AROS Kickstart ROM?
 -----------------------------
 
 There might be, if someone creates a native Amiga port of AROS and does all the
@@ -354,7 +354,7 @@ other work needed to create a Kickstart ROM. Currently, no one has applied for
 the job. 
 
 
-Otázky k softwaru
+OtÃ¡zky k softwaru
 =================
 
 How do I access AROS's disk images from UAE?
@@ -701,27 +701,27 @@ Note: Formula for counting the blocks:
 block = ((highcyl - lowcyl) x surfaces + head) x blockspertrack + sec
 
 
-Otázky k hardwaru
+OtÃ¡zky k hardwaru
 =================
 
-Kde mohu najít seznam hardwaru kompatibilního s AROSem?
+Kde mohu najÃ­t seznam hardwaru kompatibilnÃ­ho s AROSem?
 -------------------------------------------------------
 
-Seznam najde¹ na stránce `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__.
-Tam se mohou nacházet i dal¹í seznamy od u¾ivatelù AROSu.
+Seznam najdeÅ¡ na strÃ¡nce `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__.
+Tam se mohou nachÃ¡zet i dalÅ¡Ã­ seznamy od uÅ¾ivatelÅ¯ AROSu.
 
 
-Proè nemù¾e AROS bootovat z jednotky nastavené na IDE kanálu jako SLAVE?
+ProÄ nemÅ¯Å¾e AROS bootovat z jednotky nastavenÃ© na IDE kanÃ¡lu jako SLAVE?
 ------------------------------------------------------------------------
 
-Tak¾e, AROS by mìl bootovat, pokud je jednotka SLAVE, ale POUZE tehdy, je-li
-na IDE i jednotka MASTER. Tak to má bıt podle IDE
-specifikace a AROS se jí dr¾í.
+TakÅ¾e, AROS by mÄ›l bootovat, pokud je jednotka SLAVE, ale POUZE tehdy, je-li
+na IDE i jednotka MASTER. Tak to mÃ¡ bÃ½t podle IDE
+specifikace a AROS se jÃ­ drÅ¾Ã­.
 
 
-Mùj systém se zastaví s èervenım kurzorem na obrazovce nebo s prázdnou obrazovkou
+MÅ¯j systÃ©m se zastavÃ­ s ÄervenÃ½m kurzorem na obrazovce nebo s prÃ¡zdnou obrazovkou
 ---------------------------------------------------------------------------------
 
-Jedním z dùvodù mù¾e bıt pou¾ití sériové my¹i (ty zatím nejsou podporovány).
-V tuto chvíli musí¹ s AROSem pou¾ívat PS/2 my¹. Dal¹ím dùvodem mù¾e bıt vıbìr grafického
-re¾imu v bootovacím menu, kterı tvùj hardware nepodporuje. Restartuj poèítaè a zkus jinı re¾im.
+JednÃ­m z dÅ¯vodÅ¯ mÅ¯Å¾e bÃ½t pouÅ¾itÃ­ sÃ©riovÃ© myÅ¡i (ty zatÃ­m nejsou podporovÃ¡ny).
+V tuto chvÃ­li musÃ­Å¡ s AROSem pouÅ¾Ã­vat PS/2 myÅ¡. DalÅ¡Ã­m dÅ¯vodem mÅ¯Å¾e bÃ½t vÃ½bÄ›r grafickÃ©ho
+reÅ¾imu v bootovacÃ­m menu, kterÃ½ tvÅ¯j hardware nepodporuje. Restartuj poÄÃ­taÄ a zkus jinÃ½ reÅ¾im.

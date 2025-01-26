@@ -1,76 +1,76 @@
 [meta]
 
-charset:          windows-1251
+charset:          utf-8
 
 [titles]
 
-news:             Новости
+news:             РќРѕРІРѕСЃС‚Рё
 news-archive-for: News archive for
-mirrors:          Зеркала
-contents:         Содержание
-search:           Поиск
-visitors:         Посетители
-sponsors:         Спонсоры
+mirrors:          Р—РµСЂРєР°Р»Р°
+contents:         РЎРѕРґРµСЂР¶Р°РЅРёРµ
+search:           РџРѕРёСЃРє
+visitors:         РџРѕСЃРµС‚РёС‚РµР»Рё
+sponsors:         РЎРїРѕРЅСЃРѕСЂС‹
 
 [navigation]
 
-home:             Начало
-news:             Новости
-archive:          Архив
-introduction:     Введение
-status:           Текущее состояние
-screenshots:      Снимки экрана
-ports:            Порты
-license:          Лицензия
-download:         Загрузка (Download)
-documentation:    Документация
-users:            Пользователи
-installation:     Установка
-using:            Использование
-shell:            Команды CLI-shell
+home:             РќР°С‡Р°Р»Рѕ
+news:             РќРѕРІРѕСЃС‚Рё
+archive:          РђСЂС…РёРІ
+introduction:     Р’РІРµРґРµРЅРёРµ
+status:           РўРµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
+screenshots:      РЎРЅРёРјРєРё СЌРєСЂР°РЅР°
+ports:            РџРѕСЂС‚С‹
+license:          Р›РёС†РµРЅР·РёСЏ
+download:         Р—Р°РіСЂСѓР·РєР° (Download)
+documentation:    Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ
+users:            РџРѕР»СЊР·РѕРІР°С‚РµР»Рё
+installation:     РЈСЃС‚Р°РЅРѕРІРєР°
+using:            РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ
+shell:            РљРѕРјР°РЅРґС‹ CLI-shell
 applications:     Applications
-faq:              ЧАВО(FAQ)
+faq:              Р§РђР’Рћ(FAQ)
 howto:            HowTo
 hwcompat:         Hardware Compatibility
 glossary:         Glossary
 translators:      Translators
-developers:       Разработчики
-contribute:       Участие
-roadmap:          План развития
-issue-tracker:    Сообщить об ошибке
-working-with-git: Работа с Git
-compiling:        Сборка
-application-development-manual: Руководство по разработке приложений
-zune-application-development-manual: Руководство по разработке приложений Zune
-system-development-manual:      Руководство по системной разработке
-debugging-manual: Руководство по отладке
-reference:        Справочная информация
-specifications:   Определения
-ui-style-guide:   Руководство по интерфейсу (UI Style)
+developers:       Р Р°Р·СЂР°Р±РѕС‚С‡РёРєРё
+contribute:       РЈС‡Р°СЃС‚РёРµ
+roadmap:          РџР»Р°РЅ СЂР°Р·РІРёС‚РёСЏ
+issue-tracker:    РЎРѕРѕР±С‰РёС‚СЊ РѕР± РѕС€РёР±РєРµ
+working-with-git: Р Р°Р±РѕС‚Р° СЃ Git
+compiling:        РЎР±РѕСЂРєР°
+application-development-manual: Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ СЂР°Р·СЂР°Р±РѕС‚РєРµ РїСЂРёР»РѕР¶РµРЅРёР№
+zune-application-development-manual: Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ СЂР°Р·СЂР°Р±РѕС‚РєРµ РїСЂРёР»РѕР¶РµРЅРёР№ Zune
+system-development-manual:      Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ СЃРёСЃС‚РµРјРЅРѕР№ СЂР°Р·СЂР°Р±РѕС‚РєРµ
+debugging-manual: Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ РѕС‚Р»Р°РґРєРµ
+reference:        РЎРїСЂР°РІРѕС‡РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
+specifications:   РћРїСЂРµРґРµР»РµРЅРёСЏ
+ui-style-guide:   Р СѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ РёРЅС‚РµСЂС„РµР№СЃСѓ (UI Style)
 testing:          Testing
-documenting:      Документирование
-porting:          Портирование
-translating:      Перевод
-summaries:        Заметки
-links:            Ссылки
-contact:          Как с нами связаться
+documenting:      Р”РѕРєСѓРјРµРЅС‚РёСЂРѕРІР°РЅРёРµ
+porting:          РџРѕСЂС‚РёСЂРѕРІР°РЅРёРµ
+translating:      РџРµСЂРµРІРѕРґ
+summaries:        Р—Р°РјРµС‚РєРё
+links:            РЎСЃС‹Р»РєРё
+contact:          РљР°Рє СЃ РЅР°РјРё СЃРІСЏР·Р°С‚СЊСЃСЏ
 slack:            Slack
-mailing-lists:    Списки рассылки
-forums:           Форумы
+mailing-lists:    РЎРїРёСЃРєРё СЂР°СЃСЃС‹Р»РєРё
+forums:           Р¤РѕСЂСѓРјС‹
 community:        Community Resources
-irc-channels:     Каналы IRC
-credits:          Участники проекта
-acknowledgements: Благодарности
-pictures:         Изображения
-developers-together: Разработчики вместе
-sponsors:         Спонсоры
-linking:          Наши баннеры
+irc-channels:     РљР°РЅР°Р»С‹ IRC
+credits:          РЈС‡Р°СЃС‚РЅРёРєРё РїСЂРѕРµРєС‚Р°
+acknowledgements: Р‘Р»Р°РіРѕРґР°СЂРЅРѕСЃС‚Рё
+pictures:         РР·РѕР±СЂР°Р¶РµРЅРёСЏ
+developers-together: Р Р°Р·СЂР°Р±РѕС‚С‡РёРєРё РІРјРµСЃС‚Рµ
+sponsors:         РЎРїРѕРЅСЃРѕСЂС‹
+linking:          РќР°С€Рё Р±Р°РЅРЅРµСЂС‹
 
 [misc]
 
-go:               Перейти
-search:           Поиск
-copyright:        Copyright © 1995-2025, The AROS Development Team. Все права защищены.
-trademarks:       Amiga© является торговым знаком Amiga Inc. Все прочие торговые знаки принадлежат их собственникам.
-read-more:        Подробнее...
-large-image:      Увеличить...
+go:               РџРµСЂРµР№С‚Рё
+search:           РџРѕРёСЃРє
+copyright:        Copyright В© 1995-2025, The AROS Development Team. Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹.
+trademarks:       AmigaВ© СЏРІР»СЏРµС‚СЃСЏ С‚РѕСЂРіРѕРІС‹Рј Р·РЅР°РєРѕРј Amiga Inc. Р’СЃРµ РїСЂРѕС‡РёРµ С‚РѕСЂРіРѕРІС‹Рµ Р·РЅР°РєРё РїСЂРёРЅР°РґР»РµР¶Р°С‚ РёС… СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°Рј.
+read-more:        РџРѕРґСЂРѕР±РЅРµРµ...
+large-image:      РЈРІРµР»РёС‡РёС‚СЊ...

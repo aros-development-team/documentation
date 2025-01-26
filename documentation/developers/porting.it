@@ -3,7 +3,7 @@ GUIDA AL PORTING DI APPLICAZIONI
 ================================
 
 :Authors:   Johann Samuellson, Matthias Rustler
-:Copyright: Copyright © 2006, The AROS Development Team
+:Copyright: Copyright Â© 2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Beta
@@ -25,12 +25,12 @@ __ http://www.os4depot.net/index.php?function=showfile&file=document/manual/spot
 Cosa portare?
 -------------
 
-* Il linguaggio di programmazione più supportato è il C. Al C++ mancano ancora
+* Il linguaggio di programmazione piÃ¹ supportato Ã¨ il C. Al C++ mancano ancora
   alcune cose.
 
 * Controllate di quali pacchetti aggiuntivi ha bisogno il software che volete
-  portare. Non potete fare un semplice porting quando c'è bisogno di toolkit
-  GUI come GTK o QT. Solo software che gira su console può essere portato
+  portare. Non potete fare un semplice porting quando c'Ã¨ bisogno di toolkit
+  GUI come GTK o QT. Solo software che gira su console puÃ² essere portato
   direttamente.
 
 * Se volete portare dei giochi, controllate che utilizzino le `libSDL`__.
@@ -41,7 +41,7 @@ __ http://www.libsdl.org
 Aggiornare l'SDK
 ----------------
 
-Il modo più semplice di portare software su AROS è da una Linux box, poichè è
+Il modo piÃ¹ semplice di portare software su AROS Ã¨ da una Linux box, poichÃ¨ Ã¨
 generalmente dotata di tutti gli strumenti di sviluppo necessari. Guardate nella
 `Guida allo sviluppo`__ per le indicazioni su come installare l'SDK.
 
@@ -51,25 +51,25 @@ __ app-dev/introduction.php#compiling-on-linux-with-gcc
 Le basi
 -------
 
-La prima cosa da fare è controllare come fare il build del progetto.
-Se c'è un file chiamato *configure* nella directory base dell'archivio,
+La prima cosa da fare Ã¨ controllare come fare il build del progetto.
+Se c'Ã¨ un file chiamato *configure* nella directory base dell'archivio,
 significa che dovete configurarlo per la vostra piattaforma. Leggete il
 prossimo capitolo per vedere come fare.
 
-Dopo che il progetto è stato configurato correttamente, viene il momento di
+Dopo che il progetto Ã¨ stato configurato correttamente, viene il momento di
 far lavorare il compilatore. Lanciate il build del progetto scrivendo ``make``.
 
-Comunque, se non c'è nessun file chiamato *configure*, cercate un file chiamato
+Comunque, se non c'Ã¨ nessun file chiamato *configure*, cercate un file chiamato
 *Makefile*. Modificato in modo da adattarsi ad AROS e fate il build del progetto
 con ``make``.
 
-Se tutto è stato compilato e linkato correttamente, siete pronti a testare il
-vostro porting. Un problema molto comune è che il programma non riesce a trovare
+Se tutto Ã¨ stato compilato e linkato correttamente, siete pronti a testare il
+vostro porting. Un problema molto comune Ã¨ che il programma non riesce a trovare
 i file file dati e crasha. Sistemate i path come spiegato nel capitolo sul
 fix del path e provate a lanciarlo di nuovo.
 
 Fate lo strip dei binari, in modo da eliminare informazioni di debug e renderli
-più piccoli.
+piÃ¹ piccoli.
 
 Bene, avete finito. Uploadate il tutto su http://archives.aros-exec.org e http://www.aminet.net!
 
@@ -84,8 +84,8 @@ installati in 3 passi::
     make
     sudo make install
 
-Quello che rende la configurazione su AROS più difficile rispetto a quella, ad
-esempio, su AmigaOS4 è il fatto che stiamo usando un cross compiler.
+Quello che rende la configurazione su AROS piÃ¹ difficile rispetto a quella, ad
+esempio, su AmigaOS4 Ã¨ il fatto che stiamo usando un cross compiler.
 
 Lanciate ``./configure --help`` per vedere le opzioni disponibili. Se il
 configure fallisce, possiamo provare a disabilitare alcune opzioni.
@@ -122,7 +122,7 @@ Ecco una spiegazione delle opzioni che abbiamo usato:
 
 .. Warning::
 
-    Non lanciate ``sudo make install`` perchè il comando installerebbe la
+    Non lanciate ``sudo make install`` perchÃ¨ il comando installerebbe la
     applicazione nei path di Linux come */usr/local*.
 
 
@@ -173,7 +173,7 @@ __ http://lgames.sourceforge.net/index.php?project=LTris
 Esempio SDL (installazione semi-automatica)
 -------------------------------------------
 
-Possiamo usare più o meno le stesse opzioni di prima::
+Possiamo usare piÃ¹ o meno le stesse opzioni di prima::
 
     ./configure CC=i386-aros-gcc  LDFLAGS="-nix" \
     --prefix=/PROGDIR --bindir=/PROGDIR \
@@ -189,13 +189,13 @@ in qualche path di Linux.
 
 Adesso potete rifare il build del vostro progetto (``make distclean``, lanciate
 lo script configure, ``make``). Adesso possiamo lanciare ``sudo make install``.
-Ma è meglio fare prima i seguenti passaggi:
+Ma Ã¨ meglio fare prima i seguenti passaggi:
 
 + sudo mkdir /PROGDIR
 + sudo chmod a+rwx /PROGDIR
 
 Questo ha il vantaggio che possiamo accedere a */PROGDIR* senza i permessi di
-root. Adesso possiamo finalmente lanciare ``make install`` che installerà il
+root. Adesso possiamo finalmente lanciare ``make install`` che installerÃ  il
 gioco in */PROGDIR*. Siccome questo non sarebbe un posto adatto dobbiamo copiare
 il tutto in un punto in cui AROS possa raggiungerlo (es cp -r /PROGDIR ~/AROS/games/ltris).
 
@@ -209,8 +209,8 @@ Errori comuni che si fanno nella configurazione
 Errori del tipo target or host i686-aros isn't available.
 
 Soluzione:
-  Probabilmente lo script *config.sub* è vecchio o non esiste. Lanciate
-  ``autoconf`` nella directory base del pacchetto. Se non è servito a nulla,
+  Probabilmente lo script *config.sub* Ã¨ vecchio o non esiste. Lanciate
+  ``autoconf`` nella directory base del pacchetto. Se non Ã¨ servito a nulla,
   copiate la versione attuale del file *config.sub* da, per esempio,
   */usr/share/automake*.
 
@@ -247,16 +247,16 @@ Soluzione:
 
 
 La stessa cosa accade spesso quando il configure cerca SDL_ttf, ora sapete
-perchè. Dobbiamo specificare altre librerie da cui dipende SDL_ttf. Ha bisogno
-di -lfreetype e -lz. Lascerò il resto a voi per esercizio.
+perchÃ¨. Dobbiamo specificare altre librerie da cui dipende SDL_ttf. Ha bisogno
+di -lfreetype e -lz. LascerÃ² il resto a voi per esercizio.
 
 Se avete aggiunto le dipendenze richieste nello script di configure e ancora non
-funzione, può essere dovuto alla mancanza di file nell'SDK. Per esempio, le
+funzione, puÃ² essere dovuto alla mancanza di file nell'SDK. Per esempio, le
 librerie SDL non sono incluse.
 
 Se ancora non funziona, e siete sicuri di avere le librerie installate, provate
 a rimuovere l'intera sezione dal file di configure dove va a cercare la libreria
-incriminata. Non è una tecnica raccomandata, ma se non c'è altra soluzione...
+incriminata. Non Ã¨ una tecnica raccomandata, ma se non c'Ã¨ altra soluzione...
 
 Adesso dovreste essere pronti a fare il build del vostro progetto. Quando fate
 il porting di applicazioni unix lanciate sempre il ``make``.
@@ -265,10 +265,10 @@ il porting di applicazioni unix lanciate sempre il ``make``.
 Creare un makefile a mano
 =========================
 
-Potete usare questo makefile se il build system è un macello e volete
+Potete usare questo makefile se il build system Ã¨ un macello e volete
 semplificarlo un po', modificatelo a seconda delle vostre esigenze.
 In genere avrete solo bisogno di modificare il makefile esistente, cambiare il
-nome del compilatore C (altrimenti creerà dei binari per Linux) e aggiungere
+nome del compilatore C (altrimenti creerÃ  dei binari per Linux) e aggiungere
 alcune librerie.
 
 Ecco una spiegazione di cosa fanno i vari flag.
@@ -326,7 +326,7 @@ Usare il build system
 =====================
 
 Il build system contiene alcuni script per la configurazione dei pacchetti. Il
-grande vantaggio di usare il build system è quello che potete fare il porting
+grande vantaggio di usare il build system Ã¨ quello che potete fare il porting
 su diverse versioni di AROS.
 
 + %build_with_configure
@@ -368,7 +368,7 @@ E' anche molto comune che i datadir siano settati nei makefile. Localizzate
 Define
 ------
 
-I define vengono spesso impostati in *config.h*, se qualcosa è configurato in
+I define vengono spesso impostati in *config.h*, se qualcosa Ã¨ configurato in
 modo sbagliato, potete spesso modificarla usando *#define* e *#undef*.
 
 Un esempio di define che considera tutte le varianti di AmigaOS::
@@ -391,7 +391,7 @@ Un esempio di define che considera BeOS e AROS::
 
   #if !defined(__BEOS__) && !defined(__AROS__)
 
-Un esempio di #ifdef più complesso::
+Un esempio di #ifdef piÃ¹ complesso::
 
   #ifdef GP2X
 	char *gngeo_dir="save/";
@@ -401,7 +401,7 @@ Un esempio di #ifdef più complesso::
 	char *gngeo_dir=get_gngeo_dir();
   #endif
 
-Alcuni pacchetti open source hanno già adottato i sistemi operativi Amiga-like.
+Alcuni pacchetti open source hanno giÃ  adottato i sistemi operativi Amiga-like.
 Se trovate qualcosa del tipo *#ifdef __AMIGA__* nel sorgente, potete provare ad
 aggiungere il define alle opzioni di config (es. CFLAGS="-nix -D__AMIGA__").
 
@@ -410,14 +410,14 @@ Comprendere i messaggi di errore
 --------------------------------
 
 Error: No return statement in function returning non-void 
-  Non c'è alcuna istruzione *return* in una funzione che ritorna un valore.
+  Non c'Ã¨ alcuna istruzione *return* in una funzione che ritorna un valore.
 
 Error: Control reaches end of non-void function
   E' stata raggiunta la fine di una funzione che deve ritornare un valore, ma
-  non c'è alcuna istruzione di return.
+  non c'Ã¨ alcuna istruzione di return.
 
 Error: May be used uninitialized in this function
-  La variabile non è inizializzata.
+  La variabile non Ã¨ inizializzata.
 
 Warning: implicit declaration of function 'blah blah'
   Dovete includere un file header.

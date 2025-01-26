@@ -9,7 +9,7 @@
 Path
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	PATH/M,ADD/S,SHOW/S,RESET/S,REMOVE/S,QUIET/S,HEAD/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -30,7 +30,7 @@ Funkcja
 ::
 
      
-	Zmienia ¶cie¿ki wyszukiwania. Bez argumentów podaje ¶cie¿ki.
+	Zmienia Å›cieÅ¼ki wyszukiwania. Bez argumentÃ³w podaje Å›cieÅ¼ki.
      
 
 Parametry
@@ -38,16 +38,16 @@ Parametry
 ::
 
 
-	PATH    -- ¶cie¿ka
-	ADD     -- dodaje ¶cie¿kê
-	SHOW    -- pokazuje ¶cie¿kê
-	RESET   -- usuwa ¶cie¿kê i dodaje now±
-	REMOVE  -- usuwa ¶cie¿kê
-	QUIET   -- tryb cichy, brak wyj¶cia
-	HEAD    -- ustawia ¶cie¿kê na pocz±tek listy
+	PATH    -- Å›cieÅ¼ka
+	ADD     -- dodaje Å›cieÅ¼kÄ™
+	SHOW    -- pokazuje Å›cieÅ¼kÄ™
+	RESET   -- usuwa Å›cieÅ¼kÄ™ i dodaje nowÄ…
+	REMOVE  -- usuwa Å›cieÅ¼kÄ™
+	QUIET   -- tryb cichy, brak wyjÅ›cia
+	HEAD    -- ustawia Å›cieÅ¼kÄ™ na poczÄ…tek listy
      
 
-Przyk³ad
+PrzykÅ‚ad
 ~~~~~~~~
 ::
 

@@ -9,12 +9,12 @@ AROS A 64-BIT!
 --------------
 
 `Michal Schulz`__ ha compiuto il miracolo, e si apre un nuovo 
-capitolo nella storia di AROS: a partire da oggi, infatti, Ë possibile
+capitolo nella storia di AROS: a partire da oggi, infatti, √® possibile
 scaricare da questo sito la versione nativa a 64 bit di AROS. Questa 
-nuova versione Ë ovviamente pi˘ avanzata rispetto alle altre, dispone
-di una protezione preliminare della memoria e GRUB puÚ caricare i 
-moduli. Un limite iniziale di 4 GB per la RAM sar‡ rimosso non 
-appena AROS avr‡ una gestione corretta della MMU. Per eseguire AROS a 
+nuova versione √® ovviamente pi√π avanzata rispetto alle altre, dispone
+di una protezione preliminare della memoria e GRUB pu√≤ caricare i 
+moduli. Un limite iniziale di 4 GB per la RAM sar√† rimosso non 
+appena AROS avr√† una gestione corretta della MMU. Per eseguire AROS a 
 64 bit occorre un processore x86 che ne sia capace, come un Athlon 64
 di AMD o uno dei recenti Core2 di Intel.
 
@@ -22,29 +22,29 @@ di AMD o uno dei recenti Core2 di Intel.
 VmwAROS
 -------
 
-» nata una nuova distribuzione. `VmwAROS`__ Ë un sistema AROS 
+√à nata una nuova distribuzione. `VmwAROS`__ √® un sistema AROS 
 pre-installato e pre-configurato per VMware, compatibile con le 
 versioni per Windows e per Linux di VMware Player, Server e 
-Workstation (v5 o 6). Il pacchetto Ë ancora lontano dalla completezza, 
-tuttavia una `beta`__ iniziale Ë stata messa a disposizione di chiunque
-sia cosÏ bravo da scaricarla e provarla personalmente. VmwAROS Ë 
+Workstation (v5 o 6). Il pacchetto √® ancora lontano dalla completezza, 
+tuttavia una `beta`__ iniziale √® stata messa a disposizione di chiunque
+sia cos√¨ bravo da scaricarla e provarla personalmente. VmwAROS √® 
 pensata per gli utenti di ogni giorno e per i programmatori, e per 
 chiunque sia incuriosito da AROS, ma che non vogliono mettere a rischio 
 i dati sul loro disco fisso. `Qui`__ trovate qualche 
-informazione in pi˘.
+informazione in pi√π.
 
 
-Altre novit‡
+Altre novit√†
 ------------
 
 L'utente di Aros-Exec's Fishy_fis ha annunciato una nuova distribuzione 
 di AROS chiamata `Velocity`__. Presto dovrebbe rilasciarne una beta. 
-"Velocity sar‡ distribuita sia come live-cd installabile, sia come 
-disco immagine per VMware, e conterr‡ molti pi˘ programmi 
+"Velocity sar√† distribuita sia come live-cd installabile, sia come 
+disco immagine per VMware, e conterr√† molti pi√π programmi 
 di quelli disponibili nelle nightly build". Sono incluse alcune foto.
 
-Robert Norris Ë al lavoro su un browser per AROS basato su Webkit, che
-si chiamer‡ Traveller. Nel frattempo, ha aggiornato un sacco di 
+Robert Norris √® al lavoro su un browser per AROS basato su Webkit, che
+si chiamer√† Traveller. Nel frattempo, ha aggiornato un sacco di 
 librerie e ha portato alcune componenti davvero apprezzabili come 
 libxml2, cURL, OpenSSL, SQLite e altre. Altre informazioni nel 
 `suo blog`__.

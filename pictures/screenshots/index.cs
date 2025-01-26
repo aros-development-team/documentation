@@ -1,4 +1,4 @@
 ================
-Snímky obrazovky
+SnÃ­mky obrazovky
 ================
 

@@ -12,7 +12,7 @@ Lab
 
  Lab 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -20,12 +20,12 @@ Ubicación
      Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     En un archivo de guión declara una etiqueta. Esta etiqueta puede estar
+     En un archivo de guiÃ³n declara una etiqueta. Esta etiqueta puede estar
      referida a un comando Skip.
 
 
@@ -46,7 +46,7 @@ Ejemplo
     Echo "No User-Startup found"
 
 
-También vea
+TambiÃ©n vea
 ~~~~~~~~~~~
 ::
 

@@ -9,7 +9,7 @@
 Join
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk³adnia
 	FILE/M/A,AS=TO/K/A
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -29,10 +29,10 @@ Funkcja
 ~~~~~~~
 ::
 	
-	Join tworzy jeden plik ze wszystkich podanych jako argumenty, wed³ug
-	kolejno¶ci ich podania. Cel nie musi posiadaæ nazwy takiej jak który¶
-	z plików ¼ród³owych. Musisz podaæ nazwê pliku docelowego. Pliki ¼ród³owe
-	nie ulegaj± zmianom. Wiele plików mo¿e byæ po³±czonych w tym samym
+	Join tworzy jeden plik ze wszystkich podanych jako argumenty, wedÅ‚ug
+	kolejnoÅ›ci ich podania. Cel nie musi posiadaÄ‡ nazwy takiej jak ktÃ³ryÅ›
+	z plikÃ³w ÅºrÃ³dÅ‚owych. Musisz podaÄ‡ nazwÄ™ pliku docelowego. Pliki ÅºrÃ³dÅ‚owe
+	nie ulegajÄ… zmianom. Wiele plikÃ³w moÅ¼e byÄ‡ poÅ‚Ä…czonych w tym samym
 	czasie.
 
 
@@ -42,7 +42,7 @@ Parametry
 ::
 
 
- FILE   --  pliki do po³±czenia
- TO=AS  --  nazwa pliku, który zostanie stworzony z plików ¿ród³owych
+ FILE   --  pliki do poÅ‚Ä…czenia
+ TO=AS  --  nazwa pliku, ktÃ³ry zostanie stworzony z plikÃ³w Å¼rÃ³dÅ‚owych
 
 

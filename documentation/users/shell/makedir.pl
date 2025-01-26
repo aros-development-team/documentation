@@ -9,7 +9,7 @@
 MakeDir
 =======
 
-Sk≥adnia
+Sk≈Çadnia
 ~~~~~~~~
 ::
 
@@ -17,7 +17,7 @@ Sk≥adnia
 	NAME/M,ALL/S
 
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 
@@ -39,7 +39,7 @@ Parametry
 
 
 	NAME  --  nazwa katalogu
-	ALL   --  tworzy katalogi po∂rednie
+	ALL   --  tworzy katalogi po≈õrednie
 
 
 Opis
@@ -47,6 +47,6 @@ Opis
 ::
 
 
-	MakeDir nie tworzy ikonek do nowotworzonych katalogÛw.
+	MakeDir nie tworzy ikonek do nowotworzonych katalog√≥w.
 
 

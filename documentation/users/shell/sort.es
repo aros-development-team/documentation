@@ -20,7 +20,7 @@ Synopsis
      FROM/A,TO/A,COLSTART/K,CASE/S,NUMERIC/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicaci髇
      Workbench:C/
         
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
@@ -41,11 +41,11 @@ Entradas
 ::
 
 
-     FROM      -- el archivo de d髇de leer
-     TO        -- el archivo a d髇de sacar
-     COLSTART  -- la columna d髇de comienza la comparaci髇
-     CASE      -- el ordenamiento es sensitivo a las may鷖culas. 
-                  Los elementos en may鷖culas salen primero.
-     NUMERIC   -- las l韓eas son interpretadas como n鷐eros
+     FROM      -- el archivo de d贸nde leer
+     TO        -- el archivo a d贸nde sacar
+     COLSTART  -- la columna d贸nde comienza la comparaci贸n
+     CASE      -- el ordenamiento es sensitivo a las may煤sculas. 
+                  Los elementos en may煤sculas salen primero.
+     NUMERIC   -- las l铆neas son interpretadas como n煤meros
 
 

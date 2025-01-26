@@ -3,6 +3,7 @@
 # $Id$
 
 import os.path
+import PIL
 from PIL import Image
 
 def makeThumbnailPath( originalPath ):
@@ -12,6 +13,6 @@ def makeThumbnailPath( originalPath ):
 def makeThumbnail( src, dst, size ):
     image = Image.open( src )
     image = image.convert( 'RGB' )
-    image.thumbnail( size, Image.ANTIALIAS )
+    image.thumbnail( size, Image.LANCZOS )
     image.save( dst )
 

@@ -4,7 +4,7 @@
 
 import os
 from html import *
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 
 def makePicture( path, description, language ):
     LANG_DIR   = 'targets/www/template/languages'
@@ -15,7 +15,8 @@ def makePicture( path, description, language ):
         root = '../../../'
 
     config = ConfigParser()
-    config.read( os.path.join( LANG_DIR, language ) )
+    with open(os.path.join( LANG_DIR, language ), 'rb') as configfile:
+        config.read(configfile)
 
     filename  = os.path.basename( path )
     directory = os.path.dirname( path )

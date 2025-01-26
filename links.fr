@@ -3,7 +3,7 @@ Liens
 =====
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -12,7 +12,7 @@ Liens
 .. Contents::
 
 
-Articles à propos d'AROS
+Articles Ã  propos d'AROS
 ========================
 
 ===============================================  ==================  ==========
@@ -31,7 +31,7 @@ __ http://elwoodb.free.fr/articles/AROS/
 __ http://www.suite101.com/article.cfm/amiga/82949 
 __ http://www.suite101.com/article.cfm/amiga/26509
 
-Si vous connaissez des articles traitant d'AROS qui ne sont pas mentionnés ici,
+Si vous connaissez des articles traitant d'AROS qui ne sont pas mentionnÃ©s ici,
 contactez-nous_ pour que nous les ajoutions. Merci. 
 
 
@@ -66,11 +66,11 @@ __ http://www.suite101.com/article.cfm/amiga/31482
 __ http://www.suite101.com/article.cfm/amiga/29763
 __ http://www.suite101.com/article.cfm/amiga/16364
 
-Si vous connaissez des articles traitant d'AROS qui ne sont pas mentionnés ici,
+Si vous connaissez des articles traitant d'AROS qui ne sont pas mentionnÃ©s ici,
 contactez-nous_ pour que nous les ajoutions. Merci. 
 
 
-Pages personnelles des développeurs
+Pages personnelles des dÃ©veloppeurs
 ===================================
 
 + `Aaron Digulla`__
@@ -106,9 +106,9 @@ Divers
 
   .. Image:: images/phoenix.jpeg
   
-  Le Phoenix Developer Consortium soutient le développement de plateformes
-  alternatives en travaillant avec les développeurs indépendants, fournissant
-  des ressources pour ce développement. 
+  Le Phoenix Developer Consortium soutient le dÃ©veloppement de plateformes
+  alternatives en travaillant avec les dÃ©veloppeurs indÃ©pendants, fournissant
+  des ressources pour ce dÃ©veloppement. 
 
 + `Team AROS`__ 
 
@@ -118,7 +118,7 @@ Divers
 
 + `AROS Max`__
 
-  AROS Max est un LiveCD préconfiguré contenant AROS.
+  AROS Max est un LiveCD prÃ©configurÃ© contenant AROS.
 
 + `AROS Polska`__
 
@@ -126,8 +126,8 @@ Divers
 
 + `AROS for Amiga`__
   
-  AfA OS remplace les bibliothèques du noyau AmigaOS avec les  contre-parties
-  plus avancées d'AROS.
+  AfA OS remplace les bibliothÃ¨ques du noyau AmigaOS avec les  contre-parties
+  plus avancÃ©es d'AROS.
 
 
 __ http://phinixi.com/

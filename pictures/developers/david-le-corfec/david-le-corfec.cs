@@ -1,1 +1,1 @@
-Na prázdninách na D¾erbì v Tunisku
+Na prÃ¡zdninÃ¡ch na DÅ¾erbÄ› v Tunisku

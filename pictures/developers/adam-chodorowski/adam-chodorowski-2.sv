@@ -1,1 +1,1 @@
-Adam på AmiGBG 2002 fair, skrivandes på sin bärbara dator.
+Adam pÃ¥ AmiGBG 2002 fair, skrivandes pÃ¥ sin bÃ¤rbara dator.

@@ -1,21 +1,21 @@
 ============================================
-Manual de Desenvolvimento de AplicaÁıes AROS
+Manual de Desenvolvimento de Aplica√ß√µes AROS
 ============================================
 
 :Autores:		Staf Verhaegen, Sebastian Rittau, Stefan Rieken, Matt Parsons,
 			Adam Chodorowski, Fabio Alemagna, Matthias Rustler
-:Direitos de CÛpia:	Copyright © 1995-2006, A equipa de desenvolvimento AROS
-:Vers„o:		$Revision$
+:Direitos de C√≥pia:	Copyright ¬© 1995-2006, A equipa de desenvolvimento AROS
+:Vers√£o:		$Revision$
 :Data:			$Date$
-:Estado:		Por acabar; integraÁ„o comeÁada (Um caminho looongo por caminhar).
-:A fazer:		Integrado as v·rias partes. Actualizado e revisto. completo...
+:Estado:		Por acabar; integra√ß√£o come√ßada (Um caminho looongo por caminhar).
+:A fazer:		Integrado as v√°rias partes. Actualizado e revisto. completo...
 
 `Index <index>`__
 
 .. Warning::
 
-   Este documento n„o est· terminado! … altamente provavel que muitas partes
-   estejam desactualizadas, contenham informaÁ„o incorrecta ou estejam em falta.
+   Este documento n√£o est√° terminado! √â altamente provavel que muitas partes
+   estejam desactualizadas, contenham informa√ß√£o incorrecta ou estejam em falta.
    Se quiser ajudar a rectificar isto, por favor contacte-nos.
 
 .. Contents::
@@ -25,30 +25,30 @@ Manual de Desenvolvimento de AplicaÁıes AROS
 Em busca de recursos (Resources tracking - RT)
 -----------------------------------------------
 
-Toda a gente fala de RT mas o que È? RT significa trÍs coisas:
+Toda a gente fala de RT mas o que √©? RT significa tr√™s coisas:
 
-1. O Sistema Operativo toma nota de recursos alocados (ex. memÛria, janelas,
-   bibliotecas, dispositivos, ecr„s, etc).
+1. O Sistema Operativo toma nota de recursos alocados (ex. mem√≥ria, janelas,
+   bibliotecas, dispositivos, ecr√£s, etc).
 
-2. O Sistema Operativo investiga a utilizaÁ„o desses recursos (ex. abriu
-   aquela janela que queria "to render" into? Est· ainda aberta? È uma janela?)
+2. O Sistema Operativo investiga a utiliza√ß√£o desses recursos (ex. abriu
+   aquela janela que queria "to render" into? Est√° ainda aberta? √© uma janela?)
 
-3. O Sistema Operativo fecha recursos se eles n„o forem mais utilizados (quer
+3. O Sistema Operativo fecha recursos se eles n√£o forem mais utilizados (quer
    porque o programa arrebenta ou porque saiu sem os libertar).
 
-A implementaÁ„o actual pode fazer todas as trÍs situaÁıes mas para as
-habilitar, tem que efectuar algumas modificaÁıes ao seu cÛdigo. a unica
-desvantagem da implementaÁ„o actual È que os recursos n„o ir„o ser
+A implementa√ß√£o actual pode fazer todas as tr√™s situa√ß√µes mas para as
+habilitar, tem que efectuar algumas modifica√ß√µes ao seu c√≥digo. a unica
+desvantagem da implementa√ß√£o actual √© que os recursos n√£o ir√£o ser
 libertados se o programa arrebenta.
 
-1. Adiccione as seguintes linhas no seu cÛdigo. Dever· ser a primeira coisa
+1. Adiccione as seguintes linhas no seu c√≥digo. Dever√° ser a primeira coisa
    a ser vista pelo compilador:
 
        #define ENABLE_RT  1
 
-   se substituir o 1 por 0, ent„o RT ir· ser silenciosamente desabilitado.
+   se substituir o 1 por 0, ent√£o RT ir√° ser silenciosamente desabilitado.
 
-2. Adiccione ``#include <aros/rt.h>`` depois do ˙ltimo #include de ``proto/``
+2. Adiccione ``#include <aros/rt.h>`` depois do √∫ltimo #include de ``proto/``
 
 3. Adiccione ``RT_Init();`` como o primeiro comando em ``main()``.
 
@@ -56,30 +56,30 @@ libertados se o programa arrebenta.
 
 5. Recompile.
 
-As vantagens s„o que ir· obter erros se tentar aceder recursos que n„o alocou
-e que ir· obter uma lista de recursos que n„o havera libertado no fim do programa.
-Todas as mensagens ir„o conter a posiÁ„o no cÛdigo onde o erro ocurreu
-(se disponÌvel) e a posiÁ„o no cÛdigo onde o recurso foi alocado (esta È a raz„o
-porque RT tem de ser compilado dentro. Poder· ser construido dentro do
-Sistema Operativo tambÈm, mas seria dificil de recolher informaÁıes de onde
+As vantagens s√£o que ir√° obter erros se tentar aceder recursos que n√£o alocou
+e que ir√° obter uma lista de recursos que n√£o havera libertado no fim do programa.
+Todas as mensagens ir√£o conter a posi√ß√£o no c√≥digo onde o erro ocurreu
+(se dispon√≠vel) e a posi√ß√£o no c√≥digo onde o recurso foi alocado (esta √© a raz√£o
+porque RT tem de ser compilado dentro. Poder√° ser construido dentro do
+Sistema Operativo tamb√©m, mas seria dificil de recolher informa√ß√µes de onde
 o erro havera ocorrido).
 
-Um bom exemplo sobre como usar RT e o que È capaz de fazer pode ser encontrado em
+Um bom exemplo sobre como usar RT e o que √© capaz de fazer pode ser encontrado em
 ``AROS/workbench/demos/rtdemo.c``.
 
-Os recursos seguintes est„o marcados:
+Os recursos seguintes est√£o marcados:
 
-+ MemÛria em``AllocMem()``, ``FreeMem()``,``AllocVec()`` e ``FreeVec()``
++ Mem√≥ria em``AllocMem()``, ``FreeMem()``,``AllocVec()`` e ``FreeVec()``
 
 + MsgPorts em ``CreateMsgPort()``, ``DeleteMsgPort()``, ``CreatePort()``,
   ``DeletePort()`` e ``PutMsg()``
 
 + Ficheiros em ``Open()``, ``Close()``, ``Read()`` e ``Write()``. ``Read()`` e
-  ``Write()`` investigue tambÈm as suas memÛrias intermÈdias (buffers).
+  ``Write()`` investigue tamb√©m as suas mem√≥rias interm√©dias (buffers).
 
 + Janelas em ``OpenWindow()``, ``OpenWindowTags()``, ``OpenWindowTagList()``,
   ``CloseWindow()``, ``WindowToFront()``, ``WindowToBack()``
 
-+ Ecr„s em ``OpenScreen()``, ``OpenScreenTags()``, ``OpenScreenTagList()``,
++ Ecr√£s em ``OpenScreen()``, ``OpenScreenTags()``, ``OpenScreenTagList()``,
   ``CloseScreen()``, ``ScreenToFront()``, ``ScreenToBack()``. ``CloseScreen()``
-  Investigue tambÈm por janelas abertas no ecr„ antes de fechar.
+  Investigue tamb√©m por janelas abertas no ecr√£ antes de fechar.

@@ -9,7 +9,7 @@
 Copy
 ====
 
-Sk³adnia
+SkÅ‚adnia
 ~~~~~~~~
 ::
 
@@ -23,7 +23,7 @@ Sk³adnia
 	FORCE/S
 
 
-¦cie¿ka
+ÅšcieÅ¼ka
 ~~~~~~~
 ::
 
@@ -36,7 +36,7 @@ Funkcja
 ::
 
 
-	Tworzy kopie jednego lub wielu plików w drugi lub wiele plików.
+	Tworzy kopie jednego lub wielu plikÃ³w w drugi lub wiele plikÃ³w.
 
 
 Parametry
@@ -44,148 +44,148 @@ Parametry
 ::
 
 
-	FROM	--	wej¶cie wieloplikowe
+	FROM	--	wejÅ›cie wieloplikowe
 	TO	--	docelowy plik lub katalog
-	ALL	--	oznacza, ¿e katalogi s± kopiowane rekurencyjnie
-	QUIET	--	tryb cichy, brak wyj¶cia na konsole
+	ALL	--	oznacza, Å¼e katalogi sÄ… kopiowane rekurencyjnie
+	QUIET	--	tryb cichy, brak wyjÅ›cia na konsole
 	BUFFER	--	rozmiar bufora dla COPY (bufor = 512bajty, 
 			standardowo 1024 (= 512K))
-	CLONE	--	tryb klonowania, wszystkie pliki s± wiernymi kopiami
+	CLONE	--	tryb klonowania, wszystkie pliki sÄ… wiernymi kopiami
 	DATES	--	kopiuj daty w tym czas
-	NOPRO	--	pomiñ kopiowanie bitów ochronnych
+	NOPRO	--	pomiÅ„ kopiowanie bitÃ³w ochronnych
 	COMMENT	--	kopiuj komentarz
 	NOREQ	--	blokuje zapytania
-	PATTERN	--	wywiórcze kopiowanie plików, poprzez podanie wzorca
-	DIRECT	--	kopiowanie bezpo¶rednie, bez testów
-	VERBOSE	--	tryb gadatliwy, podaje wiêcej szczegó³ów
+	PATTERN	--	wywiÃ³rcze kopiowanie plikÃ³w, poprzez podanie wzorca
+	DIRECT	--	kopiowanie bezpoÅ›rednie, bez testÃ³w
+	VERBOSE	--	tryb gadatliwy, podaje wiÄ™cej szczegÃ³Å‚Ã³w
 	ERRWARN	--	przerwij, gdy kopiowanie zawiedzie
-	MAKEDIR	--	twórz katalogi
-	MOVE	--	tryb przenoszenia, usuwa ¼ród³owe pliki
+	MAKEDIR	--	twÃ³rz katalogi
+	MOVE	--	tryb przenoszenia, usuwa ÅºrÃ³dÅ‚owe pliki
 	DELETE	--	tryb usuwania, nie kopiuje, tylko usuwa
-	HARDLINK--	stwórz twarde po³±czenie, zamiast kopiuj
-	SOFTLINK--	stwórz miêkkie po³±czenie, zamiast kopiuj
-	FOLNK	--	linki tak¿e dla katalogów
-	FODEL	--	usuñ pliki chronione
+	HARDLINK--	stwÃ³rz twarde poÅ‚Ä…czenie, zamiast kopiuj
+	SOFTLINK--	stwÃ³rz miÄ™kkie poÅ‚Ä…czenie, zamiast kopiuj
+	FOLNK	--	linki takÅ¼e dla katalogÃ³w
+	FODEL	--	usuÅ„ pliki chronione
 	FOOVR	--	nadpisuj chronione pliki
 	DONTOVR	--	nie nadpisuj
-	FORCE	--	NIE U¯YWAJ. Tylko w celach kompatybilno¶ci
+	FORCE	--	NIE UÅ»YWAJ. Tylko w celach kompatybilnoÅ›ci
 
 
- Bardziej szczegó³owe opisy:
+ Bardziej szczegÃ³Å‚owe opisy:
 
  FROM:
- Pliki ¼ród³owe. Dla katalogów, zawieraj±ce pliki to pliki ¼ród³owe. Mog± u¿ywaæ
- standardowych wzorców.
+ Pliki ÅºrÃ³dÅ‚owe. Dla katalogÃ³w, zawierajÄ…ce pliki to pliki ÅºrÃ³dÅ‚owe. MogÄ… uÅ¼ywaÄ‡
+ standardowych wzorcÃ³w.
 
  TO:
- Plik docelowy lub wiele ¼róde³ dla docelowego katalogu. Docelowe katalogi s±
- tworzone (zawieraj±ce wszystkie potrzebne nadrzêdne katalogi).
+ Plik docelowy lub wiele ÅºrÃ³deÅ‚ dla docelowego katalogu. Docelowe katalogi sÄ…
+ tworzone (zawierajÄ…ce wszystkie potrzebne nadrzÄ™dne katalogi).
 
  ALL:
  Kopiuje katalogi rekurencyjnie.
 
  QUIET:
- Tryb cichy, ¿adne informacje nie bêd± przekazywanem ani nawet zapytania.
+ Tryb cichy, Å¼adne informacje nie bÄ™dÄ… przekazywanem ani nawet zapytania.
 
  BUF=BUFFER:
- Okre¶la liczbê 512 bajtowych buforów dla kopiowania. Standardowo jest to 200
- [100KB pamiêci]. Jeden bufor to minimalny rozmiar, lecz nie powinien byæ 
+ OkreÅ›la liczbÄ™ 512 bajtowych buforÃ³w dla kopiowania. Standardowo jest to 200
+ [100KB pamiÄ™ci]. Jeden bufor to minimalny rozmiar, lecz nie powinien byÄ‡ 
  wykorzystywany.
 
  PAT=PATTERN:
- PATTERN okre¶la rodzaj plików, b±d¼ katalogów, dziêki standardowym dos wzorcom.
- Ta opcja jest u¿yteczna z ALL.
+ PATTERN okreÅ›la rodzaj plikÃ³w, bÄ…dÅº katalogÃ³w, dziÄ™ki standardowym dos wzorcom.
+ Ta opcja jest uÅ¼yteczna z ALL.
 
-	Przyk³ad:
-	Gdy potrzebujesz usun±æ wszystkie pliki z rozszerzeniem info to mo¿esz 
-	u¿yæ tego przyk³adu : Copy DELETE #? ALL PAT #?.info
+	PrzykÅ‚ad:
+	Gdy potrzebujesz usunÄ…Ä‡ wszystkie pliki z rozszerzeniem info to moÅ¼esz 
+	uÅ¼yÄ‡ tego przykÅ‚adu : Copy DELETE #? ALL PAT #?.info
 
  CLONE:
- Pliki zostan± sklonowane, to znaczy, ¿e czas, data, bity ochronne i komentarz
- bêdzie taki sam w pliku ¼ród³owym, jak i w docelowym.
+ Pliki zostanÄ… sklonowane, to znaczy, Å¼e czas, data, bity ochronne i komentarz
+ bÄ™dzie taki sam w pliku ÅºrÃ³dÅ‚owym, jak i w docelowym.
 
  DATES:
  Informacja o dacie zostanie skopiowana do obiektu docelowego.
 
  NOPRO:
- ¯adne bity ochrony nie zostan± skopiowane do docelowego obiektu, bêd± mia³y
- standardowe bity Odczytu[r], Zapisu[w], Wykonywania[e] i Usuniêcia[d] [rwed].
+ Å»adne bity ochrony nie zostanÄ… skopiowane do docelowego obiektu, bÄ™dÄ… miaÅ‚y
+ standardowe bity Odczytu[r], Zapisu[w], Wykonywania[e] i UsuniÄ™cia[d] [rwed].
 
  COM=COMMENT:
  Komentarz pliku zostanie skopiowany.
 
  NOREQ:
- ¯adne dos standardowe zapytania nie zostan± wy¶wietlone, bêd± pomijane.
+ Å»adne dos standardowe zapytania nie zostanÄ… wyÅ›wietlone, bÄ™dÄ… pomijane.
 
 
  DIRECT:
- Niektóre urz±dzenia nie obs³uguj± (typu DOS) pakietów zapytañ. Ta opcja to jest
- tak naprawdê prostym kopiowaniem, bez sprawdzania, tylko bezpo¶rednie 
+ NiektÃ³re urzÄ…dzenia nie obsÅ‚ugujÄ… (typu DOS) pakietÃ³w zapytaÅ„. Ta opcja to jest
+ tak naprawdÄ™ prostym kopiowaniem, bez sprawdzania, tylko bezpoÅ›rednie 
  kopiowanie.
  Opcje ALL, PAT, CLONE, DATES, NOPRO, COM, MAKEDIR, MOVE, DELETE, HARD,
- SOFT, FOLNK, FODEL, FOOVR, DONTOVR i wielo¼ród³owe kopiowanie nie mo¿e byæ 
- u¿yte wraz z DIRECT, ta opcja wymaga jednego pliku ¼ród³owego i jednego 
+ SOFT, FOLNK, FODEL, FOOVR, DONTOVR i wieloÅºrÃ³dÅ‚owe kopiowanie nie moÅ¼e byÄ‡ 
+ uÅ¼yte wraz z DIRECT, ta opcja wymaga jednego pliku ÅºrÃ³dÅ‚owego i jednego 
  docelowego obiektu.
- Gdy chcesz usun±æ po³±czenie miêkkie, które ju¿ nie wskazuje na istniej±cy
- plik, bêdziesz potrzebowa³ tej opcji.
+ Gdy chcesz usunÄ…Ä‡ poÅ‚Ä…czenie miÄ™kkie, ktÃ³re juÅ¼ nie wskazuje na istniejÄ…cy
+ plik, bÄ™dziesz potrzebowaÅ‚ tej opcji.
 
-	Przyk³ad: 'Copy DIRECT text PRT:' aby wydrukowaæ plik nazwany "text".
-	COPY automatycznie zajmuje siê takimi przypadkami, lecz mo¿e to Ci siê
-	kiedy¶ przydaæ.
+	PrzykÅ‚ad: 'Copy DIRECT text PRT:' aby wydrukowaÄ‡ plik nazwany "text".
+	COPY automatycznie zajmuje siÄ™ takimi przypadkami, lecz moÅ¼e to Ci siÄ™
+	kiedyÅ› przydaÄ‡.
 
  VERBOSE:
- Tryb gadatliwy, dodatkowe informacje o kopiowaniu s± podawane.
+ Tryb gadatliwy, dodatkowe informacje o kopiowaniu sÄ… podawane.
 
  ERRWARN:
- COPY rozpoznaje trzy rodzaje kodów b³êdu:
- 5   WARN    Ostrze¿enie, komenda pomija plik i kontynuuje kopiowanie.
- 10  ERROR   B³±d, tworzenie obiektu siê nie powiod³o.
- 20  FAIL    Powa¿ny b³±d, brak pamiêci, uszkodzenie systemu, komenda
-            przerywa swoje dzia³anie.
+ COPY rozpoznaje trzy rodzaje kodÃ³w bÅ‚Ä™du:
+ 5   WARN    OstrzeÅ¼enie, komenda pomija plik i kontynuuje kopiowanie.
+ 10  ERROR   BÅ‚Ä…d, tworzenie obiektu siÄ™ nie powiodÅ‚o.
+ 20  FAIL    PowaÅ¼ny bÅ‚Ä…d, brak pamiÄ™ci, uszkodzenie systemu, komenda
+            przerywa swoje dziaÅ‚anie.
 
- Gdy opcja ERRWARN jest u¿ywana, wtedy Ostrze¿enie (WARN) otrzymuje stopieñ B³êdu
- (ERROR). Wiêc dzia³anie w ka¿dym z tych przypadków jest zakañczane.
+ Gdy opcja ERRWARN jest uÅ¼ywana, wtedy OstrzeÅ¼enie (WARN) otrzymuje stopieÅ„ BÅ‚Ä™du
+ (ERROR). WiÄ™c dziaÅ‚anie w kaÅ¼dym z tych przypadkÃ³w jest zakaÅ„czane.
 		
  MAKEDIR:
- Wszystkie ¼ród³a zostaj± wziête jako nazwy katalogów i stworzone w ¶cie¿ce 
+ Wszystkie ÅºrÃ³dÅ‚a zostajÄ… wziÄ™te jako nazwy katalogÃ³w i stworzone w Å›cieÅ¼ce 
  docelowej.
 
  MOVE:
- Przenoszenie, zamiast pliki kopiowaæ COPY je po prostu przenosi.
+ Przenoszenie, zamiast pliki kopiowaÄ‡ COPY je po prostu przenosi.
 
  DELETE:
- Ta opcja jest bardzo niebezpieczna, zamiast pliki kopiowaæ s± one usuwane!
+ Ta opcja jest bardzo niebezpieczna, zamiast pliki kopiowaÄ‡ sÄ… one usuwane!
 
  HARD=HARDLINK:
- Podczas kopiowania obiekty s± dowi±zywane jako po³±czenie twarde. Dzia³a tylko
- wtedy, gdy ¼ród³o i docelowa ¶cie¿ka s± na tym samym dysku.
- Gdy opcja ALL jest za³±czona, to katalogi s± tworzone rekurencyjnie, 
- w przeciwnym razie kopiowane s± tylko katalogi.
+ Podczas kopiowania obiekty sÄ… dowiÄ…zywane jako poÅ‚Ä…czenie twarde. DziaÅ‚a tylko
+ wtedy, gdy ÅºrÃ³dÅ‚o i docelowa Å›cieÅ¼ka sÄ… na tym samym dysku.
+ Gdy opcja ALL jest zaÅ‚Ä…czona, to katalogi sÄ… tworzone rekurencyjnie, 
+ w przeciwnym razie kopiowane sÄ… tylko katalogi.
 
  SOFT=SOFTLINK:
- Podczas kopiowania katalogów, po³±czenie miêkkie jest tworzone. Te linki mog±
- byæ u¿ywane tak¿e pomiêdzy dwoma ró¿nymi dyskami. Miêkkie po³±czenia mog± byæ
- tworzone tylko dla katalogów, pliki s± pomijane. Opcja FORCELINK jest zawsze
+ Podczas kopiowania katalogÃ³w, poÅ‚Ä…czenie miÄ™kkie jest tworzone. Te linki mogÄ…
+ byÄ‡ uÅ¼ywane takÅ¼e pomiÄ™dzy dwoma rÃ³Å¼nymi dyskami. MiÄ™kkie poÅ‚Ä…czenia mogÄ… byÄ‡
+ tworzone tylko dla katalogÃ³w, pliki sÄ… pomijane. Opcja FORCELINK jest zawsze
  ustawiona jako prawda (true).
- OPIS:   Po³±czenia miêkkie nie s± wspierane przez system i mog± byæ
-        niebezpieczne. Sugerujê ich nie u¿ywaæ!
+ OPIS:   PoÅ‚Ä…czenia miÄ™kkie nie sÄ… wspierane przez system i mogÄ… byÄ‡
+        niebezpieczne. SugerujÄ™ ich nie uÅ¼ywaÄ‡!
 
  FOLNK=FORCELINK:
- Gdy po³±czenie powinno byæ mo¿liwe, to ta opcja jest wymagana. Zobacz sekcjê
- "About links" dla prawdopodobnych b³êdów.
+ Gdy poÅ‚Ä…czenie powinno byÄ‡ moÅ¼liwe, to ta opcja jest wymagana. Zobacz sekcjÄ™
+ "About links" dla prawdopodobnych bÅ‚Ä™dÃ³w.
 
  FODEL=FORCEDELETE:
- Usuwanie zamiast kopiowania, ale wraz z pomijaniem bitów ochronnych.
+ Usuwanie zamiast kopiowania, ale wraz z pomijaniem bitÃ³w ochronnych.
 
  FOOVR=FORCEOVERWRITE:
- Nadpisywanie, nawet gdy pliki s± chronione to zostaj± nadpisane.
+ Nadpisywanie, nawet gdy pliki sÄ… chronione to zostajÄ… nadpisane.
 
  DONTOVR=DONTOVERWRITE:
  Ta opcja chroni przed nadpisywaniem.
 
 
 
-Zobacz tak¿e
+Zobacz takÅ¼e
 ~~~~~~~~~~~~
 ::
 

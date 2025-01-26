@@ -1,12 +1,12 @@
 .. raw:: html
 
-   <h1>IntroduÁ„o<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+   <h1>Introdu√ß√£o<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 .. raw:: html
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS È um sistema operativo portavÈl e de Desktop livre intencionando ser
-compatÌvel com AmigaOS, enquanto melhorando-o em muitas ·reas. O CÛdigo
-Fonte est· disponÌvel sobe uma LicenÁa de Fonte Aberta, que permite a qualquer
+AROS √© um sistema operativo portav√©l e de Desktop livre intencionando ser
+compat√≠vel com AmigaOS, enquanto melhorando-o em muitas √°reas. O C√≥digo
+Fonte est√° dispon√≠vel sobe uma Licen√ßa de Fonte Aberta, que permite a qualquer
 um livremente melhorar sobre o existente. 

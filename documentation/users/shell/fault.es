@@ -16,7 +16,7 @@ Format
 ~~~~~~
 ::
 
-     Fault <número de error>
+     Fault <nÃºmero de error>
 
 
 Synopsis
@@ -26,19 +26,19 @@ Synopsis
      NUMBERS/N/M
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
      INTERNAL
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
-     Fault imprime el mensaje que corresponde con el código de error
-     proporcionado. Los números de cualquier error se pueden dar de
+     Fault imprime el mensaje que corresponde con el cÃ³digo de error
+     proporcionado. Los nÃºmeros de cualquier error se pueden dar de
      una vez, pero deben separarse con espacios.
 
 
@@ -50,7 +50,7 @@ Ejemplo
      1.SYS:> Fault 205
      Fault 205: object not found
 
-         Te dice que el código de error 205 significa que no se halló
+         Te dice que el cÃ³digo de error 205 significa que no se hallÃ³
          un objeto de disco.
 
 

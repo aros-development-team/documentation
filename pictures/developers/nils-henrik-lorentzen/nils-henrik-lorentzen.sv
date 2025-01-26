@@ -1,1 +1,1 @@
-PÂ tur i de norska fj‰llen.
+P√• tur i de norska fj√§llen.

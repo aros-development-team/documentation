@@ -1,31 +1,31 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
 news:             Novidades
 news-archive-for: News archive for
 mirrors:          Servidores espelho (Mirrors)
-contents:         Conte˙dos
+contents:         Conte√∫dos
 search:           Procurar
 visitors:         Visitantes
-sponsors:         PatrocÌnios
+sponsors:         Patroc√≠nios
 
 [navigation]
 
-home:             Õnicio
+home:             √çnicio
 news:             Novidades
 archive:          Arquivo
-introduction:     IntroduÁ„o
+introduction:     Introdu√ß√£o
 status:           Estado
 screenshots:      Imagens
 ports:            Portos
-license:          LicenÁa
+license:          Licen√ßa
 download:         Descarregar
-documentation:    DocumentaÁ„o
+documentation:    Documenta√ß√£o
 users:            Utilizadores
-installation:     InstalaÁ„o
+installation:     Instala√ß√£o
 using:            Utilizando
 shell:            Comandos de 'Shell'
 applications:     Applications
@@ -37,40 +37,40 @@ translators:      Translators
 developers:       Desenvolvidores
 contribute:       Contribuintes
 roadmap:          Roadmap
-issue-tracker:    ¿ procura de erros...
+issue-tracker:    √Ä procura de erros...
 working-with-git: Trabalhando com Git
 compiling:        Compilando
-application-development-manual: Manual de Desenvolvimento de AplicaÁıes
-zune-application-development-manual: Manual de Desenvolvimento de AplicaÁıes Zune
+application-development-manual: Manual de Desenvolvimento de Aplica√ß√µes
+zune-application-development-manual: Manual de Desenvolvimento de Aplica√ß√µes Zune
 system-development-manual:      Manual de Desenvolvimento do sistema
-debugging-manual: Manual de CorrecÁ„o de erros
-reference:        ReferÍncia
-specifications:   EspecificaÁıes
+debugging-manual: Manual de Correc√ß√£o de erros
+reference:        Refer√™ncia
+specifications:   Especifica√ß√µes
 ui-style-guide:   Guia de Estilos I. U.
 testing:          Testing
 documenting:      Documentando
 porting:          Portando
 translating:      Tranduzindo
-summaries:        Sum·rios
-links:            LigaÁıes
+summaries:        Sum√°rios
+links:            Liga√ß√µes
 contact:          Contactos
 slack:            Slack
 mailing-lists:    Listas de eCorreio
 forums:           Forums
 community:        Community Resources
 irc-channels:     Canais de IRC
-credits:          CrÈditos
+credits:          Cr√©ditos
 acknowledgements: A saber...
 pictures:         Fotografias
 developers-together: Massa de desenvolvidores
-sponsors:         PatrocÌnios
+sponsors:         Patroc√≠nios
 linking:          Ligando
 
 [misc]
 
 go:               Ir
 search:           Procurar
-copyright:        Direitos de CÛpia © 1995-2025, A Equipa de Desenvolvimento AROS. Todos Os Direitos Reservados.
-trademarks:       AmigaÆ, AmigaOSÆ, Workbench e Intuition s„o marcas registadas de Amiga Inc. Todas as outras marcas comerciais pertencem aos seus respectivos propriet·rios.
+copyright:        Direitos de C√≥pia ¬© 1995-2025, A Equipa de Desenvolvimento AROS. Todos Os Direitos Reservados.
+trademarks:       Amiga¬Æ, AmigaOS¬Æ, Workbench e Intuition s√£o marcas registadas de Amiga Inc. Todas as outras marcas comerciais pertencem aos seus respectivos propriet√°rios.
 read-more:        Leia mais...
 large-image:      Imagem maior...

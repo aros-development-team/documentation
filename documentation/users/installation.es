@@ -1,22 +1,22 @@
 ================================
-GuÌa para la instalaciÛn de AROS
+Gu√≠a para la instalaci√≥n de AROS
 ================================
 
 :Authors:   Stefan Rieken, Matt Parsons, Adam Chodorowski, Neil Cafferkey, Sergey Mineychev
-:Copyright: Copyright ≤ 1995-2006, The AROS Development Team
+:Copyright: Copyright ¬≤ 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Needs to be updated for some AROS ports. Can be translated.
 :Abstract:
-    Este manual te guiar· por los pasos necesarios para instalar los 
+    Este manual te guiar√° por los pasos necesarios para instalar los 
     diferentes sabores de AROS.
     .. Warning:: 
     
         AROS es un software de calidad alfa. Esto significa que en este momento
-        es divertido para jugar y cool para desarrollar. Si est·s aquÌ porque
+        es divertido para jugar y cool para desarrollar. Si est√°s aqu√≠ porque
         piensas que AROS es un sistema operativo terminado, completo y totalmente
-        usable, es probable que estÈs decepcionado. AROS todavÌa no lo es, pero nos
-        estamos moviendo lentamente en la direcciÛn correcta.
+        usable, es probable que est√©s decepcionado. AROS todav√≠a no lo es, pero nos
+        estamos moviendo lentamente en la direcci√≥n correcta.
 
 
 .. Contents::
@@ -25,30 +25,30 @@ GuÌa para la instalaciÛn de AROS
 Descargas
 =========
 
-AROS est· bajo intenso desarrollo. El resultado es que tienes que escoger entre 
-estabilidad y caracterÌsticas. En la actualidad hay dos tipos de paquetes binarios
-disponibles para descargar: las instant·neas y las nightly builds.
+AROS est√° bajo intenso desarrollo. El resultado es que tienes que escoger entre 
+estabilidad y caracter√≠sticas. En la actualidad hay dos tipos de paquetes binarios
+disponibles para descargar: las instant√°neas y las nightly builds.
 
-Las instant·neas se hacen a mano con poca frecuencia, sobre todo cuando hay
-una gran cantidad de cambios ˙tiles en AROS desde la ˙ltima instant·nea y alguien
-se siente motivado para crear una nueva instant·nea. En fin, no hay un cronograma
+Las instant√°neas se hacen a mano con poca frecuencia, sobre todo cuando hay
+una gran cantidad de cambios √∫tiles en AROS desde la √∫ltima instant√°nea y alguien
+se siente motivado para crear una nueva instant√°nea. En fin, no hay un cronograma
 de entregas regular. Incluso aunque se hacen muy de vez en cuando y que intentamos
-escoger las veces en que AROS es particularmente estable, no hay garantÌas de que estar·n
-sin errores o funcionaran en alguna m·quina en particular. Dicho esto, nosotros 
-intentamos probar las instant·neas en una amplia variedad de m·quinas, asÌ que en la
-pr·ctica deberÌan funcionar relativamente bien.
+escoger las veces en que AROS es particularmente estable, no hay garant√≠as de que estar√°n
+sin errores o funcionaran en alguna m√°quina en particular. Dicho esto, nosotros 
+intentamos probar las instant√°neas en una amplia variedad de m√°quinas, as√≠ que en la
+pr√°ctica deber√≠an funcionar relativamente bien.
 
-Las nightly builds se hacen, como su nombre indica, cada noche de un modo autom·tico
-directamente desde el ·rbol de Subversion y contiene el cÛdigo m·s reciente. Sin embargo,
+Las nightly builds se hacen, como su nombre indica, cada noche de un modo autom√°tico
+directamente desde el √°rbol de Subversion y contiene el c√≥digo m√°s reciente. Sin embargo,
 no se prueban de ninguna manera y pueden estar horriblemente rotas, extremadamente 
 defectuosas y pueden hasta destruir tu sistema en el caso que no seas afortunado. Aunque
-la mayorÌa de las veces funcionan bastante bien.
+la mayor√≠a de las veces funcionan bastante bien.
 
-Por favor mira en la `p·gina de descargas`_ para tener m·s informaciÛn sobre quÈ 
-instant·neas y nightly builds est·n listas y cÛmo descargarlas.
+Por favor mira en la `p√°gina de descargas`_ para tener m√°s informaci√≥n sobre qu√© 
+instant√°neas y nightly builds est√°n listas y c√≥mo descargarlas.
 
 
-InstalaciÛn
+Instalaci√≥n
 ===========
 
 AROS/i386-linux y AROS/i386-freebsd
@@ -57,34 +57,34 @@ AROS/i386-linux y AROS/i386-freebsd
 Requerimientos
 """"""""""""""
 
-Para ejecutar AROS/i386-linux o AROS/i386-freebsd necesitar·s lo siguiente:
+Para ejecutar AROS/i386-linux o AROS/i386-freebsd necesitar√°s lo siguiente:
 
-+ Una instalaciÛn FreeBSD 5.x o Linux que funcione (no importa quÈ distribuciÛn
++ Una instalaci√≥n FreeBSD 5.x o Linux que funcione (no importa qu√© distribuci√≥n
   uses, mientras que sea reciente).
 + Un servidor X configurado y funcionando (por ejemplo X.Org o XFree86).
 
 Eso es todo.
 
 
-ExtracciÛn
+Extracci√≥n
 """"""""""
 
 Dado que AROS/i386-linux y AROS/i386-freebsd son sabores hosted de AROS,
-la instalaciÛn es simple. Consigure los archivos apropiados para tu plataforma
-de la `p·gina de descargas`_ y extr·elos dÛnde quieras::
+la instalaci√≥n es simple. Consigure los archivos apropiados para tu plataforma
+de la `p√°gina de descargas`_ y extr√°elos d√≥nde quieras::
 
     > tar -vxjf AROS-<version>-i386-<platform>-system.tar.bz2
 
-Si descargaste el archivo contrib, tal vez quieras tambiÈn extraerlo (aunque
-ahora su contenido ya est· incluido en el archivo system y en el LiveCD)::
+Si descargaste el archivo contrib, tal vez quieras tambi√©n extraerlo (aunque
+ahora su contenido ya est√° incluido en el archivo system y en el LiveCD)::
 
     > tar -vxjf AROS-<version>-i386-all-contrib.tar.bz2
 
 
-EjecuciÛn
+Ejecuci√≥n
 """""""""
 
-DespuÈs de extraer todos los archivos puedes lanzar AROS asÌ::
+Despu√©s de extraer todos los archivos puedes lanzar AROS as√≠::
 
     > cd AROS
     > ./aros
@@ -92,18 +92,18 @@ DespuÈs de extraer todos los archivos puedes lanzar AROS asÌ::
 
 .. Note:: 
     
-    A menos que estÈs ejecutando XFree86 3.x o anterior, puedes notar que la 
+    A menos que est√©s ejecutando XFree86 3.x o anterior, puedes notar que la 
     ventana AROS no se refresca de un modo apropiado (por ejemplo cuando una
     ventana diferente pasa encima de ella). Esto se debe al hecho que AROS usa la
-    funcionalidad de X "backingstore" que por omisiÛn est· desactivada en XFree 4.0
-    y posterior. ActÌvala, y agrega el siguiente renglÛn a la secciÛn dispositivo
-    de tu tarjeta gr·fica en tu archivo de configuraciÛn de X (por lo com˙n nombrado
+    funcionalidad de X "backingstore" que por omisi√≥n est√° desactivada en XFree 4.0
+    y posterior. Act√≠vala, y agrega el siguiente rengl√≥n a la secci√≥n dispositivo
+    de tu tarjeta gr√°fica en tu archivo de configuraci√≥n de X (por lo com√∫n nombrado
     ``/etc/X11/xorg.conf``, ``/etc/X11/XF86Config-4`` or
     ``/etc/X11/XF86Config``)::
 
         Option "backingstore"
 
-    Una secciÛn dispositivo completa podrÌa verse algo asÌ::
+    Una secci√≥n dispositivo completa podr√≠a verse algo as√≠::
 
         Section "Device"
             Identifier      "Matrox G450"
@@ -119,89 +119,89 @@ AROS/i386-pc
 Requirimientos
 """"""""""""""
 
-Necesitar·s una PC promedio (basada en i486 o Pentium) con un *ratÛn PS/2* y un teclado AT o PS/2,
-un disco duro y unidad de CDROM ambas IDE, una tarjeta de video (S)VGA y un monitor. TambiÈn se 
-puede usar, en vez de todo lo anterior, una VM (m·quina virtual) compatible con una PC.
-Se recomienda al menos que la tarjeta gr·fica VGA sea compatible con la norma VESA y tenga 
+Necesitar√°s una PC promedio (basada en i486 o Pentium) con un *rat√≥n PS/2* y un teclado AT o PS/2,
+un disco duro y unidad de CDROM ambas IDE, una tarjeta de video (S)VGA y un monitor. Tambi√©n se 
+puede usar, en vez de todo lo anterior, una VM (m√°quina virtual) compatible con una PC.
+Se recomienda al menos que la tarjeta gr√°fica VGA sea compatible con la norma VESA y tenga 
 16 MB de Ram de video.
-AROS dispone de controladores acelerados genÈricos (HIDD) para las tarjeta de ATI y de nVidia.
-TambiÈn puedes agregar una tarjeta de interface de red (hay algunas que est·n soportadas) para
+AROS dispone de controladores acelerados gen√©ricos (HIDD) para las tarjeta de ATI y de nVidia.
+Tambi√©n puedes agregar una tarjeta de interface de red (hay algunas que est√°n soportadas) para
 probar la funcionalidad de red de AROS.
-En caso de problemas revisa el FAQ para informaciÛn relativa a tu tipo de hardware.
+En caso de problemas revisa el FAQ para informaci√≥n relativa a tu tipo de hardware.
 
 
 .. Note:: 
     
-    TodavÌa no recomendamos la instalaciÛn de AROS/i386-pc en el disco duro [#]_  Aunque
-    necesitar·s sÌ o sÌ instalar AROS para probar algunas de sus caracterÌsticas y workarounds. 
-    Por favor fÌjate que **no deberÏas** usar install en tu m·quina de trabajo,
-    °cuyo disco duro contiene los valiosos datos!
-    No estamos asumiendo alguna responsabilidad por cualquier pÈrdida de datos ocurrida
-    durante la instalaciÛn. Es bienvenido cualquier informe sobre errores en la instalaciÛn.
+    Todav√≠a no recomendamos la instalaci√≥n de AROS/i386-pc en el disco duro [#]_  Aunque
+    necesitar√°s s√≠ o s√≠ instalar AROS para probar algunas de sus caracter√≠sticas y workarounds. 
+    Por favor f√≠jate que **no deber√¨as** usar install en tu m√°quina de trabajo,
+    ¬°cuyo disco duro contiene los valiosos datos!
+    No estamos asumiendo alguna responsabilidad por cualquier p√©rdida de datos ocurrida
+    durante la instalaci√≥n. Es bienvenido cualquier informe sobre errores en la instalaci√≥n.
 
-Medios de instalaciÛn
+Medios de instalaci√≥n
 """""""""""""""""""""
 
-El medio recomendado de instalaciÛn para AROS/i386-pc es el CDROM, porque podemos
-incluir el sistema entero en un ˙nico disco (y tambiÈn todo el software contribuÌdo).
-Adem·s hace que la instalaciÛn sea m·s f·cil, ya que no tienes que pasar por los 
+El medio recomendado de instalaci√≥n para AROS/i386-pc es el CDROM, porque podemos
+incluir el sistema entero en un √∫nico disco (y tambi√©n todo el software contribu√≠do).
+Adem√°s hace que la instalaci√≥n sea m√°s f√°cil, ya que no tienes que pasar por los 
 cambios de disquete para transferir el software.
 
 Como nadie en este momento vende CDROM con AROS (o en cualquier otro medio),
-necesitar·s acceder a una grabadora de CD para crearte el disco por tÌ mismo.
+necesitar√°s acceder a una grabadora de CD para crearte el disco por t√≠ mismo.
 
 
 CDROM
 ^^^^^
 
-La grabaciÛn
+La grabaci√≥n
 ''''''''''''
 
-Simplemente descarga la image ISO de la `p·gina de descargas`_ y gr·bala a un CD
-con tu programa favorito de grabaciÛn. Hay programas gratuitos de grabaciÛn de CD
+Simplemente descarga la image ISO de la `p√°gina de descargas`_ y gr√°bala a un CD
+con tu programa favorito de grabaci√≥n. Hay programas gratuitos de grabaci√≥n de CD
 para cualquier sistema, y para los usuarios de Windows podemos recomendar 
-`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - es gratuito, pequeÒo y
-r·pido, un simple Nero-killing.
+`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - es gratuito, peque√±o y
+r√°pido, un simple Nero-killing.
 
 
 El arranque
 '''''''''''
 
-La manera m·s simple para arrancar desde el CD de instalaciÛn de AROS es si tienes una
-computadora que pueda arrancar desde CDROM. Para esto podrÌa ser necesario habilitar el
-arranque desde CDROM en la configuraciÛn del BIOS ya que a menudo est· deshabilitado.
+La manera m√°s simple para arrancar desde el CD de instalaci√≥n de AROS es si tienes una
+computadora que pueda arrancar desde CDROM. Para esto podr√≠a ser necesario habilitar el
+arranque desde CDROM en la configuraci√≥n del BIOS ya que a menudo est√° deshabilitado.
 Simplemente pon el CD en la primera unidad de CDROM y reinicia la computadora. El arranque
-es autom·tico, y si todo va bien deberÌas ver una agradable pantalla despuÈs de una cierta
+es autom√°tico, y si todo va bien deber√≠as ver una agradable pantalla despu√©s de una cierta
 espera.
 
 Si tu computadora no soporta arrancar desde CDROM, entonces puedes crear un disquete_
 de arranque y usarlo junto con el CDROM. Simplemente inserta ambos en sus unidades y
-reinicia. AROS arrancar· desde el disquete, pero despuÈs de que las cosas importantes 
+reinicia. AROS arrancar√° desde el disquete, pero despu√©s de que las cosas importantes 
 se hayan cargado en memoria (incluyendo el manejador del sistema de archivo de CDROM), 
-continuar· el proceso desde el CDROM.
+continuar√° el proceso desde el CDROM.
 
 
 Disquete
 ^^^^^^^^
 
-Hoy en dÌa los disquetes solamente pueden ser ˙tiles para arrancar la computadora si
-el BIOS no soporta el arranque desde CDROM o en algunas PC realmente obsoletas. AsÌ
-que todavÌa se los mantiene.
+Hoy en d√≠a los disquetes solamente pueden ser √∫tiles para arrancar la computadora si
+el BIOS no soporta el arranque desde CDROM o en algunas PC realmente obsoletas. As√≠
+que todav√≠a se los mantiene.
 
 
-La grabaciÛn
+La grabaci√≥n
 '''''''''''''
 
-Para crear el disquete de arranque, necesitar·s descargar la imagen de disco
-de la `p·gina de descargas`_, extraer el archivo, y copiar la imagen a un disquete.
+Para crear el disquete de arranque, necesitar√°s descargar la imagen de disco
+de la `p√°gina de descargas`_, extraer el archivo, y copiar la imagen a un disquete.
 Si usas un systema operativo como UNIX (como Linux o FreeBSD), puedes hacerlo con el
 siguiente comando::
 
     > cd AROS-<version>-i386-pc-boot-floppy
     > dd if=aros.bin of=/dev/fd0
 
-Si usas Windows, necesitar·s obtener rawrite_ to copiar la imagen al disquete. Mira
-en la documentaciÛn de rawrite_ para aprender a usarlo. TambiÈn hay una versiÛn GUI
+Si usas Windows, necesitar√°s obtener rawrite_ to copiar la imagen al disquete. Mira
+en la documentaci√≥n de rawrite_ para aprender a usarlo. Tambi√©n hay una versi√≥n GUI
 llamada rawwritewin.
 
 
@@ -209,87 +209,87 @@ El arranque
 '''''''''''
 
 Simplemente inserta el disquete de arranque en la unidad y reinicia la computadoa.
-El arranque es completamente autom·tico, y si todo va bien deberÌas ver una linda
-pantalla despuÈs de un momento.
+El arranque es completamente autom√°tico, y si todo va bien deber√≠as ver una linda
+pantalla despu√©s de un momento.
 
-Instalando en el disco rÌgido
+Instalando en el disco r√≠gido
 """""""""""""""""""""""""""""
 
-Bueno, fÌjate que has sido **ADVERTIDO** que la instalaciÛn en el disco duro est·
-incompleta y es **peligrosa** para cualquier dato, asÌ que aseg˙rate que la
-PC que estÈs usando no tiene ning˙n dato ˙til. Se recomienda usar una m·quina
+Bueno, f√≠jate que has sido **ADVERTIDO** que la instalaci√≥n en el disco duro est√°
+incompleta y es **peligrosa** para cualquier dato, as√≠ que aseg√∫rate que la
+PC que est√©s usando no tiene ning√∫n dato √∫til. Se recomienda usar una m√°quina
 virtual, ya que minimiza cualquier riesgo posible y permite que AROS sea usado
-y probado en una m·quina funcionando (aunque emulada). Ahora hay muchas VM
+y probado en una m√°quina funcionando (aunque emulada). Ahora hay muchas VM
 disponibles, como QEMU y VMWare.
 
 Configurando el disco duro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Primero, prepara tu disco duro -sea real o una unidad virtual-. En una unidad
-real esto significa enchufarla a la m·quina (siempre un buen comienzo) y 
+real esto significa enchufarla a la m√°quina (siempre un buen comienzo) y 
 configurar el BIOS. Para una unidad virtual de un emulador o de un virtualizador
-probablemente necesitar·s seleccionar una opciÛn para crear una nueva imagen
+probablemente necesitar√°s seleccionar una opci√≥n para crear una nueva imagen
 de unidad, y establecerla como una de las unidades de arranque de la PC virtual
 (la unidad de CD debe ser el primer dispositivo de arranque durante la
-instalaciÛn de AROS).
+instalaci√≥n de AROS).
 
-Otro paso ser· limpiar el disco duro de cualquier particiÛn existente, para
-quitar cualquiera que pueda evitar la creaciÛn de nuestra particiÛn.
-Es posible instalar AROS con otro OS, pero se necesitar·n m·s habilidades y aquÌ
-no es tratado. Por el momento, aprenderemos cÛmo instalar AROS como el ˙nico
-sistema en el disco rÌgido.
+Otro paso ser√° limpiar el disco duro de cualquier partici√≥n existente, para
+quitar cualquiera que pueda evitar la creaci√≥n de nuestra partici√≥n.
+Es posible instalar AROS con otro OS, pero se necesitar√°n m√°s habilidades y aqu√≠
+no es tratado. Por el momento, aprenderemos c√≥mo instalar AROS como el √∫nico
+sistema en el disco r√≠gido.
 
 Particionado
 ^^^^^^^^^^^^
 
-InstalaciÛn en la ˙nica particiÛn
+Instalaci√≥n en la √∫nica partici√≥n
 
-AquÌ aprenderemos cÛmo instalar AROS como el ˙nico sistema en la PC y
-ser puesto en la ˙nica particiÛn. Este es el caso m·s f·cil de instalaciÛn.
+Aqu√≠ aprenderemos c√≥mo instalar AROS como el √∫nico sistema en la PC y
+ser puesto en la √∫nica partici√≥n. Este es el caso m√°s f√°cil de instalaci√≥n.
 
-Este capÌtulo puede ser un poco engaÒoso, porque la caracterÌstica de instalaciÛn
-est· incompleta. Primero, recuerda una regla com˙n para este proceso -*reinicia*
-despuÈs de cada cambio significativo hecho al sistema de archivo (indicaremos
-dÛnde es necesario). Reiniciar significa cerrar la ventana HDToolbox si est· 
-abierta y reinicar la computadora o m·quina virtual, asÌ que se trata de un reinicio
-por hardware (hard reset). TambiÈn puedes probar un reinicio por software (soft
+Este cap√≠tulo puede ser un poco enga√±oso, porque la caracter√≠stica de instalaci√≥n
+est√° incompleta. Primero, recuerda una regla com√∫n para este proceso -*reinicia*
+despu√©s de cada cambio significativo hecho al sistema de archivo (indicaremos
+d√≥nde es necesario). Reiniciar significa cerrar la ventana HDToolbox si est√° 
+abierta y reinicar la computadora o m√°quina virtual, as√≠ que se trata de un reinicio
+por hardware (hard reset). Tambi√©n puedes probar un reinicio por software (soft
 reset) tipeando <reboot> ENTER en la ventana del CLI.
 
-Primero, encuentra una herramienta en el CD de AROS llamada *HDToolBox*. Est·
-en el cajÛn Tools. …sta ser· tu atormentador del disco rÌgido por un tiempo.
-Cuando la ejecutes, ver·s una ventana con un selector device-type (tipo de dispositivo).
-En este ejemplo (de aquÌ en m·s), estamos usando una unidad de disco rÌgido real o virtual
-IDE (tambiÈn conocida como ATA). AsÌ que apretando (hacer click) en la entrada
-*ata.device* mostrar· en la ventana izquierda Devices:1. …ste es nuestro disco duro.
-Apretando de nuevo en esta entrada se mostrar· la lista de discos duros disponibles.
+Primero, encuentra una herramienta en el CD de AROS llamada *HDToolBox*. Est√°
+en el caj√≥n Tools. √âsta ser√° tu atormentador del disco r√≠gido por un tiempo.
+Cuando la ejecutes, ver√°s una ventana con un selector device-type (tipo de dispositivo).
+En este ejemplo (de aqu√≠ en m√°s), estamos usando una unidad de disco r√≠gido real o virtual
+IDE (tambi√©n conocida como ATA). As√≠ que apretando (hacer click) en la entrada
+*ata.device* mostrar√° en la ventana izquierda Devices:1. √âste es nuestro disco duro.
+Apretando de nuevo en esta entrada se mostrar√° la lista de discos duros disponibles.
 
-AsÌ que deberÌamos ver a nuestro disco en la lista. Si es uno virtual, veremos
+As√≠ que deber√≠amos ver a nuestro disco en la lista. Si es uno virtual, veremos
 algo como *QEMU Harddisk* o el equivalente de VMWare. Si el disco es real,
-deberÌas ver su nombre. Si esto no ocurre, deberÌas asegurarte que has preparado
+deber√≠as ver su nombre. Si esto no ocurre, deber√≠as asegurarte que has preparado
 correctamente tu disco duro. Apretando en el nombre del HD veremos cierta 
-informaciÛn::
+informaci√≥n::
 
-    Size: <TamaÒo del HD>
-    Partition Table: <Tipo de la actual PT; deberÌa ser unknown (desconocida) despuÈs del borrado>
-    Partitions: <cantidad de particiones en el HD; debe ser 0 porque reciÈn hemos empezado>
+    Size: <Tama√±o del HD>
+    Partition Table: <Tipo de la actual PT; deber√≠a ser unknown (desconocida) despu√©s del borrado>
+    Partitions: <cantidad de particiones en el HD; debe ser 0 porque reci√©n hemos empezado>
 
-Bien, ahora debemos crear una nueva tabla de particiones. AquÌ, para una
+Bien, ahora debemos crear una nueva tabla de particiones. Aqu√≠, para una
 PC debemos crear un tipo de tabla *PC-MBR*. Para hacerlo, presiona en el
-botÛn *Create Table* y selecciona de la lista *PC-MBR*. Aprieta OK.
+bot√≥n *Create Table* y selecciona de la lista *PC-MBR*. Aprieta OK.
 
-DespuÈs debemos escribir los cambios al disco. Para hacerlo, aprieta en 
-el nombre del HD y despuÈs en el botÛn *Save Changes*. Responde *Yes* en 
-el cuadro de di·logo de confirmaciÛn. Cierra la ventana del HDToolBox y
+Despu√©s debemos escribir los cambios al disco. Para hacerlo, aprieta en 
+el nombre del HD y despu√©s en el bot√≥n *Save Changes*. Responde *Yes* en 
+el cuadro de di√°logo de confirmaci√≥n. Cierra la ventana del HDToolBox y
 reinicia el sistema con el Live CD.
 
-DespuÈs de que el sistema arranque, ejecuta de nuevo HDToolbox. Ahora, 
-despuÈs de ingresar en la entrada *ata.device* debemos ver la informaciÛn
-"Partition table: PC-MBR, Partitions:0". AsÌ est· bien, todavÌa no hemos
-establecido particiones. Hag·moslo ahora. Aprieta en el nombre del HD para
-ir a la lista de particiones. La lista est· vacÌa. Aprieta en el botÛn *Create
-Entry*, selecciona todo el espacio apretando en un espacio vacÌo no
-seleccionado y aprieta *OK*. Ahora deberÌas ver en la lista una entrada
-"Partition 0". EscÛgela apretando para obtener esta informaciÛn::
+Despu√©s de que el sistema arranque, ejecuta de nuevo HDToolbox. Ahora, 
+despu√©s de ingresar en la entrada *ata.device* debemos ver la informaci√≥n
+"Partition table: PC-MBR, Partitions:0". As√≠ est√° bien, todav√≠a no hemos
+establecido particiones. Hag√°moslo ahora. Aprieta en el nombre del HD para
+ir a la lista de particiones. La lista est√° vac√≠a. Aprieta en el bot√≥n *Create
+Entry*, selecciona todo el espacio apretando en un espacio vac√≠o no
+seleccionado y aprieta *OK*. Ahora deber√≠as ver en la lista una entrada
+"Partition 0". Esc√≥gela apretando para obtener esta informaci√≥n::
 
     Size: <Partition size. Almost equal to HD size>
     Partition table: Unknown <Not created yet>
@@ -298,41 +298,41 @@ seleccionado y aprieta *OK*. Ahora deberÌas ver en la lista una entrada
     Bootable: No <Not bootable>
     Automount: No <Will not mount on system startup>
 
-AquÌ puede haber alguna diferencia - hacer una particiÛn en una tabla RDB o
-una usual particiÛn PC-MBR. RDB (Bloque de Disco RÌgido) es la opciÛn de 
-compatibilidad y fue usada en el particionado de los HDD de la Amiga, y tambiÈn
+Aqu√≠ puede haber alguna diferencia - hacer una partici√≥n en una tabla RDB o
+una usual partici√≥n PC-MBR. RDB (Bloque de Disco R√≠gido) es la opci√≥n de 
+compatibilidad y fue usada en el particionado de los HDD de la Amiga, y tambi√©n
 podemos usarla. Aunque, AROS soporta las particiones FFS creadas dentro de una
-com˙n tabla PC-MBR, igual que una usual particiÛn PC como FAT/NTFS/etc. El segundo
-camino se puede considerar algo m·s moderna y m·s compatible con algunos programas
+com√∫n tabla PC-MBR, igual que una usual partici√≥n PC como FAT/NTFS/etc. El segundo
+camino se puede considerar algo m√°s moderna y m√°s compatible con algunos programas
 AROS. Consideremos ambas.
 
 *FFS en RDB*
-Ahora, aprieta el botÛn *Create Table*, selecciona *RDB table* y aprieta OK.
-Para guardar los cambios, sube *un nivel* apretando el botÛn *Parent*,
-selecciona de nuevo el nombre del HD y aprieta el botÛn *Save Changes*. Responde
-*Yes* dos veces en el cuadro de di·logo de confirmaciÛn. Sal del HDToolbox y
-reinicia la m·quina.
+Ahora, aprieta el bot√≥n *Create Table*, selecciona *RDB table* y aprieta OK.
+Para guardar los cambios, sube *un nivel* apretando el bot√≥n *Parent*,
+selecciona de nuevo el nombre del HD y aprieta el bot√≥n *Save Changes*. Responde
+*Yes* dos veces en el cuadro de di√°logo de confirmaci√≥n. Sal del HDToolbox y
+reinicia la m√°quina.
 
 *FFS en MBR*
 ... a agregarse.
 
-DespuÈs de arrancar, ejecuta HDToolbox (ya habr·s adivinado eso). Ahora la
-informaciÛn para nuestra ParticiÛn 0 es la misma excepto que la tabla de particiÛn
-ahora es RDB (o no). Esta particiÛn debe ser puesta en Activa. Para hacerlo, 
-aprieta el botÛn *Switches*, selecciona la casilla de verificaciÛn *Active*
-y aprieta *OK*. Ahora quÈ. SÌ, guarda los cambios subiendo un nivel y apretando
-el botÛn. Sal y reinicia.
+Despu√©s de arrancar, ejecuta HDToolbox (ya habr√°s adivinado eso). Ahora la
+informaci√≥n para nuestra Partici√≥n 0 es la misma excepto que la tabla de partici√≥n
+ahora es RDB (o no). Esta partici√≥n debe ser puesta en Activa. Para hacerlo, 
+aprieta el bot√≥n *Switches*, selecciona la casilla de verificaci√≥n *Active*
+y aprieta *OK*. Ahora qu√©. S√≠, guarda los cambios subiendo un nivel y apretando
+el bot√≥n. Sal y reinicia.
 
-øPor quÈ estamos reiniciando tanto? Bueno, el HDToolbox y las bibliotecas del
-sistema est·n todavÌa sin terminar y son bastante defectuosas, asÌ que reiniciar
-despuÈs de cada paso ayuda a reestablecerlas a su estado inicial.
+¬øPor qu√© estamos reiniciando tanto? Bueno, el HDToolbox y las bibliotecas del
+sistema est√°n todav√≠a sin terminar y son bastante defectuosas, as√≠ que reiniciar
+despu√©s de cada paso ayuda a reestablecerlas a su estado inicial.
 
-DespuÈs del arranque, HDToolbox deberÌa mostrarnos que la ParticiÛn 0 se ha
+Despu√©s del arranque, HDToolbox deber√≠a mostrarnos que la Partici√≥n 0 se ha
 vuelto activa. Eso es bueno, ahora debemos crear nuestro disco para instalar
-AROS en Èl. Desciende un nivel apretando en la entrada "Partition 0". Ahora quÈ.
-SÌ, aprieta el botÛn Add Entry y selecciona todo el espacio vacÌo. Ahora ver·s
-allÌ una entrada "DH0", que es nuestro disco. Apretando en Èl muestra la siguiente
-informaciÛn::
+AROS en √©l. Desciende un nivel apretando en la entrada "Partition 0". Ahora qu√©.
+S√≠, aprieta el bot√≥n Add Entry y selecciona todo el espacio vac√≠o. Ahora ver√°s
+all√≠ una entrada "DH0", que es nuestro disco. Apretando en √©l muestra la siguiente
+informaci√≥n::
 
     Size: <well...>
     Partition Table: Unknown (it's OK)
@@ -342,16 +342,16 @@ informaciÛn::
     Automount: No <we must switch it to Yes>
 
 Ahora, sube *dos niveles* hasta el nombre del HD, aprieta en Save Changes,
-confirma, sal y reinicia. DespuÈs del arranque (øno es bastante tedioso?),
-øquÈ deberÌamos hacer? SÌ debemos poner los switches a la unidad DH0 en
+confirma, sal y reinicia. Despu√©s del arranque (¬øno es bastante tedioso?),
+¬øqu√© deber√≠amos hacer? S√≠ debemos poner los switches a la unidad DH0 en
 el HDToolbox. Vayamos a la entrada DH0 y pongamos los switches con el 
-botÛn relevante y las casillas de verificaciÛn: *Bootable: Yes* y
-*Automount: Yes*. Guarda los cambios despuÈs de subir dos niveles de nuevo,
+bot√≥n relevante y las casillas de verificaci√≥n: *Bootable: Yes* y
+*Automount: Yes*. Guarda los cambios despu√©s de subir dos niveles de nuevo,
 confirma y reinicia.
 
-*øCu·nto resta?* Bien, estamos m·s all· de la mitad del camino. DespuÈs de
+*¬øCu√°nto resta?* Bien, estamos m√°s all√° de la mitad del camino. Despu√©s de
 arrancar y revisar todas las configuraciones para HD0, debemos ver su OK.
-AsÌ que podemos salir del HDToolbox sin que quede ninguna duda. Este es el
+As√≠ que podemos salir del HDToolbox sin que quede ninguna duda. Este es el
 momento para algo de la magia del CLI.
 
 Formateo
@@ -359,66 +359,66 @@ Formateo
 
 Para usarla, debemos formatear nuestra unidad DH0 recientemente creada. En este
 momento AROS tiene dos opciones de sistema de archivos - Fast FileSystem (FFS) y
-Smart FileSystem (SFS). A FFS se la conoce por ser algo m·s estable y compatible
-con la mayorÌa de los programas, SFS es m·s a prueba de fallas y m·s avanzada, 
-pero a˙n tiene algunas cuestiones con algunos programas. Hoy en dÌa debemos poner
-FFS porque el cargador de arranque GRUB no soporta SFS (GRUB2 sÌ lo har·). TambiÈn
-fÌjate que puedes tener problemas usando alg˙n software adaptado con SFS (como
-gcc). Entonces ahora abre la ventana del CLI (botÛn derecho sobre el men˙ de arriba
-y selecciona Shell del primer men˙ del Wanderer). En el prompt, ingresa el 
-comando Info (tipea ``info`` y aprieta Enter). DeberÌas ver nuestro DH0 en la 
+Smart FileSystem (SFS). A FFS se la conoce por ser algo m√°s estable y compatible
+con la mayor√≠a de los programas, SFS es m√°s a prueba de fallas y m√°s avanzada, 
+pero a√∫n tiene algunas cuestiones con algunos programas. Hoy en d√≠a debemos poner
+FFS porque el cargador de arranque GRUB no soporta SFS (GRUB2 s√≠ lo har√°). Tambi√©n
+f√≠jate que puedes tener problemas usando alg√∫n software adaptado con SFS (como
+gcc). Entonces ahora abre la ventana del CLI (bot√≥n derecho sobre el men√∫ de arriba
+y selecciona Shell del primer men√∫ del Wanderer). En el prompt, ingresa el 
+comando Info (tipea ``info`` y aprieta Enter). Deber√≠as ver nuestro DH0 en la 
 lista como ``DH0: Not a valid DOS disk``. Ahora lo formatearemos con el comando::
 
     >format DRIVE=DH0: NAME=AROS FFS INTL
     About to format drive DH0:. This will destroy all data on the drive. Are 
     you sure ? (y/N)
 
-Ingresa y, aprieta Enter y espera un segundo. DeberÌas ver la cadena
-``Formatting... done``. Si tienes un error, revisa todos los par·metros de la
-particiÛn en el HDToolbox, ya que puedes haber perdido algo, y repite.
+Ingresa y, aprieta Enter y espera un segundo. Deber√≠as ver la cadena
+``Formatting... done``. Si tienes un error, revisa todos los par√°metros de la
+partici√≥n en el HDToolbox, ya que puedes haber perdido algo, y repite.
 
-Si est·s experimentando problemas con el formato (como los mensajes ERROR, 
+Si est√°s experimentando problemas con el formato (como los mensajes ERROR, 
 en especial cuando uses particiones en RDB), lo que es improbable, entonces puedes
 probar una vieja y buena herramienta de Amiga, FORMAT64::
 
     >extras/aminet/format64 DRIVE DH0: Name AROS FFS INTL
 
 
-Ahora el comando Info deberÌa mostrar::
+Ahora el comando Info deber√≠a mostrar::
 
     >DH0: <size>  <used> <free> <full 0%> <errors> <r/w state> <FFS> <AROS>
 
-Listo. Es el momento de reiniciar para la pre-instalaciÛn.
+Listo. Es el momento de reiniciar para la pre-instalaci√≥n.
 
-.. Nota:: Si todo esto te parece tan tedioso que no puedas seguirlo, hay alg˙n
-          alivio si pretendes usar AROS sÛlo en una m·quina virtual.
+.. Nota:: Si todo esto te parece tan tedioso que no puedas seguirlo, hay alg√∫n
+          alivio si pretendes usar AROS s√≥lo en una m√°quina virtual.
           Primero, puedes conseguir un paquete pre-instalado, como *WinAROS/WinAROS
-          Lite* - este sistema ya est· instalado, pero puede estar atrasado.
+          Lite* - este sistema ya est√° instalado, pero puede estar atrasado.
           Segundo, puedes buscar el *Installation Kit* en los `AROS Archives`_
-          que contiene un HD virtual hecho y listo para instalar, asÌ que puedes
-          saltar el procedimiento anterior e instalar una fresca versiÛn de AROS.
+          que contiene un HD virtual hecho y listo para instalar, as√≠ que puedes
+          saltar el procedimiento anterior e instalar una fresca versi√≥n de AROS.
 
 Copiando el sistema
 ^^^^^^^^^^^^^^^^^^^
 
-DespuÈs de reiniciar, notar·s que nuestro HD AROS est· en el escritorio, y
-est· vacÌo. Ahora necesitamos llenarlo con archivos.
+Despu√©s de reiniciar, notar√°s que nuestro HD AROS est√° en el escritorio, y
+est√° vac√≠o. Ahora necesitamos llenarlo con archivos.
 
-DespuÈs de haber desarrollado el soporte para Arrastrar y Soltar en AROS el
-sistema entero puede ser f·cilmente copiado desde el LiveCD solamente arrastrando
-los archivos al cajÛn DH0:. Lo que resta es reemplazar el archivo dh0:boot/grub/menu.lst
+Despu√©s de haber desarrollado el soporte para Arrastrar y Soltar en AROS el
+sistema entero puede ser f√°cilmente copiado desde el LiveCD solamente arrastrando
+los archivos al caj√≥n DH0:. Lo que resta es reemplazar el archivo dh0:boot/grub/menu.lst
 con dh0:boot/grub/menu_dh.lst.DH0.
 
 En AROS hay un instalador, tan incompleto como lo es el HDToolbox, pero 
-tambiÈn se puede usar. Al menos, podemos probarlo. Entonces, aquÌ est· la
+tambi√©n se puede usar. Al menos, podemos probarlo. Entonces, aqu√≠ est√° la
 primera manera para instalar.
 
-1. Ejecuta *InstallAROS* en el cajÛn Tools. Ver·s la pantalla de bienvenida
-diciÈndote lo mismo que yo dije - que estamos usando la versiÛn alfa. 
-SaquÈmosle el jugo ;) Hay un botÛn *Proceed*
-para que aprietes. DespuÈs, ver·s la Licencia P˙blica AROS, y deberÌas aceptarla
-para seguir. Ahora ver·s la ventana con las opciones de instalaciÛn (si dice
-No, sÛlo *desmarca* la casilla relevante) ::
+1. Ejecuta *InstallAROS* en el caj√≥n Tools. Ver√°s la pantalla de bienvenida
+dici√©ndote lo mismo que yo dije - que estamos usando la versi√≥n alfa. 
+Saqu√©mosle el jugo ;) Hay un bot√≥n *Proceed*
+para que aprietes. Despu√©s, ver√°s la Licencia P√∫blica AROS, y deber√≠as aceptarla
+para seguir. Ahora ver√°s la ventana con las opciones de instalaci√≥n (si dice
+No, s√≥lo *desmarca* la casilla relevante) ::
 
     Show Partitioning Options...    []
         <No. As we've done that already>
@@ -435,8 +435,8 @@ No, sÛlo *desmarca* la casilla relevante) ::
     Show Bootloader Options         [V]
         <Yes, bootloader will not be installed otherwise>
 
-DÈjame advertir que *Show Partitioning Options* puede no ser seleccionable y estar
-gris·ceo en el caso que el instalador sea incapaz de hallar alguna particiÛn
+D√©jame advertir que *Show Partitioning Options* puede no ser seleccionable y estar
+gris√°ceo en el caso que el instalador sea incapaz de hallar alguna partici√≥n
 adecuada.
 
     Destination Drive
@@ -451,47 +451,47 @@ adecuada.
     Work drive ...
         <skipped>
     
-DespuÈs de desmarcarla, aprieta *Proceed*. Aparece la ventana con las opciones 
-del cargador de arranque. AquÌ solamente podemos marcar si GRUB, el *GRand 
-Unified Bootloader*, tiene que ser instalado en el DH0 y en cu·l dispositivo.
+Despu√©s de desmarcarla, aprieta *Proceed*. Aparece la ventana con las opciones 
+del cargador de arranque. Aqu√≠ solamente podemos marcar si GRUB, el *GRand 
+Unified Bootloader*, tiene que ser instalado en el DH0 y en cu√°l dispositivo.
 Aprieta *Proceed* de nuevo.
 
 Ahora la ventana dice que estamos listos para instalar. Aprieta *Proceed* de
-nuevo. øTe gusta este bonito botÛn? ;)
+nuevo. ¬øTe gusta este bonito bot√≥n? ;)
 
-DespuÈs de eso, la barra de progreso de la copia aparecer· a medida que los
-archivos sean copiados. Espera hasta que el proceso termine. DespuÈs, tendr·s
-la pantalla de finalizaciÛn y la casilla de verificaciÛn *Reboot*. DÈjala
+Despu√©s de eso, la barra de progreso de la copia aparecer√° a medida que los
+archivos sean copiados. Espera hasta que el proceso termine. Despu√©s, tendr√°s
+la pantalla de finalizaci√≥n y la casilla de verificaci√≥n *Reboot*. D√©jala
 marcada y aprieta *Proceed*. No, eso no es todo - espera el paso restante. 
-Ahora nuestra m·quina reiniciar· con las mismas configuraciones de antes,
+Ahora nuestra m√°quina reiniciar√° con las mismas configuraciones de antes,
 desde el LiveCD.
 
 Instalando el cargador de arranque
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ahora veremos nuestro disco AROS con todos los archivos dentro. øNo
-habÌamos instalado el cargador de arranque en los pasos previos? øquÈ
-nos est· faltando?
+Ahora veremos nuestro disco AROS con todos los archivos dentro. ¬øNo
+hab√≠amos instalado el cargador de arranque en los pasos previos? ¬øqu√©
+nos est√° faltando?
 Bueno, si usas una fresca nightly build entonces 'GRUB <http://en.wikipedia.org/wiki/GRUB>'__ 
-ya deberÌa estar instalado.
+ya deber√≠a estar instalado.
 
-Para las versiones m·s viejas (anteriores a nov. del 2006)
+Para las versiones m√°s viejas (anteriores a nov. del 2006)
 hay un bug en GRUB, que evita que se instale correctamente en el primer intento.
-AsÌ que no podr·s arrancar y obtendr·s los mensajes como GRUB GRUB FRUB etc.
+As√≠ que no podr√°s arrancar y obtendr√°s los mensajes como GRUB GRUB FRUB etc.
 Por favor lee lo siguiente.
-La reinstalaciÛn en el segundo intento por lo general ayuda a resolver esto.
-AsÌ, que ahora necesitamos InstallAROS de nuevo. Repite todos los pasos anteriores
-desde el punto 1, pero desmarca cada casilla de verificaciÛn. DespuÈs del ˙ltimo
-el botÛn *Proceed*, se reinstalar· GRUB, y aparecer· una ventana pidiÈndote que
-confirmes esa ˙ltima escritura. Responde que sÌ tantas veces como sea necesario.
-Ahora, en la ˙ltima p·gina, desmarca la casilla Reboot, cierra el programa Install
-y apaga la m·quina.
+La reinstalaci√≥n en el segundo intento por lo general ayuda a resolver esto.
+As√≠, que ahora necesitamos InstallAROS de nuevo. Repite todos los pasos anteriores
+desde el punto 1, pero desmarca cada casilla de verificaci√≥n. Despu√©s del √∫ltimo
+el bot√≥n *Proceed*, se reinstalar√° GRUB, y aparecer√° una ventana pidi√©ndote que
+confirmes esa √∫ltima escritura. Responde que s√≠ tantas veces como sea necesario.
+Ahora, en la √∫ltima p√°gina, desmarca la casilla Reboot, cierra el programa Install
+y apaga la m√°quina.
 
 Alternativamente, GRUB puede ser instalado desde el shell con este comando::
 
     c:install-i386-pc device ata.device unit 0 PN <pn> grub dh0:boot/grub kernel dh0:boot/aros-i386.gz
 
-donde PN <pn> (o PARTITIONNUMBER <pn>) es el n˙mero de particiÛn donde se instalar·
+donde PN <pn> (o PARTITIONNUMBER <pn>) es el n√∫mero de partici√≥n donde se instalar√°
 el cargador de arranque GRUB.
 
 
@@ -501,9 +501,9 @@ Preparando el arranque
 We have just done our first installation alchemy course, and AROS should
 be ready now. We must remove the Live CD from the CD drive (or disable
 booting from CD in VM) and check it out. Hear the drum roll? ;)
-Hemos hecho nuestro primer curso de la alquimia de instalaciÛn, y AROS 
-deberÌa estar listo. Debemos retirar el Live CD de la unidad de CD (o deshabilitar
-el arranque desde CD en la m·quina virtual) y comprobar. øOyes el redoble
+Hemos hecho nuestro primer curso de la alquimia de instalaci√≥n, y AROS 
+deber√≠a estar listo. Debemos retirar el Live CD de la unidad de CD (o deshabilitar
+el arranque desde CD en la m√°quina virtual) y comprobar. ¬øOyes el redoble
 de tambores? ;)
 
 If something goes wrong, there can be some answers...
@@ -512,34 +512,34 @@ Si algo va mal, puede haber algunas respuestas...
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-El proceso de instalaciÛn es uno sobre los que se pregunta con m·s frecuencia
-en los foros, en su mayorÌa por los reciÈn llegados. Puedes revisar el FAQ para
-ver si hay una respuesta a tus preguntas. øAlguna adiciÛn...?
+El proceso de instalaci√≥n es uno sobre los que se pregunta con m√°s frecuencia
+en los foros, en su mayor√≠a por los reci√©n llegados. Puedes revisar el FAQ para
+ver si hay una respuesta a tus preguntas. ¬øAlguna adici√≥n...?
 
 Instalando AROS junto con otros sistemas
 """"""""""""""""""""""""""""""""""""""""
 
-En los pasos previamente descriptos hemos instalado AROS como el *˙nico* sistema
-en el HD. Pero, øpuede ser instalado para un arranque m˙ltiple con otros sistemas
-en el HD? SÌ. Pero de nuevo, esta tarea ser· dificultosa. 
+En los pasos previamente descriptos hemos instalado AROS como el *√∫nico* sistema
+en el HD. Pero, ¬øpuede ser instalado para un arranque m√∫ltiple con otros sistemas
+en el HD? S√≠. Pero de nuevo, esta tarea ser√° dificultosa. 
 
 AROS y Windows
 
-Consideremos la situaciÛn cuando tienes solamente Windows(tm) XP instalado y
-quieres poner AROS con Èl.
+Consideremos la situaci√≥n cuando tienes solamente Windows(tm) XP instalado y
+quieres poner AROS con √©l.
 Los sistemas Windows NT se pueden instalar en los sistema de archivo FAT y NTFS.
-Mientras NTFS es la manera m·s segura y robusta, no est· soportada por GRUB
+Mientras NTFS es la manera m√°s segura y robusta, no est√° soportada por GRUB
 (desafortunadamente).
 
 AROS y Linux (y otro OS que use el cargador GRUB)
 
-Consideremos la situaciÛn cuando quieres tener tres sistema en tu HD -
+Consideremos la situaci√≥n cuando quieres tener tres sistema en tu HD -
 Windows, Linux y AROS.  
 
 Preparando el HD
 ^^^^^^^^^^^^^^^^
 
-Continuar·...
+Continuar√°...
 
 AROS/i386-PPC-hosted
 --------------------
@@ -561,48 +561,48 @@ Requirimientos
 
 Falta que alguien lo escriba.
 
-InstalaciÛn
+Instalaci√≥n
 """""""""""
 
-InstalaciÛn:
+Instalaci√≥n:
 
-+ copia el directorio AfA_OS_Libs a la particiÛn de arranque de tu unidad
++ copia el directorio AfA_OS_Libs a la partici√≥n de arranque de tu unidad
   Amiga, sys:
-  Si no te gusta aquÌ puedes copiarlo en alg˙n otro lugar y asignar AfA_OS:
-  al directorio en donde estÈ AfA_OS_Libs.
+  Si no te gusta aqu√≠ puedes copiarlo en alg√∫n otro lugar y asignar AfA_OS:
+  al directorio en donde est√© AfA_OS_Libs.
   copia Libs:freetype2.library en tu directorio sys:libs.
 + copia C:AfA_OS_Loader en tu directorio sys:fonts.
-+ copia Fonts: en tu directorio sys:fonts. Si quieres tener m·s fuentes,
++ copia Fonts: en tu directorio sys:fonts. Si quieres tener m√°s fuentes,
   usa las Fonts de AROS o de MOS.
 + copia prefs: a tu directorio sys:prefs.
 
 Para iniciarlo, en tiempo de arranque, inserta AfA_OS_Loader en tu
-S:startup-sequence, un poco antes de IPrefs. Debe ser insertado despuÈs de
+S:startup-sequence, un poco antes de IPrefs. Debe ser insertado despu√©s de
 parchar las herramientas como MCP o picasso96/cgx, porque ellas parchan a su
 vez las funciones AfA_OS.
 
-Si lo inicias con el par·metro MOUSESTART (debe estar escrito con may˙sculas),
-debes mantener apretado el botÛn izquierdo del ratÛn durante el tiempo de arranque
-para cargar los mÛdulos, en vez de evitarlos.
+Si lo inicias con el par√°metro MOUSESTART (debe estar escrito con may√∫sculas),
+debes mantener apretado el bot√≥n izquierdo del rat√≥n durante el tiempo de arranque
+para cargar los m√≥dulos, en vez de evitarlos.
 
-Para ver que todo funcione bien, inicia el programa "TextBench" que est· en este
+Para ver que todo funcione bien, inicia el programa "TextBench" que est√° en este
 archivo. La velocidad de suavizado de TTF no es en este momento un ganador en el
-renderizado de texto, no est· optimizado; mira el cÛdigo fuente aatext, pero espero
-que sea lo suficientemente r·pido para ser usable incluso en una 060/50MHz.
+renderizado de texto, no est√° optimizado; mira el c√≥digo fuente aatext, pero espero
+que sea lo suficientemente r√°pido para ser usable incluso en una 060/50MHz.
 
 
 Notas al pie
 ============
 
-.. [#] En verdad *es* posible instalar AROS/i386-pc en el disco rÌgido, pero
-       el procedimiento est· lejos de estar automatizado y ser amigable para el 
-       usuario y las herramientas necesarias est·n todavÌa en desarrollo y podrÌan
+.. [#] En verdad *es* posible instalar AROS/i386-pc en el disco r√≠gido, pero
+       el procedimiento est√° lejos de estar automatizado y ser amigable para el 
+       usuario y las herramientas necesarias est√°n todav√≠a en desarrollo y podr√≠an
        ser bastante defectuosas. Por lo tanto, oficialmente no recomendamos la 
-       instalaciÛn en el disco rÌgido para los usuarios sin experiencia en este
-       momento en que se escribiÛ esta nota.
+       instalaci√≥n en el disco r√≠gido para los usuarios sin experiencia en este
+       momento en que se escribi√≥ esta nota.
 
 
-.. _`p·gina de descargas`: ../../download
+.. _`p√°gina de descargas`: ../../download
 
 .. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
 

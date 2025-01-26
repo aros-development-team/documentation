@@ -1,9 +1,9 @@
 ========
-Linkkej‰
+Linkkej√§
 ========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright ¬© 1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -14,8 +14,8 @@ Laiteajureiden kehitys
 ----------------------
 + `USB 2.0 specifications`__
 
-  Virallinen USB tiedon l‰hde. Ei kovinkaan helppotajuinen mutta tarpeellinen
-  jos tahdot tiet‰‰ kaiken USB:sta.
+  Virallinen USB tiedon l√§hde. Ei kovinkaan helppotajuinen mutta tarpeellinen
+  jos tahdot tiet√§√§ kaiken USB:sta.
 
 + `USB in a Nutshell (making sense of the USB standard)`__
 
@@ -36,58 +36,58 @@ Ajettavat tiedostoformaatit
 
 + `ELF - Executable and Linking Format - Specification v1.2 - pdf version`__
 
-  Virallinen tiedonl‰hde ELF formaatista. Kaikille alustoille yhteisen tiedon
-  lis‰ksi joille ELF on adoptoitu, sis‰lt‰‰ se osia jotka ovat nimenomaisia
+  Virallinen tiedonl√§hde ELF formaatista. Kaikille alustoille yhteisen tiedon
+  lis√§ksi joille ELF on adoptoitu, sis√§lt√§√§ se osia jotka ovat nimenomaisia
   x86 arkkitehtuurille.
 
 + `ELF - Executable and Linking Format - html version`__
 
-  HTML-versio ELF spesifikaatiosta. Sis‰lt‰‰ tietoa ainoastaan kaikille
-  alustoille yhteisist‰ ominaisuuksista.
+  HTML-versio ELF spesifikaatiosta. Sis√§lt√§√§ tietoa ainoastaan kaikille
+  alustoille yhteisist√§ ominaisuuksista.
 
 + `Amiga Portable Binaries`__
 
-  Tutkimusprojekti siirrett‰v‰n bin‰‰rimuotoj‰rjestelm‰n luomisesta Amigalle
-  joka sallii yhden formaatin bin‰‰rin toimivan useilla eri CPU
-  arkkitehtuureilla. Ik‰v‰ kyll‰ sivustoa ei ole p‰ivitetty pitk‰‰n aikaan,
-  mutta se sis‰lt‰‰ muutamia eritt‰in mielenkiintoisia ideoita. Varmasti
-  jotain sellaista jonka tahdomme n‰hd‰ AROS:issa.
+  Tutkimusprojekti siirrett√§v√§n bin√§√§rimuotoj√§rjestelm√§n luomisesta Amigalle
+  joka sallii yhden formaatin bin√§√§rin toimivan useilla eri CPU
+  arkkitehtuureilla. Ik√§v√§ kyll√§ sivustoa ei ole p√§ivitetty pitk√§√§n aikaan,
+  mutta se sis√§lt√§√§ muutamia eritt√§in mielenkiintoisia ideoita. Varmasti
+  jotain sellaista jonka tahdomme n√§hd√§ AROS:issa.
 
 __ http://x86.ddj.com/ftp/manuals/tools/elf.pdf
 __ http://www.cs.ucdavis.edu/~haungs/paper/node10.html
 __ http://greywire.8m.com/greywire/amigasde.htm
 
 
-Sekalaisia k‰yttˆj‰rjestelm‰resursseja
+Sekalaisia k√§ytt√∂j√§rjestelm√§resursseja
 --------------------------------------
 
 + `The Operating System Resource Center`__
 
-  Kattava valikoima linkkej‰ erin‰isiin k‰yttˆj‰rjestelmien kehitys
-  resursseihin, kuten tiedostoj‰rjestelmiin, laiteajureihin, muistin
-  k‰sittelyyn, jne.
+  Kattava valikoima linkkej√§ erin√§isiin k√§ytt√∂j√§rjestelmien kehitys
+  resursseihin, kuten tiedostoj√§rjestelmiin, laiteajureihin, muistin
+  k√§sittelyyn, jne.
   
 + `Protected Mode Basics`__
 
-  Syv‰lle uppoava artikkeli Robert Collinsilta x86 arkkitehtuurin suojatusta
-  tilasta (nk. "protected mode"). Sis‰lt‰‰ todenn‰kˆisesti enemm‰n tietoa
-  kyseisest‰ arkkitehtuurista kuin tahdot edes tiet‰‰ ... ;-)
+  Syv√§lle uppoava artikkeli Robert Collinsilta x86 arkkitehtuurin suojatusta
+  tilasta (nk. "protected mode"). Sis√§lt√§√§ todenn√§k√∂isesti enemm√§n tietoa
+  kyseisest√§ arkkitehtuurista kuin tahdot edes tiet√§√§ ... ;-)
 
 + `Write your own operating system`__
 
-  Paljon k‰yttˆkelpoista tietoa matalan tason nippeleist‰ ja nappeleista joita
-  tarvitaan k‰yttˆj‰rjestelm‰n luomiseen x86 arkkitehtuurille. P‰‰asiassa
-  koskee raudan hallintaa, mutta sis‰lt‰‰ myˆs k‰yttˆkelpoista tietoa
-  tiedostoj‰rjestelmist‰, verkkoliikenteest‰, ajettavista
+  Paljon k√§ytt√∂kelpoista tietoa matalan tason nippeleist√§ ja nappeleista joita
+  tarvitaan k√§ytt√∂j√§rjestelm√§n luomiseen x86 arkkitehtuurille. P√§√§asiassa
+  koskee raudan hallintaa, mutta sis√§lt√§√§ my√∂s k√§ytt√∂kelpoista tietoa
+  tiedostoj√§rjestelmist√§, verkkoliikenteest√§, ajettavista
   tiedostoformaateista, jne.
 
 + `Write your own operating system [FAQ]`__
 
-  Viel‰ enemm‰n tietoa k‰yttˆj‰rjestelmien kirjoittamisesta, tosin kuten
-  edell‰ mainittu, on t‰m‰kin p‰‰s‰‰ntˆisesti x86 arkkitehtuurille
-  tarkoitettu. Paljon tietoa raudasta, mutta myˆs yksityiskohtaista tietoa
-  korkeamman tason jutuista ja muutamia hyvi‰ viitteit‰ k‰yttˆkelpoisiin
-  kirjoihin, tyˆkaluihin ja muihin tietol‰hteisin.
+  Viel√§ enemm√§n tietoa k√§ytt√∂j√§rjestelmien kirjoittamisesta, tosin kuten
+  edell√§ mainittu, on t√§m√§kin p√§√§s√§√§nt√∂isesti x86 arkkitehtuurille
+  tarkoitettu. Paljon tietoa raudasta, mutta my√∂s yksityiskohtaista tietoa
+  korkeamman tason jutuista ja muutamia hyvi√§ viitteit√§ k√§ytt√∂kelpoisiin
+  kirjoihin, ty√∂kaluihin ja muihin tietol√§hteisin.
 
 __ http://www.nondot.org/sabre/os/articles/
 __ http://x86.ddj.com/articles/pmbasics/tspec_a1_doc.htm
@@ -95,26 +95,26 @@ __ http://www.execpc.com/~geezer/osd/index.htm
 __ http://www.mega-tokyo.com/os/os-faq.html
 
 
-Tyˆkalut
+Ty√∂kalut
 --------
 
 + `Object Oriented Programming For All (OOP4A)`__
 
-  Toinen kielest‰ riippumaton OOP kehys AmigaOS:ille. Toisin kuin BOOPSI,
-  koostuu se jaetusta kirjastosta ajettavan ohjelman k‰sittelyyn sek‰
-  esik‰‰nt‰j‰n joka sallii helpomman syntaksin.
+  Toinen kielest√§ riippumaton OOP kehys AmigaOS:ille. Toisin kuin BOOPSI,
+  koostuu se jaetusta kirjastosta ajettavan ohjelman k√§sittelyyn sek√§
+  esik√§√§nt√§j√§n joka sallii helpomman syntaksin.
 
 + `Geek Gadgets`__
 
-  Portteja yleisimmist‰ GNU tyˆkaluista Amigalle, luoden t‰ydellisen UNIX
-  tyylisen ymp‰ristˆn sille. Sis‰lt‰‰ kaikki yleiset GNU kehitystyˆkalut
+  Portteja yleisimmist√§ GNU ty√∂kaluista Amigalle, luoden t√§ydellisen UNIX
+  tyylisen ymp√§rist√∂n sille. Sis√§lt√§√§ kaikki yleiset GNU kehitysty√∂kalut
   kuten binutils, GCC, grep, gawk, autoconf, automake, bison, cvs, flex, perl
   ja paljon muita.
 
 + `Martin Blom's crosscompiler`__
   
-  Martin Blomin kirjoittama ristiin k‰‰nt‰j‰ joka pohjautuu GCC:ll‰
-  tapahtuvaan k‰‰nt‰miseen Amigalle Linux:illa.
+  Martin Blomin kirjoittama ristiin k√§√§nt√§j√§ joka pohjautuu GCC:ll√§
+  tapahtuvaan k√§√§nt√§miseen Amigalle Linux:illa.
 
 __ http://www.geocities.com/SiliconValley/Bridge/5737/Main/oop4a_e.html
 __ http://www.ninemoons.com/GG/

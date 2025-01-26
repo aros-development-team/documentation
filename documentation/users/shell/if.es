@@ -20,7 +20,7 @@ Synopsis
      NOT/S,WARN/S,ERROR/S,FAIL/S,,EQ/K,GT/K,GE/K,VAL/S,EXISTS/K
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
@@ -28,16 +28,16 @@ UbicaciÛn
      Workbench:C
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
 
-     Ejecuta todos los comandos en un bloque si la condiciÛn dada es
-     verdadera (Un bloque es una sucesiÛn de lÌneas de comandos
+     Ejecuta todos los comandos en un bloque si la condici√≥n dada es
+     verdadera (Un bloque es una sucesi√≥n de l√≠neas de comandos
      terminada con un comando ELSE o ENDIF). Por cada comando IF debe
      haber un ENDIF correspondiente.
-     Si la condiciÛn es false, la ejecuciÛn de comandos saltar· al
+     Si la condici√≥n es false, la ejecuci√≥n de comandos saltar√° al
      correspondiente comando ELSE o ENDIF.
 
 
@@ -46,21 +46,21 @@ Entradas
 ::
 
 
-     NOT               --  Niega el valor de la condiciÛn.
+     NOT               --  Niega el valor de la condici√≥n.
 
-     WARN              --  Es verdadero si el cÛdigo devuelto anterior
+     WARN              --  Es verdadero si el c√≥digo devuelto anterior
                            fue igual o mayor que 5.
-     ERROR             --  Es verdadero si el cÛdigo devuelto anterior
+     ERROR             --  Es verdadero si el c√≥digo devuelto anterior
                            fue igual o mayor que 10.
-     FAIL              --  Es verdadero si el cÛdigo devuelto anterior
+     FAIL              --  Es verdadero si el c√≥digo devuelto anterior
                            fue igual o mayor que 20.
 
      EQ, GE, GT        --  Es verdadero si el primer valor es igual,
                            igual o mayor, o mayor que el segundo valor
                            respectivamente.
 
-     VAL               --  Indica que la comparaciÛn deberÌa tratar a las
-                           cadenas como valores numÈricos.
+     VAL               --  Indica que la comparaci√≥n deber√≠a tratar a las
+                           cadenas como valores num√©ricos.
 
      EXISTS  <cadena>  --  Es verdadero si existe el archivo o directorio
                            <cadena>.
@@ -87,12 +87,12 @@ Notas
 ::
 
 
-     ERROR y FAIL solamente ser·n apropiados si el nivel de falla del
-     guiÛn es puesto mediante FailAt (el nivel de falla normal es 10 y si
-     alg˙n cÛdigo devuelto iguala o supera este valor, el guiÛn abortar·).
+     ERROR y FAIL solamente ser√°n apropiados si el nivel de falla del
+     gui√≥n es puesto mediante FailAt (el nivel de falla normal es 10 y si
+     alg√∫n c√≥digo devuelto iguala o supera este valor, el gui√≥n abortar√°).
 
 
-Vea tambiÈn
+Vea tambi√©n
 ~~~~~~~~~~~
 ::
 

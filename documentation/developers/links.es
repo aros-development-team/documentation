@@ -3,7 +3,7 @@ Enlaces
 =======
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -57,7 +57,7 @@ __ http://www.cs.ucdavis.edu/~haungs/paper/node10.html
 __ http://greywire.8m.com/greywire/amigasde.htm
 
 
-Recursos misceláneos sobre Sistemas Operativos
+Recursos miscelÃ¡neos sobre Sistemas Operativos
 ----------------------------------------------
 
 + `The Operating System Resource Center`__
@@ -125,7 +125,7 @@ __ http://www.lysator.liu.se/~lcs/files/gg-cross/
 __ http://www.zerohero.se/cross/aros.html
 __ http://www.whoosh777.pwp.blueyonder.co.uk/amiga-68k-x-x86-aros-gcc.html
 
-Misceláneo
+MiscelÃ¡neo
 ----------
 
 + `Documentation for many Amiga related libraries`__

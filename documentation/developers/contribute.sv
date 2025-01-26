@@ -1,14 +1,14 @@
-Vi behöver din hjälp!
+Vi behÃ¶ver din hjÃ¤lp!
 =====================
 
-Vi har rätt få utvecklare vilket tyvärr innebär att arbetet fortskrider rätt
-långsamt. Vi behöver helt enkelt mer folk som kan hjälpa oss! Det finns mängder
-med uppgifter i behov av dedicerade utvecklare, i alla former från stora projekt
-till små, från stöd för hårdvara till högnivå systemprogrammering och applikationer.
-Kort sagt så finns det något för alla som kan hjälpa, oavsett hur duktig du
-är på programmering.
+Vi har rÃ¤tt fÃ¥ utvecklare vilket tyvÃ¤rr innebÃ¤r att arbetet fortskrider rÃ¤tt
+lÃ¥ngsamt. Vi behÃ¶ver helt enkelt mer folk som kan hjÃ¤lpa oss! Det finns mÃ¤ngder
+med uppgifter i behov av dedicerade utvecklare, i alla former frÃ¥n stora projekt
+till smÃ¥, frÃ¥n stÃ¶d fÃ¶r hÃ¥rdvara till hÃ¶gnivÃ¥ systemprogrammering och applikationer.
+Kort sagt sÃ¥ finns det nÃ¥got fÃ¶r alla som kan hjÃ¤lpa, oavsett hur duktig du
+Ã¤r pÃ¥ programmering.
 
-För er som inte är programmerare så finns det också mängder med saker som ni kan
-hjälpa till med! Bland annat skriva dokumentation, översätta program och dokumentation
-till olika språk, skapa snygg grafik eller hitta buggar.
-Dessa uppgifter är lika viktiga som programmering!
+FÃ¶r er som inte Ã¤r programmerare sÃ¥ finns det ocksÃ¥ mÃ¤ngder med saker som ni kan
+hjÃ¤lpa till med! Bland annat skriva dokumentation, Ã¶versÃ¤tta program och dokumentation
+till olika sprÃ¥k, skapa snygg grafik eller hitta buggar.
+Dessa uppgifter Ã¤r lika viktiga som programmering!

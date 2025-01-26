@@ -3,7 +3,7 @@ Portningar
 ==========
 
 :Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2006, The AROS Development Team
+:Copyright: Copyright Â© 1995-2006, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -14,56 +14,56 @@ Portningar
 Introduktion
 ============
 
-Eftersom AROS är ett portabelt operativsystem, så är det tillgängligt för flera
-olika plattformar. En "portning" av AROS är precis som det låter, en version av
+Eftersom AROS Ã¤r ett portabelt operativsystem, sÃ¥ Ã¤r det tillgÃ¤ngligt fÃ¶r flera
+olika plattformar. En "portning" av AROS Ã¤r precis som det lÃ¥ter, en version av
 AROS portad till en specifik plattform.
 
 
 Smaker
 ------
 
-Portningar är uppdelade i två större grupper, eller "smaker" inom AROS termioligi,
-dessa är "native" och "hosted".
+Portningar Ã¤r uppdelade i tvÃ¥ stÃ¶rre grupper, eller "smaker" inom AROS termioligi,
+dessa Ã¤r "native" och "hosted".
 
-Native-portningar körs direkt på hårdvaran och har total kontroll över datorn.
-Dom kommer att vara det rekommenderade sättet att köra AROS i framtiden eftersom
-det ger överlägsen prestanda och effektivitet, men dom är för närvarande för
-inkompletta för att vara användbara (åtminstone för utveckling). 
+Native-portningar kÃ¶rs direkt pÃ¥ hÃ¥rdvaran och har total kontroll Ã¶ver datorn.
+Dom kommer att vara det rekommenderade sÃ¤ttet att kÃ¶ra AROS i framtiden eftersom
+det ger Ã¶verlÃ¤gsen prestanda och effektivitet, men dom Ã¤r fÃ¶r nÃ¤rvarande fÃ¶r
+inkompletta fÃ¶r att vara anvÃ¤ndbara (Ã¥tminstone fÃ¶r utveckling). 
 
-Hosted-portningar körs ovanpå ett annat operativsystem och har inte tillgång till
-hårdvaran direkt, de använder faciliteterna som operativsystemet ger dom. Fördelarna
-med hosted-portningar är att dom är enklare att skriva, eftersom det inte är 
-nödvändigt att skriva låg-nivå drivrutiner. Eftersom AROS uveckling även inte är 
-själv-hosted ännu (Vi kan inte kompilera AROS inifrån AROS) så snabbar det upp
-programmeringen, eftersom vi kan köra utvecklingsmiljön och AROS sida-vid-sida utan
-att ödsla tid på konstanta omstarter för att testa ny kod. 
+Hosted-portningar kÃ¶rs ovanpÃ¥ ett annat operativsystem och har inte tillgÃ¥ng till
+hÃ¥rdvaran direkt, de anvÃ¤nder faciliteterna som operativsystemet ger dom. FÃ¶rdelarna
+med hosted-portningar Ã¤r att dom Ã¤r enklare att skriva, eftersom det inte Ã¤r 
+nÃ¶dvÃ¤ndigt att skriva lÃ¥g-nivÃ¥ drivrutiner. Eftersom AROS uveckling Ã¤ven inte Ã¤r 
+sjÃ¤lv-hosted Ã¤nnu (Vi kan inte kompilera AROS inifrÃ¥n AROS) sÃ¥ snabbar det upp
+programmeringen, eftersom vi kan kÃ¶ra utvecklingsmiljÃ¶n och AROS sida-vid-sida utan
+att Ã¶dsla tid pÃ¥ konstanta omstarter fÃ¶r att testa ny kod. 
 
 Namngivning
 -----------
 
-De olika AROS-portningarna är namngivna i formen <cpu>-<platform>, där <cpu> är
-CPU-arkitekturen och <platform> är ett symboliskt namn av plattformen. Plattformen
-av en portning kan antingen vara en hårdvara för native-portningar, som "pc" eller
-"amiga", eller ett operativsystem för hosted-portningar, som "linux" eller
-"freebsd". I fall där det inte är uppenbart att ämnet i fråga handlar om
-AROS så är det vanligt med att använda ett prefix "AROS/" till portnings-namnet,
+De olika AROS-portningarna Ã¤r namngivna i formen <cpu>-<platform>, dÃ¤r <cpu> Ã¤r
+CPU-arkitekturen och <platform> Ã¤r ett symboliskt namn av plattformen. Plattformen
+av en portning kan antingen vara en hÃ¥rdvara fÃ¶r native-portningar, som "pc" eller
+"amiga", eller ett operativsystem fÃ¶r hosted-portningar, som "linux" eller
+"freebsd". I fall dÃ¤r det inte Ã¤r uppenbart att Ã¤mnet i frÃ¥ga handlar om
+AROS sÃ¥ Ã¤r det vanligt med att anvÃ¤nda ett prefix "AROS/" till portnings-namnet,
 vilket t.ex. kan ge namnet "AROS/i386-pc".
 
 
 Portnings-kompabilitet
 ----------------------
 
-AROS exekverbara filer för en specifik CPU är kompatibla över alla portningar
-som använder den CPU:n, vilket betyder att exekverbara filer för "i386-pc" kommer
-att fungera på "i386-linux" och "i386-freebsd".
+AROS exekverbara filer fÃ¶r en specifik CPU Ã¤r kompatibla Ã¶ver alla portningar
+som anvÃ¤nder den CPU:n, vilket betyder att exekverbara filer fÃ¶r "i386-pc" kommer
+att fungera pÃ¥ "i386-linux" och "i386-freebsd".
 
 Existerande portningar
 ======================
 
-Nedan finns en lista på alla AROS portningar som fungerar och/eller aktivt
-utvecklas. Alla av dessa är inte tillgängliga för nerladdning, eftersom dom
-eventuellt inte är tillräckligt kompletta eller har kompileringskrav som vi
-inte alltid kan uppnå pga. ej tillräckliga resurser.
+Nedan finns en lista pÃ¥ alla AROS portningar som fungerar och/eller aktivt
+utvecklas. Alla av dessa Ã¤r inte tillgÃ¤ngliga fÃ¶r nerladdning, eftersom dom
+eventuellt inte Ã¤r tillrÃ¤ckligt kompletta eller har kompileringskrav som vi
+inte alltid kan uppnÃ¥ pga. ej tillrÃ¤ckliga resurser.
 
 
 AROS/i386-pc
@@ -73,38 +73,38 @@ AROS/i386-pc
 :Status:     Fungerande, ej komplett drivrutinsupport
 :Maintained: Ja
 
-AROS/i386-pc är en native-portning av AROS till vanliga IBM PC AT datorer och
-kompatibla som använder x86-processorfamiljen. Namnet är faktiskt en smula
-vilseledande eftersom AROS/i386-pc faktiskt kräver åtminstone en 486 CPU,
-eftersom användandet av en del instruktioner inte finns tillgängliga på en 386 CPU.
+AROS/i386-pc Ã¤r en native-portning av AROS till vanliga IBM PC AT datorer och
+kompatibla som anvÃ¤nder x86-processorfamiljen. Namnet Ã¤r faktiskt en smula
+vilseledande eftersom AROS/i386-pc faktiskt krÃ¤ver Ã¥tminstone en 486 CPU,
+eftersom anvÃ¤ndandet av en del instruktioner inte finns tillgÃ¤ngliga pÃ¥ en 386 CPU.
 
-Denna portning fungerar ganska bra, men vi har endast väldigt grundläggande
-drivrutinfunktioner. En av de största begränsningarna är att vi för
-tillfället endast har stöd för "accelerated graphics" på nVidia och
-ATI-grafikkort. Andra grafikkort måste användas med "generic (non accelerated)
-VGA och VBE grafikdrivrutiner. Det utvecklas drivrutiner för fler grafikkort,
-men utvecklingen går relativt trögt eftersom vi endast har omkring 2,5 
-hårdvaruutvecklare.
-Denna portning är tillgänglig för nerladdning.
+Denna portning fungerar ganska bra, men vi har endast vÃ¤ldigt grundlÃ¤ggande
+drivrutinfunktioner. En av de stÃ¶rsta begrÃ¤nsningarna Ã¤r att vi fÃ¶r
+tillfÃ¤llet endast har stÃ¶d fÃ¶r "accelerated graphics" pÃ¥ nVidia och
+ATI-grafikkort. Andra grafikkort mÃ¥ste anvÃ¤ndas med "generic (non accelerated)
+VGA och VBE grafikdrivrutiner. Det utvecklas drivrutiner fÃ¶r fler grafikkort,
+men utvecklingen gÃ¥r relativt trÃ¶gt eftersom vi endast har omkring 2,5 
+hÃ¥rdvaruutvecklare.
+Denna portning Ã¤r tillgÃ¤nglig fÃ¶r nerladdning.
 
 
 AROS/m68k-pp
 ------------
 
 :Flavour:    Native 
-:Status:     Delvis fungerande (i en emulator), ej komplett drivrutinsstöd.
+:Status:     Delvis fungerande (i en emulator), ej komplett drivrutinsstÃ¶d.
 :Maintained: Ja
 
-AROS/m68k-pp är native-portningen av AROS för Palm-serien av handdatorer och
-kompatibla ("pp" står för "palm pilot", vilket var namnet på de första handdatorerna
+AROS/m68k-pp Ã¤r native-portningen av AROS fÃ¶r Palm-serien av handdatorer och
+kompatibla ("pp" stÃ¥r fÃ¶r "palm pilot", vilket var namnet pÃ¥ de fÃ¶rsta handdatorerna
 i denna serie). Detta betyder att du eventuellt kan ta med dig AROS i din ficka
-när du reser i framtiden...
+nÃ¤r du reser i framtiden...
 
-Denna portning är för tillfälligt väldigt "rå". Oftast fungerar den (Om man kör den
-i en emulator, eftersom ingen vågar ta risken att förstöra deras dyra hårdvara
-för tillfället) men det är fortfarande mycket arbete kvar. Det finns en 
-grafikrutin, men inga för input.
-Denna portning är inte tillgänglig för nerladdning för tillfället.
+Denna portning Ã¤r fÃ¶r tillfÃ¤lligt vÃ¤ldigt "rÃ¥". Oftast fungerar den (Om man kÃ¶r den
+i en emulator, eftersom ingen vÃ¥gar ta risken att fÃ¶rstÃ¶ra deras dyra hÃ¥rdvara
+fÃ¶r tillfÃ¤llet) men det Ã¤r fortfarande mycket arbete kvar. Det finns en 
+grafikrutin, men inga fÃ¶r input.
+Denna portning Ã¤r inte tillgÃ¤nglig fÃ¶r nerladdning fÃ¶r tillfÃ¤llet.
 
 
 AROS/i386-linux
@@ -114,13 +114,13 @@ AROS/i386-linux
 :Status:     Fungerande
 :Maintained: Ja
 
-AROS/i386-linux är den hostade portningen av AROS till operativsystemet Linux
-[#]_ som körs på x86-processorer.
+AROS/i386-linux Ã¤r den hostade portningen av AROS till operativsystemet Linux
+[#]_ som kÃ¶rs pÃ¥ x86-processorer.
 
-Detta är den mest kompletta portningen av AROS funktionsmässigt, eftersom
-de flesta utvecklarna använder Linux när de utvecklar AROS och det är
-mycket färre drivrutiner att skriva.
-Denna portning finns tillgänglig för nerladdning.
+Detta Ã¤r den mest kompletta portningen av AROS funktionsmÃ¤ssigt, eftersom
+de flesta utvecklarna anvÃ¤nder Linux nÃ¤r de utvecklar AROS och det Ã¤r
+mycket fÃ¤rre drivrutiner att skriva.
+Denna portning finns tillgÃ¤nglig fÃ¶r nerladdning.
 
 AROS/i386-freebsd
 -----------------
@@ -129,14 +129,14 @@ AROS/i386-freebsd
 :Status:     Fungerande
 :Maintained: Ja (5.x)
 
-AROS/i386-freebsd är den hostade portningen av AROS till operativsystemet FreeBSD
-som körs på x86-processorer.
+AROS/i386-freebsd Ã¤r den hostade portningen av AROS till operativsystemet FreeBSD
+som kÃ¶rs pÃ¥ x86-processorer.
 
-Denna portning är relativt komplett eftersom den delar den mesta av koden
-med AROS/i386-linux, men eftersom det inte finns så många utvecklare som använder
-FreeBSD så ligger utvecklingen lite efter. Vi försöker att kompilera AROS/i386-freebsd
-när vi gör snapshots, men det är inte alltid möjligt, då det kanske inte alltid finns
-tillgängligt för nerladdning.
+Denna portning Ã¤r relativt komplett eftersom den delar den mesta av koden
+med AROS/i386-linux, men eftersom det inte finns sÃ¥ mÃ¥nga utvecklare som anvÃ¤nder
+FreeBSD sÃ¥ ligger utvecklingen lite efter. Vi fÃ¶rsÃ¶ker att kompilera AROS/i386-freebsd
+nÃ¤r vi gÃ¶r snapshots, men det Ã¤r inte alltid mÃ¶jligt, dÃ¥ det kanske inte alltid finns
+tillgÃ¤ngligt fÃ¶r nerladdning.
 
 AROS/ppc-linux
 ---------------
@@ -145,18 +145,18 @@ AROS/ppc-linux
 :Status:     Fungerande
 :Maintained: Ja
 
-AROS/ppc-linux är den hostade portningen av AROS till operativsystemet Linux
-som körs på PPC-processorer.
+AROS/ppc-linux Ã¤r den hostade portningen av AROS till operativsystemet Linux
+som kÃ¶rs pÃ¥ PPC-processorer.
 
-En förkompilerad version kan laddas ner från `Sourceforge`__.
-Omkompilering kräver en patchad gcc3.4.3. Diff-filen finns i contrib/gnu/gcc.
+En fÃ¶rkompilerad version kan laddas ner frÃ¥n `Sourceforge`__.
+Omkompilering krÃ¤ver en patchad gcc3.4.3. Diff-filen finns i contrib/gnu/gcc.
 
 __ http://sourceforge.net/project/showfiles.php?group_id=43586&package_id=194077
 
 Fotnot
 ======
 
-.. [#] Ja, vi vet att Linux bara är en kärna och inte ett helt OS, men det är mycket
-       kortare att skriva än "operativsystem baserat på Linux-kärnan, en del av
-       de vanligare GNU-verktygen och X fönsterhanterarsystemen". Denna optimering
-       av utrymme går naturligtvis att bestrida av de mest pedantiska läsarna, men men...
+.. [#] Ja, vi vet att Linux bara Ã¤r en kÃ¤rna och inte ett helt OS, men det Ã¤r mycket
+       kortare att skriva Ã¤n "operativsystem baserat pÃ¥ Linux-kÃ¤rnan, en del av
+       de vanligare GNU-verktygen och X fÃ¶nsterhanterarsystemen". Denna optimering
+       av utrymme gÃ¥r naturligtvis att bestrida av de mest pedantiska lÃ¤sarna, men men...

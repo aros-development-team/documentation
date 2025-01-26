@@ -1,2 +1,2 @@
-Ο Fabio Alemagna και ο Aaron Digulla στο Cafe 'Dolce Sosta' στο νησί
-Ισχία (κοντά στην Νάπολη της Ιταλία).
+Ξ Fabio Alemagna ΞΊΞ±ΞΉ ΞΏ Aaron Digulla ΟƒΟ„ΞΏ Cafe 'Dolce Sosta' ΟƒΟ„ΞΏ Ξ½Ξ·ΟƒΞ―
+Ξ™ΟƒΟ‡Ξ―Ξ± (ΞΊΞΏΞ½Ο„Ξ¬ ΟƒΟ„Ξ·Ξ½ ΞΞ¬Ο€ΞΏΞ»Ξ· Ο„Ξ·Ο‚ Ξ™Ο„Ξ±Ξ»Ξ―Ξ±).

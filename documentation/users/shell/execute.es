@@ -20,7 +20,7 @@ Synopsis
      FILE/A
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicaci髇
      Workbench:C
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
-     Ejecuta un gui髇 (script) de comandos DOS.
+     Ejecuta un gui贸n (script) de comandos DOS.
 
 
 Entradas
@@ -41,6 +41,6 @@ Entradas
 ::
 
 
-     FILE -- el archivo de gui髇 a ejecutar.
+     FILE -- el archivo de gui贸n a ejecutar.
 
 

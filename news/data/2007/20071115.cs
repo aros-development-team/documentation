@@ -5,39 +5,39 @@ Stav aktualizace
 :Autor:   Paolo Besser
 :Datum:   15.11.2007
 
-Poslední zprávy
+PoslednÃ­ zprÃ¡vy
 ---------------
 
-AROS se v posledních tıdnech doèkal mnoha vylep¹ení a také opravení
-spousty chyb. Pro pøedstavu, Neil Cafferkey opravil nìkolik záva¾nıch
-chyb v jeho milovaném `AROS Instalátoru`__; Nic Andrews pracoval na svém
-ovladaèi sí»ové karty RTL8139; Robert Norris opravil chybu v hlá¹ení
-o souboru, které bylo pøedtím ¹patnì nastaveno. Ale to byly jmenovány
-pouze tøi. 
+AROS se v poslednÃ­ch tÃ½dnech doÄkal mnoha vylepÅ¡enÃ­ a takÃ© opravenÃ­
+spousty chyb. Pro pÅ™edstavu, Neil Cafferkey opravil nÄ›kolik zÃ¡vaÅ¾nÃ½ch
+chyb v jeho milovanÃ©m `AROS InstalÃ¡toru`__; Nic Andrews pracoval na svÃ©m
+ovladaÄi sÃ­Å¥ovÃ© karty RTL8139; Robert Norris opravil chybu v hlÃ¡Å¡enÃ­
+o souboru, kterÃ© bylo pÅ™edtÃ­m Å¡patnÄ› nastaveno. Ale to byly jmenovÃ¡ny
+pouze tÅ™i. 
 
-Robert Norris pøidal SDL ovladaè pro linux hostící AROS. Díky tomu
-si mù¾e¹ vytvoøit hostovanı AROS, kterı nevy¾aduje X server
-(teï u¾ Xka nemusí¹ instalovat). Teoreticky by to mohlo pomoci
-s hostováním na ostatních platformách (kdekoli, kde je SDL), i kdy¾ je to trochu
-pomalej¹í ne¾ s X serverem.
+Robert Norris pÅ™idal SDL ovladaÄ pro linux hostÃ­cÃ­ AROS. DÃ­ky tomu
+si mÅ¯Å¾eÅ¡ vytvoÅ™it hostovanÃ½ AROS, kterÃ½ nevyÅ¾aduje X server
+(teÄ uÅ¾ Xka nemusÃ­Å¡ instalovat). Teoreticky by to mohlo pomoci
+s hostovÃ¡nÃ­m na ostatnÃ­ch platformÃ¡ch (kdekoli, kde je SDL), i kdyÅ¾ je to trochu
+pomalejÅ¡Ã­ neÅ¾ s X serverem.
 
 Matthias Rustler naportoval ptplay.library pro AROS. Tato knihovna
-pøevádí Protracker moduly do zvukovıch vzorkù. Dále také naportoval
-jednoduchı pøehrávaè - ShellPlayer. Tyto budou v noèních
-sestaveních, v ¹uplíku Extras/MultiMedia/Audio.
+pÅ™evÃ¡dÃ­ Protracker moduly do zvukovÃ½ch vzorkÅ¯. DÃ¡le takÃ© naportoval
+jednoduchÃ½ pÅ™ehrÃ¡vaÄ - ShellPlayer. Tyto budou v noÄnÃ­ch
+sestavenÃ­ch, v Å¡uplÃ­ku Extras/MultiMedia/Audio.
 
-Matthias Rustler také vytvoøil poèáteèní port `Wazp3D`__ od Alaina Thelliera 
-pro AROS. Wazp3D je knihovna, která by mìla bıt kompatibilní
-se slavnou knihovnou Warp3D.library pro AmigaOS 68040. Portování
-3D Amiga her na AROS by mìlo bıt jednodu¹¹í. Wazp3D mù¾e také pracovat jako
-softwarovı renderer, kterı klame ostatní aplikace tím, ¾e se tváøí jako
-3D hardwarovı ovladaè.
+Matthias Rustler takÃ© vytvoÅ™il poÄÃ¡teÄnÃ­ port `Wazp3D`__ od Alaina Thelliera 
+pro AROS. Wazp3D je knihovna, kterÃ¡ by mÄ›la bÃ½t kompatibilnÃ­
+se slavnou knihovnou Warp3D.library pro AmigaOS 68040. PortovÃ¡nÃ­
+3D Amiga her na AROS by mÄ›lo bÃ½t jednoduÅ¡Å¡Ã­. Wazp3D mÅ¯Å¾e takÃ© pracovat jako
+softwarovÃ½ renderer, kterÃ½ klame ostatnÃ­ aplikace tÃ­m, Å¾e se tvÃ¡Å™Ã­ jako
+3D hardwarovÃ½ ovladaÄ.
 
-Michal Schulz uèinil nìkolik velkıch krokù vpøed s jeho
-`x86-64`__ portem AROSu. Den 64 bitového AROSu je stále blí¾.
-Michal také pøidal podporu SSE instrukcí.
+Michal Schulz uÄinil nÄ›kolik velkÃ½ch krokÅ¯ vpÅ™ed s jeho
+`x86-64`__ portem AROSu. Den 64 bitovÃ©ho AROSu je stÃ¡le blÃ­Å¾.
+Michal takÃ© pÅ™idal podporu SSE instrukcÃ­.
 
-Petr Novák pøelo¾il `aros.org do èe¹tiny`__.
+Petr NovÃ¡k pÅ™eloÅ¾il `aros.org do ÄeÅ¡tiny`__.
 
 
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319

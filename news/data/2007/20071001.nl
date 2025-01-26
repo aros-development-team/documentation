@@ -12,7 +12,7 @@ Vers van de pers! Neil Cafferkey heeft voor een gloednieuw
 `installeerprogramma`__ voor AROS gezorgd, waardoor een nettere en veiligere
 installatie op de harde schijf mogelijk is. Dit zijn de nieuwe functies:
 
-- De harde schijf en partities waarop geïnstalleerd wordt, kunnen nu worden gekozen.
+- De harde schijf en partities waarop geÃ¯nstalleerd wordt, kunnen nu worden gekozen.
 - Het aanmaken van een Werk partitie werkt nu.
 - De grootte van partities kan nu worden aangegeven en bestaande partities kunnen onveranderd blijven.
 - Als een mogelijke Windows-systeem partitie wordt gevonden kan deze nu worden toegevoegd aan het GRUB opstartmenu.
@@ -44,7 +44,7 @@ AROS Demonstratie
 
 Zoals op deze webpagina reeds op was vooruitgelopen, schitterde AROS als gast
 op de `Pianeta Amiga 2007`__. Tijdens deze populaire Amiga show heeft Paolo
-Besser AROS gepresenteerd aan een kleine groep geïnteresseerde Amiga fans.
+Besser AROS gepresenteerd aan een kleine groep geÃ¯nteresseerde Amiga fans.
 Het evenement was van tevoren onder de aandacht gebracht door een aantal
 belangrijke nieuws-sites op het gebied van IT zoals `TGM Online`__ en
 `HW Upgrade`__. Een verslag van de show is gepubliceerd door

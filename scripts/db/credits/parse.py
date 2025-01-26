@@ -58,15 +58,15 @@ def parse( file ):
         line = line.strip()
 
         if ':' in line:
-	    if len( names ) > 0:
-	        credits.append( [ area, names ] )
+            if len( names ) > 0:
+                credits.append( [ area, names ] )
 
-	    area = line[:-1]
+            area = line[:-1]
 
-	    names = []
+            names = []
 
         elif line != '':
-	    names.append( line )
+            names.append( line )
 
     if len( names ) > 0:
         credits.append( [ area, names ] )

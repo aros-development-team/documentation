@@ -20,7 +20,7 @@ Synopsis
      NAME/A
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,12 +28,12 @@ Ubicación
      Workbench:c
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
-     Recupera la información almacenada en una variable global dada.
+     Recupera la informaciÃ³n almacenada en una variable global dada.
 
 
 Entradas
@@ -49,7 +49,7 @@ Resultado
 ::
 
 
-     Los códigos de error DOS normales.
+     Los cÃ³digos de error DOS normales.
 
 
 Ejemplo
@@ -59,10 +59,10 @@ Ejemplo
 
      Getenv Kickstart
 
-         Esto recuperará la versión de la ROM Kickstart.
+         Esto recuperarÃ¡ la versiÃ³n de la ROM Kickstart.
 
 
-Vea también
+Vea tambiÃ©n
 ~~~~~~~~~~~
 ::
 

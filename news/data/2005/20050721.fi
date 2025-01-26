@@ -5,30 +5,30 @@ Tilannekatsaus
 :Author:   Paolo Besser
 :Date:     2005-07-21
 
-Samalla kun AROS-kehitt‰j‰t ovat korjaamassa bugeja ja lis‰‰m‰ss‰
-ominaisuuksia (no, ei suuresti p‰‰lle p‰in n‰kyvi‰ ominaisuuksia, mutta
-mielenkiintoisia koodareille), olemme huomanneet yhteisˆn kasvavan koko ajan!
-Uusia ohjelmia on tulossa ja innoissamme ilahdutamme silmi‰nne
-`t‰ll‰ kuvalla.`__ Aivan, `Darius Brewka`__ on porttaamassa AmiStart:ia
-AROS:ille, joka antaa mahdollisuuden nopeampaan ohjelmien k‰yttˆˆn (ja
+Samalla kun AROS-kehitt√§j√§t ovat korjaamassa bugeja ja lis√§√§m√§ss√§
+ominaisuuksia (no, ei suuresti p√§√§lle p√§in n√§kyvi√§ ominaisuuksia, mutta
+mielenkiintoisia koodareille), olemme huomanneet yhteis√∂n kasvavan koko ajan!
+Uusia ohjelmia on tulossa ja innoissamme ilahdutamme silmi√§nne
+`t√§ll√§ kuvalla.`__ Aivan, `Darius Brewka`__ on porttaamassa AmiStart:ia
+AROS:ille, joka antaa mahdollisuuden nopeampaan ohjelmien k√§ytt√∂√∂n (ja
 kauniisti).
 
-Viime aikoina on syntynyt kaksi AROS:iin liittyv‰‰ blogia. Paul J. Beel
+Viime aikoina on syntynyt kaksi AROS:iin liittyv√§√§ blogia. Paul J. Beel
 verkotti `The AROS Show`__:n, joka keskittyy ohjema julkaisuihin ja
-dokumentaatioon: "Aikeena on tehd‰ t‰st‰ paikka jossa voit lukea tietoa Amiga
-Research Operating System:ist‰ (...). The AROS Show koettaa vastata AROS:ista
-mahdollisesti her‰‰viin kysymyksiin, sek‰ antamaan tietoa yhteisˆst‰,
-tapahtumista ja kehitt‰jist‰. Se tekee parhaansa pit‰‰kseen teid‰t ajan
-tasalla t‰m‰nhetkisten ja tulevien AROS-ohjemien tiimoilta." Onnea, Paul!
+dokumentaatioon: "Aikeena on tehd√§ t√§st√§ paikka jossa voit lukea tietoa Amiga
+Research Operating System:ist√§ (...). The AROS Show koettaa vastata AROS:ista
+mahdollisesti her√§√§viin kysymyksiin, sek√§ antamaan tietoa yhteis√∂st√§,
+tapahtumista ja kehitt√§jist√§. Se tekee parhaansa pit√§√§kseen teid√§t ajan
+tasalla t√§m√§nhetkisten ja tulevien AROS-ohjemien tiimoilta." Onnea, Paul!
 
-Jos olet kiinnostunut AROS-kehitt‰misest‰ ja tuoreista uutisista, vieraile
-kyvykk‰‰n kehitt‰j‰mme, Kalamatee:n, `blogissa`__. Er‰s mielenkiintoinen
-linkki jos tahdot tiet‰‰ t‰ll‰ hetkell‰ olemassa olevien porttausten tilasta
-ja mitk‰ porttaukset tarvitsisivat apua lˆytyy t‰‰lt‰:
-`The definitve AROS platform capability list`__, joka todenn‰kˆisesti sis‰lt‰‰
+Jos olet kiinnostunut AROS-kehitt√§misest√§ ja tuoreista uutisista, vieraile
+kyvykk√§√§n kehitt√§j√§mme, Kalamatee:n, `blogissa`__. Er√§s mielenkiintoinen
+linkki jos tahdot tiet√§√§ t√§ll√§ hetkell√§ olemassa olevien porttausten tilasta
+ja mitk√§ porttaukset tarvitsisivat apua l√∂ytyy t√§√§lt√§:
+`The definitve AROS platform capability list`__, joka todenn√§k√∂isesti sis√§lt√§√§
 suurimman osan tarvitsemistasi tiedoista.
 
-Jatka vierailua `aros-exec`__:iss‰; k‰ytt‰ji‰ yli 400 ja ulkon‰kˆkin uusittu!
+Jatka vierailua `aros-exec`__:iss√§; k√§ytt√§ji√§ yli 400 ja ulkon√§k√∂kin uusittu!
 
 __ http://www.tgmonline.it/tgmfiles/bovas/aros/amistart_aros_1.jpg
 __ http://people.freenet.de/dariusb/

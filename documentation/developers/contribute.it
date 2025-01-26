@@ -3,7 +3,7 @@ Contribute
 ==========
 
 :Authors:   Adam Chodorowski, Paolo Besser 
-:Copyright: Copyright © 1995-2020, The AROS Development Team
+:Copyright: Copyright Â© 1995-2020, The AROS Development Team
 :Status:    Done. 
 
 .. Contents::
@@ -14,24 +14,24 @@ Aiutateci!
 
 Solo un gruppo piuttosto ristretto di sviluppatori sta lavorando su AROS, 
 il che significa purtroppo che i lavori procedono a rilento. Abbiamo 
-bisogno che più gente ci dia una mano! Ci sono ancora moltissimi compiti per 
+bisogno che piÃ¹ gente ci dia una mano! Ci sono ancora moltissimi compiti per 
 chiunque voglia dedicarvisi, che comprendono piccoli e grandi lavori, dalla 
 creazione di driver per l'hardware alla programmazione di applicazioni, passando 
-per lo sviluppo del sistema. Chiunque può partecipare, indipendentemente dalle 
-proprie capacità.
+per lo sviluppo del sistema. Chiunque puÃ² partecipare, indipendentemente dalle 
+proprie capacitÃ .
 
 Se non sapete nemmeno cosa sia una riga di codice, non preoccupatevi: ci sono 
 dozzine di altri campi in cui potreste rendervi utili lo stesso, dalla 
 documentazione del sistema alle traduzioni, dal disegno di icone alla ricerca 
-dei bug. Queste attività sono tanto importanti quanto la programmazione!
+dei bug. Queste attivitÃ  sono tanto importanti quanto la programmazione!
 
 
 Compiti disponibili
 ===================
 
-Questa è una lista provvisoria dei compiti che attendono di essere 
+Questa Ã¨ una lista provvisoria dei compiti che attendono di essere 
 ancora svolti, e su cui nessuno sta attualmente lavorando. Non pretende di 
-essere completa, ma include alcune delle cose che andrebbero fatte con più 
+essere completa, ma include alcune delle cose che andrebbero fatte con piÃ¹ 
 urgenza.
 
 
@@ -39,7 +39,7 @@ Programmazione
 --------------
 
 + Realizzazione delle librerie, dei driver e delle risorse mancanti. 
-  Leggete lo status report per conoscere i dettagli su ciò che ancora manca.
+  Leggete lo status report per conoscere i dettagli su ciÃ² che ancora manca.
 
 + Realizzazione o miglioramento dei seguenti driver:
   
@@ -52,9 +52,9 @@ Programmazione
   - AROS/i386-pc:
     
     + Driver per specifici chip grafici (abbiamo solo un supporto generico 
-      e non ben accelerato). Una lista dei più attesi:
+      e non ben accelerato). Una lista dei piÃ¹ attesi:
       
-      - nVidia TNT/TNT2/GeForce (c'è, ma è incompleto) 
+      - nVidia TNT/TNT2/GeForce (c'Ã¨, ma Ã¨ incompleto) 
       - S3 Virge
       - Matrox Millenium
     
@@ -93,13 +93,13 @@ Programmazione
 + Miglioramento della libreria principale C
 
   Questo significa implementare le funzioni ANSI (e POSIX) in clib,
-  per rendere più semplice la conversione del software per UNIX (eg. GCC, 
-  make e binutils). la cosa che manca di più è un signaling stile POSIX, ma 
+  per rendere piÃ¹ semplice la conversione del software per UNIX (eg. GCC, 
+  make e binutils). la cosa che manca di piÃ¹ Ã¨ un signaling stile POSIX, ma 
   mancano anche molte altre cose.
 
 + Creare nuovi datatype e migliorare quelli esistenti
 
-  Il numero di datatypes disponibili in AROS è limitato. Alcuni esempi di 
+  Il numero di datatypes disponibili in AROS Ã¨ limitato. Alcuni esempi di 
   datatype che necessitano modifiche per diventare usabili o che necessitano 
   di una totale reimplementazione sono:
 
@@ -114,7 +114,7 @@ Programmazione
     + cdxl.datatype
     
   
-+ Convertire applicazioni già esistenti:
++ Convertire applicazioni giÃ  esistenti:
 
   - Text editor come ViM ed Emacs.
   - L'intera catena di sviluppo, che include GCC, make, binutils e altri
@@ -134,7 +134,7 @@ Documentazione
 Traduzione
 ----------
 
-+ Tradurre AROS stesso in più lingue. Ora come ora è più o meno completo 
++ Tradurre AROS stesso in piÃ¹ lingue. Ora come ora Ã¨ piÃ¹ o meno completo 
   soltanto il supporto di queste lingue:
 
   - English
@@ -143,7 +143,7 @@ Traduzione
   - Norsk
   - Italiano
 
-+ Tradurre sito e documentazione in più lingue. Allo stato attuale, queste  
++ Tradurre sito e documentazione in piÃ¹ lingue. Allo stato attuale, queste  
   due cose sono disponibili soltanto in Inglese. Alcune parti sono state  
   tradotte in Italiano, Finlandese e Norvegese, ma va ancora fatto molto.
 
@@ -160,15 +160,15 @@ Entrare nella squadra
 
 Volete diventare programmatori di AROS? E allora non vi resta che iscrivervi 
 alla `development mailing lists`__ e richiede accesso al repository di Subversion.
-Basta, è tutto qua. 
+Basta, Ã¨ tutto qua. 
 
-È molto gradita una breve email introduttiva, in cui vi presentate e chiarite in 
+Ãˆ molto gradita una breve email introduttiva, in cui vi presentate e chiarite in 
 quale ambito intendiate rendervi utili. Se avete problemi, non esitate a mandare 
 un'email alla lista o a chiedere informazioni nel `canale di IRC`__. 
 Inoltre, prima di mettervi a lavorare su qualche cosa o di apportare modifiche al 
 sistema operativo, ricordatevi sempre di inviare un'email preventiva per 
-discutere della cosa. Ciò eviterà possibili errori di valutazione e di rifare 
-per sbaglio un lavoro già fatto da altri.
+discutere della cosa. CiÃ² eviterÃ  possibili errori di valutazione e di rifare 
+per sbaglio un lavoro giÃ  fatto da altri.
 
 __ ../../contact#mailing-lists
 __ ../../contact#irc-channels
@@ -189,12 +189,12 @@ oggetto "Access to the AROS SVN server" e nel corpo del messaggio limitate a scr
 
     Please add digulla xx1LtbDbOY4/E
 
-Siccome Aaron è sempre molto occupato, potrebbero passare anche uno o due giorni 
+Siccome Aaron Ã¨ sempre molto occupato, potrebbero passare anche uno o due giorni 
 prima che vi risponda. 
 
 Per informazioni sull'uso del server AROS SVN, per cortesia leggete "`Lavorare con 
-SVN`__". Anche se sapete già usare Subversion vi preghiamo di leggere lo stesso 
-quello che c'è scritto, visto che contiene importanti trucchi e segreti specifici 
+SVN`__". Anche se sapete giÃ  usare Subversion vi preghiamo di leggere lo stesso 
+quello che c'Ã¨ scritto, visto che contiene importanti trucchi e segreti specifici 
 per AROS.
 
 __ http://aros.sourceforge.net/tools/password.html 

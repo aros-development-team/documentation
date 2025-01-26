@@ -15,20 +15,20 @@ caso foste amministratori di un sito web, di una maliling list o
 di qualcosa del genere, per cortesia aggiornate i riferimenti 
 alla nuova denominazione.
 
-Nella prima met‡ del 2007, AROS ha fatto considerevoli passi 
-avanti e, anche se non Ë ancora pronto per la sua versione "1.0", 
-Ë oggi molto pi˘ utilizzabile di quanto non lo fosse soltanto un 
+Nella prima met√† del 2007, AROS ha fatto considerevoli passi 
+avanti e, anche se non √® ancora pronto per la sua versione "1.0", 
+√® oggi molto pi√π utilizzabile di quanto non lo fosse soltanto un 
 anno fa. Abbiamo preso decisioni e apportato miglioramenti al 
-progetto originale che hanno dato ad AROS un'identit‡ propria. 
+progetto originale che hanno dato ad AROS un'identit√† propria. 
 Nel frattempo, i recenti avvenimenti che hanno coinvolto Amiga 
 Inc. ci hanno convinti che fosse un buon momento per cambiare il 
 nome.
 
-In poche parole: AROS Ë pi˘ forte di prima, perchÈ sebbene i 
+In poche parole: AROS √® pi√π forte di prima, perch√© sebbene i 
 suoi obiettivi rimangano quelli di prima, oggi possiamo 
 concentrare i nostri sforzi solo su di esso.
 
-Ultime novit‡
+Ultime novit√†
 -------------
 
 Michal Schulz ha completato il supporto USB per controller UHCI e 
@@ -37,15 +37,15 @@ tutti i computer in circolazione. Per il momento sono supportati
 solo mouse e tastiere, ma altri tipi di periferiche sono in 
 lavorazione.
 
-Grazie a Nic Andrews, Wanderer puÚ finalmente mostrare tutti i file 
+Grazie a Nic Andrews, Wanderer pu√≤ finalmente mostrare tutti i file 
 o le icone soltanto. Nic ha aggiunto anche il supporto per gli 
 sfondi scalabili per il desktop e la navigazione delle finestre con 
 la tastiera.
 
-Robert Norris ha aggiunto la possibilit‡ di scrivere al suo file 
+Robert Norris ha aggiunto la possibilit√† di scrivere al suo file 
 system FAT per AROS. Montare le partizioni di Windows resta un po' 
-complicato, ma poi tutto funziona pi˘ o meno come ci si aspetta. 
-Per il momento, perÚ, fareste meglio a non fare prove su dischi 
+complicato, ma poi tutto funziona pi√π o meno come ci si aspetta. 
+Per il momento, per√≤, fareste meglio a non fare prove su dischi 
 che contengono dati importanti.
 
 AROS su Internet
@@ -56,12 +56,12 @@ gradevoli argomenti. Non perdete quelle a `Nic Andrews`__ e a
 `Bill Panagouleas`__ di DiscreetFX sul sito `The AROS Show`__
 
 Date un'occhiata anche al nuovo portale `AROSWorld`__ di Amigamia e, 
-gi‡ che ci siete, perchÈ non comprare una di quelle bellissime 
+gi√† che ci siete, perch√© non comprare una di quelle bellissime 
 magliette, tazze o altri gadget che raffigurano la nostra Kitty? 
-Parte dei vostri soldi verr‡ impiegata per finanziare lo sviluppo di 
+Parte dei vostri soldi verr√† impiegata per finanziare lo sviluppo di 
 AROS.
 
-Il nuovo look di AROS.org Ë opera di Tom Richards.
+Il nuovo look di AROS.org √® opera di Tom Richards.
 
 __ http://arosshow.blogspot.com/2007/05/nick-kalamatee-andrews-interview-hello.html
 __ http://arosshow.blogspot.com/2007/05/bill-panagouleas-interview-what-is.html

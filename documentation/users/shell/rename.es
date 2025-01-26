@@ -22,7 +22,7 @@ Synopsis
      FROM/A/M,TO=AS/A,QUIET/S
 
 
-Ubicaci髇
+Ubicaci贸n
 ~~~~~~~~~
 ::
 
@@ -30,15 +30,15 @@ Ubicaci髇
      Workbench/c
 
 
-Funci髇
+Funci贸n
 ~~~~~~~
 ::
 
 
      Renames a directory or file. Rename can also act like the UNIX mv
      command, which moves a file or files to another location on disk.
-     Renombra un directorio o un archivo. Rename puede actuar tambi閚
-     como el comando mv de UNIX, que mueve un archivo(s) a otra ubicaci髇
+     Renombra un directorio o un archivo. Rename puede actuar tambi茅n
+     como el comando mv de UNIX, que mueve un archivo(s) a otra ubicaci贸n
      en el disco.
 
 
@@ -69,7 +69,7 @@ Resultado
 
 
      Standard DOS error codes.
-     Los c骴igos devueltos DOS normales.
+     Los c贸digos devueltos DOS normales.
 
 
 Ejemplo
@@ -90,6 +90,6 @@ Ejemplo
          All versions, renames file "a" to "b" and does not output any
          diagnostic information.
          Todas las variantes, renombra el archivo "a" a "b" y no muestra
-         ninguna informaci髇 de diagn髎tico.
+         ninguna informaci贸n de diagn贸stico.
 
 

@@ -6,7 +6,7 @@
 
   <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
 
-AROS est un système d'exploitation portable et libre visant à être compatible
-avec AmigaOS, tout en l'améliorant dans diverses branches.
-Le code source est disponible sous licence libre, ce qui permet à n'importe qui
-de l'améliorer librement.
+AROS est un systÃ¨me d'exploitation portable et libre visant Ã  Ãªtre compatible
+avec AmigaOS, tout en l'amÃ©liorant dans diverses branches.
+Le code source est disponible sous licence libre, ce qui permet Ã  n'importe qui
+de l'amÃ©liorer librement.

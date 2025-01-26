@@ -1,7 +1,5 @@
-# Author: David Goodger
-# Contact: goodger@users.sourceforge.net
-# Revision: $Revision$
-# Date: $Date$
+# $Id: standalone.py 4802 2006-11-12 18:02:17Z goodger $
+# Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
@@ -45,8 +43,7 @@ class Reader(readers.Reader):
            'validator': frontend.validate_boolean}),
          ('Deactivate the promotion of lone subsection titles.',
           ['--no-section-subtitles'],
-          {'dest': 'sectsubtitle_xform', 'action': 'store_false',
-           'validator': frontend.validate_boolean}),
+          {'dest': 'sectsubtitle_xform', 'action': 'store_false'}),
          ))
 
     config_section = 'standalone reader'

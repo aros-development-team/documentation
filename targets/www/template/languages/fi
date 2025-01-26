@@ -1,13 +1,13 @@
 [meta]
 
-charset:          iso-8859-15
+charset:          utf-8
 
 [titles]
 
 news:             Uutiset
 news-archive-for: Uutisarkisto
 mirrors:          Mirrors
-contents:         Sis‰ltˆ
+contents:         Sis√§lt√∂
 search:           Etsi
 visitors:         Vierailijat
 sponsors:         Tukijat
@@ -24,9 +24,9 @@ ports:            Porttaukset
 license:          Lisenssi
 download:         Imuroi
 documentation:    Dokumentaatio
-users:            K‰ytt‰j‰t
+users:            K√§ytt√§j√§t
 installation:     Asennus
-using:            K‰yttˆ
+using:            K√§ytt√∂
 shell:            Shell commands
 applications:     Applications
 faq:              FAQ
@@ -34,15 +34,15 @@ howto:            HowTo
 hwcompat:         Hardware Compatibility
 glossary:         Glossary
 translators:      Translators
-developers:       Kehitt‰j‰t
+developers:       Kehitt√§j√§t
 contribute:       Osanotto
 roadmap:          Roadmap
 issue-tracker:    Bugien seuranta
-working-with-git: Git:n kanssa tyˆskentely
-compiling:        K‰‰ntˆ
+working-with-git: Git:n kanssa ty√∂skentely
+compiling:        K√§√§nt√∂
 application-development-manual: Ohjelmiston kehitysmanuaali
 zune-application-development-manual: Zune-ohjelmiston kehitysmanuaali
-system-development-manual:      J‰rjestelm‰n kehitysmanuaali
+system-development-manual:      J√§rjestelm√§n kehitysmanuaali
 debugging-manual: Debuggaus opas
 reference:        Referenssit
 # FIXME: above
@@ -53,17 +53,17 @@ documenting:      Dokumentointi
 porting:          Porting
 translating:      Tulkitseminen
 summaries:        Yhteenvetoja
-links:            Linkkej‰
+links:            Linkkej√§
 contact:          Yhteyden otto
 slack:            Slack
 mailing-lists:    Postituslistat
-forums:           Keskusteluryhm‰t
+forums:           Keskusteluryhm√§t
 community:        Community Resources
 irc-channels:     IRC kanavat
 credits:          Ansiot
 acknowledgements: Acknowledgements
 pictures:         Kuvia
-developers-together: Kehitt‰j‰t yhdess‰
+developers-together: Kehitt√§j√§t yhdess√§
 sponsors:         Tukijat
 linking:          Linkit toisaalta
 
@@ -71,7 +71,7 @@ linking:          Linkit toisaalta
 
 go:               Siirry
 search:           Etsi
-copyright:        Copyright © 1995-2025, The AROS Development Team. All rights reserved.
-trademarks:       AmigaÆ, AmigaOSÆ, Workbench and Intuition are trademarks of Amiga Inc. All other trademarks belong to their respective owners.
-read-more:        Lue lis‰‰ ...
+copyright:        Copyright ¬© 1995-2025, The AROS Development Team. All rights reserved.
+trademarks:       Amiga¬Æ, AmigaOS¬Æ, Workbench and Intuition are trademarks of Amiga Inc. All other trademarks belong to their respective owners.
+read-more:        Lue lis√§√§ ...
 large-image:      Suurempana ...

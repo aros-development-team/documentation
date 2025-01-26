@@ -9,7 +9,7 @@
 EndSkip
 =======
 
-¶cieøka
+≈öcie≈ºka
 ~~~~~~~
 ::
 

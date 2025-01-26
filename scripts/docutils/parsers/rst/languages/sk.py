@@ -1,7 +1,5 @@
-# Author: Miroslav Vasko
-# Contact: zemiak@zoznam.sk
-# Revision: $Revision$
-# Date: $Date$
+# $Id: sk.py 7119 2011-09-02 13:00:23Z milde $
+# Author: Miroslav Vasko <zemiak@zoznam.sk>
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
@@ -20,6 +18,7 @@ __docformat__ = 'reStructuredText'
 directives = {
       u'pozor': 'attention',
       u'opatrne': 'caution',
+      u'code (translation required)': 'code',
       u'nebezpe\xe8enstvo': 'danger',
       u'chyba': 'error',
       u'rada': 'hint',
@@ -45,6 +44,7 @@ directives = {
       u'csv-table (translation required)': 'csv-table',
       u'list-table (translation required)': 'list-table',
       u'meta': 'meta',
+      'math (translation required)': 'math',
       #u'imagemap': 'imagemap',
       u'obr\xe1zok': 'image',
       u'tvar': 'figure',
@@ -72,6 +72,7 @@ mapping."""
 roles = {
       u'abbreviation (translation required)': 'abbreviation',
       u'acronym (translation required)': 'acronym',
+      u'code (translation required)': 'code',
       u'index (translation required)': 'index',
       u'subscript (translation required)': 'subscript',
       u'superscript (translation required)': 'superscript',
@@ -81,6 +82,7 @@ roles = {
       u'emphasis (translation required)': 'emphasis',
       u'strong (translation required)': 'strong',
       u'literal (translation required)': 'literal',
+    'math (translation required)': 'math',
       u'named-reference (translation required)': 'named-reference',
       u'anonymous-reference (translation required)': 'anonymous-reference',
       u'footnote-reference (translation required)': 'footnote-reference',

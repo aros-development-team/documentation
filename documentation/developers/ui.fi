@@ -1,17 +1,17 @@
 =======================
-K‰yttˆliittym‰tyyliopas
+K√§ytt√∂liittym√§tyyliopas
 =======================
 
 :Authors:   Adam Chodorowski
-:Copyright: Copyright © 2003, The AROS Development Team
+:Copyright: Copyright ¬© 2003, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
-.. FIXME: Esittely t‰h‰n ...
+.. FIXME: Esittely t√§h√§n ...
 
 .. Warning::
 
-   T‰m‰ dokumentti ei ole valmis! Jos tahdot korjata tilanteen, ota yhteytt‰.
+   T√§m√§ dokumentti ei ole valmis! Jos tahdot korjata tilanteen, ota yhteytt√§.
 
 .. Contents::
 
@@ -23,8 +23,8 @@ Ikkunat
 Preferences
 ===========
 
-Preferences ikkunat ovat ulkon‰ˆlt‰‰n samankaltaisia dialogi-ikkunoiden kanssa
-siin‰ mieless‰ ett‰ alareunassa on rivi nappeja eik‰ otsikkopalkissa ole
+Preferences ikkunat ovat ulkon√§√∂lt√§√§n samankaltaisia dialogi-ikkunoiden kanssa
+siin√§ mieless√§ ett√§ alareunassa on rivi nappeja eik√§ otsikkopalkissa ole
 sulkunappia.
 
 .. Figure:: /documentation/developers/ui/images/windows-prefs-titlebar.png
@@ -33,48 +33,48 @@ sulkunappia.
 
 .. Topic:: Peruste
 
-   Sulkunappia ei ole koska sen merkitys olisi ep‰m‰‰r‰inen. Toisin sanoen
-   k‰ytt‰j‰lle ei olisi selv‰‰ mit‰ sivuefektej‰ ikkunan sulkemisella on.
-   Tallentaako se asetukset vaiko hylk‰‰ ne?
+   Sulkunappia ei ole koska sen merkitys olisi ep√§m√§√§r√§inen. Toisin sanoen
+   k√§ytt√§j√§lle ei olisi selv√§√§ mit√§ sivuefektej√§ ikkunan sulkemisella on.
+   Tallentaako se asetukset vaiko hylk√§√§ ne?
 
 Seuraava nappisetti on aina paikalla, asemoitu vaakatasoon ikkunan alareunalla
-(j‰rjestyksess‰ vasemmalta oikealle):
+(j√§rjestyksess√§ vasemmalta oikealle):
 
     Test
-        Soveltaa asetukset ikkunaan siten ett‰ niiden vaikutus on v‰litˆn. Ei
+        Soveltaa asetukset ikkunaan siten ett√§ niiden vaikutus on v√§lit√∂n. Ei
         sulje ikkunaa.
         
     Revert
         Palauttaa asetukset sellaisiksi kuin ne olivat kun ikkuna avattiin ja
-        soveltaa ne v‰littˆm‰sti k‰yttˆˆn. Ei sulje ikkunaa.
+        soveltaa ne v√§litt√∂m√§sti k√§ytt√∂√∂n. Ei sulje ikkunaa.
         
     Save
-        Soveltaa asetukset v‰littˆm‰sti k‰yttˆˆn ja tallentaa ne [#]_. Sulkee
+        Soveltaa asetukset v√§litt√∂m√§sti k√§ytt√∂√∂n ja tallentaa ne [#]_. Sulkee
         ikkunan. Jos asetuksia ei voi tallentaa (koska esim. levy on
-        kirjoitussuojattu) on t‰m‰ nappi varjostettu.
+        kirjoitussuojattu) on t√§m√§ nappi varjostettu.
         
     Use
-        Soveltaa asetukset k‰yttˆˆn ja tallentaa ne v‰liaikaisesti [#]_.
+        Soveltaa asetukset k√§ytt√∂√∂n ja tallentaa ne v√§liaikaisesti [#]_.
         Sulkee ikkunan.
         
     Cancel
         Palauttaa arvot sellaisiksi kuin ne olivat ikkunan avaamisen
-        yhteydess‰ ja soveltaa ne k‰yttˆˆn. Sulkee ikkunan.
+        yhteydess√§ ja soveltaa ne k√§ytt√∂√∂n. Sulkee ikkunan.
 
 .. Topic:: Ulkoasu
 
-   Napit on jaettu kahteen ryhm‰‰n, Test ja Revert yhdess‰ ja Save, Use sek‰
-   Cancel toisessa, joista ensimm‰inen ryhm‰ on kohdistettu vasempaan reunaan
-   ja toinen oikealle. Ryhmien v‰lill‰ on havaittava v‰li erottamassa ne
-   toisistaan [#]_. Kaikkien nappien leveys on sama ja jonka pit‰isi olla
-   pienin mahdollinen (kun ikkunan kokoa muutetaan, ainoastaan ryhmien v‰lill‰
-   olevaa tyhj‰‰ tilaa kasvatetaan eik‰ nappien kokoon puututa).
+   Napit on jaettu kahteen ryhm√§√§n, Test ja Revert yhdess√§ ja Save, Use sek√§
+   Cancel toisessa, joista ensimm√§inen ryhm√§ on kohdistettu vasempaan reunaan
+   ja toinen oikealle. Ryhmien v√§lill√§ on havaittava v√§li erottamassa ne
+   toisistaan [#]_. Kaikkien nappien leveys on sama ja jonka pit√§isi olla
+   pienin mahdollinen (kun ikkunan kokoa muutetaan, ainoastaan ryhmien v√§lill√§
+   olevaa tyhj√§√§ tilaa kasvatetaan eik√§ nappien kokoon puututa).
 
 .. Figure:: /documentation/developers/ui/images/windows-prefs-buttons.png
 
-   Esimerkki preferences ikkunan nappirivistˆst‰.
+   Esimerkki preferences ikkunan nappirivist√∂st√§.
 
-.. [#] Tallentaa sek‰ molempiin ``ENVARC:`` ja ``ENV:``.
+.. [#] Tallentaa sek√§ molempiin ``ENVARC:`` ja ``ENV:``.
 .. [#] Tallentaa vain ``ENV:``.
-.. [#] Huomaa ett‰ vasemman ryhm‰n napit eiv‰t sulje ikkunaa, kun taas oikean
-       ryhm‰n napit tekev‰t niin.
+.. [#] Huomaa ett√§ vasemman ryhm√§n napit eiv√§t sulje ikkunaa, kun taas oikean
+       ryhm√§n napit tekev√§t niin.

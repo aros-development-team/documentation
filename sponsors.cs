@@ -1,14 +1,14 @@
-Sponzoøi
+SponzoÅ™i
 ========
 
 :Authors:   Aaron Digulla, Adam Chodorowski 
-:Copyright: Copyright © 1995-2002, The AROS Development Team
+:Copyright: Copyright Å  1995-2002, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
 
 
-Svımi zdroji pøispìli následující spoleènosti, organizace a jednotlivci:
+SvÃ½mi zdroji pÅ™ispÄ›li nÃ¡sledujÃ­cÃ­ spoleÄnosti, organizace a jednotlivci:
 
 + Trustec__
 
@@ -16,9 +16,9 @@ Svımi zdroji pøispìli následující spoleènosti, organizace a jednotlivci:
 
      <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
 
-  Ochotní lidé z Trustecu poskytli prostor a trafik pro AROS
-  webserver, CVS server, FTP server a nìkolik mailing listù. Pokud se zajímá¹
-  o Java vıvoj nebo kurzy v Nìmecku, kontaktuj je!
+  OchotnÃ­ lidÃ© z Trustecu poskytli prostor a trafik pro AROS
+  webserver, CVS server, FTP server a nÄ›kolik mailing listÅ¯. Pokud se zajÃ­mÃ¡Å¡
+  o Java vÃ½voj nebo kurzy v NÄ›mecku, kontaktuj je!
 
 + Genesi__
 
@@ -26,8 +26,8 @@ Svımi zdroji pøispìli následující spoleènosti, organizace a jednotlivci:
 
      <a href="http://www.pegasosppc.com/"><img border="0" src="/images/genesi.gif"></a>
 
-  Genesi nám darovalo základní desku Pegasos ve snaze dostat AROS i na tuto
-  hardwarovou platformu. Díky!
+  Genesi nÃ¡m darovalo zÃ¡kladnÃ­ desku Pegasos ve snaze dostat AROS i na tuto
+  hardwarovou platformu. DÃ­ky!
 
 + SourceForge__
 
@@ -35,15 +35,15 @@ Svımi zdroji pøispìli následující spoleènosti, organizace a jednotlivci:
 
      <a href="http://www.sourceforge.net/"><img border="0" src="/images/sourceforge.png"></a>
 
-  SourceForge nám poskytuje nìkolik slu¾eb jako webovı server se
-  skriptovacím roz¹íøením a SQL databází, mailing listy, databázi chyb
-  a distribuovanı systém pro vydávání souborù (file release system).
+  SourceForge nÃ¡m poskytuje nÄ›kolik sluÅ¾eb jako webovÃ½ server se
+  skriptovacÃ­m rozÅ¡Ã­Å™enÃ­m a SQL databÃ¡zÃ­, mailing listy, databÃ¡zi chyb
+  a distribuovanÃ½ systÃ©m pro vydÃ¡vÃ¡nÃ­ souborÅ¯ (file release system).
 
 + Yann Vernier
 + Randal Vice
 
 
-Vıvojáøskou práci sponzorovali následující organizace a jednotlivci:
+VÃ½vojÃ¡Å™skou prÃ¡ci sponzorovali nÃ¡sledujÃ­cÃ­ organizace a jednotlivci:
 
 + `Team AROS`__
 + `Norsk Amigaforening`__

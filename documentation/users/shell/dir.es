@@ -20,7 +20,7 @@ Synopsis
  DIR,OPT/K,ALL/S,DIRS/S,FILES/S,INTER/S
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,15 +28,15 @@ Ubicación
  Workbench:C
 
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 
 
  DIR muestra cada archivo y directorio contenido en el directorio
  actual o en el especificado. Se listan primero los directorios,
- después en orden alfabético, los archivos en dos columnas. Con la 
- combinación CTRL-C se aborta el listado.
+ despuÃ©s en orden alfabÃ©tico, los archivos en dos columnas. Con la 
+ combinaciÃ³n CTRL-C se aborta el listado.
 
 
 
@@ -47,20 +47,20 @@ Entradas
 
  ALL    --  Muestra todos los subdirectorios y sus archivos de manera
             recursiva.
- DIRS   --  Muestra únicamente los directorios.
+ DIRS   --  Muestra Ãºnicamente los directorios.
  FILES  --  Muestra solamente los archivos.
  INTER  --  Ingresa al modo interactivo.
 
-            El modo de listado interactivo se detiene después de cada
-            nombre para mostrar un signo de interrogación para que 
-            puedas escribir algún comando. Estos comandos son:
+            El modo de listado interactivo se detiene despuÃ©s de cada
+            nombre para mostrar un signo de interrogaciÃ³n para que 
+            puedas escribir algÃºn comando. Estos comandos son:
 
-            Return      --  Continúa con el siguiente archivo o directorio.
+            Return      --  ContinÃºa con el siguiente archivo o directorio.
             E/ENTER     --  Ingresa al directorio.
-            DEL/DELETE  --  Borra el archivo o el directorio vacío.
+            DEL/DELETE  --  Borra el archivo o el directorio vacÃ­o.
             C/COM       --  Hace que el archivo o el directorio sea la
                             entrada de un comando DOS (que es especificado 
-                            después de la C o de COM o más tarde por separado).
+                            despuÃ©s de la C o de COM o mÃ¡s tarde por separado).
             Q/QUIT      --  Sale del modo interactivo.
             B/BACK      --  Retrocede un nivel de directorio.
 

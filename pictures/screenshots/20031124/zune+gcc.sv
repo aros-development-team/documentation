@@ -1,3 +1,3 @@
-Zune blir bara bättre och bättre! Nu tack vare Georg Steger så har
-vi fler classes implementerade, som du kan se. Du kan även se gcc
-kompilera ett av test-programmen för de nya implementerade classes.
+Zune blir bara bÃ¤ttre och bÃ¤ttre! Nu tack vare Georg Steger sÃ¥ har
+vi fler classes implementerade, som du kan se. Du kan Ã¤ven se gcc
+kompilera ett av test-programmen fÃ¶r de nya implementerade classes.

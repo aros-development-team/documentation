@@ -20,7 +20,7 @@ Synopsis
      DIR
 
 
-Ubicación
+UbicaciÃ³n
 ~~~~~~~~~
 ::
 
@@ -28,7 +28,7 @@ Ubicación
      Workbench:C/
         
 
-Función
+FunciÃ³n
 ~~~~~~~
 ::
 

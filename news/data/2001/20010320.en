@@ -21,7 +21,7 @@ and made the ide.hidd compile on Linux 2.4.
 Stefan Berger fixed BUG 00080 (cd into a file) and added
 a new bug in C:Which.
 
-Przemys³aw Szczygielski made tools in C: compile for
+PrzemysÂ³aw Szczygielski made tools in C: compile for
 AROS Native/i386.
 
 Sebastian Heutling fixed a bug in the trackdisk driver for

@@ -20,7 +20,7 @@ Synopsis
      WINDOW,FROM
 
 
-UbicaciÛn
+Ubicaci√≥n
 ~~~~~~~~~
 ::
 
@@ -28,15 +28,15 @@ UbicaciÛn
      Workbench:C
 
 
-FunciÛn
+Funci√≥n
 ~~~~~~~
 ::
 
 
      Crea un nuevo shel en una ventana de consola. Esta ventana se 
-     convertir· en la ventana activa. El nuevo shell hereda la mayorÌa de
-     los atributos del shell padre, como el directorio actual, el tamaÒo
-     de pila, el prompt y lo dem·s.
+     convertir√° en la ventana activa. El nuevo shell hereda la mayor√≠a de
+     los atributos del shell padre, como el directorio actual, el tama√±o
+     de pila, el prompt y lo dem√°s.
      Sin embargo, es completamente independiente del shell padre.
          La ventana que pertenece al nuevo shell se puede especificar
          usando la palabra clave WINDOW.
@@ -47,35 +47,35 @@ Entradas
 ::
 
 
-     WINDOW  --  La especificaciÛn de la ventana del shell.
+     WINDOW  --  La especificaci√≥n de la ventana del shell.
 
-                 X         --  el n˙mero de pÌxeles desde el borde izquierdo
+                 X         --  el n√∫mero de p√≠xeles desde el borde izquierdo
                                de la pantalla.
-                 Y         --  el n˙mero de pÌxeles desde el borde superior
+                 Y         --  el n√∫mero de p√≠xeles desde el borde superior
                                de la pantalla.
-                 WIDTH     --  el ancho en pÌxeles de la ventana del shell.
-                 HEIGHT    --  el alto en pÌxeles de la ventana del shell.
-                 TITLE     --  el texto en la barra de tÌtulo de la ventana
+                 WIDTH     --  el ancho en p√≠xeles de la ventana del shell.
+                 HEIGHT    --  el alto en p√≠xeles de la ventana del shell.
+                 TITLE     --  el texto en la barra de t√≠tulo de la ventana
                                del shell
-                 AUTO      --  la ventana aparece autom·ticamente cuando el
+                 AUTO      --  la ventana aparece autom√°ticamente cuando el
                                programa necesita entrada o salida.
-                 ALT       --  la ventana aparece con el tamaÒo y la posiciÛn
+                 ALT       --  la ventana aparece con el tama√±o y la posici√≥n
                                especificada cuando se aprieta el gadget de aumento.
                  BACKDROP  --  la ventana es una ventana ###backdrop ???
                  CLOSE     --  incluye un gadget de cierre.
                  INACTIVE  --  la ventana no se vuelve activa cuando se abre.
-                 NOBORDER  --  la ventana no tiene bordes, solamente est·n
+                 NOBORDER  --  la ventana no tiene bordes, solamente est√°n
                                disponibles los gadgets de profundidad, aumento
-                               y tamaÒo.
+                               y tama√±o.
                  NOCLOSE   --  la ventana no tiene el gadget de cierre.
                  NODEPTH   --  la ventana no tiene el gadget de profundidad.
                  NODRAG    --  la ventana no se puede arrastrar; implica NOCLOSE.
-                 NOSIZE    --  la ventana no tiene el gadget de tamaÒo.
-                 SCREEN    --  el nombre de la pantalla p˙blica donde se abrir· la ventana.
+                 NOSIZE    --  la ventana no tiene el gadget de tama√±o.
+                 SCREEN    --  el nombre de la pantalla p√∫blica donde se abrir√° la ventana.
                  SIMPLE    --  si la ventana es agrandada el texto se expande
                                para llenar el espacio disponible.
-                 SMART     --  si la ventana es agrandada el texto no se expandir·.
-                 WAIT      --  la ventana sÛlo se puede cerrar seleccionando
+                 SMART     --  si la ventana es agrandada el texto no se expandir√°.
+                 WAIT      --  la ventana s√≥lo se puede cerrar seleccionando
                                el gadget de cierre o ingresando CTRL-\.
 
 

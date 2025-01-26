@@ -3,7 +3,7 @@ AROS 1.0 roadmap
 ================
 
 :Authors:   Adam Chodorowski, Sergey Mineychev, William Ouwehand (NL)
-:Copyright: Copyright Š 2003, The AROS Development Team
+:Copyright: Copyright Â© 2003, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
@@ -38,7 +38,7 @@ Ook mogen de verdere aanbevelingen onderstreept worden.
     ook in een overbrengbare methode, moet goede redenen hebben. Bijvoorbeeld als zoiets 
     maar zelden gebruikt wordt door applicaties, terwijl de moeite om dit te implementeren substantieel is.
     
-    Huidige status: Het grootste deel van AmigaOS 3.1 API is geïmplementeerd, op sommige
+    Huidige status: Het grootste deel van AmigaOS 3.1 API is geÃ¯mplementeerd, op sommige
     plekken zelfs voorbijgestreefd. Wel zijn sommige delen overgeslagen of vervangen, waaronder
     lowlevel.lib, card.device, gameport en audio.device.
 
@@ -55,7 +55,7 @@ Ook mogen de verdere aanbevelingen onderstreept worden.
     
 
 3.  Volledige GUI toolkit. Dit betekend dat Zune compleet MUI API
-     compatibel moet zijn mét een afgemaakt preferenties programma.
+     compatibel moet zijn mÃ©t een afgemaakt preferenties programma.
     
      Huidige status: Bijna klaar. De Preferences editor mist nog wat functies.
 
@@ -79,7 +79,7 @@ Ook mogen de verdere aanbevelingen onderstreept worden.
   - Workbench (we hebben Wanderer prefs, waaraan gewerkt wordt)
     
 5.  Geluids ondersteuning, ofwel API compatibiliteit en basis applicaties. Er 
-    moet op zijn minst één driver zijn voor de vereiste AROS soorten. 
+    moet op zijn minst Ã©Ã©n driver zijn voor de vereiste AROS soorten. 
     
     Huidige status: Op moment is AHI overgebracht, ook zijn er enkele drivers (een paar)
     voor de i386-port. Applicaties worden ontwikkeld; Madahi en MP3 player zijn beschikbaar. 
@@ -87,10 +87,10 @@ Ook mogen de verdere aanbevelingen onderstreept worden.
     
 6.  Netwerk ondersteuning. Hieronder vallen een TCP/IP-stack en enkele basis-applicaties
     zoals email en SSH clienten, samen met een *simpele* web browser. Er zou minstens 
-    één NIC driver moeten zijn voor de vereiste AROS versies.
+    Ã©Ã©n NIC driver moeten zijn voor de vereiste AROS versies.
     
     De eisen voor de web browser moeten niet te hoog zijn, maar het moet op
-    zijn minst wel mogelijk zijn dat men op één manier kan 'browsen' (ook al is dat
+    zijn minst wel mogelijk zijn dat men op Ã©Ã©n manier kan 'browsen' (ook al is dat
     in tekst mode).
     
     Huidige status: de AROSTCP die we nu hebben is een oeroude maar werkende implementatie 
