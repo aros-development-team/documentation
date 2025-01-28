@@ -1334,13 +1334,26 @@ class HTMLTranslator(nodes.NodeVisitor):
 
     def visit_reference(self, node):
         atts = {'class': 'reference'}
+        suffix = '.' + self.settings.target_suffix
         if 'refuri' in node:
-            atts['href'] = node['refuri']
+            href = atts['href'] = node['refuri']
             if ( self.settings.cloak_email_addresses
                  and atts['href'].startswith('mailto:')):
                 atts['href'] = self.cloak_mailto(atts['href'])
                 self.in_mailto = True
             atts['class'] += ' external'
+            # This check is not in upstream docutils
+            if ':' not in href:
+                # This is a relative URL, so we assume we want to mangle it. :-)
+                words = href.split( '#' )
+                fracts = words[0].split( '/' )
+                if not ('.' in fracts[len( fracts ) - 1] or words[0].endswith( '/' )):
+                    # It doesn't have the correct suffix...
+                    words[0] = words[0] + suffix
+                href = words[0]
+                if len( words ) > 1:
+                    href = href + '#' + words[1]
+                atts['href'] = href
         else:
             assert 'refid' in node, \
                    'References must have "refuri" or "refid" attribute.'
