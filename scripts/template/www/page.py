@@ -271,7 +271,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                 Map(
                     name = 'map',
                     contents = [
-                        Area(shape = 'rect', coords = '22,80,95,97',   alt = 'http://www.aros.org', href = 'https://aros.sourceforge.io/'),
+                        Area(shape = 'rect', coords = '22,80,95,97',   alt = 'http://www.aros.org', href = '/'),
                         Area(shape = 'rect', coords = '95,80,148,97',  alt = 'Forum',               href = 'https://www.arosworld.org/'),
                         Area(shape = 'rect', coords = '148,80,215,97', alt = 'Software',            href = 'https://archives.aros-exec.org/'),
                         Area(shape = 'rect', coords = '215,80,285,97', alt = 'Bounties',            href = 'https://power2people.org/')
