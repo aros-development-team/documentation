@@ -59,7 +59,7 @@
    <table style="text-align: justify; width: 100%; background: url(/images/bgcolorright.png);" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Latest AROS-EXEC forum posts:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   Latest AROSWorld forum posts:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href="https://www.arosworld.org/">AROSWorld</a> is the AROS primary community site. Get help with AROS, find out what is happening in the community, and post your thoughts.<br><br>
    </td></tr></tbody></table>
 
