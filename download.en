@@ -105,16 +105,6 @@ __ https://github.com/aros-development-team/AROS/issues
 __ https://www.arosworld.org/
 
 
-Nightly Builds (ABIv0)
-======================
-
-Because almost all available AROS software and distributions are
-for the old ABIv0 ABI, we keep these builds for the i386 platform.
-`Download link`__
-
-__ nightly
-
-
 Snapshots (ABIv1)
 =================
 
