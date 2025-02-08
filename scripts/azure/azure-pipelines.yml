@@ -23,10 +23,7 @@ steps:
     sudo add-apt-repository universe
     sudo apt-get update
     sudo apt-get install -y sshpass
-    sudo apt install python2
-    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-    sudo python2 get-pip.py --no-python-version-warning
-    sudo pip2 --no-python-version-warning install Pillow
+    sudo apt install python3 python3-pil
   displayName: 'Installing AROS build dependencies'
 
 - script: |
