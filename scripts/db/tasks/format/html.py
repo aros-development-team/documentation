@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2002, The AROS Development Team. All rights reserved.
+# Copyright ï¿½ 2002, The AROS Development Team. All rights reserved.
 # $Id$
 
 import sys, os
@@ -17,8 +17,8 @@ C_AmigaOnly             = 'tan'
 def calculateCategoryScore( item ):
     if isinstance( item, Category):
         if ( item.total - item.amigaonly ) != 0:
-            return ( 100 * ( item.completed + item.skipped ) + 50 * item.needssomework ) \
-                    / ( item.total - item.amigaonly )
+            return round(( 100 * ( item.completed + item.skipped ) + 50 * item.needssomework ) \
+                    / ( item.total - item.amigaonly ), 0)
     return 0;
 
 def formatRowCategoryStatus(array, count, total, color):
