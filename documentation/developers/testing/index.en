@@ -10,3 +10,5 @@ Software Testing Specifications
 Here you'll find specifications for testing AROS components.
 
 + `Zune classes <zune>`__
+
+The result of automatic tests can be found `here. </unittests>`__
