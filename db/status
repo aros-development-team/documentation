@@ -2239,7 +2239,7 @@ gradientslider;GM_HITTEST;1;1;2
 gradientslider;GM_RENDER;1;1;2
 c;AddBuffers;1;1;2
 c;AddDataTypes;1;1;2
-c;Assign;1;1;1
+c;Assign;1;1;2
 c;Avail;1;1;2
 c;BindDrivers;1;1;5
 c;Break;1;1;2
@@ -2322,9 +2322,9 @@ prefs;IControl;1;1;2
 prefs;Input;1;1;2
 prefs;Locale;1;1;2
 prefs;Overscan;1;1;5
-prefs;Palette;1;1;5
-prefs;Pointer;1;1;0
-prefs;Printer;1;1;0
+prefs;Palette;1;1;2
+prefs;Pointer;1;1;2
+prefs;Printer;1;1;2
 prefs;PrinterGfx;1;1;0
 prefs;PrinterPS;1;1;0
 prefs;Screenmode;1;1;1
@@ -2356,7 +2356,7 @@ utilities;MultiView;1;1;2
 tools;BRU;1;1;0
 tools;Calculator;1;1;2
 tools;CMD;1;1;0
-tools;GraphicDump;1;1;1
+tools;GraphicDump;1;1;2
 tools;HDBackup;1;1;0
 tools;HDToolBox;1;1;2
 tools;IconEdit;1;1;0
@@ -3006,6 +3006,7 @@ scsi;Scsi.device interface is implemented in AROS ata.device
 cardres;Card.resource is tied to the Amiga GAYLE chip
 alib;CxCustom, CxDebug, CxFilter, CxSender, CxSignal and CxTranslate are macros defined in libraries/commodities.h
 debuglib;KPrintF and KPutChar are implemented in arossupport.lib
+c;Dir misses interactive mode
 c;Echo does not support handling of all ANSI escape sequences
 c;Edit is an alias for JanoEditor
 prefs;Font preferences do not support command line arguments
@@ -3016,7 +3017,6 @@ prefs;WBPattern preferences are substituted by Wanderer preferences
 system;CLI(Shell) is available from Wanderer menu
 utilities;Clock is missing digital display and support for some parameters
 commoditiesprogs;Blanker is not supporting all command line options
-tools;GraphicDump is replaced by ScreenGrabber, however the tool saves data to disk, not printer
 muimaster;MUI_RequestA - bugreport #2155786
 notify;MUIA_AppMessage - bugreport #1985769
 menuitem;MUIA_Menuitem_Shortcut - MUIV_Menuitem_Shortcut_Check not implemented
