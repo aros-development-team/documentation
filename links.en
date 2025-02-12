@@ -3,7 +3,7 @@ Links
 =====
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2015, The AROS Development Team
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -35,6 +35,29 @@ __ https://en.wikipedia.org/wiki/AROS_Research_Operating_System
 __ https://en.wikibooks.org/wiki/Aros
 __ http://bszili.morphos.me/
 __ http://serk118.blogspot.co.uk/
+
+
+Youtube channels
+================
+
+Some Youtube channels which are either dedicated to AROS or report regularly about it.
+
+=================== =======================================
+Name                Comment
+=================== =======================================
+`Kalamatee`__       AROS Develover Kalamatee
+`AMIGASYSTEM`__     AROS One Distribution Maintainer
+`Dan Wood`__
+`Proteque-CBN`__
+`James Mattson`__
+=================== =======================================
+
+
+__ https://www.youtube.com/@Kalamatee
+__ https://www.youtube.com/@AMIGASYSTEM
+__ https://www.youtube.com/@danwood_uk
+__ https://www.youtube.com/@proteque
+__ https://www.youtube.com/@jamesmattson6813
 
 
 Articles about AROS
