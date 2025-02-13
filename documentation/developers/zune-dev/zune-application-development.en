@@ -200,7 +200,7 @@ If you intend to do a public class, you should allocate some space in
 the Zune identifier space__. Else you have to make sure you use a range
 not reserved for Zune, MUI legacy or AROS classes.
 
-__ http://aros.sourceforge.net/documentation/developers/zune-dev/identifiers.php
+__ identifiers
 
 
 
