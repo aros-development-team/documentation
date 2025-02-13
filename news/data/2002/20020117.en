@@ -5,7 +5,7 @@ Miscellaneous
 :Author: Aaron Digulla
 :Date:   2002-01-17
 
-The big news of the day? Look at this URL: `http://aros.sourceforge.net/`__.
+The big news of the day? Look at this URL: `https://aros.sourceforge.io/`__.
 Yes, AROS is now one of the many, many, many (more than 32000 last time I 
 looked) projects on SourceForge__! That means we can probably solve many of our 
 bandwidth problems. :-) You can find the normal SourceForge project page 
@@ -25,6 +25,6 @@ before).
 Henning Kiel fixed a the build script for adflib to work on Cygwin and made the 
 build process less verbose.
 
-__ http://aros.sourceforge.net/
+__ https://aros.sourceforge.io/
 __ http://sourceforge.net/
 __ http://sourceforge.net/projects/aros/

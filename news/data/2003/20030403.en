@@ -152,14 +152,14 @@ So, as we always say, we need **more** developers! Come on guys, AROS is fun, le
        a particular ELF object. In other words, an ELF object which has in its header a particular
        ELFOSABI number, is meant to be run only on the operating system which owns that number.
 
-__ http://aros.sourceforge.net/
+__ http://www.aros.org
 __ /documentation/developers/index
 __ /documentation/users/index
 __ /download
-__ http://aros.sourceforge.net/downloads/kitty/
+__ /downloads/kitty/
 __ http://www.coax.net/people/erics/
 __ screenshots_
-__ http://aros.sourceforge.net/pictures/screenshots/20030403/masonicons.png
+__ /pictures/screenshots/20030403/masonicons.png
 __ http://pyaros.sf.net/
 
 .. _MUI: http://www.sasg.com/mui/index.html

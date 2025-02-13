@@ -38,7 +38,7 @@ i386 platform. Scalos can either be started like an application from
 ``Wanderer:Wanderer`` by ``Scalos:Scalos EMU`` in ``S:Startup-Sequence``.
 
 __ http://scalos.noname.fr
-__ http://aros.sourceforge.net/nightly1.php
+__ ../../nightly1
 
 Sound drivers
 -------------

@@ -49,7 +49,7 @@ order to improve it. Initial support has been added for some Serial ATA
 chipsets: "SATA controllers supporting legacy operation mode should now
 be operational (this means we don't have AHCI at this moment)".
 
-__ http://aros.sourceforge.net/download.php
+__ ../../download
 __ http://i175.photobucket.com/albums/w131/Kalamatee/AROS/grub2gfx-1.jpg
 __ http://www.chilibi.org/aros/texlive
 
