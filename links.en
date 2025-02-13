@@ -42,18 +42,20 @@ Youtube channels
 
 Some Youtube channels which are either dedicated to AROS or report regularly about it.
 
-=================== =======================================
-Name                Comment
-=================== =======================================
-`Kalamatee`__       AROS develover Kalamatee
-`AROS One`__        AROS One distribution maintainer
-`Paolo Besser`__    Icaros distribution maintainer
+==================== =======================================================
+Name                 Description
+==================== ========================================================
+`Kalamatee`__        AROS develover Kalamatee
+`AROS & AxRuntime`__ Deadwood's channel about AxRuntime and software for AROS
+`AROS One`__         AROS One distribution maintainer
+`Paolo Besser`__     Icaros distribution maintainer
 `Dan Wood`__
 `Proteque-CBN`__
 `James Mattson`__
-=================== =======================================
+==================== ========================================================
 
-__ https://www.youtube.com/@Kalamatee
+__ https://www.youtube.com/@Kalamatee/videos
+__ https://www.youtube.com/@aros-dev/videos
 __ https://www.youtube.com/@ArosOne/videos
 __ https://www.youtube.com/@paolobesser3382/videos
 __ https://www.youtube.com/@danwood_uk
