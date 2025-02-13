@@ -129,7 +129,7 @@ for translated documents, you must keep the suffix.
 The build system uses the English version when no translated page is
 available.
 
-__ http://aros.sourceforge.net/contact.php#mailing-lists
+__ ../../contact#mailing-lists
 
 
 
@@ -279,7 +279,7 @@ Commit
 Before you commit the new or modified documents you should `build`__ both the
 HTML and WWW targets locally. Look for error messages and fix them. Check the
 result in a web browser. Normally, the changes are applied to
-http://aros.sourceforge.net/ within one day after a commit.
+http://www.aros.org within one day after a commit.
 
 __ building_
 

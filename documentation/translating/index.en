@@ -33,18 +33,16 @@ partially. The few translators available and the amount of work are one of the
 causes for this. Also, it happens that most translators and writers are (core)
 developers; taking over their tasks (even partially) here can allow them to
 maximize their efforts on coding or writing new documentation. So should you
-be interested in helping us out, please
-`contact us <http://aros.sourceforge.net/contact.php#mailing-lists>`_.
+be interested in helping us out, please contact__ us.
 Even the least effort can help us substantially.
 
-
+__ ../../contact#mailing-lists
 
 
 Where to start
 --------------
-First, please `contact us
-<http://aros.sourceforge.net/contact.php#mailing-lists>`__ to verify whether
-you can contribute (just to be on the safe side).
+First, please contact__ us to verify whether you can contribute (just to be
+on the safe side).
 
 Translating is as basic as it implicates. All you need to start translating
 with AROS is a suitable text-editor, access to the AROS 'Git sources' and a
@@ -61,6 +59,7 @@ Localizing the OS is no less important, but can always happen on a later date.
 Besides, the most basic site translation concerns just 10 to 15 not-too-large
 pages, making it not such a big job anyway.
 
+__ ../../contact#mailing-lists
 
 
 Translating the website
