@@ -47,7 +47,7 @@ on the safe side).
 Translating is as basic as it implicates. All you need to start translating
 with AROS is a suitable text-editor, access to the AROS 'Git sources' and a
 feel for your language and grammar. Information about the first two can be
-found here on the `Working with Git <git>`__ page, the latter is up to you of
+found here on the `Working with Git`__ page, the latter is up to you of
 course. You don't even need to use AROS to work on either the site or the OS
 - using Linux, Windows or OS X will do just fine.
 
@@ -60,6 +60,7 @@ Besides, the most basic site translation concerns just 10 to 15 not-too-large
 pages, making it not such a big job anyway.
 
 __ ../../contact#mailing-lists
+__ ../developers/git
 
 
 Translating the website
@@ -95,14 +96,16 @@ To summarize, it is highly recommended that you:
 + make your intentions known to the developer ML and see if your services are
   needed (to be on the safe side)
 + read this whole page
-+ read the `Working with Git <git>`__ page
++ read the `Working with Git`__ page
 + apply for Git access
 + sign up for both the developer and website Mailing List (ML)
+
+__ ../developers/git
 
 *Git*
 
 If you are not familiar with Git, read up about it on the
-`Working with Git <git>`__ page as stated.
+`Working with Git`__ page as stated.
 In short: Git works kind of like FTP in that it focusses only on files.
 However, instead of moving single files around like FTP does, you now
 keep a full (and synchronized) copy of the sources on your hard disk. You then
@@ -112,6 +115,8 @@ working with are plain text-files (no HTML). The fancy looks of the AROS
 website, together with the menus, are added in a separate process on the
 server which transforms these text files into a full HTML website. This will
 be covered later to some extend.
+
+__ ../developers/git
 
 It is highly recommended to wait until you get Git access before you start. It
 makes it easier to send in and change your translated files later. Be warned that
@@ -151,7 +156,9 @@ with ISO-8859-1 or ISO Latin-1 encoding. When your language uses more 'exotic'
 symbols to western standards (e.g. Russian or Greek), you will require
 different settings. Especially when configuring a new website translation it
 is recommended to contact the Dev ML list for advice. Also consult the
-`documenting page <documenting>`__ for further information.
+`documenting page`__ for further information.
+
+__ ../developers/documenting
 
 *Committing*
 
@@ -216,11 +223,12 @@ software (Python), but afterwards you can check your work with the same script
 that creates the website HTML files on the server; it's no magic. You work
 more efficient this way, keep the site tidy and save other developers some
 time. For a how-to on building locally and the required tools, please check
-the `documenting page <documenting>`__.
+the `documenting page`__.
 
 As with fixes, the new pages should show up in a few hours (at most a day) on
 the website.
 
+__ ../developers/documenting
 
 
 Localizing AROS or applications
