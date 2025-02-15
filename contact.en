@@ -3,9 +3,7 @@ Contact Information
 ===================
 
 :Authors:   Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2020, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Status:    Done.
 
 .. Contents::
@@ -30,6 +28,14 @@ There is an official slack channel for discussion around AROS development, that
 can be joined via this `link`__.
 
 __ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
+
+
+Discord
+-------
+
+The AmigaDev server has an AROS channel. `Invitation link`__
+
+https://discord.gg/6xPEU8wNum
 
 
 Mailing lists
@@ -74,6 +80,14 @@ much more. It's the perfect meeting place for AROS users from all over the
 world, and a few AROS core developers are known to frequent there.
 
 __ https://www.arosworld.org/
+
+
+Discord
+-------
+
+A user oriented server on Discord is AROS Exec. `Invitation link`__
+
+__ https://discord.gg/uKYWqC52
 
 
 IRC Channels
