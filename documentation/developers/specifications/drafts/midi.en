@@ -101,7 +101,7 @@ Init
     **Must** contain a pointer to a legal function. This is the first function
     to be called after the driver is loaded into memory. The function will be
     called with sysbase as its only argument and it must return FALSE if a
-    necessary initialisation failed, and otherwise TRUE. If FALSE is returned,
+    necessary initialization failed, and otherwise TRUE. If FALSE is returned,
     the 'Expunge'-function will not be called, so any resources already
     allocated before the failure will have to be freed from within the
     function, before returning. The 'Init'-function is normally called from
@@ -149,7 +149,7 @@ OpenPort
         the port that you want to distribute to the Camd.library. The
         'receiverfunc' is rather single-threaded as well, so no more than one
         visitor at the time with the same 'userdata' (which shouldn't be
-        necesarry to point out, though). Interrupts can not be disabled when
+        necessary to point out, though). Interrupts can not be disabled when
         calling because it signals a task. The 'input'-argument is the
         midi-byte you want to send to camd. It is not a message, just a single
         byte. If bit 8 is set, you tell Camd.library that there is overflow on

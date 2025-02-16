@@ -106,7 +106,7 @@ With this in mind, here's what we'd like to see:
 
    A long term goal should be dos.library support for multiple assign targets
    in case AROS will support several users logged on the same system
-   simultanously (e.g. thru ssh/nfs/samba access).
+   simultaneously (e.g. thru ssh/nfs/samba access).
 
 4. Of course, this system needs to have filesystem support for security
    reasons. Users should not be forced to share anything they don't want to

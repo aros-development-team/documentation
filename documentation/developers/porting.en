@@ -272,7 +272,7 @@ linklibraries.
 Here's an explanation of what the flags do.
 
 CC
-    The name of the C compiler executeable.
+    The name of the C compiler executable.
 
 RM
     The name of the delete command.

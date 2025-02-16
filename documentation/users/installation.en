@@ -244,7 +244,7 @@ Getting ready
 
 First, set up your HD - either real or a virtual drive image - for use.
 For a real drive, this may involve plugging it into the machine (always
-a good start) and setting it up in the BIOS. For a virtualiser's or
+a good start) and setting it up in the BIOS. For a virtualizer's or
 emulator's virtual drive, you probably just need to select an option to
 create a new drive image, and set it as one of the virtual PC's boot
 devices (the CD drive must be the first boot device during installation
@@ -408,9 +408,9 @@ You can change the kernel's parameters to set the screen resolution. The
 'floppy=disabled' option disables the floppy trackdisk device, as this device
 is not too useful these days but can cause troubles in some cases.
 
-If you happen to use lilo or any other booloader, this trick won't be that
+If you happen to use lilo or any other bootloader, this trick won't be that
 easy. (It's hard to make lilo booting AROS kernel.) You will need to somehow
-chainload AROS GRUB and set it to start up a kernel.
+chain load AROS GRUB and set it to start up a kernel.
 
 After the reboot, you should be able to see an AROS entry in the GRUB menu and
 to boot AROS.

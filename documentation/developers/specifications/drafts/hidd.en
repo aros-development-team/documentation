@@ -89,7 +89,7 @@ connected to an IDE controller - so the disk will be a child of the
 IDE controller.
 
 .. Note:: This does not mean that the Ethernet card driver is a subclass of
-          the bus driver. Only the dynamic behaviour of the drivers is subject
+          the bus driver. Only the dynamic behavior of the drivers is subject
           to the connection-oriented approach.
 
 
@@ -148,7 +148,7 @@ Object Model
     of object linkage.
 
 Dynamic Model
-    Examining the runtime behaviour of classes and objects and the
+    Examining the runtime behavior of classes and objects and the
     life-cycle of a driver.
 
 HIDD Static Model
@@ -200,7 +200,7 @@ interfaces provide a hardware independent method of access devices.
 If we examine the tree structure above we can see that the class tree
 starts with the `hidd` class. This is the base class that all HIDD
 classes inherit from. It provides many useful facilities dealing with
-initialisation and interaction of HIDDs. A complete discussion of this
+initialisztion and interaction of HIDDs. A complete discussion of this
 class is found in the HIDD Class chapter.
 
 Below this there are a number of different classes, each providing a
@@ -241,7 +241,7 @@ a SCSI controller -- something that is not always accessed by user
 programs.
 
 There are however a number of different SCSI controllers available, so
-there is more specialisation of classes here.
+there is more specialization of classes here.
 
 <!-- img src="hidd-model-class-2.png" alt="HIDD Class Tree Structure" /-->
 
@@ -359,7 +359,7 @@ all available devices. This is shown more clearly in a diagram.
     |    +- zorroii
     +- ...
 
-It is important here to realise that the connection diagram shown
+It is important here to realize that the connection diagram shown
 above does not have anything to do with class hierarchies. If we
 provide a slightly different version of the diagram showing class
 names this should become clearer.
@@ -411,7 +411,7 @@ about by the root HIDD class.
 Unknown
     All HIDD drivers start in the unknown state. This is the state
     of a driver when it has either just been loaded into memory, or when
-    it is inside the kernel, but before it is first initialised.
+    it is inside the kernel, but before it is first initialized.
 
     At this point the driver cannot tell whether the hardware it is tied
     to exist, and cannot access the device. There will have been no
@@ -511,7 +511,7 @@ The complete life cycle of a HIDD is like this:
 2. The OS reads the extended romtags from all HIDDs and puts that
    information in the global list of all available HIDDs.
 
-3. Some application asks for a list with the informations about
+3. Some application asks for a list with the information about
    all HIDDs or a specific type of HIDD.
 
 4. The application loads the HIDD and the config plugin. This makes the

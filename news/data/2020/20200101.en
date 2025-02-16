@@ -12,7 +12,7 @@ Github migration
 As a new year begins, its time to reflect on some of the things that have
 happened since the last news entry - which is a shocking 3 years ago!
 Firstly, the main AROS development has now migrated to `GitHub`__. It has
-been a contraversial decision/move but in the long run is better for
+been a controversial decision/move but in the long run is better for
 the developer community, and AROS as a whole. Along with this has been
 the migration of the nightly builds to use Azure Pipelines, so that as a
 developer team we can all contribute to the maintenance/monitoring and fault
@@ -57,8 +57,8 @@ __ https://en.wikipedia.org/wiki/Raspberry_Pi
 AHCI Device
 -----------
 
-The source code of the `AHCI`__ device has beeen refactored to work more
-similarly to ATA device, exposing hidd controller/bus/unit classes that can
+The source code of the `AHCI`__ device has been refactored to work more
+similarly to ATA device, exposing HIDD controller/bus/unit classes that can
 be viewed in SysExplorer.
 
 __ https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface
@@ -69,7 +69,7 @@ Build System
 
 A massive amount of refactoring has been done to make sure only the correct
 flags are used when building components, and to make sure flags are used
-consistently. It has beeen made sure object files from different components
+consistently. It has been made sure object files from different components
 don't pollute each other when they are made in the same mmakefile. Changes 
 have been made to allow modules to be built for different flavours (e.g. cpu
 types) of a target. The flags used when compiling c++/objc code have been

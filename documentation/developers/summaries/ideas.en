@@ -268,7 +268,7 @@ BOOPSI classes. Gadgets and images have been hit first by this new technology.
 Windows, menus and screens would have had to, but for some reason it did not
 happen (lack of time or compatibility issues).
 
-If windows were BOOPSI classes, you could override their default behaviour
+If windows were BOOPSI classes, you could override their default behavior
 simply by subclassing them.
 
 Some months ago I had a very interesting technical discussion around this

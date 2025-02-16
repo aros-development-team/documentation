@@ -1544,14 +1544,14 @@ FSA_FORMAT
 Name
 """"
 
-``FSA_FORMAT`` - Initialise a file system
+``FSA_FORMAT`` - Initialize a file system
 
 
 Function
 """"""""
 
-Initialise a device to be used by this file system. The device media should
-have already been initialised, and this command simply gets the file system
+Initialize a device to be used by this file system. The device media should
+have already been initialized, and this command simply gets the file system
 to write its own data.
 
 This command uses the ``io_Union.io_FORMAT`` member.
@@ -1570,7 +1570,7 @@ io_DosType
 Result
 """"""
 
-The file system will have been initialised, and is ready for mounting.
+The file system will have been initialized, and is ready for mounting.
 
 io_DosError
     DOS error code, or 0 for success.

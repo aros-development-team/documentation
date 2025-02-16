@@ -419,7 +419,7 @@ your updates is fully up to you.
 
 Tracking changes can be done with the Git changelogs, available trough your
 Git client. This list displays *all* changes ever made to the repository.
-Judge from the logmessages and changed files if the concerned change is
+Judge from the log messages and changed files if the concerned change is
 relevant. Comparing and synchronizing documents afterwards can be somewhat
 cumbersome. Some text-editors offer a synchronized window scrolling option,
 which can be of some help when comparing two pages. For example, the

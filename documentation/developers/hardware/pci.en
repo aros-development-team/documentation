@@ -116,7 +116,7 @@ paletteSnoop properties may be also set.
 
 All properties are obtainable through `OOP_GetAttr` call (sigh, we are really
 missing the OOP_GetAttrs(obj, struct TagItem
-\*\*attributes_to_get_with_one_call)!!!) and some of them are setable through
+\*\*attributes_to_get_with_one_call)!!!) and some of them are settable through
 OOP_SetAttrs call (see hidd/pci.h include for details). Please also remember,
 that before work with attributes is done, the IID_Hidd_PCIDevice AttrBase has
 to be obtained (please don't forget to release it when it's not needed

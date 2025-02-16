@@ -45,7 +45,7 @@ GMA chipsets, as well as the generic VESA driver.
 
 Apart from the graphics drivers, AROS also received some additional 
 graphics libraries: egl.library and openvg.library. The first provides 
-portable GL initialisation and window management interfaces, while the 
+portable GL initialization and window management interfaces, while the 
 second is a vector graphics library accelerated using Gallium. Our port 
 of the SDL library has become more polished too, with improvements to 
 features such as SDL-to-GL integration, leading to a more enjoyable 

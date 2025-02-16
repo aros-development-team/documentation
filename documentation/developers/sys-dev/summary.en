@@ -47,7 +47,7 @@ FAQ or moving some parts in other documents.
     the C library and every program using the C library will have it's own
     global errno variable. If now also other shared libraries in the same
     program access errno they will all access the same variable.
-    What Fabio now said is that shared libraries depending on this behaviour
+    What Fabio now said is that shared libraries depending on this behavior
     can, at the moment, not be ported into an AROS shared library. He also
     said he is working on a solution for that.
     I do plan to rewrite the section that explains Amiga shared libraries to
