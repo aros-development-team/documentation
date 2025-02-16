@@ -11,7 +11,7 @@ the IntelGMA video driver work again. Krzysztof Smiechowicz fixed
 Windows-hosted AROS port, enabling Windows users to enjoy AROS again,
 and was making final changes to ABIv0 system refresh. Olivier Brunner
 fixed a memory trashing problem in AROS MUI List class and Miloslav Martinka
-made a small but usefull improvement to Wanderer's Info tool, which from now
+made a small but useful improvement to Wanderer's Info tool, which from now
 on shows the path at which the icon is located and allows opening that
 path in separate Wanderer window.
 

@@ -454,7 +454,7 @@ MEMF_REVERSE
 MEMF_NO_EXPUNGE
     Normally, if not enough free memory of the requested size is found, AROS
     tries to free unused memory, for example by flushing unused libraries
-    out of the memory. If this flag is set, this behaviour is turned off.
+    out of the memory. If this flag is set, this behavior is turned off.
 
 Memory allocated with these functions *must be freed* after use with one of
 the following functions. *Note well that you should never access memory after
@@ -1014,7 +1014,7 @@ parent Task are copied into the new task. This holds for AddTask(),
 NewAddTask() and CreateNewProc(). When RunCommand() is used, however, the
 parent TaskStorage is reused in the child; changes made in the child to
 TaskStorage will be visible in parent after the child has exited.
-If these default behaviour is not acceptable, user code has to implement
+If these default behavior is not acceptable, user code has to implement
 checks and override it.
 
 Functions:

@@ -271,7 +271,7 @@ How to change joystick mode to analogue
 ---------------------------------------
 
 By default a connected USB joystick emulates an Amiga digital joystick. To
-change this behaviour, so that the joystick is presented as analogue, you
+change this behavior, so that the joystick is presented as analogue, you
 have to use the Trident preferences application (System:Prefs/Trident).
 
 Open Trident and go to the Devices window. Select your controller from the

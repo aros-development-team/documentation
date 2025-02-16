@@ -13,7 +13,7 @@ that should be mentioned.
 New C libraries
 ---------------
 
-After a long journey a cleaned up and split C library was commited to the
+After a long journey a cleaned up and split C library was committed to the
 ABIv1 branch. Next to a clean up and some improved documentation, the main
 part of the patch is a split of the ANSI standard part from the POSIX
 part. This allows using standard C functions everywhere in AROS without

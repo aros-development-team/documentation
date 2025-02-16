@@ -422,7 +422,7 @@ Building several targets from the same source
 
 If you intend to compile several different targets from one source 
 tree, you should compile outside the source tree (see the previous 
-subsection). For example, you could place your souces in ``AROS/src``, 
+subsection). For example, you could place your sources in ``AROS/src``, 
 and create a directory for your 32-bit Linux-hosted build at 
 ``AROS/linux-i386``::
 

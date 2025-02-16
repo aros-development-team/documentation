@@ -66,7 +66,7 @@ This GUI system should follow the following requirements:
 - Scalable.
 - Runtime configurable.
 - Extendable with new classes and items.
-- Light-weighted to fit on removeable media (such as boot floppies)
+- Light-weighted to fit on removable media (such as boot floppies)
 - No recompilation of binaries when new features are added, such as
   adding the ability to define a standard system wide background texture
   for buttons etc.
@@ -108,7 +108,7 @@ Gadtools
   complex stuff, just the GM_RENDER code (such as the layout parts).
 
   I don't think you can do very much theme-ability without breaking
-  compatability, since GadTools is based on absolute position and
+  compatibility, since GadTools is based on absolute position and
   size of gadgets. Many programs assume that GadTools gadgets have 'x'
   amount of border etc (AFAIK it's not possible to 'find out' such
   things, since it's hardcoded anyway).
@@ -138,7 +138,7 @@ ReAction
 + A lot of work to implement it (no special ReAction code base to start)
 + Not many programs use ReAction, much more use MUI but ReAction is new.
 + ReAction isn't very configurable but it seems possible to make it
-  very configurable and good looking without breaking API compatability.
+  very configurable and good looking without breaking API compatibility.
 
 I think we should use ReAction. My reasoning goes something like this:
 

@@ -204,7 +204,7 @@ your launch string (or a script).
 
 .. Note::
 
-    QEMU is a fast virtualiser, but its speed can be increased by installing
+    QEMU is a fast virtualizer, but its speed can be increased by installing
     the KQEMU kernel module (and appending the -kernel-kqemu option if in
     Windows). But remember that KQEMU can make the guest system unstable.
     You're advised not to use the Alt+Tab combination to free a keyboard
@@ -232,12 +232,12 @@ limited speed and it requires a reasonable fast PowerPC machine
 
 For Intel Macs (OS X) QEMU has been ported and subsequently renamed
 `Q <http://www.kju-app.org/>`__ . It comes as an Intel binary and is freeware.
-Q does not support direct virtualisation yet (nor the
+Q does not support direct virtualization yet (nor the
 i386 kernel acceleration module), making it achieve only part of the
 possible speed at the moment.
 
 Another suitable choice for VM on Intel is the `VMWare Fusion`__
-virtualiser, which was released in early 2007. Beta version 33141 already
+virtualizer, which was released in early 2007. Beta version 33141 already
 supports booting the AROS LiveCD, on condition that floppy drive support is
 disabled in the GRUB boot parameters (Just highlight your
 selection on the GRUB menu, press e twice, add nofdc to the command line,
@@ -383,13 +383,13 @@ in front of the Wanderer screen, and it now obscures the desktop. You can,
 however, switch the screens with the "depth gadget", the graphic in the top
 right corner of the screen. So, if you wish, you can switch between Wanderer,
 Directory Opus, and any other applications opening on their own screens.
-This behaviour also comes from the Amiga's historical GUI - "Workbench".
+This behavior also comes from the Amiga's historical GUI - "Workbench".
 
 Now a few words on the windows themselves. AROS windows usually have
 "gadgets", control buttons to manipulate them with. The first one, in the top
 left corner of a window, is the "close Gadget"; it allows you to close the
-window. The next, on the right, is the "size gadget", which allows minimising
-and maximising the window. And the last, in the top right corner again, is
+window. The next, on the right, is the "size gadget", which allows minimizing
+and maximizing the window. And the last, in the top right corner again, is
 the "depth gadget", which allows moving the window to the front or to the
 back, just like when switching screens. Some windows may not have gadgets at
 all - look at the Kitty demo; it doesn't even show a border, and yet has a

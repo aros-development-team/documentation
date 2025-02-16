@@ -342,7 +342,7 @@ failure, with a zero (== FALSE) value indicating a failure to initialize,
 and the library will be unloaded again and not be usable. The ExitFunc
 should not be able to fail, and thus has no return value.
 
-Often part of the libbase should be initialised, and therefore the methods
+Often part of the libbase should be initialized, and therefore the methods
 discussed above are not appropriate. For libraries, additional ways are
 available for adding initialization or clean-up code::
 

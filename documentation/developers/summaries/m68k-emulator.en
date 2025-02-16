@@ -15,7 +15,7 @@ Abstract
 ========
 
 This is a summary - basically cut and paste - of the "m68k emulator" thread
-on the aros-dev mailing list during Februari 2001.
+on the aros-dev mailing list during February 2001.
 
 
 Writing emulator for AROS to run native programs
@@ -44,7 +44,7 @@ Different types of software to emulate
 + Mostly system-friendly software which uses some hardware 'hacks', like macros
   to disable interrupts/display.
 + System-friendly software only avaible in binary format.
-+ System-friendly software avaible as sourcecode.
++ System-friendly software available as sourcecode.
 
 
 Emulator types
@@ -56,8 +56,8 @@ Emulator types
 + It should be easy to use the system on different hardware (CPUs).
 
 
-AROS kickstart/worbench for UAE
-===============================
+AROS kickstart/workbench for UAE
+================================
 
 + Only 68k binaries.
 + AROS in native code of machine
@@ -66,7 +66,7 @@ AROS kickstart/worbench for UAE
   and do these things directly.
 + When all chips have been disabled, we can switch of the code that tries to
   synchronize the virtual chips with the virtual CPU.
-+ Rigth now, with the picasso emulation, all that you need to emulate are the
++ Right now, with the picasso emulation, all that you need to emulate are the
   cia's and paula. Is not that big effort. After the AHI emulation is finished
   it'll be necessary only the cia emulation.
 
@@ -111,8 +111,8 @@ code?
 
 Last year I spent about three months seeing how possible this was and wrote a
 small program that would convert 68K instructions into a C type language
-(sort of intermediate between C and 68K ASM). Then wrote another progam that
-would convert my intermediate lanugage into whatever code.
+(sort of intermediate between C and 68K ASM). Then wrote another program that
+would convert my intermediate language into whatever code.
 
 The big problem was that AmigaOS executable files are in some kind of weird
 structure that I don't really know with strange headers etc... secondly the
@@ -127,13 +127,13 @@ The Amiga hardware could be changed for OS calls, so there would be no
 hardware problems. I am a chemist, not a computer scientist so I found the
 whole thing too hard to do and by this time my A1200 was failing so I gave up.
 
-> [...] how do you handle the case in wich the 68k program tells to the OS
+> [...] how do you handle the case in which the 68k program tells to the OS
 > the address of a 68k routine to be executed by the OS later on?
 > The only viable solution that I see is the translation on load.
 
 My solution to such a problem was to use the MMU to trap access to the Amiga
 hardware address range (about 2meg...) and then emulate the registers
-elsewhere in memory (i.e. an interupt with a handler to read the psuedo
+elsewhere in memory (i.e. an interrupt with a handler to read the pseudo
 registers and then deal with the data in them correctly, maybe using code
 from UAE)
 
@@ -142,7 +142,7 @@ under linux, just like the UAE JIT does.
 
 Another possibility is to use the MMU. Emulated code pointers point to
 wrong memory in the native environment. The exception when this code is
-called will (re)start the interpretor/translator.
+called will (re)start the interpreter/translator.
 
 For now this would require the use of the mmap() function and so the
 emulator should be part of the kernel, exec's perhaps. Later on we
@@ -153,7 +153,7 @@ I know that JIT engines (UAE-JIT and Kaffe come to mind) use so-called
 I'm sorry I don't know the details, but I'm sure the problem has been
 solved already.
 
-Endianess is a concern but Georg made a proposal how to run m68k files on a
+Endianness is a concern but Georg made a proposal how to run m68k files on a
 little-endian processor and switch between emulated and native execution.
 Hm, maybe some analyzer (disassembler) for m68k files would also be
 interesting and sufficient at the beginning to see whether this can be done.
@@ -161,8 +161,8 @@ Can one for example avoid translating (= disassembling) hardcoded structures,
 i.e.
 
 
-Endianess
-=========
+Endianness
+==========
 
 For example, if an 68k program would call OpenWindow. It gets back a pointer
 to a struct Window. If you only convert the Window Pointer to big-endian then
@@ -173,7 +173,7 @@ all little-endian. So if the 68k program reads something from this structure::
 
 then it will get the wrong value, because normal 68k emus are big-endian.
 
-The other problem (endianess) has been solved with C++ templates
+The other problem (endianness) has been solved with C++ templates
 but they are not complete. We need someone with some time or
 a lot of C++ knowledge to fill the missing gaps::
 
@@ -183,7 +183,7 @@ a lot of C++ knowledge to fill the missing gaps::
     a = b;
     i = a;
 
-In the first case, there is no need for endianess conversion and in the
+In the first case, there is no need for endianness conversion and in the
 second, there is. A C++ compile can figure this out but C can't (the
 developer has to and he better shouldn't make any mistakes). I think
 with this technique, we have these advantages:
@@ -202,7 +202,7 @@ Hmm :-\
     win = OpenWindow(&nw);
 
 Does this mean that the AROS native OpenWindow() when accessing
-the NewWindow structure must be prepaired that the newwindow might
+the NewWindow structure must be prepared that the newwindow might
 be big-endian -> it must use some macro to access the fields?
 
 NewWindow is a small problem, as it is only used by OpenWindow().
@@ -267,7 +267,7 @@ just fine.
 Disassemble Amiga binaries
 ==========================
 
-+ Sometimes it works but often data and code is not seperated so it is not
++ Sometimes it works but often data and code is not separated so it is not
   easy to decide what is a 68k command and what is data.
 + Some assumption about the compiler, compiler version and compiler options
   could be helpful.

@@ -49,7 +49,7 @@ Optional features:
   Therefore it should be implemented elsewhere in the OS.
 + Security features: Through the use of the mmu.hidd the OS should be able
   to limit the rights of tasks to change the access restrictions of pages
-  Thus the OS could stop malicious code from changing an unwriteable page
+  Thus the OS could stop malicious code from changing an unwritable page
   to a writeable one in order to hack the page's contents.
 + Feature support: Providing support for the OS for special features of
   specific MM implementations. E.g.: Supervisor context on the Amiga 68k

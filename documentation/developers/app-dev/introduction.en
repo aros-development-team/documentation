@@ -547,10 +547,10 @@ compiled for version 36 it still need to run without problem. Therefore a
 function at a certain place in the lookup table always has to perform the
 exact same function even for a newer version of the library.
 
-If you really want to change the behaviour of the function with a certain
+If you really want to change the behavior of the function with a certain
 name you could do that by putting it at another place in the lookup table.
 At the old location you put then a compatibility function that is still
-compatible with the behaviour in older library versions. For example, in the
+compatible with the behavior in older library versions. For example, in the
 first version of AmigaOS the exec function `OpenLibrary` did not have a
 version parameter. In a later version of the OS, a new `OpenLibrary` function
 was introduced that included the version parameter. While the old function was
@@ -663,14 +663,14 @@ global variable.
 
 On Unix, shared libraries were introduced after the link-time libraries were
 already heavily used. One of the design goals then, was to make the
-behaviour of the shared libraries the same as that of link-time libraries.
+behavior of the shared libraries the same as that of link-time libraries.
 Therefore, a copy is made of the variables every time a program opens a
 shared library. In this way every program that opens a shared library will
 get its own set of the global variables. Also, the global variables of a
 shared library are automatically exported from that library, so they can also
 be accessed directly in the program using that library.
 
-On Windows, one can choose the behaviour of global variables to be like the
+On Windows, one can choose the behavior of global variables to be like the
 AROS way or the Unix way but by default it is handled in the Unix way.
 
 For porting shared libraries to AROS or Amiga, this different handling of

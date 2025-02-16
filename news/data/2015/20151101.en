@@ -16,7 +16,7 @@ devices available from Poseidon.
 
 Neil Cafferkey continued his work on Zune, AROS MUI replacement, by
 adding more test cases focusing on MUI List and Listview classes.
-Together with extending the tests, a few small fixes have been implemnented.
+Together with extending the tests, a few small fixes have been implemented.
 
 Last but not least, Oliver Brunner ported traceroute utility based
 on request from community.
@@ -25,7 +25,7 @@ Outside of AROS Development Team, the community received updates to two AROS
 distributions. Olaf Schoenweiss updated his AROS m68k distribution "AROS
 Vision" to version 2.6.9. and Pascal Papara released another preview
 build of his AROS i386 distribution "AROS Broadway", working towards version
-1.0. Pascal also achieved one more nice milestone with 500 users beeing
+1.0. Pascal also achieved one more nice milestone with 500 users being
 registered in his cross platform IndieGO AppStore that is available also
 for AROS.
 

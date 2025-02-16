@@ -234,7 +234,7 @@ File system
 -----------
 
 Names in the AROS-DOS file system are case-insensitive. This allows the user
-to write them with any capitalisation he chooses. That doesn't mean, however,
+to write them with any capitalization he chooses. That doesn't mean, however,
 that we ourselves can take that freedom and write "DEVS:", "Devs:", "devs:"
 and maybe even "dEvS:" as we see fit. We should stick to a single pattern as
 well as we can.
@@ -261,13 +261,13 @@ Representation
 
 Some names and abbreviations are so familiar to us that we sometimes forget
 that they are not ordinary words. Other words apparently seem so special that
-we create abbreviations or capitalisations. As the mixed spelling this causes
+we create abbreviations or capitalizations. As the mixed spelling this causes
 is rather confusing for the reader, we should try to limit ourselves to
 writing such words in only one way. An exception are the occurrences in
 filenames etc., where other conventions govern the way names are written.
 
 Try to write the following words written out like this and/or using this
-capitalisation:
+capitalization:
 
 + AROS (rather than "a.r.o.s" or "Aros"), AROS' (for "of AROS"), but Aros.org
   (the name of the website);
@@ -387,7 +387,7 @@ Page title
 + A heading that is the first in the document and the only one of its type,
   with all other headings hierarchically below it, most likely should be
   (part of) the page title.
-+ Page titles are written with the start of each word capitalised. This is
++ Page titles are written with the start of each word capitalized. This is
   possible because they will not include the source code names, but rather the
   descriptive names: Not "exec.library" but "The Exec Library".
 
