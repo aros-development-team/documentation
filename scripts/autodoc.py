@@ -232,7 +232,7 @@ class AutoDoc(object):
                     fdesc.write(lines)
                     fdesc.write("\n")
 
-    def write_xref(self, fdesc, path_to_lib, path_to_header):
+    def write_xref(self, fdesc, path_to_lib):
         """Write xrefs ('see also') to file.
 
         Arguments:
@@ -240,7 +240,6 @@ class AutoDoc(object):
         filehandle - filehandle of a file to write the autodoc in
         path_to_shell - relative path from target document to directory with Shell command documents
         path_to_lib - relative path from target document to directory with library documents
-        path_to_header - relative path from target document to directory with header files
         """
 
         if "XREF" in self.titles:
@@ -256,7 +255,7 @@ class AutoDoc(object):
                     elif kind == XREF_KIND_STRING:
                         self.write_xref_string(fdesc, name1)
                     elif kind == XREF_KIND_HEADER:
-                        self.write_xref_header(fdesc, name1, path_to_header)
+                        self.write_xref_header(fdesc, name1)
                 fdesc.write("\n\n")
 
     def write_xref_function(self, fdesc, libname, funcname, path_to_lib):
@@ -269,10 +268,10 @@ class AutoDoc(object):
         """
         fdesc.write("`%s()`_ " % (funcname))
 
-    def write_xref_header(self, fdesc, name, path):
+    def write_xref_header(self, fdesc, name):
         """ Write XREF of a header file
         """
-        fdesc.write("`%s <%s/%s>`_ " % (name, path, name))
+        fdesc.write("`%s </documentation/developers/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
         """ Write XREF of a string
@@ -570,7 +569,7 @@ class ShellDocList(object):
             print("Writing to file", filename)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 doc.write(fdesc, titles)
-                doc.write_xref(fdesc, "../../developers/autodocs", "../../developers/headerfiles")
+                doc.write_xref(fdesc, "../../developers/autodocs")
 
         # create index page
         filename = os.path.join(targetdir, "index.en")
@@ -662,7 +661,7 @@ class LibDocList(object):
 
                 for doc in self.doclist:
                     doc.write(fdesc, titles)
-                    doc.write_xref(fdesc, ".", "../headerfiles")
+                    doc.write_xref(fdesc, ".")
                     # write transition
                     if doc is not self.doclist[-1]:
                         fdesc.write("----------\n\n")
@@ -794,7 +793,7 @@ class HiddDocList(object):
 
                     for doc in doclist:
                         doc.write(fdesc, titles)
-                        doc.write_xref(fdesc, ".", "../headerfiles")
+                        doc.write_xref(fdesc, ".")
                         # write transition
                         if doc is not doclist[-1]: # not last entry
                             fdesc.write("----------\n\n")
