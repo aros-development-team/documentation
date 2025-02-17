@@ -11,65 +11,10 @@ kbd_hidd
 Classes
 -------
 
-+ `CLID_HW_Kbd`_
 + `CLID_Hidd_Kbd`_
++ `CLID_HW_Kbd`_
 
 ----------
-
-CLID_HW_Kbd
------------
-
-========================================== ========================================== ========================================== ========================================== 
-`--background_kbdsubsystem--`_             `--hardware_drivers--`_                    
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
---background_kbdsubsystem--
-===========================
-
-Notes
-~~~~~
-::
-
-     This class represents a keyboard input subsystem in AROS. Additionally
-     it serves as a "hub" for collecting input from various keyboard devices
-     in the system. Events from all keyboard devices are merged into a single
-     stream and propagated to all clients.
-
-     In order to get an access to keyboard input subsystem you need to
-     create an object of CLID_HW_Kbd class. The actual returned object is a
-     singletone, you do not have to dispose it, and every call will return
-     the same object pointer. After getting this object, you can, for example,
-     register your driver using moHW_AddDriver method, or enumerate drivers
-     using moHW_EnumDrivers.
-
-     If you wish to receive keyboard events, use objects of CLID_Hidd_Kbd
-     class. This class implements the same interface as driver class, but
-     represents receiver's side and is responsible for registering user's
-     interrupt handler in the listeners chain. These objects are not real
-     drivers and do not need to me registered within the subsystem.
-
-
-
-----------
-
---hardware_drivers--
-====================
-
-Notes
-~~~~~
-::
-
-     A hardware driver should be a subclass of CLID_Hidd and implement IID_Hidd_Kbd
-     interface according to the following rules:
-
-     1. A single object of driver class represents a single hardware unit.
-     2. A single driver object maintains a single callback address (passed to it
-        using aoHidd_Kbd_IrqHandler). Under normal conditions this callback is supplied
-        by CLID_Hidd_Kbd class.
-
-
 
 CLID_Hidd_Kbd
 -------------
@@ -283,4 +228,59 @@ See also
 ~~~~~~~~
 
 `moHidd_Kbd_AddHardwareDriver`_ 
+
+CLID_HW_Kbd
+-----------
+
+========================================== ========================================== ========================================== ========================================== 
+`--background_kbdsubsystem--`_             `--hardware_drivers--`_                    
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+--background_kbdsubsystem--
+===========================
+
+Notes
+~~~~~
+::
+
+     This class represents a keyboard input subsystem in AROS. Additionally
+     it serves as a "hub" for collecting input from various keyboard devices
+     in the system. Events from all keyboard devices are merged into a single
+     stream and propagated to all clients.
+
+     In order to get an access to keyboard input subsystem you need to
+     create an object of CLID_HW_Kbd class. The actual returned object is a
+     singletone, you do not have to dispose it, and every call will return
+     the same object pointer. After getting this object, you can, for example,
+     register your driver using moHW_AddDriver method, or enumerate drivers
+     using moHW_EnumDrivers.
+
+     If you wish to receive keyboard events, use objects of CLID_Hidd_Kbd
+     class. This class implements the same interface as driver class, but
+     represents receiver's side and is responsible for registering user's
+     interrupt handler in the listeners chain. These objects are not real
+     drivers and do not need to me registered within the subsystem.
+
+
+
+----------
+
+--hardware_drivers--
+====================
+
+Notes
+~~~~~
+::
+
+     A hardware driver should be a subclass of CLID_Hidd and implement IID_Hidd_Kbd
+     interface according to the following rules:
+
+     1. A single object of driver class represents a single hardware unit.
+     2. A single driver object maintains a single callback address (passed to it
+        using aoHidd_Kbd_IrqHandler). Under normal conditions this callback is supplied
+        by CLID_Hidd_Kbd class.
+
+
 

@@ -708,7 +708,7 @@ Notes
 See also
 ~~~~~~~~
 
-`intuition/screens.h <../headerfiles/intuition/screens.h>`_ 
+`intuition/screens.h </documentation/developers/headerfiles/intuition/screens.h>`_ 
 
 ----------
 
@@ -2563,7 +2563,7 @@ Notes
 See also
 ~~~~~~~~
 
-`FreeScreenDrawInfo()`_ `LockPubScreen()`_ `intuition/screens.h <../headerfiles/intuition/screens.h>`_ 
+`FreeScreenDrawInfo()`_ `LockPubScreen()`_ `intuition/screens.h </documentation/developers/headerfiles/intuition/screens.h>`_ 
 
 ----------
 
@@ -3299,7 +3299,7 @@ Notes
 See also
 ~~~~~~~~
 
-`OpenWindow()`_ `CloseWindow()`_ `intuition/extensions.h <../headerfiles/intuition/extensions.h>`_ 
+`OpenWindow()`_ `CloseWindow()`_ `intuition/extensions.h </documentation/developers/headerfiles/intuition/extensions.h>`_ 
 
 ----------
 

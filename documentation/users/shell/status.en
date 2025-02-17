@@ -1,7 +1,6 @@
 ======
 Status
 ======
-
 .. This document is automatically generated. Don't edit it!
 
 `Index <index>`_ `Prev <stacksnoop>`_ `Next <symboldump>`_ 
@@ -92,5 +91,5 @@ Example
 See also
 ~~~~~~~~
 
-`dos/dosextens.h <../../developers/headerfiles/dos/dosextens.h>`_ 
+`dos/dosextens.h </documentation/developers/headerfiles/dos/dosextens.h>`_ 
 

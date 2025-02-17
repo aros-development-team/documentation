@@ -11,43 +11,266 @@ hidd_hidd
 Classes
 -------
 
-+ `CLID_HW_Root`_
-+ `CLID_HW`_
 + `hiddclass`_
++ `CLID_HW`_
++ `CLID_HW_Root`_
 
 ----------
 
-CLID_HW_Root
-------------
+hiddclass
+---------
 
 ========================================== ========================================== ========================================== ========================================== 
-`--background_hwroot--`_                   
+`--background_hiddclass--`_                `aoHidd_DriverData`_                       `aoHidd_HardwareName`_                     `aoHidd_Name`_                             
+`aoHidd_Producer`_                         `aoHidd_ProducerName`_                     `aoHidd_Product`_                          
 ========================================== ========================================== ========================================== ========================================== 
 
 -----------
 
---background_hwroot--
-=====================
+--background_hiddclass--
+========================
 
 Notes
 ~~~~~
 ::
 
-     This class represents a root of HIDD subsystem tree. In other words, it
-     represents your computer. Calling HW_EnumDrivers() on it will enumerate
-     installed subsystem classes.
-
-     By design this class is a singletone. In order to get access to it, just
-     call OOP_NewObject() on it. Every call will return the same pointer to
-     the same object. You do not need to call OOP_Dispose object on it. Such
-     calls will simply do nothing.
-
-     Subsystem classes need to register themselves in the tree by calling
-     HW_AddDriver() on this class. The class keeps an eye on the subsystem
-     usage and will allow to remove it using HW_RemoveDriver() only if the
-     subsystem being removed is not in use by any other components.
+     This class is a base class for all object-oriented hardware drivers in AROS. Its
+     main purpose is to provide some information about the driver itself.
+     
+     At the moment this class is just a primary design. Many defined attributes and
+     methods are drafts and reserved. This documentation includes only already
+     estabilished definitions. Do not use any other methods and attributes, their
+     definitions may change at any moment.
 
 
+
+----------
+
+aoHidd_DriverData
+=================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], APTR
+
+
+Function
+~~~~~~~~
+::
+
+     Provide private data for driver creation.
+
+     This attribute is actually reserved for private use by device drivers.
+     Many driver classes will scan the system and instantiate one or more
+     objects of own class to control the discovered hardware. This attribute
+     is intended to specify details of the actual device. For example for
+     PCI device drivers this can be a pointer to PCI device objects.
+
+
+Notes
+~~~~~
+::
+
+     Be careful and do not use this attribute if you implement a public reusable
+     class which is meant to be subclassed. In this case this attribute can be
+     used by subclasses, and your own use will make a conflict.
+
+     This attribute actually exists only in order to free the developer from need
+     to create own private interface just for one attribute.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Producer`_ 
+
+----------
+
+aoHidd_HardwareName
+===================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], STRPTR
+
+
+Function
+~~~~~~~~
+::
+
+     Query hardware name string.
+
+
+Notes
+~~~~~
+::
+
+     Initial value for this attribute is usually supplied by driver class in its
+     moRoot_New implementation.
+
+     The supplied string is not copied!
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Name`_ 
+
+----------
+
+aoHidd_Name
+===========
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], STRPTR
+
+
+Function
+~~~~~~~~
+::
+
+     Name of the driver instance under which it is known to the OS. This name is
+     provided to OS components that use the driver. For example Intuition's MONITORCLASS
+     expects to find something like "ati_dvi1.monitor", "ati_vga1.monitor" or
+     "pcvga.monitor" here.
+
+     Note that is is instance name, not class name. Different instances of the driver may
+     need to provide different names for different objects (like in ATI example) in order
+     to let the OS to distinguish between them.
+
+     The supplied string is internally copied, you may destroy it after object creation.
+
+
+Notes
+~~~~~
+::
+
+     Initial value for this attribute is usually supplied by driver class in its
+     moRoot_New implementation.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_HardwareName`_ 
+
+----------
+
+aoHidd_Producer
+===============
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Query hardware manufacturer's numeric ID. This ID may come for example from PCI
+     or Zorro bus configuration data.
+
+
+Notes
+~~~~~
+::
+
+     It is valid to return 0 if your hardware doesn't provide any ID number.
+     
+     Initial value for this attribute is usually supplied by driver class in its
+     moRoot_New implementation.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Product`_ 
+
+----------
+
+aoHidd_ProducerName
+===================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], STRPTR
+
+
+Function
+~~~~~~~~
+::
+
+     Query hardware manufacturer string. NULL is a valid value for this attribute
+     meaning that the information is not specified.
+
+
+Notes
+~~~~~
+::
+
+     Initial value for this attribute is usually supplied by driver class in its
+     moRoot_New implementation.
+
+     The supplied string is not copied!
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_HardwareName`_ 
+
+----------
+
+aoHidd_Product
+==============
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Query hardware's numeric produce ID. This ID may come for example from PCI
+     or Zorro bus configuration data.
+
+
+Notes
+~~~~~
+::
+
+     It is valid to return 0 if your hardware doesn't provide any ID number.
+
+     Initial value for this attribute is usually supplied by driver class in its
+     moRoot_New implementation.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Producer`_ 
 
 CLID_HW
 -------
@@ -376,258 +599,35 @@ See also
 
 `moHW_CleanUpDriver`_ 
 
-hiddclass
----------
+CLID_HW_Root
+------------
 
 ========================================== ========================================== ========================================== ========================================== 
-`--background_hiddclass--`_                `aoHidd_DriverData`_                       `aoHidd_HardwareName`_                     `aoHidd_Name`_                             
-`aoHidd_Producer`_                         `aoHidd_ProducerName`_                     `aoHidd_Product`_                          
+`--background_hwroot--`_                   
 ========================================== ========================================== ========================================== ========================================== 
 
 -----------
 
---background_hiddclass--
-========================
+--background_hwroot--
+=====================
 
 Notes
 ~~~~~
 ::
 
-     This class is a base class for all object-oriented hardware drivers in AROS. Its
-     main purpose is to provide some information about the driver itself.
-     
-     At the moment this class is just a primary design. Many defined attributes and
-     methods are drafts and reserved. This documentation includes only already
-     estabilished definitions. Do not use any other methods and attributes, their
-     definitions may change at any moment.
+     This class represents a root of HIDD subsystem tree. In other words, it
+     represents your computer. Calling HW_EnumDrivers() on it will enumerate
+     installed subsystem classes.
 
+     By design this class is a singletone. In order to get access to it, just
+     call OOP_NewObject() on it. Every call will return the same pointer to
+     the same object. You do not need to call OOP_Dispose object on it. Such
+     calls will simply do nothing.
 
+     Subsystem classes need to register themselves in the tree by calling
+     HW_AddDriver() on this class. The class keeps an eye on the subsystem
+     usage and will allow to remove it using HW_RemoveDriver() only if the
+     subsystem being removed is not in use by any other components.
 
-----------
 
-aoHidd_DriverData
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], APTR
-
-
-Function
-~~~~~~~~
-::
-
-     Provide private data for driver creation.
-
-     This attribute is actually reserved for private use by device drivers.
-     Many driver classes will scan the system and instantiate one or more
-     objects of own class to control the discovered hardware. This attribute
-     is intended to specify details of the actual device. For example for
-     PCI device drivers this can be a pointer to PCI device objects.
-
-
-Notes
-~~~~~
-::
-
-     Be careful and do not use this attribute if you implement a public reusable
-     class which is meant to be subclassed. In this case this attribute can be
-     used by subclasses, and your own use will make a conflict.
-
-     This attribute actually exists only in order to free the developer from need
-     to create own private interface just for one attribute.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Producer`_ 
-
-----------
-
-aoHidd_HardwareName
-===================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], STRPTR
-
-
-Function
-~~~~~~~~
-::
-
-     Query hardware name string.
-
-
-Notes
-~~~~~
-::
-
-     Initial value for this attribute is usually supplied by driver class in its
-     moRoot_New implementation.
-
-     The supplied string is not copied!
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Name`_ 
-
-----------
-
-aoHidd_Name
-===========
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], STRPTR
-
-
-Function
-~~~~~~~~
-::
-
-     Name of the driver instance under which it is known to the OS. This name is
-     provided to OS components that use the driver. For example Intuition's MONITORCLASS
-     expects to find something like "ati_dvi1.monitor", "ati_vga1.monitor" or
-     "pcvga.monitor" here.
-
-     Note that is is instance name, not class name. Different instances of the driver may
-     need to provide different names for different objects (like in ATI example) in order
-     to let the OS to distinguish between them.
-
-     The supplied string is internally copied, you may destroy it after object creation.
-
-
-Notes
-~~~~~
-::
-
-     Initial value for this attribute is usually supplied by driver class in its
-     moRoot_New implementation.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_HardwareName`_ 
-
-----------
-
-aoHidd_Producer
-===============
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Query hardware manufacturer's numeric ID. This ID may come for example from PCI
-     or Zorro bus configuration data.
-
-
-Notes
-~~~~~
-::
-
-     It is valid to return 0 if your hardware doesn't provide any ID number.
-     
-     Initial value for this attribute is usually supplied by driver class in its
-     moRoot_New implementation.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Product`_ 
-
-----------
-
-aoHidd_ProducerName
-===================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], STRPTR
-
-
-Function
-~~~~~~~~
-::
-
-     Query hardware manufacturer string. NULL is a valid value for this attribute
-     meaning that the information is not specified.
-
-
-Notes
-~~~~~
-::
-
-     Initial value for this attribute is usually supplied by driver class in its
-     moRoot_New implementation.
-
-     The supplied string is not copied!
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_HardwareName`_ 
-
-----------
-
-aoHidd_Product
-==============
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Query hardware's numeric produce ID. This ID may come for example from PCI
-     or Zorro bus configuration data.
-
-
-Notes
-~~~~~
-::
-
-     It is valid to return 0 if your hardware doesn't provide any ID number.
-
-     Initial value for this attribute is usually supplied by driver class in its
-     moRoot_New implementation.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Producer`_ 
 

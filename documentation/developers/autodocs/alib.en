@@ -1688,7 +1688,7 @@ Result
 See also
 ~~~~~~~~
 
-`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `CoerceMethodA()`_ `DoSuperMethodA()`_ `intuition/classusr.h <../headerfiles/intuition/classusr.h>`_ 
+`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `CoerceMethodA()`_ `DoSuperMethodA()`_ `intuition/classusr.h </documentation/developers/headerfiles/intuition/classusr.h>`_ 
 
 ----------
 
@@ -1740,7 +1740,7 @@ Result
 See also
 ~~~~~~~~
 
-`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `DoMethodA()`_ `CoerceMethodA()`_ `intuition/classes.h <../headerfiles/intuition/classes.h>`_ 
+`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `DoMethodA()`_ `CoerceMethodA()`_ `intuition/classes.h </documentation/developers/headerfiles/intuition/classes.h>`_ 
 
 ----------
 
@@ -1763,7 +1763,7 @@ Synopsis
 See also
 ~~~~~~~~
 
-`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `DoMethodA()`_ `CoerceMethodA()`_ `intuition/classes.h <../headerfiles/intuition/classes.h>`_ 
+`intuition.library/NewObjectA() <./intuition#newobjecta>`_ `intuition.library/SetAttrsA() <./intuition#setattrsa>`_ `intuition.library/GetAttr() <./intuition#getattr>`_ `intuition.library/DisposeObject() <./intuition#disposeobject>`_ `DoMethodA()`_ `CoerceMethodA()`_ `intuition/classes.h </documentation/developers/headerfiles/intuition/classes.h>`_ 
 
 ----------
 

@@ -11,400 +11,15 @@ gfx_hidd
 Classes
 -------
 
-+ `hidd.gfx.overlay`_
-+ `hidd.gfx.gc`_
 + `hidd.gfx.driver`_
-+ `hidd.gfx.bitmap`_
-+ `hidd.gfx.pixfmt`_
-+ `CLID_Hidd_ColorMap`_
 + `hidd.gfx.bitmap.planarbm`_
++ `hidd.gfx.overlay`_
++ `CLID_Hidd_ColorMap`_
++ `hidd.gfx.gc`_
++ `hidd.gfx.pixfmt`_
++ `hidd.gfx.bitmap`_
 
 ----------
-
-hidd.gfx.overlay
-----------------
-
-========================================== ========================================== ========================================== ========================================== 
-`--background_overlay--`_                  `aoHidd_Overlay_Error`_                    `aoHidd_Overlay_SrcFormat`_                `aoHidd_Overlay_SrcHeight`_                
-`aoHidd_Overlay_SrcWidth`_                 
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
---background_overlay--
-======================
-
-Notes
-~~~~~
-::
-
-     Objects of overlay class represent hardware video overlays.
-     
-     Current hardware supports only one video overlay per screen, however in future
-     the situation may change.
-     
-     hidd.gfx.overlay is an interface name. There's no such public ID since
-     there's actually no base class for the overlay. The whole implementation is
-     hardware-dependant and needs to be done separately for every driver.
-
-     Overlay classes do not need to be public. It's up to display drivers to manage
-     them. A moHidd_Gfx_NewOverlay method of graphics driver class is used to create
-     overlay objects.
-
-
-
-----------
-
-aoHidd_Overlay_Error
-====================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], ULONG *
-
-
-Function
-~~~~~~~~
-::
-
-     Specifies a pointer to ULONG location where error code will be written.
-
-     This attribute can be used for overlay creation in order to be able to get an
-     information about the actual failure reason.
-
-     Resulting error code can be one of VOERR_... values defined in
-     cybergraphx/cgxvideo.h:
-     
-       VOERR_OK          - there was no error
-       VOERR_INVSCRMODE  - no (more) hardware overlays are supported on this card
-       VOERR_NOOVLMEMORY - there is not enough VRAM to hold overlay data
-       VOERR_INVSRCFMT   - given source pixel format is not supported by the card
-       VOERR_NOMEMORY    - there is not enough system RAM for internal driver needs
-
-
-
-----------
-
-aoHidd_Overlay_SrcFormat
-========================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Specifies source data pixel format. The value should be one of SRCFMT_... constants
-     defined in cybergraphx/cgxvideo.h:
-     
-       SRCFMT_YUV16   - 16-but YUV
-       SRCFMT_YCbCr16 - 16-bit YCbCr
-       SRCFMT_RGB15PC - R5G5B5, little-endian
-       SRCFMT_RGB16PC - R5G6B5, little-endian
-
-
-Notes
-~~~~~
-::
-
-     Not all formats can be supported by all drivers. Use aoHidd_Overlay_Error attribute
-     in order to get an explanation why overlay creation fails.
-
-
-
-----------
-
-aoHidd_Overlay_SrcHeight
-========================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Specifies source data height in pixels.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Overlay_SrcWidth`_ 
-
-----------
-
-aoHidd_Overlay_SrcWidth
-=======================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Specifies source data width in pixels.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_Overlay_SrcHeight`_ 
-
-hidd.gfx.gc
------------
-
-========================================== ========================================== ========================================== ========================================== 
-`aoHidd_GC_Background`_                    `aoHidd_GC_ColorExpansionMode`_            `aoHidd_GC_ColorMask`_                     `aoHidd_GC_DrawMode`_                      
-`aoHidd_GC_Foreground`_                    `aoHidd_GC_LinePattern`_                   `aoHidd_GC_LinePatternCnt`_                `moHidd_GC_SetClipRect`_                   
-`moHidd_GC_UnsetClipRect`_                 
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
-aoHidd_GC_Background
-====================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Background color
-
-
-
-----------
-
-aoHidd_GC_ColorExpansionMode
-============================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Mode for color expansion
- 
-
-
-----------
-
-aoHidd_GC_ColorMask
-===================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Prevents some color bits from changing.
-
-
-
-----------
-
-aoHidd_GC_DrawMode
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Draw mode
-
-
-
-----------
-
-aoHidd_GC_Foreground
-====================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Foreground color
-
-
-
-----------
-
-aoHidd_GC_LinePattern
-=====================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Pattern for line drawing
- 
-
-
-----------
-
-aoHidd_GC_LinePatternCnt
-========================
-
-Synopsis
-~~~~~~~~
-::
-
-     [.SG]
-
-
-Function
-~~~~~~~~
-::
-
-     Pattern start bit for line drawing.
- 
-
-
-----------
-
-moHidd_GC_SetClipRect
-=====================
-
-Synopsis
-~~~~~~~~
-::
-
-     VOID OOP_DoMethod(OOP_Object *obj, struct pHidd_GC_SetClipRect *msg);
-
-     VOID HIDD_GC_SetClipRect(OOP_Object *obj, LONG x1, LONG y1, LONG x2, LONG y2);
-
-
-Function
-~~~~~~~~
-::
-
-     Install a clipping rectangle on a GC.
-
-
-Inputs
-~~~~~~
-::
-
-     obj    - a GC object
-     x1, y1 - top-left coordinate of the clipping rectangle
-     x2, y2 - bottom-right coordinate of the clipping rectangle
-
-
-Result
-~~~~~~
-::
-
-     None
-
-
-Notes
-~~~~~
-::
-
-     Since the GC is just a data container, installing clipping rectangle doesn't magically
-     applies it to all operations. Graphics driver method which uses the GC needs to support
-     it explicitly. Currently clipping is supported only by Draw and DrawEllipse methods.
-
-     Use this method if and only if the GC object was created by you. graphics.library
-     internally operates on temporary GC objects, which are allocated only partially. They
-     don't have storage space for clipping rectangle data, and attempt to use this
-     method on such a GC will result in memory trashing.
-
-
-
-----------
-
-moHidd_GC_UnsetClipRect
-=======================
-
-Synopsis
-~~~~~~~~
-::
-
-     VOID OOP_DoMethod(OOP_Object *obj, struct pHidd_GC_UnsetClipRect *msg);
-
-     VOID HIDD_GC_UnsetClipRect(OOP_Object *obj);
-
-
-Function
-~~~~~~~~
-::
-
-     Uninstalls the clipping rectangle (whatever it is) from the GC.
-
-
-Inputs
-~~~~~~
-::
-
-     obj - a GC object
-
-
-Result
-~~~~~~
-::
-
-     None
-
-
 
 hidd.gfx.driver
 ---------------
@@ -2669,6 +2284,622 @@ See also
 
 `moHidd_Gfx_Show`_ 
 
+hidd.gfx.bitmap.planarbm
+------------------------
+
+========================================== ========================================== ========================================== ========================================== 
+`--background_planarbm--`_                 `aoHidd_PlanarBM_AllocPlanes`_             `aoHidd_PlanarBM_BitMap`_                  
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+--background_planarbm--
+=======================
+
+Notes
+~~~~~
+::
+
+     This is a class representing a planar Amiga(tm) bitmap in AROS graphics subsystem.
+
+     When you create an object of this class, an associated planar bitmap will be created.
+     However, it's possible to use this class with pre-existing bitmaps, making them
+     available to the Gfx Hidd subsystem.
+
+
+
+----------
+
+aoHidd_PlanarBM_AllocPlanes
+===========================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], BOOL
+
+
+Function
+~~~~~~~~
+::
+
+     Set this attribute to FALSE if you want to create an empty bitmap object containing
+     no bitmap data. Useful if you want to create an empty object to be associated with
+     existing bitmap later.
+
+
+Notes
+~~~~~
+::
+
+     This attribute is obsolete. It's equal to supplying aoHidd_PlanarBM_BitMap attribute
+     with a NULL value.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_PlanarBM_BitMap`_ 
+
+----------
+
+aoHidd_PlanarBM_BitMap
+======================
+
+Synopsis
+~~~~~~~~
+::
+
+     [ISG], struct BitMap *
+
+
+Function
+~~~~~~~~
+::
+
+     Allows to specify or retrieve a raw planar bitmap structure associated with the object.
+     Useful for direct access to the bitmap within subclasses, as well as for associating
+     an object with already existing BitMap structure.
+
+     It is valid to pass this attribute with a NULL value. In this case the object becomes
+     empty and contains no actual bitmap.
+
+
+Notes
+~~~~~
+::
+
+     If the object was created with own bitmap data (with no aoHidd_PlanarBM_BitMap specified
+     during creation), this data will be deallocated when you set this attribute.
+
+     It's up to you to deallocate own bitmaps, set using this attribute. Even if the object
+     is disposed, it won't deallocate user-supplied bitmap.
+
+
+
+hidd.gfx.overlay
+----------------
+
+========================================== ========================================== ========================================== ========================================== 
+`--background_overlay--`_                  `aoHidd_Overlay_Error`_                    `aoHidd_Overlay_SrcFormat`_                `aoHidd_Overlay_SrcHeight`_                
+`aoHidd_Overlay_SrcWidth`_                 
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+--background_overlay--
+======================
+
+Notes
+~~~~~
+::
+
+     Objects of overlay class represent hardware video overlays.
+     
+     Current hardware supports only one video overlay per screen, however in future
+     the situation may change.
+     
+     hidd.gfx.overlay is an interface name. There's no such public ID since
+     there's actually no base class for the overlay. The whole implementation is
+     hardware-dependant and needs to be done separately for every driver.
+
+     Overlay classes do not need to be public. It's up to display drivers to manage
+     them. A moHidd_Gfx_NewOverlay method of graphics driver class is used to create
+     overlay objects.
+
+
+
+----------
+
+aoHidd_Overlay_Error
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], ULONG *
+
+
+Function
+~~~~~~~~
+::
+
+     Specifies a pointer to ULONG location where error code will be written.
+
+     This attribute can be used for overlay creation in order to be able to get an
+     information about the actual failure reason.
+
+     Resulting error code can be one of VOERR_... values defined in
+     cybergraphx/cgxvideo.h:
+     
+       VOERR_OK          - there was no error
+       VOERR_INVSCRMODE  - no (more) hardware overlays are supported on this card
+       VOERR_NOOVLMEMORY - there is not enough VRAM to hold overlay data
+       VOERR_INVSRCFMT   - given source pixel format is not supported by the card
+       VOERR_NOMEMORY    - there is not enough system RAM for internal driver needs
+
+
+
+----------
+
+aoHidd_Overlay_SrcFormat
+========================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Specifies source data pixel format. The value should be one of SRCFMT_... constants
+     defined in cybergraphx/cgxvideo.h:
+     
+       SRCFMT_YUV16   - 16-but YUV
+       SRCFMT_YCbCr16 - 16-bit YCbCr
+       SRCFMT_RGB15PC - R5G5B5, little-endian
+       SRCFMT_RGB16PC - R5G6B5, little-endian
+
+
+Notes
+~~~~~
+::
+
+     Not all formats can be supported by all drivers. Use aoHidd_Overlay_Error attribute
+     in order to get an explanation why overlay creation fails.
+
+
+
+----------
+
+aoHidd_Overlay_SrcHeight
+========================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Specifies source data height in pixels.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Overlay_SrcWidth`_ 
+
+----------
+
+aoHidd_Overlay_SrcWidth
+=======================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I..], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Specifies source data width in pixels.
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_Overlay_SrcHeight`_ 
+
+CLID_Hidd_ColorMap
+------------------
+
+========================================== ========================================== ========================================== ========================================== 
+`aoHidd_ColorMap_NumEntries`_              `moHidd_ColorMap_GetColor`_                `moHidd_ColorMap_GetPixel`_                `moHidd_ColorMap_SetColors`_               
+
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+aoHidd_ColorMap_NumEntries
+==========================
+
+Synopsis
+~~~~~~~~
+::
+
+     [I.G], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Number of colors in the colormap.
+
+
+
+----------
+
+moHidd_ColorMap_GetColor
+========================
+
+Synopsis
+~~~~~~~~
+::
+
+     BOOL OOP_DoMethod(OOP_Object *o, struct pHidd_ColorMap_GetColor *msg);
+
+     BOOL HIDD_CM_GetColor(OOP_Object *obj, ULONG colorNo, HIDDT_Color *colorReturn);
+
+
+Inputs
+~~~~~~
+::
+
+     obj         -
+     colorNo     -
+     colorReturn -
+
+
+
+----------
+
+moHidd_ColorMap_GetPixel
+========================
+
+Synopsis
+~~~~~~~~
+::
+
+     HIDDT_Pixel OOP_DoMethod(OOP_Object *obj, struct pHidd_ColorMap_GetPixel *msg);
+
+     HIDDT_Pixel HIDD_CM_GetPixel(OOP_Object *obj, ULONG pixelNo);
+
+
+Inputs
+~~~~~~
+::
+
+     obj     -
+     pixelNo -
+
+
+
+----------
+
+moHidd_ColorMap_SetColors
+=========================
+
+Synopsis
+~~~~~~~~
+::
+
+     BOOL OOP_DoMethod(OOP_Object *obj, struct pHidd_ColorMap_SetColors *msg);
+
+     BOOL HIDD_CM_SetColors(OOP_Object *obj, HIDDT_Color *colors, ULONG firstColor,
+                            ULONG numColors, OOP_Object *pixFmt);
+
+
+Inputs
+~~~~~~
+::
+
+     obj        -
+     colors     -
+     firstColor -
+     numColors  -
+     pixFmt     -
+
+
+
+hidd.gfx.gc
+-----------
+
+========================================== ========================================== ========================================== ========================================== 
+`aoHidd_GC_Background`_                    `aoHidd_GC_ColorExpansionMode`_            `aoHidd_GC_ColorMask`_                     `aoHidd_GC_DrawMode`_                      
+`aoHidd_GC_Foreground`_                    `aoHidd_GC_LinePattern`_                   `aoHidd_GC_LinePatternCnt`_                `moHidd_GC_SetClipRect`_                   
+`moHidd_GC_UnsetClipRect`_                 
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+aoHidd_GC_Background
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Background color
+
+
+
+----------
+
+aoHidd_GC_ColorExpansionMode
+============================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Mode for color expansion
+ 
+
+
+----------
+
+aoHidd_GC_ColorMask
+===================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Prevents some color bits from changing.
+
+
+
+----------
+
+aoHidd_GC_DrawMode
+==================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Draw mode
+
+
+
+----------
+
+aoHidd_GC_Foreground
+====================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Foreground color
+
+
+
+----------
+
+aoHidd_GC_LinePattern
+=====================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Pattern for line drawing
+ 
+
+
+----------
+
+aoHidd_GC_LinePatternCnt
+========================
+
+Synopsis
+~~~~~~~~
+::
+
+     [.SG]
+
+
+Function
+~~~~~~~~
+::
+
+     Pattern start bit for line drawing.
+ 
+
+
+----------
+
+moHidd_GC_SetClipRect
+=====================
+
+Synopsis
+~~~~~~~~
+::
+
+     VOID OOP_DoMethod(OOP_Object *obj, struct pHidd_GC_SetClipRect *msg);
+
+     VOID HIDD_GC_SetClipRect(OOP_Object *obj, LONG x1, LONG y1, LONG x2, LONG y2);
+
+
+Function
+~~~~~~~~
+::
+
+     Install a clipping rectangle on a GC.
+
+
+Inputs
+~~~~~~
+::
+
+     obj    - a GC object
+     x1, y1 - top-left coordinate of the clipping rectangle
+     x2, y2 - bottom-right coordinate of the clipping rectangle
+
+
+Result
+~~~~~~
+::
+
+     None
+
+
+Notes
+~~~~~
+::
+
+     Since the GC is just a data container, installing clipping rectangle doesn't magically
+     applies it to all operations. Graphics driver method which uses the GC needs to support
+     it explicitly. Currently clipping is supported only by Draw and DrawEllipse methods.
+
+     Use this method if and only if the GC object was created by you. graphics.library
+     internally operates on temporary GC objects, which are allocated only partially. They
+     don't have storage space for clipping rectangle data, and attempt to use this
+     method on such a GC will result in memory trashing.
+
+
+
+----------
+
+moHidd_GC_UnsetClipRect
+=======================
+
+Synopsis
+~~~~~~~~
+::
+
+     VOID OOP_DoMethod(OOP_Object *obj, struct pHidd_GC_UnsetClipRect *msg);
+
+     VOID HIDD_GC_UnsetClipRect(OOP_Object *obj);
+
+
+Function
+~~~~~~~~
+::
+
+     Uninstalls the clipping rectangle (whatever it is) from the GC.
+
+
+Inputs
+~~~~~~
+::
+
+     obj - a GC object
+
+
+Result
+~~~~~~
+::
+
+     None
+
+
+
+hidd.gfx.pixfmt
+---------------
+
+========================================== ========================================== ========================================== ========================================== 
+`aoHidd_PixFmt_CgxPixFmt`_                 
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+aoHidd_PixFmt_CgxPixFmt
+=======================
+
+Synopsis
+~~~~~~~~
+::
+
+     [..G], ULONG
+
+
+Function
+~~~~~~~~
+::
+
+     Returns pixelformat number according to CyberGraphX standard or -1
+     if the pixelformat has no correct representation in CGX (for example,
+     planar pixelformats).
+
+
+
+See also
+~~~~~~~~
+
+`aoHidd_PixFmt_StdPixFmt`_ 
+
 hidd.gfx.bitmap
 ---------------
 
@@ -4764,237 +4995,6 @@ Notes
 
      This method is called also on offscreen bitmaps. You should track visible state of your bitmap
      and ignore these calls if it's not currently visible on the screen.
-
-
-
-hidd.gfx.pixfmt
----------------
-
-========================================== ========================================== ========================================== ========================================== 
-`aoHidd_PixFmt_CgxPixFmt`_                 
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
-aoHidd_PixFmt_CgxPixFmt
-=======================
-
-Synopsis
-~~~~~~~~
-::
-
-     [..G], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Returns pixelformat number according to CyberGraphX standard or -1
-     if the pixelformat has no correct representation in CGX (for example,
-     planar pixelformats).
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_PixFmt_StdPixFmt`_ 
-
-CLID_Hidd_ColorMap
-------------------
-
-========================================== ========================================== ========================================== ========================================== 
-`aoHidd_ColorMap_NumEntries`_              `moHidd_ColorMap_GetColor`_                `moHidd_ColorMap_GetPixel`_                `moHidd_ColorMap_SetColors`_               
-
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
-aoHidd_ColorMap_NumEntries
-==========================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I.G], ULONG
-
-
-Function
-~~~~~~~~
-::
-
-     Number of colors in the colormap.
-
-
-
-----------
-
-moHidd_ColorMap_GetColor
-========================
-
-Synopsis
-~~~~~~~~
-::
-
-     BOOL OOP_DoMethod(OOP_Object *o, struct pHidd_ColorMap_GetColor *msg);
-
-     BOOL HIDD_CM_GetColor(OOP_Object *obj, ULONG colorNo, HIDDT_Color *colorReturn);
-
-
-Inputs
-~~~~~~
-::
-
-     obj         -
-     colorNo     -
-     colorReturn -
-
-
-
-----------
-
-moHidd_ColorMap_GetPixel
-========================
-
-Synopsis
-~~~~~~~~
-::
-
-     HIDDT_Pixel OOP_DoMethod(OOP_Object *obj, struct pHidd_ColorMap_GetPixel *msg);
-
-     HIDDT_Pixel HIDD_CM_GetPixel(OOP_Object *obj, ULONG pixelNo);
-
-
-Inputs
-~~~~~~
-::
-
-     obj     -
-     pixelNo -
-
-
-
-----------
-
-moHidd_ColorMap_SetColors
-=========================
-
-Synopsis
-~~~~~~~~
-::
-
-     BOOL OOP_DoMethod(OOP_Object *obj, struct pHidd_ColorMap_SetColors *msg);
-
-     BOOL HIDD_CM_SetColors(OOP_Object *obj, HIDDT_Color *colors, ULONG firstColor,
-                            ULONG numColors, OOP_Object *pixFmt);
-
-
-Inputs
-~~~~~~
-::
-
-     obj        -
-     colors     -
-     firstColor -
-     numColors  -
-     pixFmt     -
-
-
-
-hidd.gfx.bitmap.planarbm
-------------------------
-
-========================================== ========================================== ========================================== ========================================== 
-`--background_planarbm--`_                 `aoHidd_PlanarBM_AllocPlanes`_             `aoHidd_PlanarBM_BitMap`_                  
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
---background_planarbm--
-=======================
-
-Notes
-~~~~~
-::
-
-     This is a class representing a planar Amiga(tm) bitmap in AROS graphics subsystem.
-
-     When you create an object of this class, an associated planar bitmap will be created.
-     However, it's possible to use this class with pre-existing bitmaps, making them
-     available to the Gfx Hidd subsystem.
-
-
-
-----------
-
-aoHidd_PlanarBM_AllocPlanes
-===========================
-
-Synopsis
-~~~~~~~~
-::
-
-     [I..], BOOL
-
-
-Function
-~~~~~~~~
-::
-
-     Set this attribute to FALSE if you want to create an empty bitmap object containing
-     no bitmap data. Useful if you want to create an empty object to be associated with
-     existing bitmap later.
-
-
-Notes
-~~~~~
-::
-
-     This attribute is obsolete. It's equal to supplying aoHidd_PlanarBM_BitMap attribute
-     with a NULL value.
-
-
-
-See also
-~~~~~~~~
-
-`aoHidd_PlanarBM_BitMap`_ 
-
-----------
-
-aoHidd_PlanarBM_BitMap
-======================
-
-Synopsis
-~~~~~~~~
-::
-
-     [ISG], struct BitMap *
-
-
-Function
-~~~~~~~~
-::
-
-     Allows to specify or retrieve a raw planar bitmap structure associated with the object.
-     Useful for direct access to the bitmap within subclasses, as well as for associating
-     an object with already existing BitMap structure.
-
-     It is valid to pass this attribute with a NULL value. In this case the object becomes
-     empty and contains no actual bitmap.
-
-
-Notes
-~~~~~
-::
-
-     If the object was created with own bitmap data (with no aoHidd_PlanarBM_BitMap specified
-     during creation), this data will be deallocated when you set this attribute.
-
-     It's up to you to deallocate own bitmaps, set using this attribute. Even if the object
-     is disposed, it won't deallocate user-supplied bitmap.
 
 
 

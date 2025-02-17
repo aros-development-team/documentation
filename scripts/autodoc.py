@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2008-2021, The AROS Development Team. All rights reserved.
+# Copyright ï¿½ 2008-2025, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
@@ -37,6 +37,7 @@ import re
 import tempfile
 import shutil
 import filecmp
+import codecs
 
 # Relative path from the main build script to the root of the AROS source
 TOPDIR = ".."
@@ -121,18 +122,18 @@ class FunctionIndex(object):
 
     def write(self, fdesc):
         tablesep = (("=" * 74) + " ") * 4
-        os.write(fdesc, "==============\n")
-        os.write(fdesc, "Function Index\n")
-        os.write(fdesc, "==============\n\n")
-        os.write(fdesc, tablesep + "\n")
+        fdesc.write("==============\n")
+        fdesc.write("Function Index\n")
+        fdesc.write("==============\n\n")
+        fdesc.write(tablesep + "\n")
         entrynr = 1
         for func in sorted(self.funcdict):
-            text = ("`%s <%s#%s>`_" %(func, self.funcdict[func], func[:-2].lower())).ljust(75)
-            os.write(fdesc, text)
+            text = ("`%s <%s#%s>`_" % (func, self.funcdict[func], func[:-2].lower())).ljust(75)
+            fdesc.write(text)
             if (entrynr) % 4 == 0:
-                os.write(fdesc, "\n")
+                fdesc.write("\n")
             entrynr += 1
-        os.write(fdesc, "\n" + tablesep + "\n")
+        fdesc.write("\n" + tablesep + "\n")
 
 
 class AutoDoc(object):
@@ -207,6 +208,10 @@ class AutoDoc(object):
 
         return cmp(self.docfilename, other.docfilename)
 
+    def __lt__(self, other):
+        """Compare function for sorting by docfilename."""
+        return self.docfilename < other.docfilename
+
     def write(self, fdesc, titles):
         """Write autodoc elements to file.
 
@@ -221,13 +226,13 @@ class AutoDoc(object):
             if title_key != "SEE ALSO" and title_key in self.titles:
                 lines = self.titles[title_key]
                 if len(lines) > 0:
-                    os.write(fdesc, title + "\n")
-                    os.write(fdesc, "~" * len(title) + "\n")
-                    os.write(fdesc, "::\n\n")
-                    os.write(fdesc, lines)
-                    os.write(fdesc, "\n")
+                    fdesc.write(title + "\n")
+                    fdesc.write("~" * len(title) + "\n")
+                    fdesc.write("::\n\n")
+                    fdesc.write(lines)
+                    fdesc.write("\n")
 
-    def write_xref(self, fdesc, path_to_lib, path_to_header):
+    def write_xref(self, fdesc, path_to_lib):
         """Write xrefs ('see also') to file.
 
         Arguments:
@@ -235,12 +240,11 @@ class AutoDoc(object):
         filehandle - filehandle of a file to write the autodoc in
         path_to_shell - relative path from target document to directory with Shell command documents
         path_to_lib - relative path from target document to directory with library documents
-        path_to_header - relative path from target document to directory with header files
         """
 
         if "XREF" in self.titles:
             if len(self.titles["XREF"]) > 0:
-                os.write(fdesc, "See also\n~~~~~~~~\n\n")
+                fdesc.write("See also\n~~~~~~~~\n\n")
                 for kind, name1, name2 in self.titles["XREF"]:
                     if kind == XREF_KIND_FUNCTION:
                         self.write_xref_function(fdesc, name1, name2, path_to_lib)
@@ -251,34 +255,33 @@ class AutoDoc(object):
                     elif kind == XREF_KIND_STRING:
                         self.write_xref_string(fdesc, name1)
                     elif kind == XREF_KIND_HEADER:
-                        self.write_xref_header(fdesc, name1, path_to_header)
-                os.write(fdesc, "\n\n")
+                        self.write_xref_header(fdesc, name1)
+                fdesc.write("\n\n")
 
     def write_xref_function(self, fdesc, libname, funcname, path_to_lib):
         """ Write XREF of a function
         """
-        os.write(fdesc, "`%s.library/%s() <%s/%s#%s>`_ "
-                 %(libname, funcname, path_to_lib, libname, funcname.lower()))
+        fdesc.write("`%s.library/%s() <%s/%s#%s>`_ " % (libname, funcname, path_to_lib, libname, funcname.lower()))
 
     def write_xref_localfunction(self, fdesc, funcname):
         """ Write XREF of a local
         """
-        os.write(fdesc, "`%s()`_ " %(funcname))
+        fdesc.write("`%s()`_ " % (funcname))
 
-    def write_xref_header(self, fdesc, name, path):
+    def write_xref_header(self, fdesc, name):
         """ Write XREF of a header file
         """
-        os.write(fdesc, "`%s <%s/%s>`_ " %(name, path, name))
+        fdesc.write("`%s </documentation/developers/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
         """ Write XREF of a string
         """
-        os.write(fdesc, "`%s`_ " %(name))
+        fdesc.write("`%s`_ " % (name))
 
     def write_xref_any(self, fdesc, name):
         """ Write XREF of a a string without a link
         """
-        os.write(fdesc, "%s " %name)
+        fdesc.write("%s " % name)
 
 
 class ShellAutoDoc(AutoDoc):
@@ -315,24 +318,24 @@ class ShellAutoDoc(AutoDoc):
         """
 
         underline = "=" * len(self.docname) + "\n"
-        os.write(fdesc, underline)
-        os.write(fdesc, self.docname + "\n")
-        os.write(fdesc, underline + "\n")
+        fdesc.write(underline)
+        fdesc.write(self.docname + "\n")
+        fdesc.write(underline)
 
-        os.write(fdesc, ".. This document is automatically generated. Don't edit it!\n\n")
+        fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
 
-        os.write(fdesc, "`Index <index>`_ ")
+        fdesc.write("`Index <index>`_ ")
         if self.prevdocfilename:
-            os.write(fdesc, "`Prev <" + self.prevdocfilename + ">`_ ")
+            fdesc.write("`Prev <" + self.prevdocfilename + ">`_ ")
         if self.nextdocfilename:
-            os.write(fdesc, "`Next <" + self.nextdocfilename + ">`_ ")
+            fdesc.write("`Next <" + self.nextdocfilename + ">`_ ")
 
-        os.write(fdesc, "\n\n---------------\n\n")
+        fdesc.write("\n\n---------------\n\n")
 
         AutoDoc.write(self, fdesc, titles)
 
     def write_xref_string(self, fdesc, name):
-        os.write(fdesc, "`%s <%s>`_ " %(name, name.lower()))
+        fdesc.write("`%s <%s>`_ " % (name, name.lower()))
 
 
 class LibAutoDoc(AutoDoc):
@@ -441,10 +444,10 @@ class LibAutoDoc(AutoDoc):
                         Write them in the given capitalization.
         """
 
-        os.write(fdesc, self.docname + "\n")
-        os.write(fdesc, "=" * len(self.docname) + "\n\n")
+        fdesc.write(self.docname + "\n")
+        fdesc.write("=" * len(self.docname) + "\n\n")
         AutoDoc.write(self, fdesc, titles)
-        os.write(fdesc, "\n")
+        fdesc.write("\n")
 
 
 class HiddAutoDoc(AutoDoc):
@@ -480,10 +483,10 @@ class HiddAutoDoc(AutoDoc):
 
         """
 
-        os.write(fdesc, self.docname + "\n")
-        os.write(fdesc, "=" * len(self.docname) + "\n\n")
+        fdesc.write(self.docname + "\n")
+        fdesc.write("=" * len(self.docname) + "\n\n")
         AutoDoc.write(self, fdesc, titles)
-        os.write(fdesc, "\n")
+        fdesc.write("\n")
 
 
 class ShellDocList(object):
@@ -511,14 +514,13 @@ class ShellDocList(object):
         filenames = glob.glob(os.path.join(srcdir, "*.c"))
         for filename in filenames:
             print("Reading from file", filename)
-            filehandle = open(filename)
-            content = filehandle.read() # read whole file
-            for ad_entry in AD_REGX.findall(content):
-                adoc = ShellAutoDoc(ad_entry)
-                if adoc.docname != "":
-                    self.doclist.append(adoc)
-            filehandle.close()
-        self.doclist.sort()
+            with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
+                content = filehandle.read()  # read whole file
+                for ad_entry in AD_REGX.findall(content):
+                    adoc = ShellAutoDoc(ad_entry)
+                    if adoc.docname != "":
+                        self.doclist.append(adoc)
+            self.doclist.sort()
 
         # set prev/next fields
         for docnr in range(len(self.doclist)):
@@ -537,15 +539,15 @@ class ShellDocList(object):
         """
 
         print("Creating index file")
-        os.write(fdesc, ".. This document is automatically generated. Don't edit it!\n\n")
-        os.write(fdesc, "=======================\n")
-        os.write(fdesc, "Using AROS by the Shell\n")
-        os.write(fdesc, "=======================\n\n")
-        os.write(fdesc, "+ `Introduction <introduction>`_\n")
-        os.write(fdesc, "+ `Scripts <scripts>`_\n\n")
+        fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
+        fdesc.write("=======================\n")
+        fdesc.write("Using AROS by the Shell\n")
+        fdesc.write("=======================\n\n")
+        fdesc.write("+ `Introduction <introduction>`_\n")
+        fdesc.write("+ `Scripts <scripts>`_\n\n")
 
-        os.write(fdesc, "Commands\n")
-        os.write(fdesc, "--------\n")
+        fdesc.write("Commands\n")
+        fdesc.write("--------\n")
 
         write_index(fdesc, targetdir)
 
@@ -565,19 +567,15 @@ class ShellDocList(object):
         for doc in self.doclist:
             filename = os.path.join(targetdir, doc.docfilename + ".en")
             print("Writing to file", filename)
-            (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
-            doc.write(tempfd, titles)
-            doc.write_xref(tempfd, "../../developers/autodocs", "../../developers/headerfiles")
-            os.close(tempfd)
-            move_if_changed(tempfilename, filename)
+            with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+                doc.write(fdesc, titles)
+                doc.write_xref(fdesc, "../../developers/autodocs")
 
         # create index page
         filename = os.path.join(targetdir, "index.en")
         print("Writing to file", filename)
-        (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
-        self.write_index(tempfd, targetdir)
-        os.close(tempfd)
-        move_if_changed(tempfilename, filename)
+        with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+            self.write_index(fdesc, targetdir)
 
 
 class LibDocList(object):
@@ -615,13 +613,12 @@ class LibDocList(object):
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
                 print("Reading from file", filename)
-                filehandle = open(filename)
-                content = filehandle.read() # read whole file
-                for ad_entry in AD_REGX.findall(content):
-                    adoc = LibAutoDoc(ad_entry)
-                    if adoc.docname != "":
-                        self.doclist.append(adoc)
-                filehandle.close()
+                with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
+                    content = filehandle.read()  # read whole file
+                    for ad_entry in AD_REGX.findall(content):
+                        adoc = LibAutoDoc(ad_entry)
+                        if adoc.docname != "":
+                            self.doclist.append(adoc)
         self.doclist.sort()
 
     def write(self, targetdir, titles):
@@ -639,38 +636,35 @@ class LibDocList(object):
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en")
             print("Writing to file", filename)
-            (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
+            with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+                #create header
+                underline = "=" * len(self.docfilename)
+                fdesc.write(underline + "\n")
+                fdesc.write(self.docfilename + "\n")
+                fdesc.write(underline + "\n\n")
 
-            #create header
-            underline = "=" * len(self.docfilename)
-            os.write(tempfd, underline + "\n")
-            os.write(tempfd, self.docfilename + "\n")
-            os.write(tempfd, underline + "\n\n")
+                fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
+                fdesc.write("`Index <index>`_\n\n")
+                fdesc.write("----------\n\n")
 
-            os.write(tempfd, ".. This document is automatically generated. Don't edit it!\n\n")
-            os.write(tempfd, "`Index <index>`_\n\n")
-            os.write(tempfd, "----------\n\n")
+                # create toc
+                tablesep = (("=" * 39) + " ") * 4
+                fdesc.write(tablesep + "\n")
+                for docnr in range(len(self.doclist)):
+                    tocname = "`" + self.doclist[docnr].docname + "`_"
+                    tocname = tocname.ljust(40)
+                    fdesc.write(tocname)
+                    if (docnr + 1) % 4 == 0:
+                        fdesc.write("\n")
+                fdesc.write("\n" + tablesep)
+                fdesc.write("\n\n-----------\n\n")
 
-            # create toc
-            tablesep = (("=" * 39) + " ") * 4
-            os.write(tempfd, tablesep + "\n")
-            for docnr in range(len(self.doclist)):
-                tocname = "`" + self.doclist[docnr].docname + "`_"
-                tocname = tocname.ljust(40)
-                os.write(tempfd, tocname)
-                if (docnr + 1) % 4 == 0:
-                    os.write(tempfd, "\n")
-            os.write(tempfd, "\n" + tablesep)
-            os.write(tempfd, "\n\n-----------\n\n")
-
-            for doc in self.doclist:
-                doc.write(tempfd, titles)
-                doc.write_xref(tempfd, ".", "../headerfiles")
-                # write transition
-                if doc is not self.doclist[-1]:
-                    os.write(tempfd, "----------\n\n")
-            os.close(tempfd)
-            move_if_changed(tempfilename, filename)
+                for doc in self.doclist:
+                    doc.write(fdesc, titles)
+                    doc.write_xref(fdesc, ".")
+                    # write transition
+                    if doc is not self.doclist[-1]:
+                        fdesc.write("----------\n\n")
 
 
 class AppsDocList(ShellDocList):
@@ -689,10 +683,10 @@ class AppsDocList(ShellDocList):
         """
 
         # create index page
-        os.write(fdesc, ".. This document is automatically generated. Don't edit it!\n\n")
-        os.write(fdesc, "==============\n")
-        os.write(fdesc, "Applications\n")
-        os.write(fdesc, "==============\n\n")
+        fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
+        fdesc.write("==============\n")
+        fdesc.write("Applications\n")
+        fdesc.write("==============\n\n")
         write_index(fdesc, targetdir)
 
 
@@ -731,21 +725,19 @@ class HiddDocList(object):
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
                 print("Reading from file", filename)
-                filehandle = open(filename)
-                content = filehandle.read() # read whole file
-                for ad_entry in AD_REGX.findall(content):
-                    adoc = HiddAutoDoc(ad_entry)
-                    if adoc.docname != "":
-                        if "LOCATION" in adoc.titles:
-                            classname = adoc.titles["LOCATION"].strip()
-                            if classname in self.doclist:
-                                self.doclist[classname].append(adoc)
+                with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
+                    content = filehandle.read()  # read whole file
+                    for ad_entry in AD_REGX.findall(content):
+                        adoc = HiddAutoDoc(ad_entry)
+                        if adoc.docname != "":
+                            if "LOCATION" in adoc.titles:
+                                classname = adoc.titles["LOCATION"].strip()
+                                if classname in self.doclist:
+                                    self.doclist[classname].append(adoc)
+                                else:
+                                    self.doclist[classname] = [adoc]
                             else:
-                                self.doclist[classname] = [adoc]
-                        else:
-                            raise ValueError("'%s' hidd doc has no LOCATION" % (adoc.docname))
-
-                filehandle.close()
+                                raise ValueError("'%s' hidd doc has no LOCATION" % (adoc.docname))
 
         for _, value in self.doclist.items():
             value.sort()
@@ -765,49 +757,46 @@ class HiddDocList(object):
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en")
             print("Writing to file", filename)
-            (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
+            with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+                # create header
+                underline = "=" * len(self.docfilename)
+                fdesc.write(underline + "\n")
+                fdesc.write(self.docfilename + "\n")
+                fdesc.write(underline + "\n\n")
 
-            # create header
-            underline = "=" * len(self.docfilename)
-            os.write(tempfd, underline + "\n")
-            os.write(tempfd, self.docfilename + "\n")
-            os.write(tempfd, underline + "\n\n")
+                fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
+                fdesc.write("`Index <index>`_\n\n")
+                fdesc.write("----------\n\n")
 
-            os.write(tempfd, ".. This document is automatically generated. Don't edit it!\n\n")
-            os.write(tempfd, "`Index <index>`_\n\n")
-            os.write(tempfd, "----------\n\n")
+                # create list of classes
+                if len(self.doclist) > 1: # only when more than one class exists
+                    fdesc.write("Classes\n-------\n\n")
+                    for classname, doclist in self.doclist.items():
+                        fdesc.write("+ `" + classname + "`_\n")
+                    fdesc.write("\n----------\n\n")
 
-            # create list of classes
-            if len(self.doclist) > 1: # only when more than one class exists
-                os.write(tempfd, "Classes\n-------\n\n")
                 for classname, doclist in self.doclist.items():
-                    os.write(tempfd, "+ `" + classname + "`_\n")
-                os.write(tempfd, "\n----------\n\n")
+                    if len(self.doclist) > 1:
+                        fdesc.write(classname + "\n" + len(classname) * "-" + "\n\n")
 
-            for classname, doclist in self.doclist.items():
-                if len(self.doclist) > 1:
-                    os.write(tempfd, classname + "\n" + len(classname) * "-" + "\n\n")
+                    # create toc
+                    tablesep = (("=" * 42) + " ") * 4
+                    fdesc.write(tablesep + "\n")
+                    for docnr in range(len(doclist)):
+                        tocname = "`" + doclist[docnr].docname + "`_"
+                        tocname = tocname.ljust(43)
+                        fdesc.write(tocname)
+                        if (docnr + 1) % 4 == 0:
+                            fdesc.write("\n")
+                    fdesc.write("\n" + tablesep)
+                    fdesc.write("\n\n-----------\n\n")
 
-                # create toc
-                tablesep = (("=" * 42) + " ") * 4
-                os.write(tempfd, tablesep + "\n")
-                for docnr in range(len(doclist)):
-                    tocname = "`" + doclist[docnr].docname + "`_"
-                    tocname = tocname.ljust(43)
-                    os.write(tempfd, tocname)
-                    if (docnr + 1) % 4 == 0:
-                        os.write(tempfd, "\n")
-                os.write(tempfd, "\n" + tablesep)
-                os.write(tempfd, "\n\n-----------\n\n")
-
-                for doc in doclist:
-                    doc.write(tempfd, titles)
-                    doc.write_xref(tempfd, ".", "../headerfiles")
-                    # write transition
-                    if doc is not doclist[-1]: # not last entry
-                        os.write(tempfd, "----------\n\n")
-            os.close(tempfd)
-            move_if_changed(tempfilename, filename)
+                    for doc in doclist:
+                        doc.write(fdesc, titles)
+                        doc.write_xref(fdesc, ".")
+                        # write transition
+                        if doc is not doclist[-1]: # not last entry
+                            fdesc.write("----------\n\n")
 
 
 def write_index(fdesc, targetdir):
@@ -823,7 +812,7 @@ def write_index(fdesc, targetdir):
     files.sort()
 
     tablesep = (("=" * 49) + " ") * 5
-    os.write(fdesc, tablesep + "\n")
+    fdesc.write(tablesep + "\n")
     docnr = 1
     for doc in files:
         if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" \
@@ -831,11 +820,11 @@ def write_index(fdesc, targetdir):
             docname = doc[:-3]
             tocname = "`%s <%s>`_" %(docname, docname)
             tocname = tocname.ljust(50)
-            os.write(fdesc, tocname)
+            fdesc.write(tocname)
             if (docnr) % 5 == 0:
-                os.write(fdesc, "\n")
+                fdesc.write("\n")
             docnr = docnr + 1
-    os.write(fdesc, "\n" + tablesep + "\n")
+    fdesc.write("\n" + tablesep + "\n")
 
 
 def create_module_docs():
@@ -880,24 +869,20 @@ def create_module_docs():
     # print index file
     filename = os.path.join(targetdir, "index.en")
     print("Writing to file", filename)
-    (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
-    os.write(tempfd, "======================\n")
-    os.write(tempfd, "Autodocs for Modules\n")
-    os.write(tempfd, "======================\n\n")
-    os.write(tempfd, ".. This document is automatically generated. Don't edit it!\n\n")
+    with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+        fdesc.write("======================\n")
+        fdesc.write("Autodocs for Modules\n")
+        fdesc.write("======================\n\n")
+        fdesc.write(".. This document is automatically generated. Don't edit it!\n\n")
 
-    write_index(tempfd, targetdir)
-    os.write(tempfd, "\n`Function Index <functionindex>`_\n")
-    os.close(tempfd)
-    move_if_changed(tempfilename, filename)
+        write_index(fdesc, targetdir)
+        fdesc.write("\n`Function Index <functionindex>`_\n")
 
     # print function index
     filename = os.path.join(targetdir, "functionindex.en")
     print("Writing to file", filename)
-    (tempfd, tempfilename) = tempfile.mkstemp(suffix='adoc', text=True)
-    function_index.write(tempfd)
-    os.close(tempfd)
-    move_if_changed(tempfilename, filename)
+    with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
+        function_index.write(fdesc)
 
     print("Done")
 
