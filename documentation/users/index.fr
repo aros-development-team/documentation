@@ -9,7 +9,7 @@ Ressources Utilisateur
 + `FAQ`__
 
 __ installation  
-__ utilisation  
-__ index/shell
-__ index/applications
+__ using  
+__ shell/index
+__ applications/index
 __ faq  

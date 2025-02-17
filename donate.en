@@ -22,7 +22,7 @@
    	<input id="tab1" type="radio" value="paypal" name="paymethod" checked="checked">
    	<label for="tab1">PayPal</label>
    	<div id="paypal_tab" class="tab-content">
-   	  <img class="pay-logo" src="images/paypal-logo.png">
+   	  <img class="pay-logo" src="/images/paypal-logo.png">
    	  <!-- amount -->
    	  <br>
    	  <form name="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
