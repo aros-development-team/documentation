@@ -99,7 +99,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `Animate()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `Animate()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -135,7 +135,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `AddVSprite()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `AddVSprite()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -345,7 +345,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitGels()`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -836,7 +836,7 @@ Function
 See also
 ~~~~~~~~
 
-`AddAnimOb()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`AddAnimOb()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -917,7 +917,7 @@ Result
 See also
 ~~~~~~~~
 
-`InitArea()`_ `AreaMove()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitArea()`_ `AreaMove()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -967,7 +967,7 @@ Result
 See also
 ~~~~~~~~
 
-`InitArea()`_ `AreaMove()`_ `AreaDraw()`_ `AreaCircle()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitArea()`_ `AreaMove()`_ `AreaDraw()`_ `AreaCircle()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -1031,7 +1031,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`InitArea()`_ `AreaDraw()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitArea()`_ `AreaDraw()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -1079,7 +1079,7 @@ Result
 See also
 ~~~~~~~~
 
-`InitArea()`_ `AreaDraw()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitArea()`_ `AreaDraw()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -1198,7 +1198,7 @@ Result
 See also
 ~~~~~~~~
 
-`SetSoftStyle()`_ `graphics/text.h <../headerfiles/graphics/text.h>`_ 
+`SetSoftStyle()`_ `graphics/text.h </documentation/developers/headerfiles/graphics/text.h>`_ 
 
 ----------
 
@@ -1348,7 +1348,7 @@ Result
 See also
 ~~~~~~~~
 
-`graphics/modeid.h <../headerfiles/graphics/modeid.h>`_ `graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`graphics/modeid.h </documentation/developers/headerfiles/graphics/modeid.h>`_ `graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -1420,7 +1420,7 @@ Notes
 See also
 ~~~~~~~~
 
-`ScalerDiv()`_ `graphics/scale.h <../headerfiles/graphics/scale.h>`_ 
+`ScalerDiv()`_ `graphics/scale.h </documentation/developers/headerfiles/graphics/scale.h>`_ 
 
 ----------
 
@@ -1608,7 +1608,7 @@ Notes
 See also
 ~~~~~~~~
 
-`InitGels()`_ `Animate()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `Animate()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -1821,7 +1821,7 @@ Notes
 See also
 ~~~~~~~~
 
-`CINIT()`_ `CWAIT()`_ `CMOVE()`_ `CEND()`_ `graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`CINIT()`_ `CWAIT()`_ `CMOVE()`_ `CEND()`_ `graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 
@@ -1987,7 +1987,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`Text()`_ `ClearScreen()`_ `SetRast()`_ `graphics/text.h <../headerfiles/graphics/text.h>`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`Text()`_ `ClearScreen()`_ `SetRast()`_ `graphics/text.h </documentation/developers/headerfiles/graphics/text.h>`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -2234,7 +2234,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`Text()`_ `ClearEOL()`_ `SetRast()`_ `graphics/text.h <../headerfiles/graphics/text.h>`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`Text()`_ `ClearEOL()`_ `SetRast()`_ `graphics/text.h </documentation/developers/headerfiles/graphics/text.h>`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -2375,7 +2375,7 @@ Result
 See also
 ~~~~~~~~
 
-`OpenMonitor()`_ `graphics/monitor.h <../headerfiles/graphics/monitor.h>`_ 
+`OpenMonitor()`_ `graphics/monitor.h </documentation/developers/headerfiles/graphics/monitor.h>`_ 
 
 ----------
 
@@ -2414,7 +2414,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`CINIT()`_ `CWAIT()`_ `CEND()`_ `graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`CINIT()`_ `CWAIT()`_ `CEND()`_ `graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 
@@ -2552,7 +2552,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`CINIT()`_ `CMOVE()`_ `CEND()`_ `graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`CINIT()`_ `CMOVE()`_ `CEND()`_ `graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 
@@ -2914,7 +2914,7 @@ Result
 See also
 ~~~~~~~~
 
-`graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -3012,7 +3012,7 @@ Notes
 See also
 ~~~~~~~~
 
-`TextExtent()`_ `graphics/text.h <../headerfiles/graphics/text.h>`_ 
+`TextExtent()`_ `graphics/text.h </documentation/developers/headerfiles/graphics/text.h>`_ 
 
 ----------
 
@@ -3092,7 +3092,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetColorMap()`_ `SetRGB4()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`GetColorMap()`_ `SetRGB4()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -3124,7 +3124,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 
@@ -3156,7 +3156,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 
@@ -3248,7 +3248,7 @@ Notes
 See also
 ~~~~~~~~
 
-`GetGBuffers()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`GetGBuffers()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -3331,7 +3331,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetSprite()`_ `ChangeSprite()`_ `MoveSprite()`_ `graphics/sprite.h <../headerfiles/graphics/sprite.h>`_ 
+`GetSprite()`_ `ChangeSprite()`_ `MoveSprite()`_ `graphics/sprite.h </documentation/developers/headerfiles/graphics/sprite.h>`_ 
 
 ----------
 
@@ -3393,7 +3393,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -3537,7 +3537,7 @@ Result
 See also
 ~~~~~~~~
 
-`FreeColorMap()`_ `SetRGB4()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`FreeColorMap()`_ `SetRGB4()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -3589,7 +3589,7 @@ Result
 See also
 ~~~~~~~~
 
-`FindDisplayInfo()`_ `NextDisplayInfo()`_ `graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`FindDisplayInfo()`_ `NextDisplayInfo()`_ `graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -3712,7 +3712,7 @@ Notes
 See also
 ~~~~~~~~
 
-`FreeGBuffers()`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`FreeGBuffers()`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -3794,7 +3794,7 @@ Notes
 See also
 ~~~~~~~~
 
-`GetColorMap()`_ `FreeColorMap()`_ `SetRGB4()`_ `LoadRGB4()`_ `LoadRGB32()`_ `SetRGB32CM()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`GetColorMap()`_ `FreeColorMap()`_ `SetRGB4()`_ `LoadRGB4()`_ `LoadRGB32()`_ `SetRGB32CM()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -3837,7 +3837,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetColorMap()`_ `FreeColorMap()`_ `SetRGB4()`_ `LoadRGB4()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`GetColorMap()`_ `FreeColorMap()`_ `SetRGB4()`_ `LoadRGB4()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -3927,7 +3927,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`SetRPAttrsA()`_ `GetAPen()`_ `GetBPen()`_ `GetOutLinePen()`_ `graphics/rpattr.h <../headerfiles/graphics/rpattr.h>`_ 
+`SetRPAttrsA()`_ `GetAPen()`_ `GetBPen()`_ `GetOutLinePen()`_ `graphics/rpattr.h </documentation/developers/headerfiles/graphics/rpattr.h>`_ 
 
 ----------
 
@@ -3987,7 +3987,7 @@ Bugs
 See also
 ~~~~~~~~
 
-`FreeSprite()`_ `ChangeSprite()`_ `MoveSprite()`_ `GetSprite()`_ `graphics/sprite.h <../headerfiles/graphics/sprite.h>`_ 
+`FreeSprite()`_ `ChangeSprite()`_ `MoveSprite()`_ `GetSprite()`_ `graphics/sprite.h </documentation/developers/headerfiles/graphics/sprite.h>`_ 
 
 ----------
 
@@ -4028,7 +4028,7 @@ Result
 See also
 ~~~~~~~~
 
-`ModeNotAvailable()`_ `graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`ModeNotAvailable()`_ `graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -4082,7 +4082,7 @@ Notes
 See also
 ~~~~~~~~
 
-`graphics/gfxnodes.h <../headerfiles/graphics/gfxnodes.h>`_ `GfxFree()`_ `GfxNew()`_ `GfxLookUp()`_ 
+`graphics/gfxnodes.h </documentation/developers/headerfiles/graphics/gfxnodes.h>`_ `GfxFree()`_ `GfxNew()`_ `GfxLookUp()`_ 
 
 ----------
 
@@ -4125,7 +4125,7 @@ Result
 See also
 ~~~~~~~~
 
-`graphics/gfxnodes.h <../headerfiles/graphics/gfxnodes.h>`_ `GfxNew()`_ `GfxAssociate()`_ `GfxLookUp()`_ 
+`graphics/gfxnodes.h </documentation/developers/headerfiles/graphics/gfxnodes.h>`_ `GfxNew()`_ `GfxAssociate()`_ `GfxLookUp()`_ 
 
 ----------
 
@@ -4168,7 +4168,7 @@ Result
 See also
 ~~~~~~~~
 
-`graphics/gfxnodes.h <../headerfiles/graphics/gfxnodes.h>`_ `GfxNew()`_ `GfxAssociate()`_ `GfxFree()`_ 
+`graphics/gfxnodes.h </documentation/developers/headerfiles/graphics/gfxnodes.h>`_ `GfxNew()`_ `GfxAssociate()`_ `GfxFree()`_ 
 
 ----------
 
@@ -4210,7 +4210,7 @@ Result
 See also
 ~~~~~~~~
 
-`graphics/gfxnodes.h <../headerfiles/graphics/gfxnodes.h>`_ `GfxFree()`_ `GfxAssociate()`_ `GfxLookUp()`_ 
+`graphics/gfxnodes.h </documentation/developers/headerfiles/graphics/gfxnodes.h>`_ `GfxFree()`_ `GfxAssociate()`_ `GfxLookUp()`_ 
 
 ----------
 
@@ -4256,7 +4256,7 @@ Result
 See also
 ~~~~~~~~
 
-`AreaDraw()`_ `AreaMove()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`AreaDraw()`_ `AreaMove()`_ `AreaEllipse()`_ `AreaCircle()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -4305,7 +4305,7 @@ Notes
 See also
 ~~~~~~~~
 
-`graphics/gfx.h <../headerfiles/graphics/gfx.h>`_ 
+`graphics/gfx.h </documentation/developers/headerfiles/graphics/gfx.h>`_ 
 
 ----------
 
@@ -4377,7 +4377,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `InitMasks()`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `InitMasks()`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -4410,7 +4410,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `InitGMasks()`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `InitGMasks()`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -4877,7 +4877,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetVPModeID()`_ `graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`GetVPModeID()`_ `graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -5084,7 +5084,7 @@ Result
 See also
 ~~~~~~~~
 
-`FindDisplayInfo()`_ `GetDisplayInfoData()`_ `graphics/displayinfo.h <../headerfiles/graphics/displayinfo.h>`_ 
+`FindDisplayInfo()`_ `GetDisplayInfoData()`_ `graphics/displayinfo.h </documentation/developers/headerfiles/graphics/displayinfo.h>`_ 
 
 ----------
 
@@ -5280,7 +5280,7 @@ Result
 See also
 ~~~~~~~~
 
-`CloseMonitor()`_ `graphics/monitor.h <../headerfiles/graphics/monitor.h>`_ 
+`CloseMonitor()`_ `graphics/monitor.h </documentation/developers/headerfiles/graphics/monitor.h>`_ 
 
 ----------
 
@@ -5585,7 +5585,7 @@ Notes
 See also
 ~~~~~~~~
 
-`QBSBlit()`_ `OwnBlitter()`_ `DisownBlitter()`_ `hardware/blit.h <../headerfiles/hardware/blit.h>`_ 
+`QBSBlit()`_ `OwnBlitter()`_ `DisownBlitter()`_ `hardware/blit.h </documentation/developers/headerfiles/hardware/blit.h>`_ 
 
 ----------
 
@@ -5641,7 +5641,7 @@ Notes
 See also
 ~~~~~~~~
 
-`QBSBlit()`_ `OwnBlitter()`_ `DisownBlitter()`_ `hardware/blit.h <../headerfiles/hardware/blit.h>`_ 
+`QBSBlit()`_ `OwnBlitter()`_ `DisownBlitter()`_ `hardware/blit.h </documentation/developers/headerfiles/hardware/blit.h>`_ 
 
 ----------
 
@@ -5960,7 +5960,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `RemIBob()`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `RemIBob()`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -6378,7 +6378,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ `graphics/gels.h <../headerfiles/graphics/gels.h>`_ 
+`InitGels()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ `graphics/gels.h </documentation/developers/headerfiles/graphics/gels.h>`_ 
 
 ----------
 
@@ -6634,7 +6634,7 @@ Result
 See also
 ~~~~~~~~
 
-`RectFill()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`RectFill()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -6783,7 +6783,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetColorMap()`_ `SetRGB32()`_ `GetRGB32()`_ `SetRGB4CM()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`GetColorMap()`_ `SetRGB32()`_ `GetRGB32()`_ `SetRGB4CM()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -6889,7 +6889,7 @@ Result
 See also
 ~~~~~~~~
 
-`GetColorMap()`_ `SetRGB4()`_ `GetRGB4()`_ `graphics/view.h <../headerfiles/graphics/view.h>`_ 
+`GetColorMap()`_ `SetRGB4()`_ `GetRGB4()`_ `graphics/view.h </documentation/developers/headerfiles/graphics/view.h>`_ 
 
 ----------
 
@@ -6981,7 +6981,7 @@ Notes
 See also
 ~~~~~~~~
 
-`GetRPAttrsA()`_ `graphics/rpattr.h <../headerfiles/graphics/rpattr.h>`_ 
+`GetRPAttrsA()`_ `graphics/rpattr.h </documentation/developers/headerfiles/graphics/rpattr.h>`_ 
 
 ----------
 
@@ -7031,7 +7031,7 @@ Result
 See also
 ~~~~~~~~
 
-`AskSoftStyle()`_ `graphics/text.h <../headerfiles/graphics/text.h>`_ 
+`AskSoftStyle()`_ `graphics/text.h </documentation/developers/headerfiles/graphics/text.h>`_ 
 
 ----------
 
@@ -7080,7 +7080,7 @@ Inputs
 See also
 ~~~~~~~~
 
-`InitGels()`_ `DrawGList()`_ `DoCollision()`_ `graphics/rastport.h <../headerfiles/graphics/rastport.h>`_ 
+`InitGels()`_ `DrawGList()`_ `DoCollision()`_ `graphics/rastport.h </documentation/developers/headerfiles/graphics/rastport.h>`_ 
 
 ----------
 
@@ -7396,7 +7396,7 @@ Result
 See also
 ~~~~~~~~
 
-`CINIT()`_ `CMOVE()`_ `CWAIT()`_ `CEND()`_ `graphics/copper.h <../headerfiles/graphics/copper.h>`_ 
+`CINIT()`_ `CMOVE()`_ `CWAIT()`_ `CEND()`_ `graphics/copper.h </documentation/developers/headerfiles/graphics/copper.h>`_ 
 
 ----------
 

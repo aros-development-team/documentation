@@ -11,36 +11,10 @@ mouse_hidd
 Classes
 -------
 
-+ `CLID_HW_Mouse`_
 + `CLID_Hidd_Mouse`_
++ `CLID_HW_Mouse`_
 
 ----------
-
-CLID_HW_Mouse
--------------
-
-========================================== ========================================== ========================================== ========================================== 
-`--hardware_drivers--`_                    
-========================================== ========================================== ========================================== ========================================== 
-
------------
-
---hardware_drivers--
-====================
-
-Notes
-~~~~~
-::
-
-     A hardware driver should be a subclass of CLID_Hidd and implement IID_Hidd_Mouse
-     interface according to the following rules:
-
-     1. A single object of driver class represents a single hardware unit.
-     2. A single driver object maintains a single callback address (passed to it
-        using aoHidd_Mouse_IrqHandler). Under normal conditions this callback is
-        supplied by CLID_HW_Mouse class.
-
-
 
 CLID_Hidd_Mouse
 ---------------
@@ -385,4 +359,30 @@ See also
 ~~~~~~~~
 
 `moHidd_Mouse_AddHardwareDriver`_ 
+
+CLID_HW_Mouse
+-------------
+
+========================================== ========================================== ========================================== ========================================== 
+`--hardware_drivers--`_                    
+========================================== ========================================== ========================================== ========================================== 
+
+-----------
+
+--hardware_drivers--
+====================
+
+Notes
+~~~~~
+::
+
+     A hardware driver should be a subclass of CLID_Hidd and implement IID_Hidd_Mouse
+     interface according to the following rules:
+
+     1. A single object of driver class represents a single hardware unit.
+     2. A single driver object maintains a single callback address (passed to it
+        using aoHidd_Mouse_IrqHandler). Under normal conditions this callback is
+        supplied by CLID_HW_Mouse class.
+
+
 

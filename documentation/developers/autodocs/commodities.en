@@ -412,7 +412,7 @@ Result
 See also
 ~~~~~~~~
 
-`SetCxObjPri()`_ `libraries/commodities.h <../headerfiles/libraries/commodities.h>`_ 
+`SetCxObjPri()`_ `libraries/commodities.h </documentation/developers/headerfiles/libraries/commodities.h>`_ 
 
 ----------
 
@@ -870,7 +870,7 @@ Notes
 See also
 ~~~~~~~~
 
-`SetCxObjPri()`_ `CxObjError()`_ `ClearCxObjError()`_ `libraries/commodities.h <../headerfiles/libraries/commodities.h>`_ 
+`SetCxObjPri()`_ `CxObjError()`_ `ClearCxObjError()`_ `libraries/commodities.h </documentation/developers/headerfiles/libraries/commodities.h>`_ 
 
 ----------
 
@@ -1072,7 +1072,7 @@ Notes
 See also
 ~~~~~~~~
 
-`libraries/commodities.h <../headerfiles/libraries/commodities.h>`_ `ParseIX()`_ 
+`libraries/commodities.h </documentation/developers/headerfiles/libraries/commodities.h>`_ `ParseIX()`_ 
 
 ----------
 
@@ -1127,7 +1127,7 @@ Result
 See also
 ~~~~~~~~
 
-`MatchIX()`_ `libraries/commodities.h <../headerfiles/libraries/commodities.h>`_ 
+`MatchIX()`_ `libraries/commodities.h </documentation/developers/headerfiles/libraries/commodities.h>`_ 
 
 ----------
 
@@ -1359,7 +1359,7 @@ Notes
 See also
 ~~~~~~~~
 
-`SetFilter()`_ `CxObjError()`_ `libraries/commodities.h <../headerfiles/libraries/commodities.h>`_ 
+`SetFilter()`_ `CxObjError()`_ `libraries/commodities.h </documentation/developers/headerfiles/libraries/commodities.h>`_ 
 
 ----------
 
@@ -1409,5 +1409,5 @@ Notes
 See also
 ~~~~~~~~
 
-cx_lib/CxTranslate() `devices/inputevent.h <../headerfiles/devices/inputevent.h>`_ 
+cx_lib/CxTranslate() `devices/inputevent.h </documentation/developers/headerfiles/devices/inputevent.h>`_ 
 

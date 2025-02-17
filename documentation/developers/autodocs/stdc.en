@@ -142,7 +142,7 @@ Notes
 See also
 ~~~~~~~~
 
-`locale.h <../headerfiles/locale.h>`_ --background_wchar-- --background_c99-- 
+`locale.h </documentation/developers/headerfiles/locale.h>`_ --background_wchar-- --background_c99-- 
 
 ----------
 
@@ -4110,7 +4110,7 @@ Notes
 See also
 ~~~~~~~~
 
-`locale.h <../headerfiles/locale.h>`_ 
+`locale.h </documentation/developers/headerfiles/locale.h>`_ 
 
 ----------
 
@@ -5729,7 +5729,7 @@ Notes
 See also
 ~~~~~~~~
 
-`locale.h <../headerfiles/locale.h>`_ 
+`locale.h </documentation/developers/headerfiles/locale.h>`_ 
 
 ----------
 
