@@ -158,7 +158,7 @@ Různé
 
 + `Zpátky ke kořenům`__
 
-  .. Image:: images/bttr.jpeg
+  .. Image:: /images/bttr.jpeg
 
   Skvělá nostalgická síť, kde můžeš najít licencované i volně šiřitelné Amiga hry.
 

@@ -333,7 +333,7 @@ ToDO - CLI commands abstract and comparision ...
 AROS has it`s CLI, the Command Line Interface, greatly expanding the 
 capabilities of OS. Those who had used the AmigaOS can note that it looks
 Pretty close to the AmigaDOS. There`s some CLI basics described in 
-`introduction </users/introduction>`__ to CLI commands. 
+`introduction <../../introduction>`__ to CLI commands. 
 
 Currently you don`t need to type all the commands to the end - now there`s
 a neat Tab completion similar to that on Linux consoles. This allows you 

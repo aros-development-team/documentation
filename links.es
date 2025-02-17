@@ -137,7 +137,7 @@ Misceláneo
 ==========
 + `Phoenix Developer Consortium`__
 
-  .. Image:: images/phoenix.jpeg
+  .. Image:: /images/phoenix.jpeg
   
   El Phoenix Developer Consortium apoya el desarrollo de plataformas de 
   computación alternativas trabajando con los desarrolladores principales y 

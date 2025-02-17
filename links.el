@@ -140,7 +140,7 @@ __ http://www.in-berlin.de/User/jroger/index.html
 
 + `Phoenix Developer Consortium`__
 
-  .. Image:: images/phoenix.jpeg
+  .. Image:: /images/phoenix.jpeg
   
   Η Phoenix Developer Consortium υποστηρίζει την ανάπτυξη εναλλακτικών
   πλατφόρμων υπολογιστών δουλεύοντας με βασικούς και τρίτους δημιουργούς και

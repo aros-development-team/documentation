@@ -711,4 +711,4 @@ Miscellaneous
 
 .. Hyperlinks to headerfiles
 
-.. _graphics/gfxmacros.h: ../headerfiles/graphics/gfxmacros.h
+.. _graphics/gfxmacros.h: /documentation/developers/headerfiles/graphics/gfxmacros.h

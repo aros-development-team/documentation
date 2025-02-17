@@ -25,7 +25,7 @@
 
   .. RAW:: html
   
-     <a href="http://www.pegasosppc.com/"><img border="0" src="images/genesi.gif"></a>
+     <a href="http://www.pegasosppc.com/"><img border="0" src="/images/genesi.gif"></a>
 
   Genesi щедро выделила материнскую плату Pegasos, спонсируя работу по переносу 
   AROS на эту платформу. Спасибо!
@@ -35,7 +35,7 @@
 
   .. RAW:: html
   
-     <a href="http://www.sourceforge.net/"><img border="0" src="images/sourceforge.png"></a>
+     <a href="http://www.sourceforge.net/"><img border="0" src="/images/sourceforge.png"></a>
 
   SourceForge обеспечили нас несколькими сервисами, например, веб-сервером 
   с поддержкой скриптов и базой данных SQL, списками рассылки, базой по багам 

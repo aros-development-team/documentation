@@ -593,14 +593,14 @@ macros.
 
 .. Links to headers:
 
-.. _aros/asmcall.h:     ../headerfiles/aros/asmcall.h
-.. _aros/cpu.h:         ../headerfiles/aros/cpu.h
-.. _aros/macros.h:      ../headerfiles/aros/macros.h
-.. _aros/io.h:          ../headerfiles/aros/io.h
-.. _aros/64bit.h:       ../headerfiles/aros/64bit.h
-.. _exec/types.h:       ../headerfiles/exec/types.h
-.. _exec/nodes.h:       ../headerfiles/exec/nodes.h
-.. _utility/tagitem.h:  ../headerfiles/utility/tagitem.h
+.. _aros/asmcall.h:     /documentation/developers/headerfiles/aros/asmcall.h
+.. _aros/cpu.h:         /documentation/developers/headerfiles/aros/cpu.h
+.. _aros/macros.h:      /documentation/developers/headerfiles/aros/macros.h
+.. _aros/io.h:          /documentation/developers/headerfiles/aros/io.h
+.. _aros/64bit.h:       /documentation/developers/headerfiles/aros/64bit.h
+.. _exec/types.h:       /documentation/developers/headerfiles/exec/types.h
+.. _exec/nodes.h:       /documentation/developers/headerfiles/exec/nodes.h
+.. _utility/tagitem.h:  /documentation/developers/headerfiles/utility/tagitem.h
 
 
 .. Links to functions
