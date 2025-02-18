@@ -83,24 +83,6 @@ __ http://sourceforge.net/p/aros/bugs/
 
 
 
-Nachtelijke Compilaties
-=======================
-
-`Nachtelijke compilaties`__ worden, zoals de naam al aangeeft, elke nacht
-gemaakt, zijn gebaseerd op het Subversie-beheer en bevatten de nieuwste
-wijzigingen. Echter zijn deze niet getest op welke wijze dan ook en kunnen
-fouten bevatten. Evenwel werken ze meestal naar behoren.
-
-Rapporteer a.u.b. fouten die tijdens het gebruik van deze compilaties worden
-ontdekt middels de `bug tracker`__. Voor overige zaken kunt u met ons contact
-opnemen via de `AROS-Exec`__ forums.
-
-__ nightly
-__ http://sourceforge.net/p/aros/bugs/
-__ https://ae.amigalife.org/
-
-
-
 Nachtelijke Compilaties (ABIv1)
 ===============================
 

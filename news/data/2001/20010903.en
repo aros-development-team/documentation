@@ -32,4 +32,4 @@ one which checks if a layer is hidden by any other visible (or invisible)
 sibling with the same priority. And he fixed typos in rand48-functions
 in c.lib.
 
-__ %(ROOT)scredits
+__ ../../credits

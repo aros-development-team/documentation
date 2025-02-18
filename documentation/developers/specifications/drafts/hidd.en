@@ -364,8 +364,7 @@ above does not have anything to do with class hierarchies. If we
 provide a slightly different version of the diagram showing class
 names this should become clearer.
 
-.. Image:: hidd-model-obj-2.png
-   :alt: Connection of SCSI disk classes
+*(link to non-existing image removed)*
 
 This is arguably the most important thing to remember when discussing
 this topic.
