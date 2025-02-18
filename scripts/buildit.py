@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: iso-8859-1 -*-
-# Copyright © 2002-2020, The AROS Development Team. All rights reserved.
-# $Id$
+# Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
 import os
 import sys
@@ -472,14 +471,8 @@ def copyImages():
             'aros-banner-peta.png',
             'aros-sigbar-user.png',
             'aros-sigbar-coder.png',
-            'download-arrow.png'
-        ],
-        srcpath,
-        dstpath
-    )
+            'download-arrow.png',
 
-    utility.pathscopy(
-        [
             'genesi.gif',
             'trustec.png',
             'sourceforge.png',
@@ -489,7 +482,8 @@ def copyImages():
             'aspireos_logo.png',
             'kcachegrind.jpg',
             'tinyaros_logo.jpg',
-            'arosone_logo.jpeg'
+            'arosone_logo.jpeg',
+            '20070405.jpeg'
         ],
         srcpath,
         dstpath
