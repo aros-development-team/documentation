@@ -40,6 +40,6 @@ team is already taking bets if Fabio can produce a version of
 AllocMem() which is faster than the CPU allows for
 or not ;-)
 
-__ %(ROOT)sintroduction/screenshots
+__ ../../pictures/screenshots
 __ http://www.python.org/
 __ http://wouter.fov120.com/false/

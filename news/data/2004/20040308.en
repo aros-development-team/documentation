@@ -106,8 +106,8 @@ Documentation
 David Le Corfec wrote some documentation about AROS debugging__, and began a Zune
 `developer guide`__.
 
-__ /documentation/developers/debugging.php
-__ /documentation/developers/zune-application-development.php 
+__ ../../documentation/developers/debugging
+__ ../../documentation/developers/zune-dev
 
 CVS Stats
 ---------

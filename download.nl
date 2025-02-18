@@ -26,7 +26,7 @@ Icaros Desktop LIVE!
 
 `Icaros Desktop LIVE!`__ is een volledige distributie van het AROS desktop
 besturingssysteem. Het wordt geleverd op een opstartbare live DVD-ROM of
-CD-ROM die direct werkt op een PC (mits de hardware-onderdelen door AROS 
+CD-ROM die direct werkt op een PC (mits de hardware-onderdelen door AROS
 worden ondersteund) of in een virtuele machine zoals VMWare of `VirtualBox`__.
 Het kan worden geïnstalleerd op de harde schijf en kan bestaan naast een
 geïnstalleerd OS zoals Microsoft Windows, op een aangewezen partitie. Een
@@ -82,25 +82,6 @@ __ snapshots
 __ http://sourceforge.net/p/aros/bugs/
 
 
-
-Nachtelijke Compilaties
-=======================
-
-`Nachtelijke compilaties`__ worden, zoals de naam al aangeeft, elke nacht
-gemaakt, zijn gebaseerd op het Subversie-beheer en bevatten de nieuwste
-wijzigingen. Echter zijn deze niet getest op welke wijze dan ook en kunnen
-fouten bevatten. Evenwel werken ze meestal naar behoren.
-
-Rapporteer a.u.b. fouten die tijdens het gebruik van deze compilaties worden
-ontdekt middels de `bug tracker`__. Voor overige zaken kunt u met ons contact
-opnemen via de `AROSWorld`__ forums.
-
-__ nightly
-__ http://sourceforge.net/p/aros/bugs/
-__ https://www.arosworld.org/
-
-
-
 Nachtelijke Compilaties (ABIv1)
 ===============================
 
@@ -109,7 +90,7 @@ aanvullend aantal nachtelijke compilaties worden gemaakt op basis van
 deze experimentele bronbestanden, maar `deze compilaties`__ zijn alleen
 nuttig voor ontwikkelaars die de voortgang van de ABI-overgang willen
 controleren. **Ze zijn niet uitwisselbaar met de bestaande AROS
-distributies of met de AROS software die beschikbaar is via The AROS 
+distributies of met de AROS software die beschikbaar is via The AROS
 Archives of Aminet.**
 Gebruikers die nieuwe functionaliteit of foutreparaties zouden willen
 uitproberen die nog niet beschikbaar zijn in de distributies dienen

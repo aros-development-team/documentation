@@ -87,17 +87,6 @@ __ http://sourceforge.net/p/aros/bugs/
 __ https://www.arosworld.org/
 
 
-Nightly Builds (ABIv0)
-======================
-
-Weil fast alle verfügbare AROS-Software und Distributionen für die
-alte ABIv0 ABI vorhanden ist, stellen wir `diese Builds`__ für die
-i386-Plattform weiter zur Verfügung.
-
-__ nightly
-
-
-
 Snapshots (ABIv1)
 =================
 

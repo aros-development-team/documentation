@@ -24,4 +24,4 @@ the private field initialfont in the IntWindow structure is gone
 (that's what IFont in Window is for). And the notification between
 scrollbar and listview gadgets is now safer.
 
-__ %(ROOT)sdocumentation/users/faq
+__ ../../documentation/users/faq

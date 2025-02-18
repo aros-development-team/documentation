@@ -29,4 +29,4 @@ uses IORequests for filesystems, too (because they are much more
 clean in design). Now you can port AmigaOS code which relies on
 packets and it will work.
 
-__ %(ROOT)sintroduction/screenshots
+__ ../../pictures/screenshots
