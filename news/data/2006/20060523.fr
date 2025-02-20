@@ -21,8 +21,8 @@ mais seulement quelques pages sont disponibles. Si vous souhaitez contribuer
 aux traductions de nos pages web... inscrivez-vous aux mailing lists de
 développement.
 
-__ /fi
-__ /it
+__ /fi/
+__ /it/
 
 
 AROS artistique

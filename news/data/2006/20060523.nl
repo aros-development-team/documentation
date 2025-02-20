@@ -12,16 +12,16 @@ Dankzij Neil Cafferkey, Adam Chodorowski, Daniel Holmen en Paolo Besser kent
 aros.org nu ook een Finse en Italiaanse versie. Deze vertalingen van de website 
 zijn bereikbaar via onderstaande adressen: 
 
-`Finse aros.org`__: www.aros.org/fi/index.php
-`Italiaanse aros.org`__: www.aros.org/it/index.php 
+`Finse aros.org`__
+`Italiaanse aros.org`__ 
 
 De Finse vertaling is bijna compleet, de Italiaanse voorlopig nog onder 
 constructie. Aros.org biedt ook een Duitse vertaling, maar deze omvat nog maar 
 enkele pagina's. Mocht u willen meewerken aan het vertalen van onze web 
 pagina's... wel, heel graag! Laat het ons weten via de ontwikkelaars mailing lijst.   
 
-__ http://www.aros.org/fi/index.php
-__ http://www.aros.org/it/index.php
+__ /fi/
+__ /it/
 
 
 AROS betekend kunst
