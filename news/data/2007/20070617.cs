@@ -25,7 +25,7 @@ diskuzních fór, můžeš pomoci AROSu proniknout použitím odkazů na (tvoji 
 verzi) Aros.org.
 
 
-__ http://www.aros.org/el
+__ /el/
 __ http://thenostromo.com/teamaros2/?number=60
 __ http://thenostromo.com/teamaros2/?number=59
 __ http://thenostromo.com/teamaros2/?number=58

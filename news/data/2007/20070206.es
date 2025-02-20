@@ -49,7 +49,7 @@ Las recientes incorporaciones a los Archives incluyen:
   un bitmap en una suave imagen vectorial scalable.
 
 __ http://archives.aros-exec.org/share/video/aros-dnd.avi
-__ http://www.aros.org/nl
+__ //nl/
 __ http://snipurl.com/19hjr
 __ http://www.sub-ether.org/lunapaint/
 __ http://xelectrox.homeip.net/files/MSS.AROS-i386.zip
