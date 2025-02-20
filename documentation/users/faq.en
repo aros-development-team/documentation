@@ -267,7 +267,7 @@ Also available in Contrib is `E-UAE`__, which is UAE improved by some features
 from `WinUAE`__.
 
 __ http://www.rcdrummond.net/uae/
-__ http://www.winuae.net/
+__ https://www.winuae.net/
 
 
 What is the relation between AROS and Haage & Partner?
@@ -305,7 +305,7 @@ and Hollywood_:
   its nice design and features (object-oriented programming, module system,
   many useful modules included, clean syntax, ...). A separate project has
   been started for the AROS port and can be found at
-  http://pyaros.sourceforge.net/.
+  https://pyaros.sourceforge.net/.
 
 + Regina is a portable ANSI-compliant REXX interpreter. The goal for the AROS
   port is to be compatible with the ARexx interpreter for the classic
@@ -319,8 +319,8 @@ and Hollywood_:
   including games. You can buy a version for i386-aros (ABI v0).
 
 .. _Python: https://www.python.org/
-.. _Regina: http://regina-rexx.sourceforge.net/
-.. _Lua: http://www.lua.org/
+.. _Regina: https://regina-rexx.sourceforge.io/
+.. _Lua: https://www.lua.org/
 .. _Hollywood: http://www.airsoftsoftwair.com/
 
 

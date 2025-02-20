@@ -157,7 +157,7 @@ Schrijven
 Download simpelweg het ISO bestand van de `download pagina`_ en brand deze naar een CD
 met uw favoriete CD brand programma. Er zijn meerdere freeware CD brand programma's 
 beschikbaar voor vele platformen. Windows gebruikers kunnen we zo aanraden 
-`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - het is gratis, 
+`InfraRecorder <http://infrarecorder.org/>`__ - het is gratis, 
 klein, snel en simpel. 
 
 
@@ -557,6 +557,6 @@ Voetnoten
 
 .. _`download pagina`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.aros-exec.org

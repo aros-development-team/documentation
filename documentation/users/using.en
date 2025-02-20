@@ -244,20 +244,19 @@ selection on the GRUB menu, press e twice, add nofdc to the command line,
 press return, then b). If you've installed to hard disk, you can change this
 permanently in the menu.lst file).
 
-__ http://www.vmware.com/products/fusion.html
+__ https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion
 
 Yet another Intel Mac VM product is Parallels, a commercial product, though
 at a far lesser cost than VPC. Please note, however, that it as yet fails
 to boot AROS. The same applies to at least PC Parallels Workstation 2.1.
 
 ..  Note:: Users of (early) Mac Intel notebooks whose machines run relatively
-            hot may benefit from using the `SMC fan control utility`__.
+            hot may benefit from using the SMC fan control utility *(dead link removed)*.
             It allows adjustment of fan speeds for increased ventilation
             of your machine, keeping temperatures low during heavy workloads.
             While it is considered safe to use, still consider the risks
             involved!
 
-__ http://81.169.182.62/~eidac/software/page5/page5.html
 
 
 Virtual Disk Images
@@ -271,9 +270,8 @@ a command like::
     qemu-img create -f qcow aros.img <size>
 
 A set of pre-installed disk images is available to make running AROS under
-VM a bit easier. `VmwAROS <http://vmwaros.org>`__ and
-`WinAROS <http://amidevcpp.amiga-world.de/WinAros.php>`__
-are the preinstalled AROS environments installed on a HD image
+VM a bit easier. `VmwAROS <http://vmwaros.org>`__ 
+is the preinstalled AROS environment installed on a HD image
 for the virtual machines VMWare and QEMU, which are freely available
 on the net. VmwAROS is targeted for wide user audience.
 WinAROS can be especially helpful to the developers.
@@ -765,7 +763,7 @@ receive new rules) or completely disable it. Firewall can block transfers to VM.
 
 There are two ways to use network with QEMU on Windows. The first and the
 more proven is to use the tap interface. To use it you must download
-the `OpenVPN <http://openvpn.net>`__ 2.0 package for Windows (Windows 2k/XP
+the `OpenVPN <https://openvpn.net/>`__ 2.0 package for Windows (Windows 2k/XP
 only).
 After you install it, you will get an extra network connection in
 disconnected state. Rename it to, say, "eth0". Then go to the eth0
@@ -859,7 +857,7 @@ here. It's up to the reader to decide whether such information would be of
 interest.
 
 
-.. _Linux: http://www.linux.org/
+.. _Linux: https://www.linux.org/
 .. _UAE:   https://amiga.technology/uae/
 .. _install: installation
 

@@ -198,7 +198,7 @@ start booting from the floppy, but after the most important things have been
 loaded (including the CD-ROM file system handler) it will continue booting
 from the CD-ROM.
 
-__ http://infrarecorder.sourceforge.net
+__ http://infrarecorder.org/
 
 
 
@@ -430,6 +430,6 @@ TO-DO more...
 
 
 .. _`download page`: ../../download
-.. _rawrite: http://uranus.chrysocome.net/linux/rawwrite.htm
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
+.. _`AROS Archives`: https://archives.aros-exec.org
 .. _FAQ: faq

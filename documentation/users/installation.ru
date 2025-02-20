@@ -169,7 +169,7 @@ CDROM
 Сперва скачайте ISO-образ LiveCD с AROS со `страницы закачек <../../download>`__ 
 и запишите его на CD-диск с помощью любой доступной программы записи. Существует 
 множество различных программ для записи дисков, пользователям Windows мы можем 
-посоветовать `InfraRecorder <http://infrarecorder.sourceforge.net>`__ - простую,
+посоветовать `InfraRecorder <http://infrarecorder.org/>`__ - простую,
 небольшую и удобную свободную программу для записи дисков. Также есть и другие
 программы для записи дисков, например CDBurnerXP, DeepBurn, AstroBurn для Windows,
 k3B, Brasero для Linux. Для Amiga и AROS есть программа FryingPan.
@@ -726,7 +726,7 @@ Footnotes
 
 .. _`download page`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.aros-exec.org
 

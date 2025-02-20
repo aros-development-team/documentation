@@ -21,7 +21,7 @@ defined, which aims at porting the core of Python 2.7. The second new
 bounty will deliver overscan support to AROS 68k Amiga chipset
 video drivers. More details can be found on `Power2People`__.
 
-__ http://power2people.org/projects/
+__ https://power2people.org/projects/overview/
 
 Further progress has been made on supporting the 68k platform, with
 Scalos, a Workbench replacement, now functioning correctly

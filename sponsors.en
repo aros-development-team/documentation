@@ -16,7 +16,7 @@ resources:
 
   .. RAW:: html
 
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
 
   The nice people at Trustsec donate space and bandwidth for the AROS
   webserver, CVS server, FTP server and several mailing lists. If you need
@@ -90,4 +90,4 @@ __ https://sourceforge.net/
 __ http://www.apollo-core.com/
 __ https://github.com/
 __ https://power2people.org/
-__ http://acube-systems.biz/
+__ https://acube-systems.biz/

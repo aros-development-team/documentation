@@ -160,7 +160,7 @@ La grabación
 Simplemente descarga la image ISO de la `página de descargas`_ y grábala a un CD
 con tu programa favorito de grabación. Hay programas gratuitos de grabación de CD
 para cualquier sistema, y para los usuarios de Windows podemos recomendar 
-`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - es gratuito, pequeño y
+`InfraRecorder <http://infrarecorder.org/>`__ - es gratuito, pequeño y
 rápido, un simple Nero-killing.
 
 
@@ -604,6 +604,6 @@ Notas al pie
 
 .. _`página de descargas`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.aros-exec.org
