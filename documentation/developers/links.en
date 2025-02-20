@@ -28,8 +28,8 @@ Device drivers development
   the various chapters of the USB 2.0 specification and briefly introduce
   the key points."
 
-__ http://www.usb.org/developers/docs/
-__ http://www.beyondlogic.org/usbnutshell/usb1.shtml
+__ https://www.usb.org/documents
+__ https://www.beyondlogic.org/usbnutshell/usb1.shtml
 
 
 Executable file formats
@@ -74,7 +74,7 @@ Miscellaneous operating system resources
   useful books, tools and sources.
 
 __ https://mirror.math.princeton.edu/pub/oldlinux/Linux.old/docs/OSRC%20The%20Operating%20System%20Resource%20Center.htm
-__ http://www.rcollins.org/articles/pmbasics/tspec_a1_doc.html
+__ https://www.rcollins.org/articles/pmbasics/tspec_a1_doc.html
 __ http://files.osdev.org/mirrors/geezer/osd/index.htm
 __ http://wiki.osdev.org/Main_Page
 

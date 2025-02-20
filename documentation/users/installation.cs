@@ -159,7 +159,7 @@ Writing
 Simply download the ISO image from the `download page`_ and burn it to a CD
 using your favorite CD burning program. There`s a number of freeware 
 cd burning programs for any system, and we can point Windows users to the 
-`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - it`s free, 
+`InfraRecorder <http://infrarecorder.org/>`__ - it`s free, 
 it`s small and fast, and it`s just Nero-killing simple. 
 
 
@@ -588,6 +588,6 @@ Footnotes
 
 .. _`download page`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.aros-exec.org

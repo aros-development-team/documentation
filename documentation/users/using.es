@@ -815,7 +815,7 @@ información, en vez de proporcionarla aquí. Tú, el lector, puedes entonces
 decidir eso es de tu interés.
 
 
-.. _Linux: http://www.linux.org/
+.. _Linux: https://www.linux.org/
 .. _UAE:   http://www.freiburg.linux.de/~uae/
 .. _install: installation
 

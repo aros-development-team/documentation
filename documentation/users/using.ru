@@ -710,6 +710,6 @@ places where you can find such information, instead of providing it
 here. You, the reader, can then decide if this is of interest to you.
 
 
-.. _Linux: http://www.linux.org/
+.. _Linux: https://www.linux.org/
 .. _UAE:   http://www.freiburg.linux.de/~uae/
 .. _install: installation

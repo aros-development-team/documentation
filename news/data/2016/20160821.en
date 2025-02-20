@@ -13,7 +13,7 @@ the native GCC to correctly search for SDK paths.
 Outside of core AROS developments, an interesting offer has been made by
 the `Apollo Team`__ . They offered free Vampire accelerator cards to
 developers interested in improving AROS 68k. More information can be found
-in `this thread`__ .
+in this thread *(dead link removed)*.
 
 We've also seen a good portion of new applications being released for
 AROS. A number of games have been ported and are now available for
@@ -27,7 +27,6 @@ his AROS x86 distribution called AROS Broadway. More information can be
 found `here`__ .
 
 __ http://www.apollo-core.com/
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=9827&forum=4
 __ http://archives.aros-exec.org/
 __ http://www.aros-broadway.de/index.html
 

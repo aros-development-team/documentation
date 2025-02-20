@@ -168,7 +168,7 @@ Schreiben
 Laden sie einfach das ISO Abbild von der `download Seite`_ herunter und brennen
 Sie es mit Ihrem bevorzugten CD Brennprogramm auf eine CD. Es gibt viele Freeware
 CD Brennprogramme für alle Systeme und wir können Windows Anwender auf den 
-`InfraRecorder <http://infrarecorder.sourceforge.net>`__ aufmerksam machen -
+`InfraRecorder <http://infrarecorder.org/>`__ aufmerksam machen -
 er ist kostenlos, klein und schnell und es ist sehr viel einfacher als Nero.
 
 
@@ -683,6 +683,6 @@ Fußnoten
 
 .. _`Download Seite`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: http://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.aros-exec.org

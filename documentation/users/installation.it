@@ -179,7 +179,7 @@ Scrittura
 Semplicemente scarica l'immagine ISO dalla`pagina di download`_ (raccomandiamo l'uso
 di un download manager come wget) e masterizzzala su un CD usando il tuo programma preferito. 
 Ci sono molti programmi freeware per scrivere CD per ogni gusto e sistema, e puntiamo 
-gli utnti Windows  ad usare`InfraRecorder <http://infrarecorder.sourceforge.net>`__ - è gratis, 
+gli utnti Windows  ad usare`InfraRecorder <http://infrarecorder.org/http://infrarecorder.org/>`__ - è gratis, 
 piccolo, velocee semplice. Qualche altro esempio?
 CDBurnerXP, DeepBurn, AstroBurn, e in linux ci sono k3B, Brasero 
 e altri. Per Amiga (e speriamo bene anche per AROS in futuro, AROS) puoi usare FryingPan.
@@ -427,5 +427,5 @@ Coming soon!
 .. _`pagina di download`:
 .. _`download page`: ../../download
 
-.. _rawrite: http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm
+.. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 

@@ -18,7 +18,7 @@ can now compile AROS (or its parts) on AROS itself, without the
 need of any external tool. An almost complete development chain is
 already available on our nightly builds, while some of the needed
 tools are available through `The Archives`__. You may read more 
-about this straight from `Cogville`__.
+about this straight from Cogville *(dead link removed)*.
 
 Krzysztof Smiechowicz is making many useful things for AROS. He
 just `ported MPlayer`__, so we can now watch our favorite movie
@@ -59,7 +59,7 @@ porting AROS to the Efika PPC platform.
 
 Stanislaw Szymczyk is working on the `port an open source browser
 to AROS`__ bounty. He started with Netsurf, but he turned to OWB. He
-recently posted a very initial, but promising `screenshot`__ on
+recently posted a very initial, but promising screenshot *(dead link removed)* on
 AROS-EXEC. 
 
 Krzysztof Smiechowicz, Staf Verhaegen, Markus Weiss and others are
@@ -73,17 +73,15 @@ looks great.
 
 
 __ http://archives.aros-exec.org
-__ http://sszymczy.rootnode.net/index.php?menu=projects&submenu=aroscompilation
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3141&forum=2
 __ http://live.vmwaros.org
 __ http://ve.vmwaros.org
 __ http://vmwaros.blogspot.com/2008/12/vmwaros-version-10-released.html
 __ http://vmwaros.blogspot.com/2008/11/introducing-amibridge.html
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ http://www.power2people.org/bounty_025.html
+__ https://www.power2people.org/bounty_025.html
 __ http://msaros.blogspot.com/
-__ http://www.power2people.org/bounty_020.html
-__ http://sszymczy.rootnode.net/pictures/AROS_OWB.png
+__ https://www.power2people.org/bounty_020.html
 __ http://aros.wiki.sourceforge.net/ABI_V1
-__ http://www.mazze-online.de/aros/pictures/ignition4.jpg
+__ https://www.mazze-online.de/aros/pictures/ignition4.jpg
 
