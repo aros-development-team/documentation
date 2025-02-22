@@ -60,9 +60,7 @@ AmiGG also supports mail notifications. You may find a screenshot
 the same Project File Format that AmiDevCpp uses, so data exchange is 
 possible. To use Murks!, you need the AROS native gcc installed on 
 your system; Windows users can try Murks! using the latest WinAros 
-version containing the native gcc. Full story on `AROS-EXEC`__.
+version containing the native gcc. Full story on AROS-EXEC *(dead link removed)*.
 
 __ http://ministerq.integradesign.org/31.PNG
 __ http://amigg.integradesign.org/amigg_beta.lha
-__ https://ae.amigalife.org/modules/news/article.php?storyid=185
-

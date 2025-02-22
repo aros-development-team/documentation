@@ -97,7 +97,7 @@ Kalamatee's nieuwe stuurder.
 
 __ http://www.sand-labs.org/aros
 __ http://www.mazze-online.de/files/ignition.i386-aros.zip
-__ http://www.icarosdesktop.org
+__ http://vmwaros.blogspot.com/
 __ http://vmwaros.blogspot.com/2009/04/icaros-desktop-111-update-ready-for.html
 __ http://vmwaros.blogspot.com/2009/04/running-icaros-desktop-on-netbook.html
 __ http://www.clusteruk.com

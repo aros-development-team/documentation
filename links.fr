@@ -132,7 +132,7 @@ Divers
 
 __ http://phinixi.com/
 __ http://www.thenostromo.com/teamaros/
-__ http://archives.aros-exec.org/
+__ https://archives.aros-exec.org/
 __ http://www.aros-max.co.uk/
 __ http://www.aros.bbs.pl/
 __ http://www.frappr.com/arosusers

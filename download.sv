@@ -51,10 +51,9 @@ __ https://www.aspireos.com/
 AROS Broadway
 -------------
 
-`AROS Broadway`__ är den distribution som medföljer ARES-datorerna som
+AROS Broadway *(dead link removed)* är den distribution som medföljer ARES-datorerna som
 standard, men det fungerar lika på på andra AROS-kompatibla datorer.
 
-__ http://www.aros-broadway.de/index.html
 
 
 AROS Vision

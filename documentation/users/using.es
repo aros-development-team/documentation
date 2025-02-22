@@ -170,7 +170,7 @@ paquetes para las otras distribuciones o descargar y desempacar el archivo
 manualmente. Puedes obtener el archivo del `sitio web de QEMU <http://fabrice.bellard.free.fr/qemu/>`__. 
 
 También hay una MV VMWare disponible para Linux. Revisa el `sitio web de VMWare
-<http://www.vmware.com>`__.
+<https://www.vmware.com>`__.
 
 VM para Windows
 """""""""""""""
@@ -263,7 +263,7 @@ de archivo, pues no incluyen una gran cantidad de archivos, y la posibilidad par
 instalar versiones frescas de AROS, que lo hacen útil para probar las nightly
 builds. Permite la instalación fácil de las nuevas versiones sin enredarse
 con la configuración de la partición. Están incluidas las instrucciones de
-instalación. Por favor revisa `los Archives de Aros-Exec <http://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
+instalación. Por favor revisa `los Archives de Aros-Exec <https://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
 en la sección (emu/misc) para las puestas al día.
 
 Usando el AfA en m68k

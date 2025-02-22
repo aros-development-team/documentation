@@ -184,7 +184,7 @@ distributions or download and unpack the archive manually. You can get the
 archive from the `QEMU Website <https://www.qemu.org/index.html>`__.
 
 Also there's an VMware VM available for Linux. Check the `VMWare website
-<http://www.vmware.com>`__.
+<https://www.vmware.com>`__.
 
 
 VM for Windows
@@ -211,7 +211,7 @@ your launch string (or a script).
     lock, but rather to use Ctrl+Alt, otherwise Tab key may remain pressed
     and thus may damage a currently edited file.
 
-Still, `VMWare <http://www.vmware.com/products.html>`__
+Still, `VMWare <https://www.vmware.com/products>`__
 or VPC is even easier to set up.
 All you need to do is to install some virtual hardware, like a network and
 a sound card, and create a virtual hard disk. Everything is managed by a
@@ -222,7 +222,7 @@ VM for MacOS
 """"""""""""
 
 The only option available for PowerPC Macs running OS 9 or 10.x is
-`Virtual PC <https://www.microsoft.com/en-US/download/details.aspx?id=3702>`__,
+Virtual PC *(dead link removed)*,
 an i386 emulator. It does not support Intel Macs, however. And this VPC
 is a commercial product, and hence quite expensive. An alternative method to
 get it is to purchase Office 2004, which comes with a free copy of the latest
@@ -791,8 +791,8 @@ FTP-client)*.
 
 There are some more guides available on how to set-up the QEMU networking in Windows:
 
-    + For `VLan <http://www.h7.dion.ne.jp/~qemu-win/HowToNetwork-en.html>`__
-    + For `Tap <http://www.h7.dion.ne.jp/~qemu-win/TapWin32-en.html>`__
+    + For VLan *(dead link removed)*
+    + For Tap *(dead link removed)*
 
 
 Net on VMWare
@@ -843,7 +843,7 @@ Is that all the User's Information in this guide?
 This guied should have shown you how to get, install and use AROS.
 After having tried running every program in the directories C, Demos,
 Utilities, Tools, Games, etc., you might wonder if that is all. No,
-you can find some more applications at http://archives.aros-exec.org.
+you can find some more applications at https://archives.aros-exec.org.
 
 If you feel that this guide did not provide enough information about
 compiling, installing, using Subversion, shell, etc., know that there are

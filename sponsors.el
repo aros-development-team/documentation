@@ -14,7 +14,7 @@
    
   .. RAW:: html
      
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
   Οι φιλικοί άνθρωποι της Trustec προσφέρουν αποθηκευτικό χώρο και bandwidth για τον webserver του AROS,
   τον CVS server, τον FTP server και αρκετές λίστες ηλεκτρονικού ταχυδρομείου. Αν χρειάζεστε  ανάπτυξη 
@@ -60,7 +60,7 @@
 + Matthew Parsons
 + Jean-Pierre Riviθre
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ http://www.pegasosppc.com/
 __ http://www.sourceforge.net/
 __ http://www.thenostromo.com/teamaros/

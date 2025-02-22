@@ -52,10 +52,8 @@ __ https://www.aspireos.com/
 AROS Broadway
 -------------
 
-`AROS Broadway`__ is de inherente AROS distributie gemaakt voor de ARES
+AROS Broadway *(dead link removed)* is de inherente AROS distributie gemaakt voor de ARES
 Computer, maar werkt ook op elke andere door AROS ondersteunde PC.
-
-__ http://www.aros-broadway.de/index.html
 
 
 AROS Vision

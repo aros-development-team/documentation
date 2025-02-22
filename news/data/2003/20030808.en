@@ -22,10 +22,10 @@ our buggy ide.device, which attempts to write too much data at once instead
 of splitting the requests in smaller chunks. However this is going to be
 more a rewrite than a bug fix. If someone just wants to do the bug fix,
 there is an open bounty (currently 40 USD) for the ide.device bug
-at TeamAROS__.
+at TeamAROS *(dead link removed)*.
 
 __ http://www.chez.com/titan/OpenPciUK.html
-__ http://www.thenostromo.com/teamaros/
+
 
 Build system
 ------------

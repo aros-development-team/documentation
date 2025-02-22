@@ -18,5 +18,5 @@ Y si te gusta mirar tus viejas fotos digitales, quizás estés interesado
 en el `imageviewer de Pawel Stefanski`__ para Morphos, que recientemente
 fue traído a AROS.
 
-__ http://archives.aros-exec.org/index.php?function=browse&cat=audio
-__ http://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
+__ https://archives.aros-exec.org/index.php?function=browse&cat=audio
+__ https://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer

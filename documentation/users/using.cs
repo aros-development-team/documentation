@@ -173,7 +173,7 @@ on Debian/Ubuntu/Knoppix/DSL or use any other package manager for other
 distributions or download and unpack the archive manually. You can get the
 archive from the `QEMU Website <http://fabrice.bellard.free.fr/qemu/>`__. 
 
-Also there`s an VMware VM available for Linux. Check the `VMWare website <http://www.vmware.com>`__.
+Also there`s an VMware VM available for Linux. Check the `VMWare website <https://www.vmware.com>`__.
 
 VM for Windows
 """"""""""""""
@@ -263,7 +263,7 @@ size, as it doesn't include large amount of files, and the possbility to
 install fresh AROS versions, which make it useful for testing the nightly 
 builds. It allows easy installation of new versions without messing with 
 partition setup. Installation instructions included. Please check 
-`Aros-Exec Archives <http://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
+`Aros-Exec Archives <https://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
 in (emu/misc) section for the recent updates.
 
 Using the AfA on m68k

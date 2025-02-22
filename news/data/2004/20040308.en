@@ -15,14 +15,14 @@ rejoice).
 Hardware
 --------
 
-Michal Schulz has completed the new PCI driver, thus earning the TeamAROS__
-`bounty #10`__. It is hardware independent and currently has linux-i386 and
+Michal Schulz has completed the new PCI driver, thus earning the TeamAROS *(dead link removed)*
+bounty #10 *(dead link removed)*. It is hardware independent and currently has linux-i386 and
 pc-i386 (native) drivers. This is a good foundation for the future PCI
 device drivers. He also made a little tool that allows one to browse a list of all
 PCI peripherals attached to the computer. 
 
 Michal is now working on a nVidia graphics card driver
-(TeamAROS `bounty #9`__). Let's wish him good luck. :)
+(TeamAROS bounty #9 *(dead link removed)*). Let's wish him good luck. :)
 
 Johan Grip fixed some IDE bugs and is planning to do a rewrite
 of the floppy and IDE drivers.
@@ -33,9 +33,6 @@ Nic Andrews, a welcome addition to our resident hardware hackers, is working on
 CPU detection, cpu.resource and ACPI__ support
 on i386, maybe the first step on a long road to SMP support. :)
 
-__ http://thenostromo.com/teamaros/
-__ http://thenostromo.com/teamaros/bounty_details_10.html
-__ http://thenostromo.com/teamaros/bounty_details_9.html
 __ http://www.acpi.info/
 
 User Interface
@@ -79,14 +76,15 @@ As if it was not enough, he's also devoting some time to the following ports:
 lwIP network stack (with help from Adam Chodorowski and earlier work from
 Sebastian Bauer), ODBC library, Bochs and finally Mesa 6.
 
-Nate Downes is now working on TeamAROS `bounty #12`__, FAT32 filesystem.
+Nate Downes is now working on TeamAROS bounty #12 *(dead link removed)*, FAT32 filesystem.
 
-Michal Shulz and Frederic Requin started working on TeamAROS `bounty #11`__, which aims at rewriting the device driver that is in charge of handling ATA/ATAPI devices, to make it faster
+Michal Shulz and Frederic Requin started working on TeamAROS bounty #11 *(dead link removed)*,
+which aims at rewriting the device driver that is in charge of handling ATA/ATAPI devices, to make it faster
 and more reliable. Johan Grip will be helping them out along the way.
 
 Wez Furlong, a long time lurker of the AROS-Dev mailing list, has 
 finally decided to come out of the bag and show up what brave man he 
-is: he has taken up on the TeamAROS `bounty #3`__, which requires him
+is: he has taken up on the TeamAROS bounty #3 *(dead link removed)*, which requires him
 to write a complete TCP/IP stack!
 
 Iain Templeton committed his usual fixes to make AROS hosted compile and work also on FreeBSD, and
@@ -95,9 +93,6 @@ he also fixed a bug__ in the timer.device.
 Fabio Alemagna fixed some bugs in the libc, and made the necessary changes to the AROS system
 header files so that C++ programs can use them seamlessy. He also fixed a bug in dos.library/ExAll() and did some improvements to the build system.
 
-__ http://thenostromo.com/teamaros/bounty_details_12.html
-__ http://thenostromo.com/teamaros/bounty_details_11.html
-__ http://thenostromo.com/teamaros/bounty_details_3.html
 __ http://sourceforge.net/tracker/index.php?func=detail&aid=741580&group_id=43586&atid=439463
 
 Documentation
@@ -132,7 +127,7 @@ of nice screenshots to show off some of the more visually appealing
 features implemented during the latest months, so here__ they are, 
 enjoy them!
 
-__ http://www.aros.org/pictures/screenshots/#20040308
+__ /pictures/screenshots/#20040308
 
 Conclusion
 ----------

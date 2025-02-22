@@ -14,7 +14,7 @@ Die folgenden Firmen, Organisationen und Personen haben Ressourcen beigesteuert:
    
   .. RAW:: html
      
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
   Die netten Leute von 'Trustec' haben Speicherplatz und Bandbreite für den
   AROS-Webserver, CVS-Server, FTP-Server und verschiedene Mailinglisten zur
@@ -68,7 +68,7 @@ Die folgenden Organisationen und Personen haben Entwicklungsarbeit gesponsert:
 + Pascal Papara
 + `ACube Systems Slr`__
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ https://genesi.company/
 __ https://sourceforge.net/
 __ http://www.apollo-core.com/

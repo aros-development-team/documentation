@@ -37,7 +37,7 @@ uit het `Archief`__.
 
 __ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
-__ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
+__ https://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 
 
 Anders nieuws

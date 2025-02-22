@@ -30,12 +30,11 @@ AROS means art
 Hogne "M0ns00n" Titlestad has released Lunapaint v0.2 for i386/AROS. 
 The app can save and open projects, make animations and export images. 
 Initial stability issues in hosted AROS has been resolved, and Lunapaint works fine 
-also on native. You can see screenshots `here`__ and read a nice interview 
+also on native. You can see screenshots here *(dead link removed)* and read a nice interview 
 on `The Aros Show`__. Download it from the `Archives`__!
 
-__ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
-__ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
+__ https://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 
 
 Other news
@@ -49,9 +48,9 @@ Tomasz Wiszkowski has ported `FryingPan`__ and `CoFEE`__ to AROS. FryingPan
 is CD/DVD burner software, while CoFEE is a CD/DVD copy program. 
 They work partially on AROS due to lack of ATAPI and SCSI commands. 
 In order to speed up their implementation, TeamAROS has 
-started a `new bounty`__
+started a new bounty *(dead link removed)*
 
-Randy Vice and Oliver Adams have completely renewed the `TeamAROS`__ website,
+Randy Vice and Oliver Adams have completely renewed the TeamAROS *(dead link removed)* website,
 with more stylish graphics and a brand new service: Bounty Subscriptions. Now 
 "you can support TeamAROS by a monthly subscription of $5 USD or $10 USD and 
 that gives you a vote on TeamAROS-Benefactors ML on which bounty deserves that 
@@ -66,7 +65,5 @@ operating system.
 __ http://www.amidog.com/amiga/vice/index.html
 __ http://www.tbs-software.com/fp/
 __ http://www.tbs-software.com/fp/files/060430/AROS.lha
-__ http://thenostromo.com/teamaros2/?number=38
-__ http://thenostromo.com/teamaros2/
 
 

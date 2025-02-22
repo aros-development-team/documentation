@@ -50,11 +50,11 @@ heeft een volledige `how-to`__ geschreven in PDF-formaat en heeft deze op
 de Icaros website geplaatst.
 
 Pascal Papara heeft ons een spiksplinternieuwe distributie gegeven met de 
-naam `Broadway`__, die is gericht op mensen die zich nog nooit hebben 
+naam Broadway *(dead link removed)*, die is gericht op mensen die zich nog nooit hebben 
 beziggehouden met Amiga computers en bevat een uitgeklede versie van de 
 aankomende AMC, de eerste media-center omgeving gebaseerd op AmigaOS-lijkende
 systemen. Broadway is nog niet compleet, maar een aardige voorbeeld-versie
-kan worden gedownload van zijn website__.
+kan worden gedownload van zijn website *(dead link removed)*.
 
 Steve "ClusterUK" Jones heeft de komst bekendgemaakt van een nieuwe stille
 versie van zijn computer-lijn iMica. Dit op Atom gebaseerd systeem zal
@@ -90,6 +90,5 @@ AROS onder de aandacht brengen zowel binnen als buiten de Amiga-gemeenschap.
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=4724&forum=2
 __ http://vmwaros.blogspot.com/2010/05/icaros-desktop-122-update-ready-for.html
 __ http://vmwaros.blogspot.com/2010/06/create-your-own-icaros-stick.html
-__ http://www.aros-broadway.de/
-__ http://www.aros-broadway.de
+
 

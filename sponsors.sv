@@ -14,7 +14,7 @@ Följande företag, organisationer och individer har donerat resurser:
    
   .. RAW:: html
      
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
   De snälla personerna på Trustec donerar utrymme och bandbredd till AROS
   webbserver, SVN-server, FTP-server och flera mailinglistor. Om du är i behov
@@ -60,7 +60,7 @@ Följande organisationer och individer har sponsrat utvecklingsarbete:
 + Matthew Parsons
 + Jean-Pierre Rivière
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ http://www.pegasosppc.com/
 __ http://www.sourceforge.net/
 __ http://www.thenostromo.com/teamaros/

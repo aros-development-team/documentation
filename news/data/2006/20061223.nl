@@ -18,5 +18,5 @@ En mocht u naar uw oude digitale foto's willen kijken, dan is
 `Pawel Stefanski's imageviewer`__ iets wat voor u. 
 Oorspronkelijk voor Morphos, is deze applicatie nu overgezet naar AROS.
 
-__ http://archives.aros-exec.org/index.php?function=browse&cat=audio
-__ http://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
+__ https://archives.aros-exec.org/index.php?function=browse&cat=audio
+__ https://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
