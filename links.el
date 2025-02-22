@@ -56,15 +56,12 @@ Aρθρα για το AROS
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    2006-09-13
 `"AROS"`__ (στο γερμανικό Amiga-Magazin)         Martin Steigerwald  2003-09-13
 `"If you like Amiga, you'll love AROS"`__        Elwood              Unknown   
-`"AROS: Native AmigaOS For Your PC"`__           John Chandler       2001-10-21 
-`"AROS: The Amiga Research Operating System`__   John Chandler       1999-10-02
 ===============================================  ==================  ==========
 
 __ http://www.osnews.com/story.php?news_id=15819
 __ http://www.amiga-magazin.de/magazin/a09-03/aros/index.html
 __ http://elwoodb.free.fr/articles/AROS/
-__ http://www.suite101.com/article.cfm/amiga/82949 
-__ http://www.suite101.com/article.cfm/amiga/26509
+
 
 Αν γνωρίζεται κάποιο άρθρο για το AROS το οποίο δεν έχουμε αναφέρει παραπάνω, παρακαλούμε 
 ελάτε σε επαφή μαζί μας για να το προσθέσουμε. Ευχαριστούμε. 

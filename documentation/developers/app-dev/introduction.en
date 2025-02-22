@@ -10,7 +10,7 @@ AROS Application Development Manual -- Introduction
 :Status:    Unfinished; integration started (looong way left to go).
 :ToDo:      Integrate the various parts. Update and revise. Complete...
 :Abstract:
-    AROS - The Amiga Research Operating System tries to port the API of the
+    AROS - The AROS Research Operating System tries to port the API of the
     Amiga Operating System to different hardware platforms. This document
     provides an introduction to programming AROS by describing how AROS works
     and by describing its API.
