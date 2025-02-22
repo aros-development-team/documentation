@@ -41,10 +41,9 @@ platforms and the related re-creation OSes, one of those being AROS
 itself.
 
 The AROS Show has interviewed our project leader Aaron Digulla. Click
-`here`__ to read it.
+here *(dead link removed)* to read it.
 
 __ http://www.osnews.com/story.php/16543
-__ http://arosshow.blogspot.com/2006/12/interview-with-aaron-digulla-who.html
 
 Software
 --------
@@ -54,7 +53,7 @@ format, has been ported to AROS. *AmiGG* 0.44.3 has been ported too, by
 Marcin Kielesinski. This is the first Instant Messenger program for AROS
 and it supports two protocols popular in Poland: Gadu-Gadu and Tlen.
 AmiGG also supports mail notifications. You may find a screenshot
-`here`__, while binaries are `here`__.
+here *(dead link removed)*, while binaries are here *(dead link removed)*.
 
 *Murks!* is an Integrated Development Environment for AROS. Murks! uses 
 the same Project File Format that AmiDevCpp uses, so data exchange is 
@@ -62,5 +61,3 @@ possible. To use Murks!, you need the AROS native gcc installed on
 your system; Windows users can try Murks! using the latest WinAros 
 version containing the native gcc. Full story on AROS-EXEC *(dead link removed)*.
 
-__ http://ministerq.integradesign.org/31.PNG
-__ http://amigg.integradesign.org/amigg_beta.lha

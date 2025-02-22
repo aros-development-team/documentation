@@ -21,7 +21,7 @@ Robert Norris has completed network support for linux hosted AROS.
 Tap interface is working and you may find it in latest nightly builds.
 
 William Ouwehand has created a `dutch version of Aros.org`__.
-`AROS compilation guide`__ by Christoph Szczecina for Ubuntu Linux 
+AROS compilation guide *(dead link removed)* by Christoph Szczecina for Ubuntu Linux 
 also have been added.
 
 Nic Andrews has made inital commits for RTL 8139 and VIA Rhine 
@@ -34,11 +34,11 @@ News from the Archives
 
 Latest uploads on the Archives include: 
 
-- `Lunapaint`__ gets better and better! Version 0.3.1 is now 
+- Lunapaint *(dead link removed)* gets better and better! Version 0.3.1 is now 
   available, with some new nice tools and features.
 
-- `Martin's Server Suite`__, a port for AROS and other operating systems of Snug HTTP server and Yet Another FTP Server.
-  You may find a `screenshot`__ of them working on an AROS installation. 
+- Martin's Server Suite *(dead link removed)*, a port for AROS and other operating systems of Snug HTTP server and Yet Another FTP Server.
+  You may find a screenshot *(dead link removed)* of them working on an AROS installation. 
 
 - `Jhead`__ is a command line driven program for manipulating the 
   non-image parts of Exif flavour JPEG files that most digital cameras 
@@ -48,10 +48,6 @@ Latest uploads on the Archives include:
   transforming a bitmap into a smooth, scalable vector image. 
 
 __ https://archives.aros-exec.org/share/video/aros-dnd.avi
-__ /nl
-__ http://snipurl.com/19hjr
-__ http://www.sub-ether.org/lunapaint/
-__ http://xelectrox.homeip.net/files/MSS.AROS-i386.zip
-__ http://snipurl.com/19hk8
+__ /nl/
 __ https://archives.aros-exec.org/share/graphics/misc/jhead.i386-aros.zip
 __ https://archives.aros-exec.org/share/graphics/convert/potrace.i386-aros.zip

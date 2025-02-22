@@ -43,8 +43,8 @@ Robert Norris made a lot of progress with Traveller, his Webkit-based
 web browser for AROS. In order to make it work, he still needs to code
 some missing features and libraries, however his Cairo.library port is
 at a good point and he succeeded in rendering some web pages mostly 
-correct. A really `promising screenshot`__ was published in `his 
-blog`__.
+correct. A really promising screenshot *(dead link removed)* was
+published in his blog *(dead link removed)*.
 
 
 Other news
@@ -57,10 +57,10 @@ Available documents are the `AROS User Manual`__ (50% complete), the
 author can be reached at `his website`__.
 
 Alain Greppin has ported TeXlive to AROS, completing a bounty. More
-informations about it at `his website`__.
+informations about it at his website *(dead link removed)*.
 
 Tomek 'Error' Wiszkowski has been working on Frying Pan, a CD/DVD
-burner application. He posted `some screenshots`__ on AROS-Exec.org.
+burner application. He posted some screenshots *(dead link removed)* on AROS-Exec.org.
 Version 1.3 for AROS (shareware) can be downloaded from the `application's
 website`__. In order to make it work, he also fixed some bugs in AROS ATA device.
 
@@ -71,14 +71,10 @@ proper validation. No more unusable read-only system partitions!
 __ http://msaros.blogspot.com/2008/01/ive-promised-to-show-you-some.html
 __ http://msaros.blogspot.com
 __ http://kalamatee.blogspot.com/
-__ http://simplemail.sourceforge.net/index.php?body=screenshots
-__ http://archives.aros-exec.org/index.php?function=showfile&file=network/email/simplemail_beta_aros-i386.tgz
-__ http://cataclysm.cx/2008/02/18/cow-launched
-__ http://cataclysm.cx
-__ http://archives.aros-exec.org/share/document/manual/aros_user_manual_version_0.56a.pdf
-__ http://archives.aros-exec.org/share/document/manual/aros_shell_manual_version_0.7a.pdf
-__ http://archives.aros-exec.org/share/document/manual/aros_install_manual_version_0.25a.pdf
+__ https://sourceforge.net/projects/simplemail/
+__ https://archives.aros-exec.org/index.php?function=showfile&file=network/email/simplemail_beta_aros-i386.tgz
+__ https://archives.aros-exec.org/share/document/manual/aros_user_manual_version_0.56a.pdf
+__ https://archives.aros-exec.org/share/document/manual/aros_shell_manual_version_0.7a.pdf
+__ https://archives.aros-exec.org/share/document/manual/aros_install_manual_version_0.25a.pdf
 __ http://aros-wandering.blogspot.com
-__ http://www.chilibi.org/aros/texlive
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=2569&forum=2
 __ http://www.tbs-software.com/fp/welcome.phtml

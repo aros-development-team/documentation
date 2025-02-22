@@ -24,15 +24,15 @@ AROS, covering every feature and each side of our nice operating system.
 If you don't already know exactly what AROS is, you may get a good
 idea.
 
-__ http://osnews.com/story.php?news_id=15819
-__ http://osnews.com
+__ https://www.osnews.com/story/15819/aros-onboard-the-last-train-to-amiga-neverland/
+__ https://www.osnews.com/
 
 Software
 --------
 
 The new 1.20 version of the famous Commodore 8-bit computers line
 emulator *VICE* is available for all Amiga platforms, AROS included. You
-may find it `here`__.
+may find it here *(dead link removed)*.
 
 *WinAros* is a preinstalled AROS environment installed on a HD image,
 compatible with famous virtual machines QEMU and Microsoft VirtualPC,
@@ -52,7 +52,6 @@ messing with partition setup. Installation instructions included.
 Please check `Aros-Exec`__ for recent updates.
 
 
-__ http://www.viceteam.org/amigaos.html
 __ http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_QEMU.zip
 __ http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_VPC.zip
 __ http://amidevcpp.amiga-world.de/WinAros/Aros_HD_Install_English.pdf

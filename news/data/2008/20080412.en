@@ -42,7 +42,7 @@ applications.
 
 Alain Greppin has completed AROS DHCP bounty with his dhclient command.
 AROS can now get automatic IP address configuration. He also ported 
-`TeXlive`__.
+TeXlive *(dead link removed)*.
 
 Tomasz Wiszkowski and Michal Schulz are working on the ata.device in
 order to improve it. Initial support has been added for some Serial ATA
@@ -50,6 +50,4 @@ chipsets: "SATA controllers supporting legacy operation mode should now
 be operational (this means we don't have AHCI at this moment)".
 
 __ ../../download
-__ http://i175.photobucket.com/albums/w131/Kalamatee/AROS/grub2gfx-1.jpg
-__ http://www.chilibi.org/aros/texlive
-
+__ https://i175.photobucket.com/albums/w131/Kalamatee/AROS/grub2gfx-1.jpg

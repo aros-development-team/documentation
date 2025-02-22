@@ -31,9 +31,8 @@ Hogne "M0ns00n" Titlestad has released Lunapaint v0.2 for i386/AROS.
 The app can save and open projects, make animations and export images. 
 Initial stability issues in hosted AROS has been resolved, and Lunapaint works fine 
 also on native. You can see screenshots here *(dead link removed)* and read a nice interview 
-on `The Aros Show`__. Download it from the `Archives`__!
+on The Aros Show *(ded link removed)*. Download it from the `Archives`__!
 
-__ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
 __ https://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 
 

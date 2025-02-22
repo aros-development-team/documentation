@@ -5,7 +5,7 @@ Xmas update
 :Author:   Paolo Besser
 :Date:     2008-12-21
 
-First of all, we wish you a Merry Christams and a Happy New
+First of all, we wish you a Merry Christmas and a Happy New
 Year 2009! 2008 has been an important year for AROS development, since
 many things happened during the last 12 months and many projects
 have been started in the meanwhile. Here is a summary of them...
@@ -21,7 +21,7 @@ tools are available through `The Archives`__. You may read more
 about this straight from Cogville *(dead link removed)*.
 
 Krzysztof Smiechowicz is making many useful things for AROS. He
-just `ported MPlayer`__, so we can now watch our favorite movie
+just ported MPlayer *(dead link removed)*, so we can now watch our favorite movie
 files in many compression formats, including AVI, MPEG, MOV, DIVX,
 XVID and many others. MPlayer is a good music player, too.
 
@@ -72,16 +72,14 @@ He has already made some interesting progress. `This screenshot`__
 looks great.
 
 
-__ http://archives.aros-exec.org
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3141&forum=2
+__ https://archives.aros-exec.org
 __ http://live.vmwaros.org
 __ http://ve.vmwaros.org
 __ http://vmwaros.blogspot.com/2008/12/vmwaros-version-10-released.html
 __ http://vmwaros.blogspot.com/2008/11/introducing-amibridge.html
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-__ https://www.power2people.org/bounty_025.html
+__ https://www.power2people.org/projects/mass-storage/
 __ http://msaros.blogspot.com/
-__ https://www.power2people.org/bounty_020.html
+__ https://www.power2people.org/projects/web-browser/
 __ http://aros.wiki.sourceforge.net/ABI_V1
-__ https://www.mazze-online.de/aros/pictures/ignition4.jpg
-
+__ https://www.mazze-online.de/assets/aros/ignition4.jpg

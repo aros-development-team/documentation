@@ -21,7 +21,7 @@ installed on the hard drive, and a `virtual environment`__ for
 VMware.
 
 Pavel Fedin is working on a Windows-hosted version of AROS. You
-can read something about his progresses `here`__. Michal Schulz
+can read something about his progresses here *(dead link removed)*. Michal Schulz
 has completed porting AROS to the SAM 440EP board and now he's
 porting AROS to the Efika PPC platform.
 
@@ -47,7 +47,7 @@ AROS.
 Stanislaw Szymczyk has made huge progress towards AROS self 
 compilation. There are still some glitches to fix, but the day
 AROS can build itself is near. You can read something about his
-work at `Cogville`__.
+work at Cogville *(dead link removed)*.
 
 Krzysztof Smiechowicz has completed reviewing AROS API
 completeness, and now he's working on libraries and other system
@@ -63,9 +63,7 @@ the `new bounty system`__.
 
 __ http://live.vmwaros.org
 __ http://ve.vmwaros.org
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3017&forum=2
-__ http://sszymczy.rootnode.net/index.php?menu=projects&submenu=aroscompilation
 __ ../../introduction/status/everything
-__ http://www.power2people.org
-__ http://www.power2people.org/projects.html
+__ https://www.power2people.org
+__ https://www.power2people.org/projects.html
 

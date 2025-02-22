@@ -39,13 +39,11 @@ Neil Cafferkey has fixed 64-bit disk support. Boot partition can now
 be beyond 4GB.
 
 Hogne Titlestad has released version 0.3.2 of his stunning paint 
-program `Lunapaint`__, with a working text tool. You may find a new 
-`screenshot here`__.
+program Lunapaint *(dead link removed)*, with a working text tool. You may find a new 
+screenshot here *(dead link removed)*.
 
 Tomasz Pawlak's `KGB Archiver`__ has been ported to AROS by FOrest. 
 You'll find it in the `Archives`__. Please note that it hasn`t been tested much yet.
 
-__ http://www.sub-ether.org/lunapaint/
-__ http://www.sub-ether.org/lunapaint/upload/032.jpg
 __ http://www.aros.ppa.pl/images/photoalbum/48.jpg
 __ https://archives.aros-exec.org
