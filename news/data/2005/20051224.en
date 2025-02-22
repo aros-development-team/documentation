@@ -11,7 +11,7 @@ constantly developing new code and fixing the existing code, and there
 are some new brilliant features to show here. 
 
 First of all, AROS has finally got a new, faster and smarter file
-system: Michal Schulz has ported SFS to the Amiga Research Operating
+system: Michal Schulz has ported SFS to the AROS Research Operating
 System, so opening and saving lots of files won't take ages anymore,
 but just a few seconds. In order to use SFS on your hard disks,
 however, you still have to follow a tricky procedure. We're going to

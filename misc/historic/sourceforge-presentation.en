@@ -3,7 +3,7 @@
 :Version: $Revision$
 :Date: $Date$
 
-The Amiga Research OS (AROS, http://www.aros.org/) is an effort to implement an
+The AROS Research OS (AROS, http://www.aros.org/) is an effort to implement an
 Open Source and portable operating system that is API compatible (and binary
 compatible on Amiga computers) with AmigaOS 3.1. Originally, it was meant as
 a direct reimplementation, but Open Source projects being what they are there

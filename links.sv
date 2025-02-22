@@ -68,16 +68,13 @@ Titel                                            Författare          Datum
 `"Test: AROS"`__ (in German mag. AmigaFuture)    Ingo Schmitz        2005-05-05
 `"AROS"`__ (in German mag. Amiga-Magazin)        Martin Steigerwald  2003-09-13
 `"If you like Amiga, you'll love AROS"`__        Elwood              Unknown   
-`"AROS: Native AmigaOS For Your PC"`__           John Chandler       2001-10-21 
-`"AROS: The Amiga Research Operating System`__   John Chandler       1999-10-02
 ===============================================  ==================  ==========
 
 __ http://www.osnews.com/story.php?news_id=15819
 __ http://www.amigafuture.de/kb.php?mode=article&k=1315&page_num=37&start=0
 __ http://www.amiga-magazin.de/magazin/a09-03/aros/index.html
 __ http://elwoodb.free.fr/articles/AROS/
-__ http://www.suite101.com/article.cfm/amiga/82949 
-__ http://www.suite101.com/article.cfm/amiga/26509
+
 
 Om du känner till någon artikel om AROS som inte finns med, contact_ oss
 så vi kan lägga till den. Tack.

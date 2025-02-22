@@ -1,6 +1,6 @@
-===========================
-AROS: The Amiga Research OS
-===========================
+==========================
+AROS: The AROS Research OS
+==========================
 
 :Author: Aaron Digulla
 :Copyright: Copyright © 1995-2002, The AROS Development Team
@@ -13,7 +13,7 @@ AROS: The Amiga Research OS
 Abstract
 ========
 
-This paper describes AROS - The Amiga Research OS. It contains information about
+This paper describes AROS - The AROS Research OS. It contains information about
 the background of the Amiga and its OS, about AROS, the people who do it and
 why, and technical details about AROS.
 
@@ -165,7 +165,7 @@ because it's bad. Have a look yourself.
 Details of AROS
 ---------------
 
-AROS - The Amiga Research OS is the follow-up of the AOS project. Its goals are
+AROS - The AROS Research OS is the follow-up of the AOS project. Its goals are
 to develop a portable, free version of the Amiga OS for every hardware. In
 addition, we create software development tools for Amiga OS and AROS.
 
