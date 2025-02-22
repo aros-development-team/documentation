@@ -38,7 +38,7 @@ up-to-date versions of the mcc.BetterString and mcc.TextEditor MUI
 classes so that they will be taken straight from the mainstream source
 instead of being included in the AROS source tree.
 
-Matthias "Mazze" Rustler has released an `alpha version`__ of the
+Matthias "Mazze" Rustler has released an alpha version *(dead link removed)* of the
 Ignition spreadsheet application. At the moment data cannot be saved but
 it is still a good occasion to have a look at this application,
 underestimated on AmigaOS but quite powerful and well realised. There
@@ -95,7 +95,6 @@ is supported by AROS, and an RTL8168 Network card, supported by
 Kalamatee's new driver.
 
 __ http://www.sand-labs.org/aros
-__ http://www.mazze-online.de/files/ignition.i386-aros.zip
 __ http://vmwaros.blogspot.com/
 __ http://vmwaros.blogspot.com/2009/04/icaros-desktop-111-update-ready-for.html
 __ http://vmwaros.blogspot.com/2009/04/running-icaros-desktop-on-netbook.html

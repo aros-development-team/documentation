@@ -54,7 +54,7 @@ Yannick "Yannickescu" Erb has ported to AROS some interesting games like
 Open Tyrian, Super Methane Brothers and SDL Ball, and wrote ZuneARC, a
 standard and customizable Zune frontend for command-line archivers 
 already available for AROS. You can find these and other interesting 
-stuff on `his website`__. Some nice games have been ported also by 
+stuff on his website *(dead link removed)*. Some nice games have been ported also by 
 AROS_EXEC.org user Fishy_fis. Don't miss his DOSBox port to AROS!
 
 Simone "samo" Bevilacqua ported his Amiga game BOH to AROS, and it behaves
@@ -63,7 +63,7 @@ platforms.
 
 Krzysztof "Deadwood" Smiechowicz ported version 7.5 of MESA to AROS, and
 is adding hardware 3D acceleration capabilities to AROS with his ongoing
-port of Gallium3D. For now, he has just released an `alpha demo`__
+port of Gallium3D. For now, he has just released an alpha demo *(dead link removed)*
 of this technology running on GeForce FX, 6 and 7 series video cards. A
 nice video showing the GLExcess demo running on AROS is here__.
 
@@ -82,10 +82,8 @@ year and the ABI can see the light of day.
 
 
 __ http://vmwaros.blogspot.com/2009/12/icaros-desktop-got-sound-on-imica-and.html
-__ http://www.icarosdesktop.org/
-__ http://www.dusabledanslherbe.eu/AROSPage/INDEX.1.html
+__ http://vmwaros.blogspot.com/
 __ https://www.bohthegame.com/
-__ http://download.aros3d.org/gallium/mesa-nv.i386-aros.zip
 __ http://vmwaros.blogspot.com/2009/11/yet-another-glexcessgallium3d-video.html
 __ http://vmwaros.blogspot.com/2009/11/can-icaros-play-my-amiga-games-and-why.html
 __ http://www.amigaforever.com
