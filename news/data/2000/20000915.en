@@ -21,7 +21,7 @@ Work is also being done to make AROS boot with Bochs and
 VMware. It already works with VMware but VMware is quite
 expensive.
 
-Also, we try to compile AROS on UAE__ with the new JIT__ by 
+Also, we try to compile AROS on UAE__ with the new JIT *(dead link removed)* by 
 Bernie Meyer.  The JIT seems to work, the compile doesn't (yet).
 This would be a great step to help to debug AROS.
 
@@ -46,6 +46,5 @@ with us (the restriction with Europe is just because of the
 problems we would have to get a work permission for you plus
 the higher risk we would impose in you moving here).
 
-__ http://www.freiburg.linux.de/~uae/
-__ http://byron.csse.monash.edu.au/
+__ https://amiga.technology/uae/
 __ http://www.sowatec.com/

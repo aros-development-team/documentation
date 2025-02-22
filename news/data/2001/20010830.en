@@ -15,7 +15,7 @@ get as many 0x00 bytes as you want (for example to create a large
 empty file).
 
 Matt "Crazy" Parsons reports that he has put a single disk version of AROS
-`on his web site`__. It seems that over 1000 users have already downloaded it
+on his web site *(dead link removed)*. It seems that over 1000 users have already downloaded it
 (he assumes that some have downloaded it twice, though) and he gets
 three to four emails per day with comments, suggestions about and relating
 to AROS. He says "I think this is not bad for an OS that hasn't even left
@@ -59,5 +59,4 @@ the file dates. This makes sure that every page is updated when necessary
 and only when it is necessary. The next step is a "what has changed"
 page where you can see what has changed since your last visit.
 
-__ http://www.bloodline.freeserve.co.uk/aros/index.html
 __ ../../contact

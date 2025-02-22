@@ -16,7 +16,7 @@ Hardware
 Ports
 """""
 
-Matthew Parsons contacted Genesi__ and asked if they would be interested in
+Matthew Parsons contacted Genesi *(dead link removed)* and asked if they would be interested in
 sponsoring a Pegasos board to get AROS ported to it, and they thought it was a
 great idea! After some discussion on the ML and hard thinking on Johan Grip's 
 part, he decided to accept the offer and try his utmost to port AROS to the 
@@ -29,7 +29,6 @@ bits of an input driver for the touchscreen and several fixes. He also
 committed parts of a native ARM port (it's not complete, and there are no 
 promises that he will continue working on it).
 
-__ http://www.thendic-france.com/
 
 
 Drivers
@@ -130,8 +129,8 @@ Some miscellaneous things that have happened:
   
 + Olivier Adam wrote French translations for many programs.
 
-__ http://lgames.sourceforge.net/index.php?project=LBreakout2
-__ http://www.aros.org/pictures/screenshots/20030425/lbreakout2.png
+__ https://lgames.sourceforge.io/index.php?project=LBreakout2
+__ /pictures/screenshots/20030425/lbreakout2.png
 
 
 Repository Cleanup
@@ -168,11 +167,11 @@ The following things have resulted from this effort:
   for scalable TrueType fonts), libpng and png.datatype. 
 
 __ ../../documentation/developers/system-development.php#licensing-policy
-__ http://www.gnu.org/licenses/gpl.html
+__ https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 __ http://www.gnu.org/software/grub/
 __ http://sources.redhat.com/bzip2/
 __ http://www.cs.princeton.edu/software/lcc/
-__ http://www.freetype.org/
+__ https://www.freetype.org/
 
 
 Documentation

@@ -32,7 +32,7 @@ After reading from floppy disk was so insanely slow,
 Adam Chodorowski had the guts to try to *write*
 to it. He wrote 894 bytes and timed them at 23 Seconds!
 That amounts to 38 bytes/sec and should be an absolute record.
-I know of no other OS that can write that slow. Even a 1541__
+I know of no other OS that can write that slow. Even a 1541 *(dead link removed)*
 is faster and that one was controlled by a 6502 with 1 MHz
 (as opposed to the Pentium-133 on which Adam did his test).
 Fabio Alemagna did take this as a personal affront and has
@@ -42,5 +42,4 @@ the latest in bug blasting technology. He was last seen around line
 cries for help in line 54 in the very same file could not be 
 verified. ;-) Stay tuned.
 
-__ http://os.inf.tu-dresden.de/~paul/VC1541/
 __ http://www.blazemonger.com/

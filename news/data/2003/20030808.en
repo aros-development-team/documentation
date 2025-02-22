@@ -17,14 +17,13 @@ Michal Schulz is still working on the PPC port, having received the Pegasos
 board donated by Genesi, and more recently a Voodoo3 card donated by
 Randy Vice.
 
-Johan Grip is implementing the OpenPCI__ specification, and also reworking
+Johan Grip is implementing the OpenPCI *(dead link removed)* specification, and also reworking
 our buggy ide.device, which attempts to write too much data at once instead
 of splitting the requests in smaller chunks. However this is going to be
 more a rewrite than a bug fix. If someone just wants to do the bug fix,
 there is an open bounty (currently 40 USD) for the ide.device bug
 at TeamAROS *(dead link removed)*.
 
-__ http://www.chez.com/titan/OpenPciUK.html
 
 
 Build system
@@ -112,10 +111,10 @@ Use FTManager to install TrueType fonts in a few mouse clicks, and enjoy
 the new Font Prefs program.
 
 __ http://www.aros.org/pictures/screenshots/20030808/about.png
-__ http://www.megatokyo.com/extra/broken_miho-full.jpg
+__ https://megatokyo.com/extra/broken_miho-full.jpg
 __ http://www.aros.org/pictures/screenshots/20030808/fonts.png
-__ http://www.freetype.org
-__ http://www.gnome.org/fonts/
+__ https://www.freetype.org
+__ https://en.wikipedia.org/wiki/Bitstream_Vera
 
 Localizations
 -------------
@@ -151,7 +150,7 @@ As usual, some new software or updated versions were imported in contrib:
 + abcm2ps 3.7.1
 + sploiner 1.0,
 
-__ http://www.freiburg.linux.de/~uae/
+__ https://amiga.technology/uae/
 __ http://www.cis.rit.edu/~jerry/Software/4p/
 __ http://fabrice.bellard.free.fr/tcc/
 
@@ -165,12 +164,13 @@ Miscellaneous
   1063 in July. Check it there__. So obviously this status update is
   not exhaustive.
 
-__ http://sourceforge.net/mailarchive/forum.php?forum=aros-cvs
+__ https://sourceforge.net/p/aros/mailman/aros-cvs/
+
 
 Web
 ---
 
 You may be interested in this__ OSNews interview posted on 2003-08-05.
 
-__ http://www.osnews.com/story.php?news_id=4202
+__ https://www.osnews.com/story/4202/interview-with-aros-developers/
 
