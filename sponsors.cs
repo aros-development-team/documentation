@@ -14,7 +14,7 @@ Svými zdroji přispěli následující společnosti, organizace a jednotlivci:
 
   .. RAW:: html
 
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
 
   Ochotní lidé z Trustecu poskytli prostor a trafik pro AROS
   webserver, CVS server, FTP server a několik mailing listů. Pokud se zajímáš
@@ -60,7 +60,7 @@ Vývojářskou práci sponzorovali následující organizace a jednotlivci:
 + Matthew Parsons
 + Jean-Pierre Riviere
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ http://www.pegasosppc.com/
 __ http://www.sourceforge.net/
 __ http://www.thenostromo.com/teamaros/

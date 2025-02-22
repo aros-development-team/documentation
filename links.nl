@@ -117,7 +117,7 @@ Overigen
 
 
 __ http://www.thenostromo.com/teamaros/
-__ http://archives.aros-exec.org/
+__ https://archives.aros-exec.org/
 __ http://www.aros.bbs.pl/
 __ http://www.frappr.com/arosusers
 __ http://amidevcpp.amiga-world.de/afa_binarie_upload.php

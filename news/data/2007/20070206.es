@@ -48,11 +48,11 @@ Las recientes incorporaciones a los Archives incluyen:
 - `Potrace`__ es una utilidad para trazar un bitmap, es decir, transformar
   un bitmap en una suave imagen vectorial scalable.
 
-__ http://archives.aros-exec.org/share/video/aros-dnd.avi
+__ https://archives.aros-exec.org/share/video/aros-dnd.avi
 __ //nl/
 __ http://snipurl.com/19hjr
 __ http://www.sub-ether.org/lunapaint/
 __ http://xelectrox.homeip.net/files/MSS.AROS-i386.zip
 __ http://snipurl.com/19hk8
-__ http://archives.aros-exec.org/share/graphics/misc/jhead.i386-aros.zip
-__ http://archives.aros-exec.org/share/graphics/convert/potrace.i386-aros.zip
+__ https://archives.aros-exec.org/share/graphics/misc/jhead.i386-aros.zip
+__ https://archives.aros-exec.org/share/graphics/convert/potrace.i386-aros.zip

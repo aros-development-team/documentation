@@ -55,7 +55,7 @@
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; } else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Последние файлы<br>на AROS-Archives:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br><a href=http://archives.aros-exec.org>
+   Последние файлы<br>на AROS-Archives:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br><a href=https://archives.aros-exec.org>
    The AROS archives</a> хранят последние разработки ПО от нашего сообщества, а также являются основным хранилищем приложений, тем, графики и различной документации, созданных пользователями.<br><br>
    </td></tr></table>
 

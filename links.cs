@@ -2,7 +2,7 @@
 Odkazy
 ======
 
-:Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler 
+:Authors:   Aaron Digulla, Adam Chodorowski, Matthias Rustler
 :Copyright: Copyright Ś 1995-2007, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
@@ -23,7 +23,7 @@ Zdroje AROSu
   Komunitní web AROSu, diskuzní fórum, novinky, galerie
 
 + `Archiv softwaru pro AROS`__
-                                                               
+
 + `Sekce AROSu na Aminetu`__
 
 + `AROS Polska`__
@@ -46,8 +46,9 @@ Zdroje AROSu
 + `Dokumentace AROSu na WikiBooks`__
 
 __ http://www.teamaros.org/
-__ https://www.arosworld.org/
-__ http://archives.aros-exec.org/
+
+__ https://ae.amigalife.org/
+__ https://archives.aros-exec.org/
 __ http://aros.aminet.net/
 __ http://www.aros.bbs.pl/
 __ http://www.ohloh.net/projects/6056?p=AROS
@@ -67,7 +68,7 @@ Název                                            Autor               Datum
 `"Onboard the Last Train to Amiga Neverland"`__  Dmitar Butrovski    13.09.2006
 `"Test: AROS"`__ (in German mag. AmigaFuture)    Ingo Schmitz        05.05.2005
 `"AROS"`__ (in German mag. Amiga-Magazin)        Martin Steigerwald  13.09.2003
-`"If you like Amiga, you'll love AROS"`__        Elwood              Neznámé   
+`"If you like Amiga, you'll love AROS"`__        Elwood              Neznámé
 `"AROS: Native AmigaOS For Your PC"`__           John Chandler       21.10.2001
 `"AROS: The Amiga Research Operating System`__   John Chandler       02.10.1999
 ===============================================  ==================  ==========
@@ -76,7 +77,7 @@ __ http://www.osnews.com/story.php?news_id=15819
 __ http://www.amigafuture.de/kb.php?mode=article&k=1315&page_num=37&start=0
 __ http://www.amiga-magazin.de/magazin/a09-03/aros/index.html
 __ http://elwoodb.free.fr/articles/AROS/
-__ http://www.suite101.com/article.cfm/amiga/82949 
+__ http://www.suite101.com/article.cfm/amiga/82949
 __ http://www.suite101.com/article.cfm/amiga/26509
 
 Pokud znáš nějaké další články o AROSu, které zde nemáme uvedeny, `kontaktuj nás`_

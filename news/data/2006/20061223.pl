@@ -18,5 +18,5 @@ A jeśli chcesz obejrzeć swoje stare zdjęcia cyfrowe, może zainteresujesz
 się `przeglądarką Pawła Stefanskiego`__ dla Morphosa, który został 
 ostatnio portowany na AROSa. 
 
-__ http://archives.aros-exec.org/index.php?function=browse&cat=audio
-__ http://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
+__ https://archives.aros-exec.org/index.php?function=browse&cat=audio
+__ https://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer

@@ -25,7 +25,8 @@ Thanks to Poseidon, AROS can now boot from USB CD-ROM and DVD-ROM
 drives. This allows installing AROS on a wide range of notebooks and
 netbooks like the `Acer Aspire One A150`__. This netbook is now a fair
 good hardware platform for AROS: Steve Jones and Davy Wenzler wrote a
-`HD Audio driver`__ for the iMica__ computer which covers also this
+HD Audio driver *(dead link removed)* for the iMica *(dead link removed)*
+computer which covers also this
 one and a wide range of Intel-compatible mainboards, and the
 `Icaros Desktop`__ distribution introduced a way to get correct 
 1024x600 resolution on the GMA9x0 video chip.
@@ -81,8 +82,6 @@ year and the ABI can see the light of day.
 
 
 __ http://vmwaros.blogspot.com/2009/12/icaros-desktop-got-sound-on-imica-and.html
-__ http://www.clusteruk.com/SitePortalPage.aspx?siteid=1&cfid=0&did=109
-__ http://www.clusteruk.com/SitePortalPage.aspx?siteid=1&cfid=0&did=108
 __ http://www.icarosdesktop.org/
 __ http://www.dusabledanslherbe.eu/AROSPage/INDEX.1.html
 __ https://www.bohthegame.com/

@@ -51,4 +51,4 @@ Forest портировал архиватор Tomasz Pawlak `KGB Archiver`__ н
 __ http://www.sub-ether.org/lunapaint/
 __ http://www.sub-ether.org/lunapaint/upload/032.jpg
 __ http://www.aros.ppa.pl/images/photoalbum/48.jpg
-__ http://archives.aros-exec.org
+__ https://archives.aros-exec.org

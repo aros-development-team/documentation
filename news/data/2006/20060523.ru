@@ -34,7 +34,7 @@ Hogne "M0ns00n" Titlestad закончил работу над Lunapaint v0.2 д
 
 __ https://ae.amigalife.org/modules/xcgal/thumbnails.php?album=23
 __ http://arosshow.blogspot.com/2006/04/this-is-interview-with-aros-developer.html
-__ http://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
+__ https://archives.aros-exec.org/share/graphics/edit/lunapaint_v02.tar.bz2
 
 
 Прочие новости

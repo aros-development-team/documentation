@@ -74,7 +74,7 @@ __ app-dev/introduction.php#compiling-on-linux-with-gcc
 для того чтобы сделать их меньше.
 
 Теперь, если всё работает, то загрузите портированную программу на
-http://archives.aros-exec.org и http://www.aminet.net!
+https://archives.aros-exec.org и http://www.aminet.net!
 
 
 Как настроить

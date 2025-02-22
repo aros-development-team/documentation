@@ -15,7 +15,7 @@
    
   .. RAW:: html
      
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
   Замечательные ребята из Trustec выделили место и траффик для веб-сервера AROS,
   а также для CVS-сервера, FTP-сервера и нескольких списков рассылки. Если вам 
@@ -64,7 +64,7 @@
 + Jean-Pierre Riviшre
 + *Это место зарезервировано для Вас!* ;-)
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ http://www.pegasosppc.com/
 __ http://www.sourceforge.net/
 __ http://www.thenostromo.com/teamaros/

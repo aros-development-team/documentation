@@ -12,7 +12,7 @@ Another important step in AROS customization has been done. Darius
 Brewka and Georg Steger have added a new decor system to Wanderer, 
 allowing user to edit and change themes. Damir Sijakovic's ICE theme 
 has been used as an example and it is now the default theme for AROS 
-nightly builds. Please look at this screenshot (`full version`__):
+nightly builds. Please look at this screenshot (full version *(dead link removed)*):
 
 .. image:: /images/20070405.jpeg
    :alt: AROS decorated desktop
@@ -21,14 +21,14 @@ nightly builds. Please look at this screenshot (`full version`__):
 Isn't it nice? Anyway, we're trying to make AROS more stylish and 
 nice to see. So any kind of artistry contribution (themes, icons, 
 wallpapers, gadgets and so on) is very well accepted. Please look 
-at `AROS-Exec`__ for further informations.
+at AROS-Exec *(dead link removed)* for further information.
 
 
 Incredible news
 ---------------
 
 Michal Schulz is working on a keyboard driver for his USB stack. 
-He has commited an initial version that should work almost well 
+He has committed an initial version that should work almost well 
 (should handle keys correctly, but LEDs won't work). Please 
 remember that AROS is still only compatible to UHCI USB 
 controllers at this stage. 
@@ -65,6 +65,4 @@ free pens on the screen. Some new Gorilla Icons had been added
 by Paolo Besser.
 
 
-__ https://ae.amigalife.org/modules/xcgal/displayimage.php?pid=239
-__ https://ae.amigalife.org/modules/news/article.php?storyid=227
 __ http://www.lua.org/bugs.html#5.1.1

@@ -58,4 +58,4 @@ __ http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_QEMU.zip
 __ http://amidevcpp.amiga-world.de/WinAros/WinAros_Light_VPC.zip
 __ http://amidevcpp.amiga-world.de/WinAros/Aros_HD_Install_English.pdf
 __ http://amidevcpp.amiga-world.de/WinAros/Aros_HD_Installation.pdf
-__ http://archives.aros-exec.org/?function=showfile&file=emulation/misc/arosik02.zip
+__ https://archives.aros-exec.org/?function=showfile&file=emulation/misc/arosik02.zip

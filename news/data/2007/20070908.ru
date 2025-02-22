@@ -36,5 +36,5 @@ __ http://ist-krieg.de/gallery/v/kyynel/projekte/aroswallpapercompetition/presel
 __ http://ist-krieg.de/gallery/v/kyynel/projekte/aroswallpapercompetition/preselection/wesssper-01_aros.png.html
 __ http://www.pianetaamiga.it
 __ http://www.hivelytracker.com/index.php
-__ http://archives.aros-exec.org 
+__ https://archives.aros-exec.org 
 

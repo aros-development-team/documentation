@@ -95,7 +95,7 @@ Verdere ontwikkelingen
 ----------------------
 
 AROS heeft er nu een derde distributie bijgekregen, naast de regelmatig 
-bijgewerkte `Icaros Desktop`__ en `AROS Broadway`__. De nieuwe
+bijgewerkte `Icaros Desktop`__ en AROS Broadway *(dead link removed)*. De nieuwe
 `AspireOS-distributie`__ richt zich voornamelijk op de Acer Aspire One
 110 en 150 netbooks, maar kan ook interessant zijn voor gebruikers van
 andere pc's die op zoek zijn naar een lichtgewicht-distributie.
@@ -109,7 +109,6 @@ Giana's Return en Mega Mario, toegevoegd zijn. We hebben ook een aantal
 emulatoren toegevoegd voor nog meer retro-speel-plezier.
 
 
-__ http://www.icarosdesktop.org/
-__ http://www.aros-broadway.de/
+__ http://vmwaros.blogspot.com/
 __ https://www.aspireos.com/
 

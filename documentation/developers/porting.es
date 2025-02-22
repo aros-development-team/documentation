@@ -72,7 +72,7 @@ y ejecuta de nuevo.
 Luego quita la información de depuración de los binarios para hacerlos 
 más pequeños.
 
-¡Listo! Ya tienes el puerto. ¡Ahora cárgalo en http://archives.aros-exec.org
+¡Listo! Ya tienes el puerto. ¡Ahora cárgalo en https://archives.aros-exec.org
 y en http://www.aminet.net!
 
 

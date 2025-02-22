@@ -10,7 +10,7 @@ Latest news
 
 AROS has gained lots of bugfixes and improvements in the lastest 
 weeks. For istance, Neil Cafferkey has corrected some important bugs
-in his beloved `AROS Installer`__; Nic Andrews has worked on his 
+in his beloved AROS Installer *(dead link removed)*; Nic Andrews has worked on his 
 RTL8139 network driver; and Robert Norris has fixed file 
 notifications, which previously broke preferences, just to name 
 three. 
@@ -38,7 +38,6 @@ support to AROS.
 Petr Novak has translated `aros.org in Czech`__.
 
 
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=2319
 __ http://ftp.ticklers.org/pub/aminet/driver/video/Wazp3D.readme
 __ http://msaros.blogspot.com/2007/10/very-close.html
 __ /cs

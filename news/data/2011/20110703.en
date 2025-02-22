@@ -87,7 +87,7 @@ Wider developments
 ------------------
 
 AROS now has a third distribution available in addition to the regularly 
-updated `Icaros Desktop`__ and `AROS Broadway`__. The new `AspireOS`__
+updated `Icaros Desktop`__ and AROS Broadway *(dead link removed)*. The new `AspireOS`__
 distribution is aimed mainly at the Acer 
 Aspire One 110 and 150 netbooks, but may also be interesting to users of 
 other PCs looking for a lightweight distribution.
@@ -101,7 +101,6 @@ arrived. We have added a number of emulators too to allow even more
 retro gaming fun to be had.
 
 
-__ http://www.icarosdesktop.org/
-__ http://www.aros-broadway.de/
+__ http://vmwaros.blogspot.com/
 __ https://www.aspireos.com/
 

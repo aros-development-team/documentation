@@ -14,7 +14,7 @@ Le seguenti compagnie, organizzazioni e singole persone hanno donato risorse:
    
   .. RAW:: html
      
-     <a href="http://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
+     <a href="https://www.trustsec.de/"><img border="0" src="/images/trustec.png"></a>
     
   I simpatici ragazzi di Trustec hanno donato spazio e banda al server web di AROS 
   al server CVS, all'FTP e a diverse mailing list. Se avete bisogno di sviluppare  
@@ -60,7 +60,7 @@ Le seguenti organizzazioni e persone fisiche hanno contribuito allo sviluppo del
 + Matthew Parsons
 + Jean-Pierre Rivière
 
-__ http://www.trustsec.de/
+__ https://www.trustsec.de/
 __ http://www.pegasosppc.com/
 __ http://www.sourceforge.net/
 __ http://www.thenostromo.com/teamaros/

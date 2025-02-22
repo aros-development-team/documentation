@@ -18,5 +18,5 @@ Et si vous souhaitez regarder vos vieilles photos, vous serez probablement
 intéressé par `le viewer de Pawel Stefanski`__ pour Morphos qui a récemment
 été pourté à AROS. 
 
-__ http://archives.aros-exec.org/index.php?function=browse&cat=audio
-__ http://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
+__ https://archives.aros-exec.org/index.php?function=browse&cat=audio
+__ https://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
