@@ -61,8 +61,8 @@ informations about it at his website *(dead link removed)*.
 
 Tomek 'Error' Wiszkowski has been working on Frying Pan, a CD/DVD
 burner application. He posted some screenshots *(dead link removed)* on AROS-Exec.org.
-Version 1.3 for AROS (shareware) can be downloaded from the `application's
-website`__. In order to make it work, he also fixed some bugs in AROS ATA device.
+Version 1.3 for AROS (shareware) can be downloaded from the application's
+website *(dead link removed)*. In order to make it work, he also fixed some bugs in AROS ATA device.
 
 ...and, for anyone that missed this: AROS FFS filesystem recently got
 proper validation. No more unusable read-only system partitions!
@@ -77,4 +77,3 @@ __ https://archives.aros-exec.org/share/document/manual/aros_user_manual_version
 __ https://archives.aros-exec.org/share/document/manual/aros_shell_manual_version_0.7a.pdf
 __ https://archives.aros-exec.org/share/document/manual/aros_install_manual_version_0.25a.pdf
 __ http://aros-wandering.blogspot.com
-__ http://www.tbs-software.com/fp/welcome.phtml

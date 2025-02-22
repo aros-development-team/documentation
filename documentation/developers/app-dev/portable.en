@@ -57,7 +57,7 @@ You can find some conversion macros, like *AROS_WORD2BE*, in the header
 `aros/macros.h`_. Some peek and poke functions with built-in endianness
 conversion, can be found in `aros/io.h`_.
 
-.. _Endianness: http://en.wikipedia.org/wiki/Endianness
+.. _Endianness: https://en.wikipedia.org/wiki/Endianness
 
 
 

@@ -23,4 +23,4 @@ it :-) He also fixed a bug in strchr().
 
 Fabio Alemagna implemented umask().
 
-__ http://www.python.org/
+__ https://www.python.org/

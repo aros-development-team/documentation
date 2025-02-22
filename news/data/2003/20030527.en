@@ -23,7 +23,7 @@ In the meantime, Michal, who already had a PPC PReP board, worked on the native
 PPC port. He merged his sources in the AROS CVS tree, creating the new
 'arch/ppc' directory. To this day, he went as far as implementing task handling
 and scheduling. Congratulations Michal! Sources as well as a PReP boot image
-can be found at http://home.tu-clausthal.de/~misc/AROS.ppc.tar.bz2
+can be found at *(dead link removed)*
 
 Michal is also reworking exec.library to make it hardware/platform-independent,
 by moving dependent stuff in resources like kernel.resource, OpenFirmware.resource ...

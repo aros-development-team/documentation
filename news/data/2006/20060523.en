@@ -43,7 +43,8 @@ Mathias Roslund has ported the famous Commodore 8-bit computers line emulator
 VICE to all Amiga platforms, AROS included. Please note that the AROS 
 version is still highly experimental. You may find it `here`__.
 
-Tomasz Wiszkowski has ported `FryingPan`__ and `CoFEE`__ to AROS. FryingPan 
+Tomasz Wiszkowski has ported FryingPan *(dead link removed)* and
+CoFEE *(dead link removed)* to AROS. FryingPan 
 is CD/DVD burner software, while CoFEE is a CD/DVD copy program. 
 They work partially on AROS due to lack of ATAPI and SCSI commands. 
 In order to speed up their implementation, TeamAROS has 
@@ -61,8 +62,6 @@ Bernd Roesch and Georg Steger are fixing bugs and adding new features to Zune,
 while other AROS developers are still working hard on other issues of the 
 operating system.
 
-__ http://www.amidog.com/amiga/vice/index.html
-__ http://www.tbs-software.com/fp/
-__ http://www.tbs-software.com/fp/files/060430/AROS.lha
+__ https://www.amidog.com/amiga/vice/index.html
 
 

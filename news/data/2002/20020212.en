@@ -6,7 +6,7 @@ Miscellaneous
 :Date:   2002-02-12
 
 Adam Chodorowski fixed a compiler warning and added another RFC about homedirs 
-(actually, a verbatim copy of `http://home.broadpark.no/~nfurseth/aros/`__).
+(actually, a verbatim copy of *(dead link removed)*).
 
 Staf Verhaegen fixed some warnings in Regina and started implementing the ARexx 
 functions.
@@ -36,4 +36,3 @@ C:List.
 
 Fabio Alemagna fixed a bug in close().
 
-__ http://home.broadpark.no/~nfurseth/aros/
