@@ -231,7 +231,7 @@ limited speed and it requires a reasonable fast PowerPC machine
 (see the website for more details).
 
 For Intel Macs (OS X) QEMU has been ported and subsequently renamed
-`Q <http://www.kju-app.org/>`__ . It comes as an Intel binary and is freeware.
+`Q <https://www.kronenberg.org/>`__ . It comes as an Intel binary and is freeware.
 Q does not support direct virtualization yet (nor the
 i386 kernel acceleration module), making it achieve only part of the
 possible speed at the moment.
@@ -270,7 +270,7 @@ a command like::
     qemu-img create -f qcow aros.img <size>
 
 A set of pre-installed disk images is available to make running AROS under
-VM a bit easier. `VmwAROS <http://vmwaros.org>`__ 
+VM a bit easier. `VmwAROS <https://vmwaros.blogspot.com/>`__ 
 is the preinstalled AROS environment installed on a HD image
 for the virtual machines VMWare and QEMU, which are freely available
 on the net. VmwAROS is targeted for wide user audience.

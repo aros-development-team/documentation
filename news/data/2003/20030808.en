@@ -113,7 +113,7 @@ the new Font Prefs program.
 __ http://www.aros.org/pictures/screenshots/20030808/about.png
 __ https://megatokyo.com/extra/broken_miho-full.jpg
 __ http://www.aros.org/pictures/screenshots/20030808/fonts.png
-__ https://www.freetype.org
+__ https://freetype.org
 __ https://en.wikipedia.org/wiki/Bitstream_Vera
 
 Localizations
@@ -144,14 +144,13 @@ Softwares in contrib/
 As usual, some new software or updated versions were imported in contrib:
 
 + UAE__ 0.8.22 (a Zune GUI is planned)
-+ the free DeluxePaint clone 4P__ 0.09
++ the free DeluxePaint clone 4P 0.09 *(dead link removed)*
 + TCC__ 0.9.19 : you can now directly create AROS executables!
 + GNU tools : make 3.80, diffutils 2.8.1, patch 2.5.4, grep 2.5.1, m4 1.4
 + abcm2ps 3.7.1
 + sploiner 1.0,
 
 __ https://amiga.technology/uae/
-__ http://www.cis.rit.edu/~jerry/Software/4p/
 __ http://fabrice.bellard.free.fr/tcc/
 
 Miscellaneous
