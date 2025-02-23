@@ -169,9 +169,9 @@ The following things have resulted from this effort:
 __ ../../documentation/developers/system-development.php#licensing-policy
 __ https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 __ http://www.gnu.org/software/grub/
-__ http://sources.redhat.com/bzip2/
-__ http://www.cs.princeton.edu/software/lcc/
-__ https://www.freetype.org/
+__ https://sourceware.org/bzip2/
+__ https://drh.github.io/lcc/
+__ https://freetype.org/
 
 
 Documentation

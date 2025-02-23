@@ -129,13 +129,11 @@ AROS versions of ld, ranlib, the catalog compiler FlexCat, etc.
 Compiling on Linux or Windows with a cross-compiler
 ---------------------------------------------------
 
-You can download a cross-compiler from `here`__.
+You can download a cross-compiler from here *(dead link removed)*.
 
 Advantage over the fake compiler is, that you can additionally compile C++
 sources. After installing you should update the sys-includes and the libs
 from a recent SDK.
-
-__ http://www.zerohero.se/cross/aros.html
 
 
 

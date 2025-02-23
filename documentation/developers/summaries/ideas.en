@@ -875,7 +875,7 @@ Native compiler for AROS
 :Author: Henrik Berglund
 
 Maybe lcc would be the easiest compiler to port to AROS?
-You can find lcc at http://www.cs.princeton.edu/software/lcc/
+You can find lcc at https://drh.github.io/lcc/
 
 
 

@@ -61,7 +61,7 @@ License
 > POSIX-compliant gnu tool chain which IIRC is necessary for building.
 
 Oh, but you can link with libcygwin.a and avoid this restriction.
-Please see the note at http://cygwin.com/licensing.html
+Please see the note at https://cygwin.com/licensing.html
 
 (Phill Wooller, Johan Grip <ogun@smaug.moranet.se>)
 
