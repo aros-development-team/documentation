@@ -1,0 +1,20 @@
+================================
+January/February 2025 Highlights
+================================
+
+:Author:   Matthias Rustler
+:Date:     2025-02-27
+
+
+AROS core
+---------
+Johan Gill fixed various issues with the OCS, ECS and AGA chipsets
+for the m68k port. 
+
+
+Website
+-------
+Matthias Rustler worked on AROS' website. He brought back the RSS feeds for
+the most recent entries of archives.aros-exec.org and www.arosworld.org. He
+also fixed many dead links and other small issues. Johan Gill helped with
+porting the build scripts for the website to Python 3.
