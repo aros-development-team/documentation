@@ -7,6 +7,7 @@ sitio web durante este año y en los anteriores. Están disponibles las
 noticias de los siguientes años:
 
 + `2025 <2025>`__
++ `2024 <2024>`__
 + `2020 <2020>`__
 + `2016 <2016>`__
 + `2015 <2015>`__

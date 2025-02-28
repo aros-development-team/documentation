@@ -1,0 +1,22 @@
+===============
+2024 Highlights
+===============
+
+:Author:   Matthias Rustler
+:Date:     2024-12-31
+
+
+Krzysztof Smiechowicz fixed a lot of issues across the whole
+source code base. He implemented AREXX in Zune and relabeling of
+volumes in Wanderer's WBRename. He fixed some problems which
+were caused by icons without files. He made a new release of
+AxRuntime, a way to run AROS applications under Linux.
+
+Russel Shaw extended the command line parameter handling of Multiview.
+
+Johan Gill improved the m68k port. He implemented a faster PutImageLut().
+
+Stefan Reinauer committed fixes for the CDVDFS file system and
+the darwin/arm64 build.
+
+Franck Charlet improved the USB MIDI support.

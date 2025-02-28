@@ -7,6 +7,7 @@ zowel van dit jaar als de vorige jaren. Let wel: alleen berichten van 2006 en
 later zijn in het Nederlands vertaald, alle oudere berichtgeving is Engelstalig.
 
 + `2025 <2025>`__
++ `2024 <2024>`__
 + `2020 <2020>`__
 + `2016 <2016>`__
 + `2015 <2015>`__
