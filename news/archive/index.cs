@@ -6,6 +6,7 @@ Tady můžeš najít staré zpravodajské články, které byly publikovány na 
 během letošního roku i dřívějších let. K shlédnutí jsou zprávy z následujících let:
 
 + `2025 <2025>`__
++ `2024 <2024>`__
 + `2016 <2016>`__
 + `2015 <2015>`__
 + `2014 <2014>`__
