@@ -20,7 +20,7 @@ from build import utility
 from build import thumbnail
 
 from template.www import makeTemplates
-from template.www import gallery 
+from template.www import gallery
 
 import autodoc
 
@@ -99,7 +99,7 @@ def processPicture(src, depth):
 
     # Create the thumbnail.
     if utility.newer([src_abs], tn_dst_abs):
-        print('» Thumbnailing', src)
+        print('ï¿½ Thumbnailing', src)
         thumbnail.makeThumbnail(src_abs, tn_dst_abs, (200, 200))
 
 
@@ -513,7 +513,7 @@ def buildClean():
 
     for filename in filenames:
         utility.remove(filename)
-    
+
     # the localized versions of credits.* aren't
     # created by the script. Hence we can only delete credits.en
     utility.remove('credits.en')
@@ -611,7 +611,8 @@ def buildWWW():
             'docutils.css',
             'aros.css',
             'print.css',
-            'donations.css'
+            'donations.css',
+            'aros.ico'
         ],
         srcpath,
         TRGROOT
