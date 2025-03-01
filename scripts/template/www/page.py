@@ -260,6 +260,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
             Title( 'AROS Research Operating System' ),
             Link( href = '%(ROOT)saros.css?v=1.3', type = 'text/css', rel = 'stylesheet' ),
             Link( href = '%(ROOT)sprint.css', type = 'text/css', rel = 'stylesheet', media = 'print' ),
+            Link( href = '%(ROOT)saros.ico', type = 'image/x-icon', rel = 'icon'),
             Meta(
                 name    = 'keywords',
                 content = 'AROS, OS, operating system, research, open source, portage'
