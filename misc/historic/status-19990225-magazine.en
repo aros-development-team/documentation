@@ -61,7 +61,7 @@ AROS' goal is it to create an OS which:
   allows to create native applications with the comfort of the AmigaOS. 
 
 The goal for the first final release is to make development easier and faster.
-For later versions its possible to increase the compability to AmigaOS if its
+For later versions its possible to increase the compatibility to AmigaOS if its
 necessary.
 
 To reach this goal, we use a number of techniques.  First of all, we make heavy

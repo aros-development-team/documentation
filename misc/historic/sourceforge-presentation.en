@@ -8,7 +8,7 @@ Open Source and portable operating system that is API compatible (and binary
 compatible on Amiga computers) with AmigaOS 3.1. Originally, it was meant as
 a direct reimplementation, but Open Source projects being what they are there
 has also been improvements made over the existing AmigaOS in several areas. This
-has been quite sucessfull, and some parts of our code has been used in never
+has been quite successful, and some parts of our code has been used in never
 versions of the official AmigaOS (versions 3.5 and 3.9).
 
 The relation between us and Amiga, Inc. (the company that owns the original
@@ -25,7 +25,7 @@ it depends on what you want to do I guess), but we're getting quite close...
 
 There are two different 'flavors' of AROS; one that runs hosted on top of some
 other OS (Linux/i386, Linux/m68k, FreeBSD/i386, NetBSD/i386) and the other that
-runs natively on 'bare hardware' (currenlty, the i386 native port is most
+runs natively on 'bare hardware' (currently, the i386 native port is most
 complete, but there are work being done on ports to palm and amiga hardware).
 
 The SourceForge resources we intend to use are primarily for distributing
@@ -36,10 +36,10 @@ FTP server for the distribution there, but unfortunately (well, kind of :-)) the
 project has become to popular and generates too much traffic for them, so they
 asked us to reduce it. At this time we were generating 10 GB/month of traffic,
 but hopefully this will not be an problem for SourceForge. In the future we
-might want to use more of SourceForge's services, for example auxillary mailing
+might want to use more of SourceForge's services, for example auxiliary mailing
 lists for specific topics or the excellent Compile Farm. 
 
 [Note: The project's coordinator and founder is Aaron Digulla (he has contacted
 SourceForge sometime earlier), but since he seems to be very busy at the moment,
-I have taken this liberty of contacing SourceForget myself. I'm sure he doesn't
+I have taken this liberty of contacting SourceForget myself. I'm sure he doesn't
 mind. :-)]
