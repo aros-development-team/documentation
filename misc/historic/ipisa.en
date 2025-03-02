@@ -120,7 +120,7 @@ still work unreliable. Here is a list which is by no means complete:
   even need to install software on the computer. Just plug the card into a slot
   and turn the computer on and it works.
 
-+ The GUI is very flexible. It allows to adjust the behaviour of an application
++ The GUI is very flexible. It allows to adjust the behavior of an application
   in ways the original developer had not dreamed about. Win95 can do similar,
   but Amiga OS does it more elegant. Linux begins to explore this with KDE but
   as of yet, it can't do anything like that.
@@ -173,7 +173,7 @@ addition, we create software development tools for Amiga OS and AROS.
   Unixes on Intel PCs and Amigas with Amiga OS and Linux/m68k.
 
 + AROS is still fast despite being written in C, because every file *can* be
-  replaced by an optimised assembler version.
+  replaced by an optimized assembler version.
 
 + AROS is free. The source is publicly available [#]_ and we don't ask a fee for
   using it [#]_.
@@ -209,7 +209,7 @@ Memory Protection (MP) or similar just for the fun of it. Some things are
 necessary and we explore the possibilities to include them but we don't jump for
 a hype. The people who wrote the Amiga OS were not stupid, writing AROS is
 astonishingly easy (remember "stretchability"?). Some things in the Amiga OS
-might look stupid, but they aren't. We will change the known behaviour of the
+might look stupid, but they aren't. We will change the known behavior of the
 Amiga OS only if there is really no other way - and will offer a simple way to
 maintain compatibility with the original OS because developers will not support
 us if their applications don't run on both systems without change.
