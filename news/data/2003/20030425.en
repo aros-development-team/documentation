@@ -166,7 +166,7 @@ The following things have resulted from this effort:
   tree, like Regina (to provide ARexx compatibility), FreeType__ 2 (support 
   for scalable TrueType fonts), libpng and png.datatype. 
 
-__ ../../documentation/developers/system-development.php#licensing-policy
+__ ../../documentation/developers/sys-dev/system-development.php#licensing-policy
 __ https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 __ http://www.gnu.org/software/grub/
 __ https://sourceware.org/bzip2/

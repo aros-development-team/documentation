@@ -205,7 +205,7 @@ Library / Device
 ANDI
 ====
 
-http://www.nordicglobal.com/andi.txt.
+*(dead link removed)*
 
 + > IIRC, ANDI was designed to replace the SANA-II specifications, nothing
     else.
@@ -255,7 +255,7 @@ Writing own TCP/IP stack
 + Hardware drivers
 + UDP client
 + BSD or own API
-+ Roll Your Own Intranet - http://www.vijaymukhi.com/vmis/roll.htm
++ Roll Your Own Intranet *(dead link removed)*
 
 You'd probably ignore TCP to start with and implement some UDP/ICMP features
 first. To get something that "did something"tm on a network wouldn't be so

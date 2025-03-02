@@ -64,7 +64,7 @@ AROS-EXEC.
 
 Krzysztof Smiechowicz, Staf Verhaegen, Markus Weiss and others are
 working on the AROS ABI v1. You can see some progress in its
-documentation `here`__.
+documentation here *(dead link removed)*.
 
 Matthias Rustler is porting Ignition to AROS, a spreadsheet
 application recently re-released under the terms of the GPL license.
@@ -81,5 +81,4 @@ __ https://sourceforge.net/p/aros/bugs/
 __ https://www.power2people.org/projects/mass-storage/
 __ http://msaros.blogspot.com/
 __ https://www.power2people.org/projects/web-browser/
-__ http://aros.wiki.sourceforge.net/ABI_V1
 __ https://www.mazze-online.de/assets/aros/ignition4.jpg

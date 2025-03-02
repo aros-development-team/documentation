@@ -36,10 +36,8 @@ I know of no other OS that can write that slow. Even a 1541 *(dead link removed)
 is faster and that one was controlled by a 6502 with 1 MHz
 (as opposed to the Pentium-133 on which Adam did his test).
 Fabio Alemagna did take this as a personal affront and has
-equipped himself with `BLAZEMONGER BugBlaster 2010(TM)`__, 
+equipped himself with BLAZEMONGER BugBlaster 2010(TM) *(dead link removed)*, 
 the latest in bug blasting technology. He was last seen around line 
 53 of AROS/workbench/devs/afs/blockaccess.c. Reports of shouts and 
 cries for help in line 54 in the very same file could not be 
 verified. ;-) Stay tuned.
-
-__ https://www.blazemonger.com/

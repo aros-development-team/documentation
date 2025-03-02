@@ -158,7 +158,7 @@ included by the cdef section::
   #include <libraries/mylib.h>
   ##end cdef
 
-__ buildsystem#copying-include-files
+__ system-development#copying-include-files
 
 
 Functions with m68k register passing
@@ -219,7 +219,7 @@ function. The macros has the following arguments:
   section of the .conf file it is equal to the name given to the ``modname``
   parameter with the first letter capitalized.
 
-__ buildsystem#using-an-extended-libbase
+__ #using-an-extended-libbase
 
 
 Using an extended libbase
