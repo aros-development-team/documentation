@@ -5,7 +5,11 @@ Kitty
 Happy Birthday, Kitty!
 ----------------------
 
-|kittymascot| `Eric W. Schwartz`__ has been kind enough to bring AROS' new mascot to life. Thank you, Eric!
+.. image:: /downloads/kitty/aros01_small.jpg
+   :alt: Kitty Mascot
+
+
+`Eric W. Schwartz`__ has been kind enough to bring AROS' new mascot to life. Thank you, Eric!
 And also, a big thanks to Alien/Paradox for polishing it!
 
 
@@ -23,8 +27,4 @@ __ /downloads/kitty/aros01_small_signed.png
 __ /downloads/kitty/aros01_big_signed.jpg
 __ /downloads/kitty/aros01_big_signed.png
 __ /downloads/kitty/aros02_big.png
-
-.. |kittymascot| image:: /downloads/kitty/aros01_small.jpg
-   :align: top
-   :alt: Kitty Mascot
 
