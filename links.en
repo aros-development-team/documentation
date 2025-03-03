@@ -18,6 +18,7 @@ AROS resources
 + `AROS World`__ is the user community website.
 + `AROS software archive`__
 + `AROS software on Aminet`__
++ `AROS news`__ brings news including distributions and forks.
 + `Development statistics from openhub.net`__
 + `Planet AROS`__ aggregates various blogs
 + `AROS on Wikipedia`__
@@ -29,6 +30,7 @@ __ https://power2people.org/
 __ https://www.arosworld.org/
 __ https://archives.aros-exec.org/
 __ http://aros.aminet.net/
+__ https://arosnews.github.io
 __ https://openhub.net/p/aros?p=AROS
 __ http://planet-aros.heimstetten.net/
 __ https://en.wikipedia.org/wiki/AROS_Research_Operating_System
