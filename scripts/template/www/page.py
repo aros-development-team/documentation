@@ -314,7 +314,7 @@ def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
                                         TR( contents = [
                                             TD( contents = [
                                                 Div( style = 'text-align: right', contents = [
-                                                    Font( color = '#aaaaaa', size = '-1', contents = [
+                                                    Font( color = '#555555', size = '-1', contents = [
                                                         _M['copyright'],
                                                         BR(),
                                                         _M['trademarks'],
