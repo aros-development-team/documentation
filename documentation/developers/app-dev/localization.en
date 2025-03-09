@@ -345,7 +345,7 @@ however, you would then need someone else to commit your work in the archive.
 
 After obtaining the catalog translation files, you can update them or create
 additional catalog translations as described above. A Windows port of the tool
-*FlexCat* is available at https://archives.aros-exec.org.
+*FlexCat* is available at https://archives.arosworld.org.
 
 Some applications and Zune classes are maintained outside of AROS
 (e.g. MUIbase, toolbar.mcc are available at https://sourceforge.net).

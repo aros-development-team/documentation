@@ -75,7 +75,7 @@ Matthias Rustler портирует на AROS Ignition, приложение д�
 успехи, и опубликован интересный `скриншот`__.
 
 
-__ http://archives.aros-exec.org
+__ https://archives.arosworld.org
 __ http://sszymczy.rootnode.net/index.php?menu=projects&submenu=aroscompilation
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=3141&forum=2
 __ http://live.vmwaros.org

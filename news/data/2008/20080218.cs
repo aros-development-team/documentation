@@ -73,12 +73,12 @@ __ http://msaros.blogspot.com/2008/01/ive-promised-to-show-you-some.html
 __ http://msaros.blogspot.com
 __ http://kalamatee.blogspot.com/
 __ http://simplemail.sourceforge.net/index.php?body=screenshots
-__ http://archives.aros-exec.org/index.php?function=showfile&file=network/email/simplemail_beta_aros-i386.tgz
+__ https://archives.arosworld.org/index.php?function=showfile&file=network/email/simplemail_beta_aros-i386.tgz
 __ http://cataclysm.cx/2008/02/18/cow-launched
 __ http://cataclysm.cx
-__ http://archives.aros-exec.org/share/document/manual/aros_user_manual_version_0.56a.pdf
-__ http://archives.aros-exec.org/share/document/manual/aros_shell_manual_version_0.7a.pdf
-__ http://archives.aros-exec.org/share/document/manual/aros_install_manual_version_0.25a.pdf
+__ https://archives.arosworld.org/share/document/manual/aros_user_manual_version_0.56a.pdf
+__ https://archives.arosworld.org/share/document/manual/aros_shell_manual_version_0.7a.pdf
+__ https://archives.arosworld.org/share/document/manual/aros_install_manual_version_0.25a.pdf
 __ http://aros-wandering.blogspot.com
 __ http://www.chilibi.org/aros/texlive
 __ https://ae.amigalife.org/modules/newbb/viewtopic.php?viewmode=flat&topic_id=2569&forum=2

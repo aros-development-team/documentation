@@ -58,7 +58,7 @@
    <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
    else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
    Τελευταίες υποβολές ΑΡΧΕΙΟΥ AROS:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Τα <a href=https://archives.aros-exec.org>AROS archives</a> περιέχουν τον πιο πρόσφατο περιεχόμενο υποβληθέν από την κοινότητα, και είναι η κύρια περιοχή αναζήτησης εφαρμογών, θεμάτων επιφάνειας εργασίας, γραφικών, και πρόσθετης τεκμηρίωσης.<br><br>
+   Τα <a href=https://archives.arosworld.org>AROS archives</a> περιέχουν τον πιο πρόσφατο περιεχόμενο υποβληθέν από την κοινότητα, και είναι η κύρια περιοχή αναζήτησης εφαρμογών, θεμάτων επιφάνειας εργασίας, γραφικών, και πρόσθετης τεκμηρίωσης.<br><br>
    </td></tr></table>
 
    <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>

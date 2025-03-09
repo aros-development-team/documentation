@@ -590,4 +590,4 @@ Footnotes
 
 .. _rawrite: https://uranus.chrysocome.net/linux/rawwrite.htm
 
-.. _`AROS Archives`: https://archives.aros-exec.org
+.. _`AROS Archives`: https://archives.arosworld.org

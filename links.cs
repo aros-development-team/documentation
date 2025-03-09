@@ -48,7 +48,7 @@ Zdroje AROSu
 __ http://www.teamaros.org/
 
 __ https://ae.amigalife.org/
-__ https://archives.aros-exec.org/
+__ https://archives.arosworld.org/
 __ http://aros.aminet.net/
 __ http://www.aros.bbs.pl/
 __ http://www.ohloh.net/projects/6056?p=AROS

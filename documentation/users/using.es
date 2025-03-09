@@ -263,7 +263,7 @@ de archivo, pues no incluyen una gran cantidad de archivos, y la posibilidad par
 instalar versiones frescas de AROS, que lo hacen útil para probar las nightly
 builds. Permite la instalación fácil de las nuevas versiones sin enredarse
 con la configuración de la partición. Están incluidas las instrucciones de
-instalación. Por favor revisa `los Archives de Aros-Exec <https://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
+instalación. Por favor revisa `los Archives de Aros-Exec <https://archives.arosworld.org/index.php?function=browse&cat=emulation/misc>`__ 
 en la sección (emu/misc) para las puestas al día.
 
 Usando el AfA en m68k
