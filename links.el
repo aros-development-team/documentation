@@ -42,7 +42,7 @@
 + `AROS documentation on WikiBooks <http://en.wikibooks.org/wiki/Aros>`__
   
 __ http://www.teamaros.org/
-__ https://archives.aros-exec.org/
+__ https://archives.arosworld.org/
 __ http://www.aros.bbs.pl/
 __ http://www.frappr.com/arosusers
 __ http://amidevcpp.amiga-world.de/afa_binarie_upload.php

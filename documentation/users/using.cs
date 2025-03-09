@@ -263,7 +263,7 @@ size, as it doesn't include large amount of files, and the possbility to
 install fresh AROS versions, which make it useful for testing the nightly 
 builds. It allows easy installation of new versions without messing with 
 partition setup. Installation instructions included. Please check 
-`Aros-Exec Archives <https://archives.aros-exec.org/index.php?function=browse&cat=emulation/misc>`__ 
+`Aros-Exec Archives <https://archives.arosworld.org/index.php?function=browse&cat=emulation/misc>`__ 
 in (emu/misc) section for the recent updates.
 
 Using the AfA on m68k

@@ -48,11 +48,11 @@ De laatste uploads voor de Archieven bevatten:
 - `Potrace`__ is een utility voor het traceren van bitmaps, wat bitmap afbeeldingen kan 
   transformeren naar gladde vector afbeeldingen. 
 
-__ https://archives.aros-exec.org/share/video/aros-dnd.avi
+__ https://archives.arosworld.org/share/video/aros-dnd.avi
 __ http://www.aros.org/nl
 __ http://snipurl.com/19hjr
 __ http://www.sub-ether.org/lunapaint/
 __ http://xelectrox.homeip.net/files/MSS.AROS-i386.zip
 __ http://snipurl.com/19hk8
-__ https://archives.aros-exec.org/share/graphics/misc/jhead.i386-aros.zip
-__ https://archives.aros-exec.org/share/graphics/convert/potrace.i386-aros.zip
+__ https://archives.arosworld.org/share/graphics/misc/jhead.i386-aros.zip
+__ https://archives.arosworld.org/share/graphics/convert/potrace.i386-aros.zip

@@ -22,5 +22,5 @@ MP3 для AROS с графическим интерфейсом? Скачать
 
 Оставайтесь с нами в 2007!
 
-__ https://archives.aros-exec.org/index.php?function=browse&cat=audio
-__ https://archives.aros-exec.org/index.php?function=browse&cat=graphics/viewer
+__ https://archives.arosworld.org/index.php?function=browse&cat=audio
+__ https://archives.arosworld.org/index.php?function=browse&cat=graphics/viewer

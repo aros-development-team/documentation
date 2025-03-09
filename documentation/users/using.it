@@ -281,7 +281,7 @@ versioni fresche di AROS, che lo rendono utile per testare le nightly
 build. Permette una facile installazione di nuove versioni senza
 impelagarsi in partizionamenti. Sono incluse le istruzioni di
 installazione. Controllate gli 
-`Aros-Exec Archives <https://archives.aros-exec.org/index.php?
+`Aros-Exec Archives <https://archives.arosworld.org/index.php?
 function=browse&cat=emulation/misc>`__ 
 nella sezione (emu/misc) per update recenti.
 
@@ -757,7 +757,7 @@ fatto.
 
 Potete testare ancora pingando altri host o provando a usare alcune
 applicazioni di networking che potete trovare in
-https://archives.aros-exec.org/, come ftp e AIRCos. Se usate un programma
+https://archives.arosworld.org/, come ftp e AIRCos. Se usate un programma
 FTP con il vostro server FTP, ricordate che può funzionare solo con
 server ftp passivi, impostate il vostro server in questa modalità.
 
