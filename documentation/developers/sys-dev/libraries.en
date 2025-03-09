@@ -158,7 +158,7 @@ included by the cdef section::
   #include <libraries/mylib.h>
   ##end cdef
 
-__ system-development#copying-include-files
+__ libraries#copying-include-files
 
 
 Functions with m68k register passing
@@ -190,7 +190,7 @@ And the function in the source code is defined as follows::
       struct Library *, MylibBase, 9, Mylib
   )
   {
-        AROS_LIBFUNC_INIT
+      AROS_LIBFUNC_INIT
 
       ...
 
@@ -219,7 +219,7 @@ function. The macros has the following arguments:
   section of the .conf file it is equal to the name given to the ``modname``
   parameter with the first letter capitalized.
 
-__ #using-an-extended-libbase
+__ libraries#using-an-extended-libbase
 
 
 Using an extended libbase
@@ -278,7 +278,7 @@ And the config file the following section::
   ##end cdefprivate
   ...
 
-__ buildsystem#using-non-standard-types
+__ ../app-dev/buildsystem#using-non-standard-types
 
 
 Using a per-opener libbase
@@ -310,9 +310,9 @@ libbase as an explicit argument to the function but this is not encouraged.
           `use of an extended libbase`__ is only needed for using a
           per-opener libbase.
 
-__ buildsystem#using-an-extended-libbase
-__ buildsystem#functions-with-m68k-register-passing
-__ buildsystem#using-an-extended-libbase
+__ libraries#using-an-extended-libbase
+__ libraries#functions-with-m68k-register-passing
+__ libraries#using-an-extended-libbase
 
 
 Library initialization
@@ -386,7 +386,7 @@ so initialization of values in the libbase will be seen by all the openers.
 ``OpenFunc``\s are called after the copy of the libbase and changes made to
 libbase are thus private to the opener.
 
-__ buildsystem#using-a-per-opener-libbase
+__ libraries#using-a-per-opener-libbase
 
 
 
