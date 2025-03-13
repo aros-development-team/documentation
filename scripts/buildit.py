@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: iso-8859-1 -*-
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
 import os

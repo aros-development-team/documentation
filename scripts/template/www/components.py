@@ -1,5 +1,4 @@
-# -*- coding: iso-8859-1 -*-
-# Copyright © 2002-2007, The AROS Development Team. All rights reserved.
+# Copyright (C) 2002-2007, The AROS Development Team. All rights reserved.
 # $Id$
 
 from html import *
