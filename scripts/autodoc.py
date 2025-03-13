@@ -1,5 +1,4 @@
-# -*- coding: iso-8859-1 -*-
-# Copyright � 2008-2025, The AROS Development Team. All rights reserved.
+# Copyright (C) 2008-2025, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
