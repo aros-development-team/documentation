@@ -2,7 +2,9 @@
 @import url(donations.css?v=1.3);
 
 body {
-    font-family: arial, verdana, helvetica, sans-serif
+    font-family: arial, verdana, helvetica, sans-serif;
+    max-width: 80em;
+    margin: 1em auto;
 }
 
 header {
@@ -23,8 +25,8 @@ footer {
 
 /* top menu */
 .topmenu {
-  position: absolute;
-  top: 90px;
+  /*position: absolute;*/
+  top: 95px;
   left: 30px;
 }
 
