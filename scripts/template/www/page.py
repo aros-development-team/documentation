@@ -1,18 +1,16 @@
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
-# $Id$
 
 import os
 import jinja2
 
-def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
+def makePage( _T, _N, _M, lang, charset ):
     """
     Generates an HTML page using Jinja2 templating engine.
-    (CONTENT) and (BASE) are filled by the caller.
+    (CONTENT) and (BASE) are filled by buildit.py.
     Args:
-        _T: Unused parameter.
+        _T (dict): Dictionary containing title strings.
         _N (dict): Dictionary containing navigation labels.
         _M (dict): Dictionary containing metadata such as copyright and trademarks.
-        MIRRORS_DATA: Unused parameter.
         lang (str): Language code for the page.
         charset (str): Character set for the HTML content.
     Returns:

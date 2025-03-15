@@ -1,7 +1,7 @@
-# Copyright (C) 2002-2020, The AROS Development Team. All rights reserved.
-# $Id$
+# Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
-import os, sys
+import os
+# , sys
 import codecs
 
 from build import utility
@@ -10,6 +10,12 @@ from .page import makePage
 from configparser import ConfigParser
 
 def makeTemplates():
+    """
+    Creates the template files for the WWW target in all languages.
+    The templates are created in the targets/www directory.
+    The configuration files are read from the targets/www/template/languages directory.
+    """
+
     # Deduce important paths
     HERE_DIR   = os.path.split( __file__ )[0]
     LANG_DIR   = 'targets/www/template/languages'
@@ -35,7 +41,7 @@ def makeTemplates():
         for option in config.options( 'misc' ):
             _M[option] = config.get( 'misc', option )
         
-        open( dst, 'w' ).write( makePage( _T, _N, _M, '', language, charset ) )
+        open( dst, 'w' ).write( makePage( _T, _N, _M, language, charset ) )
 
     for language in os.listdir( LANG_DIR ):
         if utility.ignore( language ): continue
