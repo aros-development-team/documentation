@@ -5,6 +5,20 @@ body {
     font-family: arial, verdana, helvetica, sans-serif;
     max-width: 80em;
     margin: 1em auto;
+    display: grid;
+    gap: 0.5em;
+}
+
+@media (min-width: 30em) {
+	body {
+		grid-template-columns: 1fr 5fr;
+		grid-template-rows: auto 1fr min-content;
+	}
+}
+
+header,
+footer {
+	grid-column: 1 / -1;
 }
 
 header {
@@ -26,7 +40,7 @@ footer {
 /* top menu */
 .topmenu {
   /*position: absolute;*/
-  top: 95px;
+  top: 100px;
   left: 30px;
 }
 
