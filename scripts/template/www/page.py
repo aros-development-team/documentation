@@ -1,339 +1,203 @@
-# Copyright (C) 2002-2020, The AROS Development Team. All rights reserved.
+# Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 # $Id$
 
 import os
-
-from html import *
-from .components import *
+import jinja2
 
 def makePage( _T, _N, _M, MIRRORS_DATA, lang, charset ):
-    navigation = Tree \
-    ( [
-    P ( contents = [
-    Img( src = '%(ROOT)simages/pointer.png', alt = ''),
-    A( '<b>' + _N['home'] + '</b>', href=makeURL( '.', lang ))]
-    ),
-        Tree \
-        ( [
-        P ( contents = [
-            Img( src = '%(ROOT)simages/czechlogo.png', width = 16, height = 10, alt = 'czech logo'),
-            A( '&#268;esky', href='%(BASE)scs/' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/germanylogo.png', width = 16, height = 10, alt = 'germany logo'),
-            A( 'Deutsch', href='%(BASE)sde/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/greecelogo.png', width = 16, height = 10, alt = 'greece logo'),
-            A( '&#917;&#955;&#955;&#951;&#965;&#953;&#954;&#940;', href='%(BASE)sel/' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/englishlogo.png', width = 16, height = 10, alt = 'english logo'),
-            A( 'English', href='%(BASE)s.' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/spanishlogo.png', width = 16, height = 10, alt = 'spanish logo'),
-            A( 'Espa&#241;ol', href='%(BASE)ses/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/francelogo.png', width = 16, height = 10, alt = 'france logo'),
-            A( 'Fran&#231;ais', href='%(BASE)sfr/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/italylogo.png', width = 16, height = 10, alt = 'italy logo'),
-            A( 'Italiano', href='%(BASE)sit/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/netherlandslogo.png', width = 16, height = 10, alt = 'netherlands logo'),
-            A( 'Nederlands', href='%(BASE)snl/' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/polandlogo.png', width = 16, height = 10, alt = 'poland logo'),
-            A( 'Polski', href='%(BASE)spl/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/portugallogo.png', width = 16, height = 10, alt = 'portugal logo'),
-            A( 'Portugu&#234;s', href='%(BASE)spt/' )]),
-            P ( contents = [
-            Img( src = '%(ROOT)simages/russialogo.png', width = 16, height = 10, alt = 'russian logo'),
-            A( '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;', href='%(BASE)sru/' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/finlandlogo.png', width = 16, height = 10, alt = 'finland logo'),
-            A( 'Suomi', href='%(BASE)sfi/' )]),
-        P ( contents = [
-            Img( src = '%(ROOT)simages/swedenlogo.png', width = 16, height = 10, alt = 'sweden logo'),
-            A( 'Svenska', href='%(BASE)ssv/' )])
-        ] ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['news'] + '</b>', href=makeURL( 'news/', lang ) )]),
-        Tree ( A( _N['archive'], href=makeURL( 'news/archive/', lang ) ) ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['introduction'] + '</b>', href=makeURL( 'introduction/', lang ) ) ]),
+    """
+    Generates an HTML page using Jinja2 templating engine.
+    (CONTENT) and (BASE) are filled by the caller.
+    Args:
+        _T: Unused parameter.
+        _N (dict): Dictionary containing navigation labels.
+        _M (dict): Dictionary containing metadata such as copyright and trademarks.
+        MIRRORS_DATA: Unused parameter.
+        lang (str): Language code for the page.
+        charset (str): Character set for the HTML content.
+    Returns:
+        str: Rendered HTML content as a string.
+    """
 
-        Tree \
-        ( [
-            A( _N['status'], href=makeURL('introduction/status/everything', lang ) ),
-            A( _N['ports'], href=makeURL( 'introduction/ports', lang ) ),
-            A( _N['license'], href='%(BASE)slicense.html' )
-        ] ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['download'] + '</b>', href=makeURL( 'download', lang ) )]),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        '<b>' + _N['pictures'] + '</b>']),
-        Tree \
-        ( [
-            A( _N['screenshots'], href=makeURL( 'pictures/screenshots/', lang) ),
-            A( _N['developers'], href=makeURL( 'pictures/developers/', lang ) ),
-        ] ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        '<b>' + _N['documentation'] + '</b>']),
-        Tree \
-        ( [
-            A( '<b>' + _N['users'] + '</b>', href=makeURL( 'documentation/users/', lang ) ),
-            Tree \
-            ( [
-                A( _N['installation'], href=makeURL( 'documentation/users/installation', lang ) ),
-                A( _N['using'], href=makeURL( 'documentation/users/using', lang ) ),
-                A( _N['shell'], href=makeURL( 'documentation/users/shell/index', lang ) ),
-                A( _N['applications'], href=makeURL( 'documentation/users/applications/index', lang ) ),
-                A( _N['faq'], href=makeURL( 'documentation/users/faq', lang ) ),
-                A( _N['howto'], href=makeURL( 'documentation/users/howto', lang ) ),
-                A( _N['hwcompat'], href=makeURL( 'documentation/users/hardware', lang ) ),
-                A( _N['glossary'], href=makeURL( 'documentation/users/glossary', lang ) )
-            ] ),
-            A( '<b>' + _N['translators'] + '</b>', href=makeURL( 'documentation/translating/index', lang ) ),
-            A( '<b>' + _N['developers'] + '</b>', href=makeURL( 'documentation/developers/index', lang ) ),
-            Tree \
-            ( [
-                A( _N['contribute'], href=makeURL( 'documentation/developers/contribute', lang ) ),
-                A( _N['roadmap'], href=makeURL( 'documentation/developers/roadmap', lang ) ),
-                A( _N['issue-tracker'], href='https://github.com/aros-development-team/AROS/issues' ),
-                A( _N['working-with-git'], href=makeURL( 'documentation/developers/git', lang ) ),
-                A( _N['compiling'],  href=makeURL( 'documentation/developers/compiling', lang ) ),
-                A( _N['application-development-manual'], href=makeURL( 'documentation/developers/app-dev/index', lang ) ),
-                A( _N['zune-application-development-manual'], href=makeURL( 'documentation/developers/zune-dev/index', lang ) ),
-                A( _N['system-development-manual'], href=makeURL( 'documentation/developers/sys-dev/index', lang ) ),
-                A( _N['debugging-manual'], href=makeURL( 'documentation/developers/debugging', lang ) ),
-                A( _N['reference'], href=makeURL( 'documentation/developers/autodocs/index', lang ) ),
-                A( _N['specifications'], href=makeURL( 'documentation/developers/specifications/', lang ) ),
-                A( _N['ui-style-guide'], href=makeURL( 'documentation/developers/ui', lang ) ),
-                A( _N['testing'], href=makeURL( 'documentation/developers/testing/', lang ) ),
-                A( _N['documenting'], href=makeURL( 'documentation/developers/documenting', lang ) ),
-                A( _N['porting'], href=makeURL( 'documentation/developers/porting', lang ) ),
-                A( _N['summaries'], href=makeURL( 'documentation/developers/summaries/', lang ) ),
-                A( _N['links'], href=makeURL( 'documentation/developers/links', lang ) )
-            ] )
-        ] ),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['contact'] + '</b>', href=makeURL( 'contact', lang ) )]),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['credits'] + '</b>', href=makeURL( 'credits', lang ) )]),
-     P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['acknowledgements'] + '</b>', href=makeURL( 'acknowledgements', lang ) )]),
-        BR(),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['sponsors'] + '</b>', href=makeURL( 'sponsors', lang ) )]),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['linking'] + '</b>', href=makeURL( 'linking', lang ) )]),
-    P ( contents = [
-        Img( src = '%(ROOT)simages/pointer.png', alt = '' ),
-        A( '<b>' + _N['links'] + '</b>', href=makeURL( 'links', lang ) )])
-    ] )
+    environment = jinja2.Environment()
+    environment.globals['makeURL'] = makeURL
+    template = environment.from_string('''
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AROS Research Operating System</title>
+        <meta http-equiv="Content-Type" content="text/html; charset={{ charset }}">
+        <link rel="stylesheet" type="text/css" href="/aros.css?v=1.3">
+        <link rel="stylesheet" type="text/css" href="/print.css" media="print">
+        <link rel="icon" type="image/x-icon" href="/aros.ico">
+        <meta name="keywords" content="AROS, OS, operating system, research, open source, portage">
+    </head>
 
-    sponsors = Table\
-    (
-        cellspacing = 5, cellpadding = 0,
-        contents =
-        [
-            TR
-            (
-                TD
-                (
-                    A
-                    (
-                        Img( src = '%(ROOT)simages/trustec-small.png', border = 0, alt = 'Trustsec' ),
-                        href = 'https://www.trustsec.de/'
-                    )
-                )
-            ),
-            TR
-            (
-                TD
-                (
-                    A
-                    (
-                        Img( src = '%(ROOT)simages/genesi-small.gif', border = 0, alt = 'Genesi USA' ),
-                        href = 'https://genesi.company/'
-                    )
-                )
-            ),
-            TR
-            (
-                TD
-                (
-                    A \
-                    (
-                        Img \
-                        (
-                            src = 'https://sourceforge.net/sflogo.php?group_id=43586&amp;type=10',
-                            width = 88, height = 16, border = 0, alt = 'Get AROS Research Operating System at SourceForge.net. '
-                                'Fast, secure and Free Open Source software downloads'
-                        ),
-                        href = 'https://sourceforge.net/projects/aros/'
-                    )
-                )
-            )
-        ]
+    <body>
+        <header>
+            <img src="/images/kittymascot.png" alt="kitty mascot" style="float:right" border="0">
+            <img src="/images/toplogomenu.png" alt="top logo menu" border="0">
+        </header>
+
+        <div>
+            <nav class="tree">
+                <ul class="tree-head">
+                    <li><a href="/">{{ n['home'] }}</a></li>
+                    <ul class="tree-entry">    
+                        <li>                       
+                            <img src="/images/czechlogo.png" width = 16 height = 10 alt = "czech logo">
+                            <a href="/cs/">&#268;esky"</a>
+                        </li>
+                        <li>
+                            <img src="/images/germanylogo.png" width = 16 height = 10 alt = "germany logo">
+                            <a href="/de/">Deutsch</a>
+                        </li>
+                        <li>
+                            <img src="/images/greecelogo.png" width = 16 height = 10 alt = "greece logo">
+                            <a href="/el/">&#917;&#955;&#955;&#951;&#965;&#953;&#954;&#940;</a>
+                        </li>
+                        <li>
+                            <img src="/images/englishlogo.png" width = 16 height = 10 alt = "english logo">
+                            <a href="/">English</a>
+                        </li>
+                        <li>
+                            <img src="/images/spanishlogo.png" width = 16 height = 10 alt = "spanish logo">
+                            <a href="/es/">Espa&#241;ol</a>
+                        </li>
+                        <li>
+                            <img src="/images/francelogo.png" width = 16 height = 10 alt = "france logo">
+                            <a href="/fr/">Fran&#231;ais</a>
+                        </li>
+                        <li>
+                            <img src="/images/italylogo.png" width = 16 height = 10 alt = "italy logo">
+                            <a href="/it/">Italiano</a>
+                        </li>
+                        <li>
+                            <img src="/images/netherlandslogo.png" width = 16 height = 10 alt = "netherlands logo">
+                            <a href="/nl/">Nederlands</a>
+                        </li>
+                        <li>
+                            <img src="/images/polandlogo.png" width = 16 height = 10 alt = "poland logo">
+                            <a href="/pl/">Polski</a>
+                        </li>
+                        <li>
+                            <img src="/images/portugallogo.png" width = 16 height = 10 alt = "portugal logo">
+                            <a href="/pt/">Portugu&#234;s</a>
+                        </li>
+                        <li>
+                            <img src="/images/russialogo.png" width = 16 height = 10 alt = "russian logo">
+                            <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+                        </li>
+                        <li>
+                            <img src="/images/finlandlogo.png" width = 16 height = 10 alt = "finland logo">
+                            <a href="/fi/">Suomi</a>
+                        </li>
+                        <li>
+                            <img src="/images/swedenlogo.png" width = 16 height = 10 alt = "sweden logo">
+                            <a href="/sv/">Svenska</a>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'news/', lang) }}">{{ n['news'] }}</a></li>
+                    <ul class="tree-entry">
+                        <li><a href="{{ makeURL( 'news/archive/', lang) }}">{{ n['archive'] }}</a></li>
+                    </ul>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'introduction/', lang ) }}">{{ n['introduction'] }}</a></li>
+                    <ul class="tree-entry">
+                        <li><a href="{{ makeURL('introduction/status/everything', lang ) }}">{{ n['status'] }}</a></li>
+                        <li><a href="{{ makeURL( 'introduction/ports', lang ) }}">{{ n['ports'] }}</a></li>
+                        <li><a href="/license.html">{{ n['license'] }}</a></li>
+                    </ul>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'download', lang) }}">{{ n['download'] }}</a></li>
+                </ul>
+                <ul class="tree-head">
+                    <li>{{ n['pictures'] }}</li>
+                    <ul class="tree-entry">
+                        <li><a href="{{ makeURL( 'pictures/screenshots/', lang) }}">{{ n['screenshots'] }}</a></li>
+                        <li><a href="{{ makeURL( 'pictures/developers/', lang) }}">{{ n['developers'] }}</a></li>
+                    </ul>
+                </ul>
+                <ul class="tree-head">
+                    <li>{{ n['documentation'] }}</li>
+                    <ul class="tree-head">
+                        <li>
+                            <a href="{{ makeURL( 'documentation/users/', lang) }}">{{ n['users'] }}</a>
+                            <ul class="tree-entry">
+                                <li><a href="{{ makeURL( 'documentation/users/installation', lang) }}">{{ n['installation'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/using', lang) }}">{{ n['using'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/shell/index', lang) }}">{{ n['shell'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/applications/index', lang) }}">{{ n['applications'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/faq', lang) }}">{{ n['faq'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/howto', lang) }}">{{ n['howto'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/users/glossary', lang) }}">{{ n['glossary'] }}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ makeURL( 'documentation/translating/', lang) }}">{{ n['translators'] }}</a></li>
+                        <li>
+                            <a href="{{ makeURL( 'documentation/developers/', lang) }}">{{ n['developers'] }}</a>
+                            <ul class="tree-entry">
+                                <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
+                                <li><a href="https://github.com/aros-development-team/AROS/issues">{{ n['issue-tracker'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/testing/', lang) }}">{{ n['testing'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/documenting', lang) }}">{{ n['documenting'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/porting', lang) }}">{{ n['porting'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/summaries/', lang) }}">{{ n['summaries'] }}</a></li>
+                                <li><a href="{{ makeURL( 'documentation/developers/links', lang) }}">{{ n['links'] }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'contact', lang) }}">{{ n['contact'] }}</a></li>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'credits', lang) }}">{{ n['credits'] }}</a></li>
+                    <li><a href="{{ makeURL( 'acknowledgements', lang) }}">{{ n['acknowledgements'] }}</a></li>
+                </ul>
+                <ul class="tree-head">
+                    <li><a href="{{ makeURL( 'sponsors', lang) }}">{{ n['sponsors'] }}</a></li>
+                    <li><a href="{{ makeURL( 'linking', lang) }}">{{ n['linking'] }}</a></li>
+                    <li><a href="{{ makeURL( 'links', lang) }}">{{ n['links'] }}</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a href = 'https://www.trustsec.de/'><img src = '/images/trustec-small.png' alt = 'Trustsec'></a><br>
+                <a href = 'https://genesi.company/'><img src = '/images/genesi-small.gif' alt = 'Genesi USA'></a><br>
+                <a href = 'https://sourceforge.net/projects/aros/'>
+                    <img src = 'https://sourceforge.net/sflogo.php?group_id=43586&amp;type=10' width = 88 height = 16
+                    alt = 'Get AROS Research Operating System at SourceForge.net. Fast, secure and Free Open Source software downloads'>
+                </a><br>
+                <a href = 'https://endsoftwarepatents.org/'><img src = '/images/noeupatents-small.png' alt = 'No EU patents'></a>
+            </div>
+        </div>
+
+        <main>
+            %(CONTENT)s
+        </main>
+        <footer>
+            {{ m['copyright'] }}<br>{{ m['trademarks'] }}
+        </footer>
+    </body>
+</html>
+'''
     )
-
-    bar = Table(
-        border = 0, cellpadding = 2, cellspacing = 2, width = 171,
-        contents = [
-            TR(
-                valign = 'top', contents = [
-                    TD( rowspan = 8, width=15 ),
-                    TD()
-                ]
-            ),
-            TR( valign = 'top', contents = TD( navigation ) ),
-            TR( TD() ),
-            TR( valign = 'top', contents = TD( align = 'center', contents = sponsors ) ),
-            TR( TD()),
-            TR \
-            (
-                valign = 'top', contents = TD \
-                (
-                    align = 'center', contents = A \
-                    (
-                        Img \
-                        (
-                            src = '%(ROOT)simages/noeupatents-small.png', alt = 'No EU patents',
-                            border = 0
-                        ),
-                        href = 'https://endsoftwarepatents.org/'
-                    )
-                )
-            )
-        ]
-    )
-
-    statsPHP5= '''
-    <?php
-        require_once( '%(ROOT)srsfeed/browserdetect.php');
-        $win_ie56 = (browser_detection('browser') == 'ie' ) &&
-
-          (browser_detection('number') >= 5 ) &&
-
-                (browser_detection('number') < 7  );
-    if ($win_ie56) {
-
-    echo \"<img src=\\"/images/kittymascot.gif\\"
-        alt=\\"kitty mascot\\"
-        style=\\"float:right\\" border=\\"0\\"><img
-        src=\\"/images/toplogomenu.gif\\" border=\\"0\\"
-        alt=\\"top logo menu\\"
-        usemap=\\"#map\\">";
-
-        }
-        else {
-        echo \"<img src=\\"/images/kittymascot.png\\"
-        alt=\\"kitty mascot\\"
-        style=\\"float:right\\"
-        border=\\"0\\"><img src=\\"/images/toplogomenu.png\\"
-        alt=\\"top logo menu\\"
-        border=\\"0\\" usemap=\\"#map\\">";
-        } ?>
-    '''
-
-    page = HTML( charset, [
-        Head( [
-            Charset( charset ),
-            Title( 'AROS Research Operating System' ),
-            Link( href = '%(ROOT)saros.css?v=1.3', type = 'text/css', rel = 'stylesheet' ),
-            Link( href = '%(ROOT)sprint.css', type = 'text/css', rel = 'stylesheet', media = 'print' ),
-            Link( href = '%(ROOT)saros.ico', type = 'image/x-icon', rel = 'icon'),
-            Meta(
-                name    = 'keywords',
-                content = 'AROS, OS, operating system, research, open source, portage'
-            )
-        ] ),
-        Body(
-            style = 'margin: 0px;',
-            bgcolor = '#ffffff', contents = [
-                Map(
-                    name = 'map',
-                    contents = [
-                        Area(shape = 'rect', coords = '22,80,95,97',   alt = 'http://www.aros.org', href = '/'),
-                        Area(shape = 'rect', coords = '95,80,148,97',  alt = 'Forum',               href = 'https://www.arosworld.org/'),
-                        Area(shape = 'rect', coords = '148,80,215,97', alt = 'Software',            href = 'https://archives.arosworld.org/'),
-                        Area(shape = 'rect', coords = '215,80,285,97', alt = 'Bounties',            href = 'https://power2people.org/')
-                    ]
-                ),
-                Table(
-                    border = 0, cellspacing = 0, cellpadding = 0,
-                    style="background-image:url('%(ROOT)simages/backgroundtop.png'); background-repeat:repeat-x;",
-                    width = '100%%', contents = [
-                        TR( [
-                            TD(
-                                valign = 'top', width = '100%%', height = 109,
-                                contents = statsPHP5)
-                        ] ),
-
-                        TR(
-                            TD(
-                                Table(
-                                    border = 0, cellspacing = 0, cellpadding = 0,
-                                    width = '100%%', contents = [
-                                        TR( contents = [
-                                            TD(
-                                                width = 171, contents = [ bar ], id = 'menusidebar'
-                                            ),
-                                            TD( width="100%%",
-                                                contents =  '%(CONTENT)s'
-                                            ),
-                                        ]),
-                                    ]
-                                )
-                            )
-                        ),
-                        TR( [
-                            TD(
-                                width = '100%%', valign = 'bottom', align = 'center',
-                                contents = [
-                                    BR(),
-                                    Table(width = '100%%', contents = [
-                                        TR( contents = [
-                                            TD( contents = [
-                                                Div( style = 'text-align: right', contents = [
-                                                    Font( color = '#555555', size = '-1', contents = [
-                                                        _M['copyright'],
-                                                        BR(),
-                                                        _M['trademarks'],
-                                                        BR(),
-                                                        BR()
-                                                    ] )
-                                                ] )
-                                            ] )
-                                        ] )
-                                    ] )
-                                ]
-                            )
-                        ] )
-                    ]
-                )
-            ]
-        )
-    ] )
-
-    return str( page )
+    return template.render(n=_N, m=_M, lang=lang, charset=charset)
 
 
 # makeURL
