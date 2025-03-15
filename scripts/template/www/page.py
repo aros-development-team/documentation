@@ -34,7 +34,13 @@ def makePage( _T, _N, _M, lang, charset ):
     <body>
         <header>
             <img src="/images/kittymascot.png" alt="kitty mascot" style="float:right" border="0">
-            <img src="/images/toplogomenu.png" alt="top logo menu" border="0">
+            <img src="/images/toplogo.png" alt="top logo menu" border="0">
+            <div class="topmenu">
+                <a href="/">AROS.ORG</a>
+                <a href="https://www.arosworld.org/">Forum</a>
+                <a href="https://archives.arosworld.org/">Software</a>
+                <a href="https://power2people.org/">Bounties</a>
+            </div>
         </header>
 
         <div>
@@ -52,7 +58,7 @@ def makePage( _T, _N, _M, lang, charset ):
                         </li>
                         <li>
                             <img src="/images/greecelogo.png" width = 16 height = 10 alt = "greece logo">
-                            <a href="/el/">&#917;&#955;&#955;&#951;&#965;&#953;&#954;&#940;</a>
+                            <a href="/el/">&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</a>
                         </li>
                         <li>
                             <img src="/images/englishlogo.png" width = 16 height = 10 alt = "english logo">
@@ -142,7 +148,7 @@ def makePage( _T, _N, _M, lang, charset ):
                             <ul class="tree-entry">
                                 <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
                                 <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
-                                <li><a href="https://github.com/aros-development-team/AROS/issues">{{ n['issue-tracker'] }}</a></li>
+                                <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
                                 <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
                                 <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
                                 <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
