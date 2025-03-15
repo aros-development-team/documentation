@@ -29,6 +29,7 @@ def makePage( _T, _N, _M, lang, charset ):
         <link rel="stylesheet" type="text/css" href="/print.css" media="print">
         <link rel="icon" type="image/x-icon" href="/aros.ico">
         <meta name="keywords" content="AROS, OS, operating system, research, open source, portage">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body>
