@@ -78,6 +78,18 @@ footer {
 .tree :visited:hover {
     text-decoration: underline }
 
+/* image container for sponsors */
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    display: inline-block;
+    margin: 10px 0;
+    max-width: 100%;
+    height: auto;
+}
+
 div.document {
     padding: 0px 10px 0px 10px }
 

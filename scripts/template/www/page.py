@@ -180,7 +180,7 @@ def makePage( _T, _N, _M, lang, charset ):
                     <li><a href="{{ makeURL( 'links', lang) }}">{{ n['links'] }}</a></li>
                 </ul>
             </nav>
-            <div>
+            <div class="image-container">
                 <a href = 'https://www.trustsec.de/'><img src = '/images/trustec-small.png' alt = 'Trustsec'></a><br>
                 <a href = 'https://genesi.company/'><img src = '/images/genesi-small.gif' alt = 'Genesi USA'></a><br>
                 <a href = 'https://sourceforge.net/projects/aros/'>
