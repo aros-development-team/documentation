@@ -53,7 +53,6 @@ def makeTemplates():
             [ 
                 __file__, 
                 os.path.join( HERE_DIR, 'page.py' ),
-                os.path.join( HERE_DIR, 'components.py' ), 
                 os.path.join( LANG_DIR, language ) 
             ], 
             dst 
