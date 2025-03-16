@@ -1,6 +1,10 @@
 .. raw:: html
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
+   <div class="front-container">
+
+   <div class="main-div"><!--left side with main content-->
+
+   <section>
 
 .. Include:: introduction/index-abstract.es
 
@@ -8,12 +12,11 @@
 
 .. raw:: html
 
-   </td></tr></tbody></table><br>
+   </section>
 
+   <section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
+   <h1>Distributions<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. Include:: download-abstract.en
 
@@ -21,56 +24,48 @@
 
 .. raw:: html
 
-   </td></tr></table><br>
+   </section>
 
+   <section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   <object width="100%" height="400" data="../github-commits.php" type="text/html"></object></td></tr></table>
+   <object width="100%" height="250" data="github-commits.php" type="text/html"></object>
 
+   </section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" border="0" cellpadding="1" cellspacing="1"><tr><td>
+   <section>
 
 .. Include:: news/index.es
 
 .. raw:: html
 
-   </td></tr></table><br>
+   </section>
 
+   </div><!--main-div-->
 
-.. raw:: html
+   <div class="rss-div"><!--right side with rss feeds-->
 
-   <td style="width: 243px; vertical-align: top;">
-   <!-- The direct downloads block is disabled so that users go to the downloads section where they should learn about using distribution instead of nightly
-   <table style="text-align: justify; width:100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
-   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Direct Downloads:<br>
+   <div class="rssfeed">
+
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top"><br>
+   Las últimas propuestas al ARCHIVE:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Las nightly builds se hacen automáticamente cada noche, directamente del más
-   reciente código fuente. Si gustaras probar un LiveCD de AROS, por favor elige
-   el archivo "boot ISO" para tu plataforma (i386 or PPC).<br><br>
-   <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
+   <a href=https://archives.arosworld.org>Los archivos de AROS</a>
+   guardan el contenido más reciente propuesto por nuestra comunidad, y es el primer lugar para buscar aplicaciones de usuario, temas, gráficos, y documentación adicional.<br><br>
+   <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
+   
+   </div>
+   
+   <div class="rssfeed">
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
-   else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Las últimas propuestas al ARCHIVE:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://archives.arosworld.org>Los archivos de AROS</a>   guardan el contenido más reciente propuesto por nuestra comunidad, y es el primer lugar para buscar aplicaciones de usuario, temas, gráficos, y documentación adicional.<br><br>
-   </td></tr></table>
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top><br>
+   Los comentarios más recientes en el foro AROSWorld :<br>
+   <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://www.arosworld.org>AROSWorld</a>
+   es el principal sitio de la comunidad AROS. Recibe ayuda, descubre lo que está pasando en la comunidad, y añade tus pensamientos sobre AROS.<br><br>
+   <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
-   else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Los comentarios más recientes en el foro AROS-EXEC :<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> es el principal sitio de la comunidad AROS. Recibe ayuda, descubre lo que está pasando en la comunidad, y añade tus pensamientos sobre AROS.<br><br>
-   </td></tr></tbody></table>
+   </div>
 
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
-   <?php if ($win_ie56) { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.gif\" align=\"middle\">"; } else { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.png\" align=\"middle\">"; } ?>
-   Syndication Feeds:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   </td></tr></table>
-   </td></tr></table>
+   </div><!--rss-div-->
+   </div><!--front-container-->

@@ -1,6 +1,10 @@
 .. raw:: html
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
+   <div class="front-container">
+
+   <div class="main-div"><!--left side with main content-->
+
+   <section>
 
 .. Include:: introduction/index-abstract.sv
 
@@ -8,12 +12,11 @@
 
 .. raw:: html
 
-   </td></tr></tbody></table><br>
+   </section>
 
+   <section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolormain.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
+   <h1>Distributioner<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. Include:: download-abstract.sv
 
@@ -21,54 +24,48 @@
 
 .. raw:: html
 
-   </td></tr></table><br>
+   </section>
 
+   <section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto; background: url(/images/bgcolormain.png);" border="0" cellpadding="1" cellspacing="1"><tr><td>
    <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   <object width="100%" height="400" data="../github-commits.php" type="text/html"></object></td></tr></table>
+   <object width="100%" height="250" data="github-commits.php" type="text/html"></object>
 
+   </section>
 
-.. raw:: html
-
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" border="0" cellpadding="1" cellspacing="1"><tr><td>
+   <section>
 
 .. Include:: news/index.sv
 
 .. raw:: html
 
-   </td></tr></table><br>
+   </section>
 
+   </div><!--main-div-->
 
-.. raw:: html
+   <div class="rss-div"><!--right side with rss feeds-->
 
-   <td style="width: 243px; vertical-align: top;">
-   <!-- The direct downloads block is disabled so that users go to the downloads section where they should learn about using distribution instead of nightly
-   <table style="text-align: justify; width:100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.gif\" align=\"middle\">";}
-   else { echo "<img alt=\"Direct download Icon\" src=\"/images/directdownloadicon.png\" align=\"middle\">";} ?>Direct Downloads:<br>
+   <div class="rssfeed">
+
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top"><br>
+   Latest ARCHIVE submissions:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   Nightly builds skapas automatiskt varje natt, direkt från den senaste källkoden. Om du vill prova en AROS live CD, ladda ner "boot ISO" för din plattform (i386 or PPC).<br><br>
-   <?php virtual("/cgi-bin/files2") ?> <br></td></tr></tbody></table>-->
+   På <a href=https://archives.arosworld.org>The AROS archives</a>
+   hittar du det nyaste materialet för AROS, här hittar du program, teman, grafik och ytterligare dokumentation.<br><br>
+   <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.gif\" align=\"middle\">"; }
-   else { echo "<img alt=\"Archive Icon\" src=\"/images/archivedownloadicon.png\" align=\"middle\">"; } ?>
-   Latest ARCHIVE submissions:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   På <a href=https://archives.arosworld.org>The AROS archives</a> hittar du det nyaste materialet för AROS, här hittar du program, teman, grafik och ytterligare dokumentation.<br><br>
-   </td></tr></table>
+   </div>
 
-   <table style="text-align: justify; width: 100%;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td>
-   <?php if ($win_ie56) { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.gif\" align=\"middle\">"; }
-   else { echo "<img alt=\"Community Icon\" src=\"/images/communityicon.png\" align=\"middle\">"; } ?>
-   Senaste inläggen på AROS-EXEC forumet:<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://ae.amigalife.org>AROS-EXEC</a> är den primära AROS community-sidan. Här kan du få hjälp, hålla koll på vad som händer inom AROS-världen och posta dina tankar om AROS.<br><br>
-   </td></tr></tbody></table>
+   <div class="rssfeed">
 
-   <table style="width: 100%; text-align: justify; margin-left: auto; margin-right: auto;" background="/images/bgcolorright.png" border="0" cellpadding="1" cellspacing="1"><tr><td style="vertical-align: top;">
-   <?php if ($win_ie56) { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.gif\" align=\"middle\">"; } else { echo "<img alt=\"Syndication Icon\" src=\"/images/rssicon1.png\" align=\"middle\">"; } ?>
-   Syndication Feeds:<br><img style="width: 177px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   </td></tr></table>
-   </td></tr></table>
+   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
+   Senaste inläggen på AROSWorld forumet:<br>
+   <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
+   <a href=https://www.arosworld.org>AROSWorld</a>
+   är den primära AROS community-sidan. Här kan du få hjälp, hålla koll på vad som händer inom AROS-världen och posta dina tankar om AROS.<br><br>
+   <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
+
+   </div>
+
+   </div><!--rss-div-->
+   </div><!--front-container-->

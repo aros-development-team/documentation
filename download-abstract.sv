@@ -1,7 +1,3 @@
-.. raw:: html
-
-   <h1>Distributioner<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-
 Detta är förkonfigurerade och vältestade versioner av AROS. De innehåller
 många användbara program som inte följer med från start och är de som är mest
 intressanta för vanliga användare. De kanske saknar den senaste versionen av
