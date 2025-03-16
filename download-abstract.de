@@ -1,7 +1,3 @@
-.. raw:: html
-
-   <h1>Distributionen<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-
 Distributionen sind vorkonfigurierte und getestete AROS-Versionen. Sie kommen
 mit ein paar nützlichen Anwenderprogrammen, die nicht in den Haupt-Binaries von
 AROS.org vorhanden sind. Sie sind deshalb vor allem für Anwender interessant.
