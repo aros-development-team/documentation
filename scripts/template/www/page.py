@@ -34,8 +34,8 @@ def makePage( _T, _N, _M, lang, charset ):
 
     <body>
         <header>
-            <img src="/images/kittymascot.png" alt="kitty mascot" style="float:right" border="0">
-            <img src="/images/toplogo.png" alt="top logo menu" border="0">
+            <img src="/images/toplogo.png" alt="top logo menu" class=leftimage>
+            <img src="/images/kittymascot.png" alt="kitty mascot" class="rightimage">
             <div class="topmenu">
                 <a href="/">AROS.ORG</a>
                 <a href="https://www.arosworld.org/">Forum</a>

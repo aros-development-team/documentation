@@ -22,6 +22,7 @@ footer {
 }
 
 header {
+  position: relative;
   background-image: url('/images/backgroundtop.png');
   background-repeat: repeat-x;
   width: 100%;
@@ -37,16 +38,26 @@ footer {
 }
 
 
+.leftimage {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.rightimage {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 /* top menu */
 .topmenu {
-  /*position: absolute;*/
-  top: 100px;
-  left: 30px;
+  margin-top: 82px;
 }
 
 .topmenu a {
   font-weight: bold;
-  padding: 0 10px;
+  padding: 0 0.5em;
 }
 
 .topmenu :link {
