@@ -47,10 +47,10 @@
 
    <div class="rssfeed">
 
-   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top"><br>
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" class="rssfeed-img">
    Последние файлы<br>на AROS-Archives:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://archives.arosworld.org>The AROS archives</a>
+   <a href="https://archives.arosworld.org">The AROS archives</a>
    хранят последние разработки ПО от нашего сообщества, а также являются основным хранилищем приложений, тем, графики и различной документации, созданных пользователями.<br><br>
    <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
    
@@ -58,8 +58,8 @@
    
    <div class="rssfeed">
 
-   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
-   <a href=https://www.arosworld.org>AROSWorld</a>
+   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
+   <a href="https://www.arosworld.org">AROSWorld</a>
    - основной сайт сообщества AROS. Здесь просят помощи, узнают новости сообщества и делятся своими соображениями об AROS.<br><br>
    <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
 

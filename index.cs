@@ -47,7 +47,7 @@
 
    <div class="rssfeed">
 
-   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top"><br>
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" class="rssfeed-img">
    Nejnovější příspěvky v archivu:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href="https://archives.arosworld.org">AROS archiv</a>
@@ -58,10 +58,10 @@
    
    <div class="rssfeed">
 
-   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
+   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
    Poslední příspěvky na AROS-EXEC fóru:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://www.arosworld.org>AROSWorld</a>
+   <a href="https://www.arosworld.org">AROSWorld</a>
    je primární komunitní stránka AROSu. Můžete zde vyhledat pomoc, zjistit co se děje v rámci komunity nového a sdílet svoje myšlenky.<br><br>
    <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
 
