@@ -78,6 +78,7 @@ footer {
 .tree-head {
   list-style-image: url('/images/pointer.png');
   padding-left: 20px;
+  margin-top: 0;
   font-weight: bold;
 }
 
@@ -108,11 +109,19 @@ footer {
 /* sections of the front page */
 section {
     background-color: #f2f6ff;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 /* single rss feed */
 .rssfeed {
     background-image: url('/images/bgcolorright.png');
+    padding: 1em;
+}
+
+.rssfeed-img {
+    float: left;
+    margin-right: 1em;
 }
 
 /* for the front page we need another flex grid so we can have
@@ -120,6 +129,7 @@ section {
 .front-container {
   display: grid;
   grid-template-columns: 5fr 1fr;
+  gap: 0.5em;
 }
 
 /* .main-div, .rss-div { */
@@ -128,6 +138,7 @@ section {
 /* image container for sponsors */
 .image-container {
     text-align: center;
+    display: block;
 }
 
 .image-container img {

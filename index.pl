@@ -47,10 +47,10 @@
 
    <div class="rssfeed">
 
-   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
+   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
    Najnowsze uploady do Archiwum:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://archives.arosworld.org>Archiwa AROSa</a>
+   <a href="https://archives.arosworld.org">Archiwa AROSa</a>
    zawierają najnowsze aplikacje, grafiki i dodatkową dokumentację przygotowaną przez społeczność AROS.<br><br>
    <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
    
@@ -58,10 +58,10 @@
    
    <div class="rssfeed">
 
-   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
+   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
    Najnowsze posty na AROSWorld:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://www.arosworld.org>AROS-EXEC</a>
+   <a href="https://www.arosworld.org">AROSWorld</a>
    jest głównym serwisem społeczności AROS. Odwiedź go jeśli szukasz pomocy lub chcesz sie dowiedzieć więcej o systemie AROS.<br><br>
    <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
 

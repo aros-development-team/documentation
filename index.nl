@@ -47,10 +47,10 @@
 
    <div class="rssfeed">
 
-   <img alt="Archive Icon" src="/images/archivedownloadicon.png" align="top"><br>
+   <img alt="Archive Icon" src="/images/archivedownloadicon.png" class="rssfeed-img">
    Laatste ARCHIVE insturingen:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://archives.arosworld.org>The AROS Archive</a>
+   <a href="https://archives.arosworld.org">The AROS Archive</a>
    bevat de nieuwste systeem content ingestuurd door onze community en is de primaire locatie voor gebruikers applicaties, thema's, graphics en aanvullende documentatie.<br><br>
    <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
    
@@ -58,10 +58,10 @@
    
    <div class="rssfeed">
 
-   <img alt="Community Icon" src="/images/communityicon.png" align="top"><br>
+   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
    Laatste AROSWorld forum berichten:<br>
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href=https://www.arosworld.org>AROSWorld</a>
+   <a href="https://www.arosworld.org">AROSWorld</a>
    is de primaire AROS community site. Ontvang hulp, leer wat er speelt in de community, en post uw gedachten over AROS.<br><br>
    <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
 
