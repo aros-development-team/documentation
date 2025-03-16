@@ -105,6 +105,16 @@ footer {
 .tree :visited:hover {
     text-decoration: underline }
 
+/* sections of the front page */
+section {
+    background-color: #f2f6ff;
+}
+
+/* sections of the front page */
+.rssfeed {
+    background-image: url('/images/bgcolorright.png');
+}
+
 /* image container for sponsors */
 .image-container {
     text-align: center;
