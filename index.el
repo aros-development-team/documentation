@@ -29,7 +29,7 @@
    <section>
 
    <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   <object width="100%" height="250" data="github-commits.php" type="text/html"></object>
+   <object width="100%" height="250" data="/github-commits.php" type="text/html"></object>
 
    </section>
 
@@ -52,7 +52,7 @@
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    Τα <a href="https://archives.arosworld.org">AROS archives</a>
    περιέχουν τον πιο πρόσφατο περιεχόμενο υποβληθέν από την κοινότητα, και είναι η κύρια περιοχή αναζήτησης εφαρμογών, θεμάτων επιφάνειας εργασίας, γραφικών, και πρόσθετης τεκμηρίωσης.<br><br>
-   <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
+   <object width="100%" height="300" data="/archives-uploads.php" type="text/html"></object>
    
    </div>
    
@@ -63,7 +63,7 @@
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    Το <a href="https://www.arosworld.org">AROSWorld</a>
    αποτελεί τη βασική ιστοσελίδα της κοινότητας. Ζητήστε βοήθεια, μάθετε τι συμβαίνει στην κοινότητα, και δημοσιεύστε τις σκέψεις σας για το AROS.<br><br>
-   <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
+   <object width="100%" height="400" data="/arosworld-forum.php" type="text/html"></object>
 
    </div>
 

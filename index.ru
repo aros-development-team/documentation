@@ -29,7 +29,7 @@
    <section>
 
    <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   <object width="100%" height="250" data="github-commits.php" type="text/html"></object>
+   <object width="100%" height="250" data="/github-commits.php" type="text/html"></object>
 
    </section>
 
@@ -52,7 +52,7 @@
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href="https://archives.arosworld.org">The AROS archives</a>
    хранят последние разработки ПО от нашего сообщества, а также являются основным хранилищем приложений, тем, графики и различной документации, созданных пользователями.<br><br>
-   <object width="100%" height="300" data="archives-uploads.php" type="text/html"></object>
+   <object width="100%" height="300" data="/archives-uploads.php" type="text/html"></object>
    
    </div>
    
@@ -61,7 +61,7 @@
    <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
    <a href="https://www.arosworld.org">AROSWorld</a>
    - основной сайт сообщества AROS. Здесь просят помощи, узнают новости сообщества и делятся своими соображениями об AROS.<br><br>
-   <object width="100%" height="400" data="arosworld-forum.php" type="text/html"></object>
+   <object width="100%" height="400" data="/arosworld-forum.php" type="text/html"></object>
 
    </div>
 

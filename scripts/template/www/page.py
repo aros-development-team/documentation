@@ -51,7 +51,7 @@ def makePage( _T, _N, _M, lang, charset ):
                     <ul class="tree-entry">    
                         <li>                       
                             <img src="/images/czechlogo.png" width = 16 height = 10 alt = "czech logo">
-                            <a href="/cs/">&#268;esky"</a>
+                            <a href="/cs/">&#268;esky</a>
                         </li>
                         <li>
                             <img src="/images/germanylogo.png" width = 16 height = 10 alt = "germany logo">
