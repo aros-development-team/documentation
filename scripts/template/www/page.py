@@ -44,7 +44,7 @@ def makePage( _T, _N, _M, lang, charset ):
             </div>
         </header>
 
-        <div>
+        <div id="menusidebar">
             <nav class="tree">
                 <ul class="tree-head">
                     <li><a href="/">{{ n['home'] }}</a></li>
