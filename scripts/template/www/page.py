@@ -25,7 +25,7 @@ def makePage( _T, _N, _M, lang, charset ):
     <head>
         <title>AROS Research Operating System</title>
         <meta http-equiv="Content-Type" content="text/html; charset={{ charset }}">
-        <link rel="stylesheet" type="text/css" href="/aros.css?v=1.3">
+        <link rel="stylesheet" type="text/css" href="/aros.css?v=1.4">
         <link rel="stylesheet" type="text/css" href="/print.css" media="print">
         <link rel="icon" type="image/x-icon" href="/aros.ico">
         <meta name="keywords" content="AROS, OS, operating system, research, open source, portage">
