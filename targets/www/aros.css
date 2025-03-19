@@ -123,6 +123,10 @@ section {
     margin-right: 1em;
 }
 
+.rss-object {
+    width: 100%;
+}
+
 /* for the front page we need another flex grid so we can have
    the rssfeeds on the right side.*/
 .front-container {
