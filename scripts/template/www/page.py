@@ -47,8 +47,7 @@ def makePage( _T, _N, _M, lang, charset ):
         <div id="menusidebar">
             <nav class="tree">
                 <ul class="tree-head">
-                    <li><a href="/">{{ n['home'] }}</a></li>
-                    <li>
+                    <li><a href="/">{{ n['home'] }}</a>
                         <ul class="tree-entry">    
                             <li>                       
                                 <img src="/images/czechlogo.png" width = 16 height = 10 alt = "czech logo">
@@ -106,16 +105,14 @@ def makePage( _T, _N, _M, lang, charset ):
                     </li>
                 </ul>
                 <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'news/', lang) }}">{{ n['news'] }}</a></li>
-                    <li>
+                    <li><a href="{{ makeURL( 'news/', lang) }}">{{ n['news'] }}</a>
                         <ul class="tree-entry">
                             <li><a href="{{ makeURL( 'news/archive/', lang) }}">{{ n['archive'] }}</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'introduction/', lang ) }}">{{ n['introduction'] }}</a></li>
-                    <li>
+                    <li><a href="{{ makeURL( 'introduction/', lang ) }}">{{ n['introduction'] }}</a>
                         <ul class="tree-entry">
                             <li><a href="{{ makeURL('introduction/status/everything', lang ) }}">{{ n['status'] }}</a></li>
                             <li><a href="{{ makeURL( 'introduction/ports', lang ) }}">{{ n['ports'] }}</a></li>
@@ -127,8 +124,7 @@ def makePage( _T, _N, _M, lang, charset ):
                     <li><a href="{{ makeURL( 'download', lang) }}">{{ n['download'] }}</a></li>
                 </ul>
                 <ul class="tree-head">
-                    <li>{{ n['pictures'] }}</li>
-                    <li>
+                    <li>{{ n['pictures'] }}
                         <ul class="tree-entry">
                             <li><a href="{{ makeURL( 'pictures/screenshots/', lang) }}">{{ n['screenshots'] }}</a></li>
                             <li><a href="{{ makeURL( 'pictures/developers/', lang) }}">{{ n['developers'] }}</a></li>
@@ -136,8 +132,7 @@ def makePage( _T, _N, _M, lang, charset ):
                     </li>
                 </ul>
                 <ul class="tree-head">
-                    <li>{{ n['documentation'] }}</li>
-                    <li>
+                    <li>{{ n['documentation'] }}
                         <ul class="tree-head">
                             <li>
                                 <a href="{{ makeURL( 'documentation/users/', lang) }}">{{ n['users'] }}</a>
