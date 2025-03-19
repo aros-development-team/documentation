@@ -48,125 +48,135 @@ def makePage( _T, _N, _M, lang, charset ):
             <nav class="tree">
                 <ul class="tree-head">
                     <li><a href="/">{{ n['home'] }}</a></li>
-                    <ul class="tree-entry">    
-                        <li>                       
-                            <img src="/images/czechlogo.png" width = 16 height = 10 alt = "czech logo">
-                            <a href="/cs/">&#268;esky</a>
-                        </li>
-                        <li>
-                            <img src="/images/germanylogo.png" width = 16 height = 10 alt = "germany logo">
-                            <a href="/de/">Deutsch</a>
-                        </li>
-                        <li>
-                            <img src="/images/greecelogo.png" width = 16 height = 10 alt = "greece logo">
-                            <a href="/el/">&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</a>
-                        </li>
-                        <li>
-                            <img src="/images/englishlogo.png" width = 16 height = 10 alt = "english logo">
-                            <a href="/">English</a>
-                        </li>
-                        <li>
-                            <img src="/images/spanishlogo.png" width = 16 height = 10 alt = "spanish logo">
-                            <a href="/es/">Espa&#241;ol</a>
-                        </li>
-                        <li>
-                            <img src="/images/francelogo.png" width = 16 height = 10 alt = "france logo">
-                            <a href="/fr/">Fran&#231;ais</a>
-                        </li>
-                        <li>
-                            <img src="/images/italylogo.png" width = 16 height = 10 alt = "italy logo">
-                            <a href="/it/">Italiano</a>
-                        </li>
-                        <li>
-                            <img src="/images/netherlandslogo.png" width = 16 height = 10 alt = "netherlands logo">
-                            <a href="/nl/">Nederlands</a>
-                        </li>
-                        <li>
-                            <img src="/images/polandlogo.png" width = 16 height = 10 alt = "poland logo">
-                            <a href="/pl/">Polski</a>
-                        </li>
-                        <li>
-                            <img src="/images/portugallogo.png" width = 16 height = 10 alt = "portugal logo">
-                            <a href="/pt/">Portugu&#234;s</a>
-                        </li>
-                        <li>
-                            <img src="/images/russialogo.png" width = 16 height = 10 alt = "russian logo">
-                            <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
-                        </li>
-                        <li>
-                            <img src="/images/finlandlogo.png" width = 16 height = 10 alt = "finland logo">
-                            <a href="/fi/">Suomi</a>
-                        </li>
-                        <li>
-                            <img src="/images/swedenlogo.png" width = 16 height = 10 alt = "sweden logo">
-                            <a href="/sv/">Svenska</a>
-                        </li>
-                    </ul>
+                    <li>
+                        <ul class="tree-entry">    
+                            <li>                       
+                                <img src="/images/czechlogo.png" width = 16 height = 10 alt = "czech logo">
+                                <a href="/cs/">&#268;esky</a>
+                            </li>
+                            <li>
+                                <img src="/images/germanylogo.png" width = 16 height = 10 alt = "germany logo">
+                                <a href="/de/">Deutsch</a>
+                            </li>
+                            <li>
+                                <img src="/images/greecelogo.png" width = 16 height = 10 alt = "greece logo">
+                                <a href="/el/">&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</a>
+                            </li>
+                            <li>
+                                <img src="/images/englishlogo.png" width = 16 height = 10 alt = "english logo">
+                                <a href="/">English</a>
+                            </li>
+                            <li>
+                                <img src="/images/spanishlogo.png" width = 16 height = 10 alt = "spanish logo">
+                                <a href="/es/">Espa&#241;ol</a>
+                            </li>
+                            <li>
+                                <img src="/images/francelogo.png" width = 16 height = 10 alt = "france logo">
+                                <a href="/fr/">Fran&#231;ais</a>
+                            </li>
+                            <li>
+                                <img src="/images/italylogo.png" width = 16 height = 10 alt = "italy logo">
+                                <a href="/it/">Italiano</a>
+                            </li>
+                            <li>
+                                <img src="/images/netherlandslogo.png" width = 16 height = 10 alt = "netherlands logo">
+                                <a href="/nl/">Nederlands</a>
+                            </li>
+                            <li>
+                                <img src="/images/polandlogo.png" width = 16 height = 10 alt = "poland logo">
+                                <a href="/pl/">Polski</a>
+                            </li>
+                            <li>
+                                <img src="/images/portugallogo.png" width = 16 height = 10 alt = "portugal logo">
+                                <a href="/pt/">Portugu&#234;s</a>
+                            </li>
+                            <li>
+                                <img src="/images/russialogo.png" width = 16 height = 10 alt = "russian logo">
+                                <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+                            </li>
+                            <li>
+                                <img src="/images/finlandlogo.png" width = 16 height = 10 alt = "finland logo">
+                                <a href="/fi/">Suomi</a>
+                            </li>
+                            <li>
+                                <img src="/images/swedenlogo.png" width = 16 height = 10 alt = "sweden logo">
+                                <a href="/sv/">Svenska</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="tree-head">
                     <li><a href="{{ makeURL( 'news/', lang) }}">{{ n['news'] }}</a></li>
-                    <ul class="tree-entry">
-                        <li><a href="{{ makeURL( 'news/archive/', lang) }}">{{ n['archive'] }}</a></li>
-                    </ul>
+                    <li>
+                        <ul class="tree-entry">
+                            <li><a href="{{ makeURL( 'news/archive/', lang) }}">{{ n['archive'] }}</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="tree-head">
                     <li><a href="{{ makeURL( 'introduction/', lang ) }}">{{ n['introduction'] }}</a></li>
-                    <ul class="tree-entry">
-                        <li><a href="{{ makeURL('introduction/status/everything', lang ) }}">{{ n['status'] }}</a></li>
-                        <li><a href="{{ makeURL( 'introduction/ports', lang ) }}">{{ n['ports'] }}</a></li>
-                        <li><a href="/license.html">{{ n['license'] }}</a></li>
-                    </ul>
+                    <li>
+                        <ul class="tree-entry">
+                            <li><a href="{{ makeURL('introduction/status/everything', lang ) }}">{{ n['status'] }}</a></li>
+                            <li><a href="{{ makeURL( 'introduction/ports', lang ) }}">{{ n['ports'] }}</a></li>
+                            <li><a href="/license.html">{{ n['license'] }}</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="tree-head">
                     <li><a href="{{ makeURL( 'download', lang) }}">{{ n['download'] }}</a></li>
                 </ul>
                 <ul class="tree-head">
                     <li>{{ n['pictures'] }}</li>
-                    <ul class="tree-entry">
-                        <li><a href="{{ makeURL( 'pictures/screenshots/', lang) }}">{{ n['screenshots'] }}</a></li>
-                        <li><a href="{{ makeURL( 'pictures/developers/', lang) }}">{{ n['developers'] }}</a></li>
-                    </ul>
+                    <li>
+                        <ul class="tree-entry">
+                            <li><a href="{{ makeURL( 'pictures/screenshots/', lang) }}">{{ n['screenshots'] }}</a></li>
+                            <li><a href="{{ makeURL( 'pictures/developers/', lang) }}">{{ n['developers'] }}</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="tree-head">
                     <li>{{ n['documentation'] }}</li>
-                    <ul class="tree-head">
-                        <li>
-                            <a href="{{ makeURL( 'documentation/users/', lang) }}">{{ n['users'] }}</a>
-                            <ul class="tree-entry">
-                                <li><a href="{{ makeURL( 'documentation/users/installation', lang) }}">{{ n['installation'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/using', lang) }}">{{ n['using'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/shell/index', lang) }}">{{ n['shell'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/applications/index', lang) }}">{{ n['applications'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/faq', lang) }}">{{ n['faq'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/howto', lang) }}">{{ n['howto'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/users/glossary', lang) }}">{{ n['glossary'] }}</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ makeURL( 'documentation/translating/', lang) }}">{{ n['translators'] }}</a></li>
-                        <li>
-                            <a href="{{ makeURL( 'documentation/developers/', lang) }}">{{ n['developers'] }}</a>
-                            <ul class="tree-entry">
-                                <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
-                                <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/testing/', lang) }}">{{ n['testing'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/documenting', lang) }}">{{ n['documenting'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/porting', lang) }}">{{ n['porting'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/summaries/', lang) }}">{{ n['summaries'] }}</a></li>
-                                <li><a href="{{ makeURL( 'documentation/developers/links', lang) }}">{{ n['links'] }}</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <li>
+                        <ul class="tree-head">
+                            <li>
+                                <a href="{{ makeURL( 'documentation/users/', lang) }}">{{ n['users'] }}</a>
+                                <ul class="tree-entry">
+                                    <li><a href="{{ makeURL( 'documentation/users/installation', lang) }}">{{ n['installation'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/using', lang) }}">{{ n['using'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/shell/index', lang) }}">{{ n['shell'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/applications/index', lang) }}">{{ n['applications'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/faq', lang) }}">{{ n['faq'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/howto', lang) }}">{{ n['howto'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/users/glossary', lang) }}">{{ n['glossary'] }}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ makeURL( 'documentation/translating/', lang) }}">{{ n['translators'] }}</a></li>
+                            <li>
+                                <a href="{{ makeURL( 'documentation/developers/', lang) }}">{{ n['developers'] }}</a>
+                                <ul class="tree-entry">
+                                    <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
+                                    <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/testing/', lang) }}">{{ n['testing'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/documenting', lang) }}">{{ n['documenting'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/porting', lang) }}">{{ n['porting'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/summaries/', lang) }}">{{ n['summaries'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/developers/links', lang) }}">{{ n['links'] }}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="tree-head">
                     <li><a href="{{ makeURL( 'contact', lang) }}">{{ n['contact'] }}</a></li>
