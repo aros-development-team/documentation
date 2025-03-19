@@ -23,7 +23,7 @@ footer {
 
 header {
   position: relative;
-  background-image: url('/images/backgroundtop.png');
+  background-image: url('/images/backgroundtop.png?v=1.0');
   background-repeat: repeat-x;
   width: 100%;
   height: 109px;
@@ -33,7 +33,6 @@ header {
 
 footer {
   text-align: right;
-  font-size: -1;
   color: #555555;
 }
 
@@ -76,14 +75,14 @@ footer {
 
 
 .tree-head {
-  list-style-image: url('/images/pointer.png');
+  list-style-image: url('/images/pointer.png?v=1.0');
   padding-left: 20px;
   margin-top: 0;
   font-weight: bold;
 }
 
 .tree-entry {
-  list-style-image: url('/images/bullet.gif');
+  list-style-image: url('/images/bullet.gif?v=1.0');
   padding-left: 5px;
   font-weight: normal;
 }
@@ -115,7 +114,7 @@ section {
 
 /* single rss feed */
 .rssfeed {
-    background-image: url('/images/bgcolorright.png');
+    background-image: url('/images/bgcolorright.png?v=1.0');
     padding: 1em;
 }
 
