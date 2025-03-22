@@ -170,7 +170,7 @@ def makePictures():
                     'CONTENT' : output
                 }
 
-            filename = 'index.php'
+            filename = 'index.html'
             if lang == DEFAULTLANG:
                 dst = os.path.join(TRGROOT, root)
             else:
@@ -184,7 +184,7 @@ def makePictures():
 # ----------
 # Creates graphs of component implementation status.
 
-def makeStatus(extension='.php'):
+def makeStatus(extension='.html'):
     tasks = db.tasks.parse.parse(open('db/status', 'r'))
     for lang in languages:
         dstdir = 'introduction/status'
@@ -308,7 +308,7 @@ def convertWWW(src, language, options=None):
         '--no-source-link', '--no-datestamp',
         '--input-encoding=' + encoding,
         '--output-encoding=' + encoding,
-        '--target-suffix=' + 'php',
+        '--target-suffix=' + 'html',
         src, '']
 
     if options:
@@ -346,10 +346,10 @@ def processWWW(src, depth):
 
     for lang in languages:
         if lang == DEFAULTLANG:
-            dst = prefix + '.php'
+            dst = prefix + '.html'
             dst_depth = depth
         else:
-            dst = lang + '/' + prefix + '.php'
+            dst = lang + '/' + prefix + '.html'
             dst_depth = depth + 1
         src = altLang(prefix, lang)
         dst_abs = os.path.normpath(os.path.join(TRGROOT, dst))
@@ -533,9 +533,9 @@ def buildWWW():
             dstpath = TRGROOT
         else:
             dstpath = os.path.join(TRGROOT, lang)
-        utility.remove(os.path.join(dstpath, 'index.php'))
-        utility.remove(os.path.join(dstpath, 'introduction/index.php'))
-        utility.remove(os.path.join(dstpath, 'download.php'))
+        utility.remove(os.path.join(dstpath, 'index.html'))
+        utility.remove(os.path.join(dstpath, 'introduction/index.html'))
+        utility.remove(os.path.join(dstpath, 'download.html'))
 
     makeNews()
     makeCredits()
@@ -646,8 +646,8 @@ def buildWWW():
         shutil.rmtree(rsfeed_dest)
     utility.copytree('targets/www/rsfeed', rsfeed_dest)
 
-    # Remove index-offline.php
-    utility.remove(os.path.join(TRGROOT, 'index-offline.php'))
+    # Remove index-offline.html
+    utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
 
     os.system('chmod -R go+r %s' % TRGROOT)
 
