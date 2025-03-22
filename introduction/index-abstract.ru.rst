@@ -1,6 +1,8 @@
   
 .. raw:: html
-   
+
+   <script src="/js/random-image.js"></script>
+
    <h1>Введение<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS Research Operating System - экономичная, эффективная и гибкая 
@@ -11,7 +13,3 @@ AROS Research Operating System - экономичная, эффективная 
 её во многих областях. Исходный код доступен по открытой 
 лицензии APL, позволяющей любому желающему свободно принять участие в 
 разработке.
-
-.. raw:: html
-
-   </td><td><br><br><?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?><br><br>

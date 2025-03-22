@@ -635,6 +635,11 @@ def buildWWW():
         shutil.rmtree(cgi_dest)
     utility.copytree('targets/www/cgi-bin', cgi_dest)
 
+    js_dest = os.path.join(TRGROOT, 'js')
+    if os.path.exists(js_dest):
+        shutil.rmtree(js_dest)
+    utility.copytree('targets/www/js', js_dest)
+
     thumb_dest = os.path.join(TRGROOT, 'images/thumbs')
     if os.path.exists(thumb_dest):
         shutil.rmtree(thumb_dest)

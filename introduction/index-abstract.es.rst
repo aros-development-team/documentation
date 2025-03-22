@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Introducción<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+    <script src="/js/random-image.js"></script>
 
-.. raw:: html
-
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
+    <h1>Introducción<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 El Sistema Operativo de Investigación AROS es un sistema operativo de escritorio
 liviano, eficiente y flexible , diseñado para 

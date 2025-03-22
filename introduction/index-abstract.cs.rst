@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Úvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
-
-.. raw:: html
-
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
+    <script src="/js/random-image.js"></script>
+    
+    <h1>Úvod<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS Research Operating System je velmi jednoduchý, výkonný a flexibilní
 desktopový operační systém určený k tomu, abych ti pomohl vytěžit maximum
