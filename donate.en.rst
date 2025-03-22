@@ -101,7 +101,7 @@
    	        <input type="hidden"   name="on0" value="Publish your donation and name">
    		<input type="hidden"   name="os0" value="No">
    		<input type="checkbox" name="os0" value="Yes">
-   		<span>Add me to the <a href="sponsors.php">list of sponsors</a>
+   		<span>Add me to the <a href="sponsors.html">list of sponsors</a>
    		    (from 20,- EUR/USD up)</span>
    	      </label>
    	      <input type="hidden" name="charset" value="utf-8">
@@ -128,7 +128,7 @@
    	      <input name="no_shipping" value="1" type="hidden">
    	      <input name="no_note" value="1" type="hidden">
    	      <input name="image_url" value="http://www.aros.org/images/AROS_logo_paypal.png" type="hidden">
-   	      <input name="return" value="http://www.aros.org/donated.php" type="hidden">
+   	      <input name="return" value="http://www.aros.org/donated.html" type="hidden">
    	      <input name="cancel_return" value="#distributions" type="hidden">
    	      <input name="cbt" value="Download AROS now!" type="hidden">
    	      <p id="dButton">
@@ -140,7 +140,7 @@
    	  <!-- download -->
    	  <div id="download_div">
    	    <p>
-   	      <a href="download.php#distributions"><button class="donateButton" alt="download">Download</button></a>
+   	      <a href="download.html#distributions"><button class="donateButton" alt="download">Download</button></a>
    	    </p>
    	  </div>
    	</div>

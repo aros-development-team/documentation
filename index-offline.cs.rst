@@ -47,5 +47,5 @@ __ contact
 __ license.html
 
 __ http://www.aros.org
-__ http://www.aros.org/download.php
+__ http://www.aros.org/download.html
 __ http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
