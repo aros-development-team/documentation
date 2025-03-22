@@ -10,7 +10,7 @@ def makePage( _T, _N, _M, lang, charset ):
     Args:
         _T (dict): Dictionary containing title strings.
         _N (dict): Dictionary containing navigation labels.
-        _M (dict): Dictionary containing metadata such as copyright and trademarks.
+        _M (dict): Dictionary containing misc. strings such as copyright and trademarks.
         lang (str): Language code for the page.
         charset (str): Character set for the HTML content.
     Returns:
@@ -25,8 +25,8 @@ def makePage( _T, _N, _M, lang, charset ):
     <head>
         <title>AROS Research Operating System</title>
         <meta http-equiv="Content-Type" content="text/html; charset={{ charset }}">
-        <link rel="stylesheet" type="text/css" href="/aros.css?v=1.4">
-        <link rel="stylesheet" type="text/css" href="/print.css" media="print">
+        <link rel="stylesheet" type="text/css" href="/aros.css?v=1.5">
+        <link rel="stylesheet" type="text/css" href="/print.css?v=1.0" media="print">
         <link rel="icon" type="image/x-icon" href="/aros.ico">
         <meta name="keywords" content="AROS, OS, operating system, research, open source, portage">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,14 +34,14 @@ def makePage( _T, _N, _M, lang, charset ):
 
     <body>
         <header>
-            <img src="/images/toplogo.png" alt="top logo menu" class=leftimage>
-            <img src="/images/kittymascot.png" alt="kitty mascot" class="rightimage">
+            <img src="/images/toplogo.png?v=1.0" alt="top logo menu" class=leftimage>
+            <img src="/images/kittymascot.png?v=1.0" alt="kitty mascot" class="rightimage">
             <div class="topmenu">
                 <a href="/">AROS.ORG</a>
                 <a href="https://www.arosworld.org/">Forum</a>
                 <a href="https://archives.arosworld.org/">Software</a>
                 <a href="https://power2people.org/">Bounties</a>
-            </div>
+            </div><!-- topmenu -->
         </header>
 
         <div id="menusidebar">
@@ -194,11 +194,13 @@ def makePage( _T, _N, _M, lang, charset ):
                     alt = 'Get AROS Research Operating System at SourceForge.net. Fast, secure and Free Open Source software downloads'>
                 </a><br>
                 <a href = 'https://endsoftwarepatents.org/'><img src = '/images/noeupatents-small.png' alt = 'No EU patents'></a>
-            </div>
-        </div>
+            </div><!-- image-container -->
+        </div><!-- menusidebar -->
 
         <main>
+            <!-- before CONTENT -->
             %(CONTENT)s
+            <!-- after CONTENT -->
         </main>
         <footer>
             {{ m['copyright'] }}<br>{{ m['trademarks'] }}
