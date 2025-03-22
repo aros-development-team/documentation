@@ -47,9 +47,9 @@ languages  = []
 # language, if it exists. Otherwise, returns the file name for DEFAULTLANG.
 
 def altLang(base, lang, path='.'):
-    langfile = base + '.' + lang
+    langfile = f"{base}.{lang}.rst"
     if not os.path.exists(os.path.join(path, langfile)):
-        langfile = base + '.' + DEFAULTLANG
+        langfile = f"{base}.{DEFAULTLANG}.rst"
 
     return langfile
 
@@ -98,7 +98,7 @@ def processPicture(src, depth):
 
     # Create the thumbnail.
     if utility.newer([src_abs], tn_dst_abs):
-        print('� Thumbnailing', src)
+        print('> Thumbnailing', src)
         thumbnail.makeThumbnail(src_abs, tn_dst_abs, (200, 200))
 
 
@@ -225,7 +225,8 @@ def makeNews():
 
         # Do all the news item files (originals) in a specific year directory
         for filename in os.listdir(yeardirpath):
-            date, ext = os.path.splitext(filename)
+            name = os.path.splitext(filename)[0]  # Strip .rst
+            date, ext = os.path.splitext(name)    # Split remaining into date and language
             if ext == '.en' and len(date) == 8 and date.isdigit():
                 year = date[:4]
                 if year != yeardirname:
@@ -246,7 +247,7 @@ def makeNews():
     for lang in languages:
         news[lang].sort(reverse=True)
         current = news[lang][:NOOFITEMS]
-        _dst = NEWS_SRC_INDX + lang
+        _dst = NEWS_SRC_INDX + lang + '.rst'
 
         # Set up translated title dictionary
         config = gallery.ConfigParser()
@@ -261,7 +262,7 @@ def makeNews():
             output = open(_dst, 'w')
             output.write(utility.titleReST(_T['news']))
             for filepath in current:
-                output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # Not ideal, but at least legal HTML
+                output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-15:-7])) # Not ideal, but at least legal HTML
                 output.write(utility.drctReST('include', filepath))
             output.close()
 
@@ -269,13 +270,13 @@ def makeNews():
         for year in list(archives[lang].keys()):
             if len(archives[lang][year]):
                 archives[lang][year].sort(reverse=True)
-                _dst = os.path.join(NEWS_SRC_ARCH + year + '.' + lang)
+                _dst = os.path.join(NEWS_SRC_ARCH + year + '.' + lang + '.rst')
 
                 if utility.newer(archives[lang][year], _dst):
                     output = open(_dst, 'w')
                     output.write(utility.titleReST(_T['news-archive-for'] + ' ' + year))
                     for filepath in archives[lang][year]:
-                        output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-11:-3])) # At least legal HTML
+                        output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-15:-7])) # At least legal HTML
                         output.write(utility.drctReST('include', filepath))
                     output.close()
 
@@ -287,12 +288,12 @@ def makeNews():
 # Creates ReST file for credits.
 
 def makeCredits():
-    if (not os.path.exists('credits.en')) \
-        or (os.path.getmtime('db/credits') > os.path.getmtime('credits.en')):
+    if (not os.path.exists('credits.en.rst')) \
+        or (os.path.getmtime('db/credits') > os.path.getmtime('credits.en.rst')):
         CREDITS_DATA = db.credits.format.rest.format(
             db.credits.parse.parse(codecs.open('db/credits', 'r', encoding='iso-8859-15'))
         )
-        open('credits.en', 'w').write(CREDITS_DATA)
+        open('credits.en.rst', 'w').write(CREDITS_DATA)
 
 
 # convertWWW
@@ -334,11 +335,13 @@ def convertWWW(src, language, options=None):
 # file, nothing is done.
 
 def processWWW(src, depth):
-    src     = os.path.normpath(src)
+    src = os.path.normpath(src)
 
-    prefix = os.path.splitext(src)[0]
-    suffix = os.path.splitext(src)[1][1:]
-    if suffix != DEFAULTLANG:
+    prefix, suffix = os.path.splitext(src)
+    if suffix != ".rst":
+        return
+    prefix, suffix = os.path.splitext(prefix)
+    if suffix[1:] != DEFAULTLANG:
         return
 
     for lang in languages:
@@ -358,9 +361,9 @@ def processWWW(src, depth):
         if utility.newer([TEMPLATE + lang, src_abs], dst_abs):
             utility.reportBuilding(dst)
             strings = {
-                'ROOT'    : '../' * dst_depth,
-                'BASE'    : '../' * dst_depth,
-                'CONTENT' : convertWWW(src_abs, lang)
+                'ROOT': '../' * dst_depth,
+                'BASE': '../' * dst_depth,
+                'CONTENT': convertWWW(src_abs, lang)
             }
             open(dst_abs, 'w').write(TEMPLATE_DATA[lang] % strings)
         else:
@@ -368,14 +371,16 @@ def processWWW(src, depth):
 
 
 def processHTML(src, depth):
-    src    = os.path.normpath(src)
+    src = os.path.normpath(src)
 
-    prefix = os.path.splitext(src)[0]
-    suffix = os.path.splitext(src)[1][1:]
-    if suffix != DEFAULTLANG:
+    prefix, suffix = os.path.splitext(src)
+    if suffix != ".rst":
+        return
+    prefix, suffix = os.path.splitext(prefix)
+    if suffix[1:] != DEFAULTLANG:
         return
 
-    dst     = prefix + '.html' #.' + suffix
+    dst = prefix + '.html'
     dst_abs = os.path.normpath(os.path.join(TRGROOT, dst))
     src_abs = os.path.normpath(os.path.join(SRCROOT, src))
     dst_dir = os.path.dirname(dst_abs)
@@ -385,7 +390,7 @@ def processHTML(src, depth):
     if utility.newer([src_abs], dst_abs):
         utility.reportBuilding(src)
         arguments = [
-            '--no-generator',   '--language=' + suffix,
+            '--no-generator', '--language=' + suffix[1:],
             '--no-source-link', '--no-datestamp',
             '--output-encoding=iso-8859-15',
             '--target-suffix=html',
@@ -506,8 +511,8 @@ def copyHeaders():
 def buildClean():
     shutil.rmtree(DSTROOT, True)
 
-    filenames = glob.glob('news/index.??') \
-        + glob.glob('news/archive/20[0-9][0-9].??') \
+    filenames = glob.glob('news/index.??.rst') \
+        + glob.glob('news/archive/20[0-9][0-9].??.rst') \
         + glob.glob('targets/www/template.html.*')
 
     for filename in filenames:
@@ -658,8 +663,8 @@ def buildHTML():
     makeNews()
     makeCredits()
 
-    if not os.path.exists('news/index.en'):
-        open('news/index.en', 'w').write('')
+    if not os.path.exists('news/index.en.rst'):
+        open('news/index.en.rst', 'w').write('')
     recurse(processHTML)
 
     copyImages()

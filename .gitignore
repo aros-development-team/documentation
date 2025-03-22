@@ -2,7 +2,7 @@
 .*.swp
 
 # /
-/credits.en
+/credits.en.rst
 /.vscode
 
 # /news/
