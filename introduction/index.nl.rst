@@ -9,7 +9,7 @@ Korte introductie van AROS
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.nl
+.. Include:: index-abstract.nl.rst
 
 
 Doelen

@@ -6,7 +6,7 @@
 
    <section>
 
-.. Include:: introduction/index-abstract.nl
+.. Include:: introduction/index-abstract.nl.rst
 
 `Read more... <introduction/index>`__
 
@@ -18,7 +18,7 @@
 
    <h1>Distributies<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
-.. Include:: download-abstract.nl
+.. Include:: download-abstract.nl.rst
 
 `Read more... <download>`__
 
@@ -35,7 +35,7 @@
 
    <section>
 
-.. Include:: news/index.nl
+.. Include:: news/index.nl.rst
 
 .. raw:: html
 

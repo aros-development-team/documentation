@@ -14,7 +14,7 @@ Download
 
 .. Contents::
 
-.. Include:: download-abstract.de
+.. Include:: download-abstract.de.rst
 
 Icaros Desktop LIVE!
 --------------------

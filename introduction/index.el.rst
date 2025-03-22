@@ -9,7 +9,7 @@
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.el
+.. Include:: index-abstract.el.rst
 
 
 Στόχοι

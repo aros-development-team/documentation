@@ -9,7 +9,7 @@ Kurze Einführung in AROS
 :Status:    Fertig
 
 
-.. Include:: index-abstract.de
+.. Include:: index-abstract.de.rst
 
 
 Ziel

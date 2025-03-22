@@ -12,7 +12,7 @@ Download
 
 .. Contents::
 
-.. Include:: download-abstract.it
+.. Include:: download-abstract.it.rst
 
 
 

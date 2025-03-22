@@ -9,7 +9,7 @@ Kort introduktion till AROS
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.sv
+.. Include:: index-abstract.sv.rst
 
 
 Mål

@@ -9,7 +9,7 @@ Krátký úvod AROSu
 :Status:    Téměř hotovo, myslím...
 
 
-.. Include:: index-abstract.cs
+.. Include:: index-abstract.cs.rst
 
 
 Cíle

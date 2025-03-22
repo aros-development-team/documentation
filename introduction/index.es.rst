@@ -6,7 +6,7 @@
 :Status:    Casi terminado, creo...
 
 
-.. Include:: index-abstract.es
+.. Include:: index-abstract.es.rst
 
 
 Metas

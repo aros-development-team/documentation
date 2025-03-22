@@ -9,7 +9,7 @@
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.ru
+.. Include:: index-abstract.ru.rst
 
 
 Цели проекта

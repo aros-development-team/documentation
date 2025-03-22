@@ -6,7 +6,7 @@
 
    <section>
 
-.. Include:: introduction/index-abstract.ru
+.. Include:: introduction/index-abstract.ru.rst
 
 `Подробнее... <introduction/index>`__
 
@@ -18,7 +18,7 @@
 
    <h1>Дистрибутивы<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
-.. Include:: download-abstract.ru
+.. Include:: download-abstract.ru.rst
 
 `Подробнее... <download>`__
 
@@ -35,7 +35,7 @@
 
    <section>
 
-.. Include:: news/index.ru
+.. Include:: news/index.ru.rst
 
 .. raw:: html
 

@@ -12,7 +12,7 @@
    
 .. Contents::
 
-.. Include:: download-abstract.ru
+.. Include:: download-abstract.ru.rst
 
 Icaros Desktop LIVE!
 --------------------

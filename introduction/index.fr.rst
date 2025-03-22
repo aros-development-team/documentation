@@ -9,7 +9,7 @@ Courte introduction à AROS
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.fr
+.. Include:: index-abstract.fr.rst
 
 
 Objectifs

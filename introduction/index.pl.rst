@@ -9,7 +9,7 @@ Krótkie wprowadzenie do AROSa
 :Status:    Prawie skończony, jak sądzę...
 
 
-.. Include:: index-abstract.pl
+.. Include:: index-abstract.pl.rst
 
 
 Cele

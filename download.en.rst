@@ -13,12 +13,12 @@ Download
 
 .. Contents::
 
-.. Include:: donate.en
+.. Include:: donate.en.rst
 
 Distributions
 =============
 
-.. Include:: download-abstract.en
+.. Include:: download-abstract.en.rst
 
 .. raw:: html
 

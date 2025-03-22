@@ -9,7 +9,7 @@ Lyhyt johdanto AROS:iin
 :Status:    Almost finished, I think...
 
 
-.. Include:: index-abstract.fi
+.. Include:: index-abstract.fi.rst
 
 
 Päämäärät
