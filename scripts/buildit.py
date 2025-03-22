@@ -645,12 +645,6 @@ def buildWWW():
         shutil.rmtree(thumb_dest)
     utility.copytree('targets/www/images/thumbs', thumb_dest)
 
-
-    rsfeed_dest = os.path.join(TRGROOT, 'rsfeed')
-    if os.path.exists(rsfeed_dest):
-        shutil.rmtree(rsfeed_dest)
-    utility.copytree('targets/www/rsfeed', rsfeed_dest)
-
     # Remove index-offline.html
     utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
 
