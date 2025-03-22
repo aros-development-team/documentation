@@ -29,7 +29,7 @@
    <section>
 
    <h1>GitHub Commits<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
-   <object width="100%" height="250" data="/github-commits.php" type="text/html"></object>
+   <object width="100%" height="250" data="/github-commits.html" type="text/html"></object>
 
    </section>
 
@@ -52,7 +52,7 @@
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href="https://archives.arosworld.org">AROS archiv</a>
    obsahuje nejnovější systémový obsah poskytnutý naší komunitou a je primárním úložištěm pro uživatelské aplikace, témata, grafiku a dodatečnou dokumentaci.<br><br>
-   <object width="100%" height="300" data="/archives-uploads.php" type="text/html"></object>
+   <object width="100%" height="300" data="/archives-uploads.html" type="text/html"></object>
 
    </div>
    
@@ -63,7 +63,7 @@
    <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
    <a href="https://www.arosworld.org">AROSWorld</a>
    je primární komunitní stránka AROSu. Můžete zde vyhledat pomoc, zjistit co se děje v rámci komunity nového a sdílet svoje myšlenky.<br><br>
-   <object width="100%" height="400" data="/arosworld-forum.php" type="text/html"></object>
+   <object width="100%" height="400" data="/arosworld-forum.html" type="text/html"></object>
 
    </div>
 

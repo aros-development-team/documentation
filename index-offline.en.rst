@@ -62,5 +62,5 @@ __ documentation/developers/index
 __ documentation/users/index
 
 __ http://www.aros.org
-__ http://www.aros.org/download.php
+__ http://www.aros.org/download.html
 __ https://github.com/aros-development-team/AROS/issues
