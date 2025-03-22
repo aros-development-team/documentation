@@ -376,8 +376,8 @@ def processHTML(src, depth):
     prefix, suffix = os.path.splitext(src)
     if suffix != ".rst":
         return
-    prefix, suffix = os.path.splitext(src)
-    if suffix != DEFAULTLANG:
+    prefix, suffix = os.path.splitext(prefix)
+    if suffix[1:] != DEFAULTLANG:
         return
 
     dst = prefix + '.html'
@@ -390,7 +390,7 @@ def processHTML(src, depth):
     if utility.newer([src_abs], dst_abs):
         utility.reportBuilding(src)
         arguments = [
-            '--no-generator', '--language=' + suffix.split('.')[0],
+            '--no-generator', '--language=' + suffix[1:],
             '--no-source-link', '--no-datestamp',
             '--output-encoding=iso-8859-15',
             '--target-suffix=html',
