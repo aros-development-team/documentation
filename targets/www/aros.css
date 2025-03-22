@@ -135,8 +135,16 @@ section {
   gap: 0.5em;
 }
 
-/* .main-div, .rss-div { */
+/* for the iframe which shows the nightly builds */
+download-iframe {
+  width: 100%;
+  height: auto;
+  border: none;
+}
 
+download-iframe::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better appearance */
+}
 
 /* image container for sponsors */
 .image-container {
