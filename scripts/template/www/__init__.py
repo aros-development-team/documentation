@@ -1,7 +1,6 @@
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
 import os
-# , sys
 import codecs
 
 from build import utility
