@@ -17,4 +17,4 @@ Snapshots (ABIv0)
 
 .. raw:: html
 
-   <?php virtual( "/cgi-bin/files?type=snapshots&lang=de" ); ?>
+   <iframe src="/cgi-bin/files?type=snapshots&lang=de" class="download-iframe"></iframe>

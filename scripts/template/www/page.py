@@ -220,7 +220,7 @@ def makeURL( file, lang, section='' ):
 
     # Create the URL
     if file != '.' and file[-1] != '/':
-        file += '.php'
+        file += '.html'
     if lang != 'en':
         file = lang + '/' + file
     url = '%(BASE)s' + file

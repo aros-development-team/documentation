@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Introduktion<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+    <script src="/js/random-image.js"></script>
 
-.. raw:: html
-
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
+    <h1>Introduktion<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS är ett resurssnålt, effektivt och flexibelt operativsystem, gjord för att
 hjälpa dig få ut det mesta av din dator. Det är ett oberoende, fritt och

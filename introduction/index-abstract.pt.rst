@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Introdução<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+    <script src="/js/random-image.js"></script>
 
-.. raw:: html
-
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
+    <h1>Introdução<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS é um sistema operativo portavél e de Desktop livre intencionando ser
 compatível com AmigaOS, enquanto melhorando-o em muitas áreas. O Código

@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Wprowadzenie<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+    <script src="/js/random-image.js"></script>
 
-.. raw:: html
-
-  <?php include('/home/groups/a/ar/aros/htdocs/rsfeed/randimg.php');  random_image("/images/thumbs/","100","76"); ?>
+    <h1>Wprowadzenie<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS jest przenośnym i ogólnodostępnym systemem operacyjnym,
 posiadającym graficzny interfejs użytkownika, dążącym do kompatybilności

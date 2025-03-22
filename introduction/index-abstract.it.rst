@@ -1,10 +1,8 @@
 .. raw:: html
 
-   <h1>Introduzione<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+    <script src="/js/random-image.js"></script>
 
-.. raw:: html
-
-  <?php include('/home/project-web/aros/htdocs/rsfeed/randimg.php'); random_image("/images/thumbs/","100","76");  ?>
+    <h1>Introduzione<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 AROS Research Operating System è un sistema operativo per il desktop
 efficiente, leggero e facile da usare, pensato per rendere produttivo e
