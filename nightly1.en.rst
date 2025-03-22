@@ -13,5 +13,5 @@ Nightly Build Downloads (ABI-v1)
 
 .. raw:: html
 
-   <?php virtual( "/cgi-bin/files?type=nightly2&lang=en" ); ?>
+    <iframe src="/cgi-bin/files?type=nightly2&lang=en" class="download-iframe"></iframe>
 

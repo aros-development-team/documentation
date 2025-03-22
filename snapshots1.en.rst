@@ -20,4 +20,4 @@ Snapshots (ABIv1)
 
 .. raw:: html
 
-   <?php virtual( "/cgi-bin/files?type=snapshots2&lang=en" ); ?>
+   <iframe src="/cgi-bin/files?type=snapshots2&lang=en" class="download-iframe"></iframe>
