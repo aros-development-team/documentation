@@ -133,7 +133,7 @@ def makePictures():
                 if name == '.svn' or not os.path.isdir(path):
                     continue
 
-                outstr = '\n<div class="gallerygroup">\n<a name=%s>\n' % name
+                outstr = '\n<div class="gallerygroup">\n<a id="%s">\n' % name
                 output += outstr
                 output += convertWWW(pathAltLang('overview', lang, path), lang, options)
 
@@ -262,7 +262,7 @@ def makeNews():
             output = open(_dst, 'w')
             output.write(utility.titleReST(_T['news']))
             for filepath in current:
-                output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-15:-7])) # Not ideal, but at least legal HTML
+                output.write(utility.htmlReST('   <a id="%s"></a>\n' % filepath[-15:-7])) # Not ideal, but at least legal HTML
                 output.write(utility.drctReST('include', filepath))
             output.close()
 
@@ -276,7 +276,7 @@ def makeNews():
                     output = open(_dst, 'w')
                     output.write(utility.titleReST(_T['news-archive-for'] + ' ' + year))
                     for filepath in archives[lang][year]:
-                        output.write(utility.htmlReST('   <a name="%s"></a>\n' % filepath[-15:-7])) # At least legal HTML
+                        output.write(utility.htmlReST('   <a id="%s"></a>\n' % filepath[-15:-7])) # At least legal HTML
                         output.write(utility.drctReST('include', filepath))
                     output.close()
 
