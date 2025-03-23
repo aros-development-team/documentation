@@ -147,12 +147,12 @@ class AutoDoc(object):
 
         Arguments:
 
-        content - String of autodoc text chunk without sourrounding comment lines
+        content - String of autodoc text chunk without surrounding comment lines
         """
 
         self.titles = {} # dict for each title
         self.docname = "" # function or command name
-        self.docfilename = "" # filename without ".en"
+        self.docfilename = "" # filename without ".en.rst"
 
         current_title = None
         for line in content.splitlines():
@@ -564,14 +564,14 @@ class ShellDocList(object):
         """
 
         for doc in self.doclist:
-            filename = os.path.join(targetdir, doc.docfilename + ".en")
+            filename = os.path.join(targetdir, doc.docfilename + ".en.rst")
             print("Writing to file", filename)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 doc.write(fdesc, titles)
                 doc.write_xref(fdesc, "../../developers/autodocs")
 
         # create index page
-        filename = os.path.join(targetdir, "index.en")
+        filename = os.path.join(targetdir, "index.en.rst")
         print("Writing to file", filename)
         with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
             self.write_index(fdesc, targetdir)
@@ -633,7 +633,7 @@ class LibDocList(object):
         """
 
         if len(self.doclist) > 0:
-            filename = os.path.join(targetdir, self.docfilename + ".en")
+            filename = os.path.join(targetdir, self.docfilename + ".en.rst")
             print("Writing to file", filename)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 #create header
@@ -754,7 +754,7 @@ class HiddDocList(object):
         """
 
         if len(self.doclist) > 0:
-            filename = os.path.join(targetdir, self.docfilename + ".en")
+            filename = os.path.join(targetdir, self.docfilename + ".en.rst")
             print("Writing to file", filename)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 # create header
@@ -814,9 +814,9 @@ def write_index(fdesc, targetdir):
     fdesc.write(tablesep + "\n")
     docnr = 1
     for doc in files:
-        if doc[-3:] == ".en" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" \
+        if doc[-7:] == ".en.rst" and doc[:5] != "index" and doc != ".svn" and doc[:7] != "scripts" \
                 and doc[:12] != "introduction" and doc[:13] != "functionindex":
-            docname = doc[:-3]
+            docname = doc[:-7]
             tocname = "`%s <%s>`_" %(docname, docname)
             tocname = tocname.ljust(50)
             fdesc.write(tocname)
@@ -866,7 +866,7 @@ def create_module_docs():
         create_hidd_docs_dir(sdir, targetdir, module_titles)
 
     # print index file
-    filename = os.path.join(targetdir, "index.en")
+    filename = os.path.join(targetdir, "index.en.rst")
     print("Writing to file", filename)
     with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
         fdesc.write("======================\n")
@@ -878,7 +878,7 @@ def create_module_docs():
         fdesc.write("\n`Function Index <functionindex>`_\n")
 
     # print function index
-    filename = os.path.join(targetdir, "functionindex.en")
+    filename = os.path.join(targetdir, "functionindex.en.rst")
     print("Writing to file", filename)
     with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
         function_index.write(fdesc)
