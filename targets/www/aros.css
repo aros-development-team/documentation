@@ -136,13 +136,13 @@ section {
 }
 
 /* for the iframe which shows the nightly builds */
-download-iframe {
+.download-iframe {
   width: 100%;
   height: auto;
   border: none;
 }
 
-download-iframe::-webkit-scrollbar {
+.download-iframe::-webkit-scrollbar {
   display: none; /* Hide scrollbar for better appearance */
 }
 
