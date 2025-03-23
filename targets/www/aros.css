@@ -138,7 +138,7 @@ section {
 /* for the iframe which shows the nightly builds */
 .download-iframe {
   width: 100%;
-  height: auto;
+  height: 4000px;
   border: none;
 }
 
