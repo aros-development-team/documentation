@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 # This script scans all .en files in the current directory and its subdirectories
 # for hyperlinks and prints them to stdout in HTML format.
@@ -6,7 +6,10 @@
 
 import os
 import re
-import cgi
+
+def escape_html(s):
+    """Simple HTML escaping function"""
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&#39;')
 
 class Link:
     def __init__(self, url, ref):
@@ -14,7 +17,7 @@ class Link:
         self.ref = ref
 
     def __str__(self):
-        return '<a href="{0}">{1}</a><br>'.format(cgi.escape(self.url), cgi.escape(self.url))
+        return '<a href="{0}">{1}</a><br>'.format(escape_html(self.url), escape_html(self.url))
 
     def __repr__(self):
         return self.__str__()
@@ -23,7 +26,7 @@ def find_hyperlinks(directory):
     hyperlinks = []
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith(('.en')): # change this if you want to scan other languages
+            if file.endswith(('.en.rst')): # change this if you want to scan other languages
                 file_path = os.path.join(root, file)
                 with open(file_path, 'r') as f:
                     content = f.read()
