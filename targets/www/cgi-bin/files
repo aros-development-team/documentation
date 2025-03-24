@@ -146,14 +146,14 @@ for date in dates:
         print('''
                     <td class="layout nightly" align="center" bgcolor="%(color)s">
                         <b>%(year)s-%(month)s-%(day)s</b><br>
-                        [<a href="https://sourceforge.net/projects/aros/files/nightly/%(date)s/logs/">%(logsLabel)s</a>]
+                        [<a href="https://sourceforge.net/projects/aros/files/nightly/%(date)s/logs/" target="_blank">%(logsLabel)s</a>]
                     </td>
         ''') % vars()
     if dltype == "nightly2":
         print('''
                     <td class="layout nightly" align="center" bgcolor="%(color)s">
                         <b>%(year)s-%(month)s-%(day)s</b><br>
-                        [<a href="https://sourceforge.net/projects/aros/files/nightly2/%(date)s/logs/">%(logsLabel)s</a>]
+                        [<a href="https://sourceforge.net/projects/aros/files/nightly2/%(date)s/logs/" target="_blank">%(logsLabel)s</a>]
                     </td>
         ''') % vars()
     elif dltype == "snapshots" or dltype == "snapshots2":
@@ -226,12 +226,12 @@ for group in sorted(groups.keys()):
                      <tr class="layout"><td class="layout"></td>
                       <td class="layout" align="center">
                        <span style="float:left">
-                        <a href="%(url)s%(urlsuffix)s"><img border="0" src="/images/disk.png" alt="[floppy disk]"></a>
+                        <a href="%(url)s%(urlsuffix)s" target="_blank"><img border="0" src="/images/disk.png" alt="[floppy disk]"></a>
                        </span>
                        <span>
-                        <b><a href="%(url)s%(urlsuffix)s">%(downloadLabel)s</a></b><br>
+                        <b><a href="%(url)s%(urlsuffix)s" target="_blank">%(downloadLabel)s</a></b><br>
                         %(size)s<br>
-                        <a href="%(url)s.md5%(urlsuffix)s">%(md5Label)s</a>&nbsp;
+                        <a href="%(url)s.md5%(urlsuffix)s" target="_blank">%(md5Label)s</a>&nbsp;
                        </span>
                       </td>
                       <td class="layout"></td>
