@@ -626,7 +626,7 @@ def buildWWW():
 
     utility.makedir(os.path.join(dbpath, 'download-descriptions'))
     for lang in languages:
-        desc_file = os.path.join('db/download-descriptions', lang)
+        desc_file = os.path.join('db/download-descriptions', lang + '.txt')
         if os.path.exists(desc_file):
             utility.copy(desc_file, os.path.join(dbpath, 'download-descriptions'))
 
