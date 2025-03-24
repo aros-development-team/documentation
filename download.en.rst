@@ -13,7 +13,6 @@ Download
 
 .. Contents::
 
-.. Include:: donate.en.rst
 
 Distributions
 =============
