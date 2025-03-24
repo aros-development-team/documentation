@@ -159,7 +159,7 @@ for group in groups.keys():
                 size = formatSize( os.path.getsize( path ) )
 
                 print('''	
-                <a href="%(url)s">
+                <a href="%(url)s" target="_blank">
                 ''') % vars()
                 print(file)
                 print(''' ''') % vars()

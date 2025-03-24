@@ -166,7 +166,7 @@ The following things have resulted from this effort:
   tree, like Regina (to provide ARexx compatibility), FreeType__ 2 (support 
   for scalable TrueType fonts), libpng and png.datatype. 
 
-__ ../../documentation/developers/sys-dev/system-development.php#licensing-policy
+__ ../../documentation/developers/sys-dev/system-development.html#licensing-policy
 __ https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 __ http://www.gnu.org/software/grub/
 __ https://sourceware.org/bzip2/
@@ -182,7 +182,7 @@ programs, Adam Chodorowski decided to write the first part of the AROS `User
 Interface Style Guide`__ about this topic. It's still a long way from being 
 a comprehensive guide on user interface issues, but at least it's a start. 
 
-__ http://www.aros.org/documentation/developers/ui.php
+__ http://www.aros.org/documentation/developers/ui.html
 
 
 Website
