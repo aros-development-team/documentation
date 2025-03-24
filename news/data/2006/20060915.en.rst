@@ -13,7 +13,7 @@ national prefix to standard url. For instance, you may find the Italian home
 page using *www.aros.org/it*, the russian one with *www.aros.org/ru* and
 so on.
 
-__ http://www.aros.org/fr/
+__ /fr/
 
 AROS in the news
 ----------------

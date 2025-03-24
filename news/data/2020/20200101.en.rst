@@ -20,7 +20,7 @@ resolution that is frequently needed in a project such as AROS, and in a
 more timely manner. You can find details about GIT usage in our `documentation`__.
 
 __ https://github.com/aros-development-team
-__ http://www.aros.org/documentation/developers/git.php
+__ /documentation/developers/git.html
 
 
 SMP

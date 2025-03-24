@@ -6,11 +6,11 @@ Status update
 :Date:     2006-06-20
 
 Thanks to Matthias Rustler, we've got also a `German aros.org`__ located 
-at www.aros.org/index.de.php. But you don't have to remember every language's 
+at www.aros.org/index.de.html. But you don't have to remember every language's 
 home page: we added a nice international menu on the left. Just 
 select you preferred language, and bookmark in for your convenience.
 
-__ http://www.aros.org/de/index.php
+__ /de/
 
 
 
