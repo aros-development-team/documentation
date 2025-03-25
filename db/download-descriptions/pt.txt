@@ -1,9 +1,9 @@
 [headings]
 
 package: Pacote
-documentation: DocumentaÁ„o
+documentation: Documenta√ß√£o
 sources: Fontes
-binaries: Bin·rios
+binaries: Bin√°rios
 developer-tools: ABI-v1 Ferramentas de Desenvolvimento
 development-tools: ABI-v0 Ferramentas de Desenvolvimento
 date: Data
@@ -25,32 +25,32 @@ decimal-point: ,
 [descriptions]
 
 ChangeLog-AROS:
-    AlteraÁ„o de registo para o n˙cleo de fontes AROS.
+    Altera√ß√£o de registo para o n√∫cleo de fontes AROS.
 ChangeLog-contrib:
-    AlteraÁ„o de registo para os programas fonte contribuÌdos.
+    Altera√ß√£o de registo para os programas fonte contribu√≠dos.
 ChangeLog-docs:
-    AlteraÁ„o de registo para a documentaÁ„o.
+    Altera√ß√£o de registo para a documenta√ß√£o.
 source:
-    N˙cleo de fontes AROS.
+    N√∫cleo de fontes AROS.
 docs-source:
-    Fontes de documentaÁ„o.
+    Fontes de documenta√ß√£o.
 contrib-source:
-    Fontes de programas contribuÌdos.
+    Fontes de programas contribu√≠dos.
 docs-html:
-    DocumentaÁ„o em formato HTML. ContÈm o que est· disponÌvel
-     no Portal, mas adaptado para leitura sem ligaÁ„o.
+    Documenta√ß√£o em formato HTML. Cont√©m o que est√° dispon√≠vel
+     no Portal, mas adaptado para leitura sem liga√ß√£o.
 freebsd5-i386-system:
-    A vers„o hospedada para FreeBSD/i386 5.x. Note que n„o
-    ir· funcionar em sistemas FreeBSD 4.x.
+    A vers√£o hospedada para FreeBSD/i386 5.x. Note que n√£o
+    ir√° funcionar em sistemas FreeBSD 4.x.
 freebsd-i386-system:
-    A vers„o hospedada para FreeBSD/i386 5.x. Note que n„o
-    ir· funcionar em sistemas FreeBSD 4.x.
+    A vers√£o hospedada para FreeBSD/i386 5.x. Note que n√£o
+    ir√° funcionar em sistemas FreeBSD 4.x.
 linux-i386-system:
-    A vers„o hospedada para Linux/i386. Este È o mais
+    A vers√£o hospedada para Linux/i386. Este √© o mais
     completo e maturo porto, que significa que pode correr
-    todos os programas incluÌdos e demos com ele. Este arquivo
-    contÈm todo o sistema de bin·rios AROS compilados a partir da
-    ·rvore de Subvers„o.
+    todos os programas inclu√≠dos e demos com ele. Este arquivo
+    cont√©m todo o sistema de bin√°rios AROS compilados a partir da
+    √°rvore de Subvers√£o.
 mingw32-x86_64-system:
     The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
@@ -58,23 +58,23 @@ mingw32-i386-system:
     and compiled under Windows XP, but should work on all 32-bit Windows
     versions starting from Windows 98.
 linux-x86_64-system:
-    A vers„o hospedada para Linux/x86_64. Este È o mais
+    A vers√£o hospedada para Linux/x86_64. Este √© o mais
     completo e maturo porto, que significa que pode correr
-    todos os programas incluÌdos e demos com ele. Este arquivo
-    contÈm todo o sistema de bin·rios AROS compilados a partir da
-    ·rvore de Subvers„o.
+    todos os programas inclu√≠dos e demos com ele. Este arquivo
+    cont√©m todo o sistema de bin√°rios AROS compilados a partir da
+    √°rvore de Subvers√£o.
 linux-ppc-system:
-    A vers„o hospedada para Linux/PowerPC. Este arquivo contÈm todo
-    o sistema de bin·rios AROS compilados a partir da ·rvore de Subvers„o.
+    A vers√£o hospedada para Linux/PowerPC. Este arquivo cont√©m todo
+    o sistema de bin√°rios AROS compilados a partir da √°rvore de Subvers√£o.
 pc-i386-boot-floppy:
-    A vers„o nativa para Computadores PC-AT baseadas em i386 e
-    compativeis. Este arquivo contÈm o a imagem de arranque para
-    disquete no qual poder· escrever r·pidamente para o disco e
+    A vers√£o nativa para Computadores PC-AT baseadas em i386 e
+    compativeis. Este arquivo cont√©m o a imagem de arranque para
+    disquete no qual poder√° escrever r√°pidamente para o disco e
     Arrancar o AROS.
 pc-i386-boot-iso:
-    A vers„o nativa para Computadores PC-AT baseados em i386 e
-    compativeis. Este È a imagem ISO para arranque em CD-ROM, que
-    contÈm todo o sistema AROS e programas contribuÌdos.
+    A vers√£o nativa para Computadores PC-AT baseados em i386 e
+    compativeis. Este √© a imagem ISO para arranque em CD-ROM, que
+    cont√©m todo o sistema AROS e programas contribu√≠dos.
 pc-x86_64-boot-iso:
     The native version for 64-bit (x86_64, amd64) PC computers.
     This is the bootable CDROM ISO image, which
@@ -96,30 +96,30 @@ raspi-armhf-ports:
     and native). Because of its size the archive will only be updated
     from time to time on the snapshots page.
 pc-i386-contrib:
-    Este arquivo contÈm todo o programa contribuÌdo
-    compilado para a arquitectura i386. Eles ir„o funcionar em
-    ambos os apropriados hospedeiros (eg. i386-linux) e vers„o
+    Este arquivo cont√©m todo o programa contribu√≠do
+    compilado para a arquitectura i386. Eles ir√£o funcionar em
+    ambos os apropriados hospedeiros (eg. i386-linux) e vers√£o
     nativo (i386-pc).
 pc-x86_64-contrib:
     This archive contains all the contributed programs
     compiled for the x86_64 architecture, for use with the
     x86_64 native version.
 linux-ppc-contrib:
-    Este arquivo contÈm todo o programa contribuÌdo
+    Este arquivo cont√©m todo o programa contribu√≠do
     compilado para a arquitectura PowerPC, para uso com o porto
     Linux/PowerPC.
 pc-i386-sdk:
     Conjunto de ficheiros e ferramentas para construir os seus
-    programas AROS na sua m·quina preferida. Ir· precisar tambÈm do gcc e o
-    binutils configurados para produzir execut·veis i386-elf.
+    programas AROS na sua m√°quina preferida. Ir√° precisar tamb√©m do gcc e o
+    binutils configurados para produzir execut√°veis i386-elf.
 linux-ppc-sdk:
     Conjunto de ficheiros e ferramentas para construir os seus
-    programas AROS na sua m·quina preferida. Ir· precisar tambÈm do gcc e o
-    binutils configurados para produzir execut·veis ppc-elf.
+    programas AROS na sua m√°quina preferida. Ir√° precisar tamb√©m do gcc e o
+    binutils configurados para produzir execut√°veis ppc-elf.
 pc-x86_64-sdk:
     Conjunto de ficheiros e ferramentas para construir os seus
-    programas AROS na sua m·quina preferida. Ir· precisar tambÈm do gcc e o
-    binutils configurados para produzir execut·veis x86_64-elf.
+    programas AROS na sua m√°quina preferida. Ir√° precisar tamb√©m do gcc e o
+    binutils configurados para produzir execut√°veis x86_64-elf.
 Linux-gnu-amiga-m68k-toolchain:
     Linux GNU crosscompiler for AROS m68k target
 Linux-gnu-pc-i386-toolchain:

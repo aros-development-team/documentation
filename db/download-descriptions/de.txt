@@ -3,7 +3,7 @@
 package: Paket
 documentation: Dokumentation
 sources: Quellcodes
-binaries: Binärdateien
+binaries: BinÃ¤rdateien
 developer-tools: ABI-v1 Entwicklungswerkzeuge
 development-tools: ABI-v0 Entwicklungswerkzeuge
 date: Datum
@@ -25,11 +25,11 @@ decimal-point: ,
 [descriptions]
 
 ChangeLog-AROS:
-    Änderungsprotokolldatei für die AROS-Kern-Quellcodedateien.
+    Ã„nderungsprotokolldatei fÃ¼r die AROS-Kern-Quellcodedateien.
 ChangeLog-contrib:
-    Änderungsprotokolldatei für die Quellcodes der beigestellten Programme.
+    Ã„nderungsprotokolldatei fÃ¼r die Quellcodes der beigestellten Programme.
 ChangeLog-docs:
-    Änderungsprotokolldatei für die Dokumentation.    
+    Ã„nderungsprotokolldatei fÃ¼r die Dokumentation.    
 source:
     AROS-Kern-Quellcodedateien.
 docs-source:
@@ -37,77 +37,77 @@ docs-source:
 contrib-source:
     Quellcode der beigestellten Programme.
 docs-html:
-    Dokumentation im HTML-Format. Enthält alles, was auf der Webseite
+    Dokumentation im HTML-Format. EnthÃ¤lt alles, was auf der Webseite
     vorhanden ist, aufbereitet zum Offline-Lesen.
 amiga-m68k-system:
-    Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
-    mit AmigaOS. Dieses Archiv enthält ROM-Speicherabbilder und alle AROS
-    System-Binärdateien, welche aus dem Subversion-Verzeichnis erstellt wurden.
+    Die native Version fÃ¼r m68k Amigas oder UAE. Diese Version ist binÃ¤rkompatibel
+    mit AmigaOS. Dieses Archiv enthÃ¤lt ROM-Speicherabbilder und alle AROS
+    System-BinÃ¤rdateien, welche aus dem Subversion-Verzeichnis erstellt wurden.
 amiga-m68k-boot-floppy:
-    Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
-    mit AmigaOS. Dieses Archiv enthält ROM-Speicherabbilder und ein
+    Die native Version fÃ¼r m68k Amigas oder UAE. Diese Version ist binÃ¤rkompatibel
+    mit AmigaOS. Dieses Archiv enthÃ¤lt ROM-Speicherabbilder und ein
     Boot-Floppy-Speicherabbild.
 amiga-m68k-boot-iso:
-    Die native Version für m68k Amigas oder UAE. Diese Version ist binärkompatibel
+    Die native Version fÃ¼r m68k Amigas oder UAE. Diese Version ist binÃ¤rkompatibel
     mit AmigaOS. Dies ist das CDROM-ISO-Image.
 darwin-i386-system:
-    Die gehostete Version für Darwin und MacOS x für die i386-Platform.
+    Die gehostete Version fÃ¼r Darwin und MacOS x fÃ¼r die i386-Platform.
     Sollte auf allen Intel-MacOS-X-Versionen ab 10.4 arbeiten.
 darwin-ppc-system:
-    Die gehostete Version für Darwin und MacOS x für die PowerPC-Platform.
+    Die gehostete Version fÃ¼r Darwin und MacOS x fÃ¼r die PowerPC-Platform.
     Sollte auf allen MacOS-X-Versionen arbeiten.
 darwin-x86_64-system:
-    Die gehostete Version für Darwin und MacOS x für die x86-64-Platform.
+    Die gehostete Version fÃ¼r Darwin und MacOS x fÃ¼r die x86-64-Platform.
     Sollte auf allen Intel-MacOS-X-Versionen ab 10.6 arbeiten.
 freebsd5-i386-system:
-    Die gehostete Version für FreeBSD/i386 5.x. Beachte, dass
-    sie nicht auf FreeBSD 4.x-Systemen läuft.
+    Die gehostete Version fÃ¼r FreeBSD/i386 5.x. Beachte, dass
+    sie nicht auf FreeBSD 4.x-Systemen lÃ¤uft.
 freebsd-i386-system:
-    Die gehostete Version für FreeBSD/i386 5.x. Beachte, dass
-    sie nicht auf FreeBSD 4.x-Systemen läuft.
+    Die gehostete Version fÃ¼r FreeBSD/i386 5.x. Beachte, dass
+    sie nicht auf FreeBSD 4.x-Systemen lÃ¤uft.
 linux-i386-system:
-    Die gehostete Version für Linux/i386. Dieses Archiv enthält
-    alle AROS-System-Binärdateien aus dem Subversion-Archiv.
+    Die gehostete Version fÃ¼r Linux/i386. Dieses Archiv enthÃ¤lt
+    alle AROS-System-BinÃ¤rdateien aus dem Subversion-Archiv.
 mingw32-x86_64-system:
     The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
-    The gehostete Version für Microsoft Windows auf der i386-Plattform.
+    The gehostete Version fÃ¼r Microsoft Windows auf der i386-Plattform.
     Sie wurde entwickelt und kompiliert unter Windows XP, sollte jedoch unter
     allen 32-bit Windowsversionen ab Windows 98 laufen.
 linux-x86_64-system:
-    Die gehostete Version für Linux/x86_64. Dieses Archiv enthält
-    alle AROS-System-Binärdateien aus dem Subversion-Archiv.
+    Die gehostete Version fÃ¼r Linux/x86_64. Dieses Archiv enthÃ¤lt
+    alle AROS-System-BinÃ¤rdateien aus dem Subversion-Archiv.
 linux-ppc-system:
-    Die gehostete Version für Linux/PowerPC. Dieses Archiv enthält alle
-    AROS-System-Binärdateien aus dem Subversion-Archiv.
+    Die gehostete Version fÃ¼r Linux/PowerPC. Dieses Archiv enthÃ¤lt alle
+    AROS-System-BinÃ¤rdateien aus dem Subversion-Archiv.
 linux-arm-system:
-    Die gehostete Version für Linux/ARM. Dieses Archiv enthält die
-    AROS-System-Binärdateien aus dem Subversion-Archiv. Beachte bitte dass
-    diese Version mindestens eine ARMv6-CPU mit VFP-Einheit benötigt.
+    Die gehostete Version fÃ¼r Linux/ARM. Dieses Archiv enthÃ¤lt die
+    AROS-System-BinÃ¤rdateien aus dem Subversion-Archiv. Beachte bitte dass
+    diese Version mindestens eine ARMv6-CPU mit VFP-Einheit benÃ¶tigt.
 pc-i386-boot-floppy:
-    Die native Version für i386-PC-AT-Computer und Kompatible.
-    Dieses Archiv enthält das Boot-Diskettenimage, welches Du
+    Die native Version fÃ¼r i386-PC-AT-Computer und Kompatible.
+    Dieses Archiv enthÃ¤lt das Boot-Diskettenimage, welches Du
     auf eine Diskette schreiben kannst um AROS davon zu booten.
 pc-i386-boot-iso:
-    Die native Version für i386-PC-AT-Computer und Kompatible.
-    Dies ist das boot-fähige CDROM-ISO-Image, welches alle AROS-
-    System- und beigestellten Programme enthält.
+    Die native Version fÃ¼r i386-PC-AT-Computer und Kompatible.
+    Dies ist das boot-fÃ¤hige CDROM-ISO-Image, welches alle AROS-
+    System- und beigestellten Programme enthÃ¤lt.
 pc-x86_64-boot-iso:
-    Die native Version für 64-Bit (x86_64, amd64) Computer.
+    Die native Version fÃ¼r 64-Bit (x86_64, amd64) Computer.
     Dies ist das bootbare CDROM ISO-Image, welches alle
-    AROS-Systemprogramme und beigesteuerte Programme enthält.
+    AROS-Systemprogramme und beigesteuerte Programme enthÃ¤lt.
 pc-x86_64-smp-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
 sam440-ppc-boot-iso:
-    Die native Version für Sam440EP, Sam440EP Flex und Sam460ex Computer.
-    Dies ist das bootfähige ROM-Speicherabbild einschließlich
-    ub2lb (Parthenope) SLB. Es enthält alle AROS System- und
+    Die native Version fÃ¼r Sam440EP, Sam440EP Flex und Sam460ex Computer.
+    Dies ist das bootfÃ¤hige ROM-Speicherabbild einschlieÃŸlich
+    ub2lb (Parthenope) SLB. Es enthÃ¤lt alle AROS System- und
     beigesteuerte Programme.
 efika-chrp-ppc-boot-iso:
-    Die native Version für PowerPC Efika Computer. Dies ist das
-    bootfähige CDROM ISO-Speicherabbild einschließlich ub2lb für
-    "open firmware". Es enthält alle AROS System- und beigesteuerte
+    Die native Version fÃ¼r PowerPC Efika Computer. Dies ist das
+    bootfÃ¤hige CDROM ISO-Speicherabbild einschlieÃŸlich ub2lb fÃ¼r
+    "open firmware". Es enthÃ¤lt alle AROS System- und beigesteuerte
     Programme.
 raspi-armhf-system:
     The native version for ARMv6 based Raspberry Pi computers.
@@ -123,40 +123,40 @@ raspi-armhf-ports:
     and native). Because of its size the archive will only be updated
     from time to time on the snapshots page.
 pc-i386-contrib:
-    Dieses Archiv enthält alle beigesteuerten Programme für die
-    i386-Architektur. Sie funktionieren sowohl für hosted (z.B. i386-linux)
-    als auch für native (i386-pc).
+    Dieses Archiv enthÃ¤lt alle beigesteuerten Programme fÃ¼r die
+    i386-Architektur. Sie funktionieren sowohl fÃ¼r hosted (z.B. i386-linux)
+    als auch fÃ¼r native (i386-pc).
 pc-x86_64-contrib:
-    Dieses Archiv enthält alle beigesteuerte Programme für die
+    Dieses Archiv enthÃ¤lt alle beigesteuerte Programme fÃ¼r die
     native Version der X86_64-Architektur.
 linux-ppc-contrib:
-    Dieses Archiv enthält alle beigesteuerten Programme für die
-    PowerPC-Architektur für die Linux/PowerPC-Portierung.
+    Dieses Archiv enthÃ¤lt alle beigesteuerten Programme fÃ¼r die
+    PowerPC-Architektur fÃ¼r die Linux/PowerPC-Portierung.
 sam440-ppc-contrib:
-    Dieses Archiv enthält alle beigesteuerte Programme für die
+    Dieses Archiv enthÃ¤lt alle beigesteuerte Programme fÃ¼r die
     PowerPC-Architektur zur Verwendung mit dem Sam440EP-Port.
 pc-i386-sdk:
     Dateien und Werkzeuge um Deine eigenen AROS-Programme
     auf Deiner Maschine zu erstellen. GCC und die Binutils
-    müssen so konfiguriert sein, dass sie Programme im
+    mÃ¼ssen so konfiguriert sein, dass sie Programme im
     i386-elf-Format erzeugen.
 linux-ppc-sdk:
     Dateien und Werkzeuge um Deine eigenen AROS-Programme
     auf Deiner Maschine zu erstellen. GCC und die Binutils
-    müssen so konfiguriert sein, dass sie Programme im
+    mÃ¼ssen so konfiguriert sein, dass sie Programme im
     ppc-elf-Format erzeugen.
 linux-arm-sdk:
     Dateien und Werkzeuge um Deine eigenen AROS-Programme auf Deiner
-    bevorzugten Maschine zu erstellen. GCC und die Binutils müssen so
+    bevorzugten Maschine zu erstellen. GCC und die Binutils mÃ¼ssen so
     konfiguriert sein, dass sie Programme im arm-elf-Format erzeugen.
 sam440-ppc-sdk:
     Dateien und Werkzeuge um Deine eigenen AROS-Programme auf Deiner
-    bevorzugten Maschine zu erstellen. GCC und die Binutils müssen so
+    bevorzugten Maschine zu erstellen. GCC und die Binutils mÃ¼ssen so
     konfiguriert sein, dass sie Programme im ppc-elf-Format erzeugen.
 pc-x86_64-sdk:
     Dateien und Werkzeuge um Deine eigenen AROS-Programme
     auf Deiner Maschine zu erstellen. GCC und die Binutils
-    müssen so konfiguriert sein, dass sie Programme im
+    mÃ¼ssen so konfiguriert sein, dass sie Programme im
     x86_64-elf-Format erzeugen.
 Linux-gnu-amiga-m68k-toolchain:
     Linux GNU crosscompiler for AROS m68k target
