@@ -4,14 +4,14 @@ package: Paquet
 documentation: Documentation
 sources: Sources
 binaries: Fichiers binaires
-developer-tools: ABI-v1 Outils de développement
-development-tools: ABI-v0 Outils de développement
+developer-tools: ABI-v1 Outils de dÃ©veloppement
+development-tools: ABI-v0 Outils de dÃ©veloppement
 date: Date
 
 [links]
 
 build-logs: build log
-download: Téléchargement
+download: TÃ©lÃ©chargement
 md5: MD5
 
 [units]
@@ -38,18 +38,18 @@ contrib-source:
     Sources des programmes de contribution.
 docs-html:
     Documenttion en HTML. Contient tout ce qui est disponible
-    sur le site web, mais adapté à la lecture hors ligne.
+    sur le site web, mais adaptÃ© Ã  la lecture hors ligne.
 freebsd5-i386-system:
-    Version hôte pour FreeBSD/i386 5.x. Elle ne fonctionnera
+    Version hÃ´te pour FreeBSD/i386 5.x. Elle ne fonctionnera
     pas sur FreeBSD 4.x.
 freebsd-i386-system:
-    Version hôte pour FreeBSD/i386 5.x. Elle ne fonctionnera
+    Version hÃ´te pour FreeBSD/i386 5.x. Elle ne fonctionnera
     pas sur FreeBSD 4.x.
 linux-i386-system:
-    La version hôste pour Linux/i386. C'est la version la plus
-    complète, ce qui signifie que vous pouvez démarrer tous les
-    programmes et démos inclus avec. Cette archive contient tous
-    les fichiers binaires compilés depuis SVN.
+    La version hÃ´ste pour Linux/i386. C'est la version la plus
+    complÃ¨te, ce qui signifie que vous pouvez dÃ©marrer tous les
+    programmes et dÃ©mos inclus avec. Cette archive contient tous
+    les fichiers binaires compilÃ©s depuis SVN.
 mingw32-x86_64-system:
     The hosted version for Microsoft Windows on x86_64 platform.
 mingw32-i386-system:
@@ -57,17 +57,17 @@ mingw32-i386-system:
     and compiled under Windows XP, but should work on all 32-bit Windows
     versions starting from Windows 98.
 linux-i386-system:
-    La version hôste pour Linux/x86_64. C'est la version la plus
-    complète, ce qui signifie que vous pouvez démarrer tous les
-    programmes et démos inclus avec. Cette archive contient tous
-    les fichiers binaires compilés depuis SVN.
+    La version hÃ´ste pour Linux/x86_64. C'est la version la plus
+    complÃ¨te, ce qui signifie que vous pouvez dÃ©marrer tous les
+    programmes et dÃ©mos inclus avec. Cette archive contient tous
+    les fichiers binaires compilÃ©s depuis SVN.
 linux-ppc-system:
-    La version hôste pour Linux/PowerPC. Cette archive contient tous
-    les fichiers binaires compilés depuis SVN.
+    La version hÃ´ste pour Linux/PowerPC. Cette archive contient tous
+    les fichiers binaires compilÃ©s depuis SVN.
 pc-i386-boot-floppy:
     La version native pour PC avec processeur i386 et
     compatibles. Cette archive contient l'image d'une disquette
-    à partir de laquelle on peut démarrer AROS.
+    Ã  partir de laquelle on peut dÃ©marrer AROS.
 pc-i386-boot-iso:
     La version native pour PC avec processeur i386 et
     compatibles. Cette archive contient l'image du CDROM bootable,
@@ -94,30 +94,30 @@ raspi-armhf-ports:
     from time to time on the snapshots page.
 pc-i386-contrib:
     Cette archive contient tous les programmes de contribution
-    compilés pour l'architecture i386. Ils fonctionneront à la fois
-    dans les versions hôtes et natives.
+    compilÃ©s pour l'architecture i386. Ils fonctionneront Ã  la fois
+    dans les versions hÃ´tes et natives.
 pc-x86_64-contrib:
     Cette archive contient tous les programmes de contribution
-    compilés pour l'architecture x86_64. Ils fonctionneront à la fois
-    dans les versions hôtes et natives.
+    compilÃ©s pour l'architecture x86_64. Ils fonctionneront Ã  la fois
+    dans les versions hÃ´tes et natives.
 linux-ppc-contrib:
     Cette archive contient tous les programmes de contribution
-    compilés pour l'architecture PowerPC.
+    compilÃ©s pour l'architecture PowerPC.
 pc-i386-sdk:
-    Jeu de fichiers et d'outils visant à développer vos programmes
-    pour AROS avec votre machine préférée. Vous aurez également
-    besoin de gcc et des binutils configurés pour produire des
-    exécutables i386-elf.
+    Jeu de fichiers et d'outils visant Ã  dÃ©velopper vos programmes
+    pour AROS avec votre machine prÃ©fÃ©rÃ©e. Vous aurez Ã©galement
+    besoin de gcc et des binutils configurÃ©s pour produire des
+    exÃ©cutables i386-elf.
 linux-ppc-sdk:
-    Jeu de fichiers et d'outils visant à développer vos programmes
-    pour AROS avec votre machine préférée. Vous aurez également
-    besoin de gcc et des binutils configurés pour produire des
-    exécutables ppc-elf.
+    Jeu de fichiers et d'outils visant Ã  dÃ©velopper vos programmes
+    pour AROS avec votre machine prÃ©fÃ©rÃ©e. Vous aurez Ã©galement
+    besoin de gcc et des binutils configurÃ©s pour produire des
+    exÃ©cutables ppc-elf.
 pc-x86_64-sdk:
-    Jeu de fichiers et d'outils visant à développer vos programmes
-    pour AROS avec votre machine préférée. Vous aurez également
-    besoin de gcc et des binutils configurés pour produire des
-    exécutables x86_64-elf.
+    Jeu de fichiers et d'outils visant Ã  dÃ©velopper vos programmes
+    pour AROS avec votre machine prÃ©fÃ©rÃ©e. Vous aurez Ã©galement
+    besoin de gcc et des binutils configurÃ©s pour produire des
+    exÃ©cutables x86_64-elf.
 Linux-gnu-amiga-m68k-toolchain:
     Linux GNU crosscompiler for AROS m68k target
 Linux-gnu-pc-i386-toolchain:

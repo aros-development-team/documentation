@@ -1,16 +1,16 @@
 [headings]
 
-package: Balíèek
+package: BalÃ­Äek
 documentation: Dokumentace
 sources: Zdroje
-binaries: Binárky
-developer-tools: ABI-v1 Vıvojové nástroje
-development-tools: ABI-v0 Vıvojové nástroje
+binaries: BinÃ¡rky
+developer-tools: ABI-v1 VÃ½vojovÃ© nÃ¡stroje
+development-tools: ABI-v0 VÃ½vojovÃ© nÃ¡stroje
 date: Datum
 
 [links]
 
-build-logs: záznamy o sestavení
+build-logs: zÃ¡znamy o sestavenÃ­
 download: Download
 md5: MD5
 
@@ -25,29 +25,29 @@ decimal-point: ,
 [descriptions]
 
 ChangeLog-AROS:
-    Záznam zmìn zdrojovıch kódù jádra AROSu.
+    ZÃ¡znam zmÄ›n zdrojovÃ½ch kÃ³dÅ¯ jÃ¡dra AROSu.
 ChangeLog-contrib:
-    Záznam zmìn zdrojovıch kódù programù od pøispìvovatelù.
+    ZÃ¡znam zmÄ›n zdrojovÃ½ch kÃ³dÅ¯ programÅ¯ od pÅ™ispÄ›vovatelÅ¯.
 ChangeLog-docs:
-    Záznam zmìn dokumentace.
+    ZÃ¡znam zmÄ›n dokumentace.
 source:
-    Zdrojové kódy jádra AROSu.
+    ZdrojovÃ© kÃ³dy jÃ¡dra AROSu.
 docs-source:
-    Zdrojové kódy dokumentace.
+    ZdrojovÃ© kÃ³dy dokumentace.
 contrib-source:
-    Zdrojové kódy programù od pøispìvovatelù.
+    ZdrojovÃ© kÃ³dy programÅ¯ od pÅ™ispÄ›vovatelÅ¯.
 docs-html:
-    Dokumentace v HTML formátu. Obsahuje v¹e, co je k dispozici
-    na webovıch stránkách, ale je uzpùsobena k offline ètení.
+    Dokumentace v HTML formÃ¡tu. Obsahuje vÅ¡e, co je k dispozici
+    na webovÃ½ch strÃ¡nkÃ¡ch, ale je uzpÅ¯sobena k offline ÄtenÃ­.
 freebsd5-i386-system:
-    Hostovaná verze pro FreeBSD/i386 5.x. Nefunguje
-    na systémech FreeBSD 4.x.
+    HostovanÃ¡ verze pro FreeBSD/i386 5.x. Nefunguje
+    na systÃ©mech FreeBSD 4.x.
 freebsd-i386-system:
-    Hostovaná verze pro FreeBSD/i386 5.x. Nefunguje
-    na systémech FreeBSD 4.x.
+    HostovanÃ¡ verze pro FreeBSD/i386 5.x. Nefunguje
+    na systÃ©mech FreeBSD 4.x.
 linux-i386-system:
-    Hostovaná verze pro Linux/i386. Tento archív
-    obsahuje v¹echny binárky systému AROS kompilované z SVN
+    HostovanÃ¡ verze pro Linux/i386. Tento archÃ­v
+    obsahuje vÅ¡echny binÃ¡rky systÃ©mu AROS kompilovanÃ© z SVN
     stromu.
 mingw32-x86_64-system:
     The hosted version for Microsoft Windows on x86_64 platform.
@@ -56,25 +56,25 @@ mingw32-i386-system:
     and compiled under Windows XP, but should work on all 32-bit Windows
     versions starting from Windows 98.
 linux-x86_64-system:
-    Hostovaná verze pro Linux/x86_64. Tento archív
-    obsahuje v¹echny binárky systému AROS kompilované z SVN
+    HostovanÃ¡ verze pro Linux/x86_64. Tento archÃ­v
+    obsahuje vÅ¡echny binÃ¡rky systÃ©mu AROS kompilovanÃ© z SVN
     stromu.
 linux-ppc-system:
-    Hostovaná verze pro Linux/PowerPC. Tento archív obsahuje v¹echny
-    binárky systému AROS kompilované z SVN stromu.
+    HostovanÃ¡ verze pro Linux/PowerPC. Tento archÃ­v obsahuje vÅ¡echny
+    binÃ¡rky systÃ©mu AROS kompilovanÃ© z SVN stromu.
 pc-i386-boot-floppy:
-    Nativní verze pro poèítaèe i386 a
-    kompatibilní. Tento archív obsahuje obraz
-    diskety, kterı na ni mù¾e bıt snadno a rychle zapsán a AROS z nìj poté
-    nabootován.
+    NativnÃ­ verze pro poÄÃ­taÄe i386 a
+    kompatibilnÃ­. Tento archÃ­v obsahuje obraz
+    diskety, kterÃ½ na ni mÅ¯Å¾e bÃ½t snadno a rychle zapsÃ¡n a AROS z nÄ›j potÃ©
+    nabootovÃ¡n.
 pc-i386-boot-iso:
-    Nativní verze pro poèítaèe i386 a
-    kompatibilní. Jedná se o ISO obraz bootovacího CD, které
-    obsahuje celı systém AROS a programy pøispìvovatelù.
+    NativnÃ­ verze pro poÄÃ­taÄe i386 a
+    kompatibilnÃ­. JednÃ¡ se o ISO obraz bootovacÃ­ho CD, kterÃ©
+    obsahuje celÃ½ systÃ©m AROS a programy pÅ™ispÄ›vovatelÅ¯.
 pc-x86_64-boot-iso:
-    Nativní verze pro 64 bitové poèítaèe (x86_64, amd64).
-    Jedná se o ISO obraz bootovacího CD, které
-    obsahuje celı systém AROS a programy pøispìvovatelù.
+    NativnÃ­ verze pro 64 bitovÃ© poÄÃ­taÄe (x86_64, amd64).
+    JednÃ¡ se o ISO obraz bootovacÃ­ho CD, kterÃ©
+    obsahuje celÃ½ systÃ©m AROS a programy pÅ™ispÄ›vovatelÅ¯.
 pc-x86_64-smp-boot-iso:
     This is a highly experimental SMP build for pc-x86_64.
     Only recommended for Developers. This is a bootable CD-ROM ISO image.
@@ -92,30 +92,30 @@ raspi-armhf-ports:
     and native). Because of its size the archive will only be updated
     from time to time on the snapshots page.
 pc-i386-contrib:
-    Tento archív obsahuje v¹echny programy pøispìvovatelù
-    kompilované pro architekturu i386. Budou pracovat v
-    obou verzích - hostované (napø. i386-linux) i nativní
+    Tento archÃ­v obsahuje vÅ¡echny programy pÅ™ispÄ›vovatelÅ¯
+    kompilovanÃ© pro architekturu i386. Budou pracovat v
+    obou verzÃ­ch - hostovanÃ© (napÅ™. i386-linux) i nativnÃ­
     (i386-pc).
 pc-x86_64-contrib:
-    Tento archív obsahuje v¹echny programy pøispìvovatelù
-    kompilované pro architekturu x86_64, k pou¾ití s
-    x86_64 nativní verzí.
+    Tento archÃ­v obsahuje vÅ¡echny programy pÅ™ispÄ›vovatelÅ¯
+    kompilovanÃ© pro architekturu x86_64, k pouÅ¾itÃ­ s
+    x86_64 nativnÃ­ verzÃ­.
 linux-ppc-contrib:
-    Tento archív obsahuje v¹echny programy pøispìvovatelù
-    kompilované pro architekturu PowerPC, k pou¾ití s
+    Tento archÃ­v obsahuje vÅ¡echny programy pÅ™ispÄ›vovatelÅ¯
+    kompilovanÃ© pro architekturu PowerPC, k pouÅ¾itÃ­ s
     Linux/PowerPC portem.
 pc-i386-sdk:
-    Sada souborù a nástrojù k sestavení vlastních AROS programù
-    na tebou preferovaném stroji. Bude¹ také potøebovat gcc a
-    binutils nastavené k vytváøení i386-elf spustitelnıch souborù.
+    Sada souborÅ¯ a nÃ¡strojÅ¯ k sestavenÃ­ vlastnÃ­ch AROS programÅ¯
+    na tebou preferovanÃ©m stroji. BudeÅ¡ takÃ© potÅ™ebovat gcc a
+    binutils nastavenÃ© k vytvÃ¡Å™enÃ­ i386-elf spustitelnÃ½ch souborÅ¯.
 linux-ppc-sdk:
-    Sada souborù a nástrojù k sestavení vlastních AROS programù
-    na tebou preferovaném stroji. Bude¹ také potøebovat gcc a
-    binutils nastavené k vytváøení ppc-elf spustitelnıch souborù.
+    Sada souborÅ¯ a nÃ¡strojÅ¯ k sestavenÃ­ vlastnÃ­ch AROS programÅ¯
+    na tebou preferovanÃ©m stroji. BudeÅ¡ takÃ© potÅ™ebovat gcc a
+    binutils nastavenÃ© k vytvÃ¡Å™enÃ­ ppc-elf spustitelnÃ½ch souborÅ¯.
 pc-x86_64-sdk:
-    Sada souborù a nástrojù k sestavení vlastních AROS programù
-    na tebou preferovaném stroji. Bude¹ také potøebovat gcc a
-    binutils nastavené k vytváøení x86_64-elf spustitelnıch souborù.
+    Sada souborÅ¯ a nÃ¡strojÅ¯ k sestavenÃ­ vlastnÃ­ch AROS programÅ¯
+    na tebou preferovanÃ©m stroji. BudeÅ¡ takÃ© potÅ™ebovat gcc a
+    binutils nastavenÃ© k vytvÃ¡Å™enÃ­ x86_64-elf spustitelnÃ½ch souborÅ¯.
 Linux-gnu-amiga-m68k-toolchain:
     Linux GNU crosscompiler for AROS m68k target
 Linux-gnu-pc-i386-toolchain:
