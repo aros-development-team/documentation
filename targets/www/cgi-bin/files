@@ -45,10 +45,10 @@ colorGhosted = Color( 0x99, 0x77, 0x77 )  # File download not available text
 ## Package descriptions and other strings
 #
 descriptions = ConfigParser()
-if not os.path.exists( os.path.join( DESCRIPTIONS_DIR, language ) ):
+if not os.path.exists( os.path.join( DESCRIPTIONS_DIR, language + '.txt' ) ):
     language = 'en'
 descriptions.read( [ os.path.join( DESCRIPTIONS_DIR, 'en' ),
-    os.path.join( DESCRIPTIONS_DIR, language ) ] )
+    os.path.join( DESCRIPTIONS_DIR, language + '.txt' ) ] )
 
 ## Get size units
 #
