@@ -13,7 +13,7 @@ def makePicture( path, description, language ):
         root = '../../../'
 
     config = ConfigParser()
-    with open(os.path.join( LANG_DIR, language ), 'rb') as configfile:
+    with open(os.path.join( LANG_DIR, language + '.txt' ), 'rb') as configfile:
         config.read(configfile)
 
     filename  = os.path.basename( path )
