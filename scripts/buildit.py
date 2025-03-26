@@ -251,7 +251,7 @@ def makeNews():
 
         # Set up translated title dictionary
         config = gallery.ConfigParser()
-        with codecs.open(os.path.join('targets/www/template/languages', lang), 'r', encoding='utf-8') as configfile:
+        with codecs.open(os.path.join('targets/www/template/languages', lang + '.txt'), 'r', encoding='utf-8') as configfile:
             config.read_file(configfile)
         _T = {}
         for option in config['titles']:

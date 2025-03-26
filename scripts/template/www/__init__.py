@@ -23,7 +23,7 @@ def makeTemplates():
     def makeTemplate( language, dst ):
         # Setup translation dictionaries
         config = ConfigParser()
-        with codecs.open(os.path.join( LANG_DIR, language ), 'r', encoding='utf-8') as configfile:
+        with codecs.open(os.path.join( LANG_DIR, language + '.txt'), 'r', encoding='utf-8') as configfile:
             config.read_file(configfile)
 
         charset = config.get( 'meta', 'charset' )
@@ -42,7 +42,8 @@ def makeTemplates():
         
         open( dst, 'w' ).write( makePage( _T, _N, _M, language, charset ) )
 
-    for language in os.listdir( LANG_DIR ):
+    for langfile in os.listdir( LANG_DIR ):
+        language = langfile.split( '.' )[0] # strip '.txt'
         if utility.ignore( language ): continue
 
         dst = os.path.join( DST_DIR, 'template.html.' + language )
@@ -52,7 +53,7 @@ def makeTemplates():
             [ 
                 __file__, 
                 os.path.join( HERE_DIR, 'page.py' ),
-                os.path.join( LANG_DIR, language ) 
+                os.path.join( LANG_DIR, langfile ) 
             ], 
             dst 
         ):
