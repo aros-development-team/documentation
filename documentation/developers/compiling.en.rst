@@ -474,7 +474,7 @@ Get the sources
 """""""""""""""
 
 To find out more instruction on how to use our Git Repository,
-please refer to `Working with Git <git.php>`__
+please refer to `Working with Git <git.html>`__
 
 In brief, the commands you must use are the following::
 
