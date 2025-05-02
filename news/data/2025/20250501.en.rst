@@ -1,0 +1,20 @@
+===========================
+March/April 2025 Highlights
+===========================
+
+:Author:   Matthias Rustler
+:Date:     2025-05-01
+
+Krzysztof Smiechowicz fixed a lot of bugs across the whole
+source code base.
+
+Johan Gill fixed several bugs, mainly for the m68k chipset handling.
+
+Ian G. fixed some bugs in the Editor and the Calculator.
+
+Andrzej Subocz fixed a bug in Wanderer's Preferences editor.
+
+Javier Alaguero added support for the Basque language and provided some
+catalogs.
+
+Matthias Rustler translated the website to HTML5 and removed PHP.
