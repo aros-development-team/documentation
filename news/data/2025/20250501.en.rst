@@ -10,7 +10,7 @@ source code base.
 
 Johan Gill fixed several bugs, mainly for the m68k chipset handling.
 
-Ian G. fixed some bugs in the Editor and the Calculator.
+Ivan Gualandri fixed some bugs in the Editor and the Calculator.
 
 Andrzej Subocz fixed a bug in Wanderer's Preferences editor.
 
