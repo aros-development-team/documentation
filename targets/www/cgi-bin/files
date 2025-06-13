@@ -6,7 +6,9 @@ from ConfigParser import ConfigParser
 
 DESCRIPTIONS_DIR = '../db/download-descriptions'
 
-print('''Content-Type: text/html\n\n''')
+print("Content-Type: text/html\n")
+
+arch = plat = None
 
 ## Parse arguments ###########################################################
 
@@ -21,6 +23,12 @@ if args.has_key( 'lang' ):
     language = args['lang'].value
 else:
     language = 'en'
+
+if args.has_key( 'arch' ):
+    arch = args['arch'].value
+
+if args.has_key( 'platform' ):
+    plat = args['platform'].value
 
 ## Configuration #############################################################
 ## Colors
@@ -109,6 +117,20 @@ for date in dates:
                 else:
                     continue
 
+                pkgPlatform = pkgArch = pkgFlavour = pkgType = None
+                try:
+                    pkgPlatform, pkgArch, pkgType = package.split('-', 2)
+                    if pkgType.startswith("smp-"):
+                        pkgType = pkgType[len("smp-"):]
+                        pkgFlavour = "smp"
+                except ValueError:
+                    pass
+
+                if pkgPlatform is not None and plat is not None and pkgPlatform != plat:
+                    continue
+
+                if pkgArch is not None and arch is not None and pkgArch != arch:
+                    continue
 
                 if not groups[group].has_key( package ):
                     groups[group][package] = []
