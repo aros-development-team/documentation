@@ -9,57 +9,57 @@ posixc
 ----------
 
 ======================================= ======================================= ======================================= ======================================= 
-`--background_POSIX--`_                 `__get_default_file()`_                 `__path_a2u()`_                         `__path_u2a()`_                         
-`__posixc_alphasort()`_                 `__posixc_assert()`_                    `__posixc_creat()`_                     `__posixc_fclose()`_                    
-`__posixc_feof()`_                      `__posixc_ferror()`_                    `__posixc_fflush()`_                    `__posixc_fgetpos()`_                   
-`__posixc_fgets()`_                     `__posixc_fopen()`_                     `__posixc_fprintf()`_                   `__posixc_fputc()`_                     
-`__posixc_fputs()`_                     `__posixc_fread()`_                     `__posixc_freopen()`_                   `__posixc_fscanf()`_                    
-`__posixc_fseek()`_                     `__posixc_fseeko()`_                    `__posixc_fsetpos()`_                   `__posixc_fstat()`_                     
-`__posixc_ftell()`_                     `__posixc_ftello()`_                    `__posixc_fwrite()`_                    `__posixc_getchar()`_                   
-`__posixc_getenv()`_                    `__posixc_gets()`_                      `__posixc_lseek()`_                     `__posixc_lstat()`_                     
-`__posixc_printf()`_                    `__posixc_putchar()`_                   `__posixc_puts()`_                      `__posixc_readdir()`_                   
-`__posixc_rewind()`_                    `__posixc_scandir()`_                   `__posixc_scanf()`_                     `__posixc_setbuf()`_                    
-`__posixc_setvbuf()`_                   `__posixc_stat()`_                      `__posixc_strerror()`_                  `__posixc_system()`_                    
-`__posixc_tmpfile()`_                   `__posixc_tmpnam()`_                    `__posixc_ungetc()`_                    `__posixc_vfprintf()`_                  
-`__posixc_vfscanf()`_                   `__posixc_vprintf()`_                   `__posixc_vscanf()`_                    `access()`_                             
-`alphasort64()`_                        `basename()`_                           `chdir()`_                              `chmod()`_                              
-`chown()`_                              `clearerr()`_                           `clock_gettime()`_                      `close()`_                              
-`closedir()`_                           `creat64()`_                            `dirfd()`_                              `dirname()`_                            
+`--background_POSIX--`_                 `__assert()`_                           `__get_default_file()`_                 `__path_a2u()`_                         
+`__path_u2a()`_                         `access()`_                             `alphasort()`_                          `alphasort64()`_                        
+`basename()`_                           `chdir()`_                              `chmod()`_                              `chown()`_                              
+`clearerr()`_                           `clock_gettime()`_                      `close()`_                              `closedir()`_                           
+`creat()`_                              `creat64()`_                            `dirfd()`_                              `dirname()`_                            
 `dup()`_                                `dup2()`_                               `endgrent()`_                           `endpwent()`_                           
 `execl()`_                              `execlp()`_                             `execv()`_                              `execve()`_                             
 `execvp()`_                             `fchdir()`_                             `fchmod()`_                             `fchown()`_                             
-`fcntl()`_                              `fdopen()`_                             `fgetc()`_                              `fgetpos64()`_                          
-`fileno()`_                             `flock()`_                              `flockfile()`_                          `fopen64()`_                            
-`fseeko64()`_                           `fsetpos64()`_                          `fstat64()`_                            `fsync()`_                              
-`ftello64()`_                           `ftime()`_                              `ftruncate()`_                          `funlockfile()`_                        
-`gcvt()`_                               `getc()`_                               `getc_unlocked()`_                      `getcwd()`_                             
-`getegid()`_                            `geteuid()`_                            `getfsstat()`_                          `getgid()`_                             
-`getgrent()`_                           `getgrgid()`_                           `getgrnam()`_                           `getgroups()`_                          
-`getloadavg()`_                         `getlogin()`_                           `getopt()`_                             `getopt_long()`_                        
-`getopt_long_only()`_                   `getpass()`_                            `getpgid()`_                            `getpgrp()`_                            
-`getpid()`_                             `getppid()`_                            `getpwent()`_                           `getpwnam()`_                           
-`getpwuid()`_                           `getrlimit()`_                          `gettimeofday()`_                       `getuid()`_                             
-`getw()`_                               `ioctl()`_                              `isatty()`_                             `jrand48()`_                            
-`kill()`_                               `lcong48()`_                            `link()`_                               `lrand48()`_                            
-`lseek64()`_                            `lstat64()`_                            `mkdir()`_                              `mknod()`_                              
-`mkstemp()`_                            `mktemp()`_                             `mrand48()`_                            `nanosleep()`_                          
-`nrand48()`_                            `open()`_                               `opendir()`_                            `pclose()`_                             
-`perror()`_                             `pipe()`_                               `popen()`_                              `posix_memalign()`_                     
-`pselect()`_                            `putc()`_                               `putenv()`_                             `putw()`_                               
-`read()`_                               `readdir64()`_                          `realpath()`_                           `remove()`_                             
-`rename()`_                             `rewinddir()`_                          `rmdir()`_                              `scandir64()`_                          
-`seed48()`_                             `seekdir()`_                            `select()`_                             `setegid()`_                            
-`setenv()`_                             `seteuid()`_                            `setgid()`_                             `setgrent()`_                           
-`setlinebuf()`_                         `setpwent()`_                           `setrlimit()`_                          `setsid()`_                             
-`setuid()`_                             `sigaction()`_                          `sigaddset()`_                          `sigdelset()`_                          
-`sigemptyset()`_                        `sigfillset()`_                         `sigismember()`_                        `siglongjmp()`_                         
-`sigpending()`_                         `sigprocmask()`_                        `sigsuspend()`_                         `sleep()`_                              
-`srand48()`_                            `stat64()`_                             `statfs()`_                             `swab()`_                               
-`symlink()`_                            `sysconf()`_                            `tcgetattr()`_                          `tcgetpgrp()`_                          
-`tcsetattr()`_                          `telldir()`_                            `tempnam()`_                            `times()`_                              
-`truncate()`_                           `ttyname()`_                            `umask()`_                              `uname()`_                              
+`fclose()`_                             `fcntl()`_                              `fdopen()`_                             `feof()`_                               
+`ferror()`_                             `fflush()`_                             `fgetc()`_                              `fgetpos()`_                            
+`fgetpos64()`_                          `fgets()`_                              `fileno()`_                             `flock()`_                              
+`flockfile()`_                          `fopen()`_                              `fopen64()`_                            `fprintf()`_                            
+`fputc()`_                              `fputs()`_                              `fread()`_                              `freopen()`_                            
+`fscanf()`_                             `fseek()`_                              `fseeko()`_                             `fseeko64()`_                           
+`fsetpos()`_                            `fsetpos64()`_                          `fstat()`_                              `fstat64()`_                            
+`fsync()`_                              `ftell()`_                              `ftello()`_                             `ftello64()`_                           
+`ftime()`_                              `ftruncate()`_                          `funlockfile()`_                        `fwrite()`_                             
+`gcvt()`_                               `getc()`_                               `getc_unlocked()`_                      `getchar()`_                            
+`getcwd()`_                             `getegid()`_                            `getenv()`_                             `geteuid()`_                            
+`getfsstat()`_                          `getgid()`_                             `getgrent()`_                           `getgrgid()`_                           
+`getgrnam()`_                           `getgroups()`_                          `getloadavg()`_                         `getlogin()`_                           
+`getopt()`_                             `getopt_long()`_                        `getopt_long_only()`_                   `getpass()`_                            
+`getpgid()`_                            `getpgrp()`_                            `getpid()`_                             `getppid()`_                            
+`getpwent()`_                           `getpwnam()`_                           `getpwuid()`_                           `getrlimit()`_                          
+`gets()`_                               `gettimeofday()`_                       `getuid()`_                             `getw()`_                               
+`ioctl()`_                              `isatty()`_                             `jrand48()`_                            `kill()`_                               
+`lcong48()`_                            `link()`_                               `lrand48()`_                            `lseek()`_                              
+`lseek64()`_                            `lstat()`_                              `lstat64()`_                            `mkdir()`_                              
+`mknod()`_                              `mkstemp()`_                            `mktemp()`_                             `mrand48()`_                            
+`nanosleep()`_                          `nrand48()`_                            `open()`_                               `opendir()`_                            
+`pclose()`_                             `perror()`_                             `pipe()`_                               `popen()`_                              
+`posix_memalign()`_                     `printf()`_                             `pselect()`_                            `putc()`_                               
+`putchar()`_                            `putenv()`_                             `puts()`_                               `putw()`_                               
+`read()`_                               `readdir()`_                            `readdir64()`_                          `realpath()`_                           
+`remove()`_                             `rename()`_                             `rewind()`_                             `rewinddir()`_                          
+`rmdir()`_                              `scandir()`_                            `scandir64()`_                          `scanf()`_                              
+`seed48()`_                             `seekdir()`_                            `select()`_                             `setbuf()`_                             
+`setegid()`_                            `setenv()`_                             `seteuid()`_                            `setgid()`_                             
+`setgrent()`_                           `setlinebuf()`_                         `setpwent()`_                           `setrlimit()`_                          
+`setsid()`_                             `setuid()`_                             `setvbuf()`_                            `sigaction()`_                          
+`sigaddset()`_                          `sigdelset()`_                          `sigemptyset()`_                        `sigfillset()`_                         
+`sigismember()`_                        `siglongjmp()`_                         `sigpending()`_                         `sigprocmask()`_                        
+`sigsuspend()`_                         `sleep()`_                              `srand48()`_                            `stat()`_                               
+`stat64()`_                             `statfs()`_                             `strerror()`_                           `swab()`_                               
+`symlink()`_                            `sysconf()`_                            `system()`_                             `tcgetattr()`_                          
+`tcgetpgrp()`_                          `tcsetattr()`_                          `telldir()`_                            `tempnam()`_                            
+`times()`_                              `tmpfile()`_                            `tmpnam()`_                             `truncate()`_                           
+`ttyname()`_                            `umask()`_                              `uname()`_                              `ungetc()`_                             
 `unlink()`_                             `unsetenv()`_                           `updatestdio()`_                        `usleep()`_                             
-`utime()`_                              `utimes()`_                             `vfork()`_                              `wait()`_                               
+`utime()`_                              `utimes()`_                             `vfork()`_                              `vfprintf()`_                           
+`vfscanf()`_                            `vprintf()`_                            `vscanf()`_                             `wait()`_                               
 `waitpid()`_                            `write()`_                              
 ======================================= ======================================= ======================================= ======================================= 
 
@@ -112,6 +112,60 @@ See also
 ~~~~~~~~
 
 stdc/--background_C99-- 
+
+----------
+
+__assert()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  void __assert(
+     const char * expr,
+     const char * file,
+     unsigned int line)
+
+
+Function
+~~~~~~~~
+::
+
+     This is a function that is used for implementation of the C99 assert()
+     function.
+
+
+Inputs
+~~~~~~
+::
+
+     expr - The expression to evaluate. The type of the expression does
+             not matter, only if its zero/NULL or not.
+     file - Name of the source file.
+     line - Line number of assert() call.
+
+
+Result
+~~~~~~
+::
+
+     The function doesn't return.
+
+
+Notes
+~~~~~
+::
+
+     Different versions of this function are available. This function
+     is used when a program is using posixc.library.
+
+
+
+See also
+~~~~~~~~
+
+`stdc.library/assert() <./stdc#assert>`_ `stdc.library/__assert() <./stdc#__assert>`_ `stdc.library/__assert() <./stdc#__assert>`_ 
 
 ----------
 
@@ -258,2355 +312,6 @@ Notes
 
 ----------
 
-__posixc_alphasort()
-====================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_alphasort(
-     const struct dirent **a,
-     const struct dirent **b
-     )
-
-
-Function
-~~~~~~~~
-::
-
-     Support function for scandir().
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_scandir()`_ 
-
-----------
-
-__posixc_assert()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  void __posixc_assert(
-     const char * expr,
-     const char * file,
-     unsigned int line)
-
-
-Function
-~~~~~~~~
-::
-
-     This is a function that is used for implementation of the C99 assert()
-     function.
-
-
-Inputs
-~~~~~~
-::
-
-     expr - The expression to evaluate. The type of the expression does
-             not matter, only if its zero/NULL or not.
-     file - Name of the source file.
-     line - Line number of assert() call.
-
-
-Result
-~~~~~~
-::
-
-     The function doesn't return.
-
-
-Notes
-~~~~~
-::
-
-     Different versions of this function are available. This function
-     is used when a program is using posixc.library.
-
-
-
-See also
-~~~~~~~~
-
-`stdc.library/assert() <./stdc#assert>`_ `stdc.library/__stdc_assert() <./stdc#__stdc_assert>`_ `stdc.library/__stdcio_assert() <./stdc#__stdcio_assert>`_ 
-
-----------
-
-__posixc_creat()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_creat(
-     const char * pathname,
-     int          mode)
-
-
-Function
-~~~~~~~~
-::
-
-     Creates a file with the specified mode and name.
-
-
-Inputs
-~~~~~~
-::
-
-     pathname - Path and filename of the file you want to open.
-     mode - The access flags.
-
-
-Result
-~~~~~~
-::
-
-     -1 for error or a file descriptor for use with write().
-
-
-Notes
-~~~~~
-::
-
-     If the filesystem doesn't allow to specify different access modes
-     for users, groups and others, then the user modes are used.
-
-     This is the same as open (pathname, O_CREAT|O_WRONLY|O_TRUNC, mode);
-
-     This function must not be used in a shared library or
-     in a threaded application.
-
-
-
-See also
-~~~~~~~~
-
-`open()`_ `close()`_ `write()`_ `__posixc_fopen()`_ 
-
-----------
-
-__posixc_fclose()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fclose(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Closes a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Stream to close.
-
-
-Result
-~~~~~~
-::
-
-     Upon successful completion 0 is returned. Otherwise, EOF is
-     returned and the global variable errno is set to indicate the
-     error. In either case no further access to the stream is possible.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `open()`_ `close()`_ 
-
-----------
-
-__posixc_feof()
-===============
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_feof(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Test the EOF-Flag of a stream. This flag is set automatically by
-     any function which recognizes EOF. To clear it, call clearerr().
-
-
-Inputs
-~~~~~~
-::
-
-     stream - The stream to be tested.
-
-
-Result
-~~~~~~
-::
-
-     != 0, if the stream is at the end of the file, 0 otherwise.
-
-
-Notes
-~~~~~
-::
-
-     This function must not be used in a shared library or
-     in a threaded application.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_ferror()`_ `clearerr()`_ 
-
-----------
-
-__posixc_ferror()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_ferror(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Test the error flag of a stream. This flag is set automatically by
-     any function that detects an error. To clear it, call clearerr().
-
-
-Inputs
-~~~~~~
-::
-
-     stream - The stream to be tested.
-
-
-Result
-~~~~~~
-::
-
-     != 0, if the stream had an error, 0 otherwise.
-
-
-
-See also
-~~~~~~~~
-
-`clearerr()`_ 
-
-----------
-
-__posixc_fflush()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fflush(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Flush a stream. If the stream is an input stream, then the stream
-     is synchronized for unbuffered I/O. If the stream is an output
-     stream, then any buffered data is written.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Flush this stream. May be NULL. In this case, all
-             output streams are flushed.
-
-
-Result
-~~~~~~
-::
-
-     0 on success or EOF on error.
-
-
-
-----------
-
-__posixc_fgetpos()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fgetpos(
-     FILE   * stream,
-     fpos_t * pos)
-
-
-Function
-~~~~~~~~
-::
-
-     Get the current position in a stream. This function is equivalent
-     to ftell(). However, on some systems fpos_t may be a complex
-     structure, so this routine may be the only way to portably
-     get the position of a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - The stream to get the position from.
-     pos - Pointer to the fpos_t position structure to fill.
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fsetpos()`_ 
-
-----------
-
-__posixc_fgets()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  char * __posixc_fgets(
- char * buffer,
- int    size,
- FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Read one line of characters from the stream into the buffer.
-     Reading will stop, when a newline ('\n') is encountered, EOF
-     or when the buffer is full. If a newline is read, then it is
-     put into the buffer. The last character in the buffer is always
-     '\0' (Therefore at most size-1 characters can be read in one go).
-
-
-Inputs
-~~~~~~
-::
-
-     buffer - Write characters into this buffer
-     size - This is the size of the buffer in characters.
-     stream - Read from this stream
-
-
-Result
-~~~~~~
-::
-
-     buffer or NULL in case of an error or EOF.
-
-
-Example
-~~~~~~~
-::
-
-     // Read a file line by line
-     char line[256];
-
-     // Read until EOF
-     while (fgets (line, sizeof (line), fh))
-     {
-         // Evaluate the line
-     }
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fputs()`_ 
-
-----------
-
-__posixc_fopen()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  FILE * __posixc_fopen(
-     const char * pathname,
-     const char * mode)
-
-
-Function
-~~~~~~~~
-::
-
-     Opens a file with the specified name in the specified mode.
-
-
-Inputs
-~~~~~~
-::
-
-     pathname - Path and filename of the file you want to open.
-     mode - How to open the file:
-
-             r: Open for reading. The stream is positioned at the
-                     beginning of the file.
-
-             r+: Open for reading and writing. The stream is positioned
-                     at the beginning of the file.
-
-             w: Open for writing. If the file doesn't exist, then
-                     it is created. If it does already exist, then
-                     it is truncated. The stream is positioned at the
-                     beginning of the file.
-
-             w+: Open for reading and writing. If the file doesn't
-                     exist, then it is created. If it does already
-                     exist, then it is truncated. The stream is
-                     positioned at the beginning of the file.
-
-             a: Open for writing. If the file doesn't exist, then
-                     it is created. The stream is positioned at the
-                     end of the file.
-
-             a+: Open for reading and writing. If the file doesn't
-                     exist, then it is created. The stream is positioned
-                     at the end of the file.
-
-             b: Open in binary more. This has no effect and is ignored.
-
-
-Result
-~~~~~~
-::
-
-     A pointer to a FILE handle or NULL in case of an error. When NULL
-     is returned, then errno is set to indicate the error.
-
-
-Notes
-~~~~~
-::
-
-     On 32bit systems, fopen and related operations only work with
-     32bit filesystems/files. Anything larger than 2 GB needs to use
-     the correct 64bit structures and functions.
-    
-     This function must not be used in a shared library or
-     in a threaded application.
-
-
-Bugs
-~~~~
-::
-
-     Most modes are not supported right now.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fclose()`_ `__posixc_fread()`_ `__posixc_fwrite()`_ `open()`_ `__posixc_fgets()`_ `fgetc()`_ `__posixc_fputs()`_ `__posixc_fputc()`_ `getc()`_ `putc()`_ 
-
-----------
-
-__posixc_fprintf()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fprintf(
-     FILE       * fh,
-     const char * format,
-     ...)
-
-
-Function
-~~~~~~~~
-::
-
-     Format a string with the specified arguments and write it to
-     the stream.
-
-
-Inputs
-~~~~~~
-::
-
-     fh - Write to this stream
-     format - How to format the arguments
-     ... - The additional arguments
-
-
-Result
-~~~~~~
-::
-
-     The number of characters written to the stream or EOF on error.
-
-
-
-----------
-
-__posixc_fputc()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fputc(
-     int    c,
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Write one character to the specified stream.
-
-
-Inputs
-~~~~~~
-::
-
-     c - The character to output
-     stream - The character is written to this stream
-
-
-Result
-~~~~~~
-::
-
-     The character written or EOF on error.
-
-
-
-----------
-
-__posixc_fputs()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fputs(
-     const char * str,
-     FILE       * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Write a string to the specified stream.
-
-
-Inputs
-~~~~~~
-::
-
-     str - Output this string...
-     fh - ...to this stream
-
-
-Result
-~~~~~~
-::
-
-     > 0 on success and EOF on error.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_puts()`_ `__posixc_fputc()`_ `putc()`_ 
-
-----------
-
-__posixc_fread()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  size_t __posixc_fread(
-     void * buf,
-     size_t size,
-     size_t nblocks,
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Read an amount of bytes from a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     buf - The buffer to read the bytes into
-     size - Size of one block to read
-     nblocks - The number of blocks to read
-     stream - Read from this stream
-
-
-Result
-~~~~~~
-::
-
-     The number of blocks read. This may range from 0 when the stream
-     contains no more blocks up to nblocks. In case of an error, 0 is
-     returned.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fwrite()`_ 
-
-----------
-
-__posixc_freopen()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  FILE *__posixc_freopen(
-     const char *path,
-     const char *mode,
-     FILE       *stream
-     )
-
-
-Function
-~~~~~~~~
-::
-
-     Opens the  file whose name is the string pointed to by path  and
-     associates  the  stream  pointed to by stream with it.
-
-
-Inputs
-~~~~~~
-::
-
-     path   - the file to open
-     mode   - The mode of the stream  (same as with fopen()) must be com­patible
-              with the mode of the file  descriptor.   The  file
-              position  indicator  of  the  new  stream  is  set to that
-              belonging to fildes, and the error and end-of-file indicators
-              are cleared.  Modes "w" or "w+" do not cause truncation of the
-              file.  The file descriptor is not duplicated,  and
-              will  be  closed  when  the  stream  created  by fdopen is
-              closed.
-     stream - the stream to which the file will be associated.
-
-
-Result
-~~~~~~
-::
-
-     NULL on error or stream.
-
-
-
-See also
-~~~~~~~~
-
-`open()`_ `__posixc_fclose()`_ `fileno()`_ 
-
-----------
-
-__posixc_fscanf()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fscanf(
-     FILE       * fh,
-     const char * format,
-     ...)
-
-
-Function
-~~~~~~~~
-::
-
-     Scan a string with the specified arguments and write the results
-     in the specified parameters.
-
-
-Inputs
-~~~~~~
-::
-
-     fh - Read from this stream
-     format - How to convert the input into the arguments
-     ... - Write the result in these arguments
-
-
-Result
-~~~~~~
-::
-
-     The number of converted arguments.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_scanf()`_ 
-
-----------
-
-__posixc_fseek()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fseek(
-     FILE * stream,
-     long   offset,
-     int    whence)
-
-
-Function
-~~~~~~~~
-::
-
-     Change the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Modify this stream
-     offset, whence - How to modify the current position. whence
-             can be SEEK_SET, then offset is the absolute position
-             in the file (0 is the first byte), SEEK_CUR then the
-             position will change by offset (ie. -5 means to move
-             5 bytes to the beginning of the file) or SEEK_END.
-             SEEK_END means that the offset is relative to the
-             end of the file (-1 is the last byte and 0 is
-             the EOF).
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-Bugs
-~~~~
-::
-
- Not fully compatible with ISO fseek, especially in 'ab' and 'a+b'
- modes
-
- Since it's not possible to use Seek() for directories, this
- implementation fails with EISDIR for directory file descriptors.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fwrite()`_ 
-
-----------
-
-__posixc_fseeko()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fseeko(
-     FILE * stream,
-     off_t  offset,
-     int    whence)
-
-
-Function
-~~~~~~~~
-::
-
-     Change the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Modify this stream
-     offset, whence - How to modify the current position. whence
-             can be SEEK_SET, then offset is the absolute position
-             in the file (0 is the first byte), SEEK_CUR then the
-             position will change by offset (ie. -5 means to move
-             5 bytes to the beginning of the file) or SEEK_END.
-             SEEK_END means that the offset is relative to the
-             end of the file (-1 is the last byte and 0 is
-             the EOF).
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-Notes
-~~~~~
-::
-
-     on 32bit platforms, off_t is a 32bit value, and so the 64bit
-     version (fseeko64) is needed to work with large files.
-     off_t is 64bit natively on 64bit platforms.
-
-
-Bugs
-~~~~
-::
-
-     Not fully compatible with ISO fseeko, especially in 'ab' and 'a+b'
-     modes
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fseek()`_ 
-
-----------
-
-__posixc_fsetpos()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fsetpos(
-     FILE            * stream,
-     const fpos_t    * pos)
-
-
-Function
-~~~~~~~~
-::
-
-     Change the current position in a stream. This function is equivalent
-     to fseek() with whence set to SEEK_SET. However, on some systems
-     fpos_t may be a complex structure, so this routine may be the only
-     way to portably reposition a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Modify this stream
-     pos - The new position in the stream.
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fgetpos()`_ 
-
-----------
-
-__posixc_fstat()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_fstat(
-     int fd,
-     struct stat *sb)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns information about a file specified by an open file descriptor.
-     Information is stored in stat structure. Consult stat() documentation
-     for detailed description of that structure.
-
-
-Inputs
-~~~~~~
-::
-
-     filedes - File descriptor of the file
-     sb - Pointer to stat structure that will be filled by the fstat()
-     call.
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_stat()`_ 
-
-----------
-
-__posixc_ftell()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  long __posixc_ftell(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Tell the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Obtain position of this stream
-
-
-Result
-~~~~~~
-::
-
-     The position on success and -1 on error.
-     If an error occurred, the global variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fseek()`_ `__posixc_fwrite()`_ 
-
-----------
-
-__posixc_ftello()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  off_t __posixc_ftello(
-     FILE *stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns the current position in a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Query this stream
-
-
-Notes
-~~~~~
-::
-
-     on 32bit platforms, off_t is a 32bit value, and so the 64bit
-     version (ftello64) is needed to work with large files.
-     off_t is 64bit natively on 64bit platforms.
-
-
-
-
-----------
-
-__posixc_fwrite()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  size_t __posixc_fwrite(
-     const void * restrict   buf,
-     size_t                  size,
-     size_t                  nblocks,
-     FILE * restrict         stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Write an amount of bytes to a stream.
-
-
-Inputs
-~~~~~~
-::
-
-     buf - The buffer to write to the stream
-     size - Size of one block to write
-     nblocks - The number of blocks to write
-     stream - Write to this stream
-
-
-Result
-~~~~~~
-::
-
-     The number of blocks written. If no error occurred, this is
-     nblocks. Otherwise examine errno for the reason of the error.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ 
-
-----------
-
-__posixc_getchar()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_getchar(
-
-Function
-~~~~~~~~
-::
-
-     Read one character from the standard input stream. If there
-     is no character available or an error occurred, the function
-     returns EOF.
-
-
-Result
-~~~~~~
-::
-
-     The character read or EOF on end of file or error.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fgetc()`_ `getc()`_ `__posixc_fputc()`_ `putc()`_ 
-
-----------
-
-__posixc_getenv()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  char *__posixc_getenv(
-     const char *name)
-
-
-Function
-~~~~~~~~
-::
-
-     Get an environment variable.
-
-
-Inputs
-~~~~~~
-::
-
-     name - Name of the environment variable.
-
-
-Result
-~~~~~~
-::
-
-     Pointer to the variable's value, or NULL on failure.
-
-
-Notes
-~~~~~
-::
-
-     The returned contents of the environment variable is cached per
-     PosixCBase and per variable name. So the returned value is valid
-     and does not change until a next call to getenv with the same
-     PosixCBase and the same name.
-
-
-
-----------
-
-__posixc_gets()
-===============
-
-Synopsis
-~~~~~~~~
-::
-
-  char * __posixc_gets(
-     char * buffer)
-
-
-Function
-~~~~~~~~
-::
-
-     Read one line of characters from the standard input stream into
-     the buffer. Reading will stop, when a newline ('\n') is encountered,
-     EOF or when the buffer is full. If a newline is read, then it is
-     replaced by '\0'. The last character in the buffer is always '\0'.
-
-
-Inputs
-~~~~~~
-::
-
-     buffer - Write characters into this buffer
-
-
-Result
-~~~~~~
-::
-
-     buffer or NULL in case of an error or EOF.
-
-
-Bugs
-~~~~
-::
-
-     Never use this function. gets() does not know how large the buffer
-     is and will continue to store characters past the end of the buffer
-     if it has not encountered a newline or EOF yet. Use fgets() instead.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fgets()`_ 
-
-----------
-
-__posixc_lseek()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  off_t __posixc_lseek(
-     int    filedes,
-     off_t  offset,
-     int    whence)
-
-
-Function
-~~~~~~~~
-::
-
-     Reposition read/write file offset
-
-
-Inputs
-~~~~~~
-::
-
-     filedef - the filedescriptor being modified
-     offset, whence -
-               How to modify the current position. whence
-               can be SEEK_SET, then offset is the absolute position
-               in the file (0 is the first byte), SEEK_CUR then the
-               position will change by offset (ie. -5 means to move
-               5 bytes to the beginning of the file) or SEEK_END.
-               SEEK_END means that the offset is relative to the
-               end of the file (-1 is the last byte and 0 is
-               the EOF).
-
-
-Result
-~~~~~~
-::
-
-     The new position on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-Bugs
-~~~~
-::
-
-     File is extended with zeros if desired position is beyond the end of
-     file.
-
-     Since it's not possible to use Seek() for directories, this
-     implementation fails with EISDIR for directory file descriptors.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fwrite()`_ 
-
-----------
-
-__posixc_lstat()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_lstat(
-     const char  *path,
-     struct stat *sb)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns information about a file like stat does except that lstat
-     does not follow symbolic links. Information is stored in stat
-     structure. Consult stat() documentation for detailed description
-     of that structure.
-
-
-Inputs
-~~~~~~
-::
-
-     path - Pathname of the file
-     sb - Pointer to stat structure that will be filled by the lstat() call.
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_stat()`_ `__posixc_fstat()`_ 
-
-----------
-
-__posixc_printf()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_printf(
-     const char * format,
-     ...)
-
-
-Function
-~~~~~~~~
-::
-
-     Formats a list of arguments and prints them to standard out.
-
-     The format string is composed of zero or more directives: ordinary
-     characters (not %), which are copied unchanged to the output
-     stream; and conversion specifications, each of which results in
-     fetching zero or more subsequent arguments Each conversion
-     specification is introduced by the character %. The arguments must
-     correspond properly (after type promotion) with the conversion
-     specifier. After the %, the following appear in sequence:
-
-     Zero or more of the following flags:
-
-     # - specifying that the value should be converted to an
-         ``alternate form''. For a,A,c, d, i, n, p, s, and u conversions, this
-         option has no effect. For o conversions, the precision of the
-         number is increased to force the first character of the output
-         string to a zero (except if a zero value is printed with an
-         explicit precision of zero). For x and X conversions, a non-zero
-         result has the string `0x' (or `0X' for X conversions) prepended to
-         it. For e, E, f, F,g, and G conversions, the result will always
-         contain a decimal point, even if no digits follow it (normally, a
-         decimal point appears in the results of those conversions only if a
-         digit follows). For g and G conversions, trailing zeros are not
-         removed from the result as they would otherwise be.
-
-     0 - specifying zero padding. For all conversions except n, the
-         converted value is padded on the left with zeros rather than
-         blanks. For f,F conversion, or if a precision is given with a numeric
-         conversion (d, i, o,u, i, x, and X), the 0 flag is ignored.
-
-     - - (a negative field width flag) indicates the converted
-         value is to be left adjusted on the field boundary. Except for n
-         conversions, the converted value is padded on the right with
-         blanks, rather than on the left with blanks or zeros. A -
-         overrides a 0 if both are given.
-
-       - (a space) specifying that a blank should be left before a
-         positive number produced by a signed conversion (d, e, E, f, g, G,
-         or i). + specifying that a sign always be placed before a number
-         produced by a signed conversion. A + overrides a space if both are
-         used.
-
-     ' - specifying that in a numerical argument the output is to
-         be grouped if the locale information indicates any. Note that many
-         versions of gcc cannot parse this option and will issue a warning.
-
-     An optional decimal digit string specifying a minimum field
-     width. If the converted value has fewer characters than the field
-     width, it will be padded with spaces on the left (or right, if the
-     left-adjustment flag has been given) to fill out the field width.
-
-     An optional precision, in the form of a period (`.') followed
-     by an optional digit string. If the digit string is omitted, the
-     precision is taken as zero. This gives the minimum number of digits
-     to appear for d, i, o, u, x, and X conversions, the number of
-     digits to appear after the decimal-point for e, E, and f
-     conversions, the maximum number of significant digits for g and G
-     conversions, or the maximum number of characters to be printed from
-     a string for s conversions.
-
-     The optional character h, specifying that a following d, i,
-     o, u, x, or X conversion corresponds to a short int or unsigned
-     short int argument, or that a following n conversion corresponds to
-     a pointer to a short int argument.
-
-     The optional character l (ell) specifying that a following d,
-     i, o, u, x, or X conversion applies to a pointer to a long int or
-     unsigned long int argument, or that a following n conversion
-     corresponds to a pointer to a long int argument. Linux provides a
-     non ANSI compliant use of two l flags as a synonym to q or L. Thus
-     ll can be used in combination with float conversions. This usage
-     is, however, strongly discouraged.
-
-     The character L specifying that a following e, E,
-     f, g, or G conversion corresponds to a long double
-     argument, or a following d, i, o, u, x, or X conversion corresponds to a long long argument. Note
-     that long long is not specified in ANSI C and
-     therefore not portable to all architectures.
-
-     The optional character q. This is equivalent to L. See the
-     STANDARDS and BUGS sections for comments on the use of ll, L, and
-     q.
-
-     A Z character specifying that the following integer (d, i, o,
-     u, i, x, and X), conversion corresponds to a size_t argument.
-
-     A character that specifies the type of conversion to be
-     applied.
-
-     A field width or precision, or both, may be indicated by an
-     asterisk `*' instead of a digit string. In this case, an int
-     argument supplies the field width or precision. A negative field
-     width is treated as a left adjustment flag followed by a positive
-     field width; a negative precision is treated as though it were
-     missing.
-
-     The conversion specifiers and their meanings are:
-
-     diouxX - The int (or appropriate variant) argument is
-              converted to signed decimal (d and i), unsigned octal (o, unsigned
-              decimal (u, or unsigned hexadecimal (x and X) notation. The letters
-              abcdef are used for x conversions; the letters ABCDEF are used for
-              X conversions. The precision, if any, gives the minimum number of
-              digits that must appear; if the converted value requires fewer
-              digits, it is padded on the left with zeros.
-
-     aA - (TODO) The double argument is rounded and converted to the C99
-           floating-point number in hexadecimal notation - preserving all
-           bits of precision, and presenting them in a robust way.
-
-     eE - The double argument is rounded and converted in the style
-          [<->]d.dddedd where there is one digit before the decimal-point
-          character and the number of digits after it is equal to the
-          precision; if the precision is missing, it is taken as 6; if the
-          precision is zero, no decimal-point character appears. An E
-          conversion uses the letter E (rather than e) to introduce the
-          exponent. The exponent always contains at least two digits; if the
-          value is zero, the exponent is 00.
-
-     fF - The double argument is rounded and converted to decimal
-         notation in the style [-]ddd.ddd, where the number of digits after
-         the decimal-point character is equal to the precision
-         specification. If the precision is missing, it is taken as 6; if
-         the precision is explicitly zero, no decimal-point character
-         appears. If a decimal point appears, at least one digit appears
-         before it.
-
-     g - The double argument is converted in style f or e (or E for
-         G conversions). The precision specifies the number of significant
-         digits. If the precision is missing, 6 digits are given; if the
-         precision is zero, it is treated as 1. Style e is used if the
-         exponent from its conversion is less than -4 or greater than or
-         equal to the precision. Trailing zeros are removed from the
-         fractional part of the result; a decimal point appears only if it
-         is followed by at least one digit.
-
-     c - The int argument is converted to an unsigned char, and the
-         resulting character is written.
-
-     s - The ``char *'' argument is expected to be a pointer to an
-         array of character type (pointer to a string). Characters from the
-         array are written up to (but not including) a terminating NUL
-         character; if a precision is specified, no more than the number
-         specified are written. If a precision is given, no null character
-         need be present; if the precision is not specified, or is greater
-         than the size of the array, the array must contain a terminating
-         NUL character.
-
-     p - The ``void *'' pointer argument is printed in hexadecimal
-         (as if by %#x or %#lx).
-
-     n - The number of characters written so far is stored into the
-         integer indicated by the ``int *'' (or variant) pointer argument.
-         No argument is converted.
-
-     % - A `%' is written. No argument is converted. The complete
-         conversion specification is `%%'.
-
-     In no case does a non-existent or small field width cause
-     truncation of a field; if the result of a conversion is wider than
-     the field width, the field is expanded to contain the conversion
-     result.
-
-
-Inputs
-~~~~~~
-::
-
-     format - Format string as described above
-     ... - Arguments for the format string
-
-
-Result
-~~~~~~
-::
-
-     The number of characters written to stdout or EOF on error.
-
-
-Example
-~~~~~~~
-::
-
-     To print a date and time in the form `Sunday, July 3,
-     10:02', where weekday and month are pointers to strings:
-
-         #include <stdio.h>
-
-         fprintf (stdout, "%s, %s %d, %.2d:%.2d\n",
-                 weekday, month, day, hour, min);
-
-     To print to five decimal places:
-
-         #include <math.h>
-         #include <stdio.h>
-
-         fprintf (stdout, "pi = %.5f\n", 4 * atan(1.0));
-
-     To allocate a 128 byte string and print into it:
-
-         #include <stdio.h>
-         #include <stdlib.h>
-         #include <stdarg.h>
-
-         char *newfmt(const char *fmt, ...)
-         {
-             char *p;
-             va_list ap;
-
-             if ((p = malloc(128)) == NULL)
-                 return (NULL);
-
-             va_start(ap, fmt);
-
-             (void) vsnprintf(p, 128, fmt, ap);
-
-             va_end(ap);
-
-             return (p);
-         }
-
-
-Bugs
-~~~~
-::
-
-     All functions are fully ANSI C3.159-1989 conformant, but provide
-     the additional flags q, Z and ' as well as an additional behaviour
-     of the L and l flags. The latter may be considered to be a bug, as
-     it changes the behaviour of flags defined in ANSI C3.159-1989.
-
-     The effect of padding the %p format with zeros (either by the 0
-     flag or by specifying a precision), and the benign effect (i.e.,
-     none) of the # flag on %n and %p conversions, as well as
-     nonsensical combinations such as are not standard; such
-     combinations should be avoided.
-
-     Some combinations of flags defined by ANSI C are not making sense
-     in ANSI C (e.g. %Ld). While they may have a well-defined behaviour
-     on Linux, this need not to be so on other architectures. Therefore
-     it usually is better to use flags that are not defined by ANSI C at
-     all, i.e. use q instead of L in combination with diouxX conversions
-     or ll. The usage of q is not the same as on BSD 4.4, as it may be
-     used in float conversions equivalently to L.
-
-     Because sprintf and vsprintf assume an infinitely long string,
-     callers must be careful not to overflow the actual space; this is
-     often impossible to assure.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fprintf()`_ `__posixc_vprintf()`_ `__posixc_vfprintf()`_ `stdc.library/sprintf() <./stdc#sprintf>`_ `stdc.library/vsprintf() <./stdc#vsprintf>`_ `stdc.library/vsnprintf() <./stdc#vsnprintf>`_ 
-
-----------
-
-__posixc_putchar()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_putchar(
-     int c)
-
-
-
-----------
-
-__posixc_puts()
-===============
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_puts(
-     const char * str)
-
-
-Function
-~~~~~~~~
-::
-
-     Print a string to stdout. A newline ('\n') is emitted after the
-     string.
-
-
-Inputs
-~~~~~~
-::
-
-     str - Print this string
-
-
-Result
-~~~~~~
-::
-
-     > 0 on success and EOF on error. On error, the reason is put in
-     errno.
-
-
-Example
-~~~~~~~
-::
-
-     #include <errno.h>
-
-     if (puts ("Hello World.") != EOF)
-         fprintf (stderr, "Success");
-     else
-         fprintf (stderr, "Failure: errno=%d", errno);
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fputs()`_ `__posixc_printf()`_ `__posixc_fprintf()`_ `putc()`_ `__posixc_fputc()`_ 
-
-----------
-
-__posixc_readdir()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  struct dirent *__posixc_readdir(
-     DIR *dir)
-
-
-Function
-~~~~~~~~
-::
-
-      Reads a directory
-
-
-Inputs
-~~~~~~
-::
-
-     dir - the directory stream pointing to the directory being read
-
-
-Result
-~~~~~~
-::
-
-     The  readdir()  function  returns  a  pointer  to a dirent
-     structure, or NULL if an error occurs  or  end-of-file  is
-     reached.
-
-     The data returned by readdir() is overwritten by subsequent
-     calls to readdir() for the same directory stream.
-
-     According  to POSIX, the dirent structure contains a field
-     char d_name[] of unspecified size, with at  most  NAME_MAX
-     characters  preceding the terminating null character.  Use
-     of other fields will harm the portability of your programs.
-
-
-
-See also
-~~~~~~~~
-
-`read()`_ `opendir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
-
-----------
-
-__posixc_rewind()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  void __posixc_rewind(
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Change the current position in a stream to the beginning.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - Modify this stream
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `__posixc_fwrite()`_ `__posixc_fseek()`_ 
-
-----------
-
-__posixc_scandir()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_scandir(
-     const char *dir,
-     struct dirent ***namelist,
-     int (*select)(const struct dirent *),
-     int (*compar)(const struct dirent **, const struct dirent **)
-     )
-
-
-Function
-~~~~~~~~
-::
-
-     Scan directory
-
-
-Inputs
-~~~~~~
-::
-
-     dir      - Directory to be scanned
-     namelist - Array with the found entries.
-     select   - Filter function which must return non-zero if entry shall be
-                added. If NULL all entries will be added.
-     compar   - Function which will be used by qsort() for sorting of the
-                entries. The function alphasort() can be used for sorting
-                in alphabetical order. If NULL sorting order isn't specified.
-
-
-Result
-~~~~~~
-::
-
-     Number of entries
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_alphasort()`_ 
-
-----------
-
-__posixc_scanf()
-================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_scanf(
-     const char * format,
-     ...)
-
-
-Result
-~~~~~~
-::
-
-     The number of converted parameters
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fscanf()`_ `__posixc_vscanf()`_ `__posixc_vfscanf()`_ `stdc.library/sscanf() <./stdc#sscanf>`_ `stdc.library/vsscanf() <./stdc#vsscanf>`_ 
-
-----------
-
-__posixc_setbuf()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  void __posixc_setbuf(
-     FILE *stream,
-     char *buf)
-
-
-Notes
-~~~~~
-::
-
-     This is a simpler alias for setvbuf() according to manpage.
-
-
-
-----------
-
-__posixc_setvbuf()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_setvbuf(
-     FILE *stream,
-     char *buf,
-     int mode,
-     size_t size)
-
-
-
-----------
-
-__posixc_stat()
-===============
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_stat(
-     const char *path,
-     struct stat *sb)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns information about a file. Information is stored in stat
-     structure having the following fields:
-     
-     dev_t           st_dev;     - ID of device containing the file
-     ino_t           st_ino;     - inode number
-     mode_t          st_mode;    - protection mode
-     nlink_t         st_nlink;   - number of hard links
-     uid_t           st_uid;     - user ID of the file's owner
-     gid_t           st_gid;     - group ID of the file's group
-     dev_t           st_rdev;    - device ID (if the file is character
-                                   or block special file)
-     off_t           st_size;    - file size, in bytes
-     time_t          st_atime;   - time of last access
-     time_t          st_mtime;   - time of last data modification
-     time_t          st_ctime;   - time of last file status change
-     blksize_t       st_blksize; - optimal blocksize for I/O
-     blkcnt_t        st_blocks;  - number of blocks allocated for file
-
-
-Inputs
-~~~~~~
-::
-
-     path - Pathname of the file
-     sb - Pointer to stat structure that will be filled by the stat() call.
-
-
-Result
-~~~~~~
-::
-
-     0 on success and -1 on error. If an error occurred, the global
-     variable errno is set.
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_lstat()`_ `__posixc_fstat()`_ 
-
-----------
-
-__posixc_strerror()
-===================
-
-Synopsis
-~~~~~~~~
-::
-
-  char * __posixc_strerror(
-     int n)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns a readable string for an error number in errno.
-
-
-Inputs
-~~~~~~
-::
-
-     n - The contents of errno or a #define from errno.h
-
-
-Result
-~~~~~~
-::
-
-     A string describing the error.
-
-
-Notes
-~~~~~
-::
-
-     This function is used to override the strerror() function of
-     stdc.library to handle the extra errnos from posixc.library.
-     It is aliased as strerror() in libposixc.a
-
-
-
-See also
-~~~~~~~~
-
-`stdc.library/__stdc_strerror() <./stdc#__stdc_strerror>`_ `stdc.library/strerror() <./stdc#strerror>`_ 
-
-----------
-
-__posixc_system()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_system(
-     const char *string)
-
-
-Function
-~~~~~~~~
-::
-
-     Execute a command string. If string is NULL then 1 will be returned.
-
-
-Inputs
-~~~~~~
-::
-
-     string - command to execute or NULL
-
-
-Result
-~~~~~~
-::
-
-     Return value of command executed. If value < 0 errno indicates error.
-     1 is return if string is NULL.
-
-
-Notes
-~~~~~
-::
-
-     The system() version of posixc.library will translate UNIX<>Amiga
-     if applicable as well as use a shell for executing text batch
-     commands.
-
-
-
-----------
-
-__posixc_tmpfile()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  FILE * __posixc_tmpfile(
-     void)
-
-
-Function
-~~~~~~~~
-::
-
-     The tmpfile() function returns a pointer to a stream
-     associated with a file descriptor returned by the routine
-     mkstemp(3).  The created file is unlinked before tmpfile()
-     returns, causing the file to be automatically deleted when the
-     last reference to it is closed.  The file is opened with the
-     access value `w+'.  The file is created in the T: directory,
-     which is the standard AROS temp directory.
-
-
-
-Result
-~~~~~~
-::
-
-     The tmpfile() function returns a pointer to an open file stream on 
-     success. On error, a NULL pointer is returned and errno is set 
-     appropriately.
-
- ERRORS 
-     The tmpfile() function may fail and set the global variable
-     errno for any of the errors specified for the library functions
-     fdopen() or mkstemp().
-
-
-Example
-~~~~~~~
-::
-
-     #include <errno.h>
-     #include <stdio.h>
-     #include <string.h>
-
-     main()
-     {
-       FILE * fp;
-
-       fp = tmpfile();
-       if ( fp == NULL)
-       {
-         perror(strerror(errno));
-         return;
-       }
-
-       fprintf(fp, "do a bit of writing to the temp file");
-     }
-
-
-Bugs
-~~~~
-::
-
-     BUG1: The temporary file is neither closed nor deleted. Ideally,
-     unlink() could be used to mark the temp file for removal (see
-     BUG1 in the source code) - but I suspect a bug in unlink() itself,
-     whereby it tries to remove the file straight away, rather than
-     waiting for all references to it to be closed. The bug is not too
-     serious, because all temp files are written to the T: directory,
-     which get zapped when AROS is closed down. However, problems may
-     exist when you start creating over 26 temp files with the same PID.
-
-
-
-
-See also
-~~~~~~~~
-
-`__posixc_fopen()`_ `mkstemp()`_ 
-
-----------
-
-__posixc_tmpnam()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  char *__posixc_tmpnam(
-     char *s)
-
-
-
-----------
-
-__posixc_ungetc()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_ungetc(
-     int    c,
-     FILE * stream)
-
-
-Function
-~~~~~~~~
-::
-
-     Push the character c character back into the stream.
-
-
-Inputs
-~~~~~~
-::
-
-     c - Put this character back into the stream. The next read will
-             return this character. If you push back more than one
-             character, then they will be returned in reverse order.
-             The function guarantees that one character can be
-             pushed back but no more. It is possible to push the EOF
-             character back into the stream.
-     stream - Read from this stream
-
-
-Result
-~~~~~~
-::
-
-     c or EOF on error.
-
-
-
-See also
-~~~~~~~~
-
-`fgetc()`_ `getc()`_ `__posixc_fputc()`_ `putc()`_ 
-
-----------
-
-__posixc_vfprintf()
-===================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_vfprintf(
-     FILE       * stream,
-     const char * format,
-     va_list      args)
-
-
-Function
-~~~~~~~~
-::
-
-     Format a list of arguments and print them on the specified stream.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - A stream on which one can write
-     format - A printf() format string.
-     args - A list of arguments for the format string.
-
-
-Result
-~~~~~~
-::
-
-     The number of characters written.
-
-
-
-----------
-
-__posixc_vfscanf()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_vfscanf(
-     FILE       * stream,
-     const char * format,
-     va_list      args)
-
-
-Function
-~~~~~~~~
-::
-
-     Read the scream, scan it as the format specified and write the
-     result of the conversion into the specified arguments.
-
-
-Inputs
-~~~~~~
-::
-
-     stream - A stream to read from
-     format - A scanf() format string.
-     args - A list of arguments for the results.
-
-
-Result
-~~~~~~
-::
-
-     The number of converted arguments.
-
-
-
-----------
-
-__posixc_vprintf()
-==================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_vprintf(
-     const char * format,
-     va_list      args)
-
-
-Function
-~~~~~~~~
-::
-
-     Format a list of arguments and print them on the standard output.
-
-
-Inputs
-~~~~~~
-::
-
-     format - A printf() format string.
-     args - A list of arguments for the format string.
-
-
-Result
-~~~~~~
-::
-
-     The number of characters written.
-
-
-
-----------
-
-__posixc_vscanf()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  int __posixc_vscanf(
-     const char * format,
-     va_list      args)
-
-
-Function
-~~~~~~~~
-::
-
-     Scan the standard input and convert it into the arguments as
-     specified by format.
-
-
-Inputs
-~~~~~~
-::
-
-     format - A scanf() format string.
-     args - A list of arguments for the results
-
-
-Result
-~~~~~~
-::
-
-     The number of converted parameters.
-
-
-
-----------
-
 access()
 ========
 
@@ -2654,6 +359,34 @@ See also
 ~~~~~~~~
 
 `open()`_ `ftruncate()`_ 
+
+----------
+
+alphasort()
+===========
+
+Synopsis
+~~~~~~~~
+::
+
+  int alphasort(
+     const struct dirent **a,
+     const struct dirent **b
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     Support function for scandir().
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_scandir()`_ 
 
 ----------
 
@@ -2926,7 +659,7 @@ Result
 See also
 ~~~~~~~~
 
-`__posixc_ferror()`_ 
+`ferror()`_ 
 
 ----------
 
@@ -3028,7 +761,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `read()`_ `write()`_ `__posixc_fopen()`_ 
+`open()`_ `read()`_ `write()`_ `fopen()`_ 
 
 ----------
 
@@ -3069,7 +802,62 @@ Result
 See also
 ~~~~~~~~
 
-`close()`_ `opendir()`_ `__posixc_readdir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+`close()`_ `opendir()`_ `readdir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+
+----------
+
+creat()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int creat(
+     const char * pathname,
+     int          mode)
+
+
+Function
+~~~~~~~~
+::
+
+     Creates a file with the specified mode and name.
+
+
+Inputs
+~~~~~~
+::
+
+     pathname - Path and filename of the file you want to open.
+     mode - The access flags.
+
+
+Result
+~~~~~~
+::
+
+     -1 for error or a file descriptor for use with write().
+
+
+Notes
+~~~~~
+::
+
+     If the filesystem doesn't allow to specify different access modes
+     for users, groups and others, then the user modes are used.
+
+     This is the same as open (pathname, O_CREAT|O_WRONLY|O_TRUNC, mode);
+
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+
+See also
+~~~~~~~~
+
+`open()`_ `close()`_ `write()`_ `__posixc_fopen()`_ 
 
 ----------
 
@@ -3124,7 +912,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `close()`_ `write()`_ `__posixc_fopen()`_ 
+`open()`_ `close()`_ `write()`_ `fopen()`_ 
 
 ----------
 
@@ -3174,7 +962,7 @@ Notes
 See also
 ~~~~~~~~
 
-`open()`_ `__posixc_readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
+`open()`_ `readdir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
 
 ----------
 
@@ -3731,6 +1519,48 @@ Notes
 
 ----------
 
+fclose()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fclose(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Closes a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Stream to close.
+
+
+Result
+~~~~~~
+::
+
+     Upon successful completion 0 is returned. Otherwise, EOF is
+     returned and the global variable errno is set to indicate the
+     error. In either case no further access to the stream is possible.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `open()`_ `close()`_ 
+
+----------
+
 fcntl()
 =======
 
@@ -3870,6 +1700,134 @@ See also
 
 ----------
 
+feof()
+======
+
+Synopsis
+~~~~~~~~
+::
+
+  int feof(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Test the EOF-Flag of a stream. This flag is set automatically by
+     any function which recognizes EOF. To clear it, call clearerr().
+
+
+Inputs
+~~~~~~
+::
+
+     stream - The stream to be tested.
+
+
+Result
+~~~~~~
+::
+
+     != 0, if the stream is at the end of the file, 0 otherwise.
+
+
+Notes
+~~~~~
+::
+
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+
+See also
+~~~~~~~~
+
+`ferror()`_ `clearerr()`_ 
+
+----------
+
+ferror()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int ferror(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Test the error flag of a stream. This flag is set automatically by
+     any function that detects an error. To clear it, call clearerr().
+
+
+Inputs
+~~~~~~
+::
+
+     stream - The stream to be tested.
+
+
+Result
+~~~~~~
+::
+
+     != 0, if the stream had an error, 0 otherwise.
+
+
+
+See also
+~~~~~~~~
+
+`clearerr()`_ 
+
+----------
+
+fflush()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fflush(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Flush a stream. If the stream is an input stream, then the stream
+     is synchronized for unbuffered I/O. If the stream is an output
+     stream, then any buffered data is written.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Flush this stream. May be NULL. In this case, all
+             output streams are flushed.
+
+
+Result
+~~~~~~
+::
+
+     0 on success or EOF on error.
+
+
+
+----------
+
 fgetc()
 =======
 
@@ -3908,6 +1866,52 @@ See also
 ~~~~~~~~
 
 `getc()`_ `__posixc_fputc()`_ `putc()`_ 
+
+----------
+
+fgetpos()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fgetpos(
+     FILE   * stream,
+     fpos_t * pos)
+
+
+Function
+~~~~~~~~
+::
+
+     Get the current position in a stream. This function is equivalent
+     to ftell(). However, on some systems fpos_t may be a complex
+     structure, so this routine may be the only way to portably
+     get the position of a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - The stream to get the position from.
+     pos - Pointer to the fpos_t position structure to fill.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`fsetpos()`_ 
 
 ----------
 
@@ -3954,6 +1958,68 @@ See also
 ~~~~~~~~
 
 `__posixc_fsetpos()`_ 
+
+----------
+
+fgets()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  char * fgets(
+ char * buffer,
+ int    size,
+ FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Read one line of characters from the stream into the buffer.
+     Reading will stop, when a newline ('\n') is encountered, EOF
+     or when the buffer is full. If a newline is read, then it is
+     put into the buffer. The last character in the buffer is always
+     '\0' (Therefore at most size-1 characters can be read in one go).
+
+
+Inputs
+~~~~~~
+::
+
+     buffer - Write characters into this buffer
+     size - This is the size of the buffer in characters.
+     stream - Read from this stream
+
+
+Result
+~~~~~~
+::
+
+     buffer or NULL in case of an error or EOF.
+
+
+Example
+~~~~~~~
+::
+
+     // Read a file line by line
+     char line[256];
+
+     // Read until EOF
+     while (fgets (line, sizeof (line), fh))
+     {
+         // Evaluate the line
+     }
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fputs()`_ 
 
 ----------
 
@@ -4091,6 +2157,94 @@ Function
 
 ----------
 
+fopen()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  FILE * fopen(
+     const char * pathname,
+     const char * mode)
+
+
+Function
+~~~~~~~~
+::
+
+     Opens a file with the specified name in the specified mode.
+
+
+Inputs
+~~~~~~
+::
+
+     pathname - Path and filename of the file you want to open.
+     mode - How to open the file:
+
+             r: Open for reading. The stream is positioned at the
+                     beginning of the file.
+
+             r+: Open for reading and writing. The stream is positioned
+                     at the beginning of the file.
+
+             w: Open for writing. If the file doesn't exist, then
+                     it is created. If it does already exist, then
+                     it is truncated. The stream is positioned at the
+                     beginning of the file.
+
+             w+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. If it does already
+                     exist, then it is truncated. The stream is
+                     positioned at the beginning of the file.
+
+             a: Open for writing. If the file doesn't exist, then
+                     it is created. The stream is positioned at the
+                     end of the file.
+
+             a+: Open for reading and writing. If the file doesn't
+                     exist, then it is created. The stream is positioned
+                     at the end of the file.
+
+             b: Open in binary more. This has no effect and is ignored.
+
+
+Result
+~~~~~~
+::
+
+     A pointer to a FILE handle or NULL in case of an error. When NULL
+     is returned, then errno is set to indicate the error.
+
+
+Notes
+~~~~~
+::
+
+     On 32bit systems, fopen and related operations only work with
+     32bit filesystems/files. Anything larger than 2 GB needs to use
+     the correct 64bit structures and functions.
+    
+     This function must not be used in a shared library or
+     in a threaded application.
+
+
+Bugs
+~~~~
+::
+
+     Most modes are not supported right now.
+
+
+
+See also
+~~~~~~~~
+
+`fclose()`_ `fread()`_ `fwrite()`_ `open()`_ `fgets()`_ `fgetc()`_ `fputs()`_ `fputc()`_ `getc()`_ `putc()`_ 
+
+----------
+
 fopen64()
 =========
 
@@ -4178,6 +2332,401 @@ See also
 
 ----------
 
+fprintf()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fprintf(
+     FILE       * fh,
+     const char * format,
+     ...)
+
+
+Function
+~~~~~~~~
+::
+
+     Format a string with the specified arguments and write it to
+     the stream.
+
+
+Inputs
+~~~~~~
+::
+
+     fh - Write to this stream
+     format - How to format the arguments
+     ... - The additional arguments
+
+
+Result
+~~~~~~
+::
+
+     The number of characters written to the stream or EOF on error.
+
+
+
+----------
+
+fputc()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int fputc(
+     int    c,
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Write one character to the specified stream.
+
+
+Inputs
+~~~~~~
+::
+
+     c - The character to output
+     stream - The character is written to this stream
+
+
+Result
+~~~~~~
+::
+
+     The character written or EOF on error.
+
+
+
+----------
+
+fputs()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int fputs(
+     const char * str,
+     FILE       * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Write a string to the specified stream.
+
+
+Inputs
+~~~~~~
+::
+
+     str - Output this string...
+     fh - ...to this stream
+
+
+Result
+~~~~~~
+::
+
+     > 0 on success and EOF on error.
+
+
+
+See also
+~~~~~~~~
+
+`puts()`_ `fputc()`_ `putc()`_ 
+
+----------
+
+fread()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  size_t fread(
+     void * buf,
+     size_t size,
+     size_t nblocks,
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Read an amount of bytes from a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     buf - The buffer to read the bytes into
+     size - Size of one block to read
+     nblocks - The number of blocks to read
+     stream - Read from this stream
+
+
+Result
+~~~~~~
+::
+
+     The number of blocks read. This may range from 0 when the stream
+     contains no more blocks up to nblocks. In case of an error, 0 is
+     returned.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fwrite()`_ 
+
+----------
+
+freopen()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  FILE *freopen(
+     const char *path,
+     const char *mode,
+     FILE       *stream
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     Opens the  file whose name is the string pointed to by path  and
+     associates  the  stream  pointed to by stream with it.
+
+
+Inputs
+~~~~~~
+::
+
+     path   - the file to open
+     mode   - The mode of the stream  (same as with fopen()) must be com­patible
+              with the mode of the file  descriptor.   The  file
+              position  indicator  of  the  new  stream  is  set to that
+              belonging to fildes, and the error and end-of-file indicators
+              are cleared.  Modes "w" or "w+" do not cause truncation of the
+              file.  The file descriptor is not duplicated,  and
+              will  be  closed  when  the  stream  created  by fdopen is
+              closed.
+     stream - the stream to which the file will be associated.
+
+
+Result
+~~~~~~
+::
+
+     NULL on error or stream.
+
+
+
+See also
+~~~~~~~~
+
+`open()`_ `fclose()`_ `fileno()`_ 
+
+----------
+
+fscanf()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fscanf(
+     FILE       * fh,
+     const char * format,
+     ...)
+
+
+Function
+~~~~~~~~
+::
+
+     Scan a string with the specified arguments and write the results
+     in the specified parameters.
+
+
+Inputs
+~~~~~~
+::
+
+     fh - Read from this stream
+     format - How to convert the input into the arguments
+     ... - Write the result in these arguments
+
+
+Result
+~~~~~~
+::
+
+     The number of converted arguments.
+
+
+
+See also
+~~~~~~~~
+
+`scanf()`_ 
+
+----------
+
+fseek()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int fseek(
+     FILE * stream,
+     long   offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     offset, whence - How to modify the current position. whence
+             can be SEEK_SET, then offset is the absolute position
+             in the file (0 is the first byte), SEEK_CUR then the
+             position will change by offset (ie. -5 means to move
+             5 bytes to the beginning of the file) or SEEK_END.
+             SEEK_END means that the offset is relative to the
+             end of the file (-1 is the last byte and 0 is
+             the EOF).
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Bugs
+~~~~
+::
+
+ Not fully compatible with ISO fseek, especially in 'ab' and 'a+b'
+ modes
+
+ Since it's not possible to use Seek() for directories, this
+ implementation fails with EISDIR for directory file descriptors.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fwrite()`_ 
+
+----------
+
+fseeko()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fseeko(
+     FILE * stream,
+     off_t  offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     offset, whence - How to modify the current position. whence
+             can be SEEK_SET, then offset is the absolute position
+             in the file (0 is the first byte), SEEK_CUR then the
+             position will change by offset (ie. -5 means to move
+             5 bytes to the beginning of the file) or SEEK_END.
+             SEEK_END means that the offset is relative to the
+             end of the file (-1 is the last byte and 0 is
+             the EOF).
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Notes
+~~~~~
+::
+
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (fseeko64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
+
+
+Bugs
+~~~~
+::
+
+     Not fully compatible with ISO fseeko, especially in 'ab' and 'a+b'
+     modes
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_fseek()`_ 
+
+----------
+
 fseeko64()
 ==========
 
@@ -4245,6 +2794,52 @@ See also
 
 ----------
 
+fsetpos()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int fsetpos(
+     FILE            * stream,
+     const fpos_t    * pos)
+
+
+Function
+~~~~~~~~
+::
+
+     Change the current position in a stream. This function is equivalent
+     to fseek() with whence set to SEEK_SET. However, on some systems
+     fpos_t may be a complex structure, so this routine may be the only
+     way to portably reposition a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Modify this stream
+     pos - The new position in the stream.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`fgetpos()`_ 
+
+----------
+
 fsetpos64()
 ===========
 
@@ -4288,6 +2883,52 @@ See also
 ~~~~~~~~
 
 `__posixc_fgetpos()`_ 
+
+----------
+
+fstat()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int fstat(
+     int fd,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file specified by an open file descriptor.
+     Information is stored in stat structure. Consult stat() documentation
+     for detailed description of that structure.
+
+
+Inputs
+~~~~~~
+::
+
+     filedes - File descriptor of the file
+     sb - Pointer to stat structure that will be filled by the fstat()
+     call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_stat()`_ 
 
 ----------
 
@@ -4346,6 +2987,85 @@ Synopsis
 
   int fsync(
      int fd)
+
+
+
+----------
+
+ftell()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  long ftell(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Tell the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Obtain position of this stream
+
+
+Result
+~~~~~~
+::
+
+     The position on success and -1 on error.
+     If an error occurred, the global variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fseek()`_ `fwrite()`_ 
+
+----------
+
+ftello()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  off_t ftello(
+     FILE *stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns the current position in a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Query this stream
+
+
+Notes
+~~~~~
+::
+
+     on 32bit platforms, off_t is a 32bit value, and so the 64bit
+     version (ftello64) is needed to work with large files.
+     off_t is 64bit natively on 64bit platforms.
+
 
 
 
@@ -4525,6 +3245,53 @@ Function
 
 ----------
 
+fwrite()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  size_t fwrite(
+     const void * restrict   buf,
+     size_t                  size,
+     size_t                  nblocks,
+     FILE * restrict         stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Write an amount of bytes to a stream.
+
+
+Inputs
+~~~~~~
+::
+
+     buf - The buffer to write to the stream
+     size - Size of one block to write
+     nblocks - The number of blocks to write
+     stream - Write to this stream
+
+
+Result
+~~~~~~
+::
+
+     The number of blocks written. If no error occurred, this is
+     nblocks. Otherwise examine errno for the reason of the error.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ 
+
+----------
+
 gcvt()
 ======
 
@@ -4656,6 +3423,39 @@ See also
 
 ----------
 
+getchar()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int getchar(
+
+Function
+~~~~~~~~
+::
+
+     Read one character from the standard input stream. If there
+     is no character available or an error occurred, the function
+     returns EOF.
+
+
+Result
+~~~~~~
+::
+
+     The character read or EOF on end of file or error.
+
+
+
+See also
+~~~~~~~~
+
+`fgetc()`_ `getc()`_ `fputc()`_ `putc()`_ 
+
+----------
+
 getcwd()
 ========
 
@@ -4736,6 +3536,51 @@ See also
 ~~~~~~~~
 
 `setgid()`_   
+
+----------
+
+getenv()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  char *getenv(
+     const char *name)
+
+
+Function
+~~~~~~~~
+::
+
+     Get an environment variable.
+
+
+Inputs
+~~~~~~
+::
+
+     name - Name of the environment variable.
+
+
+Result
+~~~~~~
+::
+
+     Pointer to the variable's value, or NULL on failure.
+
+
+Notes
+~~~~~
+::
+
+     The returned contents of the environment variable is cached per
+     PosixCBase and per variable name. So the returned value is valid
+     and does not change until a next call to getenv with the same
+     PosixCBase and the same name.
+
+
 
 ----------
 
@@ -5374,6 +4219,58 @@ See also
 
 ----------
 
+gets()
+======
+
+Synopsis
+~~~~~~~~
+::
+
+  char * gets(
+     char * buffer)
+
+
+Function
+~~~~~~~~
+::
+
+     Read one line of characters from the standard input stream into
+     the buffer. Reading will stop, when a newline ('\n') is encountered,
+     EOF or when the buffer is full. If a newline is read, then it is
+     replaced by '\0'. The last character in the buffer is always '\0'.
+
+
+Inputs
+~~~~~~
+::
+
+     buffer - Write characters into this buffer
+
+
+Result
+~~~~~~
+::
+
+     buffer or NULL in case of an error or EOF.
+
+
+Bugs
+~~~~
+::
+
+     Never use this function. gets() does not know how large the buffer
+     is and will continue to store characters past the end of the buffer
+     if it has not encountered a newline or EOF yet. Use fgets() instead.
+
+
+
+See also
+~~~~~~~~
+
+`fgets()`_ 
+
+----------
+
 gettimeofday()
 ==============
 
@@ -5523,7 +4420,7 @@ Notes
 See also
 ~~~~~~~~
 
-`__posixc_fread()`_ 
+`fread()`_ 
 
 ----------
 
@@ -5715,6 +4612,69 @@ Synopsis
 
 ----------
 
+lseek()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  off_t lseek(
+     int    filedes,
+     off_t  offset,
+     int    whence)
+
+
+Function
+~~~~~~~~
+::
+
+     Reposition read/write file offset
+
+
+Inputs
+~~~~~~
+::
+
+     filedef - the filedescriptor being modified
+     offset, whence -
+               How to modify the current position. whence
+               can be SEEK_SET, then offset is the absolute position
+               in the file (0 is the first byte), SEEK_CUR then the
+               position will change by offset (ie. -5 means to move
+               5 bytes to the beginning of the file) or SEEK_END.
+               SEEK_END means that the offset is relative to the
+               end of the file (-1 is the last byte and 0 is
+               the EOF).
+
+
+Result
+~~~~~~
+::
+
+     The new position on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+Bugs
+~~~~
+::
+
+     File is extended with zeros if desired position is beyond the end of
+     file.
+
+     Since it's not possible to use Seek() for directories, this
+     implementation fails with EISDIR for directory file descriptors.
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_fopen()`_ `__posixc_fwrite()`_ 
+
+----------
+
 lseek64()
 =========
 
@@ -5775,6 +4735,52 @@ See also
 ~~~~~~~~
 
 `__posixc_fopen()`_ `__posixc_fwrite()`_ 
+
+----------
+
+lstat()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int lstat(
+     const char  *path,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file like stat does except that lstat
+     does not follow symbolic links. Information is stored in stat
+     structure. Consult stat() documentation for detailed description
+     of that structure.
+
+
+Inputs
+~~~~~~
+::
+
+     path - Pathname of the file
+     sb - Pointer to stat structure that will be filled by the lstat() call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_stat()`_ `__posixc_fstat()`_ 
 
 ----------
 
@@ -6371,6 +5377,280 @@ See also
 
 ----------
 
+printf()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int printf(
+     const char * format,
+     ...)
+
+
+Function
+~~~~~~~~
+::
+
+     Formats a list of arguments and prints them to standard out.
+
+     The format string is composed of zero or more directives: ordinary
+     characters (not %), which are copied unchanged to the output
+     stream; and conversion specifications, each of which results in
+     fetching zero or more subsequent arguments Each conversion
+     specification is introduced by the character %. The arguments must
+     correspond properly (after type promotion) with the conversion
+     specifier. After the %, the following appear in sequence:
+
+     Zero or more of the following flags:
+
+     # - specifying that the value should be converted to an
+         ``alternate form''. For a,A,c, d, i, n, p, s, and u conversions, this
+         option has no effect. For o conversions, the precision of the
+         number is increased to force the first character of the output
+         string to a zero (except if a zero value is printed with an
+         explicit precision of zero). For x and X conversions, a non-zero
+         result has the string `0x' (or `0X' for X conversions) prepended to
+         it. For e, E, f, F,g, and G conversions, the result will always
+         contain a decimal point, even if no digits follow it (normally, a
+         decimal point appears in the results of those conversions only if a
+         digit follows). For g and G conversions, trailing zeros are not
+         removed from the result as they would otherwise be.
+
+     0 - specifying zero padding. For all conversions except n, the
+         converted value is padded on the left with zeros rather than
+         blanks. For f,F conversion, or if a precision is given with a numeric
+         conversion (d, i, o,u, i, x, and X), the 0 flag is ignored.
+
+     - - (a negative field width flag) indicates the converted
+         value is to be left adjusted on the field boundary. Except for n
+         conversions, the converted value is padded on the right with
+         blanks, rather than on the left with blanks or zeros. A -
+         overrides a 0 if both are given.
+
+       - (a space) specifying that a blank should be left before a
+         positive number produced by a signed conversion (d, e, E, f, g, G,
+         or i). + specifying that a sign always be placed before a number
+         produced by a signed conversion. A + overrides a space if both are
+         used.
+
+     ' - specifying that in a numerical argument the output is to
+         be grouped if the locale information indicates any. Note that many
+         versions of gcc cannot parse this option and will issue a warning.
+
+     An optional decimal digit string specifying a minimum field
+     width. If the converted value has fewer characters than the field
+     width, it will be padded with spaces on the left (or right, if the
+     left-adjustment flag has been given) to fill out the field width.
+
+     An optional precision, in the form of a period (`.') followed
+     by an optional digit string. If the digit string is omitted, the
+     precision is taken as zero. This gives the minimum number of digits
+     to appear for d, i, o, u, x, and X conversions, the number of
+     digits to appear after the decimal-point for e, E, and f
+     conversions, the maximum number of significant digits for g and G
+     conversions, or the maximum number of characters to be printed from
+     a string for s conversions.
+
+     The optional character h, specifying that a following d, i,
+     o, u, x, or X conversion corresponds to a short int or unsigned
+     short int argument, or that a following n conversion corresponds to
+     a pointer to a short int argument.
+
+     The optional character l (ell) specifying that a following d,
+     i, o, u, x, or X conversion applies to a pointer to a long int or
+     unsigned long int argument, or that a following n conversion
+     corresponds to a pointer to a long int argument. Linux provides a
+     non ANSI compliant use of two l flags as a synonym to q or L. Thus
+     ll can be used in combination with float conversions. This usage
+     is, however, strongly discouraged.
+
+     The character L specifying that a following e, E,
+     f, g, or G conversion corresponds to a long double
+     argument, or a following d, i, o, u, x, or X conversion corresponds to a long long argument. Note
+     that long long is not specified in ANSI C and
+     therefore not portable to all architectures.
+
+     The optional character q. This is equivalent to L. See the
+     STANDARDS and BUGS sections for comments on the use of ll, L, and
+     q.
+
+     A Z character specifying that the following integer (d, i, o,
+     u, i, x, and X), conversion corresponds to a size_t argument.
+
+     A character that specifies the type of conversion to be
+     applied.
+
+     A field width or precision, or both, may be indicated by an
+     asterisk `*' instead of a digit string. In this case, an int
+     argument supplies the field width or precision. A negative field
+     width is treated as a left adjustment flag followed by a positive
+     field width; a negative precision is treated as though it were
+     missing.
+
+     The conversion specifiers and their meanings are:
+
+     diouxX - The int (or appropriate variant) argument is
+              converted to signed decimal (d and i), unsigned octal (o, unsigned
+              decimal (u, or unsigned hexadecimal (x and X) notation. The letters
+              abcdef are used for x conversions; the letters ABCDEF are used for
+              X conversions. The precision, if any, gives the minimum number of
+              digits that must appear; if the converted value requires fewer
+              digits, it is padded on the left with zeros.
+
+     aA - (TODO) The double argument is rounded and converted to the C99
+           floating-point number in hexadecimal notation - preserving all
+           bits of precision, and presenting them in a robust way.
+
+     eE - The double argument is rounded and converted in the style
+          [<->]d.dddedd where there is one digit before the decimal-point
+          character and the number of digits after it is equal to the
+          precision; if the precision is missing, it is taken as 6; if the
+          precision is zero, no decimal-point character appears. An E
+          conversion uses the letter E (rather than e) to introduce the
+          exponent. The exponent always contains at least two digits; if the
+          value is zero, the exponent is 00.
+
+     fF - The double argument is rounded and converted to decimal
+         notation in the style [-]ddd.ddd, where the number of digits after
+         the decimal-point character is equal to the precision
+         specification. If the precision is missing, it is taken as 6; if
+         the precision is explicitly zero, no decimal-point character
+         appears. If a decimal point appears, at least one digit appears
+         before it.
+
+     g - The double argument is converted in style f or e (or E for
+         G conversions). The precision specifies the number of significant
+         digits. If the precision is missing, 6 digits are given; if the
+         precision is zero, it is treated as 1. Style e is used if the
+         exponent from its conversion is less than -4 or greater than or
+         equal to the precision. Trailing zeros are removed from the
+         fractional part of the result; a decimal point appears only if it
+         is followed by at least one digit.
+
+     c - The int argument is converted to an unsigned char, and the
+         resulting character is written.
+
+     s - The ``char *'' argument is expected to be a pointer to an
+         array of character type (pointer to a string). Characters from the
+         array are written up to (but not including) a terminating NUL
+         character; if a precision is specified, no more than the number
+         specified are written. If a precision is given, no null character
+         need be present; if the precision is not specified, or is greater
+         than the size of the array, the array must contain a terminating
+         NUL character.
+
+     p - The ``void *'' pointer argument is printed in hexadecimal
+         (as if by %#x or %#lx).
+
+     n - The number of characters written so far is stored into the
+         integer indicated by the ``int *'' (or variant) pointer argument.
+         No argument is converted.
+
+     % - A `%' is written. No argument is converted. The complete
+         conversion specification is `%%'.
+
+     In no case does a non-existent or small field width cause
+     truncation of a field; if the result of a conversion is wider than
+     the field width, the field is expanded to contain the conversion
+     result.
+
+
+Inputs
+~~~~~~
+::
+
+     format - Format string as described above
+     ... - Arguments for the format string
+
+
+Result
+~~~~~~
+::
+
+     The number of characters written to stdout or EOF on error.
+
+
+Example
+~~~~~~~
+::
+
+     To print a date and time in the form `Sunday, July 3,
+     10:02', where weekday and month are pointers to strings:
+
+         #include <stdio.h>
+
+         fprintf (stdout, "%s, %s %d, %.2d:%.2d\n",
+                 weekday, month, day, hour, min);
+
+     To print to five decimal places:
+
+         #include <math.h>
+         #include <stdio.h>
+
+         fprintf (stdout, "pi = %.5f\n", 4 * atan(1.0));
+
+     To allocate a 128 byte string and print into it:
+
+         #include <stdio.h>
+         #include <stdlib.h>
+         #include <stdarg.h>
+
+         char *newfmt(const char *fmt, ...)
+         {
+             char *p;
+             va_list ap;
+
+             if ((p = malloc(128)) == NULL)
+                 return (NULL);
+
+             va_start(ap, fmt);
+
+             (void) vsnprintf(p, 128, fmt, ap);
+
+             va_end(ap);
+
+             return (p);
+         }
+
+
+Bugs
+~~~~
+::
+
+     All functions are fully ANSI C3.159-1989 conformant, but provide
+     the additional flags q, Z and ' as well as an additional behaviour
+     of the L and l flags. The latter may be considered to be a bug, as
+     it changes the behaviour of flags defined in ANSI C3.159-1989.
+
+     The effect of padding the %p format with zeros (either by the 0
+     flag or by specifying a precision), and the benign effect (i.e.,
+     none) of the # flag on %n and %p conversions, as well as
+     nonsensical combinations such as are not standard; such
+     combinations should be avoided.
+
+     Some combinations of flags defined by ANSI C are not making sense
+     in ANSI C (e.g. %Ld). While they may have a well-defined behaviour
+     on Linux, this need not to be so on other architectures. Therefore
+     it usually is better to use flags that are not defined by ANSI C at
+     all, i.e. use q instead of L in combination with diouxX conversions
+     or ll. The usage of q is not the same as on BSD 4.4, as it may be
+     used in float conversions equivalently to L.
+
+     Because sprintf and vsprintf assume an infinitely long string,
+     callers must be careful not to overflow the actual space; this is
+     often impossible to assure.
+
+
+
+See also
+~~~~~~~~
+
+`fprintf()`_ `vprintf()`_ `vfprintf()`_ `stdc.library/sprintf() <./stdc#sprintf>`_ `stdc.library/vsprintf() <./stdc#vsprintf>`_ `stdc.library/vsnprintf() <./stdc#vsnprintf>`_ 
+
+----------
+
 pselect()
 =========
 
@@ -6432,6 +5712,20 @@ See also
 
 ----------
 
+putchar()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int putchar(
+     int c)
+
+
+
+----------
+
 putenv()
 ========
 
@@ -6475,6 +5769,60 @@ Notes
      Conforming to BSD4.4 in that it makes a copy of the argument string.
 
 
+
+----------
+
+puts()
+======
+
+Synopsis
+~~~~~~~~
+::
+
+  int puts(
+     const char * str)
+
+
+Function
+~~~~~~~~
+::
+
+     Print a string to stdout. A newline ('\n') is emitted after the
+     string.
+
+
+Inputs
+~~~~~~
+::
+
+     str - Print this string
+
+
+Result
+~~~~~~
+::
+
+     > 0 on success and EOF on error. On error, the reason is put in
+     errno.
+
+
+Example
+~~~~~~~
+::
+
+     #include <errno.h>
+
+     if (puts ("Hello World.") != EOF)
+         fprintf (stderr, "Success");
+     else
+         fprintf (stderr, "Failure: errno=%d", errno);
+
+
+
+See also
+~~~~~~~~
+
+`fputs()`_ `printf()`_ `fprintf()`_ `putc()`_ `fputc()`_ 
 
 ----------
 
@@ -6547,7 +5895,57 @@ Result
 See also
 ~~~~~~~~
 
-`open()`_ `read()`_ `__posixc_fread()`_ 
+`open()`_ `read()`_ `fread()`_ 
+
+----------
+
+readdir()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  struct dirent *readdir(
+     DIR *dir)
+
+
+Function
+~~~~~~~~
+::
+
+      Reads a directory
+
+
+Inputs
+~~~~~~
+::
+
+     dir - the directory stream pointing to the directory being read
+
+
+Result
+~~~~~~
+::
+
+     The  readdir()  function  returns  a  pointer  to a dirent
+     structure, or NULL if an error occurs  or  end-of-file  is
+     reached.
+
+     The data returned by readdir() is overwritten by subsequent
+     calls to readdir() for the same directory stream.
+
+     According  to POSIX, the dirent structure contains a field
+     char d_name[] of unspecified size, with at  most  NAME_MAX
+     characters  preceding the terminating null character.  Use
+     of other fields will harm the portability of your programs.
+
+
+
+See also
+~~~~~~~~
+
+`read()`_ `opendir()`_ `closedir()`_ `rewinddir()`_ `seekdir()`_ `telldir()`_ 
 
 ----------
 
@@ -6612,13 +6010,74 @@ Synopsis
      const char *path, char *resolved_path)
 
 
+Function
+~~~~~~~~
+::
+
+     Resolves the absolute, canonical pathname of the given path by
+     resolving all symbolic links, relative components, and references
+     to `.` and `..`.
+
+
+Inputs
+~~~~~~
+::
+
+     path
+         Pointer to the null-terminated pathname to resolve.
+     resolved_path
+         Buffer where the resolved absolute pathname is stored.
+         If NULL, the function allocates a buffer of size PATH_MAX internally,
+         which should be freed by the caller.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the resolved_path buffer on success.
+     Returns NULL on failure, setting errno to indicate the error.
+
+
+Example
+~~~~~~~
+::
+
+     char buf[PATH_MAX];
+     char *res = realpath("/some/path", buf);
+     if (res) {
+         // use res
+     } else {
+         // handle error
+     }
+
+
 Notes
 ~~~~~
 ::
 
-     Not implemented.
+     - The resolved path is always null-terminated.
+     - Symbolic link loops are detected and prevented by limiting
+       the number of symlinks followed (SYMLOOP_MAX).
+     - The function temporarily changes the working directory internally,
+       but restores it before returning.
+     - The function assumes a POSIX-like environment with UTF-8 encoding.
+     - If resolved_path is NULL, the caller is responsible for freeing
+       the returned buffer.
 
 
+Bugs
+~~~~
+::
+
+     None known.
+
+
+
+See also
+~~~~~~~~
+
+`getcwd()`_ `readlink()`_ `chdir()`_ 
 
 ----------
 
@@ -6629,7 +6088,7 @@ Synopsis
 ~~~~~~~~
 ::
 
-  int remove(
+  remove(
      const char * pathname)
 
 
@@ -6676,33 +6135,137 @@ Synopsis
 ~~~~~~~~
 ::
 
-  int rename(
-     const char * oldpath
+  rename(
+     const char * oldpath,
      const char * newpath
+     )
 
 
 Function
 ~~~~~~~~
 ::
 
-     Renames a file or directory.
+     Changes the name or location of a file or directory from `oldpath` to `newpath`.
 
 
 Inputs
 ~~~~~~
 ::
 
-     oldpath - Complete path to existing file or directory.
-     newpath - Complete path to the new file or directory.
+     oldpath - The current path to an existing file or directory.
+     newpath - The new desired path for the file or directory.
 
 
 Result
 ~~~~~~
 ::
 
-     0 on success and -1 on error. In case of an error, errno is set.
-     
+     Returns 0 on success.
+     Returns -1 on failure and sets errno accordingly.
 
+
+Example
+~~~~~~~
+::
+
+     if (rename("/home/user/oldfile.txt", "/home/user/newfile.txt") != 0) {
+         perror("rename failed");
+     }
+
+
+Notes
+~~~~~
+::
+
+     - The function performs path conversions for platform compatibility.
+     - Paths with relative elements like '.' or '..' are handled.
+     - If `newpath` resolves to "." or ".." alone, the function returns
+       an error (EEXIST).
+
+
+Bugs
+~~~~
+::
+
+     None known.
+
+
+
+See also
+~~~~~~~~
+
+stdio.h rename() `unlink()`_ `mkdir()`_ 
+
+----------
+
+rewind()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  void rewind(
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Sets the file position indicator for the given stream to the beginning
+     of the file. Any error and end-of-file indicators for the stream are
+     cleared.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Pointer to a FILE object that identifies the stream to rewind.
+
+
+Result
+~~~~~~
+::
+
+     None (void function).
+
+
+Example
+~~~~~~~
+::
+
+     FILE *fp = fopen("example.txt", "r");
+     if (fp) {
+         // Read some data...
+         rewind(fp);  // Reset to start of file
+         // Read again from beginning...
+         fclose(fp);
+     }
+
+
+Notes
+~~~~~
+::
+
+     - Unlike `fseek()`, `rewind()` does not return a value.
+     - The function clears the error and EOF indicators for the stream,
+       allowing further I/O operations without error states.
+
+
+Bugs
+~~~~
+::
+
+     None known.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fwrite()`_ `fseek()`_ `clearerr()`_ 
 
 ----------
 
@@ -6760,6 +6323,56 @@ See also
 
 ----------
 
+scandir()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int scandir(
+     const char *dir,
+     struct dirent ***namelist,
+     int (*select)(const struct dirent *),
+     int (*compar)(const struct dirent **, const struct dirent **)
+     )
+
+
+Function
+~~~~~~~~
+::
+
+     Scan directory
+
+
+Inputs
+~~~~~~
+::
+
+     dir      - Directory to be scanned
+     namelist - Array with the found entries.
+     select   - Filter function which must return non-zero if entry shall be
+                added. If NULL all entries will be added.
+     compar   - Function which will be used by qsort() for sorting of the
+                entries. The function alphasort() can be used for sorting
+                in alphabetical order. If NULL sorting order isn't specified.
+
+
+Result
+~~~~~~
+::
+
+     Number of entries
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_alphasort()`_ 
+
+----------
+
 scandir64()
 ===========
 
@@ -6810,6 +6423,65 @@ See also
 
 ----------
 
+scanf()
+=======
+
+Synopsis
+~~~~~~~~
+::
+
+  int scanf(
+     const char * format,
+     ...)
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of input items successfully matched and assigned.
+     This number can be less than the number requested, or even zero, if
+     a matching failure occurs before any assignments. If an input failure
+     occurs before any conversions, EOF is returned.
+
+
+Example
+~~~~~~~
+::
+
+     int x;
+     float y;
+     scanf("%d %f", &x, &y);
+
+
+Notes
+~~~~~
+::
+
+     - The function reads from the standard input stream (stdin).
+     - The behavior and supported format specifiers conform to the C
+       standard library specification.
+     - It is recommended to check the return value to detect input errors
+       or mismatches.
+
+
+Bugs
+~~~~
+::
+
+     - Input matching is dependent on the format string correctness.
+     - Mismatched format specifiers and argument types can lead to
+       undefined behavior.
+
+
+
+See also
+~~~~~~~~
+
+`fscanf()`_ `vscanf()`_ `vfscanf()`_ `stdc.library/sscanf() <./stdc#sscanf>`_ `stdc.library/vsscanf() <./stdc#vsscanf>`_ 
+
+----------
+
 seed48()
 ========
 
@@ -6854,6 +6526,85 @@ Synopsis
      struct timeval *restrict timeout)
 
 
+
+----------
+
+setbuf()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  void setbuf(
+     FILE *stream,
+     char *buf)
+
+
+Function
+~~~~~~~~
+::
+
+     Sets the buffer for the specified stream.
+
+     If `buf` is not NULL, the stream is fully buffered using the provided
+     buffer of size `BUFSIZ`. If `buf` is NULL, the stream is set to
+     unbuffered mode (no buffering).
+
+     This function is a simpler interface to `setvbuf()` and behaves
+     according to the C standard library specification.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - Pointer to a `FILE` object identifying the stream.
+     buf    - Pointer to a buffer for stream buffering, or NULL for
+              unbuffered operation.
+
+
+Result
+~~~~~~
+::
+
+     This function returns no value.
+
+
+Example
+~~~~~~~
+::
+
+     char buffer[BUFSIZ];
+     setbuf(stdout, buffer); // Use a custom buffer for stdout
+
+
+Notes
+~~~~~
+::
+
+     - The size of the buffer used when `buf` is not NULL is fixed to
+       `BUFSIZ`.
+     - Use `setbuf()` before any I/O operation on the stream to ensure
+       the buffer is set properly.
+     - This function is equivalent to calling:
+       `setvbuf(stream, buf, buf ? _IOFBF : _IONBF, BUFSIZ);`
+
+
+Bugs
+~~~~
+::
+
+     - Buffering behavior is implementation-dependent.
+     - Calling `setbuf()` after I/O has started on the stream may have
+       undefined effects.
+
+
+
+See also
+~~~~~~~~
+
+`setvbuf()`_ `fflush()`_ `fread()`_ `fwrite()`_ 
 
 ----------
 
@@ -7134,6 +6885,90 @@ Notes
      Does not check permissions.
 
 
+
+----------
+
+setvbuf()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int setvbuf(
+     FILE *stream,
+     char *buf,
+     int mode,
+     size_t size)
+
+
+Function
+~~~~~~~~
+::
+
+     Sets the buffering mode and buffer size for a given stream.
+
+     This function must be called after the stream is opened but before
+     any other operations (such as reading or writing) are performed
+     on it. The user can supply their own buffer, or pass NULL to let
+     the system allocate one. The mode specifies how the buffer is used.
+
+
+Inputs
+~~~~~~
+::
+
+     stream  - Pointer to a valid FILE object.
+     buf     - User-provided buffer (or NULL for system-allocated).
+     mode    - One of _IOFBF (full), _IOLBF (line), _IONBF (none).
+     size    - Size of the buffer (must meet platform-specific minimum if buf is not NULL).
+
+
+Result
+~~~~~~
+::
+
+     Returns 0 on success, or EOF (-1) on failure. If an error occurs,
+     `errno` is set to indicate the cause (e.g., EFAULT, EINVAL, EBADF).
+
+
+Example
+~~~~~~~
+::
+
+     FILE *fp = fopen("example.txt", "w");
+     char buffer[512];
+     if (setvbuf(fp, buffer, _IOFBF, sizeof(buffer)) != 0)
+     {
+         perror("Failed to set buffer");
+     }
+
+
+Notes
+~~~~~
+::
+
+     - This function must be called before any stream I/O.
+     - Supplying a buffer smaller than the platform minimum will result
+       in an error.
+     - Mode must be a valid constant (_IOFBF, _IOLBF, or _IONBF).
+     - If `size` is 0, the system will determine an appropriate buffer size.
+
+
+Bugs
+~~~~
+::
+
+     - No runtime check ensures that the stream hasn't already been used.
+     - The required minimum buffer size (208 bytes) is AROS-specific and
+       may not match other platforms' expectations.
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `fflush()`_ `fclose()`_ `perror()`_ 
 
 ----------
 
@@ -7504,6 +7339,65 @@ Synopsis
 
 ----------
 
+stat()
+======
+
+Synopsis
+~~~~~~~~
+::
+
+  int stat(
+     const char *path,
+     struct stat *sb)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns information about a file. Information is stored in stat
+     structure having the following fields:
+     
+     dev_t           st_dev;     - ID of device containing the file
+     ino_t           st_ino;     - inode number
+     mode_t          st_mode;    - protection mode
+     nlink_t         st_nlink;   - number of hard links
+     uid_t           st_uid;     - user ID of the file's owner
+     gid_t           st_gid;     - group ID of the file's group
+     dev_t           st_rdev;    - device ID (if the file is character
+                                   or block special file)
+     off_t           st_size;    - file size, in bytes
+     time_t          st_atime;   - time of last access
+     time_t          st_mtime;   - time of last data modification
+     time_t          st_ctime;   - time of last file status change
+     blksize_t       st_blksize; - optimal blocksize for I/O
+     blkcnt_t        st_blocks;  - number of blocks allocated for file
+
+
+Inputs
+~~~~~~
+::
+
+     path - Pathname of the file
+     sb - Pointer to stat structure that will be filled by the stat() call.
+
+
+Result
+~~~~~~
+::
+
+     0 on success and -1 on error. If an error occurred, the global
+     variable errno is set.
+
+
+
+See also
+~~~~~~~~
+
+`__posixc_lstat()`_ `__posixc_fstat()`_ 
+
+----------
+
 stat64()
 ========
 
@@ -7609,6 +7503,54 @@ Bugs
 
 ----------
 
+strerror()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  char * strerror(
+     int n)
+
+
+Function
+~~~~~~~~
+::
+
+     Returns a readable string for an error number in errno.
+
+
+Inputs
+~~~~~~
+::
+
+     n - The contents of errno or a #define from errno.h
+
+
+Result
+~~~~~~
+::
+
+     A string describing the error.
+
+
+Notes
+~~~~~
+::
+
+     This function is used to override the strerror() function of
+     stdc.library to handle the extra errnos from posixc.library.
+
+
+
+See also
+~~~~~~~~
+
+`stdc.library/strerror() <./stdc#strerror>`_ `stdc.library/strerror() <./stdc#strerror>`_ 
+
+----------
+
 swab()
 ======
 
@@ -7658,6 +7600,83 @@ Notes
      Currently only _SC_ARG_MAX handling is implemented
 
 
+
+----------
+
+system()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int system(
+     const char *string)
+
+
+Function
+~~~~~~~~
+::
+
+     Executes a command specified by the string argument.
+
+     If the string is `NULL`, the function returns 1 to indicate that
+     a command processor is available.
+
+     If the string is non-NULL, the command is passed to a shell (if
+     available) or executed directly if no shell is present.
+
+
+Inputs
+~~~~~~
+::
+
+     string - Command string to execute, or NULL to check for shell support.
+
+
+Result
+~~~~~~
+::
+
+     On success, returns the command's exit status.
+     On error, returns -1 and sets `errno` appropriately.
+     If `string` is NULL, returns 1 (indicating a shell is available).
+
+
+Example
+~~~~~~~
+::
+
+     system("ls -l /");
+
+
+Notes
+~~~~~
+::
+
+     - On AROS, if the environment supports it, the command will be
+       executed through `/bin/sh` (or `bin:sh`).
+     - If no shell is found, the command is executed directly using the
+       AROS `SystemTags()` interface.
+     - The implementation ensures standard input/output/error are passed
+       through to the new process.
+     - Command paths and arguments are translated from UNIX-style to
+       Amiga-style if necessary.
+
+
+Bugs
+~~~~
+::
+
+     - Argument splitting and quoting are simplistic; edge cases may break.
+     - Behavior depends on the shell being available in `bin:sh`.
+
+
+
+See also
+~~~~~~~~
+
+`exec()`_ `popen()`_ `fork()`_ `execl()`_ `waitpid()`_ 
 
 ----------
 
@@ -7835,6 +7854,168 @@ Notes
 
 ----------
 
+tmpfile()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  FILE * tmpfile(
+     void)
+
+
+Function
+~~~~~~~~
+::
+
+     The tmpfile() function returns a pointer to a stream
+     associated with a file descriptor returned by the routine
+     mkstemp(3).  The created file is unlinked before tmpfile()
+     returns, causing the file to be automatically deleted when the
+     last reference to it is closed.  The file is opened with the
+     access value `w+'.  The file is created in the T: directory,
+     which is the standard AROS temp directory.
+
+
+
+Result
+~~~~~~
+::
+
+     The tmpfile() function returns a pointer to an open file stream on 
+     success. On error, a NULL pointer is returned and errno is set 
+     appropriately.
+
+ ERRORS 
+     The tmpfile() function may fail and set the global variable
+     errno for any of the errors specified for the library functions
+     fdopen() or mkstemp().
+
+
+Example
+~~~~~~~
+::
+
+     #include <errno.h>
+     #include <stdio.h>
+     #include <string.h>
+
+     main()
+     {
+       FILE * fp;
+
+       fp = tmpfile();
+       if ( fp == NULL)
+       {
+         perror(strerror(errno));
+         return;
+       }
+
+       fprintf(fp, "do a bit of writing to the temp file");
+     }
+
+
+Bugs
+~~~~
+::
+
+     BUG1: The temporary file is neither closed nor deleted. Ideally,
+     unlink() could be used to mark the temp file for removal (see
+     BUG1 in the source code) - but I suspect a bug in unlink() itself,
+     whereby it tries to remove the file straight away, rather than
+     waiting for all references to it to be closed. The bug is not too
+     serious, because all temp files are written to the T: directory,
+     which get zapped when AROS is closed down. However, problems may
+     exist when you start creating over 26 temp files with the same PID.
+
+
+
+
+See also
+~~~~~~~~
+
+`fopen()`_ `mkstemp()`_ 
+
+----------
+
+tmpnam()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  char *tmpnam(
+     char *s)
+
+
+Function
+~~~~~~~~
+::
+
+     Generates a string that is a valid and unique filename for a temporary
+     file. The filename is not associated with an open file and is not
+     guaranteed to remain unique if used multiple times without creating
+     the file immediately.
+
+
+Inputs
+~~~~~~
+::
+
+     s - Optional pointer to a user-provided buffer. If NULL, a static internal
+         buffer is used. The buffer must be at least L_tmpnam bytes in size.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the generated filename (either `s` or internal static buffer),
+     or NULL if an error occurs.
+
+
+Example
+~~~~~~~
+::
+
+     char name[L_tmpnam];
+     if (tmpnam(name) != NULL) {
+         printf("Temporary file name: %s\n", name);
+     }
+
+
+Notes
+~~~~~
+::
+
+     - The generated name is not guaranteed to be safe against race conditions;
+       use `tmpfile()` or `mkstemp()` for safer temporary file handling.
+     - If called multiple times with NULL, the static buffer is reused and
+       may be overwritten by subsequent calls.
+     - On AROS, the filename is formed using the `P_tmpdir` macro and a counter.
+     - `_mktemp()` is used to finalize the name in-place by replacing `XXXXXX`.
+
+
+Bugs
+~~~~
+::
+
+     - Not thread-safe when `s == NULL`, due to use of a static buffer.
+     - The `_mktemp()` function is inherently unsafe; it does not create the file,
+       which can lead to race conditions if multiple processes or threads are involved.
+     - May return the same name if not followed by immediate file creation.
+
+
+
+See also
+~~~~~~~~
+
+`tmpfile()`_ `mkstemp()`_ `mktemp()`_ 
+
+----------
+
 truncate()
 ==========
 
@@ -7965,6 +8146,53 @@ Result
      function returns -1 and sets errno appropriately.
 
 
+
+----------
+
+ungetc()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int ungetc(
+     int    c,
+     FILE * stream)
+
+
+Function
+~~~~~~~~
+::
+
+     Push the character c character back into the stream.
+
+
+Inputs
+~~~~~~
+::
+
+     c - Put this character back into the stream. The next read will
+             return this character. If you push back more than one
+             character, then they will be returned in reverse order.
+             The function guarantees that one character can be
+             pushed back but no more. It is possible to push the EOF
+             character back into the stream.
+     stream - Read from this stream
+
+
+Result
+~~~~~~
+::
+
+     c or EOF on error.
+
+
+
+See also
+~~~~~~~~
+
+`fgetc()`_ `getc()`_ `fputc()`_ `putc()`_ 
 
 ----------
 
@@ -8353,6 +8581,307 @@ See also
 ~~~~~~~~
 
 `execl()`_ `execve()`_ `execlp()`_ `execv()`_ `execvp()`_ 
+
+----------
+
+vfprintf()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  int vfprintf(
+     FILE       * stream,
+     const char * format,
+     va_list      args)
+
+
+Function
+~~~~~~~~
+::
+
+     Writes formatted output to the specified output stream using the format
+     string and a `va_list` of arguments.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - A pointer to an open output stream.
+     format - A format string, as used in printf().
+     args   - A `va_list` of arguments to be formatted and printed.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of characters written, or 0 if an error occurred
+     (e.g., invalid stream).
+
+
+Example
+~~~~~~~
+::
+
+     va_list ap;
+     va_start(ap, fmt);
+     vfprintf(stdout, fmt, ap);
+     va_end(ap);
+
+
+Notes
+~~~~~
+::
+
+     - The stream must be writable and valid.
+     - This function is typically called by `fprintf` and `printf` internally.
+     - Format specifiers follow standard printf-style conventions.
+
+
+Bugs
+~~~~
+::
+
+     - Returns 0 instead of the standard -1 on error, which may cause
+       incorrect error checking by compliant code.
+     - Not thread-safe if stream is shared among threads without synchronization.
+     - Assumes AROS-specific file descriptor abstraction and output handling.
+
+
+
+See also
+~~~~~~~~
+
+`fprintf()`_ `printf()`_ `vsprintf()`_ `vsnprintf()`_ `vprintf()`_ `va_start()`_ `va_list`_ 
+
+----------
+
+vfscanf()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int vfscanf(
+     FILE       * stream,
+     const char * format,
+     va_list      args)
+
+
+Function
+~~~~~~~~
+::
+
+     Reads input from the specified stream, interprets it according to
+     the provided format string, and stores the results in the locations
+     pointed to by the variable argument list `args`.
+
+
+Inputs
+~~~~~~
+::
+
+     stream - A pointer to a readable input stream.
+     format - A scanf-style format string describing expected input format.
+     args   - A `va_list` containing pointers to the variables where
+              the results of the formatted input will be stored.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of input items successfully matched and assigned,
+     which may be fewer than provided for, or zero in the event of an
+     early matching failure. Returns 0 if the stream is invalid.
+
+
+Example
+~~~~~~~
+::
+
+     va_list ap;
+     va_start(ap, fmt);
+     vfscanf(stdin, "%d %s", ap);
+     va_end(ap);
+
+
+Notes
+~~~~~
+::
+
+     - Whitespace in the format string matches any amount of whitespace
+       in the input.
+     - Input fields must match the expected format exactly or parsing will stop.
+     - This implementation includes both direct DOS-level and POSIX-style
+       fallback code paths, depending on compile-time `VFSCANF_DIRECT_DOS`.
+
+
+Bugs
+~~~~
+::
+
+     - Returns 0 on stream error instead of EOF (-1), which may not conform
+       strictly to standard expectations.
+     - Error and EOF handling uses AROS-specific flags and conventions.
+     - `VFSCANF_DIRECT_DOS` path relies on AROS `UnGetC()` and `Flush()` calls,
+       making portability limited.
+
+
+
+See also
+~~~~~~~~
+
+`scanf()`_ `fscanf()`_ `sscanf()`_ `vscanf()`_ `vsscanf()`_ `va_start()`_ `va_list`_ 
+
+----------
+
+vprintf()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  int vprintf(
+     const char * format,
+     va_list      args)
+
+
+Function
+~~~~~~~~
+::
+
+     Writes formatted output to the standard output stream using a
+     variable argument list. This function is the `va_list`-based
+     equivalent of `printf()`.
+
+
+Inputs
+~~~~~~
+::
+
+     format - A `printf`-style format string specifying how to format the output.
+     args   - A `va_list` containing the arguments to format and print.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of characters printed, or a negative value if an error occurs.
+
+
+Example
+~~~~~~~
+::
+
+     va_list ap;
+     va_start(ap, fmt);
+     vprintf("%s: %d\n", ap);
+     va_end(ap);
+
+
+Notes
+~~~~~
+::
+
+     - This function uses the AROS-specific global pointer `PosixCBase` to access
+       `_stdout`, the standard output stream.
+     - `vprintf()` is implemented by calling `vfprintf()` with `stdout`.
+
+
+Bugs
+~~~~
+::
+
+     - Assumes `PosixCBase` and `_stdout` are valid; if not, undefined behavior may occur.
+     - Limited to the formatting capabilities of `vfprintf()`.
+
+
+
+See also
+~~~~~~~~
+
+`printf()`_ `fprintf()`_ `vfprintf()`_ `vsprintf()`_ `puts()`_ `fputs()`_ 
+
+----------
+
+vscanf()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  int vscanf(
+     const char * format,
+     va_list      args)
+
+
+Function
+~~~~~~~~
+::
+
+     Reads input from the standard input stream (`stdin`), interprets it
+     according to the provided format string, and stores the results in
+     the locations specified by the variable argument list.
+
+
+Inputs
+~~~~~~
+::
+
+     format - A `scanf`-style format string specifying how to interpret the input.
+     args   - A `va_list` containing pointers to variables where the converted values
+              should be stored.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of input items successfully matched and assigned.
+     Returns `EOF` if an input failure occurs before any conversion.
+
+
+Example
+~~~~~~~
+::
+
+     va_list ap;
+     va_start(ap, fmt);
+     vscanf("%d %s", ap);
+     va_end(ap);
+
+
+Notes
+~~~~~
+::
+
+     - This function is the `va_list` variant of `scanf()`.
+     - Input is read from the standard input stream obtained from
+       `PosixCBase->_stdin`.
+     - The actual scanning is performed by `vfscanf()`.
+
+
+Bugs
+~~~~
+::
+
+     - Assumes `PosixCBase` and `_stdin` are properly initialized.
+     - Behavior is undefined if arguments do not match the format string.
+
+
+
+See also
+~~~~~~~~
+
+`scanf()`_ `fscanf()`_ `vfscanf()`_ `gets()`_ `fgets()`_ 
 
 ----------
 
