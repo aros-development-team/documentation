@@ -475,7 +475,8 @@ Inputs
      callback - A user-supplied hook which will be called for every driver.
      hookMsg  - A user-defined data to be passed to the hook.
 
-     The hook will be called with the following parameters:
+     The hook must be defined using the AROS_UFH family of macros,
+     and it will be called with the following parameters:
          AROS_UFHA(struct Hook *, hook        , A0)
              - A pointer to hook structure itself
          AROS_UFHA(OOP_Object * , driverObject, A2)

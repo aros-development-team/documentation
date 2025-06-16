@@ -10,54 +10,57 @@ stdc
 
 ======================================= ======================================= ======================================= ======================================= 
 `--background_C99--`_                   `--background_locale--`_                `--background_string--`_                `--background_wchar--`_                 
-`__stdc_assert()`_                      `__stdc_get_errorptr()`_                `__stdc_gmtoffset()`_                   `__stdc_jmp2exit()`_                    
-`__stdc_program_end()`_                 `__stdc_program_startup()`_             `__stdc_set_errorptr()`_                `__stdc_set_exitjmp()`_                 
-`__stdc_strerror()`_                    `__stdcio_assert()`_                    `__stdcio_get_environptr()`_            `__stdcio_get_envlistptr()`_            
-`__stdcio_set_environptr()`_            `__stdcio_set_envlistptr()`_            `__vcformat()`_                         `_Exit()`_                              
-`abort()`_                              `abs()`_                                `asctime()`_                            `asctime_r()`_                          
-`asprintf()`_                           `assert()`_                             `atexit()`_                             `atof()`_                               
-`atoi()`_                               `atol()`_                               `atoll()`_                              `bsearch()`_                            
-`calloc()`_                             `clearerr()`_                           `clock()`_                              `ctime()`_                              
-`ctime_r()`_                            `difftime()`_                           `div()`_                                `exit()`_                               
-`fclose()`_                             `feof()`_                               `ferror()`_                             `fflush()`_                             
-`fgetc()`_                              `fgetpos()`_                            `fgets()`_                              `fopen()`_                              
-`fprintf()`_                            `fputc()`_                              `fputs()`_                              `fread()`_                              
-`free()`_                               `freopen()`_                            `fscanf()`_                             `fseek()`_                              
-`fsetpos()`_                            `ftell()`_                              `fwrite()`_                             `getc()`_                               
-`getchar()`_                            `getenv()`_                             `gets()`_                               `gmtime()`_                             
-`gmtime_r()`_                           `imaxabs()`_                            `imaxdiv()`_                            `isalnum()`_                            
-`isalpha()`_                            `isascii()`_                            `isblank()`_                            `iscntrl()`_                            
-`isdigit()`_                            `isgraph()`_                            `islower()`_                            `isprint()`_                            
-`ispunct()`_                            `isspace()`_                            `isupper()`_                            `isxdigit()`_                           
-`labs()`_                               `ldiv()`_                               `llabs()`_                              `lldiv()`_                              
-`localeconv()`_                         `localtime()`_                          `localtime_r()`_                        `malloc()`_                             
-`malloc_align()`_                       `mblen()`_                              `mbstowcs()`_                           `mbtowc()`_                             
-`memchr()`_                             `memcmp()`_                             `memcpy()`_                             `memmove()`_                            
-`memset()`_                             `mktime()`_                             `on_exit()`_                            `perror()`_                             
-`printf()`_                             `putc()`_                               `putchar()`_                            `puts()`_                               
-`qsort()`_                              `raise()`_                              `rand()`_                               `realloc()`_                            
-`realloc_nocopy()`_                     `remove()`_                             `rename()`_                             `rewind()`_                             
-`scanf()`_                              `setbuf()`_                             `setlocale()`_                          `setvbuf()`_                            
-`signal()`_                             `snprintf()`_                           `sprintf()`_                            `srand()`_                              
-`sscanf()`_                             `stccpy()`_                             `stcd_l()`_                             `stch_l()`_                             
-`stcl_d()`_                             `stcl_h()`_                             `stcl_o()`_                             `stco_l()`_                             
-`stcu_d()`_                             `stpblk()`_                             `stpcpy()`_                             `stpsym()`_                             
-`strcasecmp()`_                         `strcasestr()`_                         `strcat()`_                             `strchr()`_                             
-`strcmp()`_                             `strcoll()`_                            `strcpy()`_                             `strcspn()`_                            
-`strdup()`_                             `strerror()`_                           `strftime()`_                           `strlcat()`_                            
-`strlcpy()`_                            `strlen()`_                             `strlwr()`_                             `strncasecmp()`_                        
-`strncat()`_                            `strncmp()`_                            `strncpy()`_                            `strndup()`_                            
-`strnlen()`_                            `strpbrk()`_                            `strrchr()`_                            `strrev()`_                             
-`strsep()`_                             `strspn()`_                             `strstr()`_                             `strtod()`_                             
-`strtof()`_                             `strtoimax()`_                          `strtok()`_                             `strtok_r()`_                           
-`strtol()`_                             `strtold()`_                            `strtoll()`_                            `strtoul()`_                            
-`strtoull()`_                           `strtoumax()`_                          `strupr()`_                             `strxfrm()`_                            
-`system()`_                             `time()`_                               `tmpfile()`_                            `tmpnam()`_                             
-`ungetc()`_                             `vasprintf()`_                          `vfprintf()`_                           `vfscanf()`_                            
-`vprintf()`_                            `vscanf()`_                             `vsnprintf()`_                          `vsprintf()`_                           
-`vsscanf()`_                            `wcscat()`_                             `wcscmp()`_                             `wcscpy()`_                             
-`wcslen()`_                             `wcsncmp()`_                            `wcsncpy()`_                            `wcstombs()`_                           
-`wctomb()`_                             
+`__assert()`_                           `__assert()`_                           `__stdc_get_errorptr()`_                `__stdc_gmtoffset()`_                   
+`__stdc_jmp2exit()`_                    `__stdc_program_end()`_                 `__stdc_program_startup()`_             `__stdc_set_errorptr()`_                
+`__stdc_set_exitjmp()`_                 `__stdcio_get_environptr()`_            `__stdcio_get_envlistptr()`_            `__stdcio_set_environptr()`_            
+`__stdcio_set_envlistptr()`_            `__vcformat()`_                         `_Exit()`_                              `abort()`_                              
+`abs()`_                                `asctime()`_                            `asctime_r()`_                          `asprintf()`_                           
+`assert()`_                             `atexit()`_                             `atof()`_                               `atoi()`_                               
+`atol()`_                               `atoll()`_                              `bsearch()`_                            `calloc()`_                             
+`clearerr()`_                           `clock()`_                              `ctime()`_                              `ctime_r()`_                            
+`difftime()`_                           `div()`_                                `exit()`_                               `fclose()`_                             
+`feof()`_                               `ferror()`_                             `fflush()`_                             `fgetc()`_                              
+`fgetpos()`_                            `fgets()`_                              `fopen()`_                              `fprintf()`_                            
+`fputc()`_                              `fputs()`_                              `fread()`_                              `free()`_                               
+`freopen()`_                            `fscanf()`_                             `fseek()`_                              `fsetpos()`_                            
+`ftell()`_                              `fwrite()`_                             `getc()`_                               `getchar()`_                            
+`getenv()`_                             `gets()`_                               `gmtime()`_                             `gmtime_r()`_                           
+`imaxabs()`_                            `imaxdiv()`_                            `isalnum()`_                            `isalpha()`_                            
+`isascii()`_                            `isblank()`_                            `iscntrl()`_                            `isdigit()`_                            
+`isgraph()`_                            `islower()`_                            `isprint()`_                            `ispunct()`_                            
+`isspace()`_                            `isupper()`_                            `isxdigit()`_                           `labs()`_                               
+`ldiv()`_                               `llabs()`_                              `lldiv()`_                              `localeconv()`_                         
+`localtime()`_                          `localtime_r()`_                        `malloc()`_                             `malloc_align()`_                       
+`mblen()`_                              `mbstowcs()`_                           `mbtowc()`_                             `memchr()`_                             
+`memcmp()`_                             `memcpy()`_                             `memmove()`_                            `memset()`_                             
+`mktime()`_                             `on_exit()`_                            `perror()`_                             `printf()`_                             
+`putc()`_                               `putchar()`_                            `puts()`_                               `qsort()`_                              
+`raise()`_                              `rand()`_                               `realloc()`_                            `realloc_nocopy()`_                     
+`remove()`_                             `rename()`_                             `rewind()`_                             `scanf()`_                              
+`setbuf()`_                             `setlocale()`_                          `setvbuf()`_                            `signal()`_                             
+`snprintf()`_                           `sprintf()`_                            `srand()`_                              `sscanf()`_                             
+`stccpy()`_                             `stcd_l()`_                             `stch_l()`_                             `stcl_d()`_                             
+`stcl_h()`_                             `stcl_o()`_                             `stco_l()`_                             `stcu_d()`_                             
+`stpblk()`_                             `stpcpy()`_                             `stpsym()`_                             `strcasecmp()`_                         
+`strcasestr()`_                         `strcat()`_                             `strchr()`_                             `strcmp()`_                             
+`strcoll()`_                            `strcpy()`_                             `strcspn()`_                            `strdup()`_                             
+`strerror()`_                           `strftime()`_                           `strlcat()`_                            `strlcpy()`_                            
+`strlen()`_                             `strlwr()`_                             `strncasecmp()`_                        `strncat()`_                            
+`strncmp()`_                            `strncpy()`_                            `strndup()`_                            `strnlen()`_                            
+`strpbrk()`_                            `strrchr()`_                            `strrev()`_                             `strsep()`_                             
+`strspn()`_                             `strstr()`_                             `strtod()`_                             `strtof()`_                             
+`strtoimax()`_                          `strtok()`_                             `strtok_r()`_                           `strtol()`_                             
+`strtold()`_                            `strtoll()`_                            `strtoul()`_                            `strtoull()`_                           
+`strtoumax()`_                          `strupr()`_                             `strxfrm()`_                            `system()`_                             
+`time()`_                               `tmpfile()`_                            `tmpnam()`_                             `ungetc()`_                             
+`vasprintf()`_                          `vfprintf()`_                           `vfscanf()`_                            `vprintf()`_                            
+`vscanf()`_                             `vsnprintf()`_                          `vsprintf()`_                           `vsscanf()`_                            
+`wcrtomb()`_                            `wcscat()`_                             `wcschr()`_                             `wcscmp()`_                             
+`wcscpy()`_                             `wcscspn()`_                            `wcslen()`_                             `wcsncat()`_                            
+`wcsncmp()`_                            `wcsncpy()`_                            `wcspbrk()`_                            `wcsrchr()`_                            
+`wcsspn()`_                             `wcsstr()`_                             `wcstok()`_                             `wcstombs()`_                           
+`wctomb()`_                             `wmemchr()`_                            `wmemcmp()`_                            `wmemcpy()`_                            
+`wmemmove()`_                           `wmemset()`_                            
 ======================================= ======================================= ======================================= ======================================= 
 
 -----------
@@ -189,14 +192,14 @@ See also
 
 ----------
 
-__stdc_assert()
-===============
+__assert()
+==========
 
 Synopsis
 ~~~~~~~~
 ::
 
-  void __stdc_assert(
+  void __assert(
      const char * expr,
      const char * file,
      unsigned int line)
@@ -237,6 +240,61 @@ Notes
      Because no normal DOS file I/O is available an attempt will be made
      to display the assertion in a requester and thus deviating from the
      C99 standard that says it to go to the error stream.
+
+
+
+See also
+~~~~~~~~
+
+`assert()`_ 
+
+----------
+
+__assert()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  void __assert(
+     const char * expr,
+     const char * file,
+     unsigned int line)
+
+
+Function
+~~~~~~~~
+::
+
+     This is a function that is used for implementation of the C99 assert()
+     function.
+
+
+Inputs
+~~~~~~
+::
+
+     expr - The expression to evaluate. The type of the expression does
+             not matter, only if its zero/NULL or not.
+     file - Name of the source file.
+     line - Line number of assert() call.
+
+
+Result
+~~~~~~
+::
+
+     The function doesn't return.
+
+
+Notes
+~~~~~
+::
+
+     Different versions of this function are available. This function
+     is used when a program is using stdcio.library and not
+     posixc.library.
 
 
 
@@ -530,113 +588,6 @@ Result
      previous jmp_buf for exiting
 
 
-
-----------
-
-__stdc_strerror()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  char * __stdc_strerror(
-     int n)
-
-
-Function
-~~~~~~~~
-::
-
-     Returns a readable string for an error number in errno.
-
-
-Inputs
-~~~~~~
-::
-
-     n - The contents of errno or a #define from errno.h
-
-
-Result
-~~~~~~
-::
-
-     A string describing the error.
-
-
-Notes
-~~~~~
-::
-
-     This functions only handles the error codes needed by C99 and the ones
-     used in stdc.library. This function is aliased as strerror() in
-     libstdc.a
-     Other libraries may override this function by providing this function
-     also in their libxxx.a file. They can internally call __stdc_strerror
-     to get the strings for the errors handled by this function.
-
-
-
-See also
-~~~~~~~~
-
-`strerror()`_ 
-
-----------
-
-__stdcio_assert()
-=================
-
-Synopsis
-~~~~~~~~
-::
-
-  void __stdcio_assert(
-     const char * expr,
-     const char * file,
-     unsigned int line)
-
-
-Function
-~~~~~~~~
-::
-
-     This is a function that is used for implementation of the C99 assert()
-     function.
-
-
-Inputs
-~~~~~~
-::
-
-     expr - The expression to evaluate. The type of the expression does
-             not matter, only if its zero/NULL or not.
-     file - Name of the source file.
-     line - Line number of assert() call.
-
-
-Result
-~~~~~~
-::
-
-     The function doesn't return.
-
-
-Notes
-~~~~~
-::
-
-     Different versions of this function are available. This function
-     is used when a program is using stdcio.library and not
-     posixc.library.
-
-
-
-See also
-~~~~~~~~
-
-`assert()`_ 
 
 ----------
 
@@ -3123,8 +3074,8 @@ Function
 ~~~~~~~~
 ::
 
-     The gmtime_r() function converts the calendar time tt to
-     broken-down time representation, expressed in Coordinated Universal
+     The gmtime_r() function converts the calendar time tt (assumed to be UTC)
+     to broken-down time representation, expressed in Coordinated Universal
      Time (UTC).
 
 
@@ -4197,7 +4148,10 @@ Function
 ~~~~~~~~
 ::
 
-     Splits the system time in seconds into a structure.
+     The localtime_r() function converts the calendar time tt (assumed to
+     be UTC) to broken-down time representation, expressed users local
+     timezone.
+
      The members of the tm structure are:
 
      tm_sec - The number of seconds after the minute, normally in
@@ -4378,37 +4332,69 @@ Function
 ~~~~~~~~
 ::
 
-     This function returns the number of bytes of the next multi-byte
-     character.
+     Determines the number of bytes comprising the next multibyte character
+     in the input string 's', examining at most 'n' bytes.
+
+     This function is typically used to scan or measure multibyte strings
+     when the actual wide character value is not needed.
 
 
 Inputs
 ~~~~~~
 ::
 
-     s: string pointer to look at next multi-byte character.
-     n: The maximum number of bytes to look at.
+     s - Pointer to the multibyte character string to examine.
+         If NULL, the function is used to test whether the current encoding
+         has state-dependent encodings.
+
+     n - Maximum number of bytes to examine in 's'.
 
 
 Result
 ~~~~~~
 ::
 
-     if s is not NULL will return the length in bytes of the next
-     multi-byte character in s; 0 is return when it is a NULL
-     byte character; -1 if it is not a valid multi-byte character.
-     If s is NULL zero or non-zero is returned when multi-byte encodings
-     resp. don't or do have state-dependent encodings.
+     Returns the number of bytes that make up the next multibyte character
+     if the sequence is valid.
+     Returns 0 if the character is the null byte (`'\0'`).
+     Returns -1 if the sequence is invalid or incomplete, and sets errno to EILSEQ.
+
+     If 's' is NULL, returns 0 in UTF-8 or "C" locale, indicating a stateless encoding.
+
+
+Example
+~~~~~~~
+::
+
+     const char *mb = "ä";
+     int len = mblen(mb, MB_CUR_MAX);
+     if (len > 0) {
+         // len indicates how many bytes 'ä' takes in the current encoding
+     }
 
 
 Notes
 ~~~~~
 ::
 
-     stdc.library currently only implements the "C" locale
-     This means that either 0 or 1 is returned when s is not NULL.
+     stdc.library currently only implements "C" or UTF-8-compatible encodings.
+     Therefore, this function always returns 0 when 's' is NULL and does not track shift states.
+     The function relies on UTF-8 byte patterns to determine the multibyte length.
 
 
+Bugs
+~~~~
+::
+
+     Does not support locale-specific or stateful encodings.
+     No shift state is maintained between calls, even in encodings where this might be necessary.
+
+
+
+See also
+~~~~~~~~
+
+`mbtowc()`_ `mbstowcs()`_ `wctomb()`_ `wcstombs()`_ 
 
 ----------
 
@@ -4420,8 +4406,8 @@ Synopsis
 ::
 
   size_t mbstowcs(
-     wchar_t * restrict pwcs,
-     const char * restrict s,
+     wchar_t * restrict dest,
+     const char * restrict src,
      size_t n)
 
 
@@ -4429,16 +4415,72 @@ Function
 ~~~~~~~~
 ::
 
-     C99 function mbstowcs.
+     Converts a null-terminated multibyte character string (char*) into its
+     corresponding wide character string (wchar_t*), using the current locale's encoding.
+
+     At most 'n' wide characters are written into 'dest'. Conversion stops
+     on the first invalid multibyte sequence, or when a null byte is encountered.
+
+
+Inputs
+~~~~~~
+::
+
+     dest - Pointer to the output wide character buffer. If NULL, the function
+            returns the number of wide characters that would result from the conversion,
+            excluding the terminating null wide character.
+
+     src  - Pointer to the null-terminated multibyte string to convert.
+
+     n    - Maximum number of wide characters to write into 'dest'.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of wide characters converted (excluding the terminating L'\0').
+     Returns (size_t)-1 if an invalid multibyte sequence is encountered during conversion,
+     and sets errno to EILSEQ.
+
+     If 'dest' is NULL, the function returns the number of wide characters that would
+     be generated from the conversion, not counting the final null wide character.
+
+
+Example
+~~~~~~~
+::
+
+     const char *utf8 = "Hello ??!";
+     wchar_t wbuf[64];
+     size_t count = mbstowcs(wbuf, utf8, 64);
+     if (count != (size_t)-1) {
+         // wbuf now contains wide character equivalents
+     }
 
 
 Notes
 ~~~~~
 ::
 
-     stdc.library currently only implements "C" locale.
+     stdc.library currently only implements "C" or UTF-8-compatible locales.
+     The encoding is stateless, and no locale-dependent shift state is used.
+     Conversion uses mbtowc() for each multibyte sequence encountered in 'src'.
 
 
+Bugs
+~~~~
+::
+
+     Does not support locale-specific encodings or stateful encodings like ISO 2022 or Shift-JIS.
+     Buffer overflow may occur if 'n' is smaller than the number of resulting wide characters.
+
+
+
+See also
+~~~~~~~~
+
+`mbtowc()`_ `wcstombs()`_ `wctomb()`_ `mblen()`_ 
 
 ----------
 
@@ -4459,46 +4501,72 @@ Function
 ~~~~~~~~
 ::
 
-     C99 mbtowc function; a function to convert one multi-byte character
-     to a wchar_t character and/or to determine the number of bytes for the
-     next multi-byte char.
+     Converts the multibyte sequence starting at 's' into a wide character and stores
+     it at the location pointed to by 'pwc'.
+
+     The function examines up to 'n' bytes to determine the length of the multibyte
+     character. If 's' is NULL, the function is used to reset the conversion state.
 
 
 Inputs
 ~~~~~~
 ::
 
-     pwc: pointer wide char string to put converted char in. When NULL
-          no char will be converted.
-     s: pointer to multi-byte char as input
-     n: maximum of bytes to look at for the multi-byte char.
-     
+     pwc - Pointer to the location where the resulting wide character will be stored.
+           If NULL, the function still parses the multibyte sequence to determine length,
+           but does not store the result.
+
+     s   - Pointer to the multibyte character sequence to convert.
+           If NULL, the function returns 0 (for stateless encodings like UTF-8).
+
+     n   - Maximum number of bytes to examine from 's'.
+
 
 Result
 ~~~~~~
 ::
 
-     If s is not NULL the function returns the number of bytes the next
-     multi-byte character is made of; 0 if the char pointed to is NULL or
-     -1 if it is not a valid multi-byte char.
-     If s is NULL the function return zero or non-zero when multi-byte chars
-     resp. don't or do have state-dependent encodings.
+     Returns the number of bytes that were consumed to produce a valid wide character.
+     Returns 0 if the character is the null byte (`'\0'`).
+     Returns -1 if an invalid or incomplete multibyte sequence is encountered, and sets errno to EILSEQ.
+
+
+Example
+~~~~~~~
+::
+
+     const char *mb = "??";
+     wchar_t wc;
+     int len = mbtowc(&wc, mb, MB_CUR_MAX);
+     if (len > 0) {
+         // wc now holds the wide character value for '??'
+     }
 
 
 Notes
 ~~~~~
 ::
 
-     stdc.library currently only supports "C" locale
-     This means that the function returns 0 when s is NULL and only 0, 1 or -1
-     when s is not NULL.
+     stdc.library currently only implements "C" or UTF-8-compatible locales.
+     The encoding is treated as stateless, so no shift state is used or stored.
+
+     This function is not thread-safe with stateful encodings unless all calls use the same static state,
+     which is not applicable here.
+
+
+Bugs
+~~~~
+::
+
+     Does not support stateful or locale-dependent encodings.
+     Returns -1 on partial or invalid sequences without giving detailed error context.
 
 
 
 See also
 ~~~~~~~~
 
-`wctomb()`_ 
+`mblen()`_ `mbstowcs()`_ `wctomb()`_ `wcstombs()`_ 
 
 ----------
 
@@ -7079,11 +7147,18 @@ Result
      A string describing the error.
 
 
+Notes
+~~~~~
+::
 
-See also
-~~~~~~~~
+     This functions only handles the error codes needed by C99 and the ones
+     used in stdc.library. This function is aliased as strerror() in
+     libstdc.a
+     Other libraries may override this function by providing this function
+     also in their libxxx.a file. They can internally call __stdc_strerror
+     to get the strings for the errors handled by this function.
 
-`__stdc_strerror()`_ 
+
 
 ----------
 
@@ -9310,6 +9385,83 @@ See also
 
 ----------
 
+wcrtomb()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  e_t wcrtomb(
+ char * restrict s, 
+ wchar_t wc, 
+ mbstate_t * restrict ps)
+
+
+Function
+~~~~~~~~
+::
+
+     Converts a single wide character (wchar_t) to its multibyte representation
+     and stores it in the output buffer 's'.
+
+
+Inputs
+~~~~~~
+::
+
+     s  - Pointer to the destination buffer to receive the multibyte sequence.
+          If NULL, the function returns the length of the encoding sequence used
+          to reset the shift state (which is 1 for UTF-8 or 0 for state-independent encodings).
+     wc - The wide character to convert.
+     ps - Pointer to an mbstate_t object that keeps conversion state between calls.
+          May be NULL for stateless encodings like UTF-8.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of bytes written to 's' if successful.
+     If 'wc' is the null wide character, a single null byte is written and 1 is returned.
+     If the conversion fails (invalid code point or sequence), (size_t)-1 is returned
+     and errno is set to EILSEQ.
+
+
+Example
+~~~~~~~
+::
+
+     wchar_t wc = L'ü';
+     char buf[MB_CUR_MAX];
+     size_t len = wcrtomb(buf, wc, NULL);
+
+
+Notes
+~~~~~
+::
+
+     This implementation assumes a stateless encoding (UTF-8).
+     If 'ps' is NULL, an internal static conversion state is not maintained  behavior is stateless.
+     Surrogate pairs and values above U+10FFFF are treated as invalid.
+
+
+Bugs
+~~~~
+::
+
+     Does not support stateful encodings.
+     No locale-specific behavior is implemented  assumes UTF-8 or ASCII compatible only.
+
+
+
+See also
+~~~~~~~~
+
+`wctomb()`_ `mbtowc()`_ `mbrtowc()`_ `wcstombs()`_ `mbstowcs()`_ 
+
+----------
+
 wcscat()
 ========
 
@@ -9342,6 +9494,44 @@ Result
 ::
 
      A pointer to the resulting wide string.
+
+
+
+----------
+
+wcschr()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcschr(
+ const wchar_t* s, 
+ wchar_t c)
+
+
+Function
+~~~~~~~~
+::
+
+     Find the first occurrence of c in the wide string s.
+ 
+
+Inputs
+~~~~~~
+::
+
+     s - source wide string.
+     c - wide character to locate.
+ 
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the located wide character c. 
+     If c does not occur in the wide string s a null pointer is returned. 
 
 
 
@@ -9423,6 +9613,44 @@ Result
 
 ----------
 
+wcscspn()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  e_t wcscspn(
+ const wchar_t *s1, 
+ const wchar_t *s2)
+
+
+Function
+~~~~~~~~
+::
+
+     Scans s1 for the first occurrence of any of the wide characters that are part of s2, 
+     returning the number of wide characters of s1 read before this first occurrence..
+
+
+Inputs
+~~~~~~
+::
+
+     s1  - wide string to be scanned.
+     s2  - wide string containing the characters to match.
+
+
+Result
+~~~~~~
+::
+
+     Returns the length of the segment.
+
+
+
+----------
+
 wcslen()
 ========
 
@@ -9453,6 +9681,45 @@ Result
 ::
 
      The number of non-null wide characters, in the wide string.
+
+
+
+----------
+
+wcsncat()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcsncat(
+ wchar_t * restrict s1, 
+ const wchar_t * restrict s2, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+      Appends not more than n wide characters from the array pointed to by s2 to the end of the wide string pointed to by s1.
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - specifies the pointer to the destination array.
+     s2 - specifies the string to be added to the destination.
+     n  - specifies the maximum number of wide characters to be added.
+
+
+Result
+~~~~~~
+::
+
+     Returns the value of s1.
 
 
 
@@ -9531,6 +9798,199 @@ Result
 
 ----------
 
+wcspbrk()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcspbrk(
+ const wchar_t *s1, 
+ const wchar_t *s2)
+
+
+Function
+~~~~~~~~
+::
+
+      Locate characters s2 in wide string s1.
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - wide string to be scanned.
+     s2 - wide string containing the characters to match.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer  to the wide character in s1, or a null pointer if no wide character from s2 occurs in s1. 
+
+
+
+----------
+
+wcsrchr()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcsrchr(
+ const wchar_t *s, 
+ wchar_t c)
+
+
+Function
+~~~~~~~~
+::
+
+      Locates the last occurrence of c in the wide string pointed to by s.
+
+
+Inputs
+~~~~~~
+::
+
+     s - wide string.
+     c - wide character to be located.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the last occurrence of c in s.
+
+
+
+----------
+
+wcsspn()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  e_t wcsspn(
+ const wchar_t *s1, 
+ const wchar_t *s2)
+
+
+Function
+~~~~~~~~
+::
+
+     Calculates the length of the initial segment of s1 which consists
+     entirely of wide characters in s2.
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - wide string to be scanned.
+     s2 - wide string containing the characters to match.
+
+
+Result
+~~~~~~
+::
+
+     Length of the initial segment of s1 which contains only
+     wide characters from s2.
+
+
+
+----------
+
+wcsstr()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcsstr(
+ const wchar_t *s1, 
+ const wchar_t *s2)
+
+
+Function
+~~~~~~~~
+::
+
+     Locates the first occurrence in the wide string pointed to by s1 of the sequence 
+     of wide characters (excluding the terminating null wide character) in the wide string 
+     pointed to by s2.
+
+
+Inputs
+~~~~~~
+::
+
+     s1  - wide string to be scanned.
+     s2  - wide string containing the sequence of characters to match.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the first occurrence in s1 of the entire sequence of characters 
+     specified in s2, or a null pointer if the sequence is not present in s1.
+
+
+
+----------
+
+wcstok()
+========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wcstok(
+ wchar_t * restrict s1, 
+ const wchar_t * restrict s2, 
+ wchar_t ** restrict ptr)
+
+
+Function
+~~~~~~~~
+::
+
+     Split wide string into tokens.
+
+
+Inputs
+~~~~~~
+::
+
+     s1  - wide string to truncate.
+     s2  - wide string containing the delimiter wide characters.
+     ptr - Pointer to a wchar_t pointer.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the first wide character of a token, 
+     or a null pointer if there is no token. 
+
+
+
+----------
+
 wcstombs()
 ==========
 
@@ -9539,8 +9999,8 @@ Synopsis
 ::
 
   size_t wcstombs(
-     char * restrict s,
-     const wchar_t * restrict pwcs,
+     char * restrict dest,
+     const wchar_t * restrict src,
      size_t n)
 
 
@@ -9548,16 +10008,71 @@ Function
 ~~~~~~~~
 ::
 
-     C99 function wcstombs
+     Converts a null-terminated wide character string (wchar_t*) into its
+     corresponding multibyte string (char*), using the current locale's encoding.
+     At most 'n' bytes are written into 'dest', not including the terminating null byte.
+
+
+Inputs
+~~~~~~
+::
+
+     dest - Pointer to the destination buffer that receives the converted multibyte string.
+            If NULL, the function returns the number of bytes that would be written, not
+            including the null terminator.
+
+     src  - Pointer to the null-terminated wide character string to convert.
+
+     n    - Maximum number of bytes to write into 'dest'.
+
+
+Result
+~~~~~~
+::
+
+     Returns the number of bytes stored in 'dest', excluding the terminating null byte.
+     If a wide character cannot be converted to a valid multibyte sequence, the function
+     returns (size_t)-1 and sets errno to EILSEQ.
+
+     If 'dest' is NULL, the function returns the number of bytes that would be needed
+     to encode the wide string, excluding the terminating null byte.
+
+
+Example
+~~~~~~~
+::
+
+     wchar_t wstr[] = L"Hello ??!";
+     char buffer[64];
+     size_t len = wcstombs(buffer, wstr, sizeof(buffer));
+     if (len != (size_t)-1) {
+         // buffer now contains UTF-8-encoded string
+     }
 
 
 Notes
 ~~~~~
 ::
 
-     stdc.library currently only implements "C" locale
+     stdc.library currently only implements "C" or UTF-8 compatible locale behavior.
+     The encoding is treated as stateless and locale-independent.
+     The terminating null character (L'\0') is converted, but the function does not
+     include it in the returned count.
 
 
+Bugs
+~~~~
+::
+
+     Does not handle stateful encodings or locale-specific behavior.
+     Buffer overflow is possible if 'n' is too small to hold even one multibyte character.
+
+
+
+See also
+~~~~~~~~
+
+`wcrtomb()`_ `mbstowcs()`_ `wctomb()`_ `mbtowc()`_ 
 
 ----------
 
@@ -9570,42 +10085,281 @@ Synopsis
 
   int wctomb(
      char *s,
-     wchar_t wchar)
+     wchar_t wc)
 
 
 Function
 ~~~~~~~~
 ::
 
-     Converts one wide char to a multi-byte char.
+     Converts a single wide character to its multibyte equivalent and stores
+     it in the buffer pointed to by 's'.
 
 
 Inputs
 ~~~~~~
 ::
 
-     wchar: wide char to convert
-     s: string pointer to put the converted char into.
+     s  - Pointer to the output buffer to store the resulting multibyte character.
+          If NULL, the function is called to reset the conversion state.
+
+     wc - The wide character to convert.
 
 
 Result
 ~~~~~~
 ::
 
-     If s is not NULL it returns the number of chars written into s;
-     zero is returned when wchar is a NULL character; -1 when the character
-     is not valid.
-     If s is NULL the function returns zero or non-zero when multi-byte
-     string resp don't or do have state-dependent encodings.
+     Returns the number of bytes written into 's' if successful.
+     If 'wc' is the null character (L'\0'), a single null byte is written and 1 is returned.
+     If the wide character cannot be represented as a valid multibyte sequence,
+     -1 is returned and errno is set to EILSEQ.
+
+     If 's' is NULL, the function does not perform a conversion. Instead, it returns 0
+     if the encoding is stateless (as with UTF-8), or a non-zero value if the encoding
+     is state-dependent. For UTF-8, 0 is always returned in this case.
+
+
+Example
+~~~~~~~
+::
+
+     wchar_t wc = L'O';
+     char buf[MB_CUR_MAX];
+     int len = wctomb(buf, wc);
+     if (len > 0) {
+         // buf now contains the multibyte representation of 'wc'
+     }
 
 
 Notes
 ~~~~~
 ::
 
-     stdc.library currently only implements "C" locale.
-     This means that 0 is returned when s is NULL and 0, 1 or -1 when s is
-     not NULL.
+     This function is a wrapper around wcrtomb(), using a static internal mbstate_t object
+     to preserve compatibility with C standard behavior. However, since UTF-8 is a stateless
+     encoding, the static state is effectively unused.
+
+     The function does not support stateful encodings and behaves according to the "C" or
+     UTF-8 locale model only. Behavior is undefined if multibyte encodings require internal state.
+
+
+Bugs
+~~~~
+::
+
+     No locale-specific behavior is supported.
+     No stateful encoding support (e.g., Shift-JIS or ISO 2022).
+
+
+
+See also
+~~~~~~~~
+
+`wcrtomb()`_ `mbtowc()`_ `mbrtowc()`_ `wcstombs()`_ `mbstowcs()`_ 
+
+----------
+
+wmemchr()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wmemchr(
+ const wchar_t *s, 
+ wchar_t c, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+      Locates the first occurrence of c in the initial n wide characters of the object pointed to by s. .
+
+
+Inputs
+~~~~~~
+::
+
+     s  - Pointer to the array of wchar_t elements to be searched.
+     c  - Wide character to be located.
+     n  - Number of elements of type wchar_t to compare.
+
+
+Result
+~~~~~~
+::
+
+     Returns a pointer to the located wide character, 
+     or a null pointer if the wide character does not occur in the object.  
+
+
+
+----------
+
+wmemcmp()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  wmemcmp(
+ const wchar_t * s1, 
+ const wchar_t * s2, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+      Compares the first n wide characters of the object pointed to by s1 
+      to the first n wide characters of the object pointed to by s2.
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - Pointer to block of elements of type wchar_t.
+     s2 - Pointer to block of elements of type wchar_t.
+     n  - Number of elements of type wchar_t to compare.
+
+
+Result
+~~~~~~
+::
+
+     Returns an integral value indicating the relationship between the content of the blocks:
+     A zero value indicates that the contents of both memory blocks are equal.
+     A value greater than zero indicates that the first wide character that does not match 
+     in both memory blocks has a greater value in ptr1 than in ptr2; 
+     And a value less than zero indicates the opposite.
+
+
+
+----------
+
+wmemcpy()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wmemcpy(
+ wchar_t * restrict s1, 
+ const wchar_t * restrict s2, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+      Copies n wide characters from the object pointed to by s2
+      to the object pointed to by s1. 
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - Pointer to the destination array where the content is to be copied.
+     s2 - Pointer to the source of data to be copied.
+     n  - Number of bytes to copy.
+
+
+Result
+~~~~~~
+::
+
+     Returns the value of s1.
+
+
+
+----------
+
+wmemmove()
+==========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wmemmove(
+ wchar_t *s1, 
+ const wchar_t *s2, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+      Copies n wide characters from the object pointed to by s2
+      to the object pointed to by s1.
+      Copying takes place as if an intermediate buffer were used, 
+      allowing the destination and source to overlap 
+
+
+Inputs
+~~~~~~
+::
+
+     s1 - Pointer to the destination array where the content is to be copied.
+     s2 - Pointer to the source of data to be copied.
+     n  - Number of elements of type wchar_t to copy.
+
+
+Result
+~~~~~~
+::
+
+     Returns the value of s1.
+
+
+
+----------
+
+wmemset()
+=========
+
+Synopsis
+~~~~~~~~
+::
+
+  ar_t *wmemset(
+ wchar_t *s, 
+ wchar_t c, 
+ size_t n)
+
+
+Function
+~~~~~~~~
+::
+
+     Copies the value of c into each of the first n wide characters of the object pointed to by s.
+
+
+Inputs
+~~~~~~
+::
+
+     s - Pointer to the array to fill.
+     c - Value to be set.
+     n - Number of bytes to be set to the value.
+
+
+Result
+~~~~~~
+::
+
+     Returns the value of s. 
 
 
 
