@@ -31,13 +31,7 @@ steps:
     chmod 700 ~/.ssh
 
     # Add SourceForge to known hosts (non-interactive SSH)
-    ssh-keyscan -t rsa shell.sourceforge.net >> ~/.ssh/known_hosts
-    echo "Checking shell access..."
-    # Try a noop command to test if shell is ready
-    if ! ssh -o StrictHostKeyChecking=no "$MAPPED_USER"@shell.sourceforge.net true; then
-      echo "Shell not active yet. Creating shell..."
-      ssh -t "$MAPPED_USER"@shell.sourceforge.net create
-    fi
+    ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
   env:
     MAPPED_USER: $(SF_RSYNC_USER)  # Set this in your pipeline variable group or UI
   condition: ne( variables['SF_RSYNC_USER'], '' )
