@@ -33,7 +33,19 @@ steps:
 
     # Add SourceForge to known hosts (non-interactive SSH)
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
-  displayName: 'Setup SSH Key for SourceForge'
+
+    # Create SSH config for web.sourceforge.net
+    cat > ~/.ssh/config <<EOF
+Host web.sourceforge.net
+    IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
+    StrictHostKeyChecking yes
+    Port 22
+EOF
+    chmod 600 ~/.ssh/config
+
+    echo "SSH key and config setup complete."
+  displayName: 'Setup SSH Key and SSH Config for SourceForge'
 
 - script: |
     sudo apt-key adv --keyserver packages.microsoft.com --recv-keys B02C46DF417A0893
@@ -44,6 +56,7 @@ steps:
   displayName: 'Installing documentation build dependencies'
 
 - script: |
+    echo "Using user: $SF_RSYNC_USER_AROS"
     mkdir -p '$(AROSDOCBUILDDIR)'
     git clone --depth 1 --recurse-submodules https://github.com/aros-development-team/AROS.git $(AROSDOCBUILDDIR)/
     mkdir -p '$(AROSWEBSRCBUILDDIR)'
@@ -94,7 +107,7 @@ steps:
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
     
     echo "Deploying using SSH key..."
-    rsync -avz -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' \
+    rsync -avz -e ssh \
       "$(Build.BinariesDirectory)/Upload/" \
       "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
     
@@ -130,7 +143,7 @@ steps:
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
-        rsync -rciv -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' {} \
+        rsync -rciv -e ssh {} \
         "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
 
@@ -139,7 +152,7 @@ steps:
       echo "Deploying website root files"
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
-      rsync -rciv -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
+      rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
         "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
   displayName: 'Deploying website using SSH Key'
@@ -170,6 +183,6 @@ steps:
     cp "$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5" "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/"
 
     echo "Deploying docs-html package using SSH key..."
-    rsync -avz -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' "$(Build.BinariesDirectory)/Upload/" "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
+    rsync -avz -e ssh "$(Build.BinariesDirectory)/Upload/" "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
   displayName: 'Deploying docs-html package using SSH key'
   
