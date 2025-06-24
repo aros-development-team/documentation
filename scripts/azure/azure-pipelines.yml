@@ -28,6 +28,7 @@ steps:
 
 - script: |
     mkdir -p '$(AROSDOCBUILDDIR)'
+    git clone --depth 1 --recurse-submodules https://github.com/aros-development-team/AROS.git $(AROSDOCBUILDDIR)/
     mkdir -p '$(AROSWEBSRCBUILDDIR)'
     mkdir -p '$(AROSDOCSRCBUILDDIR)'
     BUILDDATE=$(date -u +'%Y%m%d')
@@ -84,6 +85,8 @@ steps:
   displayName: 'Deploying documentation source package'
 
 - script: |
+    echo 'Generating autodocs...'
+    ./build alldocs
     echo 'Calling build www...'
     ./build www
   workingDirectory: '$(AROSWEBSRCBUILDDIR)'
@@ -123,6 +126,8 @@ steps:
   displayName: 'Deploying website'
 
 - script: |
+    echo 'Generating autodocs...'
+    ./build alldocs
     echo 'Calling build html...'
     ./build html
   workingDirectory: '$(AROSDOCSRCBUILDDIR)'
