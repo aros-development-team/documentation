@@ -20,4 +20,3 @@ jobs:
         title: "Sync master into azure-pipelines"
         body: "Automated PR to keep azure-pipelines branch up to date with master."
         base: azure-pipelines
-        branch: master
