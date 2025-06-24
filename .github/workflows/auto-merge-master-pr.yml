@@ -9,15 +9,15 @@ on:
 jobs:
   auto-approve-and-merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.ref == 'master'  # PR source branch == master
+    if: github.event.pull_request.base.ref == 'azure-pipelines' && github.event.pull_request.head.ref == 'auto-sync-master-to-azure-pipelines'
 
     steps:
-    - name: Auto approve the PR
-      uses: hmarr/auto-approve-action@v3
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Auto approve the PR
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Auto merge the PR
-      uses: pascalgn/automerge-action@v0.15.3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Auto merge the PR
+        uses: pascalgn/automerge-action@v0.15.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
