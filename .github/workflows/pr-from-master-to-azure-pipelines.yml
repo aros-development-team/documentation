@@ -1,0 +1,25 @@
+name: Create PR from master to azure-pipelines
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create or update PR
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Sync master into azure-pipelines"
+        title: "Sync master into azure-pipelines"
+        body: "Automated PR to keep azure-pipelines branch up to date with master."
+        base: azure-pipelines
+        head: master
+        branch: sync-master-to-azure-pipelines  # Use a unique branch name for the PR source
+        update-branch: true
