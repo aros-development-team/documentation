@@ -35,13 +35,11 @@ steps:
     ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
 
     # Create SSH config for web.sourceforge.net
-    cat > ~/.ssh/config <<EOF
-Host web.sourceforge.net
-    IdentityFile ~/.ssh/id_rsa
-    IdentitiesOnly yes
-    StrictHostKeyChecking yes
-    Port 22
-EOF
+    echo "Host web.sourceforge.net" > ~/.ssh/config
+    echo "    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
+    echo "    IdentitiesOnly yes" >> ~/.ssh/config
+    echo "    StrictHostKeyChecking yes" >> ~/.ssh/config
+    echo "    Port 22" >> ~/.ssh/config
     chmod 600 ~/.ssh/config
 
     echo "SSH key and config setup complete."
