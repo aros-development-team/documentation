@@ -9,14 +9,34 @@ jobs:
   create_pr:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full git history for branching & merging
 
-    - name: Create or update PR
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "Sync master into azure-pipelines"
-        title: "Sync master into azure-pipelines"
-        body: "Automated PR to keep azure-pipelines branch up to date with master."
-        base: azure-pipelines
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Create branch from master
+        run: |
+          git checkout -b sync-master-to-azure-pipelines
+
+      - name: Push branch to remote
+        run: |
+          git push --set-upstream origin sync-master-to-azure-pipelines --force
+
+      - name: Create or update Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: azure-pipelines
+          head: sync-master-to-azure-pipelines
+          title: "Sync master into azure-pipelines"
+          body: "Automated PR to keep azure-pipelines branch up to date with master."
+          commit-message: "Sync master into azure-pipelines"
+
+      - name: Delete remote branch
+        run: |
+          git push origin --delete sync-master-to-azure-pipelines
