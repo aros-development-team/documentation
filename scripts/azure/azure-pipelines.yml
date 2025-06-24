@@ -94,7 +94,7 @@ steps:
     cp $(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-source.tar.bz2.md5 $(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources/
     
     echo "Deploying using SSH key..."
-    rsync -avz -e 'ssh -o StrictHostKeyChecking=yes -p 22' \
+    rsync -avz -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' \
       "$(Build.BinariesDirectory)/Upload/" \
       "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
     
@@ -130,7 +130,7 @@ steps:
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
-        rsync -rciv -e 'ssh -o StrictHostKeyChecking=yes -p 22' {} \
+        rsync -rciv -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' {} \
         "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
 
@@ -139,7 +139,7 @@ steps:
       echo "Deploying website root files"
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
-      rsync -rciv -e 'ssh -o StrictHostKeyChecking=yes -p 22' $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
+      rsync -rciv -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
         "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
   displayName: 'Deploying website using SSH Key'
@@ -170,6 +170,6 @@ steps:
     cp "$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5" "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/"
 
     echo "Deploying docs-html package using SSH key..."
-    rsync -avz -e 'ssh -o StrictHostKeyChecking=yes -p 22' "$(Build.BinariesDirectory)/Upload/" "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
+    rsync -avz -e 'ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p 22' "$(Build.BinariesDirectory)/Upload/" "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
   displayName: 'Deploying docs-html package using SSH key'
   
