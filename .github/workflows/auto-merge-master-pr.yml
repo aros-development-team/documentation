@@ -1,0 +1,23 @@
+name: Auto-Approve and Merge PR from master
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - azure-pipelines
+
+jobs:
+  auto-approve-and-merge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.ref == 'master'  # PR source branch == master
+
+    steps:
+    - name: Auto approve the PR
+      uses: hmarr/auto-approve-action@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Auto merge the PR
+      uses: pascalgn/automerge-action@v0.15.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
