@@ -20,6 +20,4 @@ jobs:
         title: "Sync master into azure-pipelines"
         body: "Automated PR to keep azure-pipelines branch up to date with master."
         base: azure-pipelines
-        head: master
-        branch: sync-master-to-azure-pipelines  # Use a unique branch name for the PR source
-        update-branch: true
+        branch: master
