@@ -563,9 +563,12 @@ class ShellDocList(object):
                         Write them in the given capitalization.
         """
 
+        os.makedirs(targetdir, exist_ok=True)
         for doc in self.doclist:
             filename = os.path.join(targetdir, doc.docfilename + ".en.rst")
             print("Writing to file", filename)
+            # Ensure the directory exists
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 doc.write(fdesc, titles)
                 doc.write_xref(fdesc, "../../developers/autodocs")
@@ -635,6 +638,7 @@ class LibDocList(object):
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en.rst")
             print("Writing to file", filename)
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 #create header
                 underline = "=" * len(self.docfilename)
@@ -756,6 +760,7 @@ class HiddDocList(object):
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en.rst")
             print("Writing to file", filename)
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
                 # create header
                 underline = "=" * len(self.docfilename)
