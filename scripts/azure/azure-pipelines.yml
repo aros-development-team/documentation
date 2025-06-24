@@ -54,7 +54,7 @@ steps:
   displayName: 'Installing documentation build dependencies'
 
 - script: |
-    echo "Using user: $SF_RSYNC_USER_AROS"
+    echo "Using user: $(SF_RSYNC_USER_AROS)"
     mkdir -p '$(AROSDOCBUILDDIR)'
     git clone --depth 1 --recurse-submodules https://github.com/aros-development-team/AROS.git $(AROSDOCBUILDDIR)/
     mkdir -p '$(AROSWEBSRCBUILDDIR)'
@@ -107,7 +107,7 @@ steps:
     echo "Deploying using SSH key..."
     rsync -avz -e ssh \
       "$(Build.BinariesDirectory)/Upload/" \
-      "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
+      "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:uploads/nightly2/"
     
     rm -Rf "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Sources"
   displayName: 'Deploying documentation source package using SSH Key'
@@ -142,7 +142,7 @@ steps:
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
         rsync -rciv -e ssh {} \
-        "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
 
     # Deploy files
@@ -151,7 +151,7 @@ steps:
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www
       rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
-        "$SF_RSYNC_USER_AROS@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
   displayName: 'Deploying website using SSH Key'
 
@@ -181,6 +181,6 @@ steps:
     cp "$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5" "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/"
 
     echo "Deploying docs-html package using SSH key..."
-    rsync -avz -e ssh "$(Build.BinariesDirectory)/Upload/" "$SF_RSYNC_USER_AROS@web.sourceforge.net:uploads/nightly2/"
+    rsync -avz -e ssh "$(Build.BinariesDirectory)/Upload/" "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:uploads/nightly2/"
   displayName: 'Deploying docs-html package using SSH key'
   
