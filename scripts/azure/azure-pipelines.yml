@@ -176,7 +176,7 @@ steps:
   displayName: 'Creating docs-html package'
 
 - script: |
-      echo "Preparing upload directory..."
+    echo "Preparing upload directory..."
     mkdir -p '$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation'
     cp "$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2" "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/"
     cp "$(AROSDOCBUILDDIR)/$(AROSBUILDID)-docs-html.tar.bz2.md5" "$(Build.BinariesDirectory)/Upload/$(arosbuilddate)/Documentation/"
