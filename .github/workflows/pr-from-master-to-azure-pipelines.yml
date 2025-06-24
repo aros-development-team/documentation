@@ -32,7 +32,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: azure-pipelines
-          head: sync-master-to-azure-pipelines
+          branch: sync-master-to-azure-pipelines
           title: "Sync master into azure-pipelines"
           body: "Automated PR to keep azure-pipelines branch up to date with master."
           commit-message: "Sync master into azure-pipelines"
