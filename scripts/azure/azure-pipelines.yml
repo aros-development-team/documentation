@@ -43,7 +43,6 @@ steps:
   condition: ne( variables['SF_RSYNC_USER'], '' )
   displayName: 'Setup SSH Key for SourceForge'
 
-steps:
 - script: |
     sudo apt-key adv --keyserver packages.microsoft.com --recv-keys B02C46DF417A0893
     sudo add-apt-repository universe
