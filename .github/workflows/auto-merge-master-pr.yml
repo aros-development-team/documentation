@@ -7,7 +7,6 @@ on:
 
 jobs:
   approve_and_merge:
-    if: github.event.pull_request.head.ref == 'sync-master-to-azure-pipelines'
     runs-on: ubuntu-latest
 
     steps:
