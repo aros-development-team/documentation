@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Approve PR
+      - name: Auto approve the PR
         uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge PR
+      - name: Auto merge the PR
         uses: pascalgn/automerge-action@v0.15.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
