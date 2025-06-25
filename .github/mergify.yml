@@ -2,8 +2,8 @@
 pull_request_rules:
   - name: "Auto approve and merge PR from master to azure-pipelines"
     conditions:
-      - "base=azure-pipelines"   # Target branch is azure-pipelines
-      - "head=master"             # Source branch is master
+      - "base=azure-pipelines"
+      - "head=sync-master-to-azure-pipelines"
     actions:
       merge:
-        method: "squash"          # Merge method (can be "merge", "squash", or "rebase")
+        method: "squash"
