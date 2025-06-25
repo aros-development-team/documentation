@@ -1,22 +1,33 @@
 name: Auto-Approve and Merge PR from master
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [ azure-pipelines ]
+  workflow_run:
+    workflows: ["Create PR from master to azure-pipelines"]
+    types:
+      - completed
 
 jobs:
-  approve_and_merge:
+  auto-approve-and-merge:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: Approve PR
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Find the PR
+        id: pr
+        uses: juliangruber/find-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-sync-master-to-azure-pipelines  # adjust if needed
+
+      - name: Auto approve
         uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge PR
+      - name: Auto merge
         uses: pascalgn/automerge-action@v0.15.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: squash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
