@@ -1,16 +1,9 @@
 # .github/mergify.yml
 pull_request_rules:
-  - name: "Auto approve and merge PRs from master to azure-pipelines"
+  - name: "Auto approve and merge PR from master to azure-pipelines"
     conditions:
       - "base=azure-pipelines"   # Target branch is azure-pipelines
       - "head=master"             # Source branch is master
     actions:
-      approve:
-        # Approve the PR
-        message: "Auto-approved because it's from master to azure-pipelines."
       merge:
-        # Merge the PR once it's approved
-        method: squash
-        commit_message: "Sync master into azure-pipelines"
-        merge_commit_message: "Automated PR to sync master into azure-pipelines"
-        strict: false  # Allow the merge to happen even if there are merge conflicts (optional)
+        method: "squash"          # Merge method (can be "merge", "squash", or "rebase")
