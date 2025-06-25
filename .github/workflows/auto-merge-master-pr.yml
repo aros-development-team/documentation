@@ -23,7 +23,7 @@ jobs:
       - name: Auto approve the PR
         uses: hmarr/auto-approve-action@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub Actions token for approval
           pull-request-number: ${{ env.PR_NUMBER }}
 
       - name: Auto merge the PR
@@ -31,4 +31,4 @@ jobs:
         with:
           pull-request-number: ${{ env.PR_NUMBER }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub Actions token for merging
