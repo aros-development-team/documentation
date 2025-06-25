@@ -1,35 +1,43 @@
-name: Auto-Approve and Merge PR from master
+name: Auto-Approve and Merge Sync PR
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches:
-      - azure-pipelines
+  workflow_run:
+    workflows: ["Create PR from master to azure-pipelines"]
+    types:
+      - completed
 
 jobs:
   auto-approve-and-merge:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    if: >
-      github.event.pull_request.base.ref == 'azure-pipelines' &&
-      github.event.pull_request.head.ref == 'auto-sync-master-to-azure-pipelines'
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Install GitHub CLI
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: |
+          npm install -g @actions/github-script@5
+          gh version
 
-      - name: Find PR number
-        id: find_pr
-        run: echo "pr_number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+      - name: Get PR number from workflow run
+        id: pr
+        run: |
+          PR_URL=$(gh pr list --repo ${{ github.repository }} --head auto-sync-master-to-azure-pipelines --base azure-pipelines --json number --jq '.[0].number')
+          if [ -z "$PR_URL" ]; then
+            echo "No open PR found"
+            exit 1
+          fi
+          echo "pr_number=$PR_URL" >> $GITHUB_OUTPUT
 
       - name: Auto approve the PR
         uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.find_pr.outputs.pr_number }}
+          pull-request-number: ${{ steps.pr.outputs.pr_number }}
 
       - name: Auto merge the PR
-        uses: pascalgn/automerge-action@v0.15.3
-        with:
-          pull-request-number: ${{ steps.find_pr.outputs.pr_number }}
+        run: |
+          gh pr merge ${{ steps.pr.outputs.pr_number }} --repo ${{ github.repository }} --auto --squash --delete-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
