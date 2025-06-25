@@ -2,52 +2,42 @@ name: Auto-Approve and Merge PR from master
 
 on:
   workflow_run:
-    workflows: ["Create PR from master to azure-pipelines"]  # The name of your PR creation workflow
+    workflows: ["Create PR from master to azure-pipelines"]  # Ensure this triggers after the PR is created
     types:
       - completed
 
 jobs:
   auto-approve-and-merge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
       - name: Get PR number
-        id: pr_info
+        id: pr_number
         run: |
-          pr_response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/pulls?head=${{ github.event.workflow_run.head_commit.id }}")
+          echo "PR_NUMBER=$(curl -s \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            'https://api.github.com/repos/aros-development-team/documentation/pulls' \
+            | jq '.[0].number')" >> $GITHUB_ENV
+          echo "PR number: $PR_NUMBER"
 
-          # Debugging: Output the response to check if it's correct
-          echo "PR Response: $pr_response"
+      - name: Approve PR
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"event":"APPROVE"}' \
+            "https://api.github.com/repos/aros-development-team/documentation/pulls/${{ env.PR_NUMBER }}/reviews"
+        env:
+          PR_NUMBER: ${{ env.PR_NUMBER }}
 
-          # Check if PR exists
-          if [[ "$pr_response" == "[]" ]]; then
-            echo "No PR found. Exiting."
-            exit 1
-          fi
-
-          pr_number=$(echo "$pr_response" | jq '.[0].number')
-
-          # Debugging: Check if PR number was extracted
-          if [[ -z "$pr_number" ]]; then
-            echo "Error: PR number extraction failed."
-            exit 1
-          fi
-
-          echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
-          echo "PR Number: $pr_number"  # Print the PR number for debugging
-
-      - name: Auto approve the PR via API
+      - name: Merge the PR
         run: |
           curl -X PUT \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -d '{"event":"APPROVE"}' \
-          "https://api.github.com/repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/reviews"
-
-      - name: Auto merge the PR
-        uses: pascalgn/automerge-action@v0.15.3
-        with:
-          pull-request-number: ${{ env.PR_NUMBER }}
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"commit_title": "Merge PR", "merge_method": "merge"}' \
+            "https://api.github.com/repos/aros-development-team/documentation/pulls/${{ env.PR_NUMBER }}/merge"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure GITHUB_TOKEN is used for merging
+          PR_NUMBER: ${{ env.PR_NUMBER }}
+
