@@ -17,16 +17,26 @@ jobs:
         run: |
           pr_response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/pulls?head=${{ github.event.workflow_run.head_commit.id }}")
-          
+
           # Debugging: Output the response to check if it's correct
           echo "PR Response: $pr_response"
+
+          # Check if PR exists
+          if [[ "$pr_response" == "[]" ]]; then
+            echo "No PR found. Exiting."
+            exit 1
+          fi
 
           pr_number=$(echo "$pr_response" | jq '.[0].number')
 
           # Debugging: Check if PR number was extracted
-          echo "PR Number: $pr_number"
+          if [[ -z "$pr_number" ]]; then
+            echo "Error: PR number extraction failed."
+            exit 1
+          fi
 
           echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
+          echo "PR Number: $pr_number"  # Print the PR number for debugging
 
       - name: Auto approve the PR via API
         run: |
