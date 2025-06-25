@@ -1,4 +1,4 @@
-name: Auto-Approve and Merge PR from master
+name: Auto‑Approve and Merge PR
 
 on:
   workflow_run:
@@ -12,22 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Find the PR
-        id: pr
-        uses: juliangruber/find-pull-request-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          branch: auto-sync-master-to-azure-pipelines  # adjust if needed
-
-      - name: Auto approve
+      - name: Auto-approve the PR
         uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Auto merge
+      - name: Auto-merge the PR
         uses: pascalgn/automerge-action@v0.15.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
