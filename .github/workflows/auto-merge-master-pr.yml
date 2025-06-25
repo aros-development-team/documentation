@@ -2,25 +2,33 @@ name: Auto-Approve and Merge PR from master
 
 on:
   workflow_run:
-    workflows: ["Create PR from master to azure-pipelines"]  # adjust to your PR creation workflow name
+    workflows: ["Create PR from master to azure-pipelines"]  # The name of your PR creation workflow
     types:
       - completed
 
 jobs:
   auto-approve-and-merge:
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.pull_requests && github.event.workflow_run.pull_requests[0] }}
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
+      - name: Get PR number
+        id: pr_info
+        run: |
+          pr_number=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls?head=${{ github.event.workflow_run.head_commit.id }}" \
+            | jq '.[0].number')
+          echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
+
       - name: Auto approve the PR
         uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          pull-request-number: ${{ env.PR_NUMBER }}
 
       - name: Auto merge the PR
         uses: pascalgn/automerge-action@v0.15.3
+        with:
+          pull-request-number: ${{ env.PR_NUMBER }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          pull-request-number: ${{ github.event.workflow_run.pull_requests[0].number }}
