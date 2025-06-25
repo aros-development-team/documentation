@@ -3,8 +3,8 @@
 The documentation repository holds the AROS documentation and website source code.
 
 
-NB: Changes do not go live until they are pulled into the azure-pipelines branch, however
-this is automatically handled for the aros-development-team repository using GitHub actions.
+_NB: Changes do not go live until they are pulled into the azure-pipelines branch, however
+this is automatically handled for the aros-development-team repository using GitHub actions._
 
 
 To generate the documentation, or website you must download the AROS sources, and place the
