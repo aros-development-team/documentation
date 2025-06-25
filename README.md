@@ -1,4 +1,4 @@
-# Documentation
+# Build scripts and source code for the AROS website(s) and documentation.
 
 The documentation repository holds the AROS documentation and website source code.
 
