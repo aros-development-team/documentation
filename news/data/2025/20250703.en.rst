@@ -1,0 +1,58 @@
+===========================
+May/June 2025 Highlights
+===========================
+
+:Author:   Nick Andrews
+:Date:     2025-07-03
+
+Nick Andrews did a lot of fixes across the source tree, including:
+
+Datatypes
+---------
+
+- Implemented a TIFF datatype, and updated the Heic/PNG/Jpeg/WebP code.
+
+C Runtime
+---------
+
+- Added various widechar/multibyte support functions and unit tests for them, and initial support for locale's. Added scripts and code to download the unicode specifications and generate necessary conversion tables for use by AROS.
+
+- Fixed math functions to correctly check bounds, etc - fixes all developer math tests on x86_64.
+
+- Fixed build of c++ support code, so it correctly works on x86_64.
+
+gfx.hidd
+--------
+
+- Added SSE/AVX optimized conversion routines.
+
+Build system
+------------
+
+- Fixed ARM builds (RasPI, linux-arm and linux-armhf targets).
+
+- Updated GCC patches to GCC 15, and fixed the core/contrib & ports to build with it.
+
+- Fixed x86_64 stack call alias macros for LLVM, so modules now correctly compile and link that use these functions.
+
+- Exposed more LLVM/Clang related settings and options from configure, and fixed up LLVM build scripts (w.i.p - more widechar support needed to complete libc++ build). ~90% of AROS core now compiles with Clang.
+
+Misc
+----
+
+- Fixed broken DOS-ReadArgs behaviour, to respect the ReadItem "bug" used on AmigaOS. Unit tests now pass successfully (+ additional test cases added)
+
+- Added an early exception handler to help diagnose crashes in the bootstrapping code of AROS x86_64.
+
+- Updated Nasm port.
+
+- 64bit fixes in OpenURL prefs.
+
+- Fixed bug in Scouts "timer" list handling, resolving crash due to null pointer access on x86_64.
+
+- Add nightly script to parse the localization warnings/errors and upload them to the translators.aros.org site.
+
+- Adjusted nightly scripts to use SSH key instead of passwords.
+
+- Added script to clean up Unit tests older than 60 days.
+
