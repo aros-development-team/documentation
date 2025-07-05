@@ -17,6 +17,8 @@ variables:
     AZBUILDPATH: '$(Build.BinariesDirectory)' # workspace path
     AROSDOCSRCDIR: '$(system.defaultWorkingDirectory)' # Path to the source code
     SF_RSYNC_USER_AROS: "$(SF_RSYNC_USER),aros"
+    SF_RSYNC_USER_DEV: "$(SF_RSYNC_USER),arosdev"
+    SF_RSYNC_USER_TANS: "$(SF_RSYNC_USER),translations"
 
 steps:
 - task: DownloadSecureFile@1
@@ -116,7 +118,7 @@ steps:
     echo 'Generating autodocs...'
     ./build alldocs
     echo 'Calling build www...'
-    ./build www
+    ./build www aros dev locale
   workingDirectory: '$(AROSWEBSRCBUILDDIR)'
   displayName: 'Building website'
 
@@ -127,7 +129,7 @@ steps:
     rm -f "$(AROSDOCBUILDDIR)/rsync-directories.log" "$(AROSDOCBUILDDIR)/rsync-files.log"
 
     # Scan directory entries
-    for entry in $(AROSDOCBUILDDIR)/bin/documentation/www/*; do
+    for entry in $(AROSDOCBUILDDIR)/bin/documentation/www/aros/*; do
       if [ -d "$entry" ]; then
         echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-directories.log
       elif [ -f "$entry" ]; then
@@ -137,9 +139,9 @@ steps:
 
     # Deploy directories
     if [ -f "$(AROSDOCBUILDDIR)/rsync-directories.log" ]; then
-      echo "Deploying website directories using $(BUILDTHREADS) threads"
-      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
-      cd $(AROSDOCBUILDDIR)/bin/documentation/www
+      echo "Deploying AROS website directories using $(BUILDTHREADS) threads"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/aros/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/aros
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
         rsync -rciv -e ssh {} \
         "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
@@ -147,13 +149,83 @@ steps:
 
     # Deploy files
     if [ -f "$(AROSDOCBUILDDIR)/rsync-files.log" ]; then
-      echo "Deploying website root files"
-      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/||g' $(AROSDOCBUILDDIR)/rsync-files.log
-      cd $(AROSDOCBUILDDIR)/bin/documentation/www
+      echo "Deploying AROS website root files"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/aros||g' $(AROSDOCBUILDDIR)/rsync-files.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/aros
       rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
         "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
     fi
-  displayName: 'Deploying website using SSH Key'
+  displayName: 'Deploying main AROS website using SSH Key'
+
+- script: |
+    mkdir -p ~/.ssh
+
+    # Clean logs
+    rm -f "$(AROSDOCBUILDDIR)/rsync-directories.log" "$(AROSDOCBUILDDIR)/rsync-files.log"
+
+    # Scan directory entries
+    for entry in $(AROSDOCBUILDDIR)/bin/documentation/www/dev/*; do
+      if [ -d "$entry" ]; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-directories.log
+      elif [ -f "$entry" ]; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-files.log
+      fi
+    done
+
+    # Deploy directories
+    if [ -f "$(AROSDOCBUILDDIR)/rsync-directories.log" ]; then
+      echo "Deploying Developers website directories using $(BUILDTHREADS) threads"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/dev/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/dev
+      cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
+        rsync -rciv -e ssh {} \
+        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+    fi
+
+    # Deploy files
+    if [ -f "$(AROSDOCBUILDDIR)/rsync-files.log" ]; then
+      echo "Deploying Developers website root files"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/dev/||g' $(AROSDOCBUILDDIR)/rsync-files.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/dev
+      rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
+        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+    fi
+  displayName: 'Deploying Developers website using SSH Key'
+
+- script: |
+    mkdir -p ~/.ssh
+
+    # Clean logs
+    rm -f "$(AROSDOCBUILDDIR)/rsync-directories.log" "$(AROSDOCBUILDDIR)/rsync-files.log"
+
+    # Scan directory entries
+    for entry in $(AROSDOCBUILDDIR)/bin/documentation/www/locale/*; do
+      if [ -d "$entry" ]; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-directories.log
+      elif [ -f "$entry" ]; then
+        echo "$entry" >> $(AROSDOCBUILDDIR)/rsync-files.log
+      fi
+    done
+
+    # Deploy directories
+    if [ -f "$(AROSDOCBUILDDIR)/rsync-directories.log" ]; then
+      echo "Deploying Translations website directories using $(BUILDTHREADS) threads"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/locale/||g' $(AROSDOCBUILDDIR)/rsync-directories.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/locale
+      cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
+        rsync -rciv -e ssh {} \
+        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+    fi
+
+    # Deploy files
+    if [ -f "$(AROSDOCBUILDDIR)/rsync-files.log" ]; then
+      echo "Deploying Translations website root files"
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/locale/||g' $(AROSDOCBUILDDIR)/rsync-files.log
+      cd $(AROSDOCBUILDDIR)/bin/documentation/www/locale
+      rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
+        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+    fi
+  displayName: 'Deploying Translations website using SSH Key'
 
 - script: |
     echo 'Generating autodocs...'

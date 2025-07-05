@@ -40,6 +40,14 @@ LANGUAGES  = ['en', 'de', 'cs', 'el', 'es', 'fi', 'fr', 'it', 'nl', 'pl', 'pt', 
 # Languages to build (defaults to LANGUAGES):
 languages  = []
 
+SITES = {
+    'aros':     "aros",
+    'dev':       "developers",
+    'locale':      "translations"
+}
+
+targetsites = []
+wwwtgt = None
 
 # altLang
 # -------
@@ -344,12 +352,40 @@ def processWWW(src, depth):
     if suffix[1:] != DEFAULTLANG:
         return
 
+    dst_prefix = prefix
+
+    if wwwtgt == 'aros':
+        if "documentation/users" in os.path.dirname(src):
+            dst_prefix = prefix.replace("documentation/users", "documentation")
+
+    if wwwtgt == 'dev':
+        if "documentation/developers" not in os.path.dirname(src):
+            return
+        if prefix == "documentation/developers/index" or prefix.endswith("/documentation/developers/index"):
+            dst_prefix = prefix.replace("documentation/developers/", "")
+        else:
+            dst_prefix = prefix.replace("documentation/developers", "documentation")
+    else:
+        if "documentation/developers" in os.path.dirname(src):
+            return
+
+    if wwwtgt == 'locale':
+        if "documentation/translating" not in os.path.dirname(src):
+            return
+        if prefix == "documentation/translating/index" or prefix.endswith("/documentation/translating/index"):
+            dst_prefix = prefix.replace("documentation/translating/", "")
+        else:
+            dst_prefix = prefix.replace("documentation/translating", "documentation")
+    else:
+        if "documentation/translating" in os.path.dirname(src):
+            return
+
     for lang in languages:
         if lang == DEFAULTLANG:
-            dst = prefix + '.html'
+            dst = dst_prefix + '.html'
             dst_depth = depth
         else:
-            dst = lang + '/' + prefix + '.html'
+            dst = lang + '/' + dst_prefix + '.html'
             dst_depth = depth + 1
         src = altLang(prefix, lang)
         dst_abs = os.path.normpath(os.path.join(TRGROOT, dst))
@@ -406,11 +442,13 @@ def processHTML(src, depth):
     else:
         utility.reportSkipping(dst)
 
-
-def copyImages():
+def copyDevImages(usedevdir):
     # developer/ui
     imagepath = 'documentation/developers/ui/images'
-    dstpath   = os.path.join(TRGROOT, imagepath)
+    if usedevdir == "yes":
+        dstpath   = os.path.join(TRGROOT, imagepath)
+    else:
+        dstpath   = os.path.join(TRGROOT, 'documentation', 'ui', 'images')
     srcpath   = imagepath
 
     utility.makedir(dstpath)
@@ -426,37 +464,17 @@ def copyImages():
 
     # developer/zune-dev
     imagepath = 'documentation/developers/zune-dev/images'
-    dstpath   = os.path.join(TRGROOT, imagepath)
+    if usedevdir == "yes":
+        dstpath   = os.path.join(TRGROOT, imagepath)
+    else:
+        dstpath   = os.path.join(TRGROOT, 'documentation', 'zune-dev', 'images')
     srcpath   = imagepath
 
     utility.makedir(dstpath)
 
     utility.pathscopy('hello.png', srcpath, dstpath)
 
-    # users
-    imagepath = 'documentation/users/images'
-    dstpath   = os.path.join(TRGROOT, imagepath)
-    srcpath   = imagepath
-
-    utility.makedir(dstpath)
-
-    utility.pathscopy(
-        [
-            'installer1.png',
-            'installer2.png',
-            'installer3.png',
-            'installer4.png',
-            'installer5.png',
-            'installer6.png',
-            'installer7.png',
-            'installer8.png',
-            'installer9.png',
-            'shell.png'
-        ],
-        srcpath,
-        dstpath
-    )
-
+def copyGenericImages():
     # generic
     imagepath = 'images'
     dstpath   = os.path.join(TRGROOT, imagepath)
@@ -493,17 +511,51 @@ def copyImages():
         dstpath
     )
 
+def copyUserImages(useuserdir):
+    # users
+    imagepath = 'documentation/users/images'
+    if useuserdir == "yes":
+        dstpath   = os.path.join(TRGROOT, imagepath)
+    else:
+        dstpath   = os.path.join(TRGROOT, 'documentation', 'images')
+    srcpath   = imagepath
 
-def copySamples():
+    utility.makedir(dstpath)
+
+    utility.pathscopy(
+        [
+            'installer1.png',
+            'installer2.png',
+            'installer3.png',
+            'installer4.png',
+            'installer5.png',
+            'installer6.png',
+            'installer7.png',
+            'installer8.png',
+            'installer9.png',
+            'shell.png'
+        ],
+        srcpath,
+        dstpath
+    )
+
+
+def copySamples(www):
     srcpath = os.path.join('documentation', 'developers', 'samplecode')
-    dstpath = os.path.join(TRGROOT, srcpath)
+    if www != "yes":
+        dstpath = os.path.join(TRGROOT, srcpath)
+    else:
+        dstpath = os.path.join(TRGROOT, 'documentation', 'samplecode')
     shutil.rmtree(dstpath, True)
     utility.copytree(srcpath, dstpath)
 
 
-def copyHeaders():
+def copyHeaders(www):
     srcpath = os.path.join('documentation', 'developers', 'headerfiles')
-    dstpath = os.path.join(TRGROOT, srcpath)
+    if www != "yes":
+        dstpath = os.path.join(TRGROOT, srcpath)
+    else:
+        dstpath = os.path.join(TRGROOT, 'documentation', 'headerfiles')
     shutil.rmtree(dstpath, True)
     utility.copytree(srcpath, dstpath)
 
@@ -524,131 +576,149 @@ def buildClean():
 
 
 def buildWWW():
-    global TRGROOT
-    TRGROOT = os.path.join(DSTROOT, 'www')
+    global TRGROOT, wwwtgt
+    WWWROOT = os.path.join(DSTROOT, 'www')
 
-    # Hack to get around dependency problems
-    for lang in languages:
-        if lang == DEFAULTLANG:
-            dstpath = TRGROOT
-        else:
-            dstpath = os.path.join(TRGROOT, lang)
-        utility.remove(os.path.join(dstpath, 'index.html'))
-        utility.remove(os.path.join(dstpath, 'introduction/index.html'))
-        utility.remove(os.path.join(dstpath, 'download.html'))
+    for wwwtgt in targetsites:
+        TRGROOT = os.path.join(WWWROOT, wwwtgt)
 
-    makeNews()
-    makeCredits()
-    makeTemplates()
+        # Hack to get around dependency problems
+        for lang in languages:
+            if lang == DEFAULTLANG:
+                dstpath = TRGROOT
+            else:
+                dstpath = os.path.join(TRGROOT, lang)
+            utility.remove(os.path.join(dstpath, 'index.html'))
+            utility.remove(os.path.join(dstpath, 'introduction/index.html'))
+            utility.remove(os.path.join(dstpath, 'download.html'))
 
-    for lang in languages:
-        TEMPLATE_DATA[lang] = open(TEMPLATE + lang, 'r').read()
+        if wwwtgt == "aros":
+            makeNews()
+            makeCredits()
 
-    makePictures()
-    makeStatus()
+        makeTemplates()
 
-    recurse(processWWW)
+        for lang in languages:
+            TEMPLATE_DATA[lang] = open(TEMPLATE + lang, 'r').read()
 
-    utility.copy('license.html', TRGROOT)
+        if wwwtgt == "aros":
+            makePictures()
+            makeStatus()
 
-    imagepath = os.path.join(TRGROOT, 'images')
-    utility.makedir(imagepath)
-    srcpath = 'targets/www/images'
+        recurse(processWWW)
 
-    utility.pathscopy(
-        [
-            # Flags
-            'czechlogo.png',
-            'englishlogo.png',
-            'finlandlogo.png',
-            'francelogo.png',
-            'germanylogo.png',
-            'greecelogo.png',
-            'italylogo.png',
-            'netherlandslogo.png',
-            'polandlogo.png',
-            'portugallogo.png',
-            'russialogo.png',
-            'spanishlogo.png',
-            'swedenlogo.png',
+        utility.copy('license.html', TRGROOT)
 
-            # Layout images
-            'archivedownloadicon.png',
-            'arosthumbmain.png',
-            'backgroundtop.png',
-            'bgcolormain.png',
-            'bgcolorright.png',
-            'bountyicon1.png',
-            'bountyicon2.png',
-            'bullet.gif',
-            'communityicon.png',
-            'directdownloadicon.png',
-            'disk.png',
-            'kittymascot.png',
-            'mainpagespacer.png',
-            'pointer.png',
-            'rsfeed.gif',
-            'rssicon1.png',
-            'sidespacer.png',
-            'textdocu.gif',
-            'toplogo.png',
+        imagepath = os.path.join(TRGROOT, 'images')
+        utility.makedir(imagepath)
 
-            # Logos
-            'genesi-small.gif',
-            'noeupatents-small.png',
-            'trustec-small.png'
-        ],
-        srcpath,
-        imagepath
-    )
+        srcpath = 'targets/www/common/images'
+        utility.pathscopy(
+            [
+                # Flags
+                'czechlogo.png',
+                'englishlogo.png',
+                'finlandlogo.png',
+                'francelogo.png',
+                'germanylogo.png',
+                'greecelogo.png',
+                'italylogo.png',
+                'netherlandslogo.png',
+                'polandlogo.png',
+                'portugallogo.png',
+                'russialogo.png',
+                'spanishlogo.png',
+                'swedenlogo.png',
 
-    copyImages()
-    copySamples()
-    copyHeaders()
+                # Layout images
+                'archivedownloadicon.png',
+                'arosthumbmain.png',
+                'backgroundtop.png',
+                'bgcolormain.png',
+                'bgcolorright.png',
+                'bountyicon1.png',
+                'bountyicon2.png',
+                'bullet.gif',
+                'communityicon.png',
+                'directdownloadicon.png',
+                'disk.png',
+                'kittymascot.png',
+                'mainpagespacer.png',
+                'pointer.png',
+                'rsfeed.gif',
+                'rssicon1.png',
+                'sidespacer.png',
+                'textdocu.gif',
+                'toplogo.png',
 
-    srcpath= 'targets/www'
-    utility.pathscopy(
-        [
-            'docutils.css',
-            'aros.css',
-            'print.css',
-            'donations.css',
-            'aros.ico'
-        ],
-        srcpath,
-        TRGROOT
-    )
+                # Logos
+                'genesi-small.gif',
+                'noeupatents-small.png',
+                'trustec-small.png'
+            ],
+            srcpath,
+            imagepath
+        )
 
-    utility.copy(os.path.join('targets/www', 'htaccess'), os.path.join(TRGROOT, '.htaccess'))
+        if wwwtgt == "aros":
+            copyUserImages("no")
 
-    dbpath = os.path.join(TRGROOT, 'db')
-    utility.makedir(dbpath)
+        copyGenericImages()
 
-    utility.makedir(os.path.join(dbpath, 'download-descriptions'))
-    for lang in languages:
-        desc_file = os.path.join('db/download-descriptions', lang + '.txt')
-        if os.path.exists(desc_file):
-            utility.copy(desc_file, os.path.join(dbpath, 'download-descriptions'))
+        if wwwtgt == "dev":
+            copyDevImages("no")
+            copySamples("yes")
+            copyHeaders("yes")
 
-    cgi_dest = os.path.join(TRGROOT, 'cgi-bin')
-    if os.path.exists(cgi_dest):
-        shutil.rmtree(cgi_dest)
-    utility.copytree('targets/www/cgi-bin', cgi_dest)
+        srcpath= 'targets/www/common'
+        utility.pathscopy(
+            [
+                'docutils.css',
+                'aros.css',
+                'print.css',
+                'donations.css',
+                'aros.ico'
+            ],
+            srcpath,
+            TRGROOT
+        )
 
-    js_dest = os.path.join(TRGROOT, 'js')
-    if os.path.exists(js_dest):
-        shutil.rmtree(js_dest)
-    utility.copytree('targets/www/js', js_dest)
+        utility.copy(os.path.join('targets/www/common', 'htaccess'), os.path.join(TRGROOT, '.htaccess'))
 
-    thumb_dest = os.path.join(TRGROOT, 'images/thumbs')
-    if os.path.exists(thumb_dest):
-        shutil.rmtree(thumb_dest)
-    utility.copytree('targets/www/images/thumbs', thumb_dest)
+        dbpath = os.path.join(TRGROOT, 'db')
+        utility.makedir(dbpath)
 
-    # Remove index-offline.html
-    utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
+        if wwwtgt == "aros":
+            utility.makedir(os.path.join(dbpath, 'download-descriptions'))
+            for lang in languages:
+                desc_file = os.path.join('db/download-descriptions', lang + '.txt')
+                if os.path.exists(desc_file):
+                    utility.copy(desc_file, os.path.join(dbpath, 'download-descriptions'))
 
-    os.system('chmod -R go+r %s' % TRGROOT)
+        cgi_dest = os.path.join(TRGROOT, 'cgi-bin')
+        if os.path.exists(cgi_dest):
+            shutil.rmtree(cgi_dest)
+        if wwwtgt == "aros":
+            utility.copytree('targets/www/aros/cgi-bin', cgi_dest)
+
+        if wwwtgt == "dev":
+            utility.copytree('targets/www/dev/cgi-bin', cgi_dest)
+
+        if wwwtgt == "aros":
+            js_dest = os.path.join(TRGROOT, 'js')
+            if os.path.exists(js_dest):
+                shutil.rmtree(js_dest)
+            utility.copytree('targets/www/aros/js', js_dest)
+
+            thumb_dest = os.path.join(TRGROOT, 'images/thumbs')
+            if os.path.exists(thumb_dest):
+                shutil.rmtree(thumb_dest)
+            utility.copytree('targets/www/aros/images/thumbs', thumb_dest)
+
+            # Remove index-offline.html
+            utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
+
+        os.system('chmod -R go+r %s' % TRGROOT)
 
 
 def buildHTML():
@@ -665,7 +735,9 @@ def buildHTML():
         open('news/index.en.rst', 'w').write('')
     recurse(processHTML)
 
-    copyImages()
+    copyDevImages("yes")
+    copyGenericImages()
+    copyUserImages("yes")
     copySamples()
     copyHeaders()
 
@@ -703,7 +775,6 @@ TARGETS = {
     'appsdocs':  autodoc.create_apps_docs
 }
 
-
 # Usage: build {target|language}
 # Target is  www, html, clean, alldocs, shelldocs, libdocs.
 # The latter 3 update the documentation which is extracted from the source code.
@@ -721,6 +792,8 @@ if __name__ == '__main__':
             languages.append(arg)
         elif arg in TARGETS:
             targets.append(arg)
+        elif arg in SITES:
+            targetsites.append(arg)
         else:
             print('Error: Unrecognised argument, "' + arg + '".')
             valid = 0
@@ -731,6 +804,10 @@ if __name__ == '__main__':
             languages = list(LANGUAGES)
         if len(targets) == 0:
             targets.append('www')
+
+        # If www is a target and no site specified, default to the first in SITES
+        if 'www' in targets and len(targetsites) == 0:
+            targetsites.append(SITES[SITES.keys()[0]])  # Get first value from SITES
 
         # Build each target
         for target in targets:
