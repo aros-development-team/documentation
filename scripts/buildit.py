@@ -705,6 +705,12 @@ def buildWWW():
         if wwwtgt == "dev":
             utility.copytree('targets/www/dev/cgi-bin', cgi_dest)
 
+        if wwwtgt == "locale":
+            locflags_dest = os.path.join(TRGROOT, 'images/flags')
+            if os.path.exists(locflags_dest):
+                shutil.rmtree(locflags_dest)
+            utility.copytree('targets/www/locale/images/flags', locflags_dest)
+
         if wwwtgt == "aros":
             js_dest = os.path.join(TRGROOT, 'js')
             if os.path.exists(js_dest):
