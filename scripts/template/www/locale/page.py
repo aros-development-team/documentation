@@ -23,12 +23,12 @@ def makePage( _T, _N, _M, lang, charset ):
 <!DOCTYPE html>
 <html>
     <head>
-        <title>AROS Research Operating System</title>
+        <title>AROS Research Operating System - Localization Documentation and Resources</title>
         <meta http-equiv="Content-Type" content="text/html; charset={{ charset }}">
         <link rel="stylesheet" type="text/css" href="/aros.css?v=1.6">
         <link rel="stylesheet" type="text/css" href="/print.css?v=1.0" media="print">
         <link rel="icon" type="image/x-icon" href="/aros.ico">
-        <meta name="keywords" content="AROS, OS, operating system, research, open source, portage">
+        <meta name="keywords" content="AROS Localization, Localization, translations">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
@@ -37,7 +37,7 @@ def makePage( _T, _N, _M, lang, charset ):
             <img src="/images/toplogo.png?v=1.0" alt="top logo menu" class=leftimage>
             <img src="/images/kittymascot.png?v=1.0" alt="kitty mascot" class="rightimage">
             <div class="topmenu">
-                <a href="/">AROS.ORG</a>
+                <a href="http://www.aros.org/">AROS.ORG</a>
                 <a href="https://www.arosworld.org/">Forum</a>
                 <a href="https://archives.arosworld.org/">Software</a>
                 <a href="https://power2people.org/">Bounties</a>
@@ -105,85 +105,19 @@ def makePage( _T, _N, _M, lang, charset ):
                     </li>
                 </ul>
                 <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'news/', lang) }}">{{ n['news'] }}</a>
-                        <ul class="tree-entry">
-                            <li><a href="{{ makeURL( 'news/archive/', lang) }}">{{ n['archive'] }}</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="http://www.aros.org/">{{ n['users'] }}</a></li>
                 </ul>
                 <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'introduction/', lang ) }}">{{ n['introduction'] }}</a>
-                        <ul class="tree-entry">
-                            <li><a href="{{ makeURL('introduction/status/everything', lang ) }}">{{ n['status'] }}</a></li>
-                            <li><a href="{{ makeURL( 'introduction/ports', lang ) }}">{{ n['ports'] }}</a></li>
-                            <li><a href="/license.html">{{ n['license'] }}</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'download', lang) }}">{{ n['download'] }}</a></li>
-                </ul>
-                <ul class="tree-head">
-                    <li>{{ n['pictures'] }}
-                        <ul class="tree-entry">
-                            <li><a href="{{ makeURL( 'pictures/screenshots/', lang) }}">{{ n['screenshots'] }}</a></li>
-                            <li><a href="{{ makeURL( 'pictures/developers/', lang) }}">{{ n['developers'] }}</a></li>
-                        </ul>
+                    <li>
+                        <a href="http://developers.aros.org/">{{ n['developers'] }}</a>
                     </li>
                 </ul>
                 <ul class="tree-head">
                     <li>{{ n['documentation'] }}
                         <ul class="tree-head">
-                            <li>
-                                <a href="{{ makeURL( 'documentation/', lang) }}">{{ n['users'] }}</a>
-                                <ul class="tree-entry">
-                                    <li><a href="{{ makeURL( 'documentation/installation', lang) }}">{{ n['installation'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/using', lang) }}">{{ n['using'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/shell/index', lang) }}">{{ n['shell'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/applications/index', lang) }}">{{ n['applications'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/faq', lang) }}">{{ n['faq'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/howto', lang) }}">{{ n['howto'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/glossary', lang) }}">{{ n['glossary'] }}</a></li>
-                                </ul>
-                            </li>
                             <li><a href="http://translations.aros.org/">{{ n['translators'] }}</a></li>
-                            <li>
-                                <a href="http://developers.aros.org/">{{ n['developers'] }}</a>
-                                <ul class="tree-entry">
-                                    <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
-                                    <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/testing/', lang) }}">{{ n['testing'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/documenting', lang) }}">{{ n['documenting'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/porting', lang) }}">{{ n['porting'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/summaries/', lang) }}">{{ n['summaries'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/links', lang) }}">{{ n['links'] }}</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
-                </ul>
-                <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'contact', lang) }}">{{ n['contact'] }}</a></li>
-                </ul>
-                <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'credits', lang) }}">{{ n['credits'] }}</a></li>
-                    <li><a href="{{ makeURL( 'acknowledgements', lang) }}">{{ n['acknowledgements'] }}</a></li>
-                </ul>
-                <ul class="tree-head">
-                    <li><a href="{{ makeURL( 'sponsors', lang) }}">{{ n['sponsors'] }}</a></li>
-                    <li><a href="{{ makeURL( 'linking', lang) }}">{{ n['linking'] }}</a></li>
-                    <li><a href="{{ makeURL( 'links', lang) }}">{{ n['links'] }}</a></li>
                 </ul>
             </nav>
             <div class="image-container">

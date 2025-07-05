@@ -147,30 +147,17 @@ def makePage( _T, _N, _M, lang, charset ):
                                     <li><a href="{{ makeURL( 'documentation/glossary', lang) }}">{{ n['glossary'] }}</a></li>
                                 </ul>
                             </li>
-                            <li><a href="http://translations.aros.org/">{{ n['translators'] }}</a></li>
-                            <li>
-                                <a href="http://developers.aros.org/">{{ n['developers'] }}</a>
-                                <ul class="tree-entry">
-                                    <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
-                                    <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/git', lang) }}">{{ n['working-with-git'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/compiling', lang) }}">{{ n['compiling'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/testing/', lang) }}">{{ n['testing'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/documenting', lang) }}">{{ n['documenting'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/porting', lang) }}">{{ n['porting'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/summaries/', lang) }}">{{ n['summaries'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/developers/links', lang) }}">{{ n['links'] }}</a></li>
-                                </ul>
-                            </li>
                         </ul>
+                    </li>
+                </ul>
+                <ul class="tree-head">
+                    <li>
+                        <a href="http://translations.aros.org/">{{ n['translators'] }}</a>
+                    </li>
+                </ul>
+                <ul class="tree-head">
+                    <li>
+                        <a href="http://developers.aros.org/">{{ n['developers'] }}</a>
                     </li>
                 </ul>
                 <ul class="tree-head">
