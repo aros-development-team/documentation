@@ -29,7 +29,8 @@ DEFAULTLANG= 'en'
 SRCROOT    = os.path.abspath('.')
 DSTROOT    = os.path.abspath('../bin/documentation')
 
-TEMPLATE   = 'targets/www/template.html.'
+TEMPLATEPATH   = 'targets/www/'
+TEMPLATEFILESTEM   = 'template.html.'
 
 TEMPLATE_DATA = {}
 
@@ -394,7 +395,7 @@ def processWWW(src, depth):
 
         utility.makedir(dst_dir)
 
-        if utility.newer([TEMPLATE + lang, src_abs], dst_abs):
+        if utility.newer([TEMPLATEPATH + wwwtgt + "/" + TEMPLATEFILESTEM + lang, src_abs], dst_abs):
             utility.reportBuilding(dst)
             strings = {
                 'ROOT': '../' * dst_depth,
@@ -596,10 +597,10 @@ def buildWWW():
             makeNews()
             makeCredits()
 
-        makeTemplates()
+        makeTemplates(wwwtgt)
 
         for lang in languages:
-            TEMPLATE_DATA[lang] = open(TEMPLATE + lang, 'r').read()
+            TEMPLATE_DATA[lang] = open(TEMPLATEPATH + wwwtgt + "/" + TEMPLATEFILESTEM + lang, 'r').read()
 
         if wwwtgt == "aros":
             makePictures()

@@ -135,21 +135,21 @@ def makePage( _T, _N, _M, lang, charset ):
                     <li>{{ n['documentation'] }}
                         <ul class="tree-head">
                             <li>
-                                <a href="{{ makeURL( 'documentation/users/', lang) }}">{{ n['users'] }}</a>
+                                <a href="{{ makeURL( 'documentation/', lang) }}">{{ n['users'] }}</a>
                                 <ul class="tree-entry">
-                                    <li><a href="{{ makeURL( 'documentation/users/installation', lang) }}">{{ n['installation'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/using', lang) }}">{{ n['using'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/shell/index', lang) }}">{{ n['shell'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/applications/index', lang) }}">{{ n['applications'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/faq', lang) }}">{{ n['faq'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/howto', lang) }}">{{ n['howto'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/users/glossary', lang) }}">{{ n['glossary'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/installation', lang) }}">{{ n['installation'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/using', lang) }}">{{ n['using'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/shell/index', lang) }}">{{ n['shell'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/applications/index', lang) }}">{{ n['applications'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/faq', lang) }}">{{ n['faq'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/howto', lang) }}">{{ n['howto'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/hardware', lang) }}">{{ n['hwcompat'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/glossary', lang) }}">{{ n['glossary'] }}</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ makeURL( 'documentation/translating/', lang) }}">{{ n['translators'] }}</a></li>
+                            <li><a href="http://translations.aros.org/">{{ n['translators'] }}</a></li>
                             <li>
-                                <a href="{{ makeURL( 'documentation/developers/', lang) }}">{{ n['developers'] }}</a>
+                                <a href="http://developers.aros.org/">{{ n['developers'] }}</a>
                                 <ul class="tree-entry">
                                     <li><a href="{{ makeURL( 'documentation/developers/contribute', lang) }}">{{ n['contribute'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/developers/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
