@@ -150,7 +150,7 @@ steps:
     # Deploy files
     if [ -f "$(AROSDOCBUILDDIR)/rsync-files.log" ]; then
       echo "Deploying AROS website root files"
-      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/aros||g' $(AROSDOCBUILDDIR)/rsync-files.log
+      sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/aros/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www/aros
       rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
         "$(SF_RSYNC_USER_AROS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
