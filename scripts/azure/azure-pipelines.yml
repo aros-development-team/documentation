@@ -179,7 +179,7 @@ steps:
       cd $(AROSDOCBUILDDIR)/bin/documentation/www/dev
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
         rsync -rciv -e ssh {} \
-        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/arosdev/htdocs/"
     fi
 
     # Deploy files
@@ -188,7 +188,7 @@ steps:
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/dev/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www/dev
       rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
-        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_DEV)@web.sourceforge.net:/home/project-web/arosdev/htdocs/"
     fi
   displayName: 'Deploying Developers website using SSH Key'
 
@@ -214,7 +214,7 @@ steps:
       cd $(AROSDOCBUILDDIR)/bin/documentation/www/locale
       cat $(AROSDOCBUILDDIR)/rsync-directories.log | parallel --will-cite -j $(BUILDTHREADS) \
         rsync -rciv -e ssh {} \
-        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/translations/htdocs/"
     fi
 
     # Deploy files
@@ -223,7 +223,7 @@ steps:
       sed -i 's|$(AROSDOCBUILDDIR)/bin/documentation/www/locale/||g' $(AROSDOCBUILDDIR)/rsync-files.log
       cd $(AROSDOCBUILDDIR)/bin/documentation/www/locale
       rsync -rciv -e ssh $(< $(AROSDOCBUILDDIR)/rsync-files.log) \
-        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/aros/htdocs/"
+        "$(SF_RSYNC_USER_TANS)@web.sourceforge.net:/home/project-web/translations/htdocs/"
     fi
   displayName: 'Deploying Translations website using SSH Key'
 
