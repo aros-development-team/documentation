@@ -742,7 +742,7 @@ def buildHTML():
     copySamples("no")
     copyHeaders("no")
 
-    srcpath = 'targets/www'
+    srcpath = 'targets/www/common'
     utility.pathscopy(
         [
             'docutils.css',
