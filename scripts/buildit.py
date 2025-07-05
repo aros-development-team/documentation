@@ -738,8 +738,8 @@ def buildHTML():
     copyDevImages("yes")
     copyGenericImages()
     copyUserImages("yes")
-    copySamples()
-    copyHeaders()
+    copySamples("no")
+    copyHeaders("no")
 
     srcpath = 'targets/www'
     utility.pathscopy(
