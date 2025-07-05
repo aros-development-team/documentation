@@ -111,10 +111,10 @@ def makePage( _T, _N, _M, lang, charset ):
                     <li><a href="http://translations.aros.org/">{{ n['translators'] }}</a></li>
                 </ul>
                 <ul class="tree-head">
+                    <li><a href="/">{{ n['developers'] }}</a></li>
                     <li>{{ n['documentation'] }}
                         <ul class="tree-head">
                             <li>
-                                <a href="/">{{ n['developers'] }}</a>
                                 <ul class="tree-entry">
                                     <li><a href="{{ makeURL( 'documentation/contribute', lang) }}">{{ n['contribute'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
