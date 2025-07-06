@@ -3,7 +3,7 @@ developers.aros.org
 ====================================
 
 :Authors:   Various
-:Copyright: Copyright © 1995-2025, The AROS Development Team
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Add suitable categories for content, and split up pages to suit.
