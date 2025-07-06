@@ -66,23 +66,23 @@ Community / Support.
 + `Documenting`__
 + `Summaries`__
 
-__ compiling
-__ porting
-__ hardware/pci
-__ autodocs/index
-__ specifications/index
-__ hardware/index
-__ contribute
-__ git
-__ app-dev/index
-__ zune-dev/index
-__ ui
-__ sys-dev/index
-__ testing/index
-__ debugging
+__ {{ devdocrootpath }}compiling
+__ {{ devdocrootpath }}porting
+__ {{ devdocrootpath }}hardware/pci
+__ {{ devdocrootpath }}autodocs/index
+__ {{ devdocrootpath }}specifications/index
+__ {{ devdocrootpath }}hardware/index
+__ {{ devdocrootpath }}contribute
+__ {{ devdocrootpath }}git
+__ {{ devdocrootpath }}app-dev/index
+__ {{ devdocrootpath }}zune-dev/index
+__ {{ devdocrootpath }}ui
+__ {{ devdocrootpath }}sys-dev/index
+__ {{ devdocrootpath }}testing/index
+__ {{ devdocrootpath }}debugging
 __ https://github.com/aros-development-team/AROS/issues
-__ roadmap
-__ links
-__ faq
-__ documenting
-__ summaries/index
+__ {{ devdocrootpath }}roadmap
+__ {{ devdocrootpath }}links
+__ {{ devdocrootpath }}faq
+__ {{ devdocrootpath }}documenting
+__ {{ devdocrootpath }}summaries/index

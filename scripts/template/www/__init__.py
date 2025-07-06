@@ -68,7 +68,7 @@ def makeTemplates(tmpltgt):
         ( 
             [ 
                 __file__, 
-                os.path.join( HERE_DIR, 'page.py' ),
+                os.path.join( TMPLT_TGT, 'page.py' ),
                 os.path.join( LANG_DIR, langfile ) 
             ], 
             dst 

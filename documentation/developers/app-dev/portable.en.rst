@@ -3,7 +3,7 @@ AROS Application Development Manual -- Writing Portable Software
 ================================================================
 
 :Authors:   Matthias Rustler
-:Copyright: Copyright (C) 2007-2008, The AROS Development Team
+:Copyright: Copyright (C) 2007-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
@@ -593,14 +593,14 @@ macros.
 
 .. Links to headers:
 
-.. _aros/asmcall.h:     /documentation/developers/headerfiles/aros/asmcall.h
-.. _aros/cpu.h:         /documentation/developers/headerfiles/aros/cpu.h
-.. _aros/macros.h:      /documentation/developers/headerfiles/aros/macros.h
-.. _aros/io.h:          /documentation/developers/headerfiles/aros/io.h
-.. _aros/64bit.h:       /documentation/developers/headerfiles/aros/64bit.h
-.. _exec/types.h:       /documentation/developers/headerfiles/exec/types.h
-.. _exec/nodes.h:       /documentation/developers/headerfiles/exec/nodes.h
-.. _utility/tagitem.h:  /documentation/developers/headerfiles/utility/tagitem.h
+.. _aros/asmcall.h:     /{{ devdocpath }}headerfiles/aros/asmcall.h
+.. _aros/cpu.h:         /{{ devdocpath }}headerfiles/aros/cpu.h
+.. _aros/macros.h:      /{{ devdocpath }}headerfiles/aros/macros.h
+.. _aros/io.h:          /{{ devdocpath }}headerfiles/aros/io.h
+.. _aros/64bit.h:       /{{ devdocpath }}headerfiles/aros/64bit.h
+.. _exec/types.h:       /{{ devdocpath }}headerfiles/exec/types.h
+.. _exec/nodes.h:       /{{ devdocpath }}headerfiles/exec/nodes.h
+.. _utility/tagitem.h:  /{{ devdocpath }}headerfiles/utility/tagitem.h
 
 
 .. Links to functions
