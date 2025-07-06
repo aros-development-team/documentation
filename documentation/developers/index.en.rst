@@ -8,7 +8,9 @@ developers.aros.org
 :Date:      $Date$
 :Status:    Add suitable categories for content, and split up pages to suit.
 
-<h1>Welcome to the AROS Developer Portal<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+.. raw:: html
+
+   <h1>Welcome to the AROS Developer Portal<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 Your starting point for developing applications, drivers, and system components for the open-source Amiga-like operating system
 
