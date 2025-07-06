@@ -3,7 +3,7 @@ User Interface Style Guide
 ==========================
 
 :Authors:   Adam Chodorowski
-:Copyright: Copyright © 2003, The AROS Development Team
+:Copyright: Copyright © 2003-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 
@@ -27,7 +27,7 @@ Preferences
 Preference windows are similar in appearance to dialog windows, in that they
 have a row of buttons along the bottom and no close gadget in the title bar.
 
-.. Figure:: /documentation/developers/ui/images/windows-prefs-titlebar.png
+.. Figure:: /{{ devdocpath }}ui/images/windows-prefs-titlebar.png
 
    Example of a preferences window title bar. Notice the absence of the close
    gadget.
@@ -74,7 +74,7 @@ the bottom of the window (in this order, from left to right):
    which should be as small as possible (when resizing, only the space between
    the groups should grow and not the buttons).
 
-.. Figure:: /documentation/developers/ui/images/windows-prefs-buttons.png
+.. Figure:: /{{ devdocpath }}ui/images/windows-prefs-buttons.png
 
    Example of the row of buttons in a preferences window.
 

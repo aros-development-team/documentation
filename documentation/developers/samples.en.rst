@@ -13,7 +13,7 @@ Introduction
 helloworld.c__      Prints some text to standard output
 =================== =====================================================
 
-__ /documentation/developers/samplecode/helloworld.c
+__ /{{ devdocpath }}samplecode/helloworld.c
 
 
 Graphics
@@ -27,10 +27,10 @@ area.c__            Renders some shapes with the area functions
 font.c__            Opens a font and writes some text
 =================== =====================================================
 
-__ /documentation/developers/samplecode/graphics_simple.c
-__ /documentation/developers/samplecode/graphics_bitmap.c
-__ /documentation/developers/samplecode/graphics_area.c
-__ /documentation/developers/samplecode/graphics_font.c
+__ /{{ devdocpath }}samplecode/graphics_simple.c
+__ /{{ devdocpath }}samplecode/graphics_bitmap.c
+__ /{{ devdocpath }}samplecode/graphics_area.c
+__ /{{ devdocpath }}samplecode/graphics_font.c
 
 
 Intuition
@@ -45,11 +45,11 @@ customscreen.c__    Opens a screen with a backdrop window
 easyreq.c__         Demonstrates EasyRequesters
 =================== =====================================================
 
-__ /documentation/developers/samplecode/intuition_events.c
-__ /documentation/developers/samplecode/intuition_refresh.c
-__ /documentation/developers/samplecode/intuition_appscreen.c
-__ /documentation/developers/samplecode/intuition_customscreen.c
-__ /documentation/developers/samplecode/intuition_easyreq.c
+__ /{{ devdocpath }}samplecode/intuition_events.c
+__ /{{ devdocpath }}samplecode/intuition_refresh.c
+__ /{{ devdocpath }}samplecode/intuition_appscreen.c
+__ /{{ devdocpath }}samplecode/intuition_customscreen.c
+__ /{{ devdocpath }}samplecode/intuition_easyreq.c
 
 
 ASL
@@ -59,7 +59,7 @@ ASL
 asl.c__             File-, Font- and Screenmoderequester
 =================== =====================================================
 
-__ /documentation/developers/samplecode/asl.c
+__ /{{ devdocpath }}samplecode/asl.c
 
 
 DOS
@@ -71,9 +71,9 @@ readargs.c__        Command line parsing with ReadArgs()
 readargs_help.c__   ReadArgs() with help text
 =================== =====================================================
 
-__ /documentation/developers/samplecode/dos_file.c
-__ /documentation/developers/samplecode/dos_readargs.c
-__ /documentation/developers/samplecode/dos_readargs_help.c
+__ /{{ devdocpath }}samplecode/dos_file.c
+__ /{{ devdocpath }}samplecode/dos_readargs.c
+__ /{{ devdocpath }}samplecode/dos_readargs_help.c
 
 
 Icon
@@ -83,8 +83,8 @@ start.c__           Reads ToolTypes from icons
 change.c__          Shows how to change ToolTypes
 =================== =====================================================
 
-__ /documentation/developers/samplecode/icon_start.c
-__ /documentation/developers/samplecode/icon_change.c
+__ /{{ devdocpath }}samplecode/icon_start.c
+__ /{{ devdocpath }}samplecode/icon_change.c
 
 
 Exec
@@ -94,4 +94,4 @@ Exec
 rawdofmt.c__        RawDoFmt allows printf()-like formatting
 =================== =====================================================
 
-__ /documentation/developers/samplecode/exec_rawdofmt.c
+__ /{{ devdocpath }}samplecode/exec_rawdofmt.c

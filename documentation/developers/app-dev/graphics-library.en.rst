@@ -3,7 +3,7 @@ AROS Application Development Manual -- The Graphics Library
 ===========================================================
 
 :Authors:   Matthias Rustler
-:Copyright: Copyright (C) 2007-2008, The AROS Development Team
+:Copyright: Copyright (C) 2007-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Unfinished
@@ -711,4 +711,4 @@ Miscellaneous
 
 .. Hyperlinks to headerfiles
 
-.. _graphics/gfxmacros.h: /documentation/developers/headerfiles/graphics/gfxmacros.h
+.. _graphics/gfxmacros.h: /{{ devdocpath }}headerfiles/graphics/gfxmacros.h

@@ -12,6 +12,7 @@ import db.credits.format.rest
 import db.tasks.parse
 import db.tasks.format.html
 
+from docutils.core import publish_parts
 from docutils.core import Publisher
 from docutils.io import NullOutput
 
@@ -23,6 +24,7 @@ from template.www import gallery
 
 import autodoc
 
+from jinja2 import Environment, FileSystemLoader
 
 # Setup
 DEFAULTLANG= 'en'
@@ -49,6 +51,9 @@ SITES = {
 
 targetsites = []
 wwwtgt = None
+
+# Initialize Jinja2 environment to load templates from your source root
+jinja_env = Environment(loader=FileSystemLoader(SRCROOT))
 
 # altLang
 # -------
@@ -312,27 +317,63 @@ def makeCredits():
 def convertWWW(src, language, options=None):
     encoding = 'utf-8'
 
-    arguments = [
-        '--no-generator',   '--language=' + language,
-        '--no-source-link', '--no-datestamp',
-        '--input-encoding=' + encoding,
-        '--output-encoding=' + encoding,
-        '--target-suffix=' + 'html',
-        src, '']
+    if wwwtgt == 'aros':
+        www_arosdocrootpath = 'documentation/'
+        www_devdocrootpath = 'http://developers.aros.org/documentation/'
+        www_localedocrootpath = 'http://translations.aros.org/documentation/'
+    elif wwwtgt == 'dev':
+        www_arosdocrootpath = 'http://www.aros.org/documentation/'
+        www_devdocrootpath = 'documentation/'
+        www_localedocrootpath = 'http://translations.aros.org/documentation/'
+    elif wwwtgt == 'locale':
+        www_arosdocrootpath = 'http://www.aros.org/documentation/'
+        www_devdocrootpath = 'http://developers.aros.org/documentation/'
+        www_localedocrootpath = 'documentation/'
 
+    # === NEW: Render through Jinja2 ===
+    template_path = os.path.relpath(src, SRCROOT)
+    template = jinja_env.get_template(template_path)
+    rendered_rst = template.render({
+        'arosdepthpath': '../',
+        'devdepthpath': '../',
+        'localedepthpath': '../',
+        'devdocrootpath': www_devdocrootpath,
+        'arosdocrootpath': www_arosdocrootpath,
+        'localedocrootpath': www_localedocrootpath,
+        'devdocpath': 'documentation/',
+        'arosdocpath': 'documentation/',
+        'localedocpath': 'documentation/',
+        'lang': language
+    })
+
+    # === Convert CLI-like options into settings ===
+    settings_overrides = {
+        'generator': False,
+        'source_link': False,
+        'datestamp': False,
+        'language_code': language,
+        'input_encoding': encoding,
+        'output_encoding': encoding,
+        'embed_stylesheet': False,
+    }
+
+    # If you ever want to pass other dynamic options, process them here:
     if options:
-        for option in options:
-            arguments.insert(0, option)
+        for opt in options:
+            if opt.startswith('--stylesheet='):
+                stylesheet_path = opt.split('=', 1)[1]
+                settings_overrides['stylesheet_path'] = stylesheet_path
+            # Add other option translations here as needed
 
-    publisher = Publisher(destination_class=NullOutput)
-    publisher.set_reader('standalone', None, 'restructuredtext')
-    publisher.set_writer('html')
-    publisher.publish(argv=arguments)
-
-    return ''.join(
-        publisher.writer.body_pre_docinfo +
-        publisher.writer.body
+    # === Process with Docutils ===
+    parts = publish_parts(
+        source=rendered_rst,
+        source_path=src,
+        writer_name='html',
+        settings_overrides=settings_overrides
     )
+
+    return parts['body_pre_docinfo'] + parts['body']
 
 
 # processWWW
@@ -410,15 +451,14 @@ def processWWW(src, depth):
         else:
             utility.reportSkipping(dst)
 
-
 def processHTML(src, depth):
     src = os.path.normpath(src)
 
     prefix, suffix = os.path.splitext(src)
     if suffix != ".rst":
         return
-    prefix, suffix = os.path.splitext(prefix)
-    if suffix[1:] != DEFAULTLANG:
+    prefix, lang_suffix = os.path.splitext(prefix)
+    if lang_suffix[1:] != DEFAULTLANG:
         return
 
     dst = prefix + '.html'
@@ -430,20 +470,50 @@ def processHTML(src, depth):
 
     if utility.newer([src_abs], dst_abs):
         utility.reportBuilding(src)
-        arguments = [
-            '--no-generator', '--language=' + suffix[1:],
-            '--no-source-link', '--no-datestamp',
-            '--output-encoding=iso-8859-15',
-            '--target-suffix=html',
-            '--stylesheet=' + '../' * depth + 'aros.css?v=1.3',
-            '--link-stylesheet',
-            src_abs, dst_abs
-        ]
 
-        publisher = Publisher()
-        publisher.set_reader('standalone', None, 'restructuredtext')
-        publisher.set_writer('html')
-        publisher.publish(argv=arguments)
+        # === Render through Jinja2 ===
+        template_path = os.path.relpath(src_abs, SRCROOT)
+        template = jinja_env.get_template(template_path)
+        rendered_rst = template.render({
+            'arosdepthpath': '../../',
+            'devdepthpath': '../../',
+            'localedepthpath': '../../',
+            'devdocrootpath': '',
+            'arosdocrootpath': '',
+            'localedocrootpath': '',
+            'devdocpath': 'documentation/developers/',
+            'arosdocpath': 'documentation/users/',
+            'localedocpath': 'documentation/translating/',
+            'lang': lang_suffix[1:]
+        })
+
+        # === Docutils settings ===
+        stylesheet_path = '../' * depth + 'aros.css?v=1.3'
+        settings_overrides = {
+            'generator': False,
+            'source_link': False,
+            'datestamp': False,
+            'language_code': lang_suffix[1:],
+            'input_encoding': 'utf-8',
+            'output_encoding': 'iso-8859-15',
+            'embed_stylesheet': True,
+            'stylesheet_path': stylesheet_path,
+        }
+
+        # === Convert to HTML ===
+        parts = publish_parts(
+            source=rendered_rst,
+            source_path=src_abs,
+            writer_name='html',
+            settings_overrides=settings_overrides,
+        )
+
+        html_output = parts['whole']
+
+        # === Write the HTML file ===
+        with open(dst_abs, 'w', encoding='iso-8859-15') as f:
+            f.write(html_output)
+
     else:
         utility.reportSkipping(dst)
 

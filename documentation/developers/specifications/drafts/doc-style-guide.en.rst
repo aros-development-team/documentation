@@ -554,7 +554,7 @@ Style
 -----
 
 Autodocs have some style issues that are particular to those documents, which
-are described in documentation/developers/documenting.en. Apart from those,
+are described in {{ devdocpath }}documenting.en. Apart from those,
 their style should follow this style guide.
 
 

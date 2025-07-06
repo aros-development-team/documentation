@@ -9,7 +9,7 @@ Compiling AROS
             + Aaron Digulla
             + Adam Chodorowski
             + Neil Cafferkey
-:Copyright: Copyright (C) 2001-2020, The AROS Development Team
+:Copyright: Copyright (C) 2001-2025, The AROS Development Team
 :Status:    Done.
 :Abstract:
     This document provides information and advice on how to compile AROS. Development of AROS is
@@ -99,8 +99,8 @@ choice. If you want to build contributed software as well, download and
 extract ``contrib`` package sources into a ``./contrib`` subdirectory
 of your ``source`` package directory tree.
 
-__ ../../download
-__ ../../documentation/developers/git
+__ {{ devdepthpath }}download
+__ {{ devdepthpath }}{{ devdocpath }}git
 
 
 

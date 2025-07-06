@@ -3,7 +3,7 @@ AROS Documentation Manual
 =========================
 
 :Authors:   Adam Chodorowski, Matthias Rustler
-:Copyright: Copyright (C) 1995-2008, The AROS Development Team
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Work in progress.
@@ -136,7 +136,7 @@ __ ../../contact#mailing-lists
 Sample code
 -----------
 
-The directory 'documentation/developers/samplecode' is for source code
+The directory '{{ devdocpath }}samplecode' is for source code
 examples. The content is copied unmodified to the targets.
 
 
