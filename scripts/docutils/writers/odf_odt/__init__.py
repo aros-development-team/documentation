@@ -1,56 +1,41 @@
-# $Id: __init__.py 8605 2021-01-11 11:07:17Z milde $
+# $Id: __init__.py 9541 2024-02-17 10:37:13Z milde $
 # Author: Dave Kuhlman <dkuhlman@davekuhlman.org>
 # Copyright: This module has been placed in the public domain.
 
 """
 Open Document Format (ODF) Writer.
 
+This module is provisional:
+the API is not settled and may change with any minor Docutils version.
 """
-from __future__ import absolute_import
 
 __docformat__ = 'reStructuredText'
 
 
-import sys
+from configparser import ConfigParser
+import copy
+from io import StringIO
+import itertools
+import locale
 import os
 import os.path
+from pathlib import Path
+import re
+import subprocess
 import tempfile
-import zipfile
+import time
+import urllib
+import weakref
 from xml.etree import ElementTree as etree
 from xml.dom import minidom
-import time
-import re
-import copy
-import itertools
-import weakref
-
-try:
-    import locale   # module missing in Jython
-except ImportError:
-    pass
+import zipfile
 
 import docutils
 from docutils import frontend, nodes, utils, writers, languages
+from docutils.parsers.rst.directives.images import PIL  # optional
 from docutils.readers import standalone
 from docutils.transforms import references
 
-if sys.version_info >= (3, 0):
-    from configparser import ConfigParser
-    from io import StringIO
-    from urllib.request import urlopen
-    from urllib.error import HTTPError
-else:
-    from ConfigParser import ConfigParser
-    from StringIO import StringIO
-    from urllib2 import HTTPError
-    from urllib2 import urlopen
-
-
-VERSION = '1.0a'
-
-IMAGE_NAME_COUNTER = itertools.count()
-
-#
 # Import pygments and odtwriter pygments formatters if possible.
 try:
     import pygments
@@ -60,27 +45,18 @@ try:
 except (ImportError, SyntaxError):
     pygments = None
 
-# check for the Python Imaging Library
-try:
-    import PIL.Image
-except ImportError:
-    try:  # sometimes PIL modules are put in PYTHONPATH's root
-        import Image
+# import warnings
+# warnings.warn('importing IPShellEmbed', UserWarning)
+# from IPython.Shell import IPShellEmbed
+# args = ['-pdb', '-pi1', 'In <\\#>: ', '-pi2', '   .\\D.: ',
+#         '-po', 'Out<\\#>: ', '-nosep']
+# ipshell = IPShellEmbed(args,
+#                        banner = 'Entering IPython.  Press Ctrl-D to exit.',
+#                        exit_msg = 'Leaving Interpreter, back to program.')
 
-        class PIL(object):
-            pass  # dummy wrapper
-        PIL.Image = Image
-    except ImportError:
-        PIL = None
+VERSION = '1.0a'
 
-## import warnings
-## warnings.warn('importing IPShellEmbed', UserWarning)
-## from IPython.Shell import IPShellEmbed
-## args = ['-pdb', '-pi1', 'In <\\#>: ', '-pi2', '   .\\D.: ',
-##         '-po', 'Out<\\#>: ', '-nosep']
-## ipshell = IPShellEmbed(args,
-##                        banner = 'Entering IPython.  Press Ctrl-D to exit.',
-##                        exit_msg = 'Leaving Interpreter, back to program.')
+IMAGE_NAME_COUNTER = itertools.count()
 
 
 #
@@ -126,7 +102,7 @@ GENERATOR_DESC = 'Docutils.org/odf_odt'
 NAME_SPACE_1 = 'urn:oasis:names:tc:opendocument:xmlns:office:1.0'
 
 CONTENT_NAMESPACE_DICT = CNSD = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'chart': 'urn:oasis:names:tc:opendocument:xmlns:chart:1.0',
     'dc': 'http://purl.org/dc/elements/1.1/',
     'dom': 'http://www.w3.org/2001/xml-events',
@@ -155,7 +131,7 @@ CONTENT_NAMESPACE_DICT = CNSD = {
 }
 
 STYLES_NAMESPACE_DICT = SNSD = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'chart': 'urn:oasis:names:tc:opendocument:xmlns:chart:1.0',
     'dc': 'http://purl.org/dc/elements/1.1/',
     'dom': 'http://www.w3.org/2001/xml-events',
@@ -184,7 +160,7 @@ MANIFEST_NAMESPACE_DICT = MANNSD = {
 }
 
 META_NAMESPACE_DICT = METNSD = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'dc': 'http://purl.org/dc/elements/1.1/',
     'meta': 'urn:oasis:names:tc:opendocument:xmlns:meta:1.0',
     'office': NAME_SPACE_1,
@@ -196,7 +172,7 @@ META_NAMESPACE_DICT = METNSD = {
 # does not support use of nsmap parameter on Element() and SubElement().
 
 CONTENT_NAMESPACE_ATTRIB = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'xmlns:chart': 'urn:oasis:names:tc:opendocument:xmlns:chart:1.0',
     'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
     'xmlns:dom': 'http://www.w3.org/2001/xml-events',
@@ -225,7 +201,7 @@ CONTENT_NAMESPACE_ATTRIB = {
 }
 
 STYLES_NAMESPACE_ATTRIB = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'xmlns:chart': 'urn:oasis:names:tc:opendocument:xmlns:chart:1.0',
     'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
     'xmlns:dom': 'http://www.w3.org/2001/xml-events',
@@ -255,7 +231,7 @@ MANIFEST_NAMESPACE_ATTRIB = {
 }
 
 META_NAMESPACE_ATTRIB = {
-    #'office:version': '1.0',
+    # 'office:version': '1.0',
     'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
     'xmlns:meta': 'urn:oasis:names:tc:opendocument:xmlns:meta:1.0',
     'xmlns:office': NAME_SPACE_1,
@@ -277,8 +253,7 @@ def Element(tag, attrib=None, nsmap=None, nsdict=CNSD):
     if attrib is None:
         attrib = {}
     tag, attrib = fix_ns(tag, attrib, nsdict)
-    el = _ElementInterfaceWrapper(tag, attrib)
-    return el
+    return _ElementInterfaceWrapper(tag, attrib)
 
 
 def SubElement(parent, tag, attrib=None, nsmap=None, nsdict=CNSD):
@@ -306,10 +281,7 @@ def add_ns(tag, nsdict=CNSD):
 
 def ToString(et):
     outstream = StringIO()
-    if sys.version_info >= (3, 0):
-        et.write(outstream, encoding="unicode")
-    else:
-        et.write(outstream)
+    et.write(outstream, encoding="unicode")
     s1 = outstream.getvalue()
     outstream.close()
     return s1
@@ -333,7 +305,7 @@ def escape_cdata(text):
 #
 
 
-class TableStyle(object):
+class TableStyle:
     def __init__(self, border=None, backgroundcolor=None):
         self.border = border
         self.backgroundcolor = backgroundcolor
@@ -361,7 +333,7 @@ BUILTIN_DEFAULT_TABLE_STYLE = TableStyle(
 #
 # Information about the indentation level for lists nested inside
 #   other contexts, e.g. dictionary lists.
-class ListLevel(object):
+class ListLevel:
     def __init__(self, level, sibling_level=True, nested_level=True):
         self.level = level
         self.sibling_level = sibling_level
@@ -407,7 +379,7 @@ class Writer(writers.Writer):
         os.path.join(os.path.dirname(__file__), default_template))
 
     settings_spec = (
-        'ODF-Specific Options',
+        'ODF-Specific Options.',
         None,
         (
             ('Specify a stylesheet.  '
@@ -417,21 +389,11 @@ class Writer(writers.Writer):
                     'default': default_stylesheet_path,
                     'dest': 'stylesheet'
                 }),
-            ('Specify a configuration/mapping file relative to the '
-                'current working '
-                'directory for additional ODF options.  '
-                'In particular, this file may contain a section named '
-                '"Formats" that maps default style names to '
-                'names to be used in the resulting output file allowing for '
-                'adhering to external standards. '
-                'For more info and the format of the '
-                'configuration/mapping file, '
-                'see the odtwriter doc.',
+            ('Specify an ODF-specific configuration/mapping file '
+                'relative to the current working directory.',
                 ['--odf-config-file'],
                 {'metavar': '<file>'}),
-            ('Obfuscate email addresses to confuse harvesters while still '
-                'keeping email links usable with '
-                'standards-compliant browsers.',
+            ('Obfuscate email addresses to confuse harvesters.',
                 ['--cloak-email-addresses'],
                 {'default': False,
                     'action': 'store_true',
@@ -443,10 +405,11 @@ class Writer(writers.Writer):
                     'action': 'store_false',
                     'dest': 'cloak_email_addresses',
                     'validator': frontend.validate_boolean}),
-            ('Specify the thickness of table borders in thousands of a cm.  '
+            ('Specify the thickness of table borders in thousands of a cm. '
                 'Default is 35.',
                 ['--table-border-thickness'],
                 {'default': None,
+                    'metavar': '<int>',
                     'validator': frontend.validate_nonnegative_int}),
             ('Add syntax highlighting in literal code blocks.',
                 ['--add-syntax-highlighting'],
@@ -455,7 +418,7 @@ class Writer(writers.Writer):
                     'dest': 'add_syntax_highlighting',
                     'validator': frontend.validate_boolean}),
             ('Do not add syntax highlighting in '
-             'literal code blocks. (default)',
+                'literal code blocks. (default)',
                 ['--no-syntax-highlighting'],
                 {'default': False,
                     'action': 'store_false',
@@ -499,32 +462,32 @@ class Writer(writers.Writer):
                     'action': 'store_false',
                     'dest': 'endnotes_end_doc',
                     'validator': frontend.validate_boolean}),
-            ('Generate a bullet list table of contents, not '
-                'an ODF/oowriter table of contents.',
+            ('Generate a bullet list table of contents, '
+                'not a native ODF table of contents.',
                 ['--generate-list-toc'],
-                {'default': True,
-                    'action': 'store_false',
+                {'action': 'store_false',
                     'dest': 'generate_oowriter_toc',
                     'validator': frontend.validate_boolean}),
-            ('Generate an ODF/oowriter table of contents, not '
-                'a bullet list. (default)',
+            ('Generate a native ODF table of contents, '
+                'not a bullet list. (default)',
                 ['--generate-oowriter-toc'],
                 {'default': True,
                     'action': 'store_true',
                     'dest': 'generate_oowriter_toc',
                     'validator': frontend.validate_boolean}),
             ('Specify the contents of an custom header line.  '
-                'See odf_odt writer documentation for details '
+                'See ODF/ODT writer documentation for details '
                 'about special field character sequences.',
                 ['--custom-odt-header'],
                 {'default': '',
-                    'dest': 'custom_header', }),
+                    'dest': 'custom_header',
+                    'metavar': '<custom header>'}),
             ('Specify the contents of an custom footer line.  '
-                'See odf_odt writer documentation for details '
-                'about special field character sequences.',
+                'See ODF/ODT writer documentation for details.',
                 ['--custom-odt-footer'],
                 {'default': '',
-                    'dest': 'custom_footer', }),
+                    'dest': 'custom_footer',
+                    'metavar': '<custom footer>'}),
         )
     )
 
@@ -532,9 +495,7 @@ class Writer(writers.Writer):
         'output_encoding_error_handler': 'xmlcharrefreplace',
     }
 
-    relative_path_settings = (
-        'stylesheet_path',
-    )
+    relative_path_settings = ('odf_config_file', 'stylesheet',)
 
     config_section = 'odf_odt writer'
     config_section_dependencies = ('writers',)
@@ -705,8 +666,7 @@ class Writer(writers.Writer):
         """Get the stylesheet from the visitor.
         Ask the visitor to setup the page.
         """
-        s1 = self.visitor.setup_page()
-        return s1
+        return self.visitor.setup_page()
 
     def copy_from_stylesheet(self, outzipfile):
         """Copy images, settings, etc from the stylesheet doc into target doc.
@@ -756,8 +716,7 @@ class Writer(writers.Writer):
         }, nsdict=MANNSD)
         s1 = ToString(doc)
         doc = minidom.parseString(s1)
-        s1 = doc.toprettyxml('  ')
-        return s1
+        return doc.toprettyxml('  ')
 
     def create_meta(self):
         root = Element(
@@ -804,13 +763,13 @@ class Writer(writers.Writer):
             elif prop == 'subject':
                 el1 = SubElement(root, 'dc:subject', nsdict=METNSD)
                 el1.text = value
-            else: # Store remaining properties as custom/user-defined
+            else:  # Store remaining properties as custom/user-defined
                 el1 = SubElement(root, 'meta:user-defined',
                                  attrib={'meta:name': prop}, nsdict=METNSD)
                 el1.text = value
         s1 = ToString(doc)
-        #doc = minidom.parseString(s1)
-        #s1 = doc.toprettyxml('  ')
+        # doc = minidom.parseString(s1)
+        # s1 = doc.toprettyxml('  ')
         return s1
 
 
@@ -875,7 +834,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
     )
 
     def __init__(self, document):
-        #nodes.SparseNodeVisitor.__init__(self, document)
+        # nodes.SparseNodeVisitor.__init__(self, document)
         nodes.GenericNodeVisitor.__init__(self, document)
         self.settings = document.settings
         self.language_code = self.settings.language_code
@@ -891,10 +850,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
                     self.document.reporter.warning(
                         'Style "%s" is not a style used by odtwriter.' % (
                             rststyle, ))
-                if sys.version_info >= (3, 0):
-                    self.format_map[rststyle] = format
-                else:
-                    self.format_map[rststyle] = format.decode('utf-8')
+                self.format_map[rststyle] = format
         self.section_level = 0
         self.section_count = 0
         # Create ElementTree content and styles documents.
@@ -969,9 +925,8 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         stylespath = self.settings.stylesheet
         ext = os.path.splitext(stylespath)[1]
         if ext == '.xml':
-            stylesfile = open(stylespath, 'r')
-            s1 = stylesfile.read()
-            stylesfile.close()
+            with open(stylespath, 'r', encoding='utf-8') as stylesfile:
+                s1 = stylesfile.read()
         elif ext == extension:
             zfile = zipfile.ZipFile(stylespath, 'r')
             s1 = zfile.read('styles.xml')
@@ -1042,9 +997,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
     def find_first_text_p(self, el):
         """Search the generated doc and return the first <text:p> element.
         """
-        if (
-                el.tag == 'text:p' or
-                el.tag == 'text:h'):
+        if el.tag == 'text:p' or el.tag == 'text:h':
             return el
         else:
             for child in el:
@@ -1080,34 +1033,35 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         the value.
         """
         name1 = name % parameters
-        stylename = self.format_map.get(name1, 'rststyle-%s' % name1)
-        return stylename
+        return self.format_map.get(name1, 'rststyle-%s' % name1)
 
     def generate_content_element(self, root):
         return SubElement(root, 'office:text')
 
     def setup_page(self):
         self.setup_paper(self.dom_stylesheet)
-        if (len(self.header_content) > 0 or
-                len(self.footer_content) > 0 or
-                self.settings.custom_header or
-                self.settings.custom_footer):
+        if (len(self.header_content) > 0
+            or len(self.footer_content) > 0
+            or self.settings.custom_header
+            or self.settings.custom_footer):
             self.add_header_footer(self.dom_stylesheet)
-        new_content = etree.tostring(self.dom_stylesheet)
-        return new_content
+        return etree.tostring(self.dom_stylesheet)
 
     def get_dom_stylesheet(self):
         return self.dom_stylesheet
 
     def setup_paper(self, root_el):
+        # TODO: only call paperconf, if it is actually used
+        # (i.e. page size removed from "styles.odt" with rst2odt_prepstyles.py
+        # cf. conditional in walk() below)?
         try:
-            fin = os.popen("paperconf -s 2> /dev/null")
-            dimensions = fin.read().split()
-            w, h = (float(s) for s in dimensions)
-        except (IOError, ValueError):
+            dimensions = subprocess.check_output(('paperconf', '-s'),
+                                                 stderr=subprocess.STDOUT)
+            w, h = (float(s) for s in dimensions.split())
+        except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+            self.document.reporter.info(
+                'Cannot use `paperconf`, defaulting to Letter.')
             w, h = 612, 792     # default to Letter
-        finally:
-            fin.close()
 
         def walk(el):
             if el.tag == "{%s}page-layout-properties" % SNSD["style"] and \
@@ -1209,12 +1163,12 @@ class ODFTranslator(nodes.GenericNodeVisitor):
     def make_field_element(self, parent, text, style_name, automatic_styles):
         if text == 'p':
             el1 = SubElement(parent, 'text:page-number', attrib={
-                #'text:style-name': self.rststyle(style_name),
+                # 'text:style-name': self.rststyle(style_name),
                 'text:select-page': 'current',
             })
         elif text == 'P':
             el1 = SubElement(parent, 'text:page-count', attrib={
-                #'text:style-name': self.rststyle(style_name),
+                # 'text:style-name': self.rststyle(style_name),
             })
         elif text == 't1':
             self.style_index += 1
@@ -1463,20 +1417,19 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             if mo:
                 pos2 = mo.start()
                 if pos2 > pos1:
-                    yield (ODFTranslator.code_text, text[pos1:pos2])
-                yield (ODFTranslator.code_field, mo.group(1))
+                    yield ODFTranslator.code_text, text[pos1:pos2]
+                yield ODFTranslator.code_field, mo.group(1)
                 pos1 = mo.end()
             else:
                 break
         trailing = text[pos1:]
         if trailing:
-            yield (ODFTranslator.code_text, trailing)
+            yield ODFTranslator.code_text, trailing
 
     def astext(self):
         root = self.content_tree.getroot()
         et = etree.ElementTree(root)
-        s1 = ToString(et)
-        return s1
+        return ToString(et)
 
     def content_astext(self):
         return self.astext()
@@ -1537,8 +1490,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
     def append_child(self, tag, attrib=None, parent=None):
         if parent is None:
             parent = self.current_element
-        el = SubElement(parent, tag, attrib)
-        return el
+        return SubElement(parent, tag, attrib)
 
     def append_p(self, style, text=None):
         result = self.append_child('text:p', attrib={
@@ -1568,8 +1520,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             el, 'text:span',
             attrib={'text:style-name': self.rststyle('strong')})
         el1.text = label
-        el = self.append_p('blockindent')
-        return el
+        return self.append_p('blockindent')
 
     def generate_labeled_line(self, node, label):
         label = '%s:' % (self.language.labels[label], )
@@ -1582,8 +1533,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         return el
 
     def encode(self, text):
-        text = text.replace('\n', " ")
-        return text
+        return text.replace('\n', " ")
 
     #
     # Visitor functions
@@ -1702,10 +1652,10 @@ class ODFTranslator(nodes.GenericNodeVisitor):
 
     def visit_version(self, node):
         self.generate_labeled_line(node, 'version')
-        #self.set_current_element(el)
+        # self.set_current_element(el)
 
     def depart_version(self, node):
-        #self.set_to_parent()
+        # self.set_to_parent()
         pass
 
     def visit_attribution(self, node):
@@ -1789,7 +1739,6 @@ class ODFTranslator(nodes.GenericNodeVisitor):
 
     def visit_caption(self, node):
         raise nodes.SkipChildren()
-        pass
 
     def depart_caption(self, node):
         pass
@@ -2166,43 +2115,45 @@ class ODFTranslator(nodes.GenericNodeVisitor):
 
     def visit_image(self, node):
         # Capture the image file.
-        if 'uri' in node.attributes:
-            source = node.attributes['uri']
-            if not (source.startswith('http:') or source.startswith('https:')):
-                if not source.startswith(os.sep):
-                    docsource, line = utils.get_source_line(node)
-                    if docsource:
-                        dirname = os.path.dirname(docsource)
-                        if dirname:
-                            source = '%s%s%s' % (dirname, os.sep, source, )
-                if not self.check_file_exists(source):
-                    self.document.reporter.warning(
-                        'Cannot find image file %s.' % (source, ))
-                    return
-        else:
-            return
+        source = node['uri']
+        uri_parts = urllib.parse.urlparse(source)
+        if uri_parts.scheme in ('', 'file'):
+            source = urllib.parse.unquote(uri_parts.path)
+            if source.startswith('/'):
+                root_prefix = Path(self.settings.root_prefix)
+                source = (root_prefix/source[1:]).as_posix()
+            else:
+                # adapt relative paths
+                docsource, line = utils.get_source_line(node)
+                if docsource:
+                    dirname = os.path.dirname(docsource)
+                    if dirname:
+                        source = os.path.join(dirname, source)
+            if not self.check_file_exists(source):
+                self.document.reporter.warning(
+                    f'Cannot find image file "{source}".')
+                return
         if source in self.image_dict:
             filename, destination = self.image_dict[source]
         else:
             self.image_count += 1
             filename = os.path.split(source)[1]
-            destination = 'Pictures/1%08x%s' % (self.image_count, filename, )
-            if source.startswith('http:') or source.startswith('https:'):
-                try:
-                    imgfile = urlopen(source)
-                    content = imgfile.read()
-                    imgfile.close()
-                    imgfile2 = tempfile.NamedTemporaryFile('wb', delete=False)
-                    imgfile2.write(content)
-                    imgfile2.close()
-                    imgfilename = imgfile2.name
-                    source = imgfilename
-                except HTTPError:
-                    self.document.reporter.warning(
-                        "Can't open image url %s." % (source, ))
-                spec = (source, destination,)
-            else:
+            destination = 'Pictures/1%08x%s' % (self.image_count, filename)
+            if uri_parts.scheme in ('', 'file'):
                 spec = (os.path.abspath(source), destination,)
+            else:
+                try:
+                    with urllib.request.urlopen(source) as imgfile:
+                        content = imgfile.read()
+                except urllib.error.URLError as err:
+                    self.document.reporter.warning(
+                        f'Cannot open image URL "{source}". {err}')
+                    return
+                with tempfile.NamedTemporaryFile('wb',
+                                                 delete=False) as imgfile2:
+                    imgfile2.write(content)
+                source = imgfile2.name
+                spec = (source, destination,)
             self.embedded_file_list.append(spec)
             self.image_dict[source] = (source, destination,)
         # Is this a figure (containing an image) or just a plain image?
@@ -2304,30 +2255,31 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         dpi = (72, 72)
         if PIL is not None and source in self.image_dict:
             filename, destination = self.image_dict[source]
-            imageobj = PIL.Image.open(filename, 'r')
-            dpi = imageobj.info.get('dpi', dpi)
+            with PIL.Image.open(filename, 'r') as img:
+                img_size = img.size
+                dpi = img.info.get('dpi', dpi)
             # dpi information can be (xdpi, ydpi) or xydpi
             try:
                 iter(dpi)
             except TypeError:
                 dpi = (dpi, dpi)
         else:
-            imageobj = None
+            img_size = None
         if width is None or height is None:
-            if imageobj is None:
+            if img_size is None:
                 raise RuntimeError(
                     'image size not fully specified and PIL not installed')
             if width is None:
-                width = imageobj.size[0]
+                width = img_size[0]
                 width = float(width) * 0.026        # convert px to cm
             if height is None:
-                height = imageobj.size[1]
+                height = img_size[1]
                 height = float(height) * 0.026      # convert px to cm
             if width_unit == '%':
                 factor = width
-                image_width = imageobj.size[0]
+                image_width = img_size[0]
                 image_width = float(image_width) * 0.026    # convert px to cm
-                image_height = imageobj.size[1]
+                image_height = img_size[1]
                 image_height = float(image_height) * 0.026  # convert px to cm
                 line_width = self.get_page_width()
                 width = factor * line_width
@@ -2358,9 +2310,9 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             margin_right = node.get(
                 '{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}'
                 'margin-right')
-            if (page_width is None or
-                    margin_left is None or
-                    margin_right is None):
+            if (page_width is None
+                or margin_left is None
+                or margin_right is None):
                 continue
             try:
                 page_width, _ = self.convert_to_cm(page_width)
@@ -2514,8 +2466,8 @@ class ODFTranslator(nodes.GenericNodeVisitor):
                    attrib=attrib, nsdict=SNSD)
         draw_name = 'graphics%d' % next(IMAGE_NAME_COUNTER)
         # Add the content.
-        #el = SubElement(current_element, 'text:p',
-        #    attrib={'text:style-name': self.rststyle('textbody')})
+        # el = SubElement(current_element, 'text:p',
+        #     attrib={'text:style-name': self.rststyle('textbody')})
         attrib = {
             'draw:style-name': style_name,
             'draw:name': draw_name,
@@ -2632,23 +2584,19 @@ class ODFTranslator(nodes.GenericNodeVisitor):
                 lambda name, parameters=():
                 self.rststyle(name, parameters),
                 escape_function=escape_cdata)
-        outsource = pygments.highlight(insource, lexer, fmtr)
-        return outsource
+        return pygments.highlight(insource, lexer, fmtr)
 
     def fill_line(self, line):
         line = FILL_PAT1.sub(self.fill_func1, line)
-        line = FILL_PAT2.sub(self.fill_func2, line)
-        return line
+        return FILL_PAT2.sub(self.fill_func2, line)
 
     def fill_func1(self, matchobj):
         spaces = matchobj.group(0)
-        repl = '<text:s text:c="%d"/>' % (len(spaces), )
-        return repl
+        return '<text:s text:c="%d"/>' % (len(spaces), )
 
     def fill_func2(self, matchobj):
         spaces = matchobj.group(0)
-        repl = ' <text:s text:c="%d"/>' % (len(spaces) - 1, )
-        return repl
+        return ' <text:s text:c="%d"/>' % (len(spaces) - 1, )
 
     def visit_literal_block(self, node):
         if len(self.paragraph_style_stack) > 1:
@@ -2658,12 +2606,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             wrapper1 = '<text:p text:style-name="%s">%%s</text:p>' % (
                 self.rststyle('codeblock'), )
         source = node.astext()
-        if (
-                pygments and
-                self.settings.add_syntax_highlighting
-                #and
-                #node.get('hilight', False)
-        ):
+        if (pygments and self.settings.add_syntax_highlighting):
             language = node.get('language', 'python')
             source = self._add_syntax_highlighting(source, language)
         else:
@@ -2884,11 +2827,11 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         self.in_paragraph = False
         self.set_to_parent()
         if self.in_header:
-            self.header_content.append( self.current_element[-1] )
-            self.current_element.remove( self.current_element[-1] )
+            self.header_content.append(self.current_element[-1])
+            self.current_element.remove(self.current_element[-1])
         elif self.in_footer:
-            self.footer_content.append( self.current_element[-1] )
-            self.current_element.remove( self.current_element[-1] )
+            self.footer_content.append(self.current_element[-1])
+            self.current_element.remove(self.current_element[-1])
 
     def visit_problematic(self, node):
         pass
@@ -2902,9 +2845,9 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             formatlist = formats.split()
             if 'odt' in formatlist:
                 rawstr = node.astext()
-                attrstr = ' '.join([
+                attrstr = ' '.join(
                     '%s="%s"' % (k, v, )
-                    for k, v in list(CONTENT_NAMESPACE_ATTRIB.items())])
+                    for k, v in list(CONTENT_NAMESPACE_ATTRIB.items()))
                 contentstr = '<stuff %s>%s</stuff>' % (attrstr, rawstr, )
                 contentstr = contentstr.encode("utf-8")
                 content = etree.fromstring(contentstr)
@@ -2927,13 +2870,12 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             pass
 
     def visit_reference(self, node):
-        #text = node.astext()
+        # text = node.astext()
         if self.settings.create_links:
             if 'refuri' in node:
                 href = node['refuri']
-                if (
-                        self.settings.cloak_email_addresses and
-                        href.startswith('mailto:')):
+                if (self.settings.cloak_email_addresses
+                    and href.startswith('mailto:')):
                     href = self.cloak_mailto(href)
                 el = self.append_child('text:a', attrib={
                     'xlink:href': '%s' % href,
@@ -2950,10 +2892,9 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             else:
                 self.document.reporter.warning(
                     'References must have "refuri" or "refid" attribute.')
-        if (
-                self.in_table_of_contents and
-                len(node.children) >= 1 and
-                isinstance(node.children[0], docutils.nodes.generated)):
+        if (self.in_table_of_contents
+            and len(node.children) >= 1
+            and isinstance(node.children[0], docutils.nodes.generated)):
             node.remove(node.children[0])
 
     def depart_reference(self, node):
@@ -2969,8 +2910,8 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             if class1:
                 style_name = class1
         el = SubElement(self.current_element, 'text:h', attrib={
-            #'text:outline-level': '%d' % section_level,
-            #'text:style-name': 'Heading_20_%d' % section_level,
+            # 'text:outline-level': '%d' % section_level,
+            # 'text:style-name': 'Heading_20_%d' % section_level,
             'text:style-name': style_name,
         })
         text = node.astext()
@@ -3065,15 +3006,15 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         }, nsdict=SNSD)
         if table_style.backgroundcolor is None:
             SubElement(el1, 'style:table-properties', attrib={
-                #'style:width': '17.59cm',
-                #'table:align': 'margins',
+                # 'style:width': '17.59cm',
+                # 'table:align': 'margins',
                 'table:align': 'left',
                 'fo:margin-top': '0in',
                 'fo:margin-bottom': '0.10in',
             }, nsdict=SNSD)
         else:
             SubElement(el1, 'style:table-properties', attrib={
-                #'style:width': '17.59cm',
+                # 'style:width': '17.59cm',
                 'table:align': 'margins',
                 'fo:margin-top': '0in',
                 'fo:margin-bottom': '0.10in',
@@ -3204,9 +3145,9 @@ class ODFTranslator(nodes.GenericNodeVisitor):
         #
         # I don't know how to implement targets in ODF.
         # How do we create a target in oowriter?  A cross-reference?
-        if not ('refuri' in node or
-                'refid' in node or
-                'refname' in node):
+        if ('refuri' not in node
+                and 'refid' not in node
+                and 'refname' not in node):
             pass
         else:
             pass
@@ -3227,16 +3168,16 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             el1 = self.append_child(
                 'text:h', attrib={
                     'text:outline-level': '%d' % section_level,
-                    #'text:style-name': 'Heading_20_%d' % section_level,
+                    # 'text:style-name': 'Heading_20_%d' % section_level,
                     'text:style-name': self.rststyle(
                         'heading%d', (section_level, )),
                 })
             self.append_pending_ids(el1)
             self.set_current_element(el1)
         elif isinstance(node.parent, docutils.nodes.document):
-            #    text = self.settings.title
-            #else:
-            #    text = node.astext()
+            # text = self.settings.title
+            # else:
+            #     text = node.astext()
             el1 = SubElement(self.current_element, 'text:p', attrib={
                 'text:style-name': self.rststyle(title_type),
             })
@@ -3247,9 +3188,8 @@ class ODFTranslator(nodes.GenericNodeVisitor):
             self.set_current_element(el1)
 
     def depart_title(self, node):
-        if (
-                isinstance(node.parent, docutils.nodes.section) or
-                isinstance(node.parent, docutils.nodes.document)):
+        if (isinstance(node.parent, docutils.nodes.section)
+            or isinstance(node.parent, docutils.nodes.document)):
             self.set_to_parent()
 
     def visit_subtitle(self, node, move_ids=1):
@@ -3382,9 +3322,8 @@ class ODFTranslator(nodes.GenericNodeVisitor):
 
     def update_toc_add_numbers(self, collection):
         for level, el1 in collection:
-            if (
-                    el1.tag == 'text:p' and
-                    el1.text != 'Table of Contents'):
+            if (el1.tag == 'text:p'
+                and el1.text != 'Table of Contents'):
                 el2 = SubElement(el1, 'text:tab')
                 el2.tail = '9999'
 
@@ -3516,8 +3455,7 @@ class ODFTranslator(nodes.GenericNodeVisitor):
 class Reader(standalone.Reader):
 
     def get_transforms(self):
-        default = standalone.Reader.get_transforms(self)
-        if self.settings.create_links:
-            return default
-        return [i for i in default
-                if i is not references.DanglingReferences]
+        transforms = super().get_transforms()
+        if not self.settings.create_links:
+            transforms.remove(references.DanglingReferences)
+        return transforms

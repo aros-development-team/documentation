@@ -1,11 +1,11 @@
-# $Id: fr.py 7119 2011-09-02 13:00:23Z milde $
+# $Id: fr.py 9417 2023-06-27 20:04:54Z milde $
 # Authors: David Goodger <goodger@python.org>; William Dode
 # Copyright: This module has been placed in the public domain.
 
 # New language mappings are welcome.  Before doing a new translation, please
-# read <http://docutils.sf.net/docs/howto/i18n.html>.  Two files must be
-# translated for each language: one in docutils/languages, the other in
-# docutils/parsers/rst/languages.
+# read <https://docutils.sourceforge.io/docs/howto/i18n.html>.
+# Two files must be translated for each language: one in docutils/languages,
+# the other in docutils/parsers/rst/languages.
 
 """
 French-language mappings for language-dependent features of
@@ -16,88 +16,93 @@ __docformat__ = 'reStructuredText'
 
 
 directives = {
-      u'attention': 'attention',
-      u'pr\u00E9caution': 'caution',
-      u'code': 'code',
-      u'danger': 'danger',
-      u'erreur': 'error',
-      u'conseil': 'hint',
-      u'important': 'important',
-      u'note': 'note',
-      u'astuce': 'tip',
-      u'avertissement': 'warning',
-      u'admonition': 'admonition',
-      u'encadr\u00E9': 'sidebar',
-      u'sujet': 'topic',
-      u'bloc-textuel': 'line-block',
-      u'bloc-interpr\u00E9t\u00E9': 'parsed-literal',
-      u'code-interpr\u00E9t\u00E9': 'parsed-literal',
-      u'intertitre': 'rubric',
-      u'exergue': 'epigraph',
-      u'\u00E9pigraphe': 'epigraph',
-      u'chapeau': 'highlights',
-      u'accroche': 'pull-quote',
-      u'compound (translation required)': 'compound',
-      u'container (translation required)': 'container',
-      #u'questions': 'questions',
-      #u'qr': 'questions',
-      #u'faq': 'questions',
-      u'tableau': 'table',
-      u'csv-table (translation required)': 'csv-table',
-      u'list-table (translation required)': 'list-table',
-      u'm\u00E9ta': 'meta',
+      'attention': 'attention',
+      'précaution': 'caution',
+      'danger': 'danger',
+      'erreur': 'error',
+      'conseil': 'hint',
+      'important': 'important',
+      'note': 'note',
+      'astuce': 'tip',
+      'avertissement': 'warning',
+      'annonce': 'admonition',
+      'admonition': 'admonition',  # sic! kept for backwards compatibiltity
+      # suggestions: annonce, avis, indication, remarque, renseignement
+      # see also https://sourceforge.net/p/docutils/bugs/453/
+      'encadré': 'sidebar',
+      'sujet': 'topic',
+      'bloc-textuel': 'line-block',
+      'bloc-interprété': 'parsed-literal',
+      'code-interprété': 'parsed-literal',
+      'code': 'code',
       'math (translation required)': 'math',
-      #u'imagemap (translation required)': 'imagemap',
-      u'image': 'image',
-      u'figure': 'figure',
-      u'inclure': 'include',
-      u'brut': 'raw',
-      u'remplacer': 'replace',
-      u'remplace': 'replace',
-      u'unicode': 'unicode',
-      u'date': 'date',
-      u'classe': 'class',
-      u'role (translation required)': 'role',
-      u'default-role (translation required)': 'default-role',
-      u'titre (translation required)': 'title',
-      u'sommaire': 'contents',
-      u'table-des-mati\u00E8res': 'contents',
-      u'sectnum': 'sectnum',
-      u'section-num\u00E9rot\u00E9e': 'sectnum',
-      u'liens': 'target-notes',
-      u'header (translation required)': 'header',
-      u'footer (translation required)': 'footer',
-      #u'footnotes (translation required)': 'footnotes',
-      #u'citations (translation required)': 'citations',
+      'intertitre': 'rubric',
+      'exergue': 'epigraph',
+      'épigraphe': 'epigraph',
+      'chapeau': 'highlights',
+      'accroche': 'pull-quote',
+      'compound (translation required)': 'compound',
+      'container (translation required)': 'container',
+      'tableau': 'table',
+      'csv-table (translation required)': 'csv-table',
+      'list-table (translation required)': 'list-table',
+      'méta': 'meta',
+      # 'imagemap (translation required)': 'imagemap',
+      'image': 'image',
+      'figure': 'figure',
+      'inclure': 'include',
+      'brut': 'raw',
+      'remplacer': 'replace',
+      'remplace': 'replace',
+      'unicode': 'unicode',
+      'date': 'date',
+      'classe': 'class',
+      'role (translation required)': 'role',
+      'default-role (translation required)': 'default-role',
+      'titre (translation required)': 'title',
+      'sommaire': 'contents',
+      'table-des-matières': 'contents',
+      'sectnum': 'sectnum',
+      'section-numérotée': 'sectnum',
+      'liens': 'target-notes',
+      'header (translation required)': 'header',
+      'footer (translation required)': 'footer',
+      # 'footnotes (translation required)': 'footnotes',
+      # 'citations (translation required)': 'citations',
       }
-"""French name to registered (in directives/__init__.py) directive name
-mapping."""
+"""Mapping of French directive names to registered directive names
+
+Cf. https://docutils.sourceforge.io/docs/ref/rst/directives.html
+and `_directive_registry` in ``directives/__init__.py``.
+"""
 
 roles = {
-      u'abr\u00E9viation': 'abbreviation',
-      u'acronyme': 'acronym',
-      u'sigle': 'acronym',
-      u'code': 'code',
-      u'index': 'index',
-      u'indice': 'subscript',
-      u'ind': 'subscript',
-      u'exposant': 'superscript',
-      u'exp': 'superscript',
-      u'titre-r\u00E9f\u00E9rence': 'title-reference',
-      u'titre': 'title-reference',
-      u'pep-r\u00E9f\u00E9rence': 'pep-reference',
-      u'rfc-r\u00E9f\u00E9rence': 'rfc-reference',
-      u'emphase': 'emphasis',
-      u'fort': 'strong',
-      u'litt\u00E9ral': 'literal',
-    'math (translation required)': 'math',
-      u'nomm\u00E9e-r\u00E9f\u00E9rence': 'named-reference',
-      u'anonyme-r\u00E9f\u00E9rence': 'anonymous-reference',
-      u'note-r\u00E9f\u00E9rence': 'footnote-reference',
-      u'citation-r\u00E9f\u00E9rence': 'citation-reference',
-      u'substitution-r\u00E9f\u00E9rence': 'substitution-reference',
-      u'lien': 'target',
-      u'uri-r\u00E9f\u00E9rence': 'uri-reference',
-      u'brut': 'raw',}
+      'abréviation': 'abbreviation',
+      'acronyme': 'acronym',
+      'sigle': 'acronym',
+      'code': 'code',
+      'emphase': 'emphasis',
+      'littéral': 'literal',
+      'math (translation required)': 'math',
+      'pep-référence': 'pep-reference',
+      'rfc-référence': 'rfc-reference',
+      'fort': 'strong',
+      'indice': 'subscript',
+      'ind': 'subscript',
+      'exposant': 'superscript',
+      'exp': 'superscript',
+      'titre-référence': 'title-reference',
+      'titre': 'title-reference',
+      'brut': 'raw',
+      # the following roles are not implemented in Docutils
+      'index': 'index',
+      'nommée-référence': 'named-reference',
+      'anonyme-référence': 'anonymous-reference',
+      'note-référence': 'footnote-reference',
+      'citation-référence': 'citation-reference',
+      'substitution-référence': 'substitution-reference',
+      'lien': 'target',
+      'uri-référence': 'uri-reference',
+      }
 """Mapping of French role names to canonical role names for interpreted text.
 """

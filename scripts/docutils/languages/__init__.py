@@ -1,9 +1,9 @@
-# $Id: __init__.py 8467 2020-01-26 21:23:42Z milde $
+# $Id: __init__.py 9030 2022-03-05 23:28:32Z milde $
 # Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 # Internationalization details are documented in
-# <http://docutils.sf.net/docs/howto/i18n.html>.
+# <https://docutils.sourceforge.io/docs/howto/i18n.html>.
 
 """
 This package contains modules for language-dependent features of Docutils.
@@ -11,13 +11,12 @@ This package contains modules for language-dependent features of Docutils.
 
 __docformat__ = 'reStructuredText'
 
-import sys
 from importlib import import_module
 
 from docutils.utils import normalize_language_tag
 
 
-class LanguageImporter(object):
+class LanguageImporter:
     """Import language modules.
 
     When called with a BCP 47 language tag, instances return a module
@@ -30,7 +29,7 @@ class LanguageImporter(object):
     warn_msg = ('Language "%s" not supported: '
                 'Docutils-generated text will be in English.')
     fallback = 'en'
-    # TODO: use a dummy module returning emtpy strings?, configurable?
+    # TODO: use a dummy module returning empty strings?, configurable?
 
     def __init__(self):
         self.cache = {}
@@ -44,10 +43,10 @@ class LanguageImporter(object):
                 self.check_content(module)
             except (ImportError, AttributeError):
                 if reporter and module:
-                    reporter.info('%s is no complete Docutils language module.'
-                                  %module)
+                    reporter.info(f'{module} is no complete '
+                                  'Docutils language module.')
                 elif reporter:
-                    reporter.info('Module "%s" not found.'%(package+name))
+                    reporter.info(f'Module "{package+name}" not found.')
                 continue
             break
         return module
@@ -65,7 +64,7 @@ class LanguageImporter(object):
         except KeyError:
             pass
         for tag in normalize_language_tag(language_code):
-            tag = tag.replace('-', '_') # '-' not valid in module names
+            tag = tag.replace('-', '_')  # '-' not valid in module names
             module = self.import_from_packages(tag, reporter)
             if module is not None:
                 break
@@ -75,7 +74,8 @@ class LanguageImporter(object):
             if self.fallback:
                 module = self.import_from_packages(self.fallback)
         if reporter and (language_code != 'en'):
-            reporter.info('Using %s for language "%s".'%(module, language_code))
+            reporter.info('Using %s for language "%s".'
+                          % (module, language_code))
         self.cache[language_code] = module
         return module
 

@@ -1,4 +1,4 @@
-# $Id: pseudoxml.py 8592 2020-12-15 23:06:26Z milde $
+# $Id: pseudoxml.py 9043 2022-03-11 12:09:16Z milde $
 # Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
@@ -14,16 +14,17 @@ from docutils import writers, frontend
 
 class Writer(writers.Writer):
 
-    supported = ('pprint', 'pformat', 'pseudoxml')
+    supported = ('pseudoxml', 'pprint', 'pformat')
     """Formats this writer supports."""
-    
+
     settings_spec = (
         '"Docutils pseudo-XML" Writer Options',
         None,
         (('Pretty-print <#text> nodes.',
-          ['--detailled'],
+          ['--detailed'],
           {'action': 'store_true', 'validator': frontend.validate_boolean}),
-        ))
+         )
+        )
 
     config_section = 'pseudoxml writer'
     config_section_dependencies = ('writers',)

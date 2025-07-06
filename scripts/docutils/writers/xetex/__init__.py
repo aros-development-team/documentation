@@ -1,17 +1,15 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-# :Author: Günter Milde <milde@users.sourceforge.net>
-# :Revision: $Revision: 8672 $
-# :Date: $Date: 2021-04-07 14:10:06 +0200 (Mi, 07. Apr 2021) $
+#!/usr/bin/env python3
+# :Author: Günter Milde <milde@users.sf.net>
+# :Revision: $Revision: 9293 $
+# :Date: $Date: 2022-12-01 22:13:54 +0100 (Do, 01. Dez 2022) $
 # :Copyright: © 2010 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:
-# 
+#
 #    Copying and distribution of this file, with or without modification,
 #    are permitted in any medium without royalty provided the copyright
 #    notice and this notice are preserved.
 #    This file is offered as-is, without any warranty.
-# 
+#
 # .. _2-Clause BSD license: https://opensource.org/licenses/BSD-2-Clause
 
 """
@@ -24,46 +22,44 @@ LuaTeX and XeTeX.
 
 __docformat__ = 'reStructuredText'
 
-import os
-import os.path
-import re
-
-import docutils
-from docutils import frontend, nodes, utils, writers, languages
+from docutils import frontend
 from docutils.writers import latex2e
+
 
 class Writer(latex2e.Writer):
     """A writer for Unicode-aware LaTeX variants (XeTeX, LuaTeX)"""
 
-    supported = ('lxtex', 'xetex', 'xelatex', 'luatex', 'lualatex')
+    supported = ('latex', 'tex', 'xetex', 'xelatex', 'luatex', 'lualatex')
     """Formats this writer supports."""
 
     default_template = 'xelatex.tex'
-    default_preamble = '\n'.join([
-        r'% Linux Libertine (free, wide coverage, not only for Linux)',
-        r'\setmainfont{Linux Libertine O}',
-        r'\setsansfont{Linux Biolinum O}',
-        r'\setmonofont[HyphenChar=None,Scale=MatchLowercase]{DejaVu Sans Mono}',
-    ])
+    default_preamble = """\
+% Linux Libertine (free, wide coverage, not only for Linux)
+\\setmainfont{Linux Libertine O}
+\\setsansfont{Linux Biolinum O}
+\\setmonofont[HyphenChar=None,Scale=MatchLowercase]{DejaVu Sans Mono}"""
 
     config_section = 'xetex writer'
-    config_section_dependencies = ('writers', 'latex writers',
-                                   'latex2e writer') # TODO: remove dependency on `latex2e writer`.
+    config_section_dependencies = ('writers', 'latex writers')
 
+    # use a copy of the parent spec with some modifications:
     settings_spec = frontend.filter_settings_spec(
         latex2e.Writer.settings_spec,
+        # removed settings
         'font_encoding',
+        # changed settings:
         template=('Template file. Default: "%s".' % default_template,
-          ['--template'], {'default': default_template, 'metavar': '<file>'}),
+                  ['--template'],
+                  {'default': default_template, 'metavar': '<file>'}),
         latex_preamble=('Customization by LaTeX code in the preamble. '
-          'Default: select "Linux Libertine" fonts.',
-          ['--latex-preamble'],
-          {'default': default_preamble}),
+                        'Default: select "Linux Libertine" fonts.',
+                        ['--latex-preamble'],
+                        {'default': default_preamble}),
         )
 
     def __init__(self):
         latex2e.Writer.__init__(self)
-        self.settings_defaults.update({'fontencoding': ''}) # use default (TU)
+        self.settings_defaults.update({'fontencoding': ''})  # use default (TU)
         self.translator_class = XeLaTeXTranslator
 
 
@@ -75,26 +71,27 @@ class Babel(latex2e.Babel):
     language_codes = latex2e.Babel.language_codes.copy()
     # Additionally supported or differently named languages:
     language_codes.update({
-        # code          Polyglossia-name       comment
-        'cop':          'coptic',
-        'de':           'german', # new spelling (de_1996)
-        'de-1901':      'ogerman', # old spelling
-        'dv':           'divehi',  # Maldivian
-        'dsb':          'lsorbian',
-        'el-polyton':   'polygreek',
-        'fa':           'farsi',
-        'grc':          'ancientgreek',
-        'hsb':          'usorbian',
-        'sh-Cyrl':      'serbian', # Serbo-Croatian, Cyrillic script
-        'sh-Latn':      'croatian', # Serbo-Croatian, Latin script
-        'sq':           'albanian',
-        'sr':           'serbian', # Cyrillic script (sr-Cyrl)
-        'th':           'thai',
-        'vi':           'vietnamese',
-        # zh-Latn:      ???        #     Chinese Pinyin
+        # code        Polyglossia-name  comment
+        'cop':        'coptic',
+        'de':         'german',         # new spelling (de_1996)
+        'de-1901':    'ogerman',        # old spelling
+        'dv':         'divehi',         # Maldivian
+        'dsb':        'lsorbian',
+        'el-polyton': 'polygreek',
+        'fa':         'farsi',
+        'grc':        'ancientgreek',
+        'ko':         'korean',
+        'hsb':        'usorbian',
+        'sh-Cyrl':    'serbian',        # Serbo-Croatian, Cyrillic script
+        'sh-Latn':    'croatian',       # Serbo-Croatian, Latin script
+        'sq':         'albanian',
+        'sr':         'serbian',        # Cyrillic script (sr-Cyrl)
+        'th':         'thai',
+        'vi':         'vietnamese',
+        # zh-Latn:    ???               # Chinese Pinyin
         })
     # normalize (downcase) keys
-    language_codes = dict([(k.lower(), v) for (k, v) in language_codes.items()])
+    language_codes = {k.lower(): v for k, v in language_codes.items()}
 
     # Languages without Polyglossia support:
     for key in ('af',           # 'afrikaans',
@@ -108,8 +105,8 @@ class Babel(latex2e.Babel):
                 'fr-CA',        # 'canadien',
                 'grc-ibycus',   # 'ibycus', (Greek Ibycus encoding)
                 'sr-Latn',      # 'serbian script=latin'
-               ):
-        del(language_codes[key.lower()])
+                ):
+        del language_codes[key.lower()]
 
     def __init__(self, language_code, reporter):
         self.language_code = language_code
@@ -121,7 +118,7 @@ class Babel(latex2e.Babel):
         self.quotes = ('"', '"')
         # language dependent configuration:
         # double quotes are "active" in some languages (e.g. German).
-        self.literal_double_quote = u'"' # TODO: use \textquotedbl ?
+        self.literal_double_quote = '"'  # TODO: use \textquotedbl ?
 
     def __call__(self):
         setup = [r'\usepackage{polyglossia}',

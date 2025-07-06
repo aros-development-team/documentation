@@ -494,7 +494,7 @@ def processHTML(src, depth):
         })
 
         # === Docutils settings ===
-        stylesheet_path = '../' * depth + 'aros.css?v=1.3'
+        stylesheet_path = '../' * depth + 'aros.css'
         settings_overrides = {
             'generator': False,
             'source_link': False,
@@ -517,6 +517,7 @@ def processHTML(src, depth):
         html_output = parts['whole']
 
         # === Write the HTML file ===
+        os.makedirs(os.path.dirname(dst_abs), exist_ok=True)
         try:
             with open(dst_abs, 'w', encoding='iso-8859-15', errors='replace') as f:
                 f.write(html_output)
@@ -824,13 +825,8 @@ def buildHTML():
 
     if not os.path.exists('news/index.en.rst'):
         open('news/index.en.rst', 'w').write('')
-    recurse(processHTML)
 
-    copyDevImages("yes")
-    copyGenericImages()
-    copyUserImages("yes")
-    copySamples("no")
-    copyHeaders("no")
+    recurse(processHTML)
 
     srcpath = 'targets/www/common'
     utility.pathscopy(
@@ -843,6 +839,12 @@ def buildHTML():
         srcpath,
         TRGROOT
     )
+
+    copyDevImages("yes")
+    copyGenericImages()
+    copyUserImages("yes")
+    copySamples("no")
+    copyHeaders("no")
 
     utility.copy('license.html', TRGROOT)
 

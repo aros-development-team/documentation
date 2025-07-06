@@ -1,11 +1,8 @@
-#!/usr/bin/python
-# coding: utf-8
+# :Author: Georg Brandl; Lea Wiemann; Günter Milde
+# :Date: $Date: 2022-11-16 15:01:31 +0100 (Mi, 16. Nov 2022) $
+# :Copyright: This module has been placed in the public domain.
 
 """Lexical analysis of formal languages (i.e. code) using Pygments."""
-
-# :Author: Georg Brandl; Felix Wiemann; Günter Milde
-# :Date: $Date: 2021-01-03 22:05:13 +0100 (So, 03. Jän 2021) $
-# :Copyright: This module has been placed in the public domain.
 
 from docutils import ApplicationError
 try:
@@ -17,15 +14,17 @@ except ImportError:
     with_pygments = False
 
 # Filter the following token types from the list of class arguments:
-unstyled_tokens = ['token', # Token (base token type)
-                   'text',  # Token.Text
-                   '']      # short name for Token and Text
+unstyled_tokens = ['token',  # Token (base token type)
+                   'text',   # Token.Text
+                   '']       # short name for Token and Text
 # (Add, e.g., Token.Punctuation with ``unstyled_tokens += 'punctuation'``.)
+
 
 class LexerError(ApplicationError):
     pass
 
-class Lexer(object):
+
+class Lexer:
     """Parse `code` lines and yield "classified" tokens.
 
     Arguments
@@ -58,12 +57,12 @@ class Lexer(object):
             return
         if not with_pygments:
             raise LexerError('Cannot analyze code. '
-                                    'Pygments package not found.')
+                             'Pygments package not found.')
         try:
             self.lexer = get_lexer_by_name(self.language)
         except pygments.util.ClassNotFound:
             raise LexerError('Cannot analyze code. '
-                'No Pygments lexer found for "%s".' % language)
+                             'No Pygments lexer found for "%s".' % language)
         # self.lexer.add_filter('tokenmerge')
         # Since version 1.2. (released Jan 01, 2010) Pygments has a
         # TokenMergeFilter. # ``self.merge(tokens)`` in __iter__ could
@@ -83,30 +82,30 @@ class Lexer(object):
             if ttype is lasttype:
                 lastval += value
             else:
-                yield(lasttype, lastval)
+                yield lasttype, lastval
                 (lasttype, lastval) = (ttype, value)
         if lastval.endswith('\n'):
             lastval = lastval[:-1]
         if lastval:
-            yield(lasttype, lastval)
+            yield lasttype, lastval
 
     def __iter__(self):
         """Parse self.code and yield "classified" tokens.
         """
         if self.lexer is None:
-            yield ([], self.code)
+            yield [], self.code
             return
         tokens = pygments.lex(self.code, self.lexer)
         for tokentype, value in self.merge(tokens):
-            if self.tokennames == 'long': # long CSS class args
+            if self.tokennames == 'long':  # long CSS class args
                 classes = str(tokentype).lower().split('.')
-            else: # short CSS class args
+            else:  # short CSS class args
                 classes = [_get_ttype_class(tokentype)]
             classes = [cls for cls in classes if cls not in unstyled_tokens]
-            yield (classes, value)
+            yield classes, value
 
 
-class NumberLines(object):
+class NumberLines:
     """Insert linenumber-tokens at the start of every code line.
 
     Arguments
@@ -117,7 +116,7 @@ class NumberLines(object):
 
     Iterating over an instance yields the tokens with a
     ``(['ln'], '<the line number>')`` token added for every code line.
-    Multi-line tokens are splitted."""
+    Multi-line tokens are split."""
 
     def __init__(self, tokens, startline, endline):
         self.tokens = tokens
@@ -127,11 +126,11 @@ class NumberLines(object):
 
     def __iter__(self):
         lineno = self.startline
-        yield (['ln'], self.fmt_str % lineno)
+        yield ['ln'], self.fmt_str % lineno
         for ttype, value in self.tokens:
             lines = value.split('\n')
             for line in lines[:-1]:
-                yield (ttype, line + '\n')
+                yield ttype, line + '\n'
                 lineno += 1
-                yield (['ln'], self.fmt_str % lineno)
-            yield (ttype, lines[-1])
+                yield ['ln'], self.fmt_str % lineno
+            yield ttype, lines[-1]

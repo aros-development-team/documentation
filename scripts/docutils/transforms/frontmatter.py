@@ -1,9 +1,9 @@
-# $Id: frontmatter.py 8671 2021-04-07 12:09:51Z milde $
+# $Id: frontmatter.py 9552 2024-03-08 23:41:31Z milde $
 # Author: David Goodger, Ueli Schlaepfer <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
 """
-Transforms related to the front matter of a document or a section
+Transforms_ related to the front matter of a document or a section
 (information found before the main text):
 
 - `DocTitle`: Used to transform a lone top level section's title to
@@ -17,19 +17,16 @@ Transforms related to the front matter of a document or a section
 
 - `DocInfo`: Used to transform a bibliographic field list into docinfo
   elements.
+
+.. _transforms: https://docutils.sourceforge.io/docs/api/transforms.html
 """
 
 __docformat__ = 'reStructuredText'
 
 import re
-import sys
 
-from docutils import nodes, utils
+from docutils import nodes, parsers, utils
 from docutils.transforms import TransformError, Transform
-
-
-if sys.version_info >= (3, 0):
-    unicode = str  # noqa
 
 
 class TitlePromoter(Transform):
@@ -70,7 +67,8 @@ class TitlePromoter(Transform):
         #       already exist in node with those in section.
         # NOTE: Remove `and_source` to NOT copy the 'source'
         #       attribute from section
-        node.update_all_atts_concatenating(section, replace=True, and_source=True)
+        node.update_all_atts_concatenating(section, replace=True,
+                                           and_source=True)
 
         # setup_child is called automatically for all nodes.
         node[:] = (section[:1]        # section title
@@ -111,7 +109,8 @@ class TitlePromoter(Transform):
         #       that already exist in node with those in section.
         # NOTE: Remove `and_source` to NOT copy the 'source'
         #       attribute from section.
-        subtitle.update_all_atts_concatenating(subsection, replace=True, and_source=True)
+        subtitle.update_all_atts_concatenating(subsection, replace=True,
+                                               and_source=True)
 
         # Transfer the contents of the subsection's title to the
         # subtitle:
@@ -148,46 +147,23 @@ class DocTitle(TitlePromoter):
     two-step transform to "raise" or "promote" the title(s) (and their
     corresponding section contents) to the document level.
 
-    1. If the document contains a single top-level section as its
-       first non-comment element, the top-level section's title
-       becomes the document's title, and the top-level section's
-       contents become the document's immediate contents. The lone
-       top-level section header must be the first non-comment element
-       in the document.
-
-       For example, take this input text::
-
-           =================
-            Top-Level Title
-           =================
-
-           A paragraph.
-
-       Once parsed, it looks like this::
-
-           <document>
-               <section names="top-level title">
-                   <title>
-                       Top-Level Title
-                   <paragraph>
-                       A paragraph.
-
-       After running the DocTitle transform, we have::
-
-           <document names="top-level title">
-               <title>
-                   Top-Level Title
-               <paragraph>
-                   A paragraph.
+    1. If the document contains a single top-level section as its first
+       element (instances of `nodes.PreBibliographic` are ignored),
+       the top-level section's title becomes the document's title, and
+       the top-level section's contents become the document's immediate
+       contents. The title is also used for the <document> element's
+       "title" attribute default value.
 
     2. If step 1 successfully determines the document title, we
        continue by checking for a subtitle.
 
-       If the lone top-level section itself contains a single
-       second-level section as its first non-comment element, that
-       section's title is promoted to the document's subtitle, and
-       that section's contents become the document's immediate
-       contents. Given this input text::
+       If the lone top-level section itself contains a single second-level
+       section as its first "non-PreBibliographic" element, that section's
+       title is promoted to the document's subtitle, and that section's
+       contents become the document's immediate contents.
+
+    Example:
+       Given this input text::
 
            =================
             Top-Level Title
@@ -198,8 +174,7 @@ class DocTitle(TitlePromoter):
 
            A paragraph.
 
-       After parsing and running the Section Promotion transform, the
-       result is::
+       After parsing and running the DocTitle transform, the result is::
 
            <document names="top-level title">
                <title>
@@ -210,17 +185,14 @@ class DocTitle(TitlePromoter):
                    A paragraph.
 
        (Note that the implicit hyperlink target generated by the
-       "Second-Level Title" is preserved on the "subtitle" element
+       "Second-Level Title" is preserved on the <subtitle> element
        itself.)
 
-    Any comment elements occurring before the document title or
-    subtitle are accumulated and inserted as the first body elements
-    after the title(s).
+    Any `nodes.PreBibliographic` instances occurring before the
+    document title or subtitle are accumulated and inserted as
+    the first body elements after the title(s).
 
-    This transform also sets the document's metadata title
-    (document['title']).
-
-    .. _reStructuredText: http://docutils.sf.net/rst.html
+    .. _reStructuredText: https://docutils.sourceforge.io/rst.html
     """
 
     default_priority = 320
@@ -237,7 +209,8 @@ class DocTitle(TitlePromoter):
         if not self.document.hasattr('title'):
             if self.document.settings.title is not None:
                 self.document['title'] = self.document.settings.title
-            elif len(self.document) and isinstance(self.document[0], nodes.title):
+            elif len(self.document) and isinstance(self.document[0],
+                                                   nodes.title):
                 self.document['title'] = self.document[0].astext()
 
     def apply(self):
@@ -281,10 +254,10 @@ class SectionSubTitle(TitlePromoter):
     def apply(self):
         if not self.document.settings.setdefault('sectsubtitle_xform', True):
             return
-        for section in self.document._traverse(nodes.section):
+        for section in self.document.findall(nodes.section):
             # On our way through the node tree, we are modifying it
             # but only the not-yet-visited part, so that the iterator
-            # returned by _traverse() is not corrupted.
+            # returned by findall() is not corrupted.
             self.promote_subtitle(section)
 
 
@@ -296,12 +269,12 @@ class DocInfo(Transform):
     Specification`_ for a high-level description. This transform
     should be run *after* the `DocTitle` transform.
 
-    Given a field list as the first non-comment element after the
-    document title and subtitle (if present), registered bibliographic
+    If the document contains a field list as the first element (instances
+    of `nodes.PreBibliographic` are ignored), registered bibliographic
     field names are transformed to the corresponding DTD elements,
-    becoming child elements of the "docinfo" element (except for a
-    dedication and/or an abstract, which become "topic" elements after
-    "docinfo").
+    becoming child elements of the <docinfo> element (except for a
+    dedication and/or an abstract, which become <topic> elements after
+    <docinfo>).
 
     For example, given this document fragment after parsing::
 
@@ -359,9 +332,9 @@ class DocInfo(Transform):
       being expanded. Only the "RCSfile" keyword is stable; its
       expansion text changes only if the file name changes.)
 
-    .. _reStructuredText: http://docutils.sf.net/rst.html
+    .. _reStructuredText: https://docutils.sourceforge.io/rst.html
     .. _reStructuredText Markup Specification:
-       http://docutils.sf.net/docs/ref/rst/restructuredtext.html
+       https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html
     """
 
     default_priority = 340
@@ -393,7 +366,7 @@ class DocInfo(Transform):
         candidate = document[index]
         if isinstance(candidate, nodes.field_list):
             biblioindex = document.first_child_not_matching_class(
-                  (nodes.Titular, nodes.Decorative))
+                  (nodes.Titular, nodes.Decorative, nodes.meta))
             nodelist = self.extract_bibliographic(candidate)
             del document[index]         # untransformed field list (candidate)
             document[biblioindex:biblioindex] = nodelist
@@ -427,7 +400,7 @@ class DocInfo(Transform):
                             base_node=field)
                         raise TransformError
                     title = nodes.title(name, labels[canonical])
-                    title[0].rawsource =  labels[canonical]
+                    title[0].rawsource = labels[canonical]
                     topics[canonical] = biblioclass(
                         '', title, classes=[canonical], *field[1].children)
                 else:
@@ -453,30 +426,48 @@ class DocInfo(Transform):
     def check_empty_biblio_field(self, field, name):
         if len(field[-1]) < 1:
             field[-1] += self.document.reporter.warning(
-                  'Cannot extract empty bibliographic field "%s".' % name,
+                  f'Cannot extract empty bibliographic field "{name}".',
                   base_node=field)
-            return None
-        return 1
+            return False
+        return True
 
     def check_compound_biblio_field(self, field, name):
-        if len(field[-1]) > 1:
-            field[-1] += self.document.reporter.warning(
-                  'Cannot extract compound bibliographic field "%s".' % name,
-                  base_node=field)
-            return None
-        if not isinstance(field[-1][0], nodes.paragraph):
-            field[-1] += self.document.reporter.warning(
-                  'Cannot extract bibliographic field "%s" containing '
-                  'anything other than a single paragraph.' % name,
-                  base_node=field)
-            return None
-        return 1
+        # Check that the `field` body contains a single paragraph
+        # (i.e. it must *not* be a compound element).
+        f_body = field[-1]
+        if len(f_body) == 1 and isinstance(f_body[0], nodes.paragraph):
+            return True
+        # Restore single author name with initial (E. Xampl) parsed as
+        # enumerated list
+        # https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#enumerated-lists
+        if (isinstance(f_body[0], nodes.enumerated_list)
+            and '\n' not in f_body.rawsource.strip()):
+            # parse into a dummy document and use created nodes
+            _document = utils.new_document('*DocInfo transform*',
+                                           field.document.settings)
+            parser = parsers.rst.Parser()
+            parser.parse('\\'+f_body.rawsource, _document)
+            if (len(_document.children) == 1
+                and isinstance(_document.children[0], nodes.paragraph)):
+                f_body.children = _document.children
+                return True
+        # Check failed, add a warning
+        content = [f'<{e.tagname}>' for e in f_body.children]
+        if len(content) > 1:
+            content = '[' + ', '.join(content) + ']'
+        else:
+            content = 'a ' + content[0]
+        f_body += self.document.reporter.warning(
+                      f'Bibliographic field "{name}"\nmust contain '
+                      f'a single <paragraph>, not {content}.',
+                      base_node=field)
+        return False
 
     rcs_keyword_substitutions = [
           (re.compile(r'\$' r'Date: (\d\d\d\d)[-/](\d\d)[-/](\d\d)[ T][\d:]+'
                       r'[^$]* \$', re.IGNORECASE), r'\1-\2-\3'),
           (re.compile(r'\$' r'RCSfile: (.+),v \$', re.IGNORECASE), r'\1'),
-          (re.compile(r'\$[a-zA-Z]+: (.+) \$'), r'\1'),]
+          (re.compile(r'\$[a-zA-Z]+: (.+) \$'), r'\1')]
 
     def extract_authors(self, field, name, docinfo):
         try:
@@ -497,23 +488,26 @@ class DocInfo(Transform):
                 raise TransformError
         except TransformError:
             field[-1] += self.document.reporter.warning(
-                  'Bibliographic field "%s" incompatible with extraction: '
-                  'it must contain either a single paragraph (with authors '
-                  'separated by one of "%s"), multiple paragraphs (one per '
-                  'author), or a bullet list with one paragraph (one author) '
-                  'per item.'
-                  % (name, ''.join(self.language.author_separators)),
-                  base_node=field)
+                f'Cannot extract "{name}" from bibliographic field:\n'
+                f'Bibliographic field "{name}" must contain either\n'
+                ' a single paragraph (with author names separated by one of '
+                f'"{"".join(self.language.author_separators)}"),\n'
+                ' multiple paragraphs (one per author),\n'
+                ' or a bullet list with one author name per item.\n'
+                'Note: Leading initials can cause (mis)recognizing names '
+                'as enumerated list.',
+                base_node=field)
             raise
 
     def authors_from_one_paragraph(self, field):
-        """Return list of Text nodes for authornames.
+        """Return list of Text nodes with author names in `field`.
 
-        The set of separators is locale dependent (default: ";"- or ",").
+        Author names must be separated by one of the "autor separators"
+        defined for the document language (default: ";" or ",").
         """
         # @@ keep original formatting? (e.g. ``:authors: A. Test, *et-al*``)
-        text = ''.join(unicode(node)
-                       for node in field[1].traverse(nodes.Text))
+        text = ''.join(str(node)
+                       for node in field[1].findall(nodes.Text))
         if not text:
             raise TransformError
         for authorsep in self.language.author_separators:
@@ -523,9 +517,7 @@ class DocInfo(Transform):
             if len(authornames) > 1:
                 break
         authornames = (name.strip() for name in authornames)
-        authors = [[nodes.Text(name, utils.unescape(name, True))]
-                   for name in authornames if name]
-        return authors
+        return [[nodes.Text(name)] for name in authornames if name]
 
     def authors_from_bullet_list(self, field):
         authors = []

@@ -1,4 +1,4 @@
-# $Id: body.py 8596 2020-12-16 10:41:03Z milde $
+# $Id: body.py 9500 2023-12-14 22:38:49Z milde $
 # Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
@@ -38,14 +38,15 @@ class BasePseudoSection(Directive):
         self.assert_has_content()
         if self.arguments:  # title (in sidebars optional)
             title_text = self.arguments[0]
-            textnodes, messages = self.state.inline_text(title_text, self.lineno)
+            textnodes, messages = self.state.inline_text(
+                                      title_text, self.lineno)
             titles = [nodes.title(title_text, '', *textnodes)]
             # Sidebar uses this code.
             if 'subtitle' in self.options:
                 textnodes, more_messages = self.state.inline_text(
                     self.options['subtitle'], self.lineno)
                 titles.append(nodes.subtitle(self.options['subtitle'], '',
-                                            *textnodes))
+                                             *textnodes))
                 messages.extend(more_messages)
         else:
             titles = []
@@ -136,8 +137,8 @@ class CodeBlock(Directive):
     optional_arguments = 1
     option_spec = {'class': directives.class_option,
                    'name': directives.unchanged,
-                   'number-lines': directives.unchanged # integer or None
-                  }
+                   'number-lines': directives.unchanged  # integer or None
+                   }
     has_content = True
 
     def run(self):
@@ -155,12 +156,12 @@ class CodeBlock(Directive):
 
         # set up lexical analyzer
         try:
-            tokens = Lexer(u'\n'.join(self.content), language,
+            tokens = Lexer('\n'.join(self.content), language,
                            self.state.document.settings.syntax_highlight)
         except LexerError as error:
             if self.state.document.settings.report_level > 2:
-                # don't report warnings -> insert without syntax highligt
-                tokens = Lexer(u'\n'.join(self.content), language, 'none')
+                # don't report warnings -> insert without syntax highlight
+                tokens = Lexer('\n'.join(self.content), language, 'none')
             else:
                 raise self.warning(error)
 
@@ -193,9 +194,10 @@ class CodeBlock(Directive):
 class MathBlock(Directive):
 
     option_spec = {'class': directives.class_option,
-                   'name': directives.unchanged}
-                   ## TODO: Add Sphinx' ``mathbase.py`` option 'nowrap'?
+                   'name': directives.unchanged,
+                   # TODO: Add Sphinx' ``mathbase.py`` option 'nowrap'?
                    # 'nowrap': directives.flag,
+                   }
     has_content = True
 
     def run(self):
@@ -208,7 +210,8 @@ class MathBlock(Directive):
             if not block:
                 continue
             node = nodes.math_block(self.block_text, block, **self.options)
-            node.line = self.content_offset + 1
+            (node.source,
+             node.line) = self.state_machine.get_source_and_line(self.lineno)
             self.add_name(node)
             _nodes.append(node)
         return _nodes
