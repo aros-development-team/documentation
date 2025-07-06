@@ -19,56 +19,56 @@ Documentation
 =============
 
 Getting Started
++ `How to compile`__
++ `Porting software to AROS`__
 
 API Documentation
-
-Contribution Guide
-
-Tools & SDK's
-
-Debugging & Testing
-
-Community / Support.
-
-
-+ `How to contribute`__
-+ `Roadmap`__
-+ `Issue tracker on Github`__
-+ `Git access and usage`__
-+ `How to compile`__
-+ `Applications development manual`__
-+ `Zune Applications development manual`__
-+ `System development manual`__
 + `PCI subsystem manual`__
-+ `Debugging manual`__
 + `Autodocs (API Reference)`__
 + `Specifications`__
 + `Hardware`__
+
+Contribution Guide
++ `How to contribute`__
++ `Git access and usage`__
+
+Tools & SDK's
++ `Applications development manual`__
++ `Zune Applications development manual`__
 + `User interface style guide`__
++ `System development manual`__
+
+Debugging & Testing
 + `Testing`__
-+ `Documenting`__
-+ `Porting software to AROS`__
-+ `Summaries`__
++ `Debugging manual`__
++ `Issue tracker on Github`__
+
+Community / Support.
++ `Roadmap`__
 + `Useful links`__
 + `FAQ`__
 
-__ contribute
-__ roadmap
-__ https://github.com/aros-development-team/AROS/issues
-__ git
+
++ `Documenting`__
++ `Summaries`__
+
 __ compiling
-__ app-dev/index
-__ zune-dev/index
-__ sys-dev/index
+__ porting
 __ hardware/pci
-__ debugging
 __ autodocs/index
 __ specifications/index
 __ hardware/index
+__ contribute
+__ git
+__ app-dev/index
+__ zune-dev/index
 __ ui
+__ sys-dev/index
 __ testing/index
-__ documenting
-__ porting
-__ summaries/index
+__ debugging
+__ https://github.com/aros-development-team/AROS/issues
+__ roadmap
 __ links
 __ faq
+__ documenting
+__ summaries/index
