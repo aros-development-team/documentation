@@ -111,14 +111,21 @@ def makePage( _T, _N, _M, lang, charset ):
                     <li><a href="http://translations.aros.org/">{{ n['translators'] }}</a></li>
                 </ul>
                 <ul class="tree-head">
-                    <li><a href="/">{{ n['developers'] }}</a></li>
-                    <li>{{ n['documentation'] }}
+                    <li><a href="/">{{ n['developers'] }}</a>
                         <ul class="tree-head">
                             <li>
+                                Resources
+                                <ul class="tree-entry">
+                                    <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'unittests', lang) }}">unittests</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="tree-head">
+                            <li>{{ n['documentation'] }}
                                 <ul class="tree-entry">
                                     <li><a href="{{ makeURL( 'documentation/contribute', lang) }}">{{ n['contribute'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
-                                    <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/git', lang) }}">{{ n['working-with-git'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/compiling', lang) }}">{{ n['compiling'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
