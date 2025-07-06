@@ -517,8 +517,12 @@ def processHTML(src, depth):
         html_output = parts['whole']
 
         # === Write the HTML file ===
-        with open(dst_abs, 'w', encoding='iso-8859-15') as f:
-            f.write(html_output)
+        try:
+            with open(dst_abs, 'w', encoding='iso-8859-15') as f:
+                f.write(html_output)
+        except UnicodeEncodeError as e:
+            print(f"UnicodeEncodeError while writing '{dst_abs}': {e}")
+            raise
 
     else:
         utility.reportSkipping(dst)
