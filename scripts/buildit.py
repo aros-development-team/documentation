@@ -25,6 +25,7 @@ from template.www import gallery
 import autodoc
 
 from jinja2 import Environment, FileSystemLoader
+from jinja2 import TemplateSyntaxError
 
 # Setup
 DEFAULTLANG= 'en'
