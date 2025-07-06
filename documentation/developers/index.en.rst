@@ -8,7 +8,7 @@ developers.aros.org
 :Date:      $Date$
 :Status:    Add suitable categories for content, and split up pages to suit.
 
-    <h1>Welcome to the AROS Developer Portal<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
+<h1>Welcome to the AROS Developer Portal<br><img style="width: 238px; height: 2px;" alt="" src="/images/sidespacer.png"></h1>
 
 Your starting point for developing applications, drivers, and system components for the open-source Amiga-like operating system
 
@@ -19,31 +19,43 @@ Documentation
 =============
 
 Getting Started
+---------------
+
 + `How to compile`__
 + `Porting software to AROS`__
 
 API Documentation
+-----------------
+
 + `PCI subsystem manual`__
 + `Autodocs (API Reference)`__
 + `Specifications`__
 + `Hardware`__
 
 Contribution Guide
+------------------
+
 + `How to contribute`__
 + `Git access and usage`__
 
 Tools & SDK's
+-------------
+
 + `Applications development manual`__
 + `Zune Applications development manual`__
 + `User interface style guide`__
 + `System development manual`__
 
 Debugging & Testing
+-------------------
+
 + `Testing`__
 + `Debugging manual`__
 + `Issue tracker on Github`__
 
 Community / Support.
+--------------------
+
 + `Roadmap`__
 + `Useful links`__
 + `FAQ`__
