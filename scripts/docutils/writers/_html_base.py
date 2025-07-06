@@ -1518,25 +1518,28 @@ class HTMLTranslator(nodes.NodeVisitor):
 
     def visit_reference(self, node):
         atts = {'classes': ['reference']}
-        suffix = '.' + self.settings.target_suffix
+        suffix = ''
         if 'refuri' in node:
-            href = atts['href'] = node['refuri']
+            atts['href'] = node['refuri']
             if (self.settings.cloak_email_addresses
                 and atts['href'].startswith('mailto:')):
                 atts['href'] = self.cloak_mailto(atts['href'])
                 self.in_mailto = True
             atts['classes'].append('external')
             # This check is not in upstream docutils
-            if ':' not in href:
+            if ':' not in atts['href']:
                 # This is a relative URL, so we assume we want to mangle it. :-)
-                words = href.split( '#' )
-                fracts = words[0].split( '/' )
-                if not ('.' in fracts[len( fracts ) - 1] or words[0].endswith( '/' )):
-                    # It doesn't have the correct suffix...
-                    words[0] = words[0] + suffix
-                href = words[0]
-                if len( words ) > 1:
-                    href = href + '#' + words[1]
+                href = atts['href']
+                parts = href.split('#', 1)
+                path, fragment = (parts + [''])[0], (parts + ['',''])[1]
+                segments = path.split('/')
+                last = segments[-1]
+
+                # Add suffix if no file extension and not ending with '/'
+                if '.' not in last and not path.endswith('/'):
+                    path += '.' + self.settings.target_suffix
+
+                href = path + ('#' + fragment if fragment else '')
                 atts['href'] = href
         else:
             assert 'refid' in node, \
