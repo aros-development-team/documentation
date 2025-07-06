@@ -362,7 +362,7 @@ def processWWW(src, depth):
     if wwwtgt == 'dev':
         if "documentation/developers" not in os.path.dirname(src):
             return
-        if prefix == "documentation/developers/siteroot" or prefix.endswith("/documentation/developers/siteroot"):
+        if "documentation/developers/siteroot" in prefix:
             dst_prefix = prefix.replace("documentation/developers/siteroot/", "")
         elif prefix == "documentation/developers/index" or prefix.endswith("/documentation/developers/index"):
             dst_prefix = prefix.replace("documentation/developers/", "")
@@ -375,7 +375,7 @@ def processWWW(src, depth):
     if wwwtgt == 'locale':
         if "documentation/translating" not in os.path.dirname(src):
             return
-        if prefix == "documentation/translating/siteroot" or prefix.endswith("/documentation/translating/siteroot"):
+        if "documentation/translating/siteroot" in prefix:
             dst_prefix = prefix.replace("documentation/translating/siteroot/", "")
         if prefix == "documentation/translating/index" or prefix.endswith("/documentation/translating/index"):
             dst_prefix = prefix.replace("documentation/translating/", "")
