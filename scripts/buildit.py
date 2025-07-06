@@ -332,7 +332,12 @@ def convertWWW(src, language, options=None):
 
     # === NEW: Render through Jinja2 ===
     template_path = os.path.relpath(src, SRCROOT)
-    template = jinja_env.get_template(template_path)
+    try:
+        template = jinja_env.get_template(template_path)
+    except TemplateSyntaxError as e:
+        print(f"Error in template '{template_path}': {e}")
+        raise  # re-raise the exception so the build still fails
+
     rendered_rst = template.render({
         'arosdepthpath': '../',
         'devdepthpath': '../',
