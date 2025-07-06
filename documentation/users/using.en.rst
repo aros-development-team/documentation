@@ -613,7 +613,7 @@ tool is being developed. Please note that there actually are very few networking
 programs on AROS, as yet (but some interesting tools are in development,
 soon to be released).
 
-First you need to set up your machine’s side of the network. This
+First you need to set up your machine's side of the network. This
 part can differ depending on your hardware. On a real machine you need to
 install the supported network interface card (NIC) and plug the cable in. On
 a virtual machine you should set up its NIC implementation and check if it's
@@ -683,7 +683,7 @@ ENVARC:AROSTCP/db directory, that way the Config file could be::
     ENV:AROSTCP/db
 
 Now make AROSTCP start at boot with the word "True" in ENVARC:AROSTCP/Autorun
-(Create the file if it doesn’t exist in a CLI window with the command echo "True" 
+(Create the file if it doesn't exist in a CLI window with the command echo "True" 
 >sys:AROSTCP/Autorun) Edit the ``SYS:System/Network/AROSTCP/S/Package-Startup``::
 
     ; $VER: AROSTCP-PackageStartup 1.0 (01/08/06)
@@ -830,7 +830,7 @@ sound cards (usually sb16/es) so the way to try to get sound would be to use
 AROS-native on pc with a real SB Live/Audigy card. The AC97-compliant
 codecs are supported as well. Note: new AROS drivers are being written, and 
 the sound system is still being developed. So, if your AROS sound system 
-doesn’t work at the moment, don't worry. It may work in the near future.
+doesn't work at the moment, don't worry. It may work in the near future.
 
 AHI sound in AROS also supports no sound (VOID) and disk writing options.
 
