@@ -47,6 +47,7 @@ Tools & SDK's
 + `Zune Applications development manual`__
 + `User interface style guide`__
 + `System development manual`__
++ `SDK, Toolchain and Source-Code Downloads`__
 
 Debugging & Testing
 -------------------
@@ -78,6 +79,7 @@ __ {{ devdocrootpath }}app-dev/index
 __ {{ devdocrootpath }}zune-dev/index
 __ {{ devdocrootpath }}ui
 __ {{ devdocrootpath }}sys-dev/index
+__ /download
 __ {{ devdocrootpath }}testing/index
 __ {{ devdocrootpath }}debugging
 __ https://github.com/aros-development-team/AROS/issues
