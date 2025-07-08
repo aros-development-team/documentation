@@ -6,10 +6,10 @@
      from using the files listed on this page. 
 
 
-Nightly Build Downloads (ABI-v1)
-================================
+Toolchain, SDK, and Source-code Downloads
+=========================================
 
 .. raw:: html
 
-    <iframe src="/cgi-bin/files?type=nightly2&lang=en" class="download-iframe"></iframe>
+    <iframe src="/downloads.html?type=nightly2&lang=en" class="download-iframe"></iframe>
 
