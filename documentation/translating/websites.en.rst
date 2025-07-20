@@ -16,16 +16,16 @@ The AROS operating system and its websites are the public face of the project, o
 - User and developer documentation
 - Community resources
 
-Translating these sites helps make AROS accessible to users worldwide. While some documentation is technical and intended for developers, much of the material is for general users—and this is where translation is most important.
+Translating these sites helps make AROS accessible to users worldwide. While some documentation is technical and intended for developers, much of the material is for general users - and this is where translation is most important.
 
 ----
 
 **Where to start:**
 
 - Focus on **user guides** and **main website pages**. These are the most visible and impactful.
-- Developer documentation is lower priority, except for **“Working with Git”** and **“Contribute”**, which help attract new contributors.
+- Developer documentation is lower priority, except for **'Working with Git'** and **'Contribute'**, which help attract new contributors.
 
-The documentation is extensive (over 100 pages), but you don’t need to translate everything at once. Prioritize the core pages first.
+The documentation is extensive (over 100 pages), but you don't need to translate everything at once. Prioritize the core pages first.
 
 ----
 
