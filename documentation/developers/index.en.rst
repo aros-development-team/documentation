@@ -14,7 +14,13 @@ developers.aros.org
 
 Your starting point for developing applications, drivers, and system components for the open-source Amiga-like operating system
 
-AROS is an open-source reimplementation of AmigaOS 3.1, targeting modern hardware and architectures. This portal provides developer guides, API references, contribution workflows, and build tools.
+AROS is an open-source reimplementation of AmigaOS 3.1, aiming to bring a classic Amiga-like experience to both vintage and contemporary hardware and architectures. This portal provides developer guides, API references, contribution workflows, and build tools.
+
+.. raw:: html
+
+   <script async src="https://cse.google.com/cse.js?cx=43171d93ddf6349de">
+   </script>
+   <div class="gcse-search"></div>
 
 
 Documentation
