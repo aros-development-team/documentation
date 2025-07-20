@@ -1,6 +1,6 @@
-===================
+====================
 Translation Progress
-===================
+====================
 
 :Authors: William Ouwehand, Keen, Nick Andrews
 :Copyright: Copyright (C) 1995-2020, The AROS Development Team
