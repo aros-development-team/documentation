@@ -1,6 +1,6 @@
-==========================
+============================
 Welcome to AROS Translations
-==========================
+============================
 
 :Authors: William Ouwehand, Keen, Nick Andrews
 :Copyright: Copyright (C) 1995-2020, The AROS Development Team
@@ -20,10 +20,18 @@ We are always looking for **new translators** or **contributors** to help expand
 
 **Explore the project:**
 
-- `Getting Started <getting_started.html>`_
-- `Active Projects <projects.html>`_
-- `Translator Resources <resources.html>`_
-- `OS Translation Progress <progress.html>`_
-- `Translating the Websites <websites.html>`_
-- `Changelog <changelog.html>`_
-- `Contact & Community <contact.html>`_
+- `Getting Started`__
+- `Active Projects`__
+- `Translator Resources`__
+- `OS Translation Progress`__
+- `Translating the Websites`__
+- `Changelog`__
+- `Contact & Community`__
+
+__ {{ localedocrootpath }}getting_started
+__ {{ localedocrootpath }}projects
+__ {{ localedocrootpath }}resources
+__ {{ localedocrootpath }}progress
+__ {{ localedocrootpath }}websites
+__ {{ localedocrootpath }}changelog
+__ {{ localedocrootpath }}contact
