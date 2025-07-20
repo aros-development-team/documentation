@@ -113,6 +113,13 @@ def makePage( _T, _N, _M, lang, charset ):
                             <li>{{ n['documentation'] }}
                                 <ul class="tree-entry">
                                     <li><a href="{{ makeURL( 'documentation/issues/index', lang) }}">{{ n['contribute'] }}</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/getting_started', lang) }}">Getting Started</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/projects', lang) }}">Active Projects</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/resources', lang) }}">Translator Resources</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/progress', lang) }}">OS Translation Progress</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/websites', lang) }}">Translating the Websites</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/changelog', lang) }}">Changelog</a></li>
+                                    <li><a href="{{ makeURL( 'documentation/contact', lang) }}">{{ n['community'] }}</a></li>
                                 </ul>
                             </li>
                         </ul>
