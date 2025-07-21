@@ -126,22 +126,27 @@ def makePage( _T, _N, _M, lang, charset ):
                             <li>{{ n['documentation'] }}
                                 <ul class="tree-entry">
                                     <li><a href="{{ makeURL( 'documentation/compiling', lang) }}">{{ n['compiling'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/porting', lang) }}">{{ n['porting'] }}</a></li>
-                                    <li></li>
+                                    <li><a href="{{ makeURL( 'documentation/porting', lang) }}">{{ n['porting'] }}</a><br>
+                                    <img style="width: 30px; height: 1px;" alt="spacer" src="/images/menuspacer.png">
+                                    </li>
                                     <li><a href="{{ makeURL( 'documentation/autodocs/index', lang) }}">{{ n['reference'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/specifications/', lang) }}">{{ n['specifications'] }}</a></li>
-                                    <li></li>
+                                    <li><a href="{{ makeURL( 'documentation/specifications/', lang) }}">{{ n['specifications'] }}</a><br>
+                                    <img style="width: 30px; height: 1px;" alt="spacer" src="/images/menuspacer.png">
+                                    </li>
                                     <li><a href="{{ makeURL( 'documentation/contribute', lang) }}">{{ n['contribute'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/git', lang) }}">{{ n['working-with-git'] }}</a></li>
-                                    <li></li>
+                                    <li><a href="{{ makeURL( 'documentation/git', lang) }}">{{ n['working-with-git'] }}</a><br>
+                                    <img style="width: 30px; height: 1px;" alt="spacer" src="/images/menuspacer.png">
+                                    </li>
                                     <li><a href="{{ makeURL( 'documentation/app-dev/index', lang) }}">{{ n['application-development-manual'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/zune-dev/index', lang) }}">{{ n['zune-application-development-manual'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/ui', lang) }}">{{ n['ui-style-guide'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a></li>
-                                    <li></li>
+                                    <li><a href="{{ makeURL( 'documentation/sys-dev/index', lang) }}">{{ n['system-development-manual'] }}</a><br>
+                                    <img style="width: 30px; height: 1px;" alt="spacer" src="/images/menuspacer.png">
+                                    </li>
                                     <li><a href="{{ makeURL( 'documentation/testing/', lang) }}">{{ n['testing'] }}</a></li>
-                                    <li><a href="{{ makeURL( 'documentation/debugging', lang) }}">{{ n['debugging-manual'] }}</a></li>
-                                    <li></li>
+                                    <li><a href="{{ makeURL( 'documentation/debugging', lang) }}">{{ n['debugging-manual'] }}</a><br>
+                                    <img style="width: 30px; height: 1px;" alt="spacer" src="/images/menuspacer.png">
+                                    </li>
                                     <li><a href="{{ makeURL( 'documentation/roadmap', lang) }}">{{ n['roadmap'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/links', lang) }}">{{ n['links'] }}</a></li>
                                     <li><a href="{{ makeURL( 'documentation/faq', lang) }}">{{ n['faq'] }}</a></li>
