@@ -118,7 +118,7 @@ def makePage( _T, _N, _M, lang, charset ):
                                 <ul class="tree-entry">
                                     <li><a href="https://github.com/aros-development-team/AROS/issues" target="_blank">{{ n['issue-tracker'] }}</a></li>
                                     <li><a href="{{ makeURL( 'unittests', lang) }}">unittests</a></li>
-                                    <li><a href="{{ makeURL( 'downloads', lang) }}">SDK, Toolchain and Source-Code Downloads</a></li>
+                                    <li><a href="{{ makeURL( 'download', lang) }}">SDK, Toolchain and Source-Code Downloads</a></li>
                                 </ul>
                             </li>
                         </ul>
