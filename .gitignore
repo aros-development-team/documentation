@@ -15,4 +15,5 @@
 /scripts/config/user
 
 # /targets/www/
+/targets/www/aros/template.html.*
 /targets/www/template.html.*
