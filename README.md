@@ -24,6 +24,7 @@ Now you must build the autodocs,
 
 And once that has completed, build your desired target..
 
-    ./build www
+    ./build www <site>
 
+..where site must be one of aros, dev, locale
 
