@@ -17,3 +17,10 @@
 # /targets/www/
 /targets/www/aros/template.html.*
 /targets/www/template.html.*
+
+# ignore auto generated files
+/documentation/users/applications
+/documentation//developers/autodocs
+/documentation/users/shell
+!/documentation/users/shell/introduction.en.rst
+!/documentation/users/shell/scripts.en.rst
