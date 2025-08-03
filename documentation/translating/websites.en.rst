@@ -32,7 +32,6 @@ The documentation is extensive (over 100 pages), but you don't need to translate
 **Explore the project:**
 
 - `Getting Started <getting_started.html>`_
-- `Translation Areas & Priorities <areas.html>`_
 - `Active Projects <projects.html>`_
 - `Translator Resources <resources.html>`_
 - `Translation Progress <progress.html>`_
