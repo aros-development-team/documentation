@@ -265,13 +265,13 @@ program, which is located in the *Tools* drawer on your BootCD. Please, launch
 it by clicking on its icon. Once it's launched, it'll show you the greeting
 screen. 
 
-.. Figure:: /documentation/users/images/installer1.png
+.. Figure:: /documentation/images/installer1.png
    :alt: InstallAROS step 1
 
 Then click the ``Proceed`` button in the installer to get a screen
 with installing options.
 
-.. Figure:: /documentation/users/images/installer2.png
+.. Figure:: /documentation/images/installer2.png
    :alt: InstallAROS step 2
 
 You can see the current installing device (ahci.device) and its unit (0),
@@ -284,18 +284,18 @@ add an extra WORK partition to install programs on it. After you click
 the ``Proceed`` button again, InstallAROS will create the partition or
 partitions, and after that it will ask you to reboot.
 
-.. Figure:: /documentation/users/images/installer3.png
+.. Figure:: /documentation/images/installer3.png
    :alt: InstallAROS step 3
 
 After the reboot, please start InstallAROS again.
 
-.. Figure:: /documentation/users/images/installer4.png
+.. Figure:: /documentation/images/installer4.png
    :alt: InstallAROS step 4
 
 This time, the option ``Use existing AROS partitions`` should be selected.
 ``Proceed`` with this. You will see some extra options in a window.
 
-.. Figure:: /documentation/users/images/installer5.png
+.. Figure:: /documentation/images/installer5.png
    :alt: InstallAROS step 5
 
 + ``Choose language Options`` allows you to select the locale of your newly
@@ -315,19 +315,19 @@ On the next installer screen you can choose which partitions you want to
 format and copy files to, and whether a WORK partition is used and whether
 files should be copied to it.
 
-.. Figure:: /documentation/users/images/installer6.png
+.. Figure:: /documentation/images/installer6.png
    :alt: InstallAROS step 6
 
 After you made your choices and proceed, the installer will show the GRUB
 installation device and the path to the GRUB files for you to check.
 
-.. Figure:: /documentation/users/images/installer7.png
+.. Figure:: /documentation/images/installer7.png
    :alt: InstallAROS step 7
 
 Proceeding, you will see the last screen before installation, which will warn
 you that formatting isn't reversible. 
 
-.. Figure:: /documentation/users/images/installer8.png
+.. Figure:: /documentation/images/installer8.png
    :alt: InstallAROS step 8
 
 After clicking
@@ -335,7 +335,7 @@ After clicking
 You may be asked to select your keyboard type and locale settings, then the
 files are being copied. This may take a while; be patient, please.
 
-.. Figure:: /documentation/users/images/installer9.png
+.. Figure:: /documentation/images/installer9.png
    :alt: InstallAROS step 9
 
 
