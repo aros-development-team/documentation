@@ -19,7 +19,7 @@ You can start it with menu Wanderer>Shell. A window
 with the path of the current Wanderer window will be opened. The prompt
 normally shows the the number of the Shell and the current path.
 
-.. Figure:: /documentation/users/images/shell.png
+.. Figure:: /documentation/images/shell.png
    :alt: screenshot of Shell window
 
    A Screenshot of a Shell window
