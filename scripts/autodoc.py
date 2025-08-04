@@ -270,7 +270,7 @@ class AutoDoc(object):
     def write_xref_header(self, fdesc, name):
         """ Write XREF of a header file
         """
-        fdesc.write("`%s </documentation/developers/headerfiles/%s>`_ " % (name, name))
+        fdesc.write("`%s </documentation/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
         """ Write XREF of a string
