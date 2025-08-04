@@ -16,6 +16,7 @@
 
 # /targets/www/
 /targets/www/aros/template.html.*
+/targets/www/dev/template.html.*
 /targets/www/template.html.*
 
 # ignore auto generated files
