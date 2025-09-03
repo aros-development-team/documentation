@@ -1,0 +1,42 @@
+==============================
+July/September 2025 Highlights
+==============================
+
+:Author:   Nick Andrews, Matthias Rustler
+:Date:     2025-09-03
+
+Nick Andrews did again a lot of fixes across the source tree, including:
+
+- Font.datatype ported,
+- Wanderers Lasso handling fixed when used with mousewheel
+- Fixed a bug causing AROS to lock up with multi-part assigns.
+- Added a small menu to the con-handler.
+- Fixed up some of the rendering in tiff.datatype to get more of the images loading.
+- Added support to heic.datatype, for AVIF Images.
+- Corrected console.devices CDInputHandler behaviour to match autodocs.
+- Implemented some of the missing array operations in cgfx, including SSE versions.
+- Ported SDL2, and updated OpenAL to the last version that uses C code.
+- Fixed hostgl to work correctly under WSL.
+- Enabled EFI support on the bootiso.
+- Ported Scarlet Rivensin & Grimm, Doom3 mods.
+- Updated OpenURL prefs to use the AROS system prefs class.
+- Fixed a bunch of 64bit issues in FryingpanDatatypes
+
+
+Krzysztof Smiechowicz
+
+- Fixed bugs with SA_Font and OpenUrl
+- Fixed SDL2 and ported SDL2-mixer
+- Applied some 64-bit fixes to DOpus
+
+
+Bo Ståle Kopperud
+
+- Added support for rounded frames
+- Wrote a script for generating .clangd files
+
+
+Johan Gill fixed IMP3 scrollbar orientation
+
+
+
