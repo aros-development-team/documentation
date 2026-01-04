@@ -44,6 +44,7 @@ Contribution Guide
 ------------------
 
 + `How to contribute`__
++ `AROS C/C Style Guide`__
 + `Git access and usage`__
 
 Tools & SDK's
@@ -80,6 +81,7 @@ __ {{ devdocrootpath }}autodocs/index
 __ {{ devdocrootpath }}specifications/index
 __ {{ devdocrootpath }}hardware/index
 __ {{ devdocrootpath }}contribute
+__ {{ devdocrootpath }}styleguide
 __ {{ devdocrootpath }}git
 __ {{ devdocrootpath }}app-dev/index
 __ {{ devdocrootpath }}zune-dev/index
