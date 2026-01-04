@@ -138,7 +138,7 @@ Function calls::
 
 Logging and long format strings::
 
-    pciusbDebug("xHCI", "%s: dev=%u ep=%u state=%lu\n",
+    bug("%s: dev=%u ep=%u state=%lu\n",
                 __func__, dev, ep, state);
 
 Guidance:
