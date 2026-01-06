@@ -70,7 +70,7 @@ linking:          Linkowanie
 
 go:               Go
 search:           Szukaj
-copyright:        Copyright (C) 1995-2025, The AROS Development Team. Wszystkie prawa zastrzeżone.
+copyright:        Copyright (C) 1995-2026, The AROS Development Team. Wszystkie prawa zastrzeżone.
 trademarks:       Amiga(R), AmigaOS(R), Workbench i Intuition are znakami towarowymi Amiga Inc. Wszystkie inne znaki towarowe należą do ich prawnych właścicieli.
 read-more:        Czytaj więcej...
 large-image:      Powiększenie...
