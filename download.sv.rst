@@ -1,42 +1,44 @@
 ===========
-Nerladdning
+Nedladdning
 ===========
 
 .. Note::
 
-   "Nightly builds" (nattkompilationer), som du hittar längst ner, är enbart
-   till för utvecklare och testare. Nightly builds är inte enkla att använda,
-   är inte alltid stabila och de saknar de flesta program som en vanlig
-   användare troligen skulle efterfråga.
+   Nightly builds r bara avsedda fr utvecklare och testare. Nightly builds r
+   inte konfigurerade fr att vara enkla att anvnda, r inte alltid stabila och
+   saknar de flesta program som r ndvndiga fr en vanlig
+   anvndarupplevelse.
 
 
 .. Contents::
 
-Snapshots
-=========
-
-`Snapshots`__ är icke regelbundet utgivna och icke automatiserade versioner
-av AROS. De är skapade av utvecklare som av någon anledning inte kan använda
-sig av vanliga nightly builds.
-
-Dessa versioner är inte övergivna, så använd den vanliga kanalen för att
-rapportera buggar (`bug tracker`__).
-
-__ snapshots
-__ http://sourceforge.net/p/aros/bugs/
-
-
 Nightly Builds
 ======================
 
-AROS håller på att övergå till en ny `ABI`__. En egen uppsättning nightly
-builds har skapats för denna experimentella källkod, men `dessa`__ är bara
-användbara för utvecklare som vill hålla sig uppdaterade om ABI-övergången.
-**AVIv1 är inte kompatibel med någon distribution eller AROS-mjukvara från
-AROS Archives eller Aminet.** Användare som vill testa nyheter och buggfixade
-versioner av AROS som ännu inte implementerats i distributionerna bör endast
-använda de vanliga nightly builds.
+Nightly builds grs, som namnet antyder, varje natt direkt frn Git-repot och
+innehller den senaste koden. De har dock inte testats p ngot stt och kan
+innehlla buggar. Oftast fungerar de nd bra. `Nedladdningslnk`__
 
-__ http://en.wikipedia.org/wiki/Application_binary_interface
+Dessa builds r baserade p kllorna till nya `ABI`__. **De r inte kompatibla
+med gamla AROS-distributioner/frgreningar.**
+
+Rapportera fel som du upptcker nr du anvnder dessa builds via
+`issue tracker`__.
+
 __ nightly1
+__ https://en.wikipedia.org/wiki/Application_binary_interface
+__ https://github.com/aros-development-team/AROS/issues
 
+
+Snapshots
+=================
+
+Snapshots r icke-periodiska, icke-automatiserade builds av AROS. De grs av
+utvecklare som av ngon anledning inte kan stta upp en nightly build.
+`Nedladdningslnk`__
+
+Dessa portar r inte vergivna, s anvnd `issue tracker`__ fr att rapportera
+buggar.
+
+__ snapshots1
+__ https://github.com/aros-development-team/AROS/issues

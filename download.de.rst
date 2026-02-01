@@ -4,36 +4,41 @@ Download
 
 .. Note::
 
-   Die 'Nightly Builds', die Du am Ende dieser Seite findest, sind nur für Entwickler und Tester
-   gedacht. Die 'Nightly Builds' sind nicht für Anwender konfiguriert,
-   sie sind manchmal instabil und es fehlen die ganzen Programme, die
-   die Verwendung von AROS für Endbenutzer interessant machen.
+   Die Nightly Builds sind nur fr Entwickler und Tester gedacht. Die Nightly
+   Builds sind nicht fr eine einfache Nutzung eingerichtet, sind nicht immer
+   stabil und es fehlen die meisten Anwendungen, die fr eine normale
+   Benutzererfahrung wichtig sind.
 
 .. Contents::
 
 Nightly Builds
 ======================
 
-`Nightly builds`__ werden, wie der Name sagt, jede Nacht aus dem aktuellen
-Sourcecode vom Subversionbaum erstellt. Sie wurden jedoch nicht getestet
-und können Fehler enthalten. Meistens funktionieren sie aber ganz gut.
+Nightly Builds werden, wie der Name sagt, jede Nacht direkt aus dem
+Git-Repository erstellt und enthalten den neuesten Code. Sie wurden jedoch
+in keiner Weise getestet und knnen Fehler enthalten. Meistens funktionieren
+sie aber ganz gut. `Download link`__
 
-Diese Builds sind auf Quellen der neuen `ABI`__ aufgebaut. **Sie sind nicht kompatibel mit alten AROS-Distributionen/Forks.**
+Diese Builds basieren auf den Quellen der neuen `ABI`__. **Sie sind nicht
+kompatibel mit alten AROS-Distributionen/Forks.**
 
-Berichte bitte Fehler, die dir beim Testen auffallen, an den `Bug Tracker`__.
-Verwende bitte für Diskussionen das `AROS-Exec`__ Forum.
+Bitte melde Fehler, die du bei der Nutzung dieser Builds entdeckst, ber den
+`issue tracker`__.
 
 __ nightly1
-__ https://de.wikipedia.org/wiki/Bin%C3%A4rschnittstelle
-__ http://sourceforge.net/p/aros/bugs/
+__ https://en.wikipedia.org/wiki/Application_binary_interface
+__ https://github.com/aros-development-team/AROS/issues
 
 
 Snapshots
 =================
 
-`Snapshots`__ sind unregelmäßige, nicht automatisierte Builds von AROS. Sie wurden
-von Entwicklern erzeugt, die aus irgend einem Grund keine Nightly Builds erstellen
-können. Sie sind nicht ungewartet, deshalb berichte bitte Fehler an den `Bug Tracker`__.
+Snapshots sind unregelmige, nicht automatisierte Builds von AROS. Sie werden
+von Entwicklern erstellt, die aus irgendeinem Grund keine Nightly Builds
+einrichten knnen. `Download link`__
+
+Diese Ports werden nicht eingestellt, daher nutze bitte den `issue tracker`__,
+um Fehler zu melden.
 
 __ snapshots1
-__ http://sourceforge.net/p/aros/bugs/
+__ https://github.com/aros-development-team/AROS/issues

@@ -1,52 +1,44 @@
 ========
 Download
 ========
+
 .. Note::
 
-   The nightly builds are only meant for developers and testers. The nightly
-   builds are not configured to be easily used, are not always stable, and
-   they are missing most of the applications essential to a regular user experience.
+   Le nightly build sono destinate solo a sviluppatori e tester. Le nightly
+   build non sono configurate per un uso semplice, non sono sempre stabili e
+   mancano della maggior parte delle applicazioni essenziali per un'esperienza
+   utente regolare.
 
 .. Contents::
 
+Nightly Builds
+======================
+
+Le nightly build vengono create, come suggerisce il nome, ogni notte
+direttamente dal repository Git e contengono il codice pi recente. Tuttavia
+non sono state testate in alcun modo e possono contenere bug. La maggior parte
+delle volte, per, funzionano senza problemi. `Link per il download`__
+
+Queste build si basano sui sorgenti della nuova `ABI`__. **Non sono compatibili
+con le vecchie distribuzioni/fork di AROS.**
+
+Segnala eventuali bug che scopri durante l'uso di queste build tramite
+l'`issue tracker`__.
+
+__ nightly1
+__ https://en.wikipedia.org/wiki/Application_binary_interface
+__ https://github.com/aros-development-team/AROS/issues
+
+
 Snapshots
-=========
+=================
 
-Le snapshots sono build di AROS non automate e non periodiche. Sono fatte da
-sviluppatori che non riescono ad usare una nightly build correttamente per
-ragioni tecniche o politiche
+Le snapshot sono build di AROS non periodiche e non automatizzate. Vengono
+realizzate da sviluppatori che per qualche motivo non possono configurare una
+nightly build. `Link per il download`__
 
-Questi ports sono mantenuti, quindi se volete segnalare bug e problemi usate
-il `bug tracker`__.
+Questi port non sono abbandonati, quindi usa l'`issue tracker`__ per segnalare
+i bug.
 
-.. raw:: html
-
-   <?php virtual( "/cgi-bin/files?type=snapshots&lang=en" ); ?>
-
-__ http://sourceforge.net/p/aros/bugs/
-
-
-Nightly build
-=============
-
-.. Nota::
-
-   Per scaricare correttamente una nightly build, consigliamo vivamente 
-   l'uso di un download manager che possa recuperare un download 
-   interrotto, oppure il comando wget (con "wget -c" per scaricare la 
-   porzione rimanente di un file già scaricato in parte da un altro 
-   programma).
-
-Le nightly build vengono create automaticamente ogni notte a partire 
-dal codice sorgente più aggiornato. Siccome si tratta di versioni in 
-piena fase di sviluppo, è possibile che non si compilino o che non funzionino
-correttamente. Per cortesia, se trovate errori segnalateceli attraverso lo
-strumento apposito, il `bug tracker`__.
-
-.. raw:: html
-
-   <?php virtual( "/cgi-bin/files?type=nightly&lang=it" ); ?>
-
-__ http://sourceforge.net/p/aros/bugs/
-
-
+__ snapshots1
+__ https://github.com/aros-development-team/AROS/issues

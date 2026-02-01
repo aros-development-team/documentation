@@ -4,42 +4,40 @@ Download
 
 .. Note::
 
-   De nachtelijke compilaties, die zich onderaan deze pagina bevinden, zijn
-   alleen bedoeld voor ontwikkelaars en testers. De nachtelijke compilaties
-   zijn niet geconfigureerd voor eenvoudig gebruik, zijn niet altijd stabiel
-   en missen de meeste applicaties die noodzakelijk zijn voor een normale
-   gebruikerservaring.
+   De nightly builds zijn alleen bedoeld voor ontwikkelaars en testers. De
+   nightly builds zijn niet geconfigureerd voor eenvoudig gebruik, zijn niet
+   altijd stabiel en missen de meeste applicaties die essentieel zijn voor een
+   normale gebruikerservaring.
 
 .. Contents::
 
+Nightly Builds
+======================
+
+Nightly builds worden, zoals de naam aangeeft, elke nacht rechtstreeks uit de
+Git-repository gemaakt en bevatten de nieuwste code. Ze zijn echter niet getest
+en kunnen bugs bevatten. Meestal werken ze echter prima. `Downloadlink`__
+
+Deze builds zijn gebaseerd op bronnen van de nieuwe `ABI`__. **Ze zijn niet
+n-op-n compatibel met oude AROS-distributies/forks.**
+
+Meld bugs die je tijdens het gebruik van deze builds ontdekt via de
+`issue tracker`__.
+
+__ nightly1
+__ https://en.wikipedia.org/wiki/Application_binary_interface
+__ https://github.com/aros-development-team/AROS/issues
+
 
 Snapshots
-=========
+=================
 
-`Snapshots`__ zijn niet-periodieke, ongeautomatiseerde compilaties van AROS.
-Ze worden gemaakt door ontwikkelaars die, om wat voor reden dan ook, geen
-nachtelijke compilaties kunnen realiseren.
+Snapshots zijn niet-periodieke, niet-geautomatiseerde builds van AROS. Ze worden
+gemaakt door ontwikkelaars die om wat voor reden dan ook geen nightly build
+kunnen opzetten. `Downloadlink`__
 
-Deze compilaties worden onderhouden, dus gebruik a.u.b. de `bug tracker`__ om
-fouten te rapporteren.
+Deze ports zijn niet verlaten, dus gebruik de `issue tracker`__ om bugs te
+melden.
 
-__ snapshots
-__ http://sourceforge.net/p/aros/bugs/
-
-
-Nachtelijke Compilaties
-===============================
-
-AROS zit momenteel in een overgangsperiode naar een nieuwe `ABI`__. Een
-aanvullend aantal nachtelijke compilaties worden gemaakt op basis van
-deze experimentele bronbestanden, maar `deze compilaties`__ zijn alleen
-nuttig voor ontwikkelaars die de voortgang van de ABI-overgang willen
-controleren. **Ze zijn niet uitwisselbaar met de bestaande AROS
-distributies of met de AROS software die beschikbaar is via The AROS
-Archives of Aminet.**
-Gebruikers die nieuwe functionaliteit of foutreparaties zouden willen
-uitproberen die nog niet beschikbaar zijn in de distributies dienen
-alleen de gebruikelijke nachtelijke compilaties te gebruiken.
-
-__ http://en.wikipedia.org/wiki/Application_binary_interface
-__ nightly1
+__ snapshots1
+__ https://github.com/aros-development-team/AROS/issues
