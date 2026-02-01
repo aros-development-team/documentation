@@ -8,7 +8,7 @@
 
 .. Include:: introduction/index-abstract.ru.rst
 
-`Read more... <introduction/index>`__
+`Подробнее... <introduction/index>`__
 
 .. raw:: html
 
@@ -16,7 +16,7 @@
 
    <section>
 
-   <h1>Ð ÐµÑÑƒÑ€ÑÑ‹ ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ð°, Ñ„Ð¾Ñ€ÐºÐ¸ Ð¸ Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ†Ð¸Ñ<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Ресурсы сообщества, форки и атрибуция<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. Include:: attribution-abstract.ru.rst
 

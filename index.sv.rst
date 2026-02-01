@@ -8,7 +8,7 @@
 
 .. Include:: introduction/index-abstract.sv.rst
 
-`Read more... <introduction/index>`__
+`Läs mer... <introduction/index>`__
 
 .. raw:: html
 
