@@ -1,76 +1,43 @@
 ========
-Загрузки
+Download
 ========
+
 .. Note::
 
-   Если вы желаете лишь **опробовать** AROS, не вникая в подробности разработки и отладки,
-   мы рекомендуем вам скачать полностью оснащённую версию дистрибутива по ссылкам в
-   разделе **Дистрибутивы**. Ночные сборки, ссылки на которые приведены ниже, предназначены,
-   в первую очередь для разработчиков и бета-тестеров. Они не настроены должным образом для
-   простоты использования, иногда даже нестабильны, и в них отсутствуют приложения, жизненно
-   необходимые обыкновенным пользователям.
-   
+   The nightly builds are only meant for developers and testers. The nightly
+   builds are not configured to be easily used, are not always stable, and
+   they are missing most of the applications essential to a regular user experience.
+
 .. Contents::
 
-.. Include:: download-abstract.ru.rst
+Nightly Builds
+======================
 
-Icaros Desktop LIVE!
---------------------
+Nightly builds are done, as the name implies, every night, directly
+from the Git repository, and they contain the latest code. However,
+they have not been tested in any way and may contain bugs. Most of the
+time, though, they work just fine. `Download link`__
 
-.. image:: /images/icaroslive_logo.png
-   :align: left
+These builds are based on sources of the new `ABI`__. **They are not
+compatible with old AROS distributions/forks.**
 
-`Icaros Desktop LIVE!`__ - готовый к использованию дистрибутив AROS. 
-Он распространяется на загрузочном диске DVD-ROM, который можно запустить
-непосредственно на вашем ПК (если его аппаратная часть поддерживается AROS).
-Его можно установить на жёсткий диск, даже параллельно установленной Windows XP,
-в отдельном разделе. Также включает краткую справку и руководства пользователя 
-в PDF. Также эта версия включает виртуальную машину QEMU, позволяющую пользователям
-Windows опробовать дистрибутив в безопасном (но медленном) окружении.
+Please report bugs you may discover while using these builds through the
+`issue tracker`__. 
 
-__ http://live.icarosdesktop.org/
-                         
-
-Снимки
-======
-
-Снимки - это непериодические, неавтоматические сборки AROS. Они выпускаются
-разработчиками, которые не могут производить ночные сборки по каким-либо техническим
-или политическим причинам.
-
-Эти версии всё же имеют поддержку, поэтому пожалуйста, используйте `bug tracker`__
-для размещения сообщений об ошибках.
+__ nightly1
+__ https://en.wikipedia.org/wiki/Application_binary_interface
+__ https://github.com/aros-development-team/AROS/issues
 
 
-.. raw:: html
+Snapshots
+=================
 
-   <?php virtual( "/cgi-bin/files?type=snapshots&lang=ru" ); ?>
+Snapshots are non-periodic, non-automated builds of AROS. They are done
+by developers who can't set up a nightly build for some reason.
+`Download link`__
 
-__ http://sourceforge.net/p/aros/bugs/
+These ports are not unmaintained, so please use the `issue tracker`__ to report
+bugs.
 
-Ночные сборки
-=============
-
-Ночные сборки, соответственно имени, генерируются автоматически каждую ночь 
-непосредственно из исходников в Subversion и содержат все последние изменения в коде. 
-Однако следует учесть, что обычно они никаким образом не тестируются, и при 
-особом невезении могут быть нерабочими или ужасно глючными. Правда, как правило, 
-они работают совершенно нормально.
-
-Если при использовании ночных сборок Вы обнаружили ошибку, пожалуйста, сообщите 
-о ней, используя `bug tracker`__. Для прочих вопросов, напишите в форум на 
-`AROS-Exec`__.
-
-.. Note::
-
-   Скачивая ночные сборки и снимки, необходимо использовать менеджер закачки, способный 
-   продолжать прерванные закачки, или утилиту для командной строки наподобие
-   wget (например, докачивая прерванную закачку другой программы при помощи 
-   "wget -c").
-
-.. raw:: html
-
-   <?php virtual( "/cgi-bin/files?type=nightly&lang=ru" ); ?>
-
-__ http://sourceforge.net/p/aros/bugs/
-__ https://www.arosworld.org/
+__ snapshots1
+__ https://github.com/aros-development-team/AROS/issues
