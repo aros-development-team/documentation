@@ -38,8 +38,8 @@ def makePage( _T, _N, _M, lang, charset ):
             <img src="/images/kittymascot.png?v=1.0" alt="kitty mascot" class="rightimage">
             <div class="topmenu">
                 <a href="http://www.aros.org/">AROS.ORG</a>
-                <a href="https://www.arosworld.org/">Forum</a>
-                <a href="https://archives.arosworld.org/">Software</a>
+                <a href="/">Developers</a>
+                <a href="http://translations.aros.org/">Localization</a>
                 <a href="https://power2people.org/">Bounties</a>
             </div><!-- topmenu -->
         </header>
