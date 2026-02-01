@@ -8,7 +8,7 @@
 
 .. Include:: introduction/index-abstract.ru.rst
 
-   <h1>Ресурсы сообщества, форки и атрибуция<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+`Read more... <introduction/index>`__
 
 .. raw:: html
 
