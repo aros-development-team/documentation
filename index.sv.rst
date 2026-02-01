@@ -8,7 +8,7 @@
 
 .. Include:: introduction/index-abstract.sv.rst
 
-`Läs mer... <introduction/index>`__
+   <h1>Community-resurser, förgreningar och attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. raw:: html
 
@@ -16,7 +16,7 @@
 
    <section>
 
-   <h1>Community-resurser, f�rgreningar och attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Community-resurser, förgreningar och attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. Include:: attribution-abstract.sv.rst
 

@@ -16,7 +16,7 @@
 
    <section>
 
-   <h1>Risorse della comunit‡, fork e attribuzione<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Risorse della comunit√†, fork e attribuzione<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
 .. Include:: attribution-abstract.it.rst
 
