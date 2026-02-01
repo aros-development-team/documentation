@@ -16,9 +16,9 @@
 
    <section>
 
-   <h1>Community Resources, Forks, and Attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Ressources communautaires, forks et attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
-.. Include:: attribution-abstract.en.rst
+.. Include:: attribution-abstract.fr.rst
 
 .. raw:: html
 
