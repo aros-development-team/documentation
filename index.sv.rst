@@ -16,11 +16,9 @@
 
    <section>
 
-   <h1>Distributioner<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
+   <h1>Community-resurser, f�rgreningar och attribution<br><img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"></h1>
 
-.. Include:: download-abstract.sv.rst
-
-`Läs mer... <download>`__
+.. Include:: attribution-abstract.sv.rst
 
 .. raw:: html
 
@@ -42,30 +40,4 @@
    </section>
 
    </div><!--main-div-->
-
-   <div class="rss-div"><!--right side with rss feeds-->
-
-   <div class="rssfeed">
-
-   <img alt="Archive Icon" src="/images/archivedownloadicon.png" class="rssfeed-img">
-   Latest ARCHIVE submissions:<br>
-   <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   På <a href="https://archives.arosworld.org">The AROS archives</a>
-   hittar du det nyaste materialet för AROS, här hittar du program, teman, grafik och ytterligare dokumentation.<br><br>
-   <object width="100%" height="300" data="/archives-uploads.html" type="text/html"></object>
-
-   </div>
-
-   <div class="rssfeed">
-
-   <img alt="Community Icon" src="/images/communityicon.png" class="rssfeed-img">
-   Senaste inläggen på AROSWorld forumet:<br>
-   <img style="width: 238px; height: 2px;" alt="spacer" src="/images/sidespacer.png"><br>
-   <a href="https://www.arosworld.org">AROSWorld</a>
-   är den primära AROS community-sidan. Här kan du få hjälp, hålla koll på vad som händer inom AROS-världen och posta dina tankar om AROS.<br><br>
-   <object width="100%" height="400" data="/arosworld-forum.html" type="text/html"></object>
-
-   </div>
-
-   </div><!--rss-div-->
    </div><!--front-container-->
