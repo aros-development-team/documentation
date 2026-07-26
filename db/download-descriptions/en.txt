@@ -141,6 +141,18 @@ efika-chrp-ppc-boot-iso:
     The native version for PowerPC Efika computers. This is the
     bootable CD-ROM ISO image including ub2lb for open firmware. It
     contains all core AROS system files.
+raspi-aarch64-system:
+    The native version for ARMv8 based 64bit Raspberry Pi computers.
+    Contains all files needed to boot from a FAT formatted sd-card.
+raspi-aarch64-contrib:
+    This archive contains all the contributed programs,
+    compiled for the ARMv8 64bit architecture, for use with the
+    RasPi/aarch64 port.
+raspi-aarch64-ports:
+    This archive contains applications and games which are built
+    from external sources for the ARMv8 64bit architecture (both hosted
+    and native). Because of its size the archive will only be updated
+    from time to time on the snapshots page.
 raspi-armhf-system:
     The native version for ARMv6 based Raspberry Pi computers.
     Contains all files needed to boot from a FAT formatted sd-card.
@@ -216,6 +228,8 @@ Linux-gnu-sam440-ppc-toolchain:
 Linux-gnu-raspi-arm-toolchain:
     Linux GNU crosscompiler for AROS ARM target
 Linux-gnu-raspi-armhf-toolchain:
+    Linux GNU crosscompiler for AROS ARM target
+Linux-gnu-linux-armhf-toolchain:
     Linux GNU crosscompiler for AROS ARM target
 Linux-gnu-mingw32-i386-toolchain:
     Linux GNU crosscompiler for AROS mingw32 i386 target

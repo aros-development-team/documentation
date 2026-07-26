@@ -50,11 +50,11 @@ linux-i386-system:
     contiene tutti i file di sistema compilati
     dall'albero di SVN.
 mingw32-x86_64-system:
-    The hosted version for Microsoft Windows on x86_64 platform.
+    La versione hosted per Microsoft Windows su piattaforma x86_64.
 mingw32-i386-system:
-    The hosted version for Microsoft Windows on i386 platform. Developed
-    and compiled under Windows XP, but should work on all 32-bit Windows
-    versions starting from Windows 98.
+    La versione hosted per Microsoft Windows su piattaforma i386.
+    Sviluppata e compilata sotto Windows XP, ma dovrebbe funzionare
+    su tutte le versioni di Windows a 32 bit a partire da Windows 98.
 linux-x86_64-system:
     La versione hosted per Linux/x86_64. Questo archivio contiene
     tutti i file di sistema di AROS compilati dall'albero di SVN.
@@ -75,21 +75,36 @@ pc-x86_64-boot-iso:
     Questa è la ISO di un CD-ROM con cui è possibile avviare il
     sistema operativo e contiene il software scritto da terzi.
 pc-x86_64-smp-boot-iso:
-    This is a highly experimental SMP build for pc-x86_64.
-    Only recommended for Developers. This is a bootable CD-ROM ISO image.
+    Questa è una build SMP altamente sperimentale per pc-x86_64.
+    Consigliata solo agli sviluppatori. Questa è la ISO di un
+    CD-ROM di avvio.
+raspi-aarch64-system:
+    La versione nativa per i computer Raspberry Pi a 64 bit basati
+    su ARMv8. Contiene tutti i file necessari per l'avvio da una
+    scheda sd formattata FAT.
+raspi-aarch64-contrib:
+    Questo archivio contiene tutto il software scritto da terzi,
+    compilato per l'architettura ARMv8 a 64 bit, da usare con il
+    porting RasPi/aarch64.
+raspi-aarch64-ports:
+    Questo archivio contiene applicazioni e giochi compilati da
+    sorgenti esterni per l'architettura ARMv8 a 64 bit (sia hosted
+    che nativa). A causa delle sue dimensioni, l'archivio verrà
+    aggiornato solo di tanto in tanto nella pagina degli snapshot.
 raspi-armhf-system:
-    The native version for ARMv6 based Raspberry Pi computers.
-    Contains all files needed to boot from a FAT formatted sd-card.
+    La versione nativa per i computer Raspberry Pi basati su ARMv6.
+    Contiene tutti i file necessari per l'avvio da una scheda sd
+    formattata FAT.
 raspi-armhf-contrib:
-    This archive contains all the contributed programs,
-    compiled for the ARM architecture, for use with the
-    RasPi/ARM port (using hard-float ABI). Please note that this
-    version requires at least an ARMv6 CPU with VFP unit.
+    Questo archivio contiene tutto il software scritto da terzi,
+    compilato per l'architettura ARM, da usare con il porting
+    RasPi/ARM (con ABI hard-float). Notare che questa versione
+    richiede almeno una CPU ARMv6 con unità VFP.
 raspi-armhf-ports:
-    This archive contains applications and games which are built
-    from external sources for the armhf architecture (both hosted
-    and native). Because of its size the archive will only be updated
-    from time to time on the snapshots page.
+    Questo archivio contiene applicazioni e giochi compilati da
+    sorgenti esterni per l'architettura armhf (sia hosted che
+    nativa). A causa delle sue dimensioni, l'archivio verrà
+    aggiornato solo di tanto in tanto nella pagina degli snapshot.
 pc-i386-contrib:
     Questo archivio contiene tutto il software scritto da
     terzi e compilato per architettura i386. funziona
@@ -116,16 +131,18 @@ pc-x86_64-sdk:
     AROS, sulla macchina che preferite. Avrete bisogno di gcc
     e di binutils configurati per produrre eseguibili x86_64-elf.
 Linux-gnu-amiga-m68k-toolchain:
-    Linux GNU crosscompiler for AROS m68k target
+    Crosscompilatore GNU Linux per il target AROS m68k
 Linux-gnu-pc-i386-toolchain:
-    Linux GNU crosscompiler for AROS i386 target
+    Crosscompilatore GNU Linux per il target AROS i386
 Linux-gnu-pc-x86_64-toolchain:
-    Linux GNU crosscompiler for AROS x86_64 target
+    Crosscompilatore GNU Linux per il target AROS x86_64
 Linux-gnu-sam440-ppc-toolchain:
-    Linux GNU crosscompiler for AROS PPC target
+    Crosscompilatore GNU Linux per il target AROS PPC
 Linux-gnu-raspi-arm-toolchain:
-    Linux GNU crosscompiler for AROS ARM target
+    Crosscompilatore GNU Linux per il target AROS ARM
 Linux-gnu-raspi-armhf-toolchain:
-    Linux GNU crosscompiler for AROS ARM target
+    Crosscompilatore GNU Linux per il target AROS ARM
+Linux-gnu-linux-armhf-toolchain:
+    Crosscompilatore GNU Linux per il target AROS ARM
 Linux-gnu-mingw32-i386-toolchain:
-    Linux GNU crosscompiler for AROS mingw32 i386 target
+    Crosscompilatore GNU Linux per il target AROS mingw32 i386

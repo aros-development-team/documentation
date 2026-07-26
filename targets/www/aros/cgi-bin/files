@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, os.path, re, glob, stat, string, cgi
+import os, os.path, re, glob, stat, string, sys, cgi
 from color import *
 from ConfigParser import ConfigParser
 
@@ -55,15 +55,23 @@ colorGhosted = Color( 0x99, 0x77, 0x77 )  # File download not available text
 descriptions = ConfigParser()
 if not os.path.exists( os.path.join( DESCRIPTIONS_DIR, language + '.txt' ) ):
     language = 'en'
-descriptions.read( [ os.path.join( DESCRIPTIONS_DIR, 'en' ),
+descriptions.read( [ os.path.join( DESCRIPTIONS_DIR, 'en.txt' ),
     os.path.join( DESCRIPTIONS_DIR, language + '.txt' ) ] )
+
+# ConfigParser.get()'s third positional argument is the 'raw' flag, not a
+# default value; a missing option raises NoOptionError.
+def getdesc( section, option, default = '' ):
+    try:
+        return descriptions.get( section, option )
+    except Exception:
+        return default
 
 ## Get size units
 #
-byteUnit = descriptions.get( 'units', 'byte-unit', '' )
-kilobyteUnit = descriptions.get( 'units', 'kilobyte-unit', '' )
-megabyteUnit = descriptions.get( 'units', 'megabyte-unit', '' )
-gigabyteUnit = descriptions.get( 'units', 'gigabyte-unit', '' )
+byteUnit = getdesc( 'units', 'byte-unit' )
+kilobyteUnit = getdesc( 'units', 'kilobyte-unit' )
+megabyteUnit = getdesc( 'units', 'megabyte-unit' )
+gigabyteUnit = getdesc( 'units', 'gigabyte-unit' )
 units = ( byteUnit, kilobyteUnit, megabyteUnit, gigabyteUnit )
 
 root  = '../downloads/' + dltype
@@ -141,12 +149,12 @@ for date in dates:
 
 span = len( dates )
 
-packageHeading = descriptions.get( 'headings', 'package', '' )
-dateHeading = descriptions.get( 'headings', 'date', '' )
+packageHeading = getdesc( 'headings', 'package' )
+dateHeading = getdesc( 'headings', 'date' )
 
-logsLabel = descriptions.get( 'links', 'build-logs', '' )
-downloadLabel = descriptions.get( 'links', 'download', '' )
-md5Label = descriptions.get( 'links', 'md5', '' )
+logsLabel = getdesc( 'links', 'build-logs' )
+downloadLabel = getdesc( 'links', 'download' )
+md5Label = getdesc( 'links', 'md5' )
 
 print('''
     <table class="layout nightly" border="0" cellpadding="2" cellspacing="1" bgcolor="%(colorFrame)s">
@@ -194,7 +202,7 @@ for group in sorted(groups.keys()):
 
     try:
         groupKey = string.replace(group, '_', '-').lower()
-        groupHeading = descriptions.get( 'headings', groupKey, '' )
+        groupHeading = getdesc( 'headings', groupKey, group )
 
         print('''
                 <tr class="layout nightly" bgcolor="%(colorTH)s">
@@ -202,7 +210,7 @@ for group in sorted(groups.keys()):
                 </tr>    ''') % vars()
 
         for package in sorted(groups[group].keys()):
-            description = descriptions.get( 'descriptions', package, '' )
+            description = getdesc( 'descriptions', package )
 
             print('''
                     <tr class="layout nightly" valign="middle" bgcolor="%(colorTD)s">
@@ -270,8 +278,8 @@ for group in sorted(groups.keys()):
 
             print('''        </tr>''')
 
-    except Exception: 
-        pass
+    except Exception:
+        print('''<!-- files: error processing group '%s': %s -->''') % ( group, cgi.escape( str( sys.exc_info()[1] ) ) )
 
 print('''
     </table>

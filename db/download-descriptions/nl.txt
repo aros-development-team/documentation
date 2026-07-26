@@ -52,12 +52,12 @@ linux-i386-system:
     programma's en demo's kunt draaien. Dit archief bevat ook alle AROS
     systeem binaries gecompileerd vanuit de Subversion tak. 
 mingw32-x86_64-system:
-    The hosted version for Microsoft Windows on x86_64 platform.
+    De gehoste versie voor Microsoft Windows op het x86_64 platform.
 mingw32-i386-system:
-    The hosted version for Microsoft Windows on i386 platform. Developed
-    and compiled under Windows XP, but should work on all 32-bit Windows
-    versions starting from Windows 98.
-linux-i386-system:
+    De gehoste versie voor Microsoft Windows op het i386 platform.
+    Ontwikkeld en gecompileerd onder Windows XP, maar zou moeten werken
+    op alle 32-bit Windows versies vanaf Windows 98.
+linux-x86_64-system:
     De gehoste versie voor Linux/x86_64. Dit is de meest complete en
     capabele versie, wat betekend dat je hiermee alle bijgesloten
     programma's en demo's kunt draaien. Dit archief bevat ook alle AROS
@@ -73,19 +73,33 @@ pc-i386-boot-iso:
     De native versie voor i386-gebaseerde PC AT compatibele computers.
     Dit is een opstartbaar CDROM ISO bestand, dat alle AROS systeem en
     gecontribueerde programma's bevat.
+raspi-aarch64-system:
+    De native versie voor ARMv8-gebaseerde 64bit Raspberry Pi
+    computers. Bevat alle bestanden die nodig zijn om op te starten
+    vanaf een FAT-geformatteerde sd-kaart.
+raspi-aarch64-contrib:
+    Dit archief bevat alle gecontribueerde programma's gecompileerd
+    voor de ARMv8 64bit architectuur, voor gebruik met de
+    RasPi/aarch64 port.
+raspi-aarch64-ports:
+    Dit archief bevat applicaties en spellen die gebouwd zijn vanuit
+    externe bronnen voor de ARMv8 64bit architectuur (zowel gehost
+    als native). Vanwege de grootte zal het archief slechts af en toe
+    worden bijgewerkt op de snapshots pagina.
 raspi-armhf-system:
-    The native version for ARMv6 based Raspberry Pi computers.
-    Contains all files needed to boot from a FAT formatted sd-card.
+    De native versie voor ARMv6-gebaseerde Raspberry Pi computers.
+    Bevat alle bestanden die nodig zijn om op te starten vanaf een
+    FAT-geformatteerde sd-kaart.
 raspi-armhf-contrib:
-    This archive contains all the contributed programs,
-    compiled for the ARM architecture, for use with the
-    RasPi/ARM port (using hard-float ABI). Please note that this
-    version requires at least an ARMv6 CPU with VFP unit.
+    Dit archief bevat alle gecontribueerde programma's gecompileerd
+    voor de ARM architectuur, voor gebruik met de RasPi/ARM port
+    (met hard-float ABI). Let op: deze versie vereist minimaal een
+    ARMv6 CPU met VFP eenheid.
 raspi-armhf-ports:
-    This archive contains applications and games which are built
-    from external sources for the armhf architecture (both hosted
-    and native). Because of its size the archive will only be updated
-    from time to time on the snapshots page.
+    Dit archief bevat applicaties en spellen die gebouwd zijn vanuit
+    externe bronnen voor de armhf architectuur (zowel gehost als
+    native). Vanwege de grootte zal het archief slechts af en toe
+    worden bijgewerkt op de snapshots pagina.
 pc-i386-contrib:
     Dit archief bevat alle gecontribueerde programma's gecompileerd voor
     de i386 architectuur. Deze werken zowel in de gehoste (bijv. i386-linux)
@@ -95,12 +109,13 @@ pc-x86_64-boot-iso:
     opstartbare CD-ROM ISO image, welke alle AROS systeem en contributie
     programmatuur bevat.
 pc-x86_64-smp-boot-iso:
-    This is a highly experimental SMP build for pc-x86_64.
-    Only recommended for Developers. This is a bootable CD-ROM ISO image.
+    Dit is een zeer experimentele SMP versie voor pc-x86_64.
+    Alleen aanbevolen voor ontwikkelaars. Dit is een opstartbare
+    CD-ROM ISO image.
 pc-x86_64-contrib:
-    This archive contains all the contributed programs
-    compiled for the x86_64 architecture, for use with the
-    x86_64 native version.
+    Dit archief bevat alle gecontribueerde programma's gecompileerd
+    voor de x86_64 architectuur, voor gebruik met de x86_64 native
+    versie.
 linux-ppc-contrib:
     Dit archief bevat alle gecontribueerde programma's gecompileerd voor
     de PowerPC architectuur, voor gebruik met Linux/PowerPC port.
@@ -117,16 +132,18 @@ pc-x86_64-sdk:
     bouwen op een machine naar uw keuze. Benodigd zijn ook gcc en binutils,
     beiden geconfigureerd voor het produceren van x86_64-elf executables.
 Linux-gnu-amiga-m68k-toolchain:
-    Linux GNU crosscompiler for AROS m68k target
+    Linux GNU crosscompiler voor het AROS m68k doelplatform
 Linux-gnu-pc-i386-toolchain:
-    Linux GNU crosscompiler for AROS i386 target
+    Linux GNU crosscompiler voor het AROS i386 doelplatform
 Linux-gnu-pc-x86_64-toolchain:
-    Linux GNU crosscompiler for AROS x86_64 target
+    Linux GNU crosscompiler voor het AROS x86_64 doelplatform
 Linux-gnu-sam440-ppc-toolchain:
-    Linux GNU crosscompiler for AROS PPC target
+    Linux GNU crosscompiler voor het AROS PPC doelplatform
 Linux-gnu-raspi-arm-toolchain:
-    Linux GNU crosscompiler for AROS ARM target
+    Linux GNU crosscompiler voor het AROS ARM doelplatform
 Linux-gnu-raspi-armhf-toolchain:
-    Linux GNU crosscompiler for AROS ARM target
+    Linux GNU crosscompiler voor het AROS ARM doelplatform
+Linux-gnu-linux-armhf-toolchain:
+    Linux GNU crosscompiler voor het AROS ARM doelplatform
 Linux-gnu-mingw32-i386-toolchain:
-    Linux GNU crosscompiler for AROS mingw32 i386 target
+    Linux GNU crosscompiler voor het AROS mingw32 i386 doelplatform
