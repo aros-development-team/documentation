@@ -1,0 +1,153 @@
+================================
+July 2025 - July 2026 Highlights
+================================
+
+:Author:   Nick Andrews
+:Date:     2026-07-29
+
+The past year has been one of the busiest in recent memory for AROS, with
+almost 2000 commits landing in the development tree. Rather than list every
+change, here are the major areas of work and the developers behind them.
+
+Nick Andrews
+
+- Networking: gave AROSTCP full IPv6 support (Neighbour Discovery, SLAAC,
+  privacy addresses, dual-stack TCP6/UDP6, multicast), and modernized the TCP
+  code with SACK/ECN, pluggable congestion control (including CUBIC), SYN
+  cookies and ISN randomization.
+- Added a new Roadshow-compatible firewall (ipf/ipnat) with a brand new
+  Firewall prefs GUI, and reworked the Network prefs GUI with per-interface
+  IPv4/IPv6 configuration.
+- Updated the DHCP client (with DHCPv6 and zeroconf support), and added or
+  rewrote the route, nslookup, ip, netstat, traceroute and usergroup.library
+  userland components, along with a systematic memory-safety and security
+  hardening pass across the whole stack.
+- Implemented xHCI (USB 3.x) support, first inside pciusb.device and then as a
+  standalone driver, bringing SuperSpeed device and hub support, USB3 streams,
+  and UAS (USB Attached SCSI) mass storage.
+- Overhauled the isochronous transfer paths across all four USB host
+  controller drivers (UHCI/OHCI/EHCI/xHCI), fixed 64-bit DMA handling
+  throughout, extended the Poseidon APIs for the new hardware, and added a CDC
+  Ethernet class.
+- Made AROS buildable with the LLVM/Clang toolchain (patches for LLVM/Clang
+  20, libc++, compiler-rt and friends), and kept GCC support current through
+  GCC 15 and 16, with binutils updated to 2.45/2.47.
+- Continued C runtime conformance work: wide-character, multibyte and locale
+  support, the sigaction() family, strftime() completion, and many robustness
+  fixes, all backed by new CUnit test coverage. Added a cryptographic RNG
+  backed by entropy.resource, and dos64.library for 64-bit file I/O.
+- x86_64 kernel: added a symbol resolver with backtrace support and better
+  crash diagnostics, fixed boot failures on Ryzen CPUs, added MSI-X support,
+  and reworked shutdown handling to fix reboots on native hardware.
+- Added an ACPI telemetry framework exposing thermal zones, fans, power meters
+  and batteries in SysExplorer, an IPMI hidd, and a CPU frequency governor
+  with AMD P-state support. The NVMe driver gained scatter/gather support and
+  the NTFS handler was hardened.
+- Reworked the input subsystem around a new common inputclass hidd.
+- Graphics and media: began refactoring the gfx HIDD architecture, implemented
+  blur/tint/setalpha ProcessPixelArray operations with SSE-optimized versions,
+  and reworked Decoration theming into a layered, multi-instance architecture.
+- Added jpegxl and font datatypes, AVIF support and much improved TIFF
+  handling. AHI received SSE/AVX-optimized mixing routines and AHIRecord was
+  integrated (kindly donated by its author, Thomas Wenzel).
+- Started an initial ClassAct/ReAction compatibility layer, and switched boot
+  ISOs to grub-mkrescue so they boot on both BIOS and EFI systems.
+- Migrated and reworked the Azure nightly build pipelines, added nightly
+  unit-test and localization report pages, and updated the bundled third-party
+  libraries (freetype2, libpng, libtiff, expat, xz, zstd, ICU, ACPICA, etc.).
+
+
+Krzysztof Smiechowicz
+
+- Brought the Nouveau and IntelGMA graphics drivers back into the standard
+  build.
+- Fixed many issues in the VMware SVGA driver (resolution switching via
+  ModeID, cursor handling under QEMU, compositor support).
+- Contributed xHCI fixes verified on real hardware, including Intel EHCI/xHCI
+  shared-port routing.
+- Fixed a rare x86_64 kernel crash in interrupt dispatch along with XMM state
+  alignment issues.
+- Updated OpenURL to 7.18, fixed memory allocator edge cases, and kept Zune
+  binary compatibility intact while fixing prefs regressions.
+
+
+Bo Ståle Kopperud
+
+- Delivered a new 64-bit AArch64 Raspberry Pi port.
+- Added new Raspberry Pi drivers: the BCM2835 SDHOST controller, HDMI and PWM
+  (headphone jack) AHI audio drivers, a Broadcom WiFi (bwfm) SANA-II device
+  with supporting sdio and dma resources, and a lan78xx USB Ethernet class for
+  the Pi 3B+.
+- Gave the vc4gfx VideoCore driver DMA/NEON 2D acceleration, a hardware cursor
+  and multi-mode HDMI support, and substantially hardened the usb2otg (DWC2)
+  USB driver.
+- Enabled ARM and AArch64 builds with the LLVM/Clang toolchain, and fixed ARM
+  relocation handling in binutils and the ELF loader.
+- Added the Zune Panel/PanelGroup classes and rounded frame support, and fixed
+  several FAT filesystem bugs.
+
+
+Nicolas Ramz
+
+- Focused on classic Amiga (m68k) performance: reduced interrupt, timer and
+  scheduler latency, blitter-accelerated rendering (text output, area fills,
+  MFM sector decoding, the boot animation), and faster task switching and ROM
+  scanning.
+- Many console and Shell fixes improving compatibility with classic
+  applications, including Workbench 1.3 BCPL console support.
+- Workbook received progressive icon loading and numerous layout and refresh
+  fixes, and Intuition gained optimized gadget refreshes and a distinct
+  built-in busy pointer.
+
+
+Johan Gill
+
+- Completed missing rexxsyslib functions so HippoPlayer's ARexx support now
+  works.
+- Implemented ChangeSprite() and GetExtSpriteA() and fixed Amiga chipset
+  copper handling.
+- Made intmax_t 64-bit, unified memory pool alignment with AmigaOS, and
+  repaired task scheduling for 32-bit AROS hosted on ARM Linux.
+
+
+John Knipper
+
+- Added a hosted AROS target for Apple Silicon Macs (darwin-aarch64),
+  including the AArch64 CPU support layer.
+- Made console.device input handling asynchronous (fixing a window-resize
+  deadlock) and fixed escape sequences split across writes.
+- Implemented file notifications in emul-handler, and contributed many 64-bit
+  correctness fixes.
+
+
+Neil Cafferkey
+
+- Fixed 64-bit issues in several network drivers - nvidianet.device now works
+  on x86-64 and etherlink3.device was fixed and improved.
+- Upgraded the Atheros wireless HAL to NetBSD 10.1, fixed the realtek8180
+  wireless driver and WirelessManager, and fixed Ctrl-Alt-Del system reset.
+
+
+Bernie Innocenti
+
+- Added battmem.resource and battery-backed clock memory support for
+  m68k-amiga.
+- Made Picasso96 card drivers load from DEVS:Monitors, added entering the boot
+  menu via the HELP key, and fixed an AGA palette crash.
+
+
+Fabian Schmieder
+
+- Contributed a wave of security and stability fixes: an AFS path-parsing
+  buffer overflow, an icon ARGB decompression overflow, TLSF double-free
+  detection, AArch64 va_list support in exec, and SMP locking fixes.
+
+
+Also deserving mention: Dimitris Panokostas performed a security sweep of the
+Poseidon USB stack; Stephen Bancroft added VirtIO support and fixed Wanderer
+resource leaks; Gareth Davidson fixed the serial device and i386-pc boot ISO
+builds; Andrew Hutchings fixed early input event loss and booting with
+NTSC-only display databases; Andrzej "retrofaza" Subocz fixed crashes and
+scrolling bugs in Edit and text.datatype; Matthias Rustler fixed SysMon and
+CRT temporary-file handling; and Alain Greppin improved the cmake build
+integration.
