@@ -113,6 +113,22 @@ raspi-armhf-ports:
     από εξωτερικές πηγές για την αρχιτεκτονική armhf (τόσο hosted όσο
     και native). Λόγω του μεγέθους του, το πακέτο θα ενημερώνεται μόνο
     κατά καιρούς στη σελίδα των snapshots.
+opensbi-riscv-system:
+    Η native έκδοση για 32-bit συστήματα RISC-V με UEFI OpenSBI,
+    στοχεύοντας το προφίλ εφαρμογών RVA22.
+    Προς το παρόν υποστηρίζεται μόνο το Milk-V Titan.
+opensbi-riscv-contrib:
+    Αυτό το πακέτο περιέχει όλα τα προγράμματα που τρίτοι έχουν
+    συνεισφέρει και έγιναν compiled για την 32-bit αρχιτεκτονική
+    RISC-V (προφίλ RVA22), για χρήση με τη μεταφορά OpenSBI/riscv.
+opensbi-riscv64-system:
+    Η native έκδοση για 64-bit συστήματα RISC-V με UEFI OpenSBI,
+    στοχεύοντας το προφίλ εφαρμογών RVA22.
+    Προς το παρόν υποστηρίζεται μόνο το Milk-V Titan.
+opensbi-riscv64-contrib:
+    Αυτό το πακέτο περιέχει όλα τα προγράμματα που τρίτοι έχουν
+    συνεισφέρει και έγιναν compiled για την 64-bit αρχιτεκτονική
+    RISC-V (προφίλ RVA22), για χρήση με τη μεταφορά OpenSBI/riscv64.
 pc-i386-contrib:
     Αυτό το πακέτο περιέχει όλα τα προγράμματα που τρίτοι έχουν
 	συνεισφέρει και έγιναν compiled για i386 αρχιτεκτονική. Θα 
@@ -155,5 +171,9 @@ Linux-gnu-raspi-armhf-toolchain:
     Linux GNU crosscompiler για προορισμό AROS ARM
 Linux-gnu-linux-armhf-toolchain:
     Linux GNU crosscompiler για προορισμό AROS ARM
+Linux-gnu-opensbi-riscv-toolchain:
+    Linux GNU crosscompiler για προορισμό AROS riscv
+Linux-gnu-opensbi-riscv64-toolchain:
+    Linux GNU crosscompiler για προορισμό AROS riscv64
 Linux-gnu-mingw32-i386-toolchain:
     Linux GNU crosscompiler για προορισμό AROS mingw32 i386

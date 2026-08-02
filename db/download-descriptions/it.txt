@@ -105,6 +105,22 @@ raspi-armhf-ports:
     sorgenti esterni per l'architettura armhf (sia hosted che
     nativa). A causa delle sue dimensioni, l'archivio verrà
     aggiornato solo di tanto in tanto nella pagina degli snapshot.
+opensbi-riscv-system:
+    La versione nativa per i sistemi UEFI OpenSBI basati su RISC-V
+    a 32 bit, destinata al profilo applicativo RVA22.
+    Attualmente è supportato solo il Milk-V Titan.
+opensbi-riscv-contrib:
+    Questo archivio contiene tutto il software scritto da terzi,
+    compilato per l'architettura RISC-V a 32 bit (profilo RVA22),
+    da usare con il porting OpenSBI/riscv.
+opensbi-riscv64-system:
+    La versione nativa per i sistemi UEFI OpenSBI basati su RISC-V
+    a 64 bit, destinata al profilo applicativo RVA22.
+    Attualmente è supportato solo il Milk-V Titan.
+opensbi-riscv64-contrib:
+    Questo archivio contiene tutto il software scritto da terzi,
+    compilato per l'architettura RISC-V a 64 bit (profilo RVA22),
+    da usare con il porting OpenSBI/riscv64.
 pc-i386-contrib:
     Questo archivio contiene tutto il software scritto da
     terzi e compilato per architettura i386. funziona
@@ -144,5 +160,9 @@ Linux-gnu-raspi-armhf-toolchain:
     Crosscompilatore GNU Linux per il target AROS ARM
 Linux-gnu-linux-armhf-toolchain:
     Crosscompilatore GNU Linux per il target AROS ARM
+Linux-gnu-opensbi-riscv-toolchain:
+    Crosscompilatore GNU Linux per il target AROS riscv
+Linux-gnu-opensbi-riscv64-toolchain:
+    Crosscompilatore GNU Linux per il target AROS riscv64
 Linux-gnu-mingw32-i386-toolchain:
     Crosscompilatore GNU Linux per il target AROS mingw32 i386
