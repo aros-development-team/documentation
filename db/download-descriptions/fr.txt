@@ -110,8 +110,7 @@ raspi-armhf-ports:
     à jour que de temps en temps sur la page des snapshots.
 opensbi-riscv-system:
     La version native pour les systèmes UEFI OpenSBI à base de
-    RISC-V 32 bits, ciblant le profil applicatif RVA22. Notez que
-    cette version nécessite l'extension Zifencei.
+    RISC-V 32 bits, ciblant le profil applicatif RVA22.
     Actuellement, seul le Milk-V Titan est pris en charge.
 opensbi-riscv-contrib:
     Cette archive contient tous les programmes de contribution
@@ -119,8 +118,7 @@ opensbi-riscv-contrib:
     à utiliser avec le portage OpenSBI/riscv.
 opensbi-riscv64-system:
     La version native pour les systèmes UEFI OpenSBI à base de
-    RISC-V 64 bits, ciblant le profil applicatif RVA22. Notez que
-    cette version nécessite l'extension Zifencei.
+    RISC-V 64 bits, ciblant le profil applicatif RVA22.
     Actuellement, seul le Milk-V Titan est pris en charge.
 opensbi-riscv64-contrib:
     Cette archive contient tous les programmes de contribution
