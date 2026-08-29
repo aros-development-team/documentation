@@ -3,7 +3,7 @@
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright Š 1995-2007, The AROS Development Team
+:Copyright: Copyright (C) 1995-2026, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -16,11 +16,21 @@ Běžné otázky
 Můžu se na něco zeptat?
 -----------------------
 
-Samozřejmě můžeš. Přejdi prosím na `AROS-Exec fórum`__,
-pročti si vlákna a zeptej se na co chceš. Tyto FAQ budou postupně aktualizovány
-podle otázek uživatelů na fóru, fórum je však více aktuální.
+Samozřejmě můžeš. Existuje několik míst, kde se můžeš ptát, diskutovat
+o AROSu a najít pomoc. Vývojářské poštovní konference a kanály Slack AROSu
+jsou uvedeny na `wiki Git repozitáře AROSu`__. Existují také komunitní fóra
+a diskuse na různých fórech věnovaných Amize, kde můžeš najít lidi se
+zkušenostmi s AROSem a dalšími systémy podobnými Amize.
 
-__ https://ae.amigalife.org/modules/newbb/viewtopic.php?topic_id=1636&start=0
+Kromě toho je online k dispozici značné množství dokumentace a literatury
+o AROSu, AmigaOS a příbuzných systémech podobných Amize, která může poskytnout
+užitečné základní i praktické informace.
+
+Tyto FAQ budou aktualizovány, jakmile se objeví užitečné otázky a odpovědi,
+komunitní diskuse a vývojářské kanály však budou pravděpodobně obsahovat
+aktuálnější informace.
+
+__ https://github.com/aros-development-team/AROS/wiki
 
 
 Co je vlastně AROS?
@@ -71,277 +81,268 @@ Proč vám jde pouze o kompatibilitu s 3.1?
 -----------------------------------------
 
 Hodně se diskutovalo o napsání moderního operačního systému s vlastnostmi
-AmigaOS. Z dobrého důvodu bylo od toho upuštěno. Zaprvé, všichni se shodují,
-že současná AmigaOS by mohla být vylepšena, ale nikdo neví, jak to udělat, nebo
-se dokonce shodují na tom, co má být vylepšeno nebo co je důležité. Někteří
-například chtějí ochranu paměti, ale nechtějí za to platit (přepsání
-dostupného softwaru a zmenšení rychlosti).
+AmigaOS. Z dobrého důvodu bylo od toho upuštěno. Zaprvé, všichni se shodli,
+že současný AmigaOS by bylo třeba vylepšit, ale nikdo nevěděl, jak to udělat,
+a nepanovala ani shoda na tom, co má být vylepšeno nebo co je důležité.
+Někteří například chtěli ochranu paměti, ale nelíbila se jim její cena
+(rozsáhlé přepsání dostupného softwaru a snížení rychlosti).
 
-In the end, the discussions ended in either flame wars or reiteration of the
-same old arguments over and over again. So we decided to start with something we
-know how to handle. Then, when we have the experience to see what is possible or
-not, we decide on improvements.
+Nakonec diskuse skončily buď hádkami, nebo neustálým opakováním stejných
+argumentů. Rozhodli jsme se tedy začít s něčím, co umíme zvládnout. Až
+budeme mít zkušenosti a uvidíme, co je možné a co ne, můžeme se rozhodnout
+o vylepšeních.
 
-We also want to be binary compatible with the original AmigaOS on Amiga. The
-reason for this is just that a new OS without any programs which run on it has
-no chance to survive. Therefore we try to make the shift from the original OS to
-our new one as painless as possible (but not to the extent that we can't improve
-AROS afterwards). As usual, everything has its price and we try to decide
-carefully what that price might be and if we and everyone else will be willing
-to pay it.
+Chceme také být binárně kompatibilní s původním AmigaOS na počítačích Amiga.
+Důvod je prostý: nový OS bez programů, které by na něm běžely, má jen malou
+šanci přežít. Snažíme se proto, aby přechod z původního OS na náš nový byl co
+nejméně bolestivý (ale ne do té míry, že bychom AROS nemohli později
+vylepšovat). Jako obvykle má všechno svou cenu a my se snažíme pečlivě
+zvažovat, jaká ta cena může být a zda jsme ji my i všichni ostatní ochotni
+zaplatit.
 
 
 Můžete implementovat funkci XYZ?
 --------------------------------
 
-Ne, protože: 
+Ne, protože:
 
-a) If it was really important, it would be in the original OS. :-) 
-b) Why don't you do it yourself and send a patch to us?
+a) Kdyby to bylo opravdu důležité, bylo by to v původním OS. :-)
+b) Proč si to neuděláš sám a nepošleš nám záplatu?
 
-The reason for this attitude is that there are plenty of people around who think
-that their feature is the most important and that AROS has no future if that
-feature is not built in right away. Our position is that AmigaOS, which AROS
-aims to implement, can do everything a modern OS should do. We see that there
-are areas where AmigaOS could be enhanced, but if we do that, who would write
-the rest of the OS? In the end, we would have lots of nice improvements to the
-original AmigaOS which would break most of the available software but be worth
-nothing, because the rest of the OS would be missing.
+Důvodem tohoto postoje je, že kolem je spousta lidí, kteří si myslí, že
+právě jejich funkce je ta nejdůležitější a že AROS nemá budoucnost, pokud
+nebude zabudována okamžitě. Náš postoj je, že AmigaOS, který se AROS snaží
+implementovat, umí vše, co by moderní OS umět měl. Vidíme, že existují
+oblasti, kde by se AmigaOS dal vylepšit, ale kdybychom to udělali, kdo by
+napsal zbytek OS? Nakonec bychom měli spoustu pěkných vylepšení původního
+AmigaOS, která by rozbila většinu dostupného softwaru, ale neměla by žádnou
+cenu, protože zbytek OS by chyběl.
 
-Therefore, we decided to block every attempt to implement major new features in
-the OS until it is more or less completed. We are getting quite close to that
-goal now, and there have been a couple of innovations implemented in AROS that
-aren't available in AmigaOS.
+Proto jsme se rozhodli blokovat každý pokus o implementaci zásadních nových
+funkcí v OS, dokud nebude víceméně dokončen. K tomuto cíli se už ale docela
+blížíme, takže v AROSu skutečně bylo implementováno několik novinek, které
+v AmigaOS nejsou.
 
 
 Jak je AROS kompatibilní s AmigaOS?
 -----------------------------------
 
-Very compatible. We expect that AROS will run existing software on the Amiga
-without problems. On other hardware, the existing software must be recompiled.
-We will offer a preprocessor which you can use on your code which will change
-any code that might break with AROS and/or warn you about such code.
+Velmi kompatibilní. Očekáváme, že AROS bude na Amize bez problémů spouštět
+existující software. Na jiném hardwaru je nutné existující software znovu
+přeložit. Doufáme, že nabídneme preprocesor, který můžeš použít na svůj kód
+a který upraví každý kód, jenž by se s AROSem mohl rozbít, a/nebo tě na
+takový kód upozorní.
 
-Porting programs from AmigaOS to AROS is currently mostly a matter of a simple
-recompilation, with the occasional tweak here and there. There are of course
-programs for which this is not true, but it holds for most modern ones.
+Portování programů z AmigaOS na AROS je v současnosti většinou jen otázkou
+prostého překladu, občas s drobnou úpravou tu a tam. Samozřejmě existují
+programy, pro které to neplatí, ale u většiny moderních to platí.
 
 
 Pro jaké hardwarové platformy je AROS dostupný?
 -----------------------------------------------
 
-Currently AROS is available in a quite usable state as native and hosted
-(under Linux, and FreeBSD) for the i386 architecture (i.e. IBM PC AT
-compatible clones). There are ports under way at varying degrees of
-completeness to SUN SPARC (hosted under Solaris) and Palm compatible
-handhelds (native).
+V současnosti je AROS k dispozici v docela použitelném stavu jako nativní
+i hostovaný (pod Linuxem) pro architekturu i386 (tj. klony kompatibilní
+s IBM PC AT) a pro X86_64. V různých fázích dokončení jsou porty na 68k
+Amigy a Raspberry Pi.
 
 
 Chystá se port AROSu pro PPC?
 -----------------------------
 
-There is currently an effort under way to port AROS to PPC, initially
-hosted under Linux.
+Už je k dispozici. Udržované porty AROSu pro PowerPC jsou sam440-ppc
+a darwin-ppc.
 
 
 Proč používáte Linux a X11?
 ---------------------------
 
-We use Linux and X11 to speed up development. For example, if you implement
-a new function to open a window you can simply write that single function and
-don't have to write hundreds of other functions in layers.library,
-graphics.library, a slew of device drivers and the rest that that function might
-need to use. 
+Linux a X11 používáme k urychlení vývoje. Když například implementuješ novou
+funkci pro otevření okna, můžeš napsat jen tuto jedinou funkci a nemusíš psát
+stovky dalších funkcí v layers.library, graphics.library, hromadu ovladačů
+zařízení a vše ostatní, co by tato funkce mohla potřebovat.
 
-The goal for AROS is of course to be independent of Linux and X11 (but it would
-still be able to run on them if people really wanted to), and that is slowly
-becoming a reality with the native versions of AROS. We still need to use Linux
-for development though, since some development tools haven't been ported to AROS
-yet.
+Cílem AROSu je samozřejmě být nezávislý na Linuxu a X11 (i když by na nich
+stále mohl běžet, pokud by to lidé opravdu chtěli), a to se s nativními
+verzemi AROSu pomalu stává skutečností. Pro vývoj však Linux stále
+potřebujeme, protože některé vývojové nástroje ještě nebyly na AROS
+portovány.
 
 
 Jak zajistíte přenositelnost AROSu?
 -----------------------------------
 
-One of the major new features in AROS compared to AmigaOS is the HIDD (Hardware
-Independent Device Drivers) system, which will allow us to port AROS to
-different hardware quite easily. Basically, the core OS libraries do not hit the
-hardware directly but instead go through the HIDDs, which are coded using an
-object oriented system that makes it easy to replace HIDDs and reuse code.
+Jednou z hlavních novinek AROSu oproti AmigaOS je systém HIDD (Hardware
+Independent Device Drivers - hardwarově nezávislé ovladače zařízení), který
+nám umožní snadno portovat AROS na jiný hardware. Základní knihovny OS
+v zásadě nepřistupují k hardwaru přímo, ale přes HIDD, které jsou napsány
+pomocí objektově orientovaného systému, jenž usnadňuje nahrazování HIDD
+a opětovné použití kódu.
 
 
 Proč si myslíte, že to AROS zvládne?
 ------------------------------------
 
-We hear all the day from a lot of people that AROS won't make it. Most of them
-either don't know what we are doing or they think the Amiga is already dead.
-After we explained what we do to the former, most agree that it is possible. The
-latter make more problems. Well, is Amiga dead right now? Those who are still
-using their Amigas will probably tell you that it isn't. Did your A500 or A4000
-blow up when Commodore went bankrupt? Did it blow up when Amiga Technologies
-did?
+Celé dny slýcháme od spousty lidí, že to AROS nezvládne. Většina z nich buď
+neví, co děláme, nebo si myslí, že Amiga je už mrtvá. Když jsme těm prvním
+vysvětlili, co děláme, většina souhlasila, že je to možné. S těmi druhými je
+to těžší. Nuže, je Amiga právě teď mrtvá? Ti, kdo své Amigy stále používají,
+ti pravděpodobně řeknou, že není. Vybuchla ti tvoje A500 nebo A4000, když
+Commodore zkrachoval? Vybuchla, když zkrachovala Amiga Technologies?
 
-The fact is that there is quite little new software developed for the Amiga
-(although Aminet still chugs along quite nicely) and that hardware is also
-developed at a lower speed (but the most amazing gadgets seem appear right now).
-The Amiga community (which is still alive) seems to be sitting and waiting. And
-if someone releases a product which is a bit like the Amiga back in 1984, then
-that machine will boom again. And who knows, maybe you will get a CD along with
-the machine labeled "AROS". :-)
+Faktem je, že pro Amigu se nevyvíjí mnoho nového softwaru (i když Aminet
+stále docela pěkně funguje) a že i hardware se vyvíjí pomaleji (ale právě
+teď se objevují ty nejúžasnější kousky). Amigácká komunita (která stále
+žije) zřejmě sedí a čeká. A pokud někdo vydá produkt, který bude trochu
+připomínat Amigu z roku 1984, tento stroj znovu zažije boom. A kdo ví, možná
+k němu dostaneš i CD s nápisem "AROS". :-)
 
 
 Co mám dělat, když AROS nejde sestavit?
 ---------------------------------------
 
-Please post a message with details (for example, the error messages you
-get) on the Help forum at `AROSWorld`__ or become a developer and
-subscribe to the AROS Developer list and post it there, and someone will
-try to help you.
+Uveď prosím podrobnosti o problému, včetně příkazu, kterým jsi AROS
+sestavoval, a všech chybových hlášení, která jsi obdržel, a požádej o pomoc
+ve `vývojářské poštovní konferenci AROSu`__ nebo v kanálu Slack AROSu. To jsou
+vhodná místa pro diskusi o problémech se sestavením a dalších záležitostech
+souvisejících s vývojem AROSu, kde ti vývojáři a další lidé obeznámení se
+sestavovacím systémem mohou pomoci problém diagnostikovat.
 
-__ https://www.arosworld.org/
+K tomu, abys požádal o pomoc s problémem při sestavení, nemusíš být zavedeným
+vývojářem AROSu. Pokud sestavuješ AROS ze zdrojových kódů, již pracuješ
+s vývojovým prostředím.
+
+__ https://www.aros.org/
 
 
 Bude mít AROS ochranu paměti, SVM, RT, ...?
 -------------------------------------------
 
-Several hundred Amiga experts (that's what they thought of themselves at least)
-tried for three years to find a way to implement memory protection (MP) for
-AmigaOS. They failed. You should take it as a fact that the normal AmigaOS will
-never have MP like Unix or Windows NT.
+Několik set amigáckých expertů (a lidí, kteří se za ně považovali) se tři
+roky snažilo najít způsob, jak implementovat ochranu paměti (MP) pro
+AmigaOS. Neuspěli. To naznačuje, že je dost nepravděpodobné, že by běžný
+AmigaOS někdy měl MP jako Unix nebo Windows NT.
 
-But all is not lost. There are plans to integrate a variant of MP into AROS
-which will allows protection of at least new programs which know about it. Some
-efforts in this area look really promising. Also, is it really a problem if your
-machine crashes? Let me explain, before you nail me to a tree. :-) The problem
-is not that the machine crashes, but rather: 
+Ale není vše ztraceno. Existují plány integrovat do AROSu variantu MP, která
+umožní ochranu alespoň nových programů, jež o ní vědí. Některé snahy v této
+oblasti vypadají opravdu slibně. Navíc, když ti spadne počítač, není to ve
+skutečnosti takový problém. Problém je spíše v tom, že:
 
-1. You have no good idea why it crashed. Basically, you end up having to poke 
-   with a 100ft pole into a swamp with a thick fog. 
-2. You lose your work. Rebooting the machine is really no issue.
+1. Nemáš pořádnou představu, proč spadl. V podstatě pak musíš šťourat
+   třicetimetrovou tyčí v bažině zahalené hustou mlhou.
+2. Přijdeš o svou práci.
 
-What we could try to construct is a system which will at least alert if
-something dubious is happening and which can tell you in great detail what was
-happening when the machine crashed and which will allow you to save your work
-and *then* crash. There will also be a means to check what has been saved so you
-can be sure that you don't continue with corrupted data.
+Restart počítače ve skutečnosti žádný problém není.
 
-The same thing goes for SVM (swappable virtual memory), RT (resource tracking)
-and SMP (symmetric multiprocessing). We are currently planning how to implement
-them, making sure that adding these features will be painless. However, they do
-not have the highest priority right now. Very basic RT has been added, though.
+Mohli bychom se pokusit vytvořit systém, který přinejmenším upozorní, že se
+děje něco podezřelého, který ti dokáže velmi podrobně říct, co se dělo, když
+počítač spadl, a který ti umožní uložit práci a *teprve pak* spadnout. Měl
+by také mít prostředky ke kontrole toho, co bylo uloženo, aby sis mohl být
+jistý, že nepokračuješ s poškozenými daty.
+
+Totéž platí pro SVM (odkládatelnou virtuální paměť), RT (sledování zdrojů)
+a SMP (symetrický multiprocessing). Právě plánujeme, jak je implementovat,
+a dbáme na to, aby přidání těchto funkcí bylo bezbolestné. Nemají však teď
+nejvyšší prioritu. Velmi základní RT už ale přidáno bylo.
 
 
 Mohu se stát beta testerem?
 ---------------------------
 
-Sure, no problem. In fact, we want as many beta testers as possible, so
-everyone is welcome! We don't keep a list of beta testers though, so all
-you have to do is to download AROS, test whatever you want and send us a
-report.
+Jistě, žádný problém. Vlastně chceme co nejvíce beta testerů, takže každý je
+vítán! Seznam beta testerů si ale nevedeme, takže stačí, když si stáhneš
+AROS, otestuješ, co chceš, a pošleš nám hlášení.
 
 
 Jaký je vztah mezi AROSem a UAE?
 --------------------------------
 
-UAE is an Amiga emulator, and as such has somewhat different goals than AROS.
-UAE wants to be binary compatible even for games and hardware hitting code,
-while AROS wants to have native applications. Therefore AROS is much faster than
-UAE, but you can run more software under UAE.
+UAE je emulátor Amigy a jako takový má poněkud jiný cíl než AROS. UAE chce
+být binárně kompatibilní i pro hry a kód přistupující přímo k hardwaru,
+zatímco AROS chce mít nativní aplikace. AROS je proto mnohem rychlejší než
+UAE, ale pod UAE spustíš více softwaru.
 
-We are in loose contact with the author of UAE and there is a good chance that
-code for UAE will appear in AROS and vice versa. For example, the UAE developers
-are interested in the source for the OS because UAE could run some applications
-much faster if some or all OS functions could be replaced with native code. On
-the other hand, AROS could benefit from having an integrated Amiga emulation.
+Jsme ve volném kontaktu s autorem UAE a je velká šance, že se kód z UAE
+objeví v AROSu a naopak. Vývojáři UAE se například zajímají o zdrojové kódy
+OS, protože UAE by mohlo některé aplikace spouštět mnohem rychleji, kdyby
+šlo některé nebo všechny funkce OS nahradit nativním kódem. Na druhou stranu
+by AROS mohl těžit z integrované emulace Amigy.
 
-Since most programs won't be available on AROS from the start, Fabio Alemagna
-has ported UAE to AROS so you can run old programs at least in an emulation box.
+Protože většina programů nebude na AROSu od začátku k dispozici, Fabio
+Alemagna portoval UAE na AROS, takže staré programy můžeš spouštět alespoň
+v emulátoru.
 
-Also available in Contrib is `E-UAE`__, which is UAE improved by some features
-from `WinUAE`__.
+V Contribu je k dispozici také `E-UAE`__, což je UAE vylepšené o některé
+funkce z `WinUAE`__.
 
 __ http://www.rcdrummond.net/uae/
-__ http://www.winuae.net/
+__ https://www.winuae.net/
 
 
 Jaký je vztah mezi AROSem a Haage & Partner?
 --------------------------------------------
 
-Haage & Partner used parts of AROS in AmigaOS 3.5 and 3.9, for example the
-Colorwheel and Gradientslider gadgets and the SetENV command. This means that in
-a way, AROS has become part of the official AmigaOS. This does not imply that
-there is any formal relation between AROS and Haage & Partner. AROS is an open
-source project, and anyone can use our code in their own projects provided they
-follow the license.
+Haage & Partner použili části AROSu v AmigaOS 3.5 a 3.9, například gadgety
+Colorwheel a Gradientslider a příkaz SetENV. To znamená, že se AROS svým
+způsobem stal součástí oficiálního AmigaOS. Neznamená to však, že by mezi
+AROSem a Haage & Partner existoval nějaký formální vztah. AROS je open source
+projekt a kdokoli může použít náš kód ve svých projektech, pokud dodrží
+licenci.
 
 
 Jaký je vztah mezi AROSem a MorphOS?
 ------------------------------------
 
-The relationship between AROS and MorphOS is basically the same as between AROS
-and Haage & Partner. MorphOS uses parts of AROS to speed up their development
-effort; under the terms of our license. As with Haage & Partner, this is good
-for both the teams, since the MorphOS team gets a boost to their development
-from AROS and AROS gets good improvements to our source code from the MorphOS
-team. There is no formal relation between AROS and MorphOS; this is simply how
-open source development works.
+Vztah mezi AROSem a MorphOS je v podstatě stejný jako mezi AROSem a Haage &
+Partner. MorphOS používá části AROSu k urychlení svého vývoje, a to za
+podmínek naší licence. Stejně jako v případě Haage & Partner je to dobré pro
+oba týmy, protože tým MorphOS získává z AROSu impuls pro svůj vývoj a AROS
+získává od týmu MorphOS dobrá vylepšení našeho zdrojového kódu. Mezi AROSem
+a MorphOS není žádný formální vztah; takhle prostě funguje open source vývoj.
 
 
 Jaké programovací jazyky jsou k dispozici?
 ------------------------------------------
 
-Most development for AROS is done using ANSI C by crosscompiling the
-sources under a different OS, e.g. Linux or FreeBSD. Fabio Alemagna has
-completed an initial port of GCC to i386 native. However, it is not
-currently on the ISO or integrated into the build system.
+GCC (C, C++) je k dispozici jako nativní i křížový překladač.
 
-The languages that are available natively are Python_, Regina_, Lua_, Hollywood_ and False_:
+Nativně jsou k dispozici jazyky Python_, Regina_, Lua_ a Hollywood_:
 
-+ Python is a scripting language which has become quite popular, because of 
-  its nice design and features (object-oriented programming, module system,
-  many useful modules included, clean syntax, ...). A separate project has 
-  been started for the AROS port and can be found at 
-  http://pyaros.sourceforge.net/.
++ Python je skriptovací jazyk, který se stal docela populárním díky svému
+  pěknému návrhu a vlastnostem (objektově orientované programování, systém
+  modulů, mnoho užitečných modulů v základu, čistá syntaxe, ...). Pro port na
+  AROS byl založen samostatný projekt, který najdeš na
+  https://pyaros.sourceforge.net/.
 
-+ Regina is a portable ANSI compliant REXX interpreter. The goal for the AROS
-  port is to be compatible with the ARexx interpreter for the classic
-  AmigaOS.
++ Regina je přenositelný interpret REXXu vyhovující normě ANSI. Cílem portu
+  na AROS je kompatibilita s interpretem ARexx z klasického AmigaOS.
 
-+ Lua is a powerful, fast, light-weight, embeddable scripting language. The AROS
-  port has been extented by two modules: siamiga and zulu. The first one has
-  some simple graphics commands, the latter is an interface to Zune.
++ Lua je výkonný, rychlý, odlehčený a vestavitelný skriptovací jazyk. Port
+  na AROS byl rozšířen o dva moduly: siamiga a zulu. První obsahuje několik
+  jednoduchých grafických příkazů, druhý je rozhraním k Zune.
 
-+ Hollywood is a commercial programming language for multimedia applications
-  including games. The CD-ROM contains a version for i386-aros.
++ Hollywood je komerční programovací jazyk pro multimediální aplikace včetně
+  her. Můžeš si koupit verzi pro i386-aros (ABI v0).
 
-+ False can be classified as an exotic language, so it will most likely not be 
-  used for serious development, although it can be lots of fun. :-) 
-
-.. _Python: http://www.python.org/
-.. _Regina: http://regina-rexx.sourceforge.net/
-.. _Lua: http://www.lua.org/
+.. _Python: https://www.python.org/
+.. _Regina: https://regina-rexx.sourceforge.io/
+.. _Lua: https://www.lua.org/
 .. _Hollywood: http://www.airsoftsoftwair.com/
-.. _False:  http://strlen.com/false-language
 
 
 Proč není v AROSu žádný m68k emulátor?
 --------------------------------------
 
-To make old Amiga programs run on AROS, we have ported UAE_ to AROS. AROS's
-version of UAE will probably be a bit faster than other versions UAE since AROS
-needs less resources than other operating systems (which means UAE will get more
-CPU time), and we'll try to patch the Kickstart ROM in UAE to call AROS
-functions which will give another small improvement. Of course, this only
-applies to the native flavors of AROS and not the hosted flavors.
+Už existuje pokus o integraci emulátoru janus-uae.
 
-But why don't we simply implement a virtual m68k CPU to run software directly on
-AROS? Well, the problem here is that m68k software expects the data to be in big
-endian format while AROS also runs on little endian CPUs. The problem here is
-that the little endian routines in the AROS core would have to work with the big
-endian data in the emulation. Automatic conversion seems to be impossible (just
-an example: there is a field in a structure in the AmigaOS which sometimes
-contains one ULONG and sometimes two WORDs) because we cannot tell how a couple
-of bytes in RAM are encoded.
+Ale proč prostě neimplementujeme virtuální procesor m68k, aby software běžel
+přímo na AROSu? Problém je v tom, že software pro m68k očekává data ve
+formátu big-endian, zatímco AROS běží i na procesorech little-endian.
+Little-endian rutiny v jádru AROSu by musely pracovat s big-endian daty
+v emulaci. Automatický převod se zdá být nemožný (jen jeden příklad:
+v jedné struktuře v AmigaOS je pole, které někdy obsahuje jeden ULONG
+a někdy dva WORDy), protože nedokážeme určit, jak je několik bajtů v RAM
+zakódováno.
 
 .. _UAE: http://www.amigaemulator.org/
 
@@ -349,356 +350,131 @@ of bytes in RAM are encoded.
 Chystá se AROS Kickstart ROM?
 -----------------------------
 
-There might be, if someone creates a native Amiga port of AROS and does all the
-other work needed to create a Kickstart ROM. Currently, no one has applied for
-the job. 
+Už jsou k dispozici v balíčku amiga-m68k-boot-iso v adresáři boot/amiga.
+
+
+Noční sestavení
+===============
+
+Co jsou noční sestavení?
+------------------------
+
+Noční sestavení AROSu jsou vývojová sestavení vytvářená z aktuálního stavu
+zdrojového stromu AROSu. Jsou určena především vývojářům, testerům a lidem,
+kteří chtějí sledovat nejnovější vývoj AROSu a experimentovat s ním. Jako
+taková by měla být chápána jako průběžný vývojový snímek, nikoli jako
+vyladěné vydání určené koncovým uživatelům. Jejich konfigurace má proto
+poskytovat konzistentní prostředí pro testování aktuálního vývoje AROSu,
+nikoli představovat definitivní volbu vzhledu plochy nebo uživatelského
+prostředí.
+
+Proč noční sestavení nepoužívají "hezké" motivy?
+------------------------------------------------
+
+Problém je v tom, že "hezké" je subjektivní. Neexistuje výchozí motiv, který
+by vyhovoval všem, a měnit výchozí nastavení projektu pokaždé, když se někomu
+nelíbí, jen mění estetiku v nekonečný koloběh "vraťte to zpátky".
+
+Proto je důležité rozlišovat mezi samotným AROSem a jednotlivými distribucemi.
+Správci distribucí mohou svobodně rozhodnout, jak jejich distribuce vypadá
+a s jakými výchozími nastaveními je dodávána.
+
+Noční sestavení nemají být vyladěným desktopovým produktem s vyhraněným
+názorem; jsou to konzistentní prostředí pro vývoj a testování. Pokud dáváš
+přednost jinému vzhledu, přizpůsob si ho nebo kolem této preference vytvoř
+distribuci.
+
+Osobní preference je zcela legitimní důvod k přizpůsobení vlastního systému,
+není však příliš dobrým základem pro změnu výchozích nastavení projektu.
 
 
 Otázky k softwaru
 =================
 
-How do I access AROS's disk images from UAE?
---------------------------------------------
-
-The floppy disk image can be mounted as a hardfile and then used as a 1.4 MB
-harddisk within UAE. After you have put the files you want on the hardfile disk
-image (or whatever you wanted to do), you can write it to a floppy.
-
-The geometry of the hardfile is as follows::
-
-    Sectors    = 32
-    Surfaces   = 1
-    Reserved   = 2
-    Block Size = 90
-
-
-How do I access AROS's disk images from hosted flavors of AROS?
----------------------------------------------------------------
-
-Copy the disk image to the DiskImages directory in AROS (SYS:DiskImages, e.g.
-bin/linux-i386/AROS/DiskImages) and rename it to "Unit0". After starting AROS,
-you can mount the disk image with::
-
-    > mount AFD0: 
-
-
 Co je to Zune?
 --------------
 
-In case you read on this site about Zune, it's simply an open-source
-reimplementation of MUI, which is a powerful (as in user- and
-developer-friendly) object-oriented shareware GUI toolkit and de-facto
-standard on AmigaOS. Zune is the preferred GUI toolkit to develop
-native AROS applications. As for the name itself, it means nothing,
-but sounds good.
+Pokud jsi na tomto webu četl o Zune: je to prostě open source reimplementace
+MUI, což je výkonný (ve smyslu přívětivý k uživatelům i vývojářům) objektově
+orientovaný shareware GUI toolkit a de facto standard na AmigaOS. Zune je
+preferovaný GUI toolkit pro vývoj nativních aplikací pro AROS. Samotný název
+nic neznamená, jen dobře zní.
 
 
-How can I restore my Prefs to defaults?
----------------------------------------
+Co je grafická a ostatní paměť ve Wandereru?
+--------------------------------------------
 
-In AROS, open CLI shell, go to Envarc: and delete relevant files for the 
-pref you want to restore.
+Toto rozdělení paměti je většinou pozůstatkem z amigácké minulosti, kdy
+grafická paměť byla pamětí pro aplikace, než se přidala další paměť zvaná
+FAST RAM, v níž se nacházely aplikace, zatímco grafika, zvuky a některé
+systémové struktury zůstávaly v grafické paměti.
 
+V hostovaném AROSu žádná paměť typu Other (FAST) není, jen GFX; v nativním
+AROSu může mít GFX maximálně 16 MB, což ale neodráží stav paměti grafického
+adaptéru... Nemá to žádnou souvislost s množstvím paměti na tvé grafické
+kartě.
 
-What is the Graphical and other memory in Wanderer?
----------------------------------------------------
+*Dlouhá odpověď*
+Grafická paměť v nativní verzi pro i386 označuje spodních 16 MB paměti
+v systému. Těchto spodních 16 MB je oblast, kde mohou ISA karty provádět
+DMA. Paměť alokovaná s MEMF_DMA nebo MEMF_CHIP skončí tam, zbytek v ostatní
+(fast) paměti.
 
-This memory division is mostly a relic from Amiga past, when graphical memory 
-was application memory before you added some other, called FAST RAM, a memory where 
-applications ended, while the graphics, sounds and some system structures were 
-still in graphic memory.
-
-In AROS-hosted, there isn't such kind of memory as Other (FAST), but only GFX, when on 
-Native AROS, GFX can have a max of 16MB, although it wouldn't reflect the state 
-of the graphic adapter memory...  It has no relation to the amount of memory 
-on your graphics card.
-
-*The long-winded answer*
-Graphics memory in i386-native signifies the lower 16MB of memory 
-in the system. That lower 16MB is the area where ISA cards can do DMA. Allocating 
-memory with MEMF_DMA or MEMF_CHIP will end up there, the rest in the other (fast)
-memory.
-
-Use C:Avail HUMAN command for memory info.
+Informace o paměti získáš příkazem C:Avail HUMAN.
 
 
-What do the Wanderer Snapshot <all/window> action actually do? 
---------------------------------------------------------------
+Co vlastně dělá akce Snapshot <all/window> ve Wandereru?
+--------------------------------------------------------
 
-This command remembers icon's placement of all (or one) windows.
-
-
-How do I change the screensaver/background?
--------------------------------------------
-
-At the moment the only way to change screensaver is to write your own one.
-Blanker commodity could be tuned with Exchange, but it is able to do only 
-"starfield" with given amount of stars.
-Background of Wanderer is set by Pref tool Prefs/Wanderer.
-Background of Zune Windows is set by Zune prefs Prefs/Zune. You can also set 
-your chosen application preferences by using the Zune <application> command.
+Tento příkaz si zapamatuje rozmístění ikon ve všech oknech (nebo v jednom
+okně).
 
 
-I've launched AROS-hosted but it's failed
------------------------------------------
+Jaké jsou volby příkazové řádky spustitelného souboru hostovaného AROSu?
+------------------------------------------------------------------------
 
-If you are root and AROS crashes at launch, do "xhost +" before 
-"sudo && ./aros -m 20". You must also give it some memory with -m option as 
-shown. The space between "-m" and the value is important. Also don't forget
-about BackingStore option in section Device of your xorg.conf.
+Jejich seznam získáš spuštěním příkazu ./aros -h.
 
 
-What are the command line options for AROS-hosted executable?
+Jaké volby jádra nativního AROSu se používají na řádku GRUBu?
 -------------------------------------------------------------
 
-You can get a list of them by running ./aros -h command.
+Zde jsou některé z nich::
+
+    floppy=<disabled/nomount>   Nastavuje volby zařízení trackdisk
+        disabled                - zcela vypne inicializaci trackdisk.device
+        nomount                 - inicializuje trackdisk.device, ale nevytvoří
+                                  DOS zařízení
+
+    ATA=32bit           - Zapne 32bitové I/O v ovladači pevného disku (bezpečné)
+    forcedma            - Vynutí aktivní DMA v ovladači pevného disku (mělo by
+                          být bezpečné, ale nemusí)
+    gfx=<hidd name>     - Použije uvedený HIDD jako grafický ovladač
+    lib=<name>          - Načte a inicializuje uvedenou knihovnu/HIDD
+
+Upozorňujeme, že u voleb se rozlišují velká a malá písmena.
 
 
-How can I make windows refresh from black on AROS-hosted?
----------------------------------------------------------
+Jak vytvořím DOS skript, který se automaticky spustí pro nainstalovaný balíček?
+-------------------------------------------------------------------------------
 
-You must supply the following string (as is!) to the "Device" section of
-your /etc/X11/xorg.conf (or XFree.conf)::
-    
-    Option  "BackingStore"
+1) Vytvoř podadresář S a přidej do něj soubor s názvem 'Package-Startup'
+   obsahující DOS skript daného balíčku, který chceš spouštět při každém
+   startu.
 
-See Installation__ for details.
+2) V souboru envarc:sys/packages vytvoř proměnnou, která obsahuje cestu
+   k podadresáři S tvého balíčku.
 
-__ installation#running
-
-
-What are the AROS-native kernel options used in GRUB line?
-----------------------------------------------------------
-
-Here's some::
-
-    nofdc           - Disables the floppy driver completely.
-    noclick         - Disables the floppy disk change detection (and clicking)
-    ATA=32bit       - Enables 32-bit I/O in the hdd driver (safe)
-    forcedma        - Forces DMA to be active in the hdd driver (should be safe, but       
-                      might not be)
-    gfx=<hidd name> - Use the named HIDD as the gfx driver
-    lib=<name>      - Load and initiate the named library/HIDD
-
-Please note that they are case-sensitive.
-
-
-How can I transfer files to virtual machine with AROS?
-------------------------------------------------------
-
-First and simplest way is to put files to the ISO image and and connect it to VM. 
-There's a lot of programs able to create/edit ISO's like UltraISO, WinImage, 
-or mkisofs. Second, you can set up the network in AROS and FTP server on your 
-host machine. Then you can use FTP client for AROS to transfer files
-(look for MarranoFTP). This is tricky enough to stop at this point. User 
-documentation contains a chapter about networking, go for it. Also, now
-there`s a promising utility (AFS Util), allowing to read (no write support yet) 
-files from AROS AFFS/OFS disks and floppies.  
-
-
-Compilation Errors
-------------------
-
-Q: I`ve compiled AROS with gcc4 but found that compiled AROS-hosted segfaults 
-with -m > 20 and if I compile AROS-native it does not start (black screen)
-
-A: Add -fno-strict-aliasing to scripts/aros-gcc.in and try to recompile.
-
-
-Is it possible to make a DOS script that automatically runs when a package is installed? 
-----------------------------------------------------------------------------------------
-
-This script should do some assigns and add string to the PATH variable.
-
-1) Create a sub-directory S and add a file with name 'Package-Startup' with the DOS 
-commands to it.
-
-2) Create a variable in the envarc:sys/packages file which contains the path to the S 
-directory of your package.
-
-Example directory layout::
+Příklad rozložení adresářů::
 
     sys:Extras/myappdir
     sys:Extras/myappdir/S
     sys:Extras/myappdir/S/Package-Startup
-    
-The variable in envarc:sys/packages could have the name 'myapp' (name doesn't 
-matter), the content would then be 'sys:extras/myappdir'
 
-The Package-Startup script would then be called by the startup-sequence.
-    
+Proměnná v envarc:sys/packages by se mohla jmenovat 'myapp' (název je jen
+příklad); její obsah by pak byl 'sys:extras/myappdir'.
 
-How do I clear the shell window? How do I set it permanently?
--------------------------------------------------------------
-
-Type this command in the shell::
-
-    Echo "*E[0;0H*E[J* "
-    
-You can edit your S:Shell-Startup and insert this line somewhere, so 
-you'll have a new "Cls" command::
-
-    Alias Cls "Echo *"*E[0;0H*E[J*" "
-
-BTW: here is my new S:Shell-Startup modified to start the shell in black and 
-with a modified prompt::
-
-    Alias Edit SYS:Tools/Editor
-    Alias Cls "Echo *"*E[0;0H*E[J*" "
-    Echo "*e[>1m*e[32;41m*e[0;0H*e[J"
-    Prompt "*n*e[>1m*e[33;41m*e[1m%N/%R - *e[30;41m%S>*e[0m*e[32;41m "
-    date
-
-More about printer escape sequences::
-
-    Esc[0m
-    Standard Set
-
-    Esc[1m and Esc[22m
-    Bold
-
-    Esc[3m and Esc[23m
-    Italics
-
-    Esc[4m and Esc[24m
-    Underline
-
-    Esc[30m to Esc[39m
-    Set Front Color
-
-    Esc[40m to Esc[49m
-    Set Background Color
-
-Values meanings::
-
-    30 grey char -- 40 grey cell -- >0 grey background ---- 0 all attributes off
-    31 black char - 41 black cell - >1 black background --- 1 boldface
-    32 white char - 42 white cell - >2 white background --- 2 faint
-    33 blue char -- 43 blue cell -- >3 blue background ---- 3 italic
-    34 grey char -- 44 grey cell -- >4 grey background ---- 4 underscore
-    35 black char - 45 black cell - >5 black background --- 7 reverse video
-    36 white char - 46 white cell - >6 white background --- 8 invisible
-    37 blue char -- 47 blue cell -- >7 blue background
-
-The codes can be combined by separating them with a semicolon.
-
-
-How do I launch AROS-hosted in fullscreen?
-------------------------------------------
-
-Call "export AROS_X11_FULLSCREEN=1" in a shell. Start AROS and change the 
-screen resolution in the screenmode preferences. Quit AROS and start it again.
-
-
-How to make 2-state AROS Icons?
--------------------------------
-
-AROS icons are actually renamed PNG files. But if you want icons in two states 
-(normal/selected) use this command::
-
-    join img_1.png img_2.png TO img.info
-    
-
-How to mount an ISO image on AROS? And can I update my nightly build this way?
-------------------------------------------------------------------------------
-
-+ Get the ISO into AROS (by wget or else way)
-+ Copy the ISO into sys:DiskImages (drawer must be created if it isn`t exist). 
-+ Rename ISO to Unit0 in that dir.
-+ You must add this to your Devs:Mountlist ::
-
-    ISO:
-    FileSystem = cdrom.handler
-    Device = fdsk.device
-    Unit = 0
-
-+ Then mount ISO:
-  You can copy anything from ISO:. Additionally, you can create a script to update your 
-  nightly build like this::
-
-        copy ISO:boot/aros-pc-i386.gz sys:boot/
-        copy ISO:C sys:C all quiet
-        copy ISO:Classes sys:Classes all quiet
-        copy ISO:Demos sys:Demos all quiet
-
-And so on for each directory except Prefs, Extras:Networking/Stacks, and 
-devs:mountlist itself. Prefs have to be kept if you want it. Also you can set 
-AROSTcp to keep its settings in separate directory.
-
-If you want to write all over, just do::
-
-    copy ISO:C sys:C all quiet newer  
-    
-How to unmount a volume?
-------------------------
-
-Launch these two commands in CLI::
-    
-    assign DOSVOLUME: dismount
-    assign DOSVOLUME: remove
-
-where DOSVOLUME is DH0:, DF0:, etc
-
-
-How to mount a FAT Floppy with the FAT.handler?
------------------------------------------------
-
-Create a mountfile (text file) with the 3 magic lines::
-
-    device = trackdisk.device
-    filesystem = fat.handler
-    unit = 0
-
-+ Call it somehow, PC0 for example. Set this file default tool to c:mount in 
-  properties (or put mountfile to devs:dosdrivers or sys:storage/dosdrivers)
-+ Double click on it.
-+ Insert a FAT formatted floppy.
-+ See the icon appearing on Wanderer`s desktop.
-
-
-How to mount a real HD FAT partition with the FAT.handler?
-----------------------------------------------------------
-
-First you`d need to read the drive`s geometry and write down some values. 
-You can use HDToolbox or Linux fdisk for that. The BlocksPerTrack value is taken 
-from the sectors/track value. Note that it has absolutely nothing to do with 
-the physical disk geometry - FAT only uses it as a multiplier.
-If you get the Cylinders e.g. from HDToolbox or using the Linux fdisk like this::
-
-    sudo fdisk -u -l /dev/hda, 
-    
-Then you'll need to set BlocksPerTrack=63. 
-To ensure you have numbers in cylinders look for Units=Cylinders in output. If 
-you got fdisk output in sectors (Units=sectors), set BlocksPerTrack=1.
-
-LowCyl and HighCyl are partition`s cylinders like::
-
-    mark@ubuntu:~$ sudo fdisk -l -u /dev/hda
-    ...
-    /dev/hda1 * 63 20980889 10490413+ c W95 FAT32 (LBA)
-
-So, LowCyl is 63, and HighCyl is 20980889, blockspertrack=1
-
-Create a mountfile (text file) with these lines::
-
-    
-    device = ata.device
-    filesystem = fat.handler,
-    Unit = 0
-
-    BlocksPerTrack = 1
-    LowCyl = 63
-    HighCyl = 20980889
-    Blocksize=512
-
-+ Call it somehow, FAT0 for example
-+ Set this file`s default tool to c:mount in properties
-  (or put mountfile to devs:dosdrivers or sys:storage/dosdrivers)
-+ Double click on it
-+ See the icon appearing on Wanderer`s desktop
-
-Note: Formula for counting the blocks:
-block = ((highcyl - lowcyl) x surfaces + head) x blockspertrack + sec
+Skript Package-Startup by pak byl volán ze startup-sequence.
 
 
 Otázky k hardwaru
@@ -707,7 +483,7 @@ Otázky k hardwaru
 Kde mohu najít seznam hardwaru kompatibilního s AROSem?
 -------------------------------------------------------
 
-Seznam najdeš na stránce `AROS Wiki <http://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__.
+Seznam najdeš na stránce `AROS Wiki <https://en.wikibooks.org/wiki/Aros/Platforms/x86_support>`__.
 Tam se mohou nacházet i další seznamy od uživatelů AROSu.
 
 
