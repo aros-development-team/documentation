@@ -3,7 +3,7 @@ Frequently Asked Questions
 ==========================
 
 :Authors:   Aaron Digulla, Adam Chodorowski, Sergey Mineychev, AROS-Exec.org
-:Copyright: Copyright Â© 1995-2020, The AROS Development Team
+:Copyright: Copyright (C) 1995-2026, The AROS Development Team
 :Version:   $Revision$
 :Date:      $Date$
 :Status:    Done.
@@ -17,12 +17,20 @@ General questions
 Can I ask a question?
 ---------------------
 
-Of course you can. Please go to the `AROSWorld forum`__ and
-read the threads and ask everything you want. This FAQ will
-be updated with the users' questions, but the forum will be
-more up-to-date.
+Of course you can. There are several places where you can ask questions, discuss
+AROS, and find help. The AROS developer mailing lists and Slack channels are
+listed on the `AROS Git repository wiki`__ . There are also community forums
+and discussions on various Amiga-related forums, where you may find people
+with experience using AROS and other Amiga-like systems.
 
-__ https://www.arosworld.org/
+In addition, a considerable amount of documentation and literature about AROS,
+AmigaOS, and related Amiga-like systems is available online and can provide useful
+background and practical information.
+
+This FAQ will be updated as useful questions and answers arise, but community
+discussions and the development channels are likely to contain more recent information.
+
+__ https://github.com/aros-development-team/AROS/wiki
 
 
 What is AROS all about?
@@ -195,12 +203,18 @@ a CD along with the machine labelled "AROS". :-)
 What do I do if AROS won't compile?
 -----------------------------------
 
-Please post a message with details (for example, the error messages you
-get) on the Help forum at `AROSWorld`__ or become a developer and
-subscribe to the AROS Slack channel and post it there, and someone will
-try to help you.
+Please provide details of the problem, including the command you used to
+build AROS and any error messages you received, and ask for help on the
+AROS Developer Mailing List__ or in the AROS Slack channel. These are the
+appropriate places for discussing build problems and other issues related
+to AROS development, and are where developers and other people familiar
+with the build system can help diagnose the problem.
 
-__ https://www.arosworld.org/
+You do not need to be an established AROS developer to ask for help with a
+build problem. If you are building AROS from source, you are already
+working with the development environment.
+
+__ https://www.aros.org/
 
 
 Will AROS have memory protection, SVM, RT, ...?
@@ -346,6 +360,39 @@ Will there be an AROS Kickstart ROM?
 
 They are already available in the amiga-m68k-boot-iso package in the
 directory boot/amiga.
+
+
+Nightly Builds
+==============
+
+What are the nightly builds?
+----------------------------
+
+AROS nightly builds are development builds produced from the current state of
+the AROS source tree. They are primarily intended for developers, testers,
+and people who want to follow and experiment with the latest developments
+in AROS. As such, they should be regarded as a moving development snapshot
+rather than a polished, end-user-oriented release. Their configuration is therefore
+intended to provide a consistent environment for testing current AROS development,
+rather than to represent a definitive choice of desktop appearance or user experience.
+
+Why dont the nightly builds use "nice" themes?
+----------------------------------------------
+
+The problem is that “nice” is subjective. There is no default theme that
+will satisfy everyone, and changing the upstream default whenever somebody
+dislikes it just turns aesthetics into an endless cycle of “change it back.”
+
+That's why the distinction between AROS itself and individual distributions matters.
+Distribution maintainers are free to decide how their particular distribution looks
+and what defaults it ships with.
+
+The nightly builds aren't intended to be a polished, opinionated desktop product;
+they're a consistent environment for development and testing. If you prefer a
+different look, customise it or build a distribution around that preference.
+
+Personal preference is a perfectly legitimate reason to customise your own system,
+but it's not a particularly good basis for changing the upstream project's defaults.
 
 
 Software questions
