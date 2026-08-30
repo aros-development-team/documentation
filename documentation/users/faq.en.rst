@@ -379,9 +379,9 @@ rather than to represent a definitive choice of desktop appearance or user exper
 Why dont the nightly builds use "nice" themes?
 ----------------------------------------------
 
-The problem is that “nice” is subjective. There is no default theme that
+The problem is that "nice" is subjective. There is no default theme that
 will satisfy everyone, and changing the upstream default whenever somebody
-dislikes it just turns aesthetics into an endless cycle of “change it back.”
+dislikes it just turns aesthetics into an endless cycle of "change it back."
 
 That's why the distinction between AROS itself and individual distributions matters.
 Distribution maintainers are free to decide how their particular distribution looks
