@@ -2,42 +2,36 @@
 Kontaktinformation
 ==================
 
-:Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright (C) 1995-2009, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Authors:   Adam Chodorowski, Matthias Rustler
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Status:    Done.
 
 .. Contents::
 
 
-Ansprechpartner
-===============
+Slack
+=====
 
-Der Leiter des AROS-Entwicklungsteams ist Aaron "Optimizer" Digulla. Er ist der
-Ansprechpartner, wenn Du das Team als Ganzes ansprechen willst, z. B. für ein
-Sponsorenabkommen oder andere Formen der Zusammenarbeit. Du kannst ihn per E-Mail
-an `digulla@aros.org`__ erreichen.
+Es gibt einen offiziellen Slack-Kanal für Diskussionen rund um die Entwicklung
+von AROS, dem Du über diesen `Link`__ beitreten kannst.
 
-__ mailto:digulla@aros.org
-
+__ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
 
 Mailinglisten
 =============
 
-Es gibt ein paar AROS-bezogene Mailinglisten, welche die Hauptinformationskanäle
-für AROS-Entwickler darstellen. Folgende Mailinglisten sind vorhanden:
+Es gibt ein paar AROS-bezogene Mailinglisten, vor allem für Leute, die
+Informationen lieber auf diesem Weg erhalten:
 
 + `AROS Developer`__
 
-  Auf dieser Mailingliste finden Diskussionen über die Entwicklung von AROS statt.
-  Die Statusberichte der Nightly-Builds werden täglich an diese Mailing-Liste
-  geschickt. Auch die Einträge in die `Fehlerdatenbank` werden hier
-  veröffentlicht. Es wird jedem Entwickler empfohlen, diese Mailingliste zu,
-  abbonieren, da es sonst schwierig wird, auf dem neusten Stand zu bleiben. Da es
-  nicht so viele Entwickler gibt, ist das Volumen der Liste im Allgemeinen recht
-  niedrig. Es kann aber sehr viel werden, wenn hitzige Diskussionen stattfinden.
-  
+  Auf dieser Mailingliste finden Diskussionen über die Entwicklung von AROS
+  statt. Es wird Entwicklern **dringend** empfohlen, diese Mailingliste zu
+  abonnieren, da es sonst recht schwierig wird, auf dem neuesten Stand zu
+  bleiben. Da es nicht *so* viele AROS-Entwickler gibt, ist das Volumen der
+  Liste im Allgemeinen recht niedrig. Es kann aber sehr hoch werden, wenn
+  hitzige Diskussionen stattfinden.
+
   .. Note:: Abonnement-Anfragen für diese Liste werden nicht automatisch gehandhabt,
             sondern jede Anfrage wird vom Listenverwalter geprüft. Deshalb kann
             es einige Verzögerung geben zwischen der Anfrage und der Erteilung der
@@ -46,50 +40,21 @@ für AROS-Entwickler darstellen. Folgende Mailinglisten sind vorhanden:
 
 + `AROS CVS`__
 
-  Von dieser Liste mit Subversion-Protokollen kann nur gelesen werden. Wenn Du ein
-  annäherndes Echtzeit-Feedback des Subversion-Servers   möchtest, ist dies die
-  richtige Liste für Dich. Das Volumen der Liste kann recht groß werden.
-  
+  Von dieser Entwickler-Mailingliste kann nur gelesen werden. Immer wenn etwas
+  in die AROS-Repositories eingespielt (committet) wird, werden automatisch
+  Protokolle an sie geschickt. Wenn Du ein annäherndes Echtzeit-Feedback über
+  die Commit-Aktivität in den AROS-Repositories möchtest, ist dies die richtige
+  Liste für Dich. Das Volumen der Liste kann sehr groß werden.
+
 + `AROS Website`__
 
-  Das Skript, das die Webseite erstellt, sendet Mails an diese Liste. Diejenigen,
-  die Änderungen an der Dokumentation vornehmen oder helfen können, wenn etwas
-  nicht funktioniert, sollten diese Liste abonnieren.
+  Das Skript, das die Webseite erstellt, sendet Mails an diese Liste, damit
+  Entwickler, die an ihrem Betrieb und ihrer Wartung beteiligt sind, auftretende
+  Probleme beheben können.
 
-
-Folge den Links auf die Verwaltungsseiten, um Informationen über Anmeldung, Abmeldung,
-Zugang zu den Archiven und weitern nützlichen Funktionen zu bekommen.
+Folge den Links zu den Verwaltungsseiten, um Informationen über Anmeldung,
+Abmeldung, Zugang zu den Archiven und weitere nützliche Funktionen zu bekommen.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
-__ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
-__ http://lists.sourceforge.net/mailman/listinfo/aros-website
-
-.. _`Fehlerdatenbank`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-
-
-Foren
-=====
-
-AROS-Exec__ ist das offizielle Community-Portal für AROS. Hier kannst Du die aktuellsten
-Neuigkeiten, Diskussionsforen, Bildergalerien und vieles weitere finden.
-Dies ist der perfekte Treffpunkt für AROS-Benutzer aus der ganzen Welt.
-
-__ https://www.arosworld.org/
-
-
-IRC-Kanäle
-==========
-
-Es gibt einen offiziellen IRC-Kanal für AROS im FreeNode__-Netzwerk, der erwartungsgemäß
-den Namen `#aros`__ hat. Verbinde bitte mit `irc.freenode.net`__, dies wird Dich an
-einen Server in Deiner Nähe weiterleiten. Diskutiert wird über alles was mit AROS
-zu tun hat, einschließlich Entwicklung und wie die Welt übernommen werden kann. In
-seltenen Fällen, wenn der Hauptkanal zu geschwätzig ist, finden entwicklungsbezogene
-Diskussionen in `#aros.dev`__ statt.
-
-__ http://www.freenode.net/
-__ irc://irc.freenode.net/aros
-__ irc://irc.freenode.net/
-__ irc://irc.freenode.net/aros.dev
-
-.. The links have an other order than the English version.
+__ https://sourceforge.net/projects/aros/lists/aros-cvs
+__ https://sourceforge.net/projects/aros/lists/aros-website

@@ -2,93 +2,60 @@
 Contact Information
 ===================
 
-:Authors:   Adam Chodorowski, Paolo Besser 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Authors:   Adam Chodorowski, Paolo Besser
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Status:    Done.
 
 .. Contents::
 
 
-Contatto principale
-===================
+Slack
+=====
 
-La persona principale da contattare fra gli sviluppatori di AROS è Aaron "Optimizer"
-Digulla. Se volete contattare l'intero gruppo, es. per proporre un accordo 
-di sponsorizzazione o altre forme di collaborazione, questa è la persona con cui 
-parlare. Potete inviargli un'email all'indirizzo `digulla@aros.org`__.
+Esiste un canale Slack ufficiale per le discussioni sullo sviluppo di AROS, a
+cui potete unirvi tramite questo `link`__.
 
-__ mailto:digulla@aros.org
-
+__ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
 
 Mailing List
 ============
 
-Gli sviluppatori di AROS si tengono costantemente informati e dialogano fra di 
-loro principalmente tramite queste mailing list:
+Sono disponibili alcune mailing list dedicate ad AROS, pensate soprattutto per
+chi preferisce ricevere le informazioni in questo modo:
 
 + `AROS Developer`__
 
-  La mailing list ufficiale degli sviluppatori di AROS, dove si discutono le 
-  modifiche da apportare la sistema operativo e si possono chiedere informazioni 
-  sullo sviluppo. I log e gli esiti della compilazione notturna vengono inoltrati
-  automaticamente in questa lista. È **altamente** raccomandato agli sviluppatori 
-  di iscriversi a questa lista, altrimenti sarà veramente difficile coordinarsi 
-  con gli altri sviluppatori. Poiché il numero di programmatori attivi non è 
-  altissimo, il traffico su questa mailing list è di norma piuttosto limitato, 
-  anche se in casi molto particolari può aumentare in modo considerevole. 
+  La mailing list ufficiale degli sviluppatori di AROS, dove si discute dello
+  sviluppo del sistema operativo. È **altamente** raccomandato agli sviluppatori
+  di iscriversi a questa lista, altrimenti sarà piuttosto difficile tenersi
+  aggiornati sugli sviluppi in corso. Poiché il numero di programmatori attivi
+  non è altissimo, il traffico su questa mailing list è di norma piuttosto
+  limitato, anche se durante discussioni accese può aumentare in modo
+  considerevole.
 
-  .. Nota:: Le iscrizioni a questa mailing list non avvengono automaticamente, 
-            ma previa autorizzazione degli amministratori. Per cui potrebbe  
-            passare un po' di tempo dal momento della richiesta di iscrizione 
+  .. Nota:: Le iscrizioni a questa mailing list non avvengono automaticamente,
+            ma previa autorizzazione degli amministratori. Per cui potrebbe
+            passare un po' di tempo dal momento della richiesta di iscrizione
             all'effettiva possibilità di parteciparvi.
+
 
 + `AROS CVS`__
 
-  Una mailing list a sola lettura in cui vengono spediti tutti i cambiamenti 
-  avvenuti nel repository di Subversion: ogni volta che uno sviluppatore crea o 
-  modifica un file, parte automaticamente un messaggio su questa lista. 
-  Raccomandiamo a tutti gli sviluppatori di iscriversi.
+  Una mailing list a sola lettura in cui vengono inviati automaticamente i log
+  ogni volta che viene effettuato un commit nei repository di AROS. Se volete
+  seguire quasi in tempo reale l'attività di commit nei repository di AROS,
+  questa è la lista che fa per voi. Il traffico su questa lista può essere
+  molto elevato.
 
 + `AROS Website`__
 
-  Analoga alla precedente, si occupa esclusivamente del sito di AROS. 
-  Chiunque decida di apportare modifiche ad aros.org dovrebbe iscrivercisi, in 
-  modo da ottenere anche aiuto se qualcosa va clamorosamente storto.
+  Lo script di generazione del sito web invia messaggi a questa lista, in modo
+  che gli sviluppatori che si occupano del suo funzionamento e della sua
+  manutenzione possano risolvere i problemi quando si presentano.
 
-Seguite i link alle pagine di amministrazione delle mailing list per iscrivervi, 
-rimuovervi, chiedere informazioni, varie ed eventuali.
+Seguite i link alle pagine di amministrazione delle mailing list per iscrivervi,
+rimuovervi, consultare gli archivi e accedere ad altre funzioni utili.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
-__ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
-__ http://lists.sourceforge.net/mailman/listinfo/aros-website
-
-.. _`database dei bug`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-
-
-Forum
-=====
-
-AROS-Exec__ è il portale ufficiale della community degli utenti di AROS. 
-Qui potete trovare tutte le notizie più fresche sullo sviluppo del vostro sistema 
-operativo preferito, discutere nei forum e trovare un sacco di persone simpatiche 
-che possono aiutarvi in caso di difficoltà.
-
-__ https://www.arosworld.org/
-
-
-Canali IRC
-==========
-
-C'è un canale ufficiale di AROS, chiamato senza troppa fantasia `#aros`__, sulla rete
-FreeNode__. Per cortesia connettetevi a `irc.freenode.net`__: verrete reindirizzati 
-sul nodo più vicino a voi. È stato creato per discutere e parlare di qualsiasi 
-argomento collegato ad AROS, inclusi lo sviluppo e i piani per la dominazione del 
-mondo. In rare occasioni, se le discussioni sul canale principale diventano troppo 
-chiassose, le discussioni sulla programmazione si spostano sul canale `#aros.dev`__.
-
-__ irc://irc.freenode.net/aros
-__ http://www.freenode.net/
-__ irc://irc.freenode.net/
-__ irc://irc.freenode.net/aros.dev
+__ https://sourceforge.net/projects/aros/lists/aros-cvs
+__ https://sourceforge.net/projects/aros/lists/aros-website

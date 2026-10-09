@@ -2,92 +2,58 @@
 Yhteydenotto tiedot
 ===================
 
-:Authors:   Adam Chodorowski 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Authors:   Adam Chodorowski
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Status:    Done.
 
 .. Contents::
 
 
-Yhteyshenkilö
-=============
+Slack
+=====
 
-AROS Development Team:in pääasiallinen yhteyshenkilö on Aaron "Optimizer"
-Digulla. Jos tahdot kääntyä tiimin puoleen kokonaisuutena, esim. esittääksesi
-sponsorisopimusta tai muunlaista yhteistyötä, on hän henkilö jolle puhua.
-Tavoitat hänet lähettämällä mailia osoitteeseen `digulla@aros.org`__.
+AROS:in kehitykseen liittyville keskusteluille on virallinen Slack-kanava,
+johon voi liittyä tämän `linkin`__ kautta.
 
-__ mailto:digulla@aros.org
-
+__ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
 
 Postituslistat
 ==============
 
-AROS:iin liittyviä postituslistoja on olemassa muutamia, jotka ovat tiedon ja AROS-aiheisten keskusteluiden pääkanavia kehittäjille. Tarjolla ovat seuraavat listat:
+AROS:iin liittyviä postituslistoja on olemassa muutamia, lähinnä niille jotka
+haluavat saada tietoa tätä kautta:
 
 + `AROS Developer`__
 
   Tämä on kehittäjien postituslista jolla keskustelut AROS:in kehittämisen
-  tiimoilta pidetään. Myös CVS-logit ja öisten käännösten tila postitetaan
-  päivittäin tälle listalle. On **erittäin** suositeltavaa kaikkien
-  kehittäjien liittyä tälle listalle, sillä muutoin tämän hetkisen
-  kehitystilanteen seuraaminen on melkoisen vaikeaa. Koska AROS-kehittäjiä ei
-  kuitenkaan ole mahdottoman montaa, on listan liikenne yleisesti ottaen melko
-  vähäistä, mutta voi muuttua vilkkaaksi jos keskustelut kuumenevat.
+  tiimoilta pidetään. On **erittäin** suositeltavaa kaikkien kehittäjien
+  liittyä tälle listalle, sillä muutoin tämän hetkisen kehitystilanteen
+  seuraaminen on melkoisen vaikeaa. Koska AROS-kehittäjiä ei kuitenkaan ole
+  mahdottoman montaa, on listan liikenne yleisesti ottaen melko vähäistä,
+  mutta voi muuttua vilkkaaksi jos keskustelut kuumenevat.
 
   .. Note:: Tälle listalle liittymistä ei ole automatisoitu. Listan
             ylläpito tarkistaa kaikki liittymispyynnöt, joten voi mennä tovi
             pyynnön lähettämisestä ennen kuin olet listan jäsen.
 
+
 + `AROS CVS`__
 
-  Tämä on vain lukua varten tarkoitettu kehittäjien postituslista jolle
-  CVS-logit lähetetään automaattisesti aina kun muutoksia tapahtuu. Toisin
-  kuin AROS Development -listalle lähetetyt CVS-logit, jossa postit sisältävät
-  koosteen koko päivän tapahtumista, tälle listalle lähetetään
-  yksittäisilmoitus *välittömästi* muutoksen tapahtuessa. Joten jos tahdot
-  liki reaaliaikaisen palautteen CVS-palvelimen tapahtumista, on tämä lista
-  tarkoitettu sinulle. Listan liikenne voi olla ajoittain suurta.
-  
-+ `AROS Website`__ 
+  Tämä on vain lukua varten tarkoitettu kehittäjien postituslista, jolle
+  lokit lähetetään automaattisesti aina kun AROS:in repositorioihin tehdään
+  muutoksia (commit). Jos tahdot liki reaaliaikaisen palautteen AROS:in
+  repositorioiden muutostapahtumista, on tämä lista tarkoitettu sinulle.
+  Listan liikenne voi olla hyvin suurta.
 
-  The website build script sents mail to this list,
-  so those who commit changes to the documentation or can fix stuff
-  if something explodes should subscribe to it.
++ `AROS Website`__
+
+  Websivuston käännösskripti lähettää postia tälle listalle, jotta sen
+  toiminnasta ja ylläpidosta vastaavat kehittäjät voivat korjata ongelmat
+  niiden ilmetessä.
 
 Saadaksesi tietoa kuinka liittyä ja erota listoilta, sekä kuinka arkistoja
 käytetään, seuraa alla olevia linkkejä.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
-__ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
-__ http://lists.sourceforge.net/mailman/listinfo/aros-website
-
-.. _`vikatietokantaan`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-
-
-Keskusteluryhmät
-================
-
-AROS-Exec__ on AROS:in virallinen yhteisöportaali. Sieltä löydät viimeisimmät
-AROS:iin liittyvät uutiset, keskusteluryhmät, kuvagalleriat ja paljon muuta.
-Se on täydellinen kohtauspaikka AROS-käyttäjille kaikkialta maailmassa.
-
-__ https://www.arosworld.org/
-
-
-IRC kanavat
-===========
-
-AROS:in virallinen IRC kanava, `#aros`__, sijaitsee FreeNode__ -verkossa. Ota
-yhteyttä `irc.freenode.net`__:iin joka sitten ohjaa sinut lähimmälle
-palvelimelle. Kanava on tarkoitettu kaikelle AROS:iin liittyvälle,
-mukaanlukien sen kehittäminen ja kuinka valloittaa maailman. Niissä harvoissa
-tilanteissa jolloin pääkanava on erittäin ruuhkainen, kehitykseen liittyvät
-keskustelut siirretään `#aros.dev`__:iin.
-
-__ irc://irc.freenode.net/aros
-__ http://www.freenode.net/
-__ irc://irc.freenode.net/
-__ irc://irc.freenode.net/aros.dev
+__ https://sourceforge.net/projects/aros/lists/aros-cvs
+__ https://sourceforge.net/projects/aros/lists/aros-website

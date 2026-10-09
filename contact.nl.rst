@@ -2,105 +2,61 @@
 Contact Informatie
 ==================
 
-:Authors:   Adam Chodorowski, Matthias Rustler 
-:Copyright: Copyright © 1995-2009, The AROS Development Team
-:Version:   $Revision$
-:Date:      $Date$
+:Authors:   Adam Chodorowski, Matthias Rustler
+:Copyright: Copyright (C) 1995-2025, The AROS Development Team
 :Status:    Done.
 
 .. Contents::
 
 
-Contact Persoon
-===============
+Slack
+=====
 
-De primaire contact persoon voor het AROS ontwikkelaars team is Aaron
-"Optimizer" Digulla. Als u het gehele team wilt benaderen, bijvoorbeeld
-om een sponsor deal of een andere vorm van samenwerking voor te stellen,
-dan is hij de persoon om mee te praten. U kunt hem bereiken door een
-(Engels- of Duitstalige) mail te sturen naar `digulla@aros.org`__.
+Er is een officieel Slack kanaal voor discussies rond de ontwikkeling van
+AROS, waar u zich via deze `link`__ bij kunt aansluiten.
 
-__ mailto:digulla@aros.org
-
+__ https://join.slack.com/t/arosdevteam/shared_invite/enQtOTc4Mzg0NDIzNzQ0LWQ2NWZmNmMwNGIwNGEyNTgxNzU3MGFjMTk3ZThmOTQ1MTVjMzhmNTllYWQ0ZTUxMjBjMGE0Y2VjMDJmNTc5MzI
 
 Mailing Lijsten
 ===============
 
-Er zijn verschillende mailing lijsten beschikbaar. Dit zijn de
-hoofdkanalen voor informatie en discussies tussen AROS ontwikkelaars. De
-voertaal is Engels, hou hier a.u.b. rekening mee. De volgende mailing
-lijsten zijn beschikbaar:
+Er zijn verschillende AROS-gerelateerde mailing lijsten beschikbaar,
+voornamelijk voor mensen die hun informatie liever op deze manier ontvangen.
+De voertaal is Engels, hou hier a.u.b. rekening mee:
 
 + `AROS Ontwikkelaars`__
 
   Dit is de mailing lijst voor ontwikkelaars, waar over de ontwikkeling
-  van AROS gediscussieerd wordt. Ook wordt hier dagelijks de status van de
-  nightly build gepost. Het is ontwikkelaars **zeer**
-  aan te raden om te abonneren op deze lijst, omdat het anders vrij
-  moeilijk wordt om alle deelnemers op de hoogte te houden van de nieuwste
-  ontwikkelingen. Omdat er niet *zoveel* AROS ontwikkelaars zijn is er in
-  de regel weinig verkeer op deze lijst, maar dat kan snel veranderen als
-  er een verhitte discussie van start gaat.
+  van AROS gediscussieerd wordt. Het is ontwikkelaars **zeer** aan te raden
+  om te abonneren op deze lijst, omdat het anders vrij moeilijk wordt om op
+  de hoogte te blijven van de nieuwste ontwikkelingen. Omdat er niet *zoveel*
+  AROS ontwikkelaars zijn is er in de regel weinig verkeer op deze lijst, maar
+  dat kan flink toenemen tijdens verhitte discussies.
 
   .. Opmerking:: Inschrijvingen voor deze lijst worden niet automatisch
-                 afgehandeld - elke aanvraag moet namelijk goedgekeurd 
-                 worden door de administrateur van de lijst. Het kan dus zijn 
-                 dat er enige vertraging zit tussen de aanvraag en het 
+                 afgehandeld - elke aanvraag moet namelijk goedgekeurd
+                 worden door de administrateur van de lijst. Het kan dus zijn
+                 dat er enige vertraging zit tussen de aanvraag en het
                  tijdstip waarop u lid wordt.
+
 
 + `AROS CVS`__
 
-  Dit is een alleen-lezen ontwikkelaars mailing lijst, waar automatisch Subversion
-  logs gepost worden als iets toegevoegd wordt aan de Subversion server.
-  In tegenstelling tot de dagelijkse Subversion logs die naar de AROS ontwikkelaars 
-  lijst gestuurd worden, welke een samenvatting bevatten van alle 
-  server-activiteiten op die dag, worden hier *onmiddellijk* aparte berichten naar
-  toe gestuurd voor alle gelogde acties. Als u real-time feedback wilt hebben 
-  van de Subversion server, dan is dit de lijst voor u. 
-  Let wel dat het verkeer voor deze lijst vrij hoog kan zijn.
+  Dit is een alleen-lezen ontwikkelaars mailing lijst, waar automatisch logs
+  gepost worden wanneer er iets gecommit wordt in de AROS repositories. Als u
+  bijna real-time feedback wilt hebben over de commit-activiteit in de AROS
+  repositories, dan is dit de lijst voor u. Let wel dat het verkeer voor deze
+  lijst zeer hoog kan zijn.
 
 + `AROS Website`__
 
-  Het bouw script van de website stuurt mails naar deze lijst. Degenen
-  die wijzigingen maken in de documentatie of fouten kunnen verhelpen als
-  er iets mis gaat, is aan te raden zich te abonneren op deze lijst. 
+  Het bouw script van de website stuurt mails naar deze lijst, zodat
+  ontwikkelaars die betrokken zijn bij het beheer en onderhoud ervan
+  problemen kunnen verhelpen wanneer ze zich voordoen.
 
 Volg de links naar de administratieve pagina's voor informatie over hoe u uzelf
-kunt aan- en afmelden, archieven kunt inzien en enkele andere handige functies. 
+kunt aan- en afmelden, archieven kunt inzien en enkele andere handige functies.
 
 __ https://mail.aros.org/mailman/listinfo/aros-dev
-__ http://lists.sourceforge.net/mailman/listinfo/aros-cvs
-__ http://lists.sourceforge.net/mailman/listinfo/aros-website
-
-.. _`bug database`: http://sourceforge.net/tracker/?atid=439463&group_id=43586&func=browse
-
-
-Forums
-======
-
-`AROS-Exec`__ is de officiële community portal voor AROS. Hier kunt u
-het laatste nieuws vinden rond AROS, online discussie forums, afbeelding
-galerijen en veel meer. Het is de perfecte ontmoetingsplaats voor AROS
-gebruiker over de hele wereld.
-
-__ https://www.arosworld.org/
-
-
-IRC Kanalen
-===========
-
-Er is een officieel IRC kanaal voor AROS getiteld `#aros`__, op het
-`FreeNode`__ netwerk. Verbind a.u.b. met `irc.freenode.net`__, wat u zal
-doorsturen naar een server bij u in de buurt. Het kanaal wordt gebruikt
-voor discussies over van alles en nog wat dat te maken heeft met AROS,
-waaronder de ontwikkeling en hoe we de wereld willen veroveren. Op
-zeldzame momenten kan het hoofdkanaal erg druk zijn. In dat geval kan het zijn
-dat de ontwikkel-gerelateerde discussie verplaatst word naar het `#aros.dev`__
-kanaal. 
-
-
-__ irc://irc.freenode.net/aros
-__ http://www.freenode.net/
-__ irc://irc.freenode.net/
-__ irc://irc.freenode.net/aros.dev
-
+__ https://sourceforge.net/projects/aros/lists/aros-cvs
+__ https://sourceforge.net/projects/aros/lists/aros-website
