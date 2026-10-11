@@ -1046,6 +1046,15 @@ def create_module_docs() -> None:
     ramdrive_docs.write(str(targetdir), module_titles)
     function_index.add_list("ramdrive", ramdrive_docs)
 
+    # Poseidon is nested under rom/usb and is outside the module scan roots.
+    poseidon_dir = TOPDIR / "rom" / "usb" / "poseidon"
+    poseidon_docs = LibDocList()
+    poseidon_docs.read(str(poseidon_dir))
+    if poseidon_docs.doclist:
+        poseidon_docs.docfilename = module_output_registry.claim(poseidon_docs.docfilename, poseidon_dir)
+        poseidon_docs.write(str(targetdir), module_titles)
+        function_index.add_list(poseidon_docs.docfilename, poseidon_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
