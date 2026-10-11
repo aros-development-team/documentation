@@ -518,7 +518,11 @@ class LibAutoDoc(AutoDoc):
                 if len(self.parameters) > 1:
                     for line in self.parameters[:-1]:
                         syn += "          " + line[0] + " " + line[1] + ",\n"
-                syn += "          TAG tag, ... );\n"
+                if funcname.endswith("A") and self.parameters[-1][0].strip() == "RAWARG":
+                    # Raw argument wrappers have no leading tag parameter.
+                    syn += "          ... );\n"
+                else:
+                    syn += "          TAG tag, ... );\n"
 
             self.titles["SYNOPSIS"] = syn
 
