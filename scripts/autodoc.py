@@ -38,6 +38,8 @@ import shutil
 import filecmp
 import codecs
 import logging
+import json
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass
@@ -117,6 +119,100 @@ def move_if_changed(tmpfilename: str, targetfilename: str) -> None:
 
     logging.debug(f"{tmp_path} removed (no changes)")
     tmp_path.unlink()
+
+
+class AutoDocOutputAudit:
+    """Track recognized/parsed source entries against FINAL emitted ReST headings.
+
+    This deliberately audits the current generator's discovery scope only.
+    Unsupported formats and paths not scanned by that generator are NOT PASS.
+    """
+
+    def __init__(self):
+        self.records = []
+        self.recognized_count = 0
+
+    def reset(self):
+        self.records.clear()
+        self.recognized_count = 0
+
+    def recognize(self):
+        self.recognized_count += 1
+
+    def expect(self, output, doc):
+        output_path = Path(output).absolute()
+        try:
+            relative_output = output_path.relative_to(Path.cwd().absolute())
+        except ValueError as error:
+            raise ValueError('AutoDoc output outside build workspace') from error
+        relative = relative_output.as_posix()
+        if not relative.startswith('documentation/') or not relative.endswith('.en.rst'):
+            raise ValueError('Unexpected AutoDoc page path: ' + relative)
+        origin = getattr(doc, 'source_path', None)
+        if not origin:
+            raise ValueError('Missing AutoDoc source provenance: ' + doc.docname)
+        self.records.append({'source': origin, 'document': relative,
+                             'entry': doc.docname, 'status': 'PENDING'})
+
+    @staticmethod
+    def _headings(path):
+        lines = path.read_text(encoding='utf-8').splitlines()
+        return Counter(lines[index] for index in range(len(lines)-1)
+                       if lines[index] and lines[index+1] == '=' * len(lines[index]))
+
+    def verify(self):
+        expected = defaultdict(Counter)
+        for record in self.records:
+            expected[record['document']][record['entry']] += 1
+        defective = []
+        for document, names in sorted(expected.items()):
+            path = Path(document)
+            if not path.is_file():
+                for name, count in names.items():
+                    defective.append({'document': document, 'entry': name,
+                                      'expected': count, 'found': 0, 'reason': 'MISSING_PAGE'})
+                continue
+            headings = self._headings(path)
+            for name, count in sorted(names.items()):
+                if headings[name] != count:
+                    defective.append({'document': document, 'entry': name,
+                                      'expected': count, 'found': headings[name],
+                                      'reason': 'ENTRY_COUNT_MISMATCH'})
+        if self.recognized_count != len(self.records):
+            defective.append({'reason': 'RECOGNIZED_PARSED_COUNT_MISMATCH',
+                              'expected': self.recognized_count, 'found': len(self.records)})
+        problem_pages = {(item['document'], item['entry']) for item in defective if 'document' in item}
+        for record in self.records:
+            record['status'] = ('LOST' if (record['document'], record['entry']) in problem_pages
+                                else 'PUBLISHED')
+        manifest = {'schema': 'AROS-AUTODOCS-R4A-0001',
+                    'status': 'FAIL' if defective else 'PASS',
+                    'scope': 'recognized_and_parsed_entries_in_generator_selected_C_files',
+                    'source_discovery_completeness': 'UNVERIFIED',
+                    'unsupported_formats_coverage': 'UNVERIFIED',
+                    'public_API_contract_coverage': 'UNVERIFIED',
+                    'recognized_entries': self.recognized_count,
+                    'parsed_entries': len(self.records),
+                    'published_entries': sum(r['status']=='PUBLISHED' for r in self.records),
+                    'lost_entries': sum(r['status']=='LOST' for r in self.records),
+                    'defects': defective, 'entries': self.records}
+        target = os.environ.get('AROS_AUTODOCS_AUDIT_JSON')
+        if target:
+            p = Path(target)
+            p.parent.mkdir(parents=True, exist_ok=True)
+            # Treat an audit report write failure as a failed build, not a warning.
+            p.write_text(json.dumps(manifest, indent=2, sort_keys=True,
+                                    ensure_ascii=False) + '\n', encoding='utf-8')
+        if defective:
+            for item in defective[:12]:
+                logging.error('AutoDoc output loss: %s', item)
+            raise RuntimeError('AutoDoc R4 output audit failed: %d mismatches' % len(defective))
+        logging.info('AutoDoc R4 output audit PASS: %d entries, %d pages; discovery UNVERIFIED',
+                     len(self.records), len(expected))
+        return manifest
+
+
+DOC_AUDIT = AutoDocOutputAudit()
 
 
 class FunctionIndex:
@@ -525,14 +621,18 @@ class ShellDocList:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
                     for ad_entry in AD_REGX.findall(content):
+                        DOC_AUDIT.recognize()
                         try:
                             adoc = ShellAutoDoc(ad_entry)
                             if adoc.docname:
+                                adoc.source_path = str(filepath.relative_to(TOPDIR))
                                 self.doclist.append(adoc)
+                            else:
+                                raise ValueError(f'Empty AutoDoc name in {filepath}')
                         except ValueError as e:
-                            logging.error(f"Error parsing autodoc in {filepath}: {e}")
+                            raise ValueError(f"Error parsing autodoc in {filepath}: {e}") from e
             except (IOError, UnicodeDecodeError) as e:
-                logging.error(f"Error reading file {filepath}: {e}")
+                raise IOError(f"Error reading file {filepath}: {e}") from e
 
         self.doclist.sort()
 
@@ -580,6 +680,7 @@ class ShellDocList:
         
         for doc in self.doclist:
             filename = target_path / f"{doc.docfilename}.en.rst"
+            DOC_AUDIT.expect(filename, doc)
             logging.info(f"Writing to file {filename}")
             
             try:
@@ -587,7 +688,7 @@ class ShellDocList:
                     doc.write(fdesc, titles)
                     doc.write_xref(fdesc, "../../developers/autodocs")
             except IOError as e:
-                logging.error(f"Error writing file {filename}: {e}")
+                raise IOError(f"Error writing file {filename}: {e}") from e
 
         # create index page
         index_file = target_path / "index.en.rst"
@@ -596,7 +697,7 @@ class ShellDocList:
             with codecs.open(str(index_file), 'w', encoding='utf-8') as fdesc:
                 self.write_index(fdesc, str(target_path))
         except IOError as e:
-            logging.error(f"Error writing index file {index_file}: {e}")
+            raise IOError(f"Error writing index file {index_file}: {e}") from e
 
 
 class LibDocList:
@@ -635,14 +736,18 @@ class LibDocList:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
                     for ad_entry in AD_REGX.findall(content):
+                        DOC_AUDIT.recognize()
                         try:
                             adoc = LibAutoDoc(ad_entry)
                             if adoc.docname:
+                                adoc.source_path = str(filepath.relative_to(TOPDIR))
                                 self.doclist.append(adoc)
+                            else:
+                                raise ValueError(f'Empty AutoDoc name in {filepath}')
                         except ValueError as e:
-                            logging.error(f"Error parsing autodoc in {filepath}: {e}")
+                            raise ValueError(f"Error parsing autodoc in {filepath}: {e}") from e
             except (IOError, UnicodeDecodeError) as e:
-                logging.error(f"Error reading file {filepath}: {e}")
+                raise IOError(f"Error reading file {filepath}: {e}") from e
                 
         self.doclist.sort()
 
@@ -664,6 +769,8 @@ class LibDocList:
         target_path.mkdir(parents=True, exist_ok=True)
         
         filename = target_path / f"{self.docfilename}.en.rst"
+        for doc in self.doclist:
+            DOC_AUDIT.expect(filename, doc)
         logging.info(f"Writing to file {filename}")
         
         try:
@@ -697,7 +804,7 @@ class LibDocList:
                     if i < len(self.doclist) - 1:
                         fdesc.write("----------\n\n")
         except IOError as e:
-            logging.error(f"Error writing file {filename}: {e}")
+            raise IOError(f"Error writing file {filename}: {e}") from e
 
 
 class AppsDocList(ShellDocList):
@@ -761,8 +868,10 @@ class HiddDocList(object):
                 with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
                     for ad_entry in AD_REGX.findall(content):
+                        DOC_AUDIT.recognize()
                         adoc = HiddAutoDoc(ad_entry)
                         if adoc.docname != "":
+                            adoc.source_path = str(Path(filename).relative_to(TOPDIR))
                             if "LOCATION" in adoc.titles:
                                 classname = adoc.titles["LOCATION"].strip()
                                 if classname in self.doclist:
@@ -771,6 +880,8 @@ class HiddDocList(object):
                                     self.doclist[classname] = [adoc]
                             else:
                                 raise ValueError("'%s' hidd doc has no LOCATION" % (adoc.docname))
+                        else:
+                            raise ValueError('Empty HIDD AutoDoc name in %s' % filename)
 
         for _, value in self.doclist.items():
             value.sort()
@@ -789,6 +900,9 @@ class HiddDocList(object):
 
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en.rst")
+            for doclist in self.doclist.values():
+                for doc in doclist:
+                    DOC_AUDIT.expect(filename, doc)
             print("Writing to file", filename)
             os.makedirs(os.path.dirname(filename), exist_ok=True)
             with codecs.open(filename, 'w', encoding='utf-8') as fdesc:
@@ -870,11 +984,42 @@ def write_index(fdesc, targetdir: str) -> None:
     fdesc.write(f"\n{tablesep}\n")
 
 
+class ModuleOutputRegistry:
+    """Allocate one unambiguous page per source directory in this generator run.
+
+    Keep the first (generic) page name for backward-compatible links. Later
+    architecture or module variants receive a source-relative qualified name.
+    """
+
+    def __init__(self, source_root: Path):
+        self.source_root = source_root.resolve()
+        self.owners: Dict[str, Path] = {}
+
+    def claim(self, name: str, directory: Path) -> str:
+        origin = Path(directory).resolve()
+        relative = origin.relative_to(self.source_root)
+        if name not in self.owners:
+            self.owners[name] = origin
+            return name
+        if self.owners[name] == origin:
+            raise ValueError(f"Duplicate AutoDoc output from the same source: {origin}")
+        suffix = "-".join(relative.parts)
+        alternate = f"{name}--{suffix}"
+        if alternate in self.owners:
+            raise ValueError(f"Duplicate qualified AutoDoc output: {alternate}")
+        self.owners[alternate] = origin
+        logging.warning(
+            "AutoDoc module page collision resolved: %s (%s) -> %s; canonical from %s",
+            name, relative, alternate, self.owners[name])
+        return alternate
+
+
 def create_module_docs() -> None:
     """Create the module docs."""
     logging.info("Creating module documentation...")
     
     function_index = FunctionIndex()
+    module_output_registry = ModuleOutputRegistry(TOPDIR)
     
     module_titles = ("Synopsis", "Template", "Function",
                      "Inputs", "Tags", "Result", "Example", "Notes", "Bugs", "See also")
@@ -893,7 +1038,7 @@ def create_module_docs() -> None:
     ]
     
     for sdir in srcdirs:
-        create_lib_docs_dir(str(sdir), str(targetdir), module_titles, function_index)
+        create_lib_docs_dir(str(sdir), str(targetdir), module_titles, function_index, module_output_registry)
 
     # ramdrive.device is under workbench/devs, outside the module search roots.
     ramdrive_docs = LibDocList()
@@ -912,7 +1057,9 @@ def create_module_docs() -> None:
     for docpath in subdirs:
         libdocs = LibDocList()
         libdocs.read(str(docpath))
-        libdocs.write(str(targetdir), module_titles)
+        if libdocs.doclist:
+            libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
+            libdocs.write(str(targetdir), module_titles)
 
     # add HIDD docs
     srcdirs = [
@@ -923,7 +1070,7 @@ def create_module_docs() -> None:
     ]
     
     for sdir in srcdirs:
-        create_hidd_docs_dir(str(sdir), str(targetdir), module_titles)
+        create_hidd_docs_dir(str(sdir), str(targetdir), module_titles, module_output_registry)
 
     # print index file
     index_file = targetdir / "index.en.rst"
@@ -938,7 +1085,7 @@ def create_module_docs() -> None:
             write_index(fdesc, str(targetdir))
             fdesc.write("\n`Function Index <functionindex>`_\n")
     except IOError as e:
-        logging.error(f"Error writing index file: {e}")
+        raise IOError(f"Error writing index file: {e}") from e
 
     # print function index
     func_index_file = targetdir / "functionindex.en.rst"
@@ -947,12 +1094,13 @@ def create_module_docs() -> None:
         with codecs.open(str(func_index_file), 'w', encoding='utf-8') as fdesc:
             function_index.write(fdesc)
     except IOError as e:
-        logging.error(f"Error writing function index file: {e}")
+        raise IOError(f"Error writing function index file: {e}") from e
 
+    DOC_AUDIT.verify()
     logging.info("Module documentation creation completed")
 
 
-def create_lib_docs_dir(srcdir: str, targetdir: str, titles: List[str], function_index: FunctionIndex) -> None:
+def create_lib_docs_dir(srcdir: str, targetdir: str, titles: List[str], function_index: FunctionIndex, registry: ModuleOutputRegistry) -> None:
     """Scan whole parent directory.
 
     Scans a parent directory like AROS/rom for subdirectories with
@@ -974,11 +1122,13 @@ def create_lib_docs_dir(srcdir: str, targetdir: str, titles: List[str], function
     for sdir in subdirs:  # exec, graphics etc.
         libdocs = LibDocList()
         libdocs.read(str(sdir))
-        libdocs.write(targetdir, titles)
-        function_index.add_list(sdir.name, libdocs)
+        if libdocs.doclist:
+            libdocs.docfilename = registry.claim(libdocs.docfilename, sdir)
+            libdocs.write(targetdir, titles)
+            function_index.add_list(libdocs.docfilename, libdocs)
 
 
-def create_hidd_docs_dir(srcdir: str, targetdir: str, titles: List[str]) -> None:
+def create_hidd_docs_dir(srcdir: str, targetdir: str, titles: List[str], registry: ModuleOutputRegistry) -> None:
     """Scan whole parent directory.
 
     Scans a parent directory like AROS/rom/hidds for subdirectories with
@@ -1000,7 +1150,9 @@ def create_hidd_docs_dir(srcdir: str, targetdir: str, titles: List[str]) -> None
     for sdir in subdirs:  # kbd, mouse, graphics etc.
         hidddocs = HiddDocList()
         hidddocs.read(str(sdir))
-        hidddocs.write(targetdir, titles)
+        if hidddocs.doclist:
+            hidddocs.docfilename = registry.claim(hidddocs.docfilename, sdir)
+            hidddocs.write(targetdir, titles)
 
 def create_shell_docs() -> None:
     """Create the Shell commands docs."""
@@ -1025,6 +1177,7 @@ def create_shell_docs() -> None:
     for sdir in srcdirs:
         shelldocs.read(str(sdir))
     shelldocs.write(str(targetdir), shell_titles)
+    DOC_AUDIT.verify()
     logging.info("Shell documentation creation completed")
 
 
@@ -1047,12 +1200,14 @@ def create_apps_docs() -> None:
     for sdir in srcdirs:
         appsdocs.read(str(sdir))
     appsdocs.write(str(targetdir), apps_titles)
+    DOC_AUDIT.verify()
     logging.info("Applications documentation creation completed")
 
 
 def create_all_docs() -> None:
     """Create all docs."""
     logging.info("Creating all documentation...")
+    DOC_AUDIT.reset()
     create_shell_docs()
     create_module_docs()
     create_apps_docs()
