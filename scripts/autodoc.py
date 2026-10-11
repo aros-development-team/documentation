@@ -895,6 +895,12 @@ def create_module_docs() -> None:
     for sdir in srcdirs:
         create_lib_docs_dir(str(sdir), str(targetdir), module_titles, function_index)
 
+    # ramdrive.device is under workbench/devs, outside the module search roots.
+    ramdrive_docs = LibDocList()
+    ramdrive_docs.read(str(TOPDIR / "workbench" / "devs" / "ramdrive"))
+    ramdrive_docs.write(str(targetdir), module_titles)
+    function_index.add_list("ramdrive", ramdrive_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
