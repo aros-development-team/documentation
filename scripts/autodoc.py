@@ -1,4 +1,4 @@
-# Copyright (C) 2008-2025, The AROS Development Team. All rights reserved.
+# Copyright (C) 2008-2026, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
@@ -1058,6 +1058,15 @@ def create_module_docs() -> None:
         poseidon_docs.docfilename = module_output_registry.claim(poseidon_docs.docfilename, poseidon_dir)
         poseidon_docs.write(str(targetdir), module_titles)
         function_index.add_list(poseidon_docs.docfilename, poseidon_docs)
+
+    # pthread is a link library outside the module search roots.
+    pthread_path = TOPDIR / "compiler" / "pthread"
+    pthread_docs = LibDocList()
+    pthread_docs.read(str(pthread_path))
+    if pthread_docs.doclist:
+        pthread_docs.docfilename = module_output_registry.claim("pthread", pthread_path)
+        pthread_docs.write(str(targetdir), module_titles)
+        function_index.add_list(pthread_docs.docfilename, pthread_docs)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
