@@ -1,4 +1,4 @@
-# Copyright (C) 2008-2025, The AROS Development Team. All rights reserved.
+# Copyright (C) 2008-2026, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
@@ -1073,6 +1073,15 @@ def create_module_docs() -> None:
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
+
+    # The PNG datatype's direct interface is distinct from png.library.
+    png_datatype_path = TOPDIR / "workbench" / "classes" / "datatypes" / "png"
+    png_datatype_docs = LibDocList()
+    png_datatype_docs.read(str(png_datatype_path))
+    if png_datatype_docs.doclist:
+        png_datatype_docs.docfilename = module_output_registry.claim("png_datatype", png_datatype_path)
+        png_datatype_docs.write(str(targetdir), module_titles)
+        function_index.add_list(png_datatype_docs.docfilename, png_datatype_docs)
 
     # add HIDD docs
     srcdirs = [
