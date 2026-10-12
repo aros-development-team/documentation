@@ -1,4 +1,4 @@
-# Copyright (C) 2008-2025, The AROS Development Team. All rights reserved.
+# Copyright (C) 2008-2026, The AROS Development Team. All rights reserved.
 
 
 """Autodoc to ReST converter.
@@ -1043,6 +1043,15 @@ def create_module_docs() -> None:
     
     for sdir in srcdirs:
         create_lib_docs_dir(str(sdir), str(targetdir), module_titles, function_index, module_output_registry)
+
+    # The diskimage.device has its vectors below the device subdirectory.
+    diskimage_device_path = TOPDIR / "workbench" / "devs" / "diskimage" / "device"
+    diskimage_device_docs = LibDocList()
+    diskimage_device_docs.read(str(diskimage_device_path))
+    if diskimage_device_docs.doclist:
+        diskimage_device_docs.docfilename = module_output_registry.claim("diskimage_device", diskimage_device_path)
+        diskimage_device_docs.write(str(targetdir), module_titles)
+        function_index.add_list(diskimage_device_docs.docfilename, diskimage_device_docs)
 
     # ramdrive.device is under workbench/devs, outside the module search roots.
     ramdrive_docs = LibDocList()
