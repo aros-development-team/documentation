@@ -1083,6 +1083,48 @@ def create_module_docs() -> None:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
 
+    # ReAction AutoDocs live in class-specific directories outside module roots.
+    reaction_root = TOPDIR / "workbench" / "classes" / "reaction"
+    for classname in (
+        'bevel',
+        'bitmap',
+        'button',
+        'checkbox',
+        'chooser',
+        'clicktab',
+        'drawlist',
+        'fuelgauge',
+        'getfile',
+        'getfont',
+        'getscreenmode',
+        'glyph',
+        'integer',
+        'label',
+        'layout',
+        'led',
+        'listbrowser',
+        'page',
+        'palette',
+        'penmap',
+        'radiobutton',
+        'requester',
+        'scroller',
+        'slider',
+        'space',
+        'speedbar',
+        'string',
+        'textfield',
+        'window',
+    ):
+        class_path = reaction_root / classname
+        class_docs = LibDocList()
+        class_docs.read(str(class_path), name="reaction-" + classname)
+        if class_docs.doclist:
+            class_docs.docfilename = module_output_registry.claim(
+                class_docs.docfilename, class_path)
+            class_docs.write(str(targetdir), module_titles)
+            function_index.add_list(class_docs.docfilename, class_docs)
+
     # add HIDD docs
     srcdirs = [
         TOPDIR / "rom" / "hidds",
