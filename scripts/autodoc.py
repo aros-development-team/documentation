@@ -1083,6 +1083,16 @@ def create_module_docs() -> None:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
 
+    # AHI device AutoDocs are outside the module search roots.
+    ahi_dir = TOPDIR / "workbench" / "devs" / "AHI" / "Device"
+    ahi_docs = LibDocList()
+    ahi_docs.read(str(ahi_dir), name="ahi_device")
+    if ahi_docs.doclist:
+        ahi_docs.docfilename = module_output_registry.claim(
+            ahi_docs.docfilename, ahi_dir)
+        ahi_docs.write(str(targetdir), module_titles)
+        function_index.add_list(ahi_docs.docfilename, ahi_docs)
+
     # add HIDD docs
     srcdirs = [
         TOPDIR / "rom" / "hidds",
