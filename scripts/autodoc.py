@@ -1088,11 +1088,18 @@ def create_module_docs() -> None:
         TOPDIR / "rom" / "hidds",
         TOPDIR / "workbench" / "hidds",
         TOPDIR / "arch" / "all-unix" / "hidd",
-        TOPDIR / "rom" / "devs" / "ata"
     ]
     
     for sdir in srcdirs:
         create_hidd_docs_dir(str(sdir), str(targetdir), module_titles, module_output_registry)
+
+    # ATA HIDD AutoDocs are in the root itself, not its subdirectories.
+    ata_dir = TOPDIR / "rom" / "devs" / "ata"
+    ata_docs = HiddDocList()
+    ata_docs.read(str(ata_dir))
+    if ata_docs.doclist:
+        ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
+        ata_docs.write(str(targetdir), module_titles)
 
     # print index file
     index_file = targetdir / "index.en.rst"
