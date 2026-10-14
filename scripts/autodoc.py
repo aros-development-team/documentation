@@ -1083,6 +1083,15 @@ def create_module_docs() -> None:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
 
+    # AsyncIO implementation sources are below the library scan depth.
+    asyncio_dir = TOPDIR / "workbench" / "libs" / "asyncio" / "src"
+    asyncio_docs = LibDocList()
+    asyncio_docs.read(str(asyncio_dir), name="asyncio")
+    if asyncio_docs.doclist:
+        asyncio_docs.docfilename = module_output_registry.claim("asyncio", asyncio_dir)
+        asyncio_docs.write(str(targetdir), module_titles)
+        function_index.add_list(asyncio_docs.docfilename, asyncio_docs)
+
     # add HIDD docs
     srcdirs = [
         TOPDIR / "rom" / "hidds",
