@@ -1170,6 +1170,19 @@ def create_module_docs() -> None:
         ahi_docs.write(str(targetdir), module_titles)
         function_index.add_list(ahi_docs.docfilename, ahi_docs)
 
+    # Envoy library APIs and service-local vectors.
+    envoy_root = TOPDIR / "workbench" / "network" / "envoy"
+    for relative in ("nipc", "accounts", "services", "envoy",
+                     "efsservice", "services/echo"):
+        source_dir = envoy_root / relative
+        docs = LibDocList()
+        docs.read(str(source_dir), name="envoy_" + relative.replace("/", "_"))
+        if docs.doclist:
+            docs.docfilename = module_output_registry.claim(docs.docfilename, source_dir)
+            docs.write(str(targetdir), module_titles)
+            if relative in ("nipc", "accounts", "services", "envoy"):
+                function_index.add_list(docs.docfilename, docs)
+
     # add HIDD docs
     srcdirs = [
         TOPDIR / "rom" / "hidds",
