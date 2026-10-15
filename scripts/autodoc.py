@@ -216,32 +216,35 @@ DOC_AUDIT = AutoDocOutputAudit()
 
 
 class FunctionIndex:
-    """Index of all functions for cross-referencing."""
-    
+    """Index each function and module pair without losing duplicate names."""
+
     def __init__(self):
-        self.funcdict: Dict[str, str] = {}
+        self.funcdict: Dict[str, List[str]] = {}
 
     def add_list(self, docpath: str, libdocs: 'LibDocList') -> None:
         """Add functions from a library documentation list."""
         for ldoc in libdocs.doclist:
-            if ldoc.docname.endswith("()"):  # leave out e.g. background etc.
-                self.funcdict[ldoc.docname] = docpath
+            if ldoc.docname.endswith("()"):
+                paths = self.funcdict.setdefault(ldoc.docname, [])
+                if docpath not in paths:
+                    paths.append(docpath)
 
     def write(self, fdesc) -> None:
-        """Write function index to file descriptor."""
-        tablesep = (("=" * 74) + " ") * 4
-        fdesc.write("==============\n")
-        fdesc.write("Function Index\n")
-        fdesc.write("==============\n\n")
-        fdesc.write(tablesep + "\n")
-        
-        entrynr = 1
+        """Write every module target, qualifying ambiguous function names."""
+        entries = []
         for func in sorted(self.funcdict):
-            text = ("`%s <%s#%s>`_" % (func, self.funcdict[func], func[:-2].lower())).ljust(75)
-            fdesc.write(text)
-            if entrynr % 4 == 0:
+            paths = self.funcdict[func]
+            for path in sorted(paths):
+                label = func if len(paths) == 1 else "%s (%s)" % (func, path)
+                entries.append("`%s <%s#%s>`_" % (label, path, func[:-2].lower()))
+        width = max([74] + [len(entry) for entry in entries])
+        tablesep = (("=" * width) + " ") * 4
+        fdesc.write("==============\nFunction Index\n==============\n\n")
+        fdesc.write(tablesep + "\n")
+        for index, entry in enumerate(entries, 1):
+            fdesc.write(entry.ljust(width + 1))
+            if index % 4 == 0:
                 fdesc.write("\n")
-            entrynr += 1
         fdesc.write("\n" + tablesep + "\n")
 
 
@@ -1091,6 +1094,7 @@ def create_module_docs() -> None:
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
+            function_index.add_list(libdocs.docfilename, libdocs)
 
     # The PNG datatype's direct interface is distinct from png.library.
     png_datatype_path = TOPDIR / "workbench" / "classes" / "datatypes" / "png"
