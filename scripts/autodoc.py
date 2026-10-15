@@ -1090,6 +1090,16 @@ def create_module_docs() -> None:
         pthread_docs.write(str(targetdir), module_titles)
         function_index.add_list(pthread_docs.docfilename, pthread_docs)
 
+    # MiamiPanel is nested within AROSTCP, outside the module scan roots.
+    miamipanel_dir = TOPDIR / "workbench" / "network" / "stacks" / "AROSTCP" / "MUI.MiamiPanel"
+    miamipanel_docs = LibDocList()
+    miamipanel_docs.read(str(miamipanel_dir), name="miamipanel")
+    if miamipanel_docs.doclist:
+        miamipanel_docs.docfilename = module_output_registry.claim(
+            miamipanel_docs.docfilename, miamipanel_dir)
+        miamipanel_docs.write(str(targetdir), module_titles)
+        function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
