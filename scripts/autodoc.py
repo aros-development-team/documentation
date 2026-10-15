@@ -1119,6 +1119,16 @@ def create_module_docs() -> None:
     for sdir in srcdirs:
         create_hidd_docs_dir(str(sdir), str(targetdir), module_titles, module_output_registry)
 
+    # The base HIDD keeps the bus and storage classes one level below base.
+    # These existing AutoDocs are outside the generic HIDD directory scan.
+    for dirname in ("bus", "storage"):
+        hidd_path = TOPDIR / "rom" / "hidds" / "base" / dirname
+        hidd_docs = HiddDocList()
+        hidd_docs.read(str(hidd_path))
+        if hidd_docs.doclist:
+            hidd_docs.docfilename = module_output_registry.claim(hidd_docs.docfilename, hidd_path)
+            hidd_docs.write(str(targetdir), module_titles)
+
     # print index file
     index_file = targetdir / "index.en.rst"
     logging.info(f"Writing index to file {index_file}")
