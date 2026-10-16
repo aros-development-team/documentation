@@ -718,7 +718,7 @@ class LibDocList:
         self.doclist: List[LibAutoDoc] = []
         self.docfilename: str = ""
 
-    def read(self, srcdir: str, name: Optional[str] = None) -> None:
+    def read(self, srcdir: str, name: Optional[str] = None, include_files: Optional[Tuple[str, ...]] = None) -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -736,7 +736,10 @@ class LibDocList:
 
         self.docfilename = name if name else src_path.name
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = ([src_path / filename for filename in include_files]
+                   if include_files is not None else list(src_path.glob("*.c")))
+        if any(not file.is_file() for file in c_files):
+            raise FileNotFoundError("Missing selected AutoDoc source in " + str(src_path))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -1099,6 +1102,24 @@ def create_module_docs() -> None:
             miamipanel_docs.docfilename, miamipanel_dir)
         miamipanel_docs.write(str(targetdir), module_titles)
         function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
+
+    # Hosted glA implementation: exclude private HostGL bridge functions.
+    hostgl_dir = TOPDIR / "arch" / "all-hosted" / "libs" / "hostgl"
+    hostgl_docs = LibDocList()
+    hostgl_docs.read(str(hostgl_dir), name="hostgl", include_files=(
+        'hostgl_glacreatecontext.c',
+        'hostgl_gladestroycontext.c',
+        'hostgl_glagetconfig.c',
+        'hostgl_glagetcurrentcontext.c',
+        'hostgl_glagetprocaddress.c',
+        'hostgl_glamakecurrent.c',
+        'hostgl_glasetrast.c',
+        'hostgl_glaswapbuffers.c',
+    ))
+    if hostgl_docs.doclist:
+        hostgl_docs.docfilename = module_output_registry.claim("hostgl", hostgl_dir)
+        hostgl_docs.write(str(targetdir), module_titles)
+        function_index.add_list(hostgl_docs.docfilename, hostgl_docs)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
