@@ -216,32 +216,35 @@ DOC_AUDIT = AutoDocOutputAudit()
 
 
 class FunctionIndex:
-    """Index of all functions for cross-referencing."""
-    
+    """Index each function and module pair without losing duplicate names."""
+
     def __init__(self):
-        self.funcdict: Dict[str, str] = {}
+        self.funcdict: Dict[str, List[str]] = {}
 
     def add_list(self, docpath: str, libdocs: 'LibDocList') -> None:
         """Add functions from a library documentation list."""
         for ldoc in libdocs.doclist:
-            if ldoc.docname.endswith("()"):  # leave out e.g. background etc.
-                self.funcdict[ldoc.docname] = docpath
+            if ldoc.docname.endswith("()"):
+                paths = self.funcdict.setdefault(ldoc.docname, [])
+                if docpath not in paths:
+                    paths.append(docpath)
 
     def write(self, fdesc) -> None:
-        """Write function index to file descriptor."""
-        tablesep = (("=" * 74) + " ") * 4
-        fdesc.write("==============\n")
-        fdesc.write("Function Index\n")
-        fdesc.write("==============\n\n")
-        fdesc.write(tablesep + "\n")
-        
-        entrynr = 1
+        """Write every module target, qualifying ambiguous function names."""
+        entries = []
         for func in sorted(self.funcdict):
-            text = ("`%s <%s#%s>`_" % (func, self.funcdict[func], func[:-2].lower())).ljust(75)
-            fdesc.write(text)
-            if entrynr % 4 == 0:
+            paths = self.funcdict[func]
+            for path in sorted(paths):
+                label = func if len(paths) == 1 else "%s (%s)" % (func, path)
+                entries.append("`%s <%s#%s>`_" % (label, path, func[:-2].lower()))
+        width = max([74] + [len(entry) for entry in entries])
+        tablesep = (("=" * width) + " ") * 4
+        fdesc.write("==============\nFunction Index\n==============\n\n")
+        fdesc.write(tablesep + "\n")
+        for index, entry in enumerate(entries, 1):
+            fdesc.write(entry.ljust(width + 1))
+            if index % 4 == 0:
                 fdesc.write("\n")
-            entrynr += 1
         fdesc.write("\n" + tablesep + "\n")
 
 
@@ -1044,6 +1047,15 @@ def create_module_docs() -> None:
     for sdir in srcdirs:
         create_lib_docs_dir(str(sdir), str(targetdir), module_titles, function_index, module_output_registry)
 
+    # The diskimage.device has its vectors below the device subdirectory.
+    diskimage_device_path = TOPDIR / "workbench" / "devs" / "diskimage" / "device"
+    diskimage_device_docs = LibDocList()
+    diskimage_device_docs.read(str(diskimage_device_path))
+    if diskimage_device_docs.doclist:
+        diskimage_device_docs.docfilename = module_output_registry.claim("diskimage_device", diskimage_device_path)
+        diskimage_device_docs.write(str(targetdir), module_titles)
+        function_index.add_list(diskimage_device_docs.docfilename, diskimage_device_docs)
+
     # ramdrive.device is under workbench/devs, outside the module search roots.
     ramdrive_docs = LibDocList()
     ramdrive_docs.read(str(TOPDIR / "workbench" / "devs" / "ramdrive"))
@@ -1059,6 +1071,16 @@ def create_module_docs() -> None:
         poseidon_docs.write(str(targetdir), module_titles)
         function_index.add_list(poseidon_docs.docfilename, poseidon_docs)
 
+    # Colorwheel conversion APIs live outside the default module roots.
+    colorwheel_path = TOPDIR / "workbench" / "classes" / "gadgets" / "colorwheel"
+    colorwheel_docs = LibDocList()
+    colorwheel_docs.read(str(colorwheel_path), name="colorwheel")
+    if colorwheel_docs.doclist:
+        colorwheel_docs.docfilename = module_output_registry.claim(
+            colorwheel_docs.docfilename, colorwheel_path)
+        colorwheel_docs.write(str(targetdir), module_titles)
+        function_index.add_list(colorwheel_docs.docfilename, colorwheel_docs)
+
     # pthread is a link library outside the module search roots.
     pthread_path = TOPDIR / "compiler" / "pthread"
     pthread_docs = LibDocList()
@@ -1067,6 +1089,16 @@ def create_module_docs() -> None:
         pthread_docs.docfilename = module_output_registry.claim("pthread", pthread_path)
         pthread_docs.write(str(targetdir), module_titles)
         function_index.add_list(pthread_docs.docfilename, pthread_docs)
+
+    # MiamiPanel is nested within AROSTCP, outside the module scan roots.
+    miamipanel_dir = TOPDIR / "workbench" / "network" / "stacks" / "AROSTCP" / "MUI.MiamiPanel"
+    miamipanel_docs = LibDocList()
+    miamipanel_docs.read(str(miamipanel_dir), name="miamipanel")
+    if miamipanel_docs.doclist:
+        miamipanel_docs.docfilename = module_output_registry.claim(
+            miamipanel_docs.docfilename, miamipanel_dir)
+        miamipanel_docs.write(str(targetdir), module_titles)
+        function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
@@ -1079,9 +1111,96 @@ def create_module_docs() -> None:
     for docpath in subdirs:
         libdocs = LibDocList()
         libdocs.read(str(docpath))
+        if docpath == TOPDIR / "compiler" / "crt" / "stdc":
+            # Math entry points belong to the same C runtime document.
+            libdocs.read(str(docpath / "math"), name="stdc")
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
+            function_index.add_list(libdocs.docfilename, libdocs)
+
+    # The PNG datatype's direct interface is distinct from png.library.
+    png_datatype_path = TOPDIR / "workbench" / "classes" / "datatypes" / "png"
+    png_datatype_docs = LibDocList()
+    png_datatype_docs.read(str(png_datatype_path))
+    if png_datatype_docs.doclist:
+        png_datatype_docs.docfilename = module_output_registry.claim("png_datatype", png_datatype_path)
+        png_datatype_docs.write(str(targetdir), module_titles)
+        function_index.add_list(png_datatype_docs.docfilename, png_datatype_docs)
+
+    # ReAction AutoDocs live in class-specific directories outside module roots.
+    reaction_root = TOPDIR / "workbench" / "classes" / "reaction"
+    for classname in (
+        'bevel',
+        'bitmap',
+        'button',
+        'checkbox',
+        'chooser',
+        'clicktab',
+        'drawlist',
+        'fuelgauge',
+        'getfile',
+        'getfont',
+        'getscreenmode',
+        'glyph',
+        'integer',
+        'label',
+        'layout',
+        'led',
+        'listbrowser',
+        'page',
+        'palette',
+        'penmap',
+        'radiobutton',
+        'requester',
+        'scroller',
+        'slider',
+        'space',
+        'speedbar',
+        'string',
+        'textfield',
+        'window',
+    ):
+        class_path = reaction_root / classname
+        class_docs = LibDocList()
+        class_docs.read(str(class_path), name="reaction-" + classname)
+        if class_docs.doclist:
+            class_docs.docfilename = module_output_registry.claim(
+                class_docs.docfilename, class_path)
+            class_docs.write(str(targetdir), module_titles)
+            function_index.add_list(class_docs.docfilename, class_docs)
+
+    # AHI device AutoDocs are outside the module search roots.
+    ahi_dir = TOPDIR / "workbench" / "devs" / "AHI" / "Device"
+    ahi_docs = LibDocList()
+    ahi_docs.read(str(ahi_dir), name="ahi_device")
+    if ahi_docs.doclist:
+        ahi_docs.docfilename = module_output_registry.claim(
+            ahi_docs.docfilename, ahi_dir)
+        ahi_docs.write(str(targetdir), module_titles)
+        function_index.add_list(ahi_docs.docfilename, ahi_docs)
+
+    # Envoy library APIs and service-local vectors.
+    envoy_root = TOPDIR / "workbench" / "network" / "envoy"
+    for relative in ("nipc", "accounts", "services", "envoy",
+                     "efsservice", "services/echo"):
+        source_dir = envoy_root / relative
+        docs = LibDocList()
+        docs.read(str(source_dir), name="envoy_" + relative.replace("/", "_"))
+        if docs.doclist:
+            docs.docfilename = module_output_registry.claim(docs.docfilename, source_dir)
+            docs.write(str(targetdir), module_titles)
+            if relative in ("nipc", "accounts", "services", "envoy"):
+                function_index.add_list(docs.docfilename, docs)
+
+    # AsyncIO implementation sources are below the library scan depth.
+    asyncio_dir = TOPDIR / "workbench" / "libs" / "asyncio" / "src"
+    asyncio_docs = LibDocList()
+    asyncio_docs.read(str(asyncio_dir), name="asyncio")
+    if asyncio_docs.doclist:
+        asyncio_docs.docfilename = module_output_registry.claim("asyncio", asyncio_dir)
+        asyncio_docs.write(str(targetdir), module_titles)
+        function_index.add_list(asyncio_docs.docfilename, asyncio_docs)
 
     # add HIDD docs
     srcdirs = [
@@ -1100,6 +1219,16 @@ def create_module_docs() -> None:
     if ata_docs.doclist:
         ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
         ata_docs.write(str(targetdir), module_titles)
+
+    # The base HIDD keeps the bus and storage classes one level below base.
+    # These existing AutoDocs are outside the generic HIDD directory scan.
+    for dirname in ("bus", "storage"):
+        hidd_path = TOPDIR / "rom" / "hidds" / "base" / dirname
+        hidd_docs = HiddDocList()
+        hidd_docs.read(str(hidd_path))
+        if hidd_docs.doclist:
+            hidd_docs.docfilename = module_output_registry.claim(hidd_docs.docfilename, hidd_path)
+            hidd_docs.write(str(targetdir), module_titles)
 
     # print index file
     index_file = targetdir / "index.en.rst"
@@ -1190,6 +1319,7 @@ def create_shell_docs() -> None:
     srcdirs = [
         TOPDIR / "workbench" / "c",
         TOPDIR / "workbench" / "c" / "shellcommands",
+        TOPDIR / "workbench" / "c" / "Unpack",
         TOPDIR / "workbench" / "c" / "Shell",
         TOPDIR / "workbench" / "c" / "R",
         TOPDIR / "workbench" / "c" / "Identify",
