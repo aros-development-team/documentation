@@ -1100,6 +1100,16 @@ def create_module_docs() -> None:
         miamipanel_docs.write(str(targetdir), module_titles)
         function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
 
+    # ReqTools static-link wrappers reside below the module scan depth.
+    reqtools_stub_dir = TOPDIR / "workbench" / "libs" / "reqtools" / "stubs"
+    reqtools_stub_docs = LibDocList()
+    reqtools_stub_docs.read(str(reqtools_stub_dir), name="reqtools-stubs")
+    if reqtools_stub_docs.doclist:
+        reqtools_stub_docs.docfilename = module_output_registry.claim(
+            "reqtools-stubs", reqtools_stub_dir)
+        reqtools_stub_docs.write(str(targetdir), module_titles)
+        function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
