@@ -131,10 +131,12 @@ class AutoDocOutputAudit:
     def __init__(self):
         self.records = []
         self.recognized_count = 0
+        self.math_variant_sources = []
 
     def reset(self):
         self.records.clear()
         self.recognized_count = 0
+        self.math_variant_sources.clear()
 
     def recognize(self):
         self.recognized_count += 1
@@ -151,8 +153,11 @@ class AutoDocOutputAudit:
         origin = getattr(doc, 'source_path', None)
         if not origin:
             raise ValueError('Missing AutoDoc source provenance: ' + doc.docname)
-        self.records.append({'source': origin, 'document': relative,
-                             'entry': doc.docname, 'status': 'PENDING'})
+        record = {'source': origin, 'document': relative,
+                  'entry': doc.docname, 'status': 'PENDING'}
+        if hasattr(doc, 'source_paths'):
+            record['sources'] = doc.source_paths
+        self.records.append(record)
 
     @staticmethod
     def _headings(path):
@@ -178,9 +183,11 @@ class AutoDocOutputAudit:
                     defective.append({'document': document, 'entry': name,
                                       'expected': count, 'found': headings[name],
                                       'reason': 'ENTRY_COUNT_MISMATCH'})
-        if self.recognized_count != len(self.records):
+        source_count = sum(len(record.get('sources', [record['source']]))
+                           for record in self.records)
+        if self.recognized_count != source_count:
             defective.append({'reason': 'RECOGNIZED_PARSED_COUNT_MISMATCH',
-                              'expected': self.recognized_count, 'found': len(self.records)})
+                              'expected': self.recognized_count, 'found': source_count})
         problem_pages = {(item['document'], item['entry']) for item in defective if 'document' in item}
         for record in self.records:
             record['status'] = ('LOST' if (record['document'], record['entry']) in problem_pages
@@ -193,6 +200,8 @@ class AutoDocOutputAudit:
                     'public_API_contract_coverage': 'UNVERIFIED',
                     'recognized_entries': self.recognized_count,
                     'parsed_entries': len(self.records),
+                    'parsed_source_entries': source_count,
+                    'math_variant_sources': self.math_variant_sources,
                     'published_entries': sum(r['status']=='PUBLISHED' for r in self.records),
                     'lost_entries': sum(r['status']=='LOST' for r in self.records),
                     'defects': defective, 'entries': self.records}
@@ -758,6 +767,37 @@ class LibDocList:
                 
         self.doclist.sort()
 
+    def read_math_variants(self, mathdir: Path) -> None:
+        """Read long-double sources and coalesce identical API contracts."""
+        variants = LibDocList()
+        for variant in ("ld80", "ld128"):
+            directory = mathdir / variant
+            if not directory.is_dir():
+                raise ValueError("Missing math source directory: " + str(directory))
+            DOC_AUDIT.math_variant_sources.extend(
+                path.relative_to(TOPDIR).as_posix()
+                for path in sorted(directory.glob("*.c")))
+            variants.read(str(directory), name="stdc")
+
+        by_anchor = defaultdict(list)
+        for doc in self.doclist:
+            by_anchor[doc.docfilename].append(doc)
+        for doc in variants.doclist:
+            matches = by_anchor[doc.docfilename]
+            if not matches:
+                matches.append(doc)
+                self.doclist.append(doc)
+                continue
+            previous = matches[0]
+            if (len(matches) != 1 or previous.docname != doc.docname or
+                    previous.titles != doc.titles):
+                raise ValueError("Conflicting AutoDocs for %s: %s and %s" %
+                                 (doc.docname, previous.source_path, doc.source_path))
+            origins = getattr(previous, "source_paths", [previous.source_path])
+            previous.source_paths = origins + [doc.source_path]
+        self.docfilename = "stdc"
+        self.doclist.sort()
+
     def write(self, targetdir: str, titles: List[str]) -> None:
         """Write autodocs to directory.
 
@@ -1114,6 +1154,7 @@ def create_module_docs() -> None:
         if docpath == TOPDIR / "compiler" / "crt" / "stdc":
             # Math entry points belong to the same C runtime document.
             libdocs.read(str(docpath / "math"), name="stdc")
+            libdocs.read_math_variants(docpath / "math")
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
