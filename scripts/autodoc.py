@@ -1111,6 +1111,18 @@ def create_module_docs() -> None:
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
 
+    # SysExplorer modules have separate APIs with a shared ModuleInit name.
+    sysexp_root = TOPDIR / "workbench" / "tools" / "SysExplorer" / "Modules"
+    for module in ("AHCI", "ATA", "Gfx", "PCI", "Power", "Storage", "Telemetry"):
+        module_path = sysexp_root / module
+        module_docs = LibDocList()
+        module_docs.read(str(module_path))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(
+                "sysexp_" + module.lower(), module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
