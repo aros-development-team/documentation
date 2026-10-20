@@ -1111,6 +1111,15 @@ def create_module_docs() -> None:
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
 
+    # Envoy's NIPC library is outside the module search roots.
+    nipc_path = TOPDIR / "workbench" / "network" / "envoy" / "nipc"
+    nipc_docs = LibDocList()
+    nipc_docs.read(str(nipc_path))
+    if nipc_docs.doclist:
+        nipc_docs.docfilename = module_output_registry.claim("nipc", nipc_path)
+        nipc_docs.write(str(targetdir), module_titles)
+        function_index.add_list(nipc_docs.docfilename, nipc_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
