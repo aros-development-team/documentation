@@ -1125,6 +1125,7 @@ def create_module_docs() -> None:
         if docpath == TOPDIR / "compiler" / "crt" / "stdc":
             # Math entry points belong to the same C runtime document.
             libdocs.read(str(docpath / "math"), name="stdc")
+            libdocs.read(str(docpath / "math" / "ld80"), name="stdc")
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
