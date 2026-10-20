@@ -59,6 +59,7 @@ steps:
     echo "Using user: $(SF_RSYNC_USER_AROS)"
     mkdir -p '$(AROSDOCBUILDDIR)'
     git clone --depth 1 --recurse-submodules https://github.com/aros-development-team/AROS.git $(AROSDOCBUILDDIR)/
+    git clone --depth 1 https://github.com/aros-development-team/contrib.git '$(AZBUILDPATH)/contrib-src'
     mkdir -p '$(AROSWEBSRCBUILDDIR)'
     mkdir -p '$(AROSDOCSRCBUILDDIR)'
     BUILDDATE=$(date -u +'%Y%m%d')
@@ -120,6 +121,8 @@ steps:
     echo 'Calling build www...'
     ./build www aros dev locale
   workingDirectory: '$(AROSWEBSRCBUILDDIR)'
+  env:
+    AROS_CONTRIB_ROOT: '$(AZBUILDPATH)/contrib-src'
   displayName: 'Building website'
 
 - script: |
@@ -233,6 +236,8 @@ steps:
     echo 'Calling build html...'
     ./build html
   workingDirectory: '$(AROSDOCSRCBUILDDIR)'
+  env:
+    AROS_CONTRIB_ROOT: '$(AZBUILDPATH)/contrib-src'
   displayName: 'Building docs-html package'
 
 - script: |
