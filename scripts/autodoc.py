@@ -41,6 +41,7 @@ import logging
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from mui_class_autodoc import write_mui_docs
 from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass
 
@@ -1239,6 +1240,12 @@ def create_module_docs() -> None:
         if hidd_docs.doclist:
             hidd_docs.docfilename = module_output_registry.claim(hidd_docs.docfilename, hidd_path)
             hidd_docs.write(str(targetdir), module_titles)
+
+    # MUI attributes and methods have their own reference, not function entries.
+    mui_source = TOPDIR / "workbench" / "libs" / "muimaster" / "classes"
+    mui_target = Path("documentation") / "developers" / "autodocs" / "mui-classes"
+    if mui_source.exists():
+        write_mui_docs(mui_source, mui_target)
 
     # print index file
     index_file = targetdir / "index.en.rst"
