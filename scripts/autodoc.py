@@ -1335,6 +1335,7 @@ def create_shell_docs() -> None:
     
     srcdirs = [
         TOPDIR / "workbench" / "c",
+        TOPDIR / "workbench" / "rexxc",
         TOPDIR / "workbench" / "c" / "shellcommands",
         TOPDIR / "workbench" / "network" / "common" / "C",
         TOPDIR / "workbench" / "c" / "Unpack",
