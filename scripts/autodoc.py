@@ -41,6 +41,7 @@ import logging
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from mui_class_autodoc import write_mui_docs
 from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass
 
@@ -1103,6 +1104,16 @@ def create_module_docs() -> None:
         miamipanel_docs.write(str(targetdir), module_titles)
         function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
 
+    # ReqTools static-link wrappers reside below the module scan depth.
+    reqtools_stub_dir = TOPDIR / "workbench" / "libs" / "reqtools" / "stubs"
+    reqtools_stub_docs = LibDocList()
+    reqtools_stub_docs.read(str(reqtools_stub_dir), name="reqtools-stubs")
+    if reqtools_stub_docs.doclist:
+        reqtools_stub_docs.docfilename = module_output_registry.claim(
+            "reqtools-stubs", reqtools_stub_dir)
+        reqtools_stub_docs.write(str(targetdir), module_titles)
+        function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
+
     # Hosted glA implementation: exclude private HostGL bridge functions.
     hostgl_dir = TOPDIR / "arch" / "all-hosted" / "libs" / "hostgl"
     hostgl_docs = LibDocList()
@@ -1135,6 +1146,7 @@ def create_module_docs() -> None:
         if docpath == TOPDIR / "compiler" / "crt" / "stdc":
             # Math entry points belong to the same C runtime document.
             libdocs.read(str(docpath / "math"), name="stdc")
+            libdocs.read(str(docpath / "math" / "ld80"), name="stdc")
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
@@ -1228,11 +1240,18 @@ def create_module_docs() -> None:
         TOPDIR / "rom" / "hidds",
         TOPDIR / "workbench" / "hidds",
         TOPDIR / "arch" / "all-unix" / "hidd",
-        TOPDIR / "rom" / "devs" / "ata"
     ]
     
     for sdir in srcdirs:
         create_hidd_docs_dir(str(sdir), str(targetdir), module_titles, module_output_registry)
+
+    # ATA HIDD AutoDocs are in the root itself, not its subdirectories.
+    ata_dir = TOPDIR / "rom" / "devs" / "ata"
+    ata_docs = HiddDocList()
+    ata_docs.read(str(ata_dir))
+    if ata_docs.doclist:
+        ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
+        ata_docs.write(str(targetdir), module_titles)
 
     # The base HIDD keeps the bus and storage classes one level below base.
     # These existing AutoDocs are outside the generic HIDD directory scan.
@@ -1243,6 +1262,12 @@ def create_module_docs() -> None:
         if hidd_docs.doclist:
             hidd_docs.docfilename = module_output_registry.claim(hidd_docs.docfilename, hidd_path)
             hidd_docs.write(str(targetdir), module_titles)
+
+    # MUI attributes and methods have their own reference, not function entries.
+    mui_source = TOPDIR / "workbench" / "libs" / "muimaster" / "classes"
+    mui_target = Path("documentation") / "developers" / "autodocs" / "mui-classes"
+    if mui_source.exists():
+        write_mui_docs(mui_source, mui_target)
 
     # print index file
     index_file = targetdir / "index.en.rst"
@@ -1332,7 +1357,9 @@ def create_shell_docs() -> None:
     
     srcdirs = [
         TOPDIR / "workbench" / "c",
+        TOPDIR / "workbench" / "rexxc",
         TOPDIR / "workbench" / "c" / "shellcommands",
+        TOPDIR / "workbench" / "network" / "common" / "C",
         TOPDIR / "workbench" / "c" / "Unpack",
         TOPDIR / "workbench" / "c" / "Shell",
         TOPDIR / "workbench" / "c" / "R",
