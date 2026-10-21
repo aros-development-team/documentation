@@ -719,7 +719,7 @@ class LibDocList:
         self.doclist: List[LibAutoDoc] = []
         self.docfilename: str = ""
 
-    def read(self, srcdir: str, name: Optional[str] = None) -> None:
+    def read(self, srcdir: str, name: Optional[str] = None, pattern: str = "*.c") -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -737,7 +737,7 @@ class LibDocList:
 
         self.docfilename = name if name else src_path.name
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = list(src_path.glob(pattern))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -1100,6 +1100,16 @@ def create_module_docs() -> None:
             miamipanel_docs.docfilename, miamipanel_dir)
         miamipanel_docs.write(str(targetdir), module_titles)
         function_index.add_list(miamipanel_docs.docfilename, miamipanel_docs)
+
+    # Bluetooth class vectors are nested below the module search roots.
+    for name in ("btbattery", "btgatt", "bthid", "btpan", "btsdp", "btserial"):
+        module_path = TOPDIR / "rom" / "bluetooth" / "classes" / name
+        module_docs = LibDocList()
+        module_docs.read(str(module_path), pattern=name + ".class.c")
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(name, module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
 
     # ReqTools static-link wrappers reside below the module scan depth.
     reqtools_stub_dir = TOPDIR / "workbench" / "libs" / "reqtools" / "stubs"
