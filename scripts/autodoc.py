@@ -719,7 +719,7 @@ class LibDocList:
         self.doclist: List[LibAutoDoc] = []
         self.docfilename: str = ""
 
-    def read(self, srcdir: str, name: Optional[str] = None) -> None:
+    def read(self, srcdir: str, name: Optional[str] = None, pattern: str = "*.c") -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -728,6 +728,7 @@ class LibDocList:
         srcdir - directory from which the autodocs should be read
         name - Name of the document. If no name is given the rightmost part of
                srcdir will be used. This name will be later used for storing the file.
+        pattern - Source filename pattern, relative to srcdir.
         """
         src_path = Path(srcdir)
         
@@ -737,7 +738,7 @@ class LibDocList:
 
         self.docfilename = name if name else src_path.name
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = list(src_path.glob(pattern))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -851,7 +852,7 @@ class HiddDocList(object):
         self.doclist = {} # key is classname, content is list of documents per class
         self.docfilename = ""
 
-    def read(self, srcdir, name=None):
+    def read(self, srcdir, name=None, pattern="*.c"):
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -861,6 +862,7 @@ class HiddDocList(object):
         srcdir - directory from which the autodocs should be read
         name -  Name of the document. If no name is given the rightmost part of
                 srcdir will be used. This name will be later used for storing the file.
+        pattern - Source filename pattern, relative to srcdir.
         """
 
         if name:
@@ -868,10 +870,10 @@ class HiddDocList(object):
         else:
             self.docfilename = os.path.basename(srcdir) + "_hidd" # rightmost part of the path
 
-        cfiles = os.listdir(srcdir)
-        for infile in cfiles:
-            if infile[-2:] == ".c":
-                filename = os.path.join(srcdir, infile)
+        cfiles = Path(srcdir).glob(pattern)
+        for filepath in cfiles:
+            if filepath.suffix == ".c":
+                filename = str(filepath)
                 print("Reading from file", filename)
                 with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
@@ -1110,6 +1112,23 @@ def create_module_docs() -> None:
             "reqtools-stubs", reqtools_stub_dir)
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
+
+    # ATA device vectors and HIDD classes share a source directory.
+    ata_path = TOPDIR / "rom" / "devs" / "ata"
+    ata_docs = LibDocList()
+    ata_docs.read(str(ata_path), pattern="ata.c")
+    if ata_docs.doclist:
+        ata_docs.docfilename = module_output_registry.claim("ata_device", ata_path)
+        ata_docs.write(str(targetdir), module_titles)
+        function_index.add_list(ata_docs.docfilename, ata_docs)
+
+    for name, filename in (("ata_bus_hidd", "ata_busclass.c"),
+                           ("ata_unit_hidd", "ata_unitclass.c")):
+        ata_hidd_docs = HiddDocList()
+        ata_hidd_docs.read(str(ata_path), pattern=filename)
+        if ata_hidd_docs.doclist:
+            ata_hidd_docs.docfilename = module_output_registry.claim(name, ata_path)
+            ata_hidd_docs.write(str(targetdir), module_titles)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
