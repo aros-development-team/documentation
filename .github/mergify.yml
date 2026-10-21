@@ -1,11 +1,12 @@
 # .github/mergify.yml
 pull_request_rules:
-  - name: "Auto approve and rebase-merge PR from master to azure-pipelines"
+  - name: "Auto approve and fast-forward master to azure-pipelines"
     conditions:
       - base=azure-pipelines
       - head=sync-master-to-azure-pipelines
+      - author=github-actions[bot]
     actions:
       review:
         type: APPROVE
       merge:
-        method: rebase
+        method: fast-forward
