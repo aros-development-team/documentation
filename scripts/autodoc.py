@@ -719,7 +719,7 @@ class LibDocList:
         self.doclist: List[LibAutoDoc] = []
         self.docfilename: str = ""
 
-    def read(self, srcdir: str, name: Optional[str] = None) -> None:
+    def read(self, srcdir: str, name: Optional[str] = None, pattern: str = "*.c") -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -737,7 +737,7 @@ class LibDocList:
 
         self.docfilename = name if name else src_path.name
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = list(src_path.glob(pattern))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -1110,6 +1110,15 @@ def create_module_docs() -> None:
             "reqtools-stubs", reqtools_stub_dir)
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
+
+    # SysExplorer provides a host API distinct from its extension modules.
+    sysexp_path = TOPDIR / "workbench" / "tools" / "SysExplorer"
+    sysexp_docs = LibDocList()
+    sysexp_docs.read(str(sysexp_path), pattern="sysexp_library.c")
+    if sysexp_docs.doclist:
+        sysexp_docs.docfilename = module_output_registry.claim("sysexp", sysexp_path)
+        sysexp_docs.write(str(targetdir), module_titles)
+        function_index.add_list(sysexp_docs.docfilename, sysexp_docs)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
