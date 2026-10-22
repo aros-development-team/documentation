@@ -1111,6 +1111,15 @@ def create_module_docs() -> None:
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
 
+    # m68k-only BCPL compatibility vectors are outside the library scan roots.
+    bcpl_dir = TOPDIR / "arch" / "m68k-all" / "dos"
+    bcpl_docs = LibDocList()
+    bcpl_docs.read(str(bcpl_dir), name="m68k-bcpl")
+    if bcpl_docs.doclist:
+        bcpl_docs.docfilename = module_output_registry.claim("m68k-bcpl", bcpl_dir)
+        bcpl_docs.write(str(targetdir), module_titles)
+        function_index.add_list(bcpl_docs.docfilename, bcpl_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
