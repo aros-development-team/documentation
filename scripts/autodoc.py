@@ -1151,6 +1151,15 @@ def create_module_docs() -> None:
         poseidon_docs.write(str(targetdir), module_titles)
         function_index.add_list(poseidon_docs.docfilename, poseidon_docs)
 
+    # The Bluetooth library sources sit below the outer Bluetooth directory.
+    bluetooth_path = TOPDIR / "rom" / "bluetooth" / "bluetooth"
+    bluetooth_docs = LibDocList()
+    bluetooth_docs.read(str(bluetooth_path))
+    if bluetooth_docs.doclist:
+        bluetooth_docs.docfilename = module_output_registry.claim("bluetooth", bluetooth_path)
+        bluetooth_docs.write(str(targetdir), module_titles)
+        function_index.add_list(bluetooth_docs.docfilename, bluetooth_docs)
+
     # Colorwheel conversion APIs live outside the default module roots.
     colorwheel_path = TOPDIR / "workbench" / "classes" / "gadgets" / "colorwheel"
     colorwheel_docs = LibDocList()
