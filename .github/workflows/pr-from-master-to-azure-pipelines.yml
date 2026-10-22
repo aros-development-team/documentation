@@ -5,42 +5,46 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-master-to-azure-pipelines
+  cancel-in-progress: false
+
 jobs:
   create_pr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Configure Git
+      - name: Update or create sync PR
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-
-      - name: Install GitHub CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gh
-
-      - name: Authenticate GitHub CLI
-        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Delete remote temp branch if exists
-        run: |
-          git push origin --delete sync-master-to-azure-pipelines || echo "Branch not found, skipping delete"
-
-      - name: Create branch from master
-        run: |
-          git checkout -b sync-master-to-azure-pipelines
-
-      - name: Push branch to remote
-        run: |
-          git push --set-upstream origin sync-master-to-azure-pipelines --force
-
-      - name: Create or update Pull Request via gh CLI
-        run: |
-          gh pr view sync-master-to-azure-pipelines --repo ${{ github.repository }} --json number -q '.number' && \
-          gh pr edit sync-master-to-azure-pipelines --repo ${{ github.repository }} --base azure-pipelines --title "Sync master into azure-pipelines" --body "Automated PR to keep azure-pipelines branch up to date with master." || \
-          gh pr create --repo ${{ github.repository }} --base azure-pipelines --head sync-master-to-azure-pipelines --title "Sync master into azure-pipelines" --body "Automated PR to keep azure-pipelines branch up to date with master."
+          git fetch origin master azure-pipelines
+          master_sha=$(git rev-parse refs/remotes/origin/master)
+          if git merge-base --is-ancestor "$master_sha" refs/remotes/origin/azure-pipelines; then
+            echo "azure-pipelines is already up to date."
+          else
+            if ! git merge-base --is-ancestor refs/remotes/origin/azure-pipelines "$master_sha"; then
+              echo "::error::azure-pipelines diverged from master; refusing automatic sync"
+              exit 1
+            fi
+            git push origin "$master_sha:refs/heads/sync-master-to-azure-pipelines"
+            existing=$(gh pr list --repo "$GITHUB_REPOSITORY" --base azure-pipelines \
+              --head sync-master-to-azure-pipelines --state open \
+              --json number --jq '.[0].number // empty')
+            if [ -z "$existing" ]; then
+              gh pr create --repo "$GITHUB_REPOSITORY" \
+                --base azure-pipelines --head sync-master-to-azure-pipelines \
+                --title "Sync master into azure-pipelines" \
+                --body "Automated PR to keep azure-pipelines branch up to date with master."
+            else
+              echo "Reusing PR #$existing"
+            fi
+          fi
