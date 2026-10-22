@@ -51,6 +51,30 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Relative path from the main build script to the root of the AROS source
 TOPDIR = Path("..")
 
+
+def regina_source_dir() -> Optional[Path]:
+    """Return an explicitly supplied Contrib source tree, if configured."""
+    root = os.environ.get("AROS_CONTRIB_ROOT")
+    if not root:
+        return None
+    source = Path(root).expanduser().resolve() / "regina"
+    for relative in ("rexxsaa.c", "regina.c", "rexx.c", "rexxmast/RexxMast.c"):
+        if not (source / relative).is_file():
+            raise FileNotFoundError("Missing Regina source: " + str(source / relative))
+    return source
+
+
+def source_provenance(filepath: Path) -> str:
+    """Retain separate Contrib source identity in the AutoDoc output audit."""
+    try:
+        return str(filepath.relative_to(TOPDIR))
+    except ValueError:
+        regina = regina_source_dir()
+        if regina is None:
+            raise
+        return "contrib/" + str(filepath.relative_to(regina.parent))
+
+
 # Regex for autodoc block (without surrounding comments)
 AD_REGX = re.compile(r"""
 ^/\*{6,}
@@ -618,7 +642,7 @@ class ShellDocList:
         """Constructor."""
         self.doclist: List[ShellAutoDoc] = []
 
-    def read(self, srcdir: str) -> None:
+    def read(self, srcdir: str, filenames: Optional[Tuple[str, ...]] = None) -> None:
         """Scan directory for autodocs
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -631,7 +655,8 @@ class ShellDocList:
             logging.warning(f"Source directory {srcdir} does not exist")
             return
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = ([src_path / name for name in filenames]
+                   if filenames is not None else list(src_path.glob("*.c")))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -642,7 +667,7 @@ class ShellDocList:
                         try:
                             adoc = ShellAutoDoc(ad_entry)
                             if adoc.docname:
-                                adoc.source_path = str(filepath.relative_to(TOPDIR))
+                                adoc.source_path = source_provenance(filepath)
                                 self.doclist.append(adoc)
                             else:
                                 raise ValueError(f'Empty AutoDoc name in {filepath}')
@@ -728,7 +753,8 @@ class LibDocList:
         self.doclist: List[LibAutoDoc] = []
         self.docfilename: str = ""
 
-    def read(self, srcdir: str, name: Optional[str] = None) -> None:
+    def read(self, srcdir: str, name: Optional[str] = None,
+             filenames: Optional[Tuple[str, ...]] = None) -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -746,7 +772,8 @@ class LibDocList:
 
         self.docfilename = name if name else src_path.name
 
-        c_files = list(src_path.glob("*.c"))
+        c_files = ([src_path / name for name in filenames]
+                   if filenames is not None else list(src_path.glob("*.c")))
         for filepath in c_files:
             logging.info(f"Reading from file {filepath}")
             try:
@@ -757,7 +784,7 @@ class LibDocList:
                         try:
                             adoc = LibAutoDoc(ad_entry)
                             if adoc.docname:
-                                adoc.source_path = str(filepath.relative_to(TOPDIR))
+                                adoc.source_path = source_provenance(filepath)
                                 self.doclist.append(adoc)
                             else:
                                 raise ValueError(f'Empty AutoDoc name in {filepath}')
@@ -1045,7 +1072,19 @@ class ModuleOutputRegistry:
 
     def claim(self, name: str, directory: Path) -> str:
         origin = Path(directory).resolve()
-        relative = origin.relative_to(self.source_root)
+        staged_origin = Path(os.path.abspath(directory))
+        try:
+            # Keep staged AROS paths within the declared source tree even when
+            # their source directories are symlinks into an existing checkout.
+            relative = staged_origin.relative_to(self.source_root)
+        except ValueError:
+            try:
+                relative = origin.relative_to(self.source_root)
+            except ValueError:
+                regina = regina_source_dir()
+                if regina is None:
+                    raise
+                relative = Path('contrib') / origin.relative_to(regina.parent)
         if name not in self.owners:
             self.owners[name] = origin
             return name
@@ -1263,6 +1302,18 @@ def create_module_docs() -> None:
         asyncio_docs.write(str(targetdir), module_titles)
         function_index.add_list(asyncio_docs.docfilename, asyncio_docs)
 
+    # Regina uses a separate Contrib checkout; only its SAA API is a library.
+    regina_dir = regina_source_dir()
+    if regina_dir is not None:
+        regina_docs = LibDocList()
+        regina_docs.read(str(regina_dir), name="regina", filenames=("rexxsaa.c",))
+        if len(regina_docs.doclist) != 32:
+            raise RuntimeError("Incomplete Regina SAA AutoDocs: expected 32, found %d" %
+                               len(regina_docs.doclist))
+        regina_docs.docfilename = module_output_registry.claim("regina", regina_dir)
+        regina_docs.write(str(targetdir), module_titles)
+        function_index.add_list(regina_docs.docfilename, regina_docs)
+
     # add HIDD docs
     srcdirs = [
         TOPDIR / "rom" / "hidds",
@@ -1404,6 +1455,16 @@ def create_shell_docs() -> None:
     shelldocs = ShellDocList()
     for sdir in srcdirs:
         shelldocs.read(str(sdir))
+    # The Regina programs and RexxMast are commands, not library entry points.
+    regina_dir = regina_source_dir()
+    if regina_dir is not None:
+        shelldocs.read(str(regina_dir), filenames=("regina.c", "rexx.c"))
+        shelldocs.read(str(regina_dir / "rexxmast"), filenames=("RexxMast.c",))
+        regina_commands = {doc.docname for doc in shelldocs.doclist
+                           if doc.source_path.startswith("contrib/regina/")}
+        if regina_commands != {"regina", "rexx", "RexxMast"}:
+            raise RuntimeError("Incomplete Regina command AutoDocs: " +
+                               repr(sorted(regina_commands)))
     shelldocs.write(str(targetdir), shell_titles)
     DOC_AUDIT.verify()
     logging.info("Shell documentation creation completed")
