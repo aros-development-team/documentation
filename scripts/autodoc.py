@@ -1269,6 +1269,15 @@ def create_module_docs() -> None:
             module_docs.write(str(targetdir), module_titles)
             function_index.add_list(module_docs.docfilename, module_docs)
 
+    # SysExplorer provides a host API distinct from its extension modules.
+    sysexp_path = TOPDIR / "workbench" / "tools" / "SysExplorer"
+    sysexp_docs = LibDocList()
+    sysexp_docs.read(str(sysexp_path), filenames=("sysexp_library.c",))
+    if sysexp_docs.doclist:
+        sysexp_docs.docfilename = module_output_registry.claim("sysexp", sysexp_path)
+        sysexp_docs.write(str(targetdir), module_titles)
+        function_index.add_list(sysexp_docs.docfilename, sysexp_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
