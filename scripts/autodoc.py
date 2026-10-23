@@ -1208,6 +1208,15 @@ def create_module_docs() -> None:
         bcpl_docs.write(str(targetdir), module_titles)
         function_index.add_list(bcpl_docs.docfilename, bcpl_docs)
 
+    # ATA device AutoDocs share a source directory with existing HIDD docs.
+    ata_path = TOPDIR / "rom" / "devs" / "ata"
+    ata_docs = LibDocList()
+    ata_docs.read(str(ata_path), filenames=("ata.c",))
+    if ata_docs.doclist:
+        ata_docs.docfilename = module_output_registry.claim("ata_device", ata_path)
+        ata_docs.write(str(targetdir), module_titles)
+        function_index.add_list(ata_docs.docfilename, ata_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
