@@ -918,7 +918,7 @@ class HiddDocList(object):
         self.doclist = {} # key is classname, content is list of documents per class
         self.docfilename = ""
 
-    def read(self, srcdir, name=None):
+    def read(self, srcdir, name=None, filenames=None):
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -935,7 +935,7 @@ class HiddDocList(object):
         else:
             self.docfilename = os.path.basename(srcdir) + "_hidd" # rightmost part of the path
 
-        cfiles = os.listdir(srcdir)
+        cfiles = os.listdir(srcdir) if filenames is None else filenames
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
@@ -1336,7 +1336,7 @@ def create_module_docs() -> None:
     # ATA HIDD AutoDocs are in the root itself, not its subdirectories.
     ata_dir = TOPDIR / "rom" / "devs" / "ata"
     ata_docs = HiddDocList()
-    ata_docs.read(str(ata_dir))
+    ata_docs.read(str(ata_dir), filenames=("ata_busclass.c", "ata_unitclass.c"))
     if ata_docs.doclist:
         ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
         ata_docs.write(str(targetdir), module_titles)
