@@ -1217,6 +1217,24 @@ def create_module_docs() -> None:
         ata_docs.write(str(targetdir), module_titles)
         function_index.add_list(ata_docs.docfilename, ata_docs)
 
+    # Hosted glA implementation: exclude private HostGL bridge functions.
+    hostgl_dir = TOPDIR / "arch" / "all-hosted" / "libs" / "hostgl"
+    hostgl_docs = LibDocList()
+    hostgl_docs.read(str(hostgl_dir), name="hostgl", filenames=(
+        'hostgl_glacreatecontext.c',
+        'hostgl_gladestroycontext.c',
+        'hostgl_glagetconfig.c',
+        'hostgl_glagetcurrentcontext.c',
+        'hostgl_glagetprocaddress.c',
+        'hostgl_glamakecurrent.c',
+        'hostgl_glasetrast.c',
+        'hostgl_glaswapbuffers.c',
+    ))
+    if hostgl_docs.doclist:
+        hostgl_docs.docfilename = module_output_registry.claim("hostgl", hostgl_dir)
+        hostgl_docs.write(str(targetdir), module_titles)
+        function_index.add_list(hostgl_docs.docfilename, hostgl_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
