@@ -1259,6 +1259,16 @@ def create_module_docs() -> None:
             module_docs.write(str(targetdir), module_titles)
             function_index.add_list(module_docs.docfilename, module_docs)
 
+    # Bluetooth class vectors are nested below the module search roots.
+    for name in ("btbattery", "btgatt", "bthid", "btpan", "btsdp", "btserial"):
+        module_path = TOPDIR / "rom" / "bluetooth" / "classes" / name
+        module_docs = LibDocList()
+        module_docs.read(str(module_path), filenames=(name + ".class.c",))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(name, module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
