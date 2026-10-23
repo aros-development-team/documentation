@@ -1208,6 +1208,15 @@ def create_module_docs() -> None:
         bcpl_docs.write(str(targetdir), module_titles)
         function_index.add_list(bcpl_docs.docfilename, bcpl_docs)
 
+    # ARM-native BCM2708 SDIO resource is outside standard scan roots.
+    sdio_path = TOPDIR / "arch" / "arm-native" / "soc" / "broadcom" / "2708" / "sdio"
+    sdio_docs = LibDocList()
+    sdio_docs.read(str(sdio_path), filenames=("sdio_init.c",))
+    if sdio_docs.doclist:
+        sdio_docs.docfilename = module_output_registry.claim("sdio", sdio_path)
+        sdio_docs.write(str(targetdir), module_titles)
+        function_index.add_list(sdio_docs.docfilename, sdio_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
