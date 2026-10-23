@@ -918,7 +918,7 @@ class HiddDocList(object):
         self.doclist = {} # key is classname, content is list of documents per class
         self.docfilename = ""
 
-    def read(self, srcdir, name=None):
+    def read(self, srcdir, name=None, filenames=None):
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -935,7 +935,7 @@ class HiddDocList(object):
         else:
             self.docfilename = os.path.basename(srcdir) + "_hidd" # rightmost part of the path
 
-        cfiles = os.listdir(srcdir)
+        cfiles = os.listdir(srcdir) if filenames is None else filenames
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
@@ -1208,6 +1208,76 @@ def create_module_docs() -> None:
         bcpl_docs.write(str(targetdir), module_titles)
         function_index.add_list(bcpl_docs.docfilename, bcpl_docs)
 
+    # ATA device AutoDocs share a source directory with existing HIDD docs.
+    ata_path = TOPDIR / "rom" / "devs" / "ata"
+    ata_docs = LibDocList()
+    ata_docs.read(str(ata_path), filenames=("ata.c",))
+    if ata_docs.doclist:
+        ata_docs.docfilename = module_output_registry.claim("ata_device", ata_path)
+        ata_docs.write(str(targetdir), module_titles)
+        function_index.add_list(ata_docs.docfilename, ata_docs)
+
+    # Hosted glA implementation: exclude private HostGL bridge functions.
+    hostgl_dir = TOPDIR / "arch" / "all-hosted" / "libs" / "hostgl"
+    hostgl_docs = LibDocList()
+    hostgl_docs.read(str(hostgl_dir), name="hostgl", filenames=(
+        'hostgl_glacreatecontext.c',
+        'hostgl_gladestroycontext.c',
+        'hostgl_glagetconfig.c',
+        'hostgl_glagetcurrentcontext.c',
+        'hostgl_glagetprocaddress.c',
+        'hostgl_glamakecurrent.c',
+        'hostgl_glasetrast.c',
+        'hostgl_glaswapbuffers.c',
+    ))
+    if hostgl_docs.doclist:
+        hostgl_docs.docfilename = module_output_registry.claim("hostgl", hostgl_dir)
+        hostgl_docs.write(str(targetdir), module_titles)
+        function_index.add_list(hostgl_docs.docfilename, hostgl_docs)
+
+    # SysExplorer modules have separate APIs with a shared ModuleInit name.
+    sysexp_root = TOPDIR / "workbench" / "tools" / "SysExplorer" / "Modules"
+    for module in ("AHCI", "ATA", "Gfx", "PCI", "Power", "Storage", "Telemetry"):
+        module_path = sysexp_root / module
+        module_docs = LibDocList()
+        module_docs.read(str(module_path))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(
+                "sysexp_" + module.lower(), module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
+    # Hosted library vectors outside the immediate module search roots.
+    for name, module_path in (
+        ("oss", TOPDIR / "arch" / "all-unix" / "libs" / "oss"),
+        ("x11gfx", TOPDIR / "arch" / "all-hosted" / "hidd" / "x11"),
+    ):
+        module_docs = LibDocList()
+        module_docs.read(str(module_path))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(name, module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
+    # Bluetooth class vectors are nested below the module search roots.
+    for name in ("btbattery", "btgatt", "bthid", "btpan", "btsdp", "btserial"):
+        module_path = TOPDIR / "rom" / "bluetooth" / "classes" / name
+        module_docs = LibDocList()
+        module_docs.read(str(module_path), filenames=(name + ".class.c",))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(name, module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
+    # SysExplorer provides a host API distinct from its extension modules.
+    sysexp_path = TOPDIR / "workbench" / "tools" / "SysExplorer"
+    sysexp_docs = LibDocList()
+    sysexp_docs.read(str(sysexp_path), filenames=("sysexp_library.c",))
+    if sysexp_docs.doclist:
+        sysexp_docs.docfilename = module_output_registry.claim("sysexp", sysexp_path)
+        sysexp_docs.write(str(targetdir), module_titles)
+        function_index.add_list(sysexp_docs.docfilename, sysexp_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
@@ -1336,7 +1406,7 @@ def create_module_docs() -> None:
     # ATA HIDD AutoDocs are in the root itself, not its subdirectories.
     ata_dir = TOPDIR / "rom" / "devs" / "ata"
     ata_docs = HiddDocList()
-    ata_docs.read(str(ata_dir))
+    ata_docs.read(str(ata_dir), filenames=("ata_busclass.c", "ata_unitclass.c"))
     if ata_docs.doclist:
         ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
         ata_docs.write(str(targetdir), module_titles)
