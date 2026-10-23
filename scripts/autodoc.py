@@ -1247,6 +1247,18 @@ def create_module_docs() -> None:
             module_docs.write(str(targetdir), module_titles)
             function_index.add_list(module_docs.docfilename, module_docs)
 
+    # Hosted library vectors outside the immediate module search roots.
+    for name, module_path in (
+        ("oss", TOPDIR / "arch" / "all-unix" / "libs" / "oss"),
+        ("x11gfx", TOPDIR / "arch" / "all-hosted" / "hidd" / "x11"),
+    ):
+        module_docs = LibDocList()
+        module_docs.read(str(module_path))
+        if module_docs.doclist:
+            module_docs.docfilename = module_output_registry.claim(name, module_path)
+            module_docs.write(str(targetdir), module_titles)
+            function_index.add_list(module_docs.docfilename, module_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
