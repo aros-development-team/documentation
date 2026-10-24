@@ -58,7 +58,8 @@ def regina_source_dir() -> Optional[Path]:
     if not root:
         return None
     source = Path(root).expanduser().resolve() / "regina"
-    for relative in ("rexxsaa.c", "regina.c", "rexx.c", "rexxmast/RexxMast.c"):
+    for relative in ("rexxsaa.c", "isreginamsg.c", "regina.c",
+                     "rexx.c", "rexxmast/RexxMast.c"):
         if not (source / relative).is_file():
             raise FileNotFoundError("Missing Regina source: " + str(source / relative))
     return source
@@ -642,7 +643,8 @@ class ShellDocList:
         """Constructor."""
         self.doclist: List[ShellAutoDoc] = []
 
-    def read(self, srcdir: str, filenames: Optional[Tuple[str, ...]] = None) -> None:
+    def read(self, srcdir: str, filenames: Optional[Tuple[str, ...]] = None,
+             names: Optional[Tuple[str, ...]] = None) -> None:
         """Scan directory for autodocs
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -663,9 +665,11 @@ class ShellDocList:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
                     for ad_entry in AD_REGX.findall(content):
-                        DOC_AUDIT.recognize()
                         try:
                             adoc = ShellAutoDoc(ad_entry)
+                            if names is not None and adoc.docname not in names:
+                                continue
+                            DOC_AUDIT.recognize()
                             if adoc.docname:
                                 adoc.source_path = source_provenance(filepath)
                                 self.doclist.append(adoc)
@@ -754,7 +758,8 @@ class LibDocList:
         self.docfilename: str = ""
 
     def read(self, srcdir: str, name: Optional[str] = None,
-             filenames: Optional[Tuple[str, ...]] = None) -> None:
+             filenames: Optional[Tuple[str, ...]] = None,
+             names: Optional[Tuple[str, ...]] = None) -> None:
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -780,9 +785,11 @@ class LibDocList:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
                     for ad_entry in AD_REGX.findall(content):
-                        DOC_AUDIT.recognize()
                         try:
                             adoc = LibAutoDoc(ad_entry)
+                            if names is not None and adoc.docname not in names:
+                                continue
+                            DOC_AUDIT.recognize()
                             if adoc.docname:
                                 adoc.source_path = source_provenance(filepath)
                                 self.doclist.append(adoc)
@@ -1316,9 +1323,17 @@ def create_module_docs() -> None:
     if regina_dir is not None:
         regina_docs = LibDocList()
         regina_docs.read(str(regina_dir), name="regina", filenames=("rexxsaa.c",))
-        if len(regina_docs.doclist) != 32:
-            raise RuntimeError("Incomplete Regina SAA AutoDocs: expected 32, found %d" %
-                               len(regina_docs.doclist))
+        regina_extra = LibDocList()
+        regina_extra.read(str(regina_dir), name="regina",
+                          filenames=("isreginamsg.c", "rexx.c"),
+                          names=("IsReginaMsg()", "__regina_faked_main()"))
+        regina_docs.doclist.extend(regina_extra.doclist)
+        regina_docs.doclist.sort()
+        regina_names = [doc.docname for doc in regina_docs.doclist]
+        if len(regina_names) != 34 or len(set(regina_names)) != 34 or not {
+                "IsReginaMsg()", "__regina_faked_main()"}.issubset(regina_names):
+            raise RuntimeError("Incomplete Regina library AutoDocs: " +
+                               repr(regina_names))
         regina_docs.docfilename = module_output_registry.claim("regina", regina_dir)
         regina_docs.write(str(targetdir), module_titles)
         function_index.add_list(regina_docs.docfilename, regina_docs)
@@ -1467,7 +1482,8 @@ def create_shell_docs() -> None:
     # The Regina programs and RexxMast are commands, not library entry points.
     regina_dir = regina_source_dir()
     if regina_dir is not None:
-        shelldocs.read(str(regina_dir), filenames=("regina.c", "rexx.c"))
+        shelldocs.read(str(regina_dir), filenames=("regina.c",))
+        shelldocs.read(str(regina_dir), filenames=("rexx.c",), names=("rexx",))
         shelldocs.read(str(regina_dir / "rexxmast"), filenames=("RexxMast.c",))
         regina_commands = {doc.docname for doc in shelldocs.doclist
                            if doc.source_path.startswith("contrib/regina/")}
