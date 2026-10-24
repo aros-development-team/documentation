@@ -1215,6 +1215,15 @@ def create_module_docs() -> None:
         bcpl_docs.write(str(targetdir), module_titles)
         function_index.add_list(bcpl_docs.docfilename, bcpl_docs)
 
+    # ARM-native PL011 Bluetooth UART resource lives below the standard scan roots.
+    pl011bt_path = TOPDIR / "arch" / "arm-native" / "soc" / "broadcom" / "2708" / "bluetooth"
+    pl011bt_docs = LibDocList()
+    pl011bt_docs.read(str(pl011bt_path), filenames=("pl011bt_init.c",))
+    if pl011bt_docs.doclist:
+        pl011bt_docs.docfilename = module_output_registry.claim("pl011bt", pl011bt_path)
+        pl011bt_docs.write(str(targetdir), module_titles)
+        function_index.add_list(pl011bt_docs.docfilename, pl011bt_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
