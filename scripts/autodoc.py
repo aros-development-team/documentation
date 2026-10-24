@@ -1217,6 +1217,15 @@ def create_module_docs() -> None:
         pl011bt_docs.write(str(targetdir), module_titles)
         function_index.add_list(pl011bt_docs.docfilename, pl011bt_docs)
 
+    # CAMD USB MIDI exports belong to their USB class source.
+    camdusbmidi_path = TOPDIR / "rom" / "usb" / "classes" / "camdmidi"
+    camdusbmidi_docs = LibDocList()
+    camdusbmidi_docs.read(str(camdusbmidi_path), filenames=("camdusbmidi.class.c",))
+    if camdusbmidi_docs.doclist:
+        camdusbmidi_docs.docfilename = module_output_registry.claim("camdusbmidi", camdusbmidi_path)
+        camdusbmidi_docs.write(str(targetdir), module_titles)
+        function_index.add_list(camdusbmidi_docs.docfilename, camdusbmidi_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
