@@ -939,6 +939,9 @@ class HiddDocList(object):
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
+                # This source contains library vectors, not HIDD methods.
+                if Path(filename) == TOPDIR / "workbench" / "hidds" / "vulkan" / "vulkan_init.c":
+                    continue
                 print("Reading from file", filename)
                 with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
@@ -1216,6 +1219,15 @@ def create_module_docs() -> None:
         pl011bt_docs.docfilename = module_output_registry.claim("pl011bt", pl011bt_path)
         pl011bt_docs.write(str(targetdir), module_titles)
         function_index.add_list(pl011bt_docs.docfilename, pl011bt_docs)
+
+    # Vulkan library vectors share a HIDD source directory.
+    vulkan_path = TOPDIR / "workbench" / "hidds" / "vulkan"
+    vulkan_docs = LibDocList()
+    vulkan_docs.read(str(vulkan_path), filenames=("vulkan_init.c",))
+    if vulkan_docs.doclist:
+        vulkan_docs.docfilename = module_output_registry.claim("vulkan", vulkan_path)
+        vulkan_docs.write(str(targetdir), module_titles)
+        function_index.add_list(vulkan_docs.docfilename, vulkan_docs)
 
     # add some docs for linker libs in AROS/compiler
     subdirs = [
