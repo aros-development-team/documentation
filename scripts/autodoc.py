@@ -1217,6 +1217,15 @@ def create_module_docs() -> None:
         pl011bt_docs.write(str(targetdir), module_titles)
         function_index.add_list(pl011bt_docs.docfilename, pl011bt_docs)
 
+    # Broadcom FullMAC resource vectors are defined in one platform source.
+    bwfm_path = TOPDIR / "arch" / "arm-native" / "soc" / "broadcom" / "2708" / "bwfm"
+    bwfm_docs = LibDocList()
+    bwfm_docs.read(str(bwfm_path), filenames=("bwfm_init.c",))
+    if bwfm_docs.doclist:
+        bwfm_docs.docfilename = module_output_registry.claim("bwfm", bwfm_path)
+        bwfm_docs.write(str(targetdir), module_titles)
+        function_index.add_list(bwfm_docs.docfilename, bwfm_docs)
+
     # add some docs for linker libs in AROS/compiler
     subdirs = [
         TOPDIR / "compiler" / "alib",
