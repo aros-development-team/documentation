@@ -1251,6 +1251,24 @@ def create_module_docs() -> None:
             # Math entry points belong to the same C runtime document.
             libdocs.read(str(docpath / "math"), name="stdc")
             libdocs.read_math_variants(docpath / "math")
+
+            # __stdcio_assert.c is built into stdcio.library, not stdc.library.
+            # Only the stdcio __assert() function has separate ABI ownership.
+            # Keep the generic assert() macro reference on its historical page.
+            # Partition already parsed AutoDocs: do not recognize them twice.
+            stdcio_source = source_provenance(docpath / "__stdcio_assert.c")
+            stdcio_docs = LibDocList()
+            stdcio_docs.doclist = [doc for doc in libdocs.doclist
+                                   if doc.source_path == stdcio_source and
+                                   doc.docname == "__assert()"]
+            if len(stdcio_docs.doclist) != 1:
+                raise RuntimeError("Missing or repeated stdcio __assert AutoDoc")
+            libdocs.doclist = [doc for doc in libdocs.doclist
+                               if not (doc.source_path == stdcio_source and
+                                       doc.docname == "__assert()")]
+            stdcio_docs.docfilename = module_output_registry.claim("stdcio", docpath)
+            stdcio_docs.write(str(targetdir), module_titles)
+            function_index.add_list(stdcio_docs.docfilename, stdcio_docs)
         if libdocs.doclist:
             libdocs.docfilename = module_output_registry.claim(libdocs.docfilename, docpath)
             libdocs.write(str(targetdir), module_titles)
