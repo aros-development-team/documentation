@@ -74,6 +74,13 @@ class Category( Sortable ):
         self.subcategories.sort()
     
     def recalculate( self ):
+        self.completed = 0
+        self.needssomework = 0
+        self.notimplemented = 0
+        self.skipped = 0
+        self.amigaonly = 0
+        self.total = 0
+
         for item in self.categoryitems:
             self.total += 1
 
