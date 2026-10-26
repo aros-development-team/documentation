@@ -155,19 +155,27 @@ class AutoDocOutputAudit:
     """
 
     def __init__(self):
+        """Initialize counters and the per-entry publication ledger."""
         self.records = []
         self.recognized_count = 0
         self.math_variant_sources = []
 
     def reset(self):
+        """Clear previously recognized entries, outputs, and variant sources."""
         self.records.clear()
         self.recognized_count = 0
         self.math_variant_sources.clear()
 
     def recognize(self):
+        """Count an AutoDoc source entry selected for parsing."""
         self.recognized_count += 1
 
     def expect(self, output, doc):
+        """Register the expected output page and original source for an entry.
+
+        Reject paths outside the documentation output tree and entries without
+        source provenance by raising ``ValueError``.
+        """
         output_path = Path(output).absolute()
         try:
             relative_output = output_path.relative_to(Path.cwd().absolute())
@@ -187,11 +195,22 @@ class AutoDocOutputAudit:
 
     @staticmethod
     def _headings(path):
+        """Count reStructuredText headings that use an equals-sign underline.
+
+        Read the generated page as UTF-8 and return a ``Counter`` of titles.
+        """
         lines = path.read_text(encoding='utf-8').splitlines()
         return Counter(lines[index] for index in range(len(lines)-1)
                        if lines[index] and lines[index+1] == '=' * len(lines[index]))
 
     def verify(self):
+        """Check expected entries against generated pages and audit the counts.
+
+        Mark matching records as published, optionally write the JSON manifest
+        specified by ``AROS_AUTODOCS_AUDIT_JSON``, and raise ``RuntimeError``
+        if any expected page, heading, or source count is missing or mismatched.
+        Discovery outside the generator's selected sources remains unverified.
+        """
         expected = defaultdict(Counter)
         for record in self.records:
             expected[record['document']][record['entry']] += 1
@@ -254,6 +273,7 @@ class FunctionIndex:
     """Index each function and module pair without losing duplicate names."""
 
     def __init__(self):
+        """Initialize the mapping from function names to their source modules."""
         self.funcdict: Dict[str, List[str]] = {}
 
     def add_list(self, docpath: str, libdocs: 'LibDocList') -> None:
@@ -399,28 +419,23 @@ class AutoDoc:
             fdesc.write("\n\n")
 
     def write_xref_function(self, fdesc, libname, funcname, path_to_lib):
-        """ Write XREF of a function
-        """
+        """Write a cross-reference to a library function."""
         fdesc.write("`%s.library/%s() <%s/%s#%s>`_ " % (libname, funcname, path_to_lib, libname, funcname.lower()))
 
     def write_xref_localfunction(self, fdesc, funcname):
-        """ Write XREF of a local
-        """
+        """Write a cross-reference to a local function."""
         fdesc.write("`%s()`_ " % (funcname))
 
     def write_xref_header(self, fdesc, name):
-        """ Write XREF of a header file
-        """
+        """Write a cross-reference to a header file."""
         fdesc.write("`%s </documentation/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
-        """ Write XREF of a string
-        """
+        """Write a cross-reference to a string."""
         fdesc.write("`%s`_ " % (name))
 
     def write_xref_any(self, fdesc, name):
-        """ Write XREF of a a string without a link
-        """
+        """Write a literal cross-reference without a link."""
         fdesc.write("%s " % name)
 
 
@@ -475,6 +490,7 @@ class ShellAutoDoc(AutoDoc):
         AutoDoc.write(self, fdesc, titles)
 
     def write_xref_string(self, fdesc, name):
+        """Write a Shell-command cross-reference as a literal command name."""
         fdesc.write("`%s <%s>`_ " % (name, name.lower()))
 
 
@@ -634,10 +650,7 @@ class HiddAutoDoc(AutoDoc):
 
 
 class ShellDocList:
-    """List of Shell autodocs
-
-    Handles the Shell autodocs of a single directory.
-    """
+    """Manage AutoDocs for Shell commands in one directory."""
 
     def __init__(self):
         """Constructor."""
@@ -645,13 +658,7 @@ class ShellDocList:
 
     def read(self, srcdir: str, filenames: Optional[Tuple[str, ...]] = None,
              names: Optional[Tuple[str, ...]] = None) -> None:
-        """Scan directory for autodocs
-
-        Reads all *.c files of the given directory and scans them for autodocs.
-
-        Arguments:
-        srcdir - directory from which the autodocs should be read
-        """
+        """Scan a directory for Shell command AutoDocs."""
         src_path = Path(srcdir)
         if not src_path.exists():
             logging.warning(f"Source directory {srcdir} does not exist")
@@ -1033,12 +1040,7 @@ class HiddDocList(object):
 
 
 def write_index(fdesc, targetdir: str) -> None:
-    """Append directory listing to index file
-
-    Arguments:
-    filehandle - file where directory listing should be appended
-    targedir - directory which should be listed
-    """
+    """Append a directory listing to an index file."""
     target_path = Path(targetdir)
     if not target_path.exists():
         logging.warning(f"Target directory {targetdir} does not exist")
@@ -1077,10 +1079,17 @@ class ModuleOutputRegistry:
     """
 
     def __init__(self, source_root: Path):
+        """Initialize the registry of claimed output page names."""
         self.source_root = source_root.resolve()
         self.owners: Dict[str, Path] = {}
 
     def claim(self, name: str, directory: Path) -> str:
+        """Claim a distinct module page name for a source directory.
+
+        Keep the first page name unchanged and qualify later collisions using
+        the source path. Reject duplicate claims from one source or collisions
+        between qualified names by raising ``ValueError``.
+        """
         origin = Path(directory).resolve()
         staged_origin = Path(os.path.abspath(directory))
         try:
@@ -1112,7 +1121,12 @@ class ModuleOutputRegistry:
 
 
 def create_module_docs() -> None:
-    """Create the module docs."""
+    """Generate module AutoDoc pages and the public function index.
+
+    Scan selected AROS source directories, add separately located libraries
+    and MUI class references, and verify recognized entries against output.
+    The audit checks generated records, not completeness of source discovery.
+    """
     logging.info("Creating module documentation...")
     
     function_index = FunctionIndex()
@@ -1476,7 +1490,11 @@ def create_hidd_docs_dir(srcdir: str, targetdir: str, titles: List[str], registr
             hidddocs.write(targetdir, titles)
 
 def create_shell_docs() -> None:
-    """Create the Shell commands docs."""
+    """Generate Shell-command AutoDocs from the selected source directories.
+
+    Include configured Regina commands when ``AROS_CONTRIB_ROOT`` is set,
+    then verify the recognized entries against generated pages.
+    """
     logging.info("Creating shell documentation...")
     
     srcdirs = [
@@ -1517,7 +1535,10 @@ def create_shell_docs() -> None:
 
 
 def create_apps_docs() -> None:
-    """Create the application docs."""
+    """Generate application AutoDocs from workbench tool sources.
+
+    Write application reference pages and audit their recognized entries.
+    """
     logging.info("Creating applications documentation...")
     
     srcdirs = [
@@ -1540,7 +1561,11 @@ def create_apps_docs() -> None:
 
 
 def create_all_docs() -> None:
-    """Create all docs."""
+    """Generate Shell, module, and application AutoDocs in order.
+
+    Reset the shared output audit before generation. Each stage verifies
+    its recognized entries and raises ``RuntimeError`` on output mismatches.
+    """
     logging.info("Creating all documentation...")
     DOC_AUDIT.reset()
     create_shell_docs()

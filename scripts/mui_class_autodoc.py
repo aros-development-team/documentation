@@ -12,6 +12,13 @@ HEADER = re.compile(r"^/\*{6}\s*(?P<class_name>[A-Za-z][A-Za-z0-9_]*)\.mui/"
                     r"(?P<symbol>MUI[ACM]_[A-Za-z0-9_]+)\s+\*+\s*$", re.M)
 
 def read_mui_docs(source_dir):
+    """Extract MUI class AutoDocs from the selected C source files.
+
+    Read five mandatory Latin-1 source files. Return ``(class, symbol,
+    sections)`` tuples, rejecting unterminated comments, duplicate sections,
+    incorrect declared symbols, and duplicate symbols with ``ValueError``.
+    Missing source files raise ``FileNotFoundError``.
+    """
     result = []
     for filename in SOURCE_FILES:
         path = Path(source_dir) / filename
@@ -46,6 +53,11 @@ def read_mui_docs(source_dir):
     return result
 
 def write_mui_docs(source_dir, target_dir):
+    """Generate per-class ReST pages and an index for MUI AutoDocs.
+
+    Skip NAME, INTERNALS, and HISTORY sections in output, render SYNOPSIS
+    as literal text, and write UTF-8 files. Return the entry and class counts.
+    """
     docs = read_mui_docs(source_dir)
     target = Path(target_dir)
     target.mkdir(parents=True, exist_ok=True)

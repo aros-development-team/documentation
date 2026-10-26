@@ -1,20 +1,37 @@
 # Copyright (C) 2002, The AROS Development Team. All rights reserved.
 # $Id$
 
+"""Define sortable status categories, API items, and aggregated counts."""
+
 from datetime import date
 
 class Sortable:
+    """Compare status-model objects using their stored sort keys."""
     def __init__( self, sortkey ):
+        """Store the key used by all comparison methods."""
         self.sortkey = sortkey
 
-    def __lt__( self, other ): return self.sortkey <  other.sortkey 
-    def __le__( self, other ): return self.sortkey <= other.sortkey 
-    def __eq__( self, other ): return self.sortkey == other.sortkey 
-    def __ne__( self, other ): return self.sortkey != other.sortkey 
-    def __gt__( self, other ): return self.sortkey >  other.sortkey 
-    def __ge__( self, other ): return self.sortkey >= other.sortkey 
+    def __lt__( self, other ):
+        """Compare the sort keys for ascending order."""
+        return self.sortkey <  other.sortkey
+    def __le__( self, other ):
+        """Compare the sort keys for non-descending order."""
+        return self.sortkey <= other.sortkey
+    def __eq__( self, other ):
+        """Report whether the stored sort keys are equal."""
+        return self.sortkey == other.sortkey
+    def __ne__( self, other ):
+        """Report whether the stored sort keys differ."""
+        return self.sortkey != other.sortkey
+    def __gt__( self, other ):
+        """Compare the sort keys for descending order."""
+        return self.sortkey >  other.sortkey
+    def __ge__( self, other ):
+        """Compare the sort keys for non-ascending order."""
+        return self.sortkey >= other.sortkey
 
 class CategoryItem( Sortable ):
+    """Represent one API item and its architecture and implementation status."""
     STAT_Completed   = 2
     STAT_NeedsSomeWork = 1
     STAT_NotImplemented   = 0
@@ -29,6 +46,7 @@ class CategoryItem( Sortable ):
     API_Extension = 2
 
     def __init__( self, description, parentcategory, status, architecture, apiversion ):
+        """Initialize an API item and its parent-category identifier."""
         Sortable.__init__( self, description.upper() )
         self.description            =   description
         self.parentcategory         =   parentcategory
@@ -38,14 +56,18 @@ class CategoryItem( Sortable ):
 
 class Comment( Sortable ):
 
+    """Represent a comment attached to a status category."""
     def __init__( self, comment, parentcategory ):
+        """Store the comment text and parent-category identifier."""
         Sortable.__init__( self, comment.upper() )
         self.comment        =   comment
         self.parentcategory =   parentcategory    
 
 class Category( Sortable ):
 
+    """Represent a category, its children, and aggregated API status counts."""
     def __init__( self, category, description, parentcategory, lastupdated ):
+        """Initialize category metadata, empty child lists, and zeroed totals."""
         Sortable.__init__( self, category.upper() )
        
         self.category           =   category
@@ -67,6 +89,7 @@ class Category( Sortable ):
 
 
     def sort( self ):
+        """Recursively sort child categories, comments, and API items."""
         for item in self.subcategories:
             item.sort()
         self.comments.sort()
@@ -74,6 +97,12 @@ class Category( Sortable ):
         self.subcategories.sort()
     
     def recalculate( self ):
+        """Accumulate implementation status counts from items and child categories.
+
+        Update ``lastupdated`` with the newest child date when applicable.
+        The current implementation accumulates onto existing totals; callers
+        must invoke it only once on a fresh category tree.
+        """
         for item in self.categoryitems:
             self.total += 1
 
@@ -113,6 +142,10 @@ class Category( Sortable ):
 
     def removeempty( self ):
 
+        """Remove empty child categories recursively.
+
+        Return ``True`` when this category has no items or retained children.
+        """
         subcategoriestemp = []
         subcategoriestemp += self.subcategories
         self.subcategories = []

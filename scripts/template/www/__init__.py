@@ -1,5 +1,7 @@
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
+"""Generate localized site templates from page modules and translations."""
+
 import importlib.util
 import os
 import codecs
@@ -9,6 +11,10 @@ from build import utility
 from configparser import ConfigParser
 
 def load_makePage(tmpltgt):
+    """Load and return the ``makePage`` callable from a site's ``page.py``.
+
+    Import the module directly from the supplied site-template directory.
+    """
     module_name = "page"
     module_path = os.path.join(tmpltgt, "page.py")
 
@@ -22,10 +28,10 @@ def load_makePage(tmpltgt):
     return module.makePage
 
 def makeTemplates(tmpltgt):
-    """
-    Creates the template files for the WWW target in all languages.
-    The templates are created in the targets/www directory.
-    The configuration files are read from the targets/www/template/languages directory.
+    """Generate localized page templates for the requested website.
+
+    Read translation dictionaries from ``targets/www/template/languages``
+    and write stale or missing templates under ``targets/www/<site>``.
     """
 
     # Deduce important paths
@@ -36,6 +42,11 @@ def makeTemplates(tmpltgt):
 
     def makeTemplate( language, dst ):
         # Setup translation dictionaries
+        """Write one localized HTML site template.
+
+        Load translation strings and charset for ``language`` and render the
+        selected site's ``makePage`` callable into ``dst``.
+        """
         config = ConfigParser()
         with codecs.open(os.path.join( LANG_DIR, language + '.txt'), 'r', encoding='utf-8') as configfile:
             config.read_file(configfile)
