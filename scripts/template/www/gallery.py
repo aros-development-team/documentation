@@ -1,10 +1,17 @@
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
+"""Render localized image-gallery fragments for the public website."""
+
 import os
 import jinja2
 from configparser import ConfigParser
 
 def makePicture( path, description, language ):
+    """Render HTML for one gallery image, thumbnail, and description.
+
+    Prefix URLs according to the language's output depth and return the
+    rendered Jinja2 fragment.
+    """
     LANG_DIR   = 'targets/www/template/languages'
 
     if language == 'en':

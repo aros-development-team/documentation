@@ -11,9 +11,37 @@ SECTIONS = {"NAME", "SUPERCLASS", "DESCRIPTION", "SYNOPSIS", "FUNCTION",
 HEADER = re.compile(r"^/\*{6}\s*(?P<class_name>[A-Za-z][A-Za-z0-9_]*)\.mui/"
                     r"(?P<symbol>MUI[ACM]_[A-Za-z0-9_]+)\s+\*+\s*$", re.M)
 
+
+def _candidate_source_files(source_dir):
+    """Keep required historical sources and discover additional native MUI blocks."""
+    root = Path(source_dir)
+    if not root.is_dir():
+        raise FileNotFoundError(root)
+    required = tuple(SOURCE_FILES)
+    for name in required:
+        path = root / name
+        if not path.is_file() or path.is_symlink():
+            raise FileNotFoundError(path)
+    additional = []
+    for path in sorted(root.glob("*.c")):
+        if path.is_symlink():
+            raise ValueError(f"Symlinked MUI source requires explicit ownership: {path}")
+        if path.name in required:
+            continue
+        if HEADER.search(path.read_text(encoding="latin-1")):
+            additional.append(path.name)
+    return required + tuple(additional)
+
 def read_mui_docs(source_dir):
+    """Extract MUI class AutoDocs from the selected C source files.
+
+    Read five mandatory Latin-1 source files. Return ``(class, symbol,
+    sections)`` tuples, rejecting unterminated comments, duplicate sections,
+    incorrect declared symbols, and duplicate symbols with ``ValueError``.
+    Missing source files raise ``FileNotFoundError``.
+    """
     result = []
-    for filename in SOURCE_FILES:
+    for filename in _candidate_source_files(source_dir):
         path = Path(source_dir) / filename
         if not path.is_file():
             raise FileNotFoundError(path)
@@ -49,6 +77,11 @@ def read_mui_docs(source_dir):
     return result
 
 def write_mui_docs(source_dir, target_dir):
+    """Generate per-class ReST pages and an index for MUI AutoDocs.
+
+    Skip NAME, INTERNALS, and HISTORY sections in output, render SYNOPSIS
+    as literal text, and write UTF-8 files. Return the entry and class counts.
+    """
     docs = read_mui_docs(source_dir)
     target = Path(target_dir)
     target.mkdir(parents=True, exist_ok=True)

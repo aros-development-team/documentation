@@ -1,16 +1,16 @@
 # Copyright (C) 2002-2007, The AROS Development Team. All rights reserved.
 # $Id$
 
+"""Provide filesystem and ReST helpers for the documentation builders."""
+
 import os, shutil
 from build.settings import *
 
 def newer( src, dst ):
-    """
-        srcs - list of source paths
-        dst  - dst
+    """Return whether any source is newer than a destination.
 
-        Returns true if any path in srcs is newer than dst
-        or if dst does not exist.
+    Accept a path or list of source paths. Return ``True`` if ``dst`` is
+    absent or any source modification time is later than the destination.
     """
 
     if not os.path.exists( dst ): return True
@@ -27,6 +27,10 @@ def newer( src, dst ):
 
 
 def ignore( path ):
+    """Report whether a source path should be excluded from traversal.
+
+    Exclude known special paths and hidden basenames.
+    """
     path = os.path.normpath( path )
     filename = os.path.split( path )[1]
 
@@ -37,11 +41,17 @@ def ignore( path ):
 
 
 def makedir( path ):
+    """Create a directory and its parents when it does not exist."""
     if not os.path.exists( path ):
         os.makedirs( path )
 
 
 def copy( src, dst ):
+    """Copy newer source files to the destination.
+
+    Accept one source path or a list. If ``dst`` is a directory, retain each
+    source basename; otherwise use ``dst`` as the output filename.
+    """
     if not isinstance( src, list ): src = [ src ]
      
     for path in src:
@@ -55,12 +65,10 @@ def copy( src, dst ):
 
 
 def pathscopy( entries, srcpath, dstpath):
-    """
-        entries - entry or list of entries to copy
-        srcpath - source to copy from
-        dstpath - destination to copy to
+    """Copy one or more relative entries from a source directory.
 
-        Note that the entries can themselves include paths.
+    Entries may include subpaths; delegate freshness checks and copying
+    to ``copy``.
     """
     if not isinstance( entries, list ): entries = [ entries ]
 
@@ -69,12 +77,18 @@ def pathscopy( entries, srcpath, dstpath):
 
 
 def remove( path ):
+    """Remove an existing file; do nothing when the path is absent."""
     if os.path.exists( path ):
         os.remove( path )
 
 
 # similar shutil.copytree, but ignores .svn directory
 def copytree(src, dst, symlinks=0):
+    """Recursively copy a directory tree, omitting ``.svn`` directories.
+
+    Create ``dst`` and optionally preserve symlinks. Report per-file I/O
+    errors to stdout instead of propagating them.
+    """
     names = os.listdir(src)
     os.mkdir(dst)
     for name in names:
@@ -95,37 +109,26 @@ def copytree(src, dst, symlinks=0):
 
 
 def reportSkipping( message ):
+    """Print a colored status line for a skipped output."""
     print('\033[1m\033[32m*\033[30m', message, '\033[0m')
 
 
 def reportBuilding( message ):
+    """Print a colored status line for an output being built."""
     print('\033[1m\033[33m*\033[30m', message, '\033[0m')
 
 
 def titleReST( title):
-    """
-        title - title for an ReST page
-
-        Returns a string comprising of the title between =-lines, followed by an empty line.
-    """
+    """Return a ReST title with equals-sign rules and a trailing blank line."""
     return ('=' *len( title)) +'\n' +title +'\n' +('=' *len( title)) +'\n\n'
 
 
 def drctReST( directive, text):
-    """
-        directive - name of the directive
-        text      - text to be included in a ReST page as a directive
-
-        Returns a string comprising of the ReST directive of that name and with that text.
-    """
+    """Return a ReST directive consisting of its name and argument."""
     return '.. ' +directive +':: ' +text +'\n'
 
 
 def htmlReST( text):
-    """
-        text      - text to be included in a ReST page as raw html
-
-        Returns a string comprising of the ReST raw directive that includes as html that text followed by an empty line.
-    """
+    """Return a raw-HTML ReST directive for the supplied HTML fragment."""
     return drctReST( 'raw', 'html\n\n' +text)
 
