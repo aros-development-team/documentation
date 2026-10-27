@@ -1,20 +1,16 @@
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
+"""Render the public AROS website page template."""
+
 import os
 import jinja2
 
 def makePage( _T, _N, _M, lang, charset ):
-    """
-    Generates an HTML page using Jinja2 templating engine.
-    (CONTENT) and (BASE) are filled by buildit.py.
-    Args:
-        _T (dict): Dictionary containing title strings.
-        _N (dict): Dictionary containing navigation labels.
-        _M (dict): Dictionary containing misc. strings such as copyright and trademarks.
-        lang (str): Language code for the page.
-        charset (str): Character set for the HTML content.
-    Returns:
-        str: Rendered HTML content as a string.
+    """Render a localized HTML page using the Jinja2 site template.
+
+    Accept translated title, navigation, and miscellaneous string maps,
+    plus the language and declared charset. Return an HTML template string
+    whose ``%(CONTENT)s`` and ``%(BASE)s`` placeholders are filled later.
     """
 
     environment = jinja2.Environment()
@@ -206,6 +202,12 @@ def makePage( _T, _N, _M, lang, charset ):
 def makeURL( file, lang, section='' ):
 
     # Create the URL
+    """Construct a localized page URL for insertion into the site template.
+
+    Append ``.html`` unless the path is a directory or ``.``; prepend a
+    language directory outside English and append the optional fragment.
+    The ``%(BASE)s`` placeholder is resolved by the calling builder.
+    """
     if file != '.' and file[-1] != '/':
         file += '.html'
     if lang != 'en':

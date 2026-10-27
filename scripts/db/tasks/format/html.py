@@ -1,6 +1,8 @@
 # Copyright (C) 2002, The AROS Development Team. All rights reserved.
 # $Id$
 
+"""Render implementation-status category pages as HTML."""
+
 import sys, os
 from db.tasks.model import *
 from html import *
@@ -14,6 +16,11 @@ C_Skipped               = 'green'
 C_AmigaOnly             = 'tan'
 
 def calculateCategoryScore( item ):
+    """Return an integer completion percentage for a status category.
+
+    Exclude Amiga-only entries from the denominator. Completed and skipped
+    entries count fully; needs-work entries count halfway.
+    """
     if isinstance( item, Category):
         if ( item.total - item.amigaonly ) != 0:
             return ( 100 * ( item.completed + item.skipped ) + 50 * item.needssomework ) \
@@ -21,11 +28,19 @@ def calculateCategoryScore( item ):
     return 0
 
 def formatRowCategoryStatus(array, count, total, color):
+    """Append a proportional colored status cell when ``count`` is nonzero.
+
+    ``total`` is the total number of entries represented by the row.
+    """
     if count != 0:
         array.append( TD( bgcolor = color, width = repr(int ( round( count * 100.0 / total, 0 ) )) + '%' ) )
 
 def formatRowCategory( item, extension ):
 
+    """Build a table row linking to a category and its status breakdown.
+
+    Include the completeness score, last-update date, and proportional bar.
+    """
     row = TR( bgcolor = '#dddddd' )
 
     # Dynamically build category status chart
@@ -81,6 +96,10 @@ def formatRowCategory( item, extension ):
 
 def formatRowCategoryItem( item, extension ):
     
+    """Build an HTML table row for a tracked API item.
+
+    Display the architecture when i386-specific and color by status.
+    """
     row = TR( bgcolor = '#dddddd' )
 
     if   item.status == CategoryItem.STAT_Completed:   color = C_Completed
@@ -116,6 +135,7 @@ def formatRowCategoryItem( item, extension ):
 
 def formatHeader( root ):
 
+    """Return a category heading and its calculated completion score."""
     header = Table \
              (
                 bgcolor = '#999999', width = '40%', cellpadding = 2, \
@@ -139,6 +159,7 @@ def formatHeader( root ):
 
 def formatLegendColorTable( color ):
 
+    """Build a colored HTML swatch for the status legend."""
     legendColorTable = Table \
                      ( 
                         bgcolor = '#999999', width = '20px', height = '20px', cellpadding = 2,
@@ -166,12 +187,14 @@ def formatLegendColorTable( color ):
     return legendColorTable
 
 def formatReturnLink( parent, extension ):
+    """Return a parent-category navigation link, or an empty string."""
     if parent is not None:
         return 'Return to ' + str( A( href = parent.category + extension, contents = parent.description ) ) +'<br/>'
     else:
         return ''
 
 def formatLegend( ):
+    """Build the HTML table explaining the status categories."""
     legend = Table \
              (
                 contents =
@@ -234,6 +257,11 @@ def format( root, directory, template, lang, extension, parent = None ):
     
     # First, format this category.
 
+    """Write a category's HTML status page and recurse into subcategories.
+
+    Render the selected category, its API entries, comments, and child links
+    using ``template``; emit one file per category in ``directory``.
+    """
     content_CategoryItemsOriginalAPI = Table( bgcolor = '#999999', width = '98%', cellpadding = 2 )
     content_CategoryItemsExtensionAPI = Table( bgcolor = '#999999', width = '98%', cellpadding = 2 )
     #FIXME: GRRR: how do you create UL in html_?

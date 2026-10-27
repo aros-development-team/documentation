@@ -1,9 +1,16 @@
 # Copyright (C) 2002, The AROS Development Team. All rights reserved.
 # $Id$
 
+"""Parse the documentation implementation-status database into categories."""
+
 from db.tasks.model import *
 
 def createExtensionCategoryName( category ):
+    """Derive the virtual extension category from a category identifier.
+
+    Replace the final underscore-separated suffix with ``_ext``, or append
+    ``_ext`` if the identifier has no underscore.
+    """
     index = category.rfind("_")
     if index == -1:
         return category + "_ext"
@@ -14,6 +21,11 @@ def createExtensionCategoryName( category ):
 def createCategories( file ):
 
     # Root categories ( append in specif order, not sorted )
+    """Read category declarations and build the category hierarchy.
+
+    Create the four predefined top-level categories, derive virtual extension
+    categories, and attach categories to their declared parents or root.
+    """
     categories = {}
     root = Category( 'everything', 'Everything', None, None )
     categories[root.category] = root
@@ -84,6 +96,11 @@ def createCategories( file ):
 
 def createCategoryItems( file ):
 
+    """Parse API entries from the status file's category-items section.
+
+    Return ``CategoryItem`` instances containing description, category,
+    architecture, API version, and implementation status.
+    """
     categoryitems = []
 
     # Search for startup
@@ -115,6 +132,7 @@ def createCategoryItems( file ):
 
 def createComments( file ):
 
+    """Parse the category-comment section into ``Comment`` objects."""
     comments = []
 
     # Search for startup
@@ -144,6 +162,11 @@ def createComments( file ):
 def parse( file ):
 
     # Create categories, category items and comments
+    """Build the complete implementation-status category tree from a stream.
+
+    Load categories, items, and comments; remove empty categories, calculate
+    completion totals, sort child entries, and return the ``everything`` root.
+    """
     categories = createCategories( file )
     categoryitems = createCategoryItems( file )
     comments = createComments( file )

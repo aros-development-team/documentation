@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 # Copyright (C) 2002-2025, The AROS Development Team. All rights reserved.
 
+"""Build AROS website, offline HTML, and generated API documentation.
+
+Run from the documentation repository root. Targets and languages are
+selected through command-line arguments; ``clean`` removes generated
+output under ``../bin/documentation`` and selected generated sources.
+"""
+
 import os
 import sys
 import shutil
@@ -62,6 +69,11 @@ jinja_env = Environment(loader=FileSystemLoader(SRCROOT))
 # language, if it exists. Otherwise, returns the file name for DEFAULTLANG.
 
 def altLang(base, lang, path='.'):
+    """Select a translated ReST filename, falling back to English.
+
+    Return a basename, not the complete source path. The fallback name
+    is returned even if the English source is absent.
+    """
     langfile = f"{base}.{lang}.rst"
     if not os.path.exists(os.path.join(path, langfile)):
         langfile = f"{base}.{DEFAULTLANG}.rst"
@@ -74,10 +86,16 @@ def altLang(base, lang, path='.'):
 # Joins the result of altLang with the specified path.
 
 def pathAltLang(base, lang, path='.'):
+    """Join a directory path to the filename selected by ``altLang``."""
     return os.path.join(path, altLang(base, lang, path))
 
 
 def recurse(function, path='.', depth=0):
+    """Visit non-ignored files below a directory, passing depth to a callback.
+
+    Invoke ``function(path, depth)`` for each file. The depth starts at
+    zero and increments once for each directory level.
+    """
     for name in os.listdir(path):
         name = os.path.join(path, name)
 
@@ -89,6 +107,10 @@ def recurse(function, path='.', depth=0):
 
 
 def processPicture(src, depth):
+    """Copy a JPEG or PNG source image and update its thumbnail if stale.
+
+    ``depth`` is supplied by ``recurse`` but is not used.
+    """
     FORMATS = ['jpg', 'jpeg', 'png']
 
     extension = os.path.splitext(src)[1][1:]
@@ -122,6 +144,11 @@ def processPicture(src, depth):
 # Creates picture galleries.
 
 def makePictures():
+    """Generate the screenshot and developer-image galleries for each language.
+
+    Copy source pictures, create thumbnails, and render gallery index pages
+    under the current ``TRGROOT``.
+    """
     DIRECTORIES = [
         'pictures/developers',
         'pictures/screenshots'
@@ -200,6 +227,10 @@ def makePictures():
 # Creates graphs of component implementation status.
 
 def makeStatus(extension='.html'):
+    """Render localized HTML implementation-status pages from ``db/status``.
+
+    ``extension`` selects the generated page suffix.
+    """
     tasks = db.tasks.parse.parse(open('db/status', 'r'))
     for lang in languages:
         dstdir = 'introduction/status'
@@ -217,6 +248,11 @@ def makeStatus(extension='.html'):
 # Returns True is files were created or False if no correct news files were found
 
 def makeNews():
+    """Update ReST news indexes and yearly archives from dated news sources.
+
+    Write generated ReST files into the source tree when input files are
+    newer. Return ``False`` when no English news entries are found.
+    """
     NEWS_SRC_DIR = os.path.join(SRCROOT, 'news/data')
     NEWS_DST_DIR = os.path.join(SRCROOT, 'news/data')
     NEWS_SRC_INDX= os.path.join(SRCROOT, 'news/index.')
@@ -303,6 +339,10 @@ def makeNews():
 # Creates ReST file for credits.
 
 def makeCredits():
+    """Update the generated English credits page when its source changes.
+
+    Read ``db/credits`` using ISO-8859-15 and write ``credits.en.rst``.
+    """
     if (not os.path.exists('credits.en.rst')) \
         or (os.path.getmtime('db/credits') > os.path.getmtime('credits.en.rst')):
         CREDITS_DATA = db.credits.format.rest.format(
@@ -316,6 +356,12 @@ def makeCredits():
 # Converts a source file into an HTML string.
 
 def convertWWW(src, language, options=None):
+    """Render a ReST source through Jinja2 and return its HTML body fragment.
+
+    Use site-specific documentation links and the requested language.
+    Only ``--stylesheet=`` arguments in ``options`` override the default
+    Docutils settings.
+    """
     encoding = 'utf-8'
 
     if wwwtgt == 'aros':
@@ -391,6 +437,11 @@ def convertWWW(src, language, options=None):
 # file, nothing is done.
 
 def processWWW(src, depth):
+    """Generate translated website pages for an English ReST source.
+
+    Filter sources by the active site, use English for missing translations,
+    and update the destination when its template or source is newer.
+    """
     src = os.path.normpath(src)
 
     prefix, suffix = os.path.splitext(src)
@@ -458,6 +509,11 @@ def processWWW(src, depth):
             utility.reportSkipping(dst)
 
 def processHTML(src, depth):
+    """Render an English ReST source into a standalone offline HTML page.
+
+    Skip other extensions and languages. Write ISO-8859-15 output with
+    replacement for characters outside that encoding.
+    """
     src = os.path.normpath(src)
 
     prefix, suffix = os.path.splitext(src)
@@ -530,6 +586,10 @@ def processHTML(src, depth):
 
 def copyDevImages(usedevdir):
     # developer/ui
+    """Copy developer UI and Zune images into the active output tree.
+
+    ``usedevdir`` selects whether the developer-directory prefix is retained.
+    """
     imagepath = 'documentation/developers/ui/images'
     if usedevdir == "yes":
         dstpath   = os.path.join(TRGROOT, imagepath)
@@ -562,6 +622,7 @@ def copyDevImages(usedevdir):
 
 def copyGenericImages():
     # generic
+    """Copy the shared site logos and images into the output image tree."""
     imagepath = 'images'
     dstpath   = os.path.join(TRGROOT, imagepath)
     srcpath   = imagepath
@@ -599,6 +660,10 @@ def copyGenericImages():
 
 def copyUserImages(useuserdir):
     # users
+    """Copy user-guide screenshots into the active output tree.
+
+    ``useuserdir`` selects whether the users-directory prefix is retained.
+    """
     imagepath = 'documentation/users/images'
     if useuserdir == "yes":
         dstpath   = os.path.join(TRGROOT, imagepath)
@@ -627,6 +692,10 @@ def copyUserImages(useuserdir):
 
 
 def copySamples(www):
+    """Replace the destination sample-code tree with the developer sources.
+
+    ``www`` selects the website layout rather than the offline layout.
+    """
     srcpath = os.path.join('documentation', 'developers', 'samplecode')
     if www != "yes":
         dstpath = os.path.join(TRGROOT, srcpath)
@@ -637,6 +706,10 @@ def copySamples(www):
 
 
 def copyHeaders(www):
+    """Replace the destination header-reference tree with source headers.
+
+    ``www`` selects the website layout rather than the offline layout.
+    """
     srcpath = os.path.join('documentation', 'developers', 'headerfiles')
     if www != "yes":
         dstpath = os.path.join(TRGROOT, srcpath)
@@ -647,6 +720,11 @@ def copyHeaders(www):
 
 
 def buildClean():
+    """Remove the generated documentation tree and selected generated sources.
+
+    Delete ``DSTROOT`` recursively and remove generated news indexes,
+    news archives, and website templates from the source checkout.
+    """
     shutil.rmtree(DSTROOT, True)
 
     filenames = glob.glob('news/index.??.rst') \
@@ -662,6 +740,11 @@ def buildClean():
 
 
 def buildWWW():
+    """Build each selected public website and its localized assets.
+
+    Populate ``DSTROOT/www`` for every site in ``targetsites`` and language
+    in ``languages``. Recreate pages, indexes, images, scripts, and templates.
+    """
     global TRGROOT, wwwtgt
     WWWROOT = os.path.join(DSTROOT, 'www')
 
@@ -814,6 +897,11 @@ def buildWWW():
 
 
 def buildHTML():
+    """Build the standalone, English-only HTML documentation tree.
+
+    Generate pages and supporting assets under ``DSTROOT/html`` and promote
+    the offline index to ``index.html``.
+    """
     global TRGROOT
     TRGROOT = os.path.join(DSTROOT, 'html')
     global languages
@@ -868,12 +956,10 @@ TARGETS = {
     'appsdocs':  autodoc.create_apps_docs
 }
 
-# Usage: build {target|language}
-# Target is  www, html, clean, alldocs, shelldocs, libdocs.
-# The latter 3 update the documentation which is extracted from the source code.
-# Specifying one or more languages only effects the www target. Only the
-# specified language(s) is built. If no language is specified, all
-# languages are built.
+# Usage: build {target|language|site} ...
+# Targets: clean, www, html, alldocs, shelldocs, moduledocs, appsdocs.
+# Sites: aros, dev, locale. Language selection applies only to www.
+# With no language selection, all supported languages are built.
 
 if __name__ == '__main__':
     targets = []
