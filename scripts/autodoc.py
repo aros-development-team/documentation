@@ -291,7 +291,7 @@ class FunctionIndex:
             paths = self.funcdict[func]
             for path in sorted(paths):
                 label = func if len(paths) == 1 else "%s (%s)" % (func, path)
-                entries.append("`%s <%s#%s>`_" % (label, path, func[:-2].lower()))
+                entries.append("`%s <%s#%s>`__" % (label, path, func[:-2].lower()))
         width = max([74] + [len(entry) for entry in entries])
         tablesep = (("=" * width) + " ") * 4
         fdesc.write("==============\nFunction Index\n==============\n\n")
