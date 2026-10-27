@@ -1,0 +1,287 @@
+===============================
+July - October 2026 Highlights
+===============================
+
+:Author:   Nick Andrews
+:Date:     2026-10-27
+
+The three months since the last news item have been the most active in the
+project's history, with almost 2500 commits landing in the development tree -
+more than in the whole preceding year. Much of it arrived through pull
+requests, which are now the normal way of contributing. Here are the major
+areas of work and the developers behind them.
+
+Nick Andrews
+
+- Added a brand new RISC-V port: riscv64 running on OpenSBI firmware (RVA22
+  profile), with trap handling, device tree parsing, Sv39 MMU, Zicbom cache
+  operations, lazy FPU context switching, a device-tree PCI subsystem (with
+  message interrupts and 64-bit windows), USB, NVMe, RTC, microsecond timer,
+  self-resolving crash dumps and warm reboot, plus riscv support in the
+  binutils and gcc patches. A bootable tree and distfiles are produced by the
+  build.
+- Finished the MuFS 2 port as a ROM-resident security.library, and built a
+  multi-user system around it: Login/Logout/Passwd/Who/SetOwner, AMUInit and
+  Security-Startup, a Zune login window with Shutdown/Reboot, per-user profile
+  directories and assigns, permission enforcement in afs, ram, sfs and pfs3,
+  pam.library pluggable authentication, hardware tokens (YubiKey plugin, FIDO
+  U2F via a new fido.class and FidoTool), and a graphical Accounts program for
+  managing users and groups.
+- Added Envoy networking: envoy.library, nipc.library, services.library and
+  accounts.library, the EFS client handler and filesystem service, and
+  Services, FilesystemExports and FilesystemImports prefs.
+- Added an experimental Bluetooth stack: bluetooth.library and btcore (L2CAP,
+  RFCOMM, SDP client/server, GATT, SMP pairing) over BR/EDR and LE, HID over
+  BR/EDR and HOGP (bthid.class), Serial Port Profile (btserial.class), PAN
+  networking as SANA-II units (btpan.class), bonding persistence, reconnect
+  policy, pluggable controller-firmware loaders and a Bluetooth prefs GUI.
+- AROSTCP: IPv4 IGMP multicast, a 6in4 (SIT) tunnel pseudo-interface with
+  Network prefs support, IPv4-mapped addresses, jumbo frames and runtime MTU
+  changes, sockets shared with the C runtime through fd.library so read() and
+  write() work on them, SMP locking throughout, IPv6 and per-interface DNS
+  servers, a remote DoS fix in IP fragment reassembly, and a network services
+  framework (netservices.library, services.d, a Services tab in Network
+  prefs) under which sshd and the new timesyncd SNTP service run. Added the
+  dwmac.device SANA-II driver and merged the rtl8168/8169 drivers.
+- Graphics: modernised the Nouveau driver stack to Linux 6.18 drm/nouveau with
+  GSP-RM 580.178.04 and Blackwell (GB20x) support, moved the VMware SVGA
+  driver onto an in-process vmwgfx DRM port with 3D via Mesa's svga driver,
+  moved display composition into gfx.hidd with composited layers, hardware
+  planes, hardware video overlays and scan-out bitmaps, and added the
+  efifbgfx and headlessgfx drivers. cybergraphics gained SSE2/AVX2
+  WritePixelArrayAlpha(), and screen user copper lists work again.
+- Toolchain: updated the Mesa port to 26.2.5, forward-ported the LLVM patches
+  to 23.1 (building the target-side LLVM from the monorepo), added a Rust
+  cross compiler for AROS with a store of AROS-patched crates, updated the gcc
+  16 patch to 16.2.0 and grub2 to 2.16.
+- Kernel and drivers: fixed dropped IOAPIC interrupts above GSI 15, 64-bit PCI
+  BAR decoding and BAR mapping outside the identity window, added a PCI bus
+  driver for Intel VMD, IPMI KCS/BT transports with a C:IPMI command, split HD
+  Audio into a reusable controller class, unified the reboot/shutdown reset
+  chain, and added ARDA, a read-only remote debug agent. A new controller.hidd
+  provides a game controller input subsystem with USB, Bluetooth and XInput
+  producers bridged to lowlevel.library.
+- USB: hubss.class now talks the USB 3 hub protocol to SuperSpeed hubs, and
+  pcixhci received use-after-free, teardown and enumeration fixes.
+- C runtime: openat()/fdopendir()/fstatat() family, ftruncate64(),
+  posix_fadvise(), fnmatch(), a thread-safe shared descriptor table, per-task
+  runtime bases for pthread workers, one malloc pool per program, and C++
+  fixes (__dso_handle, usable pthread.h).
+- Filesystems: afs gained run reads and multi-user permissions, fat maintains
+  the clean-shutdown bit and honours DE_MAXTRANSFER, SFS received 64-bit
+  startup fixes, and pfs3 was made 64-bit clean with a MultiUser variant.
+- m68k: ROM-size work (size-optimised ROM code, moving code to the extended
+  ROM bank, room for the compositor), the cd32mpeg.device build, and Paula
+  interrupt fixes.
+- Infrastructure: Windows-compatible filename validation in CI, documented
+  contributing and pull request policies, fetch.sh hardening, Azure fixes,
+  and refreshed translations.
+
+
+Bo Ståle Kopperud
+
+- Brought SMP to ARM and AArch64: exec spinlocks and barriers, an SMP-safe
+  allocator, task state arbitration, secondary core bring-up on the Raspberry
+  Pi, inter-processor interrupts (including GIC-400 on Pi 4/5), a per-core
+  scheduler, CPU affinity (NP_Affinity, SetTaskAffinity(), inheritance), and
+  an extensive SMP test suite covering scheduling, semaphores, timers, device
+  I/O, networking and memory mapping.
+- Raspberry Pi 4 and 5 on AArch64: the BCM2711 PCIe host bridge and DMA4
+  engines, the BCM2712 (Pi 5/500) bootstrap, GIC SPIs and MSI, RP1 xHCI and
+  Ethernet presented as PCI devices, NVMe on the Pi 5, SD card and WiFi on
+  BCM2712, power off, reboot and the power button, battclock with the Pi 5
+  and DS3231 RTCs, a bcmgenet Ethernet driver for the Pi 4, a cdnsgem
+  (Cadence GEM) Ethernet driver for the Pi 5, and an i2c-bcm2708 driver.
+- vcgfx (formerly vc4gfx): HVS display-list takeover with page flipping and
+  overlay planes on every Pi, native HDMI mode setting from the sink's EDID on
+  the Pi 4 and 5 (including scrambled modes above 340 MHz), and a set of
+  display diagnostic tools (ddcprobe, dispdump, modetest).
+- GPU: a vc4gallium VideoCore IV gallium driver and the v3d (VideoCore VI)
+  driver rebuilt on it and ported to Mesa 26, giving OpenGL on the Pi 3 and 4
+  with a GL session per screen.
+- Reworked usb2otg (DWC2) split transfers and hotplug handling, raised lan78xx
+  throughput from 100 to 780 KB/s, and made SD I/O faster while fixing lost
+  sectors on the Pi 1-3.
+- WiFi: a C:wifi command and a WiFi network chooser prefs program, bwfm signal
+  quality and traffic reporting, and AROSTCP DHCP restarts when links come
+  and go. Also fixed AROSTCP descriptor handling and socket hand-over under
+  SMP.
+- Added the flexgroup layout engine to Zune, fixed three Zune attribute bugs,
+  added pread() and CLOCK_THREAD_CPUTIME_ID to posixc, fixed several pthread
+  races, and gave Intuition per-screen mouse coordinates for scaling display
+  drivers.
+
+
+Krzysztof Smiechowicz
+
+- Rebuilt the Nouveau graphics driver on top of the drm/nouveau code from the
+  Linux kernel, with a Linux compatibility layer derived from FreeBSD, libdrm
+  2.4.101 and xf86-video-nouveau 1.0.16. The result boots and switches
+  resolution on cards from Tesla through Maxwell (tested on GF8500 GT, GT240,
+  GTX 550 Ti, GT 630, GTX 750 and GTX 760), with 2D acceleration on Tesla,
+  Fermi, Kepler and Maxwell, 3D through gallium, firmware loading and
+  DVI/DisplayPort connector support.
+- xHCI fixes: full endpoint recovery from STALL, support for more than 15
+  root hub ports, and a LynxPoint chipset quirk.
+
+
+Andreas W. Just
+
+- Documented hundreds of previously undocumented APIs in AutoDocs: stdc and
+  posixc (math, fenv, locale, complex), pthread, poseidon.library, the
+  kernel's Krn* calls, Bluetooth, decorator and popupmenu libraries, nvdisk,
+  usergroup, rexxsyslib and many more.
+- Shell and console: error output redirection, the pipe character enabled by
+  default, backtick and .key/.def fixes, control-key line editing and Ctrl-W
+  in console.handler, native Iconify for console windows, and a long run of
+  console.device CSI fixes (ICH/DCH counts, per-unit keymaps, the BEL beep).
+- Made the C: commands preserve failure status consistently, fixed Version,
+  hardened Snoopy, tools/package and Unpack, and expanded ShowConfig with
+  storage, memory, system identity, CPU feature and release-date reporting.
+- Added a native QRCode.mcc Zune class, Gorilla icons for the prefs programs,
+  window sizing and iconify in MultiView, ShowWindow()/HideWindow()
+  semantics in Intuition, SSD classification in ahci/ata and an exact
+  capacity method in storage.hidd.
+- Build system: dynamic buffers in MetaMake and genmodule, response files to
+  avoid ARG_MAX in link commands, and LF line-ending normalisation with a CI
+  report.
+
+
+Gareth Davidson
+
+- Made PFS3 metadata endian-independent so the handler works on native
+  little-endian targets, then performed a thorough robustness pass over it:
+  cache eviction, failed-write retention, bounds checks and error reporting.
+- Carried out similar hardening passes over FAT, NTFS, AFS, SFS and SFSDefrag,
+  smbfs (SMB1 framing, NTLM, bounds), CDVDFS/CDFS (ISO, Rock Ridge, Joliet
+  and HFS), and the RAM, PIPE, CON, port and debug handlers.
+- Ported narrator-ts to AROS, adding SPEAK: and a modern speech API.
+- Fixed classic Amiga live-media booting (bootstrap path, inputclass in the
+  bootstrap ELF, CD boot detection by filesystem type), FAT detection on GPT
+  basic data partitions, several BOOPSI gadget classes (colorwheel,
+  gradientslider, tapedeck) and X11 keyboard autorepeat handling.
+
+
+Nicolas Ramz
+
+- CD32: added CD32 MPEG device support, fixed CDXL playback (Microcosm), audio
+  playback, delayed media insertion and Akiko read streams, and fixed Kid
+  Chaos compatibility and pad sampling.
+- Cut the m68k memory footprint: right-sized stacks and buffers, on-demand
+  Intuition pools, geometric exec pool growth, a sparse exception-handler
+  list, low-memory preservation for hunks and packets, and a ROM-safe RAM
+  drive.
+- Classic graphics compatibility: caller-owned Chip RAM planar screens and
+  raw custom screens display on AmigaVideo, blitter-accelerated planar blits,
+  masked copies and template blits, user copper lists, classic sprite streams
+  and legacy cursors, beam-synchronised blits and D/Generation compatibility.
+- dos: honoured legacy BCPL packet callbacks, ran the CD boot shell in the
+  boot process, moved large FRead()/FWrite() requests without the buffer, laid
+  out CIABase like Kickstart, and preserved interrupt nesting and CCR across
+  m68k task exceptions.
+
+
+Fabian Schmieder
+
+- Laid the groundwork for Raspberry Pi 5 support: an experimental BCM2712
+  platform, the RP1 southbridge resource with DesignWare I2C and xHCI USB
+  3.0, a PCIe host bridge for M.2 NVMe HATs, eMMC2 and DMA, CYW43455 WiFi,
+  the hardware RTC via the VideoCore mailbox, an upgraded gpio.resource with
+  a C:GPIO command, HDMI audio and an I2S audio driver for DAC HATs.
+- Added the initial VideoCore VI (V3D 4.2) GPU driver with Mesa OpenGL, and a
+  modular AArch64 startup with dual exception stacks.
+- Added m68kemu.library, an m68k emulation library built on the Moira CPU
+  core, with a RunM68K tool and dos routing of m68k hunk binaries through it.
+- Ported mbedTLS 3.6.7 and libssh, and added native ssh, sshd and keygen.
+- Added a native Cocoa display backend and input HIDD for Apple Silicon.
+
+
+Jaime Dias
+
+- Networked MIDI: CAMD drivers for MIDI over the network, an RTP-MIDI link
+  library with AppleMIDI sessions and clock sync, Universal MIDI Packet and
+  Network MIDI 2.0 support, and the netmidid service with mDNS advertising.
+- Added mdnsd and bonami.library for multicast DNS service registration,
+  DNS-SD browse and resolve, record queries and command-line tools.
+- Bluetooth: a BLE MIDI class, the Raspberry Pi onboard Bluetooth transport,
+  LE peripheral and GATT support, and Pi 400/CM4 firmware.
+- Made USB MIDI devices usable through CAMD, fixed CAMD driver scanning and
+  port lifetime, and added IPv4 multicast on SANA-II interfaces to AROSTCP.
+
+
+Bernie Innocenti
+
+- A sweep of graphics.library, amigavideo and p96gfx correctness fixes: plane
+  masks and rp->Mask honoured everywhere, minterms applied over pens, RectFill
+  drawmodes, FRST_DOT, BltPattern masks, the blitter's Bresenham tie-break,
+  BitMapScale() sampling, and P96 pointer sprite handling.
+- Added an AUX: handler, a Paula serial hidd for m68k-amiga, con-handler over
+  a device, Mount SHUTDOWN and proper error reporting from Mount, Assign and
+  the Shell.
+- Added a ZZ9000 Picasso96 display driver loader, made the classic
+  preferences the default on m68k Amiga, and fitted the ScreenMode editor on
+  200-line screens.
+
+
+John Knipper
+
+- Brought up the Raspberry Pi 4 (BCM2711) on AArch64: GIC-400 and generic
+  timer platform, device tree parsing, interrupt routing and the SDHCI card
+  slot, along with pcixhci fixes for strict-alignment and cache-coherency on
+  AArch64.
+- dos: implemented SYS_CliNumPtr, fixed Rename(), multi-assign opens and
+  NameFromLock(); added ACTION_FLUSH to fat and afs, and fixed AROSTCP
+  SocketBase publication and locking.
+
+
+Espen Otterstad
+
+- Made the darwin-aarch64 hosted port usable: built the Cocoa display backend
+  on the split gfx/display classes, fixed the mouse and keyboard drivers and
+  key mapping, variadic host calls on arm64, W^X executable code hunks,
+  hostdisk on arm64 and interrupt masking.
+- Fixed ram-handler soft links and name limits, pfs3 ownership and name
+  overflows, and aarch64 relocation range checks in the ELF loader.
+
+
+Andrew Hutchings
+
+- CD32 booting: cd.device fixes for Akiko's latched completion bits, drive
+  waits, CD_PLAYTRACK and disc probing; CD boots run as an appliance with
+  requesters suppressed; and m68k memory reductions (measured task stacks,
+  pools no longer committing a full puddle, a CDVDFS cache a stock CD32 can
+  afford).
+
+
+terminills
+
+- x86_64: expanded the identity map and page tables from 4 GiB to 64 GiB, a
+  GOP framebuffer handoff for framebuffers above 4 GiB (ReBAR), and SMP
+  multi-core bring-up with an interrupt-controller rework.
+- Imported Mesa 26.0.0, and added an amdgpu driver derived from Linux amdgpu
+  with RadeonSI (SI and CIK), GPU 2D operations and an AMDGPU monitor.
+- A large Installer compatibility pass: copyfiles, copylib, foreach, getsum,
+  getversion, patmatch, protect, textfile, tooltype and the askdir/askfile/
+  askdisk GUI, many Installer V43 behaviour fixes, APPBANNER and DRYRUN.
+- Added a Bluetooth A2DP audio class, fixed bluetooth.class USB handling, CD
+  automounts in massstorage.class, RNDIS binding and i8042 initialisation.
+
+
+Andrzej "retrofaza" Subocz
+
+- Overhauled BoingIconBar (ALIGN tooltype, alpha transparency, custom labels,
+  surviving screen resets, refresh and crash fixes), fixed Dtpic alpha
+  rendering, made MUI settings apply live, and fixed NListtree heap
+  corruption and corrupted prefs handling in Dataspace.
+
+
+Also deserving mention: Ashahell added getrusage() and sysconf() support to
+posixc, made x86_64 KrnMapGlobal page-granular with cross-CPU TLB flushes and
+made the AHI drivers report their mixing rates; Tomasz Staniak moved gfx.hidd
+composition off screen so an undrawn buffer is never shown and added input
+shapes to layers; Toni Wilen fixed ROM detection, moved modules to the
+extended ROM and added new-style UAE boot ROM RTG support; tonimanot71
+contributed a batch of Kickstart-compatibility fixes for trackdisk, dosboot,
+the Shell and graphics; Rob N added dosrelative.library for directory-relative
+file operations; Bryan Ashby fixed AFS bitmap validation; and Vaibhav
+Srivastava fixed documentation typos.
