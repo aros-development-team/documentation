@@ -1223,6 +1223,27 @@ def create_module_docs() -> None:
         reqtools_stub_docs.write(str(targetdir), module_titles)
         function_index.add_list(reqtools_stub_docs.docfilename, reqtools_stub_docs)
 
+    # PopupMenu's static-link variadic wrappers are not shared-library vectors.
+    # Select only the documented wrapper objects owned by popupmenu.lib.
+    popupmenu_link_dir = TOPDIR / "workbench" / "libs" / "popupmenu" / "staticlib"
+    popupmenu_link_docs = LibDocList()
+    popupmenu_link_docs.read(
+        str(popupmenu_link_dir), name="popupmenu-linklib",
+        filenames=("pm_exlst.c", "pm_filterimsg.c", "pm_getitemattrs.c",
+                   "pm_insertmenuitem.c", "pm_layoutmenu.c", "pm_makeitem.c",
+                   "pm_makemenu.c", "pm_openpopupmenu.c", "pm_setitemattrs.c"))
+    expected_popupmenu_names = {
+        "PM_ExLst()", "PM_FilterIMsg()", "PM_GetItemAttrs()",
+        "PM_InsertMenuItem()", "PM_LayoutMenu()", "PM_MakeItem()",
+        "PM_MakeMenu()", "PM_OpenPopupMenu()", "PM_SetItemAttrs()"}
+    actual_popupmenu_names = [doc.docname for doc in popupmenu_link_docs.doclist]
+    if len(actual_popupmenu_names) != len(expected_popupmenu_names) or set(actual_popupmenu_names) != expected_popupmenu_names:
+        raise ValueError("PopupMenu static-link AutoDoc inventory drift")
+    popupmenu_link_docs.docfilename = module_output_registry.claim(
+        "popupmenu-linklib", popupmenu_link_dir)
+    popupmenu_link_docs.write(str(targetdir), module_titles)
+    function_index.add_list(popupmenu_link_docs.docfilename, popupmenu_link_docs)
+
     # m68k-only BCPL compatibility vectors are outside the library scan roots.
     bcpl_dir = TOPDIR / "arch" / "m68k-all" / "dos"
     bcpl_docs = LibDocList()
