@@ -1596,13 +1596,6 @@ if __name__ == "__main__":
     # Setup logging for standalone execution
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     
-    current_dir = Path.cwd()
-    parent_dir = current_dir.parent
-    
-    if parent_dir.exists():
-        os.chdir(str(parent_dir))  # because we have relative paths
-        logging.info(f"Changed working directory to {parent_dir}")
-    else:
-        logging.warning(f"Parent directory {parent_dir} does not exist")
-    
+    # Keep TOPDIR ("..") relative to the documentation repository root.
+    os.chdir(Path(__file__).resolve().parent.parent)
     create_all_docs()

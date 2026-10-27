@@ -64,7 +64,10 @@ def read_mui_docs(source_dir):
                 elif current:
                     sections[current].append(line)
             sections = {k: "\n".join(v).strip("\n") for k, v in sections.items()}
-            declared = sections.get("NAME", "").strip().splitlines()[0].split(" --", 1)[0].split(" (", 1)[0].strip()
+            names = sections.get("NAME", "").strip().splitlines()
+            if not names:
+                raise ValueError(f"Missing MUI AutoDoc NAME: {path}: {match['symbol']}")
+            declared = names[0].split(" --", 1)[0].split(" (", 1)[0].strip()
             if declared != match["symbol"]:
                 raise ValueError(f"MUI AutoDoc symbol mismatch: {path}: {match['symbol']} vs {declared}")
             result.append((match["class_name"], match["symbol"], sections))

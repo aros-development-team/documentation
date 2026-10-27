@@ -13,6 +13,7 @@ import sys
 import shutil
 import glob
 import codecs
+import subprocess
 
 import db.credits.parse
 import db.credits.format.rest
@@ -893,7 +894,7 @@ def buildWWW():
             # Remove index-offline.html
             utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
 
-        os.system('chmod -R go+r %s' % TRGROOT)
+        subprocess.run(['chmod', '-R', 'go+r', TRGROOT], check=True)
 
 
 def buildHTML():
@@ -943,7 +944,7 @@ def buildHTML():
     utility.remove(os.path.join(TRGROOT, 'index.html'))
     os.rename(os.path.join(TRGROOT, 'index-offline.html'), os.path.join(TRGROOT, 'index.html'))
 
-    os.system('chmod -R go+r %s' % TRGROOT)
+    subprocess.run(['chmod', '-R', 'go+r', TRGROOT], check=True)
 
 
 TARGETS = {
@@ -986,8 +987,10 @@ if __name__ == '__main__':
 
         # If www is a target and no site specified, default to the first in SITES
         if 'www' in targets and len(targetsites) == 0:
-            targetsites.append(SITES[SITES.keys()[0]])  # Get first value from SITES
+            targetsites.append(next(iter(SITES)))  # Get the first site key
 
         # Build each target
         for target in targets:
             TARGETS[target]()
+    else:
+        sys.exit(2)
