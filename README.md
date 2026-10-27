@@ -28,3 +28,12 @@ And once that has completed, build your desired target..
 
 ..where site must be one of aros, dev, locale
 
+To validate rendered reStructuredText during a full HTML or website rebuild, use
+
+    ./build html --strict-docutils
+    ./build www dev en --strict-docutils
+
+The optional strict mode fails on Docutils errors (ERROR/3 or higher), but
+permits warnings. It re-renders pages even if cached HTML is up to date.
+Existing documentation errors must be corrected before strict builds pass;
+normal builds retain their previous behavior.
