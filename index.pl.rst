@@ -1,7 +1,5 @@
 .. raw:: html
 
-   <div class="front-container">
-
    <div class="main-div"><!--left side with main content-->
 
    <section>
@@ -40,4 +38,3 @@
    </section>
 
    </div><!--main-div-->
-   </div><!--front-container-->
