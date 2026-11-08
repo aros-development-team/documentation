@@ -875,11 +875,11 @@ class LibDocList:
                 fdesc.write("----------\n\n")
 
                 # create toc
-                tablesep = (("=" * 39) + " ") * 4
+                tablesep = (("=" * 74) + " ") * 4
                 fdesc.write(tablesep + "\n")
                 for docnr, doc in enumerate(self.doclist):
                     tocname = f"`{doc.docname}`_"
-                    tocname = tocname.ljust(40)
+                    tocname = tocname.ljust(75)
                     fdesc.write(tocname)
                     if (docnr + 1) % 4 == 0:
                         fdesc.write("\n")
@@ -1020,11 +1020,11 @@ class HiddDocList(object):
                         fdesc.write(classname + "\n" + len(classname) * "-" + "\n\n")
 
                     # create toc
-                    tablesep = (("=" * 42) + " ") * 4
+                    tablesep = (("=" * 74) + " ") * 4
                     fdesc.write(tablesep + "\n")
                     for docnr in range(len(doclist)):
                         tocname = "`" + doclist[docnr].docname + "`_"
-                        tocname = tocname.ljust(43)
+                        tocname = tocname.ljust(75)
                         fdesc.write(tocname)
                         if (docnr + 1) % 4 == 0:
                             fdesc.write("\n")
@@ -1049,7 +1049,7 @@ def write_index(fdesc, targetdir: str) -> None:
     files = [f.name for f in target_path.iterdir() if f.is_file()]
     files.sort()
 
-    tablesep = (("=" * 49) + " ") * 5
+    tablesep = (("=" * 74) + " ") * 5
     fdesc.write(tablesep + "\n")
     docnr = 1
     
@@ -1063,7 +1063,7 @@ def write_index(fdesc, targetdir: str) -> None:
             
             docname = doc[:-7]  # remove .en.rst
             tocname = f"`{docname} <{docname}>`_"
-            tocname = tocname.ljust(50)
+            tocname = tocname.ljust(75)
             fdesc.write(tocname)
             if docnr % 5 == 0:
                 fdesc.write("\n")
