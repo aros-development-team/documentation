@@ -127,13 +127,6 @@ section {
     width: 100%;
 }
 
-/* for the front page we need another flex grid so we can have
-   the rssfeeds on the right side.*/
-.front-container {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  gap: 0.5em;
-}
 
 /* for the iframe which shows the nightly builds */
 .download-iframe {
