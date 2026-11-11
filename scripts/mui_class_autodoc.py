@@ -8,7 +8,7 @@ SOURCE_FILES = ("list.c", "listview.c", "panelgroup.c", "string.c", "window.c")
 SECTIONS = {"NAME", "SUPERCLASS", "DESCRIPTION", "SYNOPSIS", "FUNCTION",
             "INPUTS", "TAGS", "RESULT", "NOTES", "EXAMPLE", "BUGS",
             "SEE ALSO", "INTERNALS", "HISTORY", "METHODS", "ATTRIBUTES"}
-HEADER = re.compile(r"^/\*{6}\s*(?P<class_name>[A-Za-z][A-Za-z0-9_]*)\.mui/"
+HEADER = re.compile(r"^/\*{6}\s*(?P<class_name>[A-Za-z][A-Za-z0-9_]*)\.(?P<family>mui|mcc)/"
                     r"(?P<symbol>MUI[ACM]_[A-Za-z0-9_]+)\s+\*+\s*$", re.M)
 
 
@@ -32,21 +32,49 @@ def _candidate_source_files(source_dir):
             additional.append(path.name)
     return required + tuple(additional)
 
-def read_mui_docs(source_dir):
-    """Extract MUI class AutoDocs from the selected C source files.
+def _mcc_source_files(source_root):
+    """Discover inline MCC AutoDocs in AROS C files, never in .doc mirrors.
 
-    Read five mandatory Latin-1 source files. Return ``(class, symbol,
-    sections)`` tuples, rejecting unterminated comments, duplicate sections,
-    incorrect declared symbols, and duplicate symbols with ``ValueError``.
-    Missing source files raise ``FileNotFoundError``.
+    This scan is confined to AROS' Zune class subtree. The selected source
+    files and symbols are validated by read_mui_docs before output is written.
+    """
+    root = Path(source_root)
+    if not root.is_dir():
+        raise FileNotFoundError(root)
+    aros_root = root.parents[2].resolve()
+    resolved = root.resolve()
+    if not resolved.is_relative_to(aros_root):
+        raise ValueError(f"MCC root escapes AROS: {root}")
+    selected = []
+    for path in sorted(root.rglob("*.c")):
+        if not path.resolve().is_relative_to(aros_root):
+            raise ValueError(f"MCC source escapes AROS: {path}")
+        source = path.read_text(encoding="latin-1")
+        if ".mcc/" not in source:
+            continue
+        if any(match["family"] == "mcc" for match in HEADER.finditer(source)):
+            selected.append(path)
+    return tuple(selected)
+
+
+def read_mui_docs(source_dir, mcc_root=None):
+    """Extract source-inline MUI and MCC class contracts.
+
+    Preserve the five required muimaster sources. If mcc_root is provided,
+    additionally read inline MCC AutoDocs from Zune C sources, never from
+    parallel .doc documents. Return ``(class, symbol, sections)`` tuples.
+    Reject missing files, malformed sections and duplicate symbols.
     """
     result = []
-    for filename in _candidate_source_files(source_dir):
-        path = Path(source_dir) / filename
+    mui_sources = tuple(Path(source_dir) / name for name in _candidate_source_files(source_dir))
+    mcc_sources = _mcc_source_files(mcc_root) if mcc_root is not None else ()
+    for path in mui_sources + mcc_sources:
         if not path.is_file():
             raise FileNotFoundError(path)
         source = path.read_text(encoding="latin-1")
         for match in HEADER.finditer(source):
+            if match["family"] != ("mcc" if path in mcc_sources else "mui"):
+                continue
             end = source.find("*/", match.end())
             if end < 0:
                 raise ValueError(f"Unterminated MUI AutoDoc: {path}: {match['symbol']}")
@@ -70,19 +98,28 @@ def read_mui_docs(source_dir):
             declared = names[0].split(" --", 1)[0].split(" (", 1)[0].strip()
             if declared != match["symbol"]:
                 raise ValueError(f"MUI AutoDoc symbol mismatch: {path}: {match['symbol']} vs {declared}")
-            result.append((match["class_name"], match["symbol"], sections))
-    symbols = [symbol for _, symbol, _ in result]
-    if len(symbols) != len(set(symbols)):
-        raise ValueError("Duplicate MUI AutoDoc symbol")
+            class_name = match["class_name"]
+            if match["family"] == "mcc":
+                class_name += ".mcc"
+            result.append((class_name, match["symbol"], sections))
+    # PR284_MUI_CLASS_SCOPED_UNIQUENESS_V1
+    seen_class_symbols = set()
+    for class_name, symbol, _ in result:
+        key = (class_name.casefold(), symbol.casefold())
+        if key in seen_class_symbols:
+            raise ValueError(
+                f"Duplicate MUI AutoDoc symbol in {class_name}: {symbol}")
+        seen_class_symbols.add(key)
     return result
 
-def write_mui_docs(source_dir, target_dir):
-    """Generate per-class ReST pages and an index for MUI AutoDocs.
+def write_mui_docs(source_dir, target_dir, mcc_root=None):
+    """Generate source-bound MUI/MCC class ReST pages and their index.
 
-    Skip NAME, INTERNALS, and HISTORY sections in output, render SYNOPSIS
-    as literal text, and write UTF-8 files. Return the entry and class counts.
+    Preserve existing .mui page paths and render MCC classes to distinct
+    -mcc pages. Skip NAME, INTERNALS, and HISTORY and render SYNOPSIS
+    literally. Return the generated entry and class counts.
     """
-    docs = read_mui_docs(source_dir)
+    docs = read_mui_docs(source_dir, mcc_root)
     target = Path(target_dir)
     target.mkdir(parents=True, exist_ok=True)
     classes = defaultdict(list)
@@ -91,7 +128,8 @@ def write_mui_docs(source_dir, target_dir):
     index = ["MUI Class Reference", "===================", "",
              ".. Generated from AROS source. Do not edit.", ""]
     for class_name in sorted(classes):
-        title = f"{class_name}.mui"
+        title = class_name if class_name.endswith(".mcc") else f"{class_name}.mui"
+        slug = class_name.lower().replace(".mcc", "-mcc")
         lines = [title, "=" * len(title), "",
                  ".. Generated from AROS source. Do not edit.", ""]
         for symbol, sections in sorted(classes[class_name]):
@@ -105,8 +143,8 @@ def write_mui_docs(source_dir, target_dir):
                 else:
                     lines.extend(["| " + x for x in body.splitlines()])
                 lines.append("")
-        filename = class_name.lower() + ".en.rst"
+        filename = slug + ".en.rst"
         (target / filename).write_text("\n".join(lines) + "\n", encoding="utf-8")
-        index.append(f"* `{title} <{class_name.lower()}>`_ ({len(classes[class_name])} entries)")
+        index.append(f"* `{title} <{slug}>`_ ({len(classes[class_name])} entries)")
     (target / "index.en.rst").write_text("\n".join(index) + "\n", encoding="utf-8")
     return len(docs), len(classes)

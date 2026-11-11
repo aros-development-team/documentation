@@ -84,8 +84,8 @@ def load_source_registry(registry_dir: Path, source_root: Path) -> Tuple[SourceD
             raise ValueError(f"{config_file}: unsupported AutoDoc kind {kind!r}")
         rel = _relative_path(values["path"].strip(), config_file, "path")
         directory = _within_source(source_root, rel, config_file)
-        if not directory.is_dir() or directory.is_symlink():
-            raise ValueError(f"{config_file}: missing or symlinked source directory: {directory}")
+        if not directory.is_dir():
+            raise ValueError(f"{config_file}: missing source directory: {directory}")
         output = values["output"].strip()
         if not _OUTPUT.fullmatch(output):
             raise ValueError(f"{config_file}: invalid output name {output!r}")
@@ -113,9 +113,11 @@ def load_source_registry(registry_dir: Path, source_root: Path) -> Tuple[SourceD
             raise ValueError(f"{config_file}: no source .c files selected")
         for name in names:
             path = directory / name
-            if not path.is_file() or path.is_symlink():
-                raise ValueError(f"{config_file}: missing or symlinked source: {path}")
+            if not path.is_file():
+                raise ValueError(f"{config_file}: missing source: {path}")
             normalized = path.resolve()
+            if not normalized.is_relative_to(source_root.resolve()):
+                raise ValueError(f"{config_file}: source file escapes AROS root: {path}")
             if normalized in source_files:
                 raise ValueError(f"{config_file}: duplicate source {path}, registered by {source_files[normalized]}")
             source_files[normalized] = config_file

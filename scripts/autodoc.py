@@ -40,11 +40,12 @@ import codecs
 import logging
 import json
 from collections import Counter, defaultdict
-from autodoc_entry_index import AutoDocEntryIndex
-from pathlib import Path
-from mui_class_autodoc import write_mui_docs
-from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Dict, Tuple, Optional, Any
+
+from autodoc_source_registry import load_source_registry
+from mui_class_autodoc import write_mui_docs
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -79,14 +80,76 @@ def source_provenance(filepath: Path) -> str:
 
 # Regex for autodoc block (without surrounding comments)
 AD_REGX = re.compile(r"""
-^/\*{6,}
+^/\*{6,}[ \t]*\n
 (
-.*?
+(?:(?!\*/).)*?
 ^[/*\s]{4,4}NAME
-.*?
+(?:(?!\*/).)*?
 )
 ^\*{7,}/
 """, re.VERBOSE | re.MULTILINE | re.DOTALL)
+
+# PR284_LEGACY_AUTODOC_GRAMMAR_V1
+# AROS historically embeds C declarations between documentation comment segments.
+# Recognize that *one established grammar* without weakening the original parser.
+# Quoted C declarations remain text for the existing AutoDoc/LibAutoDoc parser.
+_LEGACY_BANNER = re.compile(r"(?m)^/\*{6,}[ \t]*$")
+_LEGACY_END = re.compile(r"(?m)^\*{6,}/[ \t]*$")
+_LEGACY_NAME = re.compile(r"(?m)^[ \t]*NAME[ \t]*\*/[ \t]*$")
+_LEGACY_SECTION = re.compile(
+    r"^[ \t]*/\*[ \t]*(NAME|FORMAT|SYNOPSIS|LOCATION|FUNCTION|INPUTS|"
+    r"TAGS|RESULT|EXAMPLE|NOTES|BUGS|SEE ALSO|INTERNALS|HISTORY|TEMPLATE)"
+    r"[ \t]*(?:\*/)?[ \t]*$"
+)
+_LEGACY_NAME_LINE = re.compile(r"^[ \t]*NAME[ \t]*\*/[ \t]*$")
+
+
+def _legacy_autodoc_view(raw):
+    """Normalize a split-comment AutoDoc solely in memory for existing parsing."""
+    lines = []
+    for line in raw.splitlines():
+        if _LEGACY_NAME_LINE.fullmatch(line):
+            lines.append('    NAME')
+            continue
+        section = _LEGACY_SECTION.fullmatch(line)
+        if section:
+            lines.append('    ' + section.group(1))
+            continue
+        lines.append(line)
+    return '\n'.join(lines)
+
+
+def iter_aros_autodoc_entries(source):
+    """Yield ordinary and historic split-comment AutoDoc bodies in source order.
+
+    Source banners are bounded independently to prevent spanning neighboring
+    comments. Standard matches are passed through byte-for-byte. Legacy
+    candidates must contain NAME */ and a terminating star banner; they are
+    normalized only for the existing AutoDoc semantic parser.
+    """
+    entries = {m.start(): m.group(1) for m in AD_REGX.finditer(source)}
+    banners = list(_LEGACY_BANNER.finditer(source))
+    for n, banner in enumerate(banners):
+        start = banner.start()
+        limit = banners[n + 1].start() if n + 1 < len(banners) else len(source)
+        segment = source[start:limit]
+        end = _LEGACY_END.search(segment)
+        if not end:
+            continue
+        body = segment[banner.end() - start:end.start()]
+        if not _LEGACY_NAME.search(body):
+            continue
+        # A second canonical-looking body inside the same banner is ambiguous;
+        # fail before publishing potentially incorrect source provenance.
+        if re.search(r"(?m)^[ \t]*NAME[ \t]*$", body):
+            raise ValueError('Ambiguous canonical and legacy NAME in one AutoDoc')
+        normalized = _legacy_autodoc_view(body)
+        # Even if the original regex happens to accept a split NAME, it
+        # does not correctly interpret its embedded comment boundaries.
+        # Replace, never duplicate, the entry for this exact banner.
+        entries[start] = normalized
+    for start in sorted(entries):
+        yield entries[start]
 
 # Regex for a title
 TITLES_REGX = re.compile(r"""
@@ -160,14 +223,12 @@ class AutoDocOutputAudit:
         self.records = []
         self.recognized_count = 0
         self.math_variant_sources = []
-        self.index = AutoDocEntryIndex()
 
     def reset(self):
         """Clear previously recognized entries, outputs, and variant sources."""
         self.records.clear()
         self.recognized_count = 0
         self.math_variant_sources.clear()
-        self.index.clear()
 
     def recognize(self):
         """Count an AutoDoc source entry selected for parsing."""
@@ -191,10 +252,11 @@ class AutoDocOutputAudit:
         if not origin:
             raise ValueError('Missing AutoDoc source provenance: ' + doc.docname)
         record = {'source': origin, 'document': relative,
-                  'entry': doc.docname, 'status': 'PENDING'}
+                  'entry': getattr(doc, "rst_title", doc.docname), 'status': 'PENDING'}
+        if record['entry'] != doc.docname:
+            record['source_symbol'] = doc.docname
         if hasattr(doc, 'source_paths'):
             record['sources'] = doc.source_paths
-        self.index.add(record, doc, is_hidd=isinstance(doc, HiddAutoDoc))
         self.records.append(record)
 
     @staticmethod
@@ -215,7 +277,9 @@ class AutoDocOutputAudit:
         if any expected page, heading, or source count is missing or mismatched.
         Discovery outside the generator's selected sources remains unverified.
         """
-        expected = self.index.expected_counts()
+        expected = defaultdict(Counter)
+        for record in self.records:
+            expected[record['document']][record['entry']] += 1
         defective = []
         for document, names in sorted(expected.items()):
             path = Path(document)
@@ -425,16 +489,25 @@ class AutoDoc:
         fdesc.write("`%s.library/%s() <%s/%s#%s>`_ " % (libname, funcname, path_to_lib, libname, funcname.lower()))
 
     def write_xref_localfunction(self, fdesc, funcname):
-        """Write a cross-reference to a local function."""
-        fdesc.write("`%s()`_ " % (funcname))
+        """Link only to a function emitted on the same module page."""
+        target = funcname + "()"
+        if target in getattr(self, "module_local_names", ()):
+            from docutils import nodes
+            fdesc.write("`%s() <#%s>`_ " % (funcname, nodes.make_id(target)))
+        else:
+            fdesc.write("``%s()`` " % (funcname))
 
     def write_xref_header(self, fdesc, name):
         """Write a cross-reference to a header file."""
         fdesc.write("`%s </documentation/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
-        """Write a cross-reference to a string."""
-        fdesc.write("`%s`_ " % (name))
+        """Link on-page symbols; leave other identifiers as literals."""
+        if name in getattr(self, "module_local_names", ()):
+            from docutils import nodes
+            fdesc.write("`%s <#%s>`_ " % (name, nodes.make_id(name)))
+        else:
+            fdesc.write("``%s`` " % (name))
 
     def write_xref_any(self, fdesc, name):
         """Write a literal cross-reference without a link."""
@@ -645,8 +718,9 @@ class HiddAutoDoc(AutoDoc):
 
         """
 
-        fdesc.write(self.docname + "\n")
-        fdesc.write("=" * len(self.docname) + "\n\n")
+        heading = getattr(self, "rst_title", self.docname)
+        fdesc.write(heading + "\n")
+        fdesc.write("=" * len(heading) + "\n\n")
         AutoDoc.write(self, fdesc, titles)
         fdesc.write("\n")
 
@@ -673,7 +747,7 @@ class ShellDocList:
             try:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in AD_REGX.findall(content):
+                    for ad_entry in iter_aros_autodoc_entries(content):
                         try:
                             adoc = ShellAutoDoc(ad_entry)
                             if names is not None and adoc.docname not in names:
@@ -793,7 +867,7 @@ class LibDocList:
             try:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in AD_REGX.findall(content):
+                    for ad_entry in iter_aros_autodoc_entries(content):
                         try:
                             adoc = LibAutoDoc(ad_entry)
                             if names is not None and adoc.docname not in names:
@@ -888,7 +962,9 @@ class LibDocList:
                 fdesc.write(f"\n{tablesep}")
                 fdesc.write("\n\n-----------\n\n")
 
+                local_names = frozenset(doc.docname for doc in self.doclist)
                 for i, doc in enumerate(self.doclist):
+                    doc.module_local_names = local_names
                     doc.write(fdesc, titles)
                     doc.write_xref(fdesc, ".")
                     # write transition
@@ -961,7 +1037,7 @@ class HiddDocList(object):
                 print("Reading from file", filename)
                 with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in AD_REGX.findall(content):
+                    for ad_entry in iter_aros_autodoc_entries(content):
                         DOC_AUDIT.recognize()
                         adoc = HiddAutoDoc(ad_entry)
                         if adoc.docname != "":
@@ -994,6 +1070,19 @@ class HiddDocList(object):
 
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en.rst")
+            counts = Counter(doc.docname.casefold()
+                             for entries in self.doclist.values() for doc in entries)
+            identities = set()
+            for classname, entries in self.doclist.items():
+                for doc in entries:
+                    key = (classname, doc.docname.casefold())
+                    if key in identities:
+                        raise ValueError("Repeated HIDD AutoDoc: %r" % (key,))
+                    identities.add(key)
+                    if counts[doc.docname.casefold()] > 1:
+                        doc.rst_title = "%s (%s)" % (doc.docname, classname)
+            local_names = frozenset(getattr(doc, "rst_title", doc.docname)
+                                    for entries in self.doclist.values() for doc in entries)
             for doclist in self.doclist.values():
                 for doc in doclist:
                     DOC_AUDIT.expect(filename, doc)
@@ -1025,7 +1114,7 @@ class HiddDocList(object):
                     tablesep = (("=" * 74) + " ") * 4
                     fdesc.write(tablesep + "\n")
                     for docnr in range(len(doclist)):
-                        tocname = "`" + doclist[docnr].docname + "`_"
+                        tocname = "`" + getattr(doclist[docnr], "rst_title", doclist[docnr].docname) + "`_"
                         tocname = tocname.ljust(75)
                         fdesc.write(tocname)
                         if (docnr + 1) % 4 == 0:
@@ -1034,6 +1123,7 @@ class HiddDocList(object):
                     fdesc.write("\n\n-----------\n\n")
 
                     for doc in doclist:
+                        doc.module_local_names = local_names
                         doc.write(fdesc, titles)
                         doc.write_xref(fdesc, ".")
                         # write transition
@@ -1425,10 +1515,9 @@ def create_module_docs() -> None:
     mui_source = TOPDIR / "workbench" / "libs" / "muimaster" / "classes"
     mui_target = Path("documentation") / "developers" / "autodocs" / "mui-classes"
     if mui_source.exists():
-        write_mui_docs(mui_source, mui_target)
+        write_mui_docs(mui_source, mui_target, TOPDIR / "workbench" / "classes" / "zune")
 
     # Independently declared source groups: no per-path builder edits.
-    from autodoc_source_registry import load_source_registry
     source_registry = load_source_registry(
         Path(__file__).resolve().parent / "autodoc-sources.d", TOPDIR)
     for source_entry in source_registry:
