@@ -102,6 +102,7 @@ def createCategoryItems( file ):
     architecture, API version, and implementation status.
     """
     categoryitems = []
+    seen = set()
 
     # Search for startup
     file.seek(0)   
@@ -119,13 +120,20 @@ def createCategoryItems( file ):
             continue
     
         words = line.strip().split( ';' )
-        
-        description = words[1]
-        category    = words[0]
-        status      = int( words[4] )
-        apiversion = int( words[3] )
-        architecture = int( words[2] )
+        if len(words) != 5:
+            raise ValueError("Malformed API status entry: {!r}".format(line.rstrip()))
 
+        category, description = words[:2]
+        try:
+            architecture, apiversion, status = map(int, words[2:])
+        except ValueError as exc:
+            raise ValueError("Non-numeric API status entry: {!r}".format(line.rstrip())) from exc
+        if architecture not in (1, 2) or apiversion not in (1, 2) or status not in (0, 1, 2, 3, 5):
+            raise ValueError("Unknown API status code: {!r}".format(line.rstrip()))
+        key = (category, description.casefold())
+        if key in seen:
+            raise ValueError("Duplicate API status entry: {} / {}".format(category, description))
+        seen.add(key)
         categoryitems.append( CategoryItem( description, category, status, architecture, apiversion ) )
 
     return categoryitems
