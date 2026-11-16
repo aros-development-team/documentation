@@ -80,76 +80,14 @@ def source_provenance(filepath: Path) -> str:
 
 # Regex for autodoc block (without surrounding comments)
 AD_REGX = re.compile(r"""
-^/\*{6,}[ \t]*\n
+^/\*{6,}
 (
-(?:(?!\*/).)*?
+.*?
 ^[/*\s]{4,4}NAME
-(?:(?!\*/).)*?
+.*?
 )
 ^\*{7,}/
 """, re.VERBOSE | re.MULTILINE | re.DOTALL)
-
-# PR284_LEGACY_AUTODOC_GRAMMAR_V1
-# AROS historically embeds C declarations between documentation comment segments.
-# Recognize that *one established grammar* without weakening the original parser.
-# Quoted C declarations remain text for the existing AutoDoc/LibAutoDoc parser.
-_LEGACY_BANNER = re.compile(r"(?m)^/\*{6,}[ \t]*$")
-_LEGACY_END = re.compile(r"(?m)^\*{6,}/[ \t]*$")
-_LEGACY_NAME = re.compile(r"(?m)^[ \t]*NAME[ \t]*\*/[ \t]*$")
-_LEGACY_SECTION = re.compile(
-    r"^[ \t]*/\*[ \t]*(NAME|FORMAT|SYNOPSIS|LOCATION|FUNCTION|INPUTS|"
-    r"TAGS|RESULT|EXAMPLE|NOTES|BUGS|SEE ALSO|INTERNALS|HISTORY|TEMPLATE)"
-    r"[ \t]*(?:\*/)?[ \t]*$"
-)
-_LEGACY_NAME_LINE = re.compile(r"^[ \t]*NAME[ \t]*\*/[ \t]*$")
-
-
-def _legacy_autodoc_view(raw):
-    """Normalize a split-comment AutoDoc solely in memory for existing parsing."""
-    lines = []
-    for line in raw.splitlines():
-        if _LEGACY_NAME_LINE.fullmatch(line):
-            lines.append('    NAME')
-            continue
-        section = _LEGACY_SECTION.fullmatch(line)
-        if section:
-            lines.append('    ' + section.group(1))
-            continue
-        lines.append(line)
-    return '\n'.join(lines)
-
-
-def iter_aros_autodoc_entries(source):
-    """Yield ordinary and historic split-comment AutoDoc bodies in source order.
-
-    Source banners are bounded independently to prevent spanning neighboring
-    comments. Standard matches are passed through byte-for-byte. Legacy
-    candidates must contain NAME */ and a terminating star banner; they are
-    normalized only for the existing AutoDoc semantic parser.
-    """
-    entries = {m.start(): m.group(1) for m in AD_REGX.finditer(source)}
-    banners = list(_LEGACY_BANNER.finditer(source))
-    for n, banner in enumerate(banners):
-        start = banner.start()
-        limit = banners[n + 1].start() if n + 1 < len(banners) else len(source)
-        segment = source[start:limit]
-        end = _LEGACY_END.search(segment)
-        if not end:
-            continue
-        body = segment[banner.end() - start:end.start()]
-        if not _LEGACY_NAME.search(body):
-            continue
-        # A second canonical-looking body inside the same banner is ambiguous;
-        # fail before publishing potentially incorrect source provenance.
-        if re.search(r"(?m)^[ \t]*NAME[ \t]*$", body):
-            raise ValueError('Ambiguous canonical and legacy NAME in one AutoDoc')
-        normalized = _legacy_autodoc_view(body)
-        # Even if the original regex happens to accept a split NAME, it
-        # does not correctly interpret its embedded comment boundaries.
-        # Replace, never duplicate, the entry for this exact banner.
-        entries[start] = normalized
-    for start in sorted(entries):
-        yield entries[start]
 
 # Regex for a title
 TITLES_REGX = re.compile(r"""
@@ -747,7 +685,7 @@ class ShellDocList:
             try:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in iter_aros_autodoc_entries(content):
+                    for ad_entry in AD_REGX.findall(content):
                         try:
                             adoc = ShellAutoDoc(ad_entry)
                             if names is not None and adoc.docname not in names:
@@ -867,7 +805,7 @@ class LibDocList:
             try:
                 with codecs.open(str(filepath), 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in iter_aros_autodoc_entries(content):
+                    for ad_entry in AD_REGX.findall(content):
                         try:
                             adoc = LibAutoDoc(ad_entry)
                             if names is not None and adoc.docname not in names:
@@ -1037,7 +975,7 @@ class HiddDocList(object):
                 print("Reading from file", filename)
                 with codecs.open(filename, 'r', encoding='latin-1') as filehandle:
                     content = filehandle.read()  # read whole file
-                    for ad_entry in iter_aros_autodoc_entries(content):
+                    for ad_entry in AD_REGX.findall(content):
                         DOC_AUDIT.recognize()
                         adoc = HiddAutoDoc(ad_entry)
                         if adoc.docname != "":
@@ -1515,7 +1453,7 @@ def create_module_docs() -> None:
     mui_source = TOPDIR / "workbench" / "libs" / "muimaster" / "classes"
     mui_target = Path("documentation") / "developers" / "autodocs" / "mui-classes"
     if mui_source.exists():
-        write_mui_docs(mui_source, mui_target, TOPDIR / "workbench" / "classes" / "zune")
+        write_mui_docs(mui_source, mui_target)
 
     # Independently declared source groups: no per-path builder edits.
     source_registry = load_source_registry(
