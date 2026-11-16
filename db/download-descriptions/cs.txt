@@ -106,21 +106,21 @@ raspi-armhf-ports:
     Kvůli své velikosti bude archív na stránce snapshotů
     aktualizován pouze čas od času.
 sbi-riscv-system:
-    Nativní verze pro 32bitové systémy RISC-V s UEFI OpenSBI,
+    Nativní verze pro 32bitové systémy RISC-V s UEFI SBI,
     cílící na aplikační profil RVA22.
     V současnosti je podporován pouze Milk-V Titan.
 sbi-riscv-contrib:
     Tento archív obsahuje všechny programy přispěvovatelů
     kompilované pro 32bitovou architekturu RISC-V (profil RVA22),
-    k použití s OpenSBI/riscv portem.
+    k použití s SBI/riscv portem.
 sbi-riscv64-system:
-    Nativní verze pro 64bitové systémy RISC-V s UEFI OpenSBI,
+    Nativní verze pro 64bitové systémy RISC-V s UEFI SBI,
     cílící na aplikační profil RVA22.
     V současnosti je podporován pouze Milk-V Titan.
 sbi-riscv64-contrib:
     Tento archív obsahuje všechny programy přispěvovatelů
     kompilované pro 64bitovou architekturu RISC-V (profil RVA22),
-    k použití s OpenSBI/riscv64 portem.
+    k použití s SBI/riscv64 portem.
 pc-i386-contrib:
     Tento archív obsahuje všechny programy přispěvovatelů
     kompilované pro architekturu i386. Budou pracovat v

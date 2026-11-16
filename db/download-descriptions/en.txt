@@ -167,21 +167,21 @@ raspi-armhf-ports:
     and native). Because of its size the archive will only be updated
     from time to time on the snapshots page.
 sbi-riscv-system:
-    The native version for 32-bit RISC-V based UEFI OpenSBI systems,
+    The native version for 32-bit RISC-V based UEFI SBI systems,
     targeting the RVA22 application profile.
     Currently only the Milk-V Titan is supported.
 sbi-riscv-contrib:
     This archive contains all the contributed programs,
     compiled for the 32-bit RISC-V architecture (RVA22 profile),
-    for use with the OpenSBI/riscv port.
+    for use with the SBI/riscv port.
 sbi-riscv64-system:
-    The native version for 64-bit RISC-V based UEFI OpenSBI systems,
+    The native version for 64-bit RISC-V based UEFI SBI systems,
     targeting the RVA22 application profile.
     Currently only the Milk-V Titan is supported.
 sbi-riscv64-contrib:
     This archive contains all the contributed programs,
     compiled for the 64-bit RISC-V architecture (RVA22 profile),
-    for use with the OpenSBI/riscv64 port.
+    for use with the SBI/riscv64 port.
 pc-i386-contrib:
     This archive contains all the contributed programs,
     compiled for the i386 architecture. They will work in
