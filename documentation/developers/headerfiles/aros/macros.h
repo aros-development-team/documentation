@@ -172,8 +172,8 @@
 
 /* Just for consistency... */
 #define AROS_SWAP_BYTES_BYTE(b)  ((UBYTE)b)
-#define AROS_SWAP_WORDS_WORD(w)  ((ULONG)l)
-#define AROS_SWAP_LONGS_LONG(l)  ((UWORD)l)
+#define AROS_SWAP_WORDS_WORD(w)  ((UWORD)w)
+#define AROS_SWAP_LONGS_LONG(l)  ((ULONG)l)
 #define AROS_SWAP_QUADS_QUAD(q) ((UQUAD)q)
 
 #if !defined(AROS_SWAP_BYTES_WORD_CPU)
@@ -238,7 +238,7 @@
 	    : AROS_SWAP_WORDS_QUAD_CPU(q)     \
     )
 #else
-#   define AROS_SWAP_WORDS_QUAD(l) AROS_SWAP_WORDS_QUAD_CPU(l)
+#   define AROS_SWAP_WORDS_QUAD(q) AROS_SWAP_WORDS_QUAD_CPU(q)
 #endif
 
 #if !defined(AROS_SWAP_LONGS_QUAD_CPU)

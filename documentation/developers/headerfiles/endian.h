@@ -2,8 +2,8 @@
 #define	_ENDIAN_H_
 
 /*
-    Copyright © 2003, The AROS Development Team. All rights reserved.
-    $Id: endian.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright (C) 2003-2026, The AROS Development Team. All rights reserved.
+    $Id$
 */
 
 /*
@@ -13,7 +13,7 @@
     to make it easier to port stuff, create them as well.
 */
 
-#include <sys/cdefs.h>
+#include <aros/system.h>
 
 #if defined(_BIG_ENDIAN)
 #   undef  _BIG_ENDIAN

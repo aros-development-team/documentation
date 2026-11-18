@@ -2,7 +2,7 @@
 #define PREFS_ICONTROL_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright ï¿½ 1995-2010, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Icontrol prefs definitions
@@ -48,6 +48,7 @@ struct IControlPrefs {
 
 // FIXME: do we want these MOS extensions?
 // FIXME: what are the correct values?
+#define ICF_STICKYMENUS		(1<<31)
 #define ICF_OPAQUEMOVE          (1<<30)
 #define ICF_PRIVILEDGEDREFRESH  (1<<29)
 #define ICF_OFFSCREENLAYERS     (1<<28)
@@ -55,8 +56,9 @@ struct IControlPrefs {
 #define ICF_SCREENACTIVATION    (1<<26)
 
 /* AROS extension */
-#define ICF_3DMENUS     	(1<<16)
-#define ICF_POPUPMENUS	    	(1<<15)
+#define ICF_PULLDOWNTITLEMENUS	(1<<17)
+#define ICF_POPUPMENUS	    	(1<<16)
+#define ICF_3DMENUS     	(1<<15)
 #define ICF_AVOIDWINBORDERERASE (1<<14)
 
 /* Screen drag modes */
@@ -66,7 +68,7 @@ struct IControlPrefs {
 #define ICVDM_RBOUND    0x0008  /* Bounded at the right */
 
 /* Drag mode masks */
-#define ICVDM_HBOUND    (ICVDM_LBOUND|ICVDM_RBOUND) /* Horisontal bounding */
-#define ICVDM_VBOUND	(ICVDM_TBOUND|ICVDM_BBOUND) /* Verticak bounding   */
+#define ICVDM_HBOUND    (ICVDM_LBOUND|ICVDM_RBOUND) /* Horizontal bounding */
+#define ICVDM_VBOUND	(ICVDM_TBOUND|ICVDM_BBOUND) /* Vertical bounding   */
 
 #endif /* PREFS_ICONTROL_H */

@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2015, The AROS Development Team. All rights reserved.
 */
 
 #ifndef AROS_ASMCALL_H
@@ -57,6 +56,10 @@
 #   include <aros/system.h>
 #endif
 
+#ifdef __AROS_ASMCALL_H_FILE
+#include __AROS_ASMCALL_H_FILE
+#endif
+
 #ifndef __typedef_VOID_FUNC
 #define __typedef_VOID_FUNC
 typedef void (*VOID_FUNC)();
@@ -70,22 +73,54 @@ typedef int (*LONG_FUNC)();
 typedef unsigned int (*ULONG_FUNC)();
 #endif
 
+#ifndef __AROS_UFHA
+#define __AROS_UFHA(type,name,reg)    type name
+#endif
+#ifndef __AROS_UFPA
+#define __AROS_UFPA(type,name,reg)    type
+#endif
+#ifndef __AROS_UFCA
+#define __AROS_UFCA(type,name,reg)    (name)
+#endif
+#ifndef __AROS_UFDA
+#define __AROS_UFDA(type,name,reg)    type
+#endif
+
+#ifndef __AROS_UFH_PREFIX
+#define __AROS_UFH_PREFIX   /* eps */
+#endif
+#ifndef __AROS_UFP_PREFIX
+#define __AROS_UFP_PREFIX   /* eps */
+#endif
+#ifndef __AROS_UFC_PREFIX
+#define __AROS_UFC_PREFIX   /* eps */
+#endif
+#ifndef __AROS_UFD_PREFIX
+#define __AROS_UFD_PREFIX   /* eps */
+#endif
+
 #ifndef __AROS_CPU_SPECIFIC_ASMCALLS
 
 #if !(UseRegisterArgs && defined(AROS_COMPILER_NO_REGARGS)) /* Function headers for user functions */
 #define AROS_UFH0(t,n) \
     __AROS_UFH_PREFIX t n (void) {
+#define AROS_UFH0S(t,n) \
+    __AROS_UFH_PREFIX static t n (void) {
 #define AROS_UFH1(t,n,a1) \
     __AROS_UFH_PREFIX t n (\
     __AROS_UFHA(a1)\
     ) {
-#define AROS_UFH2S(t,n,a1,a2) \
+#define AROS_UFH1S(t,n,a1) \
     __AROS_UFH_PREFIX static t n (\
-    __AROS_UFHA(a1),\
-    __AROS_UFHA(a2)\
+    __AROS_UFHA(a1)\
     ) {
 #define AROS_UFH2(t,n,a1,a2) \
     __AROS_UFH_PREFIX t n (\
+    __AROS_UFHA(a1),\
+    __AROS_UFHA(a2)\
+    ) {
+#define AROS_UFH2S(t,n,a1,a2) \
+    __AROS_UFH_PREFIX static t n (\
     __AROS_UFHA(a1),\
     __AROS_UFHA(a2)\
     ) {
@@ -103,6 +138,13 @@ typedef unsigned int (*ULONG_FUNC)();
     ) {
 #define AROS_UFH4(t,n,a1,a2,a3,a4) \
     __AROS_UFH_PREFIX t n (\
+    __AROS_UFHA(a1),\
+    __AROS_UFHA(a2),\
+    __AROS_UFHA(a3),\
+    __AROS_UFHA(a4)\
+    ) {
+#define AROS_UFH4S(t,n,a1,a2,a3,a4) \
+    __AROS_UFH_PREFIX static t n (\
     __AROS_UFHA(a1),\
     __AROS_UFHA(a2),\
     __AROS_UFHA(a3),\
@@ -563,6 +605,22 @@ typedef unsigned int (*ULONG_FUNC)();
     __AROS_UFCA(a14),\
     __AROS_UFCA(a15)\
     ))
+#define AROS_UFC0NR AROS_UFC0
+#define AROS_UFC1NR AROS_UFC1
+#define AROS_UFC2NR AROS_UFC2
+#define AROS_UFC3NR AROS_UFC3
+#define AROS_UFC4NR AROS_UFC4
+#define AROS_UFC5NR AROS_UFC5
+#define AROS_UFC6NR AROS_UFC6
+#define AROS_UFC7NR AROS_UFC7
+#define AROS_UFC8NR AROS_UFC8
+#define AROS_UFC9NR AROS_UFC9
+#define AROS_UFC10NR AROS_UFC10
+#define AROS_UFC11NR AROS_UFC11
+#define AROS_UFC12NR AROS_UFC12
+#define AROS_UFC13NR AROS_UFC13
+#define AROS_UFC14NR AROS_UFC14
+#define AROS_UFC15NR AROS_UFC15
 #endif /* !(UseRegisterArgs && defined(AROS_COMPILER_NO_REGARGS)) */
 
 /* Prototypes for user functions */
@@ -575,6 +633,17 @@ typedef unsigned int (*ULONG_FUNC)();
 	__AROS_UFP_PREFIX t n (\
 	__AROS_UFPA(a1),\
 	__AROS_UFPA(a2))
+#   if !(UseRegisterArgs && defined(AROS_COMPILER_NO_REGARGS))
+#	define AROS_UFP2S(t,n,a1,a2) \
+	    __AROS_UFP_PREFIX static t n (\
+	    __AROS_UFPA(a1),\
+	    __AROS_UFPA(a2))
+#   else
+#	define AROS_UFP2S(t,n,a1,a2) \
+	    __AROS_UFP_PREFIX t n (\
+	    __AROS_UFPA(a1),\
+	    __AROS_UFPA(a2))
+#   endif
 #   define AROS_UFP3(t,n,a1,a2,a3) \
 	__AROS_UFP_PREFIX t n (\
 	__AROS_UFPA(a1),\
@@ -760,6 +829,35 @@ typedef unsigned int (*ULONG_FUNC)();
 #ifndef AROS_USERFUNC_EXIT
 #   define AROS_USERFUNC_EXIT }}
 #endif
+
+/* DOS/CreateProc() entry point definition
+ */
+#ifndef AROS_PROCH
+struct ExecBase;
+
+#define AROS_PROCH(n, _argptr, _argsize, _SysBase) \
+    AROS_UFH3(SIPTR, n,                           \
+        AROS_UFHA(STRPTR, _argptr, A0),           \
+        AROS_UFHA(ULONG,  _argsize, D0),          \
+        AROS_UFHA(struct ExecBase *, _SysBase, A6))
+#endif
+#ifndef AROS_PROCP
+#define AROS_PROCP(n) \
+    AROS_UFP3(SIPTR, n,                           \
+        AROS_UFPA(STRPTR, _argptr, A0),           \
+        AROS_UFPA(ULONG,  _argsize, D0),          \
+        AROS_UFPA(struct ExecBase *, _SysBase, A6))
+#endif
+#ifndef AROS_PROCC
+#define AROS_PROCC(n) \
+    AROS_UFC3(SIPTR, n,                           \
+        AROS_UFCA(STRPTR, _argptr, A0),           \
+        AROS_UFCA(ULONG,  _argsize, D0),          \
+        AROS_UFCA(struct ExecBase *, _SysBase, A6))
+#endif
+
+#define AROS_PROCFUNC_INIT      AROS_USERFUNC_INIT
+#define AROS_PROCFUNC_EXIT      AROS_USERFUNC_EXIT
 
 /******************************************************************************
 *****  ENDE aros/asmcall.h

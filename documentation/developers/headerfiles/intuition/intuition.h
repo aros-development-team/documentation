@@ -2,7 +2,7 @@
 #define INTUITION_INTUITION_H
 
 /*
-    Copyright  1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2026, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Important defines and structures for intuition.library
@@ -51,7 +51,7 @@
 
 #define INTUITIONNAME "intuition.library"
 
-		       /***** Intuition Message *****/
+                       /***** Intuition Message *****/
 
 struct IntuiMessage
 {
@@ -77,7 +77,7 @@ struct ExtIntuiMessage
     struct TabletData * eim_TabletData;
 };
 
-			    /***** IDCMP *****/
+                            /***** IDCMP *****/
 
 #define IDCMP_SIZEVERIFY     (1L<<0)
 #define IDCMP_NEWSIZE	     (1L<<1)
@@ -119,7 +119,7 @@ struct ExtIntuiMessage
 #define WBENCHOPEN	1
 #define WBENCHCLOSE	2
 
-			    /***** IntuiText *****/
+                            /***** IntuiText *****/
 
 struct IntuiText
 {
@@ -134,7 +134,7 @@ struct IntuiText
     struct IntuiText * NextText;
 };
 
-			     /***** Menu *****/
+                             /***** Menu *****/
 
 struct Menu
 {
@@ -222,7 +222,7 @@ struct MenuItem
 #define COMMWIDTH     27
 #define LOWCOMMWIDTH  16
 
-			   /***** Gadgets *****/
+                           /***** Gadgets *****/
 
 struct Gadget
 {
@@ -241,7 +241,7 @@ struct Gadget
     APTR	       SelectRender;
     struct IntuiText * GadgetText;
 
-    LONG MutualExclude; /* OBSOLETE */
+    IPTR MutualExclude; /* OBSOLETE */
 
     APTR  SpecialInfo;
     UWORD GadgetID;
@@ -265,7 +265,7 @@ struct ExtGadget
     APTR	       SelectRender;
     struct IntuiText * GadgetText;
 
-    LONG MutualExclude; /* OBSOLETE */
+    IPTR MutualExclude; /* OBSOLETE */
 
     APTR  SpecialInfo;
     UWORD GadgetID;
@@ -454,7 +454,7 @@ struct Requester
                                 or the window */
 #define PREDRAWN      (1<<1) /* If set, ImageBMap points to a custom bitmap */
 #define NOISYREQ      (1<<2) /* Requester doesn't filter input */
-#define SIMPLEREQ     (1<<4) /* If set, a SIMPLEREFRESH layer is used */
+#define SIMPLEREQ     (1<<4) /* If set, a SIMPLE_REFRESH layer is used */
 #define USEREQIMAGE   (1<<5) /* ReqImage points to an image, which is used
                                 as background */
 #define NOREQBACKFILL (1<<6) /* Ignore BackFill pen */
@@ -481,7 +481,7 @@ struct EasyStruct
     CONST_STRPTR es_GadgetFormat; /* Text of the gadgets, separated by |'s */
 };
 
-			    /***** Window *****/
+                            /***** Window *****/
 
 struct Window
 {
@@ -491,8 +491,10 @@ struct Window
     WORD TopEdge;
     WORD Width;
     WORD Height;
-    WORD MouseX;
+
     WORD MouseY;
+    WORD MouseX;
+
     WORD MinWidth;
     WORD MinHeight;
     UWORD MaxWidth;
@@ -579,7 +581,7 @@ struct NewWindow
     struct Gadget * FirstGadget;
     struct Image  * CheckMark;
     UBYTE	  * Title;
-    struct Screen * Screen;
+    struct Screen * Screen;    /* ignored if Type != CUSTOMSCREEN */
     struct BitMap * BitMap;
 
     WORD  MinWidth;
@@ -678,17 +680,28 @@ struct ExtNewWindow
 #define WA_TabletMessages    (WA_Dummy + 55)
 #define WA_HelpGroup	     (WA_Dummy + 56)
 #define WA_HelpGroupWindow   (WA_Dummy + 57)
-#define WA_ToolBox           (WA_Dummy + 58)
-
-/* AROS specific tags */
-
+/* AmigaOS4 -compatible tags follow */
+#define WA_Hidden            (WA_Dummy + 60)
+#define WA_ToolBox           (WA_Dummy + 61)
+#define WA_ShapeRegion 	     (WA_Dummy + 65)
+#define WA_ShapeHook	     (WA_Dummy + 66)
+#define WA_InFrontOf	     (WA_Dummy + 67)
+/* AROS specific tags follow */
 #define WA_Priority 	     (WA_Dummy + 100)
 #define WA_Parent   	     (WA_Dummy + 101)
-#define WA_InFrontOf	     (WA_Dummy + 102)
 #define WA_Behind   	     (WA_Dummy + 103)
-#define WA_Visible  	     (WA_Dummy + 104)
-#define WA_Shape    	     (WA_Dummy + 105)
-#define WA_ShapeHook	     (WA_Dummy + 106)
+/* Composited windows (AROS): the window's layer renders into a surface of
+   its own that the display composes onto the screen. Only honoured when the
+   screen's display can compose; otherwise an ordinary smart refresh window.
+   WA_Opaqueness is the AmigaOS 4 name; the value is AROS specific. */
+#define WA_Opaqueness	     (WA_Dummy + 104)	/* 0..255, 255 = opaque */
+#define WA_AlphaSurface      (WA_Dummy + 105)	/* BOOL: surface with per pixel alpha; starts transparent,
+                                                   pens and alpha-less blits render opaque, see LA_AlphaSurface */
+/* AROS: where the window takes input, apart from where it is seen (struct
+   Region *, window relative; copied). See LA_InputShape. Change it later with
+   layers.library's ChangeLayerInputShape(window->WLayer, region). Not for
+   GZZ windows (ignored there). */
+#define WA_InputRegion       (WA_Dummy + 106)
 
 /* Flags */
 #define WFLG_SIZEGADGET     (1L<<0)
@@ -734,7 +747,11 @@ struct ExtNewWindow
 
 #define HC_GADGETHELP 1
 
-			   /***** Images *****/
+/* Magic values for ShowWindow() and WA_InFrontOf */
+#define WINDOW_BACKMOST  (NULL)
+#define WINDOW_FRONTMOST ((struct Window *)1)
+
+                           /***** Images *****/
 
 struct Image
 {
@@ -751,7 +768,7 @@ struct Image
     struct Image * NextImage;
 };
 
-			   /***** Border *****/
+                           /***** Border *****/
 
 struct Border
 {
@@ -766,7 +783,7 @@ struct Border
     struct Border * NextBorder;
 };
 
-			 /***** Tablets *****/
+                         /***** Tablets *****/
 
 struct TabletData
 {
@@ -801,7 +818,7 @@ struct TabletHookData
     LONG	    thd_ScreenChanged;
 };
 
-			  /***** Keys *****/
+                          /***** Keys *****/
 
 #define SELECTDOWN (IECODE_LBUTTON)
 #define SELECTUP   (IECODE_LBUTTON | IECODE_UP_PREFIX)
@@ -830,7 +847,7 @@ struct TabletHookData
 #define KEYCODE_LESS	0x38
 #define KEYCODE_GREATER 0x39
 
-			   /* Miscellaneous */
+                           /* Miscellaneous */
 
 struct IBox
 {
@@ -872,26 +889,56 @@ struct ColorSpec
 #define AUTONEXTTEXT  NULL
 
 /* NewDecorator structure used by ChangeDecoration
-   the three Objects (nd_Window, nd_Screen and nd_Menu
-   must be installed and point to decorator objects
+   configure class pointers (nd_WindowClass, nd_ScreenClass and nd_MenuClass)
+   to overide the default/internal decoration classes.
    the port is used for different issues and will be filled
    up with DecoratorMessages */
 
 struct NewDecorator
-{   struct  Node     nd_Node;
-    struct  MsgPort *nd_Port;
-            UWORD    nd_cnt;
-            STRPTR   nd_Pattern;
-            STRPTR   nd_IntPattern; /* Private, transformated Pattern be dos/ParsePattern() */
-            Object  *nd_Window;
-            Object  *nd_Screen;
-            Object  *nd_Menu;
+{   struct  Node        nd_Node;
+    struct  MsgPort     *nd_Port;
+    UWORD               nd_cnt;
+    STRPTR              nd_Pattern;
+    STRPTR              nd_IntPattern; /* Private, transformated Pattern be dos/ParsePattern() */
+    struct IClass       *nd_ScreenClass;
+    struct TagItem      *nd_ScreenTags;
+    IPTR                nd_ScreenObjOffset;
+    struct IClass       *nd_MenuClass;
+    struct TagItem      *nd_MenuTags;
+    IPTR                nd_ScreenMenuObjOffset;
+    struct IClass       *nd_WindowClass;
+    struct TagItem      *nd_WindowTags;
+    IPTR                nd_ScreenWindowObjOffset;
 };
+
+/*** AROS Private Messages ***/
+
+struct MagicMessage
+{
+    struct Node         mn_Node;
+    struct MsgPort      * mn_ReplyPort; /* message reply port */
+    UWORD               mn_Length;      /* total message length, in bytes */
+                                        /* (include the size of the Message
+                                           structure in the length) */
+    ULONG               mn_Magic;       /* can be used to figure out the message sender */
+    ULONG               mn_Version;     /* version can be used to extend a message in later versions */
+};
+
+/* definition for entry Magic in Messages
+   Magic is introduced to prevent Multiple Ports, for example if youÂ´r using
+   ScreenNotifications and DecorNotifications you must have two Ports as long
+   as you cannot figure out which Messsage ist posted. With Magic this is no
+   problem. */
+
+#define   MAGIC_DECORATOR               0x8000001
+#define   MAGIC_PRIVATE_TITLECHILD      0x0F0F
+#define   MAGIC_SCREENNOTIFY            0x8000002
+
 
 struct DecoratorMessage
 {
     struct MagicMessage dm_Message;
-    ULONG               dm_Class;
+    IPTR                dm_Class;
     ULONG               dm_Code;
     ULONG               dm_Flags;
     IPTR                dm_Object;

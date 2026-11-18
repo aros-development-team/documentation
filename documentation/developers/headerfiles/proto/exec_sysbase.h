@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2004, The AROS Development Team. All rights reserved.
-    $Id: exec_sysbase.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright (C) 1995-2004, The AROS Development Team. All rights reserved.
 */
 
 #ifndef PROTO_EXEC_SYSBASE_H

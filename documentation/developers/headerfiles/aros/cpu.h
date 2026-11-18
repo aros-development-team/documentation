@@ -1,7 +1,7 @@
 #ifndef AROS_CPU_H
 #define AROS_CPU_H
 /*
-    Copyright � 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright � 1995-2023, The AROS Development Team. All rights reserved.
     $Id$
 
     CPU independent version of the <aros/cpu.h> header. This is the one
@@ -18,24 +18,66 @@
 #define AROS_CPU_IA64               8
 #define AROS_CPU_X8664              9
 #define AROS_CPU_ARM				10
+#define AROS_CPU_AARCH64            11
+#define AROS_CPU_RISCV              12
+#define AROS_CPU_RISCV64            13
+
+/* Fix up __powerpc__ definition if missing */
+#ifdef __ppc__
+#ifndef __powerpc__
+#define __powerpc__
+#endif
+#endif
 
 /*
     Firstly, include the sub-include file for a particular CPU.
 */
-#if defined __i386__
+#if defined __aarch64__ 
+#   include <aros/aarch64/cpu.h>
+#elif defined __arm__
+#   if defined __thumb2__
+#       if defined __ARMEB__
+#           include <aros/armeb/cpu-thumb2.h>
+#       else
+#           include <aros/arm/cpu-thumb2.h>
+#       endif
+#   else
+#       if defined __ARMEB__
+#           include <aros/armeb/cpu.h>
+#       else
+#           include <aros/arm/cpu.h>
+#       endif
+#   endif
+#elif defined __i386__
 #   include <aros/i386/cpu.h>
-#elif defined __x86_64__
-#   include <aros/x86_64/cpu.h>
 #elif defined __mc68000__
 #   include <aros/m68k/cpu.h>
 #elif defined __MORPHOS__
 #   include <aros/morphos/cpu.h>
 #elif defined __powerpc__
 #   include <aros/ppc/cpu.h>
-#elif defined __arm__
-#	include <aros/arm/cpu.h>
+#elif defined(__riscv) && (__riscv_xlen == 64)
+#   include <aros/riscv64/cpu.h>
+#elif defined __riscv
+#   include <aros/riscv/cpu.h>
+#elif defined __x86_64__
+#   include <aros/x86_64/cpu.h>
 #else
 #   error unsupported CPU type
+#endif
+
+#if !AROS_STACK_GROWS_DOWNWARDS
+#error Several places in AROS code assume a stack that grows downwards
+#endif
+
+/*
+    Under 64-bit MS Windows long is still 32 bits
+*/
+
+#ifdef _WIN64
+#define AROS_INTPTR_TYPE long long
+#define AROS_INTPTR_STACKTYPE long long
+#define AROS_LARGEST_TYPE long long
 #endif
 
 /*
@@ -48,7 +90,7 @@
 #endif
 
 #ifndef AROS_32BIT_TYPE
-#define AROS_32BIT_TYPE     long
+#define AROS_32BIT_TYPE     int
 #endif
 
 #ifndef AROS_16BIT_TYPE
@@ -92,7 +134,7 @@
 #endif
 
 #ifndef AROS_LARGEST_TYPE
-#define AROS_LARGEST_TYPE           long
+#define AROS_LARGEST_TYPE           long long
 #endif
 
 #ifndef AROS_ATOMIC_TYPE
@@ -222,6 +264,10 @@
 
 #ifndef STACKED
 #define STACKED __attribute__((aligned(4)))
+#endif
+
+#ifndef AROS_HOST_BARRIER
+#define AROS_HOST_BARRIER
 #endif
 
 #endif /* AROS_CPU_H */

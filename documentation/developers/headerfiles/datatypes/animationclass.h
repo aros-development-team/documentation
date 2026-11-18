@@ -2,7 +2,7 @@
 #define DATATYPES_ANIMATIONCLASS_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2016, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Includes for animationclass
@@ -31,6 +31,7 @@
 
 #define	ANIMATIONDTCLASS	"animation.datatype"
 
+
 /* Tags */
 #define	ADTA_Dummy		(DTA_Dummy + 600)
 #define	ADTA_ModeID		PDTA_ModeID
@@ -43,6 +44,8 @@
 #define	ADTA_Allocated		PDTA_Allocated
 #define	ADTA_NumColors		PDTA_NumColors
 #define	ADTA_NumAlloc		PDTA_NumAlloc
+#define	ADTA_NumSparse		PDTA_NumSparse
+#define	ADTA_SparseTable		PDTA_SparseTable
 #define	ADTA_Remap		PDTA_Remap
 #define	ADTA_Screen		PDTA_Screen
 #define	ADTA_Width		(ADTA_Dummy + 1)
@@ -69,6 +72,7 @@
 #define ID_ANIM             	MAKE_ID('A','N','I','M')
 #define ID_ANHD             	MAKE_ID('A','N','H','D')
 #define ID_DLTA             	MAKE_ID('D','L','T','A')
+#define ID_SBDY             	MAKE_ID('S','B','D','Y')
 
 struct AnimHeader
 {
@@ -84,7 +88,7 @@ struct AnimHeader
     UBYTE	 ah_Pad0;
     ULONG	 ah_Flags;
     UBYTE	 ah_Pad[16];
-};
+} __packed;
 
 /* Methods */
 

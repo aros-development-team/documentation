@@ -2,7 +2,7 @@
 #define WORKBENCH_WORKBENCH_H
 
 /*
-    Copyright © 1995-2003, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2012, The AROS Development Team. All rights reserved.
     $Id$
 */
 
@@ -31,9 +31,18 @@
 #endif
 
 /*** Workbench library name *************************************************/
-#define WORKBENCHNAME           "workbench.library"
+#define WORKBENCH_NAME           "workbench.library"
 
 /*** Structures and associated definitions **********************************/
+struct OldDrawerData
+{
+    struct NewWindow    dd_NewWindow;
+    LONG                dd_CurrentX;
+    LONG                dd_CurrentY;
+};
+
+#define OLDDRAWERDATAFILESIZE (sizeof(struct OldDrawerData))
+
 struct DrawerData
 {
     struct NewWindow dd_NewWindow;
@@ -102,8 +111,8 @@ struct AppMessage
 {
     struct Message am_Message;
     UWORD          am_Type;     /* see below */
-    ULONG          am_UserData;
-    ULONG          am_ID;
+    IPTR           am_UserData;
+    IPTR           am_ID;
     LONG           am_NumArgs;
     struct WBArg * am_ArgList;
     UWORD          am_Version;  /* see below */
@@ -116,12 +125,13 @@ struct AppMessage
 };
 
 /* Definition for am_Version */
-#define AM_VERSION         1
+#define AM_VERSION              1
 
 /* Definitions for am_Type */
-#define AMTYPE_APPWINDOW   7
-#define AMTYPE_APPICON     8
-#define AMTYPE_APPMENUITEM 9
+#define AMTYPE_APPWINDOW        7
+#define AMTYPE_APPICON          8
+#define AMTYPE_APPMENUITEM      9
+#define AMTYPE_APPWINDOWZONE    10
 
 /* Definitions for am_Class */
 #define AMCLASSICON_Open        0
@@ -155,8 +165,8 @@ struct AppWindowDropZoneMsg
 {
     struct RastPort *adzm_RastPort;
     struct IBox      adzm_DropZoneBox;
-    ULONG            adzm_ID;
-    ULONG            adzm_UserData;
+    IPTR             adzm_ID;
+    IPTR             adzm_UserData;
     LONG             adzm_Action;  /* see below */
 };
 
@@ -185,6 +195,92 @@ struct IconSelectMsg
 #define ISMACTION_Select   (1)
 #define ISMACTION_Ignore   (2)
 #define ISMACTION_Stop     (3)
+
+/****************************************************************************/
+
+struct CopyBeginMsg
+{
+    ULONG cbm_Length;
+    LONG  cbm_Action;
+    BPTR  cbm_SourceDrawer;
+    BPTR  cbm_DestinationDrawer;
+};
+
+struct CopyDataMsg
+{
+    ULONG  cdm_Length;
+    LONG   cdm_Action;
+    BPTR   cdm_SourceLock;
+    STRPTR cdm_SourceName;
+    BPTR   cdm_DestinationLock;
+    STRPTR cdm_DestinationName;
+    LONG   cdm_DestinationX;
+    LONG   cdm_DestinationY;
+};
+
+struct CopyEndMsg
+{
+    ULONG cem_Length;
+    LONG  cem_Action;
+};
+
+#define CPACTION_Begin (0)
+#define CPACTION_Copy  (1)
+#define CPACTION_End   (2)
+
+/****************************************************************************/
+
+struct DeleteBeginMsg
+{
+    ULONG       dbm_Length;
+    LONG        dbm_Action;
+};
+
+struct DeleteDataMsg
+{
+    ULONG       ddm_Length;
+    LONG        ddm_Action;
+    BPTR        ddm_Lock;
+    STRPTR      ddm_Name;
+};
+
+struct DeleteEndMsg
+{
+    ULONG       dem_Length;
+    LONG        dem_Action;
+};
+
+#define DLACTION_BeginDiscard           (0)
+#define DLACTION_BeginEmptyTrash        (1)
+#define DLACTION_DeleteContents         (3)
+#define DLACTION_DeleteObject           (4)
+#define DLACTION_End                    (5)
+
+/****************************************************************************/
+
+struct SetupCleanupHookMsg
+{
+    ULONG       schm_Length;
+    LONG        schm_State;
+};
+
+#define SCHMSTATE_TryCleanup    (0)
+#define SCHMSTATE_Cleanup       (1)
+#define SCHMSTATE_Setup         (2)
+
+/****************************************************************************/
+
+struct TextInputMsg
+{
+    ULONG       tim_Length;
+    LONG        tim_Action;
+    STRPTR      tim_Prompt;
+};
+
+#define TIACTION_Rename         (0)
+#define TIACTION_RelabelVolume  (1)
+#define TIACTION_NewDrawer      (2)
+#define TIACTION_Execute        (3)
 
 /*** Private structures *****************************************************/
 struct AppWindow;
@@ -219,12 +315,16 @@ struct AppMenuItem;
 #define WBAPPICONA_NotifySelectState        (WBA_BASE+14)
 
 /*** Tags for use with AddAppMenuItemA() ************************************/
-/* Command key string for this AppMenu (STRPTR) */
 #define WBAPPMENUA_CommandKeyString         (WBA_BASE+15)
+#define	WBAPPMENUA_GetKey                   (WBA_BASE+65)
+#define	WBAPPMENUA_UseKey                   (WBA_BASE+66)
+#define	WBAPPMENUA_GetTitleKey              (WBA_BASE+77)
 
 /*** Tags for use with OpenWorkbenchObjectA() *******************************/
 #define WBOPENA_ArgLock                     (WBA_BASE+16)
 #define WBOPENA_ArgName                     (WBA_BASE+17)
+#define WBOPENA_Show                        (WBA_BASE+75)
+#define WBOPENA_ViewBy                      (WBA_BASE+76)
 
 /*** Tags for use with WorkbenchControlA() **********************************/
 #define WBCTRLA_IsOpen                      (WBA_BASE+18)
@@ -245,6 +345,14 @@ struct AppMenuItem;
 #define WBCTRLA_RemoveHiddenDeviceName      (WBA_BASE+45)
 #define WBCTRLA_GetTypeRestartTime          (WBA_BASE+47)
 #define WBCTRLA_SetTypeRestartTime          (WBA_BASE+48)
+#define WBCTRLA_GetCopyHook                 (WBA_BASE+69)
+#define WBCTRLA_SetCopyHook                 (WBA_BASE+70)
+#define WBCTRLA_GetDeleteHook               (WBA_BASE+71)
+#define WBCTRLA_SetDeleteHook               (WBA_BASE+72)
+#define WBCTRLA_GetTextInputHook            (WBA_BASE+73)
+#define WBCTRLA_SetTextInputHook            (WBA_BASE+74)
+#define WBCTRLA_AddSetupCleanupHook         (WBA_BASE+78)
+#define WBCTRLA_RemSetupCleanupHook         (WBA_BASE+79)
 
 /*** Tags for use with AddAppWindowDropZoneA() ******************************/
 #define WBDZA_Left                          (WBA_BASE+26)
@@ -282,5 +390,9 @@ struct AppMenuItem;
 /*** Last tag ***************************************************************/
 
 #define WBA_LAST_TAG                        (WBA_BASE+64)
+
+/* Parameters for the UpdateWorkbench() function */
+#define UPDATEWB_ObjectRemoved              0
+#define UPDATEWB_ObjectAdded                1
 
 #endif /* WORKBENCH_WORKBENCH_H */

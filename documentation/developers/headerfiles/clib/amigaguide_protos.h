@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/amigaguide/amigaguide.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -30,91 +30,163 @@ __END_DECLS
 
 __BEGIN_DECLS
 
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(LONG, LockAmigaGuideBase,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          LIBBASETYPEPTR, AmigaGuideBase, 6, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(void, UnlockAmigaGuideBase,
          AROS_LPA(LONG, key, D0),
          LIBBASETYPEPTR, AmigaGuideBase, 7, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(AMIGAGUIDECONTEXT, OpenAmigaGuideA,
          AROS_LPA(struct NewAmigaGuide *, nag, A0),
          AROS_LPA(struct TagItem *, attrs, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 9, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(AMIGAGUIDECONTEXT, OpenAmigaGuideAsyncA,
          AROS_LPA(struct NewAmigaGuide *, nag, A0),
          AROS_LPA(struct TagItem *, attrs, D0),
          LIBBASETYPEPTR, AmigaGuideBase, 10, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(void, CloseAmigaGuide,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          LIBBASETYPEPTR, AmigaGuideBase, 11, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(ULONG, AmigaGuideSignal,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          LIBBASETYPEPTR, AmigaGuideBase, 12, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(struct AmigaGuideMsg *, GetAmigaGuideMsg,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          LIBBASETYPEPTR, AmigaGuideBase, 13, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(void, ReplyAmigaGuideMsg,
          AROS_LPA(struct AmigaGuideMsg *, msg, A0),
          LIBBASETYPEPTR, AmigaGuideBase, 14, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP3(BOOL, SetAmigaGuideContextA,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          AROS_LPA(ULONG, context, D0),
          AROS_LPA(struct TagItem *, attrs, D1),
          LIBBASETYPEPTR, AmigaGuideBase, 15, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(BOOL, SendAmigaGuideContextA,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          AROS_LPA(struct TagItem *, attrs, D0),
          LIBBASETYPEPTR, AmigaGuideBase, 16, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP3(BOOL, SendAmigaGuideCmdA,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          AROS_LPA(STRPTR, cmd, D0),
          AROS_LPA(struct TagItem *, attrs, D1),
          LIBBASETYPEPTR, AmigaGuideBase, 17, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(LONG, SetAmigaGuideAttrsA,
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          AROS_LPA(struct TagItem *, attrs, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 18, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP3(LONG, GetAmigaGuideAttr,
          AROS_LPA(Tag, tag, D0),
          AROS_LPA(AMIGAGUIDECONTEXT, handle, A0),
          AROS_LPA(ULONG *, storage, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 19, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(LONG, LoadXRef,
          AROS_LPA(BPTR, lock, A0),
          AROS_LPA(STRPTR, name, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 21, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP0(void, ExpungeXRef,
          LIBBASETYPEPTR, AmigaGuideBase, 22, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP3(AMIGAGUIDEHOST, AddAmigaGuideHostA,
          AROS_LPA(struct Hook *, hook, A0),
          AROS_LPA(STRPTR, name, D0),
          AROS_LPA(struct TagItem *, attrs, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 23, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP2(LONG, RemoveAmigaGuideHostA,
          AROS_LPA(AMIGAGUIDEHOST, key, A0),
          AROS_LPA(struct TagItem *, attrs, A1),
          LIBBASETYPEPTR, AmigaGuideBase, 24, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
+
+#if !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__)
 AROS_LP1(STRPTR, GetAmigaGuideString,
          AROS_LPA(ULONG, id, D0),
          LIBBASETYPEPTR, AmigaGuideBase, 35, AmigaGuide
 );
+
+#endif /* !defined(__AMIGAGUIDE_LIBAPI__) || (41 <= __AMIGAGUIDE_LIBAPI__) */
 
 __END_DECLS
 

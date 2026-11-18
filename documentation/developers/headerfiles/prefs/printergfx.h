@@ -33,14 +33,14 @@ struct PrinterGfxPrefs
     UBYTE pg_Dithering;
     UWORD pg_GraphicFlags;
     UBYTE pg_PrintDensity;
-    UWORD pg_PrintMaxWidth;
-    UWORD pg_PrintMaxHeight;
-    UBYTE pg_PrintXOffset;
-    UBYTE pg_PrintYOffset;
+    UWORD pg_PrintMaxWidth;     /* in 1/10 of an inch */
+    UWORD pg_PrintMaxHeight;    /* in 1/10 of an inch */
+    UBYTE pg_PrintXOffset;      /* in 1/10 of an inch */
+    UBYTE pg_PrintYOffset;      /* in 1/10 of an inch */
 };
 
-#define PA_HORIZONTAL 0
-#define PA_VERTICAL   1
+#define PA_HORIZONTAL 0         /* Portrait */
+#define PA_VERTICAL   1         /* Landscape */
 
 #define PS_BW		0
 #define PS_GREYSCALE	1

@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/bullet/bullet.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -28,28 +28,48 @@ __END_DECLS
 
 __BEGIN_DECLS
 
+
+#if !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__)
 AROS_LP0(struct GlyphEngine *, OpenEngine,
          LIBBASETYPEPTR, BulletBase, 5, Bullet
 );
+
+#endif /* !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__) */
+
+#if !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__)
 AROS_LP1(void, CloseEngine,
          AROS_LPA(struct GlyphEngine *, glyphEngine, A0),
          LIBBASETYPEPTR, BulletBase, 6, Bullet
 );
+
+#endif /* !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__) */
+
+#if !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__)
 AROS_LP2(ULONG, SetInfoA,
          AROS_LPA(struct GlyphEngine *, glyphEngine, A0),
          AROS_LPA(struct TagItem *, tagList, A1),
          LIBBASETYPEPTR, BulletBase, 7, Bullet
 );
+
+#endif /* !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__) */
+
+#if !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__)
 AROS_LP2(ULONG, ObtainInfoA,
          AROS_LPA(struct GlyphEngine *, glyphEngine, A0),
          AROS_LPA(struct TagItem *, tagList, A1),
          LIBBASETYPEPTR, BulletBase, 8, Bullet
 );
+
+#endif /* !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__) */
+
+#if !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__)
 AROS_LP2(ULONG, ReleaseInfoA,
          AROS_LPA(struct GlyphEngine *, glyphEngine, A0),
          AROS_LPA(struct TagItem *, tagList, A1),
          LIBBASETYPEPTR, BulletBase, 9, Bullet
 );
+
+#endif /* !defined(__BULLET_LIBAPI__) || (41 <= __BULLET_LIBAPI__) */
 
 __END_DECLS
 

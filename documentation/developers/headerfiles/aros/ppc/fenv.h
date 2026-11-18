@@ -30,12 +30,12 @@
 #define	_FENV_H_
 
 #ifdef __AROS__
-#include <sys/cdefs.h>
+#include <aros/system.h>
 #endif
-#include <sys/_types.h>
+#include <aros/types/int_t.h>
 
-typedef	__uint32_t	fenv_t;
-typedef	__uint32_t	fexcept_t;
+typedef	uint32_t	fenv_t;
+typedef	uint32_t	fexcept_t;
 
 /* Exception flags */
 #define	FE_INEXACT	0x02000000
@@ -91,11 +91,12 @@ extern const fenv_t	__fe_dfl_env;
 union __fpscr {
 	double __d;
 	struct {
-		__uint32_t __junk;
+		uint32_t __junk;
 		fenv_t __reg;
 	} __bits;
 };
 
+#ifndef STDC_NOINLINE
 static __inline int
 feclearexcept(int __excepts)
 {
@@ -221,9 +222,11 @@ feupdateenv(const fenv_t *__envp)
 	__mtfsf(__r.__d);
 	return (0);
 }
+#endif /* !STDC_NOINLINE */
 
 #if __BSD_VISIBLE
 
+#ifndef STDC_NOINLINE
 static __inline int
 feenableexcept(int __mask)
 {
@@ -258,6 +261,7 @@ fegetexcept(void)
 	__mffs(&__r.__d);
 	return ((__r.__bits.__reg & _ENABLE_MASK) << _FPUSW_SHIFT);
 }
+#endif /* !STDC_NOINLINE */
 
 #endif /* __BSD_VISIBLE */
 

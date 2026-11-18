@@ -2,7 +2,7 @@
 #define INTUITION_CLASSES_H
 
 /*
-    Copyright  1995-2008, The AROS Development Team. All rights reserved.
+    Copyright  1995-2025, The AROS Development Team. All rights reserved.
     $Id$
 
     BOOPSI structures.
@@ -19,6 +19,10 @@
 #endif
 #include <aros/asmcall.h>
 
+#ifndef INTUITION_CLASSALIGN_H
+#include <intuition/classalign.h>
+#endif
+
 /* The following structure is READ-ONLY */
 typedef struct IClass
 {
@@ -29,7 +33,7 @@ typedef struct IClass
     UWORD          cl_InstOffset;
     UWORD          cl_InstSize;
     IPTR           cl_UserData;      /* application specific */
-    ULONG          cl_SubclassCount; /* # of direct suclasses */
+    ULONG          cl_SubclassCount; /* # of direct subclasses */
     ULONG          cl_ObjectCount;   /* # of objects, made from this class
                                         must be 0, if the class is to be
                                         deleted */
@@ -49,7 +53,7 @@ struct _Object
 {
     struct MinNode  o_Node;  /* PRIVATE */
     struct IClass * o_Class;
-};
+} CLASS_INSTANCE_ALIGN;
 
 #define _OBJ(obj) ((struct _Object *)(obj))
 #define BASEOBJECT(obj) ((Object *)(_OBJ(obj) + 1))

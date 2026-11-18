@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/cgfx/cybergraphics.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -16,22 +16,40 @@
 
 __BEGIN_DECLS
 
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP1(BOOL, IsCyberModeID,
          AROS_LPA(ULONG, modeID, D0),
          LIBBASETYPEPTR, CyberGfxBase, 9, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP1(ULONG, BestCModeIDTagList,
          AROS_LPA(struct TagItem *, tags, A0),
          LIBBASETYPEPTR, CyberGfxBase, 10, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP1(struct List *, AllocCModeListTagList,
          AROS_LPA(struct TagItem *, tags, A1),
          LIBBASETYPEPTR, CyberGfxBase, 12, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP1(void, FreeCModeList,
          AROS_LPA(struct List *, modeList, A0),
          LIBBASETYPEPTR, CyberGfxBase, 13, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP10(LONG, ScalePixelArray,
          AROS_LPA(APTR, srcRect, A0),
          AROS_LPA(UWORD, SrcW, D0),
@@ -45,22 +63,38 @@ AROS_LP10(LONG, ScalePixelArray,
          AROS_LPA(UBYTE, SrcFormat, D7),
          LIBBASETYPEPTR, CyberGfxBase, 15, Cybergraphics
 );
-AROS_LP2(ULONG, GetCyberMapAttr,
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
+AROS_LP2(IPTR, GetCyberMapAttr,
          AROS_LPA(struct BitMap *, bitMap, A0),
-         AROS_LPA(ULONG, attribute, D0),
+         AROS_LPA(IPTR, attribute, D0),
          LIBBASETYPEPTR, CyberGfxBase, 16, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP2(ULONG, GetCyberIDAttr,
          AROS_LPA(ULONG, attribute, D0),
          AROS_LPA(ULONG, DisplayModeID, D1),
          LIBBASETYPEPTR, CyberGfxBase, 17, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP3(ULONG, ReadRGBPixel,
          AROS_LPA(struct RastPort *, rp, A1),
          AROS_LPA(UWORD, x, D0),
          AROS_LPA(UWORD, y, D1),
          LIBBASETYPEPTR, CyberGfxBase, 18, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP4(LONG, WriteRGBPixel,
          AROS_LPA(struct RastPort *, rp, A1),
          AROS_LPA(UWORD, x, D0),
@@ -68,6 +102,10 @@ AROS_LP4(LONG, WriteRGBPixel,
          AROS_LPA(ULONG, pixel, D2),
          LIBBASETYPEPTR, CyberGfxBase, 19, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP10(ULONG, ReadPixelArray,
          AROS_LPA(APTR, dst, A0),
          AROS_LPA(UWORD, destx, D0),
@@ -81,6 +119,10 @@ AROS_LP10(ULONG, ReadPixelArray,
          AROS_LPA(UBYTE, dstformat, D7),
          LIBBASETYPEPTR, CyberGfxBase, 20, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP10(ULONG, WritePixelArray,
          AROS_LPA(APTR, src, A0),
          AROS_LPA(UWORD, srcx, D0),
@@ -94,6 +136,10 @@ AROS_LP10(ULONG, WritePixelArray,
          AROS_LPA(UBYTE, srcformat, D7),
          LIBBASETYPEPTR, CyberGfxBase, 21, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP7(ULONG, MovePixelArray,
          AROS_LPA(UWORD, SrcX, D0),
          AROS_LPA(UWORD, SrcY, D1),
@@ -104,6 +150,10 @@ AROS_LP7(ULONG, MovePixelArray,
          AROS_LPA(UWORD, SizeY, D5),
          LIBBASETYPEPTR, CyberGfxBase, 22, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP5(ULONG, InvertPixelArray,
          AROS_LPA(struct RastPort *, rp, A1),
          AROS_LPA(UWORD, destx, D0),
@@ -112,6 +162,10 @@ AROS_LP5(ULONG, InvertPixelArray,
          AROS_LPA(UWORD, height, D3),
          LIBBASETYPEPTR, CyberGfxBase, 24, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP6(ULONG, FillPixelArray,
          AROS_LPA(struct RastPort *, rp, A1),
          AROS_LPA(UWORD, destx, D0),
@@ -121,31 +175,55 @@ AROS_LP6(ULONG, FillPixelArray,
          AROS_LPA(ULONG, pixel, D4),
          LIBBASETYPEPTR, CyberGfxBase, 25, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP3(void, DoCDrawMethodTagList,
          AROS_LPA(struct Hook *, hook, A0),
          AROS_LPA(struct RastPort *, rp, A1),
          AROS_LPA(struct TagItem *, tags, A2),
          LIBBASETYPEPTR, CyberGfxBase, 26, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP2(void, CVideoCtrlTagList,
          AROS_LPA(struct ViewPort *, vp, A0),
          AROS_LPA(struct TagItem *, tags, A1),
          LIBBASETYPEPTR, CyberGfxBase, 27, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP2(APTR, LockBitMapTagList,
          AROS_LPA(APTR, bitmap, A0),
          AROS_LPA(struct TagItem *, tags, A1),
          LIBBASETYPEPTR, CyberGfxBase, 28, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP1(void, UnLockBitMap,
          AROS_LPA(APTR, Handle, A0),
          LIBBASETYPEPTR, CyberGfxBase, 29, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP2(void, UnLockBitMapTagList,
          AROS_LPA(APTR, Handle, A0),
          AROS_LPA(struct TagItem *, Tags, A1),
          LIBBASETYPEPTR, CyberGfxBase, 30, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (40 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP7(ULONG, ExtractColor,
          AROS_LPA(struct RastPort *, RastPort, A0),
          AROS_LPA(struct BitMap *, SingleMap, A1),
@@ -156,6 +234,10 @@ AROS_LP7(ULONG, ExtractColor,
          AROS_LPA(ULONG, Height, D4),
          LIBBASETYPEPTR, CyberGfxBase, 31, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP11(LONG, WriteLUTPixelArray,
          AROS_LPA(APTR, srcRect, A0),
          AROS_LPA(UWORD, SrcX, D0),
@@ -170,6 +252,10 @@ AROS_LP11(LONG, WriteLUTPixelArray,
          AROS_LPA(UBYTE, CTabFormat, D7),
          LIBBASETYPEPTR, CyberGfxBase, 33, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP10(ULONG, WritePixelArrayAlpha,
          AROS_LPA(APTR, src, A0),
          AROS_LPA(UWORD, srcx, D0),
@@ -183,6 +269,10 @@ AROS_LP10(ULONG, WritePixelArrayAlpha,
          AROS_LPA(ULONG, globalalpha, D7),
          LIBBASETYPEPTR, CyberGfxBase, 36, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (41 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (51 <= __CYBERGRAPHICS_LIBAPI__)
 AROS_LP8(void, BltTemplateAlpha,
          AROS_LPA(APTR, src, A0),
          AROS_LPA(LONG, srcx, D0),
@@ -194,6 +284,23 @@ AROS_LP8(void, BltTemplateAlpha,
          AROS_LPA(LONG, height, D5),
          LIBBASETYPEPTR, CyberGfxBase, 37, Cybergraphics
 );
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (51 <= __CYBERGRAPHICS_LIBAPI__) */
+
+#if !defined(__CYBERGRAPHICS_LIBAPI__) || (51 <= __CYBERGRAPHICS_LIBAPI__)
+AROS_LP8(VOID, ProcessPixelArray,
+         AROS_LPA(struct RastPort *, rp, A1),
+         AROS_LPA(ULONG, destX, D0),
+         AROS_LPA(ULONG, destY, D1),
+         AROS_LPA(ULONG, sizeX, D2),
+         AROS_LPA(ULONG, sizeY, D3),
+         AROS_LPA(ULONG, operation, D4),
+         AROS_LPA(LONG, value, D5),
+         AROS_LPA(struct TagItem *, taglist, A2),
+         LIBBASETYPEPTR, CyberGfxBase, 38, Cybergraphics
+);
+
+#endif /* !defined(__CYBERGRAPHICS_LIBAPI__) || (51 <= __CYBERGRAPHICS_LIBAPI__) */
 
 __END_DECLS
 

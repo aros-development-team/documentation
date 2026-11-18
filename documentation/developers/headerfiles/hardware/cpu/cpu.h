@@ -1,9 +1,7 @@
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2001, The AROS Development Team. All rights reserved.
 
     Desc: AROS Generic CPU Definitions.
-    Lang: english
 */
 #ifndef __AROS_CPU_H__
 #define __AROS_CPU_H__
@@ -15,7 +13,6 @@
 #   include <exec/semaphores.h>
 #endif
 
-#include <hardware/acpi/acpi.h>
 #include <hardware/pic/pic.h>
 
 /* ALL supported processor families should have an entry here (for future compatability - DO NOT CHANGE THE ORDER!) */
@@ -111,7 +108,6 @@ struct CPUBase
     struct  Node                CPUB_Node;
     struct  ExecBase            *CPUB_SysBase;
     struct  UtilityBase         *CPUB_UtilBase;
-    struct  ACPIBase            *CPUB_ACPIBase;
     struct  PICBase             *CPUB_PICBase;
 
     struct SignalSemaphore      CPUB_ListLock;                   /* Control access to the cpu list..                         */

@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2002, The AROS Development Team. All rights reserved.
-    $Id: potgo.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright (C) 1995-2002, The AROS Development Team. All rights reserved.
 */
 
 #ifndef RESOURCES_POTGO_H

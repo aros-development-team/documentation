@@ -1,16 +1,10 @@
-#ifndef MUI_NListview_MCC_H
-#define MUI_NListview_MCC_H
-
 /***************************************************************************
 
  NListview.mcc - New Listview MUI Custom Class
  Registered MUI class, Serial Number: 1d51 (0x9d510020 to 0x9d51002F)
 
- Copyright (C) 1996-2004 by Gilles Masson,
-                            Carsten Scholling <aphaso@aphaso.de>,
-                            Przemyslaw Grunchala,
-                            Sebastian Bauer <sebauer@t-online.de>,
-                            Jens Langner <Jens.Langner@light-speed.de>
+ Copyright (C) 1996-2001 by Gilles Masson
+ Copyright (C) 2001-2014 NList Open Source Team
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -28,6 +22,9 @@
 
 ***************************************************************************/
 
+#ifndef MUI_NListview_MCC_H
+#define MUI_NListview_MCC_H
+
 #ifndef LIBRARIES_MUI_H
 #include <libraries/mui.h>
 #endif
@@ -37,24 +34,30 @@
 #endif
 
 #define MUIC_NListview "NListview.mcc"
+#if defined(__AROS__) && !defined(NO_INLINE_STDARG)
+#define NListviewObject MUIOBJMACRO_START(MUIC_NListview)
+#else
 #define NListviewObject MUI_NewObject(MUIC_NListview
-
+#endif
 
 /* Attributes */
 
-#define MUIA_NListview_NList                0x9d510020 /* GM  i.g Object *          */
+#define MUIA_NListview_NList                0x9d510020UL /* GM  i.g Object *          */
 
-#define MUIA_NListview_Vert_ScrollBar       0x9d510021 /* GM  isg LONG              */
-#define MUIA_NListview_Horiz_ScrollBar      0x9d510022 /* GM  isg LONG              */
-#define MUIA_NListview_VSB_Width            0x9d510023 /* GM  ..g LONG              */
-#define MUIA_NListview_HSB_Height           0x9d510024 /* GM  ..g LONG              */
+#define MUIA_NListview_Vert_ScrollBar       0x9d510021UL /* GM  isg LONG              */
+#define MUIA_NListview_Horiz_ScrollBar      0x9d510022UL /* GM  isg LONG              */
+#define MUIA_NListview_VSB_Width            0x9d510023UL /* GM  ..g LONG              */
+#define MUIA_NListview_HSB_Height           0x9d510024UL /* GM  ..g LONG              */
 
 #define MUIV_Listview_ScrollerPos_Default 0
-#define MUIV_Listview_ScrollerPos_Left 1
-#define MUIV_Listview_ScrollerPos_Right 2
-#define MUIV_Listview_ScrollerPos_None 3
+#define MUIV_Listview_ScrollerPos_Left    1
+#define MUIV_Listview_ScrollerPos_Right   2
+#define MUIV_Listview_ScrollerPos_None    3
 
 #define MUIM_NListview_QueryBeginning       MUIM_NList_QueryBeginning /* obsolete */
+#define MUIM_NListview_SetScrollers         0x9d5100A8UL /* private */
+
+struct MUIP_NListview_SetScrollers          { STACKED ULONG MethodID; STACKED ULONG scrollers; };
 
 #define MUIV_NListview_VSB_Always      1
 #define MUIV_NListview_VSB_Auto        2

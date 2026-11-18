@@ -2,16 +2,13 @@
 #define DOS_DOSEXTENS_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2019, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: LibBase and some important structures
     Lang: English
 */
 
-#ifndef AROS_CONFIG_H
-#   include <aros/config.h>
-#endif
 #ifndef EXEC_TYPES_H
 #   include <exec/types.h>
 #endif
@@ -39,7 +36,6 @@
 #ifndef DOS_DOS_H
 #   include <dos/dos.h>
 #endif
-#include <dos/dosextaros.h>
 
 /**********************************************************************
  ***************************** DosLibrary *****************************
@@ -53,43 +49,17 @@ struct DosLibrary
 
     struct RootNode * dl_Root;
 
-#if (AROS_FLAVOUR & AROS_FLAVOUR_BINCOMPAT)
-    /* The following fields are not used by AROS and are just there to
-       guarantee binary compatibility. DO NOT USE THESE FIELDS IN ANY WAY.
-       Original names were: dl_GV, dl_A2, dl_A5 and dl_A6 */
-    APTR              NoAROS2;
-    LONG              NoAROS3[3];
-#endif
+    /* private BCPL fields. Do not use. */
+    APTR    dl_GV;
+    SIPTR   dl_A2;
+    SIPTR   dl_A5;
+    SIPTR   dl_A6;
 
     /* The following fields are PRIVATE! */
     struct ErrorString	 * dl_Errors;
-    struct Device	 * dl_TimerBase;
+    struct timerequest   * dl_TimeReq;
     struct Library	 * dl_UtilityBase;
     struct Library	 * dl_IntuitionBase;
-
-    /* These are AROS specific extensions. They are all PRIVATE! */
-    struct timerequest	   dl_TimerIO;
-
-    struct DosList	 * dl_DevInfo;
-    struct ExecBase	 * dl_SysBase;
-    BPTR		   dl_SegList;
-    struct Device	 * dl_NulHandler;
-    struct Unit 	 * dl_NulLock;
-
-    struct SignalSemaphore dl_LDObjectsListSigSem;
-    struct List            dl_LDObjectsList;
-    struct Interrupt	   dl_LDHandler;
-    struct MsgPort	 * dl_LDDemonPort;
-    struct Process	 * dl_LDDemonTask;
-    ULONG		   dl_LDReturn;
-    BPTR    	    	   dl_SYSLock;
-    
-#if 0
-    ULONG		   dl_ProcCnt;
-#endif
-      /* The flags are the same, as they were in RootNode->rn_Flags. See below
-         for definitions. */
-    ULONG		   dl_Flags;
 };
 
 /* dl_Flags/rn_Flags */
@@ -110,9 +80,11 @@ struct RootNode
     struct DateStamp rn_Time;
       /* (APTR) The SegList of the process that handles validation of devices.
       */
-    LONG             rn_RestartSeg;
+    APTR             rn_RestartSeg;
       /* (struct DosInfo *) see below for DosInfo */
     BPTR             rn_Info;
+      /* BPTR to default (FFS) filesystem, used for example by WB C:Mount
+       * when mountlist filesystem is not specified */
     BPTR             rn_FileHandlerSegment;
       /* List of all CLI processes (struct CliProcList - see below). See also
          rn_TaskArray. */
@@ -139,18 +111,18 @@ struct CLIInfo
 
 struct DosInfo
 {
-    BPTR di_McName;   /* Used as resident segment list */
+    BPTR di_McName;   /* Used as resident segment list (says official documentation but it is wrong) */
     BPTR di_DevInfo;  /* Devices list                  */
     BPTR di_Devices;  /* Reserved	               */
     BPTR di_Handlers; /* Reserved	               */
-    APTR di_NetHand;  /* Reserved	               */
+    BPTR di_NetHand;  /* Reserved (actually resident segment list) */
 
     /* The following semaphores are PRIVATE. */
     struct SignalSemaphore di_DevLock;
     struct SignalSemaphore di_EntryLock;
     struct SignalSemaphore di_DeleteLock;
 };
-#define di_ResList di_McName
+#define di_ResList di_NetHand
 
 /**********************************************************************
  ***************************** Processes ******************************
@@ -177,7 +149,7 @@ struct Process
     BPTR	    pr_StackBase;
       /* Secondary return-value, as defined in <dos/dos.h>. As of now this
          field is declared PRIVATE. Use IoErr()/SetIoErr() to access it. */
-    LONG	    pr_Result2;
+    SIPTR	    pr_Result2;
       /* Lock of the current directory. As of now this is declared READ-ONLY.
          Use CurrentDir() to set it. (struct FileLock *) */
     BPTR	    pr_CurrentDir;
@@ -229,9 +201,11 @@ struct Process
 #define PRB_CLOSEOUTPUT 4
 #define PRB_FREEARGS	5
 #define PRB_CLOSEERROR	6
-#define PRB_SYNCHRONOUS 7
-#define PRB_WAITINGFORCHILD 8 /* This one is subject to change! */
-#define PRB_NOTIFYONDEATH 9
+/* The following are AROS-specific */
+#define PRB_SYNCHRONOUS     18
+#define PRB_WAITINGFORCHILD 19 /* This one is subject to change! */
+#define PRB_NOTIFYONDEATH   20
+#define PRB_CLOSECLIERROR   21
 
 #define PRF_FREESEGLIST (1L << PRB_FREESEGLIST)
 #define PRF_FREECURRDIR (1L << PRB_FREECURRDIR)
@@ -243,6 +217,7 @@ struct Process
 #define PRF_SYNCHRONOUS (1L << PRB_SYNCHRONOUS)
 #define PRF_WAITINGFORCHILD (1L << PRB_WAITINGFORCHILD)
 #define PRF_NOTIFYONDEATH (1L << PRB_NOTIFYONDEATH)
+#define PRF_CLOSECLIERROR   (1L << PRB_CLOSECLIERROR)
 
 /* Structure used for CLIs and Shells. Allocate this structure with
    AllocDosObject() only! */
@@ -313,63 +288,46 @@ struct DevProc
 
 /* Standard file-handle as returned by Open() (as BPTR). Generally said, you
    should not use this structure in any way and only use library-calls to
-   access files. Note that this structure is very different to the structure
-   used in AmigaOS! Treat this structure as PRIVATE. If you want to create
+   access files. Treat this structure as PRIVATE. If you want to create
    this structure nevertheless, use AllocDosObject(). */
 struct FileHandle
 {
     /* The next three are used with packet-based filesystems */
-    struct Message * fh_Link;   /* exec message containing packet */
-    struct MsgPort * fh_Port;   /* packet reply port */
+    ULONG  fh_Flags;
+    LONG   fh_Interactive;	/* interactive handle flag */
     struct MsgPort * fh_Type;   /* port to send packets to */
 
-    UBYTE * fh_Buf;
-    UBYTE * fh_Pos;
-    UBYTE * fh_End;
+    BPTR    fh_Buf;
+    LONG    fh_Pos;
+    LONG    fh_End;
 
-    /* The following four fields have different names and a different
-       function than their AmigaOS equivalents. The original names were:
-       fh_Funcs/fh_Func1, fh_Func2, fh_Func3, fh_Args/fh_Arg1 and fh_Arg2 */
-    ULONG	    fh_Size;
-    ULONG	    fh_Flags;   /* see below */
-      /* This is a pointer to a filesystem handler. See <dos/filesystems.h> for
-         more information. */
-    struct Device * fh_Device;
+    SIPTR fh_Funcs;
+    SIPTR fh_Func2;
+    SIPTR fh_Func3;
+    SIPTR fh_Args;
+    SIPTR fh_Arg2;
 
-    /* SDuvan: Added this and removed the #if below. This field allows us
-               to emulate packets -- specifically it makes it possible
-	       to implement the ***Pkt() functions */
-    SIPTR fh_CompatibilityHack;
-
-      /* A private pointer to a device specific filehandle structure. See
-         <dos/filesystems.h> for more information. */
-    struct Unit   * fh_Unit;
+    /* v39+ */
+    ULONG fh_BufSize;	/* Size of buffered io buffer */
+    BPTR  fh_OrigBuf;	/* Always the same as fh_Buf */
 };
 
-#define  fh_Arg1  fh_CompatibilityHack
-
-/* fh_Flags. The flags are AROS specific and therefore PRIVATE.. */
-#define FHF_WRITE   0x80000000
-#define FHF_BUF     1
-#define FHF_APPEND  2
-#define FHF_LINEBUF 4
-#define FHF_NOBUF   8
+/* Original AmigaOS aliases */
+#define fh_Port fh_Interactive
+#define fh_Func1 fh_Funcs
+#define fh_Arg1 fh_Args
 
 /* Structure of a lock. This is provided as it may be required internally by
- * packet-based filesystems, but it is not used by dos.library and the rest of
- * AROS. Lock() returns a struct FileHandle! */
+ * packet-based filesystems.
+ */
 struct FileLock
 {
     BPTR             fl_Link;   /* (struct FileLock *) Pointer to next lock. */
-    LONG             fl_Key;
+    IPTR             fl_Key;
     LONG             fl_Access;
     struct MsgPort * fl_Task;
     BPTR             fl_Volume; /* (struct DeviceList * - see below) */
 };
-
-/* This is a definition telling that AROS uses fake FileLocks which are
-   FileHandles in fact. It will go away when real FileLocks are implemented. */
-#define AROS_FAKE_LOCK
 
 /* Constants, defining of what kind a file is. These constants are used in
    many structures, including FileInfoBlock (<dos/dos.h>) and ExAllData
@@ -387,11 +345,12 @@ struct FileLock
  **********************************************************************/
 
 /* This structure is returned by LockDosList() and similar calls. This
-   structure is different to the AmigaOS one. But this structure is PRIVATE
-   anyway. Use system-calls for dos list-handling. */
+ * structure is identical to the AmigaOS one, but this structure is PRIVATE
+ * anyway. Use system-calls for dos list-handling.
+ */
 struct DosList
 {
-      /* PRIVATE pointer to next entry. In AmigaOS this used to be a BPTR. */
+      /* PRIVATE pointer to next entry. */
     BPTR dol_Next;
       /* Type of the current node (see below). */
     LONG             dol_Type;
@@ -409,7 +368,8 @@ struct DosList
             LONG    dol_StackSize;
             LONG    dol_Priority;
             BPTR    dol_Startup;
-            BPTR    dol_NoAROS3[2];
+            BPTR    dol_SegList;
+            BPTR    dol_GlobVec;
         } dol_handler;
           /* See struct DeviceList below. */
         struct {
@@ -429,15 +389,6 @@ struct DosList
 
     /* Name as a BCPL string */
     BSTR dol_Name;
-
-    /* Private extensions for the DosList struct.
-     * Should not be used in user land code.
-     */
-    union
-    {
-        IPTR dol_Reserved[5];
-        struct DosListAROSExt dol_AROS;
-    } dol_Ext;
 };
 
 /* dol_Type/dl_Type/dvi_Type. Given to MakeDosEntry(). */
@@ -451,44 +402,26 @@ struct DosList
 /* The following structures are essentially the same as DosList above. The
    difference is that they support just one type of entry. You can use them
    instead of DosList if you have a list containing just one type of
-   entry. For more information see above. */
+   entry. For more information see above.
+   Note that these two entries have the same size, and dl_Name has the same
+   offset. Also they have to correspond to the union above.
+ */
 
 struct DeviceList
 {
     BPTR             dl_Next;
-    LONG             dl_Type; /* see above, always = DLT_VOLUME */
-
+    LONG             dl_Type;		/* see above, always = DLT_VOLUME		       */
     struct MsgPort * dl_Task;
     BPTR             dl_Lock;
 
-    /* Embedded DateStamp structured as defined in <dos/dos.h>. At this
-       date the volume was created. */
-    struct DateStamp dl_VolumeDate;
-    /* (void *) List of all locks on the volume. */
-    BPTR             dl_LockList;
-    /* Type of the disk. (see <dos/dos.h> for definitions) */
-    LONG             dl_DiskType;
-    BPTR             dl_unused; /* PRIVATE */
-    
-    /* In DevInfo we have three pointers and three longwords,
-     * in this structure two pointers and four longwords,
-     * add some bytes if pointers are longer then longwords
-     * FIXME: ptr alignment not taken into account
-     */
-#if AROS_SIZEOFPTR > AROS_SIZEOFULONG
-//    UBYTE            dl_unused2[(AROS_SIZEOFPTR-AROS_SIZEOFULONG)];
-#endif
+    struct DateStamp dl_VolumeDate;	/* At this date the volume was created.		       */
+					/* ULONG padding is inserted here on 64 bits	       */
+    BPTR             dl_LockList;	/* (void *) List of all locks on the volume.	       */
+    LONG             dl_DiskType;	/* Type of the disk. (see <dos/dos.h> for definitions) */
+					/* ULONG padding is inserted here on 64 bits	       */
+    BPTR             dl_unused;		/* PRIVATE					       */
 
     BSTR dl_Name;
-
-    /* Private extensions
-     * Should not be used in user land code.
-     */
-    union
-    {
-        IPTR dl_Reserved[5];
-        struct DosListAROSExt dl_AROS;
-    } dl_Ext;
 };
 
 
@@ -497,28 +430,18 @@ struct DeviceList
 struct DevInfo
 {
     BPTR             dvi_Next;
-    LONG             dvi_Type; /* see above, always = DLT_DEVICE */
-
+    LONG             dvi_Type;       /* see above, always = DLT_DEVICE */
     struct MsgPort * dvi_Task;
     BPTR             dvi_Lock;
 
-    BSTR dvi_Handler;    /* Device name for handler. */
-    LONG dvi_StackSize;  /* Packet-handler initial stack size */
-    LONG dvi_Priority;   /* Packet-handler initial priority */
-    BPTR dvi_Startup;    /* (struct FileSysStartupMsg * - defined in
-                            <dos/filehandler.h>) */
-    BPTR dvi_NoAROS4[2]; /* PRIVATE */
-
-    BSTR dvi_Name;
-
-    /* Private extensions
-     * Should not be used in user land code.
-     */
-    union
-    {
-        IPTR dvi_Reserved[5];
-        struct DosListAROSExt dvi_AROS;
-    } dvi_Ext;
+    BSTR             dvi_Handler;    /* Device name for handler.	  */
+    LONG             dvi_StackSize;  /* Packet-handler initial stack size */
+    LONG             dvi_Priority;   /* Packet-handler initial priority	  */
+    BPTR             dvi_Startup;    /* (struct FileSysStartupMsg *)	  */
+    BPTR             dvi_SegList;    /* SegList for the handler		  */
+    BPTR             dvi_GlobVec;    /* Global Vector, should be (BPTR)-1 */
+#define dvi_GlobalVec dvi_GlobVec
+    BSTR             dvi_Name;
 };
 
 /* Dos list scanning and locking modes as used in LockDosList() */
@@ -556,21 +479,15 @@ struct AssignList
  ********************** Low Level File Handling ***********************
  **********************************************************************/
 
-/* This section is OBSOLETE and is not implemented in AROS! AROS uses a
-   different concept for filesystem-handling. See <dos/filesystem.h> for
-   more information. Use the structures and defines in this section only, if
-   you are programming just for AmigaOS. */
-
-
 /* Allocate this structure with AllocDosObject(). */
 struct DosPacket
 {
    struct Message * dp_Link; /* Pointer to a standard exec message. */
    struct MsgPort * dp_Port; /* Reply-Port of that packet. */
 
-   LONG dp_Type; /* see below */
-   LONG dp_Res1; /* Normal return value. */
-   LONG dp_Res2; /* Secondary return value (as returned by IoErr()). See
+   LONG  dp_Type; /* see below */
+   SIPTR dp_Res1; /* Normal return value. */
+   SIPTR dp_Res2; /* Secondary return value (as returned by IoErr()). See
                     <dos/dos.h> for possible values. */
 
    /* The actual data. */
@@ -588,76 +505,86 @@ struct DosPacket
 #define dp_BufAddr  dp_Arg1
 
 
-/* These are defined for packet emulation purposes only! AROS doesn't use
-   packets at all, but emulates (some of) them via DoPkt(), SendPkt() and
-   others to function like they did in AmigaOS */
+/* These are defined for DOS Packet filesystems, and are
+ * passed by DoPkt(), SendPkt(), and others
+ */
 
 /* dp_Type */
-#define ACTION_NIL             0
-#define ACTION_STARTUP         0
-#define ACTION_GET_BLOCK       2	/* Obsolete */
-#define ACTION_SET_MAP         4
-#define ACTION_DIE             5
-#define ACTION_EVENT           6
-#define ACTION_CURRENT_VOLUME  7
-#define ACTION_LOCATE_OBJECT   8
-#define ACTION_RENAME_DISK     9
-#define ACTION_FREE_LOCK      15
-#define ACTION_DELETE_OBJECT  16
-#define ACTION_RENAME_OBJECT  17
-#define ACTION_MORE_CACHE     18
-#define ACTION_COPY_DIR       19
-#define ACTION_WAIT_CHAR      20
-#define ACTION_SET_PROTECT    21
-#define ACTION_CREATE_DIR     22
-#define ACTION_EXAMINE_OBJECT 23
-#define ACTION_EXAMINE_NEXT   24
-#define ACTION_DISK_INFO      25
-#define ACTION_INFO           26
-#define ACTION_FLUSH          27
-#define ACTION_SET_COMMENT    28
-#define ACTION_PARENT         29
-#define ACTION_TIMER          30
-#define ACTION_INHIBIT        31
-#define ACTION_DISK_TYPE      32
-#define ACTION_DISK_CHANGE    33
-#define ACTION_SET_DATE       34
-#define ACTION_SAME_LOCK      40
+#define ACTION_NIL                      0
+#define ACTION_STARTUP                  0
+#define ACTION_GET_BLOCK                2	/* Obsolete */
+#define ACTION_SET_MAP                  4
+#define ACTION_DIE                      5
+#define ACTION_EVENT                    6
+#define ACTION_CURRENT_VOLUME           7
+#define ACTION_LOCATE_OBJECT            8
+#define ACTION_RENAME_DISK              9
+#define ACTION_FREE_LOCK                15
+#define ACTION_DELETE_OBJECT            16
+#define ACTION_RENAME_OBJECT            17
+#define ACTION_MORE_CACHE               18
+#define ACTION_COPY_DIR                 19
+#define ACTION_WAIT_CHAR                20
+#define ACTION_SET_PROTECT              21
+#define ACTION_CREATE_DIR               22
+#define ACTION_EXAMINE_OBJECT           23
+#define ACTION_EXAMINE_NEXT             24
+#define ACTION_DISK_INFO                25
+#define ACTION_INFO                     26
+#define ACTION_FLUSH                    27
+#define ACTION_SET_COMMENT              28
+#define ACTION_PARENT                   29
+#define ACTION_TIMER                    30
+#define ACTION_INHIBIT                  31
+#define ACTION_DISK_TYPE                32
+#define ACTION_DISK_CHANGE              33
+#define ACTION_SET_DATE                 34
+#define ACTION_SAME_LOCK                40
 
-#define ACTION_WRITE 'W'
-#define ACTION_READ  'R'
+#define ACTION_WRITE                    'W'
+#define ACTION_READ                     'R'
 
-#define ACTION_SCREEN_MODE      994
-#define ACTION_CHANGE_SIGNAL    995
-#define ACTION_READ_RETURN     1001
-#define ACTION_WRITE_RETURN    1002
-#define ACTION_FINDUPDATE      1004
-#define ACTION_FINDINPUT       1005
-#define ACTION_FINDOUTPUT      1006
-#define ACTION_END             1007
-#define ACTION_SEEK            1008
-#define ACTION_FORMAT          1020
-#define ACTION_MAKE_LINK       1021
-#define ACTION_SET_FILE_SIZE   1022
-#define ACTION_WRITE_PROTECT   1023
-#define ACTION_READ_LINK       1024
-#define ACTION_FH_FROM_LOCK    1026
-#define ACTION_IS_FILESYSTEM   1027
-#define ACTION_CHANGE_MODE     1028
-#define ACTION_COPY_DIR_FH     1030
-#define ACTION_PARENT_FH       1031
-#define ACTION_EXAMINE_ALL     1033
-#define ACTION_EXAMINE_FH      1034
-#define ACTION_EXAMINE_ALL_END 1035
-#define ACTION_SET_OWNER       1036
+#define ACTION_SCREEN_MODE              994
+#define ACTION_CHANGE_SIGNAL            995
+#define ACTION_READ_RETURN              1001
+#define ACTION_WRITE_RETURN             1002
+#define ACTION_FINDUPDATE               1004
+#define ACTION_FINDINPUT                1005
+#define ACTION_FINDOUTPUT               1006
+#define ACTION_END                      1007
+#define ACTION_SEEK                     1008
+#define ACTION_FORMAT                   1020
+#define ACTION_MAKE_LINK                1021
+#define ACTION_SET_FILE_SIZE            1022
+#define ACTION_WRITE_PROTECT            1023
+#define ACTION_READ_LINK                1024
+#define ACTION_FH_FROM_LOCK             1026
+#define ACTION_IS_FILESYSTEM            1027
+#define ACTION_CHANGE_MODE              1028
+#define ACTION_COPY_DIR_FH              1030
+#define ACTION_PARENT_FH                1031
+#define ACTION_EXAMINE_ALL              1033
+#define ACTION_EXAMINE_FH               1034
+#define ACTION_EXAMINE_ALL_END          1035
+#define ACTION_SET_OWNER                1036
 
-#define ACTION_LOCK_RECORD   2008
-#define ACTION_FREE_RECORD   2009
+#define ACTION_LOCK_RECORD              2008
+#define ACTION_FREE_RECORD              2009
 
-#define ACTION_ADD_NOTIFY    4097
-#define ACTION_REMOVE_NOTIFY 4098
+#define ACTION_ADD_NOTIFY               4097
+#define ACTION_REMOVE_NOTIFY            4098
 
-#define ACTION_SERIALIZE_DISK 4200
+#define ACTION_SERIALIZE_DISK           4200
+
+/* AROS Extension(s) */
+#define ACTION_GET_FILE_BLOCKS          2019
+
+/* AmigaOS 4 (tm) compatable Extension(s) */
+#define ACTION_CHANGE_FILE_POSITION64   8001
+#define ACTION_GET_FILE_POSITION64      8002
+#define ACTION_CHANGE_FILE_SIZE64       8003
+#define ACTION_GET_FILE_SIZE64          8004
+
 
 /* Structure for easy handling of DosPackets. DosPackets don't have to be in
    this structure, but this struture may ease the use of it. */

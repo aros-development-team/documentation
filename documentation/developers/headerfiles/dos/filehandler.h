@@ -2,7 +2,7 @@
 #define DOS_FILEHANDLER_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2011, The AROS Development Team. All rights reserved.
     $Id$
 
     Constants for filehandlers.
@@ -20,8 +20,6 @@
 #ifndef DOS_DOS_H
 #   include <dos/dos.h>
 #endif
-#include <dos/dosextaros.h>
-
 
 /* Disk environment array. The size of this structure is variable.
    de_TableSize contains the size of the structure. This structure may
@@ -84,13 +82,11 @@ struct DosEnvec
 
 
 /* This is the message that is passed to a file handler during startup
-   in the DeviceNode->dn_Startup field. It is not used in AROS DOS handlers
-   as they are now Device based, and the information is passed in during
-   OpenDevice(), however this needs to be stored for late opening
-   handlers. */
+   in the DeviceNode->dn_Startup field.
+ */
 struct FileSysStartupMsg
 {
-    ULONG fssm_Unit;    /* Unit number of device used. */
+    IPTR  fssm_Unit;    /* Unit number of device used. Can also be an STRPTR */
     BSTR  fssm_Device;  /* Device name. */
     BPTR  fssm_Environ; /* Pointer to disk environment array, like the one
                            above. */
@@ -102,11 +98,7 @@ struct FileSysStartupMsg
     <dos/dosextens.h>. This is the version for a DOS "device" DLT_DEVICE.
     It is essentially the same structure as DevInfo, defined in
     <dos/dosextens.h>.
-
-    For AROS this is notably different, as filehandlers are no longer
-    DOS tasks (ie Processes), some of the fields here have no purpose
-    and are ignored. The only fields retained are the dn_Next, dn_Type,
-    dn_Startup and dn_Handler fields. */
+  */
 struct DeviceNode
 {
       /* PRIVATE pointer to next entry */
@@ -118,22 +110,13 @@ struct DeviceNode
     BPTR             dn_Lock;	/* dol_Lock field */
 
     BSTR  dn_Handler;    /* Null-terminated device name for handler. */
-    ULONG dn_StackSize;  /* Initial stacksize for packet-handler task */
+    LONG  dn_StackSize;  /* Initial stacksize for packet-handler task */
     LONG  dn_Priority;   /* Initial priority for packet-handler task */
     BPTR  dn_Startup;    /* (struct FileSysStartupMsg *) see above */
-    BPTR  dn_SegList;    /* SegList (for packet handlers) */
-    BPTR  dn_GlobalVec;  /* Ignored, historic */
+    BPTR  dn_SegList;    /* SegList for the handler */
+    BPTR  dn_GlobalVec;  /* Global Vector, should be (BPTR)-1 */
 
     BSTR   dn_Name;
-
-    /* Private extensions
-     * Should not be used in user land code.
-     */
-    union
-    {
-        IPTR dn_Reserved[5];
-        struct DosListAROSExt dn_AROS;
-    } dn_Ext;
 };
 
 #endif /* DOS_FILEHANDLER_H */

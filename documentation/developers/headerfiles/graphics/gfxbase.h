@@ -57,7 +57,7 @@ struct GfxBase
     BYTE  VBlank;
     BYTE  Debug;
     WORD  BeamSync;
-    WORD  system_bplcon0 ;
+    WORD  system_bplcon0;
     UBYTE SpriteReserved;
     UBYTE bytereserved;
     UWORD Flags;
@@ -84,13 +84,13 @@ struct GfxBase
     UWORD   MicrosPerLine;
     UWORD   MinDisplayColumn;
     UBYTE   ChipRevBits0;     				/* see below */
-    UBYTE   MemType;
+    UBYTE   MemType;					/* CHIP memory type, see below */
     UBYTE   crb_reserved[4];
     UWORD   monitor_id;
 
-    ULONG hedley[8];
-    ULONG hedley_sprites[8];
-    ULONG hedley_sprites1[8];
+    IPTR  hedley[8];
+    IPTR  hedley_sprites[8];
+    IPTR  hedley_sprites1[8];
     WORD  hedley_count;
     UWORD hedley_flags;
     WORD  hedley_tmp;
@@ -110,9 +110,9 @@ struct GfxBase
     struct MonitorSpec     * default_monitor;		/* MonitorSpec of "default.monitor"	  */
     struct SignalSemaphore * MonitorListSemaphore;	/* Semaphore for MonitorList access       */
 
-    VOID                   * DisplayInfoDataBase;
+    VOID                   * DisplayInfoDataBase;	/* NULL, unused by AROS			  */
     UWORD                    TopLine;
-    struct SignalSemaphore * ActiViewCprSemaphore;
+    struct SignalSemaphore * ActiViewCprSemaphore;	/* Semaphore for active view access	  */
 
     struct Library  *UtilBase;				/* Library Bases */
     struct ExecBase *ExecBase;
@@ -130,7 +130,7 @@ struct GfxBase
     BYTE    SprMoveDisable;
     UBYTE   WantChips;
     UBYTE   BoardMemType;
-    UBYTE   Bugs;
+    UBYTE   Bugs;					/* Private flags for AmigaOS monitor drivers. Unused by AROS. */
     ULONG * gb_LayersBase;				/* layers.library base */
     ULONG   ColorMask;
     APTR    IVector;
@@ -144,10 +144,10 @@ struct GfxBase
     struct AnalogSignalInterval MonitorVBlank;
     struct MonitorSpec        * natural_monitor;	/* Default MonitorSpec for view without explicit MonitorSpec in ViewExtra */
 
-    APTR  ProgData;
+    APTR  ProgData;					/* NULL, unused by AROS */
     UBYTE ExtSprites;
     UBYTE pad3;
-    UWORD GfxFlags;
+    UWORD GfxFlags;					/* Zero, unused by AOS */
     ULONG VBCounter;
 
     struct SignalSemaphore * HashTableSemaphore;	/* Semaphore for hash_table access, private in fact */
@@ -155,8 +155,8 @@ struct GfxBase
 };
 #define ChunkyToPlanarPtr HWEmul[0]
 
-/* DisplayFlags
- * 
+/*
+ * DisplayFlags
  * Specify some system-wide options for Amiga(tm) chipset
  */
 #define NTSC             (1<<0) /* Default mode is NTSC */
@@ -186,6 +186,7 @@ struct GfxBase
 #define SETCHIPREV_AA   (SETCHIPREV_ECS | GFXF_AA_ALICE | GFXF_AA_LISA)
 #define SETCHIPREV_BEST 0xFFFFFFFF
 
+/* Memory type flags */
 #define BUS_16  0
 #define BUS_32  1
 #define NML_CAS 0
@@ -198,7 +199,7 @@ struct GfxBase
 
 #define BLITMSG_FAULT 4
 
-/* PRIVATE */
-#define NEW_DATABASE 1
+/* GfxFlags. Private for AmigaOS(tm), unused by AROS. */
+#define NEW_DATABASE   1
 
 #endif /* GRAPHICS_GFXBASE_H */

@@ -2,7 +2,7 @@
 #define AROS_MORPHOS_CPU_H
 /*
     Copyright � 1995-2010, The AROS Development Team. All rights reserved.
-    $Id: cpu.h 33099 2010-04-27 05:42:48Z sonic $
+    $Id$
 
     NOTE: This file must compile *without* any other header !
 
@@ -41,13 +41,16 @@
 #define AROS_SLOWSTACKTAGS      1
 #define AROS_SLOWSTACKMETHODS   1
 #define AROS_SLOWSTACKHOOKS     1
+#define AROS_SLOWSTACKFORMAT    1
 
 /* types and limits for sig_atomic_t */
 #define AROS_SIG_ATOMIC_T       int
 #define AROS_SIG_ATOMIC_MIN     (-0x7fffffff-1)
 #define AROS_SIG_ATOMIC_MAX     0x7fffffff
 
+#if defined(__GNUC__) && !defined(__clang__)
 register unsigned char* AROS_GET_SP __asm__("%sp");
+#endif
 
 /*
      An offset value sometimes added to
@@ -77,17 +80,6 @@ struct FullJumpVec
     _v->ori   = (24 << 26) | (11 << 21) | (11 << 16) | ((ULONG)(a) & 0x0000FFFF);\
     _v->mtspr = (31 << 26) | (11 << 21) | ( 9 << 16) | (467 << 1);               \
     _v->jmp   = (19 << 26) | (20 << 21) | (528 << 1);                            \
-}
-
-/*
-    Extracts and stores the start address from a loaded
-    executable segment. start_address may then be used by gdb.
-*/
-#define __AROS_SET_START_ADDR(debug_segnode)\
-{\
-    struct FullJumpVec *_v = (struct FullJumpVec *) ((debug_segnode)->seglist + 4);\
-    (debug_segnode)->start_address  = (IPTR) ((_v->addis & 0x0000FFFF) << 16);     \
-    (debug_segnode)->start_address |= (IPTR)  (_v->ori   & 0x0000FFFF);            \
 }
 
 struct JumpVec
@@ -146,11 +138,6 @@ struct JumpVec
 #undef UseExecstubs
 #define UseExecstubs 1
 
-/* For debugging only: Pass errnos from the emulated OS. dos/Fault() will
-   recognise them */
-#undef PassThroughErrnos
-#define PassThroughErrnos 0x40000000
-
 /* Macros to test/set failure of AllocEntry() */
 #define AROS_ALLOCENTRY_FAILED(memType) \
 	((struct MemList *)((IPTR)(memType) | 0x80ul<<(sizeof(APTR)-1)*8))
@@ -187,10 +174,10 @@ extern void _aros_not_implemented (char *);
 #define __AROS_UFPA(type,name,reg)    type r##reg = name
 #define __AROS_UFCA(type,name,reg)    REG_##reg = (LONG)r##reg
 #define __AROS_UFDA(type,name,reg)    type
-#define __AROS_LHAQUAD(type,name,reg1,reg2)     type name
-#define __AROS_LPAQUAD(type,name,reg1,reg2)     type
-#define __AROS_LCAQUAD(type,name,reg1,reg2)     name
-#define __AROS_LDAQUAD(type,name,reg1,reg2)     type
+#define __AROS_LHA2(type,name,reg1,reg2)     type name
+#define __AROS_LPA2(type,name,reg1,reg2)     type
+#define __AROS_LCA2(type,name,reg1,reg2)     name
+#define __AROS_LDA2(type,name,reg1,reg2)     type
 
 /* Prefix for library function in header, prototype and call */
 #define __AROS_LH_PREFIX    /* eps */
@@ -234,8 +221,8 @@ extern void _aros_not_implemented (char *);
 /* Library prototypes expand to nothing */
 #define __AROS_CPU_SPECIFIC_LP
 
-#define AROS_LPQUAD1(t,n,a1,bt,bn,o,s)
-#define AROS_LPQUAD2(t,n,a1,a2,bt,bn,o,s)
+#define AROS_LPDOUBLE1(t,n,a1,bt,bn,o,s)
+#define AROS_LPDOUBLE2(t,n,a1,a2,bt,bn,o,s)
 
 #define AROS_LP0(t,n,bt,bn,o,s)
 #define AROS_LP1(t,n,a1,bt,bn,o,s)

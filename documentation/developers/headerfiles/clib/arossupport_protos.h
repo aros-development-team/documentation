@@ -2,7 +2,7 @@
 #define  CLIB_AROSSUPPORT_PROTOS_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2020, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Prototypes for aros.lib
@@ -36,22 +36,44 @@
 #   endif
 #endif
 
+#if defined(__GNUC__) 
+#define ATTRIB_FMT(a,b)  __attribute__ ((format (printf, a, b)))
+#else
+#define ATTRIB_FMT(a,b)
+#endif
+
 /* for va_list in kprintf() proto */
 #include <stdarg.h>
 
 /*
     Prototypes
 */
+__BEGIN_DECLS
+
 ULONG   CalcChecksum (APTR mem, ULONG size);
-int     kprintf      (const UBYTE * fmt, ...);
-int     vkprintf     (const UBYTE * fmt, va_list ap);
-int     rkprintf     (const STRPTR, const STRPTR, int, const UBYTE * fmt, ...);
-void    NastyFreeMem (APTR mem, ULONG size);
+int     kprintf      (const char * fmt, ...) ATTRIB_FMT(1, 2);
+int     vkprintf     (const char * fmt, va_list ap);
+int     rkprintf     (const STRPTR, const STRPTR, int, const char * fmt, ...) ATTRIB_FMT(4, 5);
+void    NastyFreeMem (APTR mem, IPTR size);
 APTR    RemoveSList  (APTR * list, APTR node);
-void    hexdump      (const void * data, IPTR offset, ULONG count);
-int     strrncasecmp (const char *, const char *, int);
+void    hexdmp       (const void * data, IPTR offset, ULONG count);
 void    RawPutChars  (const UBYTE * string, int len);
 BOOL    IsDosEntryA  (char *Name, ULONG Flags);
+
+/* dos.library-compatible data generation */
+BSTR CreateBSTR(CONST_STRPTR src);
+BPTR __CreateSegList(APTR function, struct ExecBase *sysBase);
+#define CreateSegList(func) __CreateSegList(func, SysBase)
+
+/*
+ * Taglist parsing functions.
+ * These functions are intended for use by early startup code only
+ * (where utility.library is not available yet).
+ * Please consider using utility.library whenever possible.
+ */
+struct TagItem *LibNextTagItem(struct TagItem **tagListPtr);
+struct TagItem *LibFindTagItem(Tag tagValue, const struct TagItem *tagList);
+IPTR LibGetTagData(Tag tagValue, IPTR defaultVal, const struct TagItem *tagList);
 
 /* AROS enhancements */
 BOOL ReadByte    (struct Hook *, UBYTE  * dataptr, void * stream);
@@ -70,9 +92,16 @@ BOOL WriteString (struct Hook *, STRPTR data, void * stream);
 BOOL WriteStruct (struct Hook *, APTR   data, void * stream, const IPTR * desc);
 void FreeStruct  (APTR s,  const IPTR * desc);
 
+/* RastPort manipulations */
+struct RastPort *CreateRastPort(void);
+struct RastPort *CloneRastPort(struct RastPort *rp);
+void DeinitRastPort(struct RastPort *rp);
+void FreeRastPort(struct RastPort *rp);
 
-/* don't use SysBase->kprintf on AmigaOS */
-#ifndef __amigaos__
+__END_DECLS
+
+/* don't use SysBase->kprintf on AmigaOS, or AROS m68k */
+#if defined(__AROS__) && (defined(USE_EXEC_DEBUG) || !defined(__mc68000))
 #   define kprintf     (((struct AROSSupportBase *)(SysBase->DebugAROSBase))->kprintf)
 #   define rkprintf    (((struct AROSSupportBase *)(SysBase->DebugAROSBase))->rkprintf)
 #   define vkprintf    (((struct AROSSupportBase *)(SysBase->DebugAROSBase))->vkprintf)

@@ -1,8 +1,8 @@
 #ifndef _SYS_CDEFS_H_
 #define _SYS_CDEFS_H_
 /*
- * Copyright 1995-2002, The AROS Development Team. All rights reserved.
- * $Id: cdefs.h 30792 2009-03-07 22:40:04Z neil $
+ * Copyright 1995-2025, The AROS Development Team. All rights reserved.
+ * $Id$
  *
  * <sys/cdefs.h> header file, would you believe it's mostly the same as
  * <aros/system.h>, except that here we define all the things that
@@ -10,7 +10,7 @@
  *
  * The namespace checks below are
  *
- * Copyright (c) 1991, 1993
+ * Copyright (C) 1991, 1993
  *      The Regents of the University of California.  All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -86,6 +86,15 @@
     Other forms of UNIX might have some more trouble.
 *****************************************************************************/
 
+#ifdef _GNU_SOURCE
+/* GNU source implies POSIX.1-2008, XSI 700, plus BSD/GNU extensions */
+#undef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 200809L
+#undef _XOPEN_SOURCE
+#define _XOPEN_SOURCE 700
+#define __BSD_VISIBLE   1
+#endif
+
 /*-
  * POSIX.1 requires that the macros we test be defined before any standard
  * header file is included.
@@ -120,7 +129,11 @@
 
 /* Deal with various X/Open Portability Guides and Single UNIX Spec. */
 #ifdef _XOPEN_SOURCE
-#if _XOPEN_SOURCE - 0 >= 600
+#if _XOPEN_SOURCE - 0 >= 700
+#define __XSI_VISIBLE           700
+#undef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE         200809
+#elif _XOPEN_SOURCE - 0 >= 600
 #define __XSI_VISIBLE           600
 #undef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE         200112
@@ -139,7 +152,10 @@
 #define _POSIX_C_SOURCE         198808
 #endif
 #ifdef _POSIX_C_SOURCE
-#if _POSIX_C_SOURCE >= 200112
+#if _POSIX_C_SOURCE >= 200809
+#define __POSIX_VISIBLE         200809
+#define __ISO_C_VISIBLE         1999
+#elif _POSIX_C_SOURCE >= 200112
 #define __POSIX_VISIBLE         200112
 #define __ISO_C_VISIBLE         1999
 #elif _POSIX_C_SOURCE >= 199506
@@ -199,7 +215,5 @@
 #define __weak_reference(sym,alias)        \
         __asm__(".weak " #alias);          \
         __asm__(".equ "  #alias ", " #sym)
-
-#include <endian.h>
 
 #endif /* _SYS_CDEFS_H_ */

@@ -33,7 +33,7 @@
 #define ICONA_BASE                          (TAG_USER+0x9000)
 
 /*** Error reporting ********************************************************/
-/* Errorcode (LONG *) */
+/* Errorcode (SIPTR *) */
 #define ICONA_ErrorCode                      (ICONA_BASE+1)
 
 /* Points to the tag item that caused the error (struct TagItem **). */
@@ -71,6 +71,20 @@
 /* Maximum length of a file/drawer name supported by icon.library (LONG) */
 #define ICONCTRLA_SetGlobalMaxNameLength     (ICONA_BASE+67)
 #define ICONCTRLA_GetGlobalMaxNameLength     (ICONA_BASE+68)
+
+/*** AROS Specific ******************************/
+/*
+    Scale all icons to a bounding box.
+    width is the upper 16 bits, height is the lower 16.
+
+    If set to -1.-1, icons which have source resolution
+    information are dynamically rescaled. All others
+    are left unchanged.
+
+    If set to 0.0, icons are shown pixel-for-pixel.
+ */
+#define ICONCTRLA_GetGlobalScaleBox     (ICONA_BASE+401)
+#define ICONCTRLA_SetGlobalScaleBox     (ICONA_BASE+402)
 
 /*** Per icon local options for IconControlA() ******************************/
 /* Get the icon rendering masks (PLANEPTR) */
@@ -133,13 +147,37 @@
 
 /* Image data: In RECTFMT_ARGB32 format (ULONG **) */
 #define ICONCTRLA_GetARGBImageData1 	(ICONA_BASE+301)
+#define ICONCTRLA_SetARGBImageData1 	(ICONA_BASE+302)
 #define ICONCTRLA_GetARGBImageData2 	(ICONA_BASE+303)
+#define ICONCTRLA_SetARGBImageData2 	(ICONA_BASE+304)
 
 /*
     Check if this icon was allocated by icon.library or if it consists
     solely of a statically allocated DiskObject. (LONG *)
 */
 #define ICONCTRLA_IsNativeIcon          (ICONA_BASE+80)
+
+/*** AROS Specific ******************************/
+/*
+    Scale all icons to a bounding box.
+    width is the upper 16 bits, height is the lower 16.
+
+    If set to 0.0, the global defaults are used.
+
+    If set to -1.-1, the icon is shown pixel-for-pixel
+ */
+#define ICONCTRLA_GetScaleBox           (ICONA_BASE+403)
+#define ICONCTRLA_SetScaleBox           (ICONA_BASE+404)
+
+#define ICON_SCALEBOX_DEFAULT            (0)
+#define ICON_SCALEBOX_AUTOSCALE          (0xffffffff)
+#define PACK_ICON_SCALEBOX(maxw, maxh)   ((((ULONG)maxw)<<16) | (UWORD)(maxh))
+#define UNPACK_ICON_SCALEBOX(v, maxw, maxh) \
+    do {                                    \
+        maxw = (WORD)(((v) >> 16) & 0xffff); \
+        maxh = (WORD)(((v) >>  0) & 0xffff); \
+    } while (0)
+
 
 /*** Icon aspect handling ***************************************************/
 /* Icon aspect ratio is not known */

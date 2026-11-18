@@ -40,6 +40,10 @@
 #include <intuition/classusr.h>
 #endif
 
+#ifndef DOS_BPTR_H
+#include <dos/bptr.h>
+#endif
+
 /*
 // Tags passed to PM_OpenPopupMenuA and PM_FilterIMsgA
 */
@@ -223,9 +227,9 @@
 
 struct PopupMenuBase {
 	struct Library		pmb_Library;
-	ULONG			pmb_SegList;
+	BPTR			pmb_SegList;
 	ULONG			pmb_Flags;
-	struct Library		*pmb_ExecBase;		/* Theese library */
+	struct Library		*pmb_ExecBase;		/* These library */
 	struct Library		*pmb_UtilityBase;	/* pointers are   */
 	struct Library		*pmb_IntuitionBase;	/* valid as long  */
 	struct Library		*pmb_GfxBase;		/* as pm lib      */

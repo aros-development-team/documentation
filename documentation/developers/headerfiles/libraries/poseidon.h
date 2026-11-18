@@ -8,16 +8,17 @@
                  \______)                                   ~%%/WM"    \||
  _____    ___     ______  _____  __  _____     ___  __  __/~~__ ~~\    _||
 |"("  \()/\" \ ()/"_    )|"(___) ) )|"("  \ ()/\" \(__)/" ) /" ) " \  /_)O
-|  )   )/" \  \ (_/"\__/ |  )_  ( ( |  )_  ) /" \  \  /  /|/  / ·\  \/ ,|O
+|  )   )/" \  \ (_/"\__/ |  )_  ( ( |  )_  ) /" \  \  /  /|/  / .\  \/ ,|O
 | (___/(  (_\__) _\  \_  | (__)  ) )| (__) |(  (_\__)/  /"/  /   |\   '_|O
 |  |  _ \  /  / /" \_/ ) | ")__ ( ( |  )"  ) \  /  //  /|/  / . .|/\__/ ||
 |__| (_) \/__/ (______/  |_(___) )_)|_(___/ . \/__/(__/ (__/ .:.:|      ||
                  _____
                 |" __ \  Poseidon -- The divine USB stack for Amiga computers
-                | (__) ) Version: 4.3 (30.05.09)
+                | (__) ) Version: 5.0 (06.01.2026)
                 |  __ (  Designed and written by
                 |"(__) )   Chris Hodges <chrisly@platon42.de>
-                |_____/  Copyright ©2002-2009 Chris Hodges. All rights reserved.
+                |_____/  Copyright (c) 2009-2026 The AROS Dev Team.
+                         Copyright (c) 2002-2009 Chris Hodges.
 
  ****************************************************************************/
 
@@ -100,6 +101,7 @@
 #define HA_Description       (HA_Dummy + 0x16)
 #define HA_Copyright         (HA_Dummy + 0x17)
 #define HA_DriverVersion     (HA_Dummy + 0x18)
+#define HA_NumRootHubs       (HA_Dummy + 0x19)
 #define HA_DeviceList        (HA_Dummy + 0x20)
 
 /* Tags for psdGetAttrs(PGA_DEVICE,...) */
@@ -149,6 +151,8 @@
 #define DA_IsNewToMe         (DA_Dummy + 0x41)
 #define DA_InhibitClassBind  (DA_Dummy + 0x42)
 #define DA_OverridePowerInfo (DA_Dummy + 0x43)
+#define DA_IsSuperspeed      (DA_Dummy + 0x44)
+#define DA_IsMultiTT         (DA_Dummy + 0x45)
 
 /* Tags for psdGetAttrs(PGA_CONFIG,...) */
 #define CA_Dummy             (TAG_USER + 23)
@@ -201,6 +205,11 @@
 #define EA_NumTransMuFrame   (EA_Dummy + 0x15)
 #define EA_SyncType          (EA_Dummy + 0x16)
 #define EA_UsageType         (EA_Dummy + 0x17)
+#define EA_MaxBurst          (EA_Dummy + 0x18)
+#define EA_BytesPerInterval  (EA_Dummy + 0x19)
+#define EA_CompAttributes    (EA_Dummy + 0x1a)
+#define EA_StreamBase        (EA_Dummy + 0x1b)
+#define EA_MaxStreams        (EA_Dummy + 0x1c)
 
 /* Tags for psdGetAttrs(PGA_PIPE,...) */
 #define PPA_Dummy            (TAG_USER  + 1234)
@@ -341,9 +350,9 @@
 /* Configuration stuff */
 
 #if AROS_BIG_ENDIAN
-/* while Poseidon writes a correct big endian IFF structure on both big and little endian
+/* While Poseidon writes a correct big endian IFF structure on both big and little endian
  * the contents are *not* endian agnostic. Therefore we will avoid loading prefs of
- * different endianess by defining the outmost form ID endian specific. Also notice that
+ * different endianess by defining the outmost FORM ID endian specific. Also notice that
  * compatibility of the config files with 68k and MorphOS versions is not given. */
 #define IFFFORM_PSDCFG     MAKE_ID('P','S','B','C')
 #else
@@ -372,68 +381,8 @@
 #define IFFCHNK_INSERTSND  MAKE_ID('I','N','S','F')
 #define IFFCHNK_REMOVESND  MAKE_ID('R','M','S','F')
 
-/* Private stuff starts here */
-
-#if defined(__GNUC__)
-# pragma pack(2)
-#endif
-
-/* GCA_PopupDeviceNew definitions */
-
-#define PGCP_NEVER      0 /* never open a pop-up window */
-#define PGCP_ERROR      1 /* popup, on error condition (e.g. low power) */
-#define PGCP_ISNEW      2 /* popup, if this is the first time the device is connected */
-#define PGCP_NOBINDING  3 /* popup, if there is no binding */
-#define PGCP_ASKCONFIG  4 /* popup and ask to configure, if not existent */
-#define PGCP_CANCONFIG  5 /* popup and ask to configure, if possible */
-#define PGCP_HASBINDING 6 /* popup, if there is a binding to a class */
-#define PGCP_ALWAYS     7 /* popup always */
-
-struct PsdGlobalCfg
-{
-    ULONG pgc_ChunkID;                    /* ChunkID=IFFCHNK_GLOBALCFG */
-    ULONG pgc_Length;                     /* sizeof(struct PsdGlobalCfg)-8 */
-    BOOL  pgc_LogInfo;                    /* Log normal messages */
-    BOOL  pgc_LogWarning;                 /* Log warnings */
-    BOOL  pgc_LogError;                   /* Log errors */
-    BOOL  pgc_LogFailure;                 /* Log failures */
-    ULONG pgc_BootDelay;                  /* boot delay */
-    WORD  pgc_SubTaskPri;                 /* Subtask priority */
-    UWORD pgc_PopupDeviceNew;             /* New device popup */
-    BOOL  pgc_PopupDeviceGone;            /* Device removed popup */
-    BOOL  pgc_PopupDeviceDeath;           /* Device dead popup */
-    ULONG pgc_PopupCloseDelay;            /* Delay in seconds before closing */
-    BOOL  pgc_PopupActivateWin;           /* Activate window on opening */
-    BOOL  pgc_PopupWinToFront;            /* Pop window to front on content change */
-    BOOL  pgc_AutoDisableLP;              /* Automatically disable on LowPower */
-    BOOL  pgc_AutoDisableDead;            /* Automatically disable on Dead */
-    BOOL  pgc_AutoRestartDead;            /* Automatically restart on Dead */
-    ULONG pgc_PrefsVersion;               /* Reference version of prefs saved */
-    BOOL  pgc_PowerSaving;                /* Enable power saving features */
-    BOOL  pgc_ForceSuspend;               /* Force Suspend on classes not supporting it, but with remote wakeup */
-    ULONG pgc_SuspendTimeout;             /* Timeout when to suspend a device after inactivity */
-};
-
-/* DA_OverridePowerInfo definitions */
-#define POCP_TRUST_DEVICE 0
-#define POCP_BUS_POWERED  1
-#define POCP_SELF_POWERED 2
-
-struct PsdPoPoCfg
-{
-    ULONG poc_ChunkID;                    /* ChunkID=IFFCHNK_POPO */
-    ULONG poc_Length;                     /* sizeof(struct PsdPopoCfg)-8 */
-    BOOL  poc_InhibitPopup;               /* Inhibit opening of popup window */
-    BOOL  poc_NoClassBind;                /* Inhibit class scan */
-    UWORD poc_OverridePowerInfo;          /* 0=keep, 1=buspowered, 2=selfpowered */
-};
-
-#if defined(__GNUC__)
-# pragma pack()
-#endif
-
-/* The library node - private
-*/
+/* Public definitions to Private interfaces */
+#if !defined(_LIBRARIES_POSEIDON_H)
 struct PsdBase
 {
     struct Library      ps_Library;       /* standard */
@@ -513,5 +462,64 @@ struct PsdRTIsoHandler
 {
     struct Node         prt_Node;         /* Node linkage */
 };
+#endif /* !_LIBRARIES_POSEIDON_H */
+
+#if defined(__GNUC__)
+# pragma pack(2)
+#endif
+
+/* GCA_PopupDeviceNew definitions */
+
+#define PGCP_NEVER      0 /* never open a pop-up window */
+#define PGCP_ERROR      1 /* popup, on error condition (e.g. low power) */
+#define PGCP_ISNEW      2 /* popup, if this is the first time the device is connected */
+#define PGCP_NOBINDING  3 /* popup, if there is no binding */
+#define PGCP_ASKCONFIG  4 /* popup and ask to configure, if not existent */
+#define PGCP_CANCONFIG  5 /* popup and ask to configure, if possible */
+#define PGCP_HASBINDING 6 /* popup, if there is a binding to a class */
+#define PGCP_ALWAYS     7 /* popup always */
+
+struct PsdGlobalCfg
+{
+    ULONG pgc_ChunkID;                    /* ChunkID=IFFCHNK_GLOBALCFG */
+    ULONG pgc_Length;                     /* sizeof(struct PsdGlobalCfg)-8 */
+    BOOL  pgc_LogInfo;                    /* Log normal messages */
+    BOOL  pgc_LogWarning;                 /* Log warnings */
+    BOOL  pgc_LogError;                   /* Log errors */
+    BOOL  pgc_LogFailure;                 /* Log failures */
+    ULONG pgc_BootDelay;                  /* boot delay */
+    WORD  pgc_SubTaskPri;                 /* Subtask priority */
+    UWORD pgc_PopupDeviceNew;             /* New device popup */
+    BOOL  pgc_PopupDeviceGone;            /* Device removed popup */
+    BOOL  pgc_PopupDeviceDeath;           /* Device dead popup */
+    ULONG pgc_PopupCloseDelay;            /* Delay in seconds before closing */
+    BOOL  pgc_PopupActivateWin;           /* Activate window on opening */
+    BOOL  pgc_PopupWinToFront;            /* Pop window to front on content change */
+    BOOL  pgc_AutoDisableLP;              /* Automatically disable on LowPower */
+    BOOL  pgc_AutoDisableDead;            /* Automatically disable on Dead */
+    BOOL  pgc_AutoRestartDead;            /* Automatically restart on Dead */
+    ULONG pgc_PrefsVersion;               /* Reference version of prefs saved */
+    BOOL  pgc_PowerSaving;                /* Enable power saving features */
+    BOOL  pgc_ForceSuspend;               /* Force Suspend on classes not supporting it, but with remote wakeup */
+    ULONG pgc_SuspendTimeout;             /* Timeout when to suspend a device after inactivity */
+};
+
+/* DA_OverridePowerInfo definitions */
+#define POCP_TRUST_DEVICE 0
+#define POCP_BUS_POWERED  1
+#define POCP_SELF_POWERED 2
+
+struct PsdPoPoCfg
+{
+    ULONG poc_ChunkID;                    /* ChunkID=IFFCHNK_POPO */
+    ULONG poc_Length;                     /* sizeof(struct PsdPopoCfg)-8 */
+    BOOL  poc_InhibitPopup;               /* Inhibit opening of popup window */
+    BOOL  poc_NoClassBind;                /* Inhibit class scan */
+    UWORD poc_OverridePowerInfo;          /* 0=keep, 1=buspowered, 2=selfpowered */
+};
+
+#if defined(__GNUC__)
+# pragma pack()
+#endif
 
 #endif /* LIBRARIES_POSEIDON_H */

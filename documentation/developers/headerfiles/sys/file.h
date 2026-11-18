@@ -1,26 +1,20 @@
-#ifndef _SYS__FILE_H_
-#define _SYS__FILE_H_
+#ifndef SYS_FILE_H
+#define SYS_FILE_H \
+       "$Id: file.h,v 4.2 1994/10/05 23:16:17 ppessi Exp $"
 /*
-    Copyright © 2008, The AROS Development Team. All rights reserved.
-    $Id: file.h 29766 2008-10-16 01:09:34Z sszymczy $
-    
-    Desc: 4.4BSD header file sys/stat.h
-    Lang: english
-*/
+ *      Unix compatible include file.
+ *
+ *      Copyright (C) 2005-2026, The AROS Development Team.
+ *      Copyright (C) 1994 AmiTCP/IP Group,
+ *                       Network Solutions Development, Inc.
+ *                       All rights reserved.
+ */
 
-/* flock() operations */
-
-#ifndef SYS_TYPES_H
-#include <sys/types.h>
+#ifndef UNISTD_H
+#include <unistd.h>
 #endif
 
-#define LOCK_SH 1       /* Shared lock.  */
-#define LOCK_EX 2       /* Exclusive lock.  */
-#define LOCK_UN 8       /* Unlock.  */
-
-/* operation modifiers (combined with OR) */
-
-#define LOCK_NB 4       /* Non-blocking operation */
+#include <fcntl.h>
 
 /* function declarations */
 
@@ -30,4 +24,4 @@ int flock (int fd, int operation);
 
 __END_DECLS
 
-#endif /* _SYS__FILE_H_ */
+#endif /* !SYS_FILE_H */

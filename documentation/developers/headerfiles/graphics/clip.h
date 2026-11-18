@@ -2,7 +2,7 @@
 #define GRAPHICS_CLIP_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2026, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Clip descriptions.
@@ -118,18 +118,27 @@ struct ClipRect
 
 /* This one is used for determining optimal offset for blitting into
 cliprects */
-#define ALIGN_OFFSET(x) ((x) & 0x0F)
+#define ALIGN_CLIPRECT  16
+#define ALIGN_OFFSET(x) ((x) & (ALIGN_CLIPRECT-1))
 
+/* PRIVATE (AROS): where the ClipRect's content lies in cr->BitMap. The
+   screen point (x,y) of the ClipRect is at (x - bounds.MinX + CR_BMOFFX(cr),
+   y - bounds.MinY + CR_BMOFFY(cr)). A ClipRect with a bitmap of its own uses
+   (ALIGN_OFFSET(bounds.MinX), 0); one with CR_SHAREDBITMAP set is a view into
+   a bitmap owned elsewhere (another ClipRect or the layer) and must not
+   free it. */
+#define CR_SHAREDBITMAP     4
+#define CR_BMOFFX(cr)       ((WORD)(IPTR)(cr)->_p1)
+#define CR_BMOFFY(cr)       ((WORD)(IPTR)(cr)->_p2)
+#define CR_SETBMOFF(cr, x, y) \
+    do { (cr)->_p1 = (void *)(IPTR)(WORD)(x); (cr)->_p2 = (void *)(IPTR)(WORD)(y); } while (0)
 
-#define LA_Priority	WA_Priority
-#define LA_Hook		WA_BackFill
-#define LA_SuperBitMap	WA_SuperBitMap
-#define LA_ChildOf	WA_Parent
-#define LA_InFrontOf	WA_InFrontOf
-#define LA_Behind	WA_Behind
-#define LA_Visible	WA_Visible
-#define LA_Shape	WA_Shape
-#define LA_ShapeHook	WA_ShapeHook
+/* AROS: the layer renders into a surface bitmap of its own (one hidden
+   ClipRect covering the layer, CR_SHAREDBITMAP view into the surface) and
+   the display composes that surface onto the screen. It never owns screen
+   bitmap pixels. Set together with LAYERSMART by CreateLayerTagList()
+   for LA_Composited; bit 3 is unused by AmigaOS, MorphOS and AROS. */
+#define LAYERCOMPOSITED     (1<<3)
 
 
 /*
@@ -143,11 +152,6 @@ cliprects */
 #define LA_SRCHEIGHT  0x4005
 #define LA_DESTWIDTH  0x4006
 #define LA_DESTHEIGHT 0x4007
-
-
-#define ROOTPRIORITY		0
-#define BACKDROPPRIORITY	10
-#define UPFRONTPRIORITY		20
 
 #define IS_VISIBLE(l) (TRUE == l->visible)
 
@@ -171,28 +175,31 @@ struct CollectPixelsLayerMsg
   ULONG  minterm;
 };
 
-/* Msg sent through LA_ShapeHook. Hook function must look like this:
+/*
+   AmigaOS4-style shape hook.
 
-    AROS_UFH3(struct Region *, MyShapeFunc,
+   Msg sent through LA_ShapeHook. Hook function must look like this:
+
+    AROS_UFH3(BOOL, MyShapeFunc,
     	AROS_UFHA(struct Hook *, hook, A0),
     	AROS_UFHA(struct Layer *, layer, A2),
     	AROS_UFHA(struct ShapeHookMsg *, msg, A1))
 
 */
 
-#define SHAPEHOOKACTION_CREATELAYER     0
-#define SHAPEHOOKACTION_MOVELAYER	    1
-#define SHAPEHOOKACTION_SIZELAYER	    2
-#define SHAPEHOOKACTION_MOVESIZELAYER   3
+#define SHAPEHOOKACTION_CREATELAYER      0
+#define SHAPEHOOKACTION_MOVELAYER	 1
+#define SHAPEHOOKACTION_SIZELAYER	 2
+#define SHAPEHOOKACTION_MOVESIZELAYER    3
+#define SHAPEHOOKACTION_CHANGELAYERSHAPE 4
 
 struct ShapeHookMsg
 {
     LONG    	     Action;
-    struct Layer    *Layer;
-    struct Region   *ActualShape;
-    struct Rectangle NewBounds;
-    struct Rectangle OldBounds;
+    struct Region    *NewShape;
+    struct Region    *OldShape;
+    struct Rectangle *NewBounds;
+    struct Rectangle *OldBounds;
 };
 
 #endif /* GRAPHICS_CLIP_H */
-

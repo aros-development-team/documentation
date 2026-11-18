@@ -1,9 +1,7 @@
 /*
-    Copyright © 1995-2002, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2016, The AROS Development Team. All rights reserved.
 
-    Desc: Macro's to make calling arexx library querying functions portable
-    Lang: English
+    Desc: Macros to make calling ARexx library querying functions portable
 */
 
 #ifndef REXX_REXXCALL_H
@@ -11,11 +9,17 @@
 
 #include <exec/types.h>
 
-/* Some macro's to make ARexx portable to non-m68k platforms */
+#ifdef __mc68000
+
+#include <rexx/rexxcall-m68k.h>
+
+#else
+
+/* Some macros to make ARexx portable to non-m68k platforms */
 #define RexxCallQueryLibFunc(rexxmsg, libbase, offset, retargstringptr) \
   ({ \
     int _offset=abs(offset)/6; \
-    AROS_LC2(ULONG, RexxCallQueryLibFunc, \
+    AROS_LVO_CALL2(ULONG, \
 	       AROS_LCA(struct RexxMsg *, rexxmsg, A0), \
 	       AROS_LCA(STRPTR *, retargstringptr, A1), \
 	       struct Library *, libbase, _offset, rexxcall); \
@@ -34,4 +38,5 @@
      return rc; \
   })
 
+#endif
 #endif

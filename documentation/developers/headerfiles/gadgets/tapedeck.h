@@ -2,8 +2,8 @@
 #define GADGETS_TAPEDECK_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
-    $Id: tapedeck.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright © 1995-2016, The AROS Development Team. All rights reserved.
+    $Id$
 
     Desc: MethodIDs and AttrIDs for the tapedeck class.
     Lang: english
@@ -12,6 +12,9 @@
 #ifndef UTILITY_TAGITEM_H
 #   include <utility/tagitem.h>
 #endif
+
+#define TAPEDECKCLASS	"tapedeck.gadget"
+#define TAPEDECKNAME	"Gadgets/tapedeck.gadget"
 
 #define TDECK_Dummy  	    (TAG_USER    | 0x5000000)
 #define TDECK_Mode   	    (TDECK_Dummy + 0x1      )

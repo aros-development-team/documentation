@@ -2,19 +2,16 @@
 #define GRAPHICS_LAYERS_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2011, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Layer description
     Lang: english
 */
 
-#ifndef EXEC_LISTS_H
-#   include <exec/lists.h>
-#endif
-#ifndef EXEC_SEMAPHORES_H
-#   include <exec/semaphores.h>
-#endif
+#include <exec/semaphores.h>
+#include <graphics/gfx.h>
+#include <graphics/layersext.h>
 
 struct Layer_Info
 {
@@ -51,7 +48,6 @@ struct Layer_Info
 #define LAYER_CLIPRECTS_LOST (1<<8)
 #define LAYERIREFRESH        (1<<9)
 #define LAYERIREFRESH2       (1<<10)
-#define LAYER_ROOT_LAYER     (1<<14)
 
 #define LAYERS_BACKFILL   ((struct Hook *)0)
 #define LAYERS_NOBACKFILL ((struct Hook *)1)
@@ -59,5 +55,14 @@ struct Layer_Info
 /* LayerInfo Flag */
 
 #define LIFLG_SUPPORTS_OFFSCREEN_LAYERS     (1 << 8)	/* Same flag as AmigaOS hack PowerWindowsNG */
+
+/* Backfill hook message */
+struct BackFillMessage
+{
+    struct Layer     *Layer;
+    struct Rectangle  Bounds;
+    LONG              OffsetX;
+    LONG              OffsetY;
+};
 
 #endif /* GRAPHICS_LAYERS_H */

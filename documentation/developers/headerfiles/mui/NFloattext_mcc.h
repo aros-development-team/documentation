@@ -1,16 +1,10 @@
-#ifndef MUI_NFloattext_MCC_H
-#define MUI_NFloattext_MCC_H
-
 /***************************************************************************
 
  NFloattext.mcc - New Floattext MUI Custom Class
  Registered MUI class, Serial Number: 1d51 (0x9d5100a1 to 0x9d5100aF)
 
- Copyright (C) 1996-2004 by Gilles Masson,
-                            Carsten Scholling <aphaso@aphaso.de>,
-                            Przemyslaw Grunchala,
-                            Sebastian Bauer <sebauer@t-online.de>,
-                            Jens Langner <Jens.Langner@light-speed.de>
+ Copyright (C) 1996-2001 by Gilles Masson
+ Copyright (C) 2001-2014 NList Open Source Team
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -28,6 +22,9 @@
 
 ***************************************************************************/
 
+#ifndef MUI_NFloattext_MCC_H
+#define MUI_NFloattext_MCC_H
+
 #ifndef LIBRARIES_MUI_H
 #include <libraries/mui.h>
 #endif
@@ -36,19 +33,55 @@
 #include <mui/NListview_mcc.h>
 #endif
 
-#define MUIC_NFloattext "NFloattext.mcc"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+#if !defined(__AROS__) && defined(__PPC__)
+  #if defined(__GNUC__)
+    #pragma pack(2)
+  #elif defined(__VBCC__)
+    #pragma amiga-align
+  #endif
+#endif
+
+/***********************************************************************/
+
+// STACKED ensures proper alignment on AROS 64 bit systems
+#if !defined(__AROS__) && !defined(STACKED)
+#define STACKED
+#endif
+
+/***********************************************************************/
+
+#define MUIC_NFloattext "NFloattext.mcc"
+#if defined(__AROS__) && !defined(NO_INLINE_STDARG)
+#define NFloattextObject MUIOBJMACRO_START(MUIC_NFloattext)
+#else
 #define NFloattextObject MUI_NewObject(MUIC_NFloattext
+#endif
 
 /* Attributes */
 
-#define MUIA_NFloattext_Text                0x9d5100a1 /* GM  isg STRPTR             */
-#define MUIA_NFloattext_SkipChars           0x9d5100a2 /* GM  isg char *             */
-#define MUIA_NFloattext_TabSize             0x9d5100a3 /* GM  isg ULONG              */
-#define MUIA_NFloattext_Justify             0x9d5100a4 /* GM  isg BOOL               */
-#define MUIA_NFloattext_Align               0x9d5100a5 /* GM  isg LONG               */
+#define MUIA_NFloattext_Text                0x9d5100a1UL /* GM  isg STRPTR             */
+#define MUIA_NFloattext_SkipChars           0x9d5100a2UL /* GM  isg char *             */
+#define MUIA_NFloattext_TabSize             0x9d5100a3UL /* GM  isg ULONG              */
+#define MUIA_NFloattext_Justify             0x9d5100a4UL /* GM  isg BOOL               */
+#define MUIA_NFloattext_Align               0x9d5100a5UL /* GM  isg LONG               */
 
-#define MUIM_NFloattext_GetEntry            0x9d5100aF /* GM */
-struct  MUIP_NFloattext_GetEntry            { ULONG MethodID; LONG pos; APTR *entry; };
+#define MUIM_NFloattext_GetEntry            0x9d5100aFUL /* GM */
+struct  MUIP_NFloattext_GetEntry            { STACKED ULONG MethodID; STACKED LONG pos; STACKED APTR *entry; };
+
+#if !defined(__AROS__) && defined(__PPC__)
+  #if defined(__GNUC__)
+    #pragma pack()
+  #elif defined(__VBCC__)
+    #pragma default-align
+  #endif
+#endif
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MUI_NFloattext_MCC_H */

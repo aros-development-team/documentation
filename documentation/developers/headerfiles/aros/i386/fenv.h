@@ -29,30 +29,30 @@
 #ifndef	_FENV_H_
 #define	_FENV_H_
 
-#include <sys/cdefs.h>
-#include <sys/_types.h>
+#include <aros/system.h>
+#include <aros/types/int_t.h>
 
 /*                   
  * To preserve binary compatibility with FreeBSD 5.3, we pack the
  * mxcsr into some reserved fields, rather than changing sizeof(fenv_t).
  */
 typedef struct {
-	__uint16_t	__control;
-	__uint16_t      __mxcsr_hi;
-	__uint16_t	__status;
-	__uint16_t      __mxcsr_lo;
-	__uint32_t	__tag;
+	uint16_t	__control;
+	uint16_t      __mxcsr_hi;
+	uint16_t	__status;
+	uint16_t      __mxcsr_lo;
+	uint32_t	__tag;
 	char		__other[16];
 } fenv_t;
 
 #define	__get_mxcsr(env)	(((env).__mxcsr_hi << 16) |	\
 				 ((env).__mxcsr_lo))
 #define	__set_mxcsr(env, x)	do {				\
-	(env).__mxcsr_hi = (__uint32_t)(x) >> 16;		\
-	(env).__mxcsr_lo = (__uint16_t)(x);			\
+	(env).__mxcsr_hi = (uint32_t)(x) >> 16;                 \
+	(env).__mxcsr_lo = (uint16_t)(x);			\
 } while (0)
 
-typedef	__uint16_t	fexcept_t;
+typedef	uint16_t	fexcept_t;
 
 /* Exception flags */
 #define	FE_INVALID	0x01
@@ -110,6 +110,7 @@ extern const fenv_t	__fe_dfl_env;
 #define	__ldmxcsr(__csr)	__asm __volatile("ldmxcsr %0" : : "m" (__csr))
 #define	__stmxcsr(__csr)	__asm __volatile("stmxcsr %0" : "=m" (*(__csr)))
 
+#ifndef STDC_NOINLINE
 static __inline int
 feclearexcept(int __excepts)
 {
@@ -145,16 +146,18 @@ fegetexceptflag(fexcept_t *__flagp, int __excepts)
 	*__flagp = (__mxcsr | __status) & __excepts;
 	return (0);
 }
+#endif /* !STDC_NOINLINE */
 
 int fesetexceptflag(const fexcept_t *__flagp, int __excepts);
 int feraiseexcept(int __excepts);
 
+#ifndef STDC_NOINLINE
 static __inline int
 fetestexcept(int __excepts)
 {
-	int __mxcsr;
-        short __status;
-        
+	uint32_t __mxcsr;
+	uint16_t __status;
+
 	__fnstsw(&__status);
 	if (__HAS_SSE())
 		__stmxcsr(&__mxcsr);
@@ -166,7 +169,7 @@ fetestexcept(int __excepts)
 static __inline int
 fegetround(void)
 {
-	int __control;
+	uint16_t __control;
 
 	/*
 	 * We assume that the x87 and the SSE unit agree on the
@@ -181,7 +184,8 @@ fegetround(void)
 static __inline int
 fesetround(int __round)
 {
-	int __mxcsr, __control;
+	uint32_t __mxcsr;
+	uint16_t __control;
 
 	if (__round & ~_ROUND_MASK)
 		return (-1);
@@ -200,15 +204,17 @@ fesetround(int __round)
 
 	return (0);
 }
+#endif /* !STDC_NOINLINE */
 
 int fegetenv(fenv_t *__envp);
 int feholdexcept(fenv_t *__envp);
 
+#ifndef STDC_NOINLINE
 static __inline int
 fesetenv(const fenv_t *__envp)
 {
 	fenv_t __env = *__envp;
-	int __mxcsr;
+	uint32_t __mxcsr;
 
 	__mxcsr = __get_mxcsr(__env);
 	__set_mxcsr(__env, 0xffffffff);
@@ -225,6 +231,7 @@ fesetenv(const fenv_t *__envp)
 		__ldmxcsr(__mxcsr);
 	return (0);
 }
+#endif /* !STDC_NOINLINE */
 
 int feupdateenv(const fenv_t *__envp);
 
@@ -233,10 +240,11 @@ int feupdateenv(const fenv_t *__envp);
 int feenableexcept(int __mask);
 int fedisableexcept(int __mask);
 
+#ifndef STDC_NOINLINE
 static __inline int
 fegetexcept(void)
 {
-	int __control;
+	uint16_t __control;
 
 	/*
 	 * We assume that the masks for the x87 and the SSE unit are
@@ -245,6 +253,7 @@ fegetexcept(void)
 	__fnstcw(&__control);
 	return (~__control & FE_ALL_EXCEPT);
 }
+#endif /* !STDC_NOINLINE */
 
 #endif /* __BSD_VISIBLE */
 

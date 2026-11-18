@@ -2,7 +2,7 @@
 #define DOS_DOSTAGS_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2026, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Tags for DOS routines
@@ -89,6 +89,13 @@
   */
 #define NP_UserData	(NP_Dummy + 26)
 
+  /* (APTR) Which CPUs the process may run on: a KrnAllocCPUMask() mask,
+     or TASKAFFINITY_ANY. The mask becomes the system's to free, as for
+     TASKTAG_AFFINITY - do not reuse or free it. Absent: the process
+     inherits its parent's affinity. Non-SMP builds ignore it.
+     SetTaskAffinity() changes it later. */
+#define NP_Affinity	(NP_Dummy + 27)
+
 
 /* Tags for SystemTagList(). Additionally you may use all the tags for
    CreateNewProc(). */
@@ -111,26 +118,42 @@
 /* If neither of the following two tags is specified, the boot-shell is used.
    if SYS_UserShell is set to TRUE then the default user-shell will be used,
    while CustomShell expects a string, which names a new shell. */
-#define SYS_UserShell	(SYS_Dummy + 4) /* (BPTR) */
+#define SYS_UserShell	(SYS_Dummy + 4) /* (BOOL) */
 #define SYS_CustomShell (SYS_Dummy + 5) /* (STRPTR) */
 
-/* Aros specific */
+  /* The following are AmigaOS4-compatible */
+
   /* (BPTR/struct FileHandle *) Output filehandle. This must be a different
      filehandle from than supllied to SYS_Input. Default is Error() of the
      current process. */
-#define SYS_Error	(SYS_Dummy + 10)
+#define SYS_Error	(SYS_Dummy + 6)
+
+ /* The following are AROS-specific */
+
  /* (BPTR/struct FileHandle *) This is the FileHandle from which the shell will try to read
      commands to execute right after having executed the command supplied to SystemTagList()
      If not specified it defaults to NIL: */
 #define SYS_ScriptInput (SYS_Dummy + 11)
+
+
   /* (BOOL) The shell is run as a "background shell", like when the Run command is
      used. If the shell is in background mode, when the EOF is reached on
      SYS_ScriptInput the shell will immediately exit, without trying to read from
      SYS_Input. By default it's set to TRUE. */
 #define SYS_Background  (SYS_Dummy + 12)
+
    /* (LONG *) ti_Data points to a memory location in which SystemTagList will store the
       Cli number of the newly created cli process */
 #define SYS_CliNumPtr   (SYS_Dummy + 13)
+
+  /* (LONG) CLI type (see dos/cliinit.h) override. The defaults are:
+   *             SYS_Asynch  SYS_Background
+   *             ----------  --------------
+   * CLI_SYSTEM     FALSE       TRUE
+   * CLI_ASYSTEM    TRUE        TRUE
+   * CLI_NEWCLI     ---         FALSE
+   */
+#define SYS_CliType     (SYS_Dummy + 14)
 
 /* This is a *TAG VALUE*, not a tag. Use this together with SYS_Input, SYS_Output and
    SYS_Error, to tell SystemTagList to *duplicate* the respective caller's streams.
@@ -143,12 +166,20 @@
    handle of the shell.
 
    The duplicated file handle is automatically closed. */
-  
 #define SYS_DupStream   1
 
 /**********************************************************************
  **************************** Miscellaneous ***************************
  **********************************************************************/
+
+/* Tags for GetSegListInfo(). */
+
+#define GSLI_Dummy	(TAG_USER + 4000)
+
+#define GSLI_ElfHandle  (GSLI_Dummy + 4)
+#define GSLI_68KHUNK    (GSLI_Dummy + 5)
+#define GSLI_68KOVLAY   (GSLI_Dummy + 6)
+#define GSLI_68KRELOCS  (GSLI_Dummy + 7)    /* struct HunkRelocTable **, see dos/doshunks.h */
 
 /* Tags for AllocDosObject(). */
 

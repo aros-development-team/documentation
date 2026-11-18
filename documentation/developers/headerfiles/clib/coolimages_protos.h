@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/coolimages/coolimages.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -12,11 +12,15 @@
 
 __BEGIN_DECLS
 
+
+#if !defined(__COOLIMAGES_LIBAPI__) || (1 <= __COOLIMAGES_LIBAPI__)
 AROS_LP2(const struct CoolImage *, COOL_ObtainImageA,
          AROS_LPA(ULONG, imageid, D0),
          AROS_LPA(struct TagItem *, tags, A0),
          LIBBASETYPEPTR, CoolImagesBase, 5, CoolImages
 );
+
+#endif /* !defined(__COOLIMAGES_LIBAPI__) || (1 <= __COOLIMAGES_LIBAPI__) */
 
 __END_DECLS
 

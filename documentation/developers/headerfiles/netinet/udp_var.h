@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1982, 1986, 1989, 1993
+ * Copyright (C) 1982, 1986, 1989, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)udp_var.h	8.1 (Berkeley) 6/10/93
- * $Id: udp_var.h 30792 2009-03-07 22:40:04Z neil $
+ * $Id$
  */
 
 #ifndef _NETINET_UDP_VAR_H_
@@ -92,11 +92,10 @@ extern struct	inpcbhead udb;
 extern struct	inpcbinfo udbinfo;
 extern struct	udpstat udpstat;
 
-void	 udp_ctlinput __P((int, struct sockaddr *, struct ip *));
+void	 udp_ctlinput __P((int, struct sockaddr *, void *));
 void	 udp_init __P((void));
-void	 udp_input __P((struct mbuf *, int));
-int	 udp_output __P((struct inpcb *,
-	    struct mbuf *, struct mbuf *, struct mbuf *));
+void	 udp_input __P((void *args, ...));
+int	 udp_output __P((void *args, ...));
 int	 udp_sysctl __P((int *, u_int, void *, size_t *, void *, size_t));
 int	 udp_usrreq __P((struct socket *,
 	    int, struct mbuf *, struct mbuf *, struct mbuf *));

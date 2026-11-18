@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/commodities/commodities.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -16,142 +16,258 @@
 
 __BEGIN_DECLS
 
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP3(CxObj *, CreateCxObj,
          AROS_LPA(ULONG, type, D0),
          AROS_LPA(IPTR, arg1, A0),
          AROS_LPA(IPTR, arg2, A1),
          LIBBASETYPEPTR, CxBase, 5, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(CxObj *, CxBroker,
          AROS_LPA(struct NewBroker *, nb, A0),
          AROS_LPA(LONG *, error, D0),
          LIBBASETYPEPTR, CxBase, 6, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(LONG, ActivateCxObj,
          AROS_LPA(CxObj *, co, A0),
-         AROS_LPA(LONG, true, D0),
+         AROS_LPA(LONG, actv, D0),
          LIBBASETYPEPTR, CxBase, 7, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, DeleteCxObj,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 8, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, DeleteCxObjAll,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 9, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(ULONG, CxObjType,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 10, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(LONG, CxObjError,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 11, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, ClearCxObjError,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 12, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(LONG, SetCxObjPri,
          AROS_LPA(CxObj *, co, A0),
          AROS_LPA(LONG, pri, D0),
          LIBBASETYPEPTR, CxBase, 13, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, AttachCxObj,
          AROS_LPA(CxObj *, headObj, A0),
          AROS_LPA(CxObj *, co, A1),
          LIBBASETYPEPTR, CxBase, 14, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, EnqueueCxObj,
          AROS_LPA(CxObj *, headObj, A0),
          AROS_LPA(CxObj *, co, A1),
          LIBBASETYPEPTR, CxBase, 15, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP3(void, InsertCxObj,
          AROS_LPA(CxObj *, headObj, A0),
          AROS_LPA(CxObj *, co, A1),
          AROS_LPA(CxObj *, pred, A2),
          LIBBASETYPEPTR, CxBase, 16, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, RemoveCxObj,
          AROS_LPA(CxObj *, co, A0),
          LIBBASETYPEPTR, CxBase, 17, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, SetTranslate,
          AROS_LPA(CxObj *, translator, A0),
          AROS_LPA(struct InputEvent *, events, A1),
          LIBBASETYPEPTR, CxBase, 19, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, SetFilter,
          AROS_LPA(CxObj *, filter, A0),
          AROS_LPA(STRPTR, text, A1),
          LIBBASETYPEPTR, CxBase, 20, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, SetFilterIX,
          AROS_LPA(CxObj *, filter, A0),
          AROS_LPA(IX *, ix, A1),
          LIBBASETYPEPTR, CxBase, 21, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(LONG, ParseIX,
          AROS_LPA(CONST_STRPTR, desc, A0),
          AROS_LPA(IX *, ix, A1),
          LIBBASETYPEPTR, CxBase, 22, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(ULONG, CxMsgType,
          AROS_LPA(CxMsg *, cxm, A0),
          LIBBASETYPEPTR, CxBase, 23, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(APTR, CxMsgData,
          AROS_LPA(CxMsg *, cxm, A0),
          LIBBASETYPEPTR, CxBase, 24, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(LONG, CxMsgID,
          AROS_LPA(CxMsg *, cxm, A0),
          LIBBASETYPEPTR, CxBase, 25, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP3(void, DivertCxMsg,
          AROS_LPA(CxMsg *, cxm, A0),
          AROS_LPA(CxObj *, headObj, A1),
          AROS_LPA(CxObj *, returnObj, A2),
          LIBBASETYPEPTR, CxBase, 26, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(void, RouteCxMsg,
          AROS_LPA(CxMsg *, cxm, A0),
          AROS_LPA(CxObj *, co, A1),
          LIBBASETYPEPTR, CxBase, 27, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, DisposeCxMsg,
          AROS_LPA(CxMsg *, cxm, A0),
          LIBBASETYPEPTR, CxBase, 28, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP3(BOOL, InvertKeyMap,
          AROS_LPA(ULONG, ansiCode, D0),
          AROS_LPA(struct InputEvent *, event, A0),
          AROS_LPA(struct KeyMap *, km, A1),
          LIBBASETYPEPTR, CxBase, 29, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, AddIEvents,
          AROS_LPA(struct InputEvent *, events, A0),
          LIBBASETYPEPTR, CxBase, 30, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(LONG, CopyBrokerList,
          AROS_LPA(struct List *, CopyofList, A0),
          LIBBASETYPEPTR, CxBase, 31, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP1(void, FreeBrokerList,
          AROS_LPA(struct List *, brokerList, A0),
          LIBBASETYPEPTR, CxBase, 32, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(ULONG, BrokerCommand,
          AROS_LPA(STRPTR, name, A0),
          AROS_LPA(ULONG, command, D0),
          LIBBASETYPEPTR, CxBase, 33, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
+
+#if !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__)
 AROS_LP2(BOOL, MatchIX,
          AROS_LPA(struct InputEvent *, event, A0),
          AROS_LPA(IX *, ix, A1),
          LIBBASETYPEPTR, CxBase, 34, Commodities
 );
+
+#endif /* !defined(__COMMODITIES_LIBAPI__) || (36 <= __COMMODITIES_LIBAPI__) */
 
 __END_DECLS
 

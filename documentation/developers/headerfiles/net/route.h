@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 1980, 1986, 1993
+ * Copyright (C) 1980, 1986, 1993
  *	The Regents of the University of California.  All rights reserved.
- * Copyright (c) 2006 Pavel Fedin
+ * Copyright (C) 2006 Pavel Fedin
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -32,11 +32,13 @@
  * SUCH DAMAGE.
  *
  *	@(#)route.h	8.3 (Berkeley) 4/19/94
- * $Id: route.h 30792 2009-03-07 22:40:04Z neil $
+ * $Id$
  */
 
 #ifndef _NET_ROUTE_H_
 #define _NET_ROUTE_H_
+
+#include <sys/cdefs.h>
 
 /*
  * Kernel resident routing tables.
@@ -254,6 +256,11 @@ struct route_cb {
 		rtfree(rt); \
 	else \
 		(rt)->rt_refcnt--;
+
+struct ifnet;
+struct ifaddr;
+void	rt_purgeif __P((struct ifnet *, int));
+void	rt_purgeifa __P((struct ifaddr *));
 
 #endif
 #endif

@@ -2,7 +2,7 @@
 #define _AROS_SYMBOLSETS_H
 
 /*
-    Copyright © 1995-2005, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Symbol sets support
@@ -13,28 +13,57 @@
 #include <exec/libraries.h>
 #include <exec/execbase.h>
 #include <aros/asmcall.h>
+#include <dos/bptr.h>
+
+#include <stddef.h>
 
 struct libraryset
 {
     CONST_STRPTR name;
-    const LONG * const versionptr;
+    const LONG *versionptr;
     void  **baseptr;
+};
+
+struct rellibraryset
+{
+    CONST_STRPTR name;
+    const LONG * const versionptr;
+    const IPTR * const baseoffsetptr;
 };
 
 #define SETNAME(set) __##set##_LIST__
 
 #define DECLARESET(set) \
-extern const void * SETNAME(set)[] __attribute__((weak));
+extern const void * const SETNAME(set)[] __attribute__((weak));
 
+#if defined(__mc68000__)
+/*
+ * The default (empty) set goes in a mergeable constant section, so that the
+ * Kickstart link keeps one copy of {0,0} per ROM bank instead of one per set
+ * in every module (see arch/m68k-amiga/boot/kobj-romtag.ld).
+ */
+#define __SETNAME_STR(set) "__" #set "_LIST__"
 #define DEFINESET(set) \
-const void * SETNAME(set)[] __attribute__((weak))={0,0};
+DECLARESET(set) \
+__asm__("\t.pushsection .rodata.cst8,\"aM\",@progbits,8\n" \
+        "\t.balign 4\n" \
+        "\t.weak " __SETNAME_STR(set) "\n" \
+        "\t.type " __SETNAME_STR(set) ",@object\n" \
+        "\t.size " __SETNAME_STR(set) ",8\n" \
+        __SETNAME_STR(set) ":\n" \
+        "\t.long 0,0\n" \
+        "\t.popsection");
+#else
+#define DEFINESET(set) \
+const void * const SETNAME(set)[] __attribute__((weak))={0,0};
+#endif
 
 #define ADD2SET(symbol, _set, pri)\
-	static const void *__aros_set_##_set##_##symbol __attribute__((__section__(".aros.set." #_set "." #pri))) __used = (void *)&symbol;
+	static const void * const __aros_set_##_set##_##symbol __attribute__((__section__(".aros.set." #_set "." #pri))) __used = (void *)&symbol;
 
 #define SETELEM(symbol, _set)                        \
 ({                                                   \
-    extern const void *__aros_set_##_set##_##symbol; \
+    extern const void * const __aros_set_##_set##_##symbol; \
     &__aros_set_##_set##_##symbol;                   \
 })
 
@@ -44,9 +73,25 @@ const void * SETNAME(set)[] __attribute__((weak))={0,0};
 
     The functions have to be invoked respectively right before the program enters
     the main() function and right after the program exits the main() function.
+
+    ctors is called in backward order, dtors in forward order.
 */
-#define ADD2CTORS(symbol, pri) ADD2SET(symbol, ctors, pri)
-#define ADD2DTORS(symbol, pri) ADD2SET(symbol, dtors, pri)
+#define ADD2CTORS(symbol, pri) ADD2SET(symbol, CTORS, pri)
+#define ADD2DTORS(symbol, pri) ADD2SET(symbol, DTORS, pri)
+
+/*
+    init_array and fini_array sets are used by c++ to store static constructors/destructors
+    pointers in them on ARM EABI.
+
+    The functions have to be invoked respectively right before the program enters
+    the main() function and right after the program exits the main() function.
+
+    init_array is called in forward order, fini_array in backward order.
+
+    init_array is called after ctors, fini_array is called before dtors
+*/
+#define ADD2INITARRAY(symbol, pri) ADD2SET(symbol, INIT_ARRAY, pri)
+#define ADD2FINIARRAY(symbol, pri) ADD2SET(symbol, FINI_ARRAY, pri)
 
 /*
     init and exit sets are like the ctors and dtors sets, except that they take
@@ -59,8 +104,8 @@ const void * SETNAME(set)[] __attribute__((weak))={0,0};
     it holds an error code.
 */
 
-#define ADD2INIT(symbol, pri) ADD2SET(symbol, init, pri)
-#define ADD2EXIT(symbol, pri) ADD2SET(symbol, exit, pri)
+#define ADD2INIT(symbol, pri) ADD2SET(symbol, INIT, pri)
+#define ADD2EXIT(symbol, pri) ADD2SET(symbol, EXIT, pri)
 
 /*
     initlib, expungelib, openlib, closelib sets are similar to the init and exit
@@ -81,30 +126,64 @@ const void * SETNAME(set)[] __attribute__((weak))={0,0};
     finally the initlib set.
 */
 
-#define ADD2INITLIB(symbol, pri)    ADD2SET(symbol, initlib, pri)
-#define ADD2EXPUNGELIB(symbol, pri) ADD2SET(symbol, expungelib, pri)
-#define ADD2OPENLIB(symbol, pri)    ADD2SET(symbol, openlib, pri)
-#define ADD2CLOSELIB(symbol, pri)   ADD2SET(symbol, closelib, pri)
-#define ADD2OPENDEV(symbol, pri)    ADD2SET(symbol, opendev, pri)
-#define ADD2CLOSEDEV(symbol, pri)   ADD2SET(symbol, closedev, pri)
+#define ADD2INITLIB(symbol, pri)    ADD2SET(symbol, INITLIB, pri)
+#define ADD2EXPUNGELIB(symbol, pri) ADD2SET(symbol, EXPUNGELIB, pri)
+#define ADD2OPENLIB(symbol, pri)    ADD2SET(symbol, OPENLIB, pri)
+#define ADD2CLOSELIB(symbol, pri)   ADD2SET(symbol, CLOSELIB, pri)
+#define ADD2OPENDEV(symbol, pri)    ADD2SET(symbol, OPENDEV, pri)
+#define ADD2CLOSEDEV(symbol, pri)   ADD2SET(symbol, CLOSEDEV, pri)
 
 /* this macro generates the necessary symbols to open and close automatically
    a library. An error message will be shown if the library cannot be opened.  */
-#define ADD2LIBS(name, ver, btype, bname)                    \
-btype bname;                                                 \
-                                                             \
-AROS_IMPORT_ASM_SYM(int, dummy, __includelibrarieshandling); \
-                                                             \
-const LONG bname##_version __attribute__((weak)) = ver;      \
-                                                             \
-const struct libraryset libraryset_##bname =                 \
-{                                                            \
-     name, &bname##_version, (void *)&bname                  \
-};                                                           \
-ADD2SET(libraryset_##bname, libs, 0) 
+#define AROS_LIBSET(name, btype, bname)                        \
+btype bname;                                                   \
+extern const LONG __aros_libreq_##bname __attribute__((weak)); \
+                                                               \
+AROS_IMPORT_ASM_SYM(int, dummy, __includelibrarieshandling);   \
+                                                               \
+static const struct libraryset __aros_libset_##bname =         \
+{                                                              \
+     name, &__aros_libreq_##bname, (void *)&bname              \
+};                                                             \
+ADD2SET(__aros_libset_##bname, LIBS, 0) 
 
-#define ASKFORLIBVERSION(bname, ver) \
-const LONG bname##_version = ver
+/* NOTE: Users of this symbolset will need to provide:
+ * 
+ * const IPTR __aros_rellib_offset_##bname = offsetof(struct MyBase, my_bname);
+ * AROS_IMPORT_ASM_SYM(void *, _##bname, __aros_rellib_base_##bname);
+ */
+#define AROS_RELLIBSET(name, btype, bname)                           \
+const ULONG __aros_rellib_base_##bname = 0;                    \
+extern const IPTR __aros_rellib_offset_##bname;                \
+extern const LONG __aros_libreq_##bname __attribute__((weak)); \
+                                                                     \
+AROS_IMPORT_ASM_SYM(int, dummy, __includerellibrarieshandling);      \
+                                                                     \
+static const struct rellibraryset __aros_rellibset_##bname =   \
+{                                                                    \
+     name, &__aros_libreq_##bname, &__aros_rellib_offset_##bname     \
+};                                                                   \
+ADD2SET(__aros_rellibset_##bname, RELLIBS, 0) 
+
+
+#define ADD2LIBS(name, ver, btype, bname) \
+AROS_LIBSET(name, btype, bname)           \
+const LONG __aros_libreq_##bname = ver;
+
+/* The marker is emitted by every translation unit that calls into the
+   library, so the same absolute symbol turns up in many objects. It has to
+   be weak: GNU ld happens to tolerate repeated absolute definitions, but
+   lld rejects them as duplicate symbols. */
+#ifndef AROS_LIBREQ
+#define AROS_LIBREQ(bname, ver) \
+    asm volatile ( \
+                  ".weak __aros_libreq_" #bname "." #ver "\n" \
+                  "__aros_libreq_" #bname "." #ver "=" #ver);
+#endif
+
+#define SETRELLIBOFFSET(bname, libbasetype, fname) \
+const IPTR __aros_rellib_offset_##bname = offsetof(libbasetype, fname); \
+AROS_IMPORT_ASM_SYM(void *, _##bname, __aros_rellib_base_##bname);
 
 /* Traverse the set from the first element to the last one, or vice versa,
    depending on the value of 'direction': >=0 means first -> last, <0 means
@@ -118,7 +197,7 @@ const LONG bname##_version = ver
 #define ForeachElementInSet(set, direction, pos, elem)                       \
 for                                                                          \
 (                                                                            \
-    pos = (direction >= 0) ? 1 : ((long *)(set))[0];                         \
+    pos = (direction >= 0) ? 1 : (long)(set)[0];                             \
     elem = (void *)(set)[pos], (direction >= 0) ? elem != NULL : (pos) != 0; \
     pos += (direction >= 0) ? 1 : -1                                         \
 ) 
@@ -127,29 +206,117 @@ for                                                                          \
    or else your program won't link when symbolsets are used.
    This is so to ensure that symbolsets are properly handled and thus things get
    properly initialized. */
-#define THIS_PROGRAM_HANDLES_SYMBOLSETS \
-    AROS_MAKE_ASM_SYM(int, __this_program_requires_symbol_sets_handling, __this_program_requires_symbol_sets_handling, 0); \
-    AROS_EXPORT_ASM_SYM(__this_program_requires_symbol_sets_handling);
+#define THIS_PROGRAM_HANDLES_SYMBOLSET(x) \
+    AROS_MAKE_ASM_SYM(int, __##x##__symbol_set_handler_missing, __##x##__symbol_set_handler_missing, 0); \
+    AROS_EXPORT_WEAK_ASM_SYM(__##x##__symbol_set_handler_missing);
     
-#endif
 
 /* Function prototypes from autoinit and libinit */
-extern int set_call_funcs(const void *set[], int direction, int test_fail);
-extern int set_call_libfuncs(const void **set, int order, int test_fail, void *libbase);
+extern int _set_call_funcs(const void * const set[], int direction, int test_fail, struct ExecBase *sysBase);
+#define set_call_funcs(set, dir, fail) _set_call_funcs(set, dir, fail, SysBase)
+extern int set_call_libfuncs(const void * const *set, int order, int test_fail, void *libbase);
 extern int set_call_devfuncs
 (
-    const void **set,
+    const void * const *set,
     int order,
     int test_fail,
     void *libbase,
     void *ioreq,
-    ULONG unitnum,
+    IPTR unitnum,
     ULONG flags
 );
 
 DECLARESET(LIBS)
+DECLARESET(RELLIBS)
 
 #define set_open_libraries() set_open_libraries_list(SETNAME(LIBS))
+#define set_open_rellibraries(base) set_open_rellibraries_list(base,SETNAME(RELLIBS))
 #define set_close_libraries() set_close_libraries_list(SETNAME(LIBS))
-extern int set_open_libraries_list(const void *list[]);
-extern void set_close_libraries_list(const void *list[]);
+#define set_close_rellibraries(base) set_close_rellibraries_list(base,SETNAME(RELLIBS))
+#define set_open_libraries_list(list) _set_open_libraries_list(list, SysBase)
+#define set_open_rellibraries_list(base, list) _set_open_rellibraries_list(base, list, SysBase)
+#define set_close_libraries_list(list) _set_close_libraries_list(list, SysBase)
+#define set_close_rellibraries_list(base, list) _set_close_rellibraries_list(base, list, SysBase)
+extern int _set_open_libraries_list(const void * const list[], struct ExecBase *sysBase);
+extern int _set_open_rellibraries_list(APTR base, const void * const list[], struct ExecBase *sysBase);
+extern void _set_close_libraries_list(const void * const list[], struct ExecBase *sysBase);
+extern void _set_close_rellibraries_list(APTR base, const void * const list[], struct ExecBase *sysBase);
+
+/* Consolidated module init.
+
+   genmodule used to emit the whole open/init/rollback sequence inline into
+   every module's InitLib, which cost ~300 bytes per module. The sets are
+   gathered into this descriptor instead and the sequence runs once, here.
+   Optional sets are NULL when the module does not use them, matching the
+   calls genmodule used to omit at compile time. */
+struct __aros_libinit_sets
+{
+    const void * const *libs;           /* LIBS,     NULL if noautolib   */
+    const void * const *rellibs;        /* RELLIBS,  NULL if no rellibs  */
+    const void * const *init;           /* INIT                          */
+    const void * const *classesinit;    /* CLASSESINIT, NULL if no classes */
+    const void * const *ctors;          /* CTORS                         */
+    const void * const *init_array;     /* INIT_ARRAY                    */
+    const void * const *initlib;        /* INITLIB                       */
+    const void * const *expungelib;     /* EXPUNGELIB                    */
+    const void * const *fini_array;     /* FINI_ARRAY                    */
+    const void * const *dtors;          /* DTORS                         */
+    const void * const *exit;           /* EXIT                          */
+    const void * const *classesexpunge; /* CLASSESEXPUNGE, NULL if none  */
+};
+
+extern int _set_libinit(const struct __aros_libinit_sets *sets, void *libbase, struct ExecBase *sysBase);
+#define set_libinit(sets, libbase) _set_libinit(sets, libbase, SysBase)
+
+/* The teardown tail shared by a failed init and a real expunge:
+   FINI_ARRAY, DTORS, EXIT, then the class and library closes. The caller
+   still owns everything module-specific around it (Remove(), the OOP base
+   close, per-task slot, __freebase). */
+extern void _set_libexpunge(const struct __aros_libinit_sets *sets, void *libbase, struct ExecBase *sysBase);
+#define set_libexpunge(sets, libbase) _set_libexpunge(sets, libbase, SysBase)
+
+/* The library vectors genmodule used to emit inline into every module, for
+   the plain case: an auto-initialised base, no per-opener or per-task bases.
+   The module-specific field stores stay at the call site. Resources have no
+   vectors, so only libraries and devices carry the extra sets. */
+struct __aros_libfuncs_sets
+{
+    struct __aros_libinit_sets init;
+    const void * const *openlib;        /* OPENLIB,  NULL if noopenclose */
+    const void * const *closelib;       /* CLOSELIB, NULL if noopenclose */
+    const void * const *opendev;        /* OPENDEV,  NULL if no device   */
+    const void * const *closedev;       /* CLOSEDEV, NULL if no device   */
+};
+
+struct IORequest;
+extern void *_set_libinitbase(const struct __aros_libinit_sets *sets, struct Library *lib,
+                              LONG sysver, struct Library **oopbaseptr, struct ExecBase *sysBase);
+extern void *_set_resalloc(ULONG vecsize, ULONG basesize, CONST_STRPTR name, BYTE pri,
+                           CONST_APTR functable, LONG sysver, struct ExecBase *sysBase);
+extern void *_set_resadd(const struct __aros_libinit_sets *sets, APTR base, ULONG vecsize,
+                         ULONG basesize, struct ExecBase *sysBase);
+extern void *_set_libopen(const struct __aros_libfuncs_sets *sets, struct Library *lib);
+extern void _set_devopen(const struct __aros_libfuncs_sets *sets, struct Library *lib,
+                         struct IORequest *ioreq, IPTR unitnum, ULONG flags);
+extern int _set_libclose(const struct __aros_libfuncs_sets *sets, struct Library *lib,
+                         struct IORequest *ioreq);
+extern BPTR _set_libexpungebase(const struct __aros_libfuncs_sets *sets, struct Library *lib,
+                                BPTR seglist, struct Library **oopbaseptr, struct ExecBase *sysBase);
+
+/* Consolidated OOP class creation: what genmodule used to emit inline into
+   every OOP class's startup and shutdown. */
+struct OOP_InterfaceDescr;
+struct OOP_IClass;
+struct __aros_oopclass
+{
+    const struct OOP_InterfaceDescr *ifdescr;
+    CONST_STRPTR superid;               /* NULL: superclass passed as pointer */
+    CONST_STRPTR classid;               /* NULL: no aMeta_ID                  */
+    IPTR instsize;
+};
+
+extern int _set_oop_addclass(const struct __aros_oopclass *c, struct OOP_IClass *superptr,
+                             APTR libbase, struct OOP_IClass **clptr, struct Library *OOPBase);
+extern void _set_oop_removeclass(struct OOP_IClass *cl, struct Library *OOPBase);
+
+#endif /* _AROS_SYMBOLSETS_H */

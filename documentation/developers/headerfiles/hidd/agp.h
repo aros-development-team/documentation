@@ -3,7 +3,7 @@
 
 /*
     Copyright 2010, The AROS Development Team. All rights reserved.
-    $Id: agp.h 32869 2010-03-24 20:01:04Z deadwood $
+    $Id$
 */
 
 #ifndef EXEC_TYPES_H

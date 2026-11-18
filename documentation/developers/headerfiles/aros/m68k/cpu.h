@@ -2,45 +2,45 @@
 #define AROS_M68K_CPU_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
-    $Id: cpu.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright Â© 1995-2026, The AROS Development Team. All rights reserved.
+    $Id$
 
     NOTE: This file must compile *without* any other header !
 
-    Desc: machine.h
+    Desc: CPU-specific definitions for Motorola m68k processors
     Lang: english
 */
-
-#define EnableSetFunction	1
 
 /* Information about size and alignment,
  * the defines have to be numeric constants */
 #define AROS_STACK_GROWS_DOWNWARDS 1 /* Stack direction */
-#define AROS_BIG_ENDIAN 	   1 /* Big or little endian */
-#define AROS_SIZEOFULONG	   4 /* Size of an ULONG */
-#define AROS_SIZEOFPTR		   4 /* Size of a PTR */
-#define AROS_WORDALIGN		   2 /* Alignment for WORD */
-#define AROS_LONGALIGN		   2 /* Alignment for LONG */
-#define AROS_QUADALIGN		   2 /* Alignment for QUAD */
-#define AROS_PTRALIGN		   2 /* Alignment for PTR */
-#define AROS_IPTRALIGN		   2 /* Alignment for IPTR */
-#define AROS_DOUBLEALIGN	   2 /* Alignment for double */
-#define AROS_WORSTALIGN 	   8 /* Worst case alignment */
+#define AROS_BIG_ENDIAN            1 /* Big or little endian */
+#define AROS_SIZEOFULONG           4 /* Size of an ULONG */
+#define AROS_SIZEOFPTR             4 /* Size of a PTR */
+#define AROS_WORDALIGN             2 /* Alignment for WORD */
+#define AROS_LONGALIGN             2 /* Alignment for LONG */
+#define AROS_QUADALIGN             2 /* Alignment for QUAD */
+#define AROS_PTRALIGN              2 /* Alignment for PTR */
+#define AROS_IPTRALIGN             2 /* Alignment for IPTR */
+#define AROS_DOUBLEALIGN           2 /* Alignment for double */
+#define AROS_WORSTALIGN            4 /* Worst case alignment */
+#define AROS_STACKALIGN            8 /* Required for aligned(8) stack objects */
+
+#define AROS_SLOWSTACKFORMAT 1
 
 #define AROS_NOFPU 1
 
 /* do we need a function attribute to get parameters on the stack? */
 #define __stackparm
 
+#define STACKED
+
 /* types and limits for sig_atomic_t */
 #define AROS_SIG_ATOMIC_T       int
 #define AROS_SIG_ATOMIC_MIN     (-0x7fffffff-1)
 #define AROS_SIG_ATOMIC_MAX     0x7fffffff
 
-register unsigned char * AROS_GET_SP asm("%sp");
-
-/* ??? */
-#define SP_OFFSET 0
+#define AROS_GET_SP ({register unsigned char * sp asm("%sp"); sp;})
 
 /*
     One entry in a libraries' jumptable. For assembler compatibility, the
@@ -51,71 +51,42 @@ register unsigned char * AROS_GET_SP asm("%sp");
 struct JumpVec
 {
     unsigned short jmp;
-    unsigned char vec[4];
+    void *vec;
 };
 
 
 /* Any jump to an unimplemented vector will cause an access to this address */
-#define _aros_empty_vector		0xc0edbabe
+#define _aros_empty_vector              0xc0ed0000
 
 /* Internal macros */
-#define __AROS_ASMJMP			0x4EF9
-#define __AROS_SET_VEC(v,a)             (*(ULONG*)(v)->vec=(ULONG)(a))
-#define __AROS_GET_VEC(v)               ((APTR)(*(ULONG*)(v)->vec))
+#define __AROS_ASMJMP                   0x4EF9
+#define __AROS_SET_VEC(v,a)             ((v)->vec=(a))
+#define __AROS_GET_VEC(v)               ((v)->vec)
+#define __AROS_USE_FULLJMP
 
 struct FullJumpVec
 {
     unsigned short jmp;
-    unsigned char  vec[4];
+    void *vec;
 };
 #define __AROS_SET_FULLJMP(v,a)                          \
 do                                                       \
 {                                                        \
-	struct FullJumpVec *_v = v;                      \
-	_v->jmp = __AROS_ASMJMP;                         \
-	*((ULONG *)(_v->vec)) = (ULONG)(a)-(ULONG)(_v)-6;\
+        struct FullJumpVec *_v = v;                      \
+        _v->jmp = __AROS_ASMJMP;                         \
+        _v->vec = ((void *)(a));                         \
 } while(0)
 
 
 /* Use these to acces a vector table */
-#define LIB_VECTSIZE			(sizeof (struct JumpVec))
-#define __AROS_GETJUMPVEC(lib,n)        ((struct JumpVec *)(((unsigned char *)lib)-(n*LIB_VECTSIZE)))
-//#define __AROS_GETJUMPVEC(lib,n)        (&((struct JumpVec *)lib)[-(n*LIB_VECTSIZE)])
-#define __AROS_GETVECADDR(lib,n)        (__AROS_GET_VEC(__AROS_GETJUMPVEC(lib,n)))
+#define LIB_VECTSIZE                    (sizeof (struct JumpVec))
+#define __AROS_GETJUMPVEC(lib,n)        (&(((struct JumpVec *)(lib))[-(n)]))
+#define __AROS_GETVECADDR(lib,n)        ((void *)__AROS_GETJUMPVEC(lib,n))
 #define __AROS_SETVECADDR(lib,n,addr)   (__AROS_SET_VEC(__AROS_GETJUMPVEC(lib,n),(APTR)(addr)))
 #define __AROS_INITVEC(lib,n)           __AROS_GETJUMPVEC(lib,n)->jmp = __AROS_ASMJMP, \
-					__AROS_SETVECADDR(lib,n,_aros_empty_vector)
+                                        __AROS_SETVECADDR(lib,n,_aros_empty_vector | (n << 8) | 1)
 
-
-#define SIZEOF_ALL_REGISTERS		(20*4)
-
-/*
-   Code to use to generate stub functions.
-   It must be *printed* with a function like printf in a file
-   to be compiled with gcc.
-
-   - The first parameter is the function name,
-   - The second parameter is the basename,
-   - The third parameter is the library vector to be called.
-     It's value must be computed by the stub generator with this code:
-     &(__AROS_GETJUMPVEC(0, n+1)->vec), where n is the library vector position in
-     the library vectors list.
-
-*/
-
-#define STUBCODE_INIT                                       \
-		"#define EMITSTUB(fname, bname, vec) " \
-		".globl fname ; "                      \
-		"fname : "                             \
-		"movl bname , %%a0; "                  \
-		"movl vec(%%a0),%%a0;"                 \
-		"jmp (%%a0);\n"                        \
-		"#define EMITALIAS(fname, alias) "     \
-		".weak alias; .set alias, fname\n"
-#define STUBCODE					\
-		"EMITSTUB(%s, %s, %d) "
-#define ALIASCODE                              \
-		"EMITALIAS(%s, %s)\n"
+#define KERNEL_PANIC_BUFFER (char*)0x800
 
 /*
    We want to activate the execstubs and preserve all registers
@@ -125,17 +96,11 @@ do                                                       \
 #undef UseExecstubs
 //#define UseExecstubs 1
 
-/* For debugging only: Pass errnos from the emulated OS. dos/Fault() will
-   recognise them */
-#undef PassThroughErrnos
-//#define PassThroughErrnos 0x40000000
-#define PassThroughErrnos 0
-
 /* Macros to test/set failure of AllocEntry() */
 #define AROS_ALLOCENTRY_FAILED(memType) \
-	((struct MemList *)((IPTR)(memType) | 0x80ul<<(sizeof(APTR)-1)*8))
+        ((struct MemList *)((IPTR)(memType) | 0x80ul<<(sizeof(APTR)-1)*8))
 #define AROS_CHECK_ALLOCENTRY(memList) \
-	(!((IPTR)(memList) & 0x80ul<<(sizeof(APTR)-1)*8))
+        (!((IPTR)(memList) & 0x80ul<<(sizeof(APTR)-1)*8))
 
 /*
     Find the next valid alignment for a structure if the next x bytes must
@@ -143,18 +108,8 @@ do                                                       \
 */
 #define AROS_ALIGN(x)        (((x)+AROS_WORSTALIGN-1)&-AROS_WORSTALIGN)
 
-/*
-    This define is only used only M68K as some programs depend on the
-    contents of the D0 register
-*/
-#define AROS_COMPAT_SETD0(x) \
-    do { \
-        register IPTR d0 __asm("d0") = x; \
-        asm volatile("": : "r" d0); \
-    } while(0)
-
 /* Prototypes */
-extern void _aros_not_implemented ();
+extern void _aros_not_implemented (char *);
 extern void aros_not_implemented ();
 
 /*
@@ -162,107 +117,63 @@ extern void aros_not_implemented ();
     Not so much, I think (schulz) ;-))
 */
 
-#define AROS_STACKSIZE	0x4000
+#define AROS_STACKSIZE  0x4000
 
-/* How to map function arguments to CPU registers */
-/*
-    The i386 processor doesn't have enough registers to map the m68k
-    register set onto them - so simply use the compiler's calling
-    convention. The library base is mapped to the last argument so that
-    it can be ignored by the function.
-*/
+//#define AROS_NEEDS___MAIN
 
-/* What to do with the library base in header, prototype and call */
-#define __AROS_LH_BASE(basetype,basename)   register basetype basename __asm("a6")
-#define __AROS_LP_BASE(basetype,basename)   register void * __asm("a6")
-#define __AROS_LC_BASE(basetype,basename)   basename
-#define __AROS_LD_BASE(basetype,basename)   register basetype __asm("a6")
+#define AROS_COMPAT_SETD0(x)    do { asm volatile ( "move.l %0,%%d0\n" : "=g" (x)); return; } while (0)
 
-/* How to transform an argument in header, opt prototype, call and forced
-   prototype. */
-#define __AROS_LHA(type,name,reg)     register type name __asm(reg)
-#define __AROS_LPA(type,name,reg)     register type __asm(reg)
-#define __AROS_LCA(type,name,reg)     name
-#define __AROS_LDA(type,name,reg)     register type __asm(reg)
-#define __AROS_UFHA(type,name,reg)    register type name __asm(reg)
-#define __AROS_UFPA(type,name,reg)    register type __asm(reg)
-#define __AROS_UFCA(type,name,reg)    name
-#define __AROS_UFDA(type,name,reg)    register type __asm(reg)
-#define __AROS_LHAQUAD(type,name,reg1,reg2)     type name
-#define __AROS_LPAQUAD(type,name,reg1,reg2)     type
-#define __AROS_LCAQUAD(type,name,reg1,reg2)     name
+#define A0      a0
+#define A1      a1
+#define A2      a2
+#define A3      a3
+#define A4      a4
+#define A5      a5
+#define A6      a6
+#define D0      d0
+#define D1      d1
+#define D2      d2
+#define D3      d3
+#define D4      d4
+#define D5      d5
+#define D6      d6
+#define D7      d7
 
-/* Prefix for library function in header, prototype and call */
-#define __AROS_LH_PREFIX    /* eps */
-#define __AROS_LP_PREFIX    /* eps */
-#define __AROS_LC_PREFIX    /* eps */
-#define __AROS_LD_PREFIX    /* eps */
-#define __AROS_UFH_PREFIX   /* eps */
-#define __AROS_UFP_PREFIX   /* eps */
-#define __AROS_UFC_PREFIX   /* eps */
-#define __AROS_UFD_PREFIX   /* eps */
+/* This must match your compiler's idea of where the
+ * Frame Pointer register is. AROS's m68k gcc patches
+ * set this as A5, but unpatched GCCs can be made to
+ * generate correct code by setting these two defines
+ * to 'A6' and '"A6"'
+ */
+#define __AROS_FP_REG   A5
+#define __AROS_FP_SREG  "A5"
 
+#define ___AROS_ISREG(reg,regcmp)               (0x##reg == 0x##regcmp)
+#define __AROS_ISREG(type,name,reg,regcmp)      ___AROS_ISREG(reg,regcmp)
 
-#define __UFC3R(t,n,t1,n1,r1,t2,n2,r2,t3,n3,r3,p) \
-({\
-    long _n1 = (long)(n1);\
-    long _n2 = (long)(n2);\
-    long _n3 = (long)(n3);\
-    long _re;\
-    __asm__ __volatile__(\
-	"move.l %5,-(%%sp)\n\t"\
-	"move.l %4,-(%%sp)\n\t"\
-	"move.l %3,-(%%sp)\n\t"\
-	"move.l %%sp,%1\n\t"\
-	"move.l %2,%%a0\n\t"\
-	"jsr    (%%a0)\n\t"\
-	"adda.l #12,%%sp\n\t"\
-	"movl   %%d0,%0"\
-	: "=g"(_re), "=m"(*(APTR *)p)\
-	: "ad"(n), "g"(_n1), "g"(_n2), "g"(_n3)\
-	: "cc", "memory", "%d0" );\
-    (t)_re;\
-})
-#define AROS_UFC3R(t,n,a1,a2,a3,p,ss) __UFC3R(t,n,a1,a2,a3,p)
+/* #defines for cpu specific asm and lib calls */
+#define __AROS_ASMCALL_H_FILE "aros/m68k/asmcall.h"
+#define __AROS_LIBCALL_H_FILE "aros/m68k/libcall.h"
 
-/* Library prototypes expand to nothing */
-#define __AROS_CPU_SPECIFIC_LP
+/* Function declaration for program startup style code
+ */
+#define AROS_PROCH(n, _argptr, _argsize, _SysBase) \
+    AROS_UFH2(SIPTR, n,                            \
+            AROS_UFHA(STRPTR, _argptr, A0),        \
+            AROS_UFHA(ULONG , _argsize, D0))       \
+        struct ExecBase *_SysBase = *((struct ExecBase **)4);
+#define AROS_PROCP(n)                              \
+    AROS_UFP2(SIPTR, n,                            \
+            AROS_UFPA(STRPTR, _argptr, A0),        \
+            AROS_UFPA(ULONG , _argsize, D0))
+#define AROS_PROCC(n, _argptr, _argsize, _SysBase) \
+    AROS_UFC2(SIPTR, n,                            \
+            AROS_UFCA(STRPTR, _argptr, A0),        \
+            AROS_UFCA(ULONG , _argsize, D0))
 
-#define AROS_LPQUAD1(t,n,a1,bt,bn,o,s)
-#define AROS_LPQUAD2(t,n,a1,a2,bt,bn,o,s)
-
-#define AROS_LP0(t,n,bt,bn,o,s)
-#define AROS_LP1(t,n,a1,bt,bn,o,s)
-#define AROS_LP2(t,n,a1,a2,bt,bn,o,s)
-#define AROS_LP3(t,n,a1,a2,a3,bt,bn,o,s)
-#define AROS_LP4(t,n,a1,a2,a3,a4,bt,bn,o,s)
-#define AROS_LP5(t,n,a1,a2,a3,a4,a5,bt,bn,o,s)
-#define AROS_LP6(t,n,a1,a2,a3,a4,a5,a6,bt,bn,o,s)
-#define AROS_LP7(t,n,a1,a2,a3,a4,a5,a6,a7,bt,bn,o,s)
-#define AROS_LP8(t,n,a1,a2,a3,a4,a5,a6,a7,a8,bt,bn,o,s)
-#define AROS_LP9(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,bt,bn,o,s)
-#define AROS_LP10(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,bt,bn,o,s)
-#define AROS_LP11(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,bt,bn,o,s)
-#define AROS_LP12(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,bt,bn,o,s)
-#define AROS_LP13(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,bt,bn,o,s)
-#define AROS_LP14(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,bt,bn,o,s)
-#define AROS_LP15(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,bt,bn,o,s)
-
-#define AROS_LP0I(t,n,bt,bn,o,s)
-#define AROS_LP1I(t,n,a1,bt,bn,o,s)
-#define AROS_LP2I(t,n,a1,a2,bt,bn,o,s)
-#define AROS_LP3I(t,n,a1,a2,a3,bt,bn,o,s)
-#define AROS_LP4I(t,n,a1,a2,a3,a4,bt,bn,o,s)
-#define AROS_LP5I(t,n,a1,a2,a3,a4,a5,bt,bn,o,s)
-#define AROS_LP6I(t,n,a1,a2,a3,a4,a5,a6,bt,bn,o,s)
-#define AROS_LP7I(t,n,a1,a2,a3,a4,a5,a6,a7,bt,bn,o,s)
-#define AROS_LP8I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,bt,bn,o,s)
-#define AROS_LP9I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,bt,bn,o,s)
-#define AROS_LP10I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,bt,bn,o,s)
-#define AROS_LP11I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,bt,bn,o,s)
-#define AROS_LP12I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,bt,bn,o,s)
-#define AROS_LP13I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,bt,bn,o,s)
-#define AROS_LP14I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,bt,bn,o,s)
-#define AROS_LP15I(t,n,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,bt,bn,o,s)
+#define AROS_SWAP_BYTES_LONG_CPU(l)     \
+    ({ ULONG v; __asm__ __volatile__("ror.w #8,%0\nswap %0\nror.w #8,%0":"=d"(v):"0"(l)); v;})
+#define AROS_SWAP_BYTES_WORD_CPU(l)     \
+    ({ UWORD w; __asm__ __volatile__("ror.w #8,%d0\n":"=d"(w):"0"(l)); w;})
 
 #endif /* AROS_M68K_CPU_H */

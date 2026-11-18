@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2004, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2011, The AROS Development Team. All rights reserved.
     
     Desc: header exporting support functions from libautoinit.a
 */
@@ -8,7 +7,7 @@
 #ifndef AUTOINIT_H
 #define AUTOINIT_H
 
-#include <sys/cdefs.h>
+#include <aros/system.h>
 
 __BEGIN_DECLS
 
@@ -18,8 +17,9 @@ __BEGIN_DECLS
 
    To make it always open a requester define a global variable like this:
 
-       int __forceerrorrequester = 1;  */
-void __showerror __P((char *format, const IPTR *));
+       const int __forceerrorrequester = 1;  */
+void ___showerror(struct ExecBase *sysBase, const char *format, ...);
+#define __showerror(f,...) ___showerror(SysBase,f,__VA_ARGS__)
 
 __END_DECLS
 

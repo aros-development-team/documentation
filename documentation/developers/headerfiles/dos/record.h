@@ -33,4 +33,17 @@ struct RecordLock
     ULONG rec_Mode;   /* The mode od locking (see above). */
 };
 
+/* 64-bit version, as passed to dos64.library LockRecords64() and
+   UnLockRecords64(). Same layout as the MorphOS (tm) V51 structure. */
+struct RecordLock64
+{
+    BPTR  rec_FH;                      /* The file (struct FileHandle *). */
+    UQUAD rec_Offset AROS_DOS64_ALIGN; /* Start of the record. */
+    UQUAD rec_Length AROS_DOS64_ALIGN; /* Length of the record. */
+    ULONG rec_Mode;                    /* The mode of locking (see above). */
+};
+
+/* Former name */
+#define RecordLock32 RecordLock
+
 #endif /* DOS_RECORD_H */

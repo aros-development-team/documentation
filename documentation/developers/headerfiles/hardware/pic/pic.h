@@ -1,9 +1,7 @@
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2001, The AROS Development Team. All rights reserved.
 
     Desc: AROS PIC/APIC Definitions.
-    Lang: english
 */
 #ifndef __AROS_PIC_H__
 #define __AROS_PIC_H__
@@ -29,13 +27,6 @@ enum PIC_TYPES
 };
 
 /********** APIC DEFINITIONS ****************/
-
-struct GenericAPIC                                                          /* !! DO NOT USE!! THIS WILL BE REMOVED SOON!! */
-{ 
-    char                                    *name; 
-    IPTR                                    (*probe)(); 
-    IPTR                                    (*apic_id_registered)();
-};
 
 struct PICBase
 {

@@ -1,603 +1,775 @@
-/*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
-    $Id$
+#ifndef LIBRARIES_SECURITY_H
+#define LIBRARIES_SECURITY_H
 
-    Desc: definitions for the security.library
-    Lang: english
+/*
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
+
+    Desc: public definitions for security.library
+
+    security.library is the AROS multi-user subsystem. Its API is derived
+    from the MultiUserFileSystem (MuFS) multiuser.library by Geert
+    Uytterhoeven and the MultiUser 2 / security.library work by Wez Furlong
+    and Richard Smith; all identifiers use the "sec" prefix.
 */
-#ifndef _SECURITY_H
-#define _SECURITY_H
 
 #ifndef EXEC_TYPES_H
-#include <exec/types.h>
-#endif  /* EXEC_TYPES_H */
-
+#   include <exec/types.h>
+#endif
+#ifndef EXEC_NODES_H
+#   include <exec/nodes.h>
+#endif
 #ifndef EXEC_LISTS_H
-#include <exec/lists.h>
-#endif  /* EXEC_LISTS_H */
-
-#ifndef EXEC_LIBRARIES_H
-#include <exec/libraries.h>
-#endif  /* EXEC_LIBRARIES_H */
-
-#ifndef EXEC_EXECBASE_H
-#include <exec/execbase.h>
-#endif  /* EXEC_EXECBASE_H */
-
+#   include <exec/lists.h>
+#endif
 #ifndef EXEC_PORTS_H
-#include <exec/ports.h>
-#endif  /* EXEC_PORTS_H */
-
-#ifndef LIBRARIES_DOS_H
-#include <libraries/dos.h>
-#endif  /* LIBRARIES_DOS_H */
-
+#   include <exec/ports.h>
+#endif
+#ifndef EXEC_LIBRARIES_H
+#   include <exec/libraries.h>
+#endif
+#ifndef DOS_DOS_H
+#   include <dos/dos.h>
+#endif
+#ifndef DOS_DOSEXTENS_H
+#   include <dos/dosextens.h>
+#endif
 #ifndef UTILITY_TAGITEM_H
-#include <utility/tagitem.h>
-#endif  /* UTILITY_TAGITEM_H */
+#   include <utility/tagitem.h>
+#endif
 
-#define DEBUG                           1
+#define SECURITYNAME                    "security.library"
+#define SECURITYVERSION                 (45)
 
-#define TASKHASHVALUE	                23
-#define MEMHASHVALUE                    101
-
-/*
-    Reserved users/groups
-
-        WARNING: a uid may NOT be 65535!
-*/
-
-#define secOWNER_SYSTEM                 0x00000000                  /* always owner */
-#define secOWNER_NOBODY                 0xffffffff                  /* no rights */
-
-#define secMASK_UID                     0xffff0000                  /* Mask for uid bits */
-#define secMASK_GID                     0x0000ffff                  /* Mask for gid bits */
-
-#define secROOT_UID                     0x0000                      /* super user uid */
-#define secROOT_GID                     0x0000                      /* super user gid */
-
-#define secNOBODY_UID                   0xffff                      /* nobody uid */
-
-#define secUSERIDSIZE                   32                          /* Maximum size for a User ID */
-#define secGROUPIDSIZE                  32                          /* Maximum size for a Group ID */
-#define secPASSWORDSIZE                 32                          /* Maximum size for a Password */
-#define secUSERNAMESIZE                 220                         /* Maximum size for a User Name */
-#define secGROUPNAMESIZE                220                         /* Maximum size for a Group Name */
-#define secHOMEDIRSIZE                  256                         /* Maximum size for a Home Directory */
-#define secSHELLSIZE                    256                         /* Maximum size for a Shell */
+#define SECURITYCATALOGNAME             "System/security.catalog"
+#define SECURITYCATALOGVERSION          (1)
 
 /*
-    Tags for secLogoutA(), secLoginA() & secSetDefProtectionA()
-*/
+ * Reserved users/groups
+ *
+ * These are the original MultiUser values (root 0xffff, nobody 0), so that
+ * the owner words on real MuFS volumes mean the same thing here.
+ * WARNING: 0 is nobody, never a real user; 0xffff is the super user.
+ */
+#define secOWNER_SYSTEM                 (0xffffffff)    /* always owner */
+#define secOWNER_NOBODY                 (0x00000000)    /* no rights    */
 
-#define secT_Input                      (TAG_USER+1)                /* filehandle - default is Input() */
-#define secT_Output                     (TAG_USER+2)                /* filehandle - default is Output() */
-#define secT_Graphical                  (TAG_USER+3)                /* boolean - default is FALSE */
-#define secT_PubScrName                 (TAG_USER+4)                /* name of public screen */
-#define secT_Task                       (TAG_USER+5)                /* task (NOT the name!!) */
-#define secT_Own                        (TAG_USER+6)                /* make a task owned by this user */
-#define secT_Global                     (TAG_USER+7)                /* change it for all tasks on the */
-                                                                    /*  same level as this one */
-#define secT_Quiet                      (TAG_USER+8)                /* for secLogoutA(), don't give a */
-                                                                    /*  login prompt, simply logout */
-#define secT_UserID                     (TAG_USER+9)                /* UserID for secLoginA() */
-#define secT_Password                   (TAG_USER+10)               /* Password for secLoginA(), secst */
-                                                                    /*  be combined with secT_UserID!! */
-#define secT_DefProtection              (TAG_USER+11)               /* Default protection bits */
-                                                                    /*  default is RWED GROUP R OTHER R */
-#define secT_All                        (TAG_USER+12)               /* for secLogoutA(), logout until */
-                                                                    /*  user stack is empty */
-#define secT_NoLog                      (TAG_USER+13)               /* for secLoginA(), only root */
+#define secMASK_UID                     (0xffff0000)    /* Mask for uid bits */
+#define secMASK_GID                     (0x0000ffff)    /* Mask for gid bits */
+
+#define secROOT_UID                     (0xffff)        /* super user uid */
+#define secROOT_GID                     (0xffff)        /* super user gid */
+
+#define secNOBODY_UID                   (0x0000)        /* nobody uid */
+#define secNOBODY_GID                   (0x0000)        /* nobody gid */
+
+#define secUSERIDSIZE                   (32)            /* Maximum size for a User ID       */
+#define secGROUPIDSIZE                  (32)            /* Maximum size for a Group ID      */
+#define secPASSWORDSIZE                 (32)            /* Maximum size for a Password      */
+#define secUSERNAMESIZE                 (220)           /* Maximum size for a User Name     */
+#define secGROUPNAMESIZE                (220)           /* Maximum size for a Group Name    */
+#define secHOMEDIRSIZE                  (256)           /* Maximum size for a Home Directory*/
+#define secSHELLSIZE                    (256)           /* Maximum size for a Shell         */
 
 /*
-    KeyTypes for secGetUserInfo() and secGetGroupInfo()
-*/
+ * Extended Owner Information Structure
+ *
+ * A pointer to this structure is returned by secGetTaskExtOwner().
+ * You MUST use secFreeExtOwner() to deallocate it!!
+ *
+ * The structure is followed by a UWORD array containing the Secondary Group
+ * Numbers; use secSecGroups() to access them (never on a NULL pointer).
+ */
+struct secExtOwner
+{
+    UWORD               uid;
+    UWORD               gid;
+    UWORD               NumSecGroups;   /* Number of Secondary Groups this user belongs to */
+};
 
+#define secSecGroups(x)         ((UWORD *)((UBYTE *)(x) + sizeof(struct secExtOwner)))
+
+/* Convert an Extended Owner Information Structure to a ULONG (cfr. secGetTaskOwner()) */
+#define secExtOwner2ULONG(x)    ((ULONG)((x) ? ((ULONG)(x)->uid << 16 | (x)->gid) : secOWNER_NOBODY))
+
+/*
+ * Public User Information Structure
+ *
+ * ALWAYS use secAllocUserInfo() to allocate this structure.
+ */
+struct secUserInfo
+{
+    char                UserID[secUSERIDSIZE];
+    UWORD               uid;
+    UWORD               gid;
+    char                UserName[secUSERNAMESIZE];
+    char                HomeDir[secHOMEDIRSIZE];
+    UWORD               NumSecGroups;           /* Number of Secondary Groups this user belongs to */
+    UWORD               *SecGroups;             /* Array of NumSecGroups Secondary Group Numbers   */
+    char                Shell[secSHELLSIZE];
+};
+
+/*
+ * Public Group Information Structure
+ *
+ * ALWAYS use secAllocGroupInfo() to allocate this structure.
+ */
+struct secGroupInfo
+{
+    char                GroupID[secGROUPIDSIZE];
+    UWORD               gid;
+    UWORD               MgrUid;                 /* Manager of this group */
+    char                GroupName[secGROUPNAMESIZE];
+};
+
+/*
+ * KeyTypes for secGetUserInfo() / secGetGroupInfo()
+ */
 #define secKeyType_First                (0)
 #define secKeyType_Next                 (1)
 #define secKeyType_gid                  (4)
 
-/*
-    KeyTypes for secGetUserInfo() only
-*/
-
-#define secKeyType_UserID               (2)                         /* Case-sensitive */
+/* KeyTypes for secGetUserInfo() only */
+#define secKeyType_UserID               (2)     /* Case-sensitive */
 #define secKeyType_uid                  (3)
 #define secKeyType_gidNext              (5)
-#define secKeyType_UserName             (6)                         /* Case-insensitive */
-#define secKeyType_WUserID              (7)                         /* Case-insensitive, wild cards allowed */
-#define secKeyType_WUserName            (8)                         /* Case-insensitive, wild cards allowed */
+#define secKeyType_UserName             (6)     /* Case-insensitive */
+#define secKeyType_WUserID              (7)     /* Case-insensitive, wild cards allowed */
+#define secKeyType_WUserName            (8)     /* Case-insensitive, wild cards allowed */
 #define secKeyType_WUserIDNext          (9)
 #define secKeyType_WUserNameNext        (10)
 
-/*
-    KeyTypes for secGetGroupInfo() only
-*/
-
-#define secKeyType_GroupID              (11)                        /* Case-sensitive */
-#define secKeyType_WGroupID             (12)                        /* Case-insensitive, wild cards allowed */
+/* KeyTypes for secGetGroupInfo() only */
+#define secKeyType_GroupID              (11)    /* Case-sensitive */
+#define secKeyType_WGroupID             (12)    /* Case-insensitive, wild cards allowed */
 #define secKeyType_WGroupIDNext         (13)
-#define secKeyType_GroupName            (14)                        /* Case-insensitive */
-#define secKeyType_WGroupName           (15)                        /* Case-insensitive, wild cards allowed */
+#define secKeyType_GroupName            (14)    /* Case-insensitive */
+#define secKeyType_WGroupName           (15)    /* Case-insensitive, wild cards allowed */
 #define secKeyType_WGroupNameNext       (16)
 #define secKeyType_MgrUid               (17)
 #define secKeyType_MgrUidNext           (18)
 
 /*
-    Protection bits (see also <dos/dos.h> :-)
-*/
+ * Tags for secLoginA(), secLogoutA(), secSetDefProtectionA(), secCheckPasswdA()
+ */
+#define secT_Input              (TAG_USER+1)    /* filehandle - default is Input()                  */
+#define secT_Output             (TAG_USER+2)    /* filehandle - default is Output()                 */
+#define secT_Graphical          (TAG_USER+3)    /* boolean - default is FALSE                       */
+#define secT_PubScrName         (TAG_USER+4)    /* name of public screen                            */
+#define secT_Task               (TAG_USER+5)    /* task (NOT the name!!)                            */
+#define secT_Own                (TAG_USER+6)    /* make a task owned by this user                   */
+#define secT_Global             (TAG_USER+7)    /* change it for all tasks on the same level        */
+#define secT_Quiet              (TAG_USER+8)    /* for secLogout(), don't give a login prompt       */
+#define secT_UserID             (TAG_USER+9)    /* UserID for secLoginA()                           */
+#define secT_Password           (TAG_USER+10)   /* Password for secLoginA(), needs secT_UserID      */
+#define secT_DefProtection      (TAG_USER+11)   /* Default protection bits (RWED GROUP R OTHER R)   */
+#define secT_All                (TAG_USER+12)   /* for secLogout(), logout until user stack empty   */
+#define secT_NoLog              (TAG_USER+13)   /* for secLoginA(), only root                       */
+#define secT_Force              (TAG_USER+14)   /* for secKill(): RemTask() instead of CTRL-C       */
+#define secT_System             (TAG_USER+15)   /* for secLoginA(): the boot login (Security-Startup); the graphical login offers Shutdown/Reboot instead of Cancel */
+/* AROS additions: secVerifyUserA() / secQueryUserA() / secLoginA() */
+#define secT_Service            (TAG_USER+16)   /* (STRPTR) name of the service asking (log, monitors)            */
+#define secT_RemoteHost         (TAG_USER+17)   /* (STRPTR) host the request came from (log, failure tally)       */
+#define secT_PasswordHash       (TAG_USER+18)   /* (STRPTR) pre-hashed token instead of secT_Password             */
+#define secT_HashType           (TAG_USER+19)   /* (ULONG) secHASH_#? form of secT_PasswordHash                   */
+#define secT_UserInfo           (TAG_USER+20)   /* (struct secUserInfo *) filled on success (secAllocUserInfo())  */
+#define secT_Ticket             (TAG_USER+21)   /* secVerifyUserA(): (struct secLoginTicket *) receives a ticket; */
+                                                /* secLoginA(): (struct secLoginTicket *) the ticket to log in   */
+#define secT_HasPassword        (TAG_USER+22)   /* secQueryUserA(): (BOOL *) the user has a password              */
+#define secT_MayChangePassword  (TAG_USER+23)   /* secQueryUserA(): (BOOL *) the user may change it               */
+#define secT_DiscardTicket      (TAG_USER+24)   /* secVerifyUserA(): (struct secLoginTicket *) give an unused     */
+                                                /* ticket back; nothing else is done                              */
+/* secAuthControlA() (root only) */
+#define secT_AuthList           (TAG_USER+25)   /* (struct secAuthRecord *) array to fill                          */
+#define secT_AuthListSize       (TAG_USER+26)   /* (ULONG) entries in that array                                   */
+#define secT_AuthCount          (TAG_USER+27)   /* (ULONG *) receives the number of records (may exceed the size)  */
+#define secT_AuthClear          (TAG_USER+28)   /* (BOOL) clear the records of secT_UserID / secT_RemoteHost, or   */
+                                                /* all of them when neither is given                               */
+#define secT_LockAccount        (TAG_USER+29)   /* secAuthControlA(): (STRPTR) lock this user's account            */
+#define secT_UnlockAccount      (TAG_USER+30)   /* secAuthControlA(): (STRPTR) unlock it                           */
+#define secT_AccountLocked      (TAG_USER+31)   /* secQueryUserA(): (BOOL *) the account is locked                 */
+/* secUserAdminA() (root only); also secT_UserID, secT_Password */
+#define secT_UAOperation        (TAG_USER+32)   /* (ULONG) secUA_#?                                                */
+#define secT_NewUserID          (TAG_USER+33)   /* (STRPTR) MODIFY: new user ID                                    */
+#define secT_UID                (TAG_USER+34)   /* (ULONG) user number 1..65535                                    */
+#define secT_GID                (TAG_USER+35)   /* (ULONG) primary group number, must exist                        */
+#define secT_UserName           (TAG_USER+36)   /* (STRPTR) the full name                                          */
+#define secT_HomeDir            (TAG_USER+37)   /* (STRPTR) home directory                                         */
+#define secT_Shell              (TAG_USER+38)   /* (STRPTR) shell (may be empty)                                   */
+/* secUserAdminA() groups (root only) */
+#define secT_GroupID            (TAG_USER+39)   /* (STRPTR) the group (GROUPADD: the new one)                      */
+#define secT_NewGroupID         (TAG_USER+40)   /* (STRPTR) GROUPMODIFY: new group ID                              */
+#define secT_GroupName          (TAG_USER+41)   /* (STRPTR) the group's description                                */
+#define secT_GroupMgr           (TAG_USER+42)   /* (ULONG) uid of the group's manager (default root)               */
+#define secT_GroupMembers       (TAG_USER+43)   /* (STRPTR *) NULL-terminated user IDs: the group's members        */
+                                                /* (besides those whose primary group it is); replaces the list     */
+/* secExpandPathA() */
+#define secT_BufferSize         (TAG_USER+44)   /* (ULONG) size of the buffer that receives the path               */
+/* secKeyAdminA() (root, or the user in person with a ticket); also secT_UserID, secT_Ticket */
+#define secT_KAOperation        (TAG_USER+45)   /* (ULONG) secKA_#?                                                */
+#define secT_KeyType            (TAG_USER+46)   /* (ULONG) secKEY_#?                                               */
+#define secT_KeyLabel           (TAG_USER+47)   /* (STRPTR) a name for the key (no spaces)                         */
+#define secT_KeyScheme          (TAG_USER+48)   /* (STRPTR) the scheme a plugin implements, e.g. "yubico"          */
+#define secT_KeyPublicID        (TAG_USER+49)   /* (STRPTR) the id the token presents with every code              */
+#define secT_KeySecret          (TAG_USER+50)   /* (STRPTR) the token's secret as hex digits; its layout is the    */
+                                                /* scheme's                                                        */
+#define secT_KeyList            (TAG_USER+51)   /* secKA_LIST: (struct secKeyInfo *) array to fill                 */
+#define secT_KeyListSize        (TAG_USER+52)   /* secKA_LIST: (ULONG) entries in that array                       */
+#define secT_KeyCount           (TAG_USER+53)   /* secKA_LIST: (ULONG *) receives the number of keys               */
+#define secT_HasKeys            (TAG_USER+54)   /* secQueryUserA(): (BOOL *) the user has security keys registered */
+/* secVerifyUserA() with secKEY_CHALLENGE tokens, secKeyClientA(), secKeyAdminA() enrolment */
+#define secT_KeyChallenge       (TAG_USER+55)   /* (UBYTE *) secKEYCHALLENGESIZE bytes: receives the challenge      */
+                                                /* (secVERIFY_KEYNEEDED), or is the challenge to answer             */
+#define secT_KeyAssertion       (TAG_USER+56)   /* (UBYTE *) the token's answer: given to secVerifyUserA() with    */
+                                                /* secT_Ticket, received from secKeyClientA()                      */
+#define secT_KeyAssertionSize   (TAG_USER+57)   /* secVerifyUserA(): (ULONG) its size; secKeyClientA(): (ULONG *)  */
+                                                /* the buffer's size, then the answer's                            */
+#define secT_KCOperation        (TAG_USER+58)   /* secKeyClientA(): (ULONG) secKC_#?                                */
+#define secT_StatusHook         (TAG_USER+59)   /* (struct Hook *) told what to show while a token is waited for   */
+                                                /* (struct secKeyStatus *); returns FALSE to give up               */
+#define secT_KeyTimeout         (TAG_USER+60)   /* (ULONG) seconds to wait for a token and a touch [KEYTIMEOUT]    */
+#define secT_KeyEnrol           (TAG_USER+61)   /* secKeyAdminA(secKA_ADD): (BOOL) enrol a present secKEY_CHALLENGE */
+                                                /* token instead of giving secT_KeyPublicID / secT_KeySecret        */
+#define secT_KeyIndex           (TAG_USER+62)   /* secKeyClientA(): (ULONG *) which entry of secT_KeyList answered  */
 
-#define secFIBB_SET_UID                 (31)                        /* Change owner during execution */
-#define secFIBB_SET_GID                 (30)                        /* Change group during execution - not yet implemented */
+/* secUserAdminA() operations */
+#define secUA_ADD               (1)             /* new user: secT_UserID, secT_UID, secT_GID [, others]            */
+#define secUA_MODIFY            (2)             /* change the given fields of secT_UserID                          */
+#define secUA_DELETE            (3)             /* remove secT_UserID                                              */
+#define secUA_PASSWORD          (4)             /* set secT_UserID's password to secT_Password ("" = none)         */
+#define secUA_GROUPADD          (5)             /* new group: secT_GroupID, secT_GID [, others]                    */
+#define secUA_GROUPMODIFY       (6)             /* change the given fields of secT_GroupID                         */
+#define secUA_GROUPDELETE       (7)             /* remove secT_GroupID (not while it is a user's primary group)    */
 
-#define secFIBF_SET_UID                 (1<<secFIBB_SET_UID)
-#define secFIBF_SET_GID                 (1<<secFIBB_SET_GID)
+/* secKeyAdminA() operations */
+#define secKA_ADD               (1)             /* register a key: secT_KeyType, secT_KeyLabel and its data        */
+#define secKA_LIST              (2)             /* list the user's keys (secT_KeyList...); secrets are not listed  */
+#define secKA_REMOVE            (3)             /* remove the key secT_KeyLabel                                    */
+
+/* secKeyAdminA() results */
+#define secKAERR_OK             (0)
+#define secKAERR_NOTALLOWED     (1)             /* not root, and not the user with a fresh ticket                  */
+#define secKAERR_NOTFOUND       (2)             /* no such user, or no such key                                    */
+#define secKAERR_EXISTS         (3)             /* a key with that label is registered already                     */
+#define secKAERR_BADARGS        (4)             /* a field is missing or malformed                                 */
+#define secKAERR_WRITE          (5)             /* the key file could not be written; nothing changed              */
+#define secKAERR_UNAVAILABLE    (6)             /* unconfigured system, no server, or no keys plugin               */
+#define secKAERR_NOTOKEN        (7)             /* enrolment: no token answered, or the user gave up               */
 
 /*
-    Default Protection Bits
-*/
+ * Hardware authentication tokens ("security keys", secT_KeyType)
+ *
+ * A registered token belongs to a type (how it takes part in a login) and
+ * a scheme (whose codes it produces; a plugin implements each scheme).
+ * The library keeps the token's public id, its secret and a counter that
+ * every accepted code must advance (replay protection); the plugin
+ * recognises and checks the codes.
+ */
+#define secKEY_OTP              (1)             /* the token types a one-time code directly after the password;    */
+                                                /* schemes: "yubico" (Yubico OTP, yubikey.secplugin)               */
+#define secKEY_CHALLENGE        (2)             /* the token answers a challenge the system makes; the login talks  */
+                                                /* to it (secKeyClientA()); schemes: "u2f" (FIDO U2F, fido.secplugin) */
 
-#define DEFPROTECTION                   (FIBF_OTR_READ | FIBF_GRP_READ)
+#define secKEYLABELSIZE         (32)
+#define secKEYSCHEMESIZE        (16)
+#define secKEYPUBIDSIZE         (512)           /* the id a token presents (U2F: the key handle, up to 255 bytes, hex) */
+#define secKEYSECRETMAX         (96)            /* bytes of key material (a secret, or a public key)               */
+#define secKEYCHALLENGESIZE     (32)
+#define secKEYASSERTIONMAX      (512)           /* bytes a token's answer may have                                 */
+#define secKEYAPPIDSIZE         (64)
 
+/* secKeyClientA() operations and results */
+#define secKC_ASSERT            (1)             /* have a present token answer a challenge (secT_KeyList, ...)     */
+#define secKC_ENROL             (2)             /* enrol a present token: secT_KeyPublicID and secT_KeySecret out  */
 
-/*
-    Relations returned by secGetRelationshipA()
-*/
+#define secKCERR_OK             (0)
+#define secKCERR_NOTOKEN        (1)             /* no token, or none of the listed ones, within the timeout        */
+#define secKCERR_CANCELLED      (2)             /* the status hook gave up                                         */
+#define secKCERR_UNAVAILABLE    (3)             /* no plugin for the scheme, or not a multi-user system            */
+#define secKCERR_BADARGS        (4)
+#define secKCERR_FAILED         (5)             /* the token refused or failed                                     */
 
-#define secRelB_ROOT_UID                (0)                         /* User == super user */
-#define secRelB_ROOT_GID                (1)                         /* User belongs to the super user group */
-#define secRelB_NOBODY                  (2)                         /* User == nobody */
-#define secRelB_UID_MATCH               (3)                         /* User == owner */
-#define secRelB_GID_MATCH               (4)                         /* User belongs to owner group */
-#define secRelB_PRIM_GID                (5)                         /* User's primary group == owner group */
-#define secRelB_NO_OWNER                (6)                         /* Owner == nobody */
-
-#define secRelF_ROOT_UID                (1<<secRelB_ROOT_UID)
-#define secRelF_ROOT_GID                (1<<secRelB_ROOT_GID)
-#define secRelF_NOBODY                  (1<<secRelB_NOBODY)
-#define secRelF_UID_MATCH               (1<<secRelB_UID_MATCH)
-#define secRelF_GID_MATCH               (1<<secRelB_GID_MATCH)
-#define secRelF_PRIM_GID                (1<<secRelB_PRIM_GID)
-#define secRelF_NO_OWNER                (1<<secRelB_NO_OWNER)
-
-/*
-    Monitor Modes
-*/
-
-#define secMon_IGNORE                   (0)
-#define secMon_SEND_SIGNAL              (1)
-#define secMon_SEND_MESSAGE             (2)
-
-/*
-    Monitor Triggers
-*/
-
-#define secTrgB_OwnerChange             (0)                         /* Task Owner Change */
-                                                                    /*    From:    uid of old user */
-                                                                    /*    To:      uid of new user */
-#define secTrgB_Login                   (1)                         /* successful Login/Logout */
-                                                                    /*    From:    uid of old user */
-                                                                    /*    To:      uid of new user */
-                                                                    /*    UserID:  UserID of new user */
-#define secTrgB_LoginFail               (2)                         /* unsuccessful Login/Logout */
-                                                                    /*    From:    uid of old user */
-                                                                    /*    UserID:  UserID of new user */
-#define secTrgB_Passwd                  (3)                         /* successful Passwd */
-                                                                    /*    From:    uid of user */
-#define secTrgB_PasswdFail              (4)                         /* unsuccessful Passwd */
-                                                                    /*    From:    uid of user */
-#define secTrgB_CheckPasswd             (5)                         /* successful CheckPasswd */
-                                                                    /*    From:    uid of user */
-#define secTrgB_CheckPasswdFail         (6)                         /* unsuccessful CheckPasswd */
-                                                                    /*    From:    uid of user */
-
-#define secTrgF_OwnerChange             (1<<secTrgB_OwnerChange)
-#define secTrgF_Login                   (1<<secTrgB_Login)
-#define secTrgF_LoginFail               (1<<secTrgB_LoginFail)
-#define secTrgF_Passwd                  (1<<secTrgB_Passwd)
-#define secTrgF_PasswdFail              (1<<secTrgB_PasswdFail)
-#define secTrgF_CheckPasswd             (1<<secTrgB_CheckPasswd)
-#define secTrgF_CheckPasswdFail         (1<<secTrgB_CheckPasswdFail)
-
-
-/* Public secMemInfo structure. Don't expect it to remain */
-
-struct secMemInfo 
+/* What a status hook (secT_StatusHook) is shown: CallHookPkt(hook, struct secKeyStatus *, NULL),
+ * returning TRUE to go on, FALSE to give up */
+struct secKeyStatus
 {
-	APTR                            Address;
-	ULONG                           Size;
-	struct secMemInfo               *next;
+    ULONG               Type;                   /* secKS_#?                         */
+    CONST_STRPTR        Text;                   /* for the user                     */
+};
+#define secKS_INSERT            (1)             /* no token is present: plug one in */
+#define secKS_TOUCH             (2)             /* touch the token                  */
+#define secKS_WAIT              (3)             /* working                          */
+#define secKS_DONE              (4)             /* finished (show nothing)          */
+
+/* What a plugin gets for its client-side operations (the login's context) */
+struct secKeyClient
+{
+    ULONG               Size;                   /* sizeof(struct secKeyClient)      */
+    struct ExecBase     *Exec;                  /* the library bases, for a plugin   */
+    struct Library      *Dos;                   /* that opened none itself           */
+    struct Library      *Utility;
+    struct Hook         *StatusHook;            /* may be NULL                      */
+    CONST_STRPTR        DeviceName;             /* the tokens' exec device (KEYDEVICE, "fido.device") */
+    ULONG               Timeout;                /* seconds                          */
+    CONST_STRPTR        AppID;                  /* KEYAPPID                         */
 };
 
+/* One registered token, as secKeyAdminA(secKA_LIST) reports it (no secret) */
+struct secKeyInfo
+{
+    ULONG               Type;                   /* secKEY_#?                        */
+    char                Scheme[secKEYSCHEMESIZE];
+    char                Label[secKEYLABELSIZE];
+    char                PublicID[secKEYPUBIDSIZE];
+    ULONG               Counter;                /* last accepted counter            */
+    char                Registered[12];         /* yyyy-mm-dd                       */
+};
+
+/* secUserAdminA() results */
+#define secUAERR_OK             (0)
+#define secUAERR_NOTROOT        (1)             /* only root may change accounts                                   */
+#define secUAERR_NOTFOUND       (2)             /* no such user (or group, or member)                              */
+#define secUAERR_EXISTS         (3)             /* the user/group ID or the uid/gid is taken                       */
+#define secUAERR_BADARGS        (4)             /* a field is missing, too long or holds '|', ':' or a control char */
+#define secUAERR_NOGROUP        (5)             /* no group with that gid                                          */
+#define secUAERR_PROTECTED      (6)             /* root (and root's group) cannot be deleted, renamed or renumbered */
+#define secUAERR_WRITE          (7)             /* the password or group file could not be written; nothing changed */
+#define secUAERR_UNAVAILABLE    (8)             /* unconfigured system or no server                                */
+#define secUAERR_INUSE          (9)             /* the group is a user's primary group                             */
+
+/* What secAuthControlA() reports */
+#define secAUTHREC_DELAY        (0)             /* failures for a user name: requests are held back                */
+#define secAUTHREC_LOCKOUT      (1)             /* failures for a user from a remote host                          */
+
+struct secAuthRecord
+{
+    UBYTE   Kind;                               /* secAUTHREC_#?                                                   */
+    UBYTE   Pad[3];
+    ULONG   Failures;
+    ULONG   Seconds;                            /* left of the hold-back / lock-out, 0 = none now                  */
+    char    UserID[secUSERIDSIZE];              /* DELAY: the last name that failed in this slot                   */
+    char    Source[64];                         /* LOCKOUT: the remote host (cut)                                  */
+};
+
+/*
+ * A login ticket (secT_Ticket): an opaque, unguessable value that only the
+ * task it was issued to can use, once, within a few seconds.
+ */
+#define secTICKETSIZE           (16)
+
+struct secLoginTicket
+{
+    UBYTE   Id[secTICKETSIZE];
+};
+
+/* secT_HashType */
+#define secHASH_NONE            (0)             /* clear text (secT_Password)                                       */
+#define secHASH_ACRYPT_LC       (1)             /* ACrypt(password, lower-cased user ID), 11 characters: what an    */
+                                                /* Envoy client sends. Accepted only with HASHEDLOGIN=1 and for     */
+                                                /* users whose stored ID is lower case.                             */
+
+/* secVerifyUserA() results */
+#define secVERIFY_OK            (0)             /* the user exists and the token is right                           */
+#define secVERIFY_FAILED        (1)             /* unknown user or wrong token (not distinguished)                  */
+#define secVERIFY_LOCKED        (2)             /* too many failures for this user/host; try again later            */
+#define secVERIFY_BUSY          (3)             /* the authentication process has too much queued                   */
+#define secVERIFY_NOTSUPPORTED  (4)             /* this token form is not accepted on this system                   */
+#define secVERIFY_UNAVAILABLE   (5)             /* no password database (unconfigured) or no authentication process */
+#define secVERIFY_BADARGS       (6)             /* missing user ID or token                                         */
+#define secVERIFY_KEYNEEDED     (7)             /* the user has a secKEY_CHALLENGE token: answer the challenge in   */
+                                                /* secT_KeyChallenge (secKeyClientA()) and call again with          */
+                                                /* secT_Ticket, secT_KeyAssertion and secT_KeyPublicID              */
+
+/*
+ * Protection bits (see also <dos/dos.h>)
+ */
+#define secFIBB_SET_UID         (31)    /* Change owner during execution                     */
+#define secFIBB_SET_GID         (30)    /* Change group during execution - not implemented   */
+
+#define secFIBF_SET_UID         (1UL << secFIBB_SET_UID)
+#define secFIBF_SET_GID         (1UL << secFIBB_SET_GID)
+
+/* Default Protection Bits for new objects */
+#define secDEFPROTECTION        (FIBF_OTR_READ | FIBF_GRP_READ)
+#ifndef DEFPROTECTION
+#define DEFPROTECTION           secDEFPROTECTION        /* MuFS compatibility */
+#endif
+
+/*
+ * Relations returned by secGetRelationshipA()
+ */
+#define secRelB_ROOT_UID        (0)     /* User == super user                       */
+#define secRelB_ROOT_GID        (1)     /* User belongs to the super user group     */
+#define secRelB_NOBODY          (2)     /* User == nobody                           */
+#define secRelB_UID_MATCH       (3)     /* User == owner                            */
+#define secRelB_GID_MATCH       (4)     /* User belongs to owner group              */
+#define secRelB_PRIM_GID        (5)     /* User's primary group == owner group      */
+#define secRelB_NO_OWNER        (6)     /* Owner == nobody                          */
+
+#define secRelF_ROOT_UID        (1 << secRelB_ROOT_UID)
+#define secRelF_ROOT_GID        (1 << secRelB_ROOT_GID)
+#define secRelF_NOBODY          (1 << secRelB_NOBODY)
+#define secRelF_UID_MATCH       (1 << secRelB_UID_MATCH)
+#define secRelF_GID_MATCH       (1 << secRelB_GID_MATCH)
+#define secRelF_PRIM_GID        (1 << secRelB_PRIM_GID)
+#define secRelF_NO_OWNER        (1 << secRelB_NO_OWNER)
+
+/* Relations that permit changing an object's properties (protection, comment, date, owner) */
+#define secRelF_PROPERTY_ACCESS (secRelF_ROOT_UID | secRelF_UID_MATCH | secRelF_NO_OWNER)
+
+/*
+ * Monitor Structure
+ *
+ * The use of this structure is restricted to root.
+ * Do not modify or reuse this structure while it is active!
+ */
+struct secMonitor
+{
+    struct MinNode      Node;
+    ULONG               Mode;           /* see definitions below */
+    ULONG               Triggers;       /* see definitions below */
+    union
+    {
+        struct
+        {                               /* for SEND_SIGNAL  */
+            struct Task     *Task;
+            ULONG           SignalNum;
+        } Signal;
+        struct
+        {                               /* for SEND_MESSAGE */
+            struct MsgPort  *Port;
+        } Message;
+    } u;
+    /* NOTE: This structure may be extended in future! */
+};
+
+/* Monitor Modes */
+#define secMon_IGNORE           (0)
+#define secMon_SEND_SIGNAL      (1)
+#define secMon_SEND_MESSAGE     (2)
+
+/*
+ * Monitor Message
+ *
+ * Sent to the application if SEND_MESSAGE is specified. Do NOT forget to reply!
+ */
+struct secMonMsg
+{
+    struct Message      ExecMsg;
+    struct secMonitor   *Monitor;       /* The monitor that sent the message    */
+    ULONG               Trigger;        /* The trigger that caused the message  */
+    UWORD               From;
+    UWORD               To;
+    char                UserID[secUSERIDSIZE];
+};
+
+/* Monitor Triggers */
+#define secTrgB_OwnerChange     (0)     /* Task Owner Change            From: old uid, To: new uid          */
+#define secTrgB_Login           (1)     /* successful Login/Logout      From: old uid, To: new uid, UserID  */
+#define secTrgB_LoginFail       (2)     /* unsuccessful Login/Logout    From: old uid, UserID               */
+#define secTrgB_Passwd          (3)     /* successful Passwd            From: uid                           */
+#define secTrgB_PasswdFail      (4)     /* unsuccessful Passwd          From: uid                           */
+#define secTrgB_CheckPasswd     (5)     /* successful CheckPasswd       From: uid                           */
+#define secTrgB_CheckPasswdFail (6)     /* unsuccessful CheckPasswd     From: uid                           */
+
+#define secTrgF_OwnerChange     (1 << secTrgB_OwnerChange)
+#define secTrgF_Login           (1 << secTrgB_Login)
+#define secTrgF_LoginFail       (1 << secTrgB_LoginFail)
+#define secTrgF_Passwd          (1 << secTrgB_Passwd)
+#define secTrgF_PasswdFail      (1 << secTrgB_PasswdFail)
+#define secTrgF_CheckPasswd     (1 << secTrgB_CheckPasswd)
+#define secTrgF_CheckPasswdFail (1 << secTrgB_CheckPasswdFail)
+
+/*
+ * secMemInfo - public but not guaranteed to remain.
+ */
+struct secMemInfo
+{
+    APTR                Address;
+    ULONG               Size;
+    struct secMemInfo   *next;
+};
 
 /* This is what you get a pointer to from secLocksecBase() */
+struct secVolume;
 
 struct secPointers
 {
-	struct MinList                  *Monitors;
-	struct MinList                  *Segments;
-	struct MinList                  *Sessions;
-	struct MinList                  *Tasks;
-	struct secVolume                *Volumes;
+    struct MinList      *Monitors;
+    struct MinList      *Segments;
+    struct MinList      *Sessions;
+    struct MinList      *Tasks;
+    struct secVolume    *Volumes;
 };
+
+/*==========================================================================*/
+/*                      Configuration files                                 */
+/*==========================================================================*/
 
 /*
-    Public User Information Structure
-
-
-        For future compatibility, you should ALWAYS use secAllocUserInfo()
-        to allocate this structure. NEVER do it by yourself!!
-*/
-
-struct secUserInfo 
-{
-   char                                 UserID[secUSERIDSIZE];
-   UWORD                                uid;
-   UWORD                                gid;
-   char                                 UserName[secUSERNAMESIZE];
-   char                                 HomeDir[secHOMEDIRSIZE];
-   UWORD                                NumSecGroups;               /* Number of Secondary Groups this */
-                                                                    /*  user belongs to */
-   UWORD                                *SecGroups;                 /* Points to an array of NumSecGroups */
-                                                                    /*  Secondary Group Numbers */
-   char                                 Shell[secSHELLSIZE];
-};
-
+ * Password File
+ *
+ * For each user, the Password File must contain a line like this:
+ *
+ *   <UserID>|<Password>|<uid>|<gid>|<UserName>|<HomeDir>|<Shell>
+ *
+ *   <UserID>    User Login ID (max. secUSERIDSIZE-1 characters)
+ *   <Password>  Encrypted Password
+ *   <uid>       User Number (1 - 65534)
+ *   <gid>       Primary Group Number (0 - 65534)
+ *   <UserName>  Full User Name (max. secUSERNAMESIZE-1 characters)
+ *   <HomeDir>   Home directory (max. secHOMEDIRSIZE-1 characters)
+ *   <Shell>     Default Shell (max. secSHELLSIZE-1 characters)
+ */
+#define secPasswd_FileName      "passwd"
 
 /*
-    Public Group Information Structure
-
-
-        For future compatibility, you should ALWAYS use secAllocGroupInfo()
-        to allocate this structure. NEVER do it by yourself!!
-*/
-
-struct secGroupInfo 
-{
-   char                                 GroupID[secGROUPIDSIZE];
-   UWORD                                gid;
-   UWORD                                MgrUid;                     /* Manager of this group */
-   char                                 GroupName[secGROUPNAMESIZE];
-};
-
-/*
-    Extended Owner Information Structure
-
-        A pointer to this structure is returned by secGetTaskExtOwner().
-        You MUST use secFreeExtOwner() to deallocate it!!
-*/
-
-struct secExtOwner 
-{
-   UWORD                                uid;
-   UWORD                                gid;
-   UWORD                                NumSecGroups;               /* Number of Secondary Groups this */
-                                                                    /* user belongs too. */
-};
+ * Group File
+ *
+ * Two parts separated by a blank line. Part 1 lines:
+ *
+ *   <GroupID>|<gid>|<MgrUid>|<GroupName>
+ *
+ *   <GroupID>   Group short ID (max. secGROUPIDSIZE-1 characters)
+ *   <gid>       Group Number (0 - 65534)
+ *   <MgrUid>    User Number of this group's manager, 0 for no manager.
+ *   <GroupName> Full Group Name (max. secGROUPNAMESIZE-1 characters)
+ *
+ * Part 2 lines (secondary group membership):
+ *
+ *   <uid>:<gid>[,<gid>...]
+ */
+#define secGroup_FileName       "group"
 
 /*
-    Monitor Structure
+ * Configuration File
+ *
+ * One option per line, ReadArgs style ("<OPT> <val>" or "<OPT>=<val>"),
+ * 0 for OFF and 1 for ON. Defaults in square brackets.
+ *
+ *   LIMITDOSSETPROTECTION  dos.library/SetProtection() cannot change GROUP and OTHER bits [1]
+ *   PROFILE                execute the Profile if it exists [1]
+ *   LASTLOGINREQ           display the Lastlogin requester [1]
+ *   LOGSTARTUP             log startup [0]
+ *   LOGLOGIN               log successful logins [0]
+ *   LOGLOGINFAIL           log failed logins [0]
+ *   LOGPASSWD              log successful password changes [0]
+ *   LOGPASSWDFAIL          log failed password changes [0]
+ *   LOGCHECKPASSWD         log successful password checks [0]
+ *   LOGCHECKPASSWDFAIL     log failed password checks [0]
+ *   PASSWDUIDLEVEL         users with a uid <= <val> can change their passwords [secNOBODY_UID]
+ *   PASSWDGIDLEVEL         users with a gid <= <val> can change their passwords [secNOBODY_UID]
+ *   FSTAB                  read the fstab file and enforce the listed volumes [0]
+ *   LOADPLUGIN             name of a plugin to load (may be repeated)
+ *   HASHEDLOGIN            secVerifyUserA() accepts pre-hashed tokens (secHASH_#?) [0]
+ *   MAXTRIES               failed verifications per user and host before a lock-out, 0 = none [5]
+ *   LOCKTIME               seconds a lock-out lasts [300]
+ *   LOGINDELAYMAX          longest hold-back after failed verifications, seconds [30]
+ *   KEYLOGIN               hardware tokens (secKeyAdminA()) are checked when a user has some [1]
+ *   KEYREQUIRED            a user without a registered token cannot log in locally [0]
+ *   KEYTIMEOUT             seconds a login waits for a challenge token and its touch [30]
+ *   KEYAPPID               the application id challenge tokens are registered for [aros:login]
+ *   KEYDEVICE              the exec device challenge tokens are reached through [fido.device]
+ *
+ * Each token scheme needs its plugin, e.g. LOADPLUGIN yubikey
+ * (SYS:Libs/Security/yubikey.secplugin) for Yubico OTP.
+ */
+#define secConfig_FileName      "Security.config"
 
-        The use of this structure is restricted to root.
-        Do not modify or reuse this structure while it is active!
-*/
-
-struct secMonitor 
-{
-   struct MinNode                       Node;
-   ULONG                                Mode;                       /* see definitions below */
-   ULONG                                Triggers;                   /* see definitions below */
-   union
-   {
-      struct
-      {                                                             /* for SEND_SIGNAL */
-         struct Task                    *Task;
-         ULONG                          SignalNum;
-      } Signal;
-
-      struct
-      {                                                             /* for SEND_MESSAGE */
-         struct MsgPort                 *Port;
-      } Message;
-   } u;
-
-   /* NOTE: This structure may be extended in future! */
-};
+#define secLog_FileName         "Security.log"
+#define secLastLogin_FileName   ".lastlogin"
+#define secProfile_FileName     ".profile"
+#define secPlan_FileName        ".plan"
+#define secFSTab_FileName       "fstab"
 
 /*
-    Monitor Message
+ * Key File
+ *
+ * Present in the root directory of every volume using a muFS-aware filesystem
+ * with a key. It contains 3 lines: a pseudo random ASCII key (max. 1023
+ * characters), the directory of the password file on this volume (or an empty
+ * line), and the directory of the configuration file (or an empty line).
+ * If there is ANY inconsistency the system will refuse to work!
+ */
+#define secKey_FileName         ":.MultiUser.keyfile"
 
+/*
+ * Default location of the configuration files when no key file is found.
+ * An assign SECURITY: is created by the library pointing at this directory.
+ */
+#define secConfig_DirName       "SYS:Security"
+#define secConfig_AssignName    "SECURITY"
 
-        Sent to the application if SEND_MESSAGE is specified.
-        Do NOT forget to reply!
-*/
+/* The current S:Security-Startup that AMUInit installs; security.library
+ * logs a hint at start-up when the installed one is older */
+#define secSTARTUP_VERSION      (45)
+#define secSTARTUP_REVISION     (12)
 
-struct secMonMsg 
+/*==========================================================================*/
+/*                      FileSystem Authors' API                             */
+/*==========================================================================*/
+
+/*
+ * Packets a muFS-aware filesystem should support in addition to
+ * ACTION_SET_OWNER (see <dos/dosextens.h>).
+ */
+#define ACTION_IS_SECFS                 (2999)  /* Res1: DOSTRUE if the handler enforces ownership */
+#define ACTION_GET_SECFS_VERSION        (2998)  /* Res1: version of the FS API implemented         */
+#define secFS_API_VERSION               (2)
+
+/* Access types for secAccess_Control() (may be OR'ed) */
+#define secAt_Read                      (1)
+#define secAt_Write                     (2)
+#define secAt_Execute                   (4)
+#define secAt_Delete                    (8)
+
+/* contextflags for secAccess_Control() */
+#define secAC_IGNORE_CONTEXT            (0)     /* Context parameter should be ignored                  */
+#define secAC_FILESYSTEM_CONTEXT        (1)     /* Context parameter is the MsgPort for a filesystem    */
+
+/* Return values of secAccess_Control() */
+#define secAC_PERMISSION_GRANTED        (0)             /* Access is allowed                             */
+#define secAC_PERMISSION_DENIED         (1L << 31)      /* Permission denied                             */
+#define secAC_READ_ONLY_FS              (1L << 30)      /* FS is read-only and write access was requested*/
+#define secAC_OWNER_DENIED              (1L << 0)       /* Task owns object, but bits deny access        */
+#define secAC_GROUP_DENIED              (1L << 1)       /* Task is in the group, but bits deny access    */
+#define secAC_ROOT_DENIED               (1L << 2)       /* Task is root, but a higher rule denied access */
+
+/*
+ * Rendezvous port for bootstrap programs that tell the library where the
+ * configuration lives when no muFS volume is present.
+ */
+#define secENFORCE_PORTNAME             "SecurityEnforcePort"
+
+struct secFSEnforceRendezvous
 {
-   struct Message ExecMsg;
-   struct secMonitor *Monitor;                                      /* The monitor that sent the message */
-   ULONG Trigger;                                                   /* The trigger that caused the message */
-   UWORD From;
-   UWORD To;
-   char UserID[secUSERIDSIZE];
+    struct MsgPort      Port;
+    STRPTR              PasswdDir;
+    STRPTR              ConfigDir;
 };
 
-/****************************************************************************
+/*==========================================================================*/
+/*                              Plugins                                     */
+/*==========================================================================*/
 
-                -------------- Plugins ------------------
-
- ****************************************************************************/
-
-/* All plugins have this suffix */
-
-#define secPLUGIN_SUFFIX                ".secp"
+/* All plugins have this suffix and live in the configuration directory */
+#define secPLUGIN_SUFFIX                ".secplugin"
+#define secPLUGIN_DIRNAME               "SYS:Libs/Security"     /* where plugins are looked for after SECURITY: */
 
 /* Return values for plugin functions */
-#define secpiTRUE	                0UL	                    /* operation completed with success */
-#define secpiFALSE	                1UL	                    /* operation completed but failed: handling stops at this stage */
-#define secpiASYNC	                2UL	                    /* operation will continue asynchronously and notify
-									the system when complete.  The system will provide
-									the secSPacket that prompted the call and this
-									should be passed to the completion function. */
-#define secpiFALSECONT	                3UL	                    /* operation completed but failed; the system may continue with other handlers
-									to see if they can satisfy the request */
-#define secpiNOTSUPP	                4UL	                    /* Operation/Handler not supported */
+#define secpiTRUE                       (0UL)   /* operation completed with success                           */
+#define secpiFALSE                      (1UL)   /* operation completed but failed: handling stops here        */
+#define secpiASYNC                      (2UL)   /* operation continues asynchronously, see                    */
+                                                /* secPluginOperationComplete()                               */
+#define secpiFALSECONT                  (3UL)   /* operation failed; other handlers may be tried              */
+#define secpiNOTSUPP                    (4UL)   /* Operation/Handler not supported                            */
 
-/* 
-    Plugins overview -:
-
-        A plugin is a special form of executable.
-
-        The plugin should return a pointer to a 'Plugin' which describes what kind
-        of plugin it is, so that secFS can add it to the relevant list internally.
-
-        A plugin is recognized by a magic marker within the first 256 bytes of the
-        file.
-
-        All plugins are kept in the config dir, so the the library doesn't have to
-        search paths to find them.
-
-        The plugin is free to allocate memory/spawn processes (they will be
-        super-user priveleged) etc. without fear of being UnLoadSeg'd without the
-        library first calling its Incompatible function, which should cause the plugin
-        to free its resources.  It will them be UnLoadSeg'd.  Note that this only
-        occurs when a plugin is rejected for some reason (wrong version ?).
-
- */
-
-#define secFS_PLUGIN_IFACE1		1UL
-#define secFS_PLUGIN_INTERFACE	        SEC_PLUGIN_IFACE1
+#define secPLUGIN_IFACE1                (1UL)
+#define secPLUGIN_INTERFACE             secPLUGIN_IFACE1
 
 #ifndef MAKE_ID /* also defined in <libraries/iffparse.h> */
 #define MAKE_ID(a,b,c,d)                ((ULONG)(a)<<24 | (ULONG)(b)<<16 | (ULONG)(c)<<8 | (ULONG)(d))
 #endif
 
-#define secPLUGIN_RECOGNITION	        MAKE_ID('m', 'S', 'p', 'I')
-
-/*
-    Function called to initialize the plugin.
-    The plugin should perform any initialization it needs, and then formally
-    register itself with the security.library.
-    module should be passed to the security.library when a handler is registered.
-*/
-
-
-/* Plugin Module Definition - secst be located in the executeable */
-struct secPluginHeader
-{
-    ULONG                               plugin_magic;               /* This should be secPLUGIN_RECOGNITION */
-    /* Module Descriptor */
-    ULONG	                        Version;	            /* = SEC_PLUGIN_INTERFACE */
-    APTR                                Initialize;
-    APTR                                Terminate;
-//    secInitPluginFunc                 Initialize;
-//    secTerminatePluginFunc            Terminate;
-};
-
 /* internal plugin records */
 typedef struct
 {
-    struct MinNode                      Node;
-    ULONG                               reference_count;
-    BPTR                                SegList;
-    struct secPluginHeader *            header;	                    /* For locating the init/fini functions */
-    UBYTE                               modulename[64];	            /* For displaying */
+    struct MinNode              Node;
+    ULONG                       reference_count;
+    BPTR                        SegList;
+    struct secPluginHeader      *header;                /* For locating the init/fini functions */
+    UBYTE                       modulename[64];         /* For displaying */
+    struct ExecBase             *SysBase;               /* exec, for a plugin without start-up code */
 } secPluginModule;
+
+/*
+ * Function called to initialize the plugin. The plugin should perform any
+ * initialization it needs, and then formally register itself with
+ * security.library via secRegisterHandler(); module must be stored in the
+ * plugin_ops it registers.
+ */
+typedef BOOL (*secInitPluginFunc)(struct Library *secbase, secPluginModule *module);
+
+/* Function called to shut-down the plugin: free resources, un-register. */
+typedef VOID (*secTerminatePluginFunc)(void);
+
+/*
+ * Plugin Module Definition - must be located in the executable and be
+ * exported as the symbol "secPluginHeader" (the library looks for the magic
+ * marker in the first segment if the symbol cannot be resolved).
+ */
+#define secPLUGIN_RECOGNITION           MAKE_ID('m', 'S', 'p', 'I')
+
+struct secPluginHeader
+{
+    ULONG                       plugin_magic;   /* = secPLUGIN_RECOGNITION */
+    ULONG                       Version;        /* = secPLUGIN_INTERFACE   */
+    secInitPluginFunc           Initialize;
+    secTerminatePluginFunc      Terminate;
+};
 
 struct plugin_ops
 {
-	ULONG	                        HandlerType;	            /* = ID_PLUGIN_XXX */
-	secPluginModule *               module;		            /* As provied by the Initialization function  */
+    ULONG                       HandlerType;    /* = ID_PLUGIN_XXX                          */
+    secPluginModule             *module;        /* As provided by the Initialization function */
 };
 
 /* Encryption plugin */
+#define ID_PLUGIN_ENCRYPTION            MAKE_ID('c', 'r', 'p', 't')
 
-#define ID_PLUGIN_ENCRYPTION	        MAKE_ID('c', 'r', 'p', 't')
-struct plugin_crypt_ops	
+struct plugin_crypt_ops
 {
-	struct plugin_ops               ops;
-	//ULONG                         (*Crypt)(STRPTR buffer, STRPTR key, STRPTR setting);                  /* Encrypt the supplied text using the supplied key and place the result in buffer */
-	//ULONG                         (*MaxPwdLen)(void);                                                   /* Return the maximum length of an encrypted password */
-	//ULONG                         (*CheckPassword)(STRPTR userid, STRPTR thepass, STRPTR suppliedpass); /* Check a password to see if it is valid */
-	//ULONG                         (*EncryptPassword)(STRPTR buffer, STRPTR userid, STRPTR thepass);     /* Encrypt Password for storing in a userdb */
+    struct plugin_ops           ops;
+    /* Encrypt the supplied text using the supplied key and place the result in buffer */
+    ULONG                       (*Crypt)(STRPTR buffer, STRPTR key, STRPTR setting);
+    /* Return the maximum length of an encrypted password */
+    ULONG                       (*MaxPwdLen)(void);
+    /* Check a password to see if it is valid */
+    ULONG                       (*CheckPassword)(STRPTR userid, STRPTR thepass, STRPTR suppliedpass);
+    /* Encrypt Password for storing in a userdb */
+    ULONG                       (*EncryptPassword)(STRPTR buffer, STRPTR userid, STRPTR thepass);
 };
 
-/* User DataBase Operations Plugin */
+/*
+ * Hardware authentication plugin: one scheme of tokens (secKEY_#? type).
+ * Several plugins may register, one per scheme. The library stores the
+ * records and enforces the counter; the plugin knows the codes.
+ */
+#define ID_PLUGIN_HWAUTH                MAKE_ID('h', 'w', 'a', 'u')
 
-#define ID_PLUGIN_USER_DATABASE	        MAKE_ID('u', 'r', 'd', 'b')
-
-struct sec_passwd   /* Compatible with standard unix struct passwd */	
+struct plugin_hwauth_ops
 {
-	char                            *pw_name;                   /* user name */
-	char                            *pw_passwd;                 /* user password */
-	int                             pw_uid;                     /* user id */
-	int                             pw_gid;                     /* group id */
-	char                            *pw_gecos;                  /* real name */
-	char                            *pw_dir;                    /* home directory */
-	char                            *pw_shell;                  /* shell program */
+    struct plugin_ops           ops;
+    ULONG                       Type;           /* secKEY_#? the scheme belongs to                              */
+    CONST_STRPTR                Scheme;         /* its name (secKEYSCHEMESIZE), e.g. "yubico"                   */
+    /* Registration: is this public id / secret well formed for the scheme? secpiTRUE / secpiFALSE */
+    ULONG                       (*CheckRegistration)(CONST_STRPTR publicid, const UBYTE *secret, ULONG secretlen);
+    /* secKEY_OTP: how many characters at the end of what the user typed are a code of
+     * the token with this public id? 0 if none */
+    ULONG                       (*MatchCode)(CONST_STRPTR publicid, CONST_STRPTR typed);
+    /* Check such a code. On secpiTRUE *counter holds the code's counter, which the
+     * library requires to be greater than the last one accepted. secpiFALSE otherwise */
+    ULONG                       (*VerifyCode)(CONST_STRPTR publicid, const UBYTE *secret, ULONG secretlen, CONST_STRPTR code, ULONG *counter);
+    /* secKEY_CHALLENGE, in the authentication process: is 'assertion' the token's valid answer
+     * to 'challenge' for the application id? keydata is what was registered (a public key).
+     * secpiTRUE with the answer's counter in *counter (must grow), secpiFALSE otherwise. */
+    ULONG                       (*VerifyAssertion)(CONST_STRPTR publicid, const UBYTE *keydata, ULONG keylen, CONST_STRPTR appid,
+                                                   const UBYTE *challenge, ULONG challengelen, const UBYTE *assertion, ULONG assertionlen,
+                                                   ULONG *counter);
+    /* secKEY_CHALLENGE, in the login's context: have a present token that holds one of the
+     * 'count' ids answer the challenge (waiting ctx->Timeout seconds for it and its touch, telling
+     * ctx->StatusHook what to show). *assertionlen: the buffer's size, then the answer's; *which:
+     * the id that answered. secKCERR_#? */
+    ULONG                       (*GetAssertion)(struct secKeyClient *ctx, CONST_STRPTR *publicids, ULONG count,
+                                                const UBYTE *challenge, ULONG challengelen, UBYTE *assertion, ULONG *assertionlen, ULONG *which);
+    /* secKEY_CHALLENGE, in the login's context: enrol a present token: its id (a string of at most
+     * publicidsize) and key material (*keylen: the buffer's size, then the data's). secKCERR_#? */
+    ULONG                       (*Enrol)(struct secKeyClient *ctx, STRPTR publicid, ULONG publicidsize, UBYTE *keydata, ULONG *keylen);
 };
 
-struct plugin_userdb_ops	
-{
-	struct plugin_ops               ops;
-//	ULONG                           (*getpwent)(void);
-};
+/* User DataBase Operations Plugin - interface to be defined */
+#define ID_PLUGIN_USER_DATABASE         MAKE_ID('u', 'r', 'd', 'b')
 
-/* Volumes */
+/* Authentication plugin - interface to be defined (see MUFS3.md, PAM-style) */
+#define ID_PLUGIN_AUTH                  MAKE_ID('a', 'u', 't', 'h')
 
-struct secVolume 
-{
-    struct secVolume                     *Next;
-    struct DosList                      *DosList;			/* DosList for this Volume */
-    struct MsgPort                      *Process;			/* Process for this Volume */
-    
-    /* Extensions from MUFS2 */
-    
-    LONG	                        FS_Flags;			/* Allow set{g,u}id, read-only etc. */
-    
-    /* If FS_Flags == 0, the rest of this structure is ignored; this indicates
-	* that the volume is a true MUFS compatable volume */
-    
-    LONG	                        RootProtection;		        /* Permissions for the root dir */
-    ULONG	                        RootOwner;	                /* UID:GID of owner of root dir */
-
-    STRPTR FS_Name;						        /* So we dont re-run on the same volume */
-    struct MsgPort*	                OrigProc;		        /* The real FS */
-    struct MsgPort*	                RepPort;			/* For talking with the real FS */	
-    struct MinList	                FHCache[TASKHASHVALUE];	        /* HashList of cached FileHandles */
-    struct FileInfoBlock                *fib;
-    LONG	                        PassKey;			/* If non-zero, contains the 32 bit passkey
-									    needed to write enable the filesystem 
-									    with ACTION_WRITE_PROTECT */
-    /* proxy enforcer */
-    struct MinList                      ProxyLocks;	                /* List of locks */
-    struct MinList                      ProxyHandles[TASKHASHVALUE];	/* HashList of proxy filehandles */
-    struct DeviceNode                   *ProxyDosList;	                /* Dos entry created by the proxy filesystem */
-    struct DeviceList                   *ProxyDosListVolume;	        /* Dos entry created by the proxy filesystem */
-    ULONG                               LockCount;			/* Number of proxy locks in existence */
-
-};
-
-/* Security Configuration */
-
-struct secConfig
-{
-    ULONG                               Flags;				/* See definitions*/
-    ULONG                               LogFlags;			/* See definitions*/
-    UWORD                               PasswduidLevel;			/* Lowest uid for users who can */
-									/* change their passwords */
-    UWORD                               PasswdgidLevel;			/* Lowest gid for users who can */
-									/* change their passwords */
-};
-
-/****************************************************************************
-
-                -------------- Library Base  ------------------
-
- ****************************************************************************/
-
-
-struct secBase 
-{
-    struct Library                      LibNode;
-    UBYTE                               Flags;
-    UBYTE                               Pad;
-    BPTR                                SegList;
-
-	    /* The Server's Process */
-
-    struct Process                      *Server;
-
-	    /* The Server's Packet MsgPort */
-
-    struct MsgPort                      *ServerPort;
-
-	    /* List of sessions */
-
-    struct MinList                      SessionsList;
-
-	    /* List of Tasks and their Owner(s) */
-
-    struct SignalSemaphore              TaskOwnerSem;
-    struct MinList                      TaskOwnerList[TASKHASHVALUE];
-
-	    /* List of memory chunks and address, size, owner.
-                It's using the tasksemaphore since one usually wants that one
-                too when dealing with this list. */
-
-/*	struct MinList                  MemOwnerList[MEMHASHVALUE];*/
-
-	    /* List of Segments and their Owner */
-
-    struct SignalSemaphore              SegOwnerSem;
-    struct MinList                      SegOwnerList;
-
-    /* Configuration */
-
-    struct secConfig                    Config;
-
-    /* Signals for Passwd File Notification and Consistency Check */
-
-    ULONG                               NotifySig;
-    ULONG                               ConsistencySig;
-
-    /* Security violation flag */
-
-    BOOL                                SecurityViolation;
-
-    /* Volumes */
-
-    struct SignalSemaphore              VolumesSem;
-    struct secVolume                    *Volumes;
-
-    /* Monitoring */
-
-    struct SignalSemaphore              MonitorSem;
-    struct MinList                      MonitorList;
-    struct MsgPort                      *MonitorPort;
-
-    /* Task Control */
-
-    struct MinList                      Frozen;
-    struct MinList                      Zombies;
-
-    /* LocaleInfo for logfile */
-
-    APTR                                LogInfo;
-
-    /* You must get this one if you intend to get more than one sem. */
-
-    struct SignalSemaphore              SuperSem;
-
-    /* Plugins */
-    
-    struct SignalSemaphore              PluginModuleSem;
-    struct MinList                      PluginModuleList;	/* List of loaded plugin modules */
-
-/** OBSOLETE DEFINITIONS (or they will be once we integrate into aros..) */
-	    /* Old AddTask()/RemTask() */
-
-//    AddTaskFunc		                OLDAddTask;
-//    RemTaskFunc		                OLDRemTask;
-
-	    /* Old AllocMem()/FreeMem() */
-	
-//    AllocMemFunc	                OLDAllocMem;
-//    FreeMemFunc		                OLDFreeMem;
-
-	    /* Old LoadSeg()/NewLoadSeg()/UnLoadSeg()/InternalLoadSeg()/
-                InternalUnLoadSeg()/CreateProc()/CreateNewProc()/RunCommand()/
-                SetProtection()	*/
-
-//    LoadSegFunc				OLDLoadSeg;
-//    NewLoadSegFunc			OLDNewLoadSeg;
-//    UnLoadSegFunc			OLDUnLoadSeg;
-//    InternalLoadSegFunc		        OLDInternalLoadSeg;
-//    InternalUnLoadSegFunc	        OLDInternalUnLoadSeg;
-//    CreateProcFunc			OLDCreateProc;
-//    CreateNewProcFunc			OLDCreateNewProc;
-//    RunCommandFunc			OLDRunCommand;
-//    SetProtectionFunc			OLDSetProtection;
-};
-
-#endif /* _SECURITY_H */
+#endif /* LIBRARIES_SECURITY_H */

@@ -3,15 +3,16 @@
 /*
 **      $Filename: clib/netlib_protos.h $
 **	$Release$
-**      $Revision: 30792 $
-**      $Date: 2009-03-07 23:40:04 +0100 (Sa, 07. MÃ¤r 2009) $
+**      $Revision$
+**      $Date$
 **
 **	Prototypes for netlib utility functions
 **
-**	Copyright © 1993 AmiTCP/IP Group, <AmiTCP-Group@hut.fi>
+**	Copyright (C) 1993 AmiTCP/IP Group, <AmiTCP-Group@hut.fi>
 **                  Helsinki University of Technology, Finland.
 **                  All rights reserved.
-**	Copyright © 2005 Pavel Fedin
+**	Copyright (C) 2005 Pavel Fedin
+**  Copyright (C) 2005-2026, The AROS Development Team.
 */
 
 #ifndef EXEC_TYPES_H
@@ -76,8 +77,10 @@ void  herror(const char *banner);
 /* init_inet_daemon.c */
 int init_inet_daemon(void);
 
+#ifndef HAVE_IOCTL
 /* ioctl.c */
 int ioctl(int fd, unsigned int request, char *argp);
+#endif
 
 /* iomode.c */
 int iomode(int fd, int mode);
@@ -133,13 +136,13 @@ char *strerror(int code);
 char * inet_ntoa(struct in_addr addr);
 #endif
 #ifndef inet_makeaddr
-struct in_addr inet_makeaddr(int net, int host);
+struct in_addr inet_makeaddr(in_addr_t net, in_addr_t host);
 #endif
 #ifndef inet_lnaof
-unsigned long inet_lnaof(struct in_addr addr);
+in_addr_t inet_lnaof(struct in_addr addr);
 #endif
 #ifndef inet_netof
-unsigned long inet_netof(struct in_addr addr);
+in_addr_t inet_netof(struct in_addr addr);
 #endif
 #ifndef select
 int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exeptfds,
@@ -159,8 +162,10 @@ int   setlogmask(int pmask);
 /* timerinit.c */
 extern long __local_to_GMT;
 
+#ifndef HAVE_USLEEP
 /* usleep.c */
 void usleep(unsigned int usecs);
+#endif
 
 /* utime.c */
 #ifndef UTIME_H

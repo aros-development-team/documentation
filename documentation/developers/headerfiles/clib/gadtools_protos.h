@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/gadtools/gadtools.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -29,6 +29,8 @@ __END_DECLS
 
 __BEGIN_DECLS
 
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP4(struct Gadget *, CreateGadgetA,
          AROS_LPA(ULONG, kind, D0),
          AROS_LPA(struct Gadget *, previous, A0),
@@ -36,10 +38,18 @@ AROS_LP4(struct Gadget *, CreateGadgetA,
          AROS_LPA(struct TagItem *, taglist, A2),
          LIBBASETYPEPTR, GadToolsBase, 5, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(void, FreeGadgets,
          AROS_LPA(struct Gadget *, glist, A0),
          LIBBASETYPEPTR, GadToolsBase, 6, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP4(void, GT_SetGadgetAttrsA,
          AROS_LPA(struct Gadget *, gad, A0),
          AROS_LPA(struct Window *, win, A1),
@@ -47,61 +57,113 @@ AROS_LP4(void, GT_SetGadgetAttrsA,
          AROS_LPA(struct TagItem *, tagList, A3),
          LIBBASETYPEPTR, GadToolsBase, 7, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP2(struct Menu *, CreateMenusA,
          AROS_LPA(struct NewMenu *, newmenu, A0),
          AROS_LPA(struct TagItem *, tagList, A1),
          LIBBASETYPEPTR, GadToolsBase, 8, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(void, FreeMenus,
          AROS_LPA(struct Menu *, menu, A0),
          LIBBASETYPEPTR, GadToolsBase, 9, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP3(BOOL, LayoutMenuItemsA,
          AROS_LPA(struct MenuItem *, menuitem, A0),
          AROS_LPA(APTR, vi, A1),
          AROS_LPA(struct TagItem *, tagList, A2),
          LIBBASETYPEPTR, GadToolsBase, 10, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP3(BOOL, LayoutMenusA,
          AROS_LPA(struct Menu *, menu, A0),
          AROS_LPA(APTR, vi, A1),
          AROS_LPA(struct TagItem *, tagList, A2),
          LIBBASETYPEPTR, GadToolsBase, 11, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(struct IntuiMessage *, GT_GetIMsg,
          AROS_LPA(struct MsgPort *, intuiport, A0),
          LIBBASETYPEPTR, GadToolsBase, 12, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(void, GT_ReplyIMsg,
          AROS_LPA(struct IntuiMessage *, imsg, A1),
          LIBBASETYPEPTR, GadToolsBase, 13, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP2(void, GT_RefreshWindow,
          AROS_LPA(struct Window *, win, A0),
          AROS_LPA(struct Requester *, req, A1),
          LIBBASETYPEPTR, GadToolsBase, 14, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(void, GT_BeginRefresh,
          AROS_LPA(struct Window *, win, A0),
          LIBBASETYPEPTR, GadToolsBase, 15, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP2(void, GT_EndRefresh,
          AROS_LPA(struct Window *, win, A0),
          AROS_LPA(BOOL, complete, D0),
          LIBBASETYPEPTR, GadToolsBase, 16, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(struct IntuiMessage *, GT_FilterIMsg,
          AROS_LPA(struct IntuiMessage *, imsg, A1),
          LIBBASETYPEPTR, GadToolsBase, 17, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(struct IntuiMessage *, GT_PostFilterIMsg,
          AROS_LPA(struct IntuiMessage *, modimsg, A1),
          LIBBASETYPEPTR, GadToolsBase, 18, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(struct Gadget *, CreateContext,
          AROS_LPA(struct Gadget **, glistpointer, A0),
          LIBBASETYPEPTR, GadToolsBase, 19, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP6(void, DrawBevelBoxA,
          AROS_LPA(struct RastPort *, rport, A0),
          AROS_LPA(WORD, left, D0),
@@ -111,15 +173,27 @@ AROS_LP6(void, DrawBevelBoxA,
          AROS_LPA(struct TagItem *, taglist, A1),
          LIBBASETYPEPTR, GadToolsBase, 20, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP2(APTR, GetVisualInfoA,
          AROS_LPA(struct Screen *, screen, A0),
          AROS_LPA(struct TagItem *, tagList, A1),
          LIBBASETYPEPTR, GadToolsBase, 21, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__)
 AROS_LP1(void, FreeVisualInfo,
          AROS_LPA(APTR, vi, A0),
          LIBBASETYPEPTR, GadToolsBase, 22, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (36 <= __GADTOOLS_LIBAPI__) */
+
+#if !defined(__GADTOOLS_LIBAPI__) || (39 <= __GADTOOLS_LIBAPI__)
 AROS_LP4(LONG, GT_GetGadgetAttrsA,
          AROS_LPA(struct Gadget *, gad, A0),
          AROS_LPA(struct Window *, win, A1),
@@ -127,6 +201,8 @@ AROS_LP4(LONG, GT_GetGadgetAttrsA,
          AROS_LPA(struct TagItem *, taglist, A3),
          LIBBASETYPEPTR, GadToolsBase, 29, GadTools
 );
+
+#endif /* !defined(__GADTOOLS_LIBAPI__) || (39 <= __GADTOOLS_LIBAPI__) */
 
 __END_DECLS
 

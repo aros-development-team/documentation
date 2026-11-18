@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2004, The AROS Development Team. All rights reserved.
-    $Id: disk.h 30792 2009-03-07 22:40:04Z neil $
+    Copyright (C) 1995-2004, The AROS Development Team. All rights reserved.
 */
 
 #ifndef PROTO_DISK_H

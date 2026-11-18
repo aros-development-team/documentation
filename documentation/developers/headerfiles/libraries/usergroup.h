@@ -3,11 +3,12 @@
 /*
  * Definitions of AmiTCP/IP usergroup.library for 32 bit C compilers
  *
- * Copyright © 1994-2002 AmiTCP/IP Group & The MorphOS Team
+ * Copyright © 2025 The AROS Dev Team.
+ * Copyright © 1994-2002 AmiTCP/IP Group
  * Network Solutions Development, Inc.
  * All rights reserved.
  *
- * $Id: usergroup.h 30792 2009-03-07 22:40:04Z neil $
+ * $Id$
  */
 
 #ifndef EXEC_TYPES_H
@@ -20,12 +21,13 @@
 #ifndef _GRP_H_
 #include <grp.h>
 #endif
+#if (0)
 #ifndef _UTMP_H_
 #include <utmp.h>
 #endif
+#endif
 
-
-#define USERGROUPNAME "AmiTCP:libs/usergroup.library"
+#define USERGROUPNAME "LIBS:usergroup.library"
 
 /* Extended password encryption begins with underscore */
 #define _PASSWORD_EFMT1 '_'
@@ -74,6 +76,34 @@ struct UserGroupCredentials {
    (size == 2) ? UGT_ERRNOWPTR :\
    (size == 1) ? UGT_ERRNOBPTR : 1L)
 #define UGT_OWNER     0x80000011
+
+/*
+ * ug_UserAdminA(): add, change or remove an account or a group, or set a
+ * password. With security.library the change is made by it (root only);
+ * without, in the netinfo.device databases (AmiTCP:db/passwd, group).
+ * For the group operations UGA_Name is the group, UGA_RealName its
+ * description (security.library only).
+ */
+#define UGA_Operation 0x80000100    /* (ULONG) UGOP_#?, required                   */
+#define UGA_Name      0x80000101    /* (char *) the account, required              */
+#define UGA_NewName   0x80000102    /* (char *) UGOP_MODIFY: rename                */
+#define UGA_UID       0x80000103    /* (uid_t)                                     */
+#define UGA_GID       0x80000104    /* (gid_t) primary group, must exist           */
+#define UGA_RealName  0x80000105    /* (char *) full name (gecos)                  */
+#define UGA_HomeDir   0x80000106    /* (char *)                                    */
+#define UGA_Shell     0x80000107    /* (char *)                                    */
+#define UGA_Password  0x80000108    /* (char *) clear text, "" = none              */
+#define UGA_Lock      0x80000109    /* (BOOL) UGOP_MODIFY: lock / unlock           */
+#define UGA_Members   0x8000010A    /* (char **) NULL-terminated user names: the   */
+                                    /* group's members; replaces the list          */
+
+#define UGOP_ADD      1
+#define UGOP_MODIFY   2
+#define UGOP_DELETE   3
+#define UGOP_PASSWORD 4
+#define UGOP_GROUPADD    5
+#define UGOP_GROUPMODIFY 6
+#define UGOP_GROUPDELETE 7
 #define UGT_INTRMASK  0x80000010
 
 

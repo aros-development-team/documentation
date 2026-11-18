@@ -1,47 +1,24 @@
-#ifndef _SYS_IOCTL_H
-#define _SYS_IOCTL_H
-
+#ifndef	SYS_IOCTL_H
+#define	SYS_IOCTL_H \
+       "$Id: ioctl.h,v 4.2 1996/01/27 21:14:12 jraja Exp $"
 /*
-    Copyright � 2005, The AROS Development Team. All rights reserved.
-    $Id: ioctl.h 30792 2009-03-07 22:40:04Z neil $
-*/
-
-/*-
- * Copyright (c) 1982, 1986, 1990 The Regents of the University of California.
- * All rights reserved.
+ *	SocketIoctl codes
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgement:
- *	This product includes software developed by the University of
- *	California, Berkeley and its contributors.
- * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
- * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- *
- *	@(#)ioctl.h	7.19 (Berkeley) 6/26/91
+ *      Copyright (C) 2005-2026, The AROS Development Team.
+ *      Copyright (C) 1994 AmiTCP/IP Group,
+ *                       Network Solutions Development, Inc.
+ *                       All rights reserved.
  */
 
 #include <sys/types.h>
+
+struct winsize
+{
+    unsigned short int ws_row;
+    unsigned short int ws_col;
+    unsigned short int ws_xpixel;
+    unsigned short int ws_ypixel;
+};
 
 __BEGIN_DECLS
 int ioctl(int fd, int request, ...);
@@ -74,6 +51,12 @@ __END_DECLS
 #define	_IOWR(g,n,t)	_IOC(IOC_INOUT,	(g), (n), sizeof(t))
 
 /* 
+ * Console I/O controls
+ */
+#define TIOCSWINSZ  _IOW('t', 103, struct winsize)  /* set window size */
+#define TIOCGWINSZ  _IOR('t', 104, struct winsize)  /* get window size */
+
+/* 
  * File I/O controls
  */
 #define	FIOCLEX		_IO('f', 1)	          /* set close on exec on fd */
@@ -102,6 +85,7 @@ __END_DECLS
 #define	SIOCDELRT	_IOW('r', 11, struct ortentry)       /* delete route */
 
 #define	SIOCSIFADDR	_IOW ('i',12, struct ifreq)     /* set ifnet address */
+#define SIOCGIFNAME     _IOWR('i',31, struct ifreq)     /* get IF name by index */
 #define SIOCGIFINDEX    _IOWR('i',32, struct ifreq)     /* get IF index */
 #define	SIOCGIFADDR	_IOWR('i',33, struct ifreq)     /* get ifnet address */
 #define	SIOCSIFDSTADDR	_IOW ('i',14, struct ifreq)       /* set p-p address */
@@ -134,6 +118,24 @@ __END_DECLS
 #define SIOCGIFASYNCMAP _IOWR('i', 124, struct ifreq)   /* get ppp asyncmap */
 #define SIOCSIFASYNCMAP  _IOW('i', 125, struct ifreq)   /* set ppp asyncmap */
 
+#define SIOCGIFHWADDR	_IOWR('i', 57, struct ifreq)    /* get IF hw address */
+
+#define SIOCGIFDHCP	_IOWR('i', 58, struct ifreq)    /* get IF DHCP-requested flags
+                                                           (ifr_metric: bit0=DHCPv4,
+                                                           bit1=DHCPv6) */
+
+/*
+ * IPv6 interface address ioctls.
+ * Requires <netinet/in_var.h> for struct in6_ifreq / in6_aliasreq / in6_ifconf.
+ */
+#define SIOCAIFADDR_IN6	 _IOW ('i', 26, struct in6_aliasreq) /* add/chg IPv6 alias */
+#define SIOCDIFADDR_IN6  _IOW ('i', 25, struct in6_ifreq)   /* delete IPv6 addr */
+#define SIOCGIFADDR_IN6	 _IOWR('i', 33, struct in6_ifreq)   /* get IPv6 address */
+#define SIOCGIFDSTADDR_IN6 _IOWR('i', 34, struct in6_ifreq) /* get IPv6 p-p addr */
+#define SIOCGIFNETMASK_IN6 _IOWR('i', 37, struct in6_ifreq) /* get IPv6 netmask */
+#define SIOCGLIFADDR     _IOWR('i', 56, struct in6_ifconf)  /* get all IPv6 addrs */
+#define SIOCGIFAFLAG_IN6 _IOWR('i', 73, struct in6_ifreq)   /* an address's IN6_IFF_* flags (KAME) */
+
 /*
  * Private extensions to the BSD44 ioctl interface) 
  */
@@ -147,4 +149,43 @@ __END_DECLS
 #define SIOCGSERREQ	_IOWR('i',70, struct ifreq)   /* get ser IO req */
 #define SIOCFSERREQ	_IOW ('i',71, struct ifreq)    /* return IO req */
 
-#endif /* _SYS_IOCTL_H */
+/*
+ * IPFilter (ipf) ioctls — FreeBSD-compatible definitions.
+ * On BSD these operate on /dev/ipl; on AROS they are dispatched
+ * via IoctlSocket() on a raw socket.
+ */
+struct frentry;
+struct friostat;
+
+#define SIOCADAFR	_IOW ('r', 60, struct frentry *)  /* add rule (append) */
+#define SIOCRMAFR	_IOW ('r', 61, struct frentry *)  /* remove rule */
+#define SIOCADIFR	_IOW ('r', 62, struct frentry *)  /* add to inactive */
+#define SIOCRMIFR	_IOW ('r', 63, struct frentry *)  /* rm from inactive */
+#define SIOCIPFFL	_IOWR('r', 64, int)               /* flush rules */
+#define SIOCIPFFB	_IOR ('r', 65, int)               /* flush bad pkts */
+#define SIOCGETFS	_IOWR('r', 66, struct friostat *) /* get filt stats */
+#define SIOCFRZST	_IOWR('r', 67, struct friostat *) /* get+zero stats */
+#define SIOCFRENB	_IOW ('r', 68, u_int)             /* enable/disable */
+#define SIOCSETFF	_IOW ('r', 69, u_int)             /* set log flags */
+#define SIOCGETFF	_IOR ('r', 70, u_int)             /* get log flags */
+#define SIOCINAFR	_IOW ('r', 71, struct frentry *)  /* insert rule */
+#define SIOCINIFR	_IOW ('r', 72, struct frentry *)  /* insert inactive */
+#define SIOCSWAPA	_IOR ('r', 73, u_int)             /* swap active set */
+#define SIOCFRSYN	_IOW ('r', 74, u_int)             /* sync interfaces */
+#define SIOCZRLST	_IOWR('r', 75, struct frentry *)  /* zero rule stats */
+#define SIOCADDFR	SIOCADAFR  /* alias */
+#define SIOCDELFR	SIOCRMAFR  /* alias */
+
+/* IPFilter NAT ioctls — FreeBSD-compatible. */
+struct ipnat;
+struct nat;
+
+#define SIOCADNAT	_IOW ('r', 80, struct ipnat *)    /* add NAT rule */
+#define SIOCRMNAT	_IOW ('r', 81, struct ipnat *)    /* remove NAT rule */
+#define SIOCGNATS	_IOWR('r', 82, struct natstat *)  /* get NAT stats */
+#define SIOCGNATL	_IOWR('r', 83, struct natlookup *)/* NAT lookup */
+#define SIOCFLNAT	_IOWR('r', 84, int)               /* flush NAT rules */
+#define SIOCCNATL	_IOWR('r', 85, int)               /* flush NAT entries*/
+#define SIOCPURGENAT	_IOWR('r', 86, int)               /* purge NAT */
+
+#endif /* !SYS_IOCTL_H */

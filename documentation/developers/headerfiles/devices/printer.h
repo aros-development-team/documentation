@@ -2,7 +2,7 @@
 #define DEVICES_PRINTER_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2026, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: printer device commands and structures
@@ -39,6 +39,11 @@
 #define PRD_EDITPREFS	    	(CMD_NONSTD + 10)
 #define PRD_SETERRHOOK	    	(CMD_NONSTD + 11)
 #define PRD_DUMPRPORTTAGS   	(CMD_NONSTD + 12)
+#define PRD_PRIVATECMD		(CMD_NONSTD + 13)	/* AmigaOS: private */
+#define PRD_LASTSAVEDPREFS	(CMD_NONSTD + 14)	/* AmigaOS: private */
+#define PRD_SETJOBINFO		(CMD_NONSTD + 15)	/* AROS: io_Data = PJIA_ tags */
+#define PRD_GETDESTINATION	(CMD_NONSTD + 16)	/* AROS: io_Data = PDA_ tags */
+#define PRD_SETDESTINATION	(CMD_NONSTD + 17)	/* AROS: io_Data = PDA_ tags */
 
 /* printer command definitions */
 
@@ -159,7 +164,7 @@ struct IODRPReq
     BYTE	     io_Error;
     struct RastPort *io_RastPort;
     struct ColorMap *io_ColorMap;
-    ULONG	     io_Modes;
+    IPTR	     io_Modes;      /* Holds a pointer for TurboPrint extensions */
     UWORD	     io_SrcX;
     UWORD	     io_SrcY;
     UWORD	     io_SrcWidth;
@@ -181,7 +186,7 @@ struct IODRPTagsReq
     BYTE	     io_Error;
     struct RastPort *io_RastPort;
     struct ColorMap *io_ColorMap;
-    ULONG	     io_Modes;
+    IPTR	     io_Modes;      /* as in IODRPReq: printer.device reads both alike */
     UWORD	     io_SrcX;
     UWORD	     io_SrcY;
     UWORD   	     io_SrcWidth;
@@ -192,35 +197,35 @@ struct IODRPTagsReq
     struct TagItem  *io_TagList;
 };
 
-#define SPECIAL_MILCOLS	    	0x0001
-#define SPECIAL_MILROWS	    	0x0002
-#define SPECIAL_FULLCOLS    	0x0004
-#define SPECIAL_FULLROWS    	0x0008
-#define SPECIAL_FRACCOLS    	0x0010
-#define SPECIAL_FRACROWS    	0x0020
-#define SPECIAL_CENTER	    	0x0040
-#define SPECIAL_ASPECT	    	0x0080
-#define SPECIAL_DENSITY1    	0x0100
+#define SPECIAL_MILCOLS	    	0x0001          /* io_DestCols are in 1/1000" */
+#define SPECIAL_MILROWS	    	0x0002          /* io_DestRows are in 1/1000" */
+#define SPECIAL_FULLCOLS    	0x0004          /* ignore io_DestCols */
+#define SPECIAL_FULLROWS    	0x0008          /* ignore io_DestRows */
+#define SPECIAL_FRACCOLS    	0x0010          /* io_DestCols is a 32-bit fraction of FULLCOLS */
+#define SPECIAL_FRACROWS    	0x0020          /* io_DestRows is a 32-bit fraction of FULLROWS */
+#define SPECIAL_CENTER	    	0x0040          /* Center image on paper */
+#define SPECIAL_ASPECT	    	0x0080          /* Correct aspect ratio */
+#define SPECIAL_DENSITY1    	0x0100          /* Lowest DPI */
 #define SPECIAL_DENSITY2    	0x0200
 #define SPECIAL_DENSITY3    	0x0300
 #define SPECIAL_DENSITY4    	0x0400
 #define SPECIAL_DENSITY5    	0x0500
 #define SPECIAL_DENSITY6    	0x0600
-#define SPECIAL_DENSITY7    	0x0700
-#define SPECIAL_NOFORMFEED  	0x0800
-#define SPECIAL_TRUSTME	    	0x1000
-#define SPECIAL_NOPRINT	    	0x2000
+#define SPECIAL_DENSITY7    	0x0700          /* Highest DPI */
+#define SPECIAL_NOFORMFEED  	0x0800          /* Don't eject paper after raster has rendered */
+#define SPECIAL_TRUSTME	    	0x1000          /* Don't clear after raster has rendered */
+#define SPECIAL_NOPRINT	    	0x2000          /* Don't actually print the raster */
 
-#define PDERR_NOERR	    	0
-#define PDERR_CANCEL		1
-#define PDERR_NOTGRAPHICS	2
-#define PDERR_INVERTHAM		3
-#define PDERR_BADDIMENSION	4
-#define PDERR_DIMENSIONOVFLOW	5
-#define PDERR_INTERNALMEMORY	6
-#define PDERR_BUFFERMEMORY	7
-#define PDERR_TOOKCONTROL	8
-#define PDERR_BADPREFERENCES	9
+#define PDERR_NOERR	    	0               /* No error */
+#define PDERR_CANCEL		1               /* User cancelled the print */
+#define PDERR_NOTGRAPHICS	2               /* Printer can't print graphics */
+#define PDERR_INVERTHAM		3               /* obsolete */
+#define PDERR_BADDIMENSION	4               /* Bad printing dimensions */
+#define PDERR_DIMENSIONOVFLOW	5               /* obsolete */
+#define PDERR_INTERNALMEMORY	6               /* No memory for internal variables */
+#define PDERR_BUFFERMEMORY	7               /* No memory for the output buffer */
+#define PDERR_TOOKCONTROL	8               /* (internal) Driver rendered everything in Render Phase 0 */
+#define PDERR_BADPREFERENCES	9               /* Bad preferences */
 
 #define PDERR_LASTSTANDARD	31
 #define PDERR_FIRSTCUSTOM	32
@@ -254,6 +259,40 @@ struct DRPSourceMsg
     LONG     height;
     ULONG   *buf;
 };
+
+/* Tags for PRD_SETJOBINFO (AROS): what is being printed, for print queues.
+   The job is kept per printer.device unit, not per opener. printer.device
+   passes the command to an output device only if its NSCMD_DEVICEQUERY
+   reply lists it; the tags are on the sender's stack, so the receiver must
+   copy the strings. */
+
+#define PJIA_Dummy		(TAG_USER + 0x80000)
+#define PJIA_Application	(PJIA_Dummy + 1)	/* STRPTR */
+#define PJIA_Document		(PJIA_Dummy + 2)	/* STRPTR */
+
+/* PRD_GETDESTINATION, PRD_SETDESTINATION (AROS): an output device's own settings
+   for a unit - where a spooler queue sends its jobs, which network printer a unit
+   prints to - so that Printer prefs and a driver's prefs editor show and change
+   the same ones. A device that has them lists both commands in its
+   NSCMD_DEVICEQUERY reply; any other output device is just a name and a unit.
+   GET: for each tag the unit has, ti_Data points to where its value goes (a
+   buffer of PDA_VALUESIZE bytes for a string, a LONG for a number); PDA_Tags
+   tells which those are. SET: the new values; tags the unit does not have are
+   ignored. Open the unit with PRDOF_SETTINGS to use them without starting a job. */
+
+#define PRDOF_SETTINGS		(1UL << 31)	/* OpenDevice() flag: settings only */
+
+#define PDA_Dummy		(TAG_USER + 0x90000)
+#define PDA_Tags		(PDA_Dummy + 1)	/* GET: const Tag **, gets the unit's PDA_ tags, TAG_DONE ended */
+#define PDA_Device		(PDA_Dummy + 2)	/* STRPTR: "name.device" the unit sends its output to */
+#define PDA_Unit		(PDA_Dummy + 3)	/* LONG: that device's unit */
+#define PDA_URI			(PDA_Dummy + 4)	/* STRPTR: the network printer, ipp:// or socket:// */
+#define PDA_Name		(PDA_Dummy + 5)	/* STRPTR: the printer's name, for people */
+#define PDA_UUID		(PDA_Dummy + 6)	/* STRPTR: the printer's own ID, to find it again at a new address */
+#define PDA_Format		(PDA_Dummy + 7)	/* STRPTR: document format sent (MIME type); empty: the printer tells */
+#define PDA_Save		(PDA_Dummy + 8)	/* SET: BOOL, keep the settings over a reboot too */
+
+#define PDA_VALUESIZE		256
 
 /* Tags for PRD_EDITPREFS */
 

@@ -1,7 +1,8 @@
 /*
- * Copyright (c) 1982, 1986, 1990, 1993
+ * Copyright (C) 1982, 1986, 1990, 1993
  *	The Regents of the University of California.  All rights reserved.
- * Copytight (c) 2006 Pavel Fedin
+ * Copyright (C) 2006 Pavel Fedin
+ * Copyright (C) 2006-2026 The AROS Development Team.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -32,11 +33,13 @@
  * SUCH DAMAGE.
  *
  *	@(#)in_pcb.h	8.1 (Berkeley) 6/10/93
- * $Id: in_pcb.h 30792 2009-03-07 22:40:04Z neil $
+ * $Id$
  */
 
 #ifndef _NETINET_IN_PCB_H_
 #define _NETINET_IN_PCB_H_
+
+struct ip6_moptions;  /* forward declaration for IPv6 multicast options */
 
 /*
  * Common structure pcb for internet protocol implementation.
@@ -62,6 +65,21 @@ struct inpcb {
 	struct	ip inp_ip;		/* header prototype; should have more */
 	struct	mbuf *inp_options;	/* IP options */
 	struct	ip_moptions *inp_moptions; /* IP multicast options */
+	/* SO_BINDTODEVICE: datagrams leave by, and are accepted from, this
+	 * interface only (NULL = not bound).  Must stay ahead of the INET6
+	 * members: not every file that uses this structure is built with
+	 * INET6 defined, and those that are not must still agree on where
+	 * this field is. */
+	struct	ifnet *inp_boundif;
+#if INET6
+	struct	ip6_moptions *in6p_moptions; /* IPv6 multicast options */
+	int	in6p_hops;		/* IPv6 unicast hop limit (-1=default) */
+	int	in6p_v6only;		/* IPv6-only socket flag */
+	int	in6p_tclass;		/* IPv6 traffic class */
+	int	in6p_flags;		/* IPv6 per-socket flags (IN6P_*) */
+	struct	in6_addr inp_laddr6;	/* local IPv6 address */
+	struct	in6_addr inp_faddr6;	/* foreign IPv6 address */
+#endif
 };
 
 struct inpcbinfo {
@@ -75,8 +93,12 @@ struct inpcbinfo {
 #define	INP_RECVOPTS		0x01	/* receive incoming IP options */
 #define	INP_RECVRETOPTS		0x02	/* receive IP options for reply */
 #define	INP_RECVDSTADDR		0x04	/* receive IP dst address */
-#define	INP_CONTROLOPTS		(INP_RECVOPTS|INP_RECVRETOPTS|INP_RECVDSTADDR)
+#define	INP_CONTROLOPTS		(INP_RECVOPTS|INP_RECVRETOPTS|INP_RECVDSTADDR|INP_RECVTOS|INP_RECVTTL)
 #define	INP_HDRINCL		0x08	/* user supplies entire IP header */
+#define	INP_DONTFRAG		0x10	/* IP_DONTFRAG: DF on datagrams */
+#define	INP_RECVTOS		0x20	/* receive the TOS byte */
+#define	INP_BOUNDGONE		0x40	/* the interface it was bound to went away */
+#define	INP_RECVTTL		0x80	/* receive the TTL */
 
 #ifdef sotorawcb		/* defined in net/raw_cb.h */
 /*
@@ -107,6 +129,7 @@ int	 in_pcbbind __P((struct inpcb *, struct mbuf *));
 int	 in_pcbconnect __P((struct inpcb *, struct mbuf *));
 void	 in_pcbdetach __P((struct inpcb *));
 void	 in_pcbdisconnect __P((struct inpcb *));
+void	 in_pcbifgone __P((const struct inpcbhead *, const struct ifnet *));
 void	 in_pcbinshash __P((struct inpcb *));
 int	 in_pcbladdr __P((struct inpcb *, struct mbuf *,
 	    struct sockaddr_in **));

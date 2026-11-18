@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/rom/aros/aros.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -12,10 +12,14 @@
 
 __BEGIN_DECLS
 
+
+#if !defined(__AROS_LIBAPI__) || (41 <= __AROS_LIBAPI__)
 AROS_LP1(ULONG, ArosInquireA,
          AROS_LPA(struct TagItem *, taglist, A0),
          LIBBASETYPEPTR, ArosBase, 5, Aros
 );
+
+#endif /* !defined(__AROS_LIBAPI__) || (41 <= __AROS_LIBAPI__) */
 
 __END_DECLS
 

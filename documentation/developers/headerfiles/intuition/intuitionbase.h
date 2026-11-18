@@ -34,8 +34,9 @@ struct IntuitionBase
     struct Screen * FirstScreen;
 
     ULONG Flags;
-    WORD  MouseX;
+
     WORD  MouseY;
+    WORD  MouseX;
 
     ULONG Seconds;
     ULONG Micros;

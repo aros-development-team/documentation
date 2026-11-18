@@ -2,7 +2,7 @@
 #define DATATYPES_PICTURECLASS_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2018, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Includes for pictureclass
@@ -24,6 +24,7 @@
 
 #define PICTUREDTCLASS          "picture.datatype"
 
+
 struct BitMapHeader
 {
     UWORD        bmh_Width;
@@ -39,7 +40,7 @@ struct BitMapHeader
     UBYTE        bmh_YAspect;
     WORD         bmh_PageWidth;
     WORD         bmh_PageHeight;
-};
+} __packed;
 
 struct ColorRegister
 {
@@ -73,7 +74,7 @@ struct ColorRegister
 
 /* Interface modes */
 #define PMODE_V42 (0)	/* Mode used for backward compatibility */
-#define PMODE_V43 (1)	/* Use the new features*/
+#define PMODE_V43 (1)	/* Use the new features */
 
 
 #define mskNone                 0

@@ -2,7 +2,7 @@
 #define OOP_OOP_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2011, The AROS Development Team. All rights reserved.
     $Id$
 */
 
@@ -54,7 +54,7 @@ typedef OOP_MethodID * OOP_Msg;
 
 struct OOP_ABDescr
 {
-    STRPTR  	    interfaceID;
+    CONST_STRPTR     interfaceID;
     OOP_AttrBase    *attrBase;
 };
 
@@ -64,7 +64,7 @@ struct OOP_IClass
 {
     /* Array of pointers to methodtables for this class */
     struct Node 	ClassNode;    
-    struct Library  	*OOPBasePtr;
+    struct IntOOPBase 	*OOPBasePtr;
     ULONG   	    	InstOffset;
     APTR    	    	UserData;
     IPTR    	    	(*cl_DoMethod)(OOP_Object *, OOP_Msg);
@@ -102,16 +102,17 @@ struct _OOP_Object
 #define OOP_DoSuperMethod(cl, o, msg) ((cl)->cl_DoSuperMethod(cl, o, msg))
 #define OOP_CoerceMethod(cl, o, msg) ((cl)->cl_CoerceMethod(cl, o, msg))
 
-#define OOP_METHODDEF(x) (IPTR (*)())x
+#define OOP_GET(o, attr) ({IPTR _val; OOP_GetAttr(o, attr, &_val); _val;})
 
+#define OOP_METHODDEF(x) (IPTR (*)())x
 
 #define IS_IF_ATTR(attr, idx, attrbase, numifattrs) ( ((idx) = (attr) - (attrbase)) < (numifattrs) )
 
 struct OOP_InterfaceDescr
 {
-    struct OOP_MethodDescr  *MethodTable;
-    STRPTR  	    	    InterfaceID;
-    ULONG   	    	    NumMethods; /* Number of methods in the methodtable */
+    const struct OOP_MethodDescr *MethodTable;
+    CONST_STRPTR InterfaceID;
+    ULONG  NumMethods; /* Number of methods in the methodtable */
 };
 
 typedef IPTR (*OOP_MethodFunc)(OOP_Class *cl, OOP_Object *o, OOP_Msg msg);
@@ -119,7 +120,7 @@ typedef IPTR (*OOP_MethodFunc)(OOP_Class *cl, OOP_Object *o, OOP_Msg msg);
 struct OOP_MethodDescr
 {
     OOP_MethodFunc MethodFunc;
-    ULONG   MethodIdx;
+    ULONG MethodIdx;
 };
 
 
@@ -148,6 +149,10 @@ struct pRoot_New
 {
     OOP_MethodID mID;
     struct TagItem *attrList;
+};
+
+struct pRoot_Dispose {
+    OOP_MethodID mID;
 };
 
 struct pRoot_Set

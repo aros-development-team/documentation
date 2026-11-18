@@ -2,7 +2,7 @@
 #define LIBRARIES_EXPANSIONBASE_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2014, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Publicly visible ExpansionBase data.
@@ -15,6 +15,14 @@
 
 #ifndef EXEC_LIBRARIES_H
 #include <exec/libraries.h>
+#endif
+
+#ifndef EXEC_LISTS_H
+#include <exec/lists.h>
+#endif
+
+#ifndef LIBRARIES_CONVIGVARS_H
+#include <libraries/configvars.h>
 #endif
 
 /*
@@ -46,10 +54,12 @@ struct ExpansionBase
 {
     struct Library      LibNode;
     UBYTE               Flags;          /* Flags, read only */
-    UBYTE               eb_Private1;
-    IPTR                eb_Private2[6];
-    struct List         eb_Private3;
-    struct List         MountList;      /* BootNode entries - public */
+    UBYTE               eb_Private01;
+    IPTR                eb_Private02;
+    IPTR                eb_Private03;
+    struct CurrentBinding eb_Private04;
+    struct List         BoardList;      /* BoardList - private */
+    struct List         MountList;      /* BootNode entries - public */
 };
 
 /*  The error codes from expansion boards */
@@ -75,15 +85,7 @@ struct ExpansionBase
 #define EBB_KICKBACK36  5       /* reserved by AmigaDOS */
 #define EBF_KICKBACK36  (1L<<5)
 
-/*  The following flag is set by dosboot to indicate expansion.library, that 
-    the dos boot process has been finished and that it will no longer do
-    anything with the MountList. All futher mount attempts shall go to
-    AddDosNode() instead of AddBootNode(). Notice that this uses the same
-    bit as EBB_KICKBACK36, which is considered obsolete. */
-#define EBB_BOOTFINISHED 5
-#define EBF_BOOTFINISHED (1L<<5)
-
-/*  If the following flag is set by a floppies boot code, then when DOS
+/*  If the following flag is set by a floppy's boot code, then when DOS
     awakes, it will not open its initial console window until the first
     output is written to that shell. Otherwise the old behaviour will
     apply.

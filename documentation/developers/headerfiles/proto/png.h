@@ -2,8 +2,8 @@
 #define PROTO_PNG_H
 
 /*
-    *** Automatically generated from '/home/mazze/projects/aros-src/workbench/classes/datatypes/png/png.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/png/png.conf'. Edits will be lost. ***
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <exec/types.h>
@@ -11,16 +11,15 @@
 
 #include <clib/png_protos.h>
 
-#if !defined(PNGBase) && !defined(__NOLIBBASE__) && !defined(__PNG_NOLIBBASE__)
- #ifdef __PNG_STDLIBBASE__
-  extern struct Library *PNGBase;
- #else
-  extern struct Library *PNGBase;
- #endif
-#endif
+struct Library *__aros_getbase_PngBase(void);
+ extern const IPTR __aros_rellib_offset_PngBase;
+ #define AROS_RELLIB_OFFSET_PNG __aros_rellib_offset_PngBase
+ #define AROS_RELLIB_BASE_PNG __aros_rellib_base_PngBase
 
-#if !defined(NOLIBDEFINES) && !defined(PNG_NOLIBDEFINES)
-#   include <defines/png.h>
+#if !defined(NOLIBINLINE) && !defined(PNG_NOLIBINLINE) && !defined(__PNG_RELLIBBASE__)
+# include <inline/png.h>
+#elif !defined(NOLIBDEFINES) && !defined(PNG_NOLIBDEFINES)
+# include <defines/png.h>
 #endif
 
 #endif /* PROTO_PNG_H */

@@ -5,7 +5,7 @@
 
  codesets.library - Amiga shared library for handling different codesets
  Copyright (C) 2001-2005 by Alfonso [alfie] Ranieri <alforan@tin.it>.
- Copyright (C) 2005-2007 by codesets.library Open Source Team
+ Copyright (C) 2005-2021 codesets.library Open Source Team
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -31,20 +31,20 @@ STRPTR *CodesetsSupportedA(struct TagItem *attrs);
 STRPTR *CodesetsSupported(Tag tag1 , ...);
 void CodesetsFreeA(APTR obj, struct TagItem *attrs);
 void CodesetsFree(APTR obj, Tag tag1, ...);
-struct codeset *CodesetsSetDefaultA(STRPTR name, struct TagItem *attrs);
-struct codeset *CodesetsSetDefault(STRPTR name, Tag tag1, ...);
-struct codeset *CodesetsFindA(STRPTR name, struct TagItem *attrs);
-struct codeset *CodesetsFind(STRPTR name, Tag tag1, ...);
+struct codeset *CodesetsSetDefaultA(CONST_STRPTR name, struct TagItem *attrs);
+struct codeset *CodesetsSetDefault(CONST_STRPTR name, Tag tag1, ...);
+struct codeset *CodesetsFindA(CONST_STRPTR name, struct TagItem *attrs);
+struct codeset *CodesetsFind(CONST_STRPTR name, Tag tag1, ...);
 struct codeset *CodesetsFindBestA(struct TagItem *attrs);
 struct codeset *CodesetsFindBest(Tag tag1, ...);
 ULONG CodesetsUTF8Len(const UTF8 *str);
-ULONG CodesetsStrLenA(STRPTR str, struct TagItem *attrs);
-ULONG CodesetsStrLen(STRPTR str, Tag tag1, ...);
+ULONG CodesetsStrLenA(CONST_STRPTR str, struct TagItem *attrs);
+ULONG CodesetsStrLen(CONST_STRPTR str, Tag tag1, ...);
 STRPTR CodesetsUTF8ToStrA(struct TagItem *attrs);
 STRPTR CodesetsUTF8ToStr(Tag tag1, ...);
 UTF8 *CodesetsUTF8CreateA(struct TagItem *attrs);
 UTF8 *CodesetsUTF8Create(Tag tag1, ...);
-BOOL CodesetsIsValidUTF8(STRPTR str);
+BOOL CodesetsIsValidUTF8(CONST_STRPTR str);
 void CodesetsFreeVecPooledA(APTR pool, APTR mem, struct TagItem *attrs);
 void CodesetsFreeVecPooled(APTR pool, APTR mem, Tag tag1, ...);
 STRPTR CodesetsConvertStrA(struct TagItem *attrs);

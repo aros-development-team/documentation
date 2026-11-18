@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/rom/battclock/battclock.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <exec/types.h>
@@ -11,16 +11,35 @@
 
 #include <clib/battclock_protos.h>
 
-#if !defined(BattClockBase) && !defined(__NOLIBBASE__) && !defined(__BATTCLOCK_NOLIBBASE__)
- #ifdef __BATTCLOCK_STDLIBBASE__
-  extern struct Library *BattClockBase;
- #else
-  extern struct Library *BattClockBase;
+#ifndef __BATTCLOCK_RELLIBBASE__
+ #if !defined(__NOLIBBASE__) && !defined(__BATTCLOCK_NOLIBBASE__)
+  #if !defined(BattClockBase)
+   extern struct Library *BattClockBase;
+  #endif
+  #ifndef __aros_getbase_BattClockBase
+   #define __aros_getbase_BattClockBase() (BattClockBase)
+  #endif
+ #endif /* defined(__NOLIBBASE__) || defined(__DUMMY_NOLIBBASE__) */
+#else /* __BATTCLOCK_RELLIBASE__ */
+ extern const IPTR __aros_rellib_offset_BattClockBase;
+ #define AROS_RELLIB_OFFSET_BATTCLOCK __aros_rellib_offset_BattClockBase
+ #define AROS_RELLIB_BASE_BATTCLOCK __aros_rellib_base_BattClockBase
+ #ifndef __aros_getbase_BattClockBase
+  #ifndef __aros_getoffsettable
+   char *__aros_getoffsettable(void);
+  #endif
+  #define __aros_getbase_BattClockBase() (*(struct Library **)(__aros_getoffsettable()+__aros_rellib_offset_BattClockBase))
  #endif
 #endif
 
-#if !defined(NOLIBDEFINES) && !defined(BATTCLOCK_NOLIBDEFINES)
-#   include <defines/battclock.h>
+#ifndef __aros_getbase_BattClockBase
+extern struct Library *__aros_getbase_BattClockBase(void);
+#endif
+
+#if !defined(NOLIBINLINE) && !defined(BATTCLOCK_NOLIBINLINE) && !defined(__BATTCLOCK_RELLIBBASE__)
+# include <inline/battclock.h>
+#elif !defined(NOLIBDEFINES) && !defined(BATTCLOCK_NOLIBDEFINES)
+# include <defines/battclock.h>
 #endif
 
 #endif /* PROTO_BATTCLOCK_H */

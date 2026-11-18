@@ -3,7 +3,7 @@
 
 /*
     Copyright © 1995-2004, The AROS Development Team. All rights reserved.
-    $Id: swappedtype.hpp 30792 2009-03-07 22:40:04Z neil $
+    $Id$
 
     Desc: c++ template classes used to manage generalized byteswapping
     Lang: english

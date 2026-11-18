@@ -2,7 +2,7 @@
 #define REXX_STORAGE_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2016, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: ARexx data structures
@@ -31,8 +31,8 @@ struct RexxMsg
 	struct MsgPort *rm_PassPort;
 	STRPTR		rm_CommAddr; /* The starting host environment */
 	STRPTR		rm_FileExt; /* The file extension for macro files */
-	struct FileHandle *rm_Stdin; /* Input filehandle to use */
-	struct FileHandle *rm_Stdout; /* Output filehandle to use */
+	BPTR            rm_Stdin; /* Input filehandle to use */
+	BPTR            rm_Stdout; /* Output filehandle to use */
 	LONG		rm_Unused1; /* Was rm_avail */
 };
 /* AROS comment: rm_Private1 and rm_Private2 are implementation specific.
@@ -46,6 +46,9 @@ struct RexxMsg
 #define ARG1(msg) ((UBYTE *)msg->rm_Args[1])
 #define ARG2(msg) ((UBYTE *)msg->rm_Args[2])
 #define RXARG(msg,n) ((UBYTE *)msg->rm_Args[n])
+
+/* Maximum arguments */
+#define MAXRMARG  15
 
 /* The command for in rm_Action */
 #define RXCOMM   0x01000000
@@ -92,8 +95,8 @@ struct RexxArg
 {
 	LONG  ra_Size;
 	UWORD ra_Length;
-	UBYTE ra_Depricated1; /* Was ra_Flags but not used anymore */
-	UBYTE ra_Depricated2; /* Was ra_Hash but not used anymore */
+	UBYTE ra_Deprecated1; /* Was ra_Flags but not used anymore */
+	UBYTE ra_Deprecated2; /* Was ra_Hash but not used anymore */
 	BYTE  ra_Buff[8];
 };
 
@@ -103,8 +106,8 @@ struct RexxRsrc
 	WORD        rr_Func; /* Library offset of clean up function */
 	APTR        rr_Base; /* Library base of clean up function */
 	LONG        rr_Size; /* Total size of structure */
-	LONG        rr_Arg1; /* Meaning depends on type of Resource */
-	LONG        rr_Arg2; /* Meaning depends on type of Resource */
+	SIPTR       rr_Arg1; /* Meaning depends on type of Resource */
+	SIPTR       rr_Arg2; /* Meaning depends on type of Resource */
 };
 
 /* Types for the resource nodes */

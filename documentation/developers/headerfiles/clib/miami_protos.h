@@ -2,7 +2,7 @@
 #define CLIB_MIAMI_PROTOS_H
 
 /*
-    Copyright © 1995-2007, The AROS Development Team. All rights reserved.
+    Copyright (C) 2005-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -112,18 +112,18 @@ AROS_LP4(STRPTR, inet_ntop,
          LIBBASETYPEPTR, MiamiBase, 38, Miami
 );
 AROS_LP2(int, inet_aton,
-         AROS_LPA(char *, strptr, A0),
+         AROS_LPA(const char *, strptr, A0),
          AROS_LPA(void *, addrptr, A2),
          LIBBASETYPEPTR, MiamiBase, 39, Miami
 );
 AROS_LP3(int, inet_pton,
          AROS_LPA(LONG, family, D0),
-         AROS_LPA(char *, strptr, A0),
+         AROS_LPA(const char *, strptr, A0),
          AROS_LPA(void *, addrptr, A1),
          LIBBASETYPEPTR, MiamiBase, 40, Miami
 );
 AROS_LP2(struct hostent *, gethostbyname2,
-         AROS_LPA(char *, name, A0),
+         AROS_LPA(const char *, name, A0),
          AROS_LPA(LONG, family, D0),
          LIBBASETYPEPTR, MiamiBase, 41, Miami
 );
@@ -136,14 +136,14 @@ AROS_LP1(void, freeaddrinfo,
          LIBBASETYPEPTR, MiamiBase, 43, Miami
 );
 AROS_LP4(LONG, getaddrinfo,
-         AROS_LPA(char *, hostname, A0),
-         AROS_LPA(char *, servicename, A1),
-         AROS_LPA(struct addrinfo *, hintsp, A2),
+         AROS_LPA(const char *, hostname, A0),
+         AROS_LPA(const char *, servicename, A1),
+         AROS_LPA(const struct addrinfo *, hintsp, A2),
          AROS_LPA(struct addrinfo **, result, A3),
          LIBBASETYPEPTR, MiamiBase, 44, Miami
 );
 AROS_LP7(LONG, getnameinfo,
-         AROS_LPA(struct sockaddr *, sockaddr, A0),
+         AROS_LPA(const struct sockaddr *, sockaddr, A0),
          AROS_LPA(LONG, addrlen, D0),
          AROS_LPA(char *, hostname, A1),
          AROS_LPA(LONG, hostlen, D1),

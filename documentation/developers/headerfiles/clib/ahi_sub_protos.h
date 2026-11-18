@@ -4,7 +4,7 @@
 #define CLIB_AHI_SUB_PROTOS_H
 
 /*
-**	$VER: ahi_sub_protos.h 30794 $Id$
+**	$VER: ahi_sub_protos.h $Id$ $Id$
 **
 **	C prototypes. For use with 32 bit integers only.
 **
@@ -40,7 +40,7 @@ ULONG AHIsub_LoadSound(UWORD Sound, ULONG Type, APTR Info, struct AHIAudioCtrlDr
 ULONG AHIsub_UnloadSound(UWORD Sound, struct AHIAudioCtrlDrv * Audioctrl);
 
 /* Functions for driver queries */
-LONG AHIsub_GetAttr(ULONG Attribute, LONG Argument, LONG DefValue, struct TagItem * tagList, struct AHIAudioCtrlDrv * AudioCtrl);
+IPTR AHIsub_GetAttr(ULONG Attribute, LONG Argument, IPTR DefValue, struct TagItem * tagList, struct AHIAudioCtrlDrv * AudioCtrl);
 
 /* Functions for controlling the analog mixer etc. */
 LONG AHIsub_HardwareControl(ULONG Attribute, LONG Argument, struct AHIAudioCtrlDrv * AudioCtrl);

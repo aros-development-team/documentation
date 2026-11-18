@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2008, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #ifndef EXEC_NODES_H
@@ -19,9 +18,6 @@
 /**************************************
 		Includes
 **************************************/
-#ifndef AROS_CONFIG_H
-#   include <aros/config.h>
-#endif
 #ifndef EXEC_TYPES_H
 #   include <exec/types.h>
 #endif
@@ -31,32 +27,18 @@
 	       Structures
 **************************************/
 
-#if (AROS_FLAVOUR & AROS_FLAVOUR_BINCOMPAT)
-struct Node
+/* The attribute must be on the definition: gcc ignores it on a forward declaration,
+   and the list macros rely on it to access MinList/MinNode objects as List/Node. */
+struct __mayalias Node
 {
     struct Node * ln_Succ,
 		* ln_Pred;
     UBYTE	  ln_Type;
     BYTE	  ln_Pri;
-    /* AROS: pointer should be 32bit aligned, but we cannot do this on
-       the native machine because of binary compatibility.
-    */
     char	* ln_Name;
 };
 
-#else
-struct Node
-{
-    struct Node * ln_Succ,
-		* ln_Pred;
-    /* AROS: pointer should be 32bit aligned */
-    char	* ln_Name;
-    UBYTE	  ln_Type;
-    BYTE	  ln_Pri;
-};
-#endif /* AROS_FLAVOUR */
-
-struct MinNode
+struct __mayalias MinNode
 {
     struct MinNode * mln_Succ,
 		   * mln_Pred;
@@ -78,7 +60,7 @@ struct MinNode
 #define NT_RESOURCE	8
 #define NT_LIBRARY	9
 #define NT_MEMORY	10
-#define NT_SOFTINT	11	/* Internal flag used by SoftInits	    */
+#define NT_SOFTINT	11	/* Internal flag used by SoftInts	    */
 #define NT_FONT 	12
 #define NT_PROCESS	13	/* AmigaDOS Process			    */
 #define NT_SEMAPHORE	14

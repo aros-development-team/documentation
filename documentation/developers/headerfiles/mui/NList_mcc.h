@@ -1,17 +1,11 @@
-#ifndef MUI_NList_MCC_H
-#define MUI_NList_MCC_H
-
 /***************************************************************************
 
  NList.mcc - New List MUI Custom Class
  Registered MUI class, Serial Number: 1d51 0x9d510030 to 0x9d5100A0
                                            0x9d5100C0 to 0x9d5100FF
 
- Copyright (C) 1996-2004 by Gilles Masson,
-                            Carsten Scholling <aphaso@aphaso.de>,
-                            Przemyslaw Grunchala,
-                            Sebastian Bauer <sebauer@t-online.de>,
-                            Jens Langner <Jens.Langner@light-speed.de>
+ Copyright (C) 1996-2001 by Gilles Masson
+ Copyright (C) 2001-2014 NList Open Source Team
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -29,20 +23,49 @@
 
 ***************************************************************************/
 
+#ifndef MUI_NList_MCC_H
+#define MUI_NList_MCC_H
+
 #ifndef LIBRARIES_MUI_H
 #include <libraries/mui.h>
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if !defined(__AROS__) && defined(__PPC__)
+  #if defined(__GNUC__)
+    #pragma pack(2)
+  #elif defined(__VBCC__)
+    #pragma amiga-align
+  #endif
+#endif
+
+/***********************************************************************/
+
+// STACKED ensures proper alignment on AROS 64 bit systems
+#if !defined(__AROS__) && !defined(STACKED)
+#define STACKED
+#endif
+#if !defined(__AROS__) && !defined(SIPTR)
+#define SIPTR LONG
+#endif
+
+/***********************************************************************/
+
 /* MUI Prop and Scroller classes stuff which is still not in libraries/mui.h  (in MUI3.8) */
 /* it gives to the prop object it's increment value */
 #ifndef MUIA_Prop_DeltaFactor
-#define MUIA_Prop_DeltaFactor 0x80427C5E
+#define MUIA_Prop_DeltaFactor 0x80427C5EUL
 #endif
 
-
 #define MUIC_NList "NList.mcc"
+#if defined(__AROS__) && !defined(NO_INLINE_STDARG)
+#define NListObject MUIOBJMACRO_START(MUIC_NList)
+#else
 #define NListObject MUI_NewObject(MUIC_NList
-
+#endif
 
 /* Attributes */
 
@@ -63,16 +86,19 @@
 #define MUIA_NList_SelectPen                0x9d51003bUL /* GM  isg  LONG              */
 #define MUIA_NList_CursorPen                0x9d51003cUL /* GM  isg  LONG              */
 #define MUIA_NList_UnselCurPen              0x9d51003dUL /* GM  isg  LONG              */
+#define MUIA_NList_InactivePen              0x9d5100C1UL /* GM  isg  LONG              */
 
 #define MUIA_NList_ListBackground           0x9d51003eUL /* GM  isg  LONG              */
 #define MUIA_NList_TitleBackground          0x9d51003fUL /* GM  isg  LONG              */
 #define MUIA_NList_SelectBackground         0x9d510040UL /* GM  isg  LONG              */
 #define MUIA_NList_CursorBackground         0x9d510041UL /* GM  isg  LONG              */
 #define MUIA_NList_UnselCurBackground       0x9d510042UL /* GM  isg  LONG              */
+#define MUIA_NList_InactiveBackground       0x9d5100C2UL /* GM  isg  LONG              */
 
 #define MUIA_NList_MultiClick               0x9d510043UL /* GM  ..gn LONG              */
 
 #define MUIA_NList_DefaultObjectOnClick     0x9d510044UL /* GM  is.  BOOL              */
+#define MUIA_NList_ActiveObjectOnClick      0x9d5100C3UL /* GM  is.  BOOL              */
 
 #define MUIA_NList_ClickColumn              0x9d510045UL /* GM  ..g  LONG              */
 #define MUIA_NList_DefClickColumn           0x9d510046UL /* GM  isg  LONG              */
@@ -119,6 +145,8 @@
 #define MUIA_NList_PrivateData              0x9d51006EUL /* GM  isg  APTR              */
 #define MUIA_NList_EntryValueDependent      0x9d51006FUL /* GM  isg  BOOL              */
 
+#define MUIA_NList_IgnoreSpecialChars       0x9d510070UL /* GM  isg  const char *      */
+
 #define MUIA_NList_StackCheck               0x9d510097UL /* GM  i..  BOOL              */
 #define MUIA_NList_WordSelectChars          0x9d510098UL /* GM  isg  char *            */
 #define MUIA_NList_EntryClick               0x9d510099UL /* GM  ..gn LONG              */
@@ -128,6 +156,8 @@
 #define MUIA_NList_ForcePen                 0x9d51009DUL /* GM  isg  LONG              */
 #define MUIA_NList_SourceInsert             0x9d51009EUL /* GM  i..  struct MUIP_NList_InsertWrap *   */
 #define MUIA_NList_TitleSeparator           0x9d51009FUL /* GM  isg  BOOL              */
+
+#define MUIA_NList_AutoClip                 0x9d5100C0UL /* GM  isg  BOOL              */
 
 #define MUIA_NList_SortType2                0x9d5100EDUL /* GM  isgn LONG              */
 #define MUIA_NList_TitleClick2              0x9d5100EEUL /* GM  isgn LONG              */
@@ -149,6 +179,10 @@
 #define MUIA_NList_DisplayHook2             0x9d5100FEUL /* GM  is.  struct Hook *     */
 #define MUIA_NList_SortType                 0x9d5100FFUL /* GM  isgn LONG              */
 
+#define MUIA_NList_KeyUpFocus               0x9d5100C4UL /* GM  isg. Object *          */
+#define MUIA_NList_KeyDownFocus             0x9d5100C5UL /* GM  isg. Object *          */
+#define MUIA_NList_KeyLeftFocus             0x9d5100C6UL /* GM  isg. Object *          */
+#define MUIA_NList_KeyRightFocus            0x9d5100C7UL /* GM  isg. Object *          */
 
 #define MUIA_NLIMG_EntryCurrent             MUIA_NList_First   /* LONG (special for nlist custom image object) */
 #define MUIA_NLIMG_EntryHeight              MUIA_NList_Visible /* LONG (special for nlist custom image object) */
@@ -156,15 +190,13 @@
 #define MUIA_NList_VertDeltaFactor          MUIA_NList_Prop_DeltaFactor   /* OBSOLETE NAME */
 #define MUIA_NList_HorizDeltaFactor         MUIA_NList_Horiz_DeltaFactor  /* OBSOLETE NAME */
 
-
 /* Attributes special datas */
-
 #define MUIV_NList_TypeSelect_Line        0
 #define MUIV_NList_TypeSelect_Char        1
 
-#define MUIV_NList_Font                 -20
-#define MUIV_NList_Font_Little          -21
-#define MUIV_NList_Font_Fixed           -22
+#define MUIV_NList_Font                 ((IPTR)-20)
+#define MUIV_NList_Font_Little          ((IPTR)-21)
+#define MUIV_NList_Font_Fixed           ((IPTR)-22)
 
 #define MUIV_NList_ConstructHook_String  -1
 #define MUIV_NList_DestructHook_String   -1
@@ -229,6 +261,7 @@
 #define MUIV_NList_Redraw_Active         -1
 #define MUIV_NList_Redraw_All            -2
 #define MUIV_NList_Redraw_Title          -3
+#define MUIV_NList_Redraw_Selected       -4
 #define MUIV_NList_Redraw_VisibleCols    -5
 
 #define MUIV_NList_Move_Top               0
@@ -247,8 +280,9 @@
 #define MUIV_NList_Jump_Top               0
 #define MUIV_NList_Jump_Active           -1
 #define MUIV_NList_Jump_Bottom           -2
-#define MUIV_NList_Jump_Up               -4
 #define MUIV_NList_Jump_Down             -3
+#define MUIV_NList_Jump_Up               -4
+#define MUIV_NList_Jump_Active_Center    -5
 
 #define MUIV_NList_NextSelected_Start    -1
 #define MUIV_NList_NextSelected_End      -1
@@ -371,14 +405,17 @@
 #define MUIV_NList_TitleMark2_Box         0x40000000
 #define MUIV_NList_TitleMark2_Circle      0xC0000000
 
-#define MUIV_NList_SetColumnCol_Default  -1
+#define MUIV_NList_SetColumnCol_Default   (-1)
 
-#define MUIV_NList_GetPos_Start          -1
-#define MUIV_NList_GetPos_End            -1
+#define MUIV_NList_GetPos_Start           (-1)
+#define MUIV_NList_GetPos_End             (-1)
 
-#define	MUIV_NList_SelectChange_Flag_Multi (1 << 0)
+#define MUIV_NList_SelectChange_Flag_Multi (1 << 0)
 
-#define MUIV_NList_UseImage_All         (-1)
+#define MUIV_NList_UseImage_All           (-1)
+
+#define MUIV_NList_SetActive_Entry         (1 << 0)
+#define MUIV_NList_SetActive_Jump_Center   (1 << 1)
 
 /* Structs */
 
@@ -457,92 +494,104 @@ struct MUI_NList_GetSelectInfo
 
 /* Methods */
 
-#define MUIM_NList_Clear              0x9d510070 /* GM */
-#define MUIM_NList_CreateImage        0x9d510071 /* GM */
-#define MUIM_NList_DeleteImage        0x9d510072 /* GM */
-#define MUIM_NList_Exchange           0x9d510073 /* GM */
-#define MUIM_NList_GetEntry           0x9d510074 /* GM */
-#define MUIM_NList_Insert             0x9d510075 /* GM */
-#define MUIM_NList_InsertSingle       0x9d510076 /* GM */
-#define MUIM_NList_Jump               0x9d510077 /* GM */
-#define MUIM_NList_Move               0x9d510078 /* GM */
-#define MUIM_NList_NextSelected       0x9d510079 /* GM */
-#define MUIM_NList_Redraw             0x9d51007a /* GM */
-#define MUIM_NList_Remove             0x9d51007b /* GM */
-#define MUIM_NList_Select             0x9d51007c /* GM */
-#define MUIM_NList_Sort               0x9d51007d /* GM */
-#define MUIM_NList_TestPos            0x9d51007e /* GM */
-#define MUIM_NList_CopyToClip         0x9d51007f /* GM */
-#define MUIM_NList_UseImage           0x9d510080 /* GM */
-#define MUIM_NList_ReplaceSingle      0x9d510081 /* GM */
-#define MUIM_NList_InsertWrap         0x9d510082 /* GM */
-#define MUIM_NList_InsertSingleWrap   0x9d510083 /* GM */
-#define MUIM_NList_GetEntryInfo       0x9d510084 /* GM */
-#define MUIM_NList_QueryBeginning     0x9d510085 /* Obsolete */
-#define MUIM_NList_GetSelectInfo      0x9d510086 /* GM */
-#define MUIM_NList_CopyTo             0x9d510087 /* GM */
-#define MUIM_NList_DropType           0x9d510088 /* GM */
-#define MUIM_NList_DropDraw           0x9d510089 /* GM */
-#define MUIM_NList_RedrawEntry        0x9d51008a /* GM */
-#define MUIM_NList_DoMethod           0x9d51008b /* GM */
-#define MUIM_NList_ColWidth           0x9d51008c /* GM */
-#define MUIM_NList_ContextMenuBuild   0x9d51008d /* GM */
-#define MUIM_NList_DropEntryDrawErase 0x9d51008e /* GM */
-#define MUIM_NList_ColToColumn        0x9d51008f /* GM */
-#define MUIM_NList_ColumnToCol        0x9d510091 /* GM */
-#define MUIM_NList_Sort2              0x9d510092 /* GM */
-#define MUIM_NList_PrevSelected       0x9d510093 /* GM */
-#define MUIM_NList_SetColumnCol       0x9d510094 /* GM */
-#define MUIM_NList_Sort3              0x9d510095 /* GM */
-#define MUIM_NList_GetPos             0x9d510096 /* GM */
-#define MUIM_NList_SelectChange       0x9d5100A0 /* GM */
-#define MUIM_NList_Construct          0x9d5100A1 /* GM */
-#define MUIM_NList_Destruct           0x9d5100A2 /* GM */
-#define MUIM_NList_Compare            0x9d5100A3 /* GM */
-#define MUIM_NList_Display            0x9d5100A4 /* GM */
-struct  MUIP_NList_Clear              { STACKED ULONG MethodID; };
-struct  MUIP_NList_CreateImage        { STACKED ULONG MethodID; STACKED Object *obj; STACKED ULONG flags; };
-struct  MUIP_NList_DeleteImage        { STACKED ULONG MethodID; STACKED APTR listimg; };
-struct  MUIP_NList_Exchange           { STACKED ULONG MethodID; STACKED LONG pos1; STACKED LONG pos2; };
-struct  MUIP_NList_GetEntry           { STACKED ULONG MethodID; STACKED LONG pos; STACKED APTR *entry; };
-struct  MUIP_NList_Insert             { STACKED ULONG MethodID; STACKED APTR *entries; STACKED LONG count; STACKED LONG pos; STACKED ULONG flags; };
-struct  MUIP_NList_InsertSingle       { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; };
-struct  MUIP_NList_Jump               { STACKED ULONG MethodID; STACKED LONG pos; };
-struct  MUIP_NList_Move               { STACKED ULONG MethodID; STACKED LONG from; STACKED LONG to; };
-struct  MUIP_NList_NextSelected       { STACKED ULONG MethodID; STACKED LONG *pos; };
-struct  MUIP_NList_Redraw             { STACKED ULONG MethodID; STACKED LONG pos; };
-struct  MUIP_NList_Remove             { STACKED ULONG MethodID; STACKED LONG pos; };
-struct  MUIP_NList_Select             { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG seltype; STACKED LONG *state; };
-struct  MUIP_NList_Sort               { STACKED ULONG MethodID; };
-struct  MUIP_NList_TestPos            { STACKED ULONG MethodID; STACKED LONG x; STACKED LONG y; STACKED struct MUI_NList_TestPos_Result *res; };
-struct  MUIP_NList_CopyToClip         { STACKED ULONG MethodID; STACKED LONG pos; STACKED ULONG clipnum; STACKED APTR *entries; STACKED struct Hook *hook; };
-struct  MUIP_NList_UseImage           { STACKED ULONG MethodID; STACKED Object *obj; STACKED LONG imgnum; STACKED ULONG flags; };
-struct  MUIP_NList_ReplaceSingle      { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; };
-struct  MUIP_NList_InsertWrap         { STACKED ULONG MethodID; STACKED APTR *entries; STACKED LONG count; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; STACKED ULONG flags; };
-struct  MUIP_NList_InsertSingleWrap   { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; };
-struct  MUIP_NList_GetEntryInfo       { STACKED ULONG MethodID; STACKED struct MUI_NList_GetEntryInfo *res; };
-struct  MUIP_NList_QueryBeginning     { STACKED ULONG MethodID; };
-struct  MUIP_NList_GetSelectInfo      { STACKED ULONG MethodID; STACKED struct MUI_NList_GetSelectInfo *res; };
-struct  MUIP_NList_CopyTo             { STACKED ULONG MethodID; STACKED LONG pos; STACKED char *filename; STACKED APTR *result; STACKED APTR *entries; };
-struct  MUIP_NList_DropType           { STACKED ULONG MethodID; STACKED LONG *pos; STACKED LONG *type; STACKED LONG minx, maxx, miny, maxy; STACKED LONG mousex, mousey; };
-struct  MUIP_NList_DropDraw           { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG type; STACKED LONG minx, maxx, miny, maxy; };
-struct  MUIP_NList_RedrawEntry        { STACKED ULONG MethodID; STACKED APTR entry; };
-struct  MUIP_NList_DoMethod           { STACKED ULONG MethodID; STACKED LONG pos; STACKED APTR DestObj; STACKED ULONG FollowParams; /* ... */  };
-struct  MUIP_NList_ColWidth           { STACKED ULONG MethodID; STACKED LONG col; STACKED LONG width; };
-struct  MUIP_NList_ContextMenuBuild   { STACKED ULONG MethodID; STACKED LONG mx; STACKED LONG my; STACKED LONG pos; STACKED LONG column; STACKED LONG flags; STACKED LONG ontop; };
-struct  MUIP_NList_DropEntryDrawErase { STACKED ULONG MethodID; STACKED LONG type; STACKED LONG drawpos; STACKED LONG erasepos; };
-struct  MUIP_NList_ColToColumn        { STACKED ULONG MethodID; STACKED LONG col; };
-struct  MUIP_NList_ColumnToCol        { STACKED ULONG MethodID; STACKED LONG column; };
-struct  MUIP_NList_Sort2              { STACKED ULONG MethodID; STACKED LONG sort_type; STACKED LONG sort_type_add; };
-struct  MUIP_NList_PrevSelected       { STACKED ULONG MethodID; STACKED LONG *pos; };
-struct  MUIP_NList_SetColumnCol       { STACKED ULONG MethodID; STACKED LONG column; STACKED LONG col; };
-struct  MUIP_NList_Sort3              { STACKED ULONG MethodID; STACKED LONG sort_type; STACKED LONG sort_type_add; STACKED LONG which; };
-struct  MUIP_NList_GetPos             { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG *pos; };
-struct  MUIP_NList_SelectChange       { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG state; STACKED ULONG flags; };
-struct  MUIP_NList_Construct          { STACKED ULONG MethodID; STACKED APTR entry; STACKED APTR pool; };
-struct  MUIP_NList_Destruct           { STACKED ULONG MethodID; STACKED APTR entry; STACKED APTR pool; };
-struct  MUIP_NList_Compare            { STACKED ULONG MethodID; STACKED APTR entry1; STACKED APTR entry2; STACKED LONG sort_type1; STACKED LONG sort_type2; };
-struct  MUIP_NList_Display            { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG entry_pos; STACKED STRPTR *strings; STACKED STRPTR *preparses; };
+#define MUIM_NList_Clear              0x9d510070UL /* GM */
+#define MUIM_NList_CreateImage        0x9d510071UL /* GM */
+#define MUIM_NList_DeleteImage        0x9d510072UL /* GM */
+#define MUIM_NList_Exchange           0x9d510073UL /* GM */
+#define MUIM_NList_GetEntry           0x9d510074UL /* GM */
+#define MUIM_NList_Insert             0x9d510075UL /* GM */
+#define MUIM_NList_InsertSingle       0x9d510076UL /* GM */
+#define MUIM_NList_Jump               0x9d510077UL /* GM */
+#define MUIM_NList_Move               0x9d510078UL /* GM */
+#define MUIM_NList_NextSelected       0x9d510079UL /* GM */
+#define MUIM_NList_Redraw             0x9d51007aUL /* GM */
+#define MUIM_NList_Remove             0x9d51007bUL /* GM */
+#define MUIM_NList_Select             0x9d51007cUL /* GM */
+#define MUIM_NList_Sort               0x9d51007dUL /* GM */
+#define MUIM_NList_TestPos            0x9d51007eUL /* GM */
+#define MUIM_NList_CopyToClip         0x9d51007fUL /* GM */
+#define MUIM_NList_UseImage           0x9d510080UL /* GM */
+#define MUIM_NList_ReplaceSingle      0x9d510081UL /* GM */
+#define MUIM_NList_InsertWrap         0x9d510082UL /* GM */
+#define MUIM_NList_InsertSingleWrap   0x9d510083UL /* GM */
+#define MUIM_NList_GetEntryInfo       0x9d510084UL /* GM */
+#define MUIM_NList_QueryBeginning     0x9d510085UL /* Obsolete */
+#define MUIM_NList_GetSelectInfo      0x9d510086UL /* GM */
+#define MUIM_NList_CopyTo             0x9d510087UL /* GM */
+#define MUIM_NList_DropType           0x9d510088UL /* GM */
+#define MUIM_NList_DropDraw           0x9d510089UL /* GM */
+#define MUIM_NList_RedrawEntry        0x9d51008aUL /* GM */
+#define MUIM_NList_DoMethod           0x9d51008bUL /* GM */
+#define MUIM_NList_ColWidth           0x9d51008cUL /* GM */
+#define MUIM_NList_ContextMenuBuild   0x9d51008dUL /* GM */
+#define MUIM_NList_DropEntryDrawErase 0x9d51008eUL /* GM */
+#define MUIM_NList_ColToColumn        0x9d51008fUL /* GM */
+#define MUIM_NList_ColumnToCol        0x9d510091UL /* GM */
+#define MUIM_NList_Sort2              0x9d510092UL /* GM */
+#define MUIM_NList_PrevSelected       0x9d510093UL /* GM */
+#define MUIM_NList_SetColumnCol       0x9d510094UL /* GM */
+#define MUIM_NList_Sort3              0x9d510095UL /* GM */
+#define MUIM_NList_GetPos             0x9d510096UL /* GM */
+#define MUIM_NList_SelectChange       0x9d5100A0UL /* GM */
+#define MUIM_NList_Construct          0x9d5100A1UL /* GM */
+#define MUIM_NList_Destruct           0x9d5100A2UL /* GM */
+#define MUIM_NList_Compare            0x9d5100A3UL /* GM */
+#define MUIM_NList_Display            0x9d5100A4UL /* GM */
+#define MUIM_NList_GoActive           0x9d5100A5UL /* GM */
+#define MUIM_NList_GoInactive         0x9d5100A6UL /* GM */
+#define MUIM_NList_SetActive          0x9d5100A7UL /* GM */
+
+/*
+for future extensions, skip 0x9d5100A8 as method ID, this one is already used by NListview
+for future extensions, skip 0x9d5100AF as method ID, this one is already used by NFloattext
+*/
+
+struct MUIP_NList_Clear              { STACKED ULONG MethodID; };
+struct MUIP_NList_CreateImage        { STACKED ULONG MethodID; STACKED Object *obj; STACKED ULONG flags; };
+struct MUIP_NList_DeleteImage        { STACKED ULONG MethodID; STACKED APTR listimg; };
+struct MUIP_NList_Exchange           { STACKED ULONG MethodID; STACKED LONG pos1; STACKED LONG pos2; };
+struct MUIP_NList_GetEntry           { STACKED ULONG MethodID; STACKED LONG pos; STACKED APTR *entry; };
+struct MUIP_NList_Insert             { STACKED ULONG MethodID; STACKED APTR *entries; STACKED LONG count; STACKED LONG pos; STACKED ULONG flags; };
+struct MUIP_NList_InsertSingle       { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; };
+struct MUIP_NList_Jump               { STACKED ULONG MethodID; STACKED LONG pos; };
+struct MUIP_NList_Move               { STACKED ULONG MethodID; STACKED LONG from; STACKED LONG to; };
+struct MUIP_NList_NextSelected       { STACKED ULONG MethodID; STACKED LONG *pos; };
+struct MUIP_NList_Redraw             { STACKED ULONG MethodID; STACKED LONG pos; };
+struct MUIP_NList_Remove             { STACKED ULONG MethodID; STACKED LONG pos; };
+struct MUIP_NList_Select             { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG seltype; STACKED LONG *state; };
+struct MUIP_NList_Sort               { STACKED ULONG MethodID; };
+struct MUIP_NList_TestPos            { STACKED ULONG MethodID; STACKED LONG x; STACKED LONG y; STACKED struct MUI_NList_TestPos_Result *res; };
+struct MUIP_NList_CopyToClip         { STACKED ULONG MethodID; STACKED LONG pos; STACKED ULONG clipnum; STACKED APTR *entries; STACKED struct Hook *hook; };
+struct MUIP_NList_UseImage           { STACKED ULONG MethodID; STACKED Object *obj; STACKED LONG imgnum; STACKED ULONG flags; };
+struct MUIP_NList_ReplaceSingle      { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; };
+struct MUIP_NList_InsertWrap         { STACKED ULONG MethodID; STACKED APTR *entries; STACKED LONG count; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; STACKED ULONG flags; };
+struct MUIP_NList_InsertSingleWrap   { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG pos; STACKED LONG wrapcol; STACKED LONG align; };
+struct MUIP_NList_GetEntryInfo       { STACKED ULONG MethodID; STACKED struct MUI_NList_GetEntryInfo *res; };
+struct MUIP_NList_QueryBeginning     { STACKED ULONG MethodID; };
+struct MUIP_NList_GetSelectInfo      { STACKED ULONG MethodID; STACKED struct MUI_NList_GetSelectInfo *res; };
+struct MUIP_NList_CopyTo             { STACKED ULONG MethodID; STACKED LONG pos; STACKED char *filename; STACKED APTR *result; STACKED APTR *entries; };
+struct MUIP_NList_DropType           { STACKED ULONG MethodID; STACKED LONG *pos; STACKED LONG *type; STACKED LONG minx, maxx, miny, maxy; STACKED LONG mousex, mousey; };
+struct MUIP_NList_DropDraw           { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG type; STACKED LONG minx, maxx, miny, maxy; };
+struct MUIP_NList_RedrawEntry        { STACKED ULONG MethodID; STACKED APTR entry; };
+struct MUIP_NList_DoMethod           { STACKED ULONG MethodID; STACKED LONG pos; STACKED APTR DestObj; STACKED ULONG FollowParams; /* ... */  };
+struct MUIP_NList_ColWidth           { STACKED ULONG MethodID; STACKED LONG col; STACKED LONG width; };
+struct MUIP_NList_ContextMenuBuild   { STACKED ULONG MethodID; STACKED LONG mx; STACKED LONG my; STACKED LONG pos; STACKED LONG column; STACKED LONG flags; STACKED LONG ontop; };
+struct MUIP_NList_DropEntryDrawErase { STACKED ULONG MethodID; STACKED LONG type; STACKED LONG drawpos; STACKED LONG erasepos; };
+struct MUIP_NList_ColToColumn        { STACKED ULONG MethodID; STACKED LONG col; };
+struct MUIP_NList_ColumnToCol        { STACKED ULONG MethodID; STACKED LONG column; };
+struct MUIP_NList_Sort2              { STACKED ULONG MethodID; STACKED LONG sort_type; STACKED LONG sort_type_add; };
+struct MUIP_NList_PrevSelected       { STACKED ULONG MethodID; STACKED LONG *pos; };
+struct MUIP_NList_SetColumnCol       { STACKED ULONG MethodID; STACKED LONG column; STACKED LONG col; };
+struct MUIP_NList_Sort3              { STACKED ULONG MethodID; STACKED LONG sort_type; STACKED LONG sort_type_add; STACKED LONG which; };
+struct MUIP_NList_GetPos             { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG *pos; };
+struct MUIP_NList_SelectChange       { STACKED ULONG MethodID; STACKED LONG pos; STACKED LONG state; STACKED ULONG flags; };
+struct MUIP_NList_Construct          { STACKED ULONG MethodID; STACKED APTR entry; STACKED APTR pool; };
+struct MUIP_NList_Destruct           { STACKED ULONG MethodID; STACKED APTR entry; STACKED APTR pool; };
+struct MUIP_NList_Compare            { STACKED ULONG MethodID; STACKED APTR entry1; STACKED APTR entry2; STACKED LONG sort_type1; STACKED LONG sort_type2; };
+struct MUIP_NList_Display            { STACKED ULONG MethodID; STACKED APTR entry; STACKED LONG entry_pos; STACKED STRPTR *strings; STACKED STRPTR *preparses; };
+struct MUIP_NList_GoActive           { STACKED ULONG MethodID; };
+struct MUIP_NList_GoInactive         { STACKED ULONG MethodID; };
+struct MUIP_NList_SetActive          { STACKED ULONG MethodID; STACKED SIPTR pos; STACKED ULONG flags; };
 
 #define DISPLAY_ARRAY_MAX 64
 
@@ -552,8 +601,7 @@ struct  MUIP_NList_Display            { STACKED ULONG MethodID; STACKED APTR ent
 #define ALIGN_JUSTIFY   0x0400
 
 
-/*
- *  Be carrefull ! the 'sort_type2' member don't exist in releases before 19.96
+/*  Be carrefull ! the 'sort_type2' member don't exist in releases before 19.96
  *  where MUIM_NList_Sort3, MUIA_NList_SortType2, MUIA_NList_TitleClick2 and
  *  MUIA_NList_TitleMark2 have appeared !
  *  You can safely use get(obj,MUIA_NList_SortType2,&st2) instead if you are not
@@ -609,5 +657,16 @@ struct NList_CopyColumnToClipMessage
   STACKED LONG str_pos2;
 };
 
+#if !defined(__AROS__) && defined(__PPC__)
+  #if defined(__GNUC__)
+    #pragma pack()
+  #elif defined(__VBCC__)
+    #pragma default-align
+  #endif
+#endif
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MUI_NList_MCC_H */

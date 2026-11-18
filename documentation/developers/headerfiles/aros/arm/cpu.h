@@ -1,14 +1,38 @@
 #ifndef AROS_ARM_CPU_H
 #define AROS_ARM_CPU_H
+
 /*
-    Copyright � 1995-2008, The AROS Development Team. All rights reserved.
-    $Id: cpu.h 33625 2010-06-17 07:17:36Z mazze $
+    Copyright � 1995-2011, The AROS Development Team. All rights reserved.
+    $Id$
 
     NOTE: This file must compile *without* any other header !
 
     Desc: cpu.h include file for arm-le systems
     Lang: english
 */
+
+/* Translate __ARM_ARCH_X__ definitions to a common one. Makes it easier to write conditional code. */
+#ifdef __ARM_ARCH_2__
+#define __ARM_ARCH__ 2
+#endif
+#ifdef __ARM_ARCH_3__
+#define __ARM_ARCH__ 3
+#endif
+#ifdef __ARM_ARCH_4__
+#define __ARM_ARCH__ 4
+#endif
+#ifdef __ARM_ARCH_5__
+#define __ARM_ARCH__ 5
+#endif
+#ifdef __ARM_ARCH_6__
+#define __ARM_ARCH__ 6
+#endif
+#ifdef __ARM_ARCH_7A__
+#define __ARM_ARCH__ 7
+#endif
+
+typedef	unsigned int	cpuid_t;
+typedef	unsigned int	cpumask_t;
 
 /* Information about size and alignment,
  * the defines have to be numeric constants */
@@ -22,12 +46,17 @@
 #define AROS_PTRALIGN		   4 /* Alignment for PTR */
 #define AROS_IPTRALIGN		   4 /* Alignment for IPTR */
 #define AROS_DOUBLEALIGN	   4 /* Alignment for double */
-#define AROS_WORSTALIGN 	   8 /* Worst case alignment */
+#define AROS_WORSTALIGN 	  16 /* Worst case alignment */
+#define AROS_STACKALIGN		  16 /* FIXME: is this really needed? */
+
+/* define this if we have no support for linear varargs in the compiler */
+#define NO_LINEAR_VARARGS       1
 
 /* Do not use patched compiler. */
 #define AROS_SLOWSTACKTAGS      1
 #define AROS_SLOWSTACKMETHODS   1
 #define AROS_SLOWSTACKHOOKS     1
+#define AROS_SLOWSTACKFORMAT    1
 
 #define AROS_32BIT_TYPE         int
 
@@ -45,6 +74,12 @@
 #define AROS_SIG_ATOMIC_T       int
 #define AROS_SIG_ATOMIC_MIN     (-0x7fffffff-1)
 #define AROS_SIG_ATOMIC_MAX     0x7fffffff
+
+#if defined(__clang__)
+#define AROS_GET_SP ({ unsigned char *__sp; __asm__ __volatile__("mov %0, sp" : "=r"(__sp)); __sp; })
+#else
+register unsigned char* AROS_GET_SP __asm__("%sp");
+#endif
 
 /*
     One entry in a libraries' jumptable. For assembler compatibility, the
@@ -65,66 +100,21 @@ do \
     _v->vec = (ULONG)(a); 		/* .word target_address */ 	\
 } while (0)
 
-/*
-	Extracts and stores the start address from a loaded
-	executable segment. start_address may then be used by gdb.
- */
-#define __AROS_SET_START_ADDR(debug_segnode)\
-{\
-	struct FullJumpVec *_v = (struct FullJumpVec *) ((debug_segnode)->seglist + 4);\
-	(debug_segnode)->start_address  = (IPTR)(_v->vec);     \
-}
-
 struct JumpVec
 {
-	unsigned char vec[4];
+	void * vec;
 };
-
-/* Internal macros */
-#define __AROS_SET_VEC(v,a)             (*(ULONG*)(v)->vec=(ULONG)(a))
-#define __AROS_GET_VEC(v)               ((APTR)(*(ULONG*)(v)->vec))
 
 /* Use these to acces a vector table */
 #define LIB_VECTSIZE			(sizeof (struct JumpVec))
 #define __AROS_GETJUMPVEC(lib,n)        (&((struct JumpVec *)lib)[-(n)])
-#define __AROS_GETVECADDR(lib,n)        (__AROS_GET_VEC(__AROS_GETJUMPVEC(lib,n)))
-#define __AROS_SETVECADDR(lib,n,addr)   (__AROS_SET_VEC(__AROS_GETJUMPVEC(lib,n),(APTR)(addr)))
+#define __AROS_GETVECADDR(lib,n)        (__AROS_GETJUMPVEC(lib,n)->vec)
+#define __AROS_SETVECADDR(lib,n,addr)   (__AROS_GETJUMPVEC(lib,n)->vec = (addr))
 #define __AROS_INITVEC(lib,n)		__AROS_SETVECADDR(lib,n,_aros_not_implemented)
 
-/*
-   Code to use to generate stub functions.
-   It must be *printed* with a function like printf in a file
-   to be compiled with gcc.
-
-   - The first parameter is the function name,
-   - The second parameter is the basename,
-   - The third parameter is the library vector to be called.
-     It's value must be computed by the stub generator with this code:
-     &(__AROS_GETJUMPVEC(0, n+1)->vec), where n is the library vector position in
-     the library vectors list.
-
-*/
-
-#define STUBCODE_INIT                          \
-		"#define EMITSTUB(fname, bname, vec) " \
-		".weak fname ; "                       \
-		"fname : "                             \
-		"ldr  r12, .L1; "                      \
-		"ldr  pc , [r12, $ vec ]; "            \
-		".L1: .word bname;\n"                  \
-		"#define EMITALIAS(fname, alias) "     \
-		".weak alias; .set alias, fname\n"
-#define STUBCODE                               \
-		"EMITSTUB(%s, %s, %d)\n"
-#define ALIASCODE                              \
-		"EMITALIAS(%s, %s)\n"
-
-/*
-   No, we do not want to preserve the all registers in case of Semaphore and
-   multitasking handling functions. It made sence on m68k native target. On all
-   other targets the standard ABI rules the AROS world anyway...
-*/
+/* Register preservation is still useful. At least for stack swapping functions. */
 #undef UseExecstubs
+#define UseExecstubs 1
 
 /* Macros to test/set failure of AllocEntry() */
 #define AROS_ALLOCENTRY_FAILED(memType) \
@@ -139,7 +129,7 @@ struct JumpVec
 #define AROS_ALIGN(x)        (((x)+AROS_WORSTALIGN-1)&-AROS_WORSTALIGN)
 
 /* Prototypes */
-extern void _aros_not_implemented ();
+extern void _aros_not_implemented (char *);
 extern void aros_not_implemented ();
 
 /* How much stack do we need ? Lots :-) */
@@ -169,10 +159,10 @@ extern void aros_not_implemented ();
 #define __AROS_UFPA(type,name,reg)    type
 #define __AROS_UFCA(type,name,reg)    name
 #define __AROS_UFDA(type,name,reg)    type
-#define __AROS_LHAQUAD(type,name,reg1,reg2)     type name
-#define __AROS_LPAQUAD(type,name,reg1,reg2)     type
-#define __AROS_LCAQUAD(type,name,reg1,reg2)     name
-#define __AROS_LDAQUAD(type,name,reg1,reg2)     type
+#define __AROS_LHA2(type,name,reg1,reg2)     type name
+#define __AROS_LPA2(type,name,reg1,reg2)     type
+#define __AROS_LCA2(type,name,reg1,reg2)     name
+#define __AROS_LDA2(type,name,reg1,reg2)     type
 
 /* Prefix for library function in header, prototype and call */
 #define __AROS_LH_PREFIX    /* eps */
@@ -184,27 +174,16 @@ extern void aros_not_implemented ();
 #define __AROS_UFC_PREFIX   /* eps */
 #define __AROS_UFD_PREFIX   /* eps */
 
-/* Untested! This macro *may* be wrong... */
-#define __UFC3R(t,n,t1,n1,r1,t2,n2,r2,t3,n3,r3,p) \
-({\
-    long _n1 = (long)(n1);\
-    long _n2 = (long)(n2);\
-    long _n3 = (long)(n3);\
-    long _re;\
-    __asm__ __volatile__(\
-        "ldr    %%r0, %1\n\t"\
-        "str    %%sp,[%%r0, $0]\n\t"\
-        "mov    %%r2,%5\n\t"\
-        "mov    %%r1,%4\n\t"\
-        "mov    %%r0,%3\n\t"\
-        "mov    %%lr,%%pc\n\t"\
-        "mov    %%pc,%2\n\t"\
-        "str    %%r0,%0"\
-        : "=m"(_re), "=m"(*(int *)p)\
-        : "r"(n), "r"(_n1), "r"(_n2), "r"(_n3)\
-        : "cc", "memory", "%r0", "%r1", "%r2" );\
-    (t)_re;\
-})
-#define AROS_UFC3R(t,n,a1,a2,a3,p,ss) __UFC3R(t,n,a1,a2,a3,p)
+/*
+ * This must be placed before every call to host OS on hosted AROS.
+ * On ARM it tells that r9 register is clobbered. Some OSes (iOS again)
+ * define r9 as volatile. It can be used as scratchpad but calls will
+ * not preserve it.
+ * AROS code expects it is nonvolatile (as defined in the AAPCS).
+ */
+#define AROS_HOST_BARRIER asm volatile("":::"r9");
+
+#define AROS_SWAP_BYTES_LONG_CPU(l)     __builtin_bswap32(l)
+#define AROS_SWAP_BYTES_WORD_CPU(l)     __builtin_bswap16(l)
 
 #endif /* AROS_ARM_CPU_H */

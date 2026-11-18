@@ -3,7 +3,7 @@
 
 /*
     *** Automatically generated from '/home/mazze/projects/aros-src/workbench/libs/rexxsupport/rexxsupport.conf'. Edits will be lost. ***
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright (C) 1995-2026, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/libcall.h>
@@ -12,15 +12,23 @@
 
 __BEGIN_DECLS
 
+
+#if !defined(__REXXSUPPORT_LIBAPI__) || (34 <= __REXXSUPPORT_LIBAPI__)
 AROS_LP2(ULONG, ArexxDispatch,
          AROS_LPA(struct RexxMsg *, msg, A0),
          AROS_LPA(STRPTR *, _retargstringptr, A1),
          LIBBASETYPEPTR, RexxSupportBase, 5, RexxSupport
 );
+
+#endif /* !defined(__REXXSUPPORT_LIBAPI__) || (34 <= __REXXSUPPORT_LIBAPI__) */
+
+#if !defined(__REXXSUPPORT_LIBAPI__) || (34 <= __REXXSUPPORT_LIBAPI__)
 AROS_LP1(void, ClosePortRsrc,
          AROS_LPA(struct RexxRsrc *, rsrc, A0),
          LIBBASETYPEPTR, RexxSupportBase, 6, RexxSupport
 );
+
+#endif /* !defined(__REXXSUPPORT_LIBAPI__) || (34 <= __REXXSUPPORT_LIBAPI__) */
 
 __END_DECLS
 

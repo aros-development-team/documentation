@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2004, The AROS Development Team. All rights reserved.
-    $Id: dtclass.h 32799 2010-03-14 12:29:57Z mazze $
+    Copyright (C) 1995-2004, The AROS Development Team. All rights reserved.
 */
 
 #ifndef PROTO_DTCLASS_H

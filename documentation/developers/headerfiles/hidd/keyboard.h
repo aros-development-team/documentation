@@ -2,18 +2,20 @@
 #define HIDD_KEYBOARD_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2025, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Include for the keyboard hidd.
     Lang: English.
 */
 
+#include <proto/oop.h>
 #include <oop/oop.h>
 #include <utility/tagitem.h>
 
-#define CLID_Hidd_Kbd "hidd.kbd"
-#define IID_Hidd_Kbd "hidd.kbd"
+#define CLID_Hidd_Kbd "hidd.input.kbd"
+#define CLID_HW_Kbd "hw.input.kbd"
+#define IID_Hidd_Kbd "hidd.input.kbd"
 
 #define HiddKbdAB __abHidd_Kbd
 
@@ -21,40 +23,42 @@
 extern OOP_AttrBase HiddKbdAB;
 #endif
 
-enum {
-   aoHidd_Kbd_IrqHandler,
-   aoHidd_Kbd_IrqHandlerData,
-   
-   num_Hidd_Kbd_Attrs
-};
+/* Parameter values for the IRQ handler */
 
-#define aHidd_Kbd_IrqHandler		(aoHidd_Kbd_IrqHandler     + HiddKbdAB)
-#define aHidd_Kbd_IrqHandlerData	(aoHidd_Kbd_IrqHandlerData + HiddKbdAB)
-
-#define IS_HIDDKBD_ATTR(attr, idx) IS_IF_ATTR(attr, idx, HiddKbdAB, num_Hidd_Kbd_Attrs)
-
-enum
+struct pHidd_Kbd_Event
 {
-    moHidd_Kbd_AddHardwareDriver = 0,
-    moHidd_Kbd_RemHardwareDriver,
-
-    NUM_Kbd_METHODS
+    union {
+        struct {
+            UWORD flags;
+            UWORD code;
+        };
+        ULONG kbdevt;
+    };
 };
 
-struct pHidd_Kbd_AddHardwareDriver
+/*
+ * Keyboard Event Flags ...
+ */
+
+// Qualifier keys sent with KEYTOGGLE set, set their state based on the keys UP/DOWN state.
+#define KBD_KEYTOGGLE (1 << 7)
+
+#if !defined(HiddKbdBase) && !defined(__OOP_NOMETHODBASES__)
+#define HiddKbdBase HIDD_Kbd_GetMethodBase(__obj)
+
+static inline OOP_MethodID HIDD_Kbd_GetMethodBase(OOP_Object *obj)
 {
-    OOP_MethodID    mID;
-    OOP_Class	    *driverClass;
-    struct TagItem  *tags;
-};
+    static OOP_MethodID KbdMethodBase;
 
-struct pHidd_Kbd_RemHardwareDriver
-{
-    OOP_MethodID    mID;
-    OOP_Object	    *driverObject;
-};
+    if (!KbdMethodBase)
+    {
+        struct Library *OOPBase = (struct Library *)OOP_OOPBASE(obj);
 
-OOP_Object *HIDD_Kbd_AddHardwareDriver(OOP_Object *obj, OOP_Class *driverClass, struct TagItem *tags);
-void HIDD_Kbd_RemHardwareDriver(OOP_Object *obj, OOP_Object *driver);
+        KbdMethodBase = OOP_GetMethodID(IID_Hidd_Kbd, 0);
+    }
+
+    return KbdMethodBase;
+}
+#endif
 
 #endif /* HIDD_KEYBOARD_H */

@@ -7,11 +7,14 @@
 #  *                                                                          *
 #  ************************************************************************** */
 #
+# /* Revised by Edward Diener (2020) */
+#
 # /* See http://www.boost.org for most recent version. */
 #
 # ifndef BOOST_PREPROCESSOR_SEQ_ELEM_HPP
 # define BOOST_PREPROCESSOR_SEQ_ELEM_HPP
 #
+# include <boost/preprocessor/cat.hpp>
 # include <boost/preprocessor/config/config.hpp>
 # include <boost/preprocessor/facilities/empty.hpp>
 #
@@ -34,10 +37,16 @@
 #    define BOOST_PP_SEQ_ELEM_III(im) BOOST_PP_SEQ_ELEM_IV(im)
 #    define BOOST_PP_SEQ_ELEM_IV(x, _) x
 # else
-#    define BOOST_PP_SEQ_ELEM_I(i, seq) BOOST_PP_SEQ_ELEM_II(BOOST_PP_SEQ_ELEM_ ## i seq)
+#    if defined(__IBMC__) || defined(__IBMCPP__)
+#        define BOOST_PP_SEQ_ELEM_I(i, seq) BOOST_PP_SEQ_ELEM_II(BOOST_PP_CAT(BOOST_PP_SEQ_ELEM_ ## i, seq))
+#    else
+#        define BOOST_PP_SEQ_ELEM_I(i, seq) BOOST_PP_SEQ_ELEM_II(BOOST_PP_SEQ_ELEM_ ## i seq)
+#    endif
 #    define BOOST_PP_SEQ_ELEM_II(im) BOOST_PP_SEQ_ELEM_III(im)
 #    define BOOST_PP_SEQ_ELEM_III(x, _) x
 # endif
+#
+# if ~BOOST_PP_CONFIG_FLAGS() & BOOST_PP_CONFIG_STRICT()
 #
 # define BOOST_PP_SEQ_ELEM_0(x) x, BOOST_PP_NIL
 # define BOOST_PP_SEQ_ELEM_1(_) BOOST_PP_SEQ_ELEM_0
@@ -295,5 +304,24 @@
 # define BOOST_PP_SEQ_ELEM_253(_) BOOST_PP_SEQ_ELEM_252
 # define BOOST_PP_SEQ_ELEM_254(_) BOOST_PP_SEQ_ELEM_253
 # define BOOST_PP_SEQ_ELEM_255(_) BOOST_PP_SEQ_ELEM_254
+#
+# else
+#
+# include <boost/preprocessor/config/limits.hpp>
+#
+# if BOOST_PP_LIMIT_SEQ == 256
+# include <boost/preprocessor/seq/limits/elem_256.hpp>
+# elif BOOST_PP_LIMIT_SEQ == 512
+# include <boost/preprocessor/seq/limits/elem_256.hpp>
+# include <boost/preprocessor/seq/limits/elem_512.hpp>
+# elif BOOST_PP_LIMIT_SEQ == 1024
+# include <boost/preprocessor/seq/limits/elem_256.hpp>
+# include <boost/preprocessor/seq/limits/elem_512.hpp>
+# include <boost/preprocessor/seq/limits/elem_1024.hpp>
+# else
+# error Incorrect value for the BOOST_PP_LIMIT_SEQ limit
+# endif
+#
+# endif
 #
 # endif

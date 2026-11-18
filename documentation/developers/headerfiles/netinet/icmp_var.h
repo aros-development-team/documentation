@@ -1,7 +1,7 @@
 #ifndef _NETINET_ICMP_VAR_H_
 #define _NETINET_ICMP_VAR_H_
 /*
- * Copyright (c) 1982, 1986, 1993
+ * Copyright (C) 1982, 1986, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,6 +51,7 @@ struct	icmpstat {
 	u_long	icps_checksum;		/* bad checksum */
 	u_long	icps_badlen;		/* calculated bound mismatch */
 	u_long	icps_reflect;		/* number of responses */
+	u_long	icps_ratelimit;		/* # of errors rate-limited */
 	u_long	icps_inhist[ICMP_MAXTYPE + 1];
 };
 

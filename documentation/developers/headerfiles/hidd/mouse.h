@@ -2,7 +2,7 @@
 #define HIDD_MOUSE_H
 
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2025, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Include for the mouse hidd.
@@ -13,8 +13,14 @@
 #   include <oop/oop.h>
 #endif
 
-#define CLID_Hidd_Mouse "hidd.mouse"
-#define IID_Hidd_Mouse "hidd.mouse"
+#ifndef PROTO_OOP_H
+#   include <proto/oop.h>
+#endif
+
+#define CLID_Hidd_Mouse "hidd.input.mouse"
+#define CLID_HW_Mouse   "hw.input.mouse"
+
+#define IID_Hidd_Mouse "hidd.input.mouse"
 
 #define HiddMouseAB __abHidd_Mouse
 
@@ -26,8 +32,6 @@ extern OOP_AttrBase HiddMouseAB;
 
 enum {
 
-   aoHidd_Mouse_IrqHandler,
-   aoHidd_Mouse_IrqHandlerData,
    aoHidd_Mouse_State,
    aoHidd_Mouse_RelativeCoords,
    aoHidd_Mouse_Extended,
@@ -35,12 +39,9 @@ enum {
    num_Hidd_Mouse_Attrs
 };
 
-
-#define aHidd_Mouse_IrqHandler		(aoHidd_Mouse_IrqHandler     + HiddMouseAB)
-#define aHidd_Mouse_IrqHandlerData	(aoHidd_Mouse_IrqHandlerData + HiddMouseAB)
-#define aHidd_Mouse_State		(aoHidd_Mouse_State          + HiddMouseAB)  
-#define aHidd_Mouse_RelativeCoords  	(aoHidd_Mouse_RelativeCoords + HiddMouseAB)
-#define aHidd_Mouse_Extended		(aoHidd_Mouse_RelativeCoords + HiddMouseAB)
+#define aHidd_Mouse_State               (aoHidd_Mouse_State          + HiddMouseAB)  
+#define aHidd_Mouse_RelativeCoords      (aoHidd_Mouse_RelativeCoords + HiddMouseAB)
+#define aHidd_Mouse_Extended            (aoHidd_Mouse_Extended       + HiddMouseAB)
 
 #define IS_HIDDMOUSE_ATTR(attr, idx) IS_IF_ATTR(attr, idx, HiddMouseAB, num_Hidd_Mouse_Attrs)
 
@@ -82,28 +83,22 @@ enum {
 /* Flags */
 #define vHidd_Mouse_Relative 0x0001
 
-enum
+#if !defined(HiddMouseBase) && !defined(__OOP_NOMETHODBASES__)
+#define HiddMouseBase HIDD_Mouse_GetMethodBase(__obj)
+
+static inline OOP_MethodID HIDD_Mouse_GetMethodBase(OOP_Object *obj)
 {
-    moHidd_Mouse_AddHardwareDriver = 0,
-    moHidd_Mouse_RemHardwareDriver,
+    static OOP_MethodID MouseMethodBase;
 
-    NUM_Mouse_METHODS
-};
+    if (!MouseMethodBase)
+    {
+        struct Library *OOPBase = (struct Library *)OOP_OOPBASE(obj);
 
-struct pHidd_Mouse_AddHardwareDriver
-{
-    OOP_MethodID    mID;
-    OOP_Class	    *driverClass;
-    struct TagItem  *tags;
-};
+        MouseMethodBase = OOP_GetMethodID(IID_Hidd_Mouse, 0);
+    }
 
-struct pHidd_Mouse_RemHardwareDriver
-{
-    OOP_MethodID    mID;
-    OOP_Object	    *driverObject;
-};
-
-OOP_Object *HIDD_Mouse_AddHardwareDriver(OOP_Object *obj, OOP_Class *driverClass, struct TagItem *tags);
-void HIDD_Mouse_RemHardwareDriver(OOP_Object *obj, OOP_Object *driver);
+    return MouseMethodBase;
+}
+#endif
 
 #endif /* HIDD_MOUSE_H */

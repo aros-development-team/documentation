@@ -2,7 +2,8 @@
 #define EXEC_LISTS_H
 
 /*
-    Copyright © 1995-2005, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2026, The AROS Development Team. All rights reserved.
+    $Id$
         
     Structures and macros for exec lists.
 */
@@ -19,6 +20,7 @@
 /**************************************
 	       Structures
 **************************************/
+#ifndef __GNUC__
 /* Normal list */
 struct List
 {
@@ -36,18 +38,48 @@ struct MinList
                    * mlh_Tail,
 		   * mlh_TailPred;
 };
+#else
+/* Normal list */
+struct __mayalias List
+{
+    struct Node * lh_Head,
+                * lh_Tail;
+    union
+    {
+        struct Node * lh_TailPred;
+        struct List * lh_TailPred_;
+    };
+    UBYTE	  lh_Type;
+    UBYTE	  l_pad;
+};
 
+/* Minimal list */
+struct __mayalias MinList
+{
+    struct MinNode * mlh_Head,
+                   * mlh_Tail;
+    union
+    {
+        struct MinNode * mlh_TailPred;
+        struct MinList * mlh_TailPred_;
+    };
+};
+#endif /* __GNUC__ */
 
 /**************************************
-	       Makros
+	       Macros
 **************************************/
 #define IsListEmpty(l) \
-	( (((struct List *)l)->lh_TailPred) == (struct Node *)(l) )
+	(((struct Node *)((struct List *)(l))->lh_TailPred) == (struct Node *)(l))
+
+#define IsMinListEmpty(l) \
+	( (((struct MinList *)l)->mlh_TailPred) == (struct MinNode *)(l) )
 
 #define IsMsgPortEmpty(mp) \
       ( (((struct MsgPort *)(mp))->mp_MsgList.lh_TailPred) \
 	    == (struct Node *)(&(((struct MsgPort *)(mp))->mp_MsgList)) )
 
+#ifndef __GNUC__
 #define NEWLIST(_l)                                     \
 do                                                      \
 {                                                       \
@@ -58,6 +90,18 @@ do                                                      \
     l->lh_Tail     = 0;                                 \
     l->lh_Head     = (struct Node *)&l->lh_Tail;        \
 } while (0)
+#else /* __GNUC__ */
+#define NEWLIST(_l)                                     \
+do                                                      \
+{                                                       \
+    struct List *__aros_list_tmp = (struct List *)(_l), \
+                *l = __aros_list_tmp;                   \
+                                                        \
+    l->lh_TailPred_= l;                                 \
+    l->lh_Tail     = 0;                                 \
+    l->lh_Head     = (struct Node *)&l->lh_Tail;        \
+} while (0)
+#endif /* __GNUC__ */
 
 #define ADDHEAD(_l,_n)                                  \
 do                                                      \
@@ -119,7 +163,7 @@ do                                                        \
     struct Node *__aros_node_tmp = (struct Node *)(_n),  \
                 *n = __aros_node_tmp;                    \
                                                          \
-    (n && n->ln_Succ->ln_Succ) ? n->ln_Succ : (struct Node *)0; \
+    (n && n->ln_Succ && n->ln_Succ->ln_Succ) ? n->ln_Succ : (struct Node *)0; \
 })
 
 #define GetPred(_n)                                      \
@@ -127,7 +171,7 @@ do                                                        \
     struct Node *__aros_node_tmp = (struct Node *)(_n),  \
                 *n = __aros_node_tmp;                    \
                                                          \
-    (n && n->ln_Pred->ln_Pred) ? n->ln_Pred : (struct Node *)0; \
+    (n && n->ln_Pred && n->ln_Pred->ln_Pred) ? n->ln_Pred : (struct Node *)0; \
 })
 
 #define REMHEAD(_l)                                               \
@@ -149,17 +193,17 @@ do                                                        \
 #define ForeachNode(list, node)                        \
 for                                                    \
 (                                                      \
-    node = (void *)(((struct List *)(list))->lh_Head); \
+    *(void **)&node = (void *)(((struct List *)(list))->lh_Head); \
     ((struct Node *)(node))->ln_Succ;                  \
-    node = (void *)(((struct Node *)(node))->ln_Succ)  \
+    *(void **)&node = (void *)(((struct Node *)(node))->ln_Succ)  \
 )
 
 #define ForeachNodeSafe(list, current, next)              \
 for                                                       \
 (                                                         \
-    current = (void *)(((struct List *)(list))->lh_Head); \
-    (next = (void *)((struct Node *)(current))->ln_Succ); \
-    current = (void *)next                                \
+    *(void **)&current = (void *)(((struct List *)(list))->lh_Head); \
+    (*(void **)&next = (void *)((struct Node *)(current))->ln_Succ); \
+    *(void **)&current = (void *)next                                \
 )
 
 #define ListLength(list,count)     \

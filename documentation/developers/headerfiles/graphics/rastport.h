@@ -2,7 +2,7 @@
 #define GRAPHICS_RASTPORT_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2011, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Rastport
@@ -47,7 +47,7 @@ struct GelsInfo
 
 struct TmpRas
 {
-    BYTE * RasPtr;
+    UBYTE * RasPtr;
     LONG   Size;
 };
 
@@ -82,9 +82,14 @@ struct RastPort
     UWORD             TxBaseline;
     WORD              TxSpacing;
     APTR            * RP_User;
-    IPTR              longreserved[2];
-    UWORD             wordreserved[7];
-    UBYTE             reserved[8];
+    /*
+     * 30 bytes (on 32-bit architectures) of private space follow.
+     * On 64-bit architectures this space is doubled.
+     * Do not touch!!!
+     */
+    APTR	      RP_Extra;
+    IPTR              longreserved[6];
+    UBYTE             reserved[2];
 };
 
 /* Flags */

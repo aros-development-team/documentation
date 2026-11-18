@@ -2,14 +2,15 @@
 #define _LIBRARIES_BSDSOCKET_H
 
 /*
- * $Id: bsdsocket.h 30792 2009-03-07 22:40:04Z neil $
+ * $Id$
  *
  * :ts=8
  *
- * Copyright © 2006 by Pavel Fedin
+ * Copyright (C) 2005-2026, The AROS Development Team.
+ * Copyright (C) 2006 by Pavel Fedin
  *
  * Taken from 'Roadshow' -- Amiga TCP/IP stack
- * Copyright © 2001-2004 by Olaf Barthel.
+ * Copyright (C) 2001-2004 by Olaf Barthel.
  * All Rights Reserved.
  *
  * Amiga specific TCP/IP 'C' header files;
@@ -45,10 +46,6 @@
 #ifndef _NET_IF_H_
 #include <net/if.h>
 #endif /* _NET_IF_H_ */
-
-#ifndef _SYS_MBUF_H_
-#include <sys/mbuf.h>
-#endif /* _SYS_MBUF_H_ */
 
 /****************************************************************************/
 
@@ -157,6 +154,9 @@ extern "C" {
 /* Query the number of bytes sent so far. */
 #define SBTC_GET_BYTES_SENT 65
 
+/* Install or remove the error code hook, or get the one installed. */
+#define SBTC_ERROR_HOOK 68
+
 /****************************************************************************/
 
 /*
@@ -178,6 +178,29 @@ extern "C" {
 						   configured */
 #define SBSYSSTAT_DefaultRoute		(1L<<5)	/* A default route is
 						   configured */
+
+/****************************************************************************/
+
+/*
+ * The message the SBTC_ERROR_HOOK hook is called with, as the hook's
+ * message argument, whenever the library sets errno or h_errno. The hook
+ * runs on the calling task, so it can set that task's own variable.
+ */
+
+struct ErrorHookMsg
+{
+	ULONG	ehm_Size;	/* Size of this data structure; this
+				   must be >= 12 */
+	ULONG	ehm_Action;	/* See below for a list of definitions */
+
+	LONG	ehm_Code;	/* The error code to use */
+};
+
+/* Which action the hook is to perform */
+#define EHMA_Set_errno		1	/* Set the local 'errno' to what is
+					   found in ehm_Code */
+#define EHMA_Set_h_errno	2	/* Set the local 'h_errno' to what is
+					   found in ehm_Code */
 
 /****************************************************************************/
 
@@ -969,6 +992,9 @@ struct DomainNameServerNode
  */
 #define IFMD_Incoming 0	/* Packet was received */
 #define IFMD_Outgoing 1	/* Packet is about to be sent */
+
+/* The full definition of 'struct mbuf' is in <sys/mbuf.h> */
+struct mbuf;
 
 /* The packet filter hook is invoked with a message of
  * this type:

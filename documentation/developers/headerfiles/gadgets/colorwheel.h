@@ -3,7 +3,7 @@
 
 /*
     Copyright © 1995-2005, The AROS Development Team. All rights reserved.
-    $Id: colorwheel.h 30792 2009-03-07 22:40:04Z neil $
+    $Id$
 
     Desc: MethodIDs and AttrIDs for the colorwheel class.
     Lang: english

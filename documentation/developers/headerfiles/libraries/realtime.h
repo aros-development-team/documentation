@@ -2,7 +2,7 @@
 #define LIBRARIES_REALTIME_H
 
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright © 1995-2016, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Includes for realtime.library
@@ -34,6 +34,8 @@
 #include <exec/semaphores.h>
 #endif
 
+/* The actual length of a tick is: 1/TICK_FREQ + rtb_TickErr * 1e-9 */
+#define TICK_FREQ 1200
 
 /* A conductor is an abstraction that represent a group of applications
    that want to be syncronized. */
@@ -164,16 +166,16 @@ enum { PLAYER_Base = TAG_USER + 64,
 
 struct pmTime
 {
-    ULONG  pmt_Method;                  /* The actual method */
-    ULONG  pmt_Time;
+    STACKED ULONG  pmt_Method;                  /* The actual method */
+    STACKED ULONG  pmt_Time;
 };
 
 /* Structure used by the method PM_STATE. */
 
 struct pmState
 {
-    ULONG  pms_Method;                  /* The actual method */
-    ULONG  pms_OldState;                /* The state previous to the state
+    STACKED ULONG  pms_Method;                  /* The actual method */
+    STACKED ULONG  pms_OldState;                /* The state previous to the state
 					   change */
 };
 
@@ -197,7 +199,6 @@ struct RealTimeBase
     WORD           rtb_TickErr;
 };
 
-/* The actual length of a tick is: 1/TICK_FREQ + rtb_TickErr * 1e-9 */
 
 /* These two are hardware dependent... */
 #define  RealTime_TickErr_Min  -705

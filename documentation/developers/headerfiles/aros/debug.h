@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2009, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2025, The AROS Development Team. All rights reserved.
 
     Debugging macros.
     This include file can be included several times!
@@ -19,7 +18,6 @@
 #   include <exec/alerts.h>
 #endif
 
-#include <string.h>
 
 #ifndef DEBUG
 #   define DEBUG 0
@@ -158,26 +156,35 @@
 /* The trick with THIS_FILE allows us to reuse the same static string
  * instead of allocating a new copy for each invocation of these macros.
  */
+#ifndef __SRCFILENAME__
 #define THIS_FILE __FILE__
+#else
+#define THIS_FILE __SRCFILENAME__
+#endif
 
 #define ASSERT(x) do {						\
-	(x) ? 0 :						\
-	( DBPRINTF("\x07%s:%ld: assertion failed: %s\n",	\
-	THIS_FILE, __LINE__, #x) );				\
+	if (!(x)) {						\
+	  DBPRINTF("\x07%s:%u: assertion failed: %s\n",	\
+	           THIS_FILE, __LINE__, #x);			\
+	  Alert(AG_BadParm);					\
+	}							\
 } while(0)
 
 #define ASSERT_VALID_PTR(x) do {				\
-	(((IPTR)(x) > 1024) &&					\
-	TypeOfMem((APTR)(x))) ? 0 :				\
-	( DBPRINTF("\x07%s, %ld: bad pointer: %s = $%lx\n",	\
-	THIS_FILE, __LINE__, #x, (APTR)(x)) );			\
+	if (((IPTR)(x) < 1024) || !TypeOfMem((APTR)(x))) {	\
+	  DBPRINTF("\x07%s, %u: bad pointer: %s = $%p\n",	\
+	           THIS_FILE, __LINE__, #x, x);			\
+	  Alert(AG_BadParm);					\
+	}							\
 } while(0)
 
 #define ASSERT_VALID_PTR_OR_NULL(x) do {			\
-	((((APTR)(x)) == NULL) ||				\
-	(((IPTR)(x) > 1024) &&	TypeOfMem((APTR)(x)))) ? 0 :	\
-	( DBPRINTF("\x07%s:%ld: bad pointer: %s = $%lx\n",	\
-	THIS_FILE, __LINE__, #x, (APTR)(x)) );			\
+	if (((x) != NULL) &&					\
+	    (((IPTR)(x) < 1024) || !TypeOfMem((APTR)(x)))) {	\
+	  DBPRINTF("\x07%s, %u: bad pointer: %s = $%p\n",	\
+	           THIS_FILE, __LINE__, #x, x);			\
+	  Alert(AG_BadParm);					\
+	}							\
 } while(0)
 
 #define ASSERT_VALID_TASK(t) do {				\
@@ -192,9 +199,11 @@
 } while(0)
 
 #define KASSERT(x) do {						\
-	(x) ? 0 :						\
-	( DBPRINTF("\x07%s:%ld: assertion failed: %s\n",	\
-	THIS_FILE, __LINE__, #x), Alert(AG_BadParm) );		\
+	if (!(x)) {						\
+	  DBPRINTF("\x07%s:%u: assertion failed: %s\n",	\
+	           THIS_FILE, __LINE__, #x);			\
+	  Alert(AG_BadParm);					\
+	}							\
 } while(0)
 
 #else /* !ADEBUG */
@@ -225,21 +234,14 @@
    
 #define MUNGWALL_SIZE (32 * 1)
 
-#define MUNGWALLHEADER_SIZE 32
-
-#if AROS_SIZEOFULONG == 4
-#    define MEMFILL_FREE	0xDEADBEEFL
-#    define MEMFILL_ALLOC	0xC0DEDBADL
-#    define MEMFILL_WALL	0xABADC0DEL
-#elif AROS_SIZEOFULONG == 8
-#    define MEMFILL_FREE	0xDEADBEEFDEADBEEFL
-#    define MEMFILL_ALLOC	0xC0DEDBADC0DEDBADL
-#    define MEMFILL_WALL	0xABADC0DEABADC0DEL
-#else
-#    error sizeof ULONG is neither 4 nor 8 in this architecture
-#endif
+#define MEMFILL_FREE	0xDEADBEEFL
+#define MEMFILL_ALLOC	0xC0DEDBADL
+#define MEMFILL_WALL	0xABADC0DEL
 
 #undef MUNGE_BLOCK
+#undef BUILD_WALL
+#undef CHECK_WALL
+#undef MungWallCheck
 
 #if MDEBUG
 /* Fill the memory block pointed by <ptr> of size <size> with <fill>
@@ -253,7 +255,9 @@
 /* Build a wall over the memory block <ptr> of size <size> with <fill> bricks.
  */
 #   define BUILD_WALL(ptr, fill, size) do {		\
-	memset((ptr), (fill), (size));			\
+	UBYTE *__p = (UBYTE *)(ptr);			\
+	ULONG __s = (size);				\
+	while (__s--) *__p++ = (fill);			\
 } while(0)
 
 /* Check the integrity of the wall <ptr> of size <size> bytes containing <fill>.
@@ -266,8 +270,8 @@
 	    if(*__p != (fill))				\
 	    {						\
 		struct Task *__t = FindTask(NULL);	\
-		kprintf("\x07" "Broken wall detected at %s:%d at 0x%x, " \
-			"Task: 0x%x, Name: %s\n",       \
+		kprintf("\x07" "Broken wall detected at %s:%u at 0x%p, " \
+			"Task: 0x%p, Name: %s\n",       \
                         __FUNCTION__, __LINE__,         \
 			__p, __t, __t->tc_Node.ln_Name);\
 	    }						\
@@ -279,11 +283,17 @@
 #else
 
 #    define MUNGE_BLOCK(ptr, size, fill)
+#    define BUILD_WALL(ptr, fill, size)
 #    define CHECK_WALL(ptr, fill, size)
 #    define MungWallCheck()
 
 #endif /* MDEBUG */
 
+#ifdef __mc68000__
+#   define M68K_RETURN_INREG(val, reg)  asm volatile("move.l %0, %%" reg :: "r"(val) : reg)
+#else
+#   define M68K_RETURN_INREG(val, reg)
+#endif
 
 #if DEBUG
 #   define D(x...)     Indent x
@@ -300,7 +310,13 @@
 #   define ReturnPtr(name,type,val) {  type __aros_val = (type)val; \
 				    ExitFunc kprintf ("Exit " name "=%p\n", \
 				    (APTR)__aros_val); return __aros_val; }
-#   define ReturnStr(name,type,val) { type __aros_val = (type)val; \
+#   define ReturnPtrReg(name,type,val,reg) { \
+        type __aros_val = (type)(val); \
+        ExitFunc kprintf("Exit " name "=%p (" reg ")\n", (APTR)__aros_val); \
+        M68K_RETURN_INREG(__aros_val, reg); \
+        return __aros_val; \
+    }
+#   define ReturnStr(name,type,val) { type __aros_val = (type)val;      \
 				    ExitFunc kprintf ("Exit " name "=\"%s\"\n", \
 				    __aros_val); return __aros_val; }
 #   define ReturnInt(name,type,val) { type __aros_val = (type)val; \
@@ -325,6 +341,11 @@
 
 #   define ReturnVoid(name)                 return
 #   define ReturnPtr(name,type,val)         return val
+#   define ReturnPtrReg(name,type,val,reg) { \
+        type __aros_val = (type)(val); \
+        M68K_RETURN_INREG(__aros_val, reg); \
+        return __aros_val; \
+    }
 #   define ReturnStr(name,type,val)         return val
 #   define ReturnInt(name,type,val)         return val
 #   define ReturnXInt(name,type,val)        return val
@@ -336,20 +357,24 @@
 #undef CHECK_STACK
 #if AROS_STACK_DEBUG
 /*
-   I don't want to care about word length here because ULONG is a part of IPTR and
-   ULONG test will do here on 64-bit machines too.
-   
-   TODO: This doesn't work for 'Reversed' stack (growing upwards). If someone will ever
-   work on such an architecture (SPARC ???) he'll have to fix it.
-*/
+ * This works if stack snooping is turned on. One way to do it is to boot AROS
+ * with "stacksnoop" command line argument.
+ * I don't want to care about word length here because ULONG is a part of IPTR and
+ * ULONG test will do here on 64-bit machines too.
+ *
+ * TODO: This doesn't work for 'Reversed' stack (growing upwards). If someone will ever
+ * work on such an architecture (SPARC ???) he'll have to fix it.
+ */
 #define CHECK_STACK							\
 {									\
     struct Task *me = FindTask(NULL);					\
-									\
-    ULONG *stktop = me->tc_SPLower;					\
+    if (me->tc_Flags & TF_STACKCHK)					\
+    {									\
+    	ULONG *stktop = me->tc_SPLower;					\
     									\
-    if (stktop && (*stktop != 0xE1E1E1E1))				\
-        bug("STACK OVERFLOW in %s, line %d\n", __FILE__, __LINE__);	\
+    	if (stktop && (*stktop != 0xE1E1E1E1))				\
+            bug("STACK OVERFLOW in %s, line %u\n", __FILE__, __LINE__);	\
+    }									\
 }
 #else
 #define CHECK_STACK
@@ -378,6 +403,6 @@
 #define aros_print_not_implemented(name) \
     kprintf("The function %s() is not implemented.\n", (name))
 
-#define ALIVE kprintf("%s - %s line %d\n",__FILE__,__FUNCTION__,__LINE__);
+#define ALIVE kprintf("%s - %s line %u\n",__FILE__,__FUNCTION__,__LINE__);
 
 #endif /* AROS_DEBUG_H */
