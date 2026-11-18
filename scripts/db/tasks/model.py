@@ -97,12 +97,17 @@ class Category( Sortable ):
         self.subcategories.sort()
     
     def recalculate( self ):
-        """Accumulate implementation status counts from items and child categories.
+        """Recalculate implementation status counts from items and children.
 
-        Update ``lastupdated`` with the newest child date when applicable.
-        The current implementation accumulates onto existing totals; callers
-        must invoke it only once on a fresh category tree.
+        Reset the aggregates before counting. Update ``lastupdated``
+        to the newest child date when applicable.
         """
+        self.completed = 0
+        self.needssomework = 0
+        self.notimplemented = 0
+        self.skipped = 0
+        self.amigaonly = 0
+        self.total = 0
         for item in self.categoryitems:
             self.total += 1
 

@@ -40,10 +40,12 @@ import codecs
 import logging
 import json
 from collections import Counter, defaultdict
-from pathlib import Path
-from mui_class_autodoc import write_mui_docs
-from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Dict, Tuple, Optional, Any
+
+from autodoc_source_registry import load_source_registry
+from mui_class_autodoc import write_mui_docs
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -188,7 +190,9 @@ class AutoDocOutputAudit:
         if not origin:
             raise ValueError('Missing AutoDoc source provenance: ' + doc.docname)
         record = {'source': origin, 'document': relative,
-                  'entry': doc.docname, 'status': 'PENDING'}
+                  'entry': getattr(doc, "rst_title", doc.docname), 'status': 'PENDING'}
+        if record['entry'] != doc.docname:
+            record['source_symbol'] = doc.docname
         if hasattr(doc, 'source_paths'):
             record['sources'] = doc.source_paths
         self.records.append(record)
@@ -291,7 +295,7 @@ class FunctionIndex:
             paths = self.funcdict[func]
             for path in sorted(paths):
                 label = func if len(paths) == 1 else "%s (%s)" % (func, path)
-                entries.append("`%s <%s#%s>`_" % (label, path, func[:-2].lower()))
+                entries.append("`%s <%s#%s>`__" % (label, path, func[:-2].lower()))
         width = max([74] + [len(entry) for entry in entries])
         tablesep = (("=" * width) + " ") * 4
         fdesc.write("==============\nFunction Index\n==============\n\n")
@@ -423,16 +427,25 @@ class AutoDoc:
         fdesc.write("`%s.library/%s() <%s/%s#%s>`_ " % (libname, funcname, path_to_lib, libname, funcname.lower()))
 
     def write_xref_localfunction(self, fdesc, funcname):
-        """Write a cross-reference to a local function."""
-        fdesc.write("`%s()`_ " % (funcname))
+        """Link only to a function emitted on the same module page."""
+        target = funcname + "()"
+        if target in getattr(self, "module_local_names", ()):
+            from docutils import nodes
+            fdesc.write("`%s() <#%s>`_ " % (funcname, nodes.make_id(target)))
+        else:
+            fdesc.write("``%s()`` " % (funcname))
 
     def write_xref_header(self, fdesc, name):
         """Write a cross-reference to a header file."""
         fdesc.write("`%s </documentation/headerfiles/%s>`_ " % (name, name))
 
     def write_xref_string(self, fdesc, name):
-        """Write a cross-reference to a string."""
-        fdesc.write("`%s`_ " % (name))
+        """Link on-page symbols; leave other identifiers as literals."""
+        if name in getattr(self, "module_local_names", ()):
+            from docutils import nodes
+            fdesc.write("`%s <#%s>`_ " % (name, nodes.make_id(name)))
+        else:
+            fdesc.write("``%s`` " % (name))
 
     def write_xref_any(self, fdesc, name):
         """Write a literal cross-reference without a link."""
@@ -643,8 +656,9 @@ class HiddAutoDoc(AutoDoc):
 
         """
 
-        fdesc.write(self.docname + "\n")
-        fdesc.write("=" * len(self.docname) + "\n\n")
+        heading = getattr(self, "rst_title", self.docname)
+        fdesc.write(heading + "\n")
+        fdesc.write("=" * len(heading) + "\n\n")
         AutoDoc.write(self, fdesc, titles)
         fdesc.write("\n")
 
@@ -886,7 +900,9 @@ class LibDocList:
                 fdesc.write(f"\n{tablesep}")
                 fdesc.write("\n\n-----------\n\n")
 
+                local_names = frozenset(doc.docname for doc in self.doclist)
                 for i, doc in enumerate(self.doclist):
+                    doc.module_local_names = local_names
                     doc.write(fdesc, titles)
                     doc.write_xref(fdesc, ".")
                     # write transition
@@ -932,7 +948,7 @@ class HiddDocList(object):
         self.doclist = {} # key is classname, content is list of documents per class
         self.docfilename = ""
 
-    def read(self, srcdir, name=None):
+    def read(self, srcdir, name=None, filenames=None):
         """Scan directory for autodocs.
 
         Reads all *.c files of the given directory and scans them for autodocs.
@@ -949,7 +965,7 @@ class HiddDocList(object):
         else:
             self.docfilename = os.path.basename(srcdir) + "_hidd" # rightmost part of the path
 
-        cfiles = os.listdir(srcdir)
+        cfiles = os.listdir(srcdir) if filenames is None else filenames
         for infile in cfiles:
             if infile[-2:] == ".c":
                 filename = os.path.join(srcdir, infile)
@@ -992,6 +1008,19 @@ class HiddDocList(object):
 
         if len(self.doclist) > 0:
             filename = os.path.join(targetdir, self.docfilename + ".en.rst")
+            counts = Counter(doc.docname.casefold()
+                             for entries in self.doclist.values() for doc in entries)
+            identities = set()
+            for classname, entries in self.doclist.items():
+                for doc in entries:
+                    key = (classname, doc.docname.casefold())
+                    if key in identities:
+                        raise ValueError("Repeated HIDD AutoDoc: %r" % (key,))
+                    identities.add(key)
+                    if counts[doc.docname.casefold()] > 1:
+                        doc.rst_title = "%s (%s)" % (doc.docname, classname)
+            local_names = frozenset(getattr(doc, "rst_title", doc.docname)
+                                    for entries in self.doclist.values() for doc in entries)
             for doclist in self.doclist.values():
                 for doc in doclist:
                     DOC_AUDIT.expect(filename, doc)
@@ -1023,7 +1052,7 @@ class HiddDocList(object):
                     tablesep = (("=" * 74) + " ") * 4
                     fdesc.write(tablesep + "\n")
                     for docnr in range(len(doclist)):
-                        tocname = "`" + doclist[docnr].docname + "`_"
+                        tocname = "`" + getattr(doclist[docnr], "rst_title", doclist[docnr].docname) + "`_"
                         tocname = tocname.ljust(75)
                         fdesc.write(tocname)
                         if (docnr + 1) % 4 == 0:
@@ -1032,6 +1061,7 @@ class HiddDocList(object):
                     fdesc.write("\n\n-----------\n\n")
 
                     for doc in doclist:
+                        doc.module_local_names = local_names
                         doc.write(fdesc, titles)
                         doc.write_xref(fdesc, ".")
                         # write transition
@@ -1404,7 +1434,7 @@ def create_module_docs() -> None:
     # ATA HIDD AutoDocs are in the root itself, not its subdirectories.
     ata_dir = TOPDIR / "rom" / "devs" / "ata"
     ata_docs = HiddDocList()
-    ata_docs.read(str(ata_dir))
+    ata_docs.read(str(ata_dir), filenames=("ata_busclass.c", "ata_unitclass.c"))
     if ata_docs.doclist:
         ata_docs.docfilename = module_output_registry.claim(ata_docs.docfilename, ata_dir)
         ata_docs.write(str(targetdir), module_titles)
@@ -1424,6 +1454,53 @@ def create_module_docs() -> None:
     mui_target = Path("documentation") / "developers" / "autodocs" / "mui-classes"
     if mui_source.exists():
         write_mui_docs(mui_source, mui_target)
+
+    # Independently declared source groups: no per-path builder edits.
+    source_registry = load_source_registry(
+        Path(__file__).resolve().parent / "autodoc-sources.d", TOPDIR)
+    for source_entry in source_registry:
+        source_dir = source_entry.directory
+        if source_entry.output in module_output_registry.owners:
+            raise ValueError("Registered AutoDoc output name already claimed: " +
+                             str(source_entry.origin))
+        if source_entry.kind == "library":
+            docs = LibDocList()
+        else:
+            docs = HiddDocList()
+        docs.read(str(source_dir), name=source_entry.output,
+                  filenames=source_entry.filenames)
+        if not docs.doclist:
+            raise ValueError("Registered source has no recognized AutoDocs: " +
+                             str(source_entry.origin))
+        # Different APIs may legitimately share a source DIRECTORY (for
+        # example ata.device and ATA HIDDs). What must not repeat is a
+        # published source ENTRY. Audit provenance identifies that owner.
+        existing_contracts = {
+            (origin, record["entry"])
+            for record in DOC_AUDIT.records
+            for origin in record.get("sources", [record["source"]])
+        }
+        selected_docs = (docs.doclist if source_entry.kind == "library" else
+                         [entry for group in docs.doclist.values() for entry in group])
+        candidates = {(doc.source_path, doc.docname) for doc in selected_docs}
+        if source_entry.expected_symbols is not None:
+            actual = Counter(doc.docname for doc in selected_docs)
+            expected = Counter(source_entry.expected_symbols)
+            if actual != expected:
+                raise ValueError("Registered AutoDoc symbol inventory drift: " +
+                                 str(source_entry.origin) + " expected=" +
+                                 repr(sorted(expected.elements())) + " actual=" +
+                                 repr(sorted(actual.elements())))
+        duplicates = sorted(existing_contracts.intersection(candidates))
+        if duplicates:
+            raise ValueError("Registered AutoDoc entries already published: " +
+                             str(source_entry.origin) + ": " + repr(duplicates[:8]))
+        docs.docfilename = module_output_registry.claim(source_entry.output, source_dir)
+        if docs.docfilename != source_entry.output:
+            raise ValueError("Unexpected AutoDoc output rename: " + str(source_entry.origin))
+        docs.write(str(targetdir), module_titles)
+        if source_entry.kind == "library":
+            function_index.add_list(docs.docfilename, docs)
 
     # print index file
     index_file = targetdir / "index.en.rst"
@@ -1596,13 +1673,6 @@ if __name__ == "__main__":
     # Setup logging for standalone execution
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     
-    current_dir = Path.cwd()
-    parent_dir = current_dir.parent
-    
-    if parent_dir.exists():
-        os.chdir(str(parent_dir))  # because we have relative paths
-        logging.info(f"Changed working directory to {parent_dir}")
-    else:
-        logging.warning(f"Parent directory {parent_dir} does not exist")
-    
+    # Keep TOPDIR ("..") relative to the documentation repository root.
+    os.chdir(Path(__file__).resolve().parent.parent)
     create_all_docs()

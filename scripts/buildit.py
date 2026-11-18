@@ -13,6 +13,7 @@ import sys
 import shutil
 import glob
 import codecs
+import subprocess
 
 import db.credits.parse
 import db.credits.format.rest
@@ -22,6 +23,7 @@ import db.tasks.format.html
 from docutils.core import publish_parts
 from docutils.core import Publisher
 from docutils.io import NullOutput
+from docutils.utils import SystemMessage
 
 from build import utility
 from build import thumbnail
@@ -59,6 +61,7 @@ SITES = {
 
 targetsites = []
 wwwtgt = None
+STRICT_DOCUTILS = False
 
 # Initialize Jinja2 environment to load templates from your source root
 jinja_env = Environment(loader=FileSystemLoader(SRCROOT))
@@ -409,6 +412,9 @@ def convertWWW(src, language, options=None):
         'embed_stylesheet': False,
     }
 
+    if STRICT_DOCUTILS:
+        settings_overrides['halt_level'] = 3
+
     # If you ever want to pass other dynamic options, process them here:
     if options:
         for opt in options:
@@ -497,7 +503,11 @@ def processWWW(src, depth):
 
         utility.makedir(dst_dir)
 
-        if utility.newer([TEMPLATEPATH + wwwtgt + "/" + TEMPLATEFILESTEM + lang, src_abs], dst_abs):
+        needs_render = STRICT_DOCUTILS or utility.newer(
+            [TEMPLATEPATH + wwwtgt + "/" + TEMPLATEFILESTEM + lang, src_abs],
+            dst_abs,
+        )
+        if needs_render:
             utility.reportBuilding(dst)
             strings = {
                 'ROOT': '../' * dst_depth,
@@ -530,7 +540,7 @@ def processHTML(src, depth):
 
     utility.makedir(dst_dir)
 
-    if utility.newer([src_abs], dst_abs):
+    if STRICT_DOCUTILS or utility.newer([src_abs], dst_abs):
         utility.reportBuilding(src)
 
         # === Render through Jinja2 ===
@@ -561,6 +571,9 @@ def processHTML(src, depth):
             'embed_stylesheet': True,
             'stylesheet_path': stylesheet_path,
         }
+
+        if STRICT_DOCUTILS:
+            settings_overrides['halt_level'] = 3
 
         # === Convert to HTML ===
         parts = publish_parts(
@@ -893,7 +906,7 @@ def buildWWW():
             # Remove index-offline.html
             utility.remove(os.path.join(TRGROOT, 'index-offline.html'))
 
-        os.system('chmod -R go+r %s' % TRGROOT)
+        subprocess.run(['chmod', '-R', 'go+r', TRGROOT], check=True)
 
 
 def buildHTML():
@@ -943,7 +956,7 @@ def buildHTML():
     utility.remove(os.path.join(TRGROOT, 'index.html'))
     os.rename(os.path.join(TRGROOT, 'index-offline.html'), os.path.join(TRGROOT, 'index.html'))
 
-    os.system('chmod -R go+r %s' % TRGROOT)
+    subprocess.run(['chmod', '-R', 'go+r', TRGROOT], check=True)
 
 
 TARGETS = {
@@ -960,6 +973,7 @@ TARGETS = {
 # Targets: clean, www, html, alldocs, shelldocs, moduledocs, appsdocs.
 # Sites: aros, dev, locale. Language selection applies only to www.
 # With no language selection, all supported languages are built.
+# --strict-docutils: fail on Docutils ERROR/3 or higher for html/www.
 
 if __name__ == '__main__':
     targets = []
@@ -973,11 +987,17 @@ if __name__ == '__main__':
             targets.append(arg)
         elif arg in SITES:
             targetsites.append(arg)
+        elif arg == "--strict-docutils":
+            STRICT_DOCUTILS = True
         else:
             print('Error: Unrecognised argument, "' + arg + '".')
             valid = 0
 
     if valid:
+        if STRICT_DOCUTILS and not any(target in ("html", "www") for target in targets):
+            print("Error: --strict-docutils requires the html or www target.", file=sys.stderr)
+            sys.exit(2)
+
         # Fill in defaults if necessary
         if len(languages) == 0:
             languages = list(LANGUAGES)
@@ -986,8 +1006,16 @@ if __name__ == '__main__':
 
         # If www is a target and no site specified, default to the first in SITES
         if 'www' in targets and len(targetsites) == 0:
-            targetsites.append(SITES[SITES.keys()[0]])  # Get first value from SITES
+            targetsites.append(next(iter(SITES)))  # Get the first site key
 
         # Build each target
         for target in targets:
-            TARGETS[target]()
+            try:
+                TARGETS[target]()
+            except SystemMessage as exc:
+                if not STRICT_DOCUTILS:
+                    raise
+                print(f"Docutils validation failed: {exc}", file=sys.stderr)
+                sys.exit(1)
+    else:
+        sys.exit(2)
