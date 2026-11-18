@@ -107,7 +107,7 @@ zune;volumelist;Volumelist.mui;2012-07-10
 zune;dirlist;Dirlist.mui;2012-07-10
 zune;numeric;Numeric.mui;2012-07-10
 zune;knob;Knob.mui;2012-07-10
-zune;levelmeter;Levelmeter.mui;2012-07-10
+zune;levelmeter;Levelmeter.mui;2026-11-14
 zune;numericbutton;Numericbutton.mui;2012-07-10
 zune;slider;Slider.mui;2012-07-10
 zune;pendisplay;Pendisplay.mui;2012-07-11
@@ -115,7 +115,7 @@ zune;poppen;Poppen.mui;2012-07-11
 zune;group;Group.mui;2012-07-11
 zune;register;Register.mui;2012-07-17
 zune;penadjust;Penadjust.mui;2012-07-17
-zune;virtgroup;Virtgroup.mui;2012-07-17
+zune;virtgroup;Virtgroup.mui;2026-11-15
 zune;scrollgroup;Scrollgroup.mui;2013-09-20
 zune;scrollbar;Scrollbar.mui;2012-07-17
 zune;listview;Listview.mui;2016-09-21
@@ -2436,7 +2436,7 @@ notify;OM_DISPOSE;1;1;2
 notify;OM_SET;1;1;2
 notify;OM_GET;1;1;2
 family;MUIA_Family_Child;1;1;2
-family;MUIA_Family_List;1;1;2;
+family;MUIA_Family_List;1;1;2
 family;MUIA_Version;1;1;2
 family;MUIA_Revision;1;1;2
 family;MUIM_Family_AddHead;1;1;2
@@ -2715,7 +2715,6 @@ area;MUIM_DragReport;1;1;2
 area;MUIM_Draw;1;1;2
 area;MUIM_DrawBackground;1;1;2
 area;MUIM_Drag;1;1;2
-area;MUIM_Drag;1;1;2
 area;MUIM_HandleEvent;1;1;2
 area;MUIM_HandleInput;1;1;1
 area;MUIM_Hide;1;1;2
@@ -2890,7 +2889,12 @@ numeric;MUIM_Numeric_Stringify;1;1;2
 numeric;MUIM_Numeric_ValueToScale;1;1;2
 numeric;MUIM_Numeric_ValueToScaleExt;1;2;2
 knob;OM_NEW;1;1;2
-levelmeter;MUIA_LevelMeter_Label;1;1;0
+levelmeter;MUIA_Levelmeter_Label;1;1;0
+levelmeter;MUIA_Levelmeter_Style;1;2;2
+levelmeter;MUIA_Levelmeter_Segments;1;2;2
+levelmeter;MUIA_Levelmeter_Horiz;1;2;2
+levelmeter;MUIA_Levelmeter_WarningSegments;1;2;2
+levelmeter;MUIA_Levelmeter_CriticalSegments;1;2;2
 numericbutton;OM_NEW;1;1;2
 slider;MUIA_Slider_Horiz;1;1;2
 #slider;MUIA_Slider_Level;1;1;0
@@ -2930,11 +2934,11 @@ register;MUIA_Register_Frame;1;1;2
 register;MUIA_Register_Titles;1;1;2
 penadjust;MUIA_Penadjust_PSIMode;1;1;0
 penadjust;MUIA_Penadjust_Spec;1;2;2
-virtgroup;MUIA_Virtgroup_Height;1;1;0
+virtgroup;MUIA_Virtgroup_Height;1;1;2
 virtgroup;MUIA_Virtgroup_Input;1;1;0
-virtgroup;MUIA_Virtgroup_Left;1;1;0
-virtgroup;MUIA_Virtgroup_Top;1;1;0
-virtgroup;MUIA_Virtgroup_Width;1;1;0
+virtgroup;MUIA_Virtgroup_Left;1;1;1
+virtgroup;MUIA_Virtgroup_Top;1;1;1
+virtgroup;MUIA_Virtgroup_Width;1;1;2
 scrollgroup;MUIA_Scrollgroup_Contents;1;1;2
 scrollgroup;MUIA_Scrollgroup_FreeHoriz;1;1;0
 scrollgroup;MUIA_Scrollgroup_FreeVert;1;1;0
