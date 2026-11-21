@@ -1,0 +1,429 @@
+===================================
+AROS ABI: Motorola 68000 family
+===================================
+
+:Authors:   The AROS Development Team
+:Copyright: Copyright (C) 2026, The AROS Development Team
+:Version:   $Revision$
+:Date:      $Date$
+:Status:    Describes the behaviour of the AROS main development tree.
+
+.. Contents::
+
+
+Overview
+========
+
+This page describes the parts of the AROS ABI that are specific to the
+Motorola 68000 family. It supplements the `common ABI document <index>`__,
+which should be read first.
+
+The m68k ABI differs from all the other AROS ABIs in one fundamental way:
+it is designed to be **binary compatible with AmigaOS 3.x**. Programs and
+libraries built for AmigaOS run on AROS, and AROS modules can be used by
+AmigaOS software. As a consequence:
+
++ system structures have the same layout as on AmigaOS,
++ library functions take their arguments in registers, with the library
+  base in ``A6``,
++ a library vector is a 6-byte ``JMP`` instruction,
++ ``SysBase`` is found at absolute address 4,
++ ``BPTR`` and ``BSTR`` keep their BCPL meaning, and
++ AmigaOS hunk-format executables are loaded natively.
+
+Ports
+-----
+
+==================  ==========================================================
+Port                Notes
+==================  ==========================================================
+``amiga-m68k``      Native port for Amiga hardware and emulators. The
+                    reference for this ABI.
+``linux-m68k``      Hosted. Uses the same binary-compatible ABI.
+==================  ==========================================================
+
+
+Data representation
+===================
+
+The data model is ILP32, big-endian.
+
+=====================  =====  ==============================================
+Property               Value  Notes
+=====================  =====  ==============================================
+``int``, ``long``      32     16-bit ``int`` is not supported
+pointer                32
+``AROS_WORDALIGN``     2
+``AROS_LONGALIGN``     2
+``AROS_QUADALIGN``     2
+``AROS_PTRALIGN``      2
+``AROS_DOUBLEALIGN``   2
+``AROS_WORSTALIGN``    4
+``AROS_STACKALIGN``    8
+``AROS_STACKSIZE``     16384
+=====================  =====  ==============================================
+
+Alignment
+---------
+
+Every type of 16 bits or more is aligned to **2 bytes**, including 32-bit
+and 64-bit integers, pointers and ``double``. This is the default of the
+m68k compiler and matches AmigaOS; the AROS headers must not be compiled
+with options that change it (such as ``-malign-int``) or that change the
+size of ``int`` (``-mshort``).
+
+The one exception is ``struct TagItem``, whose two members are aligned to
+4 bytes on m68k as on every other target.
+
+Floating point
+--------------
+
+``float`` and ``double`` are IEEE 754 single and double. ``long double`` is
+the 96-bit extended format of the 68881.
+
+AROS for m68k is built **without FPU instructions** (``-msoft-float``), so
+that the same binaries run on machines with and without an FPU. Floating
+point values are passed and returned in integer registers or on the stack,
+never in FPU registers. The maths libraries detect an FPU at run time and
+patch their vectors to use it.
+
+BCPL pointers and strings
+-------------------------
+
+A ``BPTR`` is an address shifted right by two bits; the object it refers to
+must be aligned to 4 bytes. A ``BSTR`` is a ``BPTR`` to a string that starts
+with a length byte. ``BNULL`` is 0. Always use ``BADDR()``, ``MKBADDR()``
+and the ``AROS_BSTR_*`` macros.
+
+
+Register usage
+==============
+
+==============  =========================================================
+Register        Use
+==============  =========================================================
+``D0``          Return value. Scratch.
+``D1``          Low half of a 64-bit return value. Scratch.
+``D2``-``D7``   Preserved across calls.
+``A0``-``A1``   Scratch.
+``A2``-``A4``   Preserved across calls.
+``A5``          Preserved across calls. Frame pointer when one is used.
+``A6``          Preserved across calls. Library base in a library call.
+``A7``          Stack pointer.
+==============  =========================================================
+
+A called function may change ``D0``, ``D1``, ``A0`` and ``A1`` and must
+preserve all other registers. This applies to C functions and library
+functions alike.
+
+.. Note::
+
+   The AROS compiler uses ``A5`` as the frame pointer where a frame pointer
+   is needed, not ``A6``, so that ``A6`` is always available for the library
+   base. AROS is built with ``-fomit-frame-pointer``.
+
+
+Calling conventions
+===================
+
+C functions
+-----------
+
+Ordinary C functions receive all their arguments on the stack. Arguments
+are pushed right to left, each one widened to at least 32 bits. The caller
+removes them after the call.
+
+Integer and pointer results are returned in ``D0``, and 64-bit and
+``double`` results in ``D0`` (high half) and ``D1`` (low half). A function
+that returns a structure is passed the address of the memory for the result
+in ``A0`` and returns that address in ``D0``.
+
+Library functions
+-----------------
+
+A library function is called as on AmigaOS:
+
++ each argument is loaded into the register named in the function
+  definition,
++ the library base is loaded into ``A6``, and
++ the caller executes ``JSR -n*6(A6)``, where ``n`` is the LVO number.
+
+::
+
+    move.l  byteSize,d0
+    move.l  requirements,d1
+    move.l  SysBase,a6
+    jsr     -198(a6)            ; AllocMem(), LVO 33
+
+The rules for individual arguments are:
+
++ **Arguments narrower than 32 bits.** An AROS caller always loads the
+  full register, sign- or zero-extending the value. A callee must only rely
+  on the bits of the declared type, because AmigaOS callers frequently
+  leave the upper bits undefined. Functions that take a ``WORD`` count in a
+  data register must mask or extend it before use.
++ **64-bit and double arguments** occupy two registers, named with
+  ``AROS_LHA2()``. The first register holds the high half.
++ **Arguments in A5.** Because ``A5`` may be the frame pointer, the call
+  macros save it, load the argument and restore it around the call. No
+  special action is needed in source code.
++ **Results** of up to 32 bits, including pointers, are returned in ``D0``.
+  64-bit and ``double`` results are returned in ``D0`` (high half) and
+  ``D1`` (low half). Library functions cannot return structures by value.
+
+Vector format
+-------------
+
+Each vector is 6 bytes (``LIB_VECTSIZE`` is 6)::
+
+    struct JumpVec
+    {
+        unsigned short jmp;     /* 0x4EF9: JMP (abs).L */
+        void          *vec;     /* address of the function */
+    };
+
+The vector for function ``n`` is at ``base - 6 * n``. A caller jumps *into*
+the vector; it does not load a pointer from it. A vector must only be
+changed with ``SetFunction()``, which also flushes the instruction cache.
+
+C-style library functions
+-------------------------
+
+A library function that is written as a plain C function (see the `common
+document <index>`__) takes its arguments on the stack. Its link library
+stub loads the library base into **A0**, not ``A6``, and jumps through the
+vector::
+
+    move.l  LibBase,a0
+    jmp     -n*6(a0)
+
+``A0`` is a scratch register in the C convention, so the stub does not
+disturb the caller. This form of library function does not exist on
+AmigaOS.
+
+User functions and hooks
+------------------------
+
+Functions defined with ``AROS_UFH`` receive each argument in the register
+named in the definition and nothing on the stack.
+
+Hooks use the AmigaOS registers:
+
+============  ======================================
+Register      Content
+============  ======================================
+``A0``        Pointer to the ``struct Hook``
+``A2``        Object
+``A1``        Message
+``D0``        Result
+============  ======================================
+
+Interrupt handlers and servers
+------------------------------
+
+An interrupt handler or server is entered with:
+
+============  ======================================
+Register      Content
+============  ======================================
+``A1``        ``is_Data``
+``A5``        ``is_Code``
+``A6``        ``SysBase``
+``D1``        Interrupt mask
+``A0``        Custom chip base (``0xDFF000``)
+``D0``        Result
+============  ======================================
+
+A server returns zero in ``D0`` if the interrupt was not for it and non-zero
+if it was, and must set the Z flag accordingly; the ``AROS_INTH`` macros do
+this.
+
+.. Note::
+
+   *Implementation note.* On m68k the AROS interrupt server chain calls
+   every server regardless of the value each one returns.
+
+Variadic functions
+------------------
+
+Variadic arguments are pushed on the stack as 32-bit slots, so a tag list
+or method message passed as arguments is already a contiguous array and is
+used in place.
+
+``RawDoFmt()`` and the functions built on it read their argument stream in
+the AmigaOS way, where an unsized integer field is 16 bits. The variadic C
+wrappers convert between the two forms.
+
+
+The stack
+=========
+
++ The stack is a full-descending stack addressed by ``A7``.
++ The initial stack pointer of a task is aligned to 8 bytes. The CPU itself
+  requires only 2-byte alignment and C code must not assume more.
++ The default stack size for a new task is 16384 bytes. A DOS process is
+  given at least 8192 bytes.
++ Task switching stores the register frame of a task on its own stack, in
+  the layout used by Kickstart: all of ``D0``-``D7`` and ``A0``-``A6``, the
+  status register and the program counter. Programs must therefore always
+  leave working space on their stack.
+
+
+Program entry
+=============
+
+A program is entered at the start of its first hunk with the AmigaOS
+register interface:
+
+============  ==========================================================
+Register      Content
+============  ==========================================================
+``A0``        Pointer to the argument string (``NULL`` when started from
+              Workbench)
+``D0``        Length of the argument string
+``(SP)``      Return address
+``4(SP)``     Size of the stack
+``D0``        On return: the return code
+============  ==========================================================
+
+``SysBase`` is **not** passed in a register. The program reads it from
+absolute address 4::
+
+    struct ExecBase *SysBase = *(struct ExecBase **)4;
+
+This is the only AROS ABI target on which address 4 has this meaning.
+
+When started from a Shell the registers ``A2``, ``A5`` and ``A6`` also hold
+the BCPL global vector and the BCPL call and return routines, for the
+benefit of programs that use the BCPL interface of AmigaDOS.
+
+
+Supervisor mode and traps
+=========================
+
+Tasks run in user mode. ``Supervisor()`` (function in ``A5``) runs a
+function in supervisor mode; that function must end with ``RTE``.
+``SuperState()`` and ``UserState()`` switch the calling task to and from
+supervisor mode.
+
+A task's ``tc_TrapCode`` handler is entered in supervisor mode with the
+trap number as a longword on top of the exception stack frame, as on
+AmigaOS, and must preserve all registers.
+
+
+Processor state of a task
+=========================
+
+``struct ExceptionContext`` (``<aros/cpucontext.h>``) holds ``D0``-``D7``,
+``A0``-``A7``, the status register and the program counter.
+
+If the machine has an FPU, the FPU state of each task is saved and restored
+on a task switch: the internal state frame, and when it is not null also
+``FP0``-``FP7`` and the control registers. On the Apollo 68080 the AMMX
+registers are preserved as well.
+
+
+setjmp buffer
+=============
+
+``jmp_buf`` is 64 bytes: the return address followed by 15 longword slots.
+
+==========  =====================
+Slot        Content
+==========  =====================
+0           Return address
+1-6         ``D2``-``D7``
+7-11        ``A2``-``A6``
+12          ``A7``
+13-15       Reserved
+==========  =====================
+
+FPU registers are not saved.
+
+
+Executable file format
+======================
+
+Hunk executables
+----------------
+
+``LoadSeg()`` loads AmigaOS hunk-format executables on m68k, including
+overlaid executables. The following hunk types are understood:
+``HUNK_HEADER``, ``HUNK_CODE``, ``HUNK_DATA``, ``HUNK_BSS``,
+``HUNK_RELOC32``, ``HUNK_RELOC32SHORT``, ``HUNK_RELRELOC32``,
+``HUNK_DREL32``, ``HUNK_ABSRELOC16``, ``HUNK_SYMBOL``, ``HUNK_DEBUG``,
+``HUNK_OVERLAY``, ``HUNK_BREAK`` and ``HUNK_END``. The memory type flags
+of ``HUNK_HEADER`` (chip and fast memory) are honoured.
+
+ELF modules
+-----------
+
+AROS itself is built as ELF (``EM_68K``, big-endian, 32-bit, with ``RELA``
+relocations), and ``LoadSeg()`` also loads ELF modules as described in the
+common document. The ELF loader accepts these relocation types:
+
+``R_68K_32``, ``R_68K_16``, ``R_68K_8``, ``R_68K_PC32``, ``R_68K_PC16``,
+``R_68K_PC8``, ``R_68K_NONE``.
+
+Distribution format
+-------------------
+
+The binaries on ``amiga-m68k`` installation media are converted from ELF to
+hunk format with the ``elf2hunk`` tool, so that they can also be loaded by
+AmigaOS. ``elf2hunk`` supports ``R_68K_32`` and ``R_68K_PC32`` relocations
+only; modules that are to be converted must not contain others. A section
+with the ``.MEMF_CHIP`` suffix becomes a chip memory hunk.
+
+
+Compiler configuration
+======================
+
+==============================  ==============================================
+Setting                         Value
+==============================  ==============================================
+Target triple                   ``m68k-aros``
+Default CPU                     68000
+Floating point                  ``-msoft-float``
+Frame pointer register          ``A5`` (``-fomit-frame-pointer`` by default)
+Position independent code       Not used
+Structure alignment             Compiler default (2 bytes)
+==============================  ==============================================
+
+The build can be configured for a later CPU model (68020, 68030, 68040 or
+68060). This changes the instructions used, not the ABI: binaries built for
+the 68000 run on all models.
+
+The register-argument library call macros are generated at build time by
+``arch/m68k-all/include/gencall.c`` and rely on GNU C register variables.
+
+
+Differences from AmigaOS
+========================
+
+The following points are where AROS on m68k differs from AmigaOS 3.x in a
+way that a programmer may notice:
+
++ ``int`` is always 32 bits.
++ ``struct TagItem`` members are explicitly aligned to 4 bytes.
++ Libraries may contain C-style functions, which receive their library base
+  in ``A0``.
++ Library functions cannot return structures by value.
++ The default stack sizes are larger.
+
+
+Source references
+=================
+
+=============================================  ============================
+Location                                       Content
+=============================================  ============================
+``arch/m68k-all/include/aros/cpu.h``           Types, alignment, vectors
+``arch/m68k-all/include/gencall.c``            Register call macros
+``arch/m68k-all/include/aros/genmodule.h``     Library stubs
+``arch/m68k-all/include/aros/cpucontext.h``    Saved processor state
+``arch/m68k-all/exec``                         Stack and task switching
+``arch/m68k-all/dos``                          Program entry, BCPL support
+``arch/m68k-all/stdc``                         ``setjmp``/``longjmp``
+``rom/dos/internalloadseg_aos.c``              Hunk loader
+``tools/elf2hunk``                             ELF to hunk converter
+=============================================  ============================

@@ -1,0 +1,428 @@
+===================================
+AROS ABI: x86 family
+===================================
+
+:Authors:   The AROS Development Team
+:Copyright: Copyright (C) 2026, The AROS Development Team
+:Version:   $Revision$
+:Date:      $Date$
+:Status:    Describes the behaviour of the AROS main development tree.
+
+.. Contents::
+
+
+Overview
+========
+
+This page describes the parts of the AROS ABI that are specific to the x86
+family. It supplements the `common ABI document <index>`__, which should be
+read first.
+
+There are two ABI targets:
+
+==========  ==========  ==================================================
+ABI target  Data model  Base calling standard
+==========  ==========  ==================================================
+``i386``    ILP32       System V i386 ABI (``cdecl``)
+``x86_64``  LP64        System V AMD64 ABI
+==========  ==========  ==================================================
+
+The two are separate ABIs. An ``x86_64`` system does not run ``i386``
+modules.
+
+Ports
+-----
+
+====================  ====================================================
+Port                  Notes
+====================  ====================================================
+``pc-i386``           Native, PC compatible hardware
+``pc-x86_64``         Native, PC compatible hardware
+``linux-i386``        Hosted on Linux
+``linux-x86_64``      Hosted on Linux
+``darwin-i386``       Hosted on macOS
+``darwin-x86_64``     Hosted on macOS
+``mingw32-i386``      Hosted on Windows
+``mingw32-x86_64``    Hosted on Windows
+====================  ====================================================
+
+All ports of one ABI target run the same binaries. Note in particular that
+the Windows-hosted ports use the System V conventions described here for all
+AROS code, not the Microsoft ones; see `Hosted ports`_.
+
+
+Data representation
+===================
+
+=====================  =========  ==========
+Property               i386       x86_64
+=====================  =========  ==========
+Byte order             little     little
+``int``                32         32
+``long``, pointer      32         64
+``AROS_WORDALIGN``     2          2
+``AROS_LONGALIGN``     4          4
+``AROS_QUADALIGN``     4          8
+``AROS_PTRALIGN``      4          8
+``AROS_DOUBLEALIGN``   4          8
+``AROS_WORSTALIGN``    16         16
+``AROS_STACKALIGN``    16         16
+``AROS_STACKSIZE``     40960      40960
+``STACKED`` slot       4 bytes    8 bytes
+=====================  =========  ==========
+
++ On i386, 64-bit integers and ``double`` are aligned to 4 bytes inside
+  structures, as in the System V i386 ABI.
++ ``long double`` is the 80-bit x87 extended format on both targets.
++ Bit-fields are laid out using the GNU rules, not the Microsoft ones, on
+  all ports (``-mno-ms-bitfields``).
++ ``BPTR`` is an ordinary pointer and ``BSTR`` an ordinary C string.
+
+
+i386
+====
+
+Register usage
+--------------
+
+==================  ======================================================
+Register            Use
+==================  ======================================================
+``%eax``            Return value. Scratch. Library base in a library call.
+``%ecx``, ``%edx``  Scratch. ``%edx`` holds the high half of a 64-bit
+                    return value.
+``%ebx``            Preserved across calls.
+``%esi``, ``%edi``  Preserved across calls.
+``%ebp``            Preserved across calls. Frame pointer.
+``%esp``            Stack pointer.
+``%st(0)``          Floating point return value.
+==================  ======================================================
+
+No general register is reserved. In particular ``%ebx`` is an ordinary
+callee-saved register.
+
+C functions
+-----------
+
+C functions use the ``cdecl`` convention: all arguments are pushed on the
+stack from right to left, and the caller removes them.
+
+Library functions
+-----------------
+
+Library functions use ``cdecl`` with one addition: **the library base is
+passed as an extra first argument in ``%eax``**. The function's own
+arguments are on the stack in the order written. In GNU C terms a library
+function is declared as::
+
+    __attribute__((regparm(1)))
+    APTR Exec_33_AllocMem(struct ExecBase *SysBase,
+                          IPTR byteSize, ULONG requirements);
+
+and a call looks like this::
+
+    pushl   requirements
+    pushl   byteSize
+    movl    SysBase, %eax
+    call    *-132(%eax)         # AllocMem(), LVO 33: -33 * 4
+    addl    $8, %esp
+
+Because the base is in a register and not on the stack, a function that
+does not need its base may be written without it.
+
+User functions and hooks (``AROS_UFH``) do *not* use this addition. They
+are plain ``cdecl`` functions.
+
+Vector format
+-------------
+
+Each vector is a 4-byte function pointer (``LIB_VECTSIZE`` is 4). The
+vector for function ``n`` is at ``base - 4 * n``.
+
+C-style library functions
+-------------------------
+
+The link library stub of a C-style function loads the library base into
+``%eax`` and jumps through the vector::
+
+    movl    LibBase, %eax
+    jmp     *-n*4(%eax)
+
+Variadic functions
+------------------
+
+Variadic arguments are on the stack as consecutive 4-byte slots, so a tag
+list or method message passed as arguments is used in place.
+
+Stack
+-----
+
++ New tasks start with a stack pointer aligned to 16 bytes.
++ A new task receives its arguments on the stack.
++ ``NewStackSwap()`` passes all eight arguments on the new stack.
+
+Processor state
+---------------
+
+``struct ExceptionContext`` holds the general registers, segment registers,
+``%eip``, ``%eflags`` and ``%esp``, and pointers to the x87 and SSE state.
+
+The floating point state of every task is saved and restored on each task
+switch: the full ``FXSAVE`` area (x87, MMX and SSE) where the processor
+supports it, otherwise the x87 state.
+
+setjmp buffer
+-------------
+
+``jmp_buf`` is 32 bytes: the return address followed by ``%ebx``, ``%ecx``,
+``%edx``, ``%esi``, ``%edi``, ``%ebp`` and ``%esp``. The floating point
+control state is not saved.
+
+Executable file format
+----------------------
+
+ELF class 32, little-endian, machine ``EM_386``, with ``REL`` relocations.
+The loader accepts:
+
+``R_386_32``, ``R_386_PC32``, ``R_386_GOTPC``, ``R_386_NONE``.
+
+Compiler configuration
+----------------------
+
+==============================  ==============================================
+Setting                         Value
+==============================  ==============================================
+Target triple                   ``i386-aros``
+Instruction set baseline        ``-march=i486``
+Floating point                  x87
+Position independent code       Not used
+Exception handling              DWARF 2
+==============================  ==============================================
+
+The library call macros for i386 are generated at build time by
+``arch/i386-all/include/gencall.c``.
+
+
+x86_64
+======
+
+Register usage
+--------------
+
+Register usage is that of the System V AMD64 ABI.
+
+======================  ==================================================
+Register                Use
+======================  ==================================================
+``%rax``                Return value. Scratch.
+``%rdi``, ``%rsi``      Integer arguments 1 and 2. Scratch.
+``%rdx``, ``%rcx``      Integer arguments 3 and 4. Scratch.
+``%r8``, ``%r9``        Integer arguments 5 and 6. Scratch.
+``%r10``                Scratch.
+``%r11``                Scratch. Library base in a C-style library call.
+``%rbx``, ``%rbp``      Preserved across calls.
+``%r12``-``%r15``       Preserved across calls.
+``%rsp``                Stack pointer.
+``%xmm0``-``%xmm7``     Floating point arguments. Scratch.
+``%xmm8``-``%xmm15``    Scratch.
+======================  ==================================================
+
+No register is reserved.
+
+C functions
+-----------
+
+C functions follow the System V AMD64 ABI without change, with the
+exception of the red zone; see `Stack and red zone`_.
+
+Library functions
+-----------------
+
+Library functions follow the same convention, with **the library base
+passed as an extra last argument**::
+
+    APTR Exec_33_AllocMem(IPTR byteSize, ULONG requirements,
+                          struct ExecBase *SysBase);
+
+    movq    byteSize, %rdi
+    movl    requirements, %esi
+    movq    SysBase, %rdx
+    call    *-264(%rdx)         # AllocMem(), LVO 33: -33 * 8
+
+The base takes the next free argument position, so for a function with six
+or more integer arguments it is passed on the stack.
+
+Vector format
+-------------
+
+Each vector is an 8-byte function pointer (``LIB_VECTSIZE`` is 8). The
+vector for function ``n`` is at ``base - 8 * n``.
+
+C-style library functions
+-------------------------
+
+The link library stub of a C-style function loads the library base into
+``%r11`` and jumps through the vector::
+
+    movabsq $LibBase, %r11
+    movq    (%r11), %r11
+    jmp     *-n*8(%r11)
+
+``%r11`` is not used for arguments, and ``%rax`` is left untouched so that
+the count of vector registers of a variadic call is preserved.
+
+Variadic functions
+------------------
+
+Variadic arguments are passed in registers and on the stack as the base
+ABI specifies. They do not form an array in memory; variadic tag and
+message functions copy them with the ``AROS_SLOWSTACK*`` macros described
+in the common document.
+
+Stack and red zone
+------------------
+
++ The stack pointer must be aligned to 16 bytes immediately before a
+  ``call`` instruction.
++ **AROS code must not use the red zone.** The 128 bytes below ``%rsp``
+  that the System V ABI lets a leaf function use are not available on
+  AROS, because exception and interrupt frames may be written there. All
+  AROS code must be compiled with ``-mno-red-zone``.
++ A new task receives its first six arguments in registers and the
+  remaining two on the stack.
++ ``NewStackSwap()`` aligns the new stack pointer and passes the first six
+  arguments in registers and the last two on the new stack.
+
+Code model and addressing
+-------------------------
+
+Modules can be loaded anywhere in the 64-bit address space, and different
+modules can be more than 2 GB apart. For this reason:
+
++ All AROS code must be compiled with the **large code model**
+  (``-mcmodel=large``) and without position independence.
++ References within a single module may be PC-relative. The loader places
+  all segments of a module in one contiguous area to make sure they are in
+  range of each other.
++ A reference to another module, including every call through a library
+  base, must use a full 64-bit address.
+
+Memory below 2 GB can be requested with the ``MEMF_31BIT`` flag where a
+32-bit address is unavoidable, for example for hardware.
+
+Processor state
+---------------
+
+``struct ExceptionContext`` holds the sixteen general registers, the segment
+registers, ``%rip``, ``%rflags`` and ``%rsp``, and a pointer to the saved
+floating point and vector state together with its size.
+
++ All x86_64 processors have SSE and SSE2, and application code may use
+  them without checking.
++ The x87, SSE and, where the processor supports it, AVX state of every
+  task is saved and restored on each task switch.
++ AVX-512 state is not currently preserved. Applications must not use
+  AVX-512.
++ Code that runs in interrupt context must not use x87, SSE or AVX
+  registers. The native kernel and ``exec.library`` are built with
+  ``-mgeneral-regs-only`` for this reason.
+
+setjmp buffer
+-------------
+
+``jmp_buf`` is 128 bytes: the return address followed by ``%rbx``,
+``%rcx``, ``%rdx``, ``%rsi``, ``%rdi``, ``%rbp``, ``%r8``-``%r15`` and
+``%rsp``. The floating point control state is not saved.
+
+Executable file format
+----------------------
+
+ELF class 64, little-endian, machine ``EM_X86_64``, with ``RELA``
+relocations. The loader accepts:
+
+``R_X86_64_64``, ``R_X86_64_PC32``, ``R_X86_64_PLT32``, ``R_X86_64_32``,
+``R_X86_64_32S``, ``R_X86_64_PC64``, ``R_X86_64_GOTOFF64``,
+``R_X86_64_NONE``.
+
+The 32-bit relocation types are range checked. A module that needs a
+32-bit absolute address is loaded into ``MEMF_31BIT`` memory if that makes
+the relocation possible, and rejected otherwise.
+
+Compiler configuration
+----------------------
+
+==============================  ==============================================
+Setting                         Value
+==============================  ==============================================
+Target triple                   ``x86_64-aros``
+Code model                      ``-mcmodel=large``
+Red zone                        ``-mno-red-zone``
+Frame pointer                   ``-fno-omit-frame-pointer``
+Floating point                  SSE2 (the compiler default)
+Position independent code       Not used
+Exception handling              DWARF 2
+==============================  ==============================================
+
+
+Hosted ports
+============
+
+The hosted x86 ports run the same binaries as the native ports. The
+requirements are given in the `common document <index#hosted-ports>`__;
+this section lists how the x86 hosts differ from the AROS ABI and where
+the conversion takes place.
+
+Linux and macOS
+---------------
+
+On x86_64 these hosts use the System V AMD64 convention themselves, so host
+functions can be called directly through ``hostlib.resource``.
+
+These ports use asynchronous host signals to implement interrupts and task
+switching. Handling them without disturbing the stack or registers of the
+interrupted AROS task is the responsibility of the port's kernel; AROS code
+is not rebuilt with host-specific options to accommodate the host.
+
+Windows
+-------
+
+Windows uses different calling conventions from AROS: ``stdcall`` on i386
+and the Microsoft x64 convention on x86_64. AROS code on Windows still uses
+the conventions on this page. The conversion happens at the boundary, in
+both directions:
+
++ AROS-side drivers declare every Windows API function pointer with the
+  host convention (``__attribute__((ms_abi))`` on x86_64 and ``stdcall`` on
+  i386), so the compiler generates a correct call.
++ The functions that the Windows-side bootstrap exports to AROS are
+  declared ``__attribute__((sysv_abi))`` on x86_64, so AROS code can call
+  them as ordinary functions.
+
+Conformance of the current ports
+--------------------------------
+
+``-mno-red-zone`` is currently applied by the ``pc-x86_64`` and
+``linux-x86_64`` configurations but not by ``darwin-x86_64`` or
+``mingw32-x86_64``. Binaries produced by those two configurations do not
+yet meet the rule in `Stack and red zone`_.
+
+
+Source references
+=================
+
+===============================================  ============================
+Location                                         Content
+===============================================  ============================
+``arch/i386-all/include/aros/cpu.h``             i386 types, alignment, vectors
+``arch/i386-all/include/gencall.c``              i386 library call macros
+``arch/i386-all/include/aros/genmodule.h``       i386 library stubs
+``arch/x86_64-all/include/aros/cpu.h``           x86_64 types, alignment,
+                                                 vectors
+``arch/x86_64-all/include/aros/genmodule.h``     x86_64 library stubs
+``arch/*-all/include/aros/cpucontext.h``         Saved processor state
+``arch/*-all/exec``                              Stack swapping, task setup
+``arch/*-all/stdc``                              ``setjmp``/``longjmp``
+``arch/all-mingw32``                             Windows host interface
+``arch/all-unix``, ``arch/all-hosted``           Unix host interface
+``configure.in``                                 Compiler flags for each port
+===============================================  ============================

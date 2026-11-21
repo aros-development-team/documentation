@@ -68,7 +68,7 @@ Recommendations
 
 + Port SVN client tools to AROS
 
-__ specifications/drafts/abiv1
+__ specifications/abi/index
 
 
 8.  Comprehensive documentation for developers.

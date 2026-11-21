@@ -38,6 +38,7 @@ API Documentation
 + `PCI subsystem manual`__
 + `Autodocs (API Reference)`__
 + `Specifications`__
++ `Application Binary Interface (ABI)`__
 + `Hardware`__
 
 Contribution Guide
@@ -79,6 +80,7 @@ __ {{ devdocrootpath }}porting
 __ {{ devdocrootpath }}hardware/pci
 __ {{ devdocrootpath }}autodocs/index
 __ {{ devdocrootpath }}specifications/index
+__ {{ devdocrootpath }}specifications/abi/index
 __ {{ devdocrootpath }}hardware/index
 __ {{ devdocrootpath }}contribute
 __ {{ devdocrootpath }}styleguide
