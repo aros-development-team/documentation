@@ -4,6 +4,7 @@
 """Render implementation-status category pages as HTML."""
 
 import sys, os
+from xml.sax.saxutils import escape as _escape_html
 from db.tasks.model import *
 from html import *
 
@@ -27,13 +28,26 @@ def calculateCategoryScore( item ):
                     // ( item.total - item.amigaonly )
     return 0
 
-def formatRowCategoryStatus(array, count, total, color):
-    """Append a proportional colored status cell when ``count`` is nonzero.
+def _status_bar_widths(counts):
+    """Allocate 100 integer percent units; keep every nonempty status visible."""
+    total = sum(counts)
+    if total == 0:
+        return [0] * len(counts)
+    active = [i for i, count in enumerate(counts) if count > 0]
+    extra = 100 - len(active)
+    quotas = [extra * count / total for count in counts]
+    widths = [(1 if count else 0) + int(q) for count, q in zip(counts, quotas)]
+    left = 100 - sum(widths)
+    order = sorted(active, key=lambda i: (quotas[i] - int(quotas[i]), -i), reverse=True)
+    for i in order[:left]:
+        widths[i] += 1
+    return widths
 
-    ``total`` is the total number of entries represented by the row.
-    """
-    if count != 0:
-        array.append( TD( bgcolor = color, width = repr(int ( round( count * 100.0 / total, 0 ) )) + '%' ) )
+
+def formatRowCategoryStatus(array, width, color):
+    """Append a proportional cell with a nonzero integer width."""
+    if width:
+        array.append(TD(bgcolor=color, width=str(width) + '%'))
 
 def formatRowCategory( item, extension ):
 
@@ -48,15 +62,16 @@ def formatRowCategory( item, extension ):
     # entries with 0%, they are still beeing drawn
     dyncontents = []
 
-    formatRowCategoryStatus( dyncontents, item.completed, item.total, C_Completed)
-    formatRowCategoryStatus( dyncontents, item.skipped, item.total, C_Skipped)
-    formatRowCategoryStatus( dyncontents, item.amigaonly, item.total, C_AmigaOnly)
-    formatRowCategoryStatus( dyncontents, item.needssomework, item.total, C_NeedsSomeWork)
-    formatRowCategoryStatus( dyncontents, item.notimplemented, item.total, C_NotImplemented)
+    counts = [item.completed, item.skipped, item.amigaonly,
+              item.needssomework, item.notimplemented]
+    colors = [C_Completed, C_Skipped, C_AmigaOnly,
+              C_NeedsSomeWork, C_NotImplemented]
+    for width, color in zip(_status_bar_widths(counts), colors):
+        formatRowCategoryStatus(dyncontents, width, color)
 
     row.append \
     ( 
-        TD( A( href = item.category + extension, contents = item.description ) )
+        TD( A( href = _escape_html(item.category + extension, {'"': '&quot;'}), contents = _escape_html(item.description) ) )
     )
     row.append \
     (
@@ -102,13 +117,14 @@ def formatRowCategoryItem( item, extension ):
     """
     row = TR( bgcolor = '#dddddd' )
 
-    if   item.status == CategoryItem.STAT_Completed:   color = C_Completed
+    if   item.status == CategoryItem.STAT_Completed: color = C_Completed
     elif item.status == CategoryItem.STAT_NeedsSomeWork: color = C_NeedsSomeWork
-    elif item.status == CategoryItem.STAT_NotImplemented:   color = C_NotImplemented
+    elif item.status == CategoryItem.STAT_NotImplemented: color = C_NotImplemented
     elif item.status == CategoryItem.STAT_Skipped: color = C_Skipped
     elif item.status == CategoryItem.STAT_AmigaOnly: color = C_AmigaOnly
+    else: raise ValueError("Unknown API status: {}".format(item.status))
     
-    description = item.description
+    description = _escape_html(item.description)
     if item.architecture == CategoryItem.ARCH_i386:
         description = description + ' (<i>i386</i>)'
         
@@ -145,7 +161,7 @@ def formatHeader( root ):
                     contents = [
                     TD \
                     (
-                        contents = 'Status: ' + root.description
+                        contents = 'Status: ' + _escape_html(root.description)
                     ),
                     TD \
                     (
@@ -189,7 +205,7 @@ def formatLegendColorTable( color ):
 def formatReturnLink( parent, extension ):
     """Return a parent-category navigation link, or an empty string."""
     if parent is not None:
-        return 'Return to ' + str( A( href = parent.category + extension, contents = parent.description ) ) +'<br/>'
+        return 'Return to ' + str( A( href = _escape_html(parent.category + extension, {'"': '&quot;'}), contents = _escape_html(parent.description) ) ) +'<br/>'
     else:
         return ''
 
@@ -277,7 +293,7 @@ def format( root, directory, template, lang, extension, parent = None ):
 
     # Format category comments                
     for item in root.comments:
-       content_Comments += '<li>' + item.comment + '</li>'
+       content_Comments += '<li>' + _escape_html(item.comment) + '</li>'
     content_Comments += '</ul>'
 
     contentstr = '<h2 align="center" style="font-size:large">AROS implementation status</h2>'
