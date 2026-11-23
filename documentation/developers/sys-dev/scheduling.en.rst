@@ -71,5 +71,11 @@ architectures.  It is advised to use FindTask(NULL); to determine the current
 task in all cases to ensure code compiles for all AROS targets and gets the
 correct value. Other scheduling values should not be accessed.
 
+Scheduling on more than one processor core, and what it requires of code
+that used Forbid() or Disable() for protection, is described in
+`Symmetric multiprocessing in AROS`__.
+
+__ smp
+
 .. [1] ThisTask does exist on binary compatible AROS targets and can be accessed
    as normal, however such code is not portable to all AROS targets.

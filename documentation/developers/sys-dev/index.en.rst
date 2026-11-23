@@ -26,9 +26,11 @@ Table of Contents
 + `Libraries`__
 
 + `Multitasking and the Schedular`__
++ `Symmetric multiprocessing (SMP)`__
 
 
 __ system-development
 __ modules
 __ libraries
 __ scheduling
+__ smp
