@@ -118,6 +118,10 @@ a) Jos se olisi todella tärkeä, se löytyisi jo alkuperäisestä
    käyttöjärjestelmästä. :-)
 b) Mikset tee sitä itse ja lähetä meille?
 
+(Korjaustiedostot ovat tervetulleita, mutta katso kohdasta `AROS on avointa
+lähdekoodia. Tarkoittaako se, että kuka tahansa voi muuttaa sitä mielensä
+mukaan?`_, mitä niiltä odotetaan.)
+
 Syy tähän asenteeseen on se että on paljon niitä jotka ajattelevat heidän
 esittämänsä ominaisuuden olevan sen kaikkein tärkeimmän ja ettei AROS:illa ole
 tulevaisuutta jos kyseistä ominaisuutta ei toteuteta heti paikalla. Meidän
@@ -374,6 +378,312 @@ Tuleeko AROS:ista Kickstart ROM:ia?
 -----------------------------------
 
 Ne ovat jo saatavilla amiga-m68k-boot-iso-paketissa hakemistossa boot/amiga.
+
+
+Projektin organisaatio ja hallinto
+==================================
+
+Kuka johtaa AROS-projektia?
+---------------------------
+
+AROS on vapaaehtoisprojekti. Mikään yritys ei omista tai pyöritä sitä, eikä
+projekti maksa kenellekään sen parissa työskentelystä.
+
+Projektin aloitti vuonna 1995 Aaron Digulla. Nykyään sitä ylläpitävät Nick
+Andrews (Kalamatee) ja Matthias Rustler (mazze). He vastaavat projektin
+suunnasta ja päätöksistä ja ovat viime kädessä vastuussa sen jatkuvasta
+kehityksestä, infrastruktuurista ja säilyttämisestä.
+
+Muut kehitystiimin pitkäaikaiset jäsenet ovat edelleen yhteydessä projektiin,
+mutta eivät enää osallistu aktiivisesti sen päivittäiseen kehitystyöhön.
+Michal Schulz, joka oli aiemmin yksi ylläpitäjistä, vetäytyi sivuun
+keskittyäkseen m68k-emulaatiotyöhönsä.
+
+
+Mistä projektin infrastruktuuri koostuu ja kuka sen maksaa?
+-----------------------------------------------------------
+
++ **Lähdekoodia** isännöidään GitHubissa, organisaatiossa
+  `aros-development-team`__.
++ **Koontiversiot**, yölliset koontiversiot mukaan lukien, tuotetaan Azure
+  Pipelines -palvelulla.
++ **Verkkosivustoa** isännöidään SourceForgessa.
++ **Verkkotunnuksen aros.org** maksaa edelleen Aaron Digulla. Sen DNS:ää
+  hallinnoivat nykyiset ylläpitäjät.
+
+Projektilla ei ole muita juoksevia kuluja, eikä projektirahastoa ole. Tämän
+sivuston kautta tehdyt lahjoitukset menevät suoraan sille yksittäiselle
+kehittäjälle, jonka lahjoittaja valitsee, eivät projektille.
+
+__ https://github.com/aros-development-team
+
+
+Miten päätökset tehdään?
+------------------------
+
+Muutoksia ehdotetaan, niistä keskustellaan ja ne katselmoidaan avoimesti:
+kehittäjien postituslistalla, kehityksen Slack-kanavalla sekä GitHubin
+ongelmailmoituksissa (issues) ja vetopyynnöissä (pull requests). Kaikki ovat
+tervetulleita osallistumaan näihin keskusteluihin, ja erilaisiin
+mielipiteisiin ja ideoihin kannustetaan.
+
+Lopullinen päätös siitä, mitä AROS:iin hyväksytään, ja siitä, mihin suuntaan
+projekti kulkee, kuuluu ylläpitäjille. Päätökset tehdään koko projektia
+ajatellen: kaikkia sen tuettuja alustoja, sen nykyisiä käyttäjiä ja
+ohjelmistoja sekä sen pitkän aikavälin tavoitteita, eikä yksittäisen
+avustajan, alustan tai jakelun tarpeita.
+
+
+AROS on avointa lähdekoodia. Tarkoittaako se, että kuka tahansa voi muuttaa sitä mielensä mukaan?
+-------------------------------------------------------------------------------------------------
+
+Kuka tahansa saa käyttää, tutkia, muokata ja levittää edelleen AROS:in
+lähdekoodia `AROS Public License`__ -lisenssin ehtojen mukaisesti, ja kuka
+tahansa saa ehdottaa muutoksia.
+
+Tätä avoimuutta ei pidä erehtyä luulemaan valvonnan, suunnan tai normien
+puuttumiseksi. AROS ei ole kaikille vapaa temmellyskenttä. Kontribuutiot ovat
+tervetulleita, mutta niiden on kunnioitettava projektin henkeä, tavoitteita ja
+yleistä suuntaa, ja ne katselmoidaan ennen kuin ne hyväksytään. Kenenkään ei
+pidä odottaa voivansa pakottaa omaa agendaansa projektille tai käyttää
+projektin avoimuutta perusteluna sille.
+
+Erityisesti seuraavat eivät ole AROS:issa hyväksyttäviä:
+
++ projektin tai sen komponenttien käyttäminen yksityisten tai kaupallisten
+  etujen ajamiseen, esimerkiksi tuomalla komponentteihin mainontaa;
++ kehityksen ohjaaminen yhden suosikkialustan suuntaan muiden alustojen tai
+  projektin laajempien tavoitteiden kustannuksella;
++ muutokset, jotka palvelevat yhtä jakelua tai haaraumaa (fork) koko AROS:in
+  vahingoksi.
+
+__ ../../license.html
+
+
+Miksi projektin hallinta on niin harvojen käsissä?
+--------------------------------------------------
+
+Syitä on kaksi.
+
+Ensimmäinen on yksinkertaisesti historia. Nykyinen rakenne on kehittynyt
+pitkän ajan kuluessa, ja se heijastaa sitä, ketkä ovat johdonmukaisesti
+antaneet panoksensa AROS:iin, tukeneet sitä ja pysyneet siihen sitoutuneina.
+Suurimman osan viimeisistä viidestätoista vuodesta ja pidempäänkin muilla on
+ollut vain vähän pitkäjänteistä kiinnostusta ottaa vastuuta projektista, joten
+siitä huolehtivien ihmisten joukko on pysynyt pienenä.
+
+Toinen on kokemus. Aiemmin yksittäiset henkilöt ovat yrittäneet ottaa
+itselleen määräysvaltaisen aseman projektissa, suunnata sen kehitystä
+uudelleen ja käyttää sitä oman etunsa välineenä. Projektin, sen yhteisön ja
+siihen tehdyn työn rakentaminen vie monta vuotta, mutta joku voi aiheuttaa
+niille merkittävää vahinkoa hyvin lyhyessä ajassa.
+
+Ylläpidettävän hallinnan taso on tämän suora seuraus. Sen tarkoituksena ei ole
+rajoittaa oikeutettua osallistumista tai yhteistyötä. Se on olemassa
+suojellakseen projektia ja niitä panoksia, joita monet ihmiset ovat vuosien
+varrella siihen antaneet, kaappaamiselta, harhaan ohjaamiselta ja
+hyväksikäytöltä muihin tarkoituksiin kuin niihin, joita varten AROS
+perustettiin.
+
+
+Miten pääsen mukaan?
+--------------------
+
+Projekti haluaa nähdä, että yhä useampi osallistuu aktiivisesti AROS:iin. Tie
+mukaan on kaikille sama:
+
+1. Tee tietovarastosta haarauma (fork) GitHubissa ja lähetä parannukset
+   vetopyyntöinä.
+2. Liity kehittäjien postituslistalle tai Slack-kanavalle ja osallistu
+   keskusteluun, erityisesti ennen kuin aloitat suuremman muutoksen.
+3. Lue lähdekooditietovarastossa olevat avustamisohjeet, vetopyyntöprosessi ja
+   käytössäännöt (``CONTRIBUTING.md`` ja ``PULL_REQUESTS.md``) ja noudata
+   niitä.
+
+Et tarvitse tähän mitään erityisasemaa. Kohdassa `Avustaminen`__ kerrotaan
+muista tavoista auttaa, kuten testaamisesta, dokumentoinnista ja
+kääntämisestä.
+
+__ ../developers/contribute
+
+
+Miten saan commit-oikeudet tai sananvaltaa projektin suuntaan?
+--------------------------------------------------------------
+
+Suora pääsy tietovarastoon ja kaikki sitä suurempi vastuu tai vaikutusvalta
+perustuvat osoitettuun luottamukseen, luotettavuuteen ja pitkäjänteiseen
+sitoutumiseen projektiin. Käytännössä se tarkoittaa näyttöä hyvistä, ajan
+mittaan tehdyistä kontribuutioista, jotka kunnioittavat projektin tavoitteita
+ja sen parissa työskenteleviä ihmisiä.
+
+Ei ole mitään kiinteää korjaustiedostojen (patch) määrää tai ajan pituutta,
+joka tekisi jostakusta kelpoisen. Pääsyn, vastuun tai hallinnan laajentamista
+koskevat päätökset tekevät ylläpitäjät, eikä niitä projektin historian vuoksi
+tehdä kevyin perustein. Kiinnostuksen ilmaiseminen on tervetullutta, mutta
+yksinään se ei korvaa osallistumista.
+
+
+Kuka omistaa AROS:in tekijänoikeudet?
+-------------------------------------
+
+AROS:ia varten kirjoitettu koodi luovutetaan projektille kokonaisuutena. Siinä
+on The AROS Development Team -ryhmän tekijänoikeusmerkintä, ja se on
+lisensoitu AROS Public License -lisenssillä. Avustajat eivät liitä AROS:ia
+varten kirjoitettuun koodiin henkilökohtaisia tekijänoikeusmerkintöjä tai omia
+lisenssiehtojaan.
+
+Muualta peräisin oleva koodi säilyttää alkuperäisen tekijänoikeusmerkintänsä
+ja lisenssinsä, ja sitä käytetään AROS:issa kyseisen lisenssin ehtojen
+mukaisesti.
+
+
+Voinko tehdä AROS:ista oman haarauman tai jakelun?
+--------------------------------------------------
+
+Kyllä. Haaraumat ja jakelut ovat sallittuja AROS Public License -lisenssin
+nojalla, ja jakeluiden ylläpitäjät saavat vapaasti päättää, mitä heidän
+jakelunsa sisältää ja miltä se näyttää.
+
+Vastineeksi haarauman tai jakelun odotetaan ilmoittavan ylävirran (upstream)
+AROS-kehityksen osuuden selkeästi ja täsmällisesti, erottuvan selvästi
+ylävirran projektista ja kertovan avoimesti mahdollisesta
+binääriyhteensopimattomuudesta ylävirran AROS:in kanssa. AROS:in verkkosivusto
+ei linkitä haaraumiin, jakeluihin tai yhteisön resursseihin, jotka antavat
+väärän kuvan siitä, mistä työ on peräisin. Koko lausuma on tämän sivuston
+`etusivulla`__.
+
+Haaraumat ja jakelut ovat AROS-projektista riippumattomia. Niitä ylläpitävät
+niiden omat tekijät, jotka eivät puhu AROS:in puolesta, ja niitä koskevat
+kysymykset on parasta osoittaa näille tekijöille.
+
+AROS:in päälinjaan perustuva jakelu saa käyttää nimessään "AROS"; haarauma ei
+saa. Katso `Voinko käyttää nimeä "AROS" omassa projektissani tai
+tuotteessani?`_.
+
+__ ../../index
+
+
+Voinko käyttää nimeä "AROS" omassa projektissani tai tuotteessani?
+------------------------------------------------------------------
+
+Se riippuu siitä, millainen projekti on kyseessä.
+
+===================================  ==============
+Projektin tyyppi                     "AROS" nimessä
+===================================  ==============
+AROS:in päälinjaan perustuva jakelu  Sallittu
+AROS:in haarauma                     Ei sallittu
+AROS:issa toimiva ohjelmisto         Ei sallittu
+===================================  ==============
+
+Kuka tahansa saa käyttää nimeä *viitatakseen* AROS:iin: sanoakseen
+totuudenmukaisesti, että hänen ohjelmistonsa toimii AROS:issa, on kirjoitettu
+AROS:ille tai perustuu AROS:iin. Rajoitukset koskevat nimen tai siitä johdetun
+nimen käyttämistä jonkin muun *yksilöimiseen*.
+
+AROS:in päälinjaan perustuvat jakelut
+    Jakelu, joka paketoi käyttöjärjestelmän sellaisena kuin sitä kehitetään
+    AROS:in päätietovarastossa, yhdessä ohjelmisto- ja asetusvalikoiman
+    kanssa, *on* AROS, ja se saa käyttää nimessään "AROS". Sillä tulisi silti
+    olla nimi, joka erottaa sen ylävirran projektista ja muista jakeluista.
+
+Haaraumat
+    Haarauma on erikseen kehitetty versio lähdekoodista, joka on erkaantunut
+    AROS:in päälinjasta. Se ei enää ole se käyttöjärjestelmä, jota tämä
+    projekti kehittää, eikä se välttämättä ole yhteensopiva sen kanssa.
+    Haarauma ei siksi saa käyttää nimessään "AROS". Se saa sanoa, ja sen
+    tulisi sanoa, että se on johdettu AROS:ista.
+
+AROS:issa toimivat ohjelmistot
+    Sovellukset, kirjastot, sovelluskehykset, ajoympäristöt ja muut kerrokset,
+    jotka toimivat AROS:in päällä, eivät ole AROS, eivätkä ne saa käyttää
+    omana nimenään "AROS" tai siitä johdettua nimeä.
+
+"AROS" on ollut tämän käyttöjärjestelmän ja sitä kehittävän projektin nimi
+1990-luvulta lähtien. Toinen projekti, jolla on sama nimi tai nimi, joka on
+helppo sekoittaa siihen, antaa ymmärtää yhteyden, jota ei ole.
+
+Haaraumien ja AROS:issa toimivien ohjelmistojen osalta tämä sulkee pois
+erityisesti nimet, jotka:
+
++ koostuvat sanasta "AROS", johon on lisätty kirjaimia tai sanoja, tai jotka
+  eroavat siitä vain kirjaimella tai kahdella;
++ voitaisiin tulkita AROS:in versioksi, editioksi, haaraksi, komponentiksi tai
+  seuraajaksi;
++ muuten antavat ymmärtää, että projekti on virallinen tai että The AROS
+  Development Team tukee tai ylläpitää sitä.
+
+Sillä ei ole merkitystä, mistä sanoista tällainen nimi muodostuu. Se, että
+nimelle annetaan lyhenteenä toinen aukikirjoitus, ei muuta sitä, miltä se
+näyttää tai kuulostaa, tai mitä ihmiset olettavat sen nähdessään.
+
+
+Eikö lisenssi salli minun käyttää nimeä?
+----------------------------------------
+
+Ei. Tekijänoikeuslisensointi ja nimeäminen ovat eri asioita.
+
+AROS Public License säätelee *lähdekoodin* käyttöä, muokkaamista ja
+edelleenlevitystä. Se nimenomaisesti jättää tavaramerkkioikeudet myöntämättä.
+Lupa rakentaa AROS:in varaan, tehdä siitä haarauma tai kirjoittaa sille
+ohjelmistoja ei siksi ole lupa käyttää AROS:in nimeä tai logoja tavalla, joka
+antaa ymmärtää AROS-projektin tukevan hanketta tai olevan siihen sidoksissa.
+
+Useimmat avoimen lähdekoodin projektit tekevät saman eron, ja samasta syystä:
+käyttäjien, kehittäjien ja avustajien on voitava tietää, mistä ohjelmisto on
+peräisin, kuka siitä vastaa ja mistä saa tukea.
+
+
+Miten minun tulisi nimetä ja kuvailla ohjelmisto, joka on rakennettu AROS:in päälle tai AROS:ia varten?
+-------------------------------------------------------------------------------------------------------
+
+Anna sille oma nimi ja kerro yhteys AROS:iin sen kuvauksessa. Esimerkiksi:
+
++ "*Nimi*, sovelluskehys AROS:ille"
++ "*Nimi*, ajoympäristö AROS:ille"
++ "*Nimi*, AROS:ista johdettu käyttöjärjestelmä" (haaraumalle)
+
+Tämä antaa tunnustuksen käyttöjärjestelmälle, jossa ohjelmisto toimii,
+lainaamatta sen identiteettiä. Näin tehdessä ei menetetä mitään: muille
+käyttöjärjestelmille kirjoitettujen ohjelmistojen kerrotaan toimivan niissä
+ilman, että ne ottavat niiden nimiä.
+
+Erottuva nimi on erityisen tärkeä silloin, kun ohjelmisto on jotakin muuta
+kuin käyttöjärjestelmä, kuten kirjasto, sovelluskehys tai sovelluskerros, joka
+toimii AROS:in päällä. Nimi, joka on lähes sama kuin käyttöjärjestelmän nimi,
+tekee kenelle tahansa vaikeaksi erottaa, mihin toinen päättyy ja mistä toinen
+alkaa: mikä dokumentaatio pätee, minne virheestä pitäisi ilmoittaa ja kuka
+vastaa sen korjaamisesta.
+
+Riippumattoman projektin tulisi myös sanoa olevansa riippumaton, esimerkiksi:
+"Tämä on riippumaton projekti, eikä sillä ole sidoksia The AROS Development
+Team -ryhmään". Vastuuvapauslauseke on hyvä käytäntö, mutta se ei hyvitä
+nimeä, joka on jo lähtökohtaisesti sekaannusta aiheuttava.
+
+Jos et ole varma, onko jokin nimi hyväksyttävä, kysy kehittäjien
+postituslistalla ennen kuin julkaiset mitään sillä nimellä. Nimen vaihtaminen
+on paljon helpompaa ennen projektin vakiintumista kuin sen jälkeen.
+
+
+Kuka puhuu AROS-projektin puolesta?
+-----------------------------------
+
+Projektin puolesta puhuvat kohdassa `Kuka johtaa AROS-projektia?`_ nimetyt
+ylläpitäjät. Virallinen tieto julkaistaan tällä verkkosivustolla,
+lähdekooditietovarastossa sekä projektin kehittäjien postituslistan ja
+kehityskanavien kautta.
+
+AROS:ista keskustellaan monissa muissa paikoissa, kuten foorumeilla ja
+sosiaalisessa mediassa, ja keskustelijat ovat ihmisiä, jotka käyttävät sitä,
+kirjoittavat sille ohjelmistoja tai ovat siitä yksinkertaisesti
+kiinnostuneita. Nämä keskustelut ovat tervetulleita, mutta niihin osallistuvat
+puhuvat omasta puolestaan. Siellä esitetyt lausumat projektin kannasta,
+suunnitelmista, linjauksista tai sen suhteesta muihin projekteihin ovat
+henkilökohtaisia mielipiteitä eivätkä edusta AROS:ia, esitettiinpä ne kuinka
+varmasti tahansa, elleivät ne tule ylläpitäjiltä.
+
+Jos sinun täytyy tietää projektin kanta johonkin asiaan, kysy virallisten
+kanavien kautta.
 
 
 Yölliset koontiversiot (nightly builds)

@@ -114,6 +114,9 @@ No, per le seguenti ragioni:
 a) Se era veramente importante, sarebbe già nell'OS originale. :-)
 b) Potresti implementarla tu e mandarci una patch!
 
+(Le patch sono benvenute, ma vedi `AROS è open source. Significa che chiunque
+può modificarlo come meglio crede?`_ per sapere cosa ci si aspetta da esse.)
+
 La ragione di questo punto di vista è che ci sono un sacco di persone in
 giro che pensano che quella caratteristica è la più importante e che AROS
 non ha futuro se non viene implementata nel modo giusto. La nostra
@@ -383,6 +386,311 @@ Ci sarà una ROM Kickstart di AROS?
 
 Sono già disponibili nel pacchetto amiga-m68k-boot-iso, nella directory
 boot/amiga.
+
+
+Organizzazione e governance del progetto
+========================================
+
+Chi dirige il progetto AROS?
+----------------------------
+
+AROS è un progetto di volontari. Non è di proprietà di un'azienda né è gestito
+da un'azienda, e nessuno è pagato dal progetto per lavorarci.
+
+Il progetto è stato avviato nel 1995 da Aaron Digulla. Oggi è mantenuto da
+Nick Andrews (Kalamatee) e Matthias Rustler (mazze). Sono loro i responsabili
+della direzione e delle decisioni del progetto, e in ultima istanza rispondono
+del suo sviluppo continuo, della sua infrastruttura e della sua preservazione.
+
+Altri membri di lunga data del team di sviluppo restano in contatto con il
+progetto, ma non sono più attivi nel suo sviluppo quotidiano. Michal Schulz,
+in precedenza uno dei manutentori, si è fatto da parte per concentrarsi sul
+suo lavoro di emulazione m68k.
+
+
+In cosa consiste l'infrastruttura del progetto e chi la paga?
+-------------------------------------------------------------
+
++ **Il codice sorgente** è ospitato su GitHub, nell'organizzazione
+  `aros-development-team`__.
++ **Le build**, comprese le nightly build, sono prodotte con Azure Pipelines.
++ **Il sito web** è ospitato su SourceForge.
++ **Il dominio aros.org** è tuttora pagato da Aaron Digulla. Il suo DNS è
+  gestito dagli attuali manutentori.
+
+Il progetto non ha altri costi di esercizio, e non esiste un fondo del
+progetto. Le donazioni fatte tramite questo sito web vanno direttamente al
+singolo sviluppatore scelto dal donatore, non al progetto.
+
+__ https://github.com/aros-development-team
+
+
+Come vengono prese le decisioni?
+--------------------------------
+
+Le modifiche vengono proposte, discusse e riviste apertamente: sulla mailing
+list degli sviluppatori, nel canale Slack di sviluppo, e nelle issue e nelle
+pull request su GitHub. Chiunque è benvenuto a prendere parte a queste
+discussioni, e opinioni e idee diverse sono incoraggiate.
+
+La decisione finale su ciò che viene accettato in AROS, e sulla direzione che
+il progetto prende, spetta ai manutentori. Le decisioni vengono prese tenendo
+conto dell'intero progetto: tutte le sue piattaforme supportate, i suoi utenti
+e il suo software esistenti, e i suoi obiettivi a lungo termine, piuttosto che
+delle esigenze di un singolo contributore, di una singola piattaforma o di una
+singola distribuzione.
+
+
+AROS è open source. Significa che chiunque può modificarlo come meglio crede?
+-----------------------------------------------------------------------------
+
+Chiunque può usare, studiare, modificare e ridistribuire i sorgenti di AROS
+secondo i termini della `AROS Public License`__, e chiunque può proporre
+modifiche.
+
+Questa apertura non dovrebbe essere scambiata per un'assenza di supervisione,
+di direzione o di standard. AROS non è un "liberi tutti". I contributi sono
+benvenuti, ma devono rispettare l'ethos del progetto, i suoi obiettivi e la
+sua direzione generale, e vengono esaminati prima di essere accettati. Nessuno
+dovrebbe aspettarsi di poter imporre la propria agenda al progetto, né di
+usare la sua apertura come giustificazione per farlo.
+
+In particolare, in AROS non sono accettabili:
+
++ l'uso del progetto o dei suoi componenti per promuovere interessi privati o
+  commerciali, per esempio introducendo pubblicità nei componenti;
++ l'orientamento dello sviluppo verso una piattaforma favorita a scapito delle
+  altre, o degli obiettivi più ampi del progetto;
++ le modifiche che servono una distribuzione o un fork a danno di AROS nel suo
+  insieme.
+
+__ ../../license.html
+
+
+Perché il controllo del progetto è nelle mani di così poche persone?
+--------------------------------------------------------------------
+
+Le ragioni sono due.
+
+La prima è semplicemente la storia. La struttura attuale si è evoluta nel
+corso di un lungo periodo e riflette chi ha costantemente contribuito ad AROS,
+lo ha sostenuto ed è rimasto impegnato nei suoi confronti. Per la maggior
+parte degli ultimi quindici anni e più c'è stato scarso interesse duraturo da
+parte di altri ad assumersi la responsabilità del progetto, per cui il gruppo
+di persone che se ne occupa è rimasto piccolo.
+
+La seconda è l'esperienza. In passato ci sono stati tentativi, da parte di
+singoli, di assumere posizioni di autorità sul progetto, di reindirizzarne lo
+sviluppo e di usarlo come veicolo per il proprio tornaconto. Un progetto, la
+sua comunità e il lavoro che vi è stato dedicato richiedono molti anni per
+essere costruiti, ma a qualcuno basta pochissimo tempo per arrecare loro un
+danno significativo.
+
+Il livello di controllo che viene mantenuto è una conseguenza diretta di ciò.
+Non ha lo scopo di limitare il coinvolgimento o la collaborazione legittimi.
+Esiste per proteggere il progetto, e i contributi che molte persone vi hanno
+apportato nel corso degli anni, dall'essere requisiti, sviati o sfruttati per
+scopi diversi da quelli per cui AROS è stato fondato.
+
+
+Come posso partecipare?
+-----------------------
+
+Che più persone partecipino attivamente ad AROS è qualcosa che il progetto
+desidera vedere. La via d'accesso è la stessa per tutti:
+
+1. Crea un fork del repository su GitHub e invia i miglioramenti come pull
+   request.
+2. Iscriviti alla mailing list degli sviluppatori o entra nel canale Slack e
+   partecipa alla discussione, in particolare prima di iniziare una modifica
+   di maggiore entità.
+3. Leggi e segui le linee guida per i contributi, il processo delle pull
+   request e il codice di condotta presenti nel repository dei sorgenti
+   (``CONTRIBUTING.md`` e ``PULL_REQUESTS.md``).
+
+Per farlo non ti serve alcuno status speciale. Vedi `Contribuire`__ per altri
+modi di aiutare, come il testing, la documentazione e la traduzione.
+
+__ ../developers/contribute
+
+
+Come ottengo l'accesso in commit, o voce in capitolo sulla direzione del progetto?
+----------------------------------------------------------------------------------
+
+L'accesso diretto al repository, e qualsiasi livello maggiore di
+responsabilità o di influenza, si fondano su fiducia e affidabilità dimostrate
+e su un impegno duraturo verso il progetto. In pratica ciò significa una
+storia di buoni contributi, apportati nel tempo, che rispettino gli obiettivi
+del progetto e le persone che vi lavorano.
+
+Non esiste un numero fisso di patch né un periodo di tempo che dia titolo a
+qualcuno. Le decisioni sull'estensione dell'accesso, della responsabilità o
+del controllo sono prese dai manutentori e, data la storia del progetto, non
+vengono prese alla leggera. Una manifestazione di interesse è benvenuta, ma da
+sola non sostituisce il coinvolgimento.
+
+
+Chi detiene il copyright su AROS?
+---------------------------------
+
+Il codice scritto per AROS viene conferito al progetto nel suo insieme. Reca
+la nota di copyright di The AROS Development Team ed è rilasciato sotto la
+AROS Public License. I contributori non appongono note di copyright personali
+né propri termini di licenza al codice scritto per AROS.
+
+Il codice proveniente da altre fonti mantiene la nota di copyright e la
+licenza originali, ed è usato in AROS secondo i termini di quella licenza.
+
+
+Posso creare un mio fork o una mia distribuzione di AROS?
+---------------------------------------------------------
+
+Sì. I fork e le distribuzioni sono consentiti dalla AROS Public License, e i
+manutentori delle distribuzioni sono liberi di decidere cosa contiene la
+propria distribuzione e che aspetto ha.
+
+In cambio, ci si aspetta che un fork o una distribuzione attribuisca in modo
+chiaro e accurato lo sviluppo dell'AROS upstream, si distingua chiaramente dal
+progetto upstream e sia trasparente su qualsiasi incompatibilità binaria con
+l'AROS upstream. Il sito web di AROS non contiene link a fork, distribuzioni o
+risorse della comunità che travisano la provenienza del lavoro. La
+dichiarazione completa si trova sulla `pagina iniziale`__ di questo sito.
+
+I fork e le distribuzioni sono indipendenti dal progetto AROS. Sono mantenuti
+dai rispettivi autori, che non parlano a nome di AROS, ed è meglio rivolgere a
+quegli autori le domande che li riguardano.
+
+Una distribuzione basata sul ramo principale di AROS può usare "AROS" nel
+proprio nome; un fork no. Vedi `Posso usare il nome "AROS" per un mio progetto
+o prodotto?`_.
+
+__ ../../index
+
+
+Posso usare il nome "AROS" per un mio progetto o prodotto?
+----------------------------------------------------------
+
+Dipende da cosa è il progetto.
+
+======================================================  =================
+Tipo di progetto                                        "AROS" nel nome
+======================================================  =================
+Una distribuzione basata sul ramo principale di AROS    Consentito
+Un fork di AROS                                         Non consentito
+Software che gira su AROS                               Non consentito
+======================================================  =================
+
+Chiunque può usare il nome per *riferirsi* ad AROS: per dire in modo veritiero
+che il proprio software gira su AROS, è stato scritto per AROS o è basato su
+AROS. Le restrizioni riguardano l'uso del nome, o di un nome da esso derivato,
+per *identificare* qualcos'altro.
+
+Distribuzioni basate sul ramo principale di AROS
+    Una distribuzione che impacchetta il sistema operativo così come viene
+    sviluppato nel repository principale di AROS, insieme a una selezione di
+    software e di impostazioni, *è* AROS, e può usare "AROS" nel proprio nome.
+    Dovrebbe comunque avere un nome che la distingua dal progetto upstream e
+    dalle altre distribuzioni.
+
+Fork
+    Un fork è una versione dei sorgenti sviluppata separatamente che si è
+    allontanata dal ramo principale di AROS. Non è più il sistema operativo
+    che questo progetto sviluppa, e potrebbe non essere compatibile con esso.
+    Un fork non deve quindi usare "AROS" nel proprio nome. Può, e dovrebbe,
+    dichiarare di essere derivato da AROS.
+
+Software che gira su AROS
+    Le applicazioni, le librerie, i framework, gli ambienti di runtime e gli
+    altri strati che girano sopra AROS non sono AROS, e non devono usare
+    "AROS", o un nome da esso derivato, come proprio nome.
+
+"AROS" è il nome di questo sistema operativo, e del progetto che lo sviluppa,
+fin dagli anni novanta. Un progetto diverso che porti lo stesso nome, o uno
+che possa essere facilmente scambiato per esso, suggerisce un legame che non
+esiste.
+
+Per i fork e per il software che gira su AROS, ciò esclude in particolare i
+nomi che:
+
++ sono costituiti da "AROS" con l'aggiunta di lettere o parole, o che ne
+  differiscono solo per una o due lettere;
++ potrebbero essere letti come una versione, un'edizione, un ramo, un
+  componente o un successore di AROS;
++ suggeriscono in altro modo che il progetto sia ufficiale, o che sia
+  approvato o mantenuto da The AROS Development Team.
+
+Non fa alcuna differenza cosa significhi un nome del genere. Dare a un nome
+uno scioglimento diverso come acronimo non cambia il suo aspetto o il suo
+suono, né ciò che le persone presumeranno vedendolo.
+
+
+La licenza non mi permette di usare il nome?
+--------------------------------------------
+
+No. La licenza sul copyright e l'uso dei nomi sono questioni distinte.
+
+La AROS Public License disciplina l'uso, la modifica e la ridistribuzione del
+*codice sorgente*. Espressamente non concede diritti sui marchi. Il permesso
+di basarsi su AROS, di crearne un fork o di scrivere software per esso non è
+quindi un permesso di usare il nome o i loghi di AROS in un modo che implichi
+l'approvazione da parte del progetto AROS o un'affiliazione con esso.
+
+La stessa distinzione è fatta dalla maggior parte dei progetti open source, e
+per la stessa ragione: utenti, sviluppatori e contributori devono poter capire
+da dove proviene un software, chi ne è responsabile e a chi rivolgersi per il
+supporto.
+
+
+Come devo chiamare e descrivere il software basato su AROS o realizzato per AROS?
+---------------------------------------------------------------------------------
+
+Dagli un nome proprio e dichiara il legame con AROS nella sua descrizione. Per
+esempio:
+
++ "*Nome*, un framework applicativo per AROS"
++ "*Nome*, un ambiente di runtime per AROS"
++ "*Nome*, un sistema operativo derivato da AROS" (per un fork)
+
+In questo modo si riconosce il sistema operativo su cui il software gira senza
+prenderne in prestito l'identità. Così facendo non si perde nulla: il software
+scritto per altri sistemi operativi viene descritto come funzionante su di
+essi senza assumerne il nome.
+
+Un nome distinto è particolarmente importante quando il software è qualcosa di
+diverso da un sistema operativo, come una libreria, un framework o uno strato
+applicativo che gira sopra AROS. Un nome quasi identico a quello del sistema
+operativo rende difficile per chiunque capire dove finisce l'uno e dove
+comincia l'altro: quale documentazione si applica, dove andrebbe segnalato un
+bug e chi è responsabile della sua correzione.
+
+Un progetto indipendente dovrebbe anche dichiarare di essere indipendente, per
+esempio: "Questo è un progetto indipendente e non è affiliato a The AROS
+Development Team". Una dichiarazione di non affiliazione (disclaimer) è una
+buona pratica, ma non compensa un nome che è fonte di confusione in partenza.
+
+Se non sei sicuro che un nome sia accettabile, chiedi sulla mailing list degli
+sviluppatori prima di pubblicare con quel nome. È molto più facile cambiare un
+nome prima che un progetto si sia affermato che dopo.
+
+
+Chi parla a nome del progetto AROS?
+-----------------------------------
+
+I manutentori indicati in `Chi dirige il progetto AROS?`_ parlano a nome del
+progetto. Le informazioni ufficiali sono pubblicate su questo sito web, nel
+repository dei sorgenti e tramite la mailing list degli sviluppatori e i
+canali di sviluppo del progetto.
+
+Di AROS si discute in molti altri luoghi, compresi forum e social media, da
+parte di persone che lo usano, scrivono software per esso o semplicemente se
+ne interessano. Queste discussioni sono benvenute, ma le persone che vi
+partecipano parlano per sé. Le affermazioni fatte in quelle sedi sulla
+posizione, sui piani e sulle politiche del progetto, o sui suoi rapporti con
+altri progetti, sono opinioni personali e non rappresentano AROS, per quanto
+siano espresse con sicurezza, a meno che non provengano dai manutentori.
+
+Se hai bisogno di conoscere la posizione del progetto su qualcosa, chiedi
+tramite i canali ufficiali.
 
 
 Nightly build
